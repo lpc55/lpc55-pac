@@ -658,7 +658,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - no description available"]
+    #[doc = "Bits 0:1 - Flexcomm interface 2"]
     #[inline]
     pub fn flexcomm2_rule(&self) -> FLEXCOMM2_RULER {
         FLEXCOMM2_RULER::_from({
@@ -667,7 +667,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 4:5 - no description available"]
+    #[doc = "Bits 4:5 - Flexcomm interface 3"]
     #[inline]
     pub fn flexcomm3_rule(&self) -> FLEXCOMM3_RULER {
         FLEXCOMM3_RULER::_from({
@@ -676,7 +676,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 8:9 - no description available"]
+    #[doc = "Bits 8:9 - Flexcomm interface 4"]
     #[inline]
     pub fn flexcomm4_rule(&self) -> FLEXCOMM4_RULER {
         FLEXCOMM4_RULER::_from({
@@ -685,7 +685,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 12:13 - no description available"]
+    #[doc = "Bits 12:13 - Inter CPU communication Mailbox"]
     #[inline]
     pub fn mailbox_rule(&self) -> MAILBOX_RULER {
         MAILBOX_RULER::_from({
@@ -716,22 +716,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - no description available"]
+    #[doc = "Bits 0:1 - Flexcomm interface 2"]
     #[inline]
     pub fn flexcomm2_rule(&mut self) -> _FLEXCOMM2_RULEW {
         _FLEXCOMM2_RULEW { w: self }
     }
-    #[doc = "Bits 4:5 - no description available"]
+    #[doc = "Bits 4:5 - Flexcomm interface 3"]
     #[inline]
     pub fn flexcomm3_rule(&mut self) -> _FLEXCOMM3_RULEW {
         _FLEXCOMM3_RULEW { w: self }
     }
-    #[doc = "Bits 8:9 - no description available"]
+    #[doc = "Bits 8:9 - Flexcomm interface 4"]
     #[inline]
     pub fn flexcomm4_rule(&mut self) -> _FLEXCOMM4_RULEW {
         _FLEXCOMM4_RULEW { w: self }
     }
-    #[doc = "Bits 12:13 - no description available"]
+    #[doc = "Bits 12:13 - Inter CPU communication Mailbox"]
     #[inline]
     pub fn mailbox_rule(&mut self) -> _MAILBOX_RULEW {
         _MAILBOX_RULEW { w: self }

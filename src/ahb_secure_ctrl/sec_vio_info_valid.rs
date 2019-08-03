@@ -42,16 +42,15 @@ impl super::SEC_VIO_INFO_VALID {
         self.write(|w| w)
     }
 }
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID0R {
-    bits: bool,
+#[doc = "Possible values of the field `VIO_INFO_VALID0`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VIO_INFO_VALID0R {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
 }
 impl VIO_INFO_VALID0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -62,17 +61,43 @@ impl VIO_INFO_VALID0R {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID0R::NOT_VALID => false,
+            VIO_INFO_VALID0R::VALID => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> VIO_INFO_VALID0R {
+        match value {
+            false => VIO_INFO_VALID0R::NOT_VALID,
+            true => VIO_INFO_VALID0R::VALID,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_VALID`"]
+    #[inline]
+    pub fn is_not_valid(&self) -> bool {
+        *self == VIO_INFO_VALID0R::NOT_VALID
+    }
+    #[doc = "Checks if the value of the field is `VALID`"]
+    #[inline]
+    pub fn is_valid(&self) -> bool {
+        *self == VIO_INFO_VALID0R::VALID
+    }
 }
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID1R {
-    bits: bool,
+#[doc = "Possible values of the field `VIO_INFO_VALID1`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VIO_INFO_VALID1R {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
 }
 impl VIO_INFO_VALID1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -83,17 +108,43 @@ impl VIO_INFO_VALID1R {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID1R::NOT_VALID => false,
+            VIO_INFO_VALID1R::VALID => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> VIO_INFO_VALID1R {
+        match value {
+            false => VIO_INFO_VALID1R::NOT_VALID,
+            true => VIO_INFO_VALID1R::VALID,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_VALID`"]
+    #[inline]
+    pub fn is_not_valid(&self) -> bool {
+        *self == VIO_INFO_VALID1R::NOT_VALID
+    }
+    #[doc = "Checks if the value of the field is `VALID`"]
+    #[inline]
+    pub fn is_valid(&self) -> bool {
+        *self == VIO_INFO_VALID1R::VALID
+    }
 }
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID2R {
-    bits: bool,
+#[doc = "Possible values of the field `VIO_INFO_VALID2`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VIO_INFO_VALID2R {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
 }
 impl VIO_INFO_VALID2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -104,17 +155,43 @@ impl VIO_INFO_VALID2R {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID2R::NOT_VALID => false,
+            VIO_INFO_VALID2R::VALID => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> VIO_INFO_VALID2R {
+        match value {
+            false => VIO_INFO_VALID2R::NOT_VALID,
+            true => VIO_INFO_VALID2R::VALID,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_VALID`"]
+    #[inline]
+    pub fn is_not_valid(&self) -> bool {
+        *self == VIO_INFO_VALID2R::NOT_VALID
+    }
+    #[doc = "Checks if the value of the field is `VALID`"]
+    #[inline]
+    pub fn is_valid(&self) -> bool {
+        *self == VIO_INFO_VALID2R::VALID
+    }
 }
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID3R {
-    bits: bool,
+#[doc = "Possible values of the field `VIO_INFO_VALID3`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VIO_INFO_VALID3R {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
 }
 impl VIO_INFO_VALID3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -125,17 +202,43 @@ impl VIO_INFO_VALID3R {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID3R::NOT_VALID => false,
+            VIO_INFO_VALID3R::VALID => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> VIO_INFO_VALID3R {
+        match value {
+            false => VIO_INFO_VALID3R::NOT_VALID,
+            true => VIO_INFO_VALID3R::VALID,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_VALID`"]
+    #[inline]
+    pub fn is_not_valid(&self) -> bool {
+        *self == VIO_INFO_VALID3R::NOT_VALID
+    }
+    #[doc = "Checks if the value of the field is `VALID`"]
+    #[inline]
+    pub fn is_valid(&self) -> bool {
+        *self == VIO_INFO_VALID3R::VALID
+    }
 }
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID4R {
-    bits: bool,
+#[doc = "Possible values of the field `VIO_INFO_VALID4`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VIO_INFO_VALID4R {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
 }
 impl VIO_INFO_VALID4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -146,17 +249,43 @@ impl VIO_INFO_VALID4R {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID4R::NOT_VALID => false,
+            VIO_INFO_VALID4R::VALID => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> VIO_INFO_VALID4R {
+        match value {
+            false => VIO_INFO_VALID4R::NOT_VALID,
+            true => VIO_INFO_VALID4R::VALID,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_VALID`"]
+    #[inline]
+    pub fn is_not_valid(&self) -> bool {
+        *self == VIO_INFO_VALID4R::NOT_VALID
+    }
+    #[doc = "Checks if the value of the field is `VALID`"]
+    #[inline]
+    pub fn is_valid(&self) -> bool {
+        *self == VIO_INFO_VALID4R::VALID
+    }
 }
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID5R {
-    bits: bool,
+#[doc = "Possible values of the field `VIO_INFO_VALID5`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VIO_INFO_VALID5R {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
 }
 impl VIO_INFO_VALID5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -167,17 +296,43 @@ impl VIO_INFO_VALID5R {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID5R::NOT_VALID => false,
+            VIO_INFO_VALID5R::VALID => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> VIO_INFO_VALID5R {
+        match value {
+            false => VIO_INFO_VALID5R::NOT_VALID,
+            true => VIO_INFO_VALID5R::VALID,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_VALID`"]
+    #[inline]
+    pub fn is_not_valid(&self) -> bool {
+        *self == VIO_INFO_VALID5R::NOT_VALID
+    }
+    #[doc = "Checks if the value of the field is `VALID`"]
+    #[inline]
+    pub fn is_valid(&self) -> bool {
+        *self == VIO_INFO_VALID5R::VALID
+    }
 }
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID6R {
-    bits: bool,
+#[doc = "Possible values of the field `VIO_INFO_VALID6`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VIO_INFO_VALID6R {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
 }
 impl VIO_INFO_VALID6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -188,17 +343,43 @@ impl VIO_INFO_VALID6R {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID6R::NOT_VALID => false,
+            VIO_INFO_VALID6R::VALID => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> VIO_INFO_VALID6R {
+        match value {
+            false => VIO_INFO_VALID6R::NOT_VALID,
+            true => VIO_INFO_VALID6R::VALID,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_VALID`"]
+    #[inline]
+    pub fn is_not_valid(&self) -> bool {
+        *self == VIO_INFO_VALID6R::NOT_VALID
+    }
+    #[doc = "Checks if the value of the field is `VALID`"]
+    #[inline]
+    pub fn is_valid(&self) -> bool {
+        *self == VIO_INFO_VALID6R::VALID
+    }
 }
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID7R {
-    bits: bool,
+#[doc = "Possible values of the field `VIO_INFO_VALID7`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VIO_INFO_VALID7R {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
 }
 impl VIO_INFO_VALID7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -209,17 +390,43 @@ impl VIO_INFO_VALID7R {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID7R::NOT_VALID => false,
+            VIO_INFO_VALID7R::VALID => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> VIO_INFO_VALID7R {
+        match value {
+            false => VIO_INFO_VALID7R::NOT_VALID,
+            true => VIO_INFO_VALID7R::VALID,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_VALID`"]
+    #[inline]
+    pub fn is_not_valid(&self) -> bool {
+        *self == VIO_INFO_VALID7R::NOT_VALID
+    }
+    #[doc = "Checks if the value of the field is `VALID`"]
+    #[inline]
+    pub fn is_valid(&self) -> bool {
+        *self == VIO_INFO_VALID7R::VALID
+    }
 }
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID8R {
-    bits: bool,
+#[doc = "Possible values of the field `VIO_INFO_VALID8`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VIO_INFO_VALID8R {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
 }
 impl VIO_INFO_VALID8R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -230,17 +437,43 @@ impl VIO_INFO_VALID8R {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID8R::NOT_VALID => false,
+            VIO_INFO_VALID8R::VALID => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> VIO_INFO_VALID8R {
+        match value {
+            false => VIO_INFO_VALID8R::NOT_VALID,
+            true => VIO_INFO_VALID8R::VALID,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_VALID`"]
+    #[inline]
+    pub fn is_not_valid(&self) -> bool {
+        *self == VIO_INFO_VALID8R::NOT_VALID
+    }
+    #[doc = "Checks if the value of the field is `VALID`"]
+    #[inline]
+    pub fn is_valid(&self) -> bool {
+        *self == VIO_INFO_VALID8R::VALID
+    }
 }
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID9R {
-    bits: bool,
+#[doc = "Possible values of the field `VIO_INFO_VALID9`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VIO_INFO_VALID9R {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
 }
 impl VIO_INFO_VALID9R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -251,17 +484,43 @@ impl VIO_INFO_VALID9R {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID9R::NOT_VALID => false,
+            VIO_INFO_VALID9R::VALID => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> VIO_INFO_VALID9R {
+        match value {
+            false => VIO_INFO_VALID9R::NOT_VALID,
+            true => VIO_INFO_VALID9R::VALID,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_VALID`"]
+    #[inline]
+    pub fn is_not_valid(&self) -> bool {
+        *self == VIO_INFO_VALID9R::NOT_VALID
+    }
+    #[doc = "Checks if the value of the field is `VALID`"]
+    #[inline]
+    pub fn is_valid(&self) -> bool {
+        *self == VIO_INFO_VALID9R::VALID
+    }
 }
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID10R {
-    bits: bool,
+#[doc = "Possible values of the field `VIO_INFO_VALID10`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VIO_INFO_VALID10R {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
 }
 impl VIO_INFO_VALID10R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -272,17 +531,43 @@ impl VIO_INFO_VALID10R {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID10R::NOT_VALID => false,
+            VIO_INFO_VALID10R::VALID => true,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> VIO_INFO_VALID10R {
+        match value {
+            false => VIO_INFO_VALID10R::NOT_VALID,
+            true => VIO_INFO_VALID10R::VALID,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_VALID`"]
+    #[inline]
+    pub fn is_not_valid(&self) -> bool {
+        *self == VIO_INFO_VALID10R::NOT_VALID
+    }
+    #[doc = "Checks if the value of the field is `VALID`"]
+    #[inline]
+    pub fn is_valid(&self) -> bool {
+        *self == VIO_INFO_VALID10R::VALID
+    }
 }
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID11R {
-    bits: bool,
+#[doc = "Possible values of the field `VIO_INFO_VALID11`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VIO_INFO_VALID11R {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
 }
 impl VIO_INFO_VALID11R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -293,131 +578,50 @@ impl VIO_INFO_VALID11R {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
-}
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID12R {
-    bits: bool,
-}
-impl VIO_INFO_VALID12R {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bit(&self) -> bool {
-        self.bits
+        match *self {
+            VIO_INFO_VALID11R::NOT_VALID => false,
+            VIO_INFO_VALID11R::VALID => true,
+        }
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
+    #[allow(missing_docs)]
+    #[doc(hidden)]
     #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    pub fn _from(value: bool) -> VIO_INFO_VALID11R {
+        match value {
+            false => VIO_INFO_VALID11R::NOT_VALID,
+            true => VIO_INFO_VALID11R::VALID,
+        }
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
+    #[doc = "Checks if the value of the field is `NOT_VALID`"]
     #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    pub fn is_not_valid(&self) -> bool {
+        *self == VIO_INFO_VALID11R::NOT_VALID
     }
-}
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID13R {
-    bits: bool,
-}
-impl VIO_INFO_VALID13R {
-    #[doc = r" Value of the field as raw bits"]
+    #[doc = "Checks if the value of the field is `VALID`"]
     #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    pub fn is_valid(&self) -> bool {
+        *self == VIO_INFO_VALID11R::VALID
     }
 }
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID14R {
-    bits: bool,
+#[doc = "Values that can be written to the field `VIO_INFO_VALID0`"]
+pub enum VIO_INFO_VALID0W {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
 }
-impl VIO_INFO_VALID14R {
-    #[doc = r" Value of the field as raw bits"]
+impl VIO_INFO_VALID0W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
     #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID15R {
-    bits: bool,
-}
-impl VIO_INFO_VALID15R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID16R {
-    bits: bool,
-}
-impl VIO_INFO_VALID16R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct VIO_INFO_VALID17R {
-    bits: bool,
-}
-impl VIO_INFO_VALID17R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    pub fn _bits(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID0W::NOT_VALID => false,
+            VIO_INFO_VALID0W::VALID => true,
+        }
     }
 }
 #[doc = r" Proxy"]
@@ -425,6 +629,23 @@ pub struct _VIO_INFO_VALID0W<'a> {
     w: &'a mut W,
 }
 impl<'a> _VIO_INFO_VALID0W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: VIO_INFO_VALID0W) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Not valid."]
+    #[inline]
+    pub fn not_valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID0W::NOT_VALID)
+    }
+    #[doc = "Valid (violation occurred)."]
+    #[inline]
+    pub fn valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID0W::VALID)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -443,11 +664,46 @@ impl<'a> _VIO_INFO_VALID0W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `VIO_INFO_VALID1`"]
+pub enum VIO_INFO_VALID1W {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
+}
+impl VIO_INFO_VALID1W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID1W::NOT_VALID => false,
+            VIO_INFO_VALID1W::VALID => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _VIO_INFO_VALID1W<'a> {
     w: &'a mut W,
 }
 impl<'a> _VIO_INFO_VALID1W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: VIO_INFO_VALID1W) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Not valid."]
+    #[inline]
+    pub fn not_valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID1W::NOT_VALID)
+    }
+    #[doc = "Valid (violation occurred)."]
+    #[inline]
+    pub fn valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID1W::VALID)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -466,11 +722,46 @@ impl<'a> _VIO_INFO_VALID1W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `VIO_INFO_VALID2`"]
+pub enum VIO_INFO_VALID2W {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
+}
+impl VIO_INFO_VALID2W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID2W::NOT_VALID => false,
+            VIO_INFO_VALID2W::VALID => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _VIO_INFO_VALID2W<'a> {
     w: &'a mut W,
 }
 impl<'a> _VIO_INFO_VALID2W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: VIO_INFO_VALID2W) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Not valid."]
+    #[inline]
+    pub fn not_valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID2W::NOT_VALID)
+    }
+    #[doc = "Valid (violation occurred)."]
+    #[inline]
+    pub fn valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID2W::VALID)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -489,11 +780,46 @@ impl<'a> _VIO_INFO_VALID2W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `VIO_INFO_VALID3`"]
+pub enum VIO_INFO_VALID3W {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
+}
+impl VIO_INFO_VALID3W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID3W::NOT_VALID => false,
+            VIO_INFO_VALID3W::VALID => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _VIO_INFO_VALID3W<'a> {
     w: &'a mut W,
 }
 impl<'a> _VIO_INFO_VALID3W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: VIO_INFO_VALID3W) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Not valid."]
+    #[inline]
+    pub fn not_valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID3W::NOT_VALID)
+    }
+    #[doc = "Valid (violation occurred)."]
+    #[inline]
+    pub fn valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID3W::VALID)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -512,11 +838,46 @@ impl<'a> _VIO_INFO_VALID3W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `VIO_INFO_VALID4`"]
+pub enum VIO_INFO_VALID4W {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
+}
+impl VIO_INFO_VALID4W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID4W::NOT_VALID => false,
+            VIO_INFO_VALID4W::VALID => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _VIO_INFO_VALID4W<'a> {
     w: &'a mut W,
 }
 impl<'a> _VIO_INFO_VALID4W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: VIO_INFO_VALID4W) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Not valid."]
+    #[inline]
+    pub fn not_valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID4W::NOT_VALID)
+    }
+    #[doc = "Valid (violation occurred)."]
+    #[inline]
+    pub fn valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID4W::VALID)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -535,11 +896,46 @@ impl<'a> _VIO_INFO_VALID4W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `VIO_INFO_VALID5`"]
+pub enum VIO_INFO_VALID5W {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
+}
+impl VIO_INFO_VALID5W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID5W::NOT_VALID => false,
+            VIO_INFO_VALID5W::VALID => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _VIO_INFO_VALID5W<'a> {
     w: &'a mut W,
 }
 impl<'a> _VIO_INFO_VALID5W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: VIO_INFO_VALID5W) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Not valid."]
+    #[inline]
+    pub fn not_valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID5W::NOT_VALID)
+    }
+    #[doc = "Valid (violation occurred)."]
+    #[inline]
+    pub fn valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID5W::VALID)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -558,11 +954,46 @@ impl<'a> _VIO_INFO_VALID5W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `VIO_INFO_VALID6`"]
+pub enum VIO_INFO_VALID6W {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
+}
+impl VIO_INFO_VALID6W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID6W::NOT_VALID => false,
+            VIO_INFO_VALID6W::VALID => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _VIO_INFO_VALID6W<'a> {
     w: &'a mut W,
 }
 impl<'a> _VIO_INFO_VALID6W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: VIO_INFO_VALID6W) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Not valid."]
+    #[inline]
+    pub fn not_valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID6W::NOT_VALID)
+    }
+    #[doc = "Valid (violation occurred)."]
+    #[inline]
+    pub fn valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID6W::VALID)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -581,11 +1012,46 @@ impl<'a> _VIO_INFO_VALID6W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `VIO_INFO_VALID7`"]
+pub enum VIO_INFO_VALID7W {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
+}
+impl VIO_INFO_VALID7W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID7W::NOT_VALID => false,
+            VIO_INFO_VALID7W::VALID => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _VIO_INFO_VALID7W<'a> {
     w: &'a mut W,
 }
 impl<'a> _VIO_INFO_VALID7W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: VIO_INFO_VALID7W) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Not valid."]
+    #[inline]
+    pub fn not_valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID7W::NOT_VALID)
+    }
+    #[doc = "Valid (violation occurred)."]
+    #[inline]
+    pub fn valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID7W::VALID)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -604,11 +1070,46 @@ impl<'a> _VIO_INFO_VALID7W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `VIO_INFO_VALID8`"]
+pub enum VIO_INFO_VALID8W {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
+}
+impl VIO_INFO_VALID8W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID8W::NOT_VALID => false,
+            VIO_INFO_VALID8W::VALID => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _VIO_INFO_VALID8W<'a> {
     w: &'a mut W,
 }
 impl<'a> _VIO_INFO_VALID8W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: VIO_INFO_VALID8W) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Not valid."]
+    #[inline]
+    pub fn not_valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID8W::NOT_VALID)
+    }
+    #[doc = "Valid (violation occurred)."]
+    #[inline]
+    pub fn valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID8W::VALID)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -627,11 +1128,46 @@ impl<'a> _VIO_INFO_VALID8W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `VIO_INFO_VALID9`"]
+pub enum VIO_INFO_VALID9W {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
+}
+impl VIO_INFO_VALID9W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID9W::NOT_VALID => false,
+            VIO_INFO_VALID9W::VALID => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _VIO_INFO_VALID9W<'a> {
     w: &'a mut W,
 }
 impl<'a> _VIO_INFO_VALID9W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: VIO_INFO_VALID9W) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Not valid."]
+    #[inline]
+    pub fn not_valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID9W::NOT_VALID)
+    }
+    #[doc = "Valid (violation occurred)."]
+    #[inline]
+    pub fn valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID9W::VALID)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -650,11 +1186,46 @@ impl<'a> _VIO_INFO_VALID9W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `VIO_INFO_VALID10`"]
+pub enum VIO_INFO_VALID10W {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
+}
+impl VIO_INFO_VALID10W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID10W::NOT_VALID => false,
+            VIO_INFO_VALID10W::VALID => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _VIO_INFO_VALID10W<'a> {
     w: &'a mut W,
 }
 impl<'a> _VIO_INFO_VALID10W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: VIO_INFO_VALID10W) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Not valid."]
+    #[inline]
+    pub fn not_valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID10W::NOT_VALID)
+    }
+    #[doc = "Valid (violation occurred)."]
+    #[inline]
+    pub fn valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID10W::VALID)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -673,11 +1244,46 @@ impl<'a> _VIO_INFO_VALID10W<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `VIO_INFO_VALID11`"]
+pub enum VIO_INFO_VALID11W {
+    #[doc = "Not valid."]
+    NOT_VALID,
+    #[doc = "Valid (violation occurred)."]
+    VALID,
+}
+impl VIO_INFO_VALID11W {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            VIO_INFO_VALID11W::NOT_VALID => false,
+            VIO_INFO_VALID11W::VALID => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _VIO_INFO_VALID11W<'a> {
     w: &'a mut W,
 }
 impl<'a> _VIO_INFO_VALID11W<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: VIO_INFO_VALID11W) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Not valid."]
+    #[inline]
+    pub fn not_valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID11W::NOT_VALID)
+    }
+    #[doc = "Valid (violation occurred)."]
+    #[inline]
+    pub fn valid(self) -> &'a mut W {
+        self.variant(VIO_INFO_VALID11W::VALID)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -696,329 +1302,119 @@ impl<'a> _VIO_INFO_VALID11W<'a> {
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _VIO_INFO_VALID12W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _VIO_INFO_VALID12W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _VIO_INFO_VALID13W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _VIO_INFO_VALID13W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _VIO_INFO_VALID14W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _VIO_INFO_VALID14W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _VIO_INFO_VALID15W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _VIO_INFO_VALID15W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _VIO_INFO_VALID16W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _VIO_INFO_VALID16W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _VIO_INFO_VALID17W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _VIO_INFO_VALID17W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
 impl R {
     #[doc = r" Value of the register as raw bits"]
     #[inline]
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - violation information valid flag for AHB layer 0. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 0 - violation information valid flag for AHB layer 0. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid0(&self) -> VIO_INFO_VALID0R {
-        let bits = {
+        VIO_INFO_VALID0R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID0R { bits }
+        })
     }
-    #[doc = "Bit 1 - violation information valid flag for AHB layer 1. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 1 - violation information valid flag for AHB layer 1. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid1(&self) -> VIO_INFO_VALID1R {
-        let bits = {
+        VIO_INFO_VALID1R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 1;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID1R { bits }
+        })
     }
-    #[doc = "Bit 2 - violation information valid flag for AHB layer 2. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 2 - violation information valid flag for AHB layer 2. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid2(&self) -> VIO_INFO_VALID2R {
-        let bits = {
+        VIO_INFO_VALID2R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 2;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID2R { bits }
+        })
     }
-    #[doc = "Bit 3 - violation information valid flag for AHB layer 3. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 3 - violation information valid flag for AHB layer 3. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid3(&self) -> VIO_INFO_VALID3R {
-        let bits = {
+        VIO_INFO_VALID3R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 3;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID3R { bits }
+        })
     }
-    #[doc = "Bit 4 - violation information valid flag for AHB layer 4. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 4 - violation information valid flag for AHB layer 4. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid4(&self) -> VIO_INFO_VALID4R {
-        let bits = {
+        VIO_INFO_VALID4R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 4;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID4R { bits }
+        })
     }
-    #[doc = "Bit 5 - violation information valid flag for AHB layer 5. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 5 - violation information valid flag for AHB layer 5. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid5(&self) -> VIO_INFO_VALID5R {
-        let bits = {
+        VIO_INFO_VALID5R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 5;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID5R { bits }
+        })
     }
-    #[doc = "Bit 6 - violation information valid flag for AHB layer 6. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 6 - violation information valid flag for AHB layer 6. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid6(&self) -> VIO_INFO_VALID6R {
-        let bits = {
+        VIO_INFO_VALID6R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 6;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID6R { bits }
+        })
     }
-    #[doc = "Bit 7 - violation information valid flag for AHB layer 7. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 7 - violation information valid flag for AHB layer 7. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid7(&self) -> VIO_INFO_VALID7R {
-        let bits = {
+        VIO_INFO_VALID7R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 7;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID7R { bits }
+        })
     }
-    #[doc = "Bit 8 - violation information valid flag for AHB layer 8. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 8 - violation information valid flag for AHB layer 8. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid8(&self) -> VIO_INFO_VALID8R {
-        let bits = {
+        VIO_INFO_VALID8R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 8;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID8R { bits }
+        })
     }
-    #[doc = "Bit 9 - violation information valid flag for AHB layer 9. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 9 - violation information valid flag for AHB layer 9. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid9(&self) -> VIO_INFO_VALID9R {
-        let bits = {
+        VIO_INFO_VALID9R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 9;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID9R { bits }
+        })
     }
-    #[doc = "Bit 10 - violation information valid flag for AHB layer 10. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 10 - violation information valid flag for AHB layer 10. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid10(&self) -> VIO_INFO_VALID10R {
-        let bits = {
+        VIO_INFO_VALID10R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 10;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID10R { bits }
+        })
     }
-    #[doc = "Bit 11 - violation information valid flag for AHB layer 11. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 11 - violation information valid flag for AHB layer 11. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid11(&self) -> VIO_INFO_VALID11R {
-        let bits = {
+        VIO_INFO_VALID11R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 11;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID11R { bits }
-    }
-    #[doc = "Bit 12 - violation information valid flag for AHB layer 12. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
-    #[inline]
-    pub fn vio_info_valid12(&self) -> VIO_INFO_VALID12R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID12R { bits }
-    }
-    #[doc = "Bit 13 - violation information valid flag for AHB layer 13. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
-    #[inline]
-    pub fn vio_info_valid13(&self) -> VIO_INFO_VALID13R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID13R { bits }
-    }
-    #[doc = "Bit 14 - violation information valid flag for AHB layer 14. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
-    #[inline]
-    pub fn vio_info_valid14(&self) -> VIO_INFO_VALID14R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID14R { bits }
-    }
-    #[doc = "Bit 15 - violation information valid flag for AHB layer 15. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
-    #[inline]
-    pub fn vio_info_valid15(&self) -> VIO_INFO_VALID15R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID15R { bits }
-    }
-    #[doc = "Bit 16 - violation information valid flag for AHB layer 16. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
-    #[inline]
-    pub fn vio_info_valid16(&self) -> VIO_INFO_VALID16R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID16R { bits }
-    }
-    #[doc = "Bit 17 - violation information valid flag for AHB layer 17. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
-    #[inline]
-    pub fn vio_info_valid17(&self) -> VIO_INFO_VALID17R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        VIO_INFO_VALID17R { bits }
+        })
     }
 }
 impl W {
@@ -1033,94 +1429,64 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - violation information valid flag for AHB layer 0. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 0 - violation information valid flag for AHB layer 0. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid0(&mut self) -> _VIO_INFO_VALID0W {
         _VIO_INFO_VALID0W { w: self }
     }
-    #[doc = "Bit 1 - violation information valid flag for AHB layer 1. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 1 - violation information valid flag for AHB layer 1. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid1(&mut self) -> _VIO_INFO_VALID1W {
         _VIO_INFO_VALID1W { w: self }
     }
-    #[doc = "Bit 2 - violation information valid flag for AHB layer 2. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 2 - violation information valid flag for AHB layer 2. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid2(&mut self) -> _VIO_INFO_VALID2W {
         _VIO_INFO_VALID2W { w: self }
     }
-    #[doc = "Bit 3 - violation information valid flag for AHB layer 3. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 3 - violation information valid flag for AHB layer 3. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid3(&mut self) -> _VIO_INFO_VALID3W {
         _VIO_INFO_VALID3W { w: self }
     }
-    #[doc = "Bit 4 - violation information valid flag for AHB layer 4. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 4 - violation information valid flag for AHB layer 4. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid4(&mut self) -> _VIO_INFO_VALID4W {
         _VIO_INFO_VALID4W { w: self }
     }
-    #[doc = "Bit 5 - violation information valid flag for AHB layer 5. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 5 - violation information valid flag for AHB layer 5. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid5(&mut self) -> _VIO_INFO_VALID5W {
         _VIO_INFO_VALID5W { w: self }
     }
-    #[doc = "Bit 6 - violation information valid flag for AHB layer 6. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 6 - violation information valid flag for AHB layer 6. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid6(&mut self) -> _VIO_INFO_VALID6W {
         _VIO_INFO_VALID6W { w: self }
     }
-    #[doc = "Bit 7 - violation information valid flag for AHB layer 7. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 7 - violation information valid flag for AHB layer 7. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid7(&mut self) -> _VIO_INFO_VALID7W {
         _VIO_INFO_VALID7W { w: self }
     }
-    #[doc = "Bit 8 - violation information valid flag for AHB layer 8. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 8 - violation information valid flag for AHB layer 8. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid8(&mut self) -> _VIO_INFO_VALID8W {
         _VIO_INFO_VALID8W { w: self }
     }
-    #[doc = "Bit 9 - violation information valid flag for AHB layer 9. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 9 - violation information valid flag for AHB layer 9. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid9(&mut self) -> _VIO_INFO_VALID9W {
         _VIO_INFO_VALID9W { w: self }
     }
-    #[doc = "Bit 10 - violation information valid flag for AHB layer 10. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 10 - violation information valid flag for AHB layer 10. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid10(&mut self) -> _VIO_INFO_VALID10W {
         _VIO_INFO_VALID10W { w: self }
     }
-    #[doc = "Bit 11 - violation information valid flag for AHB layer 11. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
+    #[doc = "Bit 11 - violation information valid flag for AHB layer 11. Write 1 to clear."]
     #[inline]
     pub fn vio_info_valid11(&mut self) -> _VIO_INFO_VALID11W {
         _VIO_INFO_VALID11W { w: self }
-    }
-    #[doc = "Bit 12 - violation information valid flag for AHB layer 12. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
-    #[inline]
-    pub fn vio_info_valid12(&mut self) -> _VIO_INFO_VALID12W {
-        _VIO_INFO_VALID12W { w: self }
-    }
-    #[doc = "Bit 13 - violation information valid flag for AHB layer 13. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
-    #[inline]
-    pub fn vio_info_valid13(&mut self) -> _VIO_INFO_VALID13W {
-        _VIO_INFO_VALID13W { w: self }
-    }
-    #[doc = "Bit 14 - violation information valid flag for AHB layer 14. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
-    #[inline]
-    pub fn vio_info_valid14(&mut self) -> _VIO_INFO_VALID14W {
-        _VIO_INFO_VALID14W { w: self }
-    }
-    #[doc = "Bit 15 - violation information valid flag for AHB layer 15. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
-    #[inline]
-    pub fn vio_info_valid15(&mut self) -> _VIO_INFO_VALID15W {
-        _VIO_INFO_VALID15W { w: self }
-    }
-    #[doc = "Bit 16 - violation information valid flag for AHB layer 16. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
-    #[inline]
-    pub fn vio_info_valid16(&mut self) -> _VIO_INFO_VALID16W {
-        _VIO_INFO_VALID16W { w: self }
-    }
-    #[doc = "Bit 17 - violation information valid flag for AHB layer 17. 0: not valid. 1: valid (violation occurred). Write 1 to clear."]
-    #[inline]
-    pub fn vio_info_valid17(&mut self) -> _VIO_INFO_VALID17W {
-        _VIO_INFO_VALID17W { w: self }
     }
 }

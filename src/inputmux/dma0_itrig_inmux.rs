@@ -91,24 +91,8 @@ pub enum INPR {
     VAL21,
     #[doc = "None"]
     VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl INPR {
     #[doc = r" Value of the field as raw bits"]
@@ -138,15 +122,7 @@ impl INPR {
             INPR::VAL20 => 20,
             INPR::VAL21 => 21,
             INPR::VAL22 => 22,
-            INPR::VAL22 => 23,
-            INPR::VAL22 => 24,
-            INPR::VAL22 => 25,
-            INPR::VAL22 => 26,
-            INPR::VAL22 => 27,
-            INPR::VAL22 => 28,
-            INPR::VAL22 => 29,
-            INPR::VAL22 => 30,
-            INPR::VAL22 => 31,
+            INPR::_Reserved(bits) => bits,
         }
     }
     #[allow(missing_docs)]
@@ -177,16 +153,7 @@ impl INPR {
             20 => INPR::VAL20,
             21 => INPR::VAL21,
             22 => INPR::VAL22,
-            23 => INPR::VAL22,
-            24 => INPR::VAL22,
-            25 => INPR::VAL22,
-            26 => INPR::VAL22,
-            27 => INPR::VAL22,
-            28 => INPR::VAL22,
-            29 => INPR::VAL22,
-            30 => INPR::VAL22,
-            31 => INPR::VAL22,
-            _ => unreachable!(),
+            i => INPR::_Reserved(i),
         }
     }
     #[doc = "Checks if the value of the field is `VAL0`"]
@@ -304,51 +271,6 @@ impl INPR {
     pub fn is_val22(&self) -> bool {
         *self == INPR::VAL22
     }
-    #[doc = "Checks if the value of the field is `VAL22`"]
-    #[inline]
-    pub fn is_val22(&self) -> bool {
-        *self == INPR::VAL22
-    }
-    #[doc = "Checks if the value of the field is `VAL22`"]
-    #[inline]
-    pub fn is_val22(&self) -> bool {
-        *self == INPR::VAL22
-    }
-    #[doc = "Checks if the value of the field is `VAL22`"]
-    #[inline]
-    pub fn is_val22(&self) -> bool {
-        *self == INPR::VAL22
-    }
-    #[doc = "Checks if the value of the field is `VAL22`"]
-    #[inline]
-    pub fn is_val22(&self) -> bool {
-        *self == INPR::VAL22
-    }
-    #[doc = "Checks if the value of the field is `VAL22`"]
-    #[inline]
-    pub fn is_val22(&self) -> bool {
-        *self == INPR::VAL22
-    }
-    #[doc = "Checks if the value of the field is `VAL22`"]
-    #[inline]
-    pub fn is_val22(&self) -> bool {
-        *self == INPR::VAL22
-    }
-    #[doc = "Checks if the value of the field is `VAL22`"]
-    #[inline]
-    pub fn is_val22(&self) -> bool {
-        *self == INPR::VAL22
-    }
-    #[doc = "Checks if the value of the field is `VAL22`"]
-    #[inline]
-    pub fn is_val22(&self) -> bool {
-        *self == INPR::VAL22
-    }
-    #[doc = "Checks if the value of the field is `VAL22`"]
-    #[inline]
-    pub fn is_val22(&self) -> bool {
-        *self == INPR::VAL22
-    }
 }
 #[doc = "Values that can be written to the field `INP`"]
 pub enum INPW {
@@ -398,24 +320,6 @@ pub enum INPW {
     VAL21,
     #[doc = "None"]
     VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
-    #[doc = "None"]
-    VAL22,
 }
 impl INPW {
     #[allow(missing_docs)]
@@ -446,15 +350,6 @@ impl INPW {
             INPW::VAL20 => 20,
             INPW::VAL21 => 21,
             INPW::VAL22 => 22,
-            INPW::VAL22 => 23,
-            INPW::VAL22 => 24,
-            INPW::VAL22 => 25,
-            INPW::VAL22 => 26,
-            INPW::VAL22 => 27,
-            INPW::VAL22 => 28,
-            INPW::VAL22 => 29,
-            INPW::VAL22 => 30,
-            INPW::VAL22 => 31,
         }
     }
 }
@@ -466,9 +361,7 @@ impl<'a> _INPW<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
     pub fn variant(self, variant: INPW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
+        unsafe { self.bits(variant._bits()) }
     }
     #[doc = "Pin interrupt 0"]
     #[inline]
@@ -585,54 +478,9 @@ impl<'a> _INPW<'a> {
     pub fn val22(self) -> &'a mut W {
         self.variant(INPW::VAL22)
     }
-    #[doc = "None"]
-    #[inline]
-    pub fn val22(self) -> &'a mut W {
-        self.variant(INPW::VAL22)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val22(self) -> &'a mut W {
-        self.variant(INPW::VAL22)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val22(self) -> &'a mut W {
-        self.variant(INPW::VAL22)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val22(self) -> &'a mut W {
-        self.variant(INPW::VAL22)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val22(self) -> &'a mut W {
-        self.variant(INPW::VAL22)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val22(self) -> &'a mut W {
-        self.variant(INPW::VAL22)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val22(self) -> &'a mut W {
-        self.variant(INPW::VAL22)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val22(self) -> &'a mut W {
-        self.variant(INPW::VAL22)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val22(self) -> &'a mut W {
-        self.variant(INPW::VAL22)
-    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 31;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u32) << OFFSET);

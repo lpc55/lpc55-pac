@@ -301,7 +301,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 20:21 - no description available"]
+    #[doc = "Bits 20:21 - Prince"]
     #[inline]
     pub fn prince_rule(&self) -> PRINCE_RULER {
         PRINCE_RULER::_from({
@@ -328,7 +328,7 @@ impl W {
     pub fn flash_ctrl_rule(&mut self) -> _FLASH_CTRL_RULEW {
         _FLASH_CTRL_RULEW { w: self }
     }
-    #[doc = "Bits 20:21 - no description available"]
+    #[doc = "Bits 20:21 - Prince"]
     #[inline]
     pub fn prince_rule(&mut self) -> _PRINCE_RULEW {
         _PRINCE_RULEW { w: self }

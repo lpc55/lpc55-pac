@@ -266,62 +266,6 @@ impl PLU_RULER {
         *self == PLU_RULER::ENUM_S_P
     }
 }
-#[doc = "Possible values of the field `ROMPC_RULE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ROMPC_RULER {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
-}
-impl ROMPC_RULER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ROMPC_RULER::ENUM_NS_NP => 0,
-            ROMPC_RULER::ENUM_NS_P => 1,
-            ROMPC_RULER::ENUM_S_NP => 2,
-            ROMPC_RULER::ENUM_S_P => 3,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ROMPC_RULER {
-        match value {
-            0 => ROMPC_RULER::ENUM_NS_NP,
-            1 => ROMPC_RULER::ENUM_NS_P,
-            2 => ROMPC_RULER::ENUM_S_NP,
-            3 => ROMPC_RULER::ENUM_S_P,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
-    #[inline]
-    pub fn is_enum_ns_np(&self) -> bool {
-        *self == ROMPC_RULER::ENUM_NS_NP
-    }
-    #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
-    #[inline]
-    pub fn is_enum_ns_p(&self) -> bool {
-        *self == ROMPC_RULER::ENUM_NS_P
-    }
-    #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
-    #[inline]
-    pub fn is_enum_s_np(&self) -> bool {
-        *self == ROMPC_RULER::ENUM_S_NP
-    }
-    #[doc = "Checks if the value of the field is `ENUM_S_P`"]
-    #[inline]
-    pub fn is_enum_s_p(&self) -> bool {
-        *self == ROMPC_RULER::ENUM_S_P
-    }
-}
 #[doc = "Values that can be written to the field `USBHPHY_RULE`"]
 pub enum USBHPHY_RULEW {
     #[doc = "Non-secure and Non-priviledge user access allowed."]
@@ -586,72 +530,6 @@ impl<'a> _PLU_RULEW<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ROMPC_RULE`"]
-pub enum ROMPC_RULEW {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
-}
-impl ROMPC_RULEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ROMPC_RULEW::ENUM_NS_NP => 0,
-            ROMPC_RULEW::ENUM_NS_P => 1,
-            ROMPC_RULEW::ENUM_S_NP => 2,
-            ROMPC_RULEW::ENUM_S_P => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ROMPC_RULEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ROMPC_RULEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ROMPC_RULEW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    #[inline]
-    pub fn enum_ns_np(self) -> &'a mut W {
-        self.variant(ROMPC_RULEW::ENUM_NS_NP)
-    }
-    #[doc = "Non-secure and Privilege access allowed."]
-    #[inline]
-    pub fn enum_ns_p(self) -> &'a mut W {
-        self.variant(ROMPC_RULEW::ENUM_NS_P)
-    }
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    #[inline]
-    pub fn enum_s_np(self) -> &'a mut W {
-        self.variant(ROMPC_RULEW::ENUM_S_NP)
-    }
-    #[doc = "Secure and Priviledge user access allowed."]
-    #[inline]
-    pub fn enum_s_p(self) -> &'a mut W {
-        self.variant(ROMPC_RULEW::ENUM_S_P)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
 impl R {
     #[doc = r" Value of the register as raw bits"]
     #[inline]
@@ -676,7 +554,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 12:13 - no description available"]
+    #[doc = "Bits 12:13 - PUF"]
     #[inline]
     pub fn puff_rule(&self) -> PUFF_RULER {
         PUFF_RULER::_from({
@@ -691,15 +569,6 @@ impl R {
         PLU_RULER::_from({
             const MASK: u8 = 3;
             const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
-    }
-    #[doc = "Bits 24:25 - ROM patch controller"]
-    #[inline]
-    pub fn rompc_rule(&self) -> ROMPC_RULER {
-        ROMPC_RULER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 24;
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
@@ -726,7 +595,7 @@ impl W {
     pub fn rng_rule(&mut self) -> _RNG_RULEW {
         _RNG_RULEW { w: self }
     }
-    #[doc = "Bits 12:13 - no description available"]
+    #[doc = "Bits 12:13 - PUF"]
     #[inline]
     pub fn puff_rule(&mut self) -> _PUFF_RULEW {
         _PUFF_RULEW { w: self }
@@ -735,10 +604,5 @@ impl W {
     #[inline]
     pub fn plu_rule(&mut self) -> _PLU_RULEW {
         _PLU_RULEW { w: self }
-    }
-    #[doc = "Bits 24:25 - ROM patch controller"]
-    #[inline]
-    pub fn rompc_rule(&mut self) -> _ROMPC_RULEW {
-        _ROMPC_RULEW { w: self }
     }
 }

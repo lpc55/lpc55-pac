@@ -554,7 +554,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 24:25 - no description available"]
+    #[doc = "Bits 24:25 - Flexcomm interface 5"]
     #[inline]
     pub fn flexcomm5_rule(&self) -> FLEXCOMM5_RULER {
         FLEXCOMM5_RULER::_from({
@@ -563,7 +563,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 28:29 - no description available"]
+    #[doc = "Bits 28:29 - Flexcomm interface 6"]
     #[inline]
     pub fn flexcomm6_rule(&self) -> FLEXCOMM6_RULER {
         FLEXCOMM6_RULER::_from({
@@ -595,12 +595,12 @@ impl W {
     pub fn crc_rule(&mut self) -> _CRC_RULEW {
         _CRC_RULEW { w: self }
     }
-    #[doc = "Bits 24:25 - no description available"]
+    #[doc = "Bits 24:25 - Flexcomm interface 5"]
     #[inline]
     pub fn flexcomm5_rule(&mut self) -> _FLEXCOMM5_RULEW {
         _FLEXCOMM5_RULEW { w: self }
     }
-    #[doc = "Bits 28:29 - no description available"]
+    #[doc = "Bits 28:29 - Flexcomm interface 6"]
     #[inline]
     pub fn flexcomm6_rule(&mut self) -> _FLEXCOMM6_RULEW {
         _FLEXCOMM6_RULEW { w: self }

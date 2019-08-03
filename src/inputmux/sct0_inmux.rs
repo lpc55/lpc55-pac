@@ -95,20 +95,8 @@ pub enum INP_NR {
     VAL23,
     #[doc = "None"]
     VAL24,
-    #[doc = "None"]
-    VAL24,
-    #[doc = "None"]
-    VAL24,
-    #[doc = "None"]
-    VAL24,
-    #[doc = "None"]
-    VAL24,
-    #[doc = "None"]
-    VAL24,
-    #[doc = "None"]
-    VAL24,
-    #[doc = "None"]
-    VAL24,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl INP_NR {
     #[doc = r" Value of the field as raw bits"]
@@ -140,13 +128,7 @@ impl INP_NR {
             INP_NR::VAL22 => 22,
             INP_NR::VAL23 => 23,
             INP_NR::VAL24 => 24,
-            INP_NR::VAL24 => 25,
-            INP_NR::VAL24 => 26,
-            INP_NR::VAL24 => 27,
-            INP_NR::VAL24 => 28,
-            INP_NR::VAL24 => 29,
-            INP_NR::VAL24 => 30,
-            INP_NR::VAL24 => 31,
+            INP_NR::_Reserved(bits) => bits,
         }
     }
     #[allow(missing_docs)]
@@ -179,14 +161,7 @@ impl INP_NR {
             22 => INP_NR::VAL22,
             23 => INP_NR::VAL23,
             24 => INP_NR::VAL24,
-            25 => INP_NR::VAL24,
-            26 => INP_NR::VAL24,
-            27 => INP_NR::VAL24,
-            28 => INP_NR::VAL24,
-            29 => INP_NR::VAL24,
-            30 => INP_NR::VAL24,
-            31 => INP_NR::VAL24,
-            _ => unreachable!(),
+            i => INP_NR::_Reserved(i),
         }
     }
     #[doc = "Checks if the value of the field is `VAL0`"]
@@ -314,41 +289,6 @@ impl INP_NR {
     pub fn is_val24(&self) -> bool {
         *self == INP_NR::VAL24
     }
-    #[doc = "Checks if the value of the field is `VAL24`"]
-    #[inline]
-    pub fn is_val24(&self) -> bool {
-        *self == INP_NR::VAL24
-    }
-    #[doc = "Checks if the value of the field is `VAL24`"]
-    #[inline]
-    pub fn is_val24(&self) -> bool {
-        *self == INP_NR::VAL24
-    }
-    #[doc = "Checks if the value of the field is `VAL24`"]
-    #[inline]
-    pub fn is_val24(&self) -> bool {
-        *self == INP_NR::VAL24
-    }
-    #[doc = "Checks if the value of the field is `VAL24`"]
-    #[inline]
-    pub fn is_val24(&self) -> bool {
-        *self == INP_NR::VAL24
-    }
-    #[doc = "Checks if the value of the field is `VAL24`"]
-    #[inline]
-    pub fn is_val24(&self) -> bool {
-        *self == INP_NR::VAL24
-    }
-    #[doc = "Checks if the value of the field is `VAL24`"]
-    #[inline]
-    pub fn is_val24(&self) -> bool {
-        *self == INP_NR::VAL24
-    }
-    #[doc = "Checks if the value of the field is `VAL24`"]
-    #[inline]
-    pub fn is_val24(&self) -> bool {
-        *self == INP_NR::VAL24
-    }
 }
 #[doc = "Values that can be written to the field `INP_N`"]
 pub enum INP_NW {
@@ -402,20 +342,6 @@ pub enum INP_NW {
     VAL23,
     #[doc = "None"]
     VAL24,
-    #[doc = "None"]
-    VAL24,
-    #[doc = "None"]
-    VAL24,
-    #[doc = "None"]
-    VAL24,
-    #[doc = "None"]
-    VAL24,
-    #[doc = "None"]
-    VAL24,
-    #[doc = "None"]
-    VAL24,
-    #[doc = "None"]
-    VAL24,
 }
 impl INP_NW {
     #[allow(missing_docs)]
@@ -448,13 +374,6 @@ impl INP_NW {
             INP_NW::VAL22 => 22,
             INP_NW::VAL23 => 23,
             INP_NW::VAL24 => 24,
-            INP_NW::VAL24 => 25,
-            INP_NW::VAL24 => 26,
-            INP_NW::VAL24 => 27,
-            INP_NW::VAL24 => 28,
-            INP_NW::VAL24 => 29,
-            INP_NW::VAL24 => 30,
-            INP_NW::VAL24 => 31,
         }
     }
 }
@@ -466,9 +385,7 @@ impl<'a> _INP_NW<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
     pub fn variant(self, variant: INP_NW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
+        unsafe { self.bits(variant._bits()) }
     }
     #[doc = "SCT_GPI0 function selected from IOCON register"]
     #[inline]
@@ -595,44 +512,9 @@ impl<'a> _INP_NW<'a> {
     pub fn val24(self) -> &'a mut W {
         self.variant(INP_NW::VAL24)
     }
-    #[doc = "None"]
-    #[inline]
-    pub fn val24(self) -> &'a mut W {
-        self.variant(INP_NW::VAL24)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val24(self) -> &'a mut W {
-        self.variant(INP_NW::VAL24)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val24(self) -> &'a mut W {
-        self.variant(INP_NW::VAL24)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val24(self) -> &'a mut W {
-        self.variant(INP_NW::VAL24)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val24(self) -> &'a mut W {
-        self.variant(INP_NW::VAL24)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val24(self) -> &'a mut W {
-        self.variant(INP_NW::VAL24)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val24(self) -> &'a mut W {
-        self.variant(INP_NW::VAL24)
-    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 31;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u32) << OFFSET);

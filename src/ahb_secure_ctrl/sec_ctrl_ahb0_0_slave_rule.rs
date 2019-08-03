@@ -658,7 +658,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 8:9 - no description available"]
+    #[doc = "Bits 8:9 - DMA Controller"]
     #[inline]
     pub fn dma0_rule(&self) -> DMA0_RULER {
         DMA0_RULER::_from({
@@ -667,7 +667,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 16:17 - no description available"]
+    #[doc = "Bits 16:17 - USB Full-speed device"]
     #[inline]
     pub fn fs_usb_dev_rule(&self) -> FS_USB_DEV_RULER {
         FS_USB_DEV_RULER::_from({
@@ -676,7 +676,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 20:21 - no description available"]
+    #[doc = "Bits 20:21 - SCTimer"]
     #[inline]
     pub fn sct_rule(&self) -> SCT_RULER {
         SCT_RULER::_from({
@@ -685,7 +685,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 24:25 - no description available"]
+    #[doc = "Bits 24:25 - Flexcomm interface 0"]
     #[inline]
     pub fn flexcomm0_rule(&self) -> FLEXCOMM0_RULER {
         FLEXCOMM0_RULER::_from({
@@ -694,7 +694,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 28:29 - no description available"]
+    #[doc = "Bits 28:29 - Flexcomm interface 1"]
     #[inline]
     pub fn flexcomm1_rule(&self) -> FLEXCOMM1_RULER {
         FLEXCOMM1_RULER::_from({
@@ -716,27 +716,27 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 8:9 - no description available"]
+    #[doc = "Bits 8:9 - DMA Controller"]
     #[inline]
     pub fn dma0_rule(&mut self) -> _DMA0_RULEW {
         _DMA0_RULEW { w: self }
     }
-    #[doc = "Bits 16:17 - no description available"]
+    #[doc = "Bits 16:17 - USB Full-speed device"]
     #[inline]
     pub fn fs_usb_dev_rule(&mut self) -> _FS_USB_DEV_RULEW {
         _FS_USB_DEV_RULEW { w: self }
     }
-    #[doc = "Bits 20:21 - no description available"]
+    #[doc = "Bits 20:21 - SCTimer"]
     #[inline]
     pub fn sct_rule(&mut self) -> _SCT_RULEW {
         _SCT_RULEW { w: self }
     }
-    #[doc = "Bits 24:25 - no description available"]
+    #[doc = "Bits 24:25 - Flexcomm interface 0"]
     #[inline]
     pub fn flexcomm0_rule(&mut self) -> _FLEXCOMM0_RULEW {
         _FLEXCOMM0_RULEW { w: self }
     }
-    #[doc = "Bits 28:29 - no description available"]
+    #[doc = "Bits 28:29 - Flexcomm interface 1"]
     #[inline]
     pub fn flexcomm1_rule(&mut self) -> _FLEXCOMM1_RULEW {
         _FLEXCOMM1_RULEW { w: self }

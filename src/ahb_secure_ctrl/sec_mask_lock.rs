@@ -42,70 +42,186 @@ impl super::SEC_MASK_LOCK {
         self.write(|w| w)
     }
 }
-#[doc = r" Value of the field"]
-pub struct SEC_GPIO_MASK0_LOCKR {
-    bits: u8,
+#[doc = "Possible values of the field `SEC_GPIO_MASK0_LOCK`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEC_GPIO_MASK0_LOCKR {
+    #[doc = "Restricted mode."]
+    BLOCKED,
+    #[doc = "Writable."]
+    WRITABLE,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl SEC_GPIO_MASK0_LOCKR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
-        self.bits
+        match *self {
+            SEC_GPIO_MASK0_LOCKR::BLOCKED => 1,
+            SEC_GPIO_MASK0_LOCKR::WRITABLE => 2,
+            SEC_GPIO_MASK0_LOCKR::_Reserved(bits) => bits,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: u8) -> SEC_GPIO_MASK0_LOCKR {
+        match value {
+            1 => SEC_GPIO_MASK0_LOCKR::BLOCKED,
+            2 => SEC_GPIO_MASK0_LOCKR::WRITABLE,
+            i => SEC_GPIO_MASK0_LOCKR::_Reserved(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `BLOCKED`"]
+    #[inline]
+    pub fn is_blocked(&self) -> bool {
+        *self == SEC_GPIO_MASK0_LOCKR::BLOCKED
+    }
+    #[doc = "Checks if the value of the field is `WRITABLE`"]
+    #[inline]
+    pub fn is_writable(&self) -> bool {
+        *self == SEC_GPIO_MASK0_LOCKR::WRITABLE
     }
 }
-#[doc = r" Value of the field"]
-pub struct SEC_GPIO_MASK1_LOCKR {
-    bits: u8,
+#[doc = "Possible values of the field `SEC_GPIO_MASK1_LOCK`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEC_GPIO_MASK1_LOCKR {
+    #[doc = "Restricted mode."]
+    BLOCKED,
+    #[doc = "Writable."]
+    WRITABLE,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl SEC_GPIO_MASK1_LOCKR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
-        self.bits
+        match *self {
+            SEC_GPIO_MASK1_LOCKR::BLOCKED => 1,
+            SEC_GPIO_MASK1_LOCKR::WRITABLE => 2,
+            SEC_GPIO_MASK1_LOCKR::_Reserved(bits) => bits,
+        }
     }
-}
-#[doc = r" Value of the field"]
-pub struct SEC_GPIO_MASK2_LOCKR {
-    bits: u8,
-}
-impl SEC_GPIO_MASK2_LOCKR {
-    #[doc = r" Value of the field as raw bits"]
+    #[allow(missing_docs)]
+    #[doc(hidden)]
     #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+    pub fn _from(value: u8) -> SEC_GPIO_MASK1_LOCKR {
+        match value {
+            1 => SEC_GPIO_MASK1_LOCKR::BLOCKED,
+            2 => SEC_GPIO_MASK1_LOCKR::WRITABLE,
+            i => SEC_GPIO_MASK1_LOCKR::_Reserved(i),
+        }
     }
-}
-#[doc = r" Value of the field"]
-pub struct SEC_GPIO_MASK3_LOCKR {
-    bits: u8,
-}
-impl SEC_GPIO_MASK3_LOCKR {
-    #[doc = r" Value of the field as raw bits"]
+    #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+    pub fn is_blocked(&self) -> bool {
+        *self == SEC_GPIO_MASK1_LOCKR::BLOCKED
+    }
+    #[doc = "Checks if the value of the field is `WRITABLE`"]
+    #[inline]
+    pub fn is_writable(&self) -> bool {
+        *self == SEC_GPIO_MASK1_LOCKR::WRITABLE
     }
 }
-#[doc = r" Value of the field"]
-pub struct SEC_CPU1_INT_MASK0_LOCKR {
-    bits: u8,
+#[doc = "Possible values of the field `SEC_CPU1_INT_MASK0_LOCK`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEC_CPU1_INT_MASK0_LOCKR {
+    #[doc = "Restricted mode."]
+    BLOCKED,
+    #[doc = "Writable."]
+    WRITABLE,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl SEC_CPU1_INT_MASK0_LOCKR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
-        self.bits
+        match *self {
+            SEC_CPU1_INT_MASK0_LOCKR::BLOCKED => 1,
+            SEC_CPU1_INT_MASK0_LOCKR::WRITABLE => 2,
+            SEC_CPU1_INT_MASK0_LOCKR::_Reserved(bits) => bits,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: u8) -> SEC_CPU1_INT_MASK0_LOCKR {
+        match value {
+            1 => SEC_CPU1_INT_MASK0_LOCKR::BLOCKED,
+            2 => SEC_CPU1_INT_MASK0_LOCKR::WRITABLE,
+            i => SEC_CPU1_INT_MASK0_LOCKR::_Reserved(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `BLOCKED`"]
+    #[inline]
+    pub fn is_blocked(&self) -> bool {
+        *self == SEC_CPU1_INT_MASK0_LOCKR::BLOCKED
+    }
+    #[doc = "Checks if the value of the field is `WRITABLE`"]
+    #[inline]
+    pub fn is_writable(&self) -> bool {
+        *self == SEC_CPU1_INT_MASK0_LOCKR::WRITABLE
     }
 }
-#[doc = r" Value of the field"]
-pub struct SEC_CPU1_INT_MASK1_LOCKR {
-    bits: u8,
+#[doc = "Possible values of the field `SEC_CPU1_INT_MASK1_LOCK`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEC_CPU1_INT_MASK1_LOCKR {
+    #[doc = "Restricted mode."]
+    BLOCKED,
+    #[doc = "Writable."]
+    WRITABLE,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl SEC_CPU1_INT_MASK1_LOCKR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
-        self.bits
+        match *self {
+            SEC_CPU1_INT_MASK1_LOCKR::BLOCKED => 1,
+            SEC_CPU1_INT_MASK1_LOCKR::WRITABLE => 2,
+            SEC_CPU1_INT_MASK1_LOCKR::_Reserved(bits) => bits,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: u8) -> SEC_CPU1_INT_MASK1_LOCKR {
+        match value {
+            1 => SEC_CPU1_INT_MASK1_LOCKR::BLOCKED,
+            2 => SEC_CPU1_INT_MASK1_LOCKR::WRITABLE,
+            i => SEC_CPU1_INT_MASK1_LOCKR::_Reserved(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `BLOCKED`"]
+    #[inline]
+    pub fn is_blocked(&self) -> bool {
+        *self == SEC_CPU1_INT_MASK1_LOCKR::BLOCKED
+    }
+    #[doc = "Checks if the value of the field is `WRITABLE`"]
+    #[inline]
+    pub fn is_writable(&self) -> bool {
+        *self == SEC_CPU1_INT_MASK1_LOCKR::WRITABLE
+    }
+}
+#[doc = "Values that can be written to the field `SEC_GPIO_MASK0_LOCK`"]
+pub enum SEC_GPIO_MASK0_LOCKW {
+    #[doc = "Restricted mode."]
+    BLOCKED,
+    #[doc = "Writable."]
+    WRITABLE,
+}
+impl SEC_GPIO_MASK0_LOCKW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> u8 {
+        match *self {
+            SEC_GPIO_MASK0_LOCKW::BLOCKED => 1,
+            SEC_GPIO_MASK0_LOCKW::WRITABLE => 2,
+        }
     }
 }
 #[doc = r" Proxy"]
@@ -113,6 +229,21 @@ pub struct _SEC_GPIO_MASK0_LOCKW<'a> {
     w: &'a mut W,
 }
 impl<'a> _SEC_GPIO_MASK0_LOCKW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: SEC_GPIO_MASK0_LOCKW) -> &'a mut W {
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Restricted mode."]
+    #[inline]
+    pub fn blocked(self) -> &'a mut W {
+        self.variant(SEC_GPIO_MASK0_LOCKW::BLOCKED)
+    }
+    #[doc = "Writable."]
+    #[inline]
+    pub fn writable(self) -> &'a mut W {
+        self.variant(SEC_GPIO_MASK0_LOCKW::WRITABLE)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -123,11 +254,44 @@ impl<'a> _SEC_GPIO_MASK0_LOCKW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `SEC_GPIO_MASK1_LOCK`"]
+pub enum SEC_GPIO_MASK1_LOCKW {
+    #[doc = "Restricted mode."]
+    BLOCKED,
+    #[doc = "Writable."]
+    WRITABLE,
+}
+impl SEC_GPIO_MASK1_LOCKW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> u8 {
+        match *self {
+            SEC_GPIO_MASK1_LOCKW::BLOCKED => 1,
+            SEC_GPIO_MASK1_LOCKW::WRITABLE => 2,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _SEC_GPIO_MASK1_LOCKW<'a> {
     w: &'a mut W,
 }
 impl<'a> _SEC_GPIO_MASK1_LOCKW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: SEC_GPIO_MASK1_LOCKW) -> &'a mut W {
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Restricted mode."]
+    #[inline]
+    pub fn blocked(self) -> &'a mut W {
+        self.variant(SEC_GPIO_MASK1_LOCKW::BLOCKED)
+    }
+    #[doc = "Writable."]
+    #[inline]
+    pub fn writable(self) -> &'a mut W {
+        self.variant(SEC_GPIO_MASK1_LOCKW::WRITABLE)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -138,34 +302,22 @@ impl<'a> _SEC_GPIO_MASK1_LOCKW<'a> {
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SEC_GPIO_MASK2_LOCKW<'a> {
-    w: &'a mut W,
+#[doc = "Values that can be written to the field `SEC_CPU1_INT_MASK0_LOCK`"]
+pub enum SEC_CPU1_INT_MASK0_LOCKW {
+    #[doc = "Restricted mode."]
+    BLOCKED,
+    #[doc = "Writable."]
+    WRITABLE,
 }
-impl<'a> _SEC_GPIO_MASK2_LOCKW<'a> {
-    #[doc = r" Writes raw bits to the field"]
+impl SEC_CPU1_INT_MASK0_LOCKW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SEC_GPIO_MASK3_LOCKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SEC_GPIO_MASK3_LOCKW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
+    pub fn _bits(&self) -> u8 {
+        match *self {
+            SEC_CPU1_INT_MASK0_LOCKW::BLOCKED => 1,
+            SEC_CPU1_INT_MASK0_LOCKW::WRITABLE => 2,
+        }
     }
 }
 #[doc = r" Proxy"]
@@ -173,6 +325,21 @@ pub struct _SEC_CPU1_INT_MASK0_LOCKW<'a> {
     w: &'a mut W,
 }
 impl<'a> _SEC_CPU1_INT_MASK0_LOCKW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: SEC_CPU1_INT_MASK0_LOCKW) -> &'a mut W {
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Restricted mode."]
+    #[inline]
+    pub fn blocked(self) -> &'a mut W {
+        self.variant(SEC_CPU1_INT_MASK0_LOCKW::BLOCKED)
+    }
+    #[doc = "Writable."]
+    #[inline]
+    pub fn writable(self) -> &'a mut W {
+        self.variant(SEC_CPU1_INT_MASK0_LOCKW::WRITABLE)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -183,11 +350,44 @@ impl<'a> _SEC_CPU1_INT_MASK0_LOCKW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `SEC_CPU1_INT_MASK1_LOCK`"]
+pub enum SEC_CPU1_INT_MASK1_LOCKW {
+    #[doc = "Restricted mode."]
+    BLOCKED,
+    #[doc = "Writable."]
+    WRITABLE,
+}
+impl SEC_CPU1_INT_MASK1_LOCKW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> u8 {
+        match *self {
+            SEC_CPU1_INT_MASK1_LOCKW::BLOCKED => 1,
+            SEC_CPU1_INT_MASK1_LOCKW::WRITABLE => 2,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _SEC_CPU1_INT_MASK1_LOCKW<'a> {
     w: &'a mut W,
 }
 impl<'a> _SEC_CPU1_INT_MASK1_LOCKW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: SEC_CPU1_INT_MASK1_LOCKW) -> &'a mut W {
+        unsafe { self.bits(variant._bits()) }
+    }
+    #[doc = "Restricted mode."]
+    #[inline]
+    pub fn blocked(self) -> &'a mut W {
+        self.variant(SEC_CPU1_INT_MASK1_LOCKW::BLOCKED)
+    }
+    #[doc = "Writable."]
+    #[inline]
+    pub fn writable(self) -> &'a mut W {
+        self.variant(SEC_CPU1_INT_MASK1_LOCKW::WRITABLE)
+    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
@@ -204,65 +404,41 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - 2'b10: SEC_GPIO_MASK0 can be written. All other values: sec_reg_reg0 can't be written."]
+    #[doc = "Bits 0:1 - SEC_GPIO_MASK0 register write-lock."]
     #[inline]
     pub fn sec_gpio_mask0_lock(&self) -> SEC_GPIO_MASK0_LOCKR {
-        let bits = {
+        SEC_GPIO_MASK0_LOCKR::_from({
             const MASK: u8 = 3;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SEC_GPIO_MASK0_LOCKR { bits }
+        })
     }
-    #[doc = "Bits 2:3 - 2'b10: SEC_GPIO_MASK1 can be written. All other values: sec_reg_reg1 can't be written."]
+    #[doc = "Bits 2:3 - SEC_GPIO_MASK1 register write-lock."]
     #[inline]
     pub fn sec_gpio_mask1_lock(&self) -> SEC_GPIO_MASK1_LOCKR {
-        let bits = {
+        SEC_GPIO_MASK1_LOCKR::_from({
             const MASK: u8 = 3;
             const OFFSET: u8 = 2;
             ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SEC_GPIO_MASK1_LOCKR { bits }
+        })
     }
-    #[doc = "Bits 4:5 - 2'b10: SEC_GPIO_MASK2 can be written. All other values: sec_reg_reg2 can't be written."]
-    #[inline]
-    pub fn sec_gpio_mask2_lock(&self) -> SEC_GPIO_MASK2_LOCKR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SEC_GPIO_MASK2_LOCKR { bits }
-    }
-    #[doc = "Bits 6:7 - 2'b10: SEC_GPIO_MASK3 can be written. All other values: sec_reg_reg3 can't be written."]
-    #[inline]
-    pub fn sec_gpio_mask3_lock(&self) -> SEC_GPIO_MASK3_LOCKR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SEC_GPIO_MASK3_LOCKR { bits }
-    }
-    #[doc = "Bits 8:9 - 2'b10: SEC_CPU1_INT_MASK0 can be written. All other values: sec_reg_reg4 can't be written."]
+    #[doc = "Bits 8:9 - SEC_CPU_INT_MASK0 register write-lock."]
     #[inline]
     pub fn sec_cpu1_int_mask0_lock(&self) -> SEC_CPU1_INT_MASK0_LOCKR {
-        let bits = {
+        SEC_CPU1_INT_MASK0_LOCKR::_from({
             const MASK: u8 = 3;
             const OFFSET: u8 = 8;
             ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SEC_CPU1_INT_MASK0_LOCKR { bits }
+        })
     }
-    #[doc = "Bits 10:11 - 2'b10: SEC_CPU1_INT_MASK1 can be written. All other values: sec_reg_reg5 can't be written."]
+    #[doc = "Bits 10:11 - SEC_CPU_INT_MASK1 register write-lock."]
     #[inline]
     pub fn sec_cpu1_int_mask1_lock(&self) -> SEC_CPU1_INT_MASK1_LOCKR {
-        let bits = {
+        SEC_CPU1_INT_MASK1_LOCKR::_from({
             const MASK: u8 = 3;
             const OFFSET: u8 = 10;
             ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SEC_CPU1_INT_MASK1_LOCKR { bits }
+        })
     }
 }
 impl W {
@@ -277,32 +453,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - 2'b10: SEC_GPIO_MASK0 can be written. All other values: sec_reg_reg0 can't be written."]
+    #[doc = "Bits 0:1 - SEC_GPIO_MASK0 register write-lock."]
     #[inline]
     pub fn sec_gpio_mask0_lock(&mut self) -> _SEC_GPIO_MASK0_LOCKW {
         _SEC_GPIO_MASK0_LOCKW { w: self }
     }
-    #[doc = "Bits 2:3 - 2'b10: SEC_GPIO_MASK1 can be written. All other values: sec_reg_reg1 can't be written."]
+    #[doc = "Bits 2:3 - SEC_GPIO_MASK1 register write-lock."]
     #[inline]
     pub fn sec_gpio_mask1_lock(&mut self) -> _SEC_GPIO_MASK1_LOCKW {
         _SEC_GPIO_MASK1_LOCKW { w: self }
     }
-    #[doc = "Bits 4:5 - 2'b10: SEC_GPIO_MASK2 can be written. All other values: sec_reg_reg2 can't be written."]
-    #[inline]
-    pub fn sec_gpio_mask2_lock(&mut self) -> _SEC_GPIO_MASK2_LOCKW {
-        _SEC_GPIO_MASK2_LOCKW { w: self }
-    }
-    #[doc = "Bits 6:7 - 2'b10: SEC_GPIO_MASK3 can be written. All other values: sec_reg_reg3 can't be written."]
-    #[inline]
-    pub fn sec_gpio_mask3_lock(&mut self) -> _SEC_GPIO_MASK3_LOCKW {
-        _SEC_GPIO_MASK3_LOCKW { w: self }
-    }
-    #[doc = "Bits 8:9 - 2'b10: SEC_CPU1_INT_MASK0 can be written. All other values: sec_reg_reg4 can't be written."]
+    #[doc = "Bits 8:9 - SEC_CPU_INT_MASK0 register write-lock."]
     #[inline]
     pub fn sec_cpu1_int_mask0_lock(&mut self) -> _SEC_CPU1_INT_MASK0_LOCKW {
         _SEC_CPU1_INT_MASK0_LOCKW { w: self }
     }
-    #[doc = "Bits 10:11 - 2'b10: SEC_CPU1_INT_MASK1 can be written. All other values: sec_reg_reg5 can't be written."]
+    #[doc = "Bits 10:11 - SEC_CPU_INT_MASK1 register write-lock."]
     #[inline]
     pub fn sec_cpu1_int_mask1_lock(&mut self) -> _SEC_CPU1_INT_MASK1_LOCKW {
         _SEC_CPU1_INT_MASK1_LOCKW { w: self }

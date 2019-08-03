@@ -1,14 +1,14 @@
 [package]
-version = "0.0.1"
+version = "0.0.0-alpha.0"
 authors = [
   "nickray <n@stalder.io>",
 ]
 description = "Peripheral access API for lpc55s69 microcontrollers"
-documentation = "https://docs.rs/stm32l4x2-pac"
-keywords = ["no-std", "arm", "cortex-m", "lpc", "lpc55s69"]
+documentation = "https://docs.rs/lpc55s6x-pac"
+keywords = ["no-std", "cortex-m", "nxp", "lpc", "svd2rust"]
 license = "MIT OR Apache-2.0"
-name = "lp55s69-pac"
-repository = "https://github.com/nickray/lpc55s69-pac"
+name = "lpc55s6x-pac"
+repository = "https://github.com/nickray/lpc55s6x-pac"
 edition = "2018"
 
 [dependencies]

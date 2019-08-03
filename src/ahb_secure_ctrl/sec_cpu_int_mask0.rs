@@ -1452,15 +1452,15 @@ impl RTC_IRQR {
         *self == RTC_IRQR::VISIBLE
     }
 }
-#[doc = "Possible values of the field `EZH_ARCH_B_IRQ`"]
+#[doc = "Possible values of the field `RESERVED3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EZH_ARCH_B_IRQR {
+pub enum RESERVED3R {
     #[doc = "no description available"]
     INVISIBLE,
     #[doc = "no description available"]
     VISIBLE,
 }
-impl EZH_ARCH_B_IRQR {
+impl RESERVED3R {
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -1475,28 +1475,28 @@ impl EZH_ARCH_B_IRQR {
     #[inline]
     pub fn bit(&self) -> bool {
         match *self {
-            EZH_ARCH_B_IRQR::INVISIBLE => false,
-            EZH_ARCH_B_IRQR::VISIBLE => true,
+            RESERVED3R::INVISIBLE => false,
+            RESERVED3R::VISIBLE => true,
         }
     }
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
-    pub fn _from(value: bool) -> EZH_ARCH_B_IRQR {
+    pub fn _from(value: bool) -> RESERVED3R {
         match value {
-            false => EZH_ARCH_B_IRQR::INVISIBLE,
-            true => EZH_ARCH_B_IRQR::VISIBLE,
+            false => RESERVED3R::INVISIBLE,
+            true => RESERVED3R::VISIBLE,
         }
     }
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline]
     pub fn is_invisible(&self) -> bool {
-        *self == EZH_ARCH_B_IRQR::INVISIBLE
+        *self == RESERVED3R::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline]
     pub fn is_visible(&self) -> bool {
-        *self == EZH_ARCH_B_IRQR::VISIBLE
+        *self == RESERVED3R::VISIBLE
     }
 }
 #[doc = "Possible values of the field `MAILBOX_IRQ`"]
@@ -3286,32 +3286,32 @@ impl<'a> _RTC_IRQW<'a> {
         self.w
     }
 }
-#[doc = "Values that can be written to the field `EZH_ARCH_B_IRQ`"]
-pub enum EZH_ARCH_B_IRQW {
+#[doc = "Values that can be written to the field `RESERVED3`"]
+pub enum RESERVED3W {
     #[doc = "no description available"]
     INVISIBLE,
     #[doc = "no description available"]
     VISIBLE,
 }
-impl EZH_ARCH_B_IRQW {
+impl RESERVED3W {
     #[allow(missing_docs)]
     #[doc(hidden)]
     #[inline]
     pub fn _bits(&self) -> bool {
         match *self {
-            EZH_ARCH_B_IRQW::INVISIBLE => false,
-            EZH_ARCH_B_IRQW::VISIBLE => true,
+            RESERVED3W::INVISIBLE => false,
+            RESERVED3W::VISIBLE => true,
         }
     }
 }
 #[doc = r" Proxy"]
-pub struct _EZH_ARCH_B_IRQW<'a> {
+pub struct _RESERVED3W<'a> {
     w: &'a mut W,
 }
-impl<'a> _EZH_ARCH_B_IRQW<'a> {
+impl<'a> _RESERVED3W<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
-    pub fn variant(self, variant: EZH_ARCH_B_IRQW) -> &'a mut W {
+    pub fn variant(self, variant: RESERVED3W) -> &'a mut W {
         {
             self.bit(variant._bits())
         }
@@ -3319,12 +3319,12 @@ impl<'a> _EZH_ARCH_B_IRQW<'a> {
     #[doc = "no description available"]
     #[inline]
     pub fn invisible(self) -> &'a mut W {
-        self.variant(EZH_ARCH_B_IRQW::INVISIBLE)
+        self.variant(RESERVED3W::INVISIBLE)
     }
     #[doc = "no description available"]
     #[inline]
     pub fn visible(self) -> &'a mut W {
-        self.variant(EZH_ARCH_B_IRQW::VISIBLE)
+        self.variant(RESERVED3W::VISIBLE)
     }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
@@ -3624,7 +3624,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 24 - Analog Comparator and Capacitive Touch interrupt."]
+    #[doc = "Bit 24 - Analog Comparator interrupt."]
     #[inline]
     pub fn acmp_capt0_irq(&self) -> ACMP_CAPT0_IRQR {
         ACMP_CAPT0_IRQR::_from({
@@ -3678,10 +3678,10 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 30 - EZH Processor interrupt."]
+    #[doc = "Bit 30 - Reserved. Read value is undefined, only zero should be written."]
     #[inline]
-    pub fn ezh_arch_b_irq(&self) -> EZH_ARCH_B_IRQR {
-        EZH_ARCH_B_IRQR::_from({
+    pub fn reserved3(&self) -> RESERVED3R {
+        RESERVED3R::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 30;
             ((self.bits >> OFFSET) & MASK as u32) != 0
@@ -3829,7 +3829,7 @@ impl W {
     pub fn reserved0(&mut self) -> _RESERVED0W {
         _RESERVED0W { w: self }
     }
-    #[doc = "Bit 24 - Analog Comparator and Capacitive Touch interrupt."]
+    #[doc = "Bit 24 - Analog Comparator interrupt."]
     #[inline]
     pub fn acmp_capt0_irq(&mut self) -> _ACMP_CAPT0_IRQW {
         _ACMP_CAPT0_IRQW { w: self }
@@ -3859,10 +3859,10 @@ impl W {
     pub fn rtc_irq(&mut self) -> _RTC_IRQW {
         _RTC_IRQW { w: self }
     }
-    #[doc = "Bit 30 - EZH Processor interrupt."]
+    #[doc = "Bit 30 - Reserved. Read value is undefined, only zero should be written."]
     #[inline]
-    pub fn ezh_arch_b_irq(&mut self) -> _EZH_ARCH_B_IRQW {
-        _EZH_ARCH_B_IRQW { w: self }
+    pub fn reserved3(&mut self) -> _RESERVED3W {
+        _RESERVED3W { w: self }
     }
     #[doc = "Bit 31 - Mailbox interrupt."]
     #[inline]

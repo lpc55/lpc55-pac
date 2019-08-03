@@ -97,18 +97,8 @@ pub enum CAPTSELR {
     VAL24,
     #[doc = "None"]
     VAL25,
-    #[doc = "None"]
-    VAL25,
-    #[doc = "None"]
-    VAL25,
-    #[doc = "None"]
-    VAL25,
-    #[doc = "None"]
-    VAL25,
-    #[doc = "None"]
-    VAL25,
-    #[doc = "None"]
-    VAL25,
+    #[doc = r" Reserved"]
+    _Reserved(u8),
 }
 impl CAPTSELR {
     #[doc = r" Value of the field as raw bits"]
@@ -141,12 +131,7 @@ impl CAPTSELR {
             CAPTSELR::VAL23 => 23,
             CAPTSELR::VAL24 => 24,
             CAPTSELR::VAL25 => 25,
-            CAPTSELR::VAL25 => 26,
-            CAPTSELR::VAL25 => 27,
-            CAPTSELR::VAL25 => 28,
-            CAPTSELR::VAL25 => 29,
-            CAPTSELR::VAL25 => 30,
-            CAPTSELR::VAL25 => 31,
+            CAPTSELR::_Reserved(bits) => bits,
         }
     }
     #[allow(missing_docs)]
@@ -180,13 +165,7 @@ impl CAPTSELR {
             23 => CAPTSELR::VAL23,
             24 => CAPTSELR::VAL24,
             25 => CAPTSELR::VAL25,
-            26 => CAPTSELR::VAL25,
-            27 => CAPTSELR::VAL25,
-            28 => CAPTSELR::VAL25,
-            29 => CAPTSELR::VAL25,
-            30 => CAPTSELR::VAL25,
-            31 => CAPTSELR::VAL25,
-            _ => unreachable!(),
+            i => CAPTSELR::_Reserved(i),
         }
     }
     #[doc = "Checks if the value of the field is `VAL0`"]
@@ -319,36 +298,6 @@ impl CAPTSELR {
     pub fn is_val25(&self) -> bool {
         *self == CAPTSELR::VAL25
     }
-    #[doc = "Checks if the value of the field is `VAL25`"]
-    #[inline]
-    pub fn is_val25(&self) -> bool {
-        *self == CAPTSELR::VAL25
-    }
-    #[doc = "Checks if the value of the field is `VAL25`"]
-    #[inline]
-    pub fn is_val25(&self) -> bool {
-        *self == CAPTSELR::VAL25
-    }
-    #[doc = "Checks if the value of the field is `VAL25`"]
-    #[inline]
-    pub fn is_val25(&self) -> bool {
-        *self == CAPTSELR::VAL25
-    }
-    #[doc = "Checks if the value of the field is `VAL25`"]
-    #[inline]
-    pub fn is_val25(&self) -> bool {
-        *self == CAPTSELR::VAL25
-    }
-    #[doc = "Checks if the value of the field is `VAL25`"]
-    #[inline]
-    pub fn is_val25(&self) -> bool {
-        *self == CAPTSELR::VAL25
-    }
-    #[doc = "Checks if the value of the field is `VAL25`"]
-    #[inline]
-    pub fn is_val25(&self) -> bool {
-        *self == CAPTSELR::VAL25
-    }
 }
 #[doc = "Values that can be written to the field `CAPTSEL`"]
 pub enum CAPTSELW {
@@ -404,18 +353,6 @@ pub enum CAPTSELW {
     VAL24,
     #[doc = "None"]
     VAL25,
-    #[doc = "None"]
-    VAL25,
-    #[doc = "None"]
-    VAL25,
-    #[doc = "None"]
-    VAL25,
-    #[doc = "None"]
-    VAL25,
-    #[doc = "None"]
-    VAL25,
-    #[doc = "None"]
-    VAL25,
 }
 impl CAPTSELW {
     #[allow(missing_docs)]
@@ -449,12 +386,6 @@ impl CAPTSELW {
             CAPTSELW::VAL23 => 23,
             CAPTSELW::VAL24 => 24,
             CAPTSELW::VAL25 => 25,
-            CAPTSELW::VAL25 => 26,
-            CAPTSELW::VAL25 => 27,
-            CAPTSELW::VAL25 => 28,
-            CAPTSELW::VAL25 => 29,
-            CAPTSELW::VAL25 => 30,
-            CAPTSELW::VAL25 => 31,
         }
     }
 }
@@ -466,9 +397,7 @@ impl<'a> _CAPTSELW<'a> {
     #[doc = r" Writes `variant` to the field"]
     #[inline]
     pub fn variant(self, variant: CAPTSELW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
+        unsafe { self.bits(variant._bits()) }
     }
     #[doc = "CT_INP0 function selected from IOCON register"]
     #[inline]
@@ -600,39 +529,9 @@ impl<'a> _CAPTSELW<'a> {
     pub fn val25(self) -> &'a mut W {
         self.variant(CAPTSELW::VAL25)
     }
-    #[doc = "None"]
-    #[inline]
-    pub fn val25(self) -> &'a mut W {
-        self.variant(CAPTSELW::VAL25)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val25(self) -> &'a mut W {
-        self.variant(CAPTSELW::VAL25)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val25(self) -> &'a mut W {
-        self.variant(CAPTSELW::VAL25)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val25(self) -> &'a mut W {
-        self.variant(CAPTSELW::VAL25)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val25(self) -> &'a mut W {
-        self.variant(CAPTSELW::VAL25)
-    }
-    #[doc = "None"]
-    #[inline]
-    pub fn val25(self) -> &'a mut W {
-        self.variant(CAPTSELW::VAL25)
-    }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 31;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u32) << OFFSET);

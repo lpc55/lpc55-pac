@@ -536,7 +536,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - no description available"]
+    #[doc = "Bits 0:1 - Flexcomm interface 7"]
     #[inline]
     pub fn flexcomm7_rule(&self) -> FLEXCOMM7_RULER {
         FLEXCOMM7_RULER::_from({
@@ -545,7 +545,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 12:13 - no description available"]
+    #[doc = "Bits 12:13 - SDMMC card interface"]
     #[inline]
     pub fn sdio_rule(&self) -> SDIO_RULER {
         SDIO_RULER::_from({
@@ -585,12 +585,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - no description available"]
+    #[doc = "Bits 0:1 - Flexcomm interface 7"]
     #[inline]
     pub fn flexcomm7_rule(&mut self) -> _FLEXCOMM7_RULEW {
         _FLEXCOMM7_RULEW { w: self }
     }
-    #[doc = "Bits 12:13 - no description available"]
+    #[doc = "Bits 12:13 - SDMMC card interface"]
     #[inline]
     pub fn sdio_rule(&mut self) -> _SDIO_RULEW {
         _SDIO_RULEW { w: self }

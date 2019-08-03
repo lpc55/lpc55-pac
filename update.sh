@@ -2,7 +2,7 @@
 set -x
 set -e
 
-svd=LPC55S69_cm33_core0.xml
+svd=LPC55S69_core0.svd
 
 # NOTE: Last executed using Rust 1.34.0
 

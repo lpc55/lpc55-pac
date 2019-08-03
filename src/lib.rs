@@ -58,7 +58,7 @@ extern "C" {
     fn HASHCRYPT();
     fn PUF();
     fn DMA1();
-    fn LSPI_HS();
+    fn FLEXCOMM8();
 }
 #[doc(hidden)]
 pub union Vector {
@@ -157,7 +157,9 @@ pub static __INTERRUPTS: [Vector; 60] = [
     Vector { _handler: PUF },
     Vector { _reserved: 0 },
     Vector { _handler: DMA1 },
-    Vector { _handler: LSPI_HS },
+    Vector {
+        _handler: FLEXCOMM8,
+    },
 ];
 #[doc = r" Enumeration of all the interrupts"]
 pub enum Interrupt {
@@ -249,8 +251,8 @@ pub enum Interrupt {
     PUF,
     #[doc = "58 - DMA1"]
     DMA1,
-    #[doc = "59 - LSPI_HS"]
-    LSPI_HS,
+    #[doc = "59 - FLEXCOMM8"]
+    FLEXCOMM8,
 }
 unsafe impl ::bare_metal::Nr for Interrupt {
     #[inline]
@@ -300,7 +302,7 @@ unsafe impl ::bare_metal::Nr for Interrupt {
             Interrupt::HASHCRYPT => 54,
             Interrupt::PUF => 56,
             Interrupt::DMA1 => 58,
-            Interrupt::LSPI_HS => 59,
+            Interrupt::FLEXCOMM8 => 59,
         }
     }
 }
@@ -1945,6 +1947,44 @@ impl Deref for AHB_SECURE_CTRL {
 }
 #[doc = "AHB secure controller"]
 pub mod ahb_secure_ctrl;
+#[doc = "no description available"]
+pub struct SCNSCB {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SCNSCB {}
+impl SCNSCB {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const scn_scb::RegisterBlock {
+        3758153728 as *const _
+    }
+}
+impl Deref for SCNSCB {
+    type Target = scn_scb::RegisterBlock;
+    fn deref(&self) -> &scn_scb::RegisterBlock {
+        unsafe { &*SCNSCB::ptr() }
+    }
+}
+#[doc = "no description available"]
+pub mod scn_scb;
+#[doc = "no description available"]
+pub struct SAU {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SAU {}
+impl SAU {
+    #[doc = r" Returns a pointer to the register block"]
+    pub fn ptr() -> *const sau::RegisterBlock {
+        3758157264 as *const _
+    }
+}
+impl Deref for SAU {
+    type Target = sau::RegisterBlock;
+    fn deref(&self) -> &sau::RegisterBlock {
+        unsafe { &*SAU::ptr() }
+    }
+}
+#[doc = "no description available"]
+pub mod sau;
 #[allow(renamed_and_removed_lints)]
 #[allow(private_no_mangle_statics)]
 #[no_mangle]
@@ -2134,6 +2174,10 @@ pub struct Peripherals {
     pub POWERQUAD: POWERQUAD,
     #[doc = "AHB_SECURE_CTRL"]
     pub AHB_SECURE_CTRL: AHB_SECURE_CTRL,
+    #[doc = "SCNSCB"]
+    pub SCNSCB: SCNSCB,
+    #[doc = "SAU"]
+    pub SAU: SAU,
 }
 impl Peripherals {
     #[doc = r" Returns all the peripherals *once*"]
@@ -2423,6 +2467,12 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             AHB_SECURE_CTRL: AHB_SECURE_CTRL {
+                _marker: PhantomData,
+            },
+            SCNSCB: SCNSCB {
+                _marker: PhantomData,
+            },
+            SAU: SAU {
                 _marker: PhantomData,
             },
         }

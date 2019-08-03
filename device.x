@@ -42,5 +42,5 @@ PROVIDE(PLU = DefaultHandler);
 PROVIDE(HASHCRYPT = DefaultHandler);
 PROVIDE(PUF = DefaultHandler);
 PROVIDE(DMA1 = DefaultHandler);
-PROVIDE(LSPI_HS = DefaultHandler);
+PROVIDE(FLEXCOMM8 = DefaultHandler);
 

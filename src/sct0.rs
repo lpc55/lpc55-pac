@@ -61,7 +61,19 @@ pub struct RegisterBlock {
     pub sctcap8: SCTCAP8,
     #[doc = "0x124 - SCT capture register of capture channel"]
     pub sctcap9: SCTCAP9,
-    _reserved2: [u8; 216usize],
+    #[doc = "0x128 - SCT capture register of capture channel"]
+    pub sctcap10: SCTCAP10,
+    #[doc = "0x12c - SCT capture register of capture channel"]
+    pub sctcap11: SCTCAP11,
+    #[doc = "0x130 - SCT capture register of capture channel"]
+    pub sctcap12: SCTCAP12,
+    #[doc = "0x134 - SCT capture register of capture channel"]
+    pub sctcap13: SCTCAP13,
+    #[doc = "0x138 - SCT capture register of capture channel"]
+    pub sctcap14: SCTCAP14,
+    #[doc = "0x13c - SCT capture register of capture channel"]
+    pub sctcap15: SCTCAP15,
+    _reserved2: [u8; 192usize],
     #[doc = "0x200 - SCT capture control register"]
     pub sctcapctrl0: SCTCAPCTRL0,
     #[doc = "0x204 - SCT capture control register"]
@@ -82,10 +94,22 @@ pub struct RegisterBlock {
     pub sctcapctrl8: SCTCAPCTRL8,
     #[doc = "0x224 - SCT capture control register"]
     pub sctcapctrl9: SCTCAPCTRL9,
-    _reserved3: [u8; 216usize],
+    #[doc = "0x228 - SCT capture control register"]
+    pub sctcapctrl10: SCTCAPCTRL10,
+    #[doc = "0x22c - SCT capture control register"]
+    pub sctcapctrl11: SCTCAPCTRL11,
+    #[doc = "0x230 - SCT capture control register"]
+    pub sctcapctrl12: SCTCAPCTRL12,
+    #[doc = "0x234 - SCT capture control register"]
+    pub sctcapctrl13: SCTCAPCTRL13,
+    #[doc = "0x238 - SCT capture control register"]
+    pub sctcapctrl14: SCTCAPCTRL14,
+    #[doc = "0x23c - SCT capture control register"]
+    pub sctcapctrl15: SCTCAPCTRL15,
+    _reserved3: [u8; 192usize],
     #[doc = "0x300 - no description available"]
-    pub event: [EVENT; 10],
-    _reserved4: [u8; 432usize],
+    pub event: [EVENT; 16],
+    _reserved4: [u8; 384usize],
     #[doc = "0x500 - no description available"]
     pub out: [OUT; 10],
 }
@@ -345,6 +369,78 @@ pub struct SCTMATCH9 {
 }
 #[doc = "SCT match value register of match channels"]
 pub mod sctmatch9;
+#[doc = "SCT capture register of capture channel"]
+pub struct SCTCAP10 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT capture register of capture channel"]
+pub mod sctcap10;
+#[doc = "SCT match value register of match channels"]
+pub struct SCTMATCH10 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT match value register of match channels"]
+pub mod sctmatch10;
+#[doc = "SCT capture register of capture channel"]
+pub struct SCTCAP11 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT capture register of capture channel"]
+pub mod sctcap11;
+#[doc = "SCT match value register of match channels"]
+pub struct SCTMATCH11 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT match value register of match channels"]
+pub mod sctmatch11;
+#[doc = "SCT capture register of capture channel"]
+pub struct SCTCAP12 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT capture register of capture channel"]
+pub mod sctcap12;
+#[doc = "SCT match value register of match channels"]
+pub struct SCTMATCH12 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT match value register of match channels"]
+pub mod sctmatch12;
+#[doc = "SCT capture register of capture channel"]
+pub struct SCTCAP13 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT capture register of capture channel"]
+pub mod sctcap13;
+#[doc = "SCT match value register of match channels"]
+pub struct SCTMATCH13 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT match value register of match channels"]
+pub mod sctmatch13;
+#[doc = "SCT capture register of capture channel"]
+pub struct SCTCAP14 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT capture register of capture channel"]
+pub mod sctcap14;
+#[doc = "SCT match value register of match channels"]
+pub struct SCTMATCH14 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT match value register of match channels"]
+pub mod sctmatch14;
+#[doc = "SCT capture register of capture channel"]
+pub struct SCTCAP15 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT capture register of capture channel"]
+pub mod sctcap15;
+#[doc = "SCT match value register of match channels"]
+pub struct SCTMATCH15 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT match value register of match channels"]
+pub mod sctmatch15;
 #[doc = "SCT capture control register"]
 pub struct SCTCAPCTRL0 {
     register: ::vcell::VolatileCell<u32>,
@@ -465,3 +561,75 @@ pub struct SCTMATCHREL9 {
 }
 #[doc = "SCT match reload value register"]
 pub mod sctmatchrel9;
+#[doc = "SCT capture control register"]
+pub struct SCTCAPCTRL10 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT capture control register"]
+pub mod sctcapctrl10;
+#[doc = "SCT match reload value register"]
+pub struct SCTMATCHREL10 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT match reload value register"]
+pub mod sctmatchrel10;
+#[doc = "SCT capture control register"]
+pub struct SCTCAPCTRL11 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT capture control register"]
+pub mod sctcapctrl11;
+#[doc = "SCT match reload value register"]
+pub struct SCTMATCHREL11 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT match reload value register"]
+pub mod sctmatchrel11;
+#[doc = "SCT capture control register"]
+pub struct SCTCAPCTRL12 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT capture control register"]
+pub mod sctcapctrl12;
+#[doc = "SCT match reload value register"]
+pub struct SCTMATCHREL12 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT match reload value register"]
+pub mod sctmatchrel12;
+#[doc = "SCT capture control register"]
+pub struct SCTCAPCTRL13 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT capture control register"]
+pub mod sctcapctrl13;
+#[doc = "SCT match reload value register"]
+pub struct SCTMATCHREL13 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT match reload value register"]
+pub mod sctmatchrel13;
+#[doc = "SCT capture control register"]
+pub struct SCTCAPCTRL14 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT capture control register"]
+pub mod sctcapctrl14;
+#[doc = "SCT match reload value register"]
+pub struct SCTMATCHREL14 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT match reload value register"]
+pub mod sctmatchrel14;
+#[doc = "SCT capture control register"]
+pub struct SCTCAPCTRL15 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT capture control register"]
+pub mod sctcapctrl15;
+#[doc = "SCT match reload value register"]
+pub struct SCTMATCHREL15 {
+    register: ::vcell::VolatileCell<u32>,
+}
+#[doc = "SCT match reload value register"]
+pub mod sctmatchrel15;
