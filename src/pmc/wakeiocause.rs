@@ -1,477 +1,324 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::WAKEIOCAUSE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register WAKEIOCAUSE"]
+pub type R = crate::R<u32, super::WAKEIOCAUSE>;
+#[doc = "Writer for register WAKEIOCAUSE"]
+pub type W = crate::W<u32, super::WAKEIOCAUSE>;
+#[doc = "Register WAKEIOCAUSE `reset()`'s with value 0"]
+impl crate::ResetValue for super::WAKEIOCAUSE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `WAKEUP0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WAKEUP0R {
+pub enum WAKEUP0_A {
     #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 0."]
     NOEVENT,
     #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 0."]
     EVENT,
 }
-impl WAKEUP0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WAKEUP0R::NOEVENT => false,
-            WAKEUP0R::EVENT => true,
+impl From<WAKEUP0_A> for bool {
+    #[inline(always)]
+    fn from(variant: WAKEUP0_A) -> Self {
+        match variant {
+            WAKEUP0_A::NOEVENT => false,
+            WAKEUP0_A::EVENT => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WAKEUP0R {
-        match value {
-            false => WAKEUP0R::NOEVENT,
-            true => WAKEUP0R::EVENT,
+}
+#[doc = "Reader of field `WAKEUP0`"]
+pub type WAKEUP0_R = crate::R<bool, WAKEUP0_A>;
+impl WAKEUP0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WAKEUP0_A {
+        match self.bits {
+            false => WAKEUP0_A::NOEVENT,
+            true => WAKEUP0_A::EVENT,
         }
     }
     #[doc = "Checks if the value of the field is `NOEVENT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_noevent(&self) -> bool {
-        *self == WAKEUP0R::NOEVENT
+        *self == WAKEUP0_A::NOEVENT
     }
     #[doc = "Checks if the value of the field is `EVENT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_event(&self) -> bool {
-        *self == WAKEUP0R::EVENT
+        *self == WAKEUP0_A::EVENT
     }
 }
 #[doc = "Possible values of the field `WAKEUP1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WAKEUP1R {
+pub enum WAKEUP1_A {
     #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 1."]
     NOEVENT,
     #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 1."]
     EVENT,
 }
-impl WAKEUP1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WAKEUP1R::NOEVENT => false,
-            WAKEUP1R::EVENT => true,
+impl From<WAKEUP1_A> for bool {
+    #[inline(always)]
+    fn from(variant: WAKEUP1_A) -> Self {
+        match variant {
+            WAKEUP1_A::NOEVENT => false,
+            WAKEUP1_A::EVENT => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WAKEUP1R {
-        match value {
-            false => WAKEUP1R::NOEVENT,
-            true => WAKEUP1R::EVENT,
+}
+#[doc = "Reader of field `WAKEUP1`"]
+pub type WAKEUP1_R = crate::R<bool, WAKEUP1_A>;
+impl WAKEUP1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WAKEUP1_A {
+        match self.bits {
+            false => WAKEUP1_A::NOEVENT,
+            true => WAKEUP1_A::EVENT,
         }
     }
     #[doc = "Checks if the value of the field is `NOEVENT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_noevent(&self) -> bool {
-        *self == WAKEUP1R::NOEVENT
+        *self == WAKEUP1_A::NOEVENT
     }
     #[doc = "Checks if the value of the field is `EVENT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_event(&self) -> bool {
-        *self == WAKEUP1R::EVENT
+        *self == WAKEUP1_A::EVENT
+    }
+}
+#[doc = "Write proxy for field `WAKEUP1`"]
+pub struct WAKEUP1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> WAKEUP1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WAKEUP1_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 1."]
+    #[inline(always)]
+    pub fn noevent(self) -> &'a mut W {
+        self.variant(WAKEUP1_A::NOEVENT)
+    }
+    #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 1."]
+    #[inline(always)]
+    pub fn event(self) -> &'a mut W {
+        self.variant(WAKEUP1_A::EVENT)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
 #[doc = "Possible values of the field `WAKEUP2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WAKEUP2R {
+pub enum WAKEUP2_A {
     #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 2."]
     NOEVENT,
     #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 2."]
     EVENT,
 }
-impl WAKEUP2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WAKEUP2R::NOEVENT => false,
-            WAKEUP2R::EVENT => true,
+impl From<WAKEUP2_A> for bool {
+    #[inline(always)]
+    fn from(variant: WAKEUP2_A) -> Self {
+        match variant {
+            WAKEUP2_A::NOEVENT => false,
+            WAKEUP2_A::EVENT => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WAKEUP2R {
-        match value {
-            false => WAKEUP2R::NOEVENT,
-            true => WAKEUP2R::EVENT,
+}
+#[doc = "Reader of field `WAKEUP2`"]
+pub type WAKEUP2_R = crate::R<bool, WAKEUP2_A>;
+impl WAKEUP2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WAKEUP2_A {
+        match self.bits {
+            false => WAKEUP2_A::NOEVENT,
+            true => WAKEUP2_A::EVENT,
         }
     }
     #[doc = "Checks if the value of the field is `NOEVENT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_noevent(&self) -> bool {
-        *self == WAKEUP2R::NOEVENT
+        *self == WAKEUP2_A::NOEVENT
     }
     #[doc = "Checks if the value of the field is `EVENT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_event(&self) -> bool {
-        *self == WAKEUP2R::EVENT
+        *self == WAKEUP2_A::EVENT
+    }
+}
+#[doc = "Write proxy for field `WAKEUP2`"]
+pub struct WAKEUP2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> WAKEUP2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WAKEUP2_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 2."]
+    #[inline(always)]
+    pub fn noevent(self) -> &'a mut W {
+        self.variant(WAKEUP2_A::NOEVENT)
+    }
+    #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 2."]
+    #[inline(always)]
+    pub fn event(self) -> &'a mut W {
+        self.variant(WAKEUP2_A::EVENT)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `WAKEUP3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WAKEUP3R {
+pub enum WAKEUP3_A {
     #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 3."]
     NOEVENT,
     #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 3."]
     EVENT,
 }
-impl WAKEUP3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WAKEUP3R::NOEVENT => false,
-            WAKEUP3R::EVENT => true,
+impl From<WAKEUP3_A> for bool {
+    #[inline(always)]
+    fn from(variant: WAKEUP3_A) -> Self {
+        match variant {
+            WAKEUP3_A::NOEVENT => false,
+            WAKEUP3_A::EVENT => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WAKEUP3R {
-        match value {
-            false => WAKEUP3R::NOEVENT,
-            true => WAKEUP3R::EVENT,
+}
+#[doc = "Reader of field `WAKEUP3`"]
+pub type WAKEUP3_R = crate::R<bool, WAKEUP3_A>;
+impl WAKEUP3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WAKEUP3_A {
+        match self.bits {
+            false => WAKEUP3_A::NOEVENT,
+            true => WAKEUP3_A::EVENT,
         }
     }
     #[doc = "Checks if the value of the field is `NOEVENT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_noevent(&self) -> bool {
-        *self == WAKEUP3R::NOEVENT
+        *self == WAKEUP3_A::NOEVENT
     }
     #[doc = "Checks if the value of the field is `EVENT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_event(&self) -> bool {
-        *self == WAKEUP3R::EVENT
+        *self == WAKEUP3_A::EVENT
     }
 }
-#[doc = "Values that can be written to the field `WAKEUP1`"]
-pub enum WAKEUP1W {
-    #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 1."]
-    NOEVENT,
-    #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 1."]
-    EVENT,
-}
-impl WAKEUP1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WAKEUP1W::NOEVENT => false,
-            WAKEUP1W::EVENT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WAKEUP1W<'a> {
+#[doc = "Write proxy for field `WAKEUP3`"]
+pub struct WAKEUP3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WAKEUP1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WAKEUP1W) -> &'a mut W {
+impl<'a> WAKEUP3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WAKEUP3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 1."]
-    #[inline]
-    pub fn noevent(self) -> &'a mut W {
-        self.variant(WAKEUP1W::NOEVENT)
-    }
-    #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 1."]
-    #[inline]
-    pub fn event(self) -> &'a mut W {
-        self.variant(WAKEUP1W::EVENT)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `WAKEUP2`"]
-pub enum WAKEUP2W {
-    #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 2."]
-    NOEVENT,
-    #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 2."]
-    EVENT,
-}
-impl WAKEUP2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WAKEUP2W::NOEVENT => false,
-            WAKEUP2W::EVENT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WAKEUP2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _WAKEUP2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WAKEUP2W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 2."]
-    #[inline]
-    pub fn noevent(self) -> &'a mut W {
-        self.variant(WAKEUP2W::NOEVENT)
-    }
-    #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 2."]
-    #[inline]
-    pub fn event(self) -> &'a mut W {
-        self.variant(WAKEUP2W::EVENT)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `WAKEUP3`"]
-pub enum WAKEUP3W {
-    #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 3."]
-    NOEVENT,
-    #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 3."]
-    EVENT,
-}
-impl WAKEUP3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WAKEUP3W::NOEVENT => false,
-            WAKEUP3W::EVENT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WAKEUP3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _WAKEUP3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WAKEUP3W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 3."]
-    #[inline]
+    #[inline(always)]
     pub fn noevent(self) -> &'a mut W {
-        self.variant(WAKEUP3W::NOEVENT)
+        self.variant(WAKEUP3_A::NOEVENT)
     }
     #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 3."]
-    #[inline]
+    #[inline(always)]
     pub fn event(self) -> &'a mut W {
-        self.variant(WAKEUP3W::EVENT)
+        self.variant(WAKEUP3_A::EVENT)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Allows to identify Wake up I/O 0 as the wake-up source from Deep Power Down mode."]
-    #[inline]
-    pub fn wakeup0(&self) -> WAKEUP0R {
-        WAKEUP0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wakeup0(&self) -> WAKEUP0_R {
+        WAKEUP0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Allows to identify Wake up I/O 1 as the wake-up source from Deep Power Down mode."]
-    #[inline]
-    pub fn wakeup1(&self) -> WAKEUP1R {
-        WAKEUP1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wakeup1(&self) -> WAKEUP1_R {
+        WAKEUP1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Allows to identify Wake up I/O 2 as the wake-up source from Deep Power Down mode."]
-    #[inline]
-    pub fn wakeup2(&self) -> WAKEUP2R {
-        WAKEUP2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wakeup2(&self) -> WAKEUP2_R {
+        WAKEUP2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Allows to identify Wake up I/O 3 as the wake-up source from Deep Power Down mode."]
-    #[inline]
-    pub fn wakeup3(&self) -> WAKEUP3R {
-        WAKEUP3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wakeup3(&self) -> WAKEUP3_R {
+        WAKEUP3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 1 - Allows to identify Wake up I/O 1 as the wake-up source from Deep Power Down mode."]
-    #[inline]
-    pub fn wakeup1(&mut self) -> _WAKEUP1W {
-        _WAKEUP1W { w: self }
+    #[inline(always)]
+    pub fn wakeup1(&mut self) -> WAKEUP1_W {
+        WAKEUP1_W { w: self }
     }
     #[doc = "Bit 2 - Allows to identify Wake up I/O 2 as the wake-up source from Deep Power Down mode."]
-    #[inline]
-    pub fn wakeup2(&mut self) -> _WAKEUP2W {
-        _WAKEUP2W { w: self }
+    #[inline(always)]
+    pub fn wakeup2(&mut self) -> WAKEUP2_W {
+        WAKEUP2_W { w: self }
     }
     #[doc = "Bit 3 - Allows to identify Wake up I/O 3 as the wake-up source from Deep Power Down mode."]
-    #[inline]
-    pub fn wakeup3(&mut self) -> _WAKEUP3W {
-        _WAKEUP3W { w: self }
+    #[inline(always)]
+    pub fn wakeup3(&mut self) -> WAKEUP3_W {
+        WAKEUP3_W { w: self }
     }
 }

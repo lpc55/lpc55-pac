@@ -1,302 +1,192 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DE"]
+pub type R = crate::R<u32, super::DE>;
+#[doc = "Writer for register DE"]
+pub type W = crate::W<u32, super::DE>;
+#[doc = "Register DE `reset()`'s with value 0"]
+impl crate::ResetValue for super::DE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `FWMDE0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FWMDE0R {
+pub enum FWMDE0_A {
     #[doc = "DMA request disabled."]
     FWMDE0_0,
     #[doc = "DMA request enabled."]
     FWMDE0_1,
 }
-impl FWMDE0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FWMDE0R::FWMDE0_0 => false,
-            FWMDE0R::FWMDE0_1 => true,
+impl From<FWMDE0_A> for bool {
+    #[inline(always)]
+    fn from(variant: FWMDE0_A) -> Self {
+        match variant {
+            FWMDE0_A::FWMDE0_0 => false,
+            FWMDE0_A::FWMDE0_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FWMDE0R {
-        match value {
-            false => FWMDE0R::FWMDE0_0,
-            true => FWMDE0R::FWMDE0_1,
+}
+#[doc = "Reader of field `FWMDE0`"]
+pub type FWMDE0_R = crate::R<bool, FWMDE0_A>;
+impl FWMDE0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FWMDE0_A {
+        match self.bits {
+            false => FWMDE0_A::FWMDE0_0,
+            true => FWMDE0_A::FWMDE0_1,
         }
     }
     #[doc = "Checks if the value of the field is `FWMDE0_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_fwmde0_0(&self) -> bool {
-        *self == FWMDE0R::FWMDE0_0
+        *self == FWMDE0_A::FWMDE0_0
     }
     #[doc = "Checks if the value of the field is `FWMDE0_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_fwmde0_1(&self) -> bool {
-        *self == FWMDE0R::FWMDE0_1
+        *self == FWMDE0_A::FWMDE0_1
+    }
+}
+#[doc = "Write proxy for field `FWMDE0`"]
+pub struct FWMDE0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FWMDE0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FWMDE0_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "DMA request disabled."]
+    #[inline(always)]
+    pub fn fwmde0_0(self) -> &'a mut W {
+        self.variant(FWMDE0_A::FWMDE0_0)
+    }
+    #[doc = "DMA request enabled."]
+    #[inline(always)]
+    pub fn fwmde0_1(self) -> &'a mut W {
+        self.variant(FWMDE0_A::FWMDE0_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
 #[doc = "Possible values of the field `FWMDE1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FWMDE1R {
+pub enum FWMDE1_A {
     #[doc = "DMA request disabled."]
     FWMDE1_0,
     #[doc = "DMA request enabled."]
     FWMDE1_1,
 }
-impl FWMDE1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FWMDE1R::FWMDE1_0 => false,
-            FWMDE1R::FWMDE1_1 => true,
+impl From<FWMDE1_A> for bool {
+    #[inline(always)]
+    fn from(variant: FWMDE1_A) -> Self {
+        match variant {
+            FWMDE1_A::FWMDE1_0 => false,
+            FWMDE1_A::FWMDE1_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FWMDE1R {
-        match value {
-            false => FWMDE1R::FWMDE1_0,
-            true => FWMDE1R::FWMDE1_1,
+}
+#[doc = "Reader of field `FWMDE1`"]
+pub type FWMDE1_R = crate::R<bool, FWMDE1_A>;
+impl FWMDE1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FWMDE1_A {
+        match self.bits {
+            false => FWMDE1_A::FWMDE1_0,
+            true => FWMDE1_A::FWMDE1_1,
         }
     }
     #[doc = "Checks if the value of the field is `FWMDE1_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_fwmde1_0(&self) -> bool {
-        *self == FWMDE1R::FWMDE1_0
+        *self == FWMDE1_A::FWMDE1_0
     }
     #[doc = "Checks if the value of the field is `FWMDE1_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_fwmde1_1(&self) -> bool {
-        *self == FWMDE1R::FWMDE1_1
+        *self == FWMDE1_A::FWMDE1_1
     }
 }
-#[doc = "Values that can be written to the field `FWMDE0`"]
-pub enum FWMDE0W {
-    #[doc = "DMA request disabled."]
-    FWMDE0_0,
-    #[doc = "DMA request enabled."]
-    FWMDE0_1,
-}
-impl FWMDE0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FWMDE0W::FWMDE0_0 => false,
-            FWMDE0W::FWMDE0_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FWMDE0W<'a> {
+#[doc = "Write proxy for field `FWMDE1`"]
+pub struct FWMDE1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FWMDE0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FWMDE0W) -> &'a mut W {
+impl<'a> FWMDE1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FWMDE1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "DMA request disabled."]
-    #[inline]
-    pub fn fwmde0_0(self) -> &'a mut W {
-        self.variant(FWMDE0W::FWMDE0_0)
-    }
-    #[doc = "DMA request enabled."]
-    #[inline]
-    pub fn fwmde0_1(self) -> &'a mut W {
-        self.variant(FWMDE0W::FWMDE0_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FWMDE1`"]
-pub enum FWMDE1W {
-    #[doc = "DMA request disabled."]
-    FWMDE1_0,
-    #[doc = "DMA request enabled."]
-    FWMDE1_1,
-}
-impl FWMDE1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FWMDE1W::FWMDE1_0 => false,
-            FWMDE1W::FWMDE1_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FWMDE1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FWMDE1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FWMDE1W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "DMA request disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn fwmde1_0(self) -> &'a mut W {
-        self.variant(FWMDE1W::FWMDE1_0)
+        self.variant(FWMDE1_A::FWMDE1_0)
     }
     #[doc = "DMA request enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn fwmde1_1(self) -> &'a mut W {
-        self.variant(FWMDE1W::FWMDE1_1)
+        self.variant(FWMDE1_A::FWMDE1_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - FIFO 0 Watermark DMA Enable"]
-    #[inline]
-    pub fn fwmde0(&self) -> FWMDE0R {
-        FWMDE0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn fwmde0(&self) -> FWMDE0_R {
+        FWMDE0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - FIFO1 Watermark DMA Enable"]
-    #[inline]
-    pub fn fwmde1(&self) -> FWMDE1R {
-        FWMDE1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn fwmde1(&self) -> FWMDE1_R {
+        FWMDE1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - FIFO 0 Watermark DMA Enable"]
-    #[inline]
-    pub fn fwmde0(&mut self) -> _FWMDE0W {
-        _FWMDE0W { w: self }
+    #[inline(always)]
+    pub fn fwmde0(&mut self) -> FWMDE0_W {
+        FWMDE0_W { w: self }
     }
     #[doc = "Bit 1 - FIFO1 Watermark DMA Enable"]
-    #[inline]
-    pub fn fwmde1(&mut self) -> _FWMDE1W {
-        _FWMDE1W { w: self }
+    #[inline(always)]
+    pub fn fwmde1(&mut self) -> FWMDE1_W {
+        FWMDE1_W { w: self }
     }
 }

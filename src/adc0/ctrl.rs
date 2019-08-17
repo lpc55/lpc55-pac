@@ -1,379 +1,564 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CTRL"]
+pub type R = crate::R<u32, super::CTRL>;
+#[doc = "Writer for register CTRL"]
+pub type W = crate::W<u32, super::CTRL>;
+#[doc = "Register CTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `ADCEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADCENR {
+pub enum ADCEN_A {
     #[doc = "ADC is disabled."]
     ADCEN_0,
     #[doc = "ADC is enabled."]
     ADCEN_1,
 }
-impl ADCENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ADCENR::ADCEN_0 => false,
-            ADCENR::ADCEN_1 => true,
+impl From<ADCEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADCEN_A) -> Self {
+        match variant {
+            ADCEN_A::ADCEN_0 => false,
+            ADCEN_A::ADCEN_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ADCENR {
-        match value {
-            false => ADCENR::ADCEN_0,
-            true => ADCENR::ADCEN_1,
+}
+#[doc = "Reader of field `ADCEN`"]
+pub type ADCEN_R = crate::R<bool, ADCEN_A>;
+impl ADCEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADCEN_A {
+        match self.bits {
+            false => ADCEN_A::ADCEN_0,
+            true => ADCEN_A::ADCEN_1,
         }
     }
     #[doc = "Checks if the value of the field is `ADCEN_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_adcen_0(&self) -> bool {
-        *self == ADCENR::ADCEN_0
+        *self == ADCEN_A::ADCEN_0
     }
     #[doc = "Checks if the value of the field is `ADCEN_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_adcen_1(&self) -> bool {
-        *self == ADCENR::ADCEN_1
+        *self == ADCEN_A::ADCEN_1
+    }
+}
+#[doc = "Write proxy for field `ADCEN`"]
+pub struct ADCEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ADCEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADCEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "ADC is disabled."]
+    #[inline(always)]
+    pub fn adcen_0(self) -> &'a mut W {
+        self.variant(ADCEN_A::ADCEN_0)
+    }
+    #[doc = "ADC is enabled."]
+    #[inline(always)]
+    pub fn adcen_1(self) -> &'a mut W {
+        self.variant(ADCEN_A::ADCEN_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RSTR {
+pub enum RST_A {
     #[doc = "ADC logic is not reset."]
     RST_0,
     #[doc = "ADC logic is reset."]
     RST_1,
 }
-impl RSTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RSTR::RST_0 => false,
-            RSTR::RST_1 => true,
+impl From<RST_A> for bool {
+    #[inline(always)]
+    fn from(variant: RST_A) -> Self {
+        match variant {
+            RST_A::RST_0 => false,
+            RST_A::RST_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RSTR {
-        match value {
-            false => RSTR::RST_0,
-            true => RSTR::RST_1,
+}
+#[doc = "Reader of field `RST`"]
+pub type RST_R = crate::R<bool, RST_A>;
+impl RST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RST_A {
+        match self.bits {
+            false => RST_A::RST_0,
+            true => RST_A::RST_1,
         }
     }
     #[doc = "Checks if the value of the field is `RST_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rst_0(&self) -> bool {
-        *self == RSTR::RST_0
+        *self == RST_A::RST_0
     }
     #[doc = "Checks if the value of the field is `RST_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rst_1(&self) -> bool {
-        *self == RSTR::RST_1
+        *self == RST_A::RST_1
+    }
+}
+#[doc = "Write proxy for field `RST`"]
+pub struct RST_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RST_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RST_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "ADC logic is not reset."]
+    #[inline(always)]
+    pub fn rst_0(self) -> &'a mut W {
+        self.variant(RST_A::RST_0)
+    }
+    #[doc = "ADC logic is reset."]
+    #[inline(always)]
+    pub fn rst_1(self) -> &'a mut W {
+        self.variant(RST_A::RST_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
 #[doc = "Possible values of the field `DOZEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DOZENR {
+pub enum DOZEN_A {
     #[doc = "ADC is enabled in Doze mode."]
     DOZEN_0,
     #[doc = "ADC is disabled in Doze mode."]
     DOZEN_1,
 }
-impl DOZENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DOZENR::DOZEN_0 => false,
-            DOZENR::DOZEN_1 => true,
+impl From<DOZEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: DOZEN_A) -> Self {
+        match variant {
+            DOZEN_A::DOZEN_0 => false,
+            DOZEN_A::DOZEN_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DOZENR {
-        match value {
-            false => DOZENR::DOZEN_0,
-            true => DOZENR::DOZEN_1,
+}
+#[doc = "Reader of field `DOZEN`"]
+pub type DOZEN_R = crate::R<bool, DOZEN_A>;
+impl DOZEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DOZEN_A {
+        match self.bits {
+            false => DOZEN_A::DOZEN_0,
+            true => DOZEN_A::DOZEN_1,
         }
     }
     #[doc = "Checks if the value of the field is `DOZEN_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dozen_0(&self) -> bool {
-        *self == DOZENR::DOZEN_0
+        *self == DOZEN_A::DOZEN_0
     }
     #[doc = "Checks if the value of the field is `DOZEN_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dozen_1(&self) -> bool {
-        *self == DOZENR::DOZEN_1
+        *self == DOZEN_A::DOZEN_1
+    }
+}
+#[doc = "Write proxy for field `DOZEN`"]
+pub struct DOZEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DOZEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DOZEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "ADC is enabled in Doze mode."]
+    #[inline(always)]
+    pub fn dozen_0(self) -> &'a mut W {
+        self.variant(DOZEN_A::DOZEN_0)
+    }
+    #[doc = "ADC is disabled in Doze mode."]
+    #[inline(always)]
+    pub fn dozen_1(self) -> &'a mut W {
+        self.variant(DOZEN_A::DOZEN_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CAL_REQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CAL_REQR {
+pub enum CAL_REQ_A {
     #[doc = "No request for auto-calibration has been made."]
     CAL_REQ_0,
     #[doc = "A request for auto-calibration has been made"]
     CAL_REQ_1,
 }
-impl CAL_REQR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CAL_REQR::CAL_REQ_0 => false,
-            CAL_REQR::CAL_REQ_1 => true,
+impl From<CAL_REQ_A> for bool {
+    #[inline(always)]
+    fn from(variant: CAL_REQ_A) -> Self {
+        match variant {
+            CAL_REQ_A::CAL_REQ_0 => false,
+            CAL_REQ_A::CAL_REQ_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CAL_REQR {
-        match value {
-            false => CAL_REQR::CAL_REQ_0,
-            true => CAL_REQR::CAL_REQ_1,
+}
+#[doc = "Reader of field `CAL_REQ`"]
+pub type CAL_REQ_R = crate::R<bool, CAL_REQ_A>;
+impl CAL_REQ_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CAL_REQ_A {
+        match self.bits {
+            false => CAL_REQ_A::CAL_REQ_0,
+            true => CAL_REQ_A::CAL_REQ_1,
         }
     }
     #[doc = "Checks if the value of the field is `CAL_REQ_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cal_req_0(&self) -> bool {
-        *self == CAL_REQR::CAL_REQ_0
+        *self == CAL_REQ_A::CAL_REQ_0
     }
     #[doc = "Checks if the value of the field is `CAL_REQ_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cal_req_1(&self) -> bool {
-        *self == CAL_REQR::CAL_REQ_1
+        *self == CAL_REQ_A::CAL_REQ_1
+    }
+}
+#[doc = "Write proxy for field `CAL_REQ`"]
+pub struct CAL_REQ_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CAL_REQ_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CAL_REQ_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "No request for auto-calibration has been made."]
+    #[inline(always)]
+    pub fn cal_req_0(self) -> &'a mut W {
+        self.variant(CAL_REQ_A::CAL_REQ_0)
+    }
+    #[doc = "A request for auto-calibration has been made"]
+    #[inline(always)]
+    pub fn cal_req_1(self) -> &'a mut W {
+        self.variant(CAL_REQ_A::CAL_REQ_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CALOFS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CALOFSR {
+pub enum CALOFS_A {
     #[doc = "Calibration function disabled"]
     CALOFS_0,
     #[doc = "Request for offset calibration function"]
     CALOFS_1,
 }
-impl CALOFSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CALOFSR::CALOFS_0 => false,
-            CALOFSR::CALOFS_1 => true,
+impl From<CALOFS_A> for bool {
+    #[inline(always)]
+    fn from(variant: CALOFS_A) -> Self {
+        match variant {
+            CALOFS_A::CALOFS_0 => false,
+            CALOFS_A::CALOFS_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CALOFSR {
-        match value {
-            false => CALOFSR::CALOFS_0,
-            true => CALOFSR::CALOFS_1,
+}
+#[doc = "Reader of field `CALOFS`"]
+pub type CALOFS_R = crate::R<bool, CALOFS_A>;
+impl CALOFS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CALOFS_A {
+        match self.bits {
+            false => CALOFS_A::CALOFS_0,
+            true => CALOFS_A::CALOFS_1,
         }
     }
     #[doc = "Checks if the value of the field is `CALOFS_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_calofs_0(&self) -> bool {
-        *self == CALOFSR::CALOFS_0
+        *self == CALOFS_A::CALOFS_0
     }
     #[doc = "Checks if the value of the field is `CALOFS_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_calofs_1(&self) -> bool {
-        *self == CALOFSR::CALOFS_1
+        *self == CALOFS_A::CALOFS_1
+    }
+}
+#[doc = "Write proxy for field `CALOFS`"]
+pub struct CALOFS_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CALOFS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CALOFS_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Calibration function disabled"]
+    #[inline(always)]
+    pub fn calofs_0(self) -> &'a mut W {
+        self.variant(CALOFS_A::CALOFS_0)
+    }
+    #[doc = "Request for offset calibration function"]
+    #[inline(always)]
+    pub fn calofs_1(self) -> &'a mut W {
+        self.variant(CALOFS_A::CALOFS_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RSTFIFO0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RSTFIFO0R {
+pub enum RSTFIFO0_A {
     #[doc = "No effect."]
     RSTFIFO0_0,
     #[doc = "FIFO 0 is reset."]
     RSTFIFO0_1,
 }
-impl RSTFIFO0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RSTFIFO0R::RSTFIFO0_0 => false,
-            RSTFIFO0R::RSTFIFO0_1 => true,
+impl From<RSTFIFO0_A> for bool {
+    #[inline(always)]
+    fn from(variant: RSTFIFO0_A) -> Self {
+        match variant {
+            RSTFIFO0_A::RSTFIFO0_0 => false,
+            RSTFIFO0_A::RSTFIFO0_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RSTFIFO0R {
-        match value {
-            false => RSTFIFO0R::RSTFIFO0_0,
-            true => RSTFIFO0R::RSTFIFO0_1,
+}
+#[doc = "Reader of field `RSTFIFO0`"]
+pub type RSTFIFO0_R = crate::R<bool, RSTFIFO0_A>;
+impl RSTFIFO0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RSTFIFO0_A {
+        match self.bits {
+            false => RSTFIFO0_A::RSTFIFO0_0,
+            true => RSTFIFO0_A::RSTFIFO0_1,
         }
     }
     #[doc = "Checks if the value of the field is `RSTFIFO0_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rstfifo0_0(&self) -> bool {
-        *self == RSTFIFO0R::RSTFIFO0_0
+        *self == RSTFIFO0_A::RSTFIFO0_0
     }
     #[doc = "Checks if the value of the field is `RSTFIFO0_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rstfifo0_1(&self) -> bool {
-        *self == RSTFIFO0R::RSTFIFO0_1
+        *self == RSTFIFO0_A::RSTFIFO0_1
+    }
+}
+#[doc = "Write proxy for field `RSTFIFO0`"]
+pub struct RSTFIFO0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RSTFIFO0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RSTFIFO0_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "No effect."]
+    #[inline(always)]
+    pub fn rstfifo0_0(self) -> &'a mut W {
+        self.variant(RSTFIFO0_A::RSTFIFO0_0)
+    }
+    #[doc = "FIFO 0 is reset."]
+    #[inline(always)]
+    pub fn rstfifo0_1(self) -> &'a mut W {
+        self.variant(RSTFIFO0_A::RSTFIFO0_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RSTFIFO1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RSTFIFO1R {
+pub enum RSTFIFO1_A {
     #[doc = "No effect."]
     RSTFIFO1_0,
     #[doc = "FIFO 1 is reset."]
     RSTFIFO1_1,
 }
-impl RSTFIFO1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RSTFIFO1R::RSTFIFO1_0 => false,
-            RSTFIFO1R::RSTFIFO1_1 => true,
+impl From<RSTFIFO1_A> for bool {
+    #[inline(always)]
+    fn from(variant: RSTFIFO1_A) -> Self {
+        match variant {
+            RSTFIFO1_A::RSTFIFO1_0 => false,
+            RSTFIFO1_A::RSTFIFO1_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RSTFIFO1R {
-        match value {
-            false => RSTFIFO1R::RSTFIFO1_0,
-            true => RSTFIFO1R::RSTFIFO1_1,
+}
+#[doc = "Reader of field `RSTFIFO1`"]
+pub type RSTFIFO1_R = crate::R<bool, RSTFIFO1_A>;
+impl RSTFIFO1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RSTFIFO1_A {
+        match self.bits {
+            false => RSTFIFO1_A::RSTFIFO1_0,
+            true => RSTFIFO1_A::RSTFIFO1_1,
         }
     }
     #[doc = "Checks if the value of the field is `RSTFIFO1_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rstfifo1_0(&self) -> bool {
-        *self == RSTFIFO1R::RSTFIFO1_0
+        *self == RSTFIFO1_A::RSTFIFO1_0
     }
     #[doc = "Checks if the value of the field is `RSTFIFO1_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rstfifo1_1(&self) -> bool {
-        *self == RSTFIFO1R::RSTFIFO1_1
+        *self == RSTFIFO1_A::RSTFIFO1_1
+    }
+}
+#[doc = "Write proxy for field `RSTFIFO1`"]
+pub struct RSTFIFO1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RSTFIFO1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RSTFIFO1_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "No effect."]
+    #[inline(always)]
+    pub fn rstfifo1_0(self) -> &'a mut W {
+        self.variant(RSTFIFO1_A::RSTFIFO1_0)
+    }
+    #[doc = "FIFO 1 is reset."]
+    #[inline(always)]
+    pub fn rstfifo1_1(self) -> &'a mut W {
+        self.variant(RSTFIFO1_A::RSTFIFO1_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CAL_AVGS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CAL_AVGSR {
+pub enum CAL_AVGS_A {
     #[doc = "Single conversion."]
     CAL_AVGS_0,
     #[doc = "2 conversions averaged."]
@@ -391,711 +576,220 @@ pub enum CAL_AVGSR {
     #[doc = "128 conversions averaged."]
     CAL_AVGS_7,
 }
-impl CAL_AVGSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CAL_AVGSR::CAL_AVGS_0 => 0,
-            CAL_AVGSR::CAL_AVGS_1 => 1,
-            CAL_AVGSR::CAL_AVGS_2 => 2,
-            CAL_AVGSR::CAL_AVGS_3 => 3,
-            CAL_AVGSR::CAL_AVGS_4 => 4,
-            CAL_AVGSR::CAL_AVGS_5 => 5,
-            CAL_AVGSR::CAL_AVGS_6 => 6,
-            CAL_AVGSR::CAL_AVGS_7 => 7,
+impl From<CAL_AVGS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CAL_AVGS_A) -> Self {
+        match variant {
+            CAL_AVGS_A::CAL_AVGS_0 => 0,
+            CAL_AVGS_A::CAL_AVGS_1 => 1,
+            CAL_AVGS_A::CAL_AVGS_2 => 2,
+            CAL_AVGS_A::CAL_AVGS_3 => 3,
+            CAL_AVGS_A::CAL_AVGS_4 => 4,
+            CAL_AVGS_A::CAL_AVGS_5 => 5,
+            CAL_AVGS_A::CAL_AVGS_6 => 6,
+            CAL_AVGS_A::CAL_AVGS_7 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CAL_AVGSR {
-        match value {
-            0 => CAL_AVGSR::CAL_AVGS_0,
-            1 => CAL_AVGSR::CAL_AVGS_1,
-            2 => CAL_AVGSR::CAL_AVGS_2,
-            3 => CAL_AVGSR::CAL_AVGS_3,
-            4 => CAL_AVGSR::CAL_AVGS_4,
-            5 => CAL_AVGSR::CAL_AVGS_5,
-            6 => CAL_AVGSR::CAL_AVGS_6,
-            7 => CAL_AVGSR::CAL_AVGS_7,
+}
+#[doc = "Reader of field `CAL_AVGS`"]
+pub type CAL_AVGS_R = crate::R<u8, CAL_AVGS_A>;
+impl CAL_AVGS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CAL_AVGS_A {
+        match self.bits {
+            0 => CAL_AVGS_A::CAL_AVGS_0,
+            1 => CAL_AVGS_A::CAL_AVGS_1,
+            2 => CAL_AVGS_A::CAL_AVGS_2,
+            3 => CAL_AVGS_A::CAL_AVGS_3,
+            4 => CAL_AVGS_A::CAL_AVGS_4,
+            5 => CAL_AVGS_A::CAL_AVGS_5,
+            6 => CAL_AVGS_A::CAL_AVGS_6,
+            7 => CAL_AVGS_A::CAL_AVGS_7,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `CAL_AVGS_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cal_avgs_0(&self) -> bool {
-        *self == CAL_AVGSR::CAL_AVGS_0
+        *self == CAL_AVGS_A::CAL_AVGS_0
     }
     #[doc = "Checks if the value of the field is `CAL_AVGS_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cal_avgs_1(&self) -> bool {
-        *self == CAL_AVGSR::CAL_AVGS_1
+        *self == CAL_AVGS_A::CAL_AVGS_1
     }
     #[doc = "Checks if the value of the field is `CAL_AVGS_2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cal_avgs_2(&self) -> bool {
-        *self == CAL_AVGSR::CAL_AVGS_2
+        *self == CAL_AVGS_A::CAL_AVGS_2
     }
     #[doc = "Checks if the value of the field is `CAL_AVGS_3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cal_avgs_3(&self) -> bool {
-        *self == CAL_AVGSR::CAL_AVGS_3
+        *self == CAL_AVGS_A::CAL_AVGS_3
     }
     #[doc = "Checks if the value of the field is `CAL_AVGS_4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cal_avgs_4(&self) -> bool {
-        *self == CAL_AVGSR::CAL_AVGS_4
+        *self == CAL_AVGS_A::CAL_AVGS_4
     }
     #[doc = "Checks if the value of the field is `CAL_AVGS_5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cal_avgs_5(&self) -> bool {
-        *self == CAL_AVGSR::CAL_AVGS_5
+        *self == CAL_AVGS_A::CAL_AVGS_5
     }
     #[doc = "Checks if the value of the field is `CAL_AVGS_6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cal_avgs_6(&self) -> bool {
-        *self == CAL_AVGSR::CAL_AVGS_6
+        *self == CAL_AVGS_A::CAL_AVGS_6
     }
     #[doc = "Checks if the value of the field is `CAL_AVGS_7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cal_avgs_7(&self) -> bool {
-        *self == CAL_AVGSR::CAL_AVGS_7
+        *self == CAL_AVGS_A::CAL_AVGS_7
     }
 }
-#[doc = "Values that can be written to the field `ADCEN`"]
-pub enum ADCENW {
-    #[doc = "ADC is disabled."]
-    ADCEN_0,
-    #[doc = "ADC is enabled."]
-    ADCEN_1,
-}
-impl ADCENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ADCENW::ADCEN_0 => false,
-            ADCENW::ADCEN_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ADCENW<'a> {
+#[doc = "Write proxy for field `CAL_AVGS`"]
+pub struct CAL_AVGS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADCENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ADCENW) -> &'a mut W {
+impl<'a> CAL_AVGS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CAL_AVGS_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "ADC is disabled."]
-    #[inline]
-    pub fn adcen_0(self) -> &'a mut W {
-        self.variant(ADCENW::ADCEN_0)
-    }
-    #[doc = "ADC is enabled."]
-    #[inline]
-    pub fn adcen_1(self) -> &'a mut W {
-        self.variant(ADCENW::ADCEN_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RST`"]
-pub enum RSTW {
-    #[doc = "ADC logic is not reset."]
-    RST_0,
-    #[doc = "ADC logic is reset."]
-    RST_1,
-}
-impl RSTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RSTW::RST_0 => false,
-            RSTW::RST_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RSTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RSTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RSTW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "ADC logic is not reset."]
-    #[inline]
-    pub fn rst_0(self) -> &'a mut W {
-        self.variant(RSTW::RST_0)
-    }
-    #[doc = "ADC logic is reset."]
-    #[inline]
-    pub fn rst_1(self) -> &'a mut W {
-        self.variant(RSTW::RST_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DOZEN`"]
-pub enum DOZENW {
-    #[doc = "ADC is enabled in Doze mode."]
-    DOZEN_0,
-    #[doc = "ADC is disabled in Doze mode."]
-    DOZEN_1,
-}
-impl DOZENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DOZENW::DOZEN_0 => false,
-            DOZENW::DOZEN_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DOZENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DOZENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DOZENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "ADC is enabled in Doze mode."]
-    #[inline]
-    pub fn dozen_0(self) -> &'a mut W {
-        self.variant(DOZENW::DOZEN_0)
-    }
-    #[doc = "ADC is disabled in Doze mode."]
-    #[inline]
-    pub fn dozen_1(self) -> &'a mut W {
-        self.variant(DOZENW::DOZEN_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CAL_REQ`"]
-pub enum CAL_REQW {
-    #[doc = "No request for auto-calibration has been made."]
-    CAL_REQ_0,
-    #[doc = "A request for auto-calibration has been made"]
-    CAL_REQ_1,
-}
-impl CAL_REQW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CAL_REQW::CAL_REQ_0 => false,
-            CAL_REQW::CAL_REQ_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CAL_REQW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CAL_REQW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CAL_REQW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No request for auto-calibration has been made."]
-    #[inline]
-    pub fn cal_req_0(self) -> &'a mut W {
-        self.variant(CAL_REQW::CAL_REQ_0)
-    }
-    #[doc = "A request for auto-calibration has been made"]
-    #[inline]
-    pub fn cal_req_1(self) -> &'a mut W {
-        self.variant(CAL_REQW::CAL_REQ_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CALOFS`"]
-pub enum CALOFSW {
-    #[doc = "Calibration function disabled"]
-    CALOFS_0,
-    #[doc = "Request for offset calibration function"]
-    CALOFS_1,
-}
-impl CALOFSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CALOFSW::CALOFS_0 => false,
-            CALOFSW::CALOFS_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CALOFSW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CALOFSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CALOFSW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Calibration function disabled"]
-    #[inline]
-    pub fn calofs_0(self) -> &'a mut W {
-        self.variant(CALOFSW::CALOFS_0)
-    }
-    #[doc = "Request for offset calibration function"]
-    #[inline]
-    pub fn calofs_1(self) -> &'a mut W {
-        self.variant(CALOFSW::CALOFS_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RSTFIFO0`"]
-pub enum RSTFIFO0W {
-    #[doc = "No effect."]
-    RSTFIFO0_0,
-    #[doc = "FIFO 0 is reset."]
-    RSTFIFO0_1,
-}
-impl RSTFIFO0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RSTFIFO0W::RSTFIFO0_0 => false,
-            RSTFIFO0W::RSTFIFO0_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RSTFIFO0W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RSTFIFO0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RSTFIFO0W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No effect."]
-    #[inline]
-    pub fn rstfifo0_0(self) -> &'a mut W {
-        self.variant(RSTFIFO0W::RSTFIFO0_0)
-    }
-    #[doc = "FIFO 0 is reset."]
-    #[inline]
-    pub fn rstfifo0_1(self) -> &'a mut W {
-        self.variant(RSTFIFO0W::RSTFIFO0_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RSTFIFO1`"]
-pub enum RSTFIFO1W {
-    #[doc = "No effect."]
-    RSTFIFO1_0,
-    #[doc = "FIFO 1 is reset."]
-    RSTFIFO1_1,
-}
-impl RSTFIFO1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RSTFIFO1W::RSTFIFO1_0 => false,
-            RSTFIFO1W::RSTFIFO1_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RSTFIFO1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RSTFIFO1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RSTFIFO1W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No effect."]
-    #[inline]
-    pub fn rstfifo1_0(self) -> &'a mut W {
-        self.variant(RSTFIFO1W::RSTFIFO1_0)
-    }
-    #[doc = "FIFO 1 is reset."]
-    #[inline]
-    pub fn rstfifo1_1(self) -> &'a mut W {
-        self.variant(RSTFIFO1W::RSTFIFO1_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CAL_AVGS`"]
-pub enum CAL_AVGSW {
-    #[doc = "Single conversion."]
-    CAL_AVGS_0,
-    #[doc = "2 conversions averaged."]
-    CAL_AVGS_1,
-    #[doc = "4 conversions averaged."]
-    CAL_AVGS_2,
-    #[doc = "8 conversions averaged."]
-    CAL_AVGS_3,
-    #[doc = "16 conversions averaged."]
-    CAL_AVGS_4,
-    #[doc = "32 conversions averaged."]
-    CAL_AVGS_5,
-    #[doc = "64 conversions averaged."]
-    CAL_AVGS_6,
-    #[doc = "128 conversions averaged."]
-    CAL_AVGS_7,
-}
-impl CAL_AVGSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CAL_AVGSW::CAL_AVGS_0 => 0,
-            CAL_AVGSW::CAL_AVGS_1 => 1,
-            CAL_AVGSW::CAL_AVGS_2 => 2,
-            CAL_AVGSW::CAL_AVGS_3 => 3,
-            CAL_AVGSW::CAL_AVGS_4 => 4,
-            CAL_AVGSW::CAL_AVGS_5 => 5,
-            CAL_AVGSW::CAL_AVGS_6 => 6,
-            CAL_AVGSW::CAL_AVGS_7 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CAL_AVGSW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CAL_AVGSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CAL_AVGSW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Single conversion."]
-    #[inline]
+    #[inline(always)]
     pub fn cal_avgs_0(self) -> &'a mut W {
-        self.variant(CAL_AVGSW::CAL_AVGS_0)
+        self.variant(CAL_AVGS_A::CAL_AVGS_0)
     }
     #[doc = "2 conversions averaged."]
-    #[inline]
+    #[inline(always)]
     pub fn cal_avgs_1(self) -> &'a mut W {
-        self.variant(CAL_AVGSW::CAL_AVGS_1)
+        self.variant(CAL_AVGS_A::CAL_AVGS_1)
     }
     #[doc = "4 conversions averaged."]
-    #[inline]
+    #[inline(always)]
     pub fn cal_avgs_2(self) -> &'a mut W {
-        self.variant(CAL_AVGSW::CAL_AVGS_2)
+        self.variant(CAL_AVGS_A::CAL_AVGS_2)
     }
     #[doc = "8 conversions averaged."]
-    #[inline]
+    #[inline(always)]
     pub fn cal_avgs_3(self) -> &'a mut W {
-        self.variant(CAL_AVGSW::CAL_AVGS_3)
+        self.variant(CAL_AVGS_A::CAL_AVGS_3)
     }
     #[doc = "16 conversions averaged."]
-    #[inline]
+    #[inline(always)]
     pub fn cal_avgs_4(self) -> &'a mut W {
-        self.variant(CAL_AVGSW::CAL_AVGS_4)
+        self.variant(CAL_AVGS_A::CAL_AVGS_4)
     }
     #[doc = "32 conversions averaged."]
-    #[inline]
+    #[inline(always)]
     pub fn cal_avgs_5(self) -> &'a mut W {
-        self.variant(CAL_AVGSW::CAL_AVGS_5)
+        self.variant(CAL_AVGS_A::CAL_AVGS_5)
     }
     #[doc = "64 conversions averaged."]
-    #[inline]
+    #[inline(always)]
     pub fn cal_avgs_6(self) -> &'a mut W {
-        self.variant(CAL_AVGSW::CAL_AVGS_6)
+        self.variant(CAL_AVGS_A::CAL_AVGS_6)
     }
     #[doc = "128 conversions averaged."]
-    #[inline]
+    #[inline(always)]
     pub fn cal_avgs_7(self) -> &'a mut W {
-        self.variant(CAL_AVGSW::CAL_AVGS_7)
+        self.variant(CAL_AVGS_A::CAL_AVGS_7)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - ADC Enable"]
-    #[inline]
-    pub fn adcen(&self) -> ADCENR {
-        ADCENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn adcen(&self) -> ADCEN_R {
+        ADCEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Software Reset"]
-    #[inline]
-    pub fn rst(&self) -> RSTR {
-        RSTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rst(&self) -> RST_R {
+        RST_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Doze Enable"]
-    #[inline]
-    pub fn dozen(&self) -> DOZENR {
-        DOZENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dozen(&self) -> DOZEN_R {
+        DOZEN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Auto-Calibration Request"]
-    #[inline]
-    pub fn cal_req(&self) -> CAL_REQR {
-        CAL_REQR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cal_req(&self) -> CAL_REQ_R {
+        CAL_REQ_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Configure for offset calibration function"]
-    #[inline]
-    pub fn calofs(&self) -> CALOFSR {
-        CALOFSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn calofs(&self) -> CALOFS_R {
+        CALOFS_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Reset FIFO 0"]
-    #[inline]
-    pub fn rstfifo0(&self) -> RSTFIFO0R {
-        RSTFIFO0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rstfifo0(&self) -> RSTFIFO0_R {
+        RSTFIFO0_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Reset FIFO 1"]
-    #[inline]
-    pub fn rstfifo1(&self) -> RSTFIFO1R {
-        RSTFIFO1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rstfifo1(&self) -> RSTFIFO1_R {
+        RSTFIFO1_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bits 16:18 - Auto-Calibration Averages"]
-    #[inline]
-    pub fn cal_avgs(&self) -> CAL_AVGSR {
-        CAL_AVGSR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn cal_avgs(&self) -> CAL_AVGS_R {
+        CAL_AVGS_R::new(((self.bits >> 16) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - ADC Enable"]
-    #[inline]
-    pub fn adcen(&mut self) -> _ADCENW {
-        _ADCENW { w: self }
+    #[inline(always)]
+    pub fn adcen(&mut self) -> ADCEN_W {
+        ADCEN_W { w: self }
     }
     #[doc = "Bit 1 - Software Reset"]
-    #[inline]
-    pub fn rst(&mut self) -> _RSTW {
-        _RSTW { w: self }
+    #[inline(always)]
+    pub fn rst(&mut self) -> RST_W {
+        RST_W { w: self }
     }
     #[doc = "Bit 2 - Doze Enable"]
-    #[inline]
-    pub fn dozen(&mut self) -> _DOZENW {
-        _DOZENW { w: self }
+    #[inline(always)]
+    pub fn dozen(&mut self) -> DOZEN_W {
+        DOZEN_W { w: self }
     }
     #[doc = "Bit 3 - Auto-Calibration Request"]
-    #[inline]
-    pub fn cal_req(&mut self) -> _CAL_REQW {
-        _CAL_REQW { w: self }
+    #[inline(always)]
+    pub fn cal_req(&mut self) -> CAL_REQ_W {
+        CAL_REQ_W { w: self }
     }
     #[doc = "Bit 4 - Configure for offset calibration function"]
-    #[inline]
-    pub fn calofs(&mut self) -> _CALOFSW {
-        _CALOFSW { w: self }
+    #[inline(always)]
+    pub fn calofs(&mut self) -> CALOFS_W {
+        CALOFS_W { w: self }
     }
     #[doc = "Bit 8 - Reset FIFO 0"]
-    #[inline]
-    pub fn rstfifo0(&mut self) -> _RSTFIFO0W {
-        _RSTFIFO0W { w: self }
+    #[inline(always)]
+    pub fn rstfifo0(&mut self) -> RSTFIFO0_W {
+        RSTFIFO0_W { w: self }
     }
     #[doc = "Bit 9 - Reset FIFO 1"]
-    #[inline]
-    pub fn rstfifo1(&mut self) -> _RSTFIFO1W {
-        _RSTFIFO1W { w: self }
+    #[inline(always)]
+    pub fn rstfifo1(&mut self) -> RSTFIFO1_W {
+        RSTFIFO1_W { w: self }
     }
     #[doc = "Bits 16:18 - Auto-Calibration Averages"]
-    #[inline]
-    pub fn cal_avgs(&mut self) -> _CAL_AVGSW {
-        _CAL_AVGSW { w: self }
+    #[inline(always)]
+    pub fn cal_avgs(&mut self) -> CAL_AVGS_W {
+        CAL_AVGS_W { w: self }
     }
 }

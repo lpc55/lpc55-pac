@@ -1,224 +1,128 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::GCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register GCR[%s]"]
+pub type R = crate::R<u32, super::GCR>;
+#[doc = "Writer for register GCR[%s]"]
+pub type W = crate::W<u32, super::GCR>;
+#[doc = "Register GCR[%s] `reset()`'s with value 0"]
+impl crate::ResetValue for super::GCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct GCALRR {
-    bits: u16,
+#[doc = "Reader of field `GCALR`"]
+pub type GCALR_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `GCALR`"]
+pub struct GCALR_W<'a> {
+    w: &'a mut W,
 }
-impl GCALRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
+impl<'a> GCALR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RDY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RDYR {
+pub enum RDY_A {
     #[doc = "The gain offset calculation value is invalid."]
     RDY_0,
     #[doc = "The gain calibration value is valid."]
     RDY_1,
 }
-impl RDYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RDYR::RDY_0 => false,
-            RDYR::RDY_1 => true,
+impl From<RDY_A> for bool {
+    #[inline(always)]
+    fn from(variant: RDY_A) -> Self {
+        match variant {
+            RDY_A::RDY_0 => false,
+            RDY_A::RDY_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RDYR {
-        match value {
-            false => RDYR::RDY_0,
-            true => RDYR::RDY_1,
+}
+#[doc = "Reader of field `RDY`"]
+pub type RDY_R = crate::R<bool, RDY_A>;
+impl RDY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RDY_A {
+        match self.bits {
+            false => RDY_A::RDY_0,
+            true => RDY_A::RDY_1,
         }
     }
     #[doc = "Checks if the value of the field is `RDY_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rdy_0(&self) -> bool {
-        *self == RDYR::RDY_0
+        *self == RDY_A::RDY_0
     }
     #[doc = "Checks if the value of the field is `RDY_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rdy_1(&self) -> bool {
-        *self == RDYR::RDY_1
+        *self == RDY_A::RDY_1
     }
 }
-#[doc = r" Proxy"]
-pub struct _GCALRW<'a> {
+#[doc = "Write proxy for field `RDY`"]
+pub struct RDY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GCALRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RDY`"]
-pub enum RDYW {
-    #[doc = "The gain offset calculation value is invalid."]
-    RDY_0,
-    #[doc = "The gain calibration value is valid."]
-    RDY_1,
-}
-impl RDYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RDYW::RDY_0 => false,
-            RDYW::RDY_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RDYW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RDYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RDYW) -> &'a mut W {
+impl<'a> RDY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RDY_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The gain offset calculation value is invalid."]
-    #[inline]
+    #[inline(always)]
     pub fn rdy_0(self) -> &'a mut W {
-        self.variant(RDYW::RDY_0)
+        self.variant(RDY_A::RDY_0)
     }
     #[doc = "The gain calibration value is valid."]
-    #[inline]
+    #[inline(always)]
     pub fn rdy_1(self) -> &'a mut W {
-        self.variant(RDYW::RDY_1)
+        self.variant(RDY_A::RDY_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Gain Calculation Result"]
-    #[inline]
-    pub fn gcalr(&self) -> GCALRR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        GCALRR { bits }
+    #[inline(always)]
+    pub fn gcalr(&self) -> GCALR_R {
+        GCALR_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bit 24 - Gain Calculation Ready"]
-    #[inline]
-    pub fn rdy(&self) -> RDYR {
-        RDYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rdy(&self) -> RDY_R {
+        RDY_R::new(((self.bits >> 24) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - Gain Calculation Result"]
-    #[inline]
-    pub fn gcalr(&mut self) -> _GCALRW {
-        _GCALRW { w: self }
+    #[inline(always)]
+    pub fn gcalr(&mut self) -> GCALR_W {
+        GCALR_W { w: self }
     }
     #[doc = "Bit 24 - Gain Calculation Ready"]
-    #[inline]
-    pub fn rdy(&mut self) -> _RDYW {
-        _RDYW { w: self }
+    #[inline(always)]
+    pub fn rdy(&mut self) -> RDY_W {
+        RDY_W { w: self }
     }
 }

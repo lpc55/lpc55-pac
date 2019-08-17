@@ -1,1207 +1,839 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::RINGO2_CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register RINGO2_CTRL"]
+pub type R = crate::R<u32, super::RINGO2_CTRL>;
+#[doc = "Writer for register RINGO2_CTRL"]
+pub type W = crate::W<u32, super::RINGO2_CTRL>;
+#[doc = "Register RINGO2_CTRL `reset()`'s with value 0x40"]
+impl crate::ResetValue for super::RINGO2_CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x40
     }
 }
 #[doc = "Possible values of the field `S`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SR {
+pub enum S_A {
     #[doc = "Select short ringo (few elements)."]
     SHORT,
     #[doc = "Select long ringo (many elements)."]
     LONG,
 }
-impl SR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SR::SHORT => false,
-            SR::LONG => true,
+impl From<S_A> for bool {
+    #[inline(always)]
+    fn from(variant: S_A) -> Self {
+        match variant {
+            S_A::SHORT => false,
+            S_A::LONG => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SR {
-        match value {
-            false => SR::SHORT,
-            true => SR::LONG,
+}
+#[doc = "Reader of field `S`"]
+pub type S_R = crate::R<bool, S_A>;
+impl S_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> S_A {
+        match self.bits {
+            false => S_A::SHORT,
+            true => S_A::LONG,
         }
     }
     #[doc = "Checks if the value of the field is `SHORT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_short(&self) -> bool {
-        *self == SR::SHORT
+        *self == S_A::SHORT
     }
     #[doc = "Checks if the value of the field is `LONG`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_long(&self) -> bool {
-        *self == SR::LONG
+        *self == S_A::LONG
+    }
+}
+#[doc = "Write proxy for field `S`"]
+pub struct S_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> S_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: S_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Select short ringo (few elements)."]
+    #[inline(always)]
+    pub fn short(self) -> &'a mut W {
+        self.variant(S_A::SHORT)
+    }
+    #[doc = "Select long ringo (many elements)."]
+    #[inline(always)]
+    pub fn long(self) -> &'a mut W {
+        self.variant(S_A::LONG)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
 #[doc = "Possible values of the field `FS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FSR {
+pub enum FS_A {
     #[doc = "High frequency output (frequency lower than 100 MHz)."]
     FAST,
     #[doc = "Low frequency output (frequency lower than 10 MHz)."]
     SLOW,
 }
-impl FSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FSR::FAST => false,
-            FSR::SLOW => true,
+impl From<FS_A> for bool {
+    #[inline(always)]
+    fn from(variant: FS_A) -> Self {
+        match variant {
+            FS_A::FAST => false,
+            FS_A::SLOW => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FSR {
-        match value {
-            false => FSR::FAST,
-            true => FSR::SLOW,
+}
+#[doc = "Reader of field `FS`"]
+pub type FS_R = crate::R<bool, FS_A>;
+impl FS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FS_A {
+        match self.bits {
+            false => FS_A::FAST,
+            true => FS_A::SLOW,
         }
     }
     #[doc = "Checks if the value of the field is `FAST`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_fast(&self) -> bool {
-        *self == FSR::FAST
+        *self == FS_A::FAST
     }
     #[doc = "Checks if the value of the field is `SLOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_slow(&self) -> bool {
-        *self == FSR::SLOW
+        *self == FS_A::SLOW
+    }
+}
+#[doc = "Write proxy for field `FS`"]
+pub struct FS_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FS_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "High frequency output (frequency lower than 100 MHz)."]
+    #[inline(always)]
+    pub fn fast(self) -> &'a mut W {
+        self.variant(FS_A::FAST)
+    }
+    #[doc = "Low frequency output (frequency lower than 10 MHz)."]
+    #[inline(always)]
+    pub fn slow(self) -> &'a mut W {
+        self.variant(FS_A::SLOW)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PD`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDR {
+pub enum PD_A {
     #[doc = "The Ringo module is enabled."]
     POWERED_ON,
     #[doc = "The Ringo module is disabled."]
     POWERED_DOWN,
 }
-impl PDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDR::POWERED_ON => false,
-            PDR::POWERED_DOWN => true,
+impl From<PD_A> for bool {
+    #[inline(always)]
+    fn from(variant: PD_A) -> Self {
+        match variant {
+            PD_A::POWERED_ON => false,
+            PD_A::POWERED_DOWN => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDR {
-        match value {
-            false => PDR::POWERED_ON,
-            true => PDR::POWERED_DOWN,
+}
+#[doc = "Reader of field `PD`"]
+pub type PD_R = crate::R<bool, PD_A>;
+impl PD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PD_A {
+        match self.bits {
+            false => PD_A::POWERED_ON,
+            true => PD_A::POWERED_DOWN,
         }
     }
     #[doc = "Checks if the value of the field is `POWERED_ON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_powered_on(&self) -> bool {
-        *self == PDR::POWERED_ON
+        *self == PD_A::POWERED_ON
     }
     #[doc = "Checks if the value of the field is `POWERED_DOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_powered_down(&self) -> bool {
-        *self == PDR::POWERED_DOWN
+        *self == PD_A::POWERED_DOWN
+    }
+}
+#[doc = "Write proxy for field `PD`"]
+pub struct PD_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PD_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The Ringo module is enabled."]
+    #[inline(always)]
+    pub fn powered_on(self) -> &'a mut W {
+        self.variant(PD_A::POWERED_ON)
+    }
+    #[doc = "The Ringo module is disabled."]
+    #[inline(always)]
+    pub fn powered_down(self) -> &'a mut W {
+        self.variant(PD_A::POWERED_DOWN)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `E_R24`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum E_R24R {
+pub enum E_R24_A {
     #[doc = "Ringo is disabled."]
     DISABLE,
     #[doc = "Ringo is enabled."]
     ENABLE,
 }
-impl E_R24R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            E_R24R::DISABLE => false,
-            E_R24R::ENABLE => true,
+impl From<E_R24_A> for bool {
+    #[inline(always)]
+    fn from(variant: E_R24_A) -> Self {
+        match variant {
+            E_R24_A::DISABLE => false,
+            E_R24_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> E_R24R {
-        match value {
-            false => E_R24R::DISABLE,
-            true => E_R24R::ENABLE,
+}
+#[doc = "Reader of field `E_R24`"]
+pub type E_R24_R = crate::R<bool, E_R24_A>;
+impl E_R24_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> E_R24_A {
+        match self.bits {
+            false => E_R24_A::DISABLE,
+            true => E_R24_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == E_R24R::DISABLE
+        *self == E_R24_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == E_R24R::ENABLE
+        *self == E_R24_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `E_R24`"]
+pub struct E_R24_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> E_R24_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: E_R24_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Ringo is disabled."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(E_R24_A::DISABLE)
+    }
+    #[doc = "Ringo is enabled."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(E_R24_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
 #[doc = "Possible values of the field `E_R35`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum E_R35R {
+pub enum E_R35_A {
     #[doc = "Ringo is disabled."]
     DISABLE,
     #[doc = "Ringo is enabled."]
     ENABLE,
 }
-impl E_R35R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            E_R35R::DISABLE => false,
-            E_R35R::ENABLE => true,
+impl From<E_R35_A> for bool {
+    #[inline(always)]
+    fn from(variant: E_R35_A) -> Self {
+        match variant {
+            E_R35_A::DISABLE => false,
+            E_R35_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> E_R35R {
-        match value {
-            false => E_R35R::DISABLE,
-            true => E_R35R::ENABLE,
+}
+#[doc = "Reader of field `E_R35`"]
+pub type E_R35_R = crate::R<bool, E_R35_A>;
+impl E_R35_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> E_R35_A {
+        match self.bits {
+            false => E_R35_A::DISABLE,
+            true => E_R35_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == E_R35R::DISABLE
+        *self == E_R35_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == E_R35R::ENABLE
+        *self == E_R35_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `E_R35`"]
+pub struct E_R35_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> E_R35_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: E_R35_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Ringo is disabled."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(E_R35_A::DISABLE)
+    }
+    #[doc = "Ringo is enabled."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(E_R35_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `E_M2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum E_M2R {
+pub enum E_M2_A {
     #[doc = "Ringo is disabled."]
     DISABLE,
     #[doc = "Ringo is enabled."]
     ENABLE,
 }
-impl E_M2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            E_M2R::DISABLE => false,
-            E_M2R::ENABLE => true,
+impl From<E_M2_A> for bool {
+    #[inline(always)]
+    fn from(variant: E_M2_A) -> Self {
+        match variant {
+            E_M2_A::DISABLE => false,
+            E_M2_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> E_M2R {
-        match value {
-            false => E_M2R::DISABLE,
-            true => E_M2R::ENABLE,
+}
+#[doc = "Reader of field `E_M2`"]
+pub type E_M2_R = crate::R<bool, E_M2_A>;
+impl E_M2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> E_M2_A {
+        match self.bits {
+            false => E_M2_A::DISABLE,
+            true => E_M2_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == E_M2R::DISABLE
+        *self == E_M2_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == E_M2R::ENABLE
+        *self == E_M2_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `E_M2`"]
+pub struct E_M2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> E_M2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: E_M2_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Ringo is disabled."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(E_M2_A::DISABLE)
+    }
+    #[doc = "Ringo is enabled."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(E_M2_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
     }
 }
 #[doc = "Possible values of the field `E_M3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum E_M3R {
+pub enum E_M3_A {
     #[doc = "Ringo is disabled."]
     DISABLE,
     #[doc = "Ringo is enabled."]
     ENABLE,
 }
-impl E_M3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            E_M3R::DISABLE => false,
-            E_M3R::ENABLE => true,
+impl From<E_M3_A> for bool {
+    #[inline(always)]
+    fn from(variant: E_M3_A) -> Self {
+        match variant {
+            E_M3_A::DISABLE => false,
+            E_M3_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> E_M3R {
-        match value {
-            false => E_M3R::DISABLE,
-            true => E_M3R::ENABLE,
+}
+#[doc = "Reader of field `E_M3`"]
+pub type E_M3_R = crate::R<bool, E_M3_A>;
+impl E_M3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> E_M3_A {
+        match self.bits {
+            false => E_M3_A::DISABLE,
+            true => E_M3_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == E_M3R::DISABLE
+        *self == E_M3_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == E_M3R::ENABLE
+        *self == E_M3_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `E_M3`"]
+pub struct E_M3_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> E_M3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: E_M3_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Ringo is disabled."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(E_M3_A::DISABLE)
+    }
+    #[doc = "Ringo is enabled."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(E_M3_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w
     }
 }
 #[doc = "Possible values of the field `E_M4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum E_M4R {
+pub enum E_M4_A {
     #[doc = "Ringo is disabled."]
     DISABLE,
     #[doc = "Ringo is enabled."]
     ENABLE,
 }
-impl E_M4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            E_M4R::DISABLE => false,
-            E_M4R::ENABLE => true,
+impl From<E_M4_A> for bool {
+    #[inline(always)]
+    fn from(variant: E_M4_A) -> Self {
+        match variant {
+            E_M4_A::DISABLE => false,
+            E_M4_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> E_M4R {
-        match value {
-            false => E_M4R::DISABLE,
-            true => E_M4R::ENABLE,
+}
+#[doc = "Reader of field `E_M4`"]
+pub type E_M4_R = crate::R<bool, E_M4_A>;
+impl E_M4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> E_M4_A {
+        match self.bits {
+            false => E_M4_A::DISABLE,
+            true => E_M4_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == E_M4R::DISABLE
+        *self == E_M4_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == E_M4R::ENABLE
+        *self == E_M4_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `E_M4`"]
+pub struct E_M4_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> E_M4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: E_M4_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Ringo is disabled."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(E_M4_A::DISABLE)
+    }
+    #[doc = "Ringo is enabled."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(E_M4_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w
     }
 }
 #[doc = "Possible values of the field `E_M5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum E_M5R {
+pub enum E_M5_A {
     #[doc = "Ringo is disabled."]
     DISABLE,
     #[doc = "Ringo is enabled."]
     ENABLE,
 }
-impl E_M5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            E_M5R::DISABLE => false,
-            E_M5R::ENABLE => true,
+impl From<E_M5_A> for bool {
+    #[inline(always)]
+    fn from(variant: E_M5_A) -> Self {
+        match variant {
+            E_M5_A::DISABLE => false,
+            E_M5_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> E_M5R {
-        match value {
-            false => E_M5R::DISABLE,
-            true => E_M5R::ENABLE,
+}
+#[doc = "Reader of field `E_M5`"]
+pub type E_M5_R = crate::R<bool, E_M5_A>;
+impl E_M5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> E_M5_A {
+        match self.bits {
+            false => E_M5_A::DISABLE,
+            true => E_M5_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == E_M5R::DISABLE
+        *self == E_M5_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == E_M5R::ENABLE
+        *self == E_M5_A::ENABLE
     }
 }
-#[doc = r" Value of the field"]
-pub struct DIVISORR {
-    bits: u8,
-}
-impl DIVISORR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DIV_UPDATE_REQR {
-    bits: bool,
-}
-impl DIV_UPDATE_REQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `S`"]
-pub enum SW {
-    #[doc = "Select short ringo (few elements)."]
-    SHORT,
-    #[doc = "Select long ringo (many elements)."]
-    LONG,
-}
-impl SW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SW::SHORT => false,
-            SW::LONG => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SW<'a> {
+#[doc = "Write proxy for field `E_M5`"]
+pub struct E_M5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SW) -> &'a mut W {
+impl<'a> E_M5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: E_M5_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Select short ringo (few elements)."]
-    #[inline]
-    pub fn short(self) -> &'a mut W {
-        self.variant(SW::SHORT)
-    }
-    #[doc = "Select long ringo (many elements)."]
-    #[inline]
-    pub fn long(self) -> &'a mut W {
-        self.variant(SW::LONG)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FS`"]
-pub enum FSW {
-    #[doc = "High frequency output (frequency lower than 100 MHz)."]
-    FAST,
-    #[doc = "Low frequency output (frequency lower than 10 MHz)."]
-    SLOW,
-}
-impl FSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FSW::FAST => false,
-            FSW::SLOW => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FSW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FSW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "High frequency output (frequency lower than 100 MHz)."]
-    #[inline]
-    pub fn fast(self) -> &'a mut W {
-        self.variant(FSW::FAST)
-    }
-    #[doc = "Low frequency output (frequency lower than 10 MHz)."]
-    #[inline]
-    pub fn slow(self) -> &'a mut W {
-        self.variant(FSW::SLOW)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PD`"]
-pub enum PDW {
-    #[doc = "The Ringo module is enabled."]
-    POWERED_ON,
-    #[doc = "The Ringo module is disabled."]
-    POWERED_DOWN,
-}
-impl PDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDW::POWERED_ON => false,
-            PDW::POWERED_DOWN => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The Ringo module is enabled."]
-    #[inline]
-    pub fn powered_on(self) -> &'a mut W {
-        self.variant(PDW::POWERED_ON)
-    }
-    #[doc = "The Ringo module is disabled."]
-    #[inline]
-    pub fn powered_down(self) -> &'a mut W {
-        self.variant(PDW::POWERED_DOWN)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `E_R24`"]
-pub enum E_R24W {
-    #[doc = "Ringo is disabled."]
-    DISABLE,
-    #[doc = "Ringo is enabled."]
-    ENABLE,
-}
-impl E_R24W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            E_R24W::DISABLE => false,
-            E_R24W::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _E_R24W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _E_R24W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: E_R24W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Ringo is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(E_R24W::DISABLE)
+        self.variant(E_M5_A::DISABLE)
     }
     #[doc = "Ringo is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(E_R24W::ENABLE)
+        self.variant(E_M5_A::ENABLE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `E_R35`"]
-pub enum E_R35W {
-    #[doc = "Ringo is disabled."]
-    DISABLE,
-    #[doc = "Ringo is enabled."]
-    ENABLE,
-}
-impl E_R35W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            E_R35W::DISABLE => false,
-            E_R35W::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _E_R35W<'a> {
+#[doc = "Reader of field `DIVISOR`"]
+pub type DIVISOR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DIVISOR`"]
+pub struct DIVISOR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _E_R35W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: E_R35W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Ringo is disabled."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(E_R35W::DISABLE)
-    }
-    #[doc = "Ringo is enabled."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(E_R35W::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `E_M2`"]
-pub enum E_M2W {
-    #[doc = "Ringo is disabled."]
-    DISABLE,
-    #[doc = "Ringo is enabled."]
-    ENABLE,
-}
-impl E_M2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            E_M2W::DISABLE => false,
-            E_M2W::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _E_M2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _E_M2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: E_M2W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Ringo is disabled."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(E_M2W::DISABLE)
-    }
-    #[doc = "Ringo is enabled."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(E_M2W::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `E_M3`"]
-pub enum E_M3W {
-    #[doc = "Ringo is disabled."]
-    DISABLE,
-    #[doc = "Ringo is enabled."]
-    ENABLE,
-}
-impl E_M3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            E_M3W::DISABLE => false,
-            E_M3W::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _E_M3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _E_M3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: E_M3W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Ringo is disabled."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(E_M3W::DISABLE)
-    }
-    #[doc = "Ringo is enabled."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(E_M3W::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `E_M4`"]
-pub enum E_M4W {
-    #[doc = "Ringo is disabled."]
-    DISABLE,
-    #[doc = "Ringo is enabled."]
-    ENABLE,
-}
-impl E_M4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            E_M4W::DISABLE => false,
-            E_M4W::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _E_M4W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _E_M4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: E_M4W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Ringo is disabled."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(E_M4W::DISABLE)
-    }
-    #[doc = "Ringo is enabled."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(E_M4W::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `E_M5`"]
-pub enum E_M5W {
-    #[doc = "Ringo is disabled."]
-    DISABLE,
-    #[doc = "Ringo is enabled."]
-    ENABLE,
-}
-impl E_M5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            E_M5W::DISABLE => false,
-            E_M5W::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _E_M5W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _E_M5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: E_M5W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Ringo is disabled."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(E_M5W::DISABLE)
-    }
-    #[doc = "Ringo is enabled."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(E_M5W::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DIVISORW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DIVISORW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DIVISOR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
         self.w
     }
 }
+#[doc = "Reader of field `DIV_UPDATE_REQ`"]
+pub type DIV_UPDATE_REQ_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Select short or long ringo (for all ringos types)."]
-    #[inline]
-    pub fn s(&self) -> SR {
-        SR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn s(&self) -> S_R {
+        S_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Ringo frequency output divider."]
-    #[inline]
-    pub fn fs(&self) -> FSR {
-        FSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn fs(&self) -> FS_R {
+        FS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Ringo module Power control."]
-    #[inline]
-    pub fn pd(&self) -> PDR {
-        PDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pd(&self) -> PD_R {
+        PD_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - ."]
-    #[inline]
-    pub fn e_r24(&self) -> E_R24R {
-        E_R24R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn e_r24(&self) -> E_R24_R {
+        E_R24_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - ."]
-    #[inline]
-    pub fn e_r35(&self) -> E_R35R {
-        E_R35R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn e_r35(&self) -> E_R35_R {
+        E_R35_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Metal 2 (M2) monitor control."]
-    #[inline]
-    pub fn e_m2(&self) -> E_M2R {
-        E_M2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn e_m2(&self) -> E_M2_R {
+        E_M2_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Metal 3 (M3) monitor control."]
-    #[inline]
-    pub fn e_m3(&self) -> E_M3R {
-        E_M3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn e_m3(&self) -> E_M3_R {
+        E_M3_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Metal 4 (M4) monitor control."]
-    #[inline]
-    pub fn e_m4(&self) -> E_M4R {
-        E_M4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn e_m4(&self) -> E_M4_R {
+        E_M4_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Metal 5 (M5) monitor control."]
-    #[inline]
-    pub fn e_m5(&self) -> E_M5R {
-        E_M5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn e_m5(&self) -> E_M5_R {
+        E_M5_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bits 16:19 - Ringo out Clock divider value. Frequency Output = Frequency input / (DIViSOR+1). (minimum = Frequency input / 16)"]
-    #[inline]
-    pub fn divisor(&self) -> DIVISORR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DIVISORR { bits }
+    #[inline(always)]
+    pub fn divisor(&self) -> DIVISOR_R {
+        DIVISOR_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bit 31 - Ringo clock out Divider status flag. Set when a change is made to the divider value, cleared when the change is complete."]
-    #[inline]
-    pub fn div_update_req(&self) -> DIV_UPDATE_REQR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DIV_UPDATE_REQR { bits }
+    #[inline(always)]
+    pub fn div_update_req(&self) -> DIV_UPDATE_REQ_R {
+        DIV_UPDATE_REQ_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 64 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Select short or long ringo (for all ringos types)."]
-    #[inline]
-    pub fn s(&mut self) -> _SW {
-        _SW { w: self }
+    #[inline(always)]
+    pub fn s(&mut self) -> S_W {
+        S_W { w: self }
     }
     #[doc = "Bit 1 - Ringo frequency output divider."]
-    #[inline]
-    pub fn fs(&mut self) -> _FSW {
-        _FSW { w: self }
+    #[inline(always)]
+    pub fn fs(&mut self) -> FS_W {
+        FS_W { w: self }
     }
     #[doc = "Bit 2 - Ringo module Power control."]
-    #[inline]
-    pub fn pd(&mut self) -> _PDW {
-        _PDW { w: self }
+    #[inline(always)]
+    pub fn pd(&mut self) -> PD_W {
+        PD_W { w: self }
     }
     #[doc = "Bit 3 - ."]
-    #[inline]
-    pub fn e_r24(&mut self) -> _E_R24W {
-        _E_R24W { w: self }
+    #[inline(always)]
+    pub fn e_r24(&mut self) -> E_R24_W {
+        E_R24_W { w: self }
     }
     #[doc = "Bit 4 - ."]
-    #[inline]
-    pub fn e_r35(&mut self) -> _E_R35W {
-        _E_R35W { w: self }
+    #[inline(always)]
+    pub fn e_r35(&mut self) -> E_R35_W {
+        E_R35_W { w: self }
     }
     #[doc = "Bit 5 - Metal 2 (M2) monitor control."]
-    #[inline]
-    pub fn e_m2(&mut self) -> _E_M2W {
-        _E_M2W { w: self }
+    #[inline(always)]
+    pub fn e_m2(&mut self) -> E_M2_W {
+        E_M2_W { w: self }
     }
     #[doc = "Bit 6 - Metal 3 (M3) monitor control."]
-    #[inline]
-    pub fn e_m3(&mut self) -> _E_M3W {
-        _E_M3W { w: self }
+    #[inline(always)]
+    pub fn e_m3(&mut self) -> E_M3_W {
+        E_M3_W { w: self }
     }
     #[doc = "Bit 7 - Metal 4 (M4) monitor control."]
-    #[inline]
-    pub fn e_m4(&mut self) -> _E_M4W {
-        _E_M4W { w: self }
+    #[inline(always)]
+    pub fn e_m4(&mut self) -> E_M4_W {
+        E_M4_W { w: self }
     }
     #[doc = "Bit 8 - Metal 5 (M5) monitor control."]
-    #[inline]
-    pub fn e_m5(&mut self) -> _E_M5W {
-        _E_M5W { w: self }
+    #[inline(always)]
+    pub fn e_m5(&mut self) -> E_M5_W {
+        E_M5_W { w: self }
     }
     #[doc = "Bits 16:19 - Ringo out Clock divider value. Frequency Output = Frequency input / (DIViSOR+1). (minimum = Frequency input / 16)"]
-    #[inline]
-    pub fn divisor(&mut self) -> _DIVISORW {
-        _DIVISORW { w: self }
+    #[inline(always)]
+    pub fn divisor(&mut self) -> DIVISOR_W {
+        DIVISOR_W { w: self }
     }
 }

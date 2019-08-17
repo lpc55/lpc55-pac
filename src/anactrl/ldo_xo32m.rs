@@ -1,144 +1,174 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::LDO_XO32M {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register LDO_XO32M"]
+pub type R = crate::R<u32, super::LDO_XO32M>;
+#[doc = "Writer for register LDO_XO32M"]
+pub type W = crate::W<u32, super::LDO_XO32M>;
+#[doc = "Register LDO_XO32M `reset()`'s with value 0x03a0"]
+impl crate::ResetValue for super::LDO_XO32M {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x03a0
     }
 }
 #[doc = "Possible values of the field `BYPASS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BYPASSR {
+pub enum BYPASS_A {
     #[doc = "Disable bypass mode (for normal operations)."]
     DISABLE,
     #[doc = "Activate LDO bypass."]
     ENABLE,
 }
-impl BYPASSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BYPASSR::DISABLE => false,
-            BYPASSR::ENABLE => true,
+impl From<BYPASS_A> for bool {
+    #[inline(always)]
+    fn from(variant: BYPASS_A) -> Self {
+        match variant {
+            BYPASS_A::DISABLE => false,
+            BYPASS_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BYPASSR {
-        match value {
-            false => BYPASSR::DISABLE,
-            true => BYPASSR::ENABLE,
+}
+#[doc = "Reader of field `BYPASS`"]
+pub type BYPASS_R = crate::R<bool, BYPASS_A>;
+impl BYPASS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BYPASS_A {
+        match self.bits {
+            false => BYPASS_A::DISABLE,
+            true => BYPASS_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == BYPASSR::DISABLE
+        *self == BYPASS_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == BYPASSR::ENABLE
+        *self == BYPASS_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `BYPASS`"]
+pub struct BYPASS_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> BYPASS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BYPASS_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Disable bypass mode (for normal operations)."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(BYPASS_A::DISABLE)
+    }
+    #[doc = "Activate LDO bypass."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(BYPASS_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
 #[doc = "Possible values of the field `HIGHZ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HIGHZR {
+pub enum HIGHZ_A {
     #[doc = "Output in High normal state."]
     NORMALMPEDANCE,
     #[doc = "Output in High Impedance state."]
     HIGHIMPEDANCE,
 }
-impl HIGHZR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HIGHZR::NORMALMPEDANCE => false,
-            HIGHZR::HIGHIMPEDANCE => true,
+impl From<HIGHZ_A> for bool {
+    #[inline(always)]
+    fn from(variant: HIGHZ_A) -> Self {
+        match variant {
+            HIGHZ_A::NORMALMPEDANCE => false,
+            HIGHZ_A::HIGHIMPEDANCE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HIGHZR {
-        match value {
-            false => HIGHZR::NORMALMPEDANCE,
-            true => HIGHZR::HIGHIMPEDANCE,
+}
+#[doc = "Reader of field `HIGHZ`"]
+pub type HIGHZ_R = crate::R<bool, HIGHZ_A>;
+impl HIGHZ_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HIGHZ_A {
+        match self.bits {
+            false => HIGHZ_A::NORMALMPEDANCE,
+            true => HIGHZ_A::HIGHIMPEDANCE,
         }
     }
     #[doc = "Checks if the value of the field is `NORMALMPEDANCE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_normalmpedance(&self) -> bool {
-        *self == HIGHZR::NORMALMPEDANCE
+        *self == HIGHZ_A::NORMALMPEDANCE
     }
     #[doc = "Checks if the value of the field is `HIGHIMPEDANCE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_highimpedance(&self) -> bool {
-        *self == HIGHZR::HIGHIMPEDANCE
+        *self == HIGHZ_A::HIGHIMPEDANCE
+    }
+}
+#[doc = "Write proxy for field `HIGHZ`"]
+pub struct HIGHZ_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> HIGHZ_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HIGHZ_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Output in High normal state."]
+    #[inline(always)]
+    pub fn normalmpedance(self) -> &'a mut W {
+        self.variant(HIGHZ_A::NORMALMPEDANCE)
+    }
+    #[doc = "Output in High Impedance state."]
+    #[inline(always)]
+    pub fn highimpedance(self) -> &'a mut W {
+        self.variant(HIGHZ_A::HIGHIMPEDANCE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `VOUT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VOUTR {
+pub enum VOUT_A {
     #[doc = "0.750 V."]
     V_0P750,
     #[doc = "0.775 V."]
@@ -156,433 +186,218 @@ pub enum VOUTR {
     #[doc = "0.925 V."]
     V_0P925,
 }
-impl VOUTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            VOUTR::V_0P750 => 0,
-            VOUTR::V_0P775 => 1,
-            VOUTR::V_0P800 => 2,
-            VOUTR::V_0P825 => 3,
-            VOUTR::V_0P850 => 4,
-            VOUTR::V_0P875 => 5,
-            VOUTR::V_0P900 => 6,
-            VOUTR::V_0P925 => 7,
+impl From<VOUT_A> for u8 {
+    #[inline(always)]
+    fn from(variant: VOUT_A) -> Self {
+        match variant {
+            VOUT_A::V_0P750 => 0,
+            VOUT_A::V_0P775 => 1,
+            VOUT_A::V_0P800 => 2,
+            VOUT_A::V_0P825 => 3,
+            VOUT_A::V_0P850 => 4,
+            VOUT_A::V_0P875 => 5,
+            VOUT_A::V_0P900 => 6,
+            VOUT_A::V_0P925 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> VOUTR {
-        match value {
-            0 => VOUTR::V_0P750,
-            1 => VOUTR::V_0P775,
-            2 => VOUTR::V_0P800,
-            3 => VOUTR::V_0P825,
-            4 => VOUTR::V_0P850,
-            5 => VOUTR::V_0P875,
-            6 => VOUTR::V_0P900,
-            7 => VOUTR::V_0P925,
+}
+#[doc = "Reader of field `VOUT`"]
+pub type VOUT_R = crate::R<u8, VOUT_A>;
+impl VOUT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VOUT_A {
+        match self.bits {
+            0 => VOUT_A::V_0P750,
+            1 => VOUT_A::V_0P775,
+            2 => VOUT_A::V_0P800,
+            3 => VOUT_A::V_0P825,
+            4 => VOUT_A::V_0P850,
+            5 => VOUT_A::V_0P875,
+            6 => VOUT_A::V_0P900,
+            7 => VOUT_A::V_0P925,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `V_0P750`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_v_0p750(&self) -> bool {
-        *self == VOUTR::V_0P750
+        *self == VOUT_A::V_0P750
     }
     #[doc = "Checks if the value of the field is `V_0P775`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_v_0p775(&self) -> bool {
-        *self == VOUTR::V_0P775
+        *self == VOUT_A::V_0P775
     }
     #[doc = "Checks if the value of the field is `V_0P800`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_v_0p800(&self) -> bool {
-        *self == VOUTR::V_0P800
+        *self == VOUT_A::V_0P800
     }
     #[doc = "Checks if the value of the field is `V_0P825`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_v_0p825(&self) -> bool {
-        *self == VOUTR::V_0P825
+        *self == VOUT_A::V_0P825
     }
     #[doc = "Checks if the value of the field is `V_0P850`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_v_0p850(&self) -> bool {
-        *self == VOUTR::V_0P850
+        *self == VOUT_A::V_0P850
     }
     #[doc = "Checks if the value of the field is `V_0P875`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_v_0p875(&self) -> bool {
-        *self == VOUTR::V_0P875
+        *self == VOUT_A::V_0P875
     }
     #[doc = "Checks if the value of the field is `V_0P900`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_v_0p900(&self) -> bool {
-        *self == VOUTR::V_0P900
+        *self == VOUT_A::V_0P900
     }
     #[doc = "Checks if the value of the field is `V_0P925`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_v_0p925(&self) -> bool {
-        *self == VOUTR::V_0P925
+        *self == VOUT_A::V_0P925
     }
 }
-#[doc = r" Value of the field"]
-pub struct IBIASR {
-    bits: u8,
-}
-impl IBIASR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct STABMODER {
-    bits: u8,
-}
-impl STABMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `BYPASS`"]
-pub enum BYPASSW {
-    #[doc = "Disable bypass mode (for normal operations)."]
-    DISABLE,
-    #[doc = "Activate LDO bypass."]
-    ENABLE,
-}
-impl BYPASSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BYPASSW::DISABLE => false,
-            BYPASSW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BYPASSW<'a> {
+#[doc = "Write proxy for field `VOUT`"]
+pub struct VOUT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BYPASSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BYPASSW) -> &'a mut W {
+impl<'a> VOUT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: VOUT_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disable bypass mode (for normal operations)."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(BYPASSW::DISABLE)
-    }
-    #[doc = "Activate LDO bypass."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(BYPASSW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `HIGHZ`"]
-pub enum HIGHZW {
-    #[doc = "Output in High normal state."]
-    NORMALMPEDANCE,
-    #[doc = "Output in High Impedance state."]
-    HIGHIMPEDANCE,
-}
-impl HIGHZW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HIGHZW::NORMALMPEDANCE => false,
-            HIGHZW::HIGHIMPEDANCE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HIGHZW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HIGHZW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HIGHZW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Output in High normal state."]
-    #[inline]
-    pub fn normalmpedance(self) -> &'a mut W {
-        self.variant(HIGHZW::NORMALMPEDANCE)
-    }
-    #[doc = "Output in High Impedance state."]
-    #[inline]
-    pub fn highimpedance(self) -> &'a mut W {
-        self.variant(HIGHZW::HIGHIMPEDANCE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `VOUT`"]
-pub enum VOUTW {
-    #[doc = "0.750 V."]
-    V_0P750,
-    #[doc = "0.775 V."]
-    V_0P775,
-    #[doc = "0.800 V."]
-    V_0P800,
-    #[doc = "0.825 V."]
-    V_0P825,
-    #[doc = "0.850 V."]
-    V_0P850,
-    #[doc = "0.875 V."]
-    V_0P875,
-    #[doc = "0.900 V."]
-    V_0P900,
-    #[doc = "0.925 V."]
-    V_0P925,
-}
-impl VOUTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            VOUTW::V_0P750 => 0,
-            VOUTW::V_0P775 => 1,
-            VOUTW::V_0P800 => 2,
-            VOUTW::V_0P825 => 3,
-            VOUTW::V_0P850 => 4,
-            VOUTW::V_0P875 => 5,
-            VOUTW::V_0P900 => 6,
-            VOUTW::V_0P925 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _VOUTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _VOUTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: VOUTW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "0.750 V."]
-    #[inline]
+    #[inline(always)]
     pub fn v_0p750(self) -> &'a mut W {
-        self.variant(VOUTW::V_0P750)
+        self.variant(VOUT_A::V_0P750)
     }
     #[doc = "0.775 V."]
-    #[inline]
+    #[inline(always)]
     pub fn v_0p775(self) -> &'a mut W {
-        self.variant(VOUTW::V_0P775)
+        self.variant(VOUT_A::V_0P775)
     }
     #[doc = "0.800 V."]
-    #[inline]
+    #[inline(always)]
     pub fn v_0p800(self) -> &'a mut W {
-        self.variant(VOUTW::V_0P800)
+        self.variant(VOUT_A::V_0P800)
     }
     #[doc = "0.825 V."]
-    #[inline]
+    #[inline(always)]
     pub fn v_0p825(self) -> &'a mut W {
-        self.variant(VOUTW::V_0P825)
+        self.variant(VOUT_A::V_0P825)
     }
     #[doc = "0.850 V."]
-    #[inline]
+    #[inline(always)]
     pub fn v_0p850(self) -> &'a mut W {
-        self.variant(VOUTW::V_0P850)
+        self.variant(VOUT_A::V_0P850)
     }
     #[doc = "0.875 V."]
-    #[inline]
+    #[inline(always)]
     pub fn v_0p875(self) -> &'a mut W {
-        self.variant(VOUTW::V_0P875)
+        self.variant(VOUT_A::V_0P875)
     }
     #[doc = "0.900 V."]
-    #[inline]
+    #[inline(always)]
     pub fn v_0p900(self) -> &'a mut W {
-        self.variant(VOUTW::V_0P900)
+        self.variant(VOUT_A::V_0P900)
     }
     #[doc = "0.925 V."]
-    #[inline]
+    #[inline(always)]
     pub fn v_0p925(self) -> &'a mut W {
-        self.variant(VOUTW::V_0P925)
+        self.variant(VOUT_A::V_0P925)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 3)) | (((value as u32) & 0x07) << 3);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _IBIASW<'a> {
+#[doc = "Reader of field `IBIAS`"]
+pub type IBIAS_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `IBIAS`"]
+pub struct IBIAS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IBIASW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> IBIAS_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _STABMODEW<'a> {
+#[doc = "Reader of field `STABMODE`"]
+pub type STABMODE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `STABMODE`"]
+pub struct STABMODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _STABMODEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> STABMODE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 1 - Activate LDO bypass."]
-    #[inline]
-    pub fn bypass(&self) -> BYPASSR {
-        BYPASSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bypass(&self) -> BYPASS_R {
+        BYPASS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - ."]
-    #[inline]
-    pub fn highz(&self) -> HIGHZR {
-        HIGHZR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn highz(&self) -> HIGHZ_R {
+        HIGHZ_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bits 3:5 - Sets the LDO output level."]
-    #[inline]
-    pub fn vout(&self) -> VOUTR {
-        VOUTR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn vout(&self) -> VOUT_R {
+        VOUT_R::new(((self.bits >> 3) & 0x07) as u8)
     }
     #[doc = "Bits 6:7 - Adjust the biasing current."]
-    #[inline]
-    pub fn ibias(&self) -> IBIASR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        IBIASR { bits }
+    #[inline(always)]
+    pub fn ibias(&self) -> IBIAS_R {
+        IBIAS_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bits 8:9 - Stability configuration."]
-    #[inline]
-    pub fn stabmode(&self) -> STABMODER {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        STABMODER { bits }
+    #[inline(always)]
+    pub fn stabmode(&self) -> STABMODE_R {
+        STABMODE_R::new(((self.bits >> 8) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 928 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 1 - Activate LDO bypass."]
-    #[inline]
-    pub fn bypass(&mut self) -> _BYPASSW {
-        _BYPASSW { w: self }
+    #[inline(always)]
+    pub fn bypass(&mut self) -> BYPASS_W {
+        BYPASS_W { w: self }
     }
     #[doc = "Bit 2 - ."]
-    #[inline]
-    pub fn highz(&mut self) -> _HIGHZW {
-        _HIGHZW { w: self }
+    #[inline(always)]
+    pub fn highz(&mut self) -> HIGHZ_W {
+        HIGHZ_W { w: self }
     }
     #[doc = "Bits 3:5 - Sets the LDO output level."]
-    #[inline]
-    pub fn vout(&mut self) -> _VOUTW {
-        _VOUTW { w: self }
+    #[inline(always)]
+    pub fn vout(&mut self) -> VOUT_W {
+        VOUT_W { w: self }
     }
     #[doc = "Bits 6:7 - Adjust the biasing current."]
-    #[inline]
-    pub fn ibias(&mut self) -> _IBIASW {
-        _IBIASW { w: self }
+    #[inline(always)]
+    pub fn ibias(&mut self) -> IBIAS_W {
+        IBIAS_W { w: self }
     }
     #[doc = "Bits 8:9 - Stability configuration."]
-    #[inline]
-    pub fn stabmode(&mut self) -> _STABMODEW {
-        _STABMODEW { w: self }
+    #[inline(always)]
+    pub fn stabmode(&mut self) -> STABMODE_W {
+        STABMODE_W { w: self }
     }
 }

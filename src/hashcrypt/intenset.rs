@@ -1,421 +1,280 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::INTENSET {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register INTENSET"]
+pub type R = crate::R<u32, super::INTENSET>;
+#[doc = "Writer for register INTENSET"]
+pub type W = crate::W<u32, super::INTENSET>;
+#[doc = "Register INTENSET `reset()`'s with value 0"]
+impl crate::ResetValue for super::INTENSET {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `WAITING`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WAITINGR {
+pub enum WAITING_A {
     #[doc = "Will not interrupt when waiting."]
     NO_INTERRUPT,
     #[doc = "Will interrupt when waiting"]
     INTERRUPT,
 }
-impl WAITINGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WAITINGR::NO_INTERRUPT => false,
-            WAITINGR::INTERRUPT => true,
+impl From<WAITING_A> for bool {
+    #[inline(always)]
+    fn from(variant: WAITING_A) -> Self {
+        match variant {
+            WAITING_A::NO_INTERRUPT => false,
+            WAITING_A::INTERRUPT => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WAITINGR {
-        match value {
-            false => WAITINGR::NO_INTERRUPT,
-            true => WAITINGR::INTERRUPT,
+}
+#[doc = "Reader of field `WAITING`"]
+pub type WAITING_R = crate::R<bool, WAITING_A>;
+impl WAITING_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WAITING_A {
+        match self.bits {
+            false => WAITING_A::NO_INTERRUPT,
+            true => WAITING_A::INTERRUPT,
         }
     }
     #[doc = "Checks if the value of the field is `NO_INTERRUPT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_no_interrupt(&self) -> bool {
-        *self == WAITINGR::NO_INTERRUPT
+        *self == WAITING_A::NO_INTERRUPT
     }
     #[doc = "Checks if the value of the field is `INTERRUPT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_interrupt(&self) -> bool {
-        *self == WAITINGR::INTERRUPT
+        *self == WAITING_A::INTERRUPT
+    }
+}
+#[doc = "Write proxy for field `WAITING`"]
+pub struct WAITING_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> WAITING_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WAITING_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Will not interrupt when waiting."]
+    #[inline(always)]
+    pub fn no_interrupt(self) -> &'a mut W {
+        self.variant(WAITING_A::NO_INTERRUPT)
+    }
+    #[doc = "Will interrupt when waiting"]
+    #[inline(always)]
+    pub fn interrupt(self) -> &'a mut W {
+        self.variant(WAITING_A::INTERRUPT)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
 #[doc = "Possible values of the field `DIGEST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DIGESTR {
+pub enum DIGEST_A {
     #[doc = "Will not interrupt when Digest is ready"]
     NO_INTERRUPT,
     #[doc = "Will interrupt when Digest is ready. Interrupt cleared by writing more data, starting a new Hash, or disabling (done)."]
     INTERRUPT,
 }
-impl DIGESTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DIGESTR::NO_INTERRUPT => false,
-            DIGESTR::INTERRUPT => true,
+impl From<DIGEST_A> for bool {
+    #[inline(always)]
+    fn from(variant: DIGEST_A) -> Self {
+        match variant {
+            DIGEST_A::NO_INTERRUPT => false,
+            DIGEST_A::INTERRUPT => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DIGESTR {
-        match value {
-            false => DIGESTR::NO_INTERRUPT,
-            true => DIGESTR::INTERRUPT,
+}
+#[doc = "Reader of field `DIGEST`"]
+pub type DIGEST_R = crate::R<bool, DIGEST_A>;
+impl DIGEST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DIGEST_A {
+        match self.bits {
+            false => DIGEST_A::NO_INTERRUPT,
+            true => DIGEST_A::INTERRUPT,
         }
     }
     #[doc = "Checks if the value of the field is `NO_INTERRUPT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_no_interrupt(&self) -> bool {
-        *self == DIGESTR::NO_INTERRUPT
+        *self == DIGEST_A::NO_INTERRUPT
     }
     #[doc = "Checks if the value of the field is `INTERRUPT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_interrupt(&self) -> bool {
-        *self == DIGESTR::INTERRUPT
+        *self == DIGEST_A::INTERRUPT
+    }
+}
+#[doc = "Write proxy for field `DIGEST`"]
+pub struct DIGEST_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DIGEST_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DIGEST_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Will not interrupt when Digest is ready"]
+    #[inline(always)]
+    pub fn no_interrupt(self) -> &'a mut W {
+        self.variant(DIGEST_A::NO_INTERRUPT)
+    }
+    #[doc = "Will interrupt when Digest is ready. Interrupt cleared by writing more data, starting a new Hash, or disabling (done)."]
+    #[inline(always)]
+    pub fn interrupt(self) -> &'a mut W {
+        self.variant(DIGEST_A::INTERRUPT)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
 #[doc = "Possible values of the field `ERROR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ERRORR {
+pub enum ERROR_A {
     #[doc = "Will not interrupt on Error."]
     NOT_INTERRUPT,
     #[doc = "Will interrupt on Error (until cleared)."]
     INTERRUPT,
 }
-impl ERRORR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ERRORR::NOT_INTERRUPT => false,
-            ERRORR::INTERRUPT => true,
+impl From<ERROR_A> for bool {
+    #[inline(always)]
+    fn from(variant: ERROR_A) -> Self {
+        match variant {
+            ERROR_A::NOT_INTERRUPT => false,
+            ERROR_A::INTERRUPT => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ERRORR {
-        match value {
-            false => ERRORR::NOT_INTERRUPT,
-            true => ERRORR::INTERRUPT,
+}
+#[doc = "Reader of field `ERROR`"]
+pub type ERROR_R = crate::R<bool, ERROR_A>;
+impl ERROR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ERROR_A {
+        match self.bits {
+            false => ERROR_A::NOT_INTERRUPT,
+            true => ERROR_A::INTERRUPT,
         }
     }
     #[doc = "Checks if the value of the field is `NOT_INTERRUPT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_not_interrupt(&self) -> bool {
-        *self == ERRORR::NOT_INTERRUPT
+        *self == ERROR_A::NOT_INTERRUPT
     }
     #[doc = "Checks if the value of the field is `INTERRUPT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_interrupt(&self) -> bool {
-        *self == ERRORR::INTERRUPT
+        *self == ERROR_A::INTERRUPT
     }
 }
-#[doc = "Values that can be written to the field `WAITING`"]
-pub enum WAITINGW {
-    #[doc = "Will not interrupt when waiting."]
-    NO_INTERRUPT,
-    #[doc = "Will interrupt when waiting"]
-    INTERRUPT,
-}
-impl WAITINGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WAITINGW::NO_INTERRUPT => false,
-            WAITINGW::INTERRUPT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WAITINGW<'a> {
+#[doc = "Write proxy for field `ERROR`"]
+pub struct ERROR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WAITINGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WAITINGW) -> &'a mut W {
+impl<'a> ERROR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ERROR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Will not interrupt when waiting."]
-    #[inline]
-    pub fn no_interrupt(self) -> &'a mut W {
-        self.variant(WAITINGW::NO_INTERRUPT)
-    }
-    #[doc = "Will interrupt when waiting"]
-    #[inline]
-    pub fn interrupt(self) -> &'a mut W {
-        self.variant(WAITINGW::INTERRUPT)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DIGEST`"]
-pub enum DIGESTW {
-    #[doc = "Will not interrupt when Digest is ready"]
-    NO_INTERRUPT,
-    #[doc = "Will interrupt when Digest is ready. Interrupt cleared by writing more data, starting a new Hash, or disabling (done)."]
-    INTERRUPT,
-}
-impl DIGESTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DIGESTW::NO_INTERRUPT => false,
-            DIGESTW::INTERRUPT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DIGESTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DIGESTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DIGESTW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Will not interrupt when Digest is ready"]
-    #[inline]
-    pub fn no_interrupt(self) -> &'a mut W {
-        self.variant(DIGESTW::NO_INTERRUPT)
-    }
-    #[doc = "Will interrupt when Digest is ready. Interrupt cleared by writing more data, starting a new Hash, or disabling (done)."]
-    #[inline]
-    pub fn interrupt(self) -> &'a mut W {
-        self.variant(DIGESTW::INTERRUPT)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ERROR`"]
-pub enum ERRORW {
-    #[doc = "Will not interrupt on Error."]
-    NOT_INTERRUPT,
-    #[doc = "Will interrupt on Error (until cleared)."]
-    INTERRUPT,
-}
-impl ERRORW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ERRORW::NOT_INTERRUPT => false,
-            ERRORW::INTERRUPT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ERRORW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ERRORW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ERRORW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Will not interrupt on Error."]
-    #[inline]
+    #[inline(always)]
     pub fn not_interrupt(self) -> &'a mut W {
-        self.variant(ERRORW::NOT_INTERRUPT)
+        self.variant(ERROR_A::NOT_INTERRUPT)
     }
     #[doc = "Will interrupt on Error (until cleared)."]
-    #[inline]
+    #[inline(always)]
     pub fn interrupt(self) -> &'a mut W {
-        self.variant(ERRORW::INTERRUPT)
+        self.variant(ERROR_A::INTERRUPT)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Indicates if should interrupt when waiting for data input."]
-    #[inline]
-    pub fn waiting(&self) -> WAITINGR {
-        WAITINGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn waiting(&self) -> WAITING_R {
+        WAITING_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Indicates if should interrupt when Digest (or Outdata) is ready (completed a hash/crypto or completed a full sequence)."]
-    #[inline]
-    pub fn digest(&self) -> DIGESTR {
-        DIGESTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn digest(&self) -> DIGEST_R {
+        DIGEST_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Indicates if should interrupt on an ERROR (as defined in Status)"]
-    #[inline]
-    pub fn error(&self) -> ERRORR {
-        ERRORR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn error(&self) -> ERROR_R {
+        ERROR_R::new(((self.bits >> 2) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Indicates if should interrupt when waiting for data input."]
-    #[inline]
-    pub fn waiting(&mut self) -> _WAITINGW {
-        _WAITINGW { w: self }
+    #[inline(always)]
+    pub fn waiting(&mut self) -> WAITING_W {
+        WAITING_W { w: self }
     }
     #[doc = "Bit 1 - Indicates if should interrupt when Digest (or Outdata) is ready (completed a hash/crypto or completed a full sequence)."]
-    #[inline]
-    pub fn digest(&mut self) -> _DIGESTW {
-        _DIGESTW { w: self }
+    #[inline(always)]
+    pub fn digest(&mut self) -> DIGEST_W {
+        DIGEST_W { w: self }
     }
     #[doc = "Bit 2 - Indicates if should interrupt on an ERROR (as defined in Status)"]
-    #[inline]
-    pub fn error(&mut self) -> _ERRORW {
-        _ERRORW { w: self }
+    #[inline(always)]
+    pub fn error(&mut self) -> ERROR_W {
+        ERROR_W { w: self }
     }
 }

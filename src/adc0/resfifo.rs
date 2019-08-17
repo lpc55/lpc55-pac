@@ -1,30 +1,10 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::RESFIFO {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DR {
-    bits: u16,
-}
-impl DR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
+#[doc = "Reader of register RESFIFO[%s]"]
+pub type R = crate::R<u32, super::RESFIFO>;
+#[doc = "Reader of field `D`"]
+pub type D_R = crate::R<u16, u16>;
 #[doc = "Possible values of the field `TSRC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TSRCR {
+pub enum TSRC_A {
     #[doc = "Trigger source 0 initiated this conversion."]
     TSRC_0,
     #[doc = "Trigger source 1 initiated this conversion."]
@@ -47,106 +27,106 @@ pub enum TSRCR {
     TSRC_9,
     #[doc = "Trigger source 15 initiated this conversion."]
     TSRC_15,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl TSRCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            TSRCR::TSRC_0 => 0,
-            TSRCR::TSRC_1 => 1,
-            TSRCR::TSRC_2 => 2,
-            TSRCR::TSRC_3 => 3,
-            TSRCR::TSRC_4 => 4,
-            TSRCR::TSRC_5 => 5,
-            TSRCR::TSRC_6 => 6,
-            TSRCR::TSRC_7 => 7,
-            TSRCR::TSRC_8 => 8,
-            TSRCR::TSRC_9 => 9,
-            TSRCR::TSRC_15 => 15,
-            TSRCR::_Reserved(bits) => bits,
+impl From<TSRC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: TSRC_A) -> Self {
+        match variant {
+            TSRC_A::TSRC_0 => 0,
+            TSRC_A::TSRC_1 => 1,
+            TSRC_A::TSRC_2 => 2,
+            TSRC_A::TSRC_3 => 3,
+            TSRC_A::TSRC_4 => 4,
+            TSRC_A::TSRC_5 => 5,
+            TSRC_A::TSRC_6 => 6,
+            TSRC_A::TSRC_7 => 7,
+            TSRC_A::TSRC_8 => 8,
+            TSRC_A::TSRC_9 => 9,
+            TSRC_A::TSRC_15 => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> TSRCR {
-        match value {
-            0 => TSRCR::TSRC_0,
-            1 => TSRCR::TSRC_1,
-            2 => TSRCR::TSRC_2,
-            3 => TSRCR::TSRC_3,
-            4 => TSRCR::TSRC_4,
-            5 => TSRCR::TSRC_5,
-            6 => TSRCR::TSRC_6,
-            7 => TSRCR::TSRC_7,
-            8 => TSRCR::TSRC_8,
-            9 => TSRCR::TSRC_9,
-            15 => TSRCR::TSRC_15,
-            i => TSRCR::_Reserved(i),
+}
+#[doc = "Reader of field `TSRC`"]
+pub type TSRC_R = crate::R<u8, TSRC_A>;
+impl TSRC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, TSRC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(TSRC_A::TSRC_0),
+            1 => Val(TSRC_A::TSRC_1),
+            2 => Val(TSRC_A::TSRC_2),
+            3 => Val(TSRC_A::TSRC_3),
+            4 => Val(TSRC_A::TSRC_4),
+            5 => Val(TSRC_A::TSRC_5),
+            6 => Val(TSRC_A::TSRC_6),
+            7 => Val(TSRC_A::TSRC_7),
+            8 => Val(TSRC_A::TSRC_8),
+            9 => Val(TSRC_A::TSRC_9),
+            15 => Val(TSRC_A::TSRC_15),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `TSRC_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tsrc_0(&self) -> bool {
-        *self == TSRCR::TSRC_0
+        *self == TSRC_A::TSRC_0
     }
     #[doc = "Checks if the value of the field is `TSRC_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tsrc_1(&self) -> bool {
-        *self == TSRCR::TSRC_1
+        *self == TSRC_A::TSRC_1
     }
     #[doc = "Checks if the value of the field is `TSRC_2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tsrc_2(&self) -> bool {
-        *self == TSRCR::TSRC_2
+        *self == TSRC_A::TSRC_2
     }
     #[doc = "Checks if the value of the field is `TSRC_3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tsrc_3(&self) -> bool {
-        *self == TSRCR::TSRC_3
+        *self == TSRC_A::TSRC_3
     }
     #[doc = "Checks if the value of the field is `TSRC_4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tsrc_4(&self) -> bool {
-        *self == TSRCR::TSRC_4
+        *self == TSRC_A::TSRC_4
     }
     #[doc = "Checks if the value of the field is `TSRC_5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tsrc_5(&self) -> bool {
-        *self == TSRCR::TSRC_5
+        *self == TSRC_A::TSRC_5
     }
     #[doc = "Checks if the value of the field is `TSRC_6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tsrc_6(&self) -> bool {
-        *self == TSRCR::TSRC_6
+        *self == TSRC_A::TSRC_6
     }
     #[doc = "Checks if the value of the field is `TSRC_7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tsrc_7(&self) -> bool {
-        *self == TSRCR::TSRC_7
+        *self == TSRC_A::TSRC_7
     }
     #[doc = "Checks if the value of the field is `TSRC_8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tsrc_8(&self) -> bool {
-        *self == TSRCR::TSRC_8
+        *self == TSRC_A::TSRC_8
     }
     #[doc = "Checks if the value of the field is `TSRC_9`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tsrc_9(&self) -> bool {
-        *self == TSRCR::TSRC_9
+        *self == TSRC_A::TSRC_9
     }
     #[doc = "Checks if the value of the field is `TSRC_15`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tsrc_15(&self) -> bool {
-        *self == TSRCR::TSRC_15
+        *self == TSRC_A::TSRC_15
     }
 }
 #[doc = "Possible values of the field `LOOPCNT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOOPCNTR {
+pub enum LOOPCNT_A {
     #[doc = "Result is from initial conversion in command."]
     LOOPCNT_0,
     #[doc = "Result is from second conversion in command."]
@@ -169,106 +149,106 @@ pub enum LOOPCNTR {
     LOOPCNT_9,
     #[doc = "Result is from 16th conversion in command."]
     LOOPCNT_15,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl LOOPCNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LOOPCNTR::LOOPCNT_0 => 0,
-            LOOPCNTR::LOOPCNT_1 => 1,
-            LOOPCNTR::LOOPCNT_2 => 2,
-            LOOPCNTR::LOOPCNT_3 => 3,
-            LOOPCNTR::LOOPCNT_4 => 4,
-            LOOPCNTR::LOOPCNT_5 => 5,
-            LOOPCNTR::LOOPCNT_6 => 6,
-            LOOPCNTR::LOOPCNT_7 => 7,
-            LOOPCNTR::LOOPCNT_8 => 8,
-            LOOPCNTR::LOOPCNT_9 => 9,
-            LOOPCNTR::LOOPCNT_15 => 15,
-            LOOPCNTR::_Reserved(bits) => bits,
+impl From<LOOPCNT_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LOOPCNT_A) -> Self {
+        match variant {
+            LOOPCNT_A::LOOPCNT_0 => 0,
+            LOOPCNT_A::LOOPCNT_1 => 1,
+            LOOPCNT_A::LOOPCNT_2 => 2,
+            LOOPCNT_A::LOOPCNT_3 => 3,
+            LOOPCNT_A::LOOPCNT_4 => 4,
+            LOOPCNT_A::LOOPCNT_5 => 5,
+            LOOPCNT_A::LOOPCNT_6 => 6,
+            LOOPCNT_A::LOOPCNT_7 => 7,
+            LOOPCNT_A::LOOPCNT_8 => 8,
+            LOOPCNT_A::LOOPCNT_9 => 9,
+            LOOPCNT_A::LOOPCNT_15 => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LOOPCNTR {
-        match value {
-            0 => LOOPCNTR::LOOPCNT_0,
-            1 => LOOPCNTR::LOOPCNT_1,
-            2 => LOOPCNTR::LOOPCNT_2,
-            3 => LOOPCNTR::LOOPCNT_3,
-            4 => LOOPCNTR::LOOPCNT_4,
-            5 => LOOPCNTR::LOOPCNT_5,
-            6 => LOOPCNTR::LOOPCNT_6,
-            7 => LOOPCNTR::LOOPCNT_7,
-            8 => LOOPCNTR::LOOPCNT_8,
-            9 => LOOPCNTR::LOOPCNT_9,
-            15 => LOOPCNTR::LOOPCNT_15,
-            i => LOOPCNTR::_Reserved(i),
+}
+#[doc = "Reader of field `LOOPCNT`"]
+pub type LOOPCNT_R = crate::R<u8, LOOPCNT_A>;
+impl LOOPCNT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, LOOPCNT_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(LOOPCNT_A::LOOPCNT_0),
+            1 => Val(LOOPCNT_A::LOOPCNT_1),
+            2 => Val(LOOPCNT_A::LOOPCNT_2),
+            3 => Val(LOOPCNT_A::LOOPCNT_3),
+            4 => Val(LOOPCNT_A::LOOPCNT_4),
+            5 => Val(LOOPCNT_A::LOOPCNT_5),
+            6 => Val(LOOPCNT_A::LOOPCNT_6),
+            7 => Val(LOOPCNT_A::LOOPCNT_7),
+            8 => Val(LOOPCNT_A::LOOPCNT_8),
+            9 => Val(LOOPCNT_A::LOOPCNT_9),
+            15 => Val(LOOPCNT_A::LOOPCNT_15),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loopcnt_0(&self) -> bool {
-        *self == LOOPCNTR::LOOPCNT_0
+        *self == LOOPCNT_A::LOOPCNT_0
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loopcnt_1(&self) -> bool {
-        *self == LOOPCNTR::LOOPCNT_1
+        *self == LOOPCNT_A::LOOPCNT_1
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loopcnt_2(&self) -> bool {
-        *self == LOOPCNTR::LOOPCNT_2
+        *self == LOOPCNT_A::LOOPCNT_2
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loopcnt_3(&self) -> bool {
-        *self == LOOPCNTR::LOOPCNT_3
+        *self == LOOPCNT_A::LOOPCNT_3
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loopcnt_4(&self) -> bool {
-        *self == LOOPCNTR::LOOPCNT_4
+        *self == LOOPCNT_A::LOOPCNT_4
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loopcnt_5(&self) -> bool {
-        *self == LOOPCNTR::LOOPCNT_5
+        *self == LOOPCNT_A::LOOPCNT_5
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loopcnt_6(&self) -> bool {
-        *self == LOOPCNTR::LOOPCNT_6
+        *self == LOOPCNT_A::LOOPCNT_6
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loopcnt_7(&self) -> bool {
-        *self == LOOPCNTR::LOOPCNT_7
+        *self == LOOPCNT_A::LOOPCNT_7
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loopcnt_8(&self) -> bool {
-        *self == LOOPCNTR::LOOPCNT_8
+        *self == LOOPCNT_A::LOOPCNT_8
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_9`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loopcnt_9(&self) -> bool {
-        *self == LOOPCNTR::LOOPCNT_9
+        *self == LOOPCNT_A::LOOPCNT_9
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_15`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_loopcnt_15(&self) -> bool {
-        *self == LOOPCNTR::LOOPCNT_15
+        *self == LOOPCNT_A::LOOPCNT_15
     }
 }
 #[doc = "Possible values of the field `CMDSRC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CMDSRCR {
+pub enum CMDSRC_A {
     #[doc = "Not a valid value CMDSRC value for a dataword in RESFIFO. 0x0 is only found in initial FIFO state prior to an ADC conversion result dataword being stored to a RESFIFO buffer."]
     CMDSRC_0,
     #[doc = "CMD1 buffer used as control settings for this conversion."]
@@ -291,200 +271,166 @@ pub enum CMDSRCR {
     CMDSRC_9,
     #[doc = "CMD15 buffer used as control settings for this conversion."]
     CMDSRC_15,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CMDSRCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CMDSRCR::CMDSRC_0 => 0,
-            CMDSRCR::CMDSRC_1 => 1,
-            CMDSRCR::CMDSRC_2 => 2,
-            CMDSRCR::CMDSRC_3 => 3,
-            CMDSRCR::CMDSRC_4 => 4,
-            CMDSRCR::CMDSRC_5 => 5,
-            CMDSRCR::CMDSRC_6 => 6,
-            CMDSRCR::CMDSRC_7 => 7,
-            CMDSRCR::CMDSRC_8 => 8,
-            CMDSRCR::CMDSRC_9 => 9,
-            CMDSRCR::CMDSRC_15 => 15,
-            CMDSRCR::_Reserved(bits) => bits,
+impl From<CMDSRC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CMDSRC_A) -> Self {
+        match variant {
+            CMDSRC_A::CMDSRC_0 => 0,
+            CMDSRC_A::CMDSRC_1 => 1,
+            CMDSRC_A::CMDSRC_2 => 2,
+            CMDSRC_A::CMDSRC_3 => 3,
+            CMDSRC_A::CMDSRC_4 => 4,
+            CMDSRC_A::CMDSRC_5 => 5,
+            CMDSRC_A::CMDSRC_6 => 6,
+            CMDSRC_A::CMDSRC_7 => 7,
+            CMDSRC_A::CMDSRC_8 => 8,
+            CMDSRC_A::CMDSRC_9 => 9,
+            CMDSRC_A::CMDSRC_15 => 15,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CMDSRCR {
-        match value {
-            0 => CMDSRCR::CMDSRC_0,
-            1 => CMDSRCR::CMDSRC_1,
-            2 => CMDSRCR::CMDSRC_2,
-            3 => CMDSRCR::CMDSRC_3,
-            4 => CMDSRCR::CMDSRC_4,
-            5 => CMDSRCR::CMDSRC_5,
-            6 => CMDSRCR::CMDSRC_6,
-            7 => CMDSRCR::CMDSRC_7,
-            8 => CMDSRCR::CMDSRC_8,
-            9 => CMDSRCR::CMDSRC_9,
-            15 => CMDSRCR::CMDSRC_15,
-            i => CMDSRCR::_Reserved(i),
+}
+#[doc = "Reader of field `CMDSRC`"]
+pub type CMDSRC_R = crate::R<u8, CMDSRC_A>;
+impl CMDSRC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CMDSRC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(CMDSRC_A::CMDSRC_0),
+            1 => Val(CMDSRC_A::CMDSRC_1),
+            2 => Val(CMDSRC_A::CMDSRC_2),
+            3 => Val(CMDSRC_A::CMDSRC_3),
+            4 => Val(CMDSRC_A::CMDSRC_4),
+            5 => Val(CMDSRC_A::CMDSRC_5),
+            6 => Val(CMDSRC_A::CMDSRC_6),
+            7 => Val(CMDSRC_A::CMDSRC_7),
+            8 => Val(CMDSRC_A::CMDSRC_8),
+            9 => Val(CMDSRC_A::CMDSRC_9),
+            15 => Val(CMDSRC_A::CMDSRC_15),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `CMDSRC_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmdsrc_0(&self) -> bool {
-        *self == CMDSRCR::CMDSRC_0
+        *self == CMDSRC_A::CMDSRC_0
     }
     #[doc = "Checks if the value of the field is `CMDSRC_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmdsrc_1(&self) -> bool {
-        *self == CMDSRCR::CMDSRC_1
+        *self == CMDSRC_A::CMDSRC_1
     }
     #[doc = "Checks if the value of the field is `CMDSRC_2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmdsrc_2(&self) -> bool {
-        *self == CMDSRCR::CMDSRC_2
+        *self == CMDSRC_A::CMDSRC_2
     }
     #[doc = "Checks if the value of the field is `CMDSRC_3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmdsrc_3(&self) -> bool {
-        *self == CMDSRCR::CMDSRC_3
+        *self == CMDSRC_A::CMDSRC_3
     }
     #[doc = "Checks if the value of the field is `CMDSRC_4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmdsrc_4(&self) -> bool {
-        *self == CMDSRCR::CMDSRC_4
+        *self == CMDSRC_A::CMDSRC_4
     }
     #[doc = "Checks if the value of the field is `CMDSRC_5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmdsrc_5(&self) -> bool {
-        *self == CMDSRCR::CMDSRC_5
+        *self == CMDSRC_A::CMDSRC_5
     }
     #[doc = "Checks if the value of the field is `CMDSRC_6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmdsrc_6(&self) -> bool {
-        *self == CMDSRCR::CMDSRC_6
+        *self == CMDSRC_A::CMDSRC_6
     }
     #[doc = "Checks if the value of the field is `CMDSRC_7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmdsrc_7(&self) -> bool {
-        *self == CMDSRCR::CMDSRC_7
+        *self == CMDSRC_A::CMDSRC_7
     }
     #[doc = "Checks if the value of the field is `CMDSRC_8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmdsrc_8(&self) -> bool {
-        *self == CMDSRCR::CMDSRC_8
+        *self == CMDSRC_A::CMDSRC_8
     }
     #[doc = "Checks if the value of the field is `CMDSRC_9`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmdsrc_9(&self) -> bool {
-        *self == CMDSRCR::CMDSRC_9
+        *self == CMDSRC_A::CMDSRC_9
     }
     #[doc = "Checks if the value of the field is `CMDSRC_15`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmdsrc_15(&self) -> bool {
-        *self == CMDSRCR::CMDSRC_15
+        *self == CMDSRC_A::CMDSRC_15
     }
 }
 #[doc = "Possible values of the field `VALID`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VALIDR {
+pub enum VALID_A {
     #[doc = "FIFO is empty. Discard any read from RESFIFO."]
     VALID_0,
     #[doc = "FIFO record read from RESFIFO is valid."]
     VALID_1,
 }
-impl VALIDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VALIDR::VALID_0 => false,
-            VALIDR::VALID_1 => true,
+impl From<VALID_A> for bool {
+    #[inline(always)]
+    fn from(variant: VALID_A) -> Self {
+        match variant {
+            VALID_A::VALID_0 => false,
+            VALID_A::VALID_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VALIDR {
-        match value {
-            false => VALIDR::VALID_0,
-            true => VALIDR::VALID_1,
+}
+#[doc = "Reader of field `VALID`"]
+pub type VALID_R = crate::R<bool, VALID_A>;
+impl VALID_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VALID_A {
+        match self.bits {
+            false => VALID_A::VALID_0,
+            true => VALID_A::VALID_1,
         }
     }
     #[doc = "Checks if the value of the field is `VALID_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_valid_0(&self) -> bool {
-        *self == VALIDR::VALID_0
+        *self == VALID_A::VALID_0
     }
     #[doc = "Checks if the value of the field is `VALID_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_valid_1(&self) -> bool {
-        *self == VALIDR::VALID_1
+        *self == VALID_A::VALID_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Data result"]
-    #[inline]
-    pub fn d(&self) -> DR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        DR { bits }
+    #[inline(always)]
+    pub fn d(&self) -> D_R {
+        D_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:19 - Trigger Source"]
-    #[inline]
-    pub fn tsrc(&self) -> TSRCR {
-        TSRCR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn tsrc(&self) -> TSRC_R {
+        TSRC_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
     #[doc = "Bits 20:23 - Loop count value"]
-    #[inline]
-    pub fn loopcnt(&self) -> LOOPCNTR {
-        LOOPCNTR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn loopcnt(&self) -> LOOPCNT_R {
+        LOOPCNT_R::new(((self.bits >> 20) & 0x0f) as u8)
     }
     #[doc = "Bits 24:27 - Command Buffer Source"]
-    #[inline]
-    pub fn cmdsrc(&self) -> CMDSRCR {
-        CMDSRCR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn cmdsrc(&self) -> CMDSRC_R {
+        CMDSRC_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
     #[doc = "Bit 31 - FIFO entry is valid"]
-    #[inline]
-    pub fn valid(&self) -> VALIDR {
-        VALIDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn valid(&self) -> VALID_R {
+        VALID_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }

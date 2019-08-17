@@ -1,30 +1,10 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::PARAM {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TRIG_NUMR {
-    bits: u8,
-}
-impl TRIG_NUMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register PARAM"]
+pub type R = crate::R<u32, super::PARAM>;
+#[doc = "Reader of field `TRIG_NUM`"]
+pub type TRIG_NUM_R = crate::R<u8, u8>;
 #[doc = "Possible values of the field `FIFOSIZE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FIFOSIZER {
+pub enum FIFOSIZE_A {
     #[doc = "Result FIFO depth = 1 dataword."]
     FIFOSIZE_1,
     #[doc = "Result FIFO depth = 4 datawords."]
@@ -37,133 +17,91 @@ pub enum FIFOSIZER {
     FIFOSIZE_32,
     #[doc = "Result FIFO depth = 64 datawords."]
     FIFOSIZE_64,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl FIFOSIZER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FIFOSIZER::FIFOSIZE_1 => 1,
-            FIFOSIZER::FIFOSIZE_4 => 4,
-            FIFOSIZER::FIFOSIZE_8 => 8,
-            FIFOSIZER::FIFOSIZE_16 => 16,
-            FIFOSIZER::FIFOSIZE_32 => 32,
-            FIFOSIZER::FIFOSIZE_64 => 64,
-            FIFOSIZER::_Reserved(bits) => bits,
+impl From<FIFOSIZE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FIFOSIZE_A) -> Self {
+        match variant {
+            FIFOSIZE_A::FIFOSIZE_1 => 1,
+            FIFOSIZE_A::FIFOSIZE_4 => 4,
+            FIFOSIZE_A::FIFOSIZE_8 => 8,
+            FIFOSIZE_A::FIFOSIZE_16 => 16,
+            FIFOSIZE_A::FIFOSIZE_32 => 32,
+            FIFOSIZE_A::FIFOSIZE_64 => 64,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FIFOSIZER {
-        match value {
-            1 => FIFOSIZER::FIFOSIZE_1,
-            4 => FIFOSIZER::FIFOSIZE_4,
-            8 => FIFOSIZER::FIFOSIZE_8,
-            16 => FIFOSIZER::FIFOSIZE_16,
-            32 => FIFOSIZER::FIFOSIZE_32,
-            64 => FIFOSIZER::FIFOSIZE_64,
-            i => FIFOSIZER::_Reserved(i),
+}
+#[doc = "Reader of field `FIFOSIZE`"]
+pub type FIFOSIZE_R = crate::R<u8, FIFOSIZE_A>;
+impl FIFOSIZE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FIFOSIZE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            1 => Val(FIFOSIZE_A::FIFOSIZE_1),
+            4 => Val(FIFOSIZE_A::FIFOSIZE_4),
+            8 => Val(FIFOSIZE_A::FIFOSIZE_8),
+            16 => Val(FIFOSIZE_A::FIFOSIZE_16),
+            32 => Val(FIFOSIZE_A::FIFOSIZE_32),
+            64 => Val(FIFOSIZE_A::FIFOSIZE_64),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `FIFOSIZE_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_fifosize_1(&self) -> bool {
-        *self == FIFOSIZER::FIFOSIZE_1
+        *self == FIFOSIZE_A::FIFOSIZE_1
     }
     #[doc = "Checks if the value of the field is `FIFOSIZE_4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_fifosize_4(&self) -> bool {
-        *self == FIFOSIZER::FIFOSIZE_4
+        *self == FIFOSIZE_A::FIFOSIZE_4
     }
     #[doc = "Checks if the value of the field is `FIFOSIZE_8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_fifosize_8(&self) -> bool {
-        *self == FIFOSIZER::FIFOSIZE_8
+        *self == FIFOSIZE_A::FIFOSIZE_8
     }
     #[doc = "Checks if the value of the field is `FIFOSIZE_16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_fifosize_16(&self) -> bool {
-        *self == FIFOSIZER::FIFOSIZE_16
+        *self == FIFOSIZE_A::FIFOSIZE_16
     }
     #[doc = "Checks if the value of the field is `FIFOSIZE_32`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_fifosize_32(&self) -> bool {
-        *self == FIFOSIZER::FIFOSIZE_32
+        *self == FIFOSIZE_A::FIFOSIZE_32
     }
     #[doc = "Checks if the value of the field is `FIFOSIZE_64`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_fifosize_64(&self) -> bool {
-        *self == FIFOSIZER::FIFOSIZE_64
+        *self == FIFOSIZE_A::FIFOSIZE_64
     }
 }
-#[doc = r" Value of the field"]
-pub struct CV_NUMR {
-    bits: u8,
-}
-impl CV_NUMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CMD_NUMR {
-    bits: u8,
-}
-impl CMD_NUMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of field `CV_NUM`"]
+pub type CV_NUM_R = crate::R<u8, u8>;
+#[doc = "Reader of field `CMD_NUM`"]
+pub type CMD_NUM_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Trigger Number"]
-    #[inline]
-    pub fn trig_num(&self) -> TRIG_NUMR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TRIG_NUMR { bits }
+    #[inline(always)]
+    pub fn trig_num(&self) -> TRIG_NUM_R {
+        TRIG_NUM_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Result FIFO Depth"]
-    #[inline]
-    pub fn fifosize(&self) -> FIFOSIZER {
-        FIFOSIZER::_from({
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn fifosize(&self) -> FIFOSIZE_R {
+        FIFOSIZE_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - Compare Value Number"]
-    #[inline]
-    pub fn cv_num(&self) -> CV_NUMR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CV_NUMR { bits }
+    #[inline(always)]
+    pub fn cv_num(&self) -> CV_NUM_R {
+        CV_NUM_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - Command Buffer Number"]
-    #[inline]
-    pub fn cmd_num(&self) -> CMD_NUMR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CMD_NUMR { bits }
+    #[inline(always)]
+    pub fn cmd_num(&self) -> CMD_NUM_R {
+        CMD_NUM_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }

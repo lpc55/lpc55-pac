@@ -1,523 +1,282 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PLL0SSCG1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PLL0SSCG1"]
+pub type R = crate::R<u32, super::PLL0SSCG1>;
+#[doc = "Writer for register PLL0SSCG1"]
+pub type W = crate::W<u32, super::PLL0SSCG1>;
+#[doc = "Register PLL0SSCG1 `reset()`'s with value 0"]
+impl crate::ResetValue for super::PLL0SSCG1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct MD_MBSR {
-    bits: bool,
-}
-impl MD_MBSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MD_REQR {
-    bits: bool,
-}
-impl MD_REQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MFR {
-    bits: u8,
-}
-impl MFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MRR {
-    bits: u8,
-}
-impl MRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MCR {
-    bits: u8,
-}
-impl MCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MDIV_EXTR {
-    bits: u16,
-}
-impl MDIV_EXTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MREQR {
-    bits: bool,
-}
-impl MREQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DITHERR {
-    bits: bool,
-}
-impl DITHERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SEL_EXTR {
-    bits: bool,
-}
-impl SEL_EXTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MD_MBSW<'a> {
+#[doc = "Reader of field `MD_MBS`"]
+pub type MD_MBS_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MD_MBS`"]
+pub struct MD_MBS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MD_MBSW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> MD_MBS_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MD_REQW<'a> {
+#[doc = "Reader of field `MD_REQ`"]
+pub type MD_REQ_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MD_REQ`"]
+pub struct MD_REQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MD_REQW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> MD_REQ_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MFW<'a> {
+#[doc = "Reader of field `MF`"]
+pub type MF_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `MF`"]
+pub struct MF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MFW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> MF_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 2)) | (((value as u32) & 0x07) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MRW<'a> {
+#[doc = "Reader of field `MR`"]
+pub type MR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `MR`"]
+pub struct MR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> MR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 5)) | (((value as u32) & 0x07) << 5);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MCW<'a> {
+#[doc = "Reader of field `MC`"]
+pub type MC_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `MC`"]
+pub struct MC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MCW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> MC_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MDIV_EXTW<'a> {
+#[doc = "Reader of field `MDIV_EXT`"]
+pub type MDIV_EXT_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `MDIV_EXT`"]
+pub struct MDIV_EXT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MDIV_EXTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> MDIV_EXT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xffff << 10)) | (((value as u32) & 0xffff) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _MREQW<'a> {
+#[doc = "Reader of field `MREQ`"]
+pub type MREQ_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MREQ`"]
+pub struct MREQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MREQW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> MREQ_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DITHERW<'a> {
+#[doc = "Reader of field `DITHER`"]
+pub type DITHER_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DITHER`"]
+pub struct DITHER_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DITHERW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DITHER_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SEL_EXTW<'a> {
+#[doc = "Reader of field `SEL_EXT`"]
+pub type SEL_EXT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SEL_EXT`"]
+pub struct SEL_EXT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SEL_EXTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SEL_EXT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - input word of the wrapper bit 32."]
-    #[inline]
-    pub fn md_mbs(&self) -> MD_MBSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MD_MBSR { bits }
+    #[inline(always)]
+    pub fn md_mbs(&self) -> MD_MBS_R {
+        MD_MBS_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - md change request."]
-    #[inline]
-    pub fn md_req(&self) -> MD_REQR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MD_REQR { bits }
+    #[inline(always)]
+    pub fn md_req(&self) -> MD_REQ_R {
+        MD_REQ_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bits 2:4 - programmable modulation frequency fm = Fref/Nss mf\\[2:0\\] = 000 => Nss=512 (fm ~ 3."]
-    #[inline]
-    pub fn mf(&self) -> MFR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MFR { bits }
+    #[inline(always)]
+    pub fn mf(&self) -> MF_R {
+        MF_R::new(((self.bits >> 2) & 0x07) as u8)
     }
     #[doc = "Bits 5:7 - programmable frequency modulation depth Dfmodpk-pk = Fref*kss/Fcco = kss/(2*md\\[32:25\\]dec) mr\\[2:0\\] = 000 => kss = 0 (no spread spectrum) mr\\[2:0\\] = 001 => kss ~ 1 mr\\[2:0\\] = 010 => kss ~ 1."]
-    #[inline]
-    pub fn mr(&self) -> MRR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MRR { bits }
+    #[inline(always)]
+    pub fn mr(&self) -> MR_R {
+        MR_R::new(((self.bits >> 5) & 0x07) as u8)
     }
     #[doc = "Bits 8:9 - modulation waveform control Compensation for low pass filtering of the PLL to get a triangular modulation at the output of the PLL, giving a flat frequency spectrum."]
-    #[inline]
-    pub fn mc(&self) -> MCR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MCR { bits }
+    #[inline(always)]
+    pub fn mc(&self) -> MC_R {
+        MC_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bits 10:25 - to select an external mdiv value."]
-    #[inline]
-    pub fn mdiv_ext(&self) -> MDIV_EXTR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        MDIV_EXTR { bits }
+    #[inline(always)]
+    pub fn mdiv_ext(&self) -> MDIV_EXT_R {
+        MDIV_EXT_R::new(((self.bits >> 10) & 0xffff) as u16)
     }
     #[doc = "Bit 26 - to select an external mreq value."]
-    #[inline]
-    pub fn mreq(&self) -> MREQR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MREQR { bits }
+    #[inline(always)]
+    pub fn mreq(&self) -> MREQ_R {
+        MREQ_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 27 - dithering between two modulation frequencies in a random way or in a pseudo random way (white noise), in order to decrease the probability that the modulated waveform will occur with the same phase on a particular point on the screen."]
-    #[inline]
-    pub fn dither(&self) -> DITHERR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DITHERR { bits }
+    #[inline(always)]
+    pub fn dither(&self) -> DITHER_R {
+        DITHER_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bit 28 - to select mdiv_ext and mreq_ext sel_ext = 0: mdiv ~ md\\[32:0\\], mreq = 1 sel_ext = 1 : mdiv = mdiv_ext, mreq = mreq_ext."]
-    #[inline]
-    pub fn sel_ext(&self) -> SEL_EXTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SEL_EXTR { bits }
+    #[inline(always)]
+    pub fn sel_ext(&self) -> SEL_EXT_R {
+        SEL_EXT_R::new(((self.bits >> 28) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - input word of the wrapper bit 32."]
-    #[inline]
-    pub fn md_mbs(&mut self) -> _MD_MBSW {
-        _MD_MBSW { w: self }
+    #[inline(always)]
+    pub fn md_mbs(&mut self) -> MD_MBS_W {
+        MD_MBS_W { w: self }
     }
     #[doc = "Bit 1 - md change request."]
-    #[inline]
-    pub fn md_req(&mut self) -> _MD_REQW {
-        _MD_REQW { w: self }
+    #[inline(always)]
+    pub fn md_req(&mut self) -> MD_REQ_W {
+        MD_REQ_W { w: self }
     }
     #[doc = "Bits 2:4 - programmable modulation frequency fm = Fref/Nss mf\\[2:0\\] = 000 => Nss=512 (fm ~ 3."]
-    #[inline]
-    pub fn mf(&mut self) -> _MFW {
-        _MFW { w: self }
+    #[inline(always)]
+    pub fn mf(&mut self) -> MF_W {
+        MF_W { w: self }
     }
     #[doc = "Bits 5:7 - programmable frequency modulation depth Dfmodpk-pk = Fref*kss/Fcco = kss/(2*md\\[32:25\\]dec) mr\\[2:0\\] = 000 => kss = 0 (no spread spectrum) mr\\[2:0\\] = 001 => kss ~ 1 mr\\[2:0\\] = 010 => kss ~ 1."]
-    #[inline]
-    pub fn mr(&mut self) -> _MRW {
-        _MRW { w: self }
+    #[inline(always)]
+    pub fn mr(&mut self) -> MR_W {
+        MR_W { w: self }
     }
     #[doc = "Bits 8:9 - modulation waveform control Compensation for low pass filtering of the PLL to get a triangular modulation at the output of the PLL, giving a flat frequency spectrum."]
-    #[inline]
-    pub fn mc(&mut self) -> _MCW {
-        _MCW { w: self }
+    #[inline(always)]
+    pub fn mc(&mut self) -> MC_W {
+        MC_W { w: self }
     }
     #[doc = "Bits 10:25 - to select an external mdiv value."]
-    #[inline]
-    pub fn mdiv_ext(&mut self) -> _MDIV_EXTW {
-        _MDIV_EXTW { w: self }
+    #[inline(always)]
+    pub fn mdiv_ext(&mut self) -> MDIV_EXT_W {
+        MDIV_EXT_W { w: self }
     }
     #[doc = "Bit 26 - to select an external mreq value."]
-    #[inline]
-    pub fn mreq(&mut self) -> _MREQW {
-        _MREQW { w: self }
+    #[inline(always)]
+    pub fn mreq(&mut self) -> MREQ_W {
+        MREQ_W { w: self }
     }
     #[doc = "Bit 27 - dithering between two modulation frequencies in a random way or in a pseudo random way (white noise), in order to decrease the probability that the modulated waveform will occur with the same phase on a particular point on the screen."]
-    #[inline]
-    pub fn dither(&mut self) -> _DITHERW {
-        _DITHERW { w: self }
+    #[inline(always)]
+    pub fn dither(&mut self) -> DITHER_W {
+        DITHER_W { w: self }
     }
     #[doc = "Bit 28 - to select mdiv_ext and mreq_ext sel_ext = 0: mdiv ~ md\\[32:0\\], mreq = 1 sel_ext = 1 : mdiv = mdiv_ext, mreq = mreq_ext."]
-    #[inline]
-    pub fn sel_ext(&mut self) -> _SEL_EXTW {
-        _SEL_EXTW { w: self }
+    #[inline(always)]
+    pub fn sel_ext(&mut self) -> SEL_EXT_W {
+        SEL_EXT_W { w: self }
     }
 }

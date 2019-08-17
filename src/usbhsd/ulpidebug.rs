@@ -1,364 +1,190 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ULPIDEBUG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ULPIDEBUG"]
+pub type R = crate::R<u32, super::ULPIDEBUG>;
+#[doc = "Writer for register ULPIDEBUG"]
+pub type W = crate::W<u32, super::ULPIDEBUG>;
+#[doc = "Register ULPIDEBUG `reset()`'s with value 0"]
+impl crate::ResetValue for super::ULPIDEBUG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct PHY_ADDRR {
-    bits: u8,
-}
-impl PHY_ADDRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PHY_WDATAR {
-    bits: u8,
-}
-impl PHY_WDATAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PHY_RDATAR {
-    bits: u8,
-}
-impl PHY_RDATAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PHY_RWR {
-    bits: bool,
-}
-impl PHY_RWR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PHY_ACCESSR {
-    bits: bool,
-}
-impl PHY_ACCESSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PHY_MODER {
-    bits: bool,
-}
-impl PHY_MODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PHY_ADDRW<'a> {
+#[doc = "Reader of field `PHY_ADDR`"]
+pub type PHY_ADDR_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PHY_ADDR`"]
+pub struct PHY_ADDR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PHY_ADDRW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PHY_ADDR_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PHY_WDATAW<'a> {
+#[doc = "Reader of field `PHY_WDATA`"]
+pub type PHY_WDATA_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PHY_WDATA`"]
+pub struct PHY_WDATA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PHY_WDATAW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PHY_WDATA_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PHY_RDATAW<'a> {
+#[doc = "Reader of field `PHY_RDATA`"]
+pub type PHY_RDATA_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PHY_RDATA`"]
+pub struct PHY_RDATA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PHY_RDATAW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PHY_RDATA_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PHY_RWW<'a> {
+#[doc = "Reader of field `PHY_RW`"]
+pub type PHY_RW_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PHY_RW`"]
+pub struct PHY_RW_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PHY_RWW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PHY_RW_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PHY_ACCESSW<'a> {
+#[doc = "Reader of field `PHY_ACCESS`"]
+pub type PHY_ACCESS_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PHY_ACCESS`"]
+pub struct PHY_ACCESS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PHY_ACCESSW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PHY_ACCESS_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PHY_MODEW<'a> {
+#[doc = "Reader of field `PHY_MODE`"]
+pub type PHY_MODE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PHY_MODE`"]
+pub struct PHY_MODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PHY_MODEW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PHY_MODE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - ULPI mode: Bits 7:0 are used as the address when doing a register access over the ULPI interface."]
-    #[inline]
-    pub fn phy_addr(&self) -> PHY_ADDRR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PHY_ADDRR { bits }
+    #[inline(always)]
+    pub fn phy_addr(&self) -> PHY_ADDR_R {
+        PHY_ADDR_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - UTMI+ mode: Reserved."]
-    #[inline]
-    pub fn phy_wdata(&self) -> PHY_WDATAR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PHY_WDATAR { bits }
+    #[inline(always)]
+    pub fn phy_wdata(&self) -> PHY_WDATA_R {
+        PHY_WDATA_R::new(((self.bits >> 8) & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - UTMI+ mode: Bits 7:0 contains the value returned by the VStatus signal on Vendor Interface of UTMI+."]
-    #[inline]
-    pub fn phy_rdata(&self) -> PHY_RDATAR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PHY_RDATAR { bits }
+    #[inline(always)]
+    pub fn phy_rdata(&self) -> PHY_RDATA_R {
+        PHY_RDATA_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bit 24 - UTMI+ mode: Reserved."]
-    #[inline]
-    pub fn phy_rw(&self) -> PHY_RWR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PHY_RWR { bits }
+    #[inline(always)]
+    pub fn phy_rw(&self) -> PHY_RW_R {
+        PHY_RW_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Software writes this bit to one to start a read or write operation."]
-    #[inline]
-    pub fn phy_access(&self) -> PHY_ACCESSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PHY_ACCESSR { bits }
+    #[inline(always)]
+    pub fn phy_access(&self) -> PHY_ACCESS_R {
+        PHY_ACCESS_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 31 - This bit indicates if the interface between the controller is UTMI+ or ULPI."]
-    #[inline]
-    pub fn phy_mode(&self) -> PHY_MODER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PHY_MODER { bits }
+    #[inline(always)]
+    pub fn phy_mode(&self) -> PHY_MODE_R {
+        PHY_MODE_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - ULPI mode: Bits 7:0 are used as the address when doing a register access over the ULPI interface."]
-    #[inline]
-    pub fn phy_addr(&mut self) -> _PHY_ADDRW {
-        _PHY_ADDRW { w: self }
+    #[inline(always)]
+    pub fn phy_addr(&mut self) -> PHY_ADDR_W {
+        PHY_ADDR_W { w: self }
     }
     #[doc = "Bits 8:15 - UTMI+ mode: Reserved."]
-    #[inline]
-    pub fn phy_wdata(&mut self) -> _PHY_WDATAW {
-        _PHY_WDATAW { w: self }
+    #[inline(always)]
+    pub fn phy_wdata(&mut self) -> PHY_WDATA_W {
+        PHY_WDATA_W { w: self }
     }
     #[doc = "Bits 16:23 - UTMI+ mode: Bits 7:0 contains the value returned by the VStatus signal on Vendor Interface of UTMI+."]
-    #[inline]
-    pub fn phy_rdata(&mut self) -> _PHY_RDATAW {
-        _PHY_RDATAW { w: self }
+    #[inline(always)]
+    pub fn phy_rdata(&mut self) -> PHY_RDATA_W {
+        PHY_RDATA_W { w: self }
     }
     #[doc = "Bit 24 - UTMI+ mode: Reserved."]
-    #[inline]
-    pub fn phy_rw(&mut self) -> _PHY_RWW {
-        _PHY_RWW { w: self }
+    #[inline(always)]
+    pub fn phy_rw(&mut self) -> PHY_RW_W {
+        PHY_RW_W { w: self }
     }
     #[doc = "Bit 25 - Software writes this bit to one to start a read or write operation."]
-    #[inline]
-    pub fn phy_access(&mut self) -> _PHY_ACCESSW {
-        _PHY_ACCESSW { w: self }
+    #[inline(always)]
+    pub fn phy_access(&mut self) -> PHY_ACCESS_W {
+        PHY_ACCESS_W { w: self }
     }
     #[doc = "Bit 31 - This bit indicates if the interface between the controller is UTMI+ or ULPI."]
-    #[inline]
-    pub fn phy_mode(&mut self) -> _PHY_MODEW {
-        _PHY_MODEW { w: self }
+    #[inline(always)]
+    pub fn phy_mode(&mut self) -> PHY_MODE_W {
+        PHY_MODE_W { w: self }
     }
 }

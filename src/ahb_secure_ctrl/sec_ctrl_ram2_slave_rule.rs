@@ -1,50 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SEC_CTRL_RAM2_SLAVE_RULE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SEC_CTRL_RAM2_SLAVE_RULE"]
+pub type R = crate::R<u32, super::SEC_CTRL_RAM2_SLAVE_RULE>;
+#[doc = "Writer for register SEC_CTRL_RAM2_SLAVE_RULE"]
+pub type W = crate::W<u32, super::SEC_CTRL_RAM2_SLAVE_RULE>;
+#[doc = "Register SEC_CTRL_RAM2_SLAVE_RULE `reset()`'s with value 0"]
+impl crate::ResetValue for super::SEC_CTRL_RAM2_SLAVE_RULE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `RAM2_RULE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RAM2_RULER {
+pub enum RAM2_RULE_A {
     #[doc = "Non-secure and Non-priviledge user access allowed."]
     ENUM_NS_NP,
     #[doc = "Non-secure and Privilege access allowed."]
@@ -54,147 +22,102 @@ pub enum RAM2_RULER {
     #[doc = "Secure and Priviledge user access allowed."]
     ENUM_S_P,
 }
-impl RAM2_RULER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            RAM2_RULER::ENUM_NS_NP => 0,
-            RAM2_RULER::ENUM_NS_P => 1,
-            RAM2_RULER::ENUM_S_NP => 2,
-            RAM2_RULER::ENUM_S_P => 3,
+impl From<RAM2_RULE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: RAM2_RULE_A) -> Self {
+        match variant {
+            RAM2_RULE_A::ENUM_NS_NP => 0,
+            RAM2_RULE_A::ENUM_NS_P => 1,
+            RAM2_RULE_A::ENUM_S_NP => 2,
+            RAM2_RULE_A::ENUM_S_P => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> RAM2_RULER {
-        match value {
-            0 => RAM2_RULER::ENUM_NS_NP,
-            1 => RAM2_RULER::ENUM_NS_P,
-            2 => RAM2_RULER::ENUM_S_NP,
-            3 => RAM2_RULER::ENUM_S_P,
+}
+#[doc = "Reader of field `RAM2_RULE`"]
+pub type RAM2_RULE_R = crate::R<u8, RAM2_RULE_A>;
+impl RAM2_RULE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RAM2_RULE_A {
+        match self.bits {
+            0 => RAM2_RULE_A::ENUM_NS_NP,
+            1 => RAM2_RULE_A::ENUM_NS_P,
+            2 => RAM2_RULE_A::ENUM_S_NP,
+            3 => RAM2_RULE_A::ENUM_S_P,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == RAM2_RULER::ENUM_NS_NP
+        *self == RAM2_RULE_A::ENUM_NS_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == RAM2_RULER::ENUM_NS_P
+        *self == RAM2_RULE_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == RAM2_RULER::ENUM_S_NP
+        *self == RAM2_RULE_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == RAM2_RULER::ENUM_S_P
+        *self == RAM2_RULE_A::ENUM_S_P
     }
 }
-#[doc = "Values that can be written to the field `RAM2_RULE`"]
-pub enum RAM2_RULEW {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
-}
-impl RAM2_RULEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            RAM2_RULEW::ENUM_NS_NP => 0,
-            RAM2_RULEW::ENUM_NS_P => 1,
-            RAM2_RULEW::ENUM_S_NP => 2,
-            RAM2_RULEW::ENUM_S_P => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RAM2_RULEW<'a> {
+#[doc = "Write proxy for field `RAM2_RULE`"]
+pub struct RAM2_RULE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RAM2_RULEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RAM2_RULEW) -> &'a mut W {
+impl<'a> RAM2_RULE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RAM2_RULE_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Non-secure and Non-priviledge user access allowed."]
-    #[inline]
+    #[inline(always)]
     pub fn enum_ns_np(self) -> &'a mut W {
-        self.variant(RAM2_RULEW::ENUM_NS_NP)
+        self.variant(RAM2_RULE_A::ENUM_NS_NP)
     }
     #[doc = "Non-secure and Privilege access allowed."]
-    #[inline]
+    #[inline(always)]
     pub fn enum_ns_p(self) -> &'a mut W {
-        self.variant(RAM2_RULEW::ENUM_NS_P)
+        self.variant(RAM2_RULE_A::ENUM_NS_P)
     }
     #[doc = "Secure and Non-priviledge user access allowed."]
-    #[inline]
+    #[inline(always)]
     pub fn enum_s_np(self) -> &'a mut W {
-        self.variant(RAM2_RULEW::ENUM_S_NP)
+        self.variant(RAM2_RULE_A::ENUM_S_NP)
     }
     #[doc = "Secure and Priviledge user access allowed."]
-    #[inline]
+    #[inline(always)]
     pub fn enum_s_p(self) -> &'a mut W {
-        self.variant(RAM2_RULEW::ENUM_S_P)
+        self.variant(RAM2_RULE_A::ENUM_S_P)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Security access rules for the whole RAM2 : 0x2002_0000 - 0x2002_FFFF"]
-    #[inline]
-    pub fn ram2_rule(&self) -> RAM2_RULER {
-        RAM2_RULER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ram2_rule(&self) -> RAM2_RULE_R {
+        RAM2_RULE_R::new((self.bits & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Security access rules for the whole RAM2 : 0x2002_0000 - 0x2002_FFFF"]
-    #[inline]
-    pub fn ram2_rule(&mut self) -> _RAM2_RULEW {
-        _RAM2_RULEW { w: self }
+    #[inline(always)]
+    pub fn ram2_rule(&mut self) -> RAM2_RULE_W {
+        RAM2_RULE_W { w: self }
     }
 }

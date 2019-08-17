@@ -1,402 +1,250 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CTRL0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CTRL0"]
+pub type R = crate::R<u32, super::CTRL0>;
+#[doc = "Writer for register CTRL0"]
+pub type W = crate::W<u32, super::CTRL0>;
+#[doc = "Register CTRL0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::CTRL0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `ABBPAIR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ABBPAIRR {
+pub enum ABBPAIR_A {
     #[doc = "Bank-pair 0 (1st)"]
     PAIR0,
     #[doc = "Bank-pair 1 (2nd)"]
     PAIR1,
 }
-impl ABBPAIRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ABBPAIRR::PAIR0 => false,
-            ABBPAIRR::PAIR1 => true,
+impl From<ABBPAIR_A> for bool {
+    #[inline(always)]
+    fn from(variant: ABBPAIR_A) -> Self {
+        match variant {
+            ABBPAIR_A::PAIR0 => false,
+            ABBPAIR_A::PAIR1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ABBPAIRR {
-        match value {
-            false => ABBPAIRR::PAIR0,
-            true => ABBPAIRR::PAIR1,
+}
+#[doc = "Reader of field `ABBPAIR`"]
+pub type ABBPAIR_R = crate::R<bool, ABBPAIR_A>;
+impl ABBPAIR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ABBPAIR_A {
+        match self.bits {
+            false => ABBPAIR_A::PAIR0,
+            true => ABBPAIR_A::PAIR1,
         }
     }
     #[doc = "Checks if the value of the field is `PAIR0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pair0(&self) -> bool {
-        *self == ABBPAIRR::PAIR0
+        *self == ABBPAIR_A::PAIR0
     }
     #[doc = "Checks if the value of the field is `PAIR1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pair1(&self) -> bool {
-        *self == ABBPAIRR::PAIR1
+        *self == ABBPAIR_A::PAIR1
     }
 }
-#[doc = r" Value of the field"]
-pub struct ABOFFR {
-    bits: bool,
+#[doc = "Write proxy for field `ABBPAIR`"]
+pub struct ABBPAIR_W<'a> {
+    w: &'a mut W,
 }
-impl ABOFFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> ABBPAIR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ABBPAIR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = "Bank-pair 0 (1st)"]
+    #[inline(always)]
+    pub fn pair0(self) -> &'a mut W {
+        self.variant(ABBPAIR_A::PAIR0)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = "Bank-pair 1 (2nd)"]
+    #[inline(always)]
+    pub fn pair1(self) -> &'a mut W {
+        self.variant(ABBPAIR_A::PAIR1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "Reader of field `ABOFF`"]
+pub type ABOFF_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ABOFF`"]
+pub struct ABOFF_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ABOFF_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CDBPAIR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CDBPAIRR {
+pub enum CDBPAIR_A {
     #[doc = "Bank-pair 0 (1st)"]
     PAIR0,
     #[doc = "Bank-pair 1 (2nd)"]
     PAIR1,
 }
-impl CDBPAIRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CDBPAIRR::PAIR0 => false,
-            CDBPAIRR::PAIR1 => true,
+impl From<CDBPAIR_A> for bool {
+    #[inline(always)]
+    fn from(variant: CDBPAIR_A) -> Self {
+        match variant {
+            CDBPAIR_A::PAIR0 => false,
+            CDBPAIR_A::PAIR1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CDBPAIRR {
-        match value {
-            false => CDBPAIRR::PAIR0,
-            true => CDBPAIRR::PAIR1,
+}
+#[doc = "Reader of field `CDBPAIR`"]
+pub type CDBPAIR_R = crate::R<bool, CDBPAIR_A>;
+impl CDBPAIR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CDBPAIR_A {
+        match self.bits {
+            false => CDBPAIR_A::PAIR0,
+            true => CDBPAIR_A::PAIR1,
         }
     }
     #[doc = "Checks if the value of the field is `PAIR0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pair0(&self) -> bool {
-        *self == CDBPAIRR::PAIR0
+        *self == CDBPAIR_A::PAIR0
     }
     #[doc = "Checks if the value of the field is `PAIR1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pair1(&self) -> bool {
-        *self == CDBPAIRR::PAIR1
+        *self == CDBPAIR_A::PAIR1
     }
 }
-#[doc = r" Value of the field"]
-pub struct CDOFFR {
-    bits: u16,
-}
-impl CDOFFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `ABBPAIR`"]
-pub enum ABBPAIRW {
-    #[doc = "Bank-pair 0 (1st)"]
-    PAIR0,
-    #[doc = "Bank-pair 1 (2nd)"]
-    PAIR1,
-}
-impl ABBPAIRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ABBPAIRW::PAIR0 => false,
-            ABBPAIRW::PAIR1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ABBPAIRW<'a> {
+#[doc = "Write proxy for field `CDBPAIR`"]
+pub struct CDBPAIR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ABBPAIRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ABBPAIRW) -> &'a mut W {
+impl<'a> CDBPAIR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CDBPAIR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Bank-pair 0 (1st)"]
-    #[inline]
+    #[inline(always)]
     pub fn pair0(self) -> &'a mut W {
-        self.variant(ABBPAIRW::PAIR0)
+        self.variant(CDBPAIR_A::PAIR0)
     }
     #[doc = "Bank-pair 1 (2nd)"]
-    #[inline]
+    #[inline(always)]
     pub fn pair1(self) -> &'a mut W {
-        self.variant(ABBPAIRW::PAIR1)
+        self.variant(CDBPAIR_A::PAIR1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ABOFFW<'a> {
+#[doc = "Reader of field `CDOFF`"]
+pub type CDOFF_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `CDOFF`"]
+pub struct CDOFF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ABOFFW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CDBPAIR`"]
-pub enum CDBPAIRW {
-    #[doc = "Bank-pair 0 (1st)"]
-    PAIR0,
-    #[doc = "Bank-pair 1 (2nd)"]
-    PAIR1,
-}
-impl CDBPAIRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CDBPAIRW::PAIR0 => false,
-            CDBPAIRW::PAIR1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CDBPAIRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CDBPAIRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CDBPAIRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Bank-pair 0 (1st)"]
-    #[inline]
-    pub fn pair0(self) -> &'a mut W {
-        self.variant(CDBPAIRW::PAIR0)
-    }
-    #[doc = "Bank-pair 1 (2nd)"]
-    #[inline]
-    pub fn pair1(self) -> &'a mut W {
-        self.variant(CDBPAIRW::PAIR1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CDOFFW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CDOFFW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CDOFF_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 2047;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07ff << 18)) | (((value as u32) & 0x07ff) << 18);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Which bank-pair the offset ABOFF is within. This must be 0 if only 2-up"]
-    #[inline]
-    pub fn abbpair(&self) -> ABBPAIRR {
-        ABBPAIRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn abbpair(&self) -> ABBPAIR_R {
+        ABBPAIR_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 2 - Word or DWord Offset of AB values, with B at \\[2\\]=0 and A at \\[2\\]=1 as far as the code sees (normally will be an interleaved bank so only sequential to AHB). Word offset only allowed if 32 bit operation. Ideally not in the same RAM as the CD values if 4-up"]
-    #[inline]
-    pub fn aboff(&self) -> ABOFFR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ABOFFR { bits }
+    #[inline(always)]
+    pub fn aboff(&self) -> ABOFF_R {
+        ABOFF_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Which bank-pair the offset CDOFF is within. This must be 0 if only 2-up"]
-    #[inline]
-    pub fn cdbpair(&self) -> CDBPAIRR {
-        CDBPAIRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cdbpair(&self) -> CDBPAIR_R {
+        CDBPAIR_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bits 18:28 - Word or DWord Offset of CD, with D at \\[2\\]=0 and C at \\[2\\]=1 as far as the code sees (normally will be an interleaved bank so only sequential to AHB). Word offset only allowed if 32 bit operation. Ideally not in the same RAM as the AB values"]
-    #[inline]
-    pub fn cdoff(&self) -> CDOFFR {
-        let bits = {
-            const MASK: u16 = 2047;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        CDOFFR { bits }
+    #[inline(always)]
+    pub fn cdoff(&self) -> CDOFF_R {
+        CDOFF_R::new(((self.bits >> 18) & 0x07ff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Which bank-pair the offset ABOFF is within. This must be 0 if only 2-up"]
-    #[inline]
-    pub fn abbpair(&mut self) -> _ABBPAIRW {
-        _ABBPAIRW { w: self }
+    #[inline(always)]
+    pub fn abbpair(&mut self) -> ABBPAIR_W {
+        ABBPAIR_W { w: self }
     }
     #[doc = "Bit 2 - Word or DWord Offset of AB values, with B at \\[2\\]=0 and A at \\[2\\]=1 as far as the code sees (normally will be an interleaved bank so only sequential to AHB). Word offset only allowed if 32 bit operation. Ideally not in the same RAM as the CD values if 4-up"]
-    #[inline]
-    pub fn aboff(&mut self) -> _ABOFFW {
-        _ABOFFW { w: self }
+    #[inline(always)]
+    pub fn aboff(&mut self) -> ABOFF_W {
+        ABOFF_W { w: self }
     }
     #[doc = "Bit 16 - Which bank-pair the offset CDOFF is within. This must be 0 if only 2-up"]
-    #[inline]
-    pub fn cdbpair(&mut self) -> _CDBPAIRW {
-        _CDBPAIRW { w: self }
+    #[inline(always)]
+    pub fn cdbpair(&mut self) -> CDBPAIR_W {
+        CDBPAIR_W { w: self }
     }
     #[doc = "Bits 18:28 - Word or DWord Offset of CD, with D at \\[2\\]=0 and C at \\[2\\]=1 as far as the code sees (normally will be an interleaved bank so only sequential to AHB). Word offset only allowed if 32 bit operation. Ideally not in the same RAM as the AB values"]
-    #[inline]
-    pub fn cdoff(&mut self) -> _CDOFFW {
-        _CDOFFW { w: self }
+    #[inline(always)]
+    pub fn cdoff(&mut self) -> CDOFF_W {
+        CDOFF_W { w: self }
     }
 }

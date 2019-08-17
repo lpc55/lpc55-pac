@@ -1,1016 +1,720 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SFSR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SFSR"]
+pub type R = crate::R<u32, super::SFSR>;
+#[doc = "Writer for register SFSR"]
+pub type W = crate::W<u32, super::SFSR>;
+#[doc = "Register SFSR `reset()`'s with value 0"]
+impl crate::ResetValue for super::SFSR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `INVEP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INVEPR {
+pub enum INVEP_A {
     #[doc = "Error has not occurred."]
     NO_ERROR,
     #[doc = "Error has occurred."]
     ERROR,
 }
-impl INVEPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INVEPR::NO_ERROR => false,
-            INVEPR::ERROR => true,
+impl From<INVEP_A> for bool {
+    #[inline(always)]
+    fn from(variant: INVEP_A) -> Self {
+        match variant {
+            INVEP_A::NO_ERROR => false,
+            INVEP_A::ERROR => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INVEPR {
-        match value {
-            false => INVEPR::NO_ERROR,
-            true => INVEPR::ERROR,
+}
+#[doc = "Reader of field `INVEP`"]
+pub type INVEP_R = crate::R<bool, INVEP_A>;
+impl INVEP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INVEP_A {
+        match self.bits {
+            false => INVEP_A::NO_ERROR,
+            true => INVEP_A::ERROR,
         }
     }
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == INVEPR::NO_ERROR
+        *self == INVEP_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == INVEPR::ERROR
+        *self == INVEP_A::ERROR
+    }
+}
+#[doc = "Write proxy for field `INVEP`"]
+pub struct INVEP_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> INVEP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INVEP_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Error has not occurred."]
+    #[inline(always)]
+    pub fn no_error(self) -> &'a mut W {
+        self.variant(INVEP_A::NO_ERROR)
+    }
+    #[doc = "Error has occurred."]
+    #[inline(always)]
+    pub fn error(self) -> &'a mut W {
+        self.variant(INVEP_A::ERROR)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
 #[doc = "Possible values of the field `INVIS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INVISR {
+pub enum INVIS_A {
     #[doc = "Error has not occurred."]
     NO_ERROR,
     #[doc = "Error has occurred."]
     ERROR,
 }
-impl INVISR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INVISR::NO_ERROR => false,
-            INVISR::ERROR => true,
+impl From<INVIS_A> for bool {
+    #[inline(always)]
+    fn from(variant: INVIS_A) -> Self {
+        match variant {
+            INVIS_A::NO_ERROR => false,
+            INVIS_A::ERROR => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INVISR {
-        match value {
-            false => INVISR::NO_ERROR,
-            true => INVISR::ERROR,
+}
+#[doc = "Reader of field `INVIS`"]
+pub type INVIS_R = crate::R<bool, INVIS_A>;
+impl INVIS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INVIS_A {
+        match self.bits {
+            false => INVIS_A::NO_ERROR,
+            true => INVIS_A::ERROR,
         }
     }
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == INVISR::NO_ERROR
+        *self == INVIS_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == INVISR::ERROR
+        *self == INVIS_A::ERROR
+    }
+}
+#[doc = "Write proxy for field `INVIS`"]
+pub struct INVIS_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> INVIS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INVIS_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Error has not occurred."]
+    #[inline(always)]
+    pub fn no_error(self) -> &'a mut W {
+        self.variant(INVIS_A::NO_ERROR)
+    }
+    #[doc = "Error has occurred."]
+    #[inline(always)]
+    pub fn error(self) -> &'a mut W {
+        self.variant(INVIS_A::ERROR)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
 #[doc = "Possible values of the field `INVER`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INVERR {
+pub enum INVER_A {
     #[doc = "Error has not occurred."]
     NO_ERROR,
     #[doc = "Error has occurred."]
     ERROR,
 }
-impl INVERR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INVERR::NO_ERROR => false,
-            INVERR::ERROR => true,
+impl From<INVER_A> for bool {
+    #[inline(always)]
+    fn from(variant: INVER_A) -> Self {
+        match variant {
+            INVER_A::NO_ERROR => false,
+            INVER_A::ERROR => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INVERR {
-        match value {
-            false => INVERR::NO_ERROR,
-            true => INVERR::ERROR,
+}
+#[doc = "Reader of field `INVER`"]
+pub type INVER_R = crate::R<bool, INVER_A>;
+impl INVER_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INVER_A {
+        match self.bits {
+            false => INVER_A::NO_ERROR,
+            true => INVER_A::ERROR,
         }
     }
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == INVERR::NO_ERROR
+        *self == INVER_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == INVERR::ERROR
+        *self == INVER_A::ERROR
+    }
+}
+#[doc = "Write proxy for field `INVER`"]
+pub struct INVER_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> INVER_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INVER_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Error has not occurred."]
+    #[inline(always)]
+    pub fn no_error(self) -> &'a mut W {
+        self.variant(INVER_A::NO_ERROR)
+    }
+    #[doc = "Error has occurred."]
+    #[inline(always)]
+    pub fn error(self) -> &'a mut W {
+        self.variant(INVER_A::ERROR)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `AUVIOL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AUVIOLR {
+pub enum AUVIOL_A {
     #[doc = "Error has not occurred."]
     NO_ERROR,
     #[doc = "Error has occurred."]
     ERROR,
 }
-impl AUVIOLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            AUVIOLR::NO_ERROR => false,
-            AUVIOLR::ERROR => true,
+impl From<AUVIOL_A> for bool {
+    #[inline(always)]
+    fn from(variant: AUVIOL_A) -> Self {
+        match variant {
+            AUVIOL_A::NO_ERROR => false,
+            AUVIOL_A::ERROR => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> AUVIOLR {
-        match value {
-            false => AUVIOLR::NO_ERROR,
-            true => AUVIOLR::ERROR,
+}
+#[doc = "Reader of field `AUVIOL`"]
+pub type AUVIOL_R = crate::R<bool, AUVIOL_A>;
+impl AUVIOL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AUVIOL_A {
+        match self.bits {
+            false => AUVIOL_A::NO_ERROR,
+            true => AUVIOL_A::ERROR,
         }
     }
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == AUVIOLR::NO_ERROR
+        *self == AUVIOL_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == AUVIOLR::ERROR
+        *self == AUVIOL_A::ERROR
+    }
+}
+#[doc = "Write proxy for field `AUVIOL`"]
+pub struct AUVIOL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> AUVIOL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AUVIOL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Error has not occurred."]
+    #[inline(always)]
+    pub fn no_error(self) -> &'a mut W {
+        self.variant(AUVIOL_A::NO_ERROR)
+    }
+    #[doc = "Error has occurred."]
+    #[inline(always)]
+    pub fn error(self) -> &'a mut W {
+        self.variant(AUVIOL_A::ERROR)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
 #[doc = "Possible values of the field `INVTRAN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INVTRANR {
+pub enum INVTRAN_A {
     #[doc = "Error has not occurred."]
     NO_ERROR,
     #[doc = "Error has occurred."]
     ERROR,
 }
-impl INVTRANR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INVTRANR::NO_ERROR => false,
-            INVTRANR::ERROR => true,
+impl From<INVTRAN_A> for bool {
+    #[inline(always)]
+    fn from(variant: INVTRAN_A) -> Self {
+        match variant {
+            INVTRAN_A::NO_ERROR => false,
+            INVTRAN_A::ERROR => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INVTRANR {
-        match value {
-            false => INVTRANR::NO_ERROR,
-            true => INVTRANR::ERROR,
+}
+#[doc = "Reader of field `INVTRAN`"]
+pub type INVTRAN_R = crate::R<bool, INVTRAN_A>;
+impl INVTRAN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INVTRAN_A {
+        match self.bits {
+            false => INVTRAN_A::NO_ERROR,
+            true => INVTRAN_A::ERROR,
         }
     }
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == INVTRANR::NO_ERROR
+        *self == INVTRAN_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == INVTRANR::ERROR
+        *self == INVTRAN_A::ERROR
+    }
+}
+#[doc = "Write proxy for field `INVTRAN`"]
+pub struct INVTRAN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> INVTRAN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: INVTRAN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Error has not occurred."]
+    #[inline(always)]
+    pub fn no_error(self) -> &'a mut W {
+        self.variant(INVTRAN_A::NO_ERROR)
+    }
+    #[doc = "Error has occurred."]
+    #[inline(always)]
+    pub fn error(self) -> &'a mut W {
+        self.variant(INVTRAN_A::ERROR)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `LSPERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LSPERRR {
+pub enum LSPERR_A {
     #[doc = "Error has not occurred."]
     NO_ERROR,
     #[doc = "Error has occurred."]
     ERROR,
 }
-impl LSPERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LSPERRR::NO_ERROR => false,
-            LSPERRR::ERROR => true,
+impl From<LSPERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: LSPERR_A) -> Self {
+        match variant {
+            LSPERR_A::NO_ERROR => false,
+            LSPERR_A::ERROR => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LSPERRR {
-        match value {
-            false => LSPERRR::NO_ERROR,
-            true => LSPERRR::ERROR,
+}
+#[doc = "Reader of field `LSPERR`"]
+pub type LSPERR_R = crate::R<bool, LSPERR_A>;
+impl LSPERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LSPERR_A {
+        match self.bits {
+            false => LSPERR_A::NO_ERROR,
+            true => LSPERR_A::ERROR,
         }
     }
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == LSPERRR::NO_ERROR
+        *self == LSPERR_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == LSPERRR::ERROR
+        *self == LSPERR_A::ERROR
+    }
+}
+#[doc = "Write proxy for field `LSPERR`"]
+pub struct LSPERR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LSPERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LSPERR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Error has not occurred."]
+    #[inline(always)]
+    pub fn no_error(self) -> &'a mut W {
+        self.variant(LSPERR_A::NO_ERROR)
+    }
+    #[doc = "Error has occurred."]
+    #[inline(always)]
+    pub fn error(self) -> &'a mut W {
+        self.variant(LSPERR_A::ERROR)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SFARVALID`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SFARVALIDR {
+pub enum SFARVALID_A {
     #[doc = "SFAR content not valid."]
     NOT_VALID,
     #[doc = "SFAR content valid."]
     VALID,
 }
-impl SFARVALIDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SFARVALIDR::NOT_VALID => false,
-            SFARVALIDR::VALID => true,
+impl From<SFARVALID_A> for bool {
+    #[inline(always)]
+    fn from(variant: SFARVALID_A) -> Self {
+        match variant {
+            SFARVALID_A::NOT_VALID => false,
+            SFARVALID_A::VALID => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SFARVALIDR {
-        match value {
-            false => SFARVALIDR::NOT_VALID,
-            true => SFARVALIDR::VALID,
+}
+#[doc = "Reader of field `SFARVALID`"]
+pub type SFARVALID_R = crate::R<bool, SFARVALID_A>;
+impl SFARVALID_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SFARVALID_A {
+        match self.bits {
+            false => SFARVALID_A::NOT_VALID,
+            true => SFARVALID_A::VALID,
         }
     }
     #[doc = "Checks if the value of the field is `NOT_VALID`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_not_valid(&self) -> bool {
-        *self == SFARVALIDR::NOT_VALID
+        *self == SFARVALID_A::NOT_VALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        *self == SFARVALIDR::VALID
+        *self == SFARVALID_A::VALID
+    }
+}
+#[doc = "Write proxy for field `SFARVALID`"]
+pub struct SFARVALID_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SFARVALID_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SFARVALID_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "SFAR content not valid."]
+    #[inline(always)]
+    pub fn not_valid(self) -> &'a mut W {
+        self.variant(SFARVALID_A::NOT_VALID)
+    }
+    #[doc = "SFAR content valid."]
+    #[inline(always)]
+    pub fn valid(self) -> &'a mut W {
+        self.variant(SFARVALID_A::VALID)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w
     }
 }
 #[doc = "Possible values of the field `LSERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LSERRR {
+pub enum LSERR_A {
     #[doc = "Error has not occurred"]
     NO_ERROR,
     #[doc = "Error has occurred."]
     ERROR,
 }
-impl LSERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LSERRR::NO_ERROR => false,
-            LSERRR::ERROR => true,
+impl From<LSERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: LSERR_A) -> Self {
+        match variant {
+            LSERR_A::NO_ERROR => false,
+            LSERR_A::ERROR => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LSERRR {
-        match value {
-            false => LSERRR::NO_ERROR,
-            true => LSERRR::ERROR,
+}
+#[doc = "Reader of field `LSERR`"]
+pub type LSERR_R = crate::R<bool, LSERR_A>;
+impl LSERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LSERR_A {
+        match self.bits {
+            false => LSERR_A::NO_ERROR,
+            true => LSERR_A::ERROR,
         }
     }
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == LSERRR::NO_ERROR
+        *self == LSERR_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == LSERRR::ERROR
+        *self == LSERR_A::ERROR
     }
 }
-#[doc = "Values that can be written to the field `INVEP`"]
-pub enum INVEPW {
-    #[doc = "Error has not occurred."]
-    NO_ERROR,
-    #[doc = "Error has occurred."]
-    ERROR,
-}
-impl INVEPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INVEPW::NO_ERROR => false,
-            INVEPW::ERROR => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INVEPW<'a> {
+#[doc = "Write proxy for field `LSERR`"]
+pub struct LSERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INVEPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INVEPW) -> &'a mut W {
+impl<'a> LSERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LSERR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Error has not occurred."]
-    #[inline]
-    pub fn no_error(self) -> &'a mut W {
-        self.variant(INVEPW::NO_ERROR)
-    }
-    #[doc = "Error has occurred."]
-    #[inline]
-    pub fn error(self) -> &'a mut W {
-        self.variant(INVEPW::ERROR)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `INVIS`"]
-pub enum INVISW {
-    #[doc = "Error has not occurred."]
-    NO_ERROR,
-    #[doc = "Error has occurred."]
-    ERROR,
-}
-impl INVISW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INVISW::NO_ERROR => false,
-            INVISW::ERROR => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INVISW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _INVISW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INVISW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Error has not occurred."]
-    #[inline]
-    pub fn no_error(self) -> &'a mut W {
-        self.variant(INVISW::NO_ERROR)
-    }
-    #[doc = "Error has occurred."]
-    #[inline]
-    pub fn error(self) -> &'a mut W {
-        self.variant(INVISW::ERROR)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `INVER`"]
-pub enum INVERW {
-    #[doc = "Error has not occurred."]
-    NO_ERROR,
-    #[doc = "Error has occurred."]
-    ERROR,
-}
-impl INVERW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INVERW::NO_ERROR => false,
-            INVERW::ERROR => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INVERW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _INVERW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INVERW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Error has not occurred."]
-    #[inline]
-    pub fn no_error(self) -> &'a mut W {
-        self.variant(INVERW::NO_ERROR)
-    }
-    #[doc = "Error has occurred."]
-    #[inline]
-    pub fn error(self) -> &'a mut W {
-        self.variant(INVERW::ERROR)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `AUVIOL`"]
-pub enum AUVIOLW {
-    #[doc = "Error has not occurred."]
-    NO_ERROR,
-    #[doc = "Error has occurred."]
-    ERROR,
-}
-impl AUVIOLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            AUVIOLW::NO_ERROR => false,
-            AUVIOLW::ERROR => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AUVIOLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _AUVIOLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AUVIOLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Error has not occurred."]
-    #[inline]
-    pub fn no_error(self) -> &'a mut W {
-        self.variant(AUVIOLW::NO_ERROR)
-    }
-    #[doc = "Error has occurred."]
-    #[inline]
-    pub fn error(self) -> &'a mut W {
-        self.variant(AUVIOLW::ERROR)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `INVTRAN`"]
-pub enum INVTRANW {
-    #[doc = "Error has not occurred."]
-    NO_ERROR,
-    #[doc = "Error has occurred."]
-    ERROR,
-}
-impl INVTRANW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            INVTRANW::NO_ERROR => false,
-            INVTRANW::ERROR => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INVTRANW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _INVTRANW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: INVTRANW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Error has not occurred."]
-    #[inline]
-    pub fn no_error(self) -> &'a mut W {
-        self.variant(INVTRANW::NO_ERROR)
-    }
-    #[doc = "Error has occurred."]
-    #[inline]
-    pub fn error(self) -> &'a mut W {
-        self.variant(INVTRANW::ERROR)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LSPERR`"]
-pub enum LSPERRW {
-    #[doc = "Error has not occurred."]
-    NO_ERROR,
-    #[doc = "Error has occurred."]
-    ERROR,
-}
-impl LSPERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LSPERRW::NO_ERROR => false,
-            LSPERRW::ERROR => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LSPERRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LSPERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LSPERRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Error has not occurred."]
-    #[inline]
-    pub fn no_error(self) -> &'a mut W {
-        self.variant(LSPERRW::NO_ERROR)
-    }
-    #[doc = "Error has occurred."]
-    #[inline]
-    pub fn error(self) -> &'a mut W {
-        self.variant(LSPERRW::ERROR)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SFARVALID`"]
-pub enum SFARVALIDW {
-    #[doc = "SFAR content not valid."]
-    NOT_VALID,
-    #[doc = "SFAR content valid."]
-    VALID,
-}
-impl SFARVALIDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SFARVALIDW::NOT_VALID => false,
-            SFARVALIDW::VALID => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SFARVALIDW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SFARVALIDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SFARVALIDW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "SFAR content not valid."]
-    #[inline]
-    pub fn not_valid(self) -> &'a mut W {
-        self.variant(SFARVALIDW::NOT_VALID)
-    }
-    #[doc = "SFAR content valid."]
-    #[inline]
-    pub fn valid(self) -> &'a mut W {
-        self.variant(SFARVALIDW::VALID)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LSERR`"]
-pub enum LSERRW {
-    #[doc = "Error has not occurred"]
-    NO_ERROR,
-    #[doc = "Error has occurred."]
-    ERROR,
-}
-impl LSERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LSERRW::NO_ERROR => false,
-            LSERRW::ERROR => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LSERRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LSERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LSERRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Error has not occurred"]
-    #[inline]
+    #[inline(always)]
     pub fn no_error(self) -> &'a mut W {
-        self.variant(LSERRW::NO_ERROR)
+        self.variant(LSERR_A::NO_ERROR)
     }
     #[doc = "Error has occurred."]
-    #[inline]
+    #[inline(always)]
     pub fn error(self) -> &'a mut W {
-        self.variant(LSERRW::ERROR)
+        self.variant(LSERR_A::ERROR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Invalid entry point."]
-    #[inline]
-    pub fn invep(&self) -> INVEPR {
-        INVEPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn invep(&self) -> INVEP_R {
+        INVEP_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Invalid integrity signature flag."]
-    #[inline]
-    pub fn invis(&self) -> INVISR {
-        INVISR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn invis(&self) -> INVIS_R {
+        INVIS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Invalid exception return flag."]
-    #[inline]
-    pub fn inver(&self) -> INVERR {
-        INVERR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn inver(&self) -> INVER_R {
+        INVER_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Attribution unit violation flag."]
-    #[inline]
-    pub fn auviol(&self) -> AUVIOLR {
-        AUVIOLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn auviol(&self) -> AUVIOL_R {
+        AUVIOL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Invalid transition flag."]
-    #[inline]
-    pub fn invtran(&self) -> INVTRANR {
-        INVTRANR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn invtran(&self) -> INVTRAN_R {
+        INVTRAN_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Lazy state preservation error flag."]
-    #[inline]
-    pub fn lsperr(&self) -> LSPERRR {
-        LSPERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lsperr(&self) -> LSPERR_R {
+        LSPERR_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Secure fault address valid."]
-    #[inline]
-    pub fn sfarvalid(&self) -> SFARVALIDR {
-        SFARVALIDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sfarvalid(&self) -> SFARVALID_R {
+        SFARVALID_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Lazy state error flag."]
-    #[inline]
-    pub fn lserr(&self) -> LSERRR {
-        LSERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lserr(&self) -> LSERR_R {
+        LSERR_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Invalid entry point."]
-    #[inline]
-    pub fn invep(&mut self) -> _INVEPW {
-        _INVEPW { w: self }
+    #[inline(always)]
+    pub fn invep(&mut self) -> INVEP_W {
+        INVEP_W { w: self }
     }
     #[doc = "Bit 1 - Invalid integrity signature flag."]
-    #[inline]
-    pub fn invis(&mut self) -> _INVISW {
-        _INVISW { w: self }
+    #[inline(always)]
+    pub fn invis(&mut self) -> INVIS_W {
+        INVIS_W { w: self }
     }
     #[doc = "Bit 2 - Invalid exception return flag."]
-    #[inline]
-    pub fn inver(&mut self) -> _INVERW {
-        _INVERW { w: self }
+    #[inline(always)]
+    pub fn inver(&mut self) -> INVER_W {
+        INVER_W { w: self }
     }
     #[doc = "Bit 3 - Attribution unit violation flag."]
-    #[inline]
-    pub fn auviol(&mut self) -> _AUVIOLW {
-        _AUVIOLW { w: self }
+    #[inline(always)]
+    pub fn auviol(&mut self) -> AUVIOL_W {
+        AUVIOL_W { w: self }
     }
     #[doc = "Bit 4 - Invalid transition flag."]
-    #[inline]
-    pub fn invtran(&mut self) -> _INVTRANW {
-        _INVTRANW { w: self }
+    #[inline(always)]
+    pub fn invtran(&mut self) -> INVTRAN_W {
+        INVTRAN_W { w: self }
     }
     #[doc = "Bit 5 - Lazy state preservation error flag."]
-    #[inline]
-    pub fn lsperr(&mut self) -> _LSPERRW {
-        _LSPERRW { w: self }
+    #[inline(always)]
+    pub fn lsperr(&mut self) -> LSPERR_W {
+        LSPERR_W { w: self }
     }
     #[doc = "Bit 6 - Secure fault address valid."]
-    #[inline]
-    pub fn sfarvalid(&mut self) -> _SFARVALIDW {
-        _SFARVALIDW { w: self }
+    #[inline(always)]
+    pub fn sfarvalid(&mut self) -> SFARVALID_W {
+        SFARVALID_W { w: self }
     }
     #[doc = "Bit 7 - Lazy state error flag."]
-    #[inline]
-    pub fn lserr(&mut self) -> _LSERRW {
-        _LSERRW { w: self }
+    #[inline(always)]
+    pub fn lserr(&mut self) -> LSERR_W {
+        LSERR_W { w: self }
     }
 }

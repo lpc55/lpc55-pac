@@ -1,6 +1,6 @@
 # lpc55s6x-pac
 
-Generated docs are commited to <https://github.com/nickray/lpc55s6x-pac-docs> and published at <https://lpc55s6x-pac-docs.netlify.com/>, see [deploy logs](https://app.netlify.com/sites/lpc55s6x-pac-docs/deploys).
+Generated docs are commited to <https://github.com/nickray/lpc55s6x-pac-docs> and published at <https://lpc55s6x.netlify.com/>, see [deploy logs](https://app.netlify.com/sites/lpc55s6x/deploys).
 
 # License
 

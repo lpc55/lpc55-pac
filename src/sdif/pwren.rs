@@ -1,182 +1,84 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PWREN {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PWREN"]
+pub type R = crate::R<u32, super::PWREN>;
+#[doc = "Writer for register PWREN"]
+pub type W = crate::W<u32, super::PWREN>;
+#[doc = "Register PWREN `reset()`'s with value 0"]
+impl crate::ResetValue for super::PWREN {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct POWER_ENABLE0R {
-    bits: bool,
-}
-impl POWER_ENABLE0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct POWER_ENABLE1R {
-    bits: bool,
-}
-impl POWER_ENABLE1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _POWER_ENABLE0W<'a> {
+#[doc = "Reader of field `POWER_ENABLE0`"]
+pub type POWER_ENABLE0_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `POWER_ENABLE0`"]
+pub struct POWER_ENABLE0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _POWER_ENABLE0W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> POWER_ENABLE0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _POWER_ENABLE1W<'a> {
+#[doc = "Reader of field `POWER_ENABLE1`"]
+pub type POWER_ENABLE1_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `POWER_ENABLE1`"]
+pub struct POWER_ENABLE1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _POWER_ENABLE1W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> POWER_ENABLE1_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Power on/off switch for card 0; once power is turned on, software should wait for regulator/switch ramp-up time before trying to initialize card 0."]
-    #[inline]
-    pub fn power_enable0(&self) -> POWER_ENABLE0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        POWER_ENABLE0R { bits }
+    #[inline(always)]
+    pub fn power_enable0(&self) -> POWER_ENABLE0_R {
+        POWER_ENABLE0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Power on/off switch for card 1; once power is turned on, software should wait for regulator/switch ramp-up time before trying to initialize card 1."]
-    #[inline]
-    pub fn power_enable1(&self) -> POWER_ENABLE1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        POWER_ENABLE1R { bits }
+    #[inline(always)]
+    pub fn power_enable1(&self) -> POWER_ENABLE1_R {
+        POWER_ENABLE1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Power on/off switch for card 0; once power is turned on, software should wait for regulator/switch ramp-up time before trying to initialize card 0."]
-    #[inline]
-    pub fn power_enable0(&mut self) -> _POWER_ENABLE0W {
-        _POWER_ENABLE0W { w: self }
+    #[inline(always)]
+    pub fn power_enable0(&mut self) -> POWER_ENABLE0_W {
+        POWER_ENABLE0_W { w: self }
     }
     #[doc = "Bit 1 - Power on/off switch for card 1; once power is turned on, software should wait for regulator/switch ramp-up time before trying to initialize card 1."]
-    #[inline]
-    pub fn power_enable1(&mut self) -> _POWER_ENABLE1W {
-        _POWER_ENABLE1W { w: self }
+    #[inline(always)]
+    pub fn power_enable1(&mut self) -> POWER_ENABLE1_W {
+        POWER_ENABLE1_W { w: self }
     }
 }

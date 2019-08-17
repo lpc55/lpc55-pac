@@ -1,82 +1,61 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CODESECURITYPROTCPU1 {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register CODESECURITYPROTCPU1"]
+pub type W = crate::W<u32, super::CODESECURITYPROTCPU1>;
+#[doc = "Register CODESECURITYPROTCPU1 `reset()`'s with value 0"]
+impl crate::ResetValue for super::CODESECURITYPROTCPU1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Values that can be written to the field `SEC_CODE`"]
-pub enum SEC_CODEW {
+#[doc = "Possible values of the field `SEC_CODE`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SEC_CODE_AW {
     #[doc = "CPU1 DAP is not allowed."]
     DISABLE,
     #[doc = "Security code to allow CPU1 DAP."]
     ENABLE,
 }
-impl SEC_CODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u32 {
-        match *self {
-            SEC_CODEW::DISABLE => 0,
-            SEC_CODEW::ENABLE => 305419896,
+impl From<SEC_CODE_AW> for u32 {
+    #[inline(always)]
+    fn from(variant: SEC_CODE_AW) -> Self {
+        match variant {
+            SEC_CODE_AW::DISABLE => 0,
+            SEC_CODE_AW::ENABLE => 305419896,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SEC_CODEW<'a> {
+#[doc = "Write proxy for field `SEC_CODE`"]
+pub struct SEC_CODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SEC_CODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SEC_CODEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> SEC_CODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SEC_CODE_AW) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "CPU1 DAP is not allowed."]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(SEC_CODEW::DISABLE)
+        self.variant(SEC_CODE_AW::DISABLE)
     }
     #[doc = "Security code to allow CPU1 DAP."]
-    #[inline]
+    #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(SEC_CODEW::ENABLE)
+        self.variant(SEC_CODE_AW::ENABLE)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        const MASK: u32 = 4294967295;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:31 - Security code to allow CPU1 DAP: 0x12345678."]
-    #[inline]
-    pub fn sec_code(&mut self) -> _SEC_CODEW {
-        _SEC_CODEW { w: self }
+    #[inline(always)]
+    pub fn sec_code(&mut self) -> SEC_CODE_W {
+        SEC_CODE_W { w: self }
     }
 }

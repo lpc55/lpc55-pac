@@ -1,351 +1,184 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::USBHS_PHY_TRIM {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register USBHS_PHY_TRIM"]
+pub type R = crate::R<u32, super::USBHS_PHY_TRIM>;
+#[doc = "Writer for register USBHS_PHY_TRIM"]
+pub type W = crate::W<u32, super::USBHS_PHY_TRIM>;
+#[doc = "Register USBHS_PHY_TRIM `reset()`'s with value 0"]
+impl crate::ResetValue for super::USBHS_PHY_TRIM {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct TRIM_USB_REG_ENV_TAIL_ADJ_VDR {
-    bits: u8,
-}
-impl TRIM_USB_REG_ENV_TAIL_ADJ_VDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TRIM_USBPHY_TX_D_CALR {
-    bits: u8,
-}
-impl TRIM_USBPHY_TX_D_CALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TRIM_USBPHY_TX_CAL45DPR {
-    bits: u8,
-}
-impl TRIM_USBPHY_TX_CAL45DPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TRIM_USBPHY_TX_CAL45DMR {
-    bits: u8,
-}
-impl TRIM_USBPHY_TX_CAL45DMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TRIM_USB2_REFBIAS_TSTR {
-    bits: u8,
-}
-impl TRIM_USB2_REFBIAS_TSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TRIM_USB2_REFBIAS_VBGADJR {
-    bits: u8,
-}
-impl TRIM_USB2_REFBIAS_VBGADJR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TRIM_PLL_CTRL0_DIV_SELR {
-    bits: u8,
-}
-impl TRIM_PLL_CTRL0_DIV_SELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TRIM_USB_REG_ENV_TAIL_ADJ_VDW<'a> {
+#[doc = "Reader of field `trim_usb_reg_env_tail_adj_vd`"]
+pub type TRIM_USB_REG_ENV_TAIL_ADJ_VD_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `trim_usb_reg_env_tail_adj_vd`"]
+pub struct TRIM_USB_REG_ENV_TAIL_ADJ_VD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIM_USB_REG_ENV_TAIL_ADJ_VDW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TRIM_USB_REG_ENV_TAIL_ADJ_VD_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIM_USBPHY_TX_D_CALW<'a> {
+#[doc = "Reader of field `trim_usbphy_tx_d_cal`"]
+pub type TRIM_USBPHY_TX_D_CAL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `trim_usbphy_tx_d_cal`"]
+pub struct TRIM_USBPHY_TX_D_CAL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIM_USBPHY_TX_D_CALW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TRIM_USBPHY_TX_D_CAL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 2)) | (((value as u32) & 0x0f) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIM_USBPHY_TX_CAL45DPW<'a> {
+#[doc = "Reader of field `trim_usbphy_tx_cal45dp`"]
+pub type TRIM_USBPHY_TX_CAL45DP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `trim_usbphy_tx_cal45dp`"]
+pub struct TRIM_USBPHY_TX_CAL45DP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIM_USBPHY_TX_CAL45DPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TRIM_USBPHY_TX_CAL45DP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 6)) | (((value as u32) & 0x1f) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIM_USBPHY_TX_CAL45DMW<'a> {
+#[doc = "Reader of field `trim_usbphy_tx_cal45dm`"]
+pub type TRIM_USBPHY_TX_CAL45DM_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `trim_usbphy_tx_cal45dm`"]
+pub struct TRIM_USBPHY_TX_CAL45DM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIM_USBPHY_TX_CAL45DMW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TRIM_USBPHY_TX_CAL45DM_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 11)) | (((value as u32) & 0x1f) << 11);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIM_USB2_REFBIAS_TSTW<'a> {
+#[doc = "Reader of field `trim_usb2_refbias_tst`"]
+pub type TRIM_USB2_REFBIAS_TST_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `trim_usb2_refbias_tst`"]
+pub struct TRIM_USB2_REFBIAS_TST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIM_USB2_REFBIAS_TSTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TRIM_USB2_REFBIAS_TST_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIM_USB2_REFBIAS_VBGADJW<'a> {
+#[doc = "Reader of field `trim_usb2_refbias_vbgadj`"]
+pub type TRIM_USB2_REFBIAS_VBGADJ_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `trim_usb2_refbias_vbgadj`"]
+pub struct TRIM_USB2_REFBIAS_VBGADJ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIM_USB2_REFBIAS_VBGADJW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TRIM_USB2_REFBIAS_VBGADJ_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 18)) | (((value as u32) & 0x07) << 18);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TRIM_PLL_CTRL0_DIV_SELW<'a> {
+#[doc = "Reader of field `trim_pll_ctrl0_div_sel`"]
+pub type TRIM_PLL_CTRL0_DIV_SEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `trim_pll_ctrl0_div_sel`"]
+pub struct TRIM_PLL_CTRL0_DIV_SEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TRIM_PLL_CTRL0_DIV_SELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TRIM_PLL_CTRL0_DIV_SEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 21)) | (((value as u32) & 0x07) << 21);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Adjusts time constant of HS RX squelch (envelope) comparator."]
-    #[inline]
-    pub fn trim_usb_reg_env_tail_adj_vd(&self) -> TRIM_USB_REG_ENV_TAIL_ADJ_VDR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TRIM_USB_REG_ENV_TAIL_ADJ_VDR { bits }
+    #[inline(always)]
+    pub fn trim_usb_reg_env_tail_adj_vd(&self) -> TRIM_USB_REG_ENV_TAIL_ADJ_VD_R {
+        TRIM_USB_REG_ENV_TAIL_ADJ_VD_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:5 - ."]
-    #[inline]
-    pub fn trim_usbphy_tx_d_cal(&self) -> TRIM_USBPHY_TX_D_CALR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TRIM_USBPHY_TX_D_CALR { bits }
+    #[inline(always)]
+    pub fn trim_usbphy_tx_d_cal(&self) -> TRIM_USBPHY_TX_D_CAL_R {
+        TRIM_USBPHY_TX_D_CAL_R::new(((self.bits >> 2) & 0x0f) as u8)
     }
     #[doc = "Bits 6:10 - ."]
-    #[inline]
-    pub fn trim_usbphy_tx_cal45dp(&self) -> TRIM_USBPHY_TX_CAL45DPR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TRIM_USBPHY_TX_CAL45DPR { bits }
+    #[inline(always)]
+    pub fn trim_usbphy_tx_cal45dp(&self) -> TRIM_USBPHY_TX_CAL45DP_R {
+        TRIM_USBPHY_TX_CAL45DP_R::new(((self.bits >> 6) & 0x1f) as u8)
     }
     #[doc = "Bits 11:15 - ."]
-    #[inline]
-    pub fn trim_usbphy_tx_cal45dm(&self) -> TRIM_USBPHY_TX_CAL45DMR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TRIM_USBPHY_TX_CAL45DMR { bits }
+    #[inline(always)]
+    pub fn trim_usbphy_tx_cal45dm(&self) -> TRIM_USBPHY_TX_CAL45DM_R {
+        TRIM_USBPHY_TX_CAL45DM_R::new(((self.bits >> 11) & 0x1f) as u8)
     }
     #[doc = "Bits 16:17 - ."]
-    #[inline]
-    pub fn trim_usb2_refbias_tst(&self) -> TRIM_USB2_REFBIAS_TSTR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TRIM_USB2_REFBIAS_TSTR { bits }
+    #[inline(always)]
+    pub fn trim_usb2_refbias_tst(&self) -> TRIM_USB2_REFBIAS_TST_R {
+        TRIM_USB2_REFBIAS_TST_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bits 18:20 - ."]
-    #[inline]
-    pub fn trim_usb2_refbias_vbgadj(&self) -> TRIM_USB2_REFBIAS_VBGADJR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TRIM_USB2_REFBIAS_VBGADJR { bits }
+    #[inline(always)]
+    pub fn trim_usb2_refbias_vbgadj(&self) -> TRIM_USB2_REFBIAS_VBGADJ_R {
+        TRIM_USB2_REFBIAS_VBGADJ_R::new(((self.bits >> 18) & 0x07) as u8)
     }
     #[doc = "Bits 21:23 - ."]
-    #[inline]
-    pub fn trim_pll_ctrl0_div_sel(&self) -> TRIM_PLL_CTRL0_DIV_SELR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TRIM_PLL_CTRL0_DIV_SELR { bits }
+    #[inline(always)]
+    pub fn trim_pll_ctrl0_div_sel(&self) -> TRIM_PLL_CTRL0_DIV_SEL_R {
+        TRIM_PLL_CTRL0_DIV_SEL_R::new(((self.bits >> 21) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Adjusts time constant of HS RX squelch (envelope) comparator."]
-    #[inline]
-    pub fn trim_usb_reg_env_tail_adj_vd(&mut self) -> _TRIM_USB_REG_ENV_TAIL_ADJ_VDW {
-        _TRIM_USB_REG_ENV_TAIL_ADJ_VDW { w: self }
+    #[inline(always)]
+    pub fn trim_usb_reg_env_tail_adj_vd(&mut self) -> TRIM_USB_REG_ENV_TAIL_ADJ_VD_W {
+        TRIM_USB_REG_ENV_TAIL_ADJ_VD_W { w: self }
     }
     #[doc = "Bits 2:5 - ."]
-    #[inline]
-    pub fn trim_usbphy_tx_d_cal(&mut self) -> _TRIM_USBPHY_TX_D_CALW {
-        _TRIM_USBPHY_TX_D_CALW { w: self }
+    #[inline(always)]
+    pub fn trim_usbphy_tx_d_cal(&mut self) -> TRIM_USBPHY_TX_D_CAL_W {
+        TRIM_USBPHY_TX_D_CAL_W { w: self }
     }
     #[doc = "Bits 6:10 - ."]
-    #[inline]
-    pub fn trim_usbphy_tx_cal45dp(&mut self) -> _TRIM_USBPHY_TX_CAL45DPW {
-        _TRIM_USBPHY_TX_CAL45DPW { w: self }
+    #[inline(always)]
+    pub fn trim_usbphy_tx_cal45dp(&mut self) -> TRIM_USBPHY_TX_CAL45DP_W {
+        TRIM_USBPHY_TX_CAL45DP_W { w: self }
     }
     #[doc = "Bits 11:15 - ."]
-    #[inline]
-    pub fn trim_usbphy_tx_cal45dm(&mut self) -> _TRIM_USBPHY_TX_CAL45DMW {
-        _TRIM_USBPHY_TX_CAL45DMW { w: self }
+    #[inline(always)]
+    pub fn trim_usbphy_tx_cal45dm(&mut self) -> TRIM_USBPHY_TX_CAL45DM_W {
+        TRIM_USBPHY_TX_CAL45DM_W { w: self }
     }
     #[doc = "Bits 16:17 - ."]
-    #[inline]
-    pub fn trim_usb2_refbias_tst(&mut self) -> _TRIM_USB2_REFBIAS_TSTW {
-        _TRIM_USB2_REFBIAS_TSTW { w: self }
+    #[inline(always)]
+    pub fn trim_usb2_refbias_tst(&mut self) -> TRIM_USB2_REFBIAS_TST_W {
+        TRIM_USB2_REFBIAS_TST_W { w: self }
     }
     #[doc = "Bits 18:20 - ."]
-    #[inline]
-    pub fn trim_usb2_refbias_vbgadj(&mut self) -> _TRIM_USB2_REFBIAS_VBGADJW {
-        _TRIM_USB2_REFBIAS_VBGADJW { w: self }
+    #[inline(always)]
+    pub fn trim_usb2_refbias_vbgadj(&mut self) -> TRIM_USB2_REFBIAS_VBGADJ_W {
+        TRIM_USB2_REFBIAS_VBGADJ_W { w: self }
     }
     #[doc = "Bits 21:23 - ."]
-    #[inline]
-    pub fn trim_pll_ctrl0_div_sel(&mut self) -> _TRIM_PLL_CTRL0_DIV_SELW {
-        _TRIM_PLL_CTRL0_DIV_SELW { w: self }
+    #[inline(always)]
+    pub fn trim_pll_ctrl0_div_sel(&mut self) -> TRIM_PLL_CTRL0_DIV_SEL_W {
+        TRIM_PLL_CTRL0_DIV_SEL_W { w: self }
     }
 }

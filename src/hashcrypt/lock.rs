@@ -1,208 +1,118 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::LOCK {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register LOCK"]
+pub type R = crate::R<u32, super::LOCK>;
+#[doc = "Writer for register LOCK"]
+pub type W = crate::W<u32, super::LOCK>;
+#[doc = "Register LOCK `reset()`'s with value 0"]
+impl crate::ResetValue for super::LOCK {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `SECLOCK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SECLOCKR {
+pub enum SECLOCK_A {
     #[doc = "Unlocks, so block is open to all. But, AHB Master will only issue non-secure requests."]
     UNLOCK,
     #[doc = "Locks to the current security level. AHB Master will issue requests at this level."]
     LOCK,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl SECLOCKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SECLOCKR::UNLOCK => 0,
-            SECLOCKR::LOCK => 1,
-            SECLOCKR::_Reserved(bits) => bits,
+impl From<SECLOCK_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SECLOCK_A) -> Self {
+        match variant {
+            SECLOCK_A::UNLOCK => 0,
+            SECLOCK_A::LOCK => 1,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SECLOCKR {
-        match value {
-            0 => SECLOCKR::UNLOCK,
-            1 => SECLOCKR::LOCK,
-            i => SECLOCKR::_Reserved(i),
+}
+#[doc = "Reader of field `SECLOCK`"]
+pub type SECLOCK_R = crate::R<u8, SECLOCK_A>;
+impl SECLOCK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SECLOCK_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SECLOCK_A::UNLOCK),
+            1 => Val(SECLOCK_A::LOCK),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `UNLOCK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unlock(&self) -> bool {
-        *self == SECLOCKR::UNLOCK
+        *self == SECLOCK_A::UNLOCK
     }
     #[doc = "Checks if the value of the field is `LOCK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lock(&self) -> bool {
-        *self == SECLOCKR::LOCK
+        *self == SECLOCK_A::LOCK
     }
 }
-#[doc = r" Value of the field"]
-pub struct PATTERNR {
-    bits: u16,
-}
-impl PATTERNR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `SECLOCK`"]
-pub enum SECLOCKW {
-    #[doc = "Unlocks, so block is open to all. But, AHB Master will only issue non-secure requests."]
-    UNLOCK,
-    #[doc = "Locks to the current security level. AHB Master will issue requests at this level."]
-    LOCK,
-}
-impl SECLOCKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SECLOCKW::UNLOCK => 0,
-            SECLOCKW::LOCK => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SECLOCKW<'a> {
+#[doc = "Write proxy for field `SECLOCK`"]
+pub struct SECLOCK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SECLOCKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SECLOCKW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> SECLOCK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SECLOCK_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Unlocks, so block is open to all. But, AHB Master will only issue non-secure requests."]
-    #[inline]
+    #[inline(always)]
     pub fn unlock(self) -> &'a mut W {
-        self.variant(SECLOCKW::UNLOCK)
+        self.variant(SECLOCK_A::UNLOCK)
     }
     #[doc = "Locks to the current security level. AHB Master will issue requests at this level."]
-    #[inline]
+    #[inline(always)]
     pub fn lock(self) -> &'a mut W {
-        self.variant(SECLOCKW::LOCK)
+        self.variant(SECLOCK_A::LOCK)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PATTERNW<'a> {
+#[doc = "Reader of field `PATTERN`"]
+pub type PATTERN_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `PATTERN`"]
+pub struct PATTERN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PATTERNW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PATTERN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 4095;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0fff << 4)) | (((value as u32) & 0x0fff) << 4);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Write 1 to secure-lock this block (if running in a security state). Write 0 to unlock. If locked already, may only write if at same or higher security level as lock. Reads as: 0 if unlocked, else 1, 2, 3 to indicate security level it is locked at. NOTE: this and ID are the only readable registers if locked and current state is lower than lock level."]
-    #[inline]
-    pub fn seclock(&self) -> SECLOCKR {
-        SECLOCKR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn seclock(&self) -> SECLOCK_R {
+        SECLOCK_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 4:15 - Must write 0xA75 to change lock state. A75:Pattern needed to change bits 1:0"]
-    #[inline]
-    pub fn pattern(&self) -> PATTERNR {
-        let bits = {
-            const MASK: u16 = 4095;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        PATTERNR { bits }
+    #[inline(always)]
+    pub fn pattern(&self) -> PATTERN_R {
+        PATTERN_R::new(((self.bits >> 4) & 0x0fff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Write 1 to secure-lock this block (if running in a security state). Write 0 to unlock. If locked already, may only write if at same or higher security level as lock. Reads as: 0 if unlocked, else 1, 2, 3 to indicate security level it is locked at. NOTE: this and ID are the only readable registers if locked and current state is lower than lock level."]
-    #[inline]
-    pub fn seclock(&mut self) -> _SECLOCKW {
-        _SECLOCKW { w: self }
+    #[inline(always)]
+    pub fn seclock(&mut self) -> SECLOCK_W {
+        SECLOCK_W { w: self }
     }
     #[doc = "Bits 4:15 - Must write 0xA75 to change lock state. A75:Pattern needed to change bits 1:0"]
-    #[inline]
-    pub fn pattern(&mut self) -> _PATTERNW {
-        _PATTERNW { w: self }
+    #[inline(always)]
+    pub fn pattern(&mut self) -> PATTERN_W {
+        PATTERN_W { w: self }
     }
 }

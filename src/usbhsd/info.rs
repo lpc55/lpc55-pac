@@ -1,104 +1,32 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::INFO {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FRAME_NRR {
-    bits: u16,
-}
-impl FRAME_NRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERR_CODER {
-    bits: u8,
-}
-impl ERR_CODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MINREVR {
-    bits: u8,
-}
-impl MINREVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MAJREVR {
-    bits: u8,
-}
-impl MAJREVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of register INFO"]
+pub type R = crate::R<u32, super::INFO>;
+#[doc = "Reader of field `FRAME_NR`"]
+pub type FRAME_NR_R = crate::R<u16, u16>;
+#[doc = "Reader of field `ERR_CODE`"]
+pub type ERR_CODE_R = crate::R<u8, u8>;
+#[doc = "Reader of field `Minrev`"]
+pub type MINREV_R = crate::R<u8, u8>;
+#[doc = "Reader of field `Majrev`"]
+pub type MAJREV_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:10 - Frame number."]
-    #[inline]
-    pub fn frame_nr(&self) -> FRAME_NRR {
-        let bits = {
-            const MASK: u16 = 2047;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        FRAME_NRR { bits }
+    #[inline(always)]
+    pub fn frame_nr(&self) -> FRAME_NR_R {
+        FRAME_NR_R::new((self.bits & 0x07ff) as u16)
     }
     #[doc = "Bits 11:14 - The error code which last occurred:."]
-    #[inline]
-    pub fn err_code(&self) -> ERR_CODER {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ERR_CODER { bits }
+    #[inline(always)]
+    pub fn err_code(&self) -> ERR_CODE_R {
+        ERR_CODE_R::new(((self.bits >> 11) & 0x0f) as u8)
     }
     #[doc = "Bits 16:23 - Minor revision."]
-    #[inline]
-    pub fn minrev(&self) -> MINREVR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MINREVR { bits }
+    #[inline(always)]
+    pub fn minrev(&self) -> MINREV_R {
+        MINREV_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:31 - Major revision."]
-    #[inline]
-    pub fn majrev(&self) -> MAJREVR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MAJREVR { bits }
+    #[inline(always)]
+    pub fn majrev(&self) -> MAJREV_R {
+        MAJREV_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }

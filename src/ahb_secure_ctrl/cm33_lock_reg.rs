@@ -1,682 +1,484 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CM33_LOCK_REG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CM33_LOCK_REG"]
+pub type R = crate::R<u32, super::CM33_LOCK_REG>;
+#[doc = "Writer for register CM33_LOCK_REG"]
+pub type W = crate::W<u32, super::CM33_LOCK_REG>;
+#[doc = "Register CM33_LOCK_REG `reset()`'s with value 0x8000_02aa"]
+impl crate::ResetValue for super::CM33_LOCK_REG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x8000_02aa
     }
 }
 #[doc = "Possible values of the field `LOCK_NS_VTOR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCK_NS_VTORR {
+pub enum LOCK_NS_VTOR_A {
     #[doc = "Restricted mode."]
     BLOCKED,
     #[doc = "Writable."]
     WRITABLE,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl LOCK_NS_VTORR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LOCK_NS_VTORR::BLOCKED => 1,
-            LOCK_NS_VTORR::WRITABLE => 2,
-            LOCK_NS_VTORR::_Reserved(bits) => bits,
+impl From<LOCK_NS_VTOR_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LOCK_NS_VTOR_A) -> Self {
+        match variant {
+            LOCK_NS_VTOR_A::BLOCKED => 1,
+            LOCK_NS_VTOR_A::WRITABLE => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LOCK_NS_VTORR {
-        match value {
-            1 => LOCK_NS_VTORR::BLOCKED,
-            2 => LOCK_NS_VTORR::WRITABLE,
-            i => LOCK_NS_VTORR::_Reserved(i),
+}
+#[doc = "Reader of field `LOCK_NS_VTOR`"]
+pub type LOCK_NS_VTOR_R = crate::R<u8, LOCK_NS_VTOR_A>;
+impl LOCK_NS_VTOR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, LOCK_NS_VTOR_A> {
+        use crate::Variant::*;
+        match self.bits {
+            1 => Val(LOCK_NS_VTOR_A::BLOCKED),
+            2 => Val(LOCK_NS_VTOR_A::WRITABLE),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == LOCK_NS_VTORR::BLOCKED
+        *self == LOCK_NS_VTOR_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `WRITABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_writable(&self) -> bool {
-        *self == LOCK_NS_VTORR::WRITABLE
+        *self == LOCK_NS_VTOR_A::WRITABLE
+    }
+}
+#[doc = "Write proxy for field `LOCK_NS_VTOR`"]
+pub struct LOCK_NS_VTOR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LOCK_NS_VTOR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOCK_NS_VTOR_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Restricted mode."]
+    #[inline(always)]
+    pub fn blocked(self) -> &'a mut W {
+        self.variant(LOCK_NS_VTOR_A::BLOCKED)
+    }
+    #[doc = "Writable."]
+    #[inline(always)]
+    pub fn writable(self) -> &'a mut W {
+        self.variant(LOCK_NS_VTOR_A::WRITABLE)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w
     }
 }
 #[doc = "Possible values of the field `LOCK_NS_MPU`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCK_NS_MPUR {
+pub enum LOCK_NS_MPU_A {
     #[doc = "Restricted mode."]
     BLOCKED,
     #[doc = "Writable."]
     WRITABLE,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl LOCK_NS_MPUR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LOCK_NS_MPUR::BLOCKED => 1,
-            LOCK_NS_MPUR::WRITABLE => 2,
-            LOCK_NS_MPUR::_Reserved(bits) => bits,
+impl From<LOCK_NS_MPU_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LOCK_NS_MPU_A) -> Self {
+        match variant {
+            LOCK_NS_MPU_A::BLOCKED => 1,
+            LOCK_NS_MPU_A::WRITABLE => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LOCK_NS_MPUR {
-        match value {
-            1 => LOCK_NS_MPUR::BLOCKED,
-            2 => LOCK_NS_MPUR::WRITABLE,
-            i => LOCK_NS_MPUR::_Reserved(i),
+}
+#[doc = "Reader of field `LOCK_NS_MPU`"]
+pub type LOCK_NS_MPU_R = crate::R<u8, LOCK_NS_MPU_A>;
+impl LOCK_NS_MPU_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, LOCK_NS_MPU_A> {
+        use crate::Variant::*;
+        match self.bits {
+            1 => Val(LOCK_NS_MPU_A::BLOCKED),
+            2 => Val(LOCK_NS_MPU_A::WRITABLE),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == LOCK_NS_MPUR::BLOCKED
+        *self == LOCK_NS_MPU_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `WRITABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_writable(&self) -> bool {
-        *self == LOCK_NS_MPUR::WRITABLE
+        *self == LOCK_NS_MPU_A::WRITABLE
+    }
+}
+#[doc = "Write proxy for field `LOCK_NS_MPU`"]
+pub struct LOCK_NS_MPU_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LOCK_NS_MPU_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOCK_NS_MPU_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Restricted mode."]
+    #[inline(always)]
+    pub fn blocked(self) -> &'a mut W {
+        self.variant(LOCK_NS_MPU_A::BLOCKED)
+    }
+    #[doc = "Writable."]
+    #[inline(always)]
+    pub fn writable(self) -> &'a mut W {
+        self.variant(LOCK_NS_MPU_A::WRITABLE)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `LOCK_S_VTAIRCR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCK_S_VTAIRCRR {
+pub enum LOCK_S_VTAIRCR_A {
     #[doc = "Restricted mode."]
     BLOCKED,
     #[doc = "Writable."]
     WRITABLE,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl LOCK_S_VTAIRCRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LOCK_S_VTAIRCRR::BLOCKED => 1,
-            LOCK_S_VTAIRCRR::WRITABLE => 2,
-            LOCK_S_VTAIRCRR::_Reserved(bits) => bits,
+impl From<LOCK_S_VTAIRCR_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LOCK_S_VTAIRCR_A) -> Self {
+        match variant {
+            LOCK_S_VTAIRCR_A::BLOCKED => 1,
+            LOCK_S_VTAIRCR_A::WRITABLE => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LOCK_S_VTAIRCRR {
-        match value {
-            1 => LOCK_S_VTAIRCRR::BLOCKED,
-            2 => LOCK_S_VTAIRCRR::WRITABLE,
-            i => LOCK_S_VTAIRCRR::_Reserved(i),
+}
+#[doc = "Reader of field `LOCK_S_VTAIRCR`"]
+pub type LOCK_S_VTAIRCR_R = crate::R<u8, LOCK_S_VTAIRCR_A>;
+impl LOCK_S_VTAIRCR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, LOCK_S_VTAIRCR_A> {
+        use crate::Variant::*;
+        match self.bits {
+            1 => Val(LOCK_S_VTAIRCR_A::BLOCKED),
+            2 => Val(LOCK_S_VTAIRCR_A::WRITABLE),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == LOCK_S_VTAIRCRR::BLOCKED
+        *self == LOCK_S_VTAIRCR_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `WRITABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_writable(&self) -> bool {
-        *self == LOCK_S_VTAIRCRR::WRITABLE
+        *self == LOCK_S_VTAIRCR_A::WRITABLE
+    }
+}
+#[doc = "Write proxy for field `LOCK_S_VTAIRCR`"]
+pub struct LOCK_S_VTAIRCR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LOCK_S_VTAIRCR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOCK_S_VTAIRCR_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Restricted mode."]
+    #[inline(always)]
+    pub fn blocked(self) -> &'a mut W {
+        self.variant(LOCK_S_VTAIRCR_A::BLOCKED)
+    }
+    #[doc = "Writable."]
+    #[inline(always)]
+    pub fn writable(self) -> &'a mut W {
+        self.variant(LOCK_S_VTAIRCR_A::WRITABLE)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `LOCK_S_MPU`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCK_S_MPUR {
+pub enum LOCK_S_MPU_A {
     #[doc = "Restricted mode."]
     BLOCKED,
     #[doc = "Writable."]
     WRITABLE,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl LOCK_S_MPUR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LOCK_S_MPUR::BLOCKED => 1,
-            LOCK_S_MPUR::WRITABLE => 2,
-            LOCK_S_MPUR::_Reserved(bits) => bits,
+impl From<LOCK_S_MPU_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LOCK_S_MPU_A) -> Self {
+        match variant {
+            LOCK_S_MPU_A::BLOCKED => 1,
+            LOCK_S_MPU_A::WRITABLE => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LOCK_S_MPUR {
-        match value {
-            1 => LOCK_S_MPUR::BLOCKED,
-            2 => LOCK_S_MPUR::WRITABLE,
-            i => LOCK_S_MPUR::_Reserved(i),
+}
+#[doc = "Reader of field `LOCK_S_MPU`"]
+pub type LOCK_S_MPU_R = crate::R<u8, LOCK_S_MPU_A>;
+impl LOCK_S_MPU_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, LOCK_S_MPU_A> {
+        use crate::Variant::*;
+        match self.bits {
+            1 => Val(LOCK_S_MPU_A::BLOCKED),
+            2 => Val(LOCK_S_MPU_A::WRITABLE),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == LOCK_S_MPUR::BLOCKED
+        *self == LOCK_S_MPU_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `WRITABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_writable(&self) -> bool {
-        *self == LOCK_S_MPUR::WRITABLE
+        *self == LOCK_S_MPU_A::WRITABLE
+    }
+}
+#[doc = "Write proxy for field `LOCK_S_MPU`"]
+pub struct LOCK_S_MPU_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LOCK_S_MPU_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOCK_S_MPU_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Restricted mode."]
+    #[inline(always)]
+    pub fn blocked(self) -> &'a mut W {
+        self.variant(LOCK_S_MPU_A::BLOCKED)
+    }
+    #[doc = "Writable."]
+    #[inline(always)]
+    pub fn writable(self) -> &'a mut W {
+        self.variant(LOCK_S_MPU_A::WRITABLE)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w
     }
 }
 #[doc = "Possible values of the field `LOCK_SAU`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCK_SAUR {
+pub enum LOCK_SAU_A {
     #[doc = "Restricted mode."]
     BLOCKED,
     #[doc = "Writable."]
     WRITABLE,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl LOCK_SAUR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LOCK_SAUR::BLOCKED => 1,
-            LOCK_SAUR::WRITABLE => 2,
-            LOCK_SAUR::_Reserved(bits) => bits,
+impl From<LOCK_SAU_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LOCK_SAU_A) -> Self {
+        match variant {
+            LOCK_SAU_A::BLOCKED => 1,
+            LOCK_SAU_A::WRITABLE => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LOCK_SAUR {
-        match value {
-            1 => LOCK_SAUR::BLOCKED,
-            2 => LOCK_SAUR::WRITABLE,
-            i => LOCK_SAUR::_Reserved(i),
+}
+#[doc = "Reader of field `LOCK_SAU`"]
+pub type LOCK_SAU_R = crate::R<u8, LOCK_SAU_A>;
+impl LOCK_SAU_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, LOCK_SAU_A> {
+        use crate::Variant::*;
+        match self.bits {
+            1 => Val(LOCK_SAU_A::BLOCKED),
+            2 => Val(LOCK_SAU_A::WRITABLE),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == LOCK_SAUR::BLOCKED
+        *self == LOCK_SAU_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `WRITABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_writable(&self) -> bool {
-        *self == LOCK_SAUR::WRITABLE
+        *self == LOCK_SAU_A::WRITABLE
+    }
+}
+#[doc = "Write proxy for field `LOCK_SAU`"]
+pub struct LOCK_SAU_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LOCK_SAU_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOCK_SAU_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Restricted mode."]
+    #[inline(always)]
+    pub fn blocked(self) -> &'a mut W {
+        self.variant(LOCK_SAU_A::BLOCKED)
+    }
+    #[doc = "Writable."]
+    #[inline(always)]
+    pub fn writable(self) -> &'a mut W {
+        self.variant(LOCK_SAU_A::WRITABLE)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CM33_LOCK_REG_LOCK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CM33_LOCK_REG_LOCKR {
+pub enum CM33_LOCK_REG_LOCK_A {
     #[doc = "Restricted mode."]
     BLOCKED,
     #[doc = "Writable."]
     WRITABLE,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl CM33_LOCK_REG_LOCKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CM33_LOCK_REG_LOCKR::BLOCKED => 1,
-            CM33_LOCK_REG_LOCKR::WRITABLE => 2,
-            CM33_LOCK_REG_LOCKR::_Reserved(bits) => bits,
+impl From<CM33_LOCK_REG_LOCK_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CM33_LOCK_REG_LOCK_A) -> Self {
+        match variant {
+            CM33_LOCK_REG_LOCK_A::BLOCKED => 1,
+            CM33_LOCK_REG_LOCK_A::WRITABLE => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CM33_LOCK_REG_LOCKR {
-        match value {
-            1 => CM33_LOCK_REG_LOCKR::BLOCKED,
-            2 => CM33_LOCK_REG_LOCKR::WRITABLE,
-            i => CM33_LOCK_REG_LOCKR::_Reserved(i),
+}
+#[doc = "Reader of field `CM33_LOCK_REG_LOCK`"]
+pub type CM33_LOCK_REG_LOCK_R = crate::R<u8, CM33_LOCK_REG_LOCK_A>;
+impl CM33_LOCK_REG_LOCK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, CM33_LOCK_REG_LOCK_A> {
+        use crate::Variant::*;
+        match self.bits {
+            1 => Val(CM33_LOCK_REG_LOCK_A::BLOCKED),
+            2 => Val(CM33_LOCK_REG_LOCK_A::WRITABLE),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == CM33_LOCK_REG_LOCKR::BLOCKED
+        *self == CM33_LOCK_REG_LOCK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `WRITABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_writable(&self) -> bool {
-        *self == CM33_LOCK_REG_LOCKR::WRITABLE
+        *self == CM33_LOCK_REG_LOCK_A::WRITABLE
     }
 }
-#[doc = "Values that can be written to the field `LOCK_NS_VTOR`"]
-pub enum LOCK_NS_VTORW {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
-}
-impl LOCK_NS_VTORW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LOCK_NS_VTORW::BLOCKED => 1,
-            LOCK_NS_VTORW::WRITABLE => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LOCK_NS_VTORW<'a> {
+#[doc = "Write proxy for field `CM33_LOCK_REG_LOCK`"]
+pub struct CM33_LOCK_REG_LOCK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LOCK_NS_VTORW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOCK_NS_VTORW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> CM33_LOCK_REG_LOCK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CM33_LOCK_REG_LOCK_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Restricted mode."]
-    #[inline]
+    #[inline(always)]
     pub fn blocked(self) -> &'a mut W {
-        self.variant(LOCK_NS_VTORW::BLOCKED)
+        self.variant(CM33_LOCK_REG_LOCK_A::BLOCKED)
     }
     #[doc = "Writable."]
-    #[inline]
+    #[inline(always)]
     pub fn writable(self) -> &'a mut W {
-        self.variant(LOCK_NS_VTORW::WRITABLE)
+        self.variant(CM33_LOCK_REG_LOCK_A::WRITABLE)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LOCK_NS_MPU`"]
-pub enum LOCK_NS_MPUW {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
-}
-impl LOCK_NS_MPUW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LOCK_NS_MPUW::BLOCKED => 1,
-            LOCK_NS_MPUW::WRITABLE => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LOCK_NS_MPUW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LOCK_NS_MPUW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOCK_NS_MPUW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Restricted mode."]
-    #[inline]
-    pub fn blocked(self) -> &'a mut W {
-        self.variant(LOCK_NS_MPUW::BLOCKED)
-    }
-    #[doc = "Writable."]
-    #[inline]
-    pub fn writable(self) -> &'a mut W {
-        self.variant(LOCK_NS_MPUW::WRITABLE)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LOCK_S_VTAIRCR`"]
-pub enum LOCK_S_VTAIRCRW {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
-}
-impl LOCK_S_VTAIRCRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LOCK_S_VTAIRCRW::BLOCKED => 1,
-            LOCK_S_VTAIRCRW::WRITABLE => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LOCK_S_VTAIRCRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LOCK_S_VTAIRCRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOCK_S_VTAIRCRW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Restricted mode."]
-    #[inline]
-    pub fn blocked(self) -> &'a mut W {
-        self.variant(LOCK_S_VTAIRCRW::BLOCKED)
-    }
-    #[doc = "Writable."]
-    #[inline]
-    pub fn writable(self) -> &'a mut W {
-        self.variant(LOCK_S_VTAIRCRW::WRITABLE)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LOCK_S_MPU`"]
-pub enum LOCK_S_MPUW {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
-}
-impl LOCK_S_MPUW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LOCK_S_MPUW::BLOCKED => 1,
-            LOCK_S_MPUW::WRITABLE => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LOCK_S_MPUW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LOCK_S_MPUW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOCK_S_MPUW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Restricted mode."]
-    #[inline]
-    pub fn blocked(self) -> &'a mut W {
-        self.variant(LOCK_S_MPUW::BLOCKED)
-    }
-    #[doc = "Writable."]
-    #[inline]
-    pub fn writable(self) -> &'a mut W {
-        self.variant(LOCK_S_MPUW::WRITABLE)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LOCK_SAU`"]
-pub enum LOCK_SAUW {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
-}
-impl LOCK_SAUW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LOCK_SAUW::BLOCKED => 1,
-            LOCK_SAUW::WRITABLE => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LOCK_SAUW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LOCK_SAUW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOCK_SAUW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Restricted mode."]
-    #[inline]
-    pub fn blocked(self) -> &'a mut W {
-        self.variant(LOCK_SAUW::BLOCKED)
-    }
-    #[doc = "Writable."]
-    #[inline]
-    pub fn writable(self) -> &'a mut W {
-        self.variant(LOCK_SAUW::WRITABLE)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CM33_LOCK_REG_LOCK`"]
-pub enum CM33_LOCK_REG_LOCKW {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
-}
-impl CM33_LOCK_REG_LOCKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CM33_LOCK_REG_LOCKW::BLOCKED => 1,
-            CM33_LOCK_REG_LOCKW::WRITABLE => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CM33_LOCK_REG_LOCKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CM33_LOCK_REG_LOCKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CM33_LOCK_REG_LOCKW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Restricted mode."]
-    #[inline]
-    pub fn blocked(self) -> &'a mut W {
-        self.variant(CM33_LOCK_REG_LOCKW::BLOCKED)
-    }
-    #[doc = "Writable."]
-    #[inline]
-    pub fn writable(self) -> &'a mut W {
-        self.variant(CM33_LOCK_REG_LOCKW::WRITABLE)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 30)) | (((value as u32) & 0x03) << 30);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - CM33 (CPU0) VTOR_NS register write-lock."]
-    #[inline]
-    pub fn lock_ns_vtor(&self) -> LOCK_NS_VTORR {
-        LOCK_NS_VTORR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lock_ns_vtor(&self) -> LOCK_NS_VTOR_R {
+        LOCK_NS_VTOR_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:3 - CM33 (CPU0) non-secure MPU register write-lock."]
-    #[inline]
-    pub fn lock_ns_mpu(&self) -> LOCK_NS_MPUR {
-        LOCK_NS_MPUR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lock_ns_mpu(&self) -> LOCK_NS_MPU_R {
+        LOCK_NS_MPU_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - CM33 (CPU0) VTOR_S, AIRCR.PRIS, IRCR.BFHFNMINS registers write-lock."]
-    #[inline]
-    pub fn lock_s_vtaircr(&self) -> LOCK_S_VTAIRCRR {
-        LOCK_S_VTAIRCRR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lock_s_vtaircr(&self) -> LOCK_S_VTAIRCR_R {
+        LOCK_S_VTAIRCR_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 6:7 - CM33 (CPU0) Secure MPU registers write-lock."]
-    #[inline]
-    pub fn lock_s_mpu(&self) -> LOCK_S_MPUR {
-        LOCK_S_MPUR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lock_s_mpu(&self) -> LOCK_S_MPU_R {
+        LOCK_S_MPU_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bits 8:9 - CM33 (CPU0) SAU registers write-lock."]
-    #[inline]
-    pub fn lock_sau(&self) -> LOCK_SAUR {
-        LOCK_SAUR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lock_sau(&self) -> LOCK_SAU_R {
+        LOCK_SAU_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bits 30:31 - CM33_LOCK_REG write-lock."]
-    #[inline]
-    pub fn cm33_lock_reg_lock(&self) -> CM33_LOCK_REG_LOCKR {
-        CM33_LOCK_REG_LOCKR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn cm33_lock_reg_lock(&self) -> CM33_LOCK_REG_LOCK_R {
+        CM33_LOCK_REG_LOCK_R::new(((self.bits >> 30) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 2147484330 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - CM33 (CPU0) VTOR_NS register write-lock."]
-    #[inline]
-    pub fn lock_ns_vtor(&mut self) -> _LOCK_NS_VTORW {
-        _LOCK_NS_VTORW { w: self }
+    #[inline(always)]
+    pub fn lock_ns_vtor(&mut self) -> LOCK_NS_VTOR_W {
+        LOCK_NS_VTOR_W { w: self }
     }
     #[doc = "Bits 2:3 - CM33 (CPU0) non-secure MPU register write-lock."]
-    #[inline]
-    pub fn lock_ns_mpu(&mut self) -> _LOCK_NS_MPUW {
-        _LOCK_NS_MPUW { w: self }
+    #[inline(always)]
+    pub fn lock_ns_mpu(&mut self) -> LOCK_NS_MPU_W {
+        LOCK_NS_MPU_W { w: self }
     }
     #[doc = "Bits 4:5 - CM33 (CPU0) VTOR_S, AIRCR.PRIS, IRCR.BFHFNMINS registers write-lock."]
-    #[inline]
-    pub fn lock_s_vtaircr(&mut self) -> _LOCK_S_VTAIRCRW {
-        _LOCK_S_VTAIRCRW { w: self }
+    #[inline(always)]
+    pub fn lock_s_vtaircr(&mut self) -> LOCK_S_VTAIRCR_W {
+        LOCK_S_VTAIRCR_W { w: self }
     }
     #[doc = "Bits 6:7 - CM33 (CPU0) Secure MPU registers write-lock."]
-    #[inline]
-    pub fn lock_s_mpu(&mut self) -> _LOCK_S_MPUW {
-        _LOCK_S_MPUW { w: self }
+    #[inline(always)]
+    pub fn lock_s_mpu(&mut self) -> LOCK_S_MPU_W {
+        LOCK_S_MPU_W { w: self }
     }
     #[doc = "Bits 8:9 - CM33 (CPU0) SAU registers write-lock."]
-    #[inline]
-    pub fn lock_sau(&mut self) -> _LOCK_SAUW {
-        _LOCK_SAUW { w: self }
+    #[inline(always)]
+    pub fn lock_sau(&mut self) -> LOCK_SAU_W {
+        LOCK_SAU_W { w: self }
     }
     #[doc = "Bits 30:31 - CM33_LOCK_REG write-lock."]
-    #[inline]
-    pub fn cm33_lock_reg_lock(&mut self) -> _CM33_LOCK_REG_LOCKW {
-        _CM33_LOCK_REG_LOCKW { w: self }
+    #[inline(always)]
+    pub fn cm33_lock_reg_lock(&mut self) -> CM33_LOCK_REG_LOCK_W {
+        CM33_LOCK_REG_LOCK_W { w: self }
     }
 }

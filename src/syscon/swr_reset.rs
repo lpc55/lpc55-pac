@@ -1,82 +1,61 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SWR_RESET {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register SWR_RESET"]
+pub type W = crate::W<u32, super::SWR_RESET>;
+#[doc = "Register SWR_RESET `reset()`'s with value 0"]
+impl crate::ResetValue for super::SWR_RESET {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Values that can be written to the field `SWR_RESET`"]
-pub enum SWR_RESETW {
+#[doc = "Possible values of the field `SWR_RESET`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SWR_RESET_AW {
     #[doc = "Bloc is not reset."]
     RELEASED,
     #[doc = "Generate a software reset."]
     ASSERTED,
 }
-impl SWR_RESETW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u32 {
-        match *self {
-            SWR_RESETW::RELEASED => 0,
-            SWR_RESETW::ASSERTED => 1509949441,
+impl From<SWR_RESET_AW> for u32 {
+    #[inline(always)]
+    fn from(variant: SWR_RESET_AW) -> Self {
+        match variant {
+            SWR_RESET_AW::RELEASED => 0,
+            SWR_RESET_AW::ASSERTED => 1509949441,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SWR_RESETW<'a> {
+#[doc = "Write proxy for field `SWR_RESET`"]
+pub struct SWR_RESET_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SWR_RESETW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SWR_RESETW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> SWR_RESET_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SWR_RESET_AW) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Bloc is not reset."]
-    #[inline]
+    #[inline(always)]
     pub fn released(self) -> &'a mut W {
-        self.variant(SWR_RESETW::RELEASED)
+        self.variant(SWR_RESET_AW::RELEASED)
     }
     #[doc = "Generate a software reset."]
-    #[inline]
+    #[inline(always)]
     pub fn asserted(self) -> &'a mut W {
-        self.variant(SWR_RESETW::ASSERTED)
+        self.variant(SWR_RESET_AW::ASSERTED)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        const MASK: u32 = 4294967295;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:31 - Write 0x5A00_0001 to generate a software_reset."]
-    #[inline]
-    pub fn swr_reset(&mut self) -> _SWR_RESETW {
-        _SWR_RESETW { w: self }
+    #[inline(always)]
+    pub fn swr_reset(&mut self) -> SWR_RESET_W {
+        SWR_RESET_W { w: self }
     }
 }

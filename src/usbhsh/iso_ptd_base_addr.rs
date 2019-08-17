@@ -1,146 +1,64 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ISO_PTD_BASE_ADDR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ISO_PTD_BASE_ADDR"]
+pub type R = crate::R<u32, super::ISO_PTD_BASE_ADDR>;
+#[doc = "Writer for register ISO_PTD_BASE_ADDR"]
+pub type W = crate::W<u32, super::ISO_PTD_BASE_ADDR>;
+#[doc = "Register ISO_PTD_BASE_ADDR `reset()`'s with value 0"]
+impl crate::ResetValue for super::ISO_PTD_BASE_ADDR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct ISO_FIRSTR {
-    bits: u8,
-}
-impl ISO_FIRSTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ISO_BASER {
-    bits: u32,
-}
-impl ISO_BASER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ISO_FIRSTW<'a> {
+#[doc = "Reader of field `ISO_FIRST`"]
+pub type ISO_FIRST_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `ISO_FIRST`"]
+pub struct ISO_FIRST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISO_FIRSTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> ISO_FIRST_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 5)) | (((value as u32) & 0x1f) << 5);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ISO_BASEW<'a> {
+#[doc = "Reader of field `ISO_BASE`"]
+pub type ISO_BASE_R = crate::R<u32, u32>;
+#[doc = "Write proxy for field `ISO_BASE`"]
+pub struct ISO_BASE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISO_BASEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> ISO_BASE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        const MASK: u32 = 4194303;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x003f_ffff << 10)) | (((value as u32) & 0x003f_ffff) << 10);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 5:9 - This indicates the first PTD that is used by the hardware when it is processing the ISO list."]
-    #[inline]
-    pub fn iso_first(&self) -> ISO_FIRSTR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ISO_FIRSTR { bits }
+    #[inline(always)]
+    pub fn iso_first(&self) -> ISO_FIRST_R {
+        ISO_FIRST_R::new(((self.bits >> 5) & 0x1f) as u8)
     }
     #[doc = "Bits 10:31 - Base address to be used by the hardware to find the start of the ISO list."]
-    #[inline]
-    pub fn iso_base(&self) -> ISO_BASER {
-        let bits = {
-            const MASK: u32 = 4194303;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        ISO_BASER { bits }
+    #[inline(always)]
+    pub fn iso_base(&self) -> ISO_BASE_R {
+        ISO_BASE_R::new(((self.bits >> 10) & 0x003f_ffff) as u32)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 5:9 - This indicates the first PTD that is used by the hardware when it is processing the ISO list."]
-    #[inline]
-    pub fn iso_first(&mut self) -> _ISO_FIRSTW {
-        _ISO_FIRSTW { w: self }
+    #[inline(always)]
+    pub fn iso_first(&mut self) -> ISO_FIRST_W {
+        ISO_FIRST_W { w: self }
     }
     #[doc = "Bits 10:31 - Base address to be used by the hardware to find the start of the ISO list."]
-    #[inline]
-    pub fn iso_base(&mut self) -> _ISO_BASEW {
-        _ISO_BASEW { w: self }
+    #[inline(always)]
+    pub fn iso_base(&mut self) -> ISO_BASE_W {
+        ISO_BASE_W { w: self }
     }
 }

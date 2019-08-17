@@ -1,232 +1,147 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::COMP_INT_STATUS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register COMP_INT_STATUS"]
+pub type R = crate::R<u32, super::COMP_INT_STATUS>;
+#[doc = "Writer for register COMP_INT_STATUS"]
+pub type W = crate::W<u32, super::COMP_INT_STATUS>;
+#[doc = "Register COMP_INT_STATUS `reset()`'s with value 0"]
+impl crate::ResetValue for super::COMP_INT_STATUS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `STATUS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STATUSR {
+pub enum STATUS_A {
     #[doc = "no interrupt pending."]
     NO_INT,
     #[doc = "interrupt pending."]
     PENDING,
 }
-impl STATUSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            STATUSR::NO_INT => false,
-            STATUSR::PENDING => true,
+impl From<STATUS_A> for bool {
+    #[inline(always)]
+    fn from(variant: STATUS_A) -> Self {
+        match variant {
+            STATUS_A::NO_INT => false,
+            STATUS_A::PENDING => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> STATUSR {
-        match value {
-            false => STATUSR::NO_INT,
-            true => STATUSR::PENDING,
+}
+#[doc = "Reader of field `STATUS`"]
+pub type STATUS_R = crate::R<bool, STATUS_A>;
+impl STATUS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> STATUS_A {
+        match self.bits {
+            false => STATUS_A::NO_INT,
+            true => STATUS_A::PENDING,
         }
     }
     #[doc = "Checks if the value of the field is `NO_INT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_no_int(&self) -> bool {
-        *self == STATUSR::NO_INT
+        *self == STATUS_A::NO_INT
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        *self == STATUSR::PENDING
+        *self == STATUS_A::PENDING
     }
 }
 #[doc = "Possible values of the field `INT_STATUS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum INT_STATUSR {
+pub enum INT_STATUS_A {
     #[doc = "no interrupt pending."]
     NO_INT,
     #[doc = "interrupt pending."]
     PENDING,
 }
-impl INT_STATUSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            INT_STATUSR::NO_INT => false,
-            INT_STATUSR::PENDING => true,
+impl From<INT_STATUS_A> for bool {
+    #[inline(always)]
+    fn from(variant: INT_STATUS_A) -> Self {
+        match variant {
+            INT_STATUS_A::NO_INT => false,
+            INT_STATUS_A::PENDING => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> INT_STATUSR {
-        match value {
-            false => INT_STATUSR::NO_INT,
-            true => INT_STATUSR::PENDING,
+}
+#[doc = "Reader of field `INT_STATUS`"]
+pub type INT_STATUS_R = crate::R<bool, INT_STATUS_A>;
+impl INT_STATUS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> INT_STATUS_A {
+        match self.bits {
+            false => INT_STATUS_A::NO_INT,
+            true => INT_STATUS_A::PENDING,
         }
     }
     #[doc = "Checks if the value of the field is `NO_INT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_no_int(&self) -> bool {
-        *self == INT_STATUSR::NO_INT
+        *self == INT_STATUS_A::NO_INT
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        *self == INT_STATUSR::PENDING
+        *self == INT_STATUS_A::PENDING
     }
 }
 #[doc = "Possible values of the field `VAL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VALR {
+pub enum VAL_A {
     #[doc = "P+ is smaller than P-."]
     SMALLER,
     #[doc = "P+ is greater than P-."]
     GREATER,
 }
-impl VALR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VALR::SMALLER => false,
-            VALR::GREATER => true,
+impl From<VAL_A> for bool {
+    #[inline(always)]
+    fn from(variant: VAL_A) -> Self {
+        match variant {
+            VAL_A::SMALLER => false,
+            VAL_A::GREATER => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VALR {
-        match value {
-            false => VALR::SMALLER,
-            true => VALR::GREATER,
+}
+#[doc = "Reader of field `VAL`"]
+pub type VAL_R = crate::R<bool, VAL_A>;
+impl VAL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VAL_A {
+        match self.bits {
+            false => VAL_A::SMALLER,
+            true => VAL_A::GREATER,
         }
     }
     #[doc = "Checks if the value of the field is `SMALLER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_smaller(&self) -> bool {
-        *self == VALR::SMALLER
+        *self == VAL_A::SMALLER
     }
     #[doc = "Checks if the value of the field is `GREATER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_greater(&self) -> bool {
-        *self == VALR::GREATER
+        *self == VAL_A::GREATER
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Interrupt status BEFORE Interrupt Enable."]
-    #[inline]
-    pub fn status(&self) -> STATUSR {
-        STATUSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn status(&self) -> STATUS_R {
+        STATUS_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Interrupt status AFTER Interrupt Enable."]
-    #[inline]
-    pub fn int_status(&self) -> INT_STATUSR {
-        INT_STATUSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn int_status(&self) -> INT_STATUS_R {
+        INT_STATUS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - comparator analog output."]
-    #[inline]
-    pub fn val(&self) -> VALR {
-        VALR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn val(&self) -> VAL_R {
+        VAL_R::new(((self.bits >> 2) & 0x01) != 0)
     }
 }
-impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
-}
+impl W {}

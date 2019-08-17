@@ -1,187 +1,88 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ROTKH_REVOKE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ROTKH_REVOKE"]
+pub type R = crate::R<u32, super::ROTKH_REVOKE>;
+#[doc = "Writer for register ROTKH_REVOKE"]
+pub type W = crate::W<u32, super::ROTKH_REVOKE>;
+#[doc = "Register ROTKH_REVOKE `reset()`'s with value 0"]
+impl crate::ResetValue for super::ROTKH_REVOKE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct ROTK0_ENR {
-    bits: u8,
-}
-impl ROTK0_ENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ROTK1_ENR {
-    bits: u8,
-}
-impl ROTK1_ENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ROTK2_ENR {
-    bits: u8,
-}
-impl ROTK2_ENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ROTK0_ENW<'a> {
+#[doc = "Reader of field `RoTK0_EN`"]
+pub type ROTK0_EN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RoTK0_EN`"]
+pub struct ROTK0_EN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ROTK0_ENW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> ROTK0_EN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ROTK1_ENW<'a> {
+#[doc = "Reader of field `RoTK1_EN`"]
+pub type ROTK1_EN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RoTK1_EN`"]
+pub struct ROTK1_EN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ROTK1_ENW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> ROTK1_EN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ROTK2_ENW<'a> {
+#[doc = "Reader of field `RoTK2_EN`"]
+pub type ROTK2_EN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `RoTK2_EN`"]
+pub struct ROTK2_EN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ROTK2_ENW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> ROTK2_EN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - RoT Key 0 enable. 00 - Invalid 01 - Enabled 10, 11 - Key revoked"]
-    #[inline]
-    pub fn ro_tk0_en(&self) -> ROTK0_ENR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ROTK0_ENR { bits }
+    #[inline(always)]
+    pub fn ro_tk0_en(&self) -> ROTK0_EN_R {
+        ROTK0_EN_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:3 - RoT Key 1 enable. 00 - Invalid 01 - Enabled 10, 11 - Key revoked"]
-    #[inline]
-    pub fn ro_tk1_en(&self) -> ROTK1_ENR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ROTK1_ENR { bits }
+    #[inline(always)]
+    pub fn ro_tk1_en(&self) -> ROTK1_EN_R {
+        ROTK1_EN_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - RoT Key 2 enable. 00 - Invalid 01 - Enabled 10, 11 - Key revoked"]
-    #[inline]
-    pub fn ro_tk2_en(&self) -> ROTK2_ENR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ROTK2_ENR { bits }
+    #[inline(always)]
+    pub fn ro_tk2_en(&self) -> ROTK2_EN_R {
+        ROTK2_EN_R::new(((self.bits >> 4) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - RoT Key 0 enable. 00 - Invalid 01 - Enabled 10, 11 - Key revoked"]
-    #[inline]
-    pub fn ro_tk0_en(&mut self) -> _ROTK0_ENW {
-        _ROTK0_ENW { w: self }
+    #[inline(always)]
+    pub fn ro_tk0_en(&mut self) -> ROTK0_EN_W {
+        ROTK0_EN_W { w: self }
     }
     #[doc = "Bits 2:3 - RoT Key 1 enable. 00 - Invalid 01 - Enabled 10, 11 - Key revoked"]
-    #[inline]
-    pub fn ro_tk1_en(&mut self) -> _ROTK1_ENW {
-        _ROTK1_ENW { w: self }
+    #[inline(always)]
+    pub fn ro_tk1_en(&mut self) -> ROTK1_EN_W {
+        ROTK1_EN_W { w: self }
     }
     #[doc = "Bits 4:5 - RoT Key 2 enable. 00 - Invalid 01 - Enabled 10, 11 - Key revoked"]
-    #[inline]
-    pub fn ro_tk2_en(&mut self) -> _ROTK2_ENW {
-        _ROTK2_ENW { w: self }
+    #[inline(always)]
+    pub fn ro_tk2_en(&mut self) -> ROTK2_EN_W {
+        ROTK2_EN_W { w: self }
     }
 }

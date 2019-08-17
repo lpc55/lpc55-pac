@@ -1,3 +1,4 @@
 /target/
 Cargo.lock
 /lpc55s6x-pac-docs/
+/ref/

@@ -1,540 +1,368 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FIFOINTENSET {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FIFOINTENSET"]
+pub type R = crate::R<u32, super::FIFOINTENSET>;
+#[doc = "Writer for register FIFOINTENSET"]
+pub type W = crate::W<u32, super::FIFOINTENSET>;
+#[doc = "Register FIFOINTENSET `reset()`'s with value 0"]
+impl crate::ResetValue for super::FIFOINTENSET {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `TXERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXERRR {
+pub enum TXERR_A {
     #[doc = "No interrupt will be generated for a transmit error."]
     DISABLED,
     #[doc = "An interrupt will be generated when a transmit error occurs."]
     ENABLED,
 }
-impl TXERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TXERRR::DISABLED => false,
-            TXERRR::ENABLED => true,
+impl From<TXERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: TXERR_A) -> Self {
+        match variant {
+            TXERR_A::DISABLED => false,
+            TXERR_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TXERRR {
-        match value {
-            false => TXERRR::DISABLED,
-            true => TXERRR::ENABLED,
+}
+#[doc = "Reader of field `TXERR`"]
+pub type TXERR_R = crate::R<bool, TXERR_A>;
+impl TXERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TXERR_A {
+        match self.bits {
+            false => TXERR_A::DISABLED,
+            true => TXERR_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == TXERRR::DISABLED
+        *self == TXERR_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == TXERRR::ENABLED
+        *self == TXERR_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `TXERR`"]
+pub struct TXERR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TXERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TXERR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "No interrupt will be generated for a transmit error."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(TXERR_A::DISABLED)
+    }
+    #[doc = "An interrupt will be generated when a transmit error occurs."]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(TXERR_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RXERR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXERRR {
+pub enum RXERR_A {
     #[doc = "No interrupt will be generated for a receive error."]
     DISABLED,
     #[doc = "An interrupt will be generated when a receive error occurs."]
     ENABLED,
 }
-impl RXERRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RXERRR::DISABLED => false,
-            RXERRR::ENABLED => true,
+impl From<RXERR_A> for bool {
+    #[inline(always)]
+    fn from(variant: RXERR_A) -> Self {
+        match variant {
+            RXERR_A::DISABLED => false,
+            RXERR_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RXERRR {
-        match value {
-            false => RXERRR::DISABLED,
-            true => RXERRR::ENABLED,
+}
+#[doc = "Reader of field `RXERR`"]
+pub type RXERR_R = crate::R<bool, RXERR_A>;
+impl RXERR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXERR_A {
+        match self.bits {
+            false => RXERR_A::DISABLED,
+            true => RXERR_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RXERRR::DISABLED
+        *self == RXERR_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RXERRR::ENABLED
+        *self == RXERR_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `RXERR`"]
+pub struct RXERR_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RXERR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RXERR_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "No interrupt will be generated for a receive error."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(RXERR_A::DISABLED)
+    }
+    #[doc = "An interrupt will be generated when a receive error occurs."]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(RXERR_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
 #[doc = "Possible values of the field `TXLVL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXLVLR {
+pub enum TXLVL_A {
     #[doc = "No interrupt will be generated based on the TX FIFO level."]
     DISABLED,
     #[doc = "If TXLVLENA in the FIFOTRIG register = 1, an interrupt will be generated when the TX FIFO level decreases to the level specified by TXLVL in the FIFOTRIG register."]
     ENABLED,
 }
-impl TXLVLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TXLVLR::DISABLED => false,
-            TXLVLR::ENABLED => true,
+impl From<TXLVL_A> for bool {
+    #[inline(always)]
+    fn from(variant: TXLVL_A) -> Self {
+        match variant {
+            TXLVL_A::DISABLED => false,
+            TXLVL_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TXLVLR {
-        match value {
-            false => TXLVLR::DISABLED,
-            true => TXLVLR::ENABLED,
+}
+#[doc = "Reader of field `TXLVL`"]
+pub type TXLVL_R = crate::R<bool, TXLVL_A>;
+impl TXLVL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TXLVL_A {
+        match self.bits {
+            false => TXLVL_A::DISABLED,
+            true => TXLVL_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == TXLVLR::DISABLED
+        *self == TXLVL_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == TXLVLR::ENABLED
+        *self == TXLVL_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `TXLVL`"]
+pub struct TXLVL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TXLVL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TXLVL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "No interrupt will be generated based on the TX FIFO level."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(TXLVL_A::DISABLED)
+    }
+    #[doc = "If TXLVLENA in the FIFOTRIG register = 1, an interrupt will be generated when the TX FIFO level decreases to the level specified by TXLVL in the FIFOTRIG register."]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(TXLVL_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RXLVL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXLVLR {
+pub enum RXLVL_A {
     #[doc = "No interrupt will be generated based on the RX FIFO level."]
     DISABLED,
     #[doc = "If RXLVLENA in the FIFOTRIG register = 1, an interrupt will be generated when the when the RX FIFO level increases to the level specified by RXLVL in the FIFOTRIG register."]
     ENABLED,
 }
-impl RXLVLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RXLVLR::DISABLED => false,
-            RXLVLR::ENABLED => true,
+impl From<RXLVL_A> for bool {
+    #[inline(always)]
+    fn from(variant: RXLVL_A) -> Self {
+        match variant {
+            RXLVL_A::DISABLED => false,
+            RXLVL_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RXLVLR {
-        match value {
-            false => RXLVLR::DISABLED,
-            true => RXLVLR::ENABLED,
+}
+#[doc = "Reader of field `RXLVL`"]
+pub type RXLVL_R = crate::R<bool, RXLVL_A>;
+impl RXLVL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXLVL_A {
+        match self.bits {
+            false => RXLVL_A::DISABLED,
+            true => RXLVL_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == RXLVLR::DISABLED
+        *self == RXLVL_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == RXLVLR::ENABLED
+        *self == RXLVL_A::ENABLED
     }
 }
-#[doc = "Values that can be written to the field `TXERR`"]
-pub enum TXERRW {
-    #[doc = "No interrupt will be generated for a transmit error."]
-    DISABLED,
-    #[doc = "An interrupt will be generated when a transmit error occurs."]
-    ENABLED,
-}
-impl TXERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TXERRW::DISABLED => false,
-            TXERRW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TXERRW<'a> {
+#[doc = "Write proxy for field `RXLVL`"]
+pub struct RXLVL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TXERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TXERRW) -> &'a mut W {
+impl<'a> RXLVL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RXLVL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No interrupt will be generated for a transmit error."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(TXERRW::DISABLED)
-    }
-    #[doc = "An interrupt will be generated when a transmit error occurs."]
-    #[inline]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(TXERRW::ENABLED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RXERR`"]
-pub enum RXERRW {
-    #[doc = "No interrupt will be generated for a receive error."]
-    DISABLED,
-    #[doc = "An interrupt will be generated when a receive error occurs."]
-    ENABLED,
-}
-impl RXERRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RXERRW::DISABLED => false,
-            RXERRW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RXERRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RXERRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RXERRW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No interrupt will be generated for a receive error."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(RXERRW::DISABLED)
-    }
-    #[doc = "An interrupt will be generated when a receive error occurs."]
-    #[inline]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(RXERRW::ENABLED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TXLVL`"]
-pub enum TXLVLW {
-    #[doc = "No interrupt will be generated based on the TX FIFO level."]
-    DISABLED,
-    #[doc = "If TXLVLENA in the FIFOTRIG register = 1, an interrupt will be generated when the TX FIFO level decreases to the level specified by TXLVL in the FIFOTRIG register."]
-    ENABLED,
-}
-impl TXLVLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TXLVLW::DISABLED => false,
-            TXLVLW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TXLVLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TXLVLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TXLVLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No interrupt will be generated based on the TX FIFO level."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(TXLVLW::DISABLED)
-    }
-    #[doc = "If TXLVLENA in the FIFOTRIG register = 1, an interrupt will be generated when the TX FIFO level decreases to the level specified by TXLVL in the FIFOTRIG register."]
-    #[inline]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(TXLVLW::ENABLED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RXLVL`"]
-pub enum RXLVLW {
-    #[doc = "No interrupt will be generated based on the RX FIFO level."]
-    DISABLED,
-    #[doc = "If RXLVLENA in the FIFOTRIG register = 1, an interrupt will be generated when the when the RX FIFO level increases to the level specified by RXLVL in the FIFOTRIG register."]
-    ENABLED,
-}
-impl RXLVLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RXLVLW::DISABLED => false,
-            RXLVLW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RXLVLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RXLVLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RXLVLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No interrupt will be generated based on the RX FIFO level."]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(RXLVLW::DISABLED)
+        self.variant(RXLVL_A::DISABLED)
     }
     #[doc = "If RXLVLENA in the FIFOTRIG register = 1, an interrupt will be generated when the when the RX FIFO level increases to the level specified by RXLVL in the FIFOTRIG register."]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(RXLVLW::ENABLED)
+        self.variant(RXLVL_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Determines whether an interrupt occurs when a transmit error occurs, based on the TXERR flag in the FIFOSTAT register."]
-    #[inline]
-    pub fn txerr(&self) -> TXERRR {
-        TXERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn txerr(&self) -> TXERR_R {
+        TXERR_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Determines whether an interrupt occurs when a receive error occurs, based on the RXERR flag in the FIFOSTAT register."]
-    #[inline]
-    pub fn rxerr(&self) -> RXERRR {
-        RXERRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rxerr(&self) -> RXERR_R {
+        RXERR_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Determines whether an interrupt occurs when a the transmit FIFO reaches the level specified by the TXLVL field in the FIFOTRIG register."]
-    #[inline]
-    pub fn txlvl(&self) -> TXLVLR {
-        TXLVLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn txlvl(&self) -> TXLVL_R {
+        TXLVL_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Determines whether an interrupt occurs when a the receive FIFO reaches the level specified by the TXLVL field in the FIFOTRIG register."]
-    #[inline]
-    pub fn rxlvl(&self) -> RXLVLR {
-        RXLVLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rxlvl(&self) -> RXLVL_R {
+        RXLVL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Determines whether an interrupt occurs when a transmit error occurs, based on the TXERR flag in the FIFOSTAT register."]
-    #[inline]
-    pub fn txerr(&mut self) -> _TXERRW {
-        _TXERRW { w: self }
+    #[inline(always)]
+    pub fn txerr(&mut self) -> TXERR_W {
+        TXERR_W { w: self }
     }
     #[doc = "Bit 1 - Determines whether an interrupt occurs when a receive error occurs, based on the RXERR flag in the FIFOSTAT register."]
-    #[inline]
-    pub fn rxerr(&mut self) -> _RXERRW {
-        _RXERRW { w: self }
+    #[inline(always)]
+    pub fn rxerr(&mut self) -> RXERR_W {
+        RXERR_W { w: self }
     }
     #[doc = "Bit 2 - Determines whether an interrupt occurs when a the transmit FIFO reaches the level specified by the TXLVL field in the FIFOTRIG register."]
-    #[inline]
-    pub fn txlvl(&mut self) -> _TXLVLW {
-        _TXLVLW { w: self }
+    #[inline(always)]
+    pub fn txlvl(&mut self) -> TXLVL_W {
+        TXLVL_W { w: self }
     }
     #[doc = "Bit 3 - Determines whether an interrupt occurs when a the receive FIFO reaches the level specified by the TXLVL field in the FIFOTRIG register."]
-    #[inline]
-    pub fn rxlvl(&mut self) -> _RXLVLW {
-        _RXLVLW { w: self }
+    #[inline(always)]
+    pub fn rxlvl(&mut self) -> RXLVL_W {
+        RXLVL_W { w: self }
     }
 }

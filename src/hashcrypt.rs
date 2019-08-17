@@ -1,4 +1,4 @@
-#[doc = r" Register block"]
+#[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Is control register to enable and operate Hash and Crypto"]
@@ -13,7 +13,7 @@ pub struct RegisterBlock {
     pub memctrl: MEMCTRL,
     #[doc = "0x14 - Address to start memory access from (if available)."]
     pub memaddr: MEMADDR,
-    _reserved0: [u8; 8usize],
+    _reserved6: [u8; 8usize],
     #[doc = "0x20 - Input of 16 words at a time to load up buffer."]
     pub indata: INDATA,
     #[doc = "0x24 - no description available"]
@@ -26,93 +26,153 @@ pub struct RegisterBlock {
     pub cryptcfg: CRYPTCFG,
     #[doc = "0x84 - Returns the configuration of this block in this chip - indicates what services are available."]
     pub config: CONFIG,
-    _reserved1: [u8; 4usize],
+    _reserved12: [u8; 4usize],
     #[doc = "0x8c - Lock register allows locking to the current security level or unlocking by the lock holding level."]
     pub lock: LOCK,
     #[doc = "0x90 - no description available"]
     pub mask: [MASK; 4],
 }
-#[doc = "Is control register to enable and operate Hash and Crypto"]
-pub struct CTRL {
-    register: ::vcell::VolatileCell<u32>,
-}
+#[doc = "Is control register to enable and operate Hash and Crypto\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctrl](ctrl) module"]
+pub type CTRL = crate::Reg<u32, _CTRL>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _CTRL;
+#[doc = "`read()` method returns [ctrl::R](ctrl::R) reader structure"]
+impl crate::Readable for CTRL {}
+#[doc = "`write(|w| ..)` method takes [ctrl::W](ctrl::W) writer structure"]
+impl crate::Writable for CTRL {}
 #[doc = "Is control register to enable and operate Hash and Crypto"]
 pub mod ctrl;
-#[doc = "Indicates status of Hash peripheral."]
-pub struct STATUS {
-    register: ::vcell::VolatileCell<u32>,
-}
+#[doc = "Indicates status of Hash peripheral.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [status](status) module"]
+pub type STATUS = crate::Reg<u32, _STATUS>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _STATUS;
+#[doc = "`read()` method returns [status::R](status::R) reader structure"]
+impl crate::Readable for STATUS {}
+#[doc = "`write(|w| ..)` method takes [status::W](status::W) writer structure"]
+impl crate::Writable for STATUS {}
 #[doc = "Indicates status of Hash peripheral."]
 pub mod status;
-#[doc = "Write 1 to enable interrupts; reads back with which are set."]
-pub struct INTENSET {
-    register: ::vcell::VolatileCell<u32>,
-}
+#[doc = "Write 1 to enable interrupts; reads back with which are set.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intenset](intenset) module"]
+pub type INTENSET = crate::Reg<u32, _INTENSET>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _INTENSET;
+#[doc = "`read()` method returns [intenset::R](intenset::R) reader structure"]
+impl crate::Readable for INTENSET {}
+#[doc = "`write(|w| ..)` method takes [intenset::W](intenset::W) writer structure"]
+impl crate::Writable for INTENSET {}
 #[doc = "Write 1 to enable interrupts; reads back with which are set."]
 pub mod intenset;
-#[doc = "Write 1 to clear interrupts."]
-pub struct INTENCLR {
-    register: ::vcell::VolatileCell<u32>,
-}
+#[doc = "Write 1 to clear interrupts.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intenclr](intenclr) module"]
+pub type INTENCLR = crate::Reg<u32, _INTENCLR>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _INTENCLR;
+#[doc = "`read()` method returns [intenclr::R](intenclr::R) reader structure"]
+impl crate::Readable for INTENCLR {}
+#[doc = "`write(|w| ..)` method takes [intenclr::W](intenclr::W) writer structure"]
+impl crate::Writable for INTENCLR {}
 #[doc = "Write 1 to clear interrupts."]
 pub mod intenclr;
-#[doc = "Setup Master to access memory (if available)"]
-pub struct MEMCTRL {
-    register: ::vcell::VolatileCell<u32>,
-}
+#[doc = "Setup Master to access memory (if available)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [memctrl](memctrl) module"]
+pub type MEMCTRL = crate::Reg<u32, _MEMCTRL>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _MEMCTRL;
+#[doc = "`read()` method returns [memctrl::R](memctrl::R) reader structure"]
+impl crate::Readable for MEMCTRL {}
+#[doc = "`write(|w| ..)` method takes [memctrl::W](memctrl::W) writer structure"]
+impl crate::Writable for MEMCTRL {}
 #[doc = "Setup Master to access memory (if available)"]
 pub mod memctrl;
-#[doc = "Address to start memory access from (if available)."]
-pub struct MEMADDR {
-    register: ::vcell::VolatileCell<u32>,
-}
+#[doc = "Address to start memory access from (if available).\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [memaddr](memaddr) module"]
+pub type MEMADDR = crate::Reg<u32, _MEMADDR>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _MEMADDR;
+#[doc = "`read()` method returns [memaddr::R](memaddr::R) reader structure"]
+impl crate::Readable for MEMADDR {}
+#[doc = "`write(|w| ..)` method takes [memaddr::W](memaddr::W) writer structure"]
+impl crate::Writable for MEMADDR {}
 #[doc = "Address to start memory access from (if available)."]
 pub mod memaddr;
-#[doc = "Input of 16 words at a time to load up buffer."]
-pub struct INDATA {
-    register: ::vcell::VolatileCell<u32>,
-}
+#[doc = "Input of 16 words at a time to load up buffer.\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [indata](indata) module"]
+pub type INDATA = crate::Reg<u32, _INDATA>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _INDATA;
+#[doc = "`write(|w| ..)` method takes [indata::W](indata::W) writer structure"]
+impl crate::Writable for INDATA {}
 #[doc = "Input of 16 words at a time to load up buffer."]
 pub mod indata;
-#[doc = "no description available"]
-pub struct ALIAS {
-    register: ::vcell::VolatileCell<u32>,
-}
+#[doc = "no description available\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [alias](alias) module"]
+pub type ALIAS = crate::Reg<u32, _ALIAS>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _ALIAS;
+#[doc = "`write(|w| ..)` method takes [alias::W](alias::W) writer structure"]
+impl crate::Writable for ALIAS {}
 #[doc = "no description available"]
 pub mod alias;
-#[doc = "no description available"]
-pub struct OUTDATA0 {
-    register: ::vcell::VolatileCell<u32>,
-}
+#[doc = "no description available\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [outdata0](outdata0) module"]
+pub type OUTDATA0 = crate::Reg<u32, _OUTDATA0>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _OUTDATA0;
+#[doc = "`read()` method returns [outdata0::R](outdata0::R) reader structure"]
+impl crate::Readable for OUTDATA0 {}
 #[doc = "no description available"]
 pub mod outdata0;
-#[doc = "no description available"]
-pub struct OUTDATA1 {
-    register: ::vcell::VolatileCell<u32>,
-}
+#[doc = "no description available\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [outdata1](outdata1) module"]
+pub type OUTDATA1 = crate::Reg<u32, _OUTDATA1>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _OUTDATA1;
+#[doc = "`read()` method returns [outdata1::R](outdata1::R) reader structure"]
+impl crate::Readable for OUTDATA1 {}
 #[doc = "no description available"]
 pub mod outdata1;
-#[doc = "Crypto settings for AES and Salsa and ChaCha"]
-pub struct CRYPTCFG {
-    register: ::vcell::VolatileCell<u32>,
-}
+#[doc = "Crypto settings for AES and Salsa and ChaCha\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cryptcfg](cryptcfg) module"]
+pub type CRYPTCFG = crate::Reg<u32, _CRYPTCFG>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _CRYPTCFG;
+#[doc = "`read()` method returns [cryptcfg::R](cryptcfg::R) reader structure"]
+impl crate::Readable for CRYPTCFG {}
+#[doc = "`write(|w| ..)` method takes [cryptcfg::W](cryptcfg::W) writer structure"]
+impl crate::Writable for CRYPTCFG {}
 #[doc = "Crypto settings for AES and Salsa and ChaCha"]
 pub mod cryptcfg;
-#[doc = "Returns the configuration of this block in this chip - indicates what services are available."]
-pub struct CONFIG {
-    register: ::vcell::VolatileCell<u32>,
-}
+#[doc = "Returns the configuration of this block in this chip - indicates what services are available.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [config](config) module"]
+pub type CONFIG = crate::Reg<u32, _CONFIG>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _CONFIG;
+#[doc = "`read()` method returns [config::R](config::R) reader structure"]
+impl crate::Readable for CONFIG {}
+#[doc = "`write(|w| ..)` method takes [config::W](config::W) writer structure"]
+impl crate::Writable for CONFIG {}
 #[doc = "Returns the configuration of this block in this chip - indicates what services are available."]
 pub mod config;
-#[doc = "Lock register allows locking to the current security level or unlocking by the lock holding level."]
-pub struct LOCK {
-    register: ::vcell::VolatileCell<u32>,
-}
+#[doc = "Lock register allows locking to the current security level or unlocking by the lock holding level.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [lock](lock) module"]
+pub type LOCK = crate::Reg<u32, _LOCK>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _LOCK;
+#[doc = "`read()` method returns [lock::R](lock::R) reader structure"]
+impl crate::Readable for LOCK {}
+#[doc = "`write(|w| ..)` method takes [lock::W](lock::W) writer structure"]
+impl crate::Writable for LOCK {}
 #[doc = "Lock register allows locking to the current security level or unlocking by the lock holding level."]
 pub mod lock;
-#[doc = "no description available"]
-pub struct MASK {
-    register: ::vcell::VolatileCell<u32>,
-}
+#[doc = "no description available\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [mask](mask) module"]
+pub type MASK = crate::Reg<u32, _MASK>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _MASK;
+#[doc = "`write(|w| ..)` method takes [mask::W](mask::W) writer structure"]
+impl crate::Writable for MASK {}
 #[doc = "no description available"]
 pub mod mask;

@@ -1,127 +1,36 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ONLINE_TEST_VAL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ONLINE_TEST_VAL"]
+pub type R = crate::R<u32, super::ONLINE_TEST_VAL>;
+#[doc = "Writer for register ONLINE_TEST_VAL"]
+pub type W = crate::W<u32, super::ONLINE_TEST_VAL>;
+#[doc = "Register ONLINE_TEST_VAL `reset()`'s with value 0"]
+impl crate::ResetValue for super::ONLINE_TEST_VAL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct LIVE_CHI_SQUAREDR {
-    bits: u8,
-}
-impl LIVE_CHI_SQUAREDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MIN_CHI_SQUAREDR {
-    bits: u8,
-}
-impl MIN_CHI_SQUAREDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MAX_CHI_SQUAREDR {
-    bits: u8,
-}
-impl MAX_CHI_SQUAREDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of field `LIVE_CHI_SQUARED`"]
+pub type LIVE_CHI_SQUARED_R = crate::R<u8, u8>;
+#[doc = "Reader of field `MIN_CHI_SQUARED`"]
+pub type MIN_CHI_SQUARED_R = crate::R<u8, u8>;
+#[doc = "Reader of field `MAX_CHI_SQUARED`"]
+pub type MAX_CHI_SQUARED_R = crate::R<u8, u8>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - This value is updated as described in field 'activate'."]
-    #[inline]
-    pub fn live_chi_squared(&self) -> LIVE_CHI_SQUAREDR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        LIVE_CHI_SQUAREDR { bits }
+    #[inline(always)]
+    pub fn live_chi_squared(&self) -> LIVE_CHI_SQUARED_R {
+        LIVE_CHI_SQUARED_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:7 - This field is reset when 'activate'==0."]
-    #[inline]
-    pub fn min_chi_squared(&self) -> MIN_CHI_SQUAREDR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MIN_CHI_SQUAREDR { bits }
+    #[inline(always)]
+    pub fn min_chi_squared(&self) -> MIN_CHI_SQUARED_R {
+        MIN_CHI_SQUARED_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - This field is reset when 'activate'==0."]
-    #[inline]
-    pub fn max_chi_squared(&self) -> MAX_CHI_SQUAREDR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MAX_CHI_SQUAREDR { bits }
+    #[inline(always)]
+    pub fn max_chi_squared(&self) -> MAX_CHI_SQUARED_R {
+        MAX_CHI_SQUARED_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
 }
-impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
-}
+impl W {}

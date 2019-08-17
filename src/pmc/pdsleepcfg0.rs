@@ -1,3039 +1,2216 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PDSLEEPCFG0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PDSLEEPCFG0"]
+pub type R = crate::R<u32, super::PDSLEEPCFG0>;
+#[doc = "Writer for register PDSLEEPCFG0"]
+pub type W = crate::W<u32, super::PDSLEEPCFG0>;
+#[doc = "Register PDSLEEPCFG0 `reset()`'s with value 0xc0"]
+impl crate::ResetValue for super::PDSLEEPCFG0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xc0
     }
 }
 #[doc = "Possible values of the field `PDEN_DCDC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_DCDCR {
+pub enum PDEN_DCDC_A {
     #[doc = "DCDC is powered on during low power mode.."]
     POWEREDON,
     #[doc = "DCDC is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_DCDCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_DCDCR::POWEREDON => false,
-            PDEN_DCDCR::POWEREDOFF => true,
+impl From<PDEN_DCDC_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_DCDC_A) -> Self {
+        match variant {
+            PDEN_DCDC_A::POWEREDON => false,
+            PDEN_DCDC_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_DCDCR {
-        match value {
-            false => PDEN_DCDCR::POWEREDON,
-            true => PDEN_DCDCR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_DCDC`"]
+pub type PDEN_DCDC_R = crate::R<bool, PDEN_DCDC_A>;
+impl PDEN_DCDC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_DCDC_A {
+        match self.bits {
+            false => PDEN_DCDC_A::POWEREDON,
+            true => PDEN_DCDC_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_DCDCR::POWEREDON
+        *self == PDEN_DCDC_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_DCDCR::POWEREDOFF
+        *self == PDEN_DCDC_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_DCDC`"]
+pub struct PDEN_DCDC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_DCDC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_DCDC_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "DCDC is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_DCDC_A::POWEREDON)
+    }
+    #[doc = "DCDC is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_DCDC_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_BIAS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_BIASR {
+pub enum PDEN_BIAS_A {
     #[doc = "Analog Bias is powered on during low power mode.."]
     POWEREDON,
     #[doc = "Analog Bias is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_BIASR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_BIASR::POWEREDON => false,
-            PDEN_BIASR::POWEREDOFF => true,
+impl From<PDEN_BIAS_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_BIAS_A) -> Self {
+        match variant {
+            PDEN_BIAS_A::POWEREDON => false,
+            PDEN_BIAS_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_BIASR {
-        match value {
-            false => PDEN_BIASR::POWEREDON,
-            true => PDEN_BIASR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_BIAS`"]
+pub type PDEN_BIAS_R = crate::R<bool, PDEN_BIAS_A>;
+impl PDEN_BIAS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_BIAS_A {
+        match self.bits {
+            false => PDEN_BIAS_A::POWEREDON,
+            true => PDEN_BIAS_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_BIASR::POWEREDON
+        *self == PDEN_BIAS_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_BIASR::POWEREDOFF
+        *self == PDEN_BIAS_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_BIAS`"]
+pub struct PDEN_BIAS_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_BIAS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_BIAS_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Analog Bias is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_BIAS_A::POWEREDON)
+    }
+    #[doc = "Analog Bias is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_BIAS_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_BODCORE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_BODCORER {
+pub enum PDEN_BODCORE_A {
     #[doc = "BOD CORE is powered on during low power mode.."]
     POWEREDON,
     #[doc = "BOD CORE is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_BODCORER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_BODCORER::POWEREDON => false,
-            PDEN_BODCORER::POWEREDOFF => true,
+impl From<PDEN_BODCORE_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_BODCORE_A) -> Self {
+        match variant {
+            PDEN_BODCORE_A::POWEREDON => false,
+            PDEN_BODCORE_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_BODCORER {
-        match value {
-            false => PDEN_BODCORER::POWEREDON,
-            true => PDEN_BODCORER::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_BODCORE`"]
+pub type PDEN_BODCORE_R = crate::R<bool, PDEN_BODCORE_A>;
+impl PDEN_BODCORE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_BODCORE_A {
+        match self.bits {
+            false => PDEN_BODCORE_A::POWEREDON,
+            true => PDEN_BODCORE_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_BODCORER::POWEREDON
+        *self == PDEN_BODCORE_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_BODCORER::POWEREDOFF
+        *self == PDEN_BODCORE_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_BODCORE`"]
+pub struct PDEN_BODCORE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_BODCORE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_BODCORE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "BOD CORE is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_BODCORE_A::POWEREDON)
+    }
+    #[doc = "BOD CORE is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_BODCORE_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_BODVBAT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_BODVBATR {
+pub enum PDEN_BODVBAT_A {
     #[doc = "BOD VBAT is powered on during low power mode.."]
     POWEREDON,
     #[doc = "BOD VBAT is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_BODVBATR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_BODVBATR::POWEREDON => false,
-            PDEN_BODVBATR::POWEREDOFF => true,
+impl From<PDEN_BODVBAT_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_BODVBAT_A) -> Self {
+        match variant {
+            PDEN_BODVBAT_A::POWEREDON => false,
+            PDEN_BODVBAT_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_BODVBATR {
-        match value {
-            false => PDEN_BODVBATR::POWEREDON,
-            true => PDEN_BODVBATR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_BODVBAT`"]
+pub type PDEN_BODVBAT_R = crate::R<bool, PDEN_BODVBAT_A>;
+impl PDEN_BODVBAT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_BODVBAT_A {
+        match self.bits {
+            false => PDEN_BODVBAT_A::POWEREDON,
+            true => PDEN_BODVBAT_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_BODVBATR::POWEREDON
+        *self == PDEN_BODVBAT_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_BODVBATR::POWEREDOFF
+        *self == PDEN_BODVBAT_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_BODVBAT`"]
+pub struct PDEN_BODVBAT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_BODVBAT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_BODVBAT_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "BOD VBAT is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_BODVBAT_A::POWEREDON)
+    }
+    #[doc = "BOD VBAT is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_BODVBAT_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_FRO1M`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_FRO1MR {
+pub enum PDEN_FRO1M_A {
     #[doc = "FRO 1MHz is powered on during low power mode.."]
     POWEREDON,
     #[doc = "FRO 1MHz is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_FRO1MR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_FRO1MR::POWEREDON => false,
-            PDEN_FRO1MR::POWEREDOFF => true,
+impl From<PDEN_FRO1M_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_FRO1M_A) -> Self {
+        match variant {
+            PDEN_FRO1M_A::POWEREDON => false,
+            PDEN_FRO1M_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_FRO1MR {
-        match value {
-            false => PDEN_FRO1MR::POWEREDON,
-            true => PDEN_FRO1MR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_FRO1M`"]
+pub type PDEN_FRO1M_R = crate::R<bool, PDEN_FRO1M_A>;
+impl PDEN_FRO1M_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_FRO1M_A {
+        match self.bits {
+            false => PDEN_FRO1M_A::POWEREDON,
+            true => PDEN_FRO1M_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_FRO1MR::POWEREDON
+        *self == PDEN_FRO1M_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_FRO1MR::POWEREDOFF
+        *self == PDEN_FRO1M_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_FRO1M`"]
+pub struct PDEN_FRO1M_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_FRO1M_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_FRO1M_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "FRO 1MHz is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_FRO1M_A::POWEREDON)
+    }
+    #[doc = "FRO 1MHz is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_FRO1M_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_FRO192M`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_FRO192MR {
+pub enum PDEN_FRO192M_A {
     #[doc = "FRO 192 MHz is powered on during low power mode.."]
     POWEREDON,
     #[doc = "FRO 192 MHz is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_FRO192MR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_FRO192MR::POWEREDON => false,
-            PDEN_FRO192MR::POWEREDOFF => true,
+impl From<PDEN_FRO192M_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_FRO192M_A) -> Self {
+        match variant {
+            PDEN_FRO192M_A::POWEREDON => false,
+            PDEN_FRO192M_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_FRO192MR {
-        match value {
-            false => PDEN_FRO192MR::POWEREDON,
-            true => PDEN_FRO192MR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_FRO192M`"]
+pub type PDEN_FRO192M_R = crate::R<bool, PDEN_FRO192M_A>;
+impl PDEN_FRO192M_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_FRO192M_A {
+        match self.bits {
+            false => PDEN_FRO192M_A::POWEREDON,
+            true => PDEN_FRO192M_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_FRO192MR::POWEREDON
+        *self == PDEN_FRO192M_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_FRO192MR::POWEREDOFF
+        *self == PDEN_FRO192M_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_FRO192M`"]
+pub struct PDEN_FRO192M_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_FRO192M_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_FRO192M_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "FRO 192 MHz is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_FRO192M_A::POWEREDON)
+    }
+    #[doc = "FRO 192 MHz is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_FRO192M_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_FRO32K`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_FRO32KR {
+pub enum PDEN_FRO32K_A {
     #[doc = "FRO 32 KHz is powered on during low power mode.."]
     POWEREDON,
     #[doc = "FRO 32 KHz is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_FRO32KR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_FRO32KR::POWEREDON => false,
-            PDEN_FRO32KR::POWEREDOFF => true,
+impl From<PDEN_FRO32K_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_FRO32K_A) -> Self {
+        match variant {
+            PDEN_FRO32K_A::POWEREDON => false,
+            PDEN_FRO32K_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_FRO32KR {
-        match value {
-            false => PDEN_FRO32KR::POWEREDON,
-            true => PDEN_FRO32KR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_FRO32K`"]
+pub type PDEN_FRO32K_R = crate::R<bool, PDEN_FRO32K_A>;
+impl PDEN_FRO32K_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_FRO32K_A {
+        match self.bits {
+            false => PDEN_FRO32K_A::POWEREDON,
+            true => PDEN_FRO32K_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_FRO32KR::POWEREDON
+        *self == PDEN_FRO32K_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_FRO32KR::POWEREDOFF
+        *self == PDEN_FRO32K_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_FRO32K`"]
+pub struct PDEN_FRO32K_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_FRO32K_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_FRO32K_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "FRO 32 KHz is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_FRO32K_A::POWEREDON)
+    }
+    #[doc = "FRO 32 KHz is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_FRO32K_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_XTAL32K`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_XTAL32KR {
+pub enum PDEN_XTAL32K_A {
     #[doc = "crystal 32 KHz is powered on during low power mode.."]
     POWEREDON,
     #[doc = "crystal 32 KHz is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_XTAL32KR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_XTAL32KR::POWEREDON => false,
-            PDEN_XTAL32KR::POWEREDOFF => true,
+impl From<PDEN_XTAL32K_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_XTAL32K_A) -> Self {
+        match variant {
+            PDEN_XTAL32K_A::POWEREDON => false,
+            PDEN_XTAL32K_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_XTAL32KR {
-        match value {
-            false => PDEN_XTAL32KR::POWEREDON,
-            true => PDEN_XTAL32KR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_XTAL32K`"]
+pub type PDEN_XTAL32K_R = crate::R<bool, PDEN_XTAL32K_A>;
+impl PDEN_XTAL32K_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_XTAL32K_A {
+        match self.bits {
+            false => PDEN_XTAL32K_A::POWEREDON,
+            true => PDEN_XTAL32K_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_XTAL32KR::POWEREDON
+        *self == PDEN_XTAL32K_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_XTAL32KR::POWEREDOFF
+        *self == PDEN_XTAL32K_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_XTAL32K`"]
+pub struct PDEN_XTAL32K_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_XTAL32K_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_XTAL32K_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "crystal 32 KHz is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_XTAL32K_A::POWEREDON)
+    }
+    #[doc = "crystal 32 KHz is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_XTAL32K_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_XTAL32M`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_XTAL32MR {
+pub enum PDEN_XTAL32M_A {
     #[doc = "crystal 32 MHz is powered on during low power mode.."]
     POWEREDON,
     #[doc = "crystal 32 MHz is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_XTAL32MR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_XTAL32MR::POWEREDON => false,
-            PDEN_XTAL32MR::POWEREDOFF => true,
+impl From<PDEN_XTAL32M_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_XTAL32M_A) -> Self {
+        match variant {
+            PDEN_XTAL32M_A::POWEREDON => false,
+            PDEN_XTAL32M_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_XTAL32MR {
-        match value {
-            false => PDEN_XTAL32MR::POWEREDON,
-            true => PDEN_XTAL32MR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_XTAL32M`"]
+pub type PDEN_XTAL32M_R = crate::R<bool, PDEN_XTAL32M_A>;
+impl PDEN_XTAL32M_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_XTAL32M_A {
+        match self.bits {
+            false => PDEN_XTAL32M_A::POWEREDON,
+            true => PDEN_XTAL32M_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_XTAL32MR::POWEREDON
+        *self == PDEN_XTAL32M_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_XTAL32MR::POWEREDOFF
+        *self == PDEN_XTAL32M_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_XTAL32M`"]
+pub struct PDEN_XTAL32M_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_XTAL32M_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_XTAL32M_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "crystal 32 MHz is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_XTAL32M_A::POWEREDON)
+    }
+    #[doc = "crystal 32 MHz is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_XTAL32M_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_PLL0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_PLL0R {
+pub enum PDEN_PLL0_A {
     #[doc = "System PLL (also refered as PLL0) is powered on during low power mode.."]
     POWEREDON,
     #[doc = "System PLL (also refered as PLL0) is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_PLL0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_PLL0R::POWEREDON => false,
-            PDEN_PLL0R::POWEREDOFF => true,
+impl From<PDEN_PLL0_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_PLL0_A) -> Self {
+        match variant {
+            PDEN_PLL0_A::POWEREDON => false,
+            PDEN_PLL0_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_PLL0R {
-        match value {
-            false => PDEN_PLL0R::POWEREDON,
-            true => PDEN_PLL0R::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_PLL0`"]
+pub type PDEN_PLL0_R = crate::R<bool, PDEN_PLL0_A>;
+impl PDEN_PLL0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_PLL0_A {
+        match self.bits {
+            false => PDEN_PLL0_A::POWEREDON,
+            true => PDEN_PLL0_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_PLL0R::POWEREDON
+        *self == PDEN_PLL0_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_PLL0R::POWEREDOFF
+        *self == PDEN_PLL0_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_PLL0`"]
+pub struct PDEN_PLL0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_PLL0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_PLL0_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "System PLL (also refered as PLL0) is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_PLL0_A::POWEREDON)
+    }
+    #[doc = "System PLL (also refered as PLL0) is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_PLL0_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_PLL1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_PLL1R {
+pub enum PDEN_PLL1_A {
     #[doc = "USB PLL (also refered as PLL1) is powered on during low power mode.."]
     POWEREDON,
     #[doc = "USB PLL (also refered as PLL1) is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_PLL1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_PLL1R::POWEREDON => false,
-            PDEN_PLL1R::POWEREDOFF => true,
+impl From<PDEN_PLL1_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_PLL1_A) -> Self {
+        match variant {
+            PDEN_PLL1_A::POWEREDON => false,
+            PDEN_PLL1_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_PLL1R {
-        match value {
-            false => PDEN_PLL1R::POWEREDON,
-            true => PDEN_PLL1R::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_PLL1`"]
+pub type PDEN_PLL1_R = crate::R<bool, PDEN_PLL1_A>;
+impl PDEN_PLL1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_PLL1_A {
+        match self.bits {
+            false => PDEN_PLL1_A::POWEREDON,
+            true => PDEN_PLL1_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_PLL1R::POWEREDON
+        *self == PDEN_PLL1_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_PLL1R::POWEREDOFF
+        *self == PDEN_PLL1_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_PLL1`"]
+pub struct PDEN_PLL1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_PLL1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_PLL1_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "USB PLL (also refered as PLL1) is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_PLL1_A::POWEREDON)
+    }
+    #[doc = "USB PLL (also refered as PLL1) is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_PLL1_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_USBFSPHY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_USBFSPHYR {
+pub enum PDEN_USBFSPHY_A {
     #[doc = "USB Full Speed phy is powered on during low power mode.."]
     POWEREDON,
     #[doc = "USB Full Speed phy is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_USBFSPHYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_USBFSPHYR::POWEREDON => false,
-            PDEN_USBFSPHYR::POWEREDOFF => true,
+impl From<PDEN_USBFSPHY_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_USBFSPHY_A) -> Self {
+        match variant {
+            PDEN_USBFSPHY_A::POWEREDON => false,
+            PDEN_USBFSPHY_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_USBFSPHYR {
-        match value {
-            false => PDEN_USBFSPHYR::POWEREDON,
-            true => PDEN_USBFSPHYR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_USBFSPHY`"]
+pub type PDEN_USBFSPHY_R = crate::R<bool, PDEN_USBFSPHY_A>;
+impl PDEN_USBFSPHY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_USBFSPHY_A {
+        match self.bits {
+            false => PDEN_USBFSPHY_A::POWEREDON,
+            true => PDEN_USBFSPHY_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_USBFSPHYR::POWEREDON
+        *self == PDEN_USBFSPHY_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_USBFSPHYR::POWEREDOFF
+        *self == PDEN_USBFSPHY_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_USBFSPHY`"]
+pub struct PDEN_USBFSPHY_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_USBFSPHY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_USBFSPHY_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "USB Full Speed phy is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_USBFSPHY_A::POWEREDON)
+    }
+    #[doc = "USB Full Speed phy is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_USBFSPHY_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_USBHSPHY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_USBHSPHYR {
+pub enum PDEN_USBHSPHY_A {
     #[doc = "USB High Speed Phy is powered on during low power mode.."]
     POWEREDON,
     #[doc = "USB High Speed Phy is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_USBHSPHYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_USBHSPHYR::POWEREDON => false,
-            PDEN_USBHSPHYR::POWEREDOFF => true,
+impl From<PDEN_USBHSPHY_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_USBHSPHY_A) -> Self {
+        match variant {
+            PDEN_USBHSPHY_A::POWEREDON => false,
+            PDEN_USBHSPHY_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_USBHSPHYR {
-        match value {
-            false => PDEN_USBHSPHYR::POWEREDON,
-            true => PDEN_USBHSPHYR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_USBHSPHY`"]
+pub type PDEN_USBHSPHY_R = crate::R<bool, PDEN_USBHSPHY_A>;
+impl PDEN_USBHSPHY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_USBHSPHY_A {
+        match self.bits {
+            false => PDEN_USBHSPHY_A::POWEREDON,
+            true => PDEN_USBHSPHY_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_USBHSPHYR::POWEREDON
+        *self == PDEN_USBHSPHY_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_USBHSPHYR::POWEREDOFF
+        *self == PDEN_USBHSPHY_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_USBHSPHY`"]
+pub struct PDEN_USBHSPHY_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_USBHSPHY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_USBHSPHY_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "USB High Speed Phy is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_USBHSPHY_A::POWEREDON)
+    }
+    #[doc = "USB High Speed Phy is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_USBHSPHY_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_COMP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_COMPR {
+pub enum PDEN_COMP_A {
     #[doc = "Analog Comparator is powered on during low power mode.."]
     POWEREDON,
     #[doc = "Analog Comparator is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_COMPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_COMPR::POWEREDON => false,
-            PDEN_COMPR::POWEREDOFF => true,
+impl From<PDEN_COMP_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_COMP_A) -> Self {
+        match variant {
+            PDEN_COMP_A::POWEREDON => false,
+            PDEN_COMP_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_COMPR {
-        match value {
-            false => PDEN_COMPR::POWEREDON,
-            true => PDEN_COMPR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_COMP`"]
+pub type PDEN_COMP_R = crate::R<bool, PDEN_COMP_A>;
+impl PDEN_COMP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_COMP_A {
+        match self.bits {
+            false => PDEN_COMP_A::POWEREDON,
+            true => PDEN_COMP_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_COMPR::POWEREDON
+        *self == PDEN_COMP_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_COMPR::POWEREDOFF
+        *self == PDEN_COMP_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_COMP`"]
+pub struct PDEN_COMP_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_COMP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_COMP_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Analog Comparator is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_COMP_A::POWEREDON)
+    }
+    #[doc = "Analog Comparator is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_COMP_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_TEMPSENS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_TEMPSENSR {
+pub enum PDEN_TEMPSENS_A {
     #[doc = "Temperature Sensor is powered on during low power mode.."]
     POWEREDON,
     #[doc = "Temperature Sensor is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_TEMPSENSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_TEMPSENSR::POWEREDON => false,
-            PDEN_TEMPSENSR::POWEREDOFF => true,
+impl From<PDEN_TEMPSENS_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_TEMPSENS_A) -> Self {
+        match variant {
+            PDEN_TEMPSENS_A::POWEREDON => false,
+            PDEN_TEMPSENS_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_TEMPSENSR {
-        match value {
-            false => PDEN_TEMPSENSR::POWEREDON,
-            true => PDEN_TEMPSENSR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_TEMPSENS`"]
+pub type PDEN_TEMPSENS_R = crate::R<bool, PDEN_TEMPSENS_A>;
+impl PDEN_TEMPSENS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_TEMPSENS_A {
+        match self.bits {
+            false => PDEN_TEMPSENS_A::POWEREDON,
+            true => PDEN_TEMPSENS_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_TEMPSENSR::POWEREDON
+        *self == PDEN_TEMPSENS_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_TEMPSENSR::POWEREDOFF
+        *self == PDEN_TEMPSENS_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_TEMPSENS`"]
+pub struct PDEN_TEMPSENS_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_TEMPSENS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_TEMPSENS_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Temperature Sensor is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_TEMPSENS_A::POWEREDON)
+    }
+    #[doc = "Temperature Sensor is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_TEMPSENS_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_GPADC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_GPADCR {
+pub enum PDEN_GPADC_A {
     #[doc = "General Purpose ADC (GPADC) is powered on during low power mode.."]
     POWEREDON,
     #[doc = "General Purpose ADC (GPADC) is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_GPADCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_GPADCR::POWEREDON => false,
-            PDEN_GPADCR::POWEREDOFF => true,
+impl From<PDEN_GPADC_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_GPADC_A) -> Self {
+        match variant {
+            PDEN_GPADC_A::POWEREDON => false,
+            PDEN_GPADC_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_GPADCR {
-        match value {
-            false => PDEN_GPADCR::POWEREDON,
-            true => PDEN_GPADCR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_GPADC`"]
+pub type PDEN_GPADC_R = crate::R<bool, PDEN_GPADC_A>;
+impl PDEN_GPADC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_GPADC_A {
+        match self.bits {
+            false => PDEN_GPADC_A::POWEREDON,
+            true => PDEN_GPADC_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_GPADCR::POWEREDON
+        *self == PDEN_GPADC_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_GPADCR::POWEREDOFF
+        *self == PDEN_GPADC_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_GPADC`"]
+pub struct PDEN_GPADC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_GPADC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_GPADC_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "General Purpose ADC (GPADC) is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_GPADC_A::POWEREDON)
+    }
+    #[doc = "General Purpose ADC (GPADC) is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_GPADC_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_LDOMEM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_LDOMEMR {
+pub enum PDEN_LDOMEM_A {
     #[doc = "Memories LDO is powered on during low power mode.."]
     POWEREDON,
     #[doc = "Memories LDO is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_LDOMEMR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_LDOMEMR::POWEREDON => false,
-            PDEN_LDOMEMR::POWEREDOFF => true,
+impl From<PDEN_LDOMEM_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_LDOMEM_A) -> Self {
+        match variant {
+            PDEN_LDOMEM_A::POWEREDON => false,
+            PDEN_LDOMEM_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_LDOMEMR {
-        match value {
-            false => PDEN_LDOMEMR::POWEREDON,
-            true => PDEN_LDOMEMR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_LDOMEM`"]
+pub type PDEN_LDOMEM_R = crate::R<bool, PDEN_LDOMEM_A>;
+impl PDEN_LDOMEM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_LDOMEM_A {
+        match self.bits {
+            false => PDEN_LDOMEM_A::POWEREDON,
+            true => PDEN_LDOMEM_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_LDOMEMR::POWEREDON
+        *self == PDEN_LDOMEM_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_LDOMEMR::POWEREDOFF
+        *self == PDEN_LDOMEM_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_LDOMEM`"]
+pub struct PDEN_LDOMEM_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_LDOMEM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_LDOMEM_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Memories LDO is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_LDOMEM_A::POWEREDON)
+    }
+    #[doc = "Memories LDO is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_LDOMEM_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_LDODEEPSLEEP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_LDODEEPSLEEPR {
+pub enum PDEN_LDODEEPSLEEP_A {
     #[doc = "Deep Sleep LDO is powered on during low power mode.."]
     POWEREDON,
     #[doc = "Deep Sleep LDO is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_LDODEEPSLEEPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_LDODEEPSLEEPR::POWEREDON => false,
-            PDEN_LDODEEPSLEEPR::POWEREDOFF => true,
+impl From<PDEN_LDODEEPSLEEP_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_LDODEEPSLEEP_A) -> Self {
+        match variant {
+            PDEN_LDODEEPSLEEP_A::POWEREDON => false,
+            PDEN_LDODEEPSLEEP_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_LDODEEPSLEEPR {
-        match value {
-            false => PDEN_LDODEEPSLEEPR::POWEREDON,
-            true => PDEN_LDODEEPSLEEPR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_LDODEEPSLEEP`"]
+pub type PDEN_LDODEEPSLEEP_R = crate::R<bool, PDEN_LDODEEPSLEEP_A>;
+impl PDEN_LDODEEPSLEEP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_LDODEEPSLEEP_A {
+        match self.bits {
+            false => PDEN_LDODEEPSLEEP_A::POWEREDON,
+            true => PDEN_LDODEEPSLEEP_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_LDODEEPSLEEPR::POWEREDON
+        *self == PDEN_LDODEEPSLEEP_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_LDODEEPSLEEPR::POWEREDOFF
+        *self == PDEN_LDODEEPSLEEP_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_LDODEEPSLEEP`"]
+pub struct PDEN_LDODEEPSLEEP_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_LDODEEPSLEEP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_LDODEEPSLEEP_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Deep Sleep LDO is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_LDODEEPSLEEP_A::POWEREDON)
+    }
+    #[doc = "Deep Sleep LDO is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_LDODEEPSLEEP_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_LDOUSBHS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_LDOUSBHSR {
+pub enum PDEN_LDOUSBHS_A {
     #[doc = "USB high speed LDO is powered on during low power mode.."]
     POWEREDON,
     #[doc = "USB high speed LDO is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_LDOUSBHSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_LDOUSBHSR::POWEREDON => false,
-            PDEN_LDOUSBHSR::POWEREDOFF => true,
+impl From<PDEN_LDOUSBHS_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_LDOUSBHS_A) -> Self {
+        match variant {
+            PDEN_LDOUSBHS_A::POWEREDON => false,
+            PDEN_LDOUSBHS_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_LDOUSBHSR {
-        match value {
-            false => PDEN_LDOUSBHSR::POWEREDON,
-            true => PDEN_LDOUSBHSR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_LDOUSBHS`"]
+pub type PDEN_LDOUSBHS_R = crate::R<bool, PDEN_LDOUSBHS_A>;
+impl PDEN_LDOUSBHS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_LDOUSBHS_A {
+        match self.bits {
+            false => PDEN_LDOUSBHS_A::POWEREDON,
+            true => PDEN_LDOUSBHS_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_LDOUSBHSR::POWEREDON
+        *self == PDEN_LDOUSBHS_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_LDOUSBHSR::POWEREDOFF
+        *self == PDEN_LDOUSBHS_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_LDOUSBHS`"]
+pub struct PDEN_LDOUSBHS_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_LDOUSBHS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_LDOUSBHS_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "USB high speed LDO is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_LDOUSBHS_A::POWEREDON)
+    }
+    #[doc = "USB high speed LDO is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_LDOUSBHS_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_AUXBIAS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_AUXBIASR {
+pub enum PDEN_AUXBIAS_A {
     #[doc = "is powered on during low power mode.."]
     POWEREDON,
     #[doc = "is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_AUXBIASR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_AUXBIASR::POWEREDON => false,
-            PDEN_AUXBIASR::POWEREDOFF => true,
+impl From<PDEN_AUXBIAS_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_AUXBIAS_A) -> Self {
+        match variant {
+            PDEN_AUXBIAS_A::POWEREDON => false,
+            PDEN_AUXBIAS_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_AUXBIASR {
-        match value {
-            false => PDEN_AUXBIASR::POWEREDON,
-            true => PDEN_AUXBIASR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_AUXBIAS`"]
+pub type PDEN_AUXBIAS_R = crate::R<bool, PDEN_AUXBIAS_A>;
+impl PDEN_AUXBIAS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_AUXBIAS_A {
+        match self.bits {
+            false => PDEN_AUXBIAS_A::POWEREDON,
+            true => PDEN_AUXBIAS_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_AUXBIASR::POWEREDON
+        *self == PDEN_AUXBIAS_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_AUXBIASR::POWEREDOFF
+        *self == PDEN_AUXBIAS_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_AUXBIAS`"]
+pub struct PDEN_AUXBIAS_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_AUXBIAS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_AUXBIAS_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_AUXBIAS_A::POWEREDON)
+    }
+    #[doc = "is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_AUXBIAS_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_LDOXO32M`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_LDOXO32MR {
+pub enum PDEN_LDOXO32M_A {
     #[doc = "crystal 32 MHz LDO is powered on during low power mode.."]
     POWEREDON,
     #[doc = "crystal 32 MHz LDO is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_LDOXO32MR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_LDOXO32MR::POWEREDON => false,
-            PDEN_LDOXO32MR::POWEREDOFF => true,
+impl From<PDEN_LDOXO32M_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_LDOXO32M_A) -> Self {
+        match variant {
+            PDEN_LDOXO32M_A::POWEREDON => false,
+            PDEN_LDOXO32M_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_LDOXO32MR {
-        match value {
-            false => PDEN_LDOXO32MR::POWEREDON,
-            true => PDEN_LDOXO32MR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_LDOXO32M`"]
+pub type PDEN_LDOXO32M_R = crate::R<bool, PDEN_LDOXO32M_A>;
+impl PDEN_LDOXO32M_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_LDOXO32M_A {
+        match self.bits {
+            false => PDEN_LDOXO32M_A::POWEREDON,
+            true => PDEN_LDOXO32M_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_LDOXO32MR::POWEREDON
+        *self == PDEN_LDOXO32M_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_LDOXO32MR::POWEREDOFF
+        *self == PDEN_LDOXO32M_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_LDOXO32M`"]
+pub struct PDEN_LDOXO32M_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_LDOXO32M_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_LDOXO32M_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "crystal 32 MHz LDO is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_LDOXO32M_A::POWEREDON)
+    }
+    #[doc = "crystal 32 MHz LDO is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_LDOXO32M_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_LDOFLASHNV`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_LDOFLASHNVR {
+pub enum PDEN_LDOFLASHNV_A {
     #[doc = "Flash NV (high voltage) is powered on during low power mode.."]
     POWEREDON,
     #[doc = "Flash NV (high voltage) is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_LDOFLASHNVR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_LDOFLASHNVR::POWEREDON => false,
-            PDEN_LDOFLASHNVR::POWEREDOFF => true,
+impl From<PDEN_LDOFLASHNV_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_LDOFLASHNV_A) -> Self {
+        match variant {
+            PDEN_LDOFLASHNV_A::POWEREDON => false,
+            PDEN_LDOFLASHNV_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_LDOFLASHNVR {
-        match value {
-            false => PDEN_LDOFLASHNVR::POWEREDON,
-            true => PDEN_LDOFLASHNVR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_LDOFLASHNV`"]
+pub type PDEN_LDOFLASHNV_R = crate::R<bool, PDEN_LDOFLASHNV_A>;
+impl PDEN_LDOFLASHNV_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_LDOFLASHNV_A {
+        match self.bits {
+            false => PDEN_LDOFLASHNV_A::POWEREDON,
+            true => PDEN_LDOFLASHNV_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_LDOFLASHNVR::POWEREDON
+        *self == PDEN_LDOFLASHNV_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_LDOFLASHNVR::POWEREDOFF
+        *self == PDEN_LDOFLASHNV_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_LDOFLASHNV`"]
+pub struct PDEN_LDOFLASHNV_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_LDOFLASHNV_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_LDOFLASHNV_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Flash NV (high voltage) is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_LDOFLASHNV_A::POWEREDON)
+    }
+    #[doc = "Flash NV (high voltage) is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_LDOFLASHNV_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_RNG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_RNGR {
+pub enum PDEN_RNG_A {
     #[doc = "True Random Number Genetaor (TRNG) clock sources are powered on during low power mode.."]
     POWEREDON,
     #[doc = "True Random Number Genetaor (TRNG) clock sources are powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_RNGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_RNGR::POWEREDON => false,
-            PDEN_RNGR::POWEREDOFF => true,
+impl From<PDEN_RNG_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_RNG_A) -> Self {
+        match variant {
+            PDEN_RNG_A::POWEREDON => false,
+            PDEN_RNG_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_RNGR {
-        match value {
-            false => PDEN_RNGR::POWEREDON,
-            true => PDEN_RNGR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_RNG`"]
+pub type PDEN_RNG_R = crate::R<bool, PDEN_RNG_A>;
+impl PDEN_RNG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_RNG_A {
+        match self.bits {
+            false => PDEN_RNG_A::POWEREDON,
+            true => PDEN_RNG_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_RNGR::POWEREDON
+        *self == PDEN_RNG_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_RNGR::POWEREDOFF
+        *self == PDEN_RNG_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_RNG`"]
+pub struct PDEN_RNG_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_RNG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_RNG_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "True Random Number Genetaor (TRNG) clock sources are powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_RNG_A::POWEREDON)
+    }
+    #[doc = "True Random Number Genetaor (TRNG) clock sources are powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_RNG_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_PLL0_SSCG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_PLL0_SSCGR {
+pub enum PDEN_PLL0_SSCG_A {
     #[doc = "PLL0 Spread Sprectrum module is powered on during low power mode.."]
     POWEREDON,
     #[doc = "PLL0 Spread Sprectrum module is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_PLL0_SSCGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_PLL0_SSCGR::POWEREDON => false,
-            PDEN_PLL0_SSCGR::POWEREDOFF => true,
+impl From<PDEN_PLL0_SSCG_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_PLL0_SSCG_A) -> Self {
+        match variant {
+            PDEN_PLL0_SSCG_A::POWEREDON => false,
+            PDEN_PLL0_SSCG_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_PLL0_SSCGR {
-        match value {
-            false => PDEN_PLL0_SSCGR::POWEREDON,
-            true => PDEN_PLL0_SSCGR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_PLL0_SSCG`"]
+pub type PDEN_PLL0_SSCG_R = crate::R<bool, PDEN_PLL0_SSCG_A>;
+impl PDEN_PLL0_SSCG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_PLL0_SSCG_A {
+        match self.bits {
+            false => PDEN_PLL0_SSCG_A::POWEREDON,
+            true => PDEN_PLL0_SSCG_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_PLL0_SSCGR::POWEREDON
+        *self == PDEN_PLL0_SSCG_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_PLL0_SSCGR::POWEREDOFF
+        *self == PDEN_PLL0_SSCG_A::POWEREDOFF
+    }
+}
+#[doc = "Write proxy for field `PDEN_PLL0_SSCG`"]
+pub struct PDEN_PLL0_SSCG_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PDEN_PLL0_SSCG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_PLL0_SSCG_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "PLL0 Spread Sprectrum module is powered on during low power mode.."]
+    #[inline(always)]
+    pub fn poweredon(self) -> &'a mut W {
+        self.variant(PDEN_PLL0_SSCG_A::POWEREDON)
+    }
+    #[doc = "PLL0 Spread Sprectrum module is powered off during low power mode.."]
+    #[inline(always)]
+    pub fn poweredoff(self) -> &'a mut W {
+        self.variant(PDEN_PLL0_SSCG_A::POWEREDOFF)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PDEN_ROM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDEN_ROMR {
+pub enum PDEN_ROM_A {
     #[doc = "ROM is powered on during low power mode.."]
     POWEREDON,
     #[doc = "ROM is powered off during low power mode.."]
     POWEREDOFF,
 }
-impl PDEN_ROMR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PDEN_ROMR::POWEREDON => false,
-            PDEN_ROMR::POWEREDOFF => true,
+impl From<PDEN_ROM_A> for bool {
+    #[inline(always)]
+    fn from(variant: PDEN_ROM_A) -> Self {
+        match variant {
+            PDEN_ROM_A::POWEREDON => false,
+            PDEN_ROM_A::POWEREDOFF => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PDEN_ROMR {
-        match value {
-            false => PDEN_ROMR::POWEREDON,
-            true => PDEN_ROMR::POWEREDOFF,
+}
+#[doc = "Reader of field `PDEN_ROM`"]
+pub type PDEN_ROM_R = crate::R<bool, PDEN_ROM_A>;
+impl PDEN_ROM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PDEN_ROM_A {
+        match self.bits {
+            false => PDEN_ROM_A::POWEREDON,
+            true => PDEN_ROM_A::POWEREDOFF,
         }
     }
     #[doc = "Checks if the value of the field is `POWEREDON`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_ROMR::POWEREDON
+        *self == PDEN_ROM_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_ROMR::POWEREDOFF
+        *self == PDEN_ROM_A::POWEREDOFF
     }
 }
-#[doc = "Values that can be written to the field `PDEN_DCDC`"]
-pub enum PDEN_DCDCW {
-    #[doc = "DCDC is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "DCDC is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_DCDCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_DCDCW::POWEREDON => false,
-            PDEN_DCDCW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_DCDCW<'a> {
+#[doc = "Write proxy for field `PDEN_ROM`"]
+pub struct PDEN_ROM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PDEN_DCDCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_DCDCW) -> &'a mut W {
+impl<'a> PDEN_ROM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PDEN_ROM_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "DCDC is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_DCDCW::POWEREDON)
-    }
-    #[doc = "DCDC is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_DCDCW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_BIAS`"]
-pub enum PDEN_BIASW {
-    #[doc = "Analog Bias is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "Analog Bias is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_BIASW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_BIASW::POWEREDON => false,
-            PDEN_BIASW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_BIASW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_BIASW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_BIASW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Analog Bias is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_BIASW::POWEREDON)
-    }
-    #[doc = "Analog Bias is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_BIASW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_BODCORE`"]
-pub enum PDEN_BODCOREW {
-    #[doc = "BOD CORE is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "BOD CORE is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_BODCOREW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_BODCOREW::POWEREDON => false,
-            PDEN_BODCOREW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_BODCOREW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_BODCOREW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_BODCOREW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "BOD CORE is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_BODCOREW::POWEREDON)
-    }
-    #[doc = "BOD CORE is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_BODCOREW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_BODVBAT`"]
-pub enum PDEN_BODVBATW {
-    #[doc = "BOD VBAT is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "BOD VBAT is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_BODVBATW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_BODVBATW::POWEREDON => false,
-            PDEN_BODVBATW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_BODVBATW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_BODVBATW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_BODVBATW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "BOD VBAT is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_BODVBATW::POWEREDON)
-    }
-    #[doc = "BOD VBAT is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_BODVBATW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_FRO1M`"]
-pub enum PDEN_FRO1MW {
-    #[doc = "FRO 1MHz is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "FRO 1MHz is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_FRO1MW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_FRO1MW::POWEREDON => false,
-            PDEN_FRO1MW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_FRO1MW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_FRO1MW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_FRO1MW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "FRO 1MHz is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_FRO1MW::POWEREDON)
-    }
-    #[doc = "FRO 1MHz is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_FRO1MW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_FRO192M`"]
-pub enum PDEN_FRO192MW {
-    #[doc = "FRO 192 MHz is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "FRO 192 MHz is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_FRO192MW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_FRO192MW::POWEREDON => false,
-            PDEN_FRO192MW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_FRO192MW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_FRO192MW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_FRO192MW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "FRO 192 MHz is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_FRO192MW::POWEREDON)
-    }
-    #[doc = "FRO 192 MHz is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_FRO192MW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_FRO32K`"]
-pub enum PDEN_FRO32KW {
-    #[doc = "FRO 32 KHz is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "FRO 32 KHz is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_FRO32KW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_FRO32KW::POWEREDON => false,
-            PDEN_FRO32KW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_FRO32KW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_FRO32KW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_FRO32KW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "FRO 32 KHz is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_FRO32KW::POWEREDON)
-    }
-    #[doc = "FRO 32 KHz is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_FRO32KW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_XTAL32K`"]
-pub enum PDEN_XTAL32KW {
-    #[doc = "crystal 32 KHz is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "crystal 32 KHz is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_XTAL32KW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_XTAL32KW::POWEREDON => false,
-            PDEN_XTAL32KW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_XTAL32KW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_XTAL32KW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_XTAL32KW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "crystal 32 KHz is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_XTAL32KW::POWEREDON)
-    }
-    #[doc = "crystal 32 KHz is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_XTAL32KW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_XTAL32M`"]
-pub enum PDEN_XTAL32MW {
-    #[doc = "crystal 32 MHz is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "crystal 32 MHz is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_XTAL32MW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_XTAL32MW::POWEREDON => false,
-            PDEN_XTAL32MW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_XTAL32MW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_XTAL32MW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_XTAL32MW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "crystal 32 MHz is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_XTAL32MW::POWEREDON)
-    }
-    #[doc = "crystal 32 MHz is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_XTAL32MW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_PLL0`"]
-pub enum PDEN_PLL0W {
-    #[doc = "System PLL (also refered as PLL0) is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "System PLL (also refered as PLL0) is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_PLL0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_PLL0W::POWEREDON => false,
-            PDEN_PLL0W::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_PLL0W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_PLL0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_PLL0W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "System PLL (also refered as PLL0) is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_PLL0W::POWEREDON)
-    }
-    #[doc = "System PLL (also refered as PLL0) is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_PLL0W::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_PLL1`"]
-pub enum PDEN_PLL1W {
-    #[doc = "USB PLL (also refered as PLL1) is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "USB PLL (also refered as PLL1) is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_PLL1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_PLL1W::POWEREDON => false,
-            PDEN_PLL1W::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_PLL1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_PLL1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_PLL1W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "USB PLL (also refered as PLL1) is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_PLL1W::POWEREDON)
-    }
-    #[doc = "USB PLL (also refered as PLL1) is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_PLL1W::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_USBFSPHY`"]
-pub enum PDEN_USBFSPHYW {
-    #[doc = "USB Full Speed phy is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "USB Full Speed phy is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_USBFSPHYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_USBFSPHYW::POWEREDON => false,
-            PDEN_USBFSPHYW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_USBFSPHYW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_USBFSPHYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_USBFSPHYW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "USB Full Speed phy is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_USBFSPHYW::POWEREDON)
-    }
-    #[doc = "USB Full Speed phy is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_USBFSPHYW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_USBHSPHY`"]
-pub enum PDEN_USBHSPHYW {
-    #[doc = "USB High Speed Phy is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "USB High Speed Phy is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_USBHSPHYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_USBHSPHYW::POWEREDON => false,
-            PDEN_USBHSPHYW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_USBHSPHYW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_USBHSPHYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_USBHSPHYW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "USB High Speed Phy is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_USBHSPHYW::POWEREDON)
-    }
-    #[doc = "USB High Speed Phy is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_USBHSPHYW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_COMP`"]
-pub enum PDEN_COMPW {
-    #[doc = "Analog Comparator is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "Analog Comparator is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_COMPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_COMPW::POWEREDON => false,
-            PDEN_COMPW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_COMPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_COMPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_COMPW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Analog Comparator is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_COMPW::POWEREDON)
-    }
-    #[doc = "Analog Comparator is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_COMPW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_TEMPSENS`"]
-pub enum PDEN_TEMPSENSW {
-    #[doc = "Temperature Sensor is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "Temperature Sensor is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_TEMPSENSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_TEMPSENSW::POWEREDON => false,
-            PDEN_TEMPSENSW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_TEMPSENSW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_TEMPSENSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_TEMPSENSW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Temperature Sensor is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_TEMPSENSW::POWEREDON)
-    }
-    #[doc = "Temperature Sensor is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_TEMPSENSW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_GPADC`"]
-pub enum PDEN_GPADCW {
-    #[doc = "General Purpose ADC (GPADC) is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "General Purpose ADC (GPADC) is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_GPADCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_GPADCW::POWEREDON => false,
-            PDEN_GPADCW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_GPADCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_GPADCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_GPADCW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "General Purpose ADC (GPADC) is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_GPADCW::POWEREDON)
-    }
-    #[doc = "General Purpose ADC (GPADC) is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_GPADCW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_LDOMEM`"]
-pub enum PDEN_LDOMEMW {
-    #[doc = "Memories LDO is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "Memories LDO is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_LDOMEMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_LDOMEMW::POWEREDON => false,
-            PDEN_LDOMEMW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_LDOMEMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_LDOMEMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_LDOMEMW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Memories LDO is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_LDOMEMW::POWEREDON)
-    }
-    #[doc = "Memories LDO is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_LDOMEMW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_LDODEEPSLEEP`"]
-pub enum PDEN_LDODEEPSLEEPW {
-    #[doc = "Deep Sleep LDO is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "Deep Sleep LDO is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_LDODEEPSLEEPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_LDODEEPSLEEPW::POWEREDON => false,
-            PDEN_LDODEEPSLEEPW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_LDODEEPSLEEPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_LDODEEPSLEEPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_LDODEEPSLEEPW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Deep Sleep LDO is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_LDODEEPSLEEPW::POWEREDON)
-    }
-    #[doc = "Deep Sleep LDO is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_LDODEEPSLEEPW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_LDOUSBHS`"]
-pub enum PDEN_LDOUSBHSW {
-    #[doc = "USB high speed LDO is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "USB high speed LDO is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_LDOUSBHSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_LDOUSBHSW::POWEREDON => false,
-            PDEN_LDOUSBHSW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_LDOUSBHSW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_LDOUSBHSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_LDOUSBHSW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "USB high speed LDO is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_LDOUSBHSW::POWEREDON)
-    }
-    #[doc = "USB high speed LDO is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_LDOUSBHSW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_AUXBIAS`"]
-pub enum PDEN_AUXBIASW {
-    #[doc = "is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_AUXBIASW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_AUXBIASW::POWEREDON => false,
-            PDEN_AUXBIASW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_AUXBIASW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_AUXBIASW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_AUXBIASW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_AUXBIASW::POWEREDON)
-    }
-    #[doc = "is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_AUXBIASW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 19;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_LDOXO32M`"]
-pub enum PDEN_LDOXO32MW {
-    #[doc = "crystal 32 MHz LDO is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "crystal 32 MHz LDO is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_LDOXO32MW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_LDOXO32MW::POWEREDON => false,
-            PDEN_LDOXO32MW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_LDOXO32MW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_LDOXO32MW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_LDOXO32MW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "crystal 32 MHz LDO is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_LDOXO32MW::POWEREDON)
-    }
-    #[doc = "crystal 32 MHz LDO is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_LDOXO32MW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_LDOFLASHNV`"]
-pub enum PDEN_LDOFLASHNVW {
-    #[doc = "Flash NV (high voltage) is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "Flash NV (high voltage) is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_LDOFLASHNVW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_LDOFLASHNVW::POWEREDON => false,
-            PDEN_LDOFLASHNVW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_LDOFLASHNVW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_LDOFLASHNVW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_LDOFLASHNVW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Flash NV (high voltage) is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_LDOFLASHNVW::POWEREDON)
-    }
-    #[doc = "Flash NV (high voltage) is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_LDOFLASHNVW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_RNG`"]
-pub enum PDEN_RNGW {
-    #[doc = "True Random Number Genetaor (TRNG) clock sources are powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "True Random Number Genetaor (TRNG) clock sources are powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_RNGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_RNGW::POWEREDON => false,
-            PDEN_RNGW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_RNGW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_RNGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_RNGW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "True Random Number Genetaor (TRNG) clock sources are powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_RNGW::POWEREDON)
-    }
-    #[doc = "True Random Number Genetaor (TRNG) clock sources are powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_RNGW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_PLL0_SSCG`"]
-pub enum PDEN_PLL0_SSCGW {
-    #[doc = "PLL0 Spread Sprectrum module is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "PLL0 Spread Sprectrum module is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_PLL0_SSCGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_PLL0_SSCGW::POWEREDON => false,
-            PDEN_PLL0_SSCGW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_PLL0_SSCGW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_PLL0_SSCGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_PLL0_SSCGW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "PLL0 Spread Sprectrum module is powered on during low power mode.."]
-    #[inline]
-    pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_PLL0_SSCGW::POWEREDON)
-    }
-    #[doc = "PLL0 Spread Sprectrum module is powered off during low power mode.."]
-    #[inline]
-    pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_PLL0_SSCGW::POWEREDOFF)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PDEN_ROM`"]
-pub enum PDEN_ROMW {
-    #[doc = "ROM is powered on during low power mode.."]
-    POWEREDON,
-    #[doc = "ROM is powered off during low power mode.."]
-    POWEREDOFF,
-}
-impl PDEN_ROMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PDEN_ROMW::POWEREDON => false,
-            PDEN_ROMW::POWEREDOFF => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDEN_ROMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PDEN_ROMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PDEN_ROMW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "ROM is powered on during low power mode.."]
-    #[inline]
+    #[inline(always)]
     pub fn poweredon(self) -> &'a mut W {
-        self.variant(PDEN_ROMW::POWEREDON)
+        self.variant(PDEN_ROM_A::POWEREDON)
     }
     #[doc = "ROM is powered off during low power mode.."]
-    #[inline]
+    #[inline(always)]
     pub fn poweredoff(self) -> &'a mut W {
-        self.variant(PDEN_ROMW::POWEREDOFF)
+        self.variant(PDEN_ROM_A::POWEREDOFF)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Controls DCDC power during DEEP SLEEP (DCDC is always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_dcdc(&self) -> PDEN_DCDCR {
-        PDEN_DCDCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_dcdc(&self) -> PDEN_DCDC_R {
+        PDEN_DCDC_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Controls Analog Bias power during DEEP SLEEP and POWER DOWN (always shut down during DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_bias(&self) -> PDEN_BIASR {
-        PDEN_BIASR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_bias(&self) -> PDEN_BIAS_R {
+        PDEN_BIAS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Controls Core Logic BoD power during DEEP SLEEP and POWER DOWN (always shut down during DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_bodcore(&self) -> PDEN_BODCORER {
-        PDEN_BODCORER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_bodcore(&self) -> PDEN_BODCORE_R {
+        PDEN_BODCORE_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Controls VBAT BoD power during DEEP SLEEP and POWER DOWN (always shut down during DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_bodvbat(&self) -> PDEN_BODVBATR {
-        PDEN_BODVBATR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_bodvbat(&self) -> PDEN_BODVBAT_R {
+        PDEN_BODVBAT_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Controls 1 MHz Free Running Oscillator power during DEEP SLEEP, POWER DOWN and DEEP POWER DOWN."]
-    #[inline]
-    pub fn pden_fro1m(&self) -> PDEN_FRO1MR {
-        PDEN_FRO1MR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_fro1m(&self) -> PDEN_FRO1M_R {
+        PDEN_FRO1M_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Controls 192MHz Free Running Oscillator power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_fro192m(&self) -> PDEN_FRO192MR {
-        PDEN_FRO192MR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_fro192m(&self) -> PDEN_FRO192M_R {
+        PDEN_FRO192M_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Controls power during DEEP SLEEP, POWER DOWN and DEEP POWER DOWN."]
-    #[inline]
-    pub fn pden_fro32k(&self) -> PDEN_FRO32KR {
-        PDEN_FRO32KR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_fro32k(&self) -> PDEN_FRO32K_R {
+        PDEN_FRO32K_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Controls crystal 32 KHz power during DEEP SLEEP, POWER DOWN and DEEP POWER DOWN."]
-    #[inline]
-    pub fn pden_xtal32k(&self) -> PDEN_XTAL32KR {
-        PDEN_XTAL32KR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_xtal32k(&self) -> PDEN_XTAL32K_R {
+        PDEN_XTAL32K_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Controls crystal 32 MHz power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_xtal32m(&self) -> PDEN_XTAL32MR {
-        PDEN_XTAL32MR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_xtal32m(&self) -> PDEN_XTAL32M_R {
+        PDEN_XTAL32M_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Controls System PLL (also refered as PLL0) power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_pll0(&self) -> PDEN_PLL0R {
-        PDEN_PLL0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_pll0(&self) -> PDEN_PLL0_R {
+        PDEN_PLL0_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Controls USB PLL (also refered as PLL1) power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_pll1(&self) -> PDEN_PLL1R {
-        PDEN_PLL1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_pll1(&self) -> PDEN_PLL1_R {
+        PDEN_PLL1_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Controls USB Full Speed phy power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_usbfsphy(&self) -> PDEN_USBFSPHYR {
-        PDEN_USBFSPHYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_usbfsphy(&self) -> PDEN_USBFSPHY_R {
+        PDEN_USBFSPHY_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Controls USB High Speed Phy power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_usbhsphy(&self) -> PDEN_USBHSPHYR {
-        PDEN_USBHSPHYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_usbhsphy(&self) -> PDEN_USBHSPHY_R {
+        PDEN_USBHSPHY_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Controls Analog Comparator power during DEEP SLEEP and POWER DOWN (always shut down during DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_comp(&self) -> PDEN_COMPR {
-        PDEN_COMPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_comp(&self) -> PDEN_COMP_R {
+        PDEN_COMP_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Controls Temperature Sensor power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_tempsens(&self) -> PDEN_TEMPSENSR {
-        PDEN_TEMPSENSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_tempsens(&self) -> PDEN_TEMPSENS_R {
+        PDEN_TEMPSENS_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Controls General Purpose ADC (GPADC) power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_gpadc(&self) -> PDEN_GPADCR {
-        PDEN_GPADCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_gpadc(&self) -> PDEN_GPADC_R {
+        PDEN_GPADC_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Controls Memories LDO power during DEEP SLEEP, POWER DOWN and DEEP POWER DOWN."]
-    #[inline]
-    pub fn pden_ldomem(&self) -> PDEN_LDOMEMR {
-        PDEN_LDOMEMR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_ldomem(&self) -> PDEN_LDOMEM_R {
+        PDEN_LDOMEM_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Controls Deep Sleep LDO power during DEEP SLEEP and POWER DOWN (always shut down during DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_ldodeepsleep(&self) -> PDEN_LDODEEPSLEEPR {
-        PDEN_LDODEEPSLEEPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_ldodeepsleep(&self) -> PDEN_LDODEEPSLEEP_R {
+        PDEN_LDODEEPSLEEP_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - Controls USB high speed LDO power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_ldousbhs(&self) -> PDEN_LDOUSBHSR {
-        PDEN_LDOUSBHSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_ldousbhs(&self) -> PDEN_LDOUSBHS_R {
+        PDEN_LDOUSBHS_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - during DEEP SLEEP and POWER DOWN (always shut down during DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_auxbias(&self) -> PDEN_AUXBIASR {
-        PDEN_AUXBIASR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 19;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_auxbias(&self) -> PDEN_AUXBIAS_R {
+        PDEN_AUXBIAS_R::new(((self.bits >> 19) & 0x01) != 0)
     }
     #[doc = "Bit 20 - Controls crystal 32 MHz LDO power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_ldoxo32m(&self) -> PDEN_LDOXO32MR {
-        PDEN_LDOXO32MR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_ldoxo32m(&self) -> PDEN_LDOXO32M_R {
+        PDEN_LDOXO32M_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 21 - Controls Flash NV (high voltage) LDO power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_ldoflashnv(&self) -> PDEN_LDOFLASHNVR {
-        PDEN_LDOFLASHNVR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_ldoflashnv(&self) -> PDEN_LDOFLASHNV_R {
+        PDEN_LDOFLASHNV_R::new(((self.bits >> 21) & 0x01) != 0)
     }
     #[doc = "Bit 22 - Controls True Random Number Genetaor (TRNG) clock sources power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_rng(&self) -> PDEN_RNGR {
-        PDEN_RNGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_rng(&self) -> PDEN_RNG_R {
+        PDEN_RNG_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 23 - Controls PLL0 Spread Sprectrum module power during DEEP SLEEP (PLL0 Spread Spectrum is always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_pll0_sscg(&self) -> PDEN_PLL0_SSCGR {
-        PDEN_PLL0_SSCGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_pll0_sscg(&self) -> PDEN_PLL0_SSCG_R {
+        PDEN_PLL0_SSCG_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Controls ROM power during DEEP SLEEP (ROM is always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_rom(&self) -> PDEN_ROMR {
-        PDEN_ROMR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pden_rom(&self) -> PDEN_ROM_R {
+        PDEN_ROM_R::new(((self.bits >> 24) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 192 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Controls DCDC power during DEEP SLEEP (DCDC is always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_dcdc(&mut self) -> _PDEN_DCDCW {
-        _PDEN_DCDCW { w: self }
+    #[inline(always)]
+    pub fn pden_dcdc(&mut self) -> PDEN_DCDC_W {
+        PDEN_DCDC_W { w: self }
     }
     #[doc = "Bit 1 - Controls Analog Bias power during DEEP SLEEP and POWER DOWN (always shut down during DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_bias(&mut self) -> _PDEN_BIASW {
-        _PDEN_BIASW { w: self }
+    #[inline(always)]
+    pub fn pden_bias(&mut self) -> PDEN_BIAS_W {
+        PDEN_BIAS_W { w: self }
     }
     #[doc = "Bit 2 - Controls Core Logic BoD power during DEEP SLEEP and POWER DOWN (always shut down during DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_bodcore(&mut self) -> _PDEN_BODCOREW {
-        _PDEN_BODCOREW { w: self }
+    #[inline(always)]
+    pub fn pden_bodcore(&mut self) -> PDEN_BODCORE_W {
+        PDEN_BODCORE_W { w: self }
     }
     #[doc = "Bit 3 - Controls VBAT BoD power during DEEP SLEEP and POWER DOWN (always shut down during DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_bodvbat(&mut self) -> _PDEN_BODVBATW {
-        _PDEN_BODVBATW { w: self }
+    #[inline(always)]
+    pub fn pden_bodvbat(&mut self) -> PDEN_BODVBAT_W {
+        PDEN_BODVBAT_W { w: self }
     }
     #[doc = "Bit 4 - Controls 1 MHz Free Running Oscillator power during DEEP SLEEP, POWER DOWN and DEEP POWER DOWN."]
-    #[inline]
-    pub fn pden_fro1m(&mut self) -> _PDEN_FRO1MW {
-        _PDEN_FRO1MW { w: self }
+    #[inline(always)]
+    pub fn pden_fro1m(&mut self) -> PDEN_FRO1M_W {
+        PDEN_FRO1M_W { w: self }
     }
     #[doc = "Bit 5 - Controls 192MHz Free Running Oscillator power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_fro192m(&mut self) -> _PDEN_FRO192MW {
-        _PDEN_FRO192MW { w: self }
+    #[inline(always)]
+    pub fn pden_fro192m(&mut self) -> PDEN_FRO192M_W {
+        PDEN_FRO192M_W { w: self }
     }
     #[doc = "Bit 6 - Controls power during DEEP SLEEP, POWER DOWN and DEEP POWER DOWN."]
-    #[inline]
-    pub fn pden_fro32k(&mut self) -> _PDEN_FRO32KW {
-        _PDEN_FRO32KW { w: self }
+    #[inline(always)]
+    pub fn pden_fro32k(&mut self) -> PDEN_FRO32K_W {
+        PDEN_FRO32K_W { w: self }
     }
     #[doc = "Bit 7 - Controls crystal 32 KHz power during DEEP SLEEP, POWER DOWN and DEEP POWER DOWN."]
-    #[inline]
-    pub fn pden_xtal32k(&mut self) -> _PDEN_XTAL32KW {
-        _PDEN_XTAL32KW { w: self }
+    #[inline(always)]
+    pub fn pden_xtal32k(&mut self) -> PDEN_XTAL32K_W {
+        PDEN_XTAL32K_W { w: self }
     }
     #[doc = "Bit 8 - Controls crystal 32 MHz power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_xtal32m(&mut self) -> _PDEN_XTAL32MW {
-        _PDEN_XTAL32MW { w: self }
+    #[inline(always)]
+    pub fn pden_xtal32m(&mut self) -> PDEN_XTAL32M_W {
+        PDEN_XTAL32M_W { w: self }
     }
     #[doc = "Bit 9 - Controls System PLL (also refered as PLL0) power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_pll0(&mut self) -> _PDEN_PLL0W {
-        _PDEN_PLL0W { w: self }
+    #[inline(always)]
+    pub fn pden_pll0(&mut self) -> PDEN_PLL0_W {
+        PDEN_PLL0_W { w: self }
     }
     #[doc = "Bit 10 - Controls USB PLL (also refered as PLL1) power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_pll1(&mut self) -> _PDEN_PLL1W {
-        _PDEN_PLL1W { w: self }
+    #[inline(always)]
+    pub fn pden_pll1(&mut self) -> PDEN_PLL1_W {
+        PDEN_PLL1_W { w: self }
     }
     #[doc = "Bit 11 - Controls USB Full Speed phy power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_usbfsphy(&mut self) -> _PDEN_USBFSPHYW {
-        _PDEN_USBFSPHYW { w: self }
+    #[inline(always)]
+    pub fn pden_usbfsphy(&mut self) -> PDEN_USBFSPHY_W {
+        PDEN_USBFSPHY_W { w: self }
     }
     #[doc = "Bit 12 - Controls USB High Speed Phy power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_usbhsphy(&mut self) -> _PDEN_USBHSPHYW {
-        _PDEN_USBHSPHYW { w: self }
+    #[inline(always)]
+    pub fn pden_usbhsphy(&mut self) -> PDEN_USBHSPHY_W {
+        PDEN_USBHSPHY_W { w: self }
     }
     #[doc = "Bit 13 - Controls Analog Comparator power during DEEP SLEEP and POWER DOWN (always shut down during DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_comp(&mut self) -> _PDEN_COMPW {
-        _PDEN_COMPW { w: self }
+    #[inline(always)]
+    pub fn pden_comp(&mut self) -> PDEN_COMP_W {
+        PDEN_COMP_W { w: self }
     }
     #[doc = "Bit 14 - Controls Temperature Sensor power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_tempsens(&mut self) -> _PDEN_TEMPSENSW {
-        _PDEN_TEMPSENSW { w: self }
+    #[inline(always)]
+    pub fn pden_tempsens(&mut self) -> PDEN_TEMPSENS_W {
+        PDEN_TEMPSENS_W { w: self }
     }
     #[doc = "Bit 15 - Controls General Purpose ADC (GPADC) power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_gpadc(&mut self) -> _PDEN_GPADCW {
-        _PDEN_GPADCW { w: self }
+    #[inline(always)]
+    pub fn pden_gpadc(&mut self) -> PDEN_GPADC_W {
+        PDEN_GPADC_W { w: self }
     }
     #[doc = "Bit 16 - Controls Memories LDO power during DEEP SLEEP, POWER DOWN and DEEP POWER DOWN."]
-    #[inline]
-    pub fn pden_ldomem(&mut self) -> _PDEN_LDOMEMW {
-        _PDEN_LDOMEMW { w: self }
+    #[inline(always)]
+    pub fn pden_ldomem(&mut self) -> PDEN_LDOMEM_W {
+        PDEN_LDOMEM_W { w: self }
     }
     #[doc = "Bit 17 - Controls Deep Sleep LDO power during DEEP SLEEP and POWER DOWN (always shut down during DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_ldodeepsleep(&mut self) -> _PDEN_LDODEEPSLEEPW {
-        _PDEN_LDODEEPSLEEPW { w: self }
+    #[inline(always)]
+    pub fn pden_ldodeepsleep(&mut self) -> PDEN_LDODEEPSLEEP_W {
+        PDEN_LDODEEPSLEEP_W { w: self }
     }
     #[doc = "Bit 18 - Controls USB high speed LDO power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_ldousbhs(&mut self) -> _PDEN_LDOUSBHSW {
-        _PDEN_LDOUSBHSW { w: self }
+    #[inline(always)]
+    pub fn pden_ldousbhs(&mut self) -> PDEN_LDOUSBHS_W {
+        PDEN_LDOUSBHS_W { w: self }
     }
     #[doc = "Bit 19 - during DEEP SLEEP and POWER DOWN (always shut down during DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_auxbias(&mut self) -> _PDEN_AUXBIASW {
-        _PDEN_AUXBIASW { w: self }
+    #[inline(always)]
+    pub fn pden_auxbias(&mut self) -> PDEN_AUXBIAS_W {
+        PDEN_AUXBIAS_W { w: self }
     }
     #[doc = "Bit 20 - Controls crystal 32 MHz LDO power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_ldoxo32m(&mut self) -> _PDEN_LDOXO32MW {
-        _PDEN_LDOXO32MW { w: self }
+    #[inline(always)]
+    pub fn pden_ldoxo32m(&mut self) -> PDEN_LDOXO32M_W {
+        PDEN_LDOXO32M_W { w: self }
     }
     #[doc = "Bit 21 - Controls Flash NV (high voltage) LDO power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_ldoflashnv(&mut self) -> _PDEN_LDOFLASHNVW {
-        _PDEN_LDOFLASHNVW { w: self }
+    #[inline(always)]
+    pub fn pden_ldoflashnv(&mut self) -> PDEN_LDOFLASHNV_W {
+        PDEN_LDOFLASHNV_W { w: self }
     }
     #[doc = "Bit 22 - Controls True Random Number Genetaor (TRNG) clock sources power during DEEP SLEEP (always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_rng(&mut self) -> _PDEN_RNGW {
-        _PDEN_RNGW { w: self }
+    #[inline(always)]
+    pub fn pden_rng(&mut self) -> PDEN_RNG_W {
+        PDEN_RNG_W { w: self }
     }
     #[doc = "Bit 23 - Controls PLL0 Spread Sprectrum module power during DEEP SLEEP (PLL0 Spread Spectrum is always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_pll0_sscg(&mut self) -> _PDEN_PLL0_SSCGW {
-        _PDEN_PLL0_SSCGW { w: self }
+    #[inline(always)]
+    pub fn pden_pll0_sscg(&mut self) -> PDEN_PLL0_SSCG_W {
+        PDEN_PLL0_SSCG_W { w: self }
     }
     #[doc = "Bit 24 - Controls ROM power during DEEP SLEEP (ROM is always shut down during POWER DOWN and DEEP POWER DOWN)."]
-    #[inline]
-    pub fn pden_rom(&mut self) -> _PDEN_ROMW {
-        _PDEN_ROMW { w: self }
+    #[inline(always)]
+    pub fn pden_rom(&mut self) -> PDEN_ROM_W {
+        PDEN_ROM_W { w: self }
     }
 }

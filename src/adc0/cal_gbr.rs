@@ -1,105 +1,40 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CAL_GBR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CAL_GBR[%s]"]
+pub type R = crate::R<u32, super::CAL_GBR>;
+#[doc = "Writer for register CAL_GBR[%s]"]
+pub type W = crate::W<u32, super::CAL_GBR>;
+#[doc = "Register CAL_GBR[%s] `reset()`'s with value 0"]
+impl crate::ResetValue for super::CAL_GBR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct CAL_GBR_VALR {
-    bits: u16,
-}
-impl CAL_GBR_VALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CAL_GBR_VALW<'a> {
+#[doc = "Reader of field `CAL_GBR_VAL`"]
+pub type CAL_GBR_VAL_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `CAL_GBR_VAL`"]
+pub struct CAL_GBR_VAL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CAL_GBR_VALW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CAL_GBR_VAL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Calibration General B Side Register Element"]
-    #[inline]
-    pub fn cal_gbr_val(&self) -> CAL_GBR_VALR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        CAL_GBR_VALR { bits }
+    #[inline(always)]
+    pub fn cal_gbr_val(&self) -> CAL_GBR_VAL_R {
+        CAL_GBR_VAL_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - Calibration General B Side Register Element"]
-    #[inline]
-    pub fn cal_gbr_val(&mut self) -> _CAL_GBR_VALW {
-        _CAL_GBR_VALW { w: self }
+    #[inline(always)]
+    pub fn cal_gbr_val(&mut self) -> CAL_GBR_VAL_W {
+        CAL_GBR_VAL_W { w: self }
     }
 }

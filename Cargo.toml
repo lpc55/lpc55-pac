@@ -1,9 +1,9 @@
 [package]
-version = "0.0.0-alpha.0"
+version = "0.0.1"
 authors = [
   "nickray <n@stalder.io>",
 ]
-description = "Peripheral access API for lpc55s69 microcontrollers"
+description = "Peripheral access API for lpc55s6x microcontrollers"
 documentation = "https://docs.rs/lpc55s6x-pac"
 keywords = ["no-std", "cortex-m", "nxp", "lpc", "svd2rust"]
 license = "MIT OR Apache-2.0"

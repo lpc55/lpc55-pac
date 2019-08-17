@@ -1,49 +1,29 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PDRUNCFGSET0 {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register PDRUNCFGSET0"]
+pub type W = crate::W<u32, super::PDRUNCFGSET0>;
+#[doc = "Register PDRUNCFGSET0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::PDRUNCFGSET0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Proxy"]
-pub struct _PDRUNCFGSET0W<'a> {
+#[doc = "Write proxy for field `PDRUNCFGSET0`"]
+pub struct PDRUNCFGSET0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PDRUNCFGSET0W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PDRUNCFGSET0_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        const MASK: u32 = 4294967295;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:31 - Writing ones to this register sets the corresponding bit or bits in the PDRUNCFG0 register, if they are implemented."]
-    #[inline]
-    pub fn pdruncfgset0(&mut self) -> _PDRUNCFGSET0W {
-        _PDRUNCFGSET0W { w: self }
+    #[inline(always)]
+    pub fn pdruncfgset0(&mut self) -> PDRUNCFGSET0_W {
+        PDRUNCFGSET0_W { w: self }
     }
 }

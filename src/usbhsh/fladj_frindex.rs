@@ -1,146 +1,64 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FLADJ_FRINDEX {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FLADJ_FRINDEX"]
+pub type R = crate::R<u32, super::FLADJ_FRINDEX>;
+#[doc = "Writer for register FLADJ_FRINDEX"]
+pub type W = crate::W<u32, super::FLADJ_FRINDEX>;
+#[doc = "Register FLADJ_FRINDEX `reset()`'s with value 0x20"]
+impl crate::ResetValue for super::FLADJ_FRINDEX {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x20
     }
 }
-#[doc = r" Value of the field"]
-pub struct FLADJR {
-    bits: u8,
-}
-impl FLADJR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FRINDEXR {
-    bits: u16,
-}
-impl FRINDEXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FLADJW<'a> {
+#[doc = "Reader of field `FLADJ`"]
+pub type FLADJ_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `FLADJ`"]
+pub struct FLADJ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FLADJW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> FLADJ_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _FRINDEXW<'a> {
+#[doc = "Reader of field `FRINDEX`"]
+pub type FRINDEX_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `FRINDEX`"]
+pub struct FRINDEX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FRINDEXW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> FRINDEX_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 16383;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x3fff << 16)) | (((value as u32) & 0x3fff) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - Frame Length Timing Value."]
-    #[inline]
-    pub fn fladj(&self) -> FLADJR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        FLADJR { bits }
+    #[inline(always)]
+    pub fn fladj(&self) -> FLADJ_R {
+        FLADJ_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 16:29 - Frame Index: Bits 29 to16 in this register are used for the frame number field in the SOF packet."]
-    #[inline]
-    pub fn frindex(&self) -> FRINDEXR {
-        let bits = {
-            const MASK: u16 = 16383;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        FRINDEXR { bits }
+    #[inline(always)]
+    pub fn frindex(&self) -> FRINDEX_R {
+        FRINDEX_R::new(((self.bits >> 16) & 0x3fff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 32 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - Frame Length Timing Value."]
-    #[inline]
-    pub fn fladj(&mut self) -> _FLADJW {
-        _FLADJW { w: self }
+    #[inline(always)]
+    pub fn fladj(&mut self) -> FLADJ_W {
+        FLADJ_W { w: self }
     }
     #[doc = "Bits 16:29 - Frame Index: Bits 29 to16 in this register are used for the frame number field in the SOF packet."]
-    #[inline]
-    pub fn frindex(&mut self) -> _FRINDEXW {
-        _FRINDEXW { w: self }
+    #[inline(always)]
+    pub fn frindex(&mut self) -> FRINDEX_W {
+        FRINDEX_W { w: self }
     }
 }
