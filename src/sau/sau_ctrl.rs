@@ -1,302 +1,192 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::SAU_CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register SAU_CTRL"]
+pub type R = crate::R<u32, super::SAU_CTRL>;
+#[doc = "Writer for register SAU_CTRL"]
+pub type W = crate::W<u32, super::SAU_CTRL>;
+#[doc = "Register SAU_CTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::SAU_CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `ENABLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENABLER {
+pub enum ENABLE_A {
     #[doc = "The SAU is disabled."]
     DISABLED,
     #[doc = "The SAU is enabled."]
     ENABLED,
 }
-impl ENABLER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENABLER::DISABLED => false,
-            ENABLER::ENABLED => true,
+impl From<ENABLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENABLE_A) -> Self {
+        match variant {
+            ENABLE_A::DISABLED => false,
+            ENABLE_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENABLER {
-        match value {
-            false => ENABLER::DISABLED,
-            true => ENABLER::ENABLED,
+}
+#[doc = "Reader of field `ENABLE`"]
+pub type ENABLE_R = crate::R<bool, ENABLE_A>;
+impl ENABLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENABLE_A {
+        match self.bits {
+            false => ENABLE_A::DISABLED,
+            true => ENABLE_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENABLER::DISABLED
+        *self == ENABLE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENABLER::ENABLED
+        *self == ENABLE_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `ENABLE`"]
+pub struct ENABLE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ENABLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENABLE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The SAU is disabled."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ENABLE_A::DISABLED)
+    }
+    #[doc = "The SAU is enabled."]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ENABLE_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
 #[doc = "Possible values of the field `ALLNS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ALLNSR {
+pub enum ALLNS_A {
     #[doc = "Memory is marked as Secure and is not Non-secure callable."]
     SECURED_MEMORY,
     #[doc = "Memory is marked as Non-secure."]
     NON_SECURED_MEMORY,
 }
-impl ALLNSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ALLNSR::SECURED_MEMORY => false,
-            ALLNSR::NON_SECURED_MEMORY => true,
+impl From<ALLNS_A> for bool {
+    #[inline(always)]
+    fn from(variant: ALLNS_A) -> Self {
+        match variant {
+            ALLNS_A::SECURED_MEMORY => false,
+            ALLNS_A::NON_SECURED_MEMORY => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ALLNSR {
-        match value {
-            false => ALLNSR::SECURED_MEMORY,
-            true => ALLNSR::NON_SECURED_MEMORY,
+}
+#[doc = "Reader of field `ALLNS`"]
+pub type ALLNS_R = crate::R<bool, ALLNS_A>;
+impl ALLNS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ALLNS_A {
+        match self.bits {
+            false => ALLNS_A::SECURED_MEMORY,
+            true => ALLNS_A::NON_SECURED_MEMORY,
         }
     }
     #[doc = "Checks if the value of the field is `SECURED_MEMORY`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secured_memory(&self) -> bool {
-        *self == ALLNSR::SECURED_MEMORY
+        *self == ALLNS_A::SECURED_MEMORY
     }
     #[doc = "Checks if the value of the field is `NON_SECURED_MEMORY`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_non_secured_memory(&self) -> bool {
-        *self == ALLNSR::NON_SECURED_MEMORY
+        *self == ALLNS_A::NON_SECURED_MEMORY
     }
 }
-#[doc = "Values that can be written to the field `ENABLE`"]
-pub enum ENABLEW {
-    #[doc = "The SAU is disabled."]
-    DISABLED,
-    #[doc = "The SAU is enabled."]
-    ENABLED,
-}
-impl ENABLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENABLEW::DISABLED => false,
-            ENABLEW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENABLEW<'a> {
+#[doc = "Write proxy for field `ALLNS`"]
+pub struct ALLNS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENABLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENABLEW) -> &'a mut W {
+impl<'a> ALLNS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ALLNS_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The SAU is disabled."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(ENABLEW::DISABLED)
-    }
-    #[doc = "The SAU is enabled."]
-    #[inline]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(ENABLEW::ENABLED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ALLNS`"]
-pub enum ALLNSW {
-    #[doc = "Memory is marked as Secure and is not Non-secure callable."]
-    SECURED_MEMORY,
-    #[doc = "Memory is marked as Non-secure."]
-    NON_SECURED_MEMORY,
-}
-impl ALLNSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ALLNSW::SECURED_MEMORY => false,
-            ALLNSW::NON_SECURED_MEMORY => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ALLNSW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ALLNSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ALLNSW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Memory is marked as Secure and is not Non-secure callable."]
-    #[inline]
+    #[inline(always)]
     pub fn secured_memory(self) -> &'a mut W {
-        self.variant(ALLNSW::SECURED_MEMORY)
+        self.variant(ALLNS_A::SECURED_MEMORY)
     }
     #[doc = "Memory is marked as Non-secure."]
-    #[inline]
+    #[inline(always)]
     pub fn non_secured_memory(self) -> &'a mut W {
-        self.variant(ALLNSW::NON_SECURED_MEMORY)
+        self.variant(ALLNS_A::NON_SECURED_MEMORY)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Enable. Enables the SAU. This bit is RAZ/WI when the Security Extension is implemented without an SAU region."]
-    #[inline]
-    pub fn enable(&self) -> ENABLER {
-        ENABLER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn enable(&self) -> ENABLE_R {
+        ENABLE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - All Non-secure."]
-    #[inline]
-    pub fn allns(&self) -> ALLNSR {
-        ALLNSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn allns(&self) -> ALLNS_R {
+        ALLNS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Enable. Enables the SAU. This bit is RAZ/WI when the Security Extension is implemented without an SAU region."]
-    #[inline]
-    pub fn enable(&mut self) -> _ENABLEW {
-        _ENABLEW { w: self }
+    #[inline(always)]
+    pub fn enable(&mut self) -> ENABLE_W {
+        ENABLE_W { w: self }
     }
     #[doc = "Bit 1 - All Non-secure."]
-    #[inline]
-    pub fn allns(&mut self) -> _ALLNSW {
-        _ALLNSW { w: self }
+    #[inline(always)]
+    pub fn allns(&mut self) -> ALLNS_W {
+        ALLNS_W { w: self }
     }
 }

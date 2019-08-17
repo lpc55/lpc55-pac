@@ -1,97 +1,55 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::GCC {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct GAIN_CALR {
-    bits: u16,
-}
-impl GAIN_CALR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
+#[doc = "Reader of register GCC[%s]"]
+pub type R = crate::R<u32, super::GCC>;
+#[doc = "Reader of field `GAIN_CAL`"]
+pub type GAIN_CAL_R = crate::R<u16, u16>;
 #[doc = "Possible values of the field `RDY`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RDYR {
+pub enum RDY_A {
     #[doc = "The gain calibration value is invalid. Run the auto-calibration routine for this value to be written."]
     RDY_0,
     #[doc = "The gain calibration value is valid. It should be used to update the GCRa\\[GCALR\\] register field."]
     RDY_1,
 }
-impl RDYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RDYR::RDY_0 => false,
-            RDYR::RDY_1 => true,
+impl From<RDY_A> for bool {
+    #[inline(always)]
+    fn from(variant: RDY_A) -> Self {
+        match variant {
+            RDY_A::RDY_0 => false,
+            RDY_A::RDY_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RDYR {
-        match value {
-            false => RDYR::RDY_0,
-            true => RDYR::RDY_1,
+}
+#[doc = "Reader of field `RDY`"]
+pub type RDY_R = crate::R<bool, RDY_A>;
+impl RDY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RDY_A {
+        match self.bits {
+            false => RDY_A::RDY_0,
+            true => RDY_A::RDY_1,
         }
     }
     #[doc = "Checks if the value of the field is `RDY_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rdy_0(&self) -> bool {
-        *self == RDYR::RDY_0
+        *self == RDY_A::RDY_0
     }
     #[doc = "Checks if the value of the field is `RDY_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rdy_1(&self) -> bool {
-        *self == RDYR::RDY_1
+        *self == RDY_A::RDY_1
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Gain Calibration Value"]
-    #[inline]
-    pub fn gain_cal(&self) -> GAIN_CALR {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        GAIN_CALR { bits }
+    #[inline(always)]
+    pub fn gain_cal(&self) -> GAIN_CAL_R {
+        GAIN_CAL_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bit 24 - Gain Calibration Value Valid"]
-    #[inline]
-    pub fn rdy(&self) -> RDYR {
-        RDYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rdy(&self) -> RDY_R {
+        RDY_R::new(((self.bits >> 24) & 0x01) != 0)
     }
 }

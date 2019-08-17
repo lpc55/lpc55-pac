@@ -1,681 +1,418 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FMCCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FMCCR"]
+pub type R = crate::R<u32, super::FMCCR>;
+#[doc = "Writer for register FMCCR"]
+pub type W = crate::W<u32, super::FMCCR>;
+#[doc = "Register FMCCR `reset()`'s with value 0x3000"]
+impl crate::ResetValue for super::FMCCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x3000
     }
 }
 #[doc = "Possible values of the field `FETCHCTL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FETCHCTLR {
+pub enum FETCHCTL_A {
     #[doc = "No buffering (bypass always used) for Fetch cycles"]
     NOBUF,
     #[doc = "One buffer is used for all Fetch cycles"]
     ONEBUF,
     #[doc = "All buffers can be used for Fetch cycles"]
     ALLBUF,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl FETCHCTLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FETCHCTLR::NOBUF => 0,
-            FETCHCTLR::ONEBUF => 1,
-            FETCHCTLR::ALLBUF => 2,
-            FETCHCTLR::_Reserved(bits) => bits,
+impl From<FETCHCTL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FETCHCTL_A) -> Self {
+        match variant {
+            FETCHCTL_A::NOBUF => 0,
+            FETCHCTL_A::ONEBUF => 1,
+            FETCHCTL_A::ALLBUF => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FETCHCTLR {
-        match value {
-            0 => FETCHCTLR::NOBUF,
-            1 => FETCHCTLR::ONEBUF,
-            2 => FETCHCTLR::ALLBUF,
-            i => FETCHCTLR::_Reserved(i),
+}
+#[doc = "Reader of field `FETCHCTL`"]
+pub type FETCHCTL_R = crate::R<u8, FETCHCTL_A>;
+impl FETCHCTL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FETCHCTL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(FETCHCTL_A::NOBUF),
+            1 => Val(FETCHCTL_A::ONEBUF),
+            2 => Val(FETCHCTL_A::ALLBUF),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `NOBUF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_nobuf(&self) -> bool {
-        *self == FETCHCTLR::NOBUF
+        *self == FETCHCTL_A::NOBUF
     }
     #[doc = "Checks if the value of the field is `ONEBUF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_onebuf(&self) -> bool {
-        *self == FETCHCTLR::ONEBUF
+        *self == FETCHCTL_A::ONEBUF
     }
     #[doc = "Checks if the value of the field is `ALLBUF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_allbuf(&self) -> bool {
-        *self == FETCHCTLR::ALLBUF
+        *self == FETCHCTL_A::ALLBUF
+    }
+}
+#[doc = "Write proxy for field `FETCHCTL`"]
+pub struct FETCHCTL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FETCHCTL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FETCHCTL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "No buffering (bypass always used) for Fetch cycles"]
+    #[inline(always)]
+    pub fn nobuf(self) -> &'a mut W {
+        self.variant(FETCHCTL_A::NOBUF)
+    }
+    #[doc = "One buffer is used for all Fetch cycles"]
+    #[inline(always)]
+    pub fn onebuf(self) -> &'a mut W {
+        self.variant(FETCHCTL_A::ONEBUF)
+    }
+    #[doc = "All buffers can be used for Fetch cycles"]
+    #[inline(always)]
+    pub fn allbuf(self) -> &'a mut W {
+        self.variant(FETCHCTL_A::ALLBUF)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w
     }
 }
 #[doc = "Possible values of the field `DATACTL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DATACTLR {
+pub enum DATACTL_A {
     #[doc = "No buffering (bypass always used) for Data cycles"]
     NOBUF,
     #[doc = "One buffer is used for all Data cycles"]
     ONEBUF,
     #[doc = "All buffers can be used for Data cycles"]
     ALLBUF,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl DATACTLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            DATACTLR::NOBUF => 0,
-            DATACTLR::ONEBUF => 1,
-            DATACTLR::ALLBUF => 2,
-            DATACTLR::_Reserved(bits) => bits,
+impl From<DATACTL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DATACTL_A) -> Self {
+        match variant {
+            DATACTL_A::NOBUF => 0,
+            DATACTL_A::ONEBUF => 1,
+            DATACTL_A::ALLBUF => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> DATACTLR {
-        match value {
-            0 => DATACTLR::NOBUF,
-            1 => DATACTLR::ONEBUF,
-            2 => DATACTLR::ALLBUF,
-            i => DATACTLR::_Reserved(i),
+}
+#[doc = "Reader of field `DATACTL`"]
+pub type DATACTL_R = crate::R<u8, DATACTL_A>;
+impl DATACTL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, DATACTL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(DATACTL_A::NOBUF),
+            1 => Val(DATACTL_A::ONEBUF),
+            2 => Val(DATACTL_A::ALLBUF),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `NOBUF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_nobuf(&self) -> bool {
-        *self == DATACTLR::NOBUF
+        *self == DATACTL_A::NOBUF
     }
     #[doc = "Checks if the value of the field is `ONEBUF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_onebuf(&self) -> bool {
-        *self == DATACTLR::ONEBUF
+        *self == DATACTL_A::ONEBUF
     }
     #[doc = "Checks if the value of the field is `ALLBUF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_allbuf(&self) -> bool {
-        *self == DATACTLR::ALLBUF
+        *self == DATACTL_A::ALLBUF
     }
 }
-#[doc = r" Value of the field"]
-pub struct ACCELR {
-    bits: bool,
-}
-impl ACCELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PREFENR {
-    bits: bool,
-}
-impl PREFENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PREFOVRR {
-    bits: bool,
-}
-impl PREFOVRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PREFCRIR {
-    bits: u8,
-}
-impl PREFCRIR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FMCTIMR {
-    bits: u8,
-}
-impl FMCTIMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PFISLRUR {
-    bits: bool,
-}
-impl PFISLRUR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PFADAPR {
-    bits: bool,
-}
-impl PFADAPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `FETCHCTL`"]
-pub enum FETCHCTLW {
-    #[doc = "No buffering (bypass always used) for Fetch cycles"]
-    NOBUF,
-    #[doc = "One buffer is used for all Fetch cycles"]
-    ONEBUF,
-    #[doc = "All buffers can be used for Fetch cycles"]
-    ALLBUF,
-}
-impl FETCHCTLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FETCHCTLW::NOBUF => 0,
-            FETCHCTLW::ONEBUF => 1,
-            FETCHCTLW::ALLBUF => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FETCHCTLW<'a> {
+#[doc = "Write proxy for field `DATACTL`"]
+pub struct DATACTL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FETCHCTLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FETCHCTLW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "No buffering (bypass always used) for Fetch cycles"]
-    #[inline]
-    pub fn nobuf(self) -> &'a mut W {
-        self.variant(FETCHCTLW::NOBUF)
-    }
-    #[doc = "One buffer is used for all Fetch cycles"]
-    #[inline]
-    pub fn onebuf(self) -> &'a mut W {
-        self.variant(FETCHCTLW::ONEBUF)
-    }
-    #[doc = "All buffers can be used for Fetch cycles"]
-    #[inline]
-    pub fn allbuf(self) -> &'a mut W {
-        self.variant(FETCHCTLW::ALLBUF)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DATACTL`"]
-pub enum DATACTLW {
-    #[doc = "No buffering (bypass always used) for Data cycles"]
-    NOBUF,
-    #[doc = "One buffer is used for all Data cycles"]
-    ONEBUF,
-    #[doc = "All buffers can be used for Data cycles"]
-    ALLBUF,
-}
-impl DATACTLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            DATACTLW::NOBUF => 0,
-            DATACTLW::ONEBUF => 1,
-            DATACTLW::ALLBUF => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DATACTLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DATACTLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DATACTLW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> DATACTL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DATACTL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "No buffering (bypass always used) for Data cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn nobuf(self) -> &'a mut W {
-        self.variant(DATACTLW::NOBUF)
+        self.variant(DATACTL_A::NOBUF)
     }
     #[doc = "One buffer is used for all Data cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn onebuf(self) -> &'a mut W {
-        self.variant(DATACTLW::ONEBUF)
+        self.variant(DATACTL_A::ONEBUF)
     }
     #[doc = "All buffers can be used for Data cycles"]
-    #[inline]
+    #[inline(always)]
     pub fn allbuf(self) -> &'a mut W {
-        self.variant(DATACTLW::ALLBUF)
+        self.variant(DATACTL_A::ALLBUF)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ACCELW<'a> {
+#[doc = "Reader of field `ACCEL`"]
+pub type ACCEL_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ACCEL`"]
+pub struct ACCEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ACCELW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ACCEL_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PREFENW<'a> {
+#[doc = "Reader of field `PREFEN`"]
+pub type PREFEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PREFEN`"]
+pub struct PREFEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PREFENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PREFEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PREFOVRW<'a> {
+#[doc = "Reader of field `PREFOVR`"]
+pub type PREFOVR_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PREFOVR`"]
+pub struct PREFOVR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PREFOVRW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PREFOVR_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PREFCRIW<'a> {
+#[doc = "Reader of field `PREFCRI`"]
+pub type PREFCRI_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PREFCRI`"]
+pub struct PREFCRI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PREFCRIW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PREFCRI_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _FMCTIMW<'a> {
+#[doc = "Reader of field `FMCTIM`"]
+pub type FMCTIM_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `FMCTIM`"]
+pub struct FMCTIM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FMCTIMW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> FMCTIM_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 12)) | (((value as u32) & 0x1f) << 12);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PFISLRUW<'a> {
+#[doc = "Reader of field `PFISLRU`"]
+pub type PFISLRU_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PFISLRU`"]
+pub struct PFISLRU_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PFISLRUW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PFISLRU_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PFADAPW<'a> {
+#[doc = "Reader of field `PFADAP`"]
+pub type PFADAP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PFADAP`"]
+pub struct PFADAP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PFADAPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PFADAP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Fetch control"]
-    #[inline]
-    pub fn fetchctl(&self) -> FETCHCTLR {
-        FETCHCTLR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn fetchctl(&self) -> FETCHCTL_R {
+        FETCHCTL_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:3 - Data control"]
-    #[inline]
-    pub fn datactl(&self) -> DATACTLR {
-        DATACTLR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn datactl(&self) -> DATACTL_R {
+        DATACTL_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bit 4 - ACCEL"]
-    #[inline]
-    pub fn accel(&self) -> ACCELR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ACCELR { bits }
+    #[inline(always)]
+    pub fn accel(&self) -> ACCEL_R {
+        ACCEL_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Pref enable"]
-    #[inline]
-    pub fn prefen(&self) -> PREFENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PREFENR { bits }
+    #[inline(always)]
+    pub fn prefen(&self) -> PREFEN_R {
+        PREFEN_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Pref ovr"]
-    #[inline]
-    pub fn prefovr(&self) -> PREFOVRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PREFOVRR { bits }
+    #[inline(always)]
+    pub fn prefovr(&self) -> PREFOVR_R {
+        PREFOVR_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bits 8:10 - Pref CRI"]
-    #[inline]
-    pub fn prefcri(&self) -> PREFCRIR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PREFCRIR { bits }
+    #[inline(always)]
+    pub fn prefcri(&self) -> PREFCRI_R {
+        PREFCRI_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bits 12:16 - TMC time"]
-    #[inline]
-    pub fn fmctim(&self) -> FMCTIMR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        FMCTIMR { bits }
+    #[inline(always)]
+    pub fn fmctim(&self) -> FMCTIM_R {
+        FMCTIM_R::new(((self.bits >> 12) & 0x1f) as u8)
     }
     #[doc = "Bit 17 - When set, prefetch uses LRU buffer replacement policy"]
-    #[inline]
-    pub fn pfislru(&self) -> PFISLRUR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PFISLRUR { bits }
+    #[inline(always)]
+    pub fn pfislru(&self) -> PFISLRU_R {
+        PFISLRU_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bit 18 - When set, prefetch will adaptively select between parent and LRU buffer replacement policies."]
-    #[inline]
-    pub fn pfadap(&self) -> PFADAPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PFADAPR { bits }
+    #[inline(always)]
+    pub fn pfadap(&self) -> PFADAP_R {
+        PFADAP_R::new(((self.bits >> 18) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 12288 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Fetch control"]
-    #[inline]
-    pub fn fetchctl(&mut self) -> _FETCHCTLW {
-        _FETCHCTLW { w: self }
+    #[inline(always)]
+    pub fn fetchctl(&mut self) -> FETCHCTL_W {
+        FETCHCTL_W { w: self }
     }
     #[doc = "Bits 2:3 - Data control"]
-    #[inline]
-    pub fn datactl(&mut self) -> _DATACTLW {
-        _DATACTLW { w: self }
+    #[inline(always)]
+    pub fn datactl(&mut self) -> DATACTL_W {
+        DATACTL_W { w: self }
     }
     #[doc = "Bit 4 - ACCEL"]
-    #[inline]
-    pub fn accel(&mut self) -> _ACCELW {
-        _ACCELW { w: self }
+    #[inline(always)]
+    pub fn accel(&mut self) -> ACCEL_W {
+        ACCEL_W { w: self }
     }
     #[doc = "Bit 5 - Pref enable"]
-    #[inline]
-    pub fn prefen(&mut self) -> _PREFENW {
-        _PREFENW { w: self }
+    #[inline(always)]
+    pub fn prefen(&mut self) -> PREFEN_W {
+        PREFEN_W { w: self }
     }
     #[doc = "Bit 6 - Pref ovr"]
-    #[inline]
-    pub fn prefovr(&mut self) -> _PREFOVRW {
-        _PREFOVRW { w: self }
+    #[inline(always)]
+    pub fn prefovr(&mut self) -> PREFOVR_W {
+        PREFOVR_W { w: self }
     }
     #[doc = "Bits 8:10 - Pref CRI"]
-    #[inline]
-    pub fn prefcri(&mut self) -> _PREFCRIW {
-        _PREFCRIW { w: self }
+    #[inline(always)]
+    pub fn prefcri(&mut self) -> PREFCRI_W {
+        PREFCRI_W { w: self }
     }
     #[doc = "Bits 12:16 - TMC time"]
-    #[inline]
-    pub fn fmctim(&mut self) -> _FMCTIMW {
-        _FMCTIMW { w: self }
+    #[inline(always)]
+    pub fn fmctim(&mut self) -> FMCTIM_W {
+        FMCTIM_W { w: self }
     }
     #[doc = "Bit 17 - When set, prefetch uses LRU buffer replacement policy"]
-    #[inline]
-    pub fn pfislru(&mut self) -> _PFISLRUW {
-        _PFISLRUW { w: self }
+    #[inline(always)]
+    pub fn pfislru(&mut self) -> PFISLRU_W {
+        PFISLRU_W { w: self }
     }
     #[doc = "Bit 18 - When set, prefetch will adaptively select between parent and LRU buffer replacement policies."]
-    #[inline]
-    pub fn pfadap(&mut self) -> _PFADAPW {
-        _PFADAPW { w: self }
+    #[inline(always)]
+    pub fn pfadap(&mut self) -> PFADAP_W {
+        PFADAP_W { w: self }
     }
 }

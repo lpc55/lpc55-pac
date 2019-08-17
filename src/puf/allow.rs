@@ -1,188 +1,43 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::ALLOW {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register ALLOW"]
+pub type R = crate::R<u32, super::ALLOW>;
+#[doc = "Writer for register ALLOW"]
+pub type W = crate::W<u32, super::ALLOW>;
+#[doc = "Register ALLOW `reset()`'s with value 0"]
+impl crate::ResetValue for super::ALLOW {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct ALLOWENROLLR {
-    bits: bool,
-}
-impl ALLOWENROLLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ALLOWSTARTR {
-    bits: bool,
-}
-impl ALLOWSTARTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ALLOWSETKEYR {
-    bits: bool,
-}
-impl ALLOWSETKEYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ALLOWGETKEYR {
-    bits: bool,
-}
-impl ALLOWGETKEYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of field `ALLOWENROLL`"]
+pub type ALLOWENROLL_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ALLOWSTART`"]
+pub type ALLOWSTART_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ALLOWSETKEY`"]
+pub type ALLOWSETKEY_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ALLOWGETKEY`"]
+pub type ALLOWGETKEY_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Enroll operation is allowed"]
-    #[inline]
-    pub fn allowenroll(&self) -> ALLOWENROLLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ALLOWENROLLR { bits }
+    #[inline(always)]
+    pub fn allowenroll(&self) -> ALLOWENROLL_R {
+        ALLOWENROLL_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Start operation is allowed"]
-    #[inline]
-    pub fn allowstart(&self) -> ALLOWSTARTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ALLOWSTARTR { bits }
+    #[inline(always)]
+    pub fn allowstart(&self) -> ALLOWSTART_R {
+        ALLOWSTART_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Set Key operations are allowed"]
-    #[inline]
-    pub fn allowsetkey(&self) -> ALLOWSETKEYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ALLOWSETKEYR { bits }
+    #[inline(always)]
+    pub fn allowsetkey(&self) -> ALLOWSETKEY_R {
+        ALLOWSETKEY_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Get Key operation is allowed"]
-    #[inline]
-    pub fn allowgetkey(&self) -> ALLOWGETKEYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ALLOWGETKEYR { bits }
+    #[inline(always)]
+    pub fn allowgetkey(&self) -> ALLOWGETKEY_R {
+        ALLOWGETKEY_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
-impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
-}
+impl W {}

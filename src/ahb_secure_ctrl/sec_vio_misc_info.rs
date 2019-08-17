@@ -1,124 +1,88 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::SEC_VIO_MISC_INFO {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
+#[doc = "Reader of register sec_vio_misc_info[%s]"]
+pub type R = crate::R<u32, super::SEC_VIO_MISC_INFO>;
 #[doc = "Possible values of the field `SEC_VIO_INFO_WRITE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SEC_VIO_INFO_WRITER {
+pub enum SEC_VIO_INFO_WRITE_A {
     #[doc = "Read access."]
     READ,
     #[doc = "Write access."]
     WRITE,
 }
-impl SEC_VIO_INFO_WRITER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SEC_VIO_INFO_WRITER::READ => false,
-            SEC_VIO_INFO_WRITER::WRITE => true,
+impl From<SEC_VIO_INFO_WRITE_A> for bool {
+    #[inline(always)]
+    fn from(variant: SEC_VIO_INFO_WRITE_A) -> Self {
+        match variant {
+            SEC_VIO_INFO_WRITE_A::READ => false,
+            SEC_VIO_INFO_WRITE_A::WRITE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SEC_VIO_INFO_WRITER {
-        match value {
-            false => SEC_VIO_INFO_WRITER::READ,
-            true => SEC_VIO_INFO_WRITER::WRITE,
+}
+#[doc = "Reader of field `SEC_VIO_INFO_WRITE`"]
+pub type SEC_VIO_INFO_WRITE_R = crate::R<bool, SEC_VIO_INFO_WRITE_A>;
+impl SEC_VIO_INFO_WRITE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SEC_VIO_INFO_WRITE_A {
+        match self.bits {
+            false => SEC_VIO_INFO_WRITE_A::READ,
+            true => SEC_VIO_INFO_WRITE_A::WRITE,
         }
     }
     #[doc = "Checks if the value of the field is `READ`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_read(&self) -> bool {
-        *self == SEC_VIO_INFO_WRITER::READ
+        *self == SEC_VIO_INFO_WRITE_A::READ
     }
     #[doc = "Checks if the value of the field is `WRITE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_write(&self) -> bool {
-        *self == SEC_VIO_INFO_WRITER::WRITE
+        *self == SEC_VIO_INFO_WRITE_A::WRITE
     }
 }
 #[doc = "Possible values of the field `SEC_VIO_INFO_DATA_ACCESS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SEC_VIO_INFO_DATA_ACCESSR {
+pub enum SEC_VIO_INFO_DATA_ACCESS_A {
     #[doc = "Code access."]
     CODE,
     #[doc = "Data access."]
     DATA,
 }
-impl SEC_VIO_INFO_DATA_ACCESSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SEC_VIO_INFO_DATA_ACCESSR::CODE => false,
-            SEC_VIO_INFO_DATA_ACCESSR::DATA => true,
+impl From<SEC_VIO_INFO_DATA_ACCESS_A> for bool {
+    #[inline(always)]
+    fn from(variant: SEC_VIO_INFO_DATA_ACCESS_A) -> Self {
+        match variant {
+            SEC_VIO_INFO_DATA_ACCESS_A::CODE => false,
+            SEC_VIO_INFO_DATA_ACCESS_A::DATA => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SEC_VIO_INFO_DATA_ACCESSR {
-        match value {
-            false => SEC_VIO_INFO_DATA_ACCESSR::CODE,
-            true => SEC_VIO_INFO_DATA_ACCESSR::DATA,
+}
+#[doc = "Reader of field `SEC_VIO_INFO_DATA_ACCESS`"]
+pub type SEC_VIO_INFO_DATA_ACCESS_R = crate::R<bool, SEC_VIO_INFO_DATA_ACCESS_A>;
+impl SEC_VIO_INFO_DATA_ACCESS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SEC_VIO_INFO_DATA_ACCESS_A {
+        match self.bits {
+            false => SEC_VIO_INFO_DATA_ACCESS_A::CODE,
+            true => SEC_VIO_INFO_DATA_ACCESS_A::DATA,
         }
     }
     #[doc = "Checks if the value of the field is `CODE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_code(&self) -> bool {
-        *self == SEC_VIO_INFO_DATA_ACCESSR::CODE
+        *self == SEC_VIO_INFO_DATA_ACCESS_A::CODE
     }
     #[doc = "Checks if the value of the field is `DATA`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_data(&self) -> bool {
-        *self == SEC_VIO_INFO_DATA_ACCESSR::DATA
+        *self == SEC_VIO_INFO_DATA_ACCESS_A::DATA
     }
 }
-#[doc = r" Value of the field"]
-pub struct SEC_VIO_INFO_MASTER_SEC_LEVELR {
-    bits: u8,
-}
-impl SEC_VIO_INFO_MASTER_SEC_LEVELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
+#[doc = "Reader of field `SEC_VIO_INFO_MASTER_SEC_LEVEL`"]
+pub type SEC_VIO_INFO_MASTER_SEC_LEVEL_R = crate::R<u8, u8>;
 #[doc = "Possible values of the field `SEC_VIO_INFO_MASTER`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SEC_VIO_INFO_MASTERR {
+pub enum SEC_VIO_INFO_MASTER_A {
     #[doc = "CPU0 Code."]
     VALUE_0,
     #[doc = "CPU0 System."]
@@ -141,144 +105,122 @@ pub enum SEC_VIO_INFO_MASTERR {
     VALUE_11,
     #[doc = "SDMA1."]
     VALUE_12,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl SEC_VIO_INFO_MASTERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SEC_VIO_INFO_MASTERR::VALUE_0 => 0,
-            SEC_VIO_INFO_MASTERR::VALUE_1 => 1,
-            SEC_VIO_INFO_MASTERR::VALUE_2 => 2,
-            SEC_VIO_INFO_MASTERR::VALUE_3 => 3,
-            SEC_VIO_INFO_MASTERR::VALUE_4 => 4,
-            SEC_VIO_INFO_MASTERR::VALUE_5 => 5,
-            SEC_VIO_INFO_MASTERR::VALUE_8 => 8,
-            SEC_VIO_INFO_MASTERR::VALUE_9 => 9,
-            SEC_VIO_INFO_MASTERR::VALUE_10 => 10,
-            SEC_VIO_INFO_MASTERR::VALUE_11 => 11,
-            SEC_VIO_INFO_MASTERR::VALUE_12 => 12,
-            SEC_VIO_INFO_MASTERR::_Reserved(bits) => bits,
+impl From<SEC_VIO_INFO_MASTER_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SEC_VIO_INFO_MASTER_A) -> Self {
+        match variant {
+            SEC_VIO_INFO_MASTER_A::VALUE_0 => 0,
+            SEC_VIO_INFO_MASTER_A::VALUE_1 => 1,
+            SEC_VIO_INFO_MASTER_A::VALUE_2 => 2,
+            SEC_VIO_INFO_MASTER_A::VALUE_3 => 3,
+            SEC_VIO_INFO_MASTER_A::VALUE_4 => 4,
+            SEC_VIO_INFO_MASTER_A::VALUE_5 => 5,
+            SEC_VIO_INFO_MASTER_A::VALUE_8 => 8,
+            SEC_VIO_INFO_MASTER_A::VALUE_9 => 9,
+            SEC_VIO_INFO_MASTER_A::VALUE_10 => 10,
+            SEC_VIO_INFO_MASTER_A::VALUE_11 => 11,
+            SEC_VIO_INFO_MASTER_A::VALUE_12 => 12,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SEC_VIO_INFO_MASTERR {
-        match value {
-            0 => SEC_VIO_INFO_MASTERR::VALUE_0,
-            1 => SEC_VIO_INFO_MASTERR::VALUE_1,
-            2 => SEC_VIO_INFO_MASTERR::VALUE_2,
-            3 => SEC_VIO_INFO_MASTERR::VALUE_3,
-            4 => SEC_VIO_INFO_MASTERR::VALUE_4,
-            5 => SEC_VIO_INFO_MASTERR::VALUE_5,
-            8 => SEC_VIO_INFO_MASTERR::VALUE_8,
-            9 => SEC_VIO_INFO_MASTERR::VALUE_9,
-            10 => SEC_VIO_INFO_MASTERR::VALUE_10,
-            11 => SEC_VIO_INFO_MASTERR::VALUE_11,
-            12 => SEC_VIO_INFO_MASTERR::VALUE_12,
-            i => SEC_VIO_INFO_MASTERR::_Reserved(i),
+}
+#[doc = "Reader of field `SEC_VIO_INFO_MASTER`"]
+pub type SEC_VIO_INFO_MASTER_R = crate::R<u8, SEC_VIO_INFO_MASTER_A>;
+impl SEC_VIO_INFO_MASTER_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SEC_VIO_INFO_MASTER_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SEC_VIO_INFO_MASTER_A::VALUE_0),
+            1 => Val(SEC_VIO_INFO_MASTER_A::VALUE_1),
+            2 => Val(SEC_VIO_INFO_MASTER_A::VALUE_2),
+            3 => Val(SEC_VIO_INFO_MASTER_A::VALUE_3),
+            4 => Val(SEC_VIO_INFO_MASTER_A::VALUE_4),
+            5 => Val(SEC_VIO_INFO_MASTER_A::VALUE_5),
+            8 => Val(SEC_VIO_INFO_MASTER_A::VALUE_8),
+            9 => Val(SEC_VIO_INFO_MASTER_A::VALUE_9),
+            10 => Val(SEC_VIO_INFO_MASTER_A::VALUE_10),
+            11 => Val(SEC_VIO_INFO_MASTER_A::VALUE_11),
+            12 => Val(SEC_VIO_INFO_MASTER_A::VALUE_12),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value_0(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTERR::VALUE_0
+        *self == SEC_VIO_INFO_MASTER_A::VALUE_0
     }
     #[doc = "Checks if the value of the field is `VALUE_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value_1(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTERR::VALUE_1
+        *self == SEC_VIO_INFO_MASTER_A::VALUE_1
     }
     #[doc = "Checks if the value of the field is `VALUE_2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value_2(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTERR::VALUE_2
+        *self == SEC_VIO_INFO_MASTER_A::VALUE_2
     }
     #[doc = "Checks if the value of the field is `VALUE_3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value_3(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTERR::VALUE_3
+        *self == SEC_VIO_INFO_MASTER_A::VALUE_3
     }
     #[doc = "Checks if the value of the field is `VALUE_4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value_4(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTERR::VALUE_4
+        *self == SEC_VIO_INFO_MASTER_A::VALUE_4
     }
     #[doc = "Checks if the value of the field is `VALUE_5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value_5(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTERR::VALUE_5
+        *self == SEC_VIO_INFO_MASTER_A::VALUE_5
     }
     #[doc = "Checks if the value of the field is `VALUE_8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value_8(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTERR::VALUE_8
+        *self == SEC_VIO_INFO_MASTER_A::VALUE_8
     }
     #[doc = "Checks if the value of the field is `VALUE_9`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value_9(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTERR::VALUE_9
+        *self == SEC_VIO_INFO_MASTER_A::VALUE_9
     }
     #[doc = "Checks if the value of the field is `VALUE_10`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value_10(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTERR::VALUE_10
+        *self == SEC_VIO_INFO_MASTER_A::VALUE_10
     }
     #[doc = "Checks if the value of the field is `VALUE_11`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value_11(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTERR::VALUE_11
+        *self == SEC_VIO_INFO_MASTER_A::VALUE_11
     }
     #[doc = "Checks if the value of the field is `VALUE_12`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value_12(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTERR::VALUE_12
+        *self == SEC_VIO_INFO_MASTER_A::VALUE_12
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - security violation access read/write indicator."]
-    #[inline]
-    pub fn sec_vio_info_write(&self) -> SEC_VIO_INFO_WRITER {
-        SEC_VIO_INFO_WRITER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sec_vio_info_write(&self) -> SEC_VIO_INFO_WRITE_R {
+        SEC_VIO_INFO_WRITE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - security violation access data/code indicator."]
-    #[inline]
-    pub fn sec_vio_info_data_access(&self) -> SEC_VIO_INFO_DATA_ACCESSR {
-        SEC_VIO_INFO_DATA_ACCESSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sec_vio_info_data_access(&self) -> SEC_VIO_INFO_DATA_ACCESS_R {
+        SEC_VIO_INFO_DATA_ACCESS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bits 4:7 - bit \\[5:4\\]: master sec level and privilege level bit \\[7:6\\]: anti-pol value for master sec level and privilege level"]
-    #[inline]
-    pub fn sec_vio_info_master_sec_level(&self) -> SEC_VIO_INFO_MASTER_SEC_LEVELR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SEC_VIO_INFO_MASTER_SEC_LEVELR { bits }
+    #[inline(always)]
+    pub fn sec_vio_info_master_sec_level(&self) -> SEC_VIO_INFO_MASTER_SEC_LEVEL_R {
+        SEC_VIO_INFO_MASTER_SEC_LEVEL_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
     #[doc = "Bits 8:11 - security violation master number"]
-    #[inline]
-    pub fn sec_vio_info_master(&self) -> SEC_VIO_INFO_MASTERR {
-        SEC_VIO_INFO_MASTERR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sec_vio_info_master(&self) -> SEC_VIO_INFO_MASTER_R {
+        SEC_VIO_INFO_MASTER_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
 }

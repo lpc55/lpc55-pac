@@ -1,265 +1,152 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::LOADER {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register LOADER"]
+pub type R = crate::R<u32, super::LOADER>;
+#[doc = "Writer for register LOADER"]
+pub type W = crate::W<u32, super::LOADER>;
+#[doc = "Register LOADER `reset()`'s with value 0"]
+impl crate::ResetValue for super::LOADER {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct COUNTR {
-    bits: u8,
+#[doc = "Reader of field `COUNT`"]
+pub type COUNT_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `COUNT`"]
+pub struct COUNT_W<'a> {
+    w: &'a mut W,
 }
-impl COUNTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> COUNT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CTRLBPAIR`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CTRLBPAIRR {
+pub enum CTRLBPAIR_A {
     #[doc = "Bank-pair 0 (1st)"]
     PAIR0,
     #[doc = "Bank-pair 1 (2nd)"]
     PAIR1,
 }
-impl CTRLBPAIRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CTRLBPAIRR::PAIR0 => false,
-            CTRLBPAIRR::PAIR1 => true,
+impl From<CTRLBPAIR_A> for bool {
+    #[inline(always)]
+    fn from(variant: CTRLBPAIR_A) -> Self {
+        match variant {
+            CTRLBPAIR_A::PAIR0 => false,
+            CTRLBPAIR_A::PAIR1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CTRLBPAIRR {
-        match value {
-            false => CTRLBPAIRR::PAIR0,
-            true => CTRLBPAIRR::PAIR1,
+}
+#[doc = "Reader of field `CTRLBPAIR`"]
+pub type CTRLBPAIR_R = crate::R<bool, CTRLBPAIR_A>;
+impl CTRLBPAIR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CTRLBPAIR_A {
+        match self.bits {
+            false => CTRLBPAIR_A::PAIR0,
+            true => CTRLBPAIR_A::PAIR1,
         }
     }
     #[doc = "Checks if the value of the field is `PAIR0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pair0(&self) -> bool {
-        *self == CTRLBPAIRR::PAIR0
+        *self == CTRLBPAIR_A::PAIR0
     }
     #[doc = "Checks if the value of the field is `PAIR1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pair1(&self) -> bool {
-        *self == CTRLBPAIRR::PAIR1
+        *self == CTRLBPAIR_A::PAIR1
     }
 }
-#[doc = r" Value of the field"]
-pub struct CTRLOFFR {
-    bits: u16,
-}
-impl CTRLOFFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _COUNTW<'a> {
+#[doc = "Write proxy for field `CTRLBPAIR`"]
+pub struct CTRLBPAIR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _COUNTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CTRLBPAIR`"]
-pub enum CTRLBPAIRW {
-    #[doc = "Bank-pair 0 (1st)"]
-    PAIR0,
-    #[doc = "Bank-pair 1 (2nd)"]
-    PAIR1,
-}
-impl CTRLBPAIRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CTRLBPAIRW::PAIR0 => false,
-            CTRLBPAIRW::PAIR1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CTRLBPAIRW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CTRLBPAIRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CTRLBPAIRW) -> &'a mut W {
+impl<'a> CTRLBPAIR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CTRLBPAIR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Bank-pair 0 (1st)"]
-    #[inline]
+    #[inline(always)]
     pub fn pair0(self) -> &'a mut W {
-        self.variant(CTRLBPAIRW::PAIR0)
+        self.variant(CTRLBPAIR_A::PAIR0)
     }
     #[doc = "Bank-pair 1 (2nd)"]
-    #[inline]
+    #[inline(always)]
     pub fn pair1(self) -> &'a mut W {
-        self.variant(CTRLBPAIRW::PAIR1)
+        self.variant(CTRLBPAIR_A::PAIR1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CTRLOFFW<'a> {
+#[doc = "Reader of field `CTRLOFF`"]
+pub type CTRLOFF_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `CTRLOFF`"]
+pub struct CTRLOFF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CTRLOFFW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CTRLOFF_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 2047;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07ff << 18)) | (((value as u32) & 0x07ff) << 18);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Number of control pairs to load 0 relative (so 1 means load 1). write 1 means Does one op - does not iterate, write N means N control pairs to load"]
-    #[inline]
-    pub fn count(&self) -> COUNTR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        COUNTR { bits }
+    #[inline(always)]
+    pub fn count(&self) -> COUNT_R {
+        COUNT_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bit 16 - Which bank-pair the offset CTRLOFF is within. This must be 0 if only 2-up. Does not matter which bank is used as this is loaded when not performing an operation."]
-    #[inline]
-    pub fn ctrlbpair(&self) -> CTRLBPAIRR {
-        CTRLBPAIRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ctrlbpair(&self) -> CTRLBPAIR_R {
+        CTRLBPAIR_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bits 18:28 - DWord Offset of CTRL pair to load next."]
-    #[inline]
-    pub fn ctrloff(&self) -> CTRLOFFR {
-        let bits = {
-            const MASK: u16 = 2047;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        CTRLOFFR { bits }
+    #[inline(always)]
+    pub fn ctrloff(&self) -> CTRLOFF_R {
+        CTRLOFF_R::new(((self.bits >> 18) & 0x07ff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - Number of control pairs to load 0 relative (so 1 means load 1). write 1 means Does one op - does not iterate, write N means N control pairs to load"]
-    #[inline]
-    pub fn count(&mut self) -> _COUNTW {
-        _COUNTW { w: self }
+    #[inline(always)]
+    pub fn count(&mut self) -> COUNT_W {
+        COUNT_W { w: self }
     }
     #[doc = "Bit 16 - Which bank-pair the offset CTRLOFF is within. This must be 0 if only 2-up. Does not matter which bank is used as this is loaded when not performing an operation."]
-    #[inline]
-    pub fn ctrlbpair(&mut self) -> _CTRLBPAIRW {
-        _CTRLBPAIRW { w: self }
+    #[inline(always)]
+    pub fn ctrlbpair(&mut self) -> CTRLBPAIR_W {
+        CTRLBPAIR_W { w: self }
     }
     #[doc = "Bits 18:28 - DWord Offset of CTRL pair to load next."]
-    #[inline]
-    pub fn ctrloff(&mut self) -> _CTRLOFFW {
-        _CTRLOFFW { w: self }
+    #[inline(always)]
+    pub fn ctrloff(&mut self) -> CTRLOFF_W {
+        CTRLOFF_W { w: self }
     }
 }

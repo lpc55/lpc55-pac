@@ -1,61 +1,32 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::WAKEINT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register WAKEINT"]
+pub type R = crate::R<u32, super::WAKEINT>;
+#[doc = "Writer for register WAKEINT"]
+pub type W = crate::W<u32, super::WAKEINT>;
+#[doc = "Register WAKEINT `reset()`'s with value 0"]
+impl crate::ResetValue for super::WAKEINT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct MASKR {
-    bits: u8,
+#[doc = "Reader of field `MASK`"]
+pub type MASK_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `MASK`"]
+pub struct MASK_W<'a> {
+    w: &'a mut W,
 }
-impl MASKR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> MASK_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w
     }
 }
 #[doc = "Possible values of the field `FILTER_MODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FILTER_MODER {
+pub enum FILTER_MODE_A {
     #[doc = "Bypass mode."]
     BYPASS,
     #[doc = "Filter 1 clock period."]
@@ -65,336 +36,204 @@ pub enum FILTER_MODER {
     #[doc = "Filter 3 clock period."]
     FILTER3CLK,
 }
-impl FILTER_MODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FILTER_MODER::BYPASS => 0,
-            FILTER_MODER::FILTER1CLK => 1,
-            FILTER_MODER::FILTER2CLK => 2,
-            FILTER_MODER::FILTER3CLK => 3,
+impl From<FILTER_MODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FILTER_MODE_A) -> Self {
+        match variant {
+            FILTER_MODE_A::BYPASS => 0,
+            FILTER_MODE_A::FILTER1CLK => 1,
+            FILTER_MODE_A::FILTER2CLK => 2,
+            FILTER_MODE_A::FILTER3CLK => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FILTER_MODER {
-        match value {
-            0 => FILTER_MODER::BYPASS,
-            1 => FILTER_MODER::FILTER1CLK,
-            2 => FILTER_MODER::FILTER2CLK,
-            3 => FILTER_MODER::FILTER3CLK,
+}
+#[doc = "Reader of field `FILTER_MODE`"]
+pub type FILTER_MODE_R = crate::R<u8, FILTER_MODE_A>;
+impl FILTER_MODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FILTER_MODE_A {
+        match self.bits {
+            0 => FILTER_MODE_A::BYPASS,
+            1 => FILTER_MODE_A::FILTER1CLK,
+            2 => FILTER_MODE_A::FILTER2CLK,
+            3 => FILTER_MODE_A::FILTER3CLK,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `BYPASS`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bypass(&self) -> bool {
-        *self == FILTER_MODER::BYPASS
+        *self == FILTER_MODE_A::BYPASS
     }
     #[doc = "Checks if the value of the field is `FILTER1CLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_filter1clk(&self) -> bool {
-        *self == FILTER_MODER::FILTER1CLK
+        *self == FILTER_MODE_A::FILTER1CLK
     }
     #[doc = "Checks if the value of the field is `FILTER2CLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_filter2clk(&self) -> bool {
-        *self == FILTER_MODER::FILTER2CLK
+        *self == FILTER_MODE_A::FILTER2CLK
     }
     #[doc = "Checks if the value of the field is `FILTER3CLK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_filter3clk(&self) -> bool {
-        *self == FILTER_MODER::FILTER3CLK
+        *self == FILTER_MODE_A::FILTER3CLK
     }
 }
-#[doc = r" Value of the field"]
-pub struct FILTER_CLKSELR {
-    bits: u8,
-}
-impl FILTER_CLKSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct LATCH_ENABLER {
-    bits: bool,
-}
-impl LATCH_ENABLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTR_CLEARR {
-    bits: bool,
-}
-impl INTR_CLEARR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MASKW<'a> {
+#[doc = "Write proxy for field `FILTER_MODE`"]
+pub struct FILTER_MODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MASKW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FILTER_MODE`"]
-pub enum FILTER_MODEW {
-    #[doc = "Bypass mode."]
-    BYPASS,
-    #[doc = "Filter 1 clock period."]
-    FILTER1CLK,
-    #[doc = "Filter 2 clock period."]
-    FILTER2CLK,
-    #[doc = "Filter 3 clock period."]
-    FILTER3CLK,
-}
-impl FILTER_MODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FILTER_MODEW::BYPASS => 0,
-            FILTER_MODEW::FILTER1CLK => 1,
-            FILTER_MODEW::FILTER2CLK => 2,
-            FILTER_MODEW::FILTER3CLK => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FILTER_MODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FILTER_MODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FILTER_MODEW) -> &'a mut W {
+impl<'a> FILTER_MODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FILTER_MODE_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Bypass mode."]
-    #[inline]
+    #[inline(always)]
     pub fn bypass(self) -> &'a mut W {
-        self.variant(FILTER_MODEW::BYPASS)
+        self.variant(FILTER_MODE_A::BYPASS)
     }
     #[doc = "Filter 1 clock period."]
-    #[inline]
+    #[inline(always)]
     pub fn filter1clk(self) -> &'a mut W {
-        self.variant(FILTER_MODEW::FILTER1CLK)
+        self.variant(FILTER_MODE_A::FILTER1CLK)
     }
     #[doc = "Filter 2 clock period."]
-    #[inline]
+    #[inline(always)]
     pub fn filter2clk(self) -> &'a mut W {
-        self.variant(FILTER_MODEW::FILTER2CLK)
+        self.variant(FILTER_MODE_A::FILTER2CLK)
     }
     #[doc = "Filter 3 clock period."]
-    #[inline]
+    #[inline(always)]
     pub fn filter3clk(self) -> &'a mut W {
-        self.variant(FILTER_MODEW::FILTER3CLK)
+        self.variant(FILTER_MODE_A::FILTER3CLK)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _FILTER_CLKSELW<'a> {
+#[doc = "Reader of field `FILTER_CLKSEL`"]
+pub type FILTER_CLKSEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `FILTER_CLKSEL`"]
+pub struct FILTER_CLKSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FILTER_CLKSELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> FILTER_CLKSEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _LATCH_ENABLEW<'a> {
+#[doc = "Reader of field `LATCH_ENABLE`"]
+pub type LATCH_ENABLE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `LATCH_ENABLE`"]
+pub struct LATCH_ENABLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LATCH_ENABLEW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> LATCH_ENABLE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INTR_CLEARW<'a> {
+#[doc = "Reader of field `INTR_CLEAR`"]
+pub type INTR_CLEAR_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `INTR_CLEAR`"]
+pub struct INTR_CLEAR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INTR_CLEARW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> INTR_CLEAR_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Interrupt mask (which of the 8 PLU Outputs contribute to interrupt)"]
-    #[inline]
-    pub fn mask(&self) -> MASKR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MASKR { bits }
+    #[inline(always)]
+    pub fn mask(&self) -> MASK_R {
+        MASK_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:9 - control input of the PLU, add filtering for glitch"]
-    #[inline]
-    pub fn filter_mode(&self) -> FILTER_MODER {
-        FILTER_MODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn filter_mode(&self) -> FILTER_MODE_R {
+        FILTER_MODE_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bits 10:11 - hclk is divided by 2**filter_clksel"]
-    #[inline]
-    pub fn filter_clksel(&self) -> FILTER_CLKSELR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        FILTER_CLKSELR { bits }
+    #[inline(always)]
+    pub fn filter_clksel(&self) -> FILTER_CLKSEL_R {
+        FILTER_CLKSEL_R::new(((self.bits >> 10) & 0x03) as u8)
     }
     #[doc = "Bit 12 - latch the interrupt , then can be cleared with next bit INTR_CLEAR"]
-    #[inline]
-    pub fn latch_enable(&self) -> LATCH_ENABLER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        LATCH_ENABLER { bits }
+    #[inline(always)]
+    pub fn latch_enable(&self) -> LATCH_ENABLE_R {
+        LATCH_ENABLE_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Write to clear wakeint_latched"]
-    #[inline]
-    pub fn intr_clear(&self) -> INTR_CLEARR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        INTR_CLEARR { bits }
+    #[inline(always)]
+    pub fn intr_clear(&self) -> INTR_CLEAR_R {
+        INTR_CLEAR_R::new(((self.bits >> 13) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - Interrupt mask (which of the 8 PLU Outputs contribute to interrupt)"]
-    #[inline]
-    pub fn mask(&mut self) -> _MASKW {
-        _MASKW { w: self }
+    #[inline(always)]
+    pub fn mask(&mut self) -> MASK_W {
+        MASK_W { w: self }
     }
     #[doc = "Bits 8:9 - control input of the PLU, add filtering for glitch"]
-    #[inline]
-    pub fn filter_mode(&mut self) -> _FILTER_MODEW {
-        _FILTER_MODEW { w: self }
+    #[inline(always)]
+    pub fn filter_mode(&mut self) -> FILTER_MODE_W {
+        FILTER_MODE_W { w: self }
     }
     #[doc = "Bits 10:11 - hclk is divided by 2**filter_clksel"]
-    #[inline]
-    pub fn filter_clksel(&mut self) -> _FILTER_CLKSELW {
-        _FILTER_CLKSELW { w: self }
+    #[inline(always)]
+    pub fn filter_clksel(&mut self) -> FILTER_CLKSEL_W {
+        FILTER_CLKSEL_W { w: self }
     }
     #[doc = "Bit 12 - latch the interrupt , then can be cleared with next bit INTR_CLEAR"]
-    #[inline]
-    pub fn latch_enable(&mut self) -> _LATCH_ENABLEW {
-        _LATCH_ENABLEW { w: self }
+    #[inline(always)]
+    pub fn latch_enable(&mut self) -> LATCH_ENABLE_W {
+        LATCH_ENABLE_W { w: self }
     }
     #[doc = "Bit 13 - Write to clear wakeint_latched"]
-    #[inline]
-    pub fn intr_clear(&mut self) -> _INTR_CLEARW {
-        _INTR_CLEARW { w: self }
+    #[inline(always)]
+    pub fn intr_clear(&mut self) -> INTR_CLEAR_W {
+        INTR_CLEAR_W { w: self }
     }
 }

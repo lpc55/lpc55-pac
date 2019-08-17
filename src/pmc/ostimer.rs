@@ -1,300 +1,152 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::OSTIMER {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register OSTIMER"]
+pub type R = crate::R<u32, super::OSTIMER>;
+#[doc = "Writer for register OSTIMER"]
+pub type W = crate::W<u32, super::OSTIMER>;
+#[doc = "Register OSTIMER `reset()`'s with value 0x08"]
+impl crate::ResetValue for super::OSTIMER {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x08
     }
 }
-#[doc = r" Value of the field"]
-pub struct SOFTRESETR {
-    bits: bool,
-}
-impl SOFTRESETR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CLOCKENABLER {
-    bits: bool,
-}
-impl CLOCKENABLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DPDWAKEUPENABLER {
-    bits: bool,
-}
-impl DPDWAKEUPENABLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OSC32KPDR {
-    bits: bool,
-}
-impl OSC32KPDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SOFTRESETW<'a> {
+#[doc = "Reader of field `SOFTRESET`"]
+pub type SOFTRESET_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SOFTRESET`"]
+pub struct SOFTRESET_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SOFTRESETW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SOFTRESET_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CLOCKENABLEW<'a> {
+#[doc = "Reader of field `CLOCKENABLE`"]
+pub type CLOCKENABLE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CLOCKENABLE`"]
+pub struct CLOCKENABLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLOCKENABLEW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CLOCKENABLE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DPDWAKEUPENABLEW<'a> {
+#[doc = "Reader of field `DPDWAKEUPENABLE`"]
+pub type DPDWAKEUPENABLE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DPDWAKEUPENABLE`"]
+pub struct DPDWAKEUPENABLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DPDWAKEUPENABLEW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DPDWAKEUPENABLE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _OSC32KPDW<'a> {
+#[doc = "Reader of field `OSC32KPD`"]
+pub type OSC32KPD_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `OSC32KPD`"]
+pub struct OSC32KPD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _OSC32KPDW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> OSC32KPD_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Active high reset."]
-    #[inline]
-    pub fn softreset(&self) -> SOFTRESETR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SOFTRESETR { bits }
+    #[inline(always)]
+    pub fn softreset(&self) -> SOFTRESET_R {
+        SOFTRESET_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Enable OSTIMER 32 KHz clock."]
-    #[inline]
-    pub fn clockenable(&self) -> CLOCKENABLER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CLOCKENABLER { bits }
+    #[inline(always)]
+    pub fn clockenable(&self) -> CLOCKENABLE_R {
+        CLOCKENABLE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Wake up enable in Deep Power Down mode (To be used in Enable Deep Power Down mode)."]
-    #[inline]
-    pub fn dpdwakeupenable(&self) -> DPDWAKEUPENABLER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DPDWAKEUPENABLER { bits }
+    #[inline(always)]
+    pub fn dpdwakeupenable(&self) -> DPDWAKEUPENABLE_R {
+        DPDWAKEUPENABLE_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Oscilator 32KHz (either FRO32KHz or XTAL32KHz according to RTCOSC32K."]
-    #[inline]
-    pub fn osc32kpd(&self) -> OSC32KPDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OSC32KPDR { bits }
+    #[inline(always)]
+    pub fn osc32kpd(&self) -> OSC32KPD_R {
+        OSC32KPD_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 8 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Active high reset."]
-    #[inline]
-    pub fn softreset(&mut self) -> _SOFTRESETW {
-        _SOFTRESETW { w: self }
+    #[inline(always)]
+    pub fn softreset(&mut self) -> SOFTRESET_W {
+        SOFTRESET_W { w: self }
     }
     #[doc = "Bit 1 - Enable OSTIMER 32 KHz clock."]
-    #[inline]
-    pub fn clockenable(&mut self) -> _CLOCKENABLEW {
-        _CLOCKENABLEW { w: self }
+    #[inline(always)]
+    pub fn clockenable(&mut self) -> CLOCKENABLE_W {
+        CLOCKENABLE_W { w: self }
     }
     #[doc = "Bit 2 - Wake up enable in Deep Power Down mode (To be used in Enable Deep Power Down mode)."]
-    #[inline]
-    pub fn dpdwakeupenable(&mut self) -> _DPDWAKEUPENABLEW {
-        _DPDWAKEUPENABLEW { w: self }
+    #[inline(always)]
+    pub fn dpdwakeupenable(&mut self) -> DPDWAKEUPENABLE_W {
+        DPDWAKEUPENABLE_W { w: self }
     }
     #[doc = "Bit 3 - Oscilator 32KHz (either FRO32KHz or XTAL32KHz according to RTCOSC32K."]
-    #[inline]
-    pub fn osc32kpd(&mut self) -> _OSC32KPDW {
-        _OSC32KPDW { w: self }
+    #[inline(always)]
+    pub fn osc32kpd(&mut self) -> OSC32KPD_W {
+        OSC32KPD_W { w: self }
     }
 }

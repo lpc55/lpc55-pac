@@ -1,182 +1,84 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CDETECT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CDETECT"]
+pub type R = crate::R<u32, super::CDETECT>;
+#[doc = "Writer for register CDETECT"]
+pub type W = crate::W<u32, super::CDETECT>;
+#[doc = "Register CDETECT `reset()`'s with value 0"]
+impl crate::ResetValue for super::CDETECT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct CARD0_DETECTR {
-    bits: bool,
-}
-impl CARD0_DETECTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CARD1_DETECTR {
-    bits: bool,
-}
-impl CARD1_DETECTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CARD0_DETECTW<'a> {
+#[doc = "Reader of field `CARD0_DETECT`"]
+pub type CARD0_DETECT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CARD0_DETECT`"]
+pub struct CARD0_DETECT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CARD0_DETECTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CARD0_DETECT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CARD1_DETECTW<'a> {
+#[doc = "Reader of field `CARD1_DETECT`"]
+pub type CARD1_DETECT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CARD1_DETECT`"]
+pub struct CARD1_DETECT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CARD1_DETECTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CARD1_DETECT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Card 0 detect"]
-    #[inline]
-    pub fn card0_detect(&self) -> CARD0_DETECTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CARD0_DETECTR { bits }
+    #[inline(always)]
+    pub fn card0_detect(&self) -> CARD0_DETECT_R {
+        CARD0_DETECT_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Card 1 detect"]
-    #[inline]
-    pub fn card1_detect(&self) -> CARD1_DETECTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CARD1_DETECTR { bits }
+    #[inline(always)]
+    pub fn card1_detect(&self) -> CARD1_DETECT_R {
+        CARD1_DETECT_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Card 0 detect"]
-    #[inline]
-    pub fn card0_detect(&mut self) -> _CARD0_DETECTW {
-        _CARD0_DETECTW { w: self }
+    #[inline(always)]
+    pub fn card0_detect(&mut self) -> CARD0_DETECT_W {
+        CARD0_DETECT_W { w: self }
     }
     #[doc = "Bit 1 - Card 1 detect"]
-    #[inline]
-    pub fn card1_detect(&mut self) -> _CARD1_DETECTW {
-        _CARD1_DETECTW { w: self }
+    #[inline(always)]
+    pub fn card1_detect(&mut self) -> CARD1_DETECT_W {
+        CARD1_DETECT_W { w: self }
     }
 }

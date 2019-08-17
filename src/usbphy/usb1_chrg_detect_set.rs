@@ -1,242 +1,138 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::USB1_CHRG_DETECT_SET {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register USB1_CHRG_DETECT_SET"]
+pub type R = crate::R<u32, super::USB1_CHRG_DETECT_SET>;
+#[doc = "Writer for register USB1_CHRG_DETECT_SET"]
+pub type W = crate::W<u32, super::USB1_CHRG_DETECT_SET>;
+#[doc = "Register USB1_CHRG_DETECT_SET `reset()`'s with value 0x8018_0000"]
+impl crate::ResetValue for super::USB1_CHRG_DETECT_SET {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x8018_0000
     }
 }
-#[doc = r" Value of the field"]
-pub struct PULLUP_DPR {
-    bits: bool,
+#[doc = "Reader of field `PULLUP_DP`"]
+pub type PULLUP_DP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PULLUP_DP`"]
+pub struct PULLUP_DP_W<'a> {
+    w: &'a mut W,
 }
-impl PULLUP_DPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> PULLUP_DP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `BGR_IBIAS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BGR_IBIASR {
+pub enum BGR_IBIAS_A {
     #[doc = "Bias current is derived from the USB PHY internal current generator."]
     VALUE0,
     #[doc = "Bias current is derived from the reference generator of the bandgap."]
     VALUE1,
 }
-impl BGR_IBIASR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BGR_IBIASR::VALUE0 => false,
-            BGR_IBIASR::VALUE1 => true,
+impl From<BGR_IBIAS_A> for bool {
+    #[inline(always)]
+    fn from(variant: BGR_IBIAS_A) -> Self {
+        match variant {
+            BGR_IBIAS_A::VALUE0 => false,
+            BGR_IBIAS_A::VALUE1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BGR_IBIASR {
-        match value {
-            false => BGR_IBIASR::VALUE0,
-            true => BGR_IBIASR::VALUE1,
+}
+#[doc = "Reader of field `BGR_IBIAS`"]
+pub type BGR_IBIAS_R = crate::R<bool, BGR_IBIAS_A>;
+impl BGR_IBIAS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BGR_IBIAS_A {
+        match self.bits {
+            false => BGR_IBIAS_A::VALUE0,
+            true => BGR_IBIAS_A::VALUE1,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == BGR_IBIASR::VALUE0
+        *self == BGR_IBIAS_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == BGR_IBIASR::VALUE1
+        *self == BGR_IBIAS_A::VALUE1
     }
 }
-#[doc = r" Proxy"]
-pub struct _PULLUP_DPW<'a> {
+#[doc = "Write proxy for field `BGR_IBIAS`"]
+pub struct BGR_IBIAS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PULLUP_DPW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `BGR_IBIAS`"]
-pub enum BGR_IBIASW {
-    #[doc = "Bias current is derived from the USB PHY internal current generator."]
-    VALUE0,
-    #[doc = "Bias current is derived from the reference generator of the bandgap."]
-    VALUE1,
-}
-impl BGR_IBIASW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BGR_IBIASW::VALUE0 => false,
-            BGR_IBIASW::VALUE1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BGR_IBIASW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BGR_IBIASW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BGR_IBIASW) -> &'a mut W {
+impl<'a> BGR_IBIAS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BGR_IBIAS_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Bias current is derived from the USB PHY internal current generator."]
-    #[inline]
+    #[inline(always)]
     pub fn value0(self) -> &'a mut W {
-        self.variant(BGR_IBIASW::VALUE0)
+        self.variant(BGR_IBIAS_A::VALUE0)
     }
     #[doc = "Bias current is derived from the reference generator of the bandgap."]
-    #[inline]
+    #[inline(always)]
     pub fn value1(self) -> &'a mut W {
-        self.variant(BGR_IBIASW::VALUE1)
+        self.variant(BGR_IBIAS_A::VALUE1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 2 - This bit is used to pull up DP, for digital charge detect."]
-    #[inline]
-    pub fn pullup_dp(&self) -> PULLUP_DPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PULLUP_DPR { bits }
+    #[inline(always)]
+    pub fn pullup_dp(&self) -> PULLUP_DP_R {
+        PULLUP_DP_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 23 - USB charge detector bias current reference This bit determines the reference for the bias current of the USB charge detector"]
-    #[inline]
-    pub fn bgr_ibias(&self) -> BGR_IBIASR {
-        BGR_IBIASR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bgr_ibias(&self) -> BGR_IBIAS_R {
+        BGR_IBIAS_R::new(((self.bits >> 23) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 2149056512 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 2 - This bit is used to pull up DP, for digital charge detect."]
-    #[inline]
-    pub fn pullup_dp(&mut self) -> _PULLUP_DPW {
-        _PULLUP_DPW { w: self }
+    #[inline(always)]
+    pub fn pullup_dp(&mut self) -> PULLUP_DP_W {
+        PULLUP_DP_W { w: self }
     }
     #[doc = "Bit 23 - USB charge detector bias current reference This bit determines the reference for the bias current of the USB charge detector"]
-    #[inline]
-    pub fn bgr_ibias(&mut self) -> _BGR_IBIASW {
-        _BGR_IBIASW { w: self }
+    #[inline(always)]
+    pub fn bgr_ibias(&mut self) -> BGR_IBIAS_W {
+        BGR_IBIAS_W { w: self }
     }
 }

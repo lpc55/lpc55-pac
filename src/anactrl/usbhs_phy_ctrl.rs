@@ -1,241 +1,118 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::USBHS_PHY_CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register USBHS_PHY_CTRL"]
+pub type R = crate::R<u32, super::USBHS_PHY_CTRL>;
+#[doc = "Writer for register USBHS_PHY_CTRL"]
+pub type W = crate::W<u32, super::USBHS_PHY_CTRL>;
+#[doc = "Register USBHS_PHY_CTRL `reset()`'s with value 0x08"]
+impl crate::ResetValue for super::USBHS_PHY_CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x08
     }
 }
-#[doc = r" Value of the field"]
-pub struct USB_VBUSVALID_EXTR {
-    bits: bool,
-}
-impl USB_VBUSVALID_EXTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct USB_ID_EXTR {
-    bits: bool,
-}
-impl USB_ID_EXTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ISO_ATXR {
-    bits: bool,
-}
-impl ISO_ATXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _USB_VBUSVALID_EXTW<'a> {
+#[doc = "Reader of field `usb_vbusvalid_ext`"]
+pub type USB_VBUSVALID_EXT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `usb_vbusvalid_ext`"]
+pub struct USB_VBUSVALID_EXT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _USB_VBUSVALID_EXTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> USB_VBUSVALID_EXT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _USB_ID_EXTW<'a> {
+#[doc = "Reader of field `usb_id_ext`"]
+pub type USB_ID_EXT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `usb_id_ext`"]
+pub struct USB_ID_EXT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _USB_ID_EXTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> USB_ID_EXT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ISO_ATXW<'a> {
+#[doc = "Reader of field `iso_atx`"]
+pub type ISO_ATX_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `iso_atx`"]
+pub struct ISO_ATX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISO_ATXW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ISO_ATX_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Override value for Vbus if using external detectors."]
-    #[inline]
-    pub fn usb_vbusvalid_ext(&self) -> USB_VBUSVALID_EXTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        USB_VBUSVALID_EXTR { bits }
+    #[inline(always)]
+    pub fn usb_vbusvalid_ext(&self) -> USB_VBUSVALID_EXT_R {
+        USB_VBUSVALID_EXT_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Override value for ID if using external detectors."]
-    #[inline]
-    pub fn usb_id_ext(&self) -> USB_ID_EXTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        USB_ID_EXTR { bits }
+    #[inline(always)]
+    pub fn usb_id_ext(&self) -> USB_ID_EXT_R {
+        USB_ID_EXT_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 3 - ."]
-    #[inline]
-    pub fn iso_atx(&self) -> ISO_ATXR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ISO_ATXR { bits }
+    #[inline(always)]
+    pub fn iso_atx(&self) -> ISO_ATX_R {
+        ISO_ATX_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 8 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Override value for Vbus if using external detectors."]
-    #[inline]
-    pub fn usb_vbusvalid_ext(&mut self) -> _USB_VBUSVALID_EXTW {
-        _USB_VBUSVALID_EXTW { w: self }
+    #[inline(always)]
+    pub fn usb_vbusvalid_ext(&mut self) -> USB_VBUSVALID_EXT_W {
+        USB_VBUSVALID_EXT_W { w: self }
     }
     #[doc = "Bit 1 - Override value for ID if using external detectors."]
-    #[inline]
-    pub fn usb_id_ext(&mut self) -> _USB_ID_EXTW {
-        _USB_ID_EXTW { w: self }
+    #[inline(always)]
+    pub fn usb_id_ext(&mut self) -> USB_ID_EXT_W {
+        USB_ID_EXT_W { w: self }
     }
     #[doc = "Bit 3 - ."]
-    #[inline]
-    pub fn iso_atx(&mut self) -> _ISO_ATXW {
-        _ISO_ATXW { w: self }
+    #[inline(always)]
+    pub fn iso_atx(&mut self) -> ISO_ATX_W {
+        ISO_ATX_W { w: self }
     }
 }

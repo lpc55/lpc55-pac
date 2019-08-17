@@ -1,477 +1,254 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::INTEN {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register INTEN"]
+pub type R = crate::R<u32, super::INTEN>;
+#[doc = "Writer for register INTEN"]
+pub type W = crate::W<u32, super::INTEN>;
+#[doc = "Register INTEN `reset()`'s with value 0"]
+impl crate::ResetValue for super::INTEN {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct READYENR {
-    bits: bool,
-}
-impl READYENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SUCCESENR {
-    bits: bool,
-}
-impl SUCCESENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERRORENR {
-    bits: bool,
-}
-impl ERRORENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct KEYINREQENR {
-    bits: bool,
-}
-impl KEYINREQENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct KEYOUTAVAILENR {
-    bits: bool,
-}
-impl KEYOUTAVAILENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CODEINREQENR {
-    bits: bool,
-}
-impl CODEINREQENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CODEOUTAVAILENR {
-    bits: bool,
-}
-impl CODEOUTAVAILENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _READYENW<'a> {
+#[doc = "Reader of field `READYEN`"]
+pub type READYEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `READYEN`"]
+pub struct READYEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _READYENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> READYEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SUCCESENW<'a> {
+#[doc = "Reader of field `SUCCESEN`"]
+pub type SUCCESEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SUCCESEN`"]
+pub struct SUCCESEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SUCCESENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SUCCESEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERRORENW<'a> {
+#[doc = "Reader of field `ERROREN`"]
+pub type ERROREN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERROREN`"]
+pub struct ERROREN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERRORENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ERROREN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _KEYINREQENW<'a> {
+#[doc = "Reader of field `KEYINREQEN`"]
+pub type KEYINREQEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `KEYINREQEN`"]
+pub struct KEYINREQEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _KEYINREQENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> KEYINREQEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _KEYOUTAVAILENW<'a> {
+#[doc = "Reader of field `KEYOUTAVAILEN`"]
+pub type KEYOUTAVAILEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `KEYOUTAVAILEN`"]
+pub struct KEYOUTAVAILEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _KEYOUTAVAILENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> KEYOUTAVAILEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CODEINREQENW<'a> {
+#[doc = "Reader of field `CODEINREQEN`"]
+pub type CODEINREQEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CODEINREQEN`"]
+pub struct CODEINREQEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CODEINREQENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CODEINREQEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CODEOUTAVAILENW<'a> {
+#[doc = "Reader of field `CODEOUTAVAILEN`"]
+pub type CODEOUTAVAILEN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CODEOUTAVAILEN`"]
+pub struct CODEOUTAVAILEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CODEOUTAVAILENW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CODEOUTAVAILEN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
-    #[inline]
-    pub fn readyen(&self) -> READYENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        READYENR { bits }
+    #[inline(always)]
+    pub fn readyen(&self) -> READYEN_R {
+        READYEN_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
-    #[inline]
-    pub fn succesen(&self) -> SUCCESENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SUCCESENR { bits }
+    #[inline(always)]
+    pub fn succesen(&self) -> SUCCESEN_R {
+        SUCCESEN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
-    #[inline]
-    pub fn erroren(&self) -> ERRORENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERRORENR { bits }
+    #[inline(always)]
+    pub fn erroren(&self) -> ERROREN_R {
+        ERROREN_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
-    #[inline]
-    pub fn keyinreqen(&self) -> KEYINREQENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        KEYINREQENR { bits }
+    #[inline(always)]
+    pub fn keyinreqen(&self) -> KEYINREQEN_R {
+        KEYINREQEN_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
-    #[inline]
-    pub fn keyoutavailen(&self) -> KEYOUTAVAILENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        KEYOUTAVAILENR { bits }
+    #[inline(always)]
+    pub fn keyoutavailen(&self) -> KEYOUTAVAILEN_R {
+        KEYOUTAVAILEN_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
-    #[inline]
-    pub fn codeinreqen(&self) -> CODEINREQENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CODEINREQENR { bits }
+    #[inline(always)]
+    pub fn codeinreqen(&self) -> CODEINREQEN_R {
+        CODEINREQEN_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
-    #[inline]
-    pub fn codeoutavailen(&self) -> CODEOUTAVAILENR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CODEOUTAVAILENR { bits }
+    #[inline(always)]
+    pub fn codeoutavailen(&self) -> CODEOUTAVAILEN_R {
+        CODEOUTAVAILEN_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
-    #[inline]
-    pub fn readyen(&mut self) -> _READYENW {
-        _READYENW { w: self }
+    #[inline(always)]
+    pub fn readyen(&mut self) -> READYEN_W {
+        READYEN_W { w: self }
     }
     #[doc = "Bit 1 - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
-    #[inline]
-    pub fn succesen(&mut self) -> _SUCCESENW {
-        _SUCCESENW { w: self }
+    #[inline(always)]
+    pub fn succesen(&mut self) -> SUCCESEN_W {
+        SUCCESEN_W { w: self }
     }
     #[doc = "Bit 2 - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
-    #[inline]
-    pub fn erroren(&mut self) -> _ERRORENW {
-        _ERRORENW { w: self }
+    #[inline(always)]
+    pub fn erroren(&mut self) -> ERROREN_W {
+        ERROREN_W { w: self }
     }
     #[doc = "Bit 4 - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
-    #[inline]
-    pub fn keyinreqen(&mut self) -> _KEYINREQENW {
-        _KEYINREQENW { w: self }
+    #[inline(always)]
+    pub fn keyinreqen(&mut self) -> KEYINREQEN_W {
+        KEYINREQEN_W { w: self }
     }
     #[doc = "Bit 5 - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
-    #[inline]
-    pub fn keyoutavailen(&mut self) -> _KEYOUTAVAILENW {
-        _KEYOUTAVAILENW { w: self }
+    #[inline(always)]
+    pub fn keyoutavailen(&mut self) -> KEYOUTAVAILEN_W {
+        KEYOUTAVAILEN_W { w: self }
     }
     #[doc = "Bit 6 - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
-    #[inline]
-    pub fn codeinreqen(&mut self) -> _CODEINREQENW {
-        _CODEINREQENW { w: self }
+    #[inline(always)]
+    pub fn codeinreqen(&mut self) -> CODEINREQEN_W {
+        CODEINREQEN_W { w: self }
     }
     #[doc = "Bit 7 - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
-    #[inline]
-    pub fn codeoutavailen(&mut self) -> _CODEOUTAVAILENW {
-        _CODEOUTAVAILENW { w: self }
+    #[inline(always)]
+    pub fn codeoutavailen(&mut self) -> CODEOUTAVAILEN_W {
+        CODEOUTAVAILEN_W { w: self }
     }
 }

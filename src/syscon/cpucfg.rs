@@ -1,183 +1,104 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CPUCFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CPUCFG"]
+pub type R = crate::R<u32, super::CPUCFG>;
+#[doc = "Writer for register CPUCFG"]
+pub type W = crate::W<u32, super::CPUCFG>;
+#[doc = "Register CPUCFG `reset()`'s with value 0x02"]
+impl crate::ResetValue for super::CPUCFG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x02
     }
 }
 #[doc = "Possible values of the field `CPU1ENABLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPU1ENABLER {
+pub enum CPU1ENABLE_A {
     #[doc = "CPU1 is disable (Processor in reset)."]
     DISABLE,
     #[doc = "CPU1 is enable."]
     ENABLE,
 }
-impl CPU1ENABLER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CPU1ENABLER::DISABLE => false,
-            CPU1ENABLER::ENABLE => true,
+impl From<CPU1ENABLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: CPU1ENABLE_A) -> Self {
+        match variant {
+            CPU1ENABLE_A::DISABLE => false,
+            CPU1ENABLE_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CPU1ENABLER {
-        match value {
-            false => CPU1ENABLER::DISABLE,
-            true => CPU1ENABLER::ENABLE,
+}
+#[doc = "Reader of field `CPU1ENABLE`"]
+pub type CPU1ENABLE_R = crate::R<bool, CPU1ENABLE_A>;
+impl CPU1ENABLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CPU1ENABLE_A {
+        match self.bits {
+            false => CPU1ENABLE_A::DISABLE,
+            true => CPU1ENABLE_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CPU1ENABLER::DISABLE
+        *self == CPU1ENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == CPU1ENABLER::ENABLE
+        *self == CPU1ENABLE_A::ENABLE
     }
 }
-#[doc = "Values that can be written to the field `CPU1ENABLE`"]
-pub enum CPU1ENABLEW {
-    #[doc = "CPU1 is disable (Processor in reset)."]
-    DISABLE,
-    #[doc = "CPU1 is enable."]
-    ENABLE,
-}
-impl CPU1ENABLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CPU1ENABLEW::DISABLE => false,
-            CPU1ENABLEW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CPU1ENABLEW<'a> {
+#[doc = "Write proxy for field `CPU1ENABLE`"]
+pub struct CPU1ENABLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CPU1ENABLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CPU1ENABLEW) -> &'a mut W {
+impl<'a> CPU1ENABLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CPU1ENABLE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "CPU1 is disable (Processor in reset)."]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(CPU1ENABLEW::DISABLE)
+        self.variant(CPU1ENABLE_A::DISABLE)
     }
     #[doc = "CPU1 is enable."]
-    #[inline]
+    #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(CPU1ENABLEW::ENABLE)
+        self.variant(CPU1ENABLE_A::ENABLE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 2 - Enable CPU1."]
-    #[inline]
-    pub fn cpu1enable(&self) -> CPU1ENABLER {
-        CPU1ENABLER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cpu1enable(&self) -> CPU1ENABLE_R {
+        CPU1ENABLE_R::new(((self.bits >> 2) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 2 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 2 - Enable CPU1."]
-    #[inline]
-    pub fn cpu1enable(&mut self) -> _CPU1ENABLEW {
-        _CPU1ENABLEW { w: self }
+    #[inline(always)]
+    pub fn cpu1enable(&mut self) -> CPU1ENABLE_W {
+        CPU1ENABLE_W { w: self }
     }
 }

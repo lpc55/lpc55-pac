@@ -1,187 +1,88 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::LAST_PTD_INUSE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register LAST_PTD_INUSE"]
+pub type R = crate::R<u32, super::LAST_PTD_INUSE>;
+#[doc = "Writer for register LAST_PTD_INUSE"]
+pub type W = crate::W<u32, super::LAST_PTD_INUSE>;
+#[doc = "Register LAST_PTD_INUSE `reset()`'s with value 0"]
+impl crate::ResetValue for super::LAST_PTD_INUSE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct ATL_LASTR {
-    bits: u8,
-}
-impl ATL_LASTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ISO_LASTR {
-    bits: u8,
-}
-impl ISO_LASTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INT_LASTR {
-    bits: u8,
-}
-impl INT_LASTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ATL_LASTW<'a> {
+#[doc = "Reader of field `ATL_LAST`"]
+pub type ATL_LAST_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `ATL_LAST`"]
+pub struct ATL_LAST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ATL_LASTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> ATL_LAST_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ISO_LASTW<'a> {
+#[doc = "Reader of field `ISO_LAST`"]
+pub type ISO_LAST_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `ISO_LAST`"]
+pub struct ISO_LAST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISO_LASTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> ISO_LAST_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 8)) | (((value as u32) & 0x1f) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INT_LASTW<'a> {
+#[doc = "Reader of field `INT_LAST`"]
+pub type INT_LAST_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `INT_LAST`"]
+pub struct INT_LAST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INT_LASTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INT_LAST_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 16)) | (((value as u32) & 0x1f) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:4 - If hardware has reached this PTD and the J bit is not set, it will go to PTD0 as the next PTD to be processed."]
-    #[inline]
-    pub fn atl_last(&self) -> ATL_LASTR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ATL_LASTR { bits }
+    #[inline(always)]
+    pub fn atl_last(&self) -> ATL_LAST_R {
+        ATL_LAST_R::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bits 8:12 - This indicates the last PTD in the ISO list."]
-    #[inline]
-    pub fn iso_last(&self) -> ISO_LASTR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ISO_LASTR { bits }
+    #[inline(always)]
+    pub fn iso_last(&self) -> ISO_LAST_R {
+        ISO_LAST_R::new(((self.bits >> 8) & 0x1f) as u8)
     }
     #[doc = "Bits 16:20 - This indicates the last PTD in the INT list."]
-    #[inline]
-    pub fn int_last(&self) -> INT_LASTR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INT_LASTR { bits }
+    #[inline(always)]
+    pub fn int_last(&self) -> INT_LAST_R {
+        INT_LAST_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:4 - If hardware has reached this PTD and the J bit is not set, it will go to PTD0 as the next PTD to be processed."]
-    #[inline]
-    pub fn atl_last(&mut self) -> _ATL_LASTW {
-        _ATL_LASTW { w: self }
+    #[inline(always)]
+    pub fn atl_last(&mut self) -> ATL_LAST_W {
+        ATL_LAST_W { w: self }
     }
     #[doc = "Bits 8:12 - This indicates the last PTD in the ISO list."]
-    #[inline]
-    pub fn iso_last(&mut self) -> _ISO_LASTW {
-        _ISO_LASTW { w: self }
+    #[inline(always)]
+    pub fn iso_last(&mut self) -> ISO_LAST_W {
+        ISO_LAST_W { w: self }
     }
     #[doc = "Bits 16:20 - This indicates the last PTD in the INT list."]
-    #[inline]
-    pub fn int_last(&mut self) -> _INT_LASTW {
-        _INT_LASTW { w: self }
+    #[inline(always)]
+    pub fn int_last(&mut self) -> INT_LAST_W {
+        INT_LAST_W { w: self }
     }
 }

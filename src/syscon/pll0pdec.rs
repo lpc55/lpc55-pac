@@ -1,164 +1,74 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PLL0PDEC {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PLL0PDEC"]
+pub type R = crate::R<u32, super::PLL0PDEC>;
+#[doc = "Writer for register PLL0PDEC"]
+pub type W = crate::W<u32, super::PLL0PDEC>;
+#[doc = "Register PLL0PDEC `reset()`'s with value 0"]
+impl crate::ResetValue for super::PLL0PDEC {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct PDIVR {
-    bits: u8,
-}
-impl PDIVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PREQR {
-    bits: bool,
-}
-impl PREQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PDIVW<'a> {
+#[doc = "Reader of field `PDIV`"]
+pub type PDIV_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PDIV`"]
+pub struct PDIV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PDIVW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PDIV_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PREQW<'a> {
+#[doc = "Reader of field `PREQ`"]
+pub type PREQ_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PREQ`"]
+pub struct PREQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PREQW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PREQ_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:4 - post-divider divider ratio (P-divider)"]
-    #[inline]
-    pub fn pdiv(&self) -> PDIVR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PDIVR { bits }
+    #[inline(always)]
+    pub fn pdiv(&self) -> PDIV_R {
+        PDIV_R::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bit 5 - feedback ratio change request."]
-    #[inline]
-    pub fn preq(&self) -> PREQR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PREQR { bits }
+    #[inline(always)]
+    pub fn preq(&self) -> PREQ_R {
+        PREQ_R::new(((self.bits >> 5) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:4 - post-divider divider ratio (P-divider)"]
-    #[inline]
-    pub fn pdiv(&mut self) -> _PDIVW {
-        _PDIVW { w: self }
+    #[inline(always)]
+    pub fn pdiv(&mut self) -> PDIV_W {
+        PDIV_W { w: self }
     }
     #[doc = "Bit 5 - feedback ratio change request."]
-    #[inline]
-    pub fn preq(&mut self) -> _PREQW {
-        _PREQW { w: self }
+    #[inline(always)]
+    pub fn preq(&mut self) -> PREQ_W {
+        PREQ_W { w: self }
     }
 }

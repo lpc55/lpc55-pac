@@ -1,62 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::DIEID {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct REV_IDR {
-    bits: u8,
-}
-impl REV_IDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MCO_NUM_IN_DIE_IDR {
-    bits: u32,
-}
-impl MCO_NUM_IN_DIE_IDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
-}
+#[doc = "Reader of register DIEID"]
+pub type R = crate::R<u32, super::DIEID>;
+#[doc = "Reader of field `REV_ID`"]
+pub type REV_ID_R = crate::R<u8, u8>;
+#[doc = "Reader of field `MCO_NUM_IN_DIE_ID`"]
+pub type MCO_NUM_IN_DIE_ID_R = crate::R<u32, u32>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Chip Metal Revision ID."]
-    #[inline]
-    pub fn rev_id(&self) -> REV_IDR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        REV_IDR { bits }
+    #[inline(always)]
+    pub fn rev_id(&self) -> REV_ID_R {
+        REV_ID_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:23 - Chip Number."]
-    #[inline]
-    pub fn mco_num_in_die_id(&self) -> MCO_NUM_IN_DIE_IDR {
-        let bits = {
-            const MASK: u32 = 1048575;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u32
-        };
-        MCO_NUM_IN_DIE_IDR { bits }
+    #[inline(always)]
+    pub fn mco_num_in_die_id(&self) -> MCO_NUM_IN_DIE_ID_R {
+        MCO_NUM_IN_DIE_ID_R::new(((self.bits >> 4) & 0x000f_ffff) as u32)
     }
 }

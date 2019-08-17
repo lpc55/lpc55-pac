@@ -1,305 +1,156 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::COUNTER_CFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register COUNTER_CFG"]
+pub type R = crate::R<u32, super::COUNTER_CFG>;
+#[doc = "Writer for register COUNTER_CFG"]
+pub type W = crate::W<u32, super::COUNTER_CFG>;
+#[doc = "Register COUNTER_CFG `reset()`'s with value 0"]
+impl crate::ResetValue for super::COUNTER_CFG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct MODER {
-    bits: u8,
-}
-impl MODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CLOCK_SELR {
-    bits: u8,
-}
-impl CLOCK_SELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SHIFT4XR {
-    bits: u8,
-}
-impl SHIFT4XR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DIS_ENH_ENTR_REFILLR {
-    bits: bool,
-}
-impl DIS_ENH_ENTR_REFILLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FORCE_ENTR_SPREADINGR {
-    bits: bool,
-}
-impl FORCE_ENTR_SPREADINGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODEW<'a> {
+#[doc = "Reader of field `MODE`"]
+pub type MODE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `MODE`"]
+pub struct MODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MODEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> MODE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CLOCK_SELW<'a> {
+#[doc = "Reader of field `CLOCK_SEL`"]
+pub type CLOCK_SEL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CLOCK_SEL`"]
+pub struct CLOCK_SEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLOCK_SELW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CLOCK_SEL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 2)) | (((value as u32) & 0x07) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SHIFT4XW<'a> {
+#[doc = "Reader of field `SHIFT4X`"]
+pub type SHIFT4X_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SHIFT4X`"]
+pub struct SHIFT4X_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SHIFT4XW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SHIFT4X_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 5)) | (((value as u32) & 0x07) << 5);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DIS_ENH_ENTR_REFILLW<'a> {
+#[doc = "Reader of field `DIS_ENH_ENTR_REFILL`"]
+pub type DIS_ENH_ENTR_REFILL_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DIS_ENH_ENTR_REFILL`"]
+pub struct DIS_ENH_ENTR_REFILL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DIS_ENH_ENTR_REFILLW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DIS_ENH_ENTR_REFILL_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _FORCE_ENTR_SPREADINGW<'a> {
+#[doc = "Reader of field `FORCE_ENTR_SPREADING`"]
+pub type FORCE_ENTR_SPREADING_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `FORCE_ENTR_SPREADING`"]
+pub struct FORCE_ENTR_SPREADING_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FORCE_ENTR_SPREADINGW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> FORCE_ENTR_SPREADING_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - 00: disabled 01: update once."]
-    #[inline]
-    pub fn mode(&self) -> MODER {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MODER { bits }
+    #[inline(always)]
+    pub fn mode(&self) -> MODE_R {
+        MODE_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:4 - Selects the internal clock on which to compute statistics."]
-    #[inline]
-    pub fn clock_sel(&self) -> CLOCK_SELR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CLOCK_SELR { bits }
+    #[inline(always)]
+    pub fn clock_sel(&self) -> CLOCK_SEL_R {
+        CLOCK_SEL_R::new(((self.bits >> 2) & 0x07) as u8)
     }
     #[doc = "Bits 5:7 - To be used to add precision to clock_ratio and determine 'entropy refill'."]
-    #[inline]
-    pub fn shift4x(&self) -> SHIFT4XR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SHIFT4XR { bits }
+    #[inline(always)]
+    pub fn shift4x(&self) -> SHIFT4X_R {
+        SHIFT4X_R::new(((self.bits >> 5) & 0x07) as u8)
     }
     #[doc = "Bit 8 - Disable 'enhanced entropy refill' feature, which is enabled by default when 'mode' > 00."]
-    #[inline]
-    pub fn dis_enh_entr_refill(&self) -> DIS_ENH_ENTR_REFILLR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DIS_ENH_ENTR_REFILLR { bits }
+    #[inline(always)]
+    pub fn dis_enh_entr_refill(&self) -> DIS_ENH_ENTR_REFILL_R {
+        DIS_ENH_ENTR_REFILL_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Forces entropy spreading (interactions between RNGs) even when 'clock_sel'>0."]
-    #[inline]
-    pub fn force_entr_spreading(&self) -> FORCE_ENTR_SPREADINGR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        FORCE_ENTR_SPREADINGR { bits }
+    #[inline(always)]
+    pub fn force_entr_spreading(&self) -> FORCE_ENTR_SPREADING_R {
+        FORCE_ENTR_SPREADING_R::new(((self.bits >> 9) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - 00: disabled 01: update once."]
-    #[inline]
-    pub fn mode(&mut self) -> _MODEW {
-        _MODEW { w: self }
+    #[inline(always)]
+    pub fn mode(&mut self) -> MODE_W {
+        MODE_W { w: self }
     }
     #[doc = "Bits 2:4 - Selects the internal clock on which to compute statistics."]
-    #[inline]
-    pub fn clock_sel(&mut self) -> _CLOCK_SELW {
-        _CLOCK_SELW { w: self }
+    #[inline(always)]
+    pub fn clock_sel(&mut self) -> CLOCK_SEL_W {
+        CLOCK_SEL_W { w: self }
     }
     #[doc = "Bits 5:7 - To be used to add precision to clock_ratio and determine 'entropy refill'."]
-    #[inline]
-    pub fn shift4x(&mut self) -> _SHIFT4XW {
-        _SHIFT4XW { w: self }
+    #[inline(always)]
+    pub fn shift4x(&mut self) -> SHIFT4X_W {
+        SHIFT4X_W { w: self }
     }
     #[doc = "Bit 8 - Disable 'enhanced entropy refill' feature, which is enabled by default when 'mode' > 00."]
-    #[inline]
-    pub fn dis_enh_entr_refill(&mut self) -> _DIS_ENH_ENTR_REFILLW {
-        _DIS_ENH_ENTR_REFILLW { w: self }
+    #[inline(always)]
+    pub fn dis_enh_entr_refill(&mut self) -> DIS_ENH_ENTR_REFILL_W {
+        DIS_ENH_ENTR_REFILL_W { w: self }
     }
     #[doc = "Bit 9 - Forces entropy spreading (interactions between RNGs) even when 'clock_sel'>0."]
-    #[inline]
-    pub fn force_entr_spreading(&mut self) -> _FORCE_ENTR_SPREADINGW {
-        _FORCE_ENTR_SPREADINGW { w: self }
+    #[inline(always)]
+    pub fn force_entr_spreading(&mut self) -> FORCE_ENTR_SPREADING_W {
+        FORCE_ENTR_SPREADING_W { w: self }
     }
 }

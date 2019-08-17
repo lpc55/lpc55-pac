@@ -1,442 +1,254 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::RTCOSC32K {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register RTCOSC32K"]
+pub type R = crate::R<u32, super::RTCOSC32K>;
+#[doc = "Writer for register RTCOSC32K"]
+pub type W = crate::W<u32, super::RTCOSC32K>;
+#[doc = "Register RTCOSC32K `reset()`'s with value 0x03ff_0008"]
+impl crate::ResetValue for super::RTCOSC32K {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x03ff_0008
     }
 }
 #[doc = "Possible values of the field `SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SELR {
+pub enum SEL_A {
     #[doc = "FRO 32 KHz."]
     FRO32K,
     #[doc = "XTAL 32KHz."]
     XTAL32K,
 }
-impl SELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SELR::FRO32K => false,
-            SELR::XTAL32K => true,
+impl From<SEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: SEL_A) -> Self {
+        match variant {
+            SEL_A::FRO32K => false,
+            SEL_A::XTAL32K => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SELR {
-        match value {
-            false => SELR::FRO32K,
-            true => SELR::XTAL32K,
+}
+#[doc = "Reader of field `SEL`"]
+pub type SEL_R = crate::R<bool, SEL_A>;
+impl SEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SEL_A {
+        match self.bits {
+            false => SEL_A::FRO32K,
+            true => SEL_A::XTAL32K,
         }
     }
     #[doc = "Checks if the value of the field is `FRO32K`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_fro32k(&self) -> bool {
-        *self == SELR::FRO32K
+        *self == SEL_A::FRO32K
     }
     #[doc = "Checks if the value of the field is `XTAL32K`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_xtal32k(&self) -> bool {
-        *self == SELR::XTAL32K
+        *self == SEL_A::XTAL32K
     }
 }
-#[doc = r" Value of the field"]
-pub struct CLK1KHZDIVR {
-    bits: u8,
-}
-impl CLK1KHZDIVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CLK1KHZDIVUPDATEREQR {
-    bits: bool,
-}
-impl CLK1KHZDIVUPDATEREQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CLK1HZDIVR {
-    bits: u16,
-}
-impl CLK1HZDIVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CLK1HZDIVHALTR {
-    bits: bool,
-}
-impl CLK1HZDIVHALTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct CLK1HZDIVUPDATEREQR {
-    bits: bool,
-}
-impl CLK1HZDIVUPDATEREQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `SEL`"]
-pub enum SELW {
-    #[doc = "FRO 32 KHz."]
-    FRO32K,
-    #[doc = "XTAL 32KHz."]
-    XTAL32K,
-}
-impl SELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SELW::FRO32K => false,
-            SELW::XTAL32K => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SELW<'a> {
+#[doc = "Write proxy for field `SEL`"]
+pub struct SEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SELW) -> &'a mut W {
+impl<'a> SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SEL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "FRO 32 KHz."]
-    #[inline]
+    #[inline(always)]
     pub fn fro32k(self) -> &'a mut W {
-        self.variant(SELW::FRO32K)
+        self.variant(SEL_A::FRO32K)
     }
     #[doc = "XTAL 32KHz."]
-    #[inline]
+    #[inline(always)]
     pub fn xtal32k(self) -> &'a mut W {
-        self.variant(SELW::XTAL32K)
+        self.variant(SEL_A::XTAL32K)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CLK1KHZDIVW<'a> {
+#[doc = "Reader of field `CLK1KHZDIV`"]
+pub type CLK1KHZDIV_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `CLK1KHZDIV`"]
+pub struct CLK1KHZDIV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLK1KHZDIVW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CLK1KHZDIV_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 1)) | (((value as u32) & 0x07) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CLK1KHZDIVUPDATEREQW<'a> {
+#[doc = "Reader of field `CLK1KHZDIVUPDATEREQ`"]
+pub type CLK1KHZDIVUPDATEREQ_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CLK1KHZDIVUPDATEREQ`"]
+pub struct CLK1KHZDIVUPDATEREQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLK1KHZDIVUPDATEREQW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CLK1KHZDIVUPDATEREQ_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CLK1HZDIVW<'a> {
+#[doc = "Reader of field `CLK1HZDIV`"]
+pub type CLK1HZDIV_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `CLK1HZDIV`"]
+pub struct CLK1HZDIV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLK1HZDIVW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> CLK1HZDIV_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 2047;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07ff << 16)) | (((value as u32) & 0x07ff) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CLK1HZDIVHALTW<'a> {
+#[doc = "Reader of field `CLK1HZDIVHALT`"]
+pub type CLK1HZDIVHALT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CLK1HZDIVHALT`"]
+pub struct CLK1HZDIVHALT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLK1HZDIVHALTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CLK1HZDIVHALT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CLK1HZDIVUPDATEREQW<'a> {
+#[doc = "Reader of field `CLK1HZDIVUPDATEREQ`"]
+pub type CLK1HZDIVUPDATEREQ_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CLK1HZDIVUPDATEREQ`"]
+pub struct CLK1HZDIVUPDATEREQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CLK1HZDIVUPDATEREQW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CLK1HZDIVUPDATEREQ_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Select the 32K oscillator to be used in Deep Power Down Mode for the RTC (either XTAL32KHz or FRO32KHz) ."]
-    #[inline]
-    pub fn sel(&self) -> SELR {
-        SELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sel(&self) -> SEL_R {
+        SEL_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bits 1:3 - Actual division ratio is : 28 + CLK1KHZDIV."]
-    #[inline]
-    pub fn clk1khzdiv(&self) -> CLK1KHZDIVR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        CLK1KHZDIVR { bits }
+    #[inline(always)]
+    pub fn clk1khzdiv(&self) -> CLK1KHZDIV_R {
+        CLK1KHZDIV_R::new(((self.bits >> 1) & 0x07) as u8)
     }
     #[doc = "Bit 15 - RTC 1KHz clock Divider status flag."]
-    #[inline]
-    pub fn clk1khzdivupdatereq(&self) -> CLK1KHZDIVUPDATEREQR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CLK1KHZDIVUPDATEREQR { bits }
+    #[inline(always)]
+    pub fn clk1khzdivupdatereq(&self) -> CLK1KHZDIVUPDATEREQ_R {
+        CLK1KHZDIVUPDATEREQ_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bits 16:26 - Actual division ratio is : 31744 + CLK1HZDIV."]
-    #[inline]
-    pub fn clk1hzdiv(&self) -> CLK1HZDIVR {
-        let bits = {
-            const MASK: u16 = 2047;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        CLK1HZDIVR { bits }
+    #[inline(always)]
+    pub fn clk1hzdiv(&self) -> CLK1HZDIV_R {
+        CLK1HZDIV_R::new(((self.bits >> 16) & 0x07ff) as u16)
     }
     #[doc = "Bit 30 - Halts the divider counter."]
-    #[inline]
-    pub fn clk1hzdivhalt(&self) -> CLK1HZDIVHALTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CLK1HZDIVHALTR { bits }
+    #[inline(always)]
+    pub fn clk1hzdivhalt(&self) -> CLK1HZDIVHALT_R {
+        CLK1HZDIVHALT_R::new(((self.bits >> 30) & 0x01) != 0)
     }
     #[doc = "Bit 31 - RTC 1Hz Divider status flag."]
-    #[inline]
-    pub fn clk1hzdivupdatereq(&self) -> CLK1HZDIVUPDATEREQR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CLK1HZDIVUPDATEREQR { bits }
+    #[inline(always)]
+    pub fn clk1hzdivupdatereq(&self) -> CLK1HZDIVUPDATEREQ_R {
+        CLK1HZDIVUPDATEREQ_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 67043336 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Select the 32K oscillator to be used in Deep Power Down Mode for the RTC (either XTAL32KHz or FRO32KHz) ."]
-    #[inline]
-    pub fn sel(&mut self) -> _SELW {
-        _SELW { w: self }
+    #[inline(always)]
+    pub fn sel(&mut self) -> SEL_W {
+        SEL_W { w: self }
     }
     #[doc = "Bits 1:3 - Actual division ratio is : 28 + CLK1KHZDIV."]
-    #[inline]
-    pub fn clk1khzdiv(&mut self) -> _CLK1KHZDIVW {
-        _CLK1KHZDIVW { w: self }
+    #[inline(always)]
+    pub fn clk1khzdiv(&mut self) -> CLK1KHZDIV_W {
+        CLK1KHZDIV_W { w: self }
     }
     #[doc = "Bit 15 - RTC 1KHz clock Divider status flag."]
-    #[inline]
-    pub fn clk1khzdivupdatereq(&mut self) -> _CLK1KHZDIVUPDATEREQW {
-        _CLK1KHZDIVUPDATEREQW { w: self }
+    #[inline(always)]
+    pub fn clk1khzdivupdatereq(&mut self) -> CLK1KHZDIVUPDATEREQ_W {
+        CLK1KHZDIVUPDATEREQ_W { w: self }
     }
     #[doc = "Bits 16:26 - Actual division ratio is : 31744 + CLK1HZDIV."]
-    #[inline]
-    pub fn clk1hzdiv(&mut self) -> _CLK1HZDIVW {
-        _CLK1HZDIVW { w: self }
+    #[inline(always)]
+    pub fn clk1hzdiv(&mut self) -> CLK1HZDIV_W {
+        CLK1HZDIV_W { w: self }
     }
     #[doc = "Bit 30 - Halts the divider counter."]
-    #[inline]
-    pub fn clk1hzdivhalt(&mut self) -> _CLK1HZDIVHALTW {
-        _CLK1HZDIVHALTW { w: self }
+    #[inline(always)]
+    pub fn clk1hzdivhalt(&mut self) -> CLK1HZDIVHALT_W {
+        CLK1HZDIVHALT_W { w: self }
     }
     #[doc = "Bit 31 - RTC 1Hz Divider status flag."]
-    #[inline]
-    pub fn clk1hzdivupdatereq(&mut self) -> _CLK1HZDIVUPDATEREQW {
-        _CLK1HZDIVUPDATEREQW { w: self }
+    #[inline(always)]
+    pub fn clk1hzdivupdatereq(&mut self) -> CLK1HZDIVUPDATEREQ_W {
+        CLK1HZDIVUPDATEREQ_W { w: self }
     }
 }

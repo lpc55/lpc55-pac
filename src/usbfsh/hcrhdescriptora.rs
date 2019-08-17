@@ -1,441 +1,234 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::HCRHDESCRIPTORA {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register HCRHDESCRIPTORA"]
+pub type R = crate::R<u32, super::HCRHDESCRIPTORA>;
+#[doc = "Writer for register HCRHDESCRIPTORA"]
+pub type W = crate::W<u32, super::HCRHDESCRIPTORA>;
+#[doc = "Register HCRHDESCRIPTORA `reset()`'s with value 0xff00_0902"]
+impl crate::ResetValue for super::HCRHDESCRIPTORA {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xff00_0902
     }
 }
-#[doc = r" Value of the field"]
-pub struct NDPR {
-    bits: u8,
-}
-impl NDPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PSMR {
-    bits: bool,
-}
-impl PSMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NPSR {
-    bits: bool,
-}
-impl NPSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DTR {
-    bits: bool,
-}
-impl DTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct OCPMR {
-    bits: bool,
-}
-impl OCPMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NOCPR {
-    bits: bool,
-}
-impl NOCPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct POTPGTR {
-    bits: u8,
-}
-impl POTPGTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NDPW<'a> {
+#[doc = "Reader of field `NDP`"]
+pub type NDP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NDP`"]
+pub struct NDP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NDPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> NDP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PSMW<'a> {
+#[doc = "Reader of field `PSM`"]
+pub type PSM_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PSM`"]
+pub struct PSM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PSMW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> PSM_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _NPSW<'a> {
+#[doc = "Reader of field `NPS`"]
+pub type NPS_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `NPS`"]
+pub struct NPS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NPSW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> NPS_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DTW<'a> {
+#[doc = "Reader of field `DT`"]
+pub type DT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DT`"]
+pub struct DT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DTW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _OCPMW<'a> {
+#[doc = "Reader of field `OCPM`"]
+pub type OCPM_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `OCPM`"]
+pub struct OCPM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _OCPMW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> OCPM_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _NOCPW<'a> {
+#[doc = "Reader of field `NOCP`"]
+pub type NOCP_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `NOCP`"]
+pub struct NOCP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NOCPW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> NOCP_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _POTPGTW<'a> {
+#[doc = "Reader of field `POTPGT`"]
+pub type POTPGT_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `POTPGT`"]
+pub struct POTPGT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _POTPGTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> POTPGT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 24)) | (((value as u32) & 0xff) << 24);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - NumberDownstreamPorts These bits specify the number of downstream ports supported by the root hub."]
-    #[inline]
-    pub fn ndp(&self) -> NDPR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NDPR { bits }
+    #[inline(always)]
+    pub fn ndp(&self) -> NDP_R {
+        NDP_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bit 8 - PowerSwitchingMode This bit is used to specify how the power switching of the root hub ports is controlled."]
-    #[inline]
-    pub fn psm(&self) -> PSMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        PSMR { bits }
+    #[inline(always)]
+    pub fn psm(&self) -> PSM_R {
+        PSM_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - NoPowerSwitching These bits are used to specify whether power switching is supported or port are always powered."]
-    #[inline]
-    pub fn nps(&self) -> NPSR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        NPSR { bits }
+    #[inline(always)]
+    pub fn nps(&self) -> NPS_R {
+        NPS_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - DeviceType This bit specifies that the root hub is not a compound device."]
-    #[inline]
-    pub fn dt(&self) -> DTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DTR { bits }
+    #[inline(always)]
+    pub fn dt(&self) -> DT_R {
+        DT_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - OverCurrentProtectionMode This bit describes how the overcurrent status for the root hub ports are reported."]
-    #[inline]
-    pub fn ocpm(&self) -> OCPMR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        OCPMR { bits }
+    #[inline(always)]
+    pub fn ocpm(&self) -> OCPM_R {
+        OCPM_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - NoOverCurrentProtection This bit describes how the overcurrent status for the root hub ports are reported."]
-    #[inline]
-    pub fn nocp(&self) -> NOCPR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        NOCPR { bits }
+    #[inline(always)]
+    pub fn nocp(&self) -> NOCP_R {
+        NOCP_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bits 24:31 - PowerOnToPowerGoodTime This byte specifies the duration the HCD has to wait before accessing a powered-on port of the root hub."]
-    #[inline]
-    pub fn potpgt(&self) -> POTPGTR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        POTPGTR { bits }
+    #[inline(always)]
+    pub fn potpgt(&self) -> POTPGT_R {
+        POTPGT_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 4278192386 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - NumberDownstreamPorts These bits specify the number of downstream ports supported by the root hub."]
-    #[inline]
-    pub fn ndp(&mut self) -> _NDPW {
-        _NDPW { w: self }
+    #[inline(always)]
+    pub fn ndp(&mut self) -> NDP_W {
+        NDP_W { w: self }
     }
     #[doc = "Bit 8 - PowerSwitchingMode This bit is used to specify how the power switching of the root hub ports is controlled."]
-    #[inline]
-    pub fn psm(&mut self) -> _PSMW {
-        _PSMW { w: self }
+    #[inline(always)]
+    pub fn psm(&mut self) -> PSM_W {
+        PSM_W { w: self }
     }
     #[doc = "Bit 9 - NoPowerSwitching These bits are used to specify whether power switching is supported or port are always powered."]
-    #[inline]
-    pub fn nps(&mut self) -> _NPSW {
-        _NPSW { w: self }
+    #[inline(always)]
+    pub fn nps(&mut self) -> NPS_W {
+        NPS_W { w: self }
     }
     #[doc = "Bit 10 - DeviceType This bit specifies that the root hub is not a compound device."]
-    #[inline]
-    pub fn dt(&mut self) -> _DTW {
-        _DTW { w: self }
+    #[inline(always)]
+    pub fn dt(&mut self) -> DT_W {
+        DT_W { w: self }
     }
     #[doc = "Bit 11 - OverCurrentProtectionMode This bit describes how the overcurrent status for the root hub ports are reported."]
-    #[inline]
-    pub fn ocpm(&mut self) -> _OCPMW {
-        _OCPMW { w: self }
+    #[inline(always)]
+    pub fn ocpm(&mut self) -> OCPM_W {
+        OCPM_W { w: self }
     }
     #[doc = "Bit 12 - NoOverCurrentProtection This bit describes how the overcurrent status for the root hub ports are reported."]
-    #[inline]
-    pub fn nocp(&mut self) -> _NOCPW {
-        _NOCPW { w: self }
+    #[inline(always)]
+    pub fn nocp(&mut self) -> NOCP_W {
+        NOCP_W { w: self }
     }
     #[doc = "Bits 24:31 - PowerOnToPowerGoodTime This byte specifies the duration the HCD has to wait before accessing a powered-on port of the root hub."]
-    #[inline]
-    pub fn potpgt(&mut self) -> _POTPGTW {
-        _POTPGTW { w: self }
+    #[inline(always)]
+    pub fn potpgt(&mut self) -> POTPGT_W {
+        POTPGT_W { w: self }
     }
 }

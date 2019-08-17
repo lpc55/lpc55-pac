@@ -1,302 +1,192 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CPUCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CPUCTRL"]
+pub type R = crate::R<u32, super::CPUCTRL>;
+#[doc = "Writer for register CPUCTRL"]
+pub type W = crate::W<u32, super::CPUCTRL>;
+#[doc = "Register CPUCTRL `reset()`'s with value 0x2c"]
+impl crate::ResetValue for super::CPUCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x2c
     }
 }
 #[doc = "Possible values of the field `CPU1CLKEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPU1CLKENR {
+pub enum CPU1CLKEN_A {
     #[doc = "The CPU1 clock is not enabled."]
     DISABLE,
     #[doc = "The CPU1 clock is enabled."]
     ENABLE,
 }
-impl CPU1CLKENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CPU1CLKENR::DISABLE => false,
-            CPU1CLKENR::ENABLE => true,
+impl From<CPU1CLKEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: CPU1CLKEN_A) -> Self {
+        match variant {
+            CPU1CLKEN_A::DISABLE => false,
+            CPU1CLKEN_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CPU1CLKENR {
-        match value {
-            false => CPU1CLKENR::DISABLE,
-            true => CPU1CLKENR::ENABLE,
+}
+#[doc = "Reader of field `CPU1CLKEN`"]
+pub type CPU1CLKEN_R = crate::R<bool, CPU1CLKEN_A>;
+impl CPU1CLKEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CPU1CLKEN_A {
+        match self.bits {
+            false => CPU1CLKEN_A::DISABLE,
+            true => CPU1CLKEN_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CPU1CLKENR::DISABLE
+        *self == CPU1CLKEN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == CPU1CLKENR::ENABLE
+        *self == CPU1CLKEN_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `CPU1CLKEN`"]
+pub struct CPU1CLKEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CPU1CLKEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CPU1CLKEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The CPU1 clock is not enabled."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CPU1CLKEN_A::DISABLE)
+    }
+    #[doc = "The CPU1 clock is enabled."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CPU1CLKEN_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CPU1RSTEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPU1RSTENR {
+pub enum CPU1RSTEN_A {
     #[doc = "The CPU1 is not being reset."]
     RELEASED,
     #[doc = "The CPU1 is being reset."]
     ASSERTED,
 }
-impl CPU1RSTENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CPU1RSTENR::RELEASED => false,
-            CPU1RSTENR::ASSERTED => true,
+impl From<CPU1RSTEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: CPU1RSTEN_A) -> Self {
+        match variant {
+            CPU1RSTEN_A::RELEASED => false,
+            CPU1RSTEN_A::ASSERTED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CPU1RSTENR {
-        match value {
-            false => CPU1RSTENR::RELEASED,
-            true => CPU1RSTENR::ASSERTED,
+}
+#[doc = "Reader of field `CPU1RSTEN`"]
+pub type CPU1RSTEN_R = crate::R<bool, CPU1RSTEN_A>;
+impl CPU1RSTEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CPU1RSTEN_A {
+        match self.bits {
+            false => CPU1RSTEN_A::RELEASED,
+            true => CPU1RSTEN_A::ASSERTED,
         }
     }
     #[doc = "Checks if the value of the field is `RELEASED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_released(&self) -> bool {
-        *self == CPU1RSTENR::RELEASED
+        *self == CPU1RSTEN_A::RELEASED
     }
     #[doc = "Checks if the value of the field is `ASSERTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_asserted(&self) -> bool {
-        *self == CPU1RSTENR::ASSERTED
+        *self == CPU1RSTEN_A::ASSERTED
     }
 }
-#[doc = "Values that can be written to the field `CPU1CLKEN`"]
-pub enum CPU1CLKENW {
-    #[doc = "The CPU1 clock is not enabled."]
-    DISABLE,
-    #[doc = "The CPU1 clock is enabled."]
-    ENABLE,
-}
-impl CPU1CLKENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CPU1CLKENW::DISABLE => false,
-            CPU1CLKENW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CPU1CLKENW<'a> {
+#[doc = "Write proxy for field `CPU1RSTEN`"]
+pub struct CPU1RSTEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CPU1CLKENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CPU1CLKENW) -> &'a mut W {
+impl<'a> CPU1RSTEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CPU1RSTEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The CPU1 clock is not enabled."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CPU1CLKENW::DISABLE)
-    }
-    #[doc = "The CPU1 clock is enabled."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(CPU1CLKENW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CPU1RSTEN`"]
-pub enum CPU1RSTENW {
-    #[doc = "The CPU1 is not being reset."]
-    RELEASED,
-    #[doc = "The CPU1 is being reset."]
-    ASSERTED,
-}
-impl CPU1RSTENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CPU1RSTENW::RELEASED => false,
-            CPU1RSTENW::ASSERTED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CPU1RSTENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CPU1RSTENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CPU1RSTENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The CPU1 is not being reset."]
-    #[inline]
+    #[inline(always)]
     pub fn released(self) -> &'a mut W {
-        self.variant(CPU1RSTENW::RELEASED)
+        self.variant(CPU1RSTEN_A::RELEASED)
     }
     #[doc = "The CPU1 is being reset."]
-    #[inline]
+    #[inline(always)]
     pub fn asserted(self) -> &'a mut W {
-        self.variant(CPU1RSTENW::ASSERTED)
+        self.variant(CPU1RSTEN_A::ASSERTED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 3 - CPU1 clock enable."]
-    #[inline]
-    pub fn cpu1clken(&self) -> CPU1CLKENR {
-        CPU1CLKENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cpu1clken(&self) -> CPU1CLKEN_R {
+        CPU1CLKEN_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 5 - CPU1 reset."]
-    #[inline]
-    pub fn cpu1rsten(&self) -> CPU1RSTENR {
-        CPU1RSTENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cpu1rsten(&self) -> CPU1RSTEN_R {
+        CPU1RSTEN_R::new(((self.bits >> 5) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 44 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 3 - CPU1 clock enable."]
-    #[inline]
-    pub fn cpu1clken(&mut self) -> _CPU1CLKENW {
-        _CPU1CLKENW { w: self }
+    #[inline(always)]
+    pub fn cpu1clken(&mut self) -> CPU1CLKEN_W {
+        CPU1CLKEN_W { w: self }
     }
     #[doc = "Bit 5 - CPU1 reset."]
-    #[inline]
-    pub fn cpu1rsten(&mut self) -> _CPU1RSTENW {
-        _CPU1RSTENW { w: self }
+    #[inline(always)]
+    pub fn cpu1rsten(&mut self) -> CPU1RSTEN_W {
+        CPU1RSTEN_W { w: self }
     }
 }

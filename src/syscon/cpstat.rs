@@ -1,288 +1,191 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CPSTAT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CPSTAT"]
+pub type R = crate::R<u32, super::CPSTAT>;
+#[doc = "Writer for register CPSTAT"]
+pub type W = crate::W<u32, super::CPSTAT>;
+#[doc = "Register CPSTAT `reset()`'s with value 0"]
+impl crate::ResetValue for super::CPSTAT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `CPU0SLEEPING`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPU0SLEEPINGR {
+pub enum CPU0SLEEPING_A {
     #[doc = "the CPU is not sleeping."]
     AWAKE,
     #[doc = "the CPU is sleeping."]
     SLEEPING,
 }
-impl CPU0SLEEPINGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CPU0SLEEPINGR::AWAKE => false,
-            CPU0SLEEPINGR::SLEEPING => true,
+impl From<CPU0SLEEPING_A> for bool {
+    #[inline(always)]
+    fn from(variant: CPU0SLEEPING_A) -> Self {
+        match variant {
+            CPU0SLEEPING_A::AWAKE => false,
+            CPU0SLEEPING_A::SLEEPING => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CPU0SLEEPINGR {
-        match value {
-            false => CPU0SLEEPINGR::AWAKE,
-            true => CPU0SLEEPINGR::SLEEPING,
+}
+#[doc = "Reader of field `CPU0SLEEPING`"]
+pub type CPU0SLEEPING_R = crate::R<bool, CPU0SLEEPING_A>;
+impl CPU0SLEEPING_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CPU0SLEEPING_A {
+        match self.bits {
+            false => CPU0SLEEPING_A::AWAKE,
+            true => CPU0SLEEPING_A::SLEEPING,
         }
     }
     #[doc = "Checks if the value of the field is `AWAKE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_awake(&self) -> bool {
-        *self == CPU0SLEEPINGR::AWAKE
+        *self == CPU0SLEEPING_A::AWAKE
     }
     #[doc = "Checks if the value of the field is `SLEEPING`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sleeping(&self) -> bool {
-        *self == CPU0SLEEPINGR::SLEEPING
+        *self == CPU0SLEEPING_A::SLEEPING
     }
 }
 #[doc = "Possible values of the field `CPU1SLEEPING`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPU1SLEEPINGR {
+pub enum CPU1SLEEPING_A {
     #[doc = "the CPU is not sleeping."]
     AWAKE,
     #[doc = "the CPU is sleeping."]
     SLEEPING,
 }
-impl CPU1SLEEPINGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CPU1SLEEPINGR::AWAKE => false,
-            CPU1SLEEPINGR::SLEEPING => true,
+impl From<CPU1SLEEPING_A> for bool {
+    #[inline(always)]
+    fn from(variant: CPU1SLEEPING_A) -> Self {
+        match variant {
+            CPU1SLEEPING_A::AWAKE => false,
+            CPU1SLEEPING_A::SLEEPING => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CPU1SLEEPINGR {
-        match value {
-            false => CPU1SLEEPINGR::AWAKE,
-            true => CPU1SLEEPINGR::SLEEPING,
+}
+#[doc = "Reader of field `CPU1SLEEPING`"]
+pub type CPU1SLEEPING_R = crate::R<bool, CPU1SLEEPING_A>;
+impl CPU1SLEEPING_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CPU1SLEEPING_A {
+        match self.bits {
+            false => CPU1SLEEPING_A::AWAKE,
+            true => CPU1SLEEPING_A::SLEEPING,
         }
     }
     #[doc = "Checks if the value of the field is `AWAKE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_awake(&self) -> bool {
-        *self == CPU1SLEEPINGR::AWAKE
+        *self == CPU1SLEEPING_A::AWAKE
     }
     #[doc = "Checks if the value of the field is `SLEEPING`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sleeping(&self) -> bool {
-        *self == CPU1SLEEPINGR::SLEEPING
+        *self == CPU1SLEEPING_A::SLEEPING
     }
 }
 #[doc = "Possible values of the field `CPU0LOCKUP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPU0LOCKUPR {
+pub enum CPU0LOCKUP_A {
     #[doc = "the CPU is not in lockup."]
     AWAKE,
     #[doc = "the CPU is in lockup."]
     SLEEPING,
 }
-impl CPU0LOCKUPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CPU0LOCKUPR::AWAKE => false,
-            CPU0LOCKUPR::SLEEPING => true,
+impl From<CPU0LOCKUP_A> for bool {
+    #[inline(always)]
+    fn from(variant: CPU0LOCKUP_A) -> Self {
+        match variant {
+            CPU0LOCKUP_A::AWAKE => false,
+            CPU0LOCKUP_A::SLEEPING => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CPU0LOCKUPR {
-        match value {
-            false => CPU0LOCKUPR::AWAKE,
-            true => CPU0LOCKUPR::SLEEPING,
+}
+#[doc = "Reader of field `CPU0LOCKUP`"]
+pub type CPU0LOCKUP_R = crate::R<bool, CPU0LOCKUP_A>;
+impl CPU0LOCKUP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CPU0LOCKUP_A {
+        match self.bits {
+            false => CPU0LOCKUP_A::AWAKE,
+            true => CPU0LOCKUP_A::SLEEPING,
         }
     }
     #[doc = "Checks if the value of the field is `AWAKE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_awake(&self) -> bool {
-        *self == CPU0LOCKUPR::AWAKE
+        *self == CPU0LOCKUP_A::AWAKE
     }
     #[doc = "Checks if the value of the field is `SLEEPING`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sleeping(&self) -> bool {
-        *self == CPU0LOCKUPR::SLEEPING
+        *self == CPU0LOCKUP_A::SLEEPING
     }
 }
 #[doc = "Possible values of the field `CPU1LOCKUP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CPU1LOCKUPR {
+pub enum CPU1LOCKUP_A {
     #[doc = "the CPU is not in lockup."]
     AWAKE,
     #[doc = "the CPU is in lockup."]
     SLEEPING,
 }
-impl CPU1LOCKUPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CPU1LOCKUPR::AWAKE => false,
-            CPU1LOCKUPR::SLEEPING => true,
+impl From<CPU1LOCKUP_A> for bool {
+    #[inline(always)]
+    fn from(variant: CPU1LOCKUP_A) -> Self {
+        match variant {
+            CPU1LOCKUP_A::AWAKE => false,
+            CPU1LOCKUP_A::SLEEPING => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CPU1LOCKUPR {
-        match value {
-            false => CPU1LOCKUPR::AWAKE,
-            true => CPU1LOCKUPR::SLEEPING,
+}
+#[doc = "Reader of field `CPU1LOCKUP`"]
+pub type CPU1LOCKUP_R = crate::R<bool, CPU1LOCKUP_A>;
+impl CPU1LOCKUP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CPU1LOCKUP_A {
+        match self.bits {
+            false => CPU1LOCKUP_A::AWAKE,
+            true => CPU1LOCKUP_A::SLEEPING,
         }
     }
     #[doc = "Checks if the value of the field is `AWAKE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_awake(&self) -> bool {
-        *self == CPU1LOCKUPR::AWAKE
+        *self == CPU1LOCKUP_A::AWAKE
     }
     #[doc = "Checks if the value of the field is `SLEEPING`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sleeping(&self) -> bool {
-        *self == CPU1LOCKUPR::SLEEPING
+        *self == CPU1LOCKUP_A::SLEEPING
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - The CPU0 sleeping state."]
-    #[inline]
-    pub fn cpu0sleeping(&self) -> CPU0SLEEPINGR {
-        CPU0SLEEPINGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cpu0sleeping(&self) -> CPU0SLEEPING_R {
+        CPU0SLEEPING_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - The CPU1 sleeping state."]
-    #[inline]
-    pub fn cpu1sleeping(&self) -> CPU1SLEEPINGR {
-        CPU1SLEEPINGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cpu1sleeping(&self) -> CPU1SLEEPING_R {
+        CPU1SLEEPING_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - The CPU0 lockup state."]
-    #[inline]
-    pub fn cpu0lockup(&self) -> CPU0LOCKUPR {
-        CPU0LOCKUPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cpu0lockup(&self) -> CPU0LOCKUP_R {
+        CPU0LOCKUP_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - The CPU1 lockup state."]
-    #[inline]
-    pub fn cpu1lockup(&self) -> CPU1LOCKUPR {
-        CPU1LOCKUPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cpu1lockup(&self) -> CPU1LOCKUP_R {
+        CPU1LOCKUP_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
-impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
-}
+impl W {}

@@ -1,100 +1,100 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CFG"]
+pub type R = crate::R<u32, super::CFG>;
+#[doc = "Writer for register CFG"]
+pub type W = crate::W<u32, super::CFG>;
+#[doc = "Register CFG `reset()`'s with value 0x0080_0000"]
+impl crate::ResetValue for super::CFG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0080_0000
     }
 }
 #[doc = "Possible values of the field `TPRICTRL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TPRICTRLR {
+pub enum TPRICTRL_A {
     #[doc = "If a higher priority trigger is detected during command processing, the current conversion is aborted and the new command specified by the trigger is started."]
     TPRICTRL_0,
     #[doc = "If a higher priority trigger is received during command processing, the current command is stopped after after completing the current conversion. If averaging is enabled, the averaging loop will be completed. However, CMDHa\\[LOOP\\] will be ignored and the higher priority trigger will be serviced."]
     TPRICTRL_1,
     #[doc = "If a higher priority trigger is received during command processing, the current command will be completed (averaging, looping, compare) before servicing the higher priority trigger."]
     TPRICTRL_2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl TPRICTRLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            TPRICTRLR::TPRICTRL_0 => 0,
-            TPRICTRLR::TPRICTRL_1 => 1,
-            TPRICTRLR::TPRICTRL_2 => 2,
-            TPRICTRLR::_Reserved(bits) => bits,
+impl From<TPRICTRL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: TPRICTRL_A) -> Self {
+        match variant {
+            TPRICTRL_A::TPRICTRL_0 => 0,
+            TPRICTRL_A::TPRICTRL_1 => 1,
+            TPRICTRL_A::TPRICTRL_2 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> TPRICTRLR {
-        match value {
-            0 => TPRICTRLR::TPRICTRL_0,
-            1 => TPRICTRLR::TPRICTRL_1,
-            2 => TPRICTRLR::TPRICTRL_2,
-            i => TPRICTRLR::_Reserved(i),
+}
+#[doc = "Reader of field `TPRICTRL`"]
+pub type TPRICTRL_R = crate::R<u8, TPRICTRL_A>;
+impl TPRICTRL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, TPRICTRL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(TPRICTRL_A::TPRICTRL_0),
+            1 => Val(TPRICTRL_A::TPRICTRL_1),
+            2 => Val(TPRICTRL_A::TPRICTRL_2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `TPRICTRL_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tprictrl_0(&self) -> bool {
-        *self == TPRICTRLR::TPRICTRL_0
+        *self == TPRICTRL_A::TPRICTRL_0
     }
     #[doc = "Checks if the value of the field is `TPRICTRL_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tprictrl_1(&self) -> bool {
-        *self == TPRICTRLR::TPRICTRL_1
+        *self == TPRICTRL_A::TPRICTRL_1
     }
     #[doc = "Checks if the value of the field is `TPRICTRL_2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tprictrl_2(&self) -> bool {
-        *self == TPRICTRLR::TPRICTRL_2
+        *self == TPRICTRL_A::TPRICTRL_2
+    }
+}
+#[doc = "Write proxy for field `TPRICTRL`"]
+pub struct TPRICTRL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TPRICTRL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TPRICTRL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "If a higher priority trigger is detected during command processing, the current conversion is aborted and the new command specified by the trigger is started."]
+    #[inline(always)]
+    pub fn tprictrl_0(self) -> &'a mut W {
+        self.variant(TPRICTRL_A::TPRICTRL_0)
+    }
+    #[doc = "If a higher priority trigger is received during command processing, the current command is stopped after after completing the current conversion. If averaging is enabled, the averaging loop will be completed. However, CMDHa\\[LOOP\\] will be ignored and the higher priority trigger will be serviced."]
+    #[inline(always)]
+    pub fn tprictrl_1(self) -> &'a mut W {
+        self.variant(TPRICTRL_A::TPRICTRL_1)
+    }
+    #[doc = "If a higher priority trigger is received during command processing, the current command will be completed (averaging, looping, compare) before servicing the higher priority trigger."]
+    #[inline(always)]
+    pub fn tprictrl_2(self) -> &'a mut W {
+        self.variant(TPRICTRL_A::TPRICTRL_2)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PWRSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PWRSELR {
+pub enum PWRSEL_A {
     #[doc = "Lowest power setting."]
     PWRSEL_0,
     #[doc = "Higher power setting than 0b0."]
@@ -104,854 +104,580 @@ pub enum PWRSELR {
     #[doc = "Highest power setting."]
     PWRSEL_3,
 }
-impl PWRSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PWRSELR::PWRSEL_0 => 0,
-            PWRSELR::PWRSEL_1 => 1,
-            PWRSELR::PWRSEL_2 => 2,
-            PWRSELR::PWRSEL_3 => 3,
+impl From<PWRSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PWRSEL_A) -> Self {
+        match variant {
+            PWRSEL_A::PWRSEL_0 => 0,
+            PWRSEL_A::PWRSEL_1 => 1,
+            PWRSEL_A::PWRSEL_2 => 2,
+            PWRSEL_A::PWRSEL_3 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PWRSELR {
-        match value {
-            0 => PWRSELR::PWRSEL_0,
-            1 => PWRSELR::PWRSEL_1,
-            2 => PWRSELR::PWRSEL_2,
-            3 => PWRSELR::PWRSEL_3,
+}
+#[doc = "Reader of field `PWRSEL`"]
+pub type PWRSEL_R = crate::R<u8, PWRSEL_A>;
+impl PWRSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PWRSEL_A {
+        match self.bits {
+            0 => PWRSEL_A::PWRSEL_0,
+            1 => PWRSEL_A::PWRSEL_1,
+            2 => PWRSEL_A::PWRSEL_2,
+            3 => PWRSEL_A::PWRSEL_3,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `PWRSEL_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pwrsel_0(&self) -> bool {
-        *self == PWRSELR::PWRSEL_0
+        *self == PWRSEL_A::PWRSEL_0
     }
     #[doc = "Checks if the value of the field is `PWRSEL_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pwrsel_1(&self) -> bool {
-        *self == PWRSELR::PWRSEL_1
+        *self == PWRSEL_A::PWRSEL_1
     }
     #[doc = "Checks if the value of the field is `PWRSEL_2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pwrsel_2(&self) -> bool {
-        *self == PWRSELR::PWRSEL_2
+        *self == PWRSEL_A::PWRSEL_2
     }
     #[doc = "Checks if the value of the field is `PWRSEL_3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pwrsel_3(&self) -> bool {
-        *self == PWRSELR::PWRSEL_3
+        *self == PWRSEL_A::PWRSEL_3
+    }
+}
+#[doc = "Write proxy for field `PWRSEL`"]
+pub struct PWRSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PWRSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PWRSEL_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
+        }
+    }
+    #[doc = "Lowest power setting."]
+    #[inline(always)]
+    pub fn pwrsel_0(self) -> &'a mut W {
+        self.variant(PWRSEL_A::PWRSEL_0)
+    }
+    #[doc = "Higher power setting than 0b0."]
+    #[inline(always)]
+    pub fn pwrsel_1(self) -> &'a mut W {
+        self.variant(PWRSEL_A::PWRSEL_1)
+    }
+    #[doc = "Higher power setting than 0b1."]
+    #[inline(always)]
+    pub fn pwrsel_2(self) -> &'a mut W {
+        self.variant(PWRSEL_A::PWRSEL_2)
+    }
+    #[doc = "Highest power setting."]
+    #[inline(always)]
+    pub fn pwrsel_3(self) -> &'a mut W {
+        self.variant(PWRSEL_A::PWRSEL_3)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `REFSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum REFSELR {
+pub enum REFSEL_A {
     #[doc = "(Default) Option 1 setting."]
     REFSEL_0,
     #[doc = "Option 2 setting."]
     REFSEL_1,
     #[doc = "Option 3 setting."]
     REFSEL_2,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl REFSELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            REFSELR::REFSEL_0 => 0,
-            REFSELR::REFSEL_1 => 1,
-            REFSELR::REFSEL_2 => 2,
-            REFSELR::_Reserved(bits) => bits,
+impl From<REFSEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: REFSEL_A) -> Self {
+        match variant {
+            REFSEL_A::REFSEL_0 => 0,
+            REFSEL_A::REFSEL_1 => 1,
+            REFSEL_A::REFSEL_2 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> REFSELR {
-        match value {
-            0 => REFSELR::REFSEL_0,
-            1 => REFSELR::REFSEL_1,
-            2 => REFSELR::REFSEL_2,
-            i => REFSELR::_Reserved(i),
+}
+#[doc = "Reader of field `REFSEL`"]
+pub type REFSEL_R = crate::R<u8, REFSEL_A>;
+impl REFSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, REFSEL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(REFSEL_A::REFSEL_0),
+            1 => Val(REFSEL_A::REFSEL_1),
+            2 => Val(REFSEL_A::REFSEL_2),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `REFSEL_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_refsel_0(&self) -> bool {
-        *self == REFSELR::REFSEL_0
+        *self == REFSEL_A::REFSEL_0
     }
     #[doc = "Checks if the value of the field is `REFSEL_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_refsel_1(&self) -> bool {
-        *self == REFSELR::REFSEL_1
+        *self == REFSEL_A::REFSEL_1
     }
     #[doc = "Checks if the value of the field is `REFSEL_2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_refsel_2(&self) -> bool {
-        *self == REFSELR::REFSEL_2
+        *self == REFSEL_A::REFSEL_2
+    }
+}
+#[doc = "Write proxy for field `REFSEL`"]
+pub struct REFSEL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> REFSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: REFSEL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "(Default) Option 1 setting."]
+    #[inline(always)]
+    pub fn refsel_0(self) -> &'a mut W {
+        self.variant(REFSEL_A::REFSEL_0)
+    }
+    #[doc = "Option 2 setting."]
+    #[inline(always)]
+    pub fn refsel_1(self) -> &'a mut W {
+        self.variant(REFSEL_A::REFSEL_1)
+    }
+    #[doc = "Option 3 setting."]
+    #[inline(always)]
+    pub fn refsel_2(self) -> &'a mut W {
+        self.variant(REFSEL_A::REFSEL_2)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w
     }
 }
 #[doc = "Possible values of the field `TRES`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TRESR {
+pub enum TRES_A {
     #[doc = "Trigger sequences interrupted by a high priority trigger exception will not be automatically resumed or restarted."]
     TRES_0,
     #[doc = "Trigger sequences interrupted by a high priority trigger exception will be automatically resumed or restarted."]
     TRES_1,
 }
-impl TRESR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TRESR::TRES_0 => false,
-            TRESR::TRES_1 => true,
+impl From<TRES_A> for bool {
+    #[inline(always)]
+    fn from(variant: TRES_A) -> Self {
+        match variant {
+            TRES_A::TRES_0 => false,
+            TRES_A::TRES_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TRESR {
-        match value {
-            false => TRESR::TRES_0,
-            true => TRESR::TRES_1,
+}
+#[doc = "Reader of field `TRES`"]
+pub type TRES_R = crate::R<bool, TRES_A>;
+impl TRES_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TRES_A {
+        match self.bits {
+            false => TRES_A::TRES_0,
+            true => TRES_A::TRES_1,
         }
     }
     #[doc = "Checks if the value of the field is `TRES_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tres_0(&self) -> bool {
-        *self == TRESR::TRES_0
+        *self == TRES_A::TRES_0
     }
     #[doc = "Checks if the value of the field is `TRES_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tres_1(&self) -> bool {
-        *self == TRESR::TRES_1
+        *self == TRES_A::TRES_1
+    }
+}
+#[doc = "Write proxy for field `TRES`"]
+pub struct TRES_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TRES_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TRES_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Trigger sequences interrupted by a high priority trigger exception will not be automatically resumed or restarted."]
+    #[inline(always)]
+    pub fn tres_0(self) -> &'a mut W {
+        self.variant(TRES_A::TRES_0)
+    }
+    #[doc = "Trigger sequences interrupted by a high priority trigger exception will be automatically resumed or restarted."]
+    #[inline(always)]
+    pub fn tres_1(self) -> &'a mut W {
+        self.variant(TRES_A::TRES_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `TCMDRES`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TCMDRESR {
+pub enum TCMDRES_A {
     #[doc = "Trigger sequences interrupted by a high priority trigger exception will be automatically restarted."]
     TCMDRES_0,
     #[doc = "Trigger sequences interrupted by a high priority trigger exception will be resumed from the command executing before the exception."]
     TCMDRES_1,
 }
-impl TCMDRESR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TCMDRESR::TCMDRES_0 => false,
-            TCMDRESR::TCMDRES_1 => true,
+impl From<TCMDRES_A> for bool {
+    #[inline(always)]
+    fn from(variant: TCMDRES_A) -> Self {
+        match variant {
+            TCMDRES_A::TCMDRES_0 => false,
+            TCMDRES_A::TCMDRES_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TCMDRESR {
-        match value {
-            false => TCMDRESR::TCMDRES_0,
-            true => TCMDRESR::TCMDRES_1,
+}
+#[doc = "Reader of field `TCMDRES`"]
+pub type TCMDRES_R = crate::R<bool, TCMDRES_A>;
+impl TCMDRES_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TCMDRES_A {
+        match self.bits {
+            false => TCMDRES_A::TCMDRES_0,
+            true => TCMDRES_A::TCMDRES_1,
         }
     }
     #[doc = "Checks if the value of the field is `TCMDRES_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tcmdres_0(&self) -> bool {
-        *self == TCMDRESR::TCMDRES_0
+        *self == TCMDRES_A::TCMDRES_0
     }
     #[doc = "Checks if the value of the field is `TCMDRES_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_tcmdres_1(&self) -> bool {
-        *self == TCMDRESR::TCMDRES_1
+        *self == TCMDRES_A::TCMDRES_1
+    }
+}
+#[doc = "Write proxy for field `TCMDRES`"]
+pub struct TCMDRES_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TCMDRES_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TCMDRES_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Trigger sequences interrupted by a high priority trigger exception will be automatically restarted."]
+    #[inline(always)]
+    pub fn tcmdres_0(self) -> &'a mut W {
+        self.variant(TCMDRES_A::TCMDRES_0)
+    }
+    #[doc = "Trigger sequences interrupted by a high priority trigger exception will be resumed from the command executing before the exception."]
+    #[inline(always)]
+    pub fn tcmdres_1(self) -> &'a mut W {
+        self.variant(TCMDRES_A::TCMDRES_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w
     }
 }
 #[doc = "Possible values of the field `HPT_EXDI`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HPT_EXDIR {
+pub enum HPT_EXDI_A {
     #[doc = "High priority trigger exceptions are enabled."]
     HPT_EXDI_0,
     #[doc = "High priority trigger exceptions are disabled."]
     HPT_EXDI_1,
 }
-impl HPT_EXDIR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HPT_EXDIR::HPT_EXDI_0 => false,
-            HPT_EXDIR::HPT_EXDI_1 => true,
+impl From<HPT_EXDI_A> for bool {
+    #[inline(always)]
+    fn from(variant: HPT_EXDI_A) -> Self {
+        match variant {
+            HPT_EXDI_A::HPT_EXDI_0 => false,
+            HPT_EXDI_A::HPT_EXDI_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HPT_EXDIR {
-        match value {
-            false => HPT_EXDIR::HPT_EXDI_0,
-            true => HPT_EXDIR::HPT_EXDI_1,
+}
+#[doc = "Reader of field `HPT_EXDI`"]
+pub type HPT_EXDI_R = crate::R<bool, HPT_EXDI_A>;
+impl HPT_EXDI_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HPT_EXDI_A {
+        match self.bits {
+            false => HPT_EXDI_A::HPT_EXDI_0,
+            true => HPT_EXDI_A::HPT_EXDI_1,
         }
     }
     #[doc = "Checks if the value of the field is `HPT_EXDI_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hpt_exdi_0(&self) -> bool {
-        *self == HPT_EXDIR::HPT_EXDI_0
+        *self == HPT_EXDI_A::HPT_EXDI_0
     }
     #[doc = "Checks if the value of the field is `HPT_EXDI_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hpt_exdi_1(&self) -> bool {
-        *self == HPT_EXDIR::HPT_EXDI_1
+        *self == HPT_EXDI_A::HPT_EXDI_1
     }
 }
-#[doc = r" Value of the field"]
-pub struct PUDLYR {
-    bits: u8,
+#[doc = "Write proxy for field `HPT_EXDI`"]
+pub struct HPT_EXDI_W<'a> {
+    w: &'a mut W,
 }
-impl PUDLYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> HPT_EXDI_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HPT_EXDI_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "High priority trigger exceptions are enabled."]
+    #[inline(always)]
+    pub fn hpt_exdi_0(self) -> &'a mut W {
+        self.variant(HPT_EXDI_A::HPT_EXDI_0)
+    }
+    #[doc = "High priority trigger exceptions are disabled."]
+    #[inline(always)]
+    pub fn hpt_exdi_1(self) -> &'a mut W {
+        self.variant(HPT_EXDI_A::HPT_EXDI_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w
+    }
+}
+#[doc = "Reader of field `PUDLY`"]
+pub type PUDLY_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PUDLY`"]
+pub struct PUDLY_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PUDLY_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PWREN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PWRENR {
+pub enum PWREN_A {
     #[doc = "ADC analog circuits are only enabled while conversions are active. Performance is affected due to analog startup delays."]
     PWREN_0,
     #[doc = "ADC analog circuits are pre-enabled and ready to execute conversions without startup delays (at the cost of higher DC current consumption). A single power up delay (CFG\\[PUDLY\\]) is executed immediately once PWREN is set, and any detected trigger does not begin ADC operation until the power up delay time has passed. After this initial delay expires the analog will remain pre-enabled, and no additional delays will be executed."]
     PWREN_1,
 }
-impl PWRENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PWRENR::PWREN_0 => false,
-            PWRENR::PWREN_1 => true,
+impl From<PWREN_A> for bool {
+    #[inline(always)]
+    fn from(variant: PWREN_A) -> Self {
+        match variant {
+            PWREN_A::PWREN_0 => false,
+            PWREN_A::PWREN_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PWRENR {
-        match value {
-            false => PWRENR::PWREN_0,
-            true => PWRENR::PWREN_1,
+}
+#[doc = "Reader of field `PWREN`"]
+pub type PWREN_R = crate::R<bool, PWREN_A>;
+impl PWREN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PWREN_A {
+        match self.bits {
+            false => PWREN_A::PWREN_0,
+            true => PWREN_A::PWREN_1,
         }
     }
     #[doc = "Checks if the value of the field is `PWREN_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pwren_0(&self) -> bool {
-        *self == PWRENR::PWREN_0
+        *self == PWREN_A::PWREN_0
     }
     #[doc = "Checks if the value of the field is `PWREN_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pwren_1(&self) -> bool {
-        *self == PWRENR::PWREN_1
+        *self == PWREN_A::PWREN_1
     }
 }
-#[doc = "Values that can be written to the field `TPRICTRL`"]
-pub enum TPRICTRLW {
-    #[doc = "If a higher priority trigger is detected during command processing, the current conversion is aborted and the new command specified by the trigger is started."]
-    TPRICTRL_0,
-    #[doc = "If a higher priority trigger is received during command processing, the current command is stopped after after completing the current conversion. If averaging is enabled, the averaging loop will be completed. However, CMDHa\\[LOOP\\] will be ignored and the higher priority trigger will be serviced."]
-    TPRICTRL_1,
-    #[doc = "If a higher priority trigger is received during command processing, the current command will be completed (averaging, looping, compare) before servicing the higher priority trigger."]
-    TPRICTRL_2,
-}
-impl TPRICTRLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            TPRICTRLW::TPRICTRL_0 => 0,
-            TPRICTRLW::TPRICTRL_1 => 1,
-            TPRICTRLW::TPRICTRL_2 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TPRICTRLW<'a> {
+#[doc = "Write proxy for field `PWREN`"]
+pub struct PWREN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TPRICTRLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TPRICTRLW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "If a higher priority trigger is detected during command processing, the current conversion is aborted and the new command specified by the trigger is started."]
-    #[inline]
-    pub fn tprictrl_0(self) -> &'a mut W {
-        self.variant(TPRICTRLW::TPRICTRL_0)
-    }
-    #[doc = "If a higher priority trigger is received during command processing, the current command is stopped after after completing the current conversion. If averaging is enabled, the averaging loop will be completed. However, CMDHa\\[LOOP\\] will be ignored and the higher priority trigger will be serviced."]
-    #[inline]
-    pub fn tprictrl_1(self) -> &'a mut W {
-        self.variant(TPRICTRLW::TPRICTRL_1)
-    }
-    #[doc = "If a higher priority trigger is received during command processing, the current command will be completed (averaging, looping, compare) before servicing the higher priority trigger."]
-    #[inline]
-    pub fn tprictrl_2(self) -> &'a mut W {
-        self.variant(TPRICTRLW::TPRICTRL_2)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PWRSEL`"]
-pub enum PWRSELW {
-    #[doc = "Lowest power setting."]
-    PWRSEL_0,
-    #[doc = "Higher power setting than 0b0."]
-    PWRSEL_1,
-    #[doc = "Higher power setting than 0b1."]
-    PWRSEL_2,
-    #[doc = "Highest power setting."]
-    PWRSEL_3,
-}
-impl PWRSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PWRSELW::PWRSEL_0 => 0,
-            PWRSELW::PWRSEL_1 => 1,
-            PWRSELW::PWRSEL_2 => 2,
-            PWRSELW::PWRSEL_3 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PWRSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PWRSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PWRSELW) -> &'a mut W {
+impl<'a> PWREN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PWREN_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Lowest power setting."]
-    #[inline]
-    pub fn pwrsel_0(self) -> &'a mut W {
-        self.variant(PWRSELW::PWRSEL_0)
-    }
-    #[doc = "Higher power setting than 0b0."]
-    #[inline]
-    pub fn pwrsel_1(self) -> &'a mut W {
-        self.variant(PWRSELW::PWRSEL_1)
-    }
-    #[doc = "Higher power setting than 0b1."]
-    #[inline]
-    pub fn pwrsel_2(self) -> &'a mut W {
-        self.variant(PWRSELW::PWRSEL_2)
-    }
-    #[doc = "Highest power setting."]
-    #[inline]
-    pub fn pwrsel_3(self) -> &'a mut W {
-        self.variant(PWRSELW::PWRSEL_3)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `REFSEL`"]
-pub enum REFSELW {
-    #[doc = "(Default) Option 1 setting."]
-    REFSEL_0,
-    #[doc = "Option 2 setting."]
-    REFSEL_1,
-    #[doc = "Option 3 setting."]
-    REFSEL_2,
-}
-impl REFSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            REFSELW::REFSEL_0 => 0,
-            REFSELW::REFSEL_1 => 1,
-            REFSELW::REFSEL_2 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _REFSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _REFSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: REFSELW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "(Default) Option 1 setting."]
-    #[inline]
-    pub fn refsel_0(self) -> &'a mut W {
-        self.variant(REFSELW::REFSEL_0)
-    }
-    #[doc = "Option 2 setting."]
-    #[inline]
-    pub fn refsel_1(self) -> &'a mut W {
-        self.variant(REFSELW::REFSEL_1)
-    }
-    #[doc = "Option 3 setting."]
-    #[inline]
-    pub fn refsel_2(self) -> &'a mut W {
-        self.variant(REFSELW::REFSEL_2)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TRES`"]
-pub enum TRESW {
-    #[doc = "Trigger sequences interrupted by a high priority trigger exception will not be automatically resumed or restarted."]
-    TRES_0,
-    #[doc = "Trigger sequences interrupted by a high priority trigger exception will be automatically resumed or restarted."]
-    TRES_1,
-}
-impl TRESW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TRESW::TRES_0 => false,
-            TRESW::TRES_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TRESW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TRESW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TRESW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Trigger sequences interrupted by a high priority trigger exception will not be automatically resumed or restarted."]
-    #[inline]
-    pub fn tres_0(self) -> &'a mut W {
-        self.variant(TRESW::TRES_0)
-    }
-    #[doc = "Trigger sequences interrupted by a high priority trigger exception will be automatically resumed or restarted."]
-    #[inline]
-    pub fn tres_1(self) -> &'a mut W {
-        self.variant(TRESW::TRES_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TCMDRES`"]
-pub enum TCMDRESW {
-    #[doc = "Trigger sequences interrupted by a high priority trigger exception will be automatically restarted."]
-    TCMDRES_0,
-    #[doc = "Trigger sequences interrupted by a high priority trigger exception will be resumed from the command executing before the exception."]
-    TCMDRES_1,
-}
-impl TCMDRESW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TCMDRESW::TCMDRES_0 => false,
-            TCMDRESW::TCMDRES_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TCMDRESW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TCMDRESW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TCMDRESW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Trigger sequences interrupted by a high priority trigger exception will be automatically restarted."]
-    #[inline]
-    pub fn tcmdres_0(self) -> &'a mut W {
-        self.variant(TCMDRESW::TCMDRES_0)
-    }
-    #[doc = "Trigger sequences interrupted by a high priority trigger exception will be resumed from the command executing before the exception."]
-    #[inline]
-    pub fn tcmdres_1(self) -> &'a mut W {
-        self.variant(TCMDRESW::TCMDRES_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `HPT_EXDI`"]
-pub enum HPT_EXDIW {
-    #[doc = "High priority trigger exceptions are enabled."]
-    HPT_EXDI_0,
-    #[doc = "High priority trigger exceptions are disabled."]
-    HPT_EXDI_1,
-}
-impl HPT_EXDIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HPT_EXDIW::HPT_EXDI_0 => false,
-            HPT_EXDIW::HPT_EXDI_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HPT_EXDIW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HPT_EXDIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HPT_EXDIW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "High priority trigger exceptions are enabled."]
-    #[inline]
-    pub fn hpt_exdi_0(self) -> &'a mut W {
-        self.variant(HPT_EXDIW::HPT_EXDI_0)
-    }
-    #[doc = "High priority trigger exceptions are disabled."]
-    #[inline]
-    pub fn hpt_exdi_1(self) -> &'a mut W {
-        self.variant(HPT_EXDIW::HPT_EXDI_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PUDLYW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PUDLYW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PWREN`"]
-pub enum PWRENW {
-    #[doc = "ADC analog circuits are only enabled while conversions are active. Performance is affected due to analog startup delays."]
-    PWREN_0,
-    #[doc = "ADC analog circuits are pre-enabled and ready to execute conversions without startup delays (at the cost of higher DC current consumption). A single power up delay (CFG\\[PUDLY\\]) is executed immediately once PWREN is set, and any detected trigger does not begin ADC operation until the power up delay time has passed. After this initial delay expires the analog will remain pre-enabled, and no additional delays will be executed."]
-    PWREN_1,
-}
-impl PWRENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PWRENW::PWREN_0 => false,
-            PWRENW::PWREN_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PWRENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PWRENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PWRENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "ADC analog circuits are only enabled while conversions are active. Performance is affected due to analog startup delays."]
-    #[inline]
+    #[inline(always)]
     pub fn pwren_0(self) -> &'a mut W {
-        self.variant(PWRENW::PWREN_0)
+        self.variant(PWREN_A::PWREN_0)
     }
     #[doc = "ADC analog circuits are pre-enabled and ready to execute conversions without startup delays (at the cost of higher DC current consumption). A single power up delay (CFG\\[PUDLY\\]) is executed immediately once PWREN is set, and any detected trigger does not begin ADC operation until the power up delay time has passed. After this initial delay expires the analog will remain pre-enabled, and no additional delays will be executed."]
-    #[inline]
+    #[inline(always)]
     pub fn pwren_1(self) -> &'a mut W {
-        self.variant(PWRENW::PWREN_1)
+        self.variant(PWREN_A::PWREN_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - ADC trigger priority control"]
-    #[inline]
-    pub fn tprictrl(&self) -> TPRICTRLR {
-        TPRICTRLR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn tprictrl(&self) -> TPRICTRL_R {
+        TPRICTRL_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - Power Configuration Select"]
-    #[inline]
-    pub fn pwrsel(&self) -> PWRSELR {
-        PWRSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pwrsel(&self) -> PWRSEL_R {
+        PWRSEL_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 6:7 - Voltage Reference Selection"]
-    #[inline]
-    pub fn refsel(&self) -> REFSELR {
-        REFSELR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn refsel(&self) -> REFSEL_R {
+        REFSEL_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bit 8 - Trigger Resume Enable"]
-    #[inline]
-    pub fn tres(&self) -> TRESR {
-        TRESR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tres(&self) -> TRES_R {
+        TRES_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Trigger Command Resume"]
-    #[inline]
-    pub fn tcmdres(&self) -> TCMDRESR {
-        TCMDRESR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn tcmdres(&self) -> TCMDRES_R {
+        TCMDRES_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - High Priority Trigger Exception Disable"]
-    #[inline]
-    pub fn hpt_exdi(&self) -> HPT_EXDIR {
-        HPT_EXDIR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hpt_exdi(&self) -> HPT_EXDI_R {
+        HPT_EXDI_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bits 16:23 - Power Up Delay"]
-    #[inline]
-    pub fn pudly(&self) -> PUDLYR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PUDLYR { bits }
+    #[inline(always)]
+    pub fn pudly(&self) -> PUDLY_R {
+        PUDLY_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bit 28 - ADC Analog Pre-Enable"]
-    #[inline]
-    pub fn pwren(&self) -> PWRENR {
-        PWRENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pwren(&self) -> PWREN_R {
+        PWREN_R::new(((self.bits >> 28) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 8388608 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - ADC trigger priority control"]
-    #[inline]
-    pub fn tprictrl(&mut self) -> _TPRICTRLW {
-        _TPRICTRLW { w: self }
+    #[inline(always)]
+    pub fn tprictrl(&mut self) -> TPRICTRL_W {
+        TPRICTRL_W { w: self }
     }
     #[doc = "Bits 4:5 - Power Configuration Select"]
-    #[inline]
-    pub fn pwrsel(&mut self) -> _PWRSELW {
-        _PWRSELW { w: self }
+    #[inline(always)]
+    pub fn pwrsel(&mut self) -> PWRSEL_W {
+        PWRSEL_W { w: self }
     }
     #[doc = "Bits 6:7 - Voltage Reference Selection"]
-    #[inline]
-    pub fn refsel(&mut self) -> _REFSELW {
-        _REFSELW { w: self }
+    #[inline(always)]
+    pub fn refsel(&mut self) -> REFSEL_W {
+        REFSEL_W { w: self }
     }
     #[doc = "Bit 8 - Trigger Resume Enable"]
-    #[inline]
-    pub fn tres(&mut self) -> _TRESW {
-        _TRESW { w: self }
+    #[inline(always)]
+    pub fn tres(&mut self) -> TRES_W {
+        TRES_W { w: self }
     }
     #[doc = "Bit 9 - Trigger Command Resume"]
-    #[inline]
-    pub fn tcmdres(&mut self) -> _TCMDRESW {
-        _TCMDRESW { w: self }
+    #[inline(always)]
+    pub fn tcmdres(&mut self) -> TCMDRES_W {
+        TCMDRES_W { w: self }
     }
     #[doc = "Bit 10 - High Priority Trigger Exception Disable"]
-    #[inline]
-    pub fn hpt_exdi(&mut self) -> _HPT_EXDIW {
-        _HPT_EXDIW { w: self }
+    #[inline(always)]
+    pub fn hpt_exdi(&mut self) -> HPT_EXDI_W {
+        HPT_EXDI_W { w: self }
     }
     #[doc = "Bits 16:23 - Power Up Delay"]
-    #[inline]
-    pub fn pudly(&mut self) -> _PUDLYW {
-        _PUDLYW { w: self }
+    #[inline(always)]
+    pub fn pudly(&mut self) -> PUDLY_W {
+        PUDLY_W { w: self }
     }
     #[doc = "Bit 28 - ADC Analog Pre-Enable"]
-    #[inline]
-    pub fn pwren(&mut self) -> _PWRENW {
-        _PWRENW { w: self }
+    #[inline(always)]
+    pub fn pwren(&mut self) -> PWREN_W {
+        PWREN_W { w: self }
     }
 }

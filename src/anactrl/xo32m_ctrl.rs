@@ -1,1060 +1,708 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::XO32M_CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register XO32M_CTRL"]
+pub type R = crate::R<u32, super::XO32M_CTRL>;
+#[doc = "Writer for register XO32M_CTRL"]
+pub type W = crate::W<u32, super::XO32M_CTRL>;
+#[doc = "Register XO32M_CTRL `reset()`'s with value 0x0021_428a"]
+impl crate::ResetValue for super::XO32M_CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0021_428a
     }
 }
-#[doc = r" Value of the field"]
-pub struct GMR {
-    bits: u8,
+#[doc = "Reader of field `GM`"]
+pub type GM_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `GM`"]
+pub struct GM_W<'a> {
+    w: &'a mut W,
 }
-impl GMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> GM_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 1)) | (((value as u32) & 0x07) << 1);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct SLAVER {
-    bits: bool,
+#[doc = "Reader of field `SLAVE`"]
+pub type SLAVE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SLAVE`"]
+pub struct SLAVE_W<'a> {
+    w: &'a mut W,
 }
-impl SLAVER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> SLAVE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AMPR {
-    bits: u8,
-}
-impl AMPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct OSC_CAP_INR {
-    bits: u8,
+#[doc = "Reader of field `AMP`"]
+pub type AMP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `AMP`"]
+pub struct AMP_W<'a> {
+    w: &'a mut W,
 }
-impl OSC_CAP_INR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> AMP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 5)) | (((value as u32) & 0x07) << 5);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct OSC_CAP_OUTR {
-    bits: u8,
+#[doc = "Reader of field `OSC_CAP_IN`"]
+pub type OSC_CAP_IN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `OSC_CAP_IN`"]
+pub struct OSC_CAP_IN_W<'a> {
+    w: &'a mut W,
 }
-impl OSC_CAP_OUTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> OSC_CAP_IN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x7f << 8)) | (((value as u32) & 0x7f) << 8);
+        self.w
+    }
+}
+#[doc = "Reader of field `OSC_CAP_OUT`"]
+pub type OSC_CAP_OUT_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `OSC_CAP_OUT`"]
+pub struct OSC_CAP_OUT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> OSC_CAP_OUT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x7f << 15)) | (((value as u32) & 0x7f) << 15);
+        self.w
     }
 }
 #[doc = "Possible values of the field `ACBUF_PASS_ENABLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ACBUF_PASS_ENABLER {
+pub enum ACBUF_PASS_ENABLE_A {
     #[doc = "XO AC buffer bypass is disabled."]
     DISABLE,
     #[doc = "XO AC buffer bypass is enabled."]
     ENABLE,
 }
-impl ACBUF_PASS_ENABLER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ACBUF_PASS_ENABLER::DISABLE => false,
-            ACBUF_PASS_ENABLER::ENABLE => true,
+impl From<ACBUF_PASS_ENABLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: ACBUF_PASS_ENABLE_A) -> Self {
+        match variant {
+            ACBUF_PASS_ENABLE_A::DISABLE => false,
+            ACBUF_PASS_ENABLE_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ACBUF_PASS_ENABLER {
-        match value {
-            false => ACBUF_PASS_ENABLER::DISABLE,
-            true => ACBUF_PASS_ENABLER::ENABLE,
+}
+#[doc = "Reader of field `ACBUF_PASS_ENABLE`"]
+pub type ACBUF_PASS_ENABLE_R = crate::R<bool, ACBUF_PASS_ENABLE_A>;
+impl ACBUF_PASS_ENABLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ACBUF_PASS_ENABLE_A {
+        match self.bits {
+            false => ACBUF_PASS_ENABLE_A::DISABLE,
+            true => ACBUF_PASS_ENABLE_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == ACBUF_PASS_ENABLER::DISABLE
+        *self == ACBUF_PASS_ENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == ACBUF_PASS_ENABLER::ENABLE
+        *self == ACBUF_PASS_ENABLE_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `ACBUF_PASS_ENABLE`"]
+pub struct ACBUF_PASS_ENABLE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ACBUF_PASS_ENABLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ACBUF_PASS_ENABLE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "XO AC buffer bypass is disabled."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(ACBUF_PASS_ENABLE_A::DISABLE)
+    }
+    #[doc = "XO AC buffer bypass is enabled."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(ACBUF_PASS_ENABLE_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w
     }
 }
 #[doc = "Possible values of the field `ENABLE_PLL_USB_OUT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENABLE_PLL_USB_OUTR {
+pub enum ENABLE_PLL_USB_OUT_A {
     #[doc = "XO 32 MHz output to USB HS PLL is disabled."]
     DISABLE,
     #[doc = "XO 32 MHz output to USB HS PLL is enabled."]
     ENABLE,
 }
-impl ENABLE_PLL_USB_OUTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENABLE_PLL_USB_OUTR::DISABLE => false,
-            ENABLE_PLL_USB_OUTR::ENABLE => true,
+impl From<ENABLE_PLL_USB_OUT_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENABLE_PLL_USB_OUT_A) -> Self {
+        match variant {
+            ENABLE_PLL_USB_OUT_A::DISABLE => false,
+            ENABLE_PLL_USB_OUT_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENABLE_PLL_USB_OUTR {
-        match value {
-            false => ENABLE_PLL_USB_OUTR::DISABLE,
-            true => ENABLE_PLL_USB_OUTR::ENABLE,
+}
+#[doc = "Reader of field `ENABLE_PLL_USB_OUT`"]
+pub type ENABLE_PLL_USB_OUT_R = crate::R<bool, ENABLE_PLL_USB_OUT_A>;
+impl ENABLE_PLL_USB_OUT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENABLE_PLL_USB_OUT_A {
+        match self.bits {
+            false => ENABLE_PLL_USB_OUT_A::DISABLE,
+            true => ENABLE_PLL_USB_OUT_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == ENABLE_PLL_USB_OUTR::DISABLE
+        *self == ENABLE_PLL_USB_OUT_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == ENABLE_PLL_USB_OUTR::ENABLE
+        *self == ENABLE_PLL_USB_OUT_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `ENABLE_PLL_USB_OUT`"]
+pub struct ENABLE_PLL_USB_OUT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ENABLE_PLL_USB_OUT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENABLE_PLL_USB_OUT_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "XO 32 MHz output to USB HS PLL is disabled."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(ENABLE_PLL_USB_OUT_A::DISABLE)
+    }
+    #[doc = "XO 32 MHz output to USB HS PLL is enabled."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(ENABLE_PLL_USB_OUT_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w
     }
 }
 #[doc = "Possible values of the field `ENABLE_SYSTEM_CLK_OUT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENABLE_SYSTEM_CLK_OUTR {
+pub enum ENABLE_SYSTEM_CLK_OUT_A {
     #[doc = "XO 32 MHz output to CPU system is disabled."]
     DISABLE,
     #[doc = "XO 32 MHz output to CPU system is enabled."]
     ENABLE,
 }
-impl ENABLE_SYSTEM_CLK_OUTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENABLE_SYSTEM_CLK_OUTR::DISABLE => false,
-            ENABLE_SYSTEM_CLK_OUTR::ENABLE => true,
+impl From<ENABLE_SYSTEM_CLK_OUT_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENABLE_SYSTEM_CLK_OUT_A) -> Self {
+        match variant {
+            ENABLE_SYSTEM_CLK_OUT_A::DISABLE => false,
+            ENABLE_SYSTEM_CLK_OUT_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENABLE_SYSTEM_CLK_OUTR {
-        match value {
-            false => ENABLE_SYSTEM_CLK_OUTR::DISABLE,
-            true => ENABLE_SYSTEM_CLK_OUTR::ENABLE,
+}
+#[doc = "Reader of field `ENABLE_SYSTEM_CLK_OUT`"]
+pub type ENABLE_SYSTEM_CLK_OUT_R = crate::R<bool, ENABLE_SYSTEM_CLK_OUT_A>;
+impl ENABLE_SYSTEM_CLK_OUT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENABLE_SYSTEM_CLK_OUT_A {
+        match self.bits {
+            false => ENABLE_SYSTEM_CLK_OUT_A::DISABLE,
+            true => ENABLE_SYSTEM_CLK_OUT_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == ENABLE_SYSTEM_CLK_OUTR::DISABLE
+        *self == ENABLE_SYSTEM_CLK_OUT_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == ENABLE_SYSTEM_CLK_OUTR::ENABLE
+        *self == ENABLE_SYSTEM_CLK_OUT_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `ENABLE_SYSTEM_CLK_OUT`"]
+pub struct ENABLE_SYSTEM_CLK_OUT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ENABLE_SYSTEM_CLK_OUT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENABLE_SYSTEM_CLK_OUT_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "XO 32 MHz output to CPU system is disabled."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(ENABLE_SYSTEM_CLK_OUT_A::DISABLE)
+    }
+    #[doc = "XO 32 MHz output to CPU system is enabled."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(ENABLE_SYSTEM_CLK_OUT_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CAPTESTSTARTSRCSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CAPTESTSTARTSRCSELR {
+pub enum CAPTESTSTARTSRCSEL_A {
     #[doc = "Sourced from CAPTESTSTART."]
     CAPTEST,
     #[doc = "Sourced from calibration."]
     CALIB,
 }
-impl CAPTESTSTARTSRCSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CAPTESTSTARTSRCSELR::CAPTEST => false,
-            CAPTESTSTARTSRCSELR::CALIB => true,
+impl From<CAPTESTSTARTSRCSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: CAPTESTSTARTSRCSEL_A) -> Self {
+        match variant {
+            CAPTESTSTARTSRCSEL_A::CAPTEST => false,
+            CAPTESTSTARTSRCSEL_A::CALIB => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CAPTESTSTARTSRCSELR {
-        match value {
-            false => CAPTESTSTARTSRCSELR::CAPTEST,
-            true => CAPTESTSTARTSRCSELR::CALIB,
+}
+#[doc = "Reader of field `CAPTESTSTARTSRCSEL`"]
+pub type CAPTESTSTARTSRCSEL_R = crate::R<bool, CAPTESTSTARTSRCSEL_A>;
+impl CAPTESTSTARTSRCSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CAPTESTSTARTSRCSEL_A {
+        match self.bits {
+            false => CAPTESTSTARTSRCSEL_A::CAPTEST,
+            true => CAPTESTSTARTSRCSEL_A::CALIB,
         }
     }
     #[doc = "Checks if the value of the field is `CAPTEST`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_captest(&self) -> bool {
-        *self == CAPTESTSTARTSRCSELR::CAPTEST
+        *self == CAPTESTSTARTSRCSEL_A::CAPTEST
     }
     #[doc = "Checks if the value of the field is `CALIB`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_calib(&self) -> bool {
-        *self == CAPTESTSTARTSRCSELR::CALIB
+        *self == CAPTESTSTARTSRCSEL_A::CALIB
     }
 }
-#[doc = r" Value of the field"]
-pub struct CAPTESTSTARTR {
-    bits: bool,
+#[doc = "Write proxy for field `CAPTESTSTARTSRCSEL`"]
+pub struct CAPTESTSTARTSRCSEL_W<'a> {
+    w: &'a mut W,
 }
-impl CAPTESTSTARTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> CAPTESTSTARTSRCSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CAPTESTSTARTSRCSEL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = "Sourced from CAPTESTSTART."]
+    #[inline(always)]
+    pub fn captest(self) -> &'a mut W {
+        self.variant(CAPTESTSTARTSRCSEL_A::CAPTEST)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = "Sourced from calibration."]
+    #[inline(always)]
+    pub fn calib(self) -> &'a mut W {
+        self.variant(CAPTESTSTARTSRCSEL_A::CALIB)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w
+    }
+}
+#[doc = "Reader of field `CAPTESTSTART`"]
+pub type CAPTESTSTART_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CAPTESTSTART`"]
+pub struct CAPTESTSTART_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CAPTESTSTART_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CAPTESTENABLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CAPTESTENABLER {
+pub enum CAPTESTENABLE_A {
     #[doc = "Captest is disabled."]
     DISABLE,
     #[doc = "Captest is enabled."]
     ENABLE,
 }
-impl CAPTESTENABLER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CAPTESTENABLER::DISABLE => false,
-            CAPTESTENABLER::ENABLE => true,
+impl From<CAPTESTENABLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: CAPTESTENABLE_A) -> Self {
+        match variant {
+            CAPTESTENABLE_A::DISABLE => false,
+            CAPTESTENABLE_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CAPTESTENABLER {
-        match value {
-            false => CAPTESTENABLER::DISABLE,
-            true => CAPTESTENABLER::ENABLE,
+}
+#[doc = "Reader of field `CAPTESTENABLE`"]
+pub type CAPTESTENABLE_R = crate::R<bool, CAPTESTENABLE_A>;
+impl CAPTESTENABLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CAPTESTENABLE_A {
+        match self.bits {
+            false => CAPTESTENABLE_A::DISABLE,
+            true => CAPTESTENABLE_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CAPTESTENABLER::DISABLE
+        *self == CAPTESTENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == CAPTESTENABLER::ENABLE
+        *self == CAPTESTENABLE_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `CAPTESTENABLE`"]
+pub struct CAPTESTENABLE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CAPTESTENABLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CAPTESTENABLE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Captest is disabled."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CAPTESTENABLE_A::DISABLE)
+    }
+    #[doc = "Captest is enabled."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CAPTESTENABLE_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CAPTESTOSCINSEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CAPTESTOSCINSELR {
+pub enum CAPTESTOSCINSEL_A {
     #[doc = "osc_out (oscillator output) pin."]
     OSCOUT,
     #[doc = "osc_in (oscillator) pin."]
     OSCIN,
 }
-impl CAPTESTOSCINSELR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CAPTESTOSCINSELR::OSCOUT => false,
-            CAPTESTOSCINSELR::OSCIN => true,
+impl From<CAPTESTOSCINSEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: CAPTESTOSCINSEL_A) -> Self {
+        match variant {
+            CAPTESTOSCINSEL_A::OSCOUT => false,
+            CAPTESTOSCINSEL_A::OSCIN => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CAPTESTOSCINSELR {
-        match value {
-            false => CAPTESTOSCINSELR::OSCOUT,
-            true => CAPTESTOSCINSELR::OSCIN,
+}
+#[doc = "Reader of field `CAPTESTOSCINSEL`"]
+pub type CAPTESTOSCINSEL_R = crate::R<bool, CAPTESTOSCINSEL_A>;
+impl CAPTESTOSCINSEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CAPTESTOSCINSEL_A {
+        match self.bits {
+            false => CAPTESTOSCINSEL_A::OSCOUT,
+            true => CAPTESTOSCINSEL_A::OSCIN,
         }
     }
     #[doc = "Checks if the value of the field is `OSCOUT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_oscout(&self) -> bool {
-        *self == CAPTESTOSCINSELR::OSCOUT
+        *self == CAPTESTOSCINSEL_A::OSCOUT
     }
     #[doc = "Checks if the value of the field is `OSCIN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_oscin(&self) -> bool {
-        *self == CAPTESTOSCINSELR::OSCIN
+        *self == CAPTESTOSCINSEL_A::OSCIN
     }
 }
-#[doc = r" Proxy"]
-pub struct _GMW<'a> {
+#[doc = "Write proxy for field `CAPTESTOSCINSEL`"]
+pub struct CAPTESTOSCINSEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _GMW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SLAVEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SLAVEW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AMPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _AMPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _OSC_CAP_INW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _OSC_CAP_INW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 127;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _OSC_CAP_OUTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _OSC_CAP_OUTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 127;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ACBUF_PASS_ENABLE`"]
-pub enum ACBUF_PASS_ENABLEW {
-    #[doc = "XO AC buffer bypass is disabled."]
-    DISABLE,
-    #[doc = "XO AC buffer bypass is enabled."]
-    ENABLE,
-}
-impl ACBUF_PASS_ENABLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ACBUF_PASS_ENABLEW::DISABLE => false,
-            ACBUF_PASS_ENABLEW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ACBUF_PASS_ENABLEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ACBUF_PASS_ENABLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ACBUF_PASS_ENABLEW) -> &'a mut W {
+impl<'a> CAPTESTOSCINSEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CAPTESTOSCINSEL_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "XO AC buffer bypass is disabled."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(ACBUF_PASS_ENABLEW::DISABLE)
-    }
-    #[doc = "XO AC buffer bypass is enabled."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(ACBUF_PASS_ENABLEW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ENABLE_PLL_USB_OUT`"]
-pub enum ENABLE_PLL_USB_OUTW {
-    #[doc = "XO 32 MHz output to USB HS PLL is disabled."]
-    DISABLE,
-    #[doc = "XO 32 MHz output to USB HS PLL is enabled."]
-    ENABLE,
-}
-impl ENABLE_PLL_USB_OUTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENABLE_PLL_USB_OUTW::DISABLE => false,
-            ENABLE_PLL_USB_OUTW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENABLE_PLL_USB_OUTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ENABLE_PLL_USB_OUTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENABLE_PLL_USB_OUTW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "XO 32 MHz output to USB HS PLL is disabled."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(ENABLE_PLL_USB_OUTW::DISABLE)
-    }
-    #[doc = "XO 32 MHz output to USB HS PLL is enabled."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(ENABLE_PLL_USB_OUTW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ENABLE_SYSTEM_CLK_OUT`"]
-pub enum ENABLE_SYSTEM_CLK_OUTW {
-    #[doc = "XO 32 MHz output to CPU system is disabled."]
-    DISABLE,
-    #[doc = "XO 32 MHz output to CPU system is enabled."]
-    ENABLE,
-}
-impl ENABLE_SYSTEM_CLK_OUTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENABLE_SYSTEM_CLK_OUTW::DISABLE => false,
-            ENABLE_SYSTEM_CLK_OUTW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENABLE_SYSTEM_CLK_OUTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ENABLE_SYSTEM_CLK_OUTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENABLE_SYSTEM_CLK_OUTW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "XO 32 MHz output to CPU system is disabled."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(ENABLE_SYSTEM_CLK_OUTW::DISABLE)
-    }
-    #[doc = "XO 32 MHz output to CPU system is enabled."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(ENABLE_SYSTEM_CLK_OUTW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CAPTESTSTARTSRCSEL`"]
-pub enum CAPTESTSTARTSRCSELW {
-    #[doc = "Sourced from CAPTESTSTART."]
-    CAPTEST,
-    #[doc = "Sourced from calibration."]
-    CALIB,
-}
-impl CAPTESTSTARTSRCSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CAPTESTSTARTSRCSELW::CAPTEST => false,
-            CAPTESTSTARTSRCSELW::CALIB => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CAPTESTSTARTSRCSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CAPTESTSTARTSRCSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CAPTESTSTARTSRCSELW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Sourced from CAPTESTSTART."]
-    #[inline]
-    pub fn captest(self) -> &'a mut W {
-        self.variant(CAPTESTSTARTSRCSELW::CAPTEST)
-    }
-    #[doc = "Sourced from calibration."]
-    #[inline]
-    pub fn calib(self) -> &'a mut W {
-        self.variant(CAPTESTSTARTSRCSELW::CALIB)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 25;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CAPTESTSTARTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CAPTESTSTARTW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 26;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CAPTESTENABLE`"]
-pub enum CAPTESTENABLEW {
-    #[doc = "Captest is disabled."]
-    DISABLE,
-    #[doc = "Captest is enabled."]
-    ENABLE,
-}
-impl CAPTESTENABLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CAPTESTENABLEW::DISABLE => false,
-            CAPTESTENABLEW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CAPTESTENABLEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CAPTESTENABLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CAPTESTENABLEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Captest is disabled."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CAPTESTENABLEW::DISABLE)
-    }
-    #[doc = "Captest is enabled."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(CAPTESTENABLEW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 27;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CAPTESTOSCINSEL`"]
-pub enum CAPTESTOSCINSELW {
-    #[doc = "osc_out (oscillator output) pin."]
-    OSCOUT,
-    #[doc = "osc_in (oscillator) pin."]
-    OSCIN,
-}
-impl CAPTESTOSCINSELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CAPTESTOSCINSELW::OSCOUT => false,
-            CAPTESTOSCINSELW::OSCIN => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CAPTESTOSCINSELW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CAPTESTOSCINSELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CAPTESTOSCINSELW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "osc_out (oscillator output) pin."]
-    #[inline]
+    #[inline(always)]
     pub fn oscout(self) -> &'a mut W {
-        self.variant(CAPTESTOSCINSELW::OSCOUT)
+        self.variant(CAPTESTOSCINSEL_A::OSCOUT)
     }
     #[doc = "osc_in (oscillator) pin."]
-    #[inline]
+    #[inline(always)]
     pub fn oscin(self) -> &'a mut W {
-        self.variant(CAPTESTOSCINSELW::OSCIN)
+        self.variant(CAPTESTOSCINSEL_A::OSCIN)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 1:3 - Gm value for Xo."]
-    #[inline]
-    pub fn gm(&self) -> GMR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        GMR { bits }
+    #[inline(always)]
+    pub fn gm(&self) -> GM_R {
+        GM_R::new(((self.bits >> 1) & 0x07) as u8)
     }
     #[doc = "Bit 4 - Xo in slave mode."]
-    #[inline]
-    pub fn slave(&self) -> SLAVER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SLAVER { bits }
+    #[inline(always)]
+    pub fn slave(&self) -> SLAVE_R {
+        SLAVE_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bits 5:7 - Amplitude selection , Min amp : 001, Max amp : 110."]
-    #[inline]
-    pub fn amp(&self) -> AMPR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        AMPR { bits }
+    #[inline(always)]
+    pub fn amp(&self) -> AMP_R {
+        AMP_R::new(((self.bits >> 5) & 0x07) as u8)
     }
     #[doc = "Bits 8:14 - Tune capa banks of Crystal 32-MHz input pin"]
-    #[inline]
-    pub fn osc_cap_in(&self) -> OSC_CAP_INR {
-        let bits = {
-            const MASK: u8 = 127;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        OSC_CAP_INR { bits }
+    #[inline(always)]
+    pub fn osc_cap_in(&self) -> OSC_CAP_IN_R {
+        OSC_CAP_IN_R::new(((self.bits >> 8) & 0x7f) as u8)
     }
     #[doc = "Bits 15:21 - Tune capa banks of Crystal 32-MHz output pin"]
-    #[inline]
-    pub fn osc_cap_out(&self) -> OSC_CAP_OUTR {
-        let bits = {
-            const MASK: u8 = 127;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        OSC_CAP_OUTR { bits }
+    #[inline(always)]
+    pub fn osc_cap_out(&self) -> OSC_CAP_OUT_R {
+        OSC_CAP_OUT_R::new(((self.bits >> 15) & 0x7f) as u8)
     }
     #[doc = "Bit 22 - Bypass enable of XO AC buffer enable in pll and top level."]
-    #[inline]
-    pub fn acbuf_pass_enable(&self) -> ACBUF_PASS_ENABLER {
-        ACBUF_PASS_ENABLER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn acbuf_pass_enable(&self) -> ACBUF_PASS_ENABLE_R {
+        ACBUF_PASS_ENABLE_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 23 - Enable XO 32 MHz output to USB HS PLL."]
-    #[inline]
-    pub fn enable_pll_usb_out(&self) -> ENABLE_PLL_USB_OUTR {
-        ENABLE_PLL_USB_OUTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn enable_pll_usb_out(&self) -> ENABLE_PLL_USB_OUT_R {
+        ENABLE_PLL_USB_OUT_R::new(((self.bits >> 23) & 0x01) != 0)
     }
     #[doc = "Bit 24 - Enable XO 32 MHz output to CPU system."]
-    #[inline]
-    pub fn enable_system_clk_out(&self) -> ENABLE_SYSTEM_CLK_OUTR {
-        ENABLE_SYSTEM_CLK_OUTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn enable_system_clk_out(&self) -> ENABLE_SYSTEM_CLK_OUT_R {
+        ENABLE_SYSTEM_CLK_OUT_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Source selection for 'xo32k_captest_start' signal."]
-    #[inline]
-    pub fn capteststartsrcsel(&self) -> CAPTESTSTARTSRCSELR {
-        CAPTESTSTARTSRCSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn capteststartsrcsel(&self) -> CAPTESTSTARTSRCSEL_R {
+        CAPTESTSTARTSRCSEL_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 26 - 1: Start CapTest."]
-    #[inline]
-    pub fn capteststart(&self) -> CAPTESTSTARTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 26;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CAPTESTSTARTR { bits }
+    #[inline(always)]
+    pub fn capteststart(&self) -> CAPTESTSTART_R {
+        CAPTESTSTART_R::new(((self.bits >> 26) & 0x01) != 0)
     }
     #[doc = "Bit 27 - Enable signal for captest."]
-    #[inline]
-    pub fn captestenable(&self) -> CAPTESTENABLER {
-        CAPTESTENABLER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 27;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn captestenable(&self) -> CAPTESTENABLE_R {
+        CAPTESTENABLE_R::new(((self.bits >> 27) & 0x01) != 0)
     }
     #[doc = "Bit 28 - Select the input for test."]
-    #[inline]
-    pub fn captestoscinsel(&self) -> CAPTESTOSCINSELR {
-        CAPTESTOSCINSELR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn captestoscinsel(&self) -> CAPTESTOSCINSEL_R {
+        CAPTESTOSCINSEL_R::new(((self.bits >> 28) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 2179722 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 1:3 - Gm value for Xo."]
-    #[inline]
-    pub fn gm(&mut self) -> _GMW {
-        _GMW { w: self }
+    #[inline(always)]
+    pub fn gm(&mut self) -> GM_W {
+        GM_W { w: self }
     }
     #[doc = "Bit 4 - Xo in slave mode."]
-    #[inline]
-    pub fn slave(&mut self) -> _SLAVEW {
-        _SLAVEW { w: self }
+    #[inline(always)]
+    pub fn slave(&mut self) -> SLAVE_W {
+        SLAVE_W { w: self }
     }
     #[doc = "Bits 5:7 - Amplitude selection , Min amp : 001, Max amp : 110."]
-    #[inline]
-    pub fn amp(&mut self) -> _AMPW {
-        _AMPW { w: self }
+    #[inline(always)]
+    pub fn amp(&mut self) -> AMP_W {
+        AMP_W { w: self }
     }
     #[doc = "Bits 8:14 - Tune capa banks of Crystal 32-MHz input pin"]
-    #[inline]
-    pub fn osc_cap_in(&mut self) -> _OSC_CAP_INW {
-        _OSC_CAP_INW { w: self }
+    #[inline(always)]
+    pub fn osc_cap_in(&mut self) -> OSC_CAP_IN_W {
+        OSC_CAP_IN_W { w: self }
     }
     #[doc = "Bits 15:21 - Tune capa banks of Crystal 32-MHz output pin"]
-    #[inline]
-    pub fn osc_cap_out(&mut self) -> _OSC_CAP_OUTW {
-        _OSC_CAP_OUTW { w: self }
+    #[inline(always)]
+    pub fn osc_cap_out(&mut self) -> OSC_CAP_OUT_W {
+        OSC_CAP_OUT_W { w: self }
     }
     #[doc = "Bit 22 - Bypass enable of XO AC buffer enable in pll and top level."]
-    #[inline]
-    pub fn acbuf_pass_enable(&mut self) -> _ACBUF_PASS_ENABLEW {
-        _ACBUF_PASS_ENABLEW { w: self }
+    #[inline(always)]
+    pub fn acbuf_pass_enable(&mut self) -> ACBUF_PASS_ENABLE_W {
+        ACBUF_PASS_ENABLE_W { w: self }
     }
     #[doc = "Bit 23 - Enable XO 32 MHz output to USB HS PLL."]
-    #[inline]
-    pub fn enable_pll_usb_out(&mut self) -> _ENABLE_PLL_USB_OUTW {
-        _ENABLE_PLL_USB_OUTW { w: self }
+    #[inline(always)]
+    pub fn enable_pll_usb_out(&mut self) -> ENABLE_PLL_USB_OUT_W {
+        ENABLE_PLL_USB_OUT_W { w: self }
     }
     #[doc = "Bit 24 - Enable XO 32 MHz output to CPU system."]
-    #[inline]
-    pub fn enable_system_clk_out(&mut self) -> _ENABLE_SYSTEM_CLK_OUTW {
-        _ENABLE_SYSTEM_CLK_OUTW { w: self }
+    #[inline(always)]
+    pub fn enable_system_clk_out(&mut self) -> ENABLE_SYSTEM_CLK_OUT_W {
+        ENABLE_SYSTEM_CLK_OUT_W { w: self }
     }
     #[doc = "Bit 25 - Source selection for 'xo32k_captest_start' signal."]
-    #[inline]
-    pub fn capteststartsrcsel(&mut self) -> _CAPTESTSTARTSRCSELW {
-        _CAPTESTSTARTSRCSELW { w: self }
+    #[inline(always)]
+    pub fn capteststartsrcsel(&mut self) -> CAPTESTSTARTSRCSEL_W {
+        CAPTESTSTARTSRCSEL_W { w: self }
     }
     #[doc = "Bit 26 - 1: Start CapTest."]
-    #[inline]
-    pub fn capteststart(&mut self) -> _CAPTESTSTARTW {
-        _CAPTESTSTARTW { w: self }
+    #[inline(always)]
+    pub fn capteststart(&mut self) -> CAPTESTSTART_W {
+        CAPTESTSTART_W { w: self }
     }
     #[doc = "Bit 27 - Enable signal for captest."]
-    #[inline]
-    pub fn captestenable(&mut self) -> _CAPTESTENABLEW {
-        _CAPTESTENABLEW { w: self }
+    #[inline(always)]
+    pub fn captestenable(&mut self) -> CAPTESTENABLE_W {
+        CAPTESTENABLE_W { w: self }
     }
     #[doc = "Bit 28 - Select the input for test."]
-    #[inline]
-    pub fn captestoscinsel(&mut self) -> _CAPTESTOSCINSELW {
-        _CAPTESTOSCINSELW { w: self }
+    #[inline(always)]
+    pub fn captestoscinsel(&mut self) -> CAPTESTOSCINSEL_W {
+        CAPTESTOSCINSEL_W { w: self }
     }
 }

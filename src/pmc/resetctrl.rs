@@ -1,540 +1,368 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::RESETCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register RESETCTRL"]
+pub type R = crate::R<u32, super::RESETCTRL>;
+#[doc = "Writer for register RESETCTRL"]
+pub type W = crate::W<u32, super::RESETCTRL>;
+#[doc = "Register RESETCTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::RESETCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `DPDWAKEUPRESETENABLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DPDWAKEUPRESETENABLER {
+pub enum DPDWAKEUPRESETENABLE_A {
     #[doc = "Reset event from DEEP POWER DOWN mode is disable."]
     DISABLE,
     #[doc = "Reset event from DEEP POWER DOWN mode is enable."]
     ENABLE,
 }
-impl DPDWAKEUPRESETENABLER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DPDWAKEUPRESETENABLER::DISABLE => false,
-            DPDWAKEUPRESETENABLER::ENABLE => true,
+impl From<DPDWAKEUPRESETENABLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: DPDWAKEUPRESETENABLE_A) -> Self {
+        match variant {
+            DPDWAKEUPRESETENABLE_A::DISABLE => false,
+            DPDWAKEUPRESETENABLE_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DPDWAKEUPRESETENABLER {
-        match value {
-            false => DPDWAKEUPRESETENABLER::DISABLE,
-            true => DPDWAKEUPRESETENABLER::ENABLE,
+}
+#[doc = "Reader of field `DPDWAKEUPRESETENABLE`"]
+pub type DPDWAKEUPRESETENABLE_R = crate::R<bool, DPDWAKEUPRESETENABLE_A>;
+impl DPDWAKEUPRESETENABLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DPDWAKEUPRESETENABLE_A {
+        match self.bits {
+            false => DPDWAKEUPRESETENABLE_A::DISABLE,
+            true => DPDWAKEUPRESETENABLE_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == DPDWAKEUPRESETENABLER::DISABLE
+        *self == DPDWAKEUPRESETENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == DPDWAKEUPRESETENABLER::ENABLE
+        *self == DPDWAKEUPRESETENABLE_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `DPDWAKEUPRESETENABLE`"]
+pub struct DPDWAKEUPRESETENABLE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DPDWAKEUPRESETENABLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DPDWAKEUPRESETENABLE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Reset event from DEEP POWER DOWN mode is disable."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(DPDWAKEUPRESETENABLE_A::DISABLE)
+    }
+    #[doc = "Reset event from DEEP POWER DOWN mode is enable."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(DPDWAKEUPRESETENABLE_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
 #[doc = "Possible values of the field `BODVBATRESETENABLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BODVBATRESETENABLER {
+pub enum BODVBATRESETENABLE_A {
     #[doc = "BOD VBAT reset is disable."]
     DISABLE,
     #[doc = "BOD VBAT reset is enable."]
     ENABLE,
 }
-impl BODVBATRESETENABLER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BODVBATRESETENABLER::DISABLE => false,
-            BODVBATRESETENABLER::ENABLE => true,
+impl From<BODVBATRESETENABLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: BODVBATRESETENABLE_A) -> Self {
+        match variant {
+            BODVBATRESETENABLE_A::DISABLE => false,
+            BODVBATRESETENABLE_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BODVBATRESETENABLER {
-        match value {
-            false => BODVBATRESETENABLER::DISABLE,
-            true => BODVBATRESETENABLER::ENABLE,
+}
+#[doc = "Reader of field `BODVBATRESETENABLE`"]
+pub type BODVBATRESETENABLE_R = crate::R<bool, BODVBATRESETENABLE_A>;
+impl BODVBATRESETENABLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BODVBATRESETENABLE_A {
+        match self.bits {
+            false => BODVBATRESETENABLE_A::DISABLE,
+            true => BODVBATRESETENABLE_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == BODVBATRESETENABLER::DISABLE
+        *self == BODVBATRESETENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == BODVBATRESETENABLER::ENABLE
+        *self == BODVBATRESETENABLE_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `BODVBATRESETENABLE`"]
+pub struct BODVBATRESETENABLE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> BODVBATRESETENABLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BODVBATRESETENABLE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "BOD VBAT reset is disable."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(BODVBATRESETENABLE_A::DISABLE)
+    }
+    #[doc = "BOD VBAT reset is enable."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(BODVBATRESETENABLE_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
 #[doc = "Possible values of the field `BODCORERESETENABLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BODCORERESETENABLER {
+pub enum BODCORERESETENABLE_A {
     #[doc = "BOD CORE reset is disable."]
     DISABLE,
     #[doc = "BOD CORE reset is enable."]
     ENABLE,
 }
-impl BODCORERESETENABLER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BODCORERESETENABLER::DISABLE => false,
-            BODCORERESETENABLER::ENABLE => true,
+impl From<BODCORERESETENABLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: BODCORERESETENABLE_A) -> Self {
+        match variant {
+            BODCORERESETENABLE_A::DISABLE => false,
+            BODCORERESETENABLE_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BODCORERESETENABLER {
-        match value {
-            false => BODCORERESETENABLER::DISABLE,
-            true => BODCORERESETENABLER::ENABLE,
+}
+#[doc = "Reader of field `BODCORERESETENABLE`"]
+pub type BODCORERESETENABLE_R = crate::R<bool, BODCORERESETENABLE_A>;
+impl BODCORERESETENABLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BODCORERESETENABLE_A {
+        match self.bits {
+            false => BODCORERESETENABLE_A::DISABLE,
+            true => BODCORERESETENABLE_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == BODCORERESETENABLER::DISABLE
+        *self == BODCORERESETENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == BODCORERESETENABLER::ENABLE
+        *self == BODCORERESETENABLE_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `BODCORERESETENABLE`"]
+pub struct BODCORERESETENABLE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> BODCORERESETENABLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BODCORERESETENABLE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "BOD CORE reset is disable."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(BODCORERESETENABLE_A::DISABLE)
+    }
+    #[doc = "BOD CORE reset is enable."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(BODCORERESETENABLE_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SWRRESETENABLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SWRRESETENABLER {
+pub enum SWRRESETENABLE_A {
     #[doc = "Software reset is disable."]
     DISABLE,
     #[doc = "Software reset is enable."]
     ENABLE,
 }
-impl SWRRESETENABLER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SWRRESETENABLER::DISABLE => false,
-            SWRRESETENABLER::ENABLE => true,
+impl From<SWRRESETENABLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: SWRRESETENABLE_A) -> Self {
+        match variant {
+            SWRRESETENABLE_A::DISABLE => false,
+            SWRRESETENABLE_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SWRRESETENABLER {
-        match value {
-            false => SWRRESETENABLER::DISABLE,
-            true => SWRRESETENABLER::ENABLE,
+}
+#[doc = "Reader of field `SWRRESETENABLE`"]
+pub type SWRRESETENABLE_R = crate::R<bool, SWRRESETENABLE_A>;
+impl SWRRESETENABLE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SWRRESETENABLE_A {
+        match self.bits {
+            false => SWRRESETENABLE_A::DISABLE,
+            true => SWRRESETENABLE_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == SWRRESETENABLER::DISABLE
+        *self == SWRRESETENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == SWRRESETENABLER::ENABLE
+        *self == SWRRESETENABLE_A::ENABLE
     }
 }
-#[doc = "Values that can be written to the field `DPDWAKEUPRESETENABLE`"]
-pub enum DPDWAKEUPRESETENABLEW {
-    #[doc = "Reset event from DEEP POWER DOWN mode is disable."]
-    DISABLE,
-    #[doc = "Reset event from DEEP POWER DOWN mode is enable."]
-    ENABLE,
-}
-impl DPDWAKEUPRESETENABLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DPDWAKEUPRESETENABLEW::DISABLE => false,
-            DPDWAKEUPRESETENABLEW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DPDWAKEUPRESETENABLEW<'a> {
+#[doc = "Write proxy for field `SWRRESETENABLE`"]
+pub struct SWRRESETENABLE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DPDWAKEUPRESETENABLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DPDWAKEUPRESETENABLEW) -> &'a mut W {
+impl<'a> SWRRESETENABLE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SWRRESETENABLE_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Reset event from DEEP POWER DOWN mode is disable."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(DPDWAKEUPRESETENABLEW::DISABLE)
-    }
-    #[doc = "Reset event from DEEP POWER DOWN mode is enable."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(DPDWAKEUPRESETENABLEW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `BODVBATRESETENABLE`"]
-pub enum BODVBATRESETENABLEW {
-    #[doc = "BOD VBAT reset is disable."]
-    DISABLE,
-    #[doc = "BOD VBAT reset is enable."]
-    ENABLE,
-}
-impl BODVBATRESETENABLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BODVBATRESETENABLEW::DISABLE => false,
-            BODVBATRESETENABLEW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BODVBATRESETENABLEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BODVBATRESETENABLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BODVBATRESETENABLEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "BOD VBAT reset is disable."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(BODVBATRESETENABLEW::DISABLE)
-    }
-    #[doc = "BOD VBAT reset is enable."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(BODVBATRESETENABLEW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `BODCORERESETENABLE`"]
-pub enum BODCORERESETENABLEW {
-    #[doc = "BOD CORE reset is disable."]
-    DISABLE,
-    #[doc = "BOD CORE reset is enable."]
-    ENABLE,
-}
-impl BODCORERESETENABLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BODCORERESETENABLEW::DISABLE => false,
-            BODCORERESETENABLEW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BODCORERESETENABLEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BODCORERESETENABLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BODCORERESETENABLEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "BOD CORE reset is disable."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(BODCORERESETENABLEW::DISABLE)
-    }
-    #[doc = "BOD CORE reset is enable."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(BODCORERESETENABLEW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SWRRESETENABLE`"]
-pub enum SWRRESETENABLEW {
-    #[doc = "Software reset is disable."]
-    DISABLE,
-    #[doc = "Software reset is enable."]
-    ENABLE,
-}
-impl SWRRESETENABLEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SWRRESETENABLEW::DISABLE => false,
-            SWRRESETENABLEW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SWRRESETENABLEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SWRRESETENABLEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SWRRESETENABLEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Software reset is disable."]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(SWRRESETENABLEW::DISABLE)
+        self.variant(SWRRESETENABLE_A::DISABLE)
     }
     #[doc = "Software reset is enable."]
-    #[inline]
+    #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(SWRRESETENABLEW::ENABLE)
+        self.variant(SWRRESETENABLE_A::ENABLE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Wake-up from DEEP POWER DOWN reset event (either from wake up I/O or RTC or OS Event Timer)."]
-    #[inline]
-    pub fn dpdwakeupresetenable(&self) -> DPDWAKEUPRESETENABLER {
-        DPDWAKEUPRESETENABLER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dpdwakeupresetenable(&self) -> DPDWAKEUPRESETENABLE_R {
+        DPDWAKEUPRESETENABLE_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - BOD VBAT reset enable."]
-    #[inline]
-    pub fn bodvbatresetenable(&self) -> BODVBATRESETENABLER {
-        BODVBATRESETENABLER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bodvbatresetenable(&self) -> BODVBATRESETENABLE_R {
+        BODVBATRESETENABLE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - BOD CORE reset enable."]
-    #[inline]
-    pub fn bodcoreresetenable(&self) -> BODCORERESETENABLER {
-        BODCORERESETENABLER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bodcoreresetenable(&self) -> BODCORERESETENABLE_R {
+        BODCORERESETENABLE_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Software reset enable."]
-    #[inline]
-    pub fn swrresetenable(&self) -> SWRRESETENABLER {
-        SWRRESETENABLER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn swrresetenable(&self) -> SWRRESETENABLE_R {
+        SWRRESETENABLE_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Wake-up from DEEP POWER DOWN reset event (either from wake up I/O or RTC or OS Event Timer)."]
-    #[inline]
-    pub fn dpdwakeupresetenable(&mut self) -> _DPDWAKEUPRESETENABLEW {
-        _DPDWAKEUPRESETENABLEW { w: self }
+    #[inline(always)]
+    pub fn dpdwakeupresetenable(&mut self) -> DPDWAKEUPRESETENABLE_W {
+        DPDWAKEUPRESETENABLE_W { w: self }
     }
     #[doc = "Bit 1 - BOD VBAT reset enable."]
-    #[inline]
-    pub fn bodvbatresetenable(&mut self) -> _BODVBATRESETENABLEW {
-        _BODVBATRESETENABLEW { w: self }
+    #[inline(always)]
+    pub fn bodvbatresetenable(&mut self) -> BODVBATRESETENABLE_W {
+        BODVBATRESETENABLE_W { w: self }
     }
     #[doc = "Bit 2 - BOD CORE reset enable."]
-    #[inline]
-    pub fn bodcoreresetenable(&mut self) -> _BODCORERESETENABLEW {
-        _BODCORERESETENABLEW { w: self }
+    #[inline(always)]
+    pub fn bodcoreresetenable(&mut self) -> BODCORERESETENABLE_W {
+        BODCORERESETENABLE_W { w: self }
     }
     #[doc = "Bit 3 - Software reset enable."]
-    #[inline]
-    pub fn swrresetenable(&mut self) -> _SWRRESETENABLEW {
-        _SWRRESETENABLEW { w: self }
+    #[inline(always)]
+    pub fn swrresetenable(&mut self) -> SWRRESETENABLE_W {
+        SWRRESETENABLE_W { w: self }
     }
 }

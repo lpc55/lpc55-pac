@@ -1,113 +1,25 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::INTSTAT {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SSAR {
-    bits: bool,
-}
-impl SSAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SSDR {
-    bits: bool,
-}
-impl SSDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct MSTIDLER {
-    bits: bool,
-}
-impl MSTIDLER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
+#[doc = "Reader of register INTSTAT"]
+pub type R = crate::R<u32, super::INTSTAT>;
+#[doc = "Reader of field `SSA`"]
+pub type SSA_R = crate::R<bool, bool>;
+#[doc = "Reader of field `SSD`"]
+pub type SSD_R = crate::R<bool, bool>;
+#[doc = "Reader of field `MSTIDLE`"]
+pub type MSTIDLE_R = crate::R<bool, bool>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 4 - Slave Select Assert."]
-    #[inline]
-    pub fn ssa(&self) -> SSAR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SSAR { bits }
+    #[inline(always)]
+    pub fn ssa(&self) -> SSA_R {
+        SSA_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Slave Select Deassert."]
-    #[inline]
-    pub fn ssd(&self) -> SSDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SSDR { bits }
+    #[inline(always)]
+    pub fn ssd(&self) -> SSD_R {
+        SSD_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Master Idle status flag."]
-    #[inline]
-    pub fn mstidle(&self) -> MSTIDLER {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MSTIDLER { bits }
+    #[inline(always)]
+    pub fn mstidle(&self) -> MSTIDLE_R {
+        MSTIDLE_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }

@@ -1,50 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::USB0CLKSEL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register USB0CLKSEL"]
+pub type R = crate::R<u32, super::USB0CLKSEL>;
+#[doc = "Writer for register USB0CLKSEL"]
+pub type W = crate::W<u32, super::USB0CLKSEL>;
+#[doc = "Register USB0CLKSEL `reset()`'s with value 0x07"]
+impl crate::ResetValue for super::USB0CLKSEL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x07
     }
 }
 #[doc = "Possible values of the field `SEL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SELR {
+pub enum SEL_A {
     #[doc = "Main clock."]
     ENUM_0X0,
     #[doc = "PLL0 clock."]
@@ -62,207 +30,150 @@ pub enum SELR {
     #[doc = "No clock."]
     ENUM_0X7,
 }
-impl SELR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SELR::ENUM_0X0 => 0,
-            SELR::ENUM_0X1 => 1,
-            SELR::ENUM_0X2 => 2,
-            SELR::ENUM_0X3 => 3,
-            SELR::ENUM_0X4 => 4,
-            SELR::ENUM_0X5 => 5,
-            SELR::ENUM_0X6 => 6,
-            SELR::ENUM_0X7 => 7,
+impl From<SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SEL_A) -> Self {
+        match variant {
+            SEL_A::ENUM_0X0 => 0,
+            SEL_A::ENUM_0X1 => 1,
+            SEL_A::ENUM_0X2 => 2,
+            SEL_A::ENUM_0X3 => 3,
+            SEL_A::ENUM_0X4 => 4,
+            SEL_A::ENUM_0X5 => 5,
+            SEL_A::ENUM_0X6 => 6,
+            SEL_A::ENUM_0X7 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SELR {
-        match value {
-            0 => SELR::ENUM_0X0,
-            1 => SELR::ENUM_0X1,
-            2 => SELR::ENUM_0X2,
-            3 => SELR::ENUM_0X3,
-            4 => SELR::ENUM_0X4,
-            5 => SELR::ENUM_0X5,
-            6 => SELR::ENUM_0X6,
-            7 => SELR::ENUM_0X7,
+}
+#[doc = "Reader of field `SEL`"]
+pub type SEL_R = crate::R<u8, SEL_A>;
+impl SEL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SEL_A {
+        match self.bits {
+            0 => SEL_A::ENUM_0X0,
+            1 => SEL_A::ENUM_0X1,
+            2 => SEL_A::ENUM_0X2,
+            3 => SEL_A::ENUM_0X3,
+            4 => SEL_A::ENUM_0X4,
+            5 => SEL_A::ENUM_0X5,
+            6 => SEL_A::ENUM_0X6,
+            7 => SEL_A::ENUM_0X7,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `ENUM_0X0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enum_0x0(&self) -> bool {
-        *self == SELR::ENUM_0X0
+        *self == SEL_A::ENUM_0X0
     }
     #[doc = "Checks if the value of the field is `ENUM_0X1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enum_0x1(&self) -> bool {
-        *self == SELR::ENUM_0X1
+        *self == SEL_A::ENUM_0X1
     }
     #[doc = "Checks if the value of the field is `ENUM_0X2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enum_0x2(&self) -> bool {
-        *self == SELR::ENUM_0X2
+        *self == SEL_A::ENUM_0X2
     }
     #[doc = "Checks if the value of the field is `ENUM_0X3`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enum_0x3(&self) -> bool {
-        *self == SELR::ENUM_0X3
+        *self == SEL_A::ENUM_0X3
     }
     #[doc = "Checks if the value of the field is `ENUM_0X4`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enum_0x4(&self) -> bool {
-        *self == SELR::ENUM_0X4
+        *self == SEL_A::ENUM_0X4
     }
     #[doc = "Checks if the value of the field is `ENUM_0X5`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enum_0x5(&self) -> bool {
-        *self == SELR::ENUM_0X5
+        *self == SEL_A::ENUM_0X5
     }
     #[doc = "Checks if the value of the field is `ENUM_0X6`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enum_0x6(&self) -> bool {
-        *self == SELR::ENUM_0X6
+        *self == SEL_A::ENUM_0X6
     }
     #[doc = "Checks if the value of the field is `ENUM_0X7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enum_0x7(&self) -> bool {
-        *self == SELR::ENUM_0X7
+        *self == SEL_A::ENUM_0X7
     }
 }
-#[doc = "Values that can be written to the field `SEL`"]
-pub enum SELW {
-    #[doc = "Main clock."]
-    ENUM_0X0,
-    #[doc = "PLL0 clock."]
-    ENUM_0X1,
-    #[doc = "No clock."]
-    ENUM_0X2,
-    #[doc = "FRO 96 MHz clock."]
-    ENUM_0X3,
-    #[doc = "No clock."]
-    ENUM_0X4,
-    #[doc = "PLL1 clock."]
-    ENUM_0X5,
-    #[doc = "No clock."]
-    ENUM_0X6,
-    #[doc = "No clock."]
-    ENUM_0X7,
-}
-impl SELW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SELW::ENUM_0X0 => 0,
-            SELW::ENUM_0X1 => 1,
-            SELW::ENUM_0X2 => 2,
-            SELW::ENUM_0X3 => 3,
-            SELW::ENUM_0X4 => 4,
-            SELW::ENUM_0X5 => 5,
-            SELW::ENUM_0X6 => 6,
-            SELW::ENUM_0X7 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SELW<'a> {
+#[doc = "Write proxy for field `SEL`"]
+pub struct SEL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SELW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SELW) -> &'a mut W {
+impl<'a> SEL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SEL_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Main clock."]
-    #[inline]
+    #[inline(always)]
     pub fn enum_0x0(self) -> &'a mut W {
-        self.variant(SELW::ENUM_0X0)
+        self.variant(SEL_A::ENUM_0X0)
     }
     #[doc = "PLL0 clock."]
-    #[inline]
+    #[inline(always)]
     pub fn enum_0x1(self) -> &'a mut W {
-        self.variant(SELW::ENUM_0X1)
+        self.variant(SEL_A::ENUM_0X1)
     }
     #[doc = "No clock."]
-    #[inline]
+    #[inline(always)]
     pub fn enum_0x2(self) -> &'a mut W {
-        self.variant(SELW::ENUM_0X2)
+        self.variant(SEL_A::ENUM_0X2)
     }
     #[doc = "FRO 96 MHz clock."]
-    #[inline]
+    #[inline(always)]
     pub fn enum_0x3(self) -> &'a mut W {
-        self.variant(SELW::ENUM_0X3)
+        self.variant(SEL_A::ENUM_0X3)
     }
     #[doc = "No clock."]
-    #[inline]
+    #[inline(always)]
     pub fn enum_0x4(self) -> &'a mut W {
-        self.variant(SELW::ENUM_0X4)
+        self.variant(SEL_A::ENUM_0X4)
     }
     #[doc = "PLL1 clock."]
-    #[inline]
+    #[inline(always)]
     pub fn enum_0x5(self) -> &'a mut W {
-        self.variant(SELW::ENUM_0X5)
+        self.variant(SEL_A::ENUM_0X5)
     }
     #[doc = "No clock."]
-    #[inline]
+    #[inline(always)]
     pub fn enum_0x6(self) -> &'a mut W {
-        self.variant(SELW::ENUM_0X6)
+        self.variant(SEL_A::ENUM_0X6)
     }
     #[doc = "No clock."]
-    #[inline]
+    #[inline(always)]
     pub fn enum_0x7(self) -> &'a mut W {
-        self.variant(SELW::ENUM_0X7)
+        self.variant(SEL_A::ENUM_0X7)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - FS USB clock source select."]
-    #[inline]
-    pub fn sel(&self) -> SELR {
-        SELR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn sel(&self) -> SEL_R {
+        SEL_R::new((self.bits & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 7 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - FS USB clock source select."]
-    #[inline]
-    pub fn sel(&mut self) -> _SELW {
-        _SELW { w: self }
+    #[inline(always)]
+    pub fn sel(&mut self) -> SEL_W {
+        SEL_W { w: self }
     }
 }

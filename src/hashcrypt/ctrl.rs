@@ -1,50 +1,18 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CTRL"]
+pub type R = crate::R<u32, super::CTRL>;
+#[doc = "Writer for register CTRL"]
+pub type W = crate::W<u32, super::CTRL>;
+#[doc = "Register CTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `Mode`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODER {
+pub enum MODE_A {
     #[doc = "Disabled"]
     DISABLED,
     #[doc = "SHA1 is enabled"]
@@ -62,597 +30,424 @@ pub enum MODER {
     #[doc = "ChaCha20 if available (see also CRYPTCFG register for more controls)"]
     CHACHA20,
 }
-impl MODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MODER::DISABLED => 0,
-            MODER::SHA1 => 1,
-            MODER::SHA2_256 => 2,
-            MODER::SHA2_512 => 3,
-            MODER::AES => 4,
-            MODER::ICB_AES => 5,
-            MODER::SALSA20 => 6,
-            MODER::CHACHA20 => 7,
+impl From<MODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: MODE_A) -> Self {
+        match variant {
+            MODE_A::DISABLED => 0,
+            MODE_A::SHA1 => 1,
+            MODE_A::SHA2_256 => 2,
+            MODE_A::SHA2_512 => 3,
+            MODE_A::AES => 4,
+            MODE_A::ICB_AES => 5,
+            MODE_A::SALSA20 => 6,
+            MODE_A::CHACHA20 => 7,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODER {
-        match value {
-            0 => MODER::DISABLED,
-            1 => MODER::SHA1,
-            2 => MODER::SHA2_256,
-            3 => MODER::SHA2_512,
-            4 => MODER::AES,
-            5 => MODER::ICB_AES,
-            6 => MODER::SALSA20,
-            7 => MODER::CHACHA20,
+}
+#[doc = "Reader of field `Mode`"]
+pub type MODE_R = crate::R<u8, MODE_A>;
+impl MODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE_A {
+        match self.bits {
+            0 => MODE_A::DISABLED,
+            1 => MODE_A::SHA1,
+            2 => MODE_A::SHA2_256,
+            3 => MODE_A::SHA2_512,
+            4 => MODE_A::AES,
+            5 => MODE_A::ICB_AES,
+            6 => MODE_A::SALSA20,
+            7 => MODE_A::CHACHA20,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == MODER::DISABLED
+        *self == MODE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `SHA1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sha1(&self) -> bool {
-        *self == MODER::SHA1
+        *self == MODE_A::SHA1
     }
     #[doc = "Checks if the value of the field is `SHA2_256`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sha2_256(&self) -> bool {
-        *self == MODER::SHA2_256
+        *self == MODE_A::SHA2_256
     }
     #[doc = "Checks if the value of the field is `SHA2_512`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sha2_512(&self) -> bool {
-        *self == MODER::SHA2_512
+        *self == MODE_A::SHA2_512
     }
     #[doc = "Checks if the value of the field is `AES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_aes(&self) -> bool {
-        *self == MODER::AES
+        *self == MODE_A::AES
     }
     #[doc = "Checks if the value of the field is `ICB_AES`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_icb_aes(&self) -> bool {
-        *self == MODER::ICB_AES
+        *self == MODE_A::ICB_AES
     }
     #[doc = "Checks if the value of the field is `SALSA20`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_salsa20(&self) -> bool {
-        *self == MODER::SALSA20
+        *self == MODE_A::SALSA20
     }
     #[doc = "Checks if the value of the field is `CHACHA20`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_chacha20(&self) -> bool {
-        *self == MODER::CHACHA20
+        *self == MODE_A::CHACHA20
+    }
+}
+#[doc = "Write proxy for field `Mode`"]
+pub struct MODE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> MODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
+        }
+    }
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(MODE_A::DISABLED)
+    }
+    #[doc = "SHA1 is enabled"]
+    #[inline(always)]
+    pub fn sha1(self) -> &'a mut W {
+        self.variant(MODE_A::SHA1)
+    }
+    #[doc = "SHA2-256 is enabled"]
+    #[inline(always)]
+    pub fn sha2_256(self) -> &'a mut W {
+        self.variant(MODE_A::SHA2_256)
+    }
+    #[doc = "SHA2-512 is enabled (if available)"]
+    #[inline(always)]
+    pub fn sha2_512(self) -> &'a mut W {
+        self.variant(MODE_A::SHA2_512)
+    }
+    #[doc = "AES if available (see also CRYPTCFG register for more controls)"]
+    #[inline(always)]
+    pub fn aes(self) -> &'a mut W {
+        self.variant(MODE_A::AES)
+    }
+    #[doc = "ICB-AES if available (see also CRYPTCFG register for more controls)"]
+    #[inline(always)]
+    pub fn icb_aes(self) -> &'a mut W {
+        self.variant(MODE_A::ICB_AES)
+    }
+    #[doc = "Salsa20/20 if available (including XSalsa - see also CRYPTCFG register)"]
+    #[inline(always)]
+    pub fn salsa20(self) -> &'a mut W {
+        self.variant(MODE_A::SALSA20)
+    }
+    #[doc = "ChaCha20 if available (see also CRYPTCFG register for more controls)"]
+    #[inline(always)]
+    pub fn chacha20(self) -> &'a mut W {
+        self.variant(MODE_A::CHACHA20)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w
     }
 }
 #[doc = "Possible values of the field `New_Hash`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NEW_HASHR {
+pub enum NEW_HASH_A {
     #[doc = "Starts a new Hash/Crypto and initializes the Digest/Result."]
     START,
-    #[doc = r" Reserved"]
-    _Reserved(bool),
 }
-impl NEW_HASHR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            NEW_HASHR::START => true,
-            NEW_HASHR::_Reserved(bits) => bits,
+impl From<NEW_HASH_A> for bool {
+    #[inline(always)]
+    fn from(variant: NEW_HASH_A) -> Self {
+        match variant {
+            NEW_HASH_A::START => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> NEW_HASHR {
-        match value {
-            true => NEW_HASHR::START,
-            i => NEW_HASHR::_Reserved(i),
+}
+#[doc = "Reader of field `New_Hash`"]
+pub type NEW_HASH_R = crate::R<bool, NEW_HASH_A>;
+impl NEW_HASH_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<bool, NEW_HASH_A> {
+        use crate::Variant::*;
+        match self.bits {
+            true => Val(NEW_HASH_A::START),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `START`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_start(&self) -> bool {
-        *self == NEW_HASHR::START
+        *self == NEW_HASH_A::START
+    }
+}
+#[doc = "Write proxy for field `New_Hash`"]
+pub struct NEW_HASH_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> NEW_HASH_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: NEW_HASH_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Starts a new Hash/Crypto and initializes the Digest/Result."]
+    #[inline(always)]
+    pub fn start(self) -> &'a mut W {
+        self.variant(NEW_HASH_A::START)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `DMA_I`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DMA_IR {
+pub enum DMA_I_A {
     #[doc = "DMA is not used. Processor writes the necessary words when WAITING is set (interrupts), unless AHB Master is used."]
     NOT_USED,
     #[doc = "DMA will push in the data."]
     PUSH,
 }
-impl DMA_IR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DMA_IR::NOT_USED => false,
-            DMA_IR::PUSH => true,
+impl From<DMA_I_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA_I_A) -> Self {
+        match variant {
+            DMA_I_A::NOT_USED => false,
+            DMA_I_A::PUSH => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DMA_IR {
-        match value {
-            false => DMA_IR::NOT_USED,
-            true => DMA_IR::PUSH,
+}
+#[doc = "Reader of field `DMA_I`"]
+pub type DMA_I_R = crate::R<bool, DMA_I_A>;
+impl DMA_I_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA_I_A {
+        match self.bits {
+            false => DMA_I_A::NOT_USED,
+            true => DMA_I_A::PUSH,
         }
     }
     #[doc = "Checks if the value of the field is `NOT_USED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_not_used(&self) -> bool {
-        *self == DMA_IR::NOT_USED
+        *self == DMA_I_A::NOT_USED
     }
     #[doc = "Checks if the value of the field is `PUSH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_push(&self) -> bool {
-        *self == DMA_IR::PUSH
+        *self == DMA_I_A::PUSH
+    }
+}
+#[doc = "Write proxy for field `DMA_I`"]
+pub struct DMA_I_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DMA_I_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DMA_I_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "DMA is not used. Processor writes the necessary words when WAITING is set (interrupts), unless AHB Master is used."]
+    #[inline(always)]
+    pub fn not_used(self) -> &'a mut W {
+        self.variant(DMA_I_A::NOT_USED)
+    }
+    #[doc = "DMA will push in the data."]
+    #[inline(always)]
+    pub fn push(self) -> &'a mut W {
+        self.variant(DMA_I_A::PUSH)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `DMA_O`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DMA_OR {
+pub enum DMA_O_A {
     #[doc = "DMA is not used. Processor reads the digest/output in response to DIGEST interrupt."]
     NOTUSED,
-    #[doc = r" Reserved"]
-    _Reserved(bool),
 }
-impl DMA_OR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DMA_OR::NOTUSED => false,
-            DMA_OR::_Reserved(bits) => bits,
+impl From<DMA_O_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA_O_A) -> Self {
+        match variant {
+            DMA_O_A::NOTUSED => false,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DMA_OR {
-        match value {
-            false => DMA_OR::NOTUSED,
-            i => DMA_OR::_Reserved(i),
+}
+#[doc = "Reader of field `DMA_O`"]
+pub type DMA_O_R = crate::R<bool, DMA_O_A>;
+impl DMA_O_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<bool, DMA_O_A> {
+        use crate::Variant::*;
+        match self.bits {
+            false => Val(DMA_O_A::NOTUSED),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `NOTUSED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_notused(&self) -> bool {
-        *self == DMA_OR::NOTUSED
+        *self == DMA_O_A::NOTUSED
     }
 }
-#[doc = r" Value of the field"]
-pub struct HASHSWPBR {
-    bits: bool,
-}
-impl HASHSWPBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `Mode`"]
-pub enum MODEW {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "SHA1 is enabled"]
-    SHA1,
-    #[doc = "SHA2-256 is enabled"]
-    SHA2_256,
-    #[doc = "SHA2-512 is enabled (if available)"]
-    SHA2_512,
-    #[doc = "AES if available (see also CRYPTCFG register for more controls)"]
-    AES,
-    #[doc = "ICB-AES if available (see also CRYPTCFG register for more controls)"]
-    ICB_AES,
-    #[doc = "Salsa20/20 if available (including XSalsa - see also CRYPTCFG register)"]
-    SALSA20,
-    #[doc = "ChaCha20 if available (see also CRYPTCFG register for more controls)"]
-    CHACHA20,
-}
-impl MODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MODEW::DISABLED => 0,
-            MODEW::SHA1 => 1,
-            MODEW::SHA2_256 => 2,
-            MODEW::SHA2_512 => 3,
-            MODEW::AES => 4,
-            MODEW::ICB_AES => 5,
-            MODEW::SALSA20 => 6,
-            MODEW::CHACHA20 => 7,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODEW<'a> {
+#[doc = "Write proxy for field `DMA_O`"]
+pub struct DMA_O_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODEW) -> &'a mut W {
+impl<'a> DMA_O_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DMA_O_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Disabled"]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(MODEW::DISABLED)
-    }
-    #[doc = "SHA1 is enabled"]
-    #[inline]
-    pub fn sha1(self) -> &'a mut W {
-        self.variant(MODEW::SHA1)
-    }
-    #[doc = "SHA2-256 is enabled"]
-    #[inline]
-    pub fn sha2_256(self) -> &'a mut W {
-        self.variant(MODEW::SHA2_256)
-    }
-    #[doc = "SHA2-512 is enabled (if available)"]
-    #[inline]
-    pub fn sha2_512(self) -> &'a mut W {
-        self.variant(MODEW::SHA2_512)
-    }
-    #[doc = "AES if available (see also CRYPTCFG register for more controls)"]
-    #[inline]
-    pub fn aes(self) -> &'a mut W {
-        self.variant(MODEW::AES)
-    }
-    #[doc = "ICB-AES if available (see also CRYPTCFG register for more controls)"]
-    #[inline]
-    pub fn icb_aes(self) -> &'a mut W {
-        self.variant(MODEW::ICB_AES)
-    }
-    #[doc = "Salsa20/20 if available (including XSalsa - see also CRYPTCFG register)"]
-    #[inline]
-    pub fn salsa20(self) -> &'a mut W {
-        self.variant(MODEW::SALSA20)
-    }
-    #[doc = "ChaCha20 if available (see also CRYPTCFG register for more controls)"]
-    #[inline]
-    pub fn chacha20(self) -> &'a mut W {
-        self.variant(MODEW::CHACHA20)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `New_Hash`"]
-pub enum NEW_HASHW {
-    #[doc = "Starts a new Hash/Crypto and initializes the Digest/Result."]
-    START,
-}
-impl NEW_HASHW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            NEW_HASHW::START => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NEW_HASHW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _NEW_HASHW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: NEW_HASHW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Starts a new Hash/Crypto and initializes the Digest/Result."]
-    #[inline]
-    pub fn start(self) -> &'a mut W {
-        self.variant(NEW_HASHW::START)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DMA_I`"]
-pub enum DMA_IW {
-    #[doc = "DMA is not used. Processor writes the necessary words when WAITING is set (interrupts), unless AHB Master is used."]
-    NOT_USED,
-    #[doc = "DMA will push in the data."]
-    PUSH,
-}
-impl DMA_IW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DMA_IW::NOT_USED => false,
-            DMA_IW::PUSH => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DMA_IW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DMA_IW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DMA_IW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "DMA is not used. Processor writes the necessary words when WAITING is set (interrupts), unless AHB Master is used."]
-    #[inline]
-    pub fn not_used(self) -> &'a mut W {
-        self.variant(DMA_IW::NOT_USED)
-    }
-    #[doc = "DMA will push in the data."]
-    #[inline]
-    pub fn push(self) -> &'a mut W {
-        self.variant(DMA_IW::PUSH)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DMA_O`"]
-pub enum DMA_OW {
-    #[doc = "DMA is not used. Processor reads the digest/output in response to DIGEST interrupt."]
-    NOTUSED,
-}
-impl DMA_OW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DMA_OW::NOTUSED => false,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DMA_OW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DMA_OW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DMA_OW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "DMA is not used. Processor reads the digest/output in response to DIGEST interrupt."]
-    #[inline]
+    #[inline(always)]
     pub fn notused(self) -> &'a mut W {
-        self.variant(DMA_OW::NOTUSED)
+        self.variant(DMA_O_A::NOTUSED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _HASHSWPBW<'a> {
+#[doc = "Reader of field `HASHSWPB`"]
+pub type HASHSWPB_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `HASHSWPB`"]
+pub struct HASHSWPB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HASHSWPBW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> HASHSWPB_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - The operational mode to use, or 0 if none. Note that the CONFIG register will indicate if specific modes beyond SHA1 and SHA2-256 are available."]
-    #[inline]
-    pub fn mode(&self) -> MODER {
-        MODER::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode(&self) -> MODE_R {
+        MODE_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bit 4 - Written with 1 when starting a new Hash/Crypto. It self clears. Note that the WAITING Status bit will clear for a cycle during the initialization from New=1."]
-    #[inline]
-    pub fn new_hash(&self) -> NEW_HASHR {
-        NEW_HASHR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn new_hash(&self) -> NEW_HASH_R {
+        NEW_HASH_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Written with 1 to use DMA to fill INDATA. If Hash, will request from DMA for 16 words and then will process the Hash. If Cryptographic, it will load as many words as needed, including key if not already loaded. It will then request again. Normal model is that the DMA interrupts the processor when its length expires. Note that if the processor will write the key and optionally IV, it should not enable this until it has done so. Otherwise, the DMA will be expected to load those for the 1st block (when needed)."]
-    #[inline]
-    pub fn dma_i(&self) -> DMA_IR {
-        DMA_IR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dma_i(&self) -> DMA_I_R {
+        DMA_I_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Written to 1 to use DMA to drain the digest/output. If both DMA_I and DMA_O are set, the DMA has to know to switch direction and the locations. This can be used for crypto uses."]
-    #[inline]
-    pub fn dma_o(&self) -> DMA_OR {
-        DMA_OR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dma_o(&self) -> DMA_O_R {
+        DMA_O_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 12 - If 1, will swap bytes in the word for SHA hashing. The default is byte order (so LSB is 1st byte) but this allows swapping to MSB is 1st such as is shown in SHS spec. For cryptographic swapping, see the CRYPTCFG register."]
-    #[inline]
-    pub fn hashswpb(&self) -> HASHSWPBR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        HASHSWPBR { bits }
+    #[inline(always)]
+    pub fn hashswpb(&self) -> HASHSWPB_R {
+        HASHSWPB_R::new(((self.bits >> 12) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - The operational mode to use, or 0 if none. Note that the CONFIG register will indicate if specific modes beyond SHA1 and SHA2-256 are available."]
-    #[inline]
-    pub fn mode(&mut self) -> _MODEW {
-        _MODEW { w: self }
+    #[inline(always)]
+    pub fn mode(&mut self) -> MODE_W {
+        MODE_W { w: self }
     }
     #[doc = "Bit 4 - Written with 1 when starting a new Hash/Crypto. It self clears. Note that the WAITING Status bit will clear for a cycle during the initialization from New=1."]
-    #[inline]
-    pub fn new_hash(&mut self) -> _NEW_HASHW {
-        _NEW_HASHW { w: self }
+    #[inline(always)]
+    pub fn new_hash(&mut self) -> NEW_HASH_W {
+        NEW_HASH_W { w: self }
     }
     #[doc = "Bit 8 - Written with 1 to use DMA to fill INDATA. If Hash, will request from DMA for 16 words and then will process the Hash. If Cryptographic, it will load as many words as needed, including key if not already loaded. It will then request again. Normal model is that the DMA interrupts the processor when its length expires. Note that if the processor will write the key and optionally IV, it should not enable this until it has done so. Otherwise, the DMA will be expected to load those for the 1st block (when needed)."]
-    #[inline]
-    pub fn dma_i(&mut self) -> _DMA_IW {
-        _DMA_IW { w: self }
+    #[inline(always)]
+    pub fn dma_i(&mut self) -> DMA_I_W {
+        DMA_I_W { w: self }
     }
     #[doc = "Bit 9 - Written to 1 to use DMA to drain the digest/output. If both DMA_I and DMA_O are set, the DMA has to know to switch direction and the locations. This can be used for crypto uses."]
-    #[inline]
-    pub fn dma_o(&mut self) -> _DMA_OW {
-        _DMA_OW { w: self }
+    #[inline(always)]
+    pub fn dma_o(&mut self) -> DMA_O_W {
+        DMA_O_W { w: self }
     }
     #[doc = "Bit 12 - If 1, will swap bytes in the word for SHA hashing. The default is byte order (so LSB is 1st byte) but this allows swapping to MSB is 1st such as is shown in SHS spec. For cryptographic swapping, see the CRYPTCFG register."]
-    #[inline]
-    pub fn hashswpb(&mut self) -> _HASHSWPBW {
-        _HASHSWPBW { w: self }
+    #[inline(always)]
+    pub fn hashswpb(&mut self) -> HASHSWPB_W {
+        HASHSWPB_W { w: self }
     }
 }

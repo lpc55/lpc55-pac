@@ -1,703 +1,444 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::FRO192M_CTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register FRO192M_CTRL"]
+pub type R = crate::R<u32, super::FRO192M_CTRL>;
+#[doc = "Writer for register FRO192M_CTRL"]
+pub type W = crate::W<u32, super::FRO192M_CTRL>;
+#[doc = "Register FRO192M_CTRL `reset()`'s with value 0x0080_d01a"]
+impl crate::ResetValue for super::FRO192M_CTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0080_d01a
     }
 }
-#[doc = r" Value of the field"]
-pub struct BIAS_TRIMR {
-    bits: u8,
+#[doc = "Reader of field `BIAS_TRIM`"]
+pub type BIAS_TRIM_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `BIAS_TRIM`"]
+pub struct BIAS_TRIM_W<'a> {
+    w: &'a mut W,
 }
-impl BIAS_TRIMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> BIAS_TRIM_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct TEMP_TRIMR {
-    bits: u8,
+#[doc = "Reader of field `TEMP_TRIM`"]
+pub type TEMP_TRIM_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TEMP_TRIM`"]
+pub struct TEMP_TRIM_W<'a> {
+    w: &'a mut W,
 }
-impl TEMP_TRIMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> TEMP_TRIM_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x7f << 7)) | (((value as u32) & 0x7f) << 7);
+        self.w
     }
 }
 #[doc = "Possible values of the field `ENA_12MHZCLK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA_12MHZCLKR {
+pub enum ENA_12MHZCLK_A {
     #[doc = "12 MHz clock is disabled."]
     DISABLE,
     #[doc = "12 MHz clock is enabled."]
     ENABLE,
 }
-impl ENA_12MHZCLKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENA_12MHZCLKR::DISABLE => false,
-            ENA_12MHZCLKR::ENABLE => true,
+impl From<ENA_12MHZCLK_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENA_12MHZCLK_A) -> Self {
+        match variant {
+            ENA_12MHZCLK_A::DISABLE => false,
+            ENA_12MHZCLK_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENA_12MHZCLKR {
-        match value {
-            false => ENA_12MHZCLKR::DISABLE,
-            true => ENA_12MHZCLKR::ENABLE,
+}
+#[doc = "Reader of field `ENA_12MHZCLK`"]
+pub type ENA_12MHZCLK_R = crate::R<bool, ENA_12MHZCLK_A>;
+impl ENA_12MHZCLK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENA_12MHZCLK_A {
+        match self.bits {
+            false => ENA_12MHZCLK_A::DISABLE,
+            true => ENA_12MHZCLK_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == ENA_12MHZCLKR::DISABLE
+        *self == ENA_12MHZCLK_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == ENA_12MHZCLKR::ENABLE
+        *self == ENA_12MHZCLK_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `ENA_12MHZCLK`"]
+pub struct ENA_12MHZCLK_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ENA_12MHZCLK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENA_12MHZCLK_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "12 MHz clock is disabled."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(ENA_12MHZCLK_A::DISABLE)
+    }
+    #[doc = "12 MHz clock is enabled."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(ENA_12MHZCLK_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w
     }
 }
 #[doc = "Possible values of the field `ENA_48MHZCLK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA_48MHZCLKR {
+pub enum ENA_48MHZCLK_A {
     #[doc = "48 MHz clock is disabled."]
     DISABLE,
     #[doc = "48 MHz clock is enabled."]
     ENABLE,
 }
-impl ENA_48MHZCLKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENA_48MHZCLKR::DISABLE => false,
-            ENA_48MHZCLKR::ENABLE => true,
+impl From<ENA_48MHZCLK_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENA_48MHZCLK_A) -> Self {
+        match variant {
+            ENA_48MHZCLK_A::DISABLE => false,
+            ENA_48MHZCLK_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENA_48MHZCLKR {
-        match value {
-            false => ENA_48MHZCLKR::DISABLE,
-            true => ENA_48MHZCLKR::ENABLE,
+}
+#[doc = "Reader of field `ENA_48MHZCLK`"]
+pub type ENA_48MHZCLK_R = crate::R<bool, ENA_48MHZCLK_A>;
+impl ENA_48MHZCLK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENA_48MHZCLK_A {
+        match self.bits {
+            false => ENA_48MHZCLK_A::DISABLE,
+            true => ENA_48MHZCLK_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == ENA_48MHZCLKR::DISABLE
+        *self == ENA_48MHZCLK_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == ENA_48MHZCLKR::ENABLE
+        *self == ENA_48MHZCLK_A::ENABLE
     }
 }
-#[doc = r" Value of the field"]
-pub struct DAC_TRIMR {
-    bits: u8,
+#[doc = "Write proxy for field `ENA_48MHZCLK`"]
+pub struct ENA_48MHZCLK_W<'a> {
+    w: &'a mut W,
 }
-impl DAC_TRIMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> ENA_48MHZCLK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENA_48MHZCLK_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "48 MHz clock is disabled."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(ENA_48MHZCLK_A::DISABLE)
+    }
+    #[doc = "48 MHz clock is enabled."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(ENA_48MHZCLK_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct USBCLKADJR {
-    bits: bool,
+#[doc = "Reader of field `DAC_TRIM`"]
+pub type DAC_TRIM_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DAC_TRIM`"]
+pub struct DAC_TRIM_W<'a> {
+    w: &'a mut W,
 }
-impl USBCLKADJR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+impl<'a> DAC_TRIM_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct USBMODCHGR {
-    bits: bool,
+#[doc = "Reader of field `USBCLKADJ`"]
+pub type USBCLKADJ_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `USBCLKADJ`"]
+pub struct USBCLKADJ_W<'a> {
+    w: &'a mut W,
 }
-impl USBMODCHGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> USBCLKADJ_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct ATB_CTRLR {
-    bits: u8,
+#[doc = "Reader of field `USBMODCHG`"]
+pub type USBMODCHG_R = crate::R<bool, bool>;
+#[doc = "Reader of field `ATB_CTRL`"]
+pub type ATB_CTRL_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `ATB_CTRL`"]
+pub struct ATB_CTRL_W<'a> {
+    w: &'a mut W,
 }
-impl ATB_CTRLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> ATB_CTRL_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 28)) | (((value as u32) & 0x03) << 28);
+        self.w
     }
 }
 #[doc = "Possible values of the field `ENA_96MHZCLK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ENA_96MHZCLKR {
+pub enum ENA_96MHZCLK_A {
     #[doc = "96 MHz clock is disabled."]
     DISABLE,
     #[doc = "96 MHz clock is enabled."]
     ENABLE,
 }
-impl ENA_96MHZCLKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ENA_96MHZCLKR::DISABLE => false,
-            ENA_96MHZCLKR::ENABLE => true,
+impl From<ENA_96MHZCLK_A> for bool {
+    #[inline(always)]
+    fn from(variant: ENA_96MHZCLK_A) -> Self {
+        match variant {
+            ENA_96MHZCLK_A::DISABLE => false,
+            ENA_96MHZCLK_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ENA_96MHZCLKR {
-        match value {
-            false => ENA_96MHZCLKR::DISABLE,
-            true => ENA_96MHZCLKR::ENABLE,
+}
+#[doc = "Reader of field `ENA_96MHZCLK`"]
+pub type ENA_96MHZCLK_R = crate::R<bool, ENA_96MHZCLK_A>;
+impl ENA_96MHZCLK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ENA_96MHZCLK_A {
+        match self.bits {
+            false => ENA_96MHZCLK_A::DISABLE,
+            true => ENA_96MHZCLK_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == ENA_96MHZCLKR::DISABLE
+        *self == ENA_96MHZCLK_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == ENA_96MHZCLKR::ENABLE
+        *self == ENA_96MHZCLK_A::ENABLE
     }
 }
-#[doc = r" Proxy"]
-pub struct _BIAS_TRIMW<'a> {
+#[doc = "Write proxy for field `ENA_96MHZCLK`"]
+pub struct ENA_96MHZCLK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BIAS_TRIMW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TEMP_TRIMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TEMP_TRIMW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 127;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ENA_12MHZCLK`"]
-pub enum ENA_12MHZCLKW {
-    #[doc = "12 MHz clock is disabled."]
-    DISABLE,
-    #[doc = "12 MHz clock is enabled."]
-    ENABLE,
-}
-impl ENA_12MHZCLKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENA_12MHZCLKW::DISABLE => false,
-            ENA_12MHZCLKW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENA_12MHZCLKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ENA_12MHZCLKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENA_12MHZCLKW) -> &'a mut W {
+impl<'a> ENA_96MHZCLK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENA_96MHZCLK_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "12 MHz clock is disabled."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(ENA_12MHZCLKW::DISABLE)
-    }
-    #[doc = "12 MHz clock is enabled."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(ENA_12MHZCLKW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ENA_48MHZCLK`"]
-pub enum ENA_48MHZCLKW {
-    #[doc = "48 MHz clock is disabled."]
-    DISABLE,
-    #[doc = "48 MHz clock is enabled."]
-    ENABLE,
-}
-impl ENA_48MHZCLKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENA_48MHZCLKW::DISABLE => false,
-            ENA_48MHZCLKW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENA_48MHZCLKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ENA_48MHZCLKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENA_48MHZCLKW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "48 MHz clock is disabled."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(ENA_48MHZCLKW::DISABLE)
-    }
-    #[doc = "48 MHz clock is enabled."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(ENA_48MHZCLKW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DAC_TRIMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DAC_TRIMW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _USBCLKADJW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _USBCLKADJW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 24;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ATB_CTRLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ATB_CTRLW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 28;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ENA_96MHZCLK`"]
-pub enum ENA_96MHZCLKW {
-    #[doc = "96 MHz clock is disabled."]
-    DISABLE,
-    #[doc = "96 MHz clock is enabled."]
-    ENABLE,
-}
-impl ENA_96MHZCLKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ENA_96MHZCLKW::DISABLE => false,
-            ENA_96MHZCLKW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENA_96MHZCLKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ENA_96MHZCLKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENA_96MHZCLKW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "96 MHz clock is disabled."]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(ENA_96MHZCLKW::DISABLE)
+        self.variant(ENA_96MHZCLK_A::DISABLE)
     }
     #[doc = "96 MHz clock is enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(ENA_96MHZCLKW::ENABLE)
+        self.variant(ENA_96MHZCLK_A::ENABLE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 30;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _WRTRIMW<'a> {
+#[doc = "Write proxy for field `WRTRIM`"]
+pub struct WRTRIM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WRTRIMW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> WRTRIM_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - Bias trimming bits (course frequency trimming)."]
-    #[inline]
-    pub fn bias_trim(&self) -> BIAS_TRIMR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        BIAS_TRIMR { bits }
+    #[inline(always)]
+    pub fn bias_trim(&self) -> BIAS_TRIM_R {
+        BIAS_TRIM_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 7:13 - Temperature coefficient trimming bits."]
-    #[inline]
-    pub fn temp_trim(&self) -> TEMP_TRIMR {
-        let bits = {
-            const MASK: u8 = 127;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TEMP_TRIMR { bits }
+    #[inline(always)]
+    pub fn temp_trim(&self) -> TEMP_TRIM_R {
+        TEMP_TRIM_R::new(((self.bits >> 7) & 0x7f) as u8)
     }
     #[doc = "Bit 14 - 12 MHz clock control."]
-    #[inline]
-    pub fn ena_12mhzclk(&self) -> ENA_12MHZCLKR {
-        ENA_12MHZCLKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ena_12mhzclk(&self) -> ENA_12MHZCLK_R {
+        ENA_12MHZCLK_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - 48 MHz clock control."]
-    #[inline]
-    pub fn ena_48mhzclk(&self) -> ENA_48MHZCLKR {
-        ENA_48MHZCLKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ena_48mhzclk(&self) -> ENA_48MHZCLK_R {
+        ENA_48MHZCLK_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bits 16:23 - Curdac trimming bits (fine frequency trimming) This trim is used to adjust the frequency, given that the bias and temperature trim are set."]
-    #[inline]
-    pub fn dac_trim(&self) -> DAC_TRIMR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DAC_TRIMR { bits }
+    #[inline(always)]
+    pub fn dac_trim(&self) -> DAC_TRIM_R {
+        DAC_TRIM_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bit 24 - If this bit is set and the USB peripheral is enabled into full speed device mode, the USB block will provide FRO clock adjustments to lock it to the host clock using the SOF packets."]
-    #[inline]
-    pub fn usbclkadj(&self) -> USBCLKADJR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 24;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        USBCLKADJR { bits }
+    #[inline(always)]
+    pub fn usbclkadj(&self) -> USBCLKADJ_R {
+        USBCLKADJ_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - If this reads as 1 when reading the DAC_TRIM field and USBCLKADJ=1, it should be reread until it is 0."]
-    #[inline]
-    pub fn usbmodchg(&self) -> USBMODCHGR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 25;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        USBMODCHGR { bits }
+    #[inline(always)]
+    pub fn usbmodchg(&self) -> USBMODCHG_R {
+        USBMODCHG_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bits 28:29 - Analog Test Bus control."]
-    #[inline]
-    pub fn atb_ctrl(&self) -> ATB_CTRLR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 28;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        ATB_CTRLR { bits }
+    #[inline(always)]
+    pub fn atb_ctrl(&self) -> ATB_CTRL_R {
+        ATB_CTRL_R::new(((self.bits >> 28) & 0x03) as u8)
     }
     #[doc = "Bit 30 - 96 MHz clock control."]
-    #[inline]
-    pub fn ena_96mhzclk(&self) -> ENA_96MHZCLKR {
-        ENA_96MHZCLKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 30;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ena_96mhzclk(&self) -> ENA_96MHZCLK_R {
+        ENA_96MHZCLK_R::new(((self.bits >> 30) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 8441882 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - Bias trimming bits (course frequency trimming)."]
-    #[inline]
-    pub fn bias_trim(&mut self) -> _BIAS_TRIMW {
-        _BIAS_TRIMW { w: self }
+    #[inline(always)]
+    pub fn bias_trim(&mut self) -> BIAS_TRIM_W {
+        BIAS_TRIM_W { w: self }
     }
     #[doc = "Bits 7:13 - Temperature coefficient trimming bits."]
-    #[inline]
-    pub fn temp_trim(&mut self) -> _TEMP_TRIMW {
-        _TEMP_TRIMW { w: self }
+    #[inline(always)]
+    pub fn temp_trim(&mut self) -> TEMP_TRIM_W {
+        TEMP_TRIM_W { w: self }
     }
     #[doc = "Bit 14 - 12 MHz clock control."]
-    #[inline]
-    pub fn ena_12mhzclk(&mut self) -> _ENA_12MHZCLKW {
-        _ENA_12MHZCLKW { w: self }
+    #[inline(always)]
+    pub fn ena_12mhzclk(&mut self) -> ENA_12MHZCLK_W {
+        ENA_12MHZCLK_W { w: self }
     }
     #[doc = "Bit 15 - 48 MHz clock control."]
-    #[inline]
-    pub fn ena_48mhzclk(&mut self) -> _ENA_48MHZCLKW {
-        _ENA_48MHZCLKW { w: self }
+    #[inline(always)]
+    pub fn ena_48mhzclk(&mut self) -> ENA_48MHZCLK_W {
+        ENA_48MHZCLK_W { w: self }
     }
     #[doc = "Bits 16:23 - Curdac trimming bits (fine frequency trimming) This trim is used to adjust the frequency, given that the bias and temperature trim are set."]
-    #[inline]
-    pub fn dac_trim(&mut self) -> _DAC_TRIMW {
-        _DAC_TRIMW { w: self }
+    #[inline(always)]
+    pub fn dac_trim(&mut self) -> DAC_TRIM_W {
+        DAC_TRIM_W { w: self }
     }
     #[doc = "Bit 24 - If this bit is set and the USB peripheral is enabled into full speed device mode, the USB block will provide FRO clock adjustments to lock it to the host clock using the SOF packets."]
-    #[inline]
-    pub fn usbclkadj(&mut self) -> _USBCLKADJW {
-        _USBCLKADJW { w: self }
+    #[inline(always)]
+    pub fn usbclkadj(&mut self) -> USBCLKADJ_W {
+        USBCLKADJ_W { w: self }
     }
     #[doc = "Bits 28:29 - Analog Test Bus control."]
-    #[inline]
-    pub fn atb_ctrl(&mut self) -> _ATB_CTRLW {
-        _ATB_CTRLW { w: self }
+    #[inline(always)]
+    pub fn atb_ctrl(&mut self) -> ATB_CTRL_W {
+        ATB_CTRL_W { w: self }
     }
     #[doc = "Bit 30 - 96 MHz clock control."]
-    #[inline]
-    pub fn ena_96mhzclk(&mut self) -> _ENA_96MHZCLKW {
-        _ENA_96MHZCLKW { w: self }
+    #[inline(always)]
+    pub fn ena_96mhzclk(&mut self) -> ENA_96MHZCLK_W {
+        ENA_96MHZCLK_W { w: self }
     }
     #[doc = "Bit 31 - This must be written to 1 to modify the BIAS_TRIM and TEMP_TRIM fields."]
-    #[inline]
-    pub fn wrtrim(&mut self) -> _WRTRIMW {
-        _WRTRIMW { w: self }
+    #[inline(always)]
+    pub fn wrtrim(&mut self) -> WRTRIM_W {
+        WRTRIM_W { w: self }
     }
 }

@@ -1,191 +1,252 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::COMP {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register COMP"]
+pub type R = crate::R<u32, super::COMP>;
+#[doc = "Writer for register COMP"]
+pub type W = crate::W<u32, super::COMP>;
+#[doc = "Register COMP `reset()`'s with value 0x0a"]
+impl crate::ResetValue for super::COMP {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0a
     }
 }
 #[doc = "Possible values of the field `HYST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HYSTR {
+pub enum HYST_A {
     #[doc = "Hysteresis is disable."]
     DISABLE,
     #[doc = "Hysteresis is enable."]
     ENABLE,
 }
-impl HYSTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HYSTR::DISABLE => false,
-            HYSTR::ENABLE => true,
+impl From<HYST_A> for bool {
+    #[inline(always)]
+    fn from(variant: HYST_A) -> Self {
+        match variant {
+            HYST_A::DISABLE => false,
+            HYST_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HYSTR {
-        match value {
-            false => HYSTR::DISABLE,
-            true => HYSTR::ENABLE,
+}
+#[doc = "Reader of field `HYST`"]
+pub type HYST_R = crate::R<bool, HYST_A>;
+impl HYST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HYST_A {
+        match self.bits {
+            false => HYST_A::DISABLE,
+            true => HYST_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == HYSTR::DISABLE
+        *self == HYST_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == HYSTR::ENABLE
+        *self == HYST_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `HYST`"]
+pub struct HYST_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> HYST_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HYST_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Hysteresis is disable."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(HYST_A::DISABLE)
+    }
+    #[doc = "Hysteresis is enable."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(HYST_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
 #[doc = "Possible values of the field `VREFINPUT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VREFINPUTR {
+pub enum VREFINPUT_A {
     #[doc = "Select internal VREF."]
     INTERNALREF,
     #[doc = "Select VDDA."]
     VDDA,
 }
-impl VREFINPUTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            VREFINPUTR::INTERNALREF => false,
-            VREFINPUTR::VDDA => true,
+impl From<VREFINPUT_A> for bool {
+    #[inline(always)]
+    fn from(variant: VREFINPUT_A) -> Self {
+        match variant {
+            VREFINPUT_A::INTERNALREF => false,
+            VREFINPUT_A::VDDA => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> VREFINPUTR {
-        match value {
-            false => VREFINPUTR::INTERNALREF,
-            true => VREFINPUTR::VDDA,
+}
+#[doc = "Reader of field `VREFINPUT`"]
+pub type VREFINPUT_R = crate::R<bool, VREFINPUT_A>;
+impl VREFINPUT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VREFINPUT_A {
+        match self.bits {
+            false => VREFINPUT_A::INTERNALREF,
+            true => VREFINPUT_A::VDDA,
         }
     }
     #[doc = "Checks if the value of the field is `INTERNALREF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_internalref(&self) -> bool {
-        *self == VREFINPUTR::INTERNALREF
+        *self == VREFINPUT_A::INTERNALREF
     }
     #[doc = "Checks if the value of the field is `VDDA`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_vdda(&self) -> bool {
-        *self == VREFINPUTR::VDDA
+        *self == VREFINPUT_A::VDDA
+    }
+}
+#[doc = "Write proxy for field `VREFINPUT`"]
+pub struct VREFINPUT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> VREFINPUT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: VREFINPUT_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Select internal VREF."]
+    #[inline(always)]
+    pub fn internalref(self) -> &'a mut W {
+        self.variant(VREFINPUT_A::INTERNALREF)
+    }
+    #[doc = "Select VDDA."]
+    #[inline(always)]
+    pub fn vdda(self) -> &'a mut W {
+        self.variant(VREFINPUT_A::VDDA)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `LOWPOWER`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOWPOWERR {
+pub enum LOWPOWER_A {
     #[doc = "High speed mode."]
     HIGHSPEED,
     #[doc = "Low power mode (Low speed)."]
     LOWSPEED,
 }
-impl LOWPOWERR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LOWPOWERR::HIGHSPEED => false,
-            LOWPOWERR::LOWSPEED => true,
+impl From<LOWPOWER_A> for bool {
+    #[inline(always)]
+    fn from(variant: LOWPOWER_A) -> Self {
+        match variant {
+            LOWPOWER_A::HIGHSPEED => false,
+            LOWPOWER_A::LOWSPEED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LOWPOWERR {
-        match value {
-            false => LOWPOWERR::HIGHSPEED,
-            true => LOWPOWERR::LOWSPEED,
+}
+#[doc = "Reader of field `LOWPOWER`"]
+pub type LOWPOWER_R = crate::R<bool, LOWPOWER_A>;
+impl LOWPOWER_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LOWPOWER_A {
+        match self.bits {
+            false => LOWPOWER_A::HIGHSPEED,
+            true => LOWPOWER_A::LOWSPEED,
         }
     }
     #[doc = "Checks if the value of the field is `HIGHSPEED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_highspeed(&self) -> bool {
-        *self == LOWPOWERR::HIGHSPEED
+        *self == LOWPOWER_A::HIGHSPEED
     }
     #[doc = "Checks if the value of the field is `LOWSPEED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_lowspeed(&self) -> bool {
-        *self == LOWPOWERR::LOWSPEED
+        *self == LOWPOWER_A::LOWSPEED
+    }
+}
+#[doc = "Write proxy for field `LOWPOWER`"]
+pub struct LOWPOWER_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LOWPOWER_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOWPOWER_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "High speed mode."]
+    #[inline(always)]
+    pub fn highspeed(self) -> &'a mut W {
+        self.variant(LOWPOWER_A::HIGHSPEED)
+    }
+    #[doc = "Low power mode (Low speed)."]
+    #[inline(always)]
+    pub fn lowspeed(self) -> &'a mut W {
+        self.variant(LOWPOWER_A::LOWSPEED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PMUX`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PMUXR {
+pub enum PMUX_A {
     #[doc = "VREF (See fiedl VREFINPUT)."]
     VREF,
     #[doc = "Pin P0_0."]
@@ -198,71 +259,118 @@ pub enum PMUXR {
     CMP0_D,
     #[doc = "Pin P2_23."]
     CMP0_E,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl PMUXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PMUXR::VREF => 0,
-            PMUXR::CMP0_A => 1,
-            PMUXR::CMP0_B => 2,
-            PMUXR::CMP0_C => 3,
-            PMUXR::CMP0_D => 4,
-            PMUXR::CMP0_E => 5,
-            PMUXR::_Reserved(bits) => bits,
+impl From<PMUX_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PMUX_A) -> Self {
+        match variant {
+            PMUX_A::VREF => 0,
+            PMUX_A::CMP0_A => 1,
+            PMUX_A::CMP0_B => 2,
+            PMUX_A::CMP0_C => 3,
+            PMUX_A::CMP0_D => 4,
+            PMUX_A::CMP0_E => 5,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PMUXR {
-        match value {
-            0 => PMUXR::VREF,
-            1 => PMUXR::CMP0_A,
-            2 => PMUXR::CMP0_B,
-            3 => PMUXR::CMP0_C,
-            4 => PMUXR::CMP0_D,
-            5 => PMUXR::CMP0_E,
-            i => PMUXR::_Reserved(i),
+}
+#[doc = "Reader of field `PMUX`"]
+pub type PMUX_R = crate::R<u8, PMUX_A>;
+impl PMUX_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, PMUX_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(PMUX_A::VREF),
+            1 => Val(PMUX_A::CMP0_A),
+            2 => Val(PMUX_A::CMP0_B),
+            3 => Val(PMUX_A::CMP0_C),
+            4 => Val(PMUX_A::CMP0_D),
+            5 => Val(PMUX_A::CMP0_E),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VREF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_vref(&self) -> bool {
-        *self == PMUXR::VREF
+        *self == PMUX_A::VREF
     }
     #[doc = "Checks if the value of the field is `CMP0_A`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmp0_a(&self) -> bool {
-        *self == PMUXR::CMP0_A
+        *self == PMUX_A::CMP0_A
     }
     #[doc = "Checks if the value of the field is `CMP0_B`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmp0_b(&self) -> bool {
-        *self == PMUXR::CMP0_B
+        *self == PMUX_A::CMP0_B
     }
     #[doc = "Checks if the value of the field is `CMP0_C`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmp0_c(&self) -> bool {
-        *self == PMUXR::CMP0_C
+        *self == PMUX_A::CMP0_C
     }
     #[doc = "Checks if the value of the field is `CMP0_D`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmp0_d(&self) -> bool {
-        *self == PMUXR::CMP0_D
+        *self == PMUX_A::CMP0_D
     }
     #[doc = "Checks if the value of the field is `CMP0_E`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmp0_e(&self) -> bool {
-        *self == PMUXR::CMP0_E
+        *self == PMUX_A::CMP0_E
+    }
+}
+#[doc = "Write proxy for field `PMUX`"]
+pub struct PMUX_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PMUX_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PMUX_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "VREF (See fiedl VREFINPUT)."]
+    #[inline(always)]
+    pub fn vref(self) -> &'a mut W {
+        self.variant(PMUX_A::VREF)
+    }
+    #[doc = "Pin P0_0."]
+    #[inline(always)]
+    pub fn cmp0_a(self) -> &'a mut W {
+        self.variant(PMUX_A::CMP0_A)
+    }
+    #[doc = "Pin P0_9."]
+    #[inline(always)]
+    pub fn cmp0_b(self) -> &'a mut W {
+        self.variant(PMUX_A::CMP0_B)
+    }
+    #[doc = "Pin P0_18."]
+    #[inline(always)]
+    pub fn cmp0_c(self) -> &'a mut W {
+        self.variant(PMUX_A::CMP0_C)
+    }
+    #[doc = "Pin P1_14."]
+    #[inline(always)]
+    pub fn cmp0_d(self) -> &'a mut W {
+        self.variant(PMUX_A::CMP0_D)
+    }
+    #[doc = "Pin P2_23."]
+    #[inline(always)]
+    pub fn cmp0_e(self) -> &'a mut W {
+        self.variant(PMUX_A::CMP0_E)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `NMUX`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NMUXR {
+pub enum NMUX_A {
     #[doc = "VREF (See field VREFINPUT)."]
     VREF,
     #[doc = "Pin P0_0."]
@@ -275,653 +383,262 @@ pub enum NMUXR {
     CMP0_D,
     #[doc = "Pin P2_23."]
     CMP0_E,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl NMUXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            NMUXR::VREF => 0,
-            NMUXR::CMP0_A => 1,
-            NMUXR::CMP0_B => 2,
-            NMUXR::CMP0_C => 3,
-            NMUXR::CMP0_D => 4,
-            NMUXR::CMP0_E => 5,
-            NMUXR::_Reserved(bits) => bits,
+impl From<NMUX_A> for u8 {
+    #[inline(always)]
+    fn from(variant: NMUX_A) -> Self {
+        match variant {
+            NMUX_A::VREF => 0,
+            NMUX_A::CMP0_A => 1,
+            NMUX_A::CMP0_B => 2,
+            NMUX_A::CMP0_C => 3,
+            NMUX_A::CMP0_D => 4,
+            NMUX_A::CMP0_E => 5,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> NMUXR {
-        match value {
-            0 => NMUXR::VREF,
-            1 => NMUXR::CMP0_A,
-            2 => NMUXR::CMP0_B,
-            3 => NMUXR::CMP0_C,
-            4 => NMUXR::CMP0_D,
-            5 => NMUXR::CMP0_E,
-            i => NMUXR::_Reserved(i),
+}
+#[doc = "Reader of field `NMUX`"]
+pub type NMUX_R = crate::R<u8, NMUX_A>;
+impl NMUX_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, NMUX_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(NMUX_A::VREF),
+            1 => Val(NMUX_A::CMP0_A),
+            2 => Val(NMUX_A::CMP0_B),
+            3 => Val(NMUX_A::CMP0_C),
+            4 => Val(NMUX_A::CMP0_D),
+            5 => Val(NMUX_A::CMP0_E),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VREF`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_vref(&self) -> bool {
-        *self == NMUXR::VREF
+        *self == NMUX_A::VREF
     }
     #[doc = "Checks if the value of the field is `CMP0_A`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmp0_a(&self) -> bool {
-        *self == NMUXR::CMP0_A
+        *self == NMUX_A::CMP0_A
     }
     #[doc = "Checks if the value of the field is `CMP0_B`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmp0_b(&self) -> bool {
-        *self == NMUXR::CMP0_B
+        *self == NMUX_A::CMP0_B
     }
     #[doc = "Checks if the value of the field is `CMP0_C`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmp0_c(&self) -> bool {
-        *self == NMUXR::CMP0_C
+        *self == NMUX_A::CMP0_C
     }
     #[doc = "Checks if the value of the field is `CMP0_D`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmp0_d(&self) -> bool {
-        *self == NMUXR::CMP0_D
+        *self == NMUX_A::CMP0_D
     }
     #[doc = "Checks if the value of the field is `CMP0_E`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cmp0_e(&self) -> bool {
-        *self == NMUXR::CMP0_E
+        *self == NMUX_A::CMP0_E
     }
 }
-#[doc = r" Value of the field"]
-pub struct VREFR {
-    bits: u8,
-}
-impl VREFR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FILTERCGF_SAMPLEMODER {
-    bits: u8,
-}
-impl FILTERCGF_SAMPLEMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct FILTERCGF_CLKDIVR {
-    bits: u8,
-}
-impl FILTERCGF_CLKDIVR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct PMUXCAPTR {
-    bits: u8,
-}
-impl PMUXCAPTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Values that can be written to the field `HYST`"]
-pub enum HYSTW {
-    #[doc = "Hysteresis is disable."]
-    DISABLE,
-    #[doc = "Hysteresis is enable."]
-    ENABLE,
-}
-impl HYSTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HYSTW::DISABLE => false,
-            HYSTW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HYSTW<'a> {
+#[doc = "Write proxy for field `NMUX`"]
+pub struct NMUX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _HYSTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HYSTW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Hysteresis is disable."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(HYSTW::DISABLE)
-    }
-    #[doc = "Hysteresis is enable."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(HYSTW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `VREFINPUT`"]
-pub enum VREFINPUTW {
-    #[doc = "Select internal VREF."]
-    INTERNALREF,
-    #[doc = "Select VDDA."]
-    VDDA,
-}
-impl VREFINPUTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            VREFINPUTW::INTERNALREF => false,
-            VREFINPUTW::VDDA => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _VREFINPUTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _VREFINPUTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: VREFINPUTW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Select internal VREF."]
-    #[inline]
-    pub fn internalref(self) -> &'a mut W {
-        self.variant(VREFINPUTW::INTERNALREF)
-    }
-    #[doc = "Select VDDA."]
-    #[inline]
-    pub fn vdda(self) -> &'a mut W {
-        self.variant(VREFINPUTW::VDDA)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LOWPOWER`"]
-pub enum LOWPOWERW {
-    #[doc = "High speed mode."]
-    HIGHSPEED,
-    #[doc = "Low power mode (Low speed)."]
-    LOWSPEED,
-}
-impl LOWPOWERW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LOWPOWERW::HIGHSPEED => false,
-            LOWPOWERW::LOWSPEED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LOWPOWERW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LOWPOWERW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOWPOWERW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "High speed mode."]
-    #[inline]
-    pub fn highspeed(self) -> &'a mut W {
-        self.variant(LOWPOWERW::HIGHSPEED)
-    }
-    #[doc = "Low power mode (Low speed)."]
-    #[inline]
-    pub fn lowspeed(self) -> &'a mut W {
-        self.variant(LOWPOWERW::LOWSPEED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PMUX`"]
-pub enum PMUXW {
-    #[doc = "VREF (See fiedl VREFINPUT)."]
-    VREF,
-    #[doc = "Pin P0_0."]
-    CMP0_A,
-    #[doc = "Pin P0_9."]
-    CMP0_B,
-    #[doc = "Pin P0_18."]
-    CMP0_C,
-    #[doc = "Pin P1_14."]
-    CMP0_D,
-    #[doc = "Pin P2_23."]
-    CMP0_E,
-}
-impl PMUXW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PMUXW::VREF => 0,
-            PMUXW::CMP0_A => 1,
-            PMUXW::CMP0_B => 2,
-            PMUXW::CMP0_C => 3,
-            PMUXW::CMP0_D => 4,
-            PMUXW::CMP0_E => 5,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PMUXW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PMUXW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PMUXW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "VREF (See fiedl VREFINPUT)."]
-    #[inline]
-    pub fn vref(self) -> &'a mut W {
-        self.variant(PMUXW::VREF)
-    }
-    #[doc = "Pin P0_0."]
-    #[inline]
-    pub fn cmp0_a(self) -> &'a mut W {
-        self.variant(PMUXW::CMP0_A)
-    }
-    #[doc = "Pin P0_9."]
-    #[inline]
-    pub fn cmp0_b(self) -> &'a mut W {
-        self.variant(PMUXW::CMP0_B)
-    }
-    #[doc = "Pin P0_18."]
-    #[inline]
-    pub fn cmp0_c(self) -> &'a mut W {
-        self.variant(PMUXW::CMP0_C)
-    }
-    #[doc = "Pin P1_14."]
-    #[inline]
-    pub fn cmp0_d(self) -> &'a mut W {
-        self.variant(PMUXW::CMP0_D)
-    }
-    #[doc = "Pin P2_23."]
-    #[inline]
-    pub fn cmp0_e(self) -> &'a mut W {
-        self.variant(PMUXW::CMP0_E)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `NMUX`"]
-pub enum NMUXW {
-    #[doc = "VREF (See field VREFINPUT)."]
-    VREF,
-    #[doc = "Pin P0_0."]
-    CMP0_A,
-    #[doc = "Pin P0_9."]
-    CMP0_B,
-    #[doc = "Pin P0_18."]
-    CMP0_C,
-    #[doc = "Pin P1_14."]
-    CMP0_D,
-    #[doc = "Pin P2_23."]
-    CMP0_E,
-}
-impl NMUXW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            NMUXW::VREF => 0,
-            NMUXW::CMP0_A => 1,
-            NMUXW::CMP0_B => 2,
-            NMUXW::CMP0_C => 3,
-            NMUXW::CMP0_D => 4,
-            NMUXW::CMP0_E => 5,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NMUXW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _NMUXW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: NMUXW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> NMUX_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: NMUX_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "VREF (See field VREFINPUT)."]
-    #[inline]
+    #[inline(always)]
     pub fn vref(self) -> &'a mut W {
-        self.variant(NMUXW::VREF)
+        self.variant(NMUX_A::VREF)
     }
     #[doc = "Pin P0_0."]
-    #[inline]
+    #[inline(always)]
     pub fn cmp0_a(self) -> &'a mut W {
-        self.variant(NMUXW::CMP0_A)
+        self.variant(NMUX_A::CMP0_A)
     }
     #[doc = "Pin P0_9."]
-    #[inline]
+    #[inline(always)]
     pub fn cmp0_b(self) -> &'a mut W {
-        self.variant(NMUXW::CMP0_B)
+        self.variant(NMUX_A::CMP0_B)
     }
     #[doc = "Pin P0_18."]
-    #[inline]
+    #[inline(always)]
     pub fn cmp0_c(self) -> &'a mut W {
-        self.variant(NMUXW::CMP0_C)
+        self.variant(NMUX_A::CMP0_C)
     }
     #[doc = "Pin P1_14."]
-    #[inline]
+    #[inline(always)]
     pub fn cmp0_d(self) -> &'a mut W {
-        self.variant(NMUXW::CMP0_D)
+        self.variant(NMUX_A::CMP0_D)
     }
     #[doc = "Pin P2_23."]
-    #[inline]
+    #[inline(always)]
     pub fn cmp0_e(self) -> &'a mut W {
-        self.variant(NMUXW::CMP0_E)
+        self.variant(NMUX_A::CMP0_E)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 7)) | (((value as u32) & 0x07) << 7);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _VREFW<'a> {
+#[doc = "Reader of field `VREF`"]
+pub type VREF_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `VREF`"]
+pub struct VREF_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _VREFW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> VREF_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x1f << 10)) | (((value as u32) & 0x1f) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _FILTERCGF_SAMPLEMODEW<'a> {
+#[doc = "Reader of field `FILTERCGF_SAMPLEMODE`"]
+pub type FILTERCGF_SAMPLEMODE_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `FILTERCGF_SAMPLEMODE`"]
+pub struct FILTERCGF_SAMPLEMODE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FILTERCGF_SAMPLEMODEW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> FILTERCGF_SAMPLEMODE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _FILTERCGF_CLKDIVW<'a> {
+#[doc = "Reader of field `FILTERCGF_CLKDIV`"]
+pub type FILTERCGF_CLKDIV_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `FILTERCGF_CLKDIV`"]
+pub struct FILTERCGF_CLKDIV_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FILTERCGF_CLKDIVW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> FILTERCGF_CLKDIV_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 18;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 18)) | (((value as u32) & 0x07) << 18);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _PMUXCAPTW<'a> {
+#[doc = "Reader of field `PMUXCAPT`"]
+pub type PMUXCAPT_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `PMUXCAPT`"]
+pub struct PMUXCAPT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PMUXCAPTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> PMUXCAPT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 21)) | (((value as u32) & 0x07) << 21);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 1 - Hysteris when hyst = '1'."]
-    #[inline]
-    pub fn hyst(&self) -> HYSTR {
-        HYSTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hyst(&self) -> HYST_R {
+        HYST_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Dedicated control bit to select between internal VREF and VDDA (for the resistive ladder)."]
-    #[inline]
-    pub fn vrefinput(&self) -> VREFINPUTR {
-        VREFINPUTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn vrefinput(&self) -> VREFINPUT_R {
+        VREFINPUT_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Low power mode."]
-    #[inline]
-    pub fn lowpower(&self) -> LOWPOWERR {
-        LOWPOWERR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lowpower(&self) -> LOWPOWER_R {
+        LOWPOWER_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bits 4:6 - Control word for P multiplexer:."]
-    #[inline]
-    pub fn pmux(&self) -> PMUXR {
-        PMUXR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn pmux(&self) -> PMUX_R {
+        PMUX_R::new(((self.bits >> 4) & 0x07) as u8)
     }
     #[doc = "Bits 7:9 - Control word for N multiplexer:."]
-    #[inline]
-    pub fn nmux(&self) -> NMUXR {
-        NMUXR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn nmux(&self) -> NMUX_R {
+        NMUX_R::new(((self.bits >> 7) & 0x07) as u8)
     }
     #[doc = "Bits 10:14 - Control reference voltage step, per steps of (VREFINPUT/31)."]
-    #[inline]
-    pub fn vref(&self) -> VREFR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        VREFR { bits }
+    #[inline(always)]
+    pub fn vref(&self) -> VREF_R {
+        VREF_R::new(((self.bits >> 10) & 0x1f) as u8)
     }
     #[doc = "Bits 16:17 - Filter Sample mode."]
-    #[inline]
-    pub fn filtercgf_samplemode(&self) -> FILTERCGF_SAMPLEMODER {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        FILTERCGF_SAMPLEMODER { bits }
+    #[inline(always)]
+    pub fn filtercgf_samplemode(&self) -> FILTERCGF_SAMPLEMODE_R {
+        FILTERCGF_SAMPLEMODE_R::new(((self.bits >> 16) & 0x03) as u8)
     }
     #[doc = "Bits 18:20 - Filter Clock div ."]
-    #[inline]
-    pub fn filtercgf_clkdiv(&self) -> FILTERCGF_CLKDIVR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 18;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        FILTERCGF_CLKDIVR { bits }
+    #[inline(always)]
+    pub fn filtercgf_clkdiv(&self) -> FILTERCGF_CLKDIV_R {
+        FILTERCGF_CLKDIV_R::new(((self.bits >> 18) & 0x07) as u8)
     }
     #[doc = "Bits 21:23 - Control word for P multiplexer for Capacitive Touch Controller."]
-    #[inline]
-    pub fn pmuxcapt(&self) -> PMUXCAPTR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        PMUXCAPTR { bits }
+    #[inline(always)]
+    pub fn pmuxcapt(&self) -> PMUXCAPT_R {
+        PMUXCAPT_R::new(((self.bits >> 21) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 10 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 1 - Hysteris when hyst = '1'."]
-    #[inline]
-    pub fn hyst(&mut self) -> _HYSTW {
-        _HYSTW { w: self }
+    #[inline(always)]
+    pub fn hyst(&mut self) -> HYST_W {
+        HYST_W { w: self }
     }
     #[doc = "Bit 2 - Dedicated control bit to select between internal VREF and VDDA (for the resistive ladder)."]
-    #[inline]
-    pub fn vrefinput(&mut self) -> _VREFINPUTW {
-        _VREFINPUTW { w: self }
+    #[inline(always)]
+    pub fn vrefinput(&mut self) -> VREFINPUT_W {
+        VREFINPUT_W { w: self }
     }
     #[doc = "Bit 3 - Low power mode."]
-    #[inline]
-    pub fn lowpower(&mut self) -> _LOWPOWERW {
-        _LOWPOWERW { w: self }
+    #[inline(always)]
+    pub fn lowpower(&mut self) -> LOWPOWER_W {
+        LOWPOWER_W { w: self }
     }
     #[doc = "Bits 4:6 - Control word for P multiplexer:."]
-    #[inline]
-    pub fn pmux(&mut self) -> _PMUXW {
-        _PMUXW { w: self }
+    #[inline(always)]
+    pub fn pmux(&mut self) -> PMUX_W {
+        PMUX_W { w: self }
     }
     #[doc = "Bits 7:9 - Control word for N multiplexer:."]
-    #[inline]
-    pub fn nmux(&mut self) -> _NMUXW {
-        _NMUXW { w: self }
+    #[inline(always)]
+    pub fn nmux(&mut self) -> NMUX_W {
+        NMUX_W { w: self }
     }
     #[doc = "Bits 10:14 - Control reference voltage step, per steps of (VREFINPUT/31)."]
-    #[inline]
-    pub fn vref(&mut self) -> _VREFW {
-        _VREFW { w: self }
+    #[inline(always)]
+    pub fn vref(&mut self) -> VREF_W {
+        VREF_W { w: self }
     }
     #[doc = "Bits 16:17 - Filter Sample mode."]
-    #[inline]
-    pub fn filtercgf_samplemode(&mut self) -> _FILTERCGF_SAMPLEMODEW {
-        _FILTERCGF_SAMPLEMODEW { w: self }
+    #[inline(always)]
+    pub fn filtercgf_samplemode(&mut self) -> FILTERCGF_SAMPLEMODE_W {
+        FILTERCGF_SAMPLEMODE_W { w: self }
     }
     #[doc = "Bits 18:20 - Filter Clock div ."]
-    #[inline]
-    pub fn filtercgf_clkdiv(&mut self) -> _FILTERCGF_CLKDIVW {
-        _FILTERCGF_CLKDIVW { w: self }
+    #[inline(always)]
+    pub fn filtercgf_clkdiv(&mut self) -> FILTERCGF_CLKDIV_W {
+        FILTERCGF_CLKDIV_W { w: self }
     }
     #[doc = "Bits 21:23 - Control word for P multiplexer for Capacitive Touch Controller."]
-    #[inline]
-    pub fn pmuxcapt(&mut self) -> _PMUXCAPTW {
-        _PMUXCAPTW { w: self }
+    #[inline(always)]
+    pub fn pmuxcapt(&mut self) -> PMUXCAPT_W {
+        PMUXCAPT_W { w: self }
     }
 }

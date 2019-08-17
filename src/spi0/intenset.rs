@@ -1,421 +1,280 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::INTENSET {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register INTENSET"]
+pub type R = crate::R<u32, super::INTENSET>;
+#[doc = "Writer for register INTENSET"]
+pub type W = crate::W<u32, super::INTENSET>;
+#[doc = "Register INTENSET `reset()`'s with value 0"]
+impl crate::ResetValue for super::INTENSET {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `SSAEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SSAENR {
+pub enum SSAEN_A {
     #[doc = "Disabled. No interrupt will be generated when any Slave Select transitions from deasserted to asserted."]
     DISABLED,
     #[doc = "Enabled. An interrupt will be generated when any Slave Select transitions from deasserted to asserted."]
     ENABLED,
 }
-impl SSAENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SSAENR::DISABLED => false,
-            SSAENR::ENABLED => true,
+impl From<SSAEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: SSAEN_A) -> Self {
+        match variant {
+            SSAEN_A::DISABLED => false,
+            SSAEN_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SSAENR {
-        match value {
-            false => SSAENR::DISABLED,
-            true => SSAENR::ENABLED,
+}
+#[doc = "Reader of field `SSAEN`"]
+pub type SSAEN_R = crate::R<bool, SSAEN_A>;
+impl SSAEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SSAEN_A {
+        match self.bits {
+            false => SSAEN_A::DISABLED,
+            true => SSAEN_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == SSAENR::DISABLED
+        *self == SSAEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == SSAENR::ENABLED
+        *self == SSAEN_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `SSAEN`"]
+pub struct SSAEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SSAEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SSAEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Disabled. No interrupt will be generated when any Slave Select transitions from deasserted to asserted."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(SSAEN_A::DISABLED)
+    }
+    #[doc = "Enabled. An interrupt will be generated when any Slave Select transitions from deasserted to asserted."]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(SSAEN_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SSDEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SSDENR {
+pub enum SSDEN_A {
     #[doc = "Disabled. No interrupt will be generated when all asserted Slave Selects transition to deasserted."]
     DISABLED,
     #[doc = "Enabled. An interrupt will be generated when all asserted Slave Selects transition to deasserted."]
     ENABLED,
 }
-impl SSDENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SSDENR::DISABLED => false,
-            SSDENR::ENABLED => true,
+impl From<SSDEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: SSDEN_A) -> Self {
+        match variant {
+            SSDEN_A::DISABLED => false,
+            SSDEN_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SSDENR {
-        match value {
-            false => SSDENR::DISABLED,
-            true => SSDENR::ENABLED,
+}
+#[doc = "Reader of field `SSDEN`"]
+pub type SSDEN_R = crate::R<bool, SSDEN_A>;
+impl SSDEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SSDEN_A {
+        match self.bits {
+            false => SSDEN_A::DISABLED,
+            true => SSDEN_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == SSDENR::DISABLED
+        *self == SSDEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == SSDENR::ENABLED
+        *self == SSDEN_A::ENABLED
+    }
+}
+#[doc = "Write proxy for field `SSDEN`"]
+pub struct SSDEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SSDEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SSDEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Disabled. No interrupt will be generated when all asserted Slave Selects transition to deasserted."]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(SSDEN_A::DISABLED)
+    }
+    #[doc = "Enabled. An interrupt will be generated when all asserted Slave Selects transition to deasserted."]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(SSDEN_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MSTIDLEEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSTIDLEENR {
+pub enum MSTIDLEEN_A {
     #[doc = "No interrupt will be generated when the SPI master function is idle."]
     DISABLED,
     #[doc = "An interrupt will be generated when the SPI master function is fully idle."]
     ENABLED,
 }
-impl MSTIDLEENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MSTIDLEENR::DISABLED => false,
-            MSTIDLEENR::ENABLED => true,
+impl From<MSTIDLEEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: MSTIDLEEN_A) -> Self {
+        match variant {
+            MSTIDLEEN_A::DISABLED => false,
+            MSTIDLEEN_A::ENABLED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MSTIDLEENR {
-        match value {
-            false => MSTIDLEENR::DISABLED,
-            true => MSTIDLEENR::ENABLED,
+}
+#[doc = "Reader of field `MSTIDLEEN`"]
+pub type MSTIDLEEN_R = crate::R<bool, MSTIDLEEN_A>;
+impl MSTIDLEEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MSTIDLEEN_A {
+        match self.bits {
+            false => MSTIDLEEN_A::DISABLED,
+            true => MSTIDLEEN_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == MSTIDLEENR::DISABLED
+        *self == MSTIDLEEN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == MSTIDLEENR::ENABLED
+        *self == MSTIDLEEN_A::ENABLED
     }
 }
-#[doc = "Values that can be written to the field `SSAEN`"]
-pub enum SSAENW {
-    #[doc = "Disabled. No interrupt will be generated when any Slave Select transitions from deasserted to asserted."]
-    DISABLED,
-    #[doc = "Enabled. An interrupt will be generated when any Slave Select transitions from deasserted to asserted."]
-    ENABLED,
-}
-impl SSAENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SSAENW::DISABLED => false,
-            SSAENW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SSAENW<'a> {
+#[doc = "Write proxy for field `MSTIDLEEN`"]
+pub struct MSTIDLEEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SSAENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SSAENW) -> &'a mut W {
+impl<'a> MSTIDLEEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MSTIDLEEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disabled. No interrupt will be generated when any Slave Select transitions from deasserted to asserted."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(SSAENW::DISABLED)
-    }
-    #[doc = "Enabled. An interrupt will be generated when any Slave Select transitions from deasserted to asserted."]
-    #[inline]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(SSAENW::ENABLED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SSDEN`"]
-pub enum SSDENW {
-    #[doc = "Disabled. No interrupt will be generated when all asserted Slave Selects transition to deasserted."]
-    DISABLED,
-    #[doc = "Enabled. An interrupt will be generated when all asserted Slave Selects transition to deasserted."]
-    ENABLED,
-}
-impl SSDENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SSDENW::DISABLED => false,
-            SSDENW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SSDENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SSDENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SSDENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disabled. No interrupt will be generated when all asserted Slave Selects transition to deasserted."]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(SSDENW::DISABLED)
-    }
-    #[doc = "Enabled. An interrupt will be generated when all asserted Slave Selects transition to deasserted."]
-    #[inline]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(SSDENW::ENABLED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MSTIDLEEN`"]
-pub enum MSTIDLEENW {
-    #[doc = "No interrupt will be generated when the SPI master function is idle."]
-    DISABLED,
-    #[doc = "An interrupt will be generated when the SPI master function is fully idle."]
-    ENABLED,
-}
-impl MSTIDLEENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MSTIDLEENW::DISABLED => false,
-            MSTIDLEENW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MSTIDLEENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MSTIDLEENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MSTIDLEENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "No interrupt will be generated when the SPI master function is idle."]
-    #[inline]
+    #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
-        self.variant(MSTIDLEENW::DISABLED)
+        self.variant(MSTIDLEEN_A::DISABLED)
     }
     #[doc = "An interrupt will be generated when the SPI master function is fully idle."]
-    #[inline]
+    #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
-        self.variant(MSTIDLEENW::ENABLED)
+        self.variant(MSTIDLEEN_A::ENABLED)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 4 - Slave select assert interrupt enable. Determines whether an interrupt occurs when the Slave Select is asserted."]
-    #[inline]
-    pub fn ssaen(&self) -> SSAENR {
-        SSAENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ssaen(&self) -> SSAEN_R {
+        SSAEN_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Slave select deassert interrupt enable. Determines whether an interrupt occurs when the Slave Select is deasserted."]
-    #[inline]
-    pub fn ssden(&self) -> SSDENR {
-        SSDENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ssden(&self) -> SSDEN_R {
+        SSDEN_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Master idle interrupt enable."]
-    #[inline]
-    pub fn mstidleen(&self) -> MSTIDLEENR {
-        MSTIDLEENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mstidleen(&self) -> MSTIDLEEN_R {
+        MSTIDLEEN_R::new(((self.bits >> 8) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 4 - Slave select assert interrupt enable. Determines whether an interrupt occurs when the Slave Select is asserted."]
-    #[inline]
-    pub fn ssaen(&mut self) -> _SSAENW {
-        _SSAENW { w: self }
+    #[inline(always)]
+    pub fn ssaen(&mut self) -> SSAEN_W {
+        SSAEN_W { w: self }
     }
     #[doc = "Bit 5 - Slave select deassert interrupt enable. Determines whether an interrupt occurs when the Slave Select is deasserted."]
-    #[inline]
-    pub fn ssden(&mut self) -> _SSDENW {
-        _SSDENW { w: self }
+    #[inline(always)]
+    pub fn ssden(&mut self) -> SSDEN_W {
+        SSDEN_W { w: self }
     }
     #[doc = "Bit 8 - Master idle interrupt enable."]
-    #[inline]
-    pub fn mstidleen(&mut self) -> _MSTIDLEENW {
-        _MSTIDLEENW { w: self }
+    #[inline(always)]
+    pub fn mstidleen(&mut self) -> MSTIDLEEN_W {
+        MSTIDLEEN_W { w: self }
     }
 }

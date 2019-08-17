@@ -1,183 +1,104 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::GPIOPSYNC {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register GPIOPSYNC"]
+pub type R = crate::R<u32, super::GPIOPSYNC>;
+#[doc = "Writer for register GPIOPSYNC"]
+pub type W = crate::W<u32, super::GPIOPSYNC>;
+#[doc = "Register GPIOPSYNC `reset()`'s with value 0"]
+impl crate::ResetValue for super::GPIOPSYNC {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `PSYNC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PSYNCR {
+pub enum PSYNC_A {
     #[doc = "use the first stage of synchonization inside GPIO_INT module."]
     USED,
     #[doc = "bypass of the first stage of synchonization inside GPIO_INT module."]
     BYPASS,
 }
-impl PSYNCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PSYNCR::USED => false,
-            PSYNCR::BYPASS => true,
+impl From<PSYNC_A> for bool {
+    #[inline(always)]
+    fn from(variant: PSYNC_A) -> Self {
+        match variant {
+            PSYNC_A::USED => false,
+            PSYNC_A::BYPASS => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PSYNCR {
-        match value {
-            false => PSYNCR::USED,
-            true => PSYNCR::BYPASS,
+}
+#[doc = "Reader of field `PSYNC`"]
+pub type PSYNC_R = crate::R<bool, PSYNC_A>;
+impl PSYNC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PSYNC_A {
+        match self.bits {
+            false => PSYNC_A::USED,
+            true => PSYNC_A::BYPASS,
         }
     }
     #[doc = "Checks if the value of the field is `USED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_used(&self) -> bool {
-        *self == PSYNCR::USED
+        *self == PSYNC_A::USED
     }
     #[doc = "Checks if the value of the field is `BYPASS`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bypass(&self) -> bool {
-        *self == PSYNCR::BYPASS
+        *self == PSYNC_A::BYPASS
     }
 }
-#[doc = "Values that can be written to the field `PSYNC`"]
-pub enum PSYNCW {
-    #[doc = "use the first stage of synchonization inside GPIO_INT module."]
-    USED,
-    #[doc = "bypass of the first stage of synchonization inside GPIO_INT module."]
-    BYPASS,
-}
-impl PSYNCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PSYNCW::USED => false,
-            PSYNCW::BYPASS => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PSYNCW<'a> {
+#[doc = "Write proxy for field `PSYNC`"]
+pub struct PSYNC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PSYNCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PSYNCW) -> &'a mut W {
+impl<'a> PSYNC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PSYNC_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "use the first stage of synchonization inside GPIO_INT module."]
-    #[inline]
+    #[inline(always)]
     pub fn used(self) -> &'a mut W {
-        self.variant(PSYNCW::USED)
+        self.variant(PSYNC_A::USED)
     }
     #[doc = "bypass of the first stage of synchonization inside GPIO_INT module."]
-    #[inline]
+    #[inline(always)]
     pub fn bypass(self) -> &'a mut W {
-        self.variant(PSYNCW::BYPASS)
+        self.variant(PSYNC_A::BYPASS)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Enable bypass of the first stage of synchonization inside GPIO_INT module."]
-    #[inline]
-    pub fn psync(&self) -> PSYNCR {
-        PSYNCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn psync(&self) -> PSYNC_R {
+        PSYNC_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Enable bypass of the first stage of synchonization inside GPIO_INT module."]
-    #[inline]
-    pub fn psync(&mut self) -> _PSYNCW {
-        _PSYNCW { w: self }
+    #[inline(always)]
+    pub fn psync(&mut self) -> PSYNC_W {
+        PSYNC_W { w: self }
     }
 }

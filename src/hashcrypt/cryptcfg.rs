@@ -1,381 +1,496 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CRYPTCFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CRYPTCFG"]
+pub type R = crate::R<u32, super::CRYPTCFG>;
+#[doc = "Writer for register CRYPTCFG"]
+pub type W = crate::W<u32, super::CRYPTCFG>;
+#[doc = "Register CRYPTCFG `reset()`'s with value 0"]
+impl crate::ResetValue for super::CRYPTCFG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct MSW1ST_OUTR {
-    bits: bool,
+#[doc = "Reader of field `MSW1ST_OUT`"]
+pub type MSW1ST_OUT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MSW1ST_OUT`"]
+pub struct MSW1ST_OUT_W<'a> {
+    w: &'a mut W,
 }
-impl MSW1ST_OUTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> MSW1ST_OUT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SWAPKEYR {
-    bits: bool,
-}
-impl SWAPKEYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct SWAPDATR {
-    bits: bool,
+#[doc = "Reader of field `SWAPKEY`"]
+pub type SWAPKEY_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SWAPKEY`"]
+pub struct SWAPKEY_W<'a> {
+    w: &'a mut W,
 }
-impl SWAPDATR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> SWAPKEY_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct MSW1STR {
-    bits: bool,
+#[doc = "Reader of field `SWAPDAT`"]
+pub type SWAPDAT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SWAPDAT`"]
+pub struct SWAPDAT_W<'a> {
+    w: &'a mut W,
 }
-impl MSW1STR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> SWAPDAT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "Reader of field `MSW1ST`"]
+pub type MSW1ST_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `MSW1ST`"]
+pub struct MSW1ST_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> MSW1ST_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
 #[doc = "Possible values of the field `AESMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AESMODER {
+pub enum AESMODE_A {
     #[doc = "ECB - used as is"]
     ECB,
     #[doc = "CBC mode (see details on IV/nonce)"]
     CBC,
     #[doc = "CTR mode (see details on IV/nonce). See also AESCTRPOS."]
     CTR,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl AESMODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            AESMODER::ECB => 0,
-            AESMODER::CBC => 1,
-            AESMODER::CTR => 2,
-            AESMODER::_Reserved(bits) => bits,
+impl From<AESMODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: AESMODE_A) -> Self {
+        match variant {
+            AESMODE_A::ECB => 0,
+            AESMODE_A::CBC => 1,
+            AESMODE_A::CTR => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> AESMODER {
-        match value {
-            0 => AESMODER::ECB,
-            1 => AESMODER::CBC,
-            2 => AESMODER::CTR,
-            i => AESMODER::_Reserved(i),
+}
+#[doc = "Reader of field `AESMODE`"]
+pub type AESMODE_R = crate::R<u8, AESMODE_A>;
+impl AESMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, AESMODE_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(AESMODE_A::ECB),
+            1 => Val(AESMODE_A::CBC),
+            2 => Val(AESMODE_A::CTR),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `ECB`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ecb(&self) -> bool {
-        *self == AESMODER::ECB
+        *self == AESMODE_A::ECB
     }
     #[doc = "Checks if the value of the field is `CBC`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cbc(&self) -> bool {
-        *self == AESMODER::CBC
+        *self == AESMODE_A::CBC
     }
     #[doc = "Checks if the value of the field is `CTR`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ctr(&self) -> bool {
-        *self == AESMODER::CTR
+        *self == AESMODE_A::CTR
+    }
+}
+#[doc = "Write proxy for field `AESMODE`"]
+pub struct AESMODE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> AESMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AESMODE_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "ECB - used as is"]
+    #[inline(always)]
+    pub fn ecb(self) -> &'a mut W {
+        self.variant(AESMODE_A::ECB)
+    }
+    #[doc = "CBC mode (see details on IV/nonce)"]
+    #[inline(always)]
+    pub fn cbc(self) -> &'a mut W {
+        self.variant(AESMODE_A::CBC)
+    }
+    #[doc = "CTR mode (see details on IV/nonce). See also AESCTRPOS."]
+    #[inline(always)]
+    pub fn ctr(self) -> &'a mut W {
+        self.variant(AESMODE_A::CTR)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `AESDECRYPT`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AESDECRYPTR {
+pub enum AESDECRYPT_A {
     #[doc = "Encrypt"]
     AESDECRYPT_0,
     #[doc = "Decrypt"]
     DECRYPT,
 }
-impl AESDECRYPTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            AESDECRYPTR::AESDECRYPT_0 => false,
-            AESDECRYPTR::DECRYPT => true,
+impl From<AESDECRYPT_A> for bool {
+    #[inline(always)]
+    fn from(variant: AESDECRYPT_A) -> Self {
+        match variant {
+            AESDECRYPT_A::AESDECRYPT_0 => false,
+            AESDECRYPT_A::DECRYPT => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> AESDECRYPTR {
-        match value {
-            false => AESDECRYPTR::AESDECRYPT_0,
-            true => AESDECRYPTR::DECRYPT,
+}
+#[doc = "Reader of field `AESDECRYPT`"]
+pub type AESDECRYPT_R = crate::R<bool, AESDECRYPT_A>;
+impl AESDECRYPT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AESDECRYPT_A {
+        match self.bits {
+            false => AESDECRYPT_A::AESDECRYPT_0,
+            true => AESDECRYPT_A::DECRYPT,
         }
     }
     #[doc = "Checks if the value of the field is `AESDECRYPT_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_aesdecrypt_0(&self) -> bool {
-        *self == AESDECRYPTR::AESDECRYPT_0
+        *self == AESDECRYPT_A::AESDECRYPT_0
     }
     #[doc = "Checks if the value of the field is `DECRYPT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_decrypt(&self) -> bool {
-        *self == AESDECRYPTR::DECRYPT
+        *self == AESDECRYPT_A::DECRYPT
+    }
+}
+#[doc = "Write proxy for field `AESDECRYPT`"]
+pub struct AESDECRYPT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> AESDECRYPT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AESDECRYPT_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Encrypt"]
+    #[inline(always)]
+    pub fn aesdecrypt_0(self) -> &'a mut W {
+        self.variant(AESDECRYPT_A::AESDECRYPT_0)
+    }
+    #[doc = "Decrypt"]
+    #[inline(always)]
+    pub fn decrypt(self) -> &'a mut W {
+        self.variant(AESDECRYPT_A::DECRYPT)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w
     }
 }
 #[doc = "Possible values of the field `AESSECRET`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AESSECRETR {
+pub enum AESSECRET_A {
     #[doc = "User key provided in normal way"]
     NORMAL_WAY,
     #[doc = "Secret key provided in hidden way by HW"]
     AESSECRET_1,
 }
-impl AESSECRETR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            AESSECRETR::NORMAL_WAY => false,
-            AESSECRETR::AESSECRET_1 => true,
+impl From<AESSECRET_A> for bool {
+    #[inline(always)]
+    fn from(variant: AESSECRET_A) -> Self {
+        match variant {
+            AESSECRET_A::NORMAL_WAY => false,
+            AESSECRET_A::AESSECRET_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> AESSECRETR {
-        match value {
-            false => AESSECRETR::NORMAL_WAY,
-            true => AESSECRETR::AESSECRET_1,
+}
+#[doc = "Reader of field `AESSECRET`"]
+pub type AESSECRET_R = crate::R<bool, AESSECRET_A>;
+impl AESSECRET_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AESSECRET_A {
+        match self.bits {
+            false => AESSECRET_A::NORMAL_WAY,
+            true => AESSECRET_A::AESSECRET_1,
         }
     }
     #[doc = "Checks if the value of the field is `NORMAL_WAY`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_normal_way(&self) -> bool {
-        *self == AESSECRETR::NORMAL_WAY
+        *self == AESSECRET_A::NORMAL_WAY
     }
     #[doc = "Checks if the value of the field is `AESSECRET_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_aessecret_1(&self) -> bool {
-        *self == AESSECRETR::AESSECRET_1
+        *self == AESSECRET_A::AESSECRET_1
+    }
+}
+#[doc = "Write proxy for field `AESSECRET`"]
+pub struct AESSECRET_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> AESSECRET_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AESSECRET_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "User key provided in normal way"]
+    #[inline(always)]
+    pub fn normal_way(self) -> &'a mut W {
+        self.variant(AESSECRET_A::NORMAL_WAY)
+    }
+    #[doc = "Secret key provided in hidden way by HW"]
+    #[inline(always)]
+    pub fn aessecret_1(self) -> &'a mut W {
+        self.variant(AESSECRET_A::AESSECRET_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w
     }
 }
 #[doc = "Possible values of the field `AESKEYSZ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AESKEYSZR {
+pub enum AESKEYSZ_A {
     #[doc = "128 bit key"]
     BITS_128,
     #[doc = "192 bit key"]
     BITS_192,
     #[doc = "256 bit key"]
     BITS_256,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl AESKEYSZR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            AESKEYSZR::BITS_128 => 0,
-            AESKEYSZR::BITS_192 => 1,
-            AESKEYSZR::BITS_256 => 2,
-            AESKEYSZR::_Reserved(bits) => bits,
+impl From<AESKEYSZ_A> for u8 {
+    #[inline(always)]
+    fn from(variant: AESKEYSZ_A) -> Self {
+        match variant {
+            AESKEYSZ_A::BITS_128 => 0,
+            AESKEYSZ_A::BITS_192 => 1,
+            AESKEYSZ_A::BITS_256 => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> AESKEYSZR {
-        match value {
-            0 => AESKEYSZR::BITS_128,
-            1 => AESKEYSZR::BITS_192,
-            2 => AESKEYSZR::BITS_256,
-            i => AESKEYSZR::_Reserved(i),
+}
+#[doc = "Reader of field `AESKEYSZ`"]
+pub type AESKEYSZ_R = crate::R<u8, AESKEYSZ_A>;
+impl AESKEYSZ_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, AESKEYSZ_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(AESKEYSZ_A::BITS_128),
+            1 => Val(AESKEYSZ_A::BITS_192),
+            2 => Val(AESKEYSZ_A::BITS_256),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `BITS_128`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bits_128(&self) -> bool {
-        *self == AESKEYSZR::BITS_128
+        *self == AESKEYSZ_A::BITS_128
     }
     #[doc = "Checks if the value of the field is `BITS_192`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bits_192(&self) -> bool {
-        *self == AESKEYSZR::BITS_192
+        *self == AESKEYSZ_A::BITS_192
     }
     #[doc = "Checks if the value of the field is `BITS_256`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bits_256(&self) -> bool {
-        *self == AESKEYSZR::BITS_256
+        *self == AESKEYSZ_A::BITS_256
     }
 }
-#[doc = r" Value of the field"]
-pub struct AESCTRPOSR {
-    bits: u8,
+#[doc = "Write proxy for field `AESKEYSZ`"]
+pub struct AESKEYSZ_W<'a> {
+    w: &'a mut W,
 }
-impl AESCTRPOSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> AESKEYSZ_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AESKEYSZ_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "128 bit key"]
+    #[inline(always)]
+    pub fn bits_128(self) -> &'a mut W {
+        self.variant(AESKEYSZ_A::BITS_128)
+    }
+    #[doc = "192 bit key"]
+    #[inline(always)]
+    pub fn bits_192(self) -> &'a mut W {
+        self.variant(AESKEYSZ_A::BITS_192)
+    }
+    #[doc = "256 bit key"]
+    #[inline(always)]
+    pub fn bits_256(self) -> &'a mut W {
+        self.variant(AESKEYSZ_A::BITS_256)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct STREAMLASTR {
-    bits: bool,
+#[doc = "Reader of field `AESCTRPOS`"]
+pub type AESCTRPOS_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `AESCTRPOS`"]
+pub struct AESCTRPOS_W<'a> {
+    w: &'a mut W,
 }
-impl STREAMLASTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+impl<'a> AESCTRPOS_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 10)) | (((value as u32) & 0x07) << 10);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct XSALSAR {
-    bits: bool,
+#[doc = "Reader of field `STREAMLAST`"]
+pub type STREAMLAST_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `STREAMLAST`"]
+pub struct STREAMLAST_W<'a> {
+    w: &'a mut W,
 }
-impl XSALSAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
+impl<'a> STREAMLAST_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w
+    }
+}
+#[doc = "Reader of field `XSALSA`"]
+pub type XSALSA_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `XSALSA`"]
+pub struct XSALSA_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> XSALSA_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w
     }
 }
 #[doc = "Possible values of the field `ICBSZ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ICBSZR {
+pub enum ICBSZ_A {
     #[doc = "32 bits of the IV/ctr are used (from 127:96)"]
     BITS_32,
     #[doc = "64 bits of the IV/ctr are used (from 127:64)"]
@@ -385,53 +500,94 @@ pub enum ICBSZR {
     #[doc = "All 128 bits of the IV/ctr are used"]
     BIT_128,
 }
-impl ICBSZR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ICBSZR::BITS_32 => 0,
-            ICBSZR::BITS_64 => 1,
-            ICBSZR::BITS_96 => 2,
-            ICBSZR::BIT_128 => 3,
+impl From<ICBSZ_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ICBSZ_A) -> Self {
+        match variant {
+            ICBSZ_A::BITS_32 => 0,
+            ICBSZ_A::BITS_64 => 1,
+            ICBSZ_A::BITS_96 => 2,
+            ICBSZ_A::BIT_128 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ICBSZR {
-        match value {
-            0 => ICBSZR::BITS_32,
-            1 => ICBSZR::BITS_64,
-            2 => ICBSZR::BITS_96,
-            3 => ICBSZR::BIT_128,
+}
+#[doc = "Reader of field `ICBSZ`"]
+pub type ICBSZ_R = crate::R<u8, ICBSZ_A>;
+impl ICBSZ_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ICBSZ_A {
+        match self.bits {
+            0 => ICBSZ_A::BITS_32,
+            1 => ICBSZ_A::BITS_64,
+            2 => ICBSZ_A::BITS_96,
+            3 => ICBSZ_A::BIT_128,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `BITS_32`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bits_32(&self) -> bool {
-        *self == ICBSZR::BITS_32
+        *self == ICBSZ_A::BITS_32
     }
     #[doc = "Checks if the value of the field is `BITS_64`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bits_64(&self) -> bool {
-        *self == ICBSZR::BITS_64
+        *self == ICBSZ_A::BITS_64
     }
     #[doc = "Checks if the value of the field is `BITS_96`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bits_96(&self) -> bool {
-        *self == ICBSZR::BITS_96
+        *self == ICBSZ_A::BITS_96
     }
     #[doc = "Checks if the value of the field is `BIT_128`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_bit_128(&self) -> bool {
-        *self == ICBSZR::BIT_128
+        *self == ICBSZ_A::BIT_128
+    }
+}
+#[doc = "Write proxy for field `ICBSZ`"]
+pub struct ICBSZ_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ICBSZ_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ICBSZ_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
+        }
+    }
+    #[doc = "32 bits of the IV/ctr are used (from 127:96)"]
+    #[inline(always)]
+    pub fn bits_32(self) -> &'a mut W {
+        self.variant(ICBSZ_A::BITS_32)
+    }
+    #[doc = "64 bits of the IV/ctr are used (from 127:64)"]
+    #[inline(always)]
+    pub fn bits_64(self) -> &'a mut W {
+        self.variant(ICBSZ_A::BITS_64)
+    }
+    #[doc = "96 bits of the IV/ctr are used (from 127:32)"]
+    #[inline(always)]
+    pub fn bits_96(self) -> &'a mut W {
+        self.variant(ICBSZ_A::BITS_96)
+    }
+    #[doc = "All 128 bits of the IV/ctr are used"]
+    #[inline(always)]
+    pub fn bit_128(self) -> &'a mut W {
+        self.variant(ICBSZ_A::BIT_128)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
+        self.w
     }
 }
 #[doc = "Possible values of the field `ICBSTRM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ICBSTRMR {
+pub enum ICBSTRM_A {
     #[doc = "8 blocks"]
     BLOCKS_8,
     #[doc = "16 blocks"]
@@ -441,769 +597,222 @@ pub enum ICBSTRMR {
     #[doc = "64 blocks"]
     BLOCKS_64,
 }
-impl ICBSTRMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            ICBSTRMR::BLOCKS_8 => 0,
-            ICBSTRMR::BLOCKS_16 => 1,
-            ICBSTRMR::BLOCKS_32 => 2,
-            ICBSTRMR::BLOCKS_64 => 3,
+impl From<ICBSTRM_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ICBSTRM_A) -> Self {
+        match variant {
+            ICBSTRM_A::BLOCKS_8 => 0,
+            ICBSTRM_A::BLOCKS_16 => 1,
+            ICBSTRM_A::BLOCKS_32 => 2,
+            ICBSTRM_A::BLOCKS_64 => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> ICBSTRMR {
-        match value {
-            0 => ICBSTRMR::BLOCKS_8,
-            1 => ICBSTRMR::BLOCKS_16,
-            2 => ICBSTRMR::BLOCKS_32,
-            3 => ICBSTRMR::BLOCKS_64,
+}
+#[doc = "Reader of field `ICBSTRM`"]
+pub type ICBSTRM_R = crate::R<u8, ICBSTRM_A>;
+impl ICBSTRM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ICBSTRM_A {
+        match self.bits {
+            0 => ICBSTRM_A::BLOCKS_8,
+            1 => ICBSTRM_A::BLOCKS_16,
+            2 => ICBSTRM_A::BLOCKS_32,
+            3 => ICBSTRM_A::BLOCKS_64,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `BLOCKS_8`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_blocks_8(&self) -> bool {
-        *self == ICBSTRMR::BLOCKS_8
+        *self == ICBSTRM_A::BLOCKS_8
     }
     #[doc = "Checks if the value of the field is `BLOCKS_16`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_blocks_16(&self) -> bool {
-        *self == ICBSTRMR::BLOCKS_16
+        *self == ICBSTRM_A::BLOCKS_16
     }
     #[doc = "Checks if the value of the field is `BLOCKS_32`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_blocks_32(&self) -> bool {
-        *self == ICBSTRMR::BLOCKS_32
+        *self == ICBSTRM_A::BLOCKS_32
     }
     #[doc = "Checks if the value of the field is `BLOCKS_64`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_blocks_64(&self) -> bool {
-        *self == ICBSTRMR::BLOCKS_64
+        *self == ICBSTRM_A::BLOCKS_64
     }
 }
-#[doc = r" Proxy"]
-pub struct _MSW1ST_OUTW<'a> {
+#[doc = "Write proxy for field `ICBSTRM`"]
+pub struct ICBSTRM_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MSW1ST_OUTW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SWAPKEYW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SWAPKEYW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SWAPDATW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SWAPDATW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MSW1STW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MSW1STW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `AESMODE`"]
-pub enum AESMODEW {
-    #[doc = "ECB - used as is"]
-    ECB,
-    #[doc = "CBC mode (see details on IV/nonce)"]
-    CBC,
-    #[doc = "CTR mode (see details on IV/nonce). See also AESCTRPOS."]
-    CTR,
-}
-impl AESMODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            AESMODEW::ECB => 0,
-            AESMODEW::CBC => 1,
-            AESMODEW::CTR => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AESMODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _AESMODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AESMODEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "ECB - used as is"]
-    #[inline]
-    pub fn ecb(self) -> &'a mut W {
-        self.variant(AESMODEW::ECB)
-    }
-    #[doc = "CBC mode (see details on IV/nonce)"]
-    #[inline]
-    pub fn cbc(self) -> &'a mut W {
-        self.variant(AESMODEW::CBC)
-    }
-    #[doc = "CTR mode (see details on IV/nonce). See also AESCTRPOS."]
-    #[inline]
-    pub fn ctr(self) -> &'a mut W {
-        self.variant(AESMODEW::CTR)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `AESDECRYPT`"]
-pub enum AESDECRYPTW {
-    #[doc = "Encrypt"]
-    AESDECRYPT_0,
-    #[doc = "Decrypt"]
-    DECRYPT,
-}
-impl AESDECRYPTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            AESDECRYPTW::AESDECRYPT_0 => false,
-            AESDECRYPTW::DECRYPT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AESDECRYPTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _AESDECRYPTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AESDECRYPTW) -> &'a mut W {
+impl<'a> ICBSTRM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ICBSTRM_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Encrypt"]
-    #[inline]
-    pub fn aesdecrypt_0(self) -> &'a mut W {
-        self.variant(AESDECRYPTW::AESDECRYPT_0)
-    }
-    #[doc = "Decrypt"]
-    #[inline]
-    pub fn decrypt(self) -> &'a mut W {
-        self.variant(AESDECRYPTW::DECRYPT)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `AESSECRET`"]
-pub enum AESSECRETW {
-    #[doc = "User key provided in normal way"]
-    NORMAL_WAY,
-    #[doc = "Secret key provided in hidden way by HW"]
-    AESSECRET_1,
-}
-impl AESSECRETW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            AESSECRETW::NORMAL_WAY => false,
-            AESSECRETW::AESSECRET_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AESSECRETW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _AESSECRETW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AESSECRETW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "User key provided in normal way"]
-    #[inline]
-    pub fn normal_way(self) -> &'a mut W {
-        self.variant(AESSECRETW::NORMAL_WAY)
-    }
-    #[doc = "Secret key provided in hidden way by HW"]
-    #[inline]
-    pub fn aessecret_1(self) -> &'a mut W {
-        self.variant(AESSECRETW::AESSECRET_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `AESKEYSZ`"]
-pub enum AESKEYSZW {
-    #[doc = "128 bit key"]
-    BITS_128,
-    #[doc = "192 bit key"]
-    BITS_192,
-    #[doc = "256 bit key"]
-    BITS_256,
-}
-impl AESKEYSZW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            AESKEYSZW::BITS_128 => 0,
-            AESKEYSZW::BITS_192 => 1,
-            AESKEYSZW::BITS_256 => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AESKEYSZW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _AESKEYSZW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AESKEYSZW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "128 bit key"]
-    #[inline]
-    pub fn bits_128(self) -> &'a mut W {
-        self.variant(AESKEYSZW::BITS_128)
-    }
-    #[doc = "192 bit key"]
-    #[inline]
-    pub fn bits_192(self) -> &'a mut W {
-        self.variant(AESKEYSZW::BITS_192)
-    }
-    #[doc = "256 bit key"]
-    #[inline]
-    pub fn bits_256(self) -> &'a mut W {
-        self.variant(AESKEYSZW::BITS_256)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _AESCTRPOSW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _AESCTRPOSW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _STREAMLASTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _STREAMLASTW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _XSALSAW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _XSALSAW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 17;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ICBSZ`"]
-pub enum ICBSZW {
-    #[doc = "32 bits of the IV/ctr are used (from 127:96)"]
-    BITS_32,
-    #[doc = "64 bits of the IV/ctr are used (from 127:64)"]
-    BITS_64,
-    #[doc = "96 bits of the IV/ctr are used (from 127:32)"]
-    BITS_96,
-    #[doc = "All 128 bits of the IV/ctr are used"]
-    BIT_128,
-}
-impl ICBSZW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ICBSZW::BITS_32 => 0,
-            ICBSZW::BITS_64 => 1,
-            ICBSZW::BITS_96 => 2,
-            ICBSZW::BIT_128 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ICBSZW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ICBSZW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ICBSZW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "32 bits of the IV/ctr are used (from 127:96)"]
-    #[inline]
-    pub fn bits_32(self) -> &'a mut W {
-        self.variant(ICBSZW::BITS_32)
-    }
-    #[doc = "64 bits of the IV/ctr are used (from 127:64)"]
-    #[inline]
-    pub fn bits_64(self) -> &'a mut W {
-        self.variant(ICBSZW::BITS_64)
-    }
-    #[doc = "96 bits of the IV/ctr are used (from 127:32)"]
-    #[inline]
-    pub fn bits_96(self) -> &'a mut W {
-        self.variant(ICBSZW::BITS_96)
-    }
-    #[doc = "All 128 bits of the IV/ctr are used"]
-    #[inline]
-    pub fn bit_128(self) -> &'a mut W {
-        self.variant(ICBSZW::BIT_128)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ICBSTRM`"]
-pub enum ICBSTRMW {
-    #[doc = "8 blocks"]
-    BLOCKS_8,
-    #[doc = "16 blocks"]
-    BLOCKS_16,
-    #[doc = "32 blocks"]
-    BLOCKS_32,
-    #[doc = "64 blocks"]
-    BLOCKS_64,
-}
-impl ICBSTRMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            ICBSTRMW::BLOCKS_8 => 0,
-            ICBSTRMW::BLOCKS_16 => 1,
-            ICBSTRMW::BLOCKS_32 => 2,
-            ICBSTRMW::BLOCKS_64 => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ICBSTRMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ICBSTRMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ICBSTRMW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "8 blocks"]
-    #[inline]
+    #[inline(always)]
     pub fn blocks_8(self) -> &'a mut W {
-        self.variant(ICBSTRMW::BLOCKS_8)
+        self.variant(ICBSTRM_A::BLOCKS_8)
     }
     #[doc = "16 blocks"]
-    #[inline]
+    #[inline(always)]
     pub fn blocks_16(self) -> &'a mut W {
-        self.variant(ICBSTRMW::BLOCKS_16)
+        self.variant(ICBSTRM_A::BLOCKS_16)
     }
     #[doc = "32 blocks"]
-    #[inline]
+    #[inline(always)]
     pub fn blocks_32(self) -> &'a mut W {
-        self.variant(ICBSTRMW::BLOCKS_32)
+        self.variant(ICBSTRM_A::BLOCKS_32)
     }
     #[doc = "64 blocks"]
-    #[inline]
+    #[inline(always)]
     pub fn blocks_64(self) -> &'a mut W {
-        self.variant(ICBSTRMW::BLOCKS_64)
+        self.variant(ICBSTRM_A::BLOCKS_64)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 22)) | (((value as u32) & 0x03) << 22);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - If 1, OUTDATA0 will be read Most significant word 1st for AES. Else it will be read in normal little endian - Least significant word 1st. Note: only if allowed by configuration."]
-    #[inline]
-    pub fn msw1st_out(&self) -> MSW1ST_OUTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MSW1ST_OUTR { bits }
+    #[inline(always)]
+    pub fn msw1st_out(&self) -> MSW1ST_OUT_R {
+        MSW1ST_OUT_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - If 1, will Swap the key input (bytes in each word)."]
-    #[inline]
-    pub fn swapkey(&self) -> SWAPKEYR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SWAPKEYR { bits }
+    #[inline(always)]
+    pub fn swapkey(&self) -> SWAPKEY_R {
+        SWAPKEY_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - If 1, will SWAP the data and IV inputs (bytes in each word)."]
-    #[inline]
-    pub fn swapdat(&self) -> SWAPDATR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SWAPDATR { bits }
+    #[inline(always)]
+    pub fn swapdat(&self) -> SWAPDAT_R {
+        SWAPDAT_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - If 1, load of key, IV, and data is MSW 1st for AES. Else, the words are little endian. Note: only if allowed by configuration."]
-    #[inline]
-    pub fn msw1st(&self) -> MSW1STR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        MSW1STR { bits }
+    #[inline(always)]
+    pub fn msw1st(&self) -> MSW1ST_R {
+        MSW1ST_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bits 4:5 - AES Cipher mode to use if plain AES"]
-    #[inline]
-    pub fn aesmode(&self) -> AESMODER {
-        AESMODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn aesmode(&self) -> AESMODE_R {
+        AESMODE_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bit 6 - AES ECB direction. Only encryption used if CTR mode or manual modes such as CFB"]
-    #[inline]
-    pub fn aesdecrypt(&self) -> AESDECRYPTR {
-        AESDECRYPTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn aesdecrypt(&self) -> AESDECRYPT_R {
+        AESDECRYPT_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Selects the Hidden Secret key vs. User key, if provided. If security levels are used, only the highest level is permitted to select this."]
-    #[inline]
-    pub fn aessecret(&self) -> AESSECRETR {
-        AESSECRETR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn aessecret(&self) -> AESSECRET_R {
+        AESSECRET_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bits 8:9 - Sets the AES key size"]
-    #[inline]
-    pub fn aeskeysz(&self) -> AESKEYSZR {
-        AESKEYSZR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn aeskeysz(&self) -> AESKEYSZ_R {
+        AESKEYSZ_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bits 10:12 - Halfword position of 16b counter in IV if AESMODE is CTR (position is fixed for Salsa and ChaCha). Only supports 16b counter, so application must control any additional bytes if using more. The 16-bit counter is read from the IV and incremented by 1 each time. Any other use CTR should use ECB directly and do its own XOR and so on."]
-    #[inline]
-    pub fn aesctrpos(&self) -> AESCTRPOSR {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        AESCTRPOSR { bits }
+    #[inline(always)]
+    pub fn aesctrpos(&self) -> AESCTRPOS_R {
+        AESCTRPOS_R::new(((self.bits >> 10) & 0x07) as u8)
     }
     #[doc = "Bit 16 - Is 1 if last stream block. If not 1, then the engine will compute the next \"hash\"."]
-    #[inline]
-    pub fn streamlast(&self) -> STREAMLASTR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 16;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        STREAMLASTR { bits }
+    #[inline(always)]
+    pub fn streamlast(&self) -> STREAMLAST_R {
+        STREAMLAST_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 17 - Is 1 if XSalsa 128b NONCE to be used vs. 64b"]
-    #[inline]
-    pub fn xsalsa(&self) -> XSALSAR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 17;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        XSALSAR { bits }
+    #[inline(always)]
+    pub fn xsalsa(&self) -> XSALSA_R {
+        XSALSA_R::new(((self.bits >> 17) & 0x01) != 0)
     }
     #[doc = "Bits 20:21 - This sets the ICB size between 32 and 128 bits, using the following rules. Note that the counter is assumed to occupy the low order bits of the IV."]
-    #[inline]
-    pub fn icbsz(&self) -> ICBSZR {
-        ICBSZR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn icbsz(&self) -> ICBSZ_R {
+        ICBSZ_R::new(((self.bits >> 20) & 0x03) as u8)
     }
     #[doc = "Bits 22:23 - The size of the ICB-AES stream that can be pushed before needing to compute a new IV/ctr (counter start). This optimizes the performance of the stream of blocks after the 1st."]
-    #[inline]
-    pub fn icbstrm(&self) -> ICBSTRMR {
-        ICBSTRMR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn icbstrm(&self) -> ICBSTRM_R {
+        ICBSTRM_R::new(((self.bits >> 22) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - If 1, OUTDATA0 will be read Most significant word 1st for AES. Else it will be read in normal little endian - Least significant word 1st. Note: only if allowed by configuration."]
-    #[inline]
-    pub fn msw1st_out(&mut self) -> _MSW1ST_OUTW {
-        _MSW1ST_OUTW { w: self }
+    #[inline(always)]
+    pub fn msw1st_out(&mut self) -> MSW1ST_OUT_W {
+        MSW1ST_OUT_W { w: self }
     }
     #[doc = "Bit 1 - If 1, will Swap the key input (bytes in each word)."]
-    #[inline]
-    pub fn swapkey(&mut self) -> _SWAPKEYW {
-        _SWAPKEYW { w: self }
+    #[inline(always)]
+    pub fn swapkey(&mut self) -> SWAPKEY_W {
+        SWAPKEY_W { w: self }
     }
     #[doc = "Bit 2 - If 1, will SWAP the data and IV inputs (bytes in each word)."]
-    #[inline]
-    pub fn swapdat(&mut self) -> _SWAPDATW {
-        _SWAPDATW { w: self }
+    #[inline(always)]
+    pub fn swapdat(&mut self) -> SWAPDAT_W {
+        SWAPDAT_W { w: self }
     }
     #[doc = "Bit 3 - If 1, load of key, IV, and data is MSW 1st for AES. Else, the words are little endian. Note: only if allowed by configuration."]
-    #[inline]
-    pub fn msw1st(&mut self) -> _MSW1STW {
-        _MSW1STW { w: self }
+    #[inline(always)]
+    pub fn msw1st(&mut self) -> MSW1ST_W {
+        MSW1ST_W { w: self }
     }
     #[doc = "Bits 4:5 - AES Cipher mode to use if plain AES"]
-    #[inline]
-    pub fn aesmode(&mut self) -> _AESMODEW {
-        _AESMODEW { w: self }
+    #[inline(always)]
+    pub fn aesmode(&mut self) -> AESMODE_W {
+        AESMODE_W { w: self }
     }
     #[doc = "Bit 6 - AES ECB direction. Only encryption used if CTR mode or manual modes such as CFB"]
-    #[inline]
-    pub fn aesdecrypt(&mut self) -> _AESDECRYPTW {
-        _AESDECRYPTW { w: self }
+    #[inline(always)]
+    pub fn aesdecrypt(&mut self) -> AESDECRYPT_W {
+        AESDECRYPT_W { w: self }
     }
     #[doc = "Bit 7 - Selects the Hidden Secret key vs. User key, if provided. If security levels are used, only the highest level is permitted to select this."]
-    #[inline]
-    pub fn aessecret(&mut self) -> _AESSECRETW {
-        _AESSECRETW { w: self }
+    #[inline(always)]
+    pub fn aessecret(&mut self) -> AESSECRET_W {
+        AESSECRET_W { w: self }
     }
     #[doc = "Bits 8:9 - Sets the AES key size"]
-    #[inline]
-    pub fn aeskeysz(&mut self) -> _AESKEYSZW {
-        _AESKEYSZW { w: self }
+    #[inline(always)]
+    pub fn aeskeysz(&mut self) -> AESKEYSZ_W {
+        AESKEYSZ_W { w: self }
     }
     #[doc = "Bits 10:12 - Halfword position of 16b counter in IV if AESMODE is CTR (position is fixed for Salsa and ChaCha). Only supports 16b counter, so application must control any additional bytes if using more. The 16-bit counter is read from the IV and incremented by 1 each time. Any other use CTR should use ECB directly and do its own XOR and so on."]
-    #[inline]
-    pub fn aesctrpos(&mut self) -> _AESCTRPOSW {
-        _AESCTRPOSW { w: self }
+    #[inline(always)]
+    pub fn aesctrpos(&mut self) -> AESCTRPOS_W {
+        AESCTRPOS_W { w: self }
     }
     #[doc = "Bit 16 - Is 1 if last stream block. If not 1, then the engine will compute the next \"hash\"."]
-    #[inline]
-    pub fn streamlast(&mut self) -> _STREAMLASTW {
-        _STREAMLASTW { w: self }
+    #[inline(always)]
+    pub fn streamlast(&mut self) -> STREAMLAST_W {
+        STREAMLAST_W { w: self }
     }
     #[doc = "Bit 17 - Is 1 if XSalsa 128b NONCE to be used vs. 64b"]
-    #[inline]
-    pub fn xsalsa(&mut self) -> _XSALSAW {
-        _XSALSAW { w: self }
+    #[inline(always)]
+    pub fn xsalsa(&mut self) -> XSALSA_W {
+        XSALSA_W { w: self }
     }
     #[doc = "Bits 20:21 - This sets the ICB size between 32 and 128 bits, using the following rules. Note that the counter is assumed to occupy the low order bits of the IV."]
-    #[inline]
-    pub fn icbsz(&mut self) -> _ICBSZW {
-        _ICBSZW { w: self }
+    #[inline(always)]
+    pub fn icbsz(&mut self) -> ICBSZ_W {
+        ICBSZ_W { w: self }
     }
     #[doc = "Bits 22:23 - The size of the ICB-AES stream that can be pushed before needing to compute a new IV/ctr (counter start). This optimizes the performance of the stream of blocks after the 1st."]
-    #[inline]
-    pub fn icbstrm(&mut self) -> _ICBSTRMW {
-        _ICBSTRMW { w: self }
+    #[inline(always)]
+    pub fn icbstrm(&mut self) -> ICBSTRM_W {
+        ICBSTRM_W { w: self }
     }
 }

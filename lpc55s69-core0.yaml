@@ -1,0 +1,5 @@
+_svd: lpc55s69-core0.svd
+
+# TODO: fix instead of delete
+_delete:
+  INPUTMUX:

@@ -1,187 +1,88 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::INBFORMAT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register INBFORMAT"]
+pub type R = crate::R<u32, super::INBFORMAT>;
+#[doc = "Writer for register INBFORMAT"]
+pub type W = crate::W<u32, super::INBFORMAT>;
+#[doc = "Register INBFORMAT `reset()`'s with value 0"]
+impl crate::ResetValue for super::INBFORMAT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct INB_FORMATINTR {
-    bits: u8,
-}
-impl INB_FORMATINTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INB_FORMATEXTR {
-    bits: u8,
-}
-impl INB_FORMATEXTR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INB_SCALERR {
-    bits: u8,
-}
-impl INB_SCALERR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _INB_FORMATINTW<'a> {
+#[doc = "Reader of field `inb_formatint`"]
+pub type INB_FORMATINT_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `inb_formatint`"]
+pub struct INB_FORMATINT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INB_FORMATINTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INB_FORMATINT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INB_FORMATEXTW<'a> {
+#[doc = "Reader of field `inb_formatext`"]
+pub type INB_FORMATEXT_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `inb_formatext`"]
+pub struct INB_FORMATEXT_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INB_FORMATEXTW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INB_FORMATEXT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _INB_SCALERW<'a> {
+#[doc = "Reader of field `inb_scaler`"]
+pub type INB_SCALER_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `inb_scaler`"]
+pub struct INB_SCALER_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _INB_SCALERW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> INB_SCALER_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Input B Internal format (00: q15; 01:q31; 10:float)"]
-    #[inline]
-    pub fn inb_formatint(&self) -> INB_FORMATINTR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INB_FORMATINTR { bits }
+    #[inline(always)]
+    pub fn inb_formatint(&self) -> INB_FORMATINT_R {
+        INB_FORMATINT_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - Input B External format (00: q15; 01:q31; 10:float)"]
-    #[inline]
-    pub fn inb_formatext(&self) -> INB_FORMATEXTR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INB_FORMATEXTR { bits }
+    #[inline(always)]
+    pub fn inb_formatext(&self) -> INB_FORMATEXT_R {
+        INB_FORMATEXT_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 8:15 - Input B Scaler value (for scaled 'q31' formats)"]
-    #[inline]
-    pub fn inb_scaler(&self) -> INB_SCALERR {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        INB_SCALERR { bits }
+    #[inline(always)]
+    pub fn inb_scaler(&self) -> INB_SCALER_R {
+        INB_SCALER_R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Input B Internal format (00: q15; 01:q31; 10:float)"]
-    #[inline]
-    pub fn inb_formatint(&mut self) -> _INB_FORMATINTW {
-        _INB_FORMATINTW { w: self }
+    #[inline(always)]
+    pub fn inb_formatint(&mut self) -> INB_FORMATINT_W {
+        INB_FORMATINT_W { w: self }
     }
     #[doc = "Bits 4:5 - Input B External format (00: q15; 01:q31; 10:float)"]
-    #[inline]
-    pub fn inb_formatext(&mut self) -> _INB_FORMATEXTW {
-        _INB_FORMATEXTW { w: self }
+    #[inline(always)]
+    pub fn inb_formatext(&mut self) -> INB_FORMATEXT_W {
+        INB_FORMATEXT_W { w: self }
     }
     #[doc = "Bits 8:15 - Input B Scaler value (for scaled 'q31' formats)"]
-    #[inline]
-    pub fn inb_scaler(&mut self) -> _INB_SCALERW {
-        _INB_SCALERW { w: self }
+    #[inline(always)]
+    pub fn inb_scaler(&mut self) -> INB_SCALER_W {
+        INB_SCALER_W { w: self }
     }
 }

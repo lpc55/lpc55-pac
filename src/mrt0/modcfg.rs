@@ -1,265 +1,152 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::MODCFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register MODCFG"]
+pub type R = crate::R<u32, super::MODCFG>;
+#[doc = "Writer for register MODCFG"]
+pub type W = crate::W<u32, super::MODCFG>;
+#[doc = "Register MODCFG `reset()`'s with value 0x0173"]
+impl crate::ResetValue for super::MODCFG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x0173
     }
 }
-#[doc = r" Value of the field"]
-pub struct NOCR {
-    bits: u8,
+#[doc = "Reader of field `NOC`"]
+pub type NOC_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NOC`"]
+pub struct NOC_W<'a> {
+    w: &'a mut W,
 }
-impl NOCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> NOC_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w
     }
 }
-#[doc = r" Value of the field"]
-pub struct NOBR {
-    bits: u8,
+#[doc = "Reader of field `NOB`"]
+pub type NOB_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NOB`"]
+pub struct NOB_W<'a> {
+    w: &'a mut W,
 }
-impl NOBR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> NOB_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x1f << 4)) | (((value as u32) & 0x1f) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `MULTITASK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MULTITASKR {
+pub enum MULTITASK_A {
     #[doc = "Hardware status mode. In this mode, the INUSE(n) flags for all channels are reset."]
     HARDWARE_STATUS_MODE,
     #[doc = "Multi-task mode."]
     MULTI_TASK_MODE,
 }
-impl MULTITASKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MULTITASKR::HARDWARE_STATUS_MODE => false,
-            MULTITASKR::MULTI_TASK_MODE => true,
+impl From<MULTITASK_A> for bool {
+    #[inline(always)]
+    fn from(variant: MULTITASK_A) -> Self {
+        match variant {
+            MULTITASK_A::HARDWARE_STATUS_MODE => false,
+            MULTITASK_A::MULTI_TASK_MODE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MULTITASKR {
-        match value {
-            false => MULTITASKR::HARDWARE_STATUS_MODE,
-            true => MULTITASKR::MULTI_TASK_MODE,
+}
+#[doc = "Reader of field `MULTITASK`"]
+pub type MULTITASK_R = crate::R<bool, MULTITASK_A>;
+impl MULTITASK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MULTITASK_A {
+        match self.bits {
+            false => MULTITASK_A::HARDWARE_STATUS_MODE,
+            true => MULTITASK_A::MULTI_TASK_MODE,
         }
     }
     #[doc = "Checks if the value of the field is `HARDWARE_STATUS_MODE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_hardware_status_mode(&self) -> bool {
-        *self == MULTITASKR::HARDWARE_STATUS_MODE
+        *self == MULTITASK_A::HARDWARE_STATUS_MODE
     }
     #[doc = "Checks if the value of the field is `MULTI_TASK_MODE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_multi_task_mode(&self) -> bool {
-        *self == MULTITASKR::MULTI_TASK_MODE
+        *self == MULTITASK_A::MULTI_TASK_MODE
     }
 }
-#[doc = r" Proxy"]
-pub struct _NOCW<'a> {
+#[doc = "Write proxy for field `MULTITASK`"]
+pub struct MULTITASK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NOCW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NOBW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _NOBW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 31;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MULTITASK`"]
-pub enum MULTITASKW {
-    #[doc = "Hardware status mode. In this mode, the INUSE(n) flags for all channels are reset."]
-    HARDWARE_STATUS_MODE,
-    #[doc = "Multi-task mode."]
-    MULTI_TASK_MODE,
-}
-impl MULTITASKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MULTITASKW::HARDWARE_STATUS_MODE => false,
-            MULTITASKW::MULTI_TASK_MODE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MULTITASKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MULTITASKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MULTITASKW) -> &'a mut W {
+impl<'a> MULTITASK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MULTITASK_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Hardware status mode. In this mode, the INUSE(n) flags for all channels are reset."]
-    #[inline]
+    #[inline(always)]
     pub fn hardware_status_mode(self) -> &'a mut W {
-        self.variant(MULTITASKW::HARDWARE_STATUS_MODE)
+        self.variant(MULTITASK_A::HARDWARE_STATUS_MODE)
     }
     #[doc = "Multi-task mode."]
-    #[inline]
+    #[inline(always)]
     pub fn multi_task_mode(self) -> &'a mut W {
-        self.variant(MULTITASKW::MULTI_TASK_MODE)
+        self.variant(MULTITASK_A::MULTI_TASK_MODE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Identifies the number of channels in this MRT.(4 channels on this device.)"]
-    #[inline]
-    pub fn noc(&self) -> NOCR {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NOCR { bits }
+    #[inline(always)]
+    pub fn noc(&self) -> NOC_R {
+        NOC_R::new((self.bits & 0x0f) as u8)
     }
     #[doc = "Bits 4:8 - Identifies the number of timer bits in this MRT. (24 bits wide on this device.)"]
-    #[inline]
-    pub fn nob(&self) -> NOBR {
-        let bits = {
-            const MASK: u8 = 31;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NOBR { bits }
+    #[inline(always)]
+    pub fn nob(&self) -> NOB_R {
+        NOB_R::new(((self.bits >> 4) & 0x1f) as u8)
     }
     #[doc = "Bit 31 - Selects the operating mode for the INUSE flags and the IDLE_CH register."]
-    #[inline]
-    pub fn multitask(&self) -> MULTITASKR {
-        MULTITASKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn multitask(&self) -> MULTITASK_R {
+        MULTITASK_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 371 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Identifies the number of channels in this MRT.(4 channels on this device.)"]
-    #[inline]
-    pub fn noc(&mut self) -> _NOCW {
-        _NOCW { w: self }
+    #[inline(always)]
+    pub fn noc(&mut self) -> NOC_W {
+        NOC_W { w: self }
     }
     #[doc = "Bits 4:8 - Identifies the number of timer bits in this MRT. (24 bits wide on this device.)"]
-    #[inline]
-    pub fn nob(&mut self) -> _NOBW {
-        _NOBW { w: self }
+    #[inline(always)]
+    pub fn nob(&mut self) -> NOB_W {
+        NOB_W { w: self }
     }
     #[doc = "Bit 31 - Selects the operating mode for the INUSE flags and the IDLE_CH register."]
-    #[inline]
-    pub fn multitask(&mut self) -> _MULTITASKW {
-        _MULTITASKW { w: self }
+    #[inline(always)]
+    pub fn multitask(&mut self) -> MULTITASK_W {
+        MULTITASK_W { w: self }
     }
 }

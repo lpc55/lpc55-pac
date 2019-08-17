@@ -1,2324 +1,1668 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CPPWR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CPPWR"]
+pub type R = crate::R<u32, super::CPPWR>;
+#[doc = "Writer for register CPPWR"]
+pub type W = crate::W<u32, super::CPPWR>;
+#[doc = "Register CPPWR `reset()`'s with value 0"]
+impl crate::ResetValue for super::CPPWR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `SU0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SU0R {
+pub enum SU0_A {
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     UNKNOWN_NOT_PERMITTED,
     #[doc = "The coprocessor state is permitted to become UNKNOWN."]
     UNKNOWN_PERMITTED,
 }
-impl SU0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SU0R::UNKNOWN_NOT_PERMITTED => false,
-            SU0R::UNKNOWN_PERMITTED => true,
+impl From<SU0_A> for bool {
+    #[inline(always)]
+    fn from(variant: SU0_A) -> Self {
+        match variant {
+            SU0_A::UNKNOWN_NOT_PERMITTED => false,
+            SU0_A::UNKNOWN_PERMITTED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SU0R {
-        match value {
-            false => SU0R::UNKNOWN_NOT_PERMITTED,
-            true => SU0R::UNKNOWN_PERMITTED,
+}
+#[doc = "Reader of field `SU0`"]
+pub type SU0_R = crate::R<bool, SU0_A>;
+impl SU0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SU0_A {
+        match self.bits {
+            false => SU0_A::UNKNOWN_NOT_PERMITTED,
+            true => SU0_A::UNKNOWN_PERMITTED,
         }
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU0R::UNKNOWN_NOT_PERMITTED
+        *self == SU0_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU0R::UNKNOWN_PERMITTED
+        *self == SU0_A::UNKNOWN_PERMITTED
+    }
+}
+#[doc = "Write proxy for field `SU0`"]
+pub struct SU0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SU0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SU0_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_not_permitted(self) -> &'a mut W {
+        self.variant(SU0_A::UNKNOWN_NOT_PERMITTED)
+    }
+    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_permitted(self) -> &'a mut W {
+        self.variant(SU0_A::UNKNOWN_PERMITTED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SUS0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SUS0R {
+pub enum SUS0_A {
     #[doc = "The SU0 field is accessible from both Security states."]
     SECURE_AND_NON_SECURE,
     #[doc = "The SU0 field is only accessible from the Secure state."]
     SECURE_ONLY,
 }
-impl SUS0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SUS0R::SECURE_AND_NON_SECURE => false,
-            SUS0R::SECURE_ONLY => true,
+impl From<SUS0_A> for bool {
+    #[inline(always)]
+    fn from(variant: SUS0_A) -> Self {
+        match variant {
+            SUS0_A::SECURE_AND_NON_SECURE => false,
+            SUS0_A::SECURE_ONLY => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SUS0R {
-        match value {
-            false => SUS0R::SECURE_AND_NON_SECURE,
-            true => SUS0R::SECURE_ONLY,
+}
+#[doc = "Reader of field `SUS0`"]
+pub type SUS0_R = crate::R<bool, SUS0_A>;
+impl SUS0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SUS0_A {
+        match self.bits {
+            false => SUS0_A::SECURE_AND_NON_SECURE,
+            true => SUS0_A::SECURE_ONLY,
         }
     }
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS0R::SECURE_AND_NON_SECURE
+        *self == SUS0_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS0R::SECURE_ONLY
+        *self == SUS0_A::SECURE_ONLY
+    }
+}
+#[doc = "Write proxy for field `SUS0`"]
+pub struct SUS0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SUS0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SUS0_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The SU0 field is accessible from both Security states."]
+    #[inline(always)]
+    pub fn secure_and_non_secure(self) -> &'a mut W {
+        self.variant(SUS0_A::SECURE_AND_NON_SECURE)
+    }
+    #[doc = "The SU0 field is only accessible from the Secure state."]
+    #[inline(always)]
+    pub fn secure_only(self) -> &'a mut W {
+        self.variant(SUS0_A::SECURE_ONLY)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SU1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SU1R {
+pub enum SU1_A {
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     UNKNOWN_NOT_PERMITTED,
     #[doc = "The coprocessor state is permitted to become UNKNOWN."]
     UNKNOWN_PERMITTED,
 }
-impl SU1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SU1R::UNKNOWN_NOT_PERMITTED => false,
-            SU1R::UNKNOWN_PERMITTED => true,
+impl From<SU1_A> for bool {
+    #[inline(always)]
+    fn from(variant: SU1_A) -> Self {
+        match variant {
+            SU1_A::UNKNOWN_NOT_PERMITTED => false,
+            SU1_A::UNKNOWN_PERMITTED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SU1R {
-        match value {
-            false => SU1R::UNKNOWN_NOT_PERMITTED,
-            true => SU1R::UNKNOWN_PERMITTED,
+}
+#[doc = "Reader of field `SU1`"]
+pub type SU1_R = crate::R<bool, SU1_A>;
+impl SU1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SU1_A {
+        match self.bits {
+            false => SU1_A::UNKNOWN_NOT_PERMITTED,
+            true => SU1_A::UNKNOWN_PERMITTED,
         }
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU1R::UNKNOWN_NOT_PERMITTED
+        *self == SU1_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU1R::UNKNOWN_PERMITTED
+        *self == SU1_A::UNKNOWN_PERMITTED
+    }
+}
+#[doc = "Write proxy for field `SU1`"]
+pub struct SU1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SU1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SU1_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_not_permitted(self) -> &'a mut W {
+        self.variant(SU1_A::UNKNOWN_NOT_PERMITTED)
+    }
+    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_permitted(self) -> &'a mut W {
+        self.variant(SU1_A::UNKNOWN_PERMITTED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SUS1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SUS1R {
+pub enum SUS1_A {
     #[doc = "The SU7 field is accessible from both Security states."]
     SECURE_AND_NON_SECURE,
     #[doc = "The SU7 field is only accessible from the Secure state."]
     SECURE_ONLY,
 }
-impl SUS1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SUS1R::SECURE_AND_NON_SECURE => false,
-            SUS1R::SECURE_ONLY => true,
+impl From<SUS1_A> for bool {
+    #[inline(always)]
+    fn from(variant: SUS1_A) -> Self {
+        match variant {
+            SUS1_A::SECURE_AND_NON_SECURE => false,
+            SUS1_A::SECURE_ONLY => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SUS1R {
-        match value {
-            false => SUS1R::SECURE_AND_NON_SECURE,
-            true => SUS1R::SECURE_ONLY,
+}
+#[doc = "Reader of field `SUS1`"]
+pub type SUS1_R = crate::R<bool, SUS1_A>;
+impl SUS1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SUS1_A {
+        match self.bits {
+            false => SUS1_A::SECURE_AND_NON_SECURE,
+            true => SUS1_A::SECURE_ONLY,
         }
     }
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS1R::SECURE_AND_NON_SECURE
+        *self == SUS1_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS1R::SECURE_ONLY
+        *self == SUS1_A::SECURE_ONLY
+    }
+}
+#[doc = "Write proxy for field `SUS1`"]
+pub struct SUS1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SUS1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SUS1_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The SU7 field is accessible from both Security states."]
+    #[inline(always)]
+    pub fn secure_and_non_secure(self) -> &'a mut W {
+        self.variant(SUS1_A::SECURE_AND_NON_SECURE)
+    }
+    #[doc = "The SU7 field is only accessible from the Secure state."]
+    #[inline(always)]
+    pub fn secure_only(self) -> &'a mut W {
+        self.variant(SUS1_A::SECURE_ONLY)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SU2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SU2R {
+pub enum SU2_A {
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     UNKNOWN_NOT_PERMITTED,
     #[doc = "The coprocessor state is permitted to become UNKNOWN."]
     UNKNOWN_PERMITTED,
 }
-impl SU2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SU2R::UNKNOWN_NOT_PERMITTED => false,
-            SU2R::UNKNOWN_PERMITTED => true,
+impl From<SU2_A> for bool {
+    #[inline(always)]
+    fn from(variant: SU2_A) -> Self {
+        match variant {
+            SU2_A::UNKNOWN_NOT_PERMITTED => false,
+            SU2_A::UNKNOWN_PERMITTED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SU2R {
-        match value {
-            false => SU2R::UNKNOWN_NOT_PERMITTED,
-            true => SU2R::UNKNOWN_PERMITTED,
+}
+#[doc = "Reader of field `SU2`"]
+pub type SU2_R = crate::R<bool, SU2_A>;
+impl SU2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SU2_A {
+        match self.bits {
+            false => SU2_A::UNKNOWN_NOT_PERMITTED,
+            true => SU2_A::UNKNOWN_PERMITTED,
         }
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU2R::UNKNOWN_NOT_PERMITTED
+        *self == SU2_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU2R::UNKNOWN_PERMITTED
+        *self == SU2_A::UNKNOWN_PERMITTED
+    }
+}
+#[doc = "Write proxy for field `SU2`"]
+pub struct SU2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SU2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SU2_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_not_permitted(self) -> &'a mut W {
+        self.variant(SU2_A::UNKNOWN_NOT_PERMITTED)
+    }
+    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_permitted(self) -> &'a mut W {
+        self.variant(SU2_A::UNKNOWN_PERMITTED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SUS2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SUS2R {
+pub enum SUS2_A {
     #[doc = "The SU2 field is accessible from both Security states."]
     SECURE_AND_NON_SECURE,
     #[doc = "The SU2 field is only accessible from the Secure state."]
     SECURE_ONLY,
 }
-impl SUS2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SUS2R::SECURE_AND_NON_SECURE => false,
-            SUS2R::SECURE_ONLY => true,
+impl From<SUS2_A> for bool {
+    #[inline(always)]
+    fn from(variant: SUS2_A) -> Self {
+        match variant {
+            SUS2_A::SECURE_AND_NON_SECURE => false,
+            SUS2_A::SECURE_ONLY => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SUS2R {
-        match value {
-            false => SUS2R::SECURE_AND_NON_SECURE,
-            true => SUS2R::SECURE_ONLY,
+}
+#[doc = "Reader of field `SUS2`"]
+pub type SUS2_R = crate::R<bool, SUS2_A>;
+impl SUS2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SUS2_A {
+        match self.bits {
+            false => SUS2_A::SECURE_AND_NON_SECURE,
+            true => SUS2_A::SECURE_ONLY,
         }
     }
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS2R::SECURE_AND_NON_SECURE
+        *self == SUS2_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS2R::SECURE_ONLY
+        *self == SUS2_A::SECURE_ONLY
+    }
+}
+#[doc = "Write proxy for field `SUS2`"]
+pub struct SUS2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SUS2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SUS2_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The SU2 field is accessible from both Security states."]
+    #[inline(always)]
+    pub fn secure_and_non_secure(self) -> &'a mut W {
+        self.variant(SUS2_A::SECURE_AND_NON_SECURE)
+    }
+    #[doc = "The SU2 field is only accessible from the Secure state."]
+    #[inline(always)]
+    pub fn secure_only(self) -> &'a mut W {
+        self.variant(SUS2_A::SECURE_ONLY)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SU3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SU3R {
+pub enum SU3_A {
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     UNKNOWN_NOT_PERMITTED,
     #[doc = "The coprocessor state is permitted to become UNKNOWN."]
     UNKNOWN_PERMITTED,
 }
-impl SU3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SU3R::UNKNOWN_NOT_PERMITTED => false,
-            SU3R::UNKNOWN_PERMITTED => true,
+impl From<SU3_A> for bool {
+    #[inline(always)]
+    fn from(variant: SU3_A) -> Self {
+        match variant {
+            SU3_A::UNKNOWN_NOT_PERMITTED => false,
+            SU3_A::UNKNOWN_PERMITTED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SU3R {
-        match value {
-            false => SU3R::UNKNOWN_NOT_PERMITTED,
-            true => SU3R::UNKNOWN_PERMITTED,
+}
+#[doc = "Reader of field `SU3`"]
+pub type SU3_R = crate::R<bool, SU3_A>;
+impl SU3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SU3_A {
+        match self.bits {
+            false => SU3_A::UNKNOWN_NOT_PERMITTED,
+            true => SU3_A::UNKNOWN_PERMITTED,
         }
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU3R::UNKNOWN_NOT_PERMITTED
+        *self == SU3_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU3R::UNKNOWN_PERMITTED
+        *self == SU3_A::UNKNOWN_PERMITTED
+    }
+}
+#[doc = "Write proxy for field `SU3`"]
+pub struct SU3_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SU3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SU3_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_not_permitted(self) -> &'a mut W {
+        self.variant(SU3_A::UNKNOWN_NOT_PERMITTED)
+    }
+    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_permitted(self) -> &'a mut W {
+        self.variant(SU3_A::UNKNOWN_PERMITTED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SUS3`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SUS3R {
+pub enum SUS3_A {
     #[doc = "The SU3 field is accessible from both Security states."]
     SECURE_AND_NON_SECURE,
     #[doc = "The SU3 field is only accessible from the Secure state."]
     SECURE_ONLY,
 }
-impl SUS3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SUS3R::SECURE_AND_NON_SECURE => false,
-            SUS3R::SECURE_ONLY => true,
+impl From<SUS3_A> for bool {
+    #[inline(always)]
+    fn from(variant: SUS3_A) -> Self {
+        match variant {
+            SUS3_A::SECURE_AND_NON_SECURE => false,
+            SUS3_A::SECURE_ONLY => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SUS3R {
-        match value {
-            false => SUS3R::SECURE_AND_NON_SECURE,
-            true => SUS3R::SECURE_ONLY,
+}
+#[doc = "Reader of field `SUS3`"]
+pub type SUS3_R = crate::R<bool, SUS3_A>;
+impl SUS3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SUS3_A {
+        match self.bits {
+            false => SUS3_A::SECURE_AND_NON_SECURE,
+            true => SUS3_A::SECURE_ONLY,
         }
     }
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS3R::SECURE_AND_NON_SECURE
+        *self == SUS3_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS3R::SECURE_ONLY
+        *self == SUS3_A::SECURE_ONLY
+    }
+}
+#[doc = "Write proxy for field `SUS3`"]
+pub struct SUS3_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SUS3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SUS3_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The SU3 field is accessible from both Security states."]
+    #[inline(always)]
+    pub fn secure_and_non_secure(self) -> &'a mut W {
+        self.variant(SUS3_A::SECURE_AND_NON_SECURE)
+    }
+    #[doc = "The SU3 field is only accessible from the Secure state."]
+    #[inline(always)]
+    pub fn secure_only(self) -> &'a mut W {
+        self.variant(SUS3_A::SECURE_ONLY)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SU4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SU4R {
+pub enum SU4_A {
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     UNKNOWN_NOT_PERMITTED,
     #[doc = "The coprocessor state is permitted to become UNKNOWN."]
     UNKNOWN_PERMITTED,
 }
-impl SU4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SU4R::UNKNOWN_NOT_PERMITTED => false,
-            SU4R::UNKNOWN_PERMITTED => true,
+impl From<SU4_A> for bool {
+    #[inline(always)]
+    fn from(variant: SU4_A) -> Self {
+        match variant {
+            SU4_A::UNKNOWN_NOT_PERMITTED => false,
+            SU4_A::UNKNOWN_PERMITTED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SU4R {
-        match value {
-            false => SU4R::UNKNOWN_NOT_PERMITTED,
-            true => SU4R::UNKNOWN_PERMITTED,
+}
+#[doc = "Reader of field `SU4`"]
+pub type SU4_R = crate::R<bool, SU4_A>;
+impl SU4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SU4_A {
+        match self.bits {
+            false => SU4_A::UNKNOWN_NOT_PERMITTED,
+            true => SU4_A::UNKNOWN_PERMITTED,
         }
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU4R::UNKNOWN_NOT_PERMITTED
+        *self == SU4_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU4R::UNKNOWN_PERMITTED
+        *self == SU4_A::UNKNOWN_PERMITTED
+    }
+}
+#[doc = "Write proxy for field `SU4`"]
+pub struct SU4_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SU4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SU4_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_not_permitted(self) -> &'a mut W {
+        self.variant(SU4_A::UNKNOWN_NOT_PERMITTED)
+    }
+    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_permitted(self) -> &'a mut W {
+        self.variant(SU4_A::UNKNOWN_PERMITTED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SUS4`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SUS4R {
+pub enum SUS4_A {
     #[doc = "The SU4 field is accessible from both Security states."]
     SECURE_AND_NON_SECURE,
     #[doc = "The SU4 field is only accessible from the Secure state."]
     SECURE_ONLY,
 }
-impl SUS4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SUS4R::SECURE_AND_NON_SECURE => false,
-            SUS4R::SECURE_ONLY => true,
+impl From<SUS4_A> for bool {
+    #[inline(always)]
+    fn from(variant: SUS4_A) -> Self {
+        match variant {
+            SUS4_A::SECURE_AND_NON_SECURE => false,
+            SUS4_A::SECURE_ONLY => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SUS4R {
-        match value {
-            false => SUS4R::SECURE_AND_NON_SECURE,
-            true => SUS4R::SECURE_ONLY,
+}
+#[doc = "Reader of field `SUS4`"]
+pub type SUS4_R = crate::R<bool, SUS4_A>;
+impl SUS4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SUS4_A {
+        match self.bits {
+            false => SUS4_A::SECURE_AND_NON_SECURE,
+            true => SUS4_A::SECURE_ONLY,
         }
     }
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS4R::SECURE_AND_NON_SECURE
+        *self == SUS4_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS4R::SECURE_ONLY
+        *self == SUS4_A::SECURE_ONLY
+    }
+}
+#[doc = "Write proxy for field `SUS4`"]
+pub struct SUS4_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SUS4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SUS4_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The SU4 field is accessible from both Security states."]
+    #[inline(always)]
+    pub fn secure_and_non_secure(self) -> &'a mut W {
+        self.variant(SUS4_A::SECURE_AND_NON_SECURE)
+    }
+    #[doc = "The SU4 field is only accessible from the Secure state."]
+    #[inline(always)]
+    pub fn secure_only(self) -> &'a mut W {
+        self.variant(SUS4_A::SECURE_ONLY)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SU5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SU5R {
+pub enum SU5_A {
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     UNKNOWN_NOT_PERMITTED,
     #[doc = "The coprocessor state is permitted to become UNKNOWN."]
     UNKNOWN_PERMITTED,
 }
-impl SU5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SU5R::UNKNOWN_NOT_PERMITTED => false,
-            SU5R::UNKNOWN_PERMITTED => true,
+impl From<SU5_A> for bool {
+    #[inline(always)]
+    fn from(variant: SU5_A) -> Self {
+        match variant {
+            SU5_A::UNKNOWN_NOT_PERMITTED => false,
+            SU5_A::UNKNOWN_PERMITTED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SU5R {
-        match value {
-            false => SU5R::UNKNOWN_NOT_PERMITTED,
-            true => SU5R::UNKNOWN_PERMITTED,
+}
+#[doc = "Reader of field `SU5`"]
+pub type SU5_R = crate::R<bool, SU5_A>;
+impl SU5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SU5_A {
+        match self.bits {
+            false => SU5_A::UNKNOWN_NOT_PERMITTED,
+            true => SU5_A::UNKNOWN_PERMITTED,
         }
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU5R::UNKNOWN_NOT_PERMITTED
+        *self == SU5_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU5R::UNKNOWN_PERMITTED
+        *self == SU5_A::UNKNOWN_PERMITTED
+    }
+}
+#[doc = "Write proxy for field `SU5`"]
+pub struct SU5_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SU5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SU5_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_not_permitted(self) -> &'a mut W {
+        self.variant(SU5_A::UNKNOWN_NOT_PERMITTED)
+    }
+    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_permitted(self) -> &'a mut W {
+        self.variant(SU5_A::UNKNOWN_PERMITTED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SUS5`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SUS5R {
+pub enum SUS5_A {
     #[doc = "The SU5 field is accessible from both Security states."]
     SECURE_AND_NON_SECURE,
     #[doc = "The SU5 field is only accessible from the Secure state."]
     SECURE_ONLY,
 }
-impl SUS5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SUS5R::SECURE_AND_NON_SECURE => false,
-            SUS5R::SECURE_ONLY => true,
+impl From<SUS5_A> for bool {
+    #[inline(always)]
+    fn from(variant: SUS5_A) -> Self {
+        match variant {
+            SUS5_A::SECURE_AND_NON_SECURE => false,
+            SUS5_A::SECURE_ONLY => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SUS5R {
-        match value {
-            false => SUS5R::SECURE_AND_NON_SECURE,
-            true => SUS5R::SECURE_ONLY,
+}
+#[doc = "Reader of field `SUS5`"]
+pub type SUS5_R = crate::R<bool, SUS5_A>;
+impl SUS5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SUS5_A {
+        match self.bits {
+            false => SUS5_A::SECURE_AND_NON_SECURE,
+            true => SUS5_A::SECURE_ONLY,
         }
     }
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS5R::SECURE_AND_NON_SECURE
+        *self == SUS5_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS5R::SECURE_ONLY
+        *self == SUS5_A::SECURE_ONLY
+    }
+}
+#[doc = "Write proxy for field `SUS5`"]
+pub struct SUS5_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SUS5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SUS5_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The SU5 field is accessible from both Security states."]
+    #[inline(always)]
+    pub fn secure_and_non_secure(self) -> &'a mut W {
+        self.variant(SUS5_A::SECURE_AND_NON_SECURE)
+    }
+    #[doc = "The SU5 field is only accessible from the Secure state."]
+    #[inline(always)]
+    pub fn secure_only(self) -> &'a mut W {
+        self.variant(SUS5_A::SECURE_ONLY)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SU6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SU6R {
+pub enum SU6_A {
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     UNKNOWN_NOT_PERMITTED,
     #[doc = "The coprocessor state is permitted to become UNKNOWN."]
     UNKNOWN_PERMITTED,
 }
-impl SU6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SU6R::UNKNOWN_NOT_PERMITTED => false,
-            SU6R::UNKNOWN_PERMITTED => true,
+impl From<SU6_A> for bool {
+    #[inline(always)]
+    fn from(variant: SU6_A) -> Self {
+        match variant {
+            SU6_A::UNKNOWN_NOT_PERMITTED => false,
+            SU6_A::UNKNOWN_PERMITTED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SU6R {
-        match value {
-            false => SU6R::UNKNOWN_NOT_PERMITTED,
-            true => SU6R::UNKNOWN_PERMITTED,
+}
+#[doc = "Reader of field `SU6`"]
+pub type SU6_R = crate::R<bool, SU6_A>;
+impl SU6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SU6_A {
+        match self.bits {
+            false => SU6_A::UNKNOWN_NOT_PERMITTED,
+            true => SU6_A::UNKNOWN_PERMITTED,
         }
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU6R::UNKNOWN_NOT_PERMITTED
+        *self == SU6_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU6R::UNKNOWN_PERMITTED
+        *self == SU6_A::UNKNOWN_PERMITTED
+    }
+}
+#[doc = "Write proxy for field `SU6`"]
+pub struct SU6_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SU6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SU6_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_not_permitted(self) -> &'a mut W {
+        self.variant(SU6_A::UNKNOWN_NOT_PERMITTED)
+    }
+    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_permitted(self) -> &'a mut W {
+        self.variant(SU6_A::UNKNOWN_PERMITTED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SUS6`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SUS6R {
+pub enum SUS6_A {
     #[doc = "The SU6 field is accessible from both Security states."]
     SECURE_AND_NON_SECURE,
     #[doc = "The SU6 field is only accessible from the Secure state."]
     SECURE_ONLY,
 }
-impl SUS6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SUS6R::SECURE_AND_NON_SECURE => false,
-            SUS6R::SECURE_ONLY => true,
+impl From<SUS6_A> for bool {
+    #[inline(always)]
+    fn from(variant: SUS6_A) -> Self {
+        match variant {
+            SUS6_A::SECURE_AND_NON_SECURE => false,
+            SUS6_A::SECURE_ONLY => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SUS6R {
-        match value {
-            false => SUS6R::SECURE_AND_NON_SECURE,
-            true => SUS6R::SECURE_ONLY,
+}
+#[doc = "Reader of field `SUS6`"]
+pub type SUS6_R = crate::R<bool, SUS6_A>;
+impl SUS6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SUS6_A {
+        match self.bits {
+            false => SUS6_A::SECURE_AND_NON_SECURE,
+            true => SUS6_A::SECURE_ONLY,
         }
     }
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS6R::SECURE_AND_NON_SECURE
+        *self == SUS6_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS6R::SECURE_ONLY
+        *self == SUS6_A::SECURE_ONLY
+    }
+}
+#[doc = "Write proxy for field `SUS6`"]
+pub struct SUS6_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SUS6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SUS6_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The SU6 field is accessible from both Security states."]
+    #[inline(always)]
+    pub fn secure_and_non_secure(self) -> &'a mut W {
+        self.variant(SUS6_A::SECURE_AND_NON_SECURE)
+    }
+    #[doc = "The SU6 field is only accessible from the Secure state."]
+    #[inline(always)]
+    pub fn secure_only(self) -> &'a mut W {
+        self.variant(SUS6_A::SECURE_ONLY)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SU7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SU7R {
+pub enum SU7_A {
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     UNKNOWN_NOT_PERMITTED,
     #[doc = "The coprocessor state is permitted to become UNKNOWN."]
     UNKNOWN_PERMITTED,
 }
-impl SU7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SU7R::UNKNOWN_NOT_PERMITTED => false,
-            SU7R::UNKNOWN_PERMITTED => true,
+impl From<SU7_A> for bool {
+    #[inline(always)]
+    fn from(variant: SU7_A) -> Self {
+        match variant {
+            SU7_A::UNKNOWN_NOT_PERMITTED => false,
+            SU7_A::UNKNOWN_PERMITTED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SU7R {
-        match value {
-            false => SU7R::UNKNOWN_NOT_PERMITTED,
-            true => SU7R::UNKNOWN_PERMITTED,
+}
+#[doc = "Reader of field `SU7`"]
+pub type SU7_R = crate::R<bool, SU7_A>;
+impl SU7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SU7_A {
+        match self.bits {
+            false => SU7_A::UNKNOWN_NOT_PERMITTED,
+            true => SU7_A::UNKNOWN_PERMITTED,
         }
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU7R::UNKNOWN_NOT_PERMITTED
+        *self == SU7_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU7R::UNKNOWN_PERMITTED
+        *self == SU7_A::UNKNOWN_PERMITTED
+    }
+}
+#[doc = "Write proxy for field `SU7`"]
+pub struct SU7_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SU7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SU7_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_not_permitted(self) -> &'a mut W {
+        self.variant(SU7_A::UNKNOWN_NOT_PERMITTED)
+    }
+    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_permitted(self) -> &'a mut W {
+        self.variant(SU7_A::UNKNOWN_PERMITTED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SUS7`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SUS7R {
+pub enum SUS7_A {
     #[doc = "The SU7 field is accessible from both Security states."]
     SECURE_AND_NON_SECURE,
     #[doc = "The SU7 field is only accessible from the Secure state."]
     SECURE_ONLY,
 }
-impl SUS7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SUS7R::SECURE_AND_NON_SECURE => false,
-            SUS7R::SECURE_ONLY => true,
+impl From<SUS7_A> for bool {
+    #[inline(always)]
+    fn from(variant: SUS7_A) -> Self {
+        match variant {
+            SUS7_A::SECURE_AND_NON_SECURE => false,
+            SUS7_A::SECURE_ONLY => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SUS7R {
-        match value {
-            false => SUS7R::SECURE_AND_NON_SECURE,
-            true => SUS7R::SECURE_ONLY,
+}
+#[doc = "Reader of field `SUS7`"]
+pub type SUS7_R = crate::R<bool, SUS7_A>;
+impl SUS7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SUS7_A {
+        match self.bits {
+            false => SUS7_A::SECURE_AND_NON_SECURE,
+            true => SUS7_A::SECURE_ONLY,
         }
     }
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS7R::SECURE_AND_NON_SECURE
+        *self == SUS7_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS7R::SECURE_ONLY
+        *self == SUS7_A::SECURE_ONLY
+    }
+}
+#[doc = "Write proxy for field `SUS7`"]
+pub struct SUS7_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SUS7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SUS7_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The SU7 field is accessible from both Security states."]
+    #[inline(always)]
+    pub fn secure_and_non_secure(self) -> &'a mut W {
+        self.variant(SUS7_A::SECURE_AND_NON_SECURE)
+    }
+    #[doc = "The SU7 field is only accessible from the Secure state."]
+    #[inline(always)]
+    pub fn secure_only(self) -> &'a mut W {
+        self.variant(SUS7_A::SECURE_ONLY)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SU10`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SU10R {
+pub enum SU10_A {
     #[doc = "The floating-point state is not permitted to become UNKNOWN."]
     UNKNOWN_NOT_PERMITTED,
     #[doc = "The floating-point state is permitted to become UNKNOWN"]
     UNKNOWN_PERMITTED,
 }
-impl SU10R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SU10R::UNKNOWN_NOT_PERMITTED => false,
-            SU10R::UNKNOWN_PERMITTED => true,
+impl From<SU10_A> for bool {
+    #[inline(always)]
+    fn from(variant: SU10_A) -> Self {
+        match variant {
+            SU10_A::UNKNOWN_NOT_PERMITTED => false,
+            SU10_A::UNKNOWN_PERMITTED => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SU10R {
-        match value {
-            false => SU10R::UNKNOWN_NOT_PERMITTED,
-            true => SU10R::UNKNOWN_PERMITTED,
+}
+#[doc = "Reader of field `SU10`"]
+pub type SU10_R = crate::R<bool, SU10_A>;
+impl SU10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SU10_A {
+        match self.bits {
+            false => SU10_A::UNKNOWN_NOT_PERMITTED,
+            true => SU10_A::UNKNOWN_PERMITTED,
         }
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU10R::UNKNOWN_NOT_PERMITTED
+        *self == SU10_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU10R::UNKNOWN_PERMITTED
+        *self == SU10_A::UNKNOWN_PERMITTED
+    }
+}
+#[doc = "Write proxy for field `SU10`"]
+pub struct SU10_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SU10_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SU10_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "The floating-point state is not permitted to become UNKNOWN."]
+    #[inline(always)]
+    pub fn unknown_not_permitted(self) -> &'a mut W {
+        self.variant(SU10_A::UNKNOWN_NOT_PERMITTED)
+    }
+    #[doc = "The floating-point state is permitted to become UNKNOWN"]
+    #[inline(always)]
+    pub fn unknown_permitted(self) -> &'a mut W {
+        self.variant(SU10_A::UNKNOWN_PERMITTED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SUS10`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SUS10R {
+pub enum SUS10_A {
     #[doc = "The SU10 field is accessible from both Security states."]
     SECURE_AND_NON_SECURE,
     #[doc = "The SU10 field is only accessible from the Secure state."]
     SECURE_ONLY,
 }
-impl SUS10R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SUS10R::SECURE_AND_NON_SECURE => false,
-            SUS10R::SECURE_ONLY => true,
+impl From<SUS10_A> for bool {
+    #[inline(always)]
+    fn from(variant: SUS10_A) -> Self {
+        match variant {
+            SUS10_A::SECURE_AND_NON_SECURE => false,
+            SUS10_A::SECURE_ONLY => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SUS10R {
-        match value {
-            false => SUS10R::SECURE_AND_NON_SECURE,
-            true => SUS10R::SECURE_ONLY,
+}
+#[doc = "Reader of field `SUS10`"]
+pub type SUS10_R = crate::R<bool, SUS10_A>;
+impl SUS10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SUS10_A {
+        match self.bits {
+            false => SUS10_A::SECURE_AND_NON_SECURE,
+            true => SUS10_A::SECURE_ONLY,
         }
     }
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS10R::SECURE_AND_NON_SECURE
+        *self == SUS10_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS10R::SECURE_ONLY
+        *self == SUS10_A::SECURE_ONLY
     }
 }
-#[doc = r" Value of the field"]
-pub struct SU11R {
-    bits: bool,
-}
-impl SU11R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SUS11R {
-    bits: bool,
-}
-impl SUS11R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `SU0`"]
-pub enum SU0W {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
-}
-impl SU0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SU0W::UNKNOWN_NOT_PERMITTED => false,
-            SU0W::UNKNOWN_PERMITTED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SU0W<'a> {
+#[doc = "Write proxy for field `SUS10`"]
+pub struct SUS10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SU0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SU0W) -> &'a mut W {
+impl<'a> SUS10_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SUS10_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_not_permitted(self) -> &'a mut W {
-        self.variant(SU0W::UNKNOWN_NOT_PERMITTED)
-    }
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_permitted(self) -> &'a mut W {
-        self.variant(SU0W::UNKNOWN_PERMITTED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SUS0`"]
-pub enum SUS0W {
-    #[doc = "The SU0 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU0 field is only accessible from the Secure state."]
-    SECURE_ONLY,
-}
-impl SUS0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SUS0W::SECURE_AND_NON_SECURE => false,
-            SUS0W::SECURE_ONLY => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SUS0W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SUS0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SUS0W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The SU0 field is accessible from both Security states."]
-    #[inline]
-    pub fn secure_and_non_secure(self) -> &'a mut W {
-        self.variant(SUS0W::SECURE_AND_NON_SECURE)
-    }
-    #[doc = "The SU0 field is only accessible from the Secure state."]
-    #[inline]
-    pub fn secure_only(self) -> &'a mut W {
-        self.variant(SUS0W::SECURE_ONLY)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SU1`"]
-pub enum SU1W {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
-}
-impl SU1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SU1W::UNKNOWN_NOT_PERMITTED => false,
-            SU1W::UNKNOWN_PERMITTED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SU1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SU1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SU1W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_not_permitted(self) -> &'a mut W {
-        self.variant(SU1W::UNKNOWN_NOT_PERMITTED)
-    }
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_permitted(self) -> &'a mut W {
-        self.variant(SU1W::UNKNOWN_PERMITTED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SUS1`"]
-pub enum SUS1W {
-    #[doc = "The SU7 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU7 field is only accessible from the Secure state."]
-    SECURE_ONLY,
-}
-impl SUS1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SUS1W::SECURE_AND_NON_SECURE => false,
-            SUS1W::SECURE_ONLY => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SUS1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SUS1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SUS1W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The SU7 field is accessible from both Security states."]
-    #[inline]
-    pub fn secure_and_non_secure(self) -> &'a mut W {
-        self.variant(SUS1W::SECURE_AND_NON_SECURE)
-    }
-    #[doc = "The SU7 field is only accessible from the Secure state."]
-    #[inline]
-    pub fn secure_only(self) -> &'a mut W {
-        self.variant(SUS1W::SECURE_ONLY)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SU2`"]
-pub enum SU2W {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
-}
-impl SU2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SU2W::UNKNOWN_NOT_PERMITTED => false,
-            SU2W::UNKNOWN_PERMITTED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SU2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SU2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SU2W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_not_permitted(self) -> &'a mut W {
-        self.variant(SU2W::UNKNOWN_NOT_PERMITTED)
-    }
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_permitted(self) -> &'a mut W {
-        self.variant(SU2W::UNKNOWN_PERMITTED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SUS2`"]
-pub enum SUS2W {
-    #[doc = "The SU2 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU2 field is only accessible from the Secure state."]
-    SECURE_ONLY,
-}
-impl SUS2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SUS2W::SECURE_AND_NON_SECURE => false,
-            SUS2W::SECURE_ONLY => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SUS2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SUS2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SUS2W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The SU2 field is accessible from both Security states."]
-    #[inline]
-    pub fn secure_and_non_secure(self) -> &'a mut W {
-        self.variant(SUS2W::SECURE_AND_NON_SECURE)
-    }
-    #[doc = "The SU2 field is only accessible from the Secure state."]
-    #[inline]
-    pub fn secure_only(self) -> &'a mut W {
-        self.variant(SUS2W::SECURE_ONLY)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SU3`"]
-pub enum SU3W {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
-}
-impl SU3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SU3W::UNKNOWN_NOT_PERMITTED => false,
-            SU3W::UNKNOWN_PERMITTED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SU3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SU3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SU3W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_not_permitted(self) -> &'a mut W {
-        self.variant(SU3W::UNKNOWN_NOT_PERMITTED)
-    }
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_permitted(self) -> &'a mut W {
-        self.variant(SU3W::UNKNOWN_PERMITTED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SUS3`"]
-pub enum SUS3W {
-    #[doc = "The SU3 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU3 field is only accessible from the Secure state."]
-    SECURE_ONLY,
-}
-impl SUS3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SUS3W::SECURE_AND_NON_SECURE => false,
-            SUS3W::SECURE_ONLY => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SUS3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SUS3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SUS3W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The SU3 field is accessible from both Security states."]
-    #[inline]
-    pub fn secure_and_non_secure(self) -> &'a mut W {
-        self.variant(SUS3W::SECURE_AND_NON_SECURE)
-    }
-    #[doc = "The SU3 field is only accessible from the Secure state."]
-    #[inline]
-    pub fn secure_only(self) -> &'a mut W {
-        self.variant(SUS3W::SECURE_ONLY)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SU4`"]
-pub enum SU4W {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
-}
-impl SU4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SU4W::UNKNOWN_NOT_PERMITTED => false,
-            SU4W::UNKNOWN_PERMITTED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SU4W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SU4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SU4W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_not_permitted(self) -> &'a mut W {
-        self.variant(SU4W::UNKNOWN_NOT_PERMITTED)
-    }
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_permitted(self) -> &'a mut W {
-        self.variant(SU4W::UNKNOWN_PERMITTED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SUS4`"]
-pub enum SUS4W {
-    #[doc = "The SU4 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU4 field is only accessible from the Secure state."]
-    SECURE_ONLY,
-}
-impl SUS4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SUS4W::SECURE_AND_NON_SECURE => false,
-            SUS4W::SECURE_ONLY => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SUS4W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SUS4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SUS4W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The SU4 field is accessible from both Security states."]
-    #[inline]
-    pub fn secure_and_non_secure(self) -> &'a mut W {
-        self.variant(SUS4W::SECURE_AND_NON_SECURE)
-    }
-    #[doc = "The SU4 field is only accessible from the Secure state."]
-    #[inline]
-    pub fn secure_only(self) -> &'a mut W {
-        self.variant(SUS4W::SECURE_ONLY)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SU5`"]
-pub enum SU5W {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
-}
-impl SU5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SU5W::UNKNOWN_NOT_PERMITTED => false,
-            SU5W::UNKNOWN_PERMITTED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SU5W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SU5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SU5W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_not_permitted(self) -> &'a mut W {
-        self.variant(SU5W::UNKNOWN_NOT_PERMITTED)
-    }
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_permitted(self) -> &'a mut W {
-        self.variant(SU5W::UNKNOWN_PERMITTED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SUS5`"]
-pub enum SUS5W {
-    #[doc = "The SU5 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU5 field is only accessible from the Secure state."]
-    SECURE_ONLY,
-}
-impl SUS5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SUS5W::SECURE_AND_NON_SECURE => false,
-            SUS5W::SECURE_ONLY => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SUS5W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SUS5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SUS5W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The SU5 field is accessible from both Security states."]
-    #[inline]
-    pub fn secure_and_non_secure(self) -> &'a mut W {
-        self.variant(SUS5W::SECURE_AND_NON_SECURE)
-    }
-    #[doc = "The SU5 field is only accessible from the Secure state."]
-    #[inline]
-    pub fn secure_only(self) -> &'a mut W {
-        self.variant(SUS5W::SECURE_ONLY)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SU6`"]
-pub enum SU6W {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
-}
-impl SU6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SU6W::UNKNOWN_NOT_PERMITTED => false,
-            SU6W::UNKNOWN_PERMITTED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SU6W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SU6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SU6W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_not_permitted(self) -> &'a mut W {
-        self.variant(SU6W::UNKNOWN_NOT_PERMITTED)
-    }
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_permitted(self) -> &'a mut W {
-        self.variant(SU6W::UNKNOWN_PERMITTED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SUS6`"]
-pub enum SUS6W {
-    #[doc = "The SU6 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU6 field is only accessible from the Secure state."]
-    SECURE_ONLY,
-}
-impl SUS6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SUS6W::SECURE_AND_NON_SECURE => false,
-            SUS6W::SECURE_ONLY => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SUS6W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SUS6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SUS6W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The SU6 field is accessible from both Security states."]
-    #[inline]
-    pub fn secure_and_non_secure(self) -> &'a mut W {
-        self.variant(SUS6W::SECURE_AND_NON_SECURE)
-    }
-    #[doc = "The SU6 field is only accessible from the Secure state."]
-    #[inline]
-    pub fn secure_only(self) -> &'a mut W {
-        self.variant(SUS6W::SECURE_ONLY)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SU7`"]
-pub enum SU7W {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
-}
-impl SU7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SU7W::UNKNOWN_NOT_PERMITTED => false,
-            SU7W::UNKNOWN_PERMITTED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SU7W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SU7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SU7W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_not_permitted(self) -> &'a mut W {
-        self.variant(SU7W::UNKNOWN_NOT_PERMITTED)
-    }
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_permitted(self) -> &'a mut W {
-        self.variant(SU7W::UNKNOWN_PERMITTED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SUS7`"]
-pub enum SUS7W {
-    #[doc = "The SU7 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU7 field is only accessible from the Secure state."]
-    SECURE_ONLY,
-}
-impl SUS7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SUS7W::SECURE_AND_NON_SECURE => false,
-            SUS7W::SECURE_ONLY => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SUS7W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SUS7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SUS7W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The SU7 field is accessible from both Security states."]
-    #[inline]
-    pub fn secure_and_non_secure(self) -> &'a mut W {
-        self.variant(SUS7W::SECURE_AND_NON_SECURE)
-    }
-    #[doc = "The SU7 field is only accessible from the Secure state."]
-    #[inline]
-    pub fn secure_only(self) -> &'a mut W {
-        self.variant(SUS7W::SECURE_ONLY)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SU10`"]
-pub enum SU10W {
-    #[doc = "The floating-point state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The floating-point state is permitted to become UNKNOWN"]
-    UNKNOWN_PERMITTED,
-}
-impl SU10W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SU10W::UNKNOWN_NOT_PERMITTED => false,
-            SU10W::UNKNOWN_PERMITTED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SU10W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SU10W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SU10W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "The floating-point state is not permitted to become UNKNOWN."]
-    #[inline]
-    pub fn unknown_not_permitted(self) -> &'a mut W {
-        self.variant(SU10W::UNKNOWN_NOT_PERMITTED)
-    }
-    #[doc = "The floating-point state is permitted to become UNKNOWN"]
-    #[inline]
-    pub fn unknown_permitted(self) -> &'a mut W {
-        self.variant(SU10W::UNKNOWN_PERMITTED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 20;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SUS10`"]
-pub enum SUS10W {
-    #[doc = "The SU10 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU10 field is only accessible from the Secure state."]
-    SECURE_ONLY,
-}
-impl SUS10W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SUS10W::SECURE_AND_NON_SECURE => false,
-            SUS10W::SECURE_ONLY => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SUS10W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SUS10W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SUS10W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The SU10 field is accessible from both Security states."]
-    #[inline]
+    #[inline(always)]
     pub fn secure_and_non_secure(self) -> &'a mut W {
-        self.variant(SUS10W::SECURE_AND_NON_SECURE)
+        self.variant(SUS10_A::SECURE_AND_NON_SECURE)
     }
     #[doc = "The SU10 field is only accessible from the Secure state."]
-    #[inline]
+    #[inline(always)]
     pub fn secure_only(self) -> &'a mut W {
-        self.variant(SUS10W::SECURE_ONLY)
+        self.variant(SUS10_A::SECURE_ONLY)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 21;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SU11W<'a> {
+#[doc = "Reader of field `SU11`"]
+pub type SU11_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SU11`"]
+pub struct SU11_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SU11W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SU11_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 22;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SUS11W<'a> {
+#[doc = "Reader of field `SUS11`"]
+pub type SUS11_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SUS11`"]
+pub struct SUS11_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SUS11W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SUS11_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - State UNKNOWN 0."]
-    #[inline]
-    pub fn su0(&self) -> SU0R {
-        SU0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn su0(&self) -> SU0_R {
+        SU0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - State UNKNOWN Secure only 0."]
-    #[inline]
-    pub fn sus0(&self) -> SUS0R {
-        SUS0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sus0(&self) -> SUS0_R {
+        SUS0_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - State UNKNOWN 1."]
-    #[inline]
-    pub fn su1(&self) -> SU1R {
-        SU1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn su1(&self) -> SU1_R {
+        SU1_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - State UNKNOWN Secure only 1."]
-    #[inline]
-    pub fn sus1(&self) -> SUS1R {
-        SUS1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sus1(&self) -> SUS1_R {
+        SUS1_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - State UNKNOWN 2."]
-    #[inline]
-    pub fn su2(&self) -> SU2R {
-        SU2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn su2(&self) -> SU2_R {
+        SU2_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - State UNKNOWN Secure only 2."]
-    #[inline]
-    pub fn sus2(&self) -> SUS2R {
-        SUS2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sus2(&self) -> SUS2_R {
+        SUS2_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - State UNKNOWN 3."]
-    #[inline]
-    pub fn su3(&self) -> SU3R {
-        SU3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn su3(&self) -> SU3_R {
+        SU3_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - State UNKNOWN Secure only 3."]
-    #[inline]
-    pub fn sus3(&self) -> SUS3R {
-        SUS3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sus3(&self) -> SUS3_R {
+        SUS3_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - State UNKNOWN 4."]
-    #[inline]
-    pub fn su4(&self) -> SU4R {
-        SU4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn su4(&self) -> SU4_R {
+        SU4_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - State UNKNOWN Secure only 4."]
-    #[inline]
-    pub fn sus4(&self) -> SUS4R {
-        SUS4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sus4(&self) -> SUS4_R {
+        SUS4_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - State UNKNOWN 5."]
-    #[inline]
-    pub fn su5(&self) -> SU5R {
-        SU5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn su5(&self) -> SU5_R {
+        SU5_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - State UNKNOWN Secure only 5."]
-    #[inline]
-    pub fn sus5(&self) -> SUS5R {
-        SUS5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sus5(&self) -> SUS5_R {
+        SUS5_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - State UNKNOWN 6."]
-    #[inline]
-    pub fn su6(&self) -> SU6R {
-        SU6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn su6(&self) -> SU6_R {
+        SU6_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - State UNKNOWN Secure only 6."]
-    #[inline]
-    pub fn sus6(&self) -> SUS6R {
-        SUS6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sus6(&self) -> SUS6_R {
+        SUS6_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - State UNKNOWN 7."]
-    #[inline]
-    pub fn su7(&self) -> SU7R {
-        SU7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn su7(&self) -> SU7_R {
+        SU7_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - State UNKNOWN Secure only 7."]
-    #[inline]
-    pub fn sus7(&self) -> SUS7R {
-        SUS7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sus7(&self) -> SUS7_R {
+        SUS7_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bit 20 - State UNKNOWN 10."]
-    #[inline]
-    pub fn su10(&self) -> SU10R {
-        SU10R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 20;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn su10(&self) -> SU10_R {
+        SU10_R::new(((self.bits >> 20) & 0x01) != 0)
     }
     #[doc = "Bit 21 - State UNKNOWN Secure only 10."]
-    #[inline]
-    pub fn sus10(&self) -> SUS10R {
-        SUS10R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 21;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sus10(&self) -> SUS10_R {
+        SUS10_R::new(((self.bits >> 21) & 0x01) != 0)
     }
     #[doc = "Bit 22 - State UNKNOWN 11."]
-    #[inline]
-    pub fn su11(&self) -> SU11R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 22;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SU11R { bits }
+    #[inline(always)]
+    pub fn su11(&self) -> SU11_R {
+        SU11_R::new(((self.bits >> 22) & 0x01) != 0)
     }
     #[doc = "Bit 23 - State UNKNOWN Secure only 11."]
-    #[inline]
-    pub fn sus11(&self) -> SUS11R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SUS11R { bits }
+    #[inline(always)]
+    pub fn sus11(&self) -> SUS11_R {
+        SUS11_R::new(((self.bits >> 23) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - State UNKNOWN 0."]
-    #[inline]
-    pub fn su0(&mut self) -> _SU0W {
-        _SU0W { w: self }
+    #[inline(always)]
+    pub fn su0(&mut self) -> SU0_W {
+        SU0_W { w: self }
     }
     #[doc = "Bit 1 - State UNKNOWN Secure only 0."]
-    #[inline]
-    pub fn sus0(&mut self) -> _SUS0W {
-        _SUS0W { w: self }
+    #[inline(always)]
+    pub fn sus0(&mut self) -> SUS0_W {
+        SUS0_W { w: self }
     }
     #[doc = "Bit 2 - State UNKNOWN 1."]
-    #[inline]
-    pub fn su1(&mut self) -> _SU1W {
-        _SU1W { w: self }
+    #[inline(always)]
+    pub fn su1(&mut self) -> SU1_W {
+        SU1_W { w: self }
     }
     #[doc = "Bit 3 - State UNKNOWN Secure only 1."]
-    #[inline]
-    pub fn sus1(&mut self) -> _SUS1W {
-        _SUS1W { w: self }
+    #[inline(always)]
+    pub fn sus1(&mut self) -> SUS1_W {
+        SUS1_W { w: self }
     }
     #[doc = "Bit 4 - State UNKNOWN 2."]
-    #[inline]
-    pub fn su2(&mut self) -> _SU2W {
-        _SU2W { w: self }
+    #[inline(always)]
+    pub fn su2(&mut self) -> SU2_W {
+        SU2_W { w: self }
     }
     #[doc = "Bit 5 - State UNKNOWN Secure only 2."]
-    #[inline]
-    pub fn sus2(&mut self) -> _SUS2W {
-        _SUS2W { w: self }
+    #[inline(always)]
+    pub fn sus2(&mut self) -> SUS2_W {
+        SUS2_W { w: self }
     }
     #[doc = "Bit 6 - State UNKNOWN 3."]
-    #[inline]
-    pub fn su3(&mut self) -> _SU3W {
-        _SU3W { w: self }
+    #[inline(always)]
+    pub fn su3(&mut self) -> SU3_W {
+        SU3_W { w: self }
     }
     #[doc = "Bit 7 - State UNKNOWN Secure only 3."]
-    #[inline]
-    pub fn sus3(&mut self) -> _SUS3W {
-        _SUS3W { w: self }
+    #[inline(always)]
+    pub fn sus3(&mut self) -> SUS3_W {
+        SUS3_W { w: self }
     }
     #[doc = "Bit 8 - State UNKNOWN 4."]
-    #[inline]
-    pub fn su4(&mut self) -> _SU4W {
-        _SU4W { w: self }
+    #[inline(always)]
+    pub fn su4(&mut self) -> SU4_W {
+        SU4_W { w: self }
     }
     #[doc = "Bit 9 - State UNKNOWN Secure only 4."]
-    #[inline]
-    pub fn sus4(&mut self) -> _SUS4W {
-        _SUS4W { w: self }
+    #[inline(always)]
+    pub fn sus4(&mut self) -> SUS4_W {
+        SUS4_W { w: self }
     }
     #[doc = "Bit 10 - State UNKNOWN 5."]
-    #[inline]
-    pub fn su5(&mut self) -> _SU5W {
-        _SU5W { w: self }
+    #[inline(always)]
+    pub fn su5(&mut self) -> SU5_W {
+        SU5_W { w: self }
     }
     #[doc = "Bit 11 - State UNKNOWN Secure only 5."]
-    #[inline]
-    pub fn sus5(&mut self) -> _SUS5W {
-        _SUS5W { w: self }
+    #[inline(always)]
+    pub fn sus5(&mut self) -> SUS5_W {
+        SUS5_W { w: self }
     }
     #[doc = "Bit 12 - State UNKNOWN 6."]
-    #[inline]
-    pub fn su6(&mut self) -> _SU6W {
-        _SU6W { w: self }
+    #[inline(always)]
+    pub fn su6(&mut self) -> SU6_W {
+        SU6_W { w: self }
     }
     #[doc = "Bit 13 - State UNKNOWN Secure only 6."]
-    #[inline]
-    pub fn sus6(&mut self) -> _SUS6W {
-        _SUS6W { w: self }
+    #[inline(always)]
+    pub fn sus6(&mut self) -> SUS6_W {
+        SUS6_W { w: self }
     }
     #[doc = "Bit 14 - State UNKNOWN 7."]
-    #[inline]
-    pub fn su7(&mut self) -> _SU7W {
-        _SU7W { w: self }
+    #[inline(always)]
+    pub fn su7(&mut self) -> SU7_W {
+        SU7_W { w: self }
     }
     #[doc = "Bit 15 - State UNKNOWN Secure only 7."]
-    #[inline]
-    pub fn sus7(&mut self) -> _SUS7W {
-        _SUS7W { w: self }
+    #[inline(always)]
+    pub fn sus7(&mut self) -> SUS7_W {
+        SUS7_W { w: self }
     }
     #[doc = "Bit 20 - State UNKNOWN 10."]
-    #[inline]
-    pub fn su10(&mut self) -> _SU10W {
-        _SU10W { w: self }
+    #[inline(always)]
+    pub fn su10(&mut self) -> SU10_W {
+        SU10_W { w: self }
     }
     #[doc = "Bit 21 - State UNKNOWN Secure only 10."]
-    #[inline]
-    pub fn sus10(&mut self) -> _SUS10W {
-        _SUS10W { w: self }
+    #[inline(always)]
+    pub fn sus10(&mut self) -> SUS10_W {
+        SUS10_W { w: self }
     }
     #[doc = "Bit 22 - State UNKNOWN 11."]
-    #[inline]
-    pub fn su11(&mut self) -> _SU11W {
-        _SU11W { w: self }
+    #[inline(always)]
+    pub fn su11(&mut self) -> SU11_W {
+        SU11_W { w: self }
     }
     #[doc = "Bit 23 - State UNKNOWN Secure only 11."]
-    #[inline]
-    pub fn sus11(&mut self) -> _SUS11W {
-        _SUS11W { w: self }
+    #[inline(always)]
+    pub fn sus11(&mut self) -> SUS11_W {
+        SUS11_W { w: self }
     }
 }

@@ -1,778 +1,544 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::TST {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register TST"]
+pub type R = crate::R<u32, super::TST>;
+#[doc = "Writer for register TST"]
+pub type W = crate::W<u32, super::TST>;
+#[doc = "Register TST `reset()`'s with value 0"]
+impl crate::ResetValue for super::TST {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
 #[doc = "Possible values of the field `CST_LONG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CST_LONGR {
+pub enum CST_LONG_A {
     #[doc = "Normal sample time. Minimum sample time of 3 ADCK cycles."]
     CST_LONG_0,
     #[doc = "Increased sample time. 67 ADCK cycles total sample time."]
     CST_LONG_1,
 }
-impl CST_LONGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CST_LONGR::CST_LONG_0 => false,
-            CST_LONGR::CST_LONG_1 => true,
+impl From<CST_LONG_A> for bool {
+    #[inline(always)]
+    fn from(variant: CST_LONG_A) -> Self {
+        match variant {
+            CST_LONG_A::CST_LONG_0 => false,
+            CST_LONG_A::CST_LONG_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CST_LONGR {
-        match value {
-            false => CST_LONGR::CST_LONG_0,
-            true => CST_LONGR::CST_LONG_1,
+}
+#[doc = "Reader of field `CST_LONG`"]
+pub type CST_LONG_R = crate::R<bool, CST_LONG_A>;
+impl CST_LONG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CST_LONG_A {
+        match self.bits {
+            false => CST_LONG_A::CST_LONG_0,
+            true => CST_LONG_A::CST_LONG_1,
         }
     }
     #[doc = "Checks if the value of the field is `CST_LONG_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cst_long_0(&self) -> bool {
-        *self == CST_LONGR::CST_LONG_0
+        *self == CST_LONG_A::CST_LONG_0
     }
     #[doc = "Checks if the value of the field is `CST_LONG_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cst_long_1(&self) -> bool {
-        *self == CST_LONGR::CST_LONG_1
+        *self == CST_LONG_A::CST_LONG_1
+    }
+}
+#[doc = "Write proxy for field `CST_LONG`"]
+pub struct CST_LONG_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CST_LONG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CST_LONG_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Normal sample time. Minimum sample time of 3 ADCK cycles."]
+    #[inline(always)]
+    pub fn cst_long_0(self) -> &'a mut W {
+        self.variant(CST_LONG_A::CST_LONG_0)
+    }
+    #[doc = "Increased sample time. 67 ADCK cycles total sample time."]
+    #[inline(always)]
+    pub fn cst_long_1(self) -> &'a mut W {
+        self.variant(CST_LONG_A::CST_LONG_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
 #[doc = "Possible values of the field `FOFFM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FOFFMR {
+pub enum FOFFM_A {
     #[doc = "Normal operation. No forced offset."]
     FOFFM_0,
     #[doc = "Test configuration. Forced positive offset on MDAC."]
     FOFFM_1,
 }
-impl FOFFMR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FOFFMR::FOFFM_0 => false,
-            FOFFMR::FOFFM_1 => true,
+impl From<FOFFM_A> for bool {
+    #[inline(always)]
+    fn from(variant: FOFFM_A) -> Self {
+        match variant {
+            FOFFM_A::FOFFM_0 => false,
+            FOFFM_A::FOFFM_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FOFFMR {
-        match value {
-            false => FOFFMR::FOFFM_0,
-            true => FOFFMR::FOFFM_1,
+}
+#[doc = "Reader of field `FOFFM`"]
+pub type FOFFM_R = crate::R<bool, FOFFM_A>;
+impl FOFFM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FOFFM_A {
+        match self.bits {
+            false => FOFFM_A::FOFFM_0,
+            true => FOFFM_A::FOFFM_1,
         }
     }
     #[doc = "Checks if the value of the field is `FOFFM_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_foffm_0(&self) -> bool {
-        *self == FOFFMR::FOFFM_0
+        *self == FOFFM_A::FOFFM_0
     }
     #[doc = "Checks if the value of the field is `FOFFM_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_foffm_1(&self) -> bool {
-        *self == FOFFMR::FOFFM_1
+        *self == FOFFM_A::FOFFM_1
+    }
+}
+#[doc = "Write proxy for field `FOFFM`"]
+pub struct FOFFM_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FOFFM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FOFFM_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Normal operation. No forced offset."]
+    #[inline(always)]
+    pub fn foffm_0(self) -> &'a mut W {
+        self.variant(FOFFM_A::FOFFM_0)
+    }
+    #[doc = "Test configuration. Forced positive offset on MDAC."]
+    #[inline(always)]
+    pub fn foffm_1(self) -> &'a mut W {
+        self.variant(FOFFM_A::FOFFM_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `FOFFP`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FOFFPR {
+pub enum FOFFP_A {
     #[doc = "Normal operation. No forced offset."]
     FOFFP_0,
     #[doc = "Test configuration. Forced positive offset on PDAC."]
     FOFFP_1,
 }
-impl FOFFPR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FOFFPR::FOFFP_0 => false,
-            FOFFPR::FOFFP_1 => true,
+impl From<FOFFP_A> for bool {
+    #[inline(always)]
+    fn from(variant: FOFFP_A) -> Self {
+        match variant {
+            FOFFP_A::FOFFP_0 => false,
+            FOFFP_A::FOFFP_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FOFFPR {
-        match value {
-            false => FOFFPR::FOFFP_0,
-            true => FOFFPR::FOFFP_1,
+}
+#[doc = "Reader of field `FOFFP`"]
+pub type FOFFP_R = crate::R<bool, FOFFP_A>;
+impl FOFFP_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FOFFP_A {
+        match self.bits {
+            false => FOFFP_A::FOFFP_0,
+            true => FOFFP_A::FOFFP_1,
         }
     }
     #[doc = "Checks if the value of the field is `FOFFP_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_foffp_0(&self) -> bool {
-        *self == FOFFPR::FOFFP_0
+        *self == FOFFP_A::FOFFP_0
     }
     #[doc = "Checks if the value of the field is `FOFFP_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_foffp_1(&self) -> bool {
-        *self == FOFFPR::FOFFP_1
+        *self == FOFFP_A::FOFFP_1
+    }
+}
+#[doc = "Write proxy for field `FOFFP`"]
+pub struct FOFFP_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FOFFP_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FOFFP_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Normal operation. No forced offset."]
+    #[inline(always)]
+    pub fn foffp_0(self) -> &'a mut W {
+        self.variant(FOFFP_A::FOFFP_0)
+    }
+    #[doc = "Test configuration. Forced positive offset on PDAC."]
+    #[inline(always)]
+    pub fn foffp_1(self) -> &'a mut W {
+        self.variant(FOFFP_A::FOFFP_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w
     }
 }
 #[doc = "Possible values of the field `FOFFM2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FOFFM2R {
+pub enum FOFFM2_A {
     #[doc = "Normal operation. No forced offset."]
     FOFFM2_0,
     #[doc = "Test configuration. Forced negative offset on MDAC."]
     FOFFM2_1,
 }
-impl FOFFM2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FOFFM2R::FOFFM2_0 => false,
-            FOFFM2R::FOFFM2_1 => true,
+impl From<FOFFM2_A> for bool {
+    #[inline(always)]
+    fn from(variant: FOFFM2_A) -> Self {
+        match variant {
+            FOFFM2_A::FOFFM2_0 => false,
+            FOFFM2_A::FOFFM2_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FOFFM2R {
-        match value {
-            false => FOFFM2R::FOFFM2_0,
-            true => FOFFM2R::FOFFM2_1,
+}
+#[doc = "Reader of field `FOFFM2`"]
+pub type FOFFM2_R = crate::R<bool, FOFFM2_A>;
+impl FOFFM2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FOFFM2_A {
+        match self.bits {
+            false => FOFFM2_A::FOFFM2_0,
+            true => FOFFM2_A::FOFFM2_1,
         }
     }
     #[doc = "Checks if the value of the field is `FOFFM2_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_foffm2_0(&self) -> bool {
-        *self == FOFFM2R::FOFFM2_0
+        *self == FOFFM2_A::FOFFM2_0
     }
     #[doc = "Checks if the value of the field is `FOFFM2_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_foffm2_1(&self) -> bool {
-        *self == FOFFM2R::FOFFM2_1
+        *self == FOFFM2_A::FOFFM2_1
+    }
+}
+#[doc = "Write proxy for field `FOFFM2`"]
+pub struct FOFFM2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FOFFM2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FOFFM2_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Normal operation. No forced offset."]
+    #[inline(always)]
+    pub fn foffm2_0(self) -> &'a mut W {
+        self.variant(FOFFM2_A::FOFFM2_0)
+    }
+    #[doc = "Test configuration. Forced negative offset on MDAC."]
+    #[inline(always)]
+    pub fn foffm2_1(self) -> &'a mut W {
+        self.variant(FOFFM2_A::FOFFM2_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w
     }
 }
 #[doc = "Possible values of the field `FOFFP2`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FOFFP2R {
+pub enum FOFFP2_A {
     #[doc = "Normal operation. No forced offset."]
     FOFFP2_0,
     #[doc = "Test configuration. Forced negative offset on PDAC."]
     FOFFP2_1,
 }
-impl FOFFP2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FOFFP2R::FOFFP2_0 => false,
-            FOFFP2R::FOFFP2_1 => true,
+impl From<FOFFP2_A> for bool {
+    #[inline(always)]
+    fn from(variant: FOFFP2_A) -> Self {
+        match variant {
+            FOFFP2_A::FOFFP2_0 => false,
+            FOFFP2_A::FOFFP2_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FOFFP2R {
-        match value {
-            false => FOFFP2R::FOFFP2_0,
-            true => FOFFP2R::FOFFP2_1,
+}
+#[doc = "Reader of field `FOFFP2`"]
+pub type FOFFP2_R = crate::R<bool, FOFFP2_A>;
+impl FOFFP2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FOFFP2_A {
+        match self.bits {
+            false => FOFFP2_A::FOFFP2_0,
+            true => FOFFP2_A::FOFFP2_1,
         }
     }
     #[doc = "Checks if the value of the field is `FOFFP2_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_foffp2_0(&self) -> bool {
-        *self == FOFFP2R::FOFFP2_0
+        *self == FOFFP2_A::FOFFP2_0
     }
     #[doc = "Checks if the value of the field is `FOFFP2_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_foffp2_1(&self) -> bool {
-        *self == FOFFP2R::FOFFP2_1
+        *self == FOFFP2_A::FOFFP2_1
+    }
+}
+#[doc = "Write proxy for field `FOFFP2`"]
+pub struct FOFFP2_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FOFFP2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FOFFP2_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Normal operation. No forced offset."]
+    #[inline(always)]
+    pub fn foffp2_0(self) -> &'a mut W {
+        self.variant(FOFFP2_A::FOFFP2_0)
+    }
+    #[doc = "Test configuration. Forced negative offset on PDAC."]
+    #[inline(always)]
+    pub fn foffp2_1(self) -> &'a mut W {
+        self.variant(FOFFP2_A::FOFFP2_1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w
     }
 }
 #[doc = "Possible values of the field `TESTEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TESTENR {
+pub enum TESTEN_A {
     #[doc = "Normal operation. Test configuration not enabled."]
     TESTEN_0,
     #[doc = "Hardware BIST Test in progress."]
     TESTEN_1,
 }
-impl TESTENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TESTENR::TESTEN_0 => false,
-            TESTENR::TESTEN_1 => true,
+impl From<TESTEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TESTEN_A) -> Self {
+        match variant {
+            TESTEN_A::TESTEN_0 => false,
+            TESTEN_A::TESTEN_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TESTENR {
-        match value {
-            false => TESTENR::TESTEN_0,
-            true => TESTENR::TESTEN_1,
+}
+#[doc = "Reader of field `TESTEN`"]
+pub type TESTEN_R = crate::R<bool, TESTEN_A>;
+impl TESTEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TESTEN_A {
+        match self.bits {
+            false => TESTEN_A::TESTEN_0,
+            true => TESTEN_A::TESTEN_1,
         }
     }
     #[doc = "Checks if the value of the field is `TESTEN_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_testen_0(&self) -> bool {
-        *self == TESTENR::TESTEN_0
+        *self == TESTEN_A::TESTEN_0
     }
     #[doc = "Checks if the value of the field is `TESTEN_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_testen_1(&self) -> bool {
-        *self == TESTENR::TESTEN_1
+        *self == TESTEN_A::TESTEN_1
     }
 }
-#[doc = "Values that can be written to the field `CST_LONG`"]
-pub enum CST_LONGW {
-    #[doc = "Normal sample time. Minimum sample time of 3 ADCK cycles."]
-    CST_LONG_0,
-    #[doc = "Increased sample time. 67 ADCK cycles total sample time."]
-    CST_LONG_1,
-}
-impl CST_LONGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CST_LONGW::CST_LONG_0 => false,
-            CST_LONGW::CST_LONG_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CST_LONGW<'a> {
+#[doc = "Write proxy for field `TESTEN`"]
+pub struct TESTEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CST_LONGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CST_LONGW) -> &'a mut W {
+impl<'a> TESTEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TESTEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Normal sample time. Minimum sample time of 3 ADCK cycles."]
-    #[inline]
-    pub fn cst_long_0(self) -> &'a mut W {
-        self.variant(CST_LONGW::CST_LONG_0)
-    }
-    #[doc = "Increased sample time. 67 ADCK cycles total sample time."]
-    #[inline]
-    pub fn cst_long_1(self) -> &'a mut W {
-        self.variant(CST_LONGW::CST_LONG_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FOFFM`"]
-pub enum FOFFMW {
-    #[doc = "Normal operation. No forced offset."]
-    FOFFM_0,
-    #[doc = "Test configuration. Forced positive offset on MDAC."]
-    FOFFM_1,
-}
-impl FOFFMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FOFFMW::FOFFM_0 => false,
-            FOFFMW::FOFFM_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FOFFMW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FOFFMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FOFFMW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Normal operation. No forced offset."]
-    #[inline]
-    pub fn foffm_0(self) -> &'a mut W {
-        self.variant(FOFFMW::FOFFM_0)
-    }
-    #[doc = "Test configuration. Forced positive offset on MDAC."]
-    #[inline]
-    pub fn foffm_1(self) -> &'a mut W {
-        self.variant(FOFFMW::FOFFM_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FOFFP`"]
-pub enum FOFFPW {
-    #[doc = "Normal operation. No forced offset."]
-    FOFFP_0,
-    #[doc = "Test configuration. Forced positive offset on PDAC."]
-    FOFFP_1,
-}
-impl FOFFPW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FOFFPW::FOFFP_0 => false,
-            FOFFPW::FOFFP_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FOFFPW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FOFFPW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FOFFPW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Normal operation. No forced offset."]
-    #[inline]
-    pub fn foffp_0(self) -> &'a mut W {
-        self.variant(FOFFPW::FOFFP_0)
-    }
-    #[doc = "Test configuration. Forced positive offset on PDAC."]
-    #[inline]
-    pub fn foffp_1(self) -> &'a mut W {
-        self.variant(FOFFPW::FOFFP_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FOFFM2`"]
-pub enum FOFFM2W {
-    #[doc = "Normal operation. No forced offset."]
-    FOFFM2_0,
-    #[doc = "Test configuration. Forced negative offset on MDAC."]
-    FOFFM2_1,
-}
-impl FOFFM2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FOFFM2W::FOFFM2_0 => false,
-            FOFFM2W::FOFFM2_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FOFFM2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FOFFM2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FOFFM2W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Normal operation. No forced offset."]
-    #[inline]
-    pub fn foffm2_0(self) -> &'a mut W {
-        self.variant(FOFFM2W::FOFFM2_0)
-    }
-    #[doc = "Test configuration. Forced negative offset on MDAC."]
-    #[inline]
-    pub fn foffm2_1(self) -> &'a mut W {
-        self.variant(FOFFM2W::FOFFM2_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FOFFP2`"]
-pub enum FOFFP2W {
-    #[doc = "Normal operation. No forced offset."]
-    FOFFP2_0,
-    #[doc = "Test configuration. Forced negative offset on PDAC."]
-    FOFFP2_1,
-}
-impl FOFFP2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FOFFP2W::FOFFP2_0 => false,
-            FOFFP2W::FOFFP2_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FOFFP2W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FOFFP2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FOFFP2W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Normal operation. No forced offset."]
-    #[inline]
-    pub fn foffp2_0(self) -> &'a mut W {
-        self.variant(FOFFP2W::FOFFP2_0)
-    }
-    #[doc = "Test configuration. Forced negative offset on PDAC."]
-    #[inline]
-    pub fn foffp2_1(self) -> &'a mut W {
-        self.variant(FOFFP2W::FOFFP2_1)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TESTEN`"]
-pub enum TESTENW {
-    #[doc = "Normal operation. Test configuration not enabled."]
-    TESTEN_0,
-    #[doc = "Hardware BIST Test in progress."]
-    TESTEN_1,
-}
-impl TESTENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TESTENW::TESTEN_0 => false,
-            TESTENW::TESTEN_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TESTENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TESTENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TESTENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Normal operation. Test configuration not enabled."]
-    #[inline]
+    #[inline(always)]
     pub fn testen_0(self) -> &'a mut W {
-        self.variant(TESTENW::TESTEN_0)
+        self.variant(TESTEN_A::TESTEN_0)
     }
     #[doc = "Hardware BIST Test in progress."]
-    #[inline]
+    #[inline(always)]
     pub fn testen_1(self) -> &'a mut W {
-        self.variant(TESTENW::TESTEN_1)
+        self.variant(TESTEN_A::TESTEN_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 23;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Calibration Sample Time Long"]
-    #[inline]
-    pub fn cst_long(&self) -> CST_LONGR {
-        CST_LONGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn cst_long(&self) -> CST_LONG_R {
+        CST_LONG_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 8 - Force M-side positive offset"]
-    #[inline]
-    pub fn foffm(&self) -> FOFFMR {
-        FOFFMR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn foffm(&self) -> FOFFM_R {
+        FOFFM_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Force P-side positive offset"]
-    #[inline]
-    pub fn foffp(&self) -> FOFFPR {
-        FOFFPR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn foffp(&self) -> FOFFP_R {
+        FOFFP_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Force M-side negative offset"]
-    #[inline]
-    pub fn foffm2(&self) -> FOFFM2R {
-        FOFFM2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn foffm2(&self) -> FOFFM2_R {
+        FOFFM2_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Force P-side negative offset"]
-    #[inline]
-    pub fn foffp2(&self) -> FOFFP2R {
-        FOFFP2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn foffp2(&self) -> FOFFP2_R {
+        FOFFP2_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 23 - Enable test configuration"]
-    #[inline]
-    pub fn testen(&self) -> TESTENR {
-        TESTENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 23;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn testen(&self) -> TESTEN_R {
+        TESTEN_R::new(((self.bits >> 23) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Calibration Sample Time Long"]
-    #[inline]
-    pub fn cst_long(&mut self) -> _CST_LONGW {
-        _CST_LONGW { w: self }
+    #[inline(always)]
+    pub fn cst_long(&mut self) -> CST_LONG_W {
+        CST_LONG_W { w: self }
     }
     #[doc = "Bit 8 - Force M-side positive offset"]
-    #[inline]
-    pub fn foffm(&mut self) -> _FOFFMW {
-        _FOFFMW { w: self }
+    #[inline(always)]
+    pub fn foffm(&mut self) -> FOFFM_W {
+        FOFFM_W { w: self }
     }
     #[doc = "Bit 9 - Force P-side positive offset"]
-    #[inline]
-    pub fn foffp(&mut self) -> _FOFFPW {
-        _FOFFPW { w: self }
+    #[inline(always)]
+    pub fn foffp(&mut self) -> FOFFP_W {
+        FOFFP_W { w: self }
     }
     #[doc = "Bit 10 - Force M-side negative offset"]
-    #[inline]
-    pub fn foffm2(&mut self) -> _FOFFM2W {
-        _FOFFM2W { w: self }
+    #[inline(always)]
+    pub fn foffm2(&mut self) -> FOFFM2_W {
+        FOFFM2_W { w: self }
     }
     #[doc = "Bit 11 - Force P-side negative offset"]
-    #[inline]
-    pub fn foffp2(&mut self) -> _FOFFP2W {
-        _FOFFP2W { w: self }
+    #[inline(always)]
+    pub fn foffp2(&mut self) -> FOFFP2_W {
+        FOFFP2_W { w: self }
     }
     #[doc = "Bit 23 - Enable test configuration"]
-    #[inline]
-    pub fn testen(&mut self) -> _TESTENW {
-        _TESTENW { w: self }
+    #[inline(always)]
+    pub fn testen(&mut self) -> TESTEN_W {
+        TESTEN_W { w: self }
     }
 }

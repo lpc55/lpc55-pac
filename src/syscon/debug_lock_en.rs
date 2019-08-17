@@ -1,167 +1,94 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::DEBUG_LOCK_EN {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register DEBUG_LOCK_EN"]
+pub type R = crate::R<u32, super::DEBUG_LOCK_EN>;
+#[doc = "Writer for register DEBUG_LOCK_EN"]
+pub type W = crate::W<u32, super::DEBUG_LOCK_EN>;
+#[doc = "Register DEBUG_LOCK_EN `reset()`'s with value 0x05"]
+impl crate::ResetValue for super::DEBUG_LOCK_EN {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x05
     }
 }
 #[doc = "Possible values of the field `LOCK_ALL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOCK_ALLR {
+pub enum LOCK_ALL_A {
     #[doc = "Any other value than b1010: disable write access to all 6 registers."]
     DISABLE,
     #[doc = "1010: Enable write access to all 6 registers."]
     ENABLE,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl LOCK_ALLR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            LOCK_ALLR::DISABLE => 0,
-            LOCK_ALLR::ENABLE => 10,
-            LOCK_ALLR::_Reserved(bits) => bits,
+impl From<LOCK_ALL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LOCK_ALL_A) -> Self {
+        match variant {
+            LOCK_ALL_A::DISABLE => 0,
+            LOCK_ALL_A::ENABLE => 10,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> LOCK_ALLR {
-        match value {
-            0 => LOCK_ALLR::DISABLE,
-            10 => LOCK_ALLR::ENABLE,
-            i => LOCK_ALLR::_Reserved(i),
+}
+#[doc = "Reader of field `LOCK_ALL`"]
+pub type LOCK_ALL_R = crate::R<u8, LOCK_ALL_A>;
+impl LOCK_ALL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, LOCK_ALL_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(LOCK_ALL_A::DISABLE),
+            10 => Val(LOCK_ALL_A::ENABLE),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == LOCK_ALLR::DISABLE
+        *self == LOCK_ALL_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == LOCK_ALLR::ENABLE
+        *self == LOCK_ALL_A::ENABLE
     }
 }
-#[doc = "Values that can be written to the field `LOCK_ALL`"]
-pub enum LOCK_ALLW {
-    #[doc = "Any other value than b1010: disable write access to all 6 registers."]
-    DISABLE,
-    #[doc = "1010: Enable write access to all 6 registers."]
-    ENABLE,
-}
-impl LOCK_ALLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            LOCK_ALLW::DISABLE => 0,
-            LOCK_ALLW::ENABLE => 10,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LOCK_ALLW<'a> {
+#[doc = "Write proxy for field `LOCK_ALL`"]
+pub struct LOCK_ALL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _LOCK_ALLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LOCK_ALLW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> LOCK_ALL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LOCK_ALL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Any other value than b1010: disable write access to all 6 registers."]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(LOCK_ALLW::DISABLE)
+        self.variant(LOCK_ALL_A::DISABLE)
     }
     #[doc = "1010: Enable write access to all 6 registers."]
-    #[inline]
+    #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(LOCK_ALLW::ENABLE)
+        self.variant(LOCK_ALL_A::ENABLE)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:3 - Control write access to CODESECURITYPROTTEST, CODESECURITYPROTCPU0, CODESECURITYPROTCPU1, CM33_DEBUG_FEATURES, MCM33_DEBUG_FEATURES and DBG_AUTH_SCRATCH registers."]
-    #[inline]
-    pub fn lock_all(&self) -> LOCK_ALLR {
-        LOCK_ALLR::_from({
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn lock_all(&self) -> LOCK_ALL_R {
+        LOCK_ALL_R::new((self.bits & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 5 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:3 - Control write access to CODESECURITYPROTTEST, CODESECURITYPROTCPU0, CODESECURITYPROTCPU1, CM33_DEBUG_FEATURES, MCM33_DEBUG_FEATURES and DBG_AUTH_SCRATCH registers."]
-    #[inline]
-    pub fn lock_all(&mut self) -> _LOCK_ALLW {
-        _LOCK_ALLW { w: self }
+    #[inline(always)]
+    pub fn lock_all(&mut self) -> LOCK_ALL_W {
+        LOCK_ALL_W { w: self }
     }
 }

@@ -1,387 +1,213 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CSW {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CSW"]
+pub type R = crate::R<u32, super::CSW>;
+#[doc = "Writer for register CSW"]
+pub type W = crate::W<u32, super::CSW>;
+#[doc = "Register CSW `reset()`'s with value 0"]
+impl crate::ResetValue for super::CSW {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct RESYNCH_REQR {
-    bits: bool,
-}
-impl RESYNCH_REQR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct REQ_PENDINGR {
-    bits: bool,
-}
-impl REQ_PENDINGR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DBG_OR_ERRR {
-    bits: bool,
-}
-impl DBG_OR_ERRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct AHB_OR_ERRR {
-    bits: bool,
-}
-impl AHB_OR_ERRR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SOFT_RESETR {
-    bits: bool,
-}
-impl SOFT_RESETR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RESYNCH_REQW<'a> {
+#[doc = "Reader of field `RESYNCH_REQ`"]
+pub type RESYNCH_REQ_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `RESYNCH_REQ`"]
+pub struct RESYNCH_REQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RESYNCH_REQW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> RESYNCH_REQ_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _REQ_PENDINGW<'a> {
+#[doc = "Reader of field `REQ_PENDING`"]
+pub type REQ_PENDING_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `REQ_PENDING`"]
+pub struct REQ_PENDING_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _REQ_PENDINGW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> REQ_PENDING_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DBG_OR_ERRW<'a> {
+#[doc = "Reader of field `DBG_OR_ERR`"]
+pub type DBG_OR_ERR_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `DBG_OR_ERR`"]
+pub struct DBG_OR_ERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DBG_OR_ERRW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> DBG_OR_ERR_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _AHB_OR_ERRW<'a> {
+#[doc = "Reader of field `AHB_OR_ERR`"]
+pub type AHB_OR_ERR_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `AHB_OR_ERR`"]
+pub struct AHB_OR_ERR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AHB_OR_ERRW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> AHB_OR_ERR_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SOFT_RESETW<'a> {
+#[doc = "Reader of field `SOFT_RESET`"]
+pub type SOFT_RESET_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `SOFT_RESET`"]
+pub struct SOFT_RESET_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SOFT_RESETW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> SOFT_RESET_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _CHIP_RESET_REQW<'a> {
+#[doc = "Write proxy for field `CHIP_RESET_REQ`"]
+pub struct CHIP_RESET_REQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CHIP_RESET_REQW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> CHIP_RESET_REQ_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Debugger will set this bit to 1 to request a resynchronrisation"]
-    #[inline]
-    pub fn resynch_req(&self) -> RESYNCH_REQR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        RESYNCH_REQR { bits }
+    #[inline(always)]
+    pub fn resynch_req(&self) -> RESYNCH_REQ_R {
+        RESYNCH_REQ_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Request is pending from debugger (i.e unread value in REQUEST)"]
-    #[inline]
-    pub fn req_pending(&self) -> REQ_PENDINGR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        REQ_PENDINGR { bits }
+    #[inline(always)]
+    pub fn req_pending(&self) -> REQ_PENDING_R {
+        REQ_PENDING_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Debugger overrun error (previous REQUEST overwritten before being picked up by ROM)"]
-    #[inline]
-    pub fn dbg_or_err(&self) -> DBG_OR_ERRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        DBG_OR_ERRR { bits }
+    #[inline(always)]
+    pub fn dbg_or_err(&self) -> DBG_OR_ERR_R {
+        DBG_OR_ERR_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - AHB overrun Error (Return value overwritten by ROM)"]
-    #[inline]
-    pub fn ahb_or_err(&self) -> AHB_OR_ERRR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AHB_OR_ERRR { bits }
+    #[inline(always)]
+    pub fn ahb_or_err(&self) -> AHB_OR_ERR_R {
+        AHB_OR_ERR_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Soft Reset for DM (write-only from AHB, not readable and selfclearing). A write to this bit will cause a soft reset for DM."]
-    #[inline]
-    pub fn soft_reset(&self) -> SOFT_RESETR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SOFT_RESETR { bits }
+    #[inline(always)]
+    pub fn soft_reset(&self) -> SOFT_RESET_R {
+        SOFT_RESET_R::new(((self.bits >> 4) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Debugger will set this bit to 1 to request a resynchronrisation"]
-    #[inline]
-    pub fn resynch_req(&mut self) -> _RESYNCH_REQW {
-        _RESYNCH_REQW { w: self }
+    #[inline(always)]
+    pub fn resynch_req(&mut self) -> RESYNCH_REQ_W {
+        RESYNCH_REQ_W { w: self }
     }
     #[doc = "Bit 1 - Request is pending from debugger (i.e unread value in REQUEST)"]
-    #[inline]
-    pub fn req_pending(&mut self) -> _REQ_PENDINGW {
-        _REQ_PENDINGW { w: self }
+    #[inline(always)]
+    pub fn req_pending(&mut self) -> REQ_PENDING_W {
+        REQ_PENDING_W { w: self }
     }
     #[doc = "Bit 2 - Debugger overrun error (previous REQUEST overwritten before being picked up by ROM)"]
-    #[inline]
-    pub fn dbg_or_err(&mut self) -> _DBG_OR_ERRW {
-        _DBG_OR_ERRW { w: self }
+    #[inline(always)]
+    pub fn dbg_or_err(&mut self) -> DBG_OR_ERR_W {
+        DBG_OR_ERR_W { w: self }
     }
     #[doc = "Bit 3 - AHB overrun Error (Return value overwritten by ROM)"]
-    #[inline]
-    pub fn ahb_or_err(&mut self) -> _AHB_OR_ERRW {
-        _AHB_OR_ERRW { w: self }
+    #[inline(always)]
+    pub fn ahb_or_err(&mut self) -> AHB_OR_ERR_W {
+        AHB_OR_ERR_W { w: self }
     }
     #[doc = "Bit 4 - Soft Reset for DM (write-only from AHB, not readable and selfclearing). A write to this bit will cause a soft reset for DM."]
-    #[inline]
-    pub fn soft_reset(&mut self) -> _SOFT_RESETW {
-        _SOFT_RESETW { w: self }
+    #[inline(always)]
+    pub fn soft_reset(&mut self) -> SOFT_RESET_W {
+        SOFT_RESET_W { w: self }
     }
     #[doc = "Bit 5 - Write only bit. Once written will cause the chip to reset (note that the DM is not reset by this reset as it is only resettable by a SOFT reset or a POR/BOD event)"]
-    #[inline]
-    pub fn chip_reset_req(&mut self) -> _CHIP_RESET_REQW {
-        _CHIP_RESET_REQW { w: self }
+    #[inline(always)]
+    pub fn chip_reset_req(&mut self) -> CHIP_RESET_REQ_W {
+        CHIP_RESET_REQ_W { w: self }
     }
 }

@@ -1,392 +1,208 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::IDXBLK_L_DP {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register IDXBLK_L_DP"]
+pub type R = crate::R<u32, super::IDXBLK_L_DP>;
+#[doc = "Writer for register IDXBLK_L_DP"]
+pub type W = crate::W<u32, super::IDXBLK_L_DP>;
+#[doc = "Register IDXBLK_L_DP `reset()`'s with value 0xaaaa"]
+impl crate::ResetValue for super::IDXBLK_L_DP {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xaaaa
     }
 }
-#[doc = r" Value of the field"]
-pub struct IDX0R {
-    bits: u8,
-}
-impl IDX0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct IDX1R {
-    bits: u8,
-}
-impl IDX1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct IDX2R {
-    bits: u8,
-}
-impl IDX2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct IDX3R {
-    bits: u8,
-}
-impl IDX3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct IDX4R {
-    bits: u8,
-}
-impl IDX4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct IDX5R {
-    bits: u8,
-}
-impl IDX5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct IDX6R {
-    bits: u8,
-}
-impl IDX6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct IDX7R {
-    bits: u8,
-}
-impl IDX7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IDX0W<'a> {
+#[doc = "Reader of field `IDX0`"]
+pub type IDX0_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `IDX0`"]
+pub struct IDX0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IDX0W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> IDX0_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _IDX1W<'a> {
+#[doc = "Reader of field `IDX1`"]
+pub type IDX1_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `IDX1`"]
+pub struct IDX1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IDX1W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> IDX1_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _IDX2W<'a> {
+#[doc = "Reader of field `IDX2`"]
+pub type IDX2_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `IDX2`"]
+pub struct IDX2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IDX2W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> IDX2_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _IDX3W<'a> {
+#[doc = "Reader of field `IDX3`"]
+pub type IDX3_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `IDX3`"]
+pub struct IDX3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IDX3W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> IDX3_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _IDX4W<'a> {
+#[doc = "Reader of field `IDX4`"]
+pub type IDX4_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `IDX4`"]
+pub struct IDX4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IDX4W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> IDX4_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _IDX5W<'a> {
+#[doc = "Reader of field `IDX5`"]
+pub type IDX5_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `IDX5`"]
+pub struct IDX5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IDX5W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> IDX5_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _IDX6W<'a> {
+#[doc = "Reader of field `IDX6`"]
+pub type IDX6_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `IDX6`"]
+pub struct IDX6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IDX6W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> IDX6_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _IDX7W<'a> {
+#[doc = "Reader of field `IDX7`"]
+pub type IDX7_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `IDX7`"]
+pub struct IDX7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IDX7W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> IDX7_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Use to block PUF index 0"]
-    #[inline]
-    pub fn idx0(&self) -> IDX0R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        IDX0R { bits }
+    #[inline(always)]
+    pub fn idx0(&self) -> IDX0_R {
+        IDX0_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:3 - Use to block PUF index 1"]
-    #[inline]
-    pub fn idx1(&self) -> IDX1R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        IDX1R { bits }
+    #[inline(always)]
+    pub fn idx1(&self) -> IDX1_R {
+        IDX1_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - Use to block PUF index 2"]
-    #[inline]
-    pub fn idx2(&self) -> IDX2R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        IDX2R { bits }
+    #[inline(always)]
+    pub fn idx2(&self) -> IDX2_R {
+        IDX2_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bits 6:7 - Use to block PUF index 3"]
-    #[inline]
-    pub fn idx3(&self) -> IDX3R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        IDX3R { bits }
+    #[inline(always)]
+    pub fn idx3(&self) -> IDX3_R {
+        IDX3_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bits 8:9 - Use to block PUF index 4"]
-    #[inline]
-    pub fn idx4(&self) -> IDX4R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        IDX4R { bits }
+    #[inline(always)]
+    pub fn idx4(&self) -> IDX4_R {
+        IDX4_R::new(((self.bits >> 8) & 0x03) as u8)
     }
     #[doc = "Bits 10:11 - Use to block PUF index 5"]
-    #[inline]
-    pub fn idx5(&self) -> IDX5R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        IDX5R { bits }
+    #[inline(always)]
+    pub fn idx5(&self) -> IDX5_R {
+        IDX5_R::new(((self.bits >> 10) & 0x03) as u8)
     }
     #[doc = "Bits 12:13 - Use to block PUF index 6"]
-    #[inline]
-    pub fn idx6(&self) -> IDX6R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        IDX6R { bits }
+    #[inline(always)]
+    pub fn idx6(&self) -> IDX6_R {
+        IDX6_R::new(((self.bits >> 12) & 0x03) as u8)
     }
     #[doc = "Bits 14:15 - Use to block PUF index 7"]
-    #[inline]
-    pub fn idx7(&self) -> IDX7R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        IDX7R { bits }
+    #[inline(always)]
+    pub fn idx7(&self) -> IDX7_R {
+        IDX7_R::new(((self.bits >> 14) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 43690 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Use to block PUF index 0"]
-    #[inline]
-    pub fn idx0(&mut self) -> _IDX0W {
-        _IDX0W { w: self }
+    #[inline(always)]
+    pub fn idx0(&mut self) -> IDX0_W {
+        IDX0_W { w: self }
     }
     #[doc = "Bits 2:3 - Use to block PUF index 1"]
-    #[inline]
-    pub fn idx1(&mut self) -> _IDX1W {
-        _IDX1W { w: self }
+    #[inline(always)]
+    pub fn idx1(&mut self) -> IDX1_W {
+        IDX1_W { w: self }
     }
     #[doc = "Bits 4:5 - Use to block PUF index 2"]
-    #[inline]
-    pub fn idx2(&mut self) -> _IDX2W {
-        _IDX2W { w: self }
+    #[inline(always)]
+    pub fn idx2(&mut self) -> IDX2_W {
+        IDX2_W { w: self }
     }
     #[doc = "Bits 6:7 - Use to block PUF index 3"]
-    #[inline]
-    pub fn idx3(&mut self) -> _IDX3W {
-        _IDX3W { w: self }
+    #[inline(always)]
+    pub fn idx3(&mut self) -> IDX3_W {
+        IDX3_W { w: self }
     }
     #[doc = "Bits 8:9 - Use to block PUF index 4"]
-    #[inline]
-    pub fn idx4(&mut self) -> _IDX4W {
-        _IDX4W { w: self }
+    #[inline(always)]
+    pub fn idx4(&mut self) -> IDX4_W {
+        IDX4_W { w: self }
     }
     #[doc = "Bits 10:11 - Use to block PUF index 5"]
-    #[inline]
-    pub fn idx5(&mut self) -> _IDX5W {
-        _IDX5W { w: self }
+    #[inline(always)]
+    pub fn idx5(&mut self) -> IDX5_W {
+        IDX5_W { w: self }
     }
     #[doc = "Bits 12:13 - Use to block PUF index 6"]
-    #[inline]
-    pub fn idx6(&mut self) -> _IDX6W {
-        _IDX6W { w: self }
+    #[inline(always)]
+    pub fn idx6(&mut self) -> IDX6_W {
+        IDX6_W { w: self }
     }
     #[doc = "Bits 14:15 - Use to block PUF index 7"]
-    #[inline]
-    pub fn idx7(&mut self) -> _IDX7W {
-        _IDX7W { w: self }
+    #[inline(always)]
+    pub fn idx7(&mut self) -> IDX7_W {
+        IDX7_W { w: self }
     }
 }

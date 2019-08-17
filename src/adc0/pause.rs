@@ -1,224 +1,128 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PAUSE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PAUSE"]
+pub type R = crate::R<u32, super::PAUSE>;
+#[doc = "Writer for register PAUSE"]
+pub type W = crate::W<u32, super::PAUSE>;
+#[doc = "Register PAUSE `reset()`'s with value 0"]
+impl crate::ResetValue for super::PAUSE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct PAUSEDLYR {
-    bits: u16,
+#[doc = "Reader of field `PAUSEDLY`"]
+pub type PAUSEDLY_R = crate::R<u16, u16>;
+#[doc = "Write proxy for field `PAUSEDLY`"]
+pub struct PAUSEDLY_W<'a> {
+    w: &'a mut W,
 }
-impl PAUSEDLYR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
+impl<'a> PAUSEDLY_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01ff) | ((value as u32) & 0x01ff);
+        self.w
     }
 }
 #[doc = "Possible values of the field `PAUSEEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PAUSEENR {
+pub enum PAUSEEN_A {
     #[doc = "Pause operation disabled"]
     PAUSEEN_0,
     #[doc = "Pause operation enabled"]
     PAUSEEN_1,
 }
-impl PAUSEENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PAUSEENR::PAUSEEN_0 => false,
-            PAUSEENR::PAUSEEN_1 => true,
+impl From<PAUSEEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: PAUSEEN_A) -> Self {
+        match variant {
+            PAUSEEN_A::PAUSEEN_0 => false,
+            PAUSEEN_A::PAUSEEN_1 => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PAUSEENR {
-        match value {
-            false => PAUSEENR::PAUSEEN_0,
-            true => PAUSEENR::PAUSEEN_1,
+}
+#[doc = "Reader of field `PAUSEEN`"]
+pub type PAUSEEN_R = crate::R<bool, PAUSEEN_A>;
+impl PAUSEEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PAUSEEN_A {
+        match self.bits {
+            false => PAUSEEN_A::PAUSEEN_0,
+            true => PAUSEEN_A::PAUSEEN_1,
         }
     }
     #[doc = "Checks if the value of the field is `PAUSEEN_0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pauseen_0(&self) -> bool {
-        *self == PAUSEENR::PAUSEEN_0
+        *self == PAUSEEN_A::PAUSEEN_0
     }
     #[doc = "Checks if the value of the field is `PAUSEEN_1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pauseen_1(&self) -> bool {
-        *self == PAUSEENR::PAUSEEN_1
+        *self == PAUSEEN_A::PAUSEEN_1
     }
 }
-#[doc = r" Proxy"]
-pub struct _PAUSEDLYW<'a> {
+#[doc = "Write proxy for field `PAUSEEN`"]
+pub struct PAUSEEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _PAUSEDLYW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 511;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PAUSEEN`"]
-pub enum PAUSEENW {
-    #[doc = "Pause operation disabled"]
-    PAUSEEN_0,
-    #[doc = "Pause operation enabled"]
-    PAUSEEN_1,
-}
-impl PAUSEENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PAUSEENW::PAUSEEN_0 => false,
-            PAUSEENW::PAUSEEN_1 => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PAUSEENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PAUSEENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PAUSEENW) -> &'a mut W {
+impl<'a> PAUSEEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PAUSEEN_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pause operation disabled"]
-    #[inline]
+    #[inline(always)]
     pub fn pauseen_0(self) -> &'a mut W {
-        self.variant(PAUSEENW::PAUSEEN_0)
+        self.variant(PAUSEEN_A::PAUSEEN_0)
     }
     #[doc = "Pause operation enabled"]
-    #[inline]
+    #[inline(always)]
     pub fn pauseen_1(self) -> &'a mut W {
-        self.variant(PAUSEENW::PAUSEEN_1)
+        self.variant(PAUSEEN_A::PAUSEEN_1)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 31;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:8 - Pause Delay"]
-    #[inline]
-    pub fn pausedly(&self) -> PAUSEDLYR {
-        let bits = {
-            const MASK: u16 = 511;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        PAUSEDLYR { bits }
+    #[inline(always)]
+    pub fn pausedly(&self) -> PAUSEDLY_R {
+        PAUSEDLY_R::new((self.bits & 0x01ff) as u16)
     }
     #[doc = "Bit 31 - PAUSE Option Enable"]
-    #[inline]
-    pub fn pauseen(&self) -> PAUSEENR {
-        PAUSEENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 31;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pauseen(&self) -> PAUSEEN_R {
+        PAUSEEN_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:8 - Pause Delay"]
-    #[inline]
-    pub fn pausedly(&mut self) -> _PAUSEDLYW {
-        _PAUSEDLYW { w: self }
+    #[inline(always)]
+    pub fn pausedly(&mut self) -> PAUSEDLY_W {
+        PAUSEDLY_W { w: self }
     }
     #[doc = "Bit 31 - PAUSE Option Enable"]
-    #[inline]
-    pub fn pauseen(&mut self) -> _PAUSEENW {
-        _PAUSEENW { w: self }
+    #[inline(always)]
+    pub fn pauseen(&mut self) -> PAUSEEN_W {
+        PAUSEEN_W { w: self }
     }
 }

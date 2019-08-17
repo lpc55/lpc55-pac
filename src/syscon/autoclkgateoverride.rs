@@ -1,2021 +1,1473 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::AUTOCLKGATEOVERRIDE {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register AUTOCLKGATEOVERRIDE"]
+pub type R = crate::R<u32, super::AUTOCLKGATEOVERRIDE>;
+#[doc = "Writer for register AUTOCLKGATEOVERRIDE"]
+pub type W = crate::W<u32, super::AUTOCLKGATEOVERRIDE>;
+#[doc = "Register AUTOCLKGATEOVERRIDE `reset()`'s with value 0xffff"]
+impl crate::ResetValue for super::AUTOCLKGATEOVERRIDE {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xffff
     }
 }
 #[doc = "Possible values of the field `ROM`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ROMR {
+pub enum ROM_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl ROMR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ROMR::DISABLE => false,
-            ROMR::ENABLE => true,
+impl From<ROM_A> for bool {
+    #[inline(always)]
+    fn from(variant: ROM_A) -> Self {
+        match variant {
+            ROM_A::DISABLE => false,
+            ROM_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ROMR {
-        match value {
-            false => ROMR::DISABLE,
-            true => ROMR::ENABLE,
+}
+#[doc = "Reader of field `ROM`"]
+pub type ROM_R = crate::R<bool, ROM_A>;
+impl ROM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ROM_A {
+        match self.bits {
+            false => ROM_A::DISABLE,
+            true => ROM_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == ROMR::DISABLE
+        *self == ROM_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == ROMR::ENABLE
+        *self == ROM_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `ROM`"]
+pub struct ROM_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ROM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ROM_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(ROM_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(ROM_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RAMX_CTRL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RAMX_CTRLR {
+pub enum RAMX_CTRL_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl RAMX_CTRLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RAMX_CTRLR::DISABLE => false,
-            RAMX_CTRLR::ENABLE => true,
+impl From<RAMX_CTRL_A> for bool {
+    #[inline(always)]
+    fn from(variant: RAMX_CTRL_A) -> Self {
+        match variant {
+            RAMX_CTRL_A::DISABLE => false,
+            RAMX_CTRL_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RAMX_CTRLR {
-        match value {
-            false => RAMX_CTRLR::DISABLE,
-            true => RAMX_CTRLR::ENABLE,
+}
+#[doc = "Reader of field `RAMX_CTRL`"]
+pub type RAMX_CTRL_R = crate::R<bool, RAMX_CTRL_A>;
+impl RAMX_CTRL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RAMX_CTRL_A {
+        match self.bits {
+            false => RAMX_CTRL_A::DISABLE,
+            true => RAMX_CTRL_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == RAMX_CTRLR::DISABLE
+        *self == RAMX_CTRL_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == RAMX_CTRLR::ENABLE
+        *self == RAMX_CTRL_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `RAMX_CTRL`"]
+pub struct RAMX_CTRL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RAMX_CTRL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RAMX_CTRL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(RAMX_CTRL_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(RAMX_CTRL_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RAM0_CTRL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RAM0_CTRLR {
+pub enum RAM0_CTRL_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl RAM0_CTRLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RAM0_CTRLR::DISABLE => false,
-            RAM0_CTRLR::ENABLE => true,
+impl From<RAM0_CTRL_A> for bool {
+    #[inline(always)]
+    fn from(variant: RAM0_CTRL_A) -> Self {
+        match variant {
+            RAM0_CTRL_A::DISABLE => false,
+            RAM0_CTRL_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RAM0_CTRLR {
-        match value {
-            false => RAM0_CTRLR::DISABLE,
-            true => RAM0_CTRLR::ENABLE,
+}
+#[doc = "Reader of field `RAM0_CTRL`"]
+pub type RAM0_CTRL_R = crate::R<bool, RAM0_CTRL_A>;
+impl RAM0_CTRL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RAM0_CTRL_A {
+        match self.bits {
+            false => RAM0_CTRL_A::DISABLE,
+            true => RAM0_CTRL_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == RAM0_CTRLR::DISABLE
+        *self == RAM0_CTRL_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == RAM0_CTRLR::ENABLE
+        *self == RAM0_CTRL_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `RAM0_CTRL`"]
+pub struct RAM0_CTRL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RAM0_CTRL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RAM0_CTRL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(RAM0_CTRL_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(RAM0_CTRL_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RAM1_CTRL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RAM1_CTRLR {
+pub enum RAM1_CTRL_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl RAM1_CTRLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RAM1_CTRLR::DISABLE => false,
-            RAM1_CTRLR::ENABLE => true,
+impl From<RAM1_CTRL_A> for bool {
+    #[inline(always)]
+    fn from(variant: RAM1_CTRL_A) -> Self {
+        match variant {
+            RAM1_CTRL_A::DISABLE => false,
+            RAM1_CTRL_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RAM1_CTRLR {
-        match value {
-            false => RAM1_CTRLR::DISABLE,
-            true => RAM1_CTRLR::ENABLE,
+}
+#[doc = "Reader of field `RAM1_CTRL`"]
+pub type RAM1_CTRL_R = crate::R<bool, RAM1_CTRL_A>;
+impl RAM1_CTRL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RAM1_CTRL_A {
+        match self.bits {
+            false => RAM1_CTRL_A::DISABLE,
+            true => RAM1_CTRL_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == RAM1_CTRLR::DISABLE
+        *self == RAM1_CTRL_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == RAM1_CTRLR::ENABLE
+        *self == RAM1_CTRL_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `RAM1_CTRL`"]
+pub struct RAM1_CTRL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RAM1_CTRL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RAM1_CTRL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(RAM1_CTRL_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(RAM1_CTRL_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RAM2_CTRL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RAM2_CTRLR {
+pub enum RAM2_CTRL_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl RAM2_CTRLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RAM2_CTRLR::DISABLE => false,
-            RAM2_CTRLR::ENABLE => true,
+impl From<RAM2_CTRL_A> for bool {
+    #[inline(always)]
+    fn from(variant: RAM2_CTRL_A) -> Self {
+        match variant {
+            RAM2_CTRL_A::DISABLE => false,
+            RAM2_CTRL_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RAM2_CTRLR {
-        match value {
-            false => RAM2_CTRLR::DISABLE,
-            true => RAM2_CTRLR::ENABLE,
+}
+#[doc = "Reader of field `RAM2_CTRL`"]
+pub type RAM2_CTRL_R = crate::R<bool, RAM2_CTRL_A>;
+impl RAM2_CTRL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RAM2_CTRL_A {
+        match self.bits {
+            false => RAM2_CTRL_A::DISABLE,
+            true => RAM2_CTRL_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == RAM2_CTRLR::DISABLE
+        *self == RAM2_CTRL_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == RAM2_CTRLR::ENABLE
+        *self == RAM2_CTRL_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `RAM2_CTRL`"]
+pub struct RAM2_CTRL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RAM2_CTRL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RAM2_CTRL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(RAM2_CTRL_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(RAM2_CTRL_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RAM3_CTRL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RAM3_CTRLR {
+pub enum RAM3_CTRL_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl RAM3_CTRLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RAM3_CTRLR::DISABLE => false,
-            RAM3_CTRLR::ENABLE => true,
+impl From<RAM3_CTRL_A> for bool {
+    #[inline(always)]
+    fn from(variant: RAM3_CTRL_A) -> Self {
+        match variant {
+            RAM3_CTRL_A::DISABLE => false,
+            RAM3_CTRL_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RAM3_CTRLR {
-        match value {
-            false => RAM3_CTRLR::DISABLE,
-            true => RAM3_CTRLR::ENABLE,
+}
+#[doc = "Reader of field `RAM3_CTRL`"]
+pub type RAM3_CTRL_R = crate::R<bool, RAM3_CTRL_A>;
+impl RAM3_CTRL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RAM3_CTRL_A {
+        match self.bits {
+            false => RAM3_CTRL_A::DISABLE,
+            true => RAM3_CTRL_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == RAM3_CTRLR::DISABLE
+        *self == RAM3_CTRL_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == RAM3_CTRLR::ENABLE
+        *self == RAM3_CTRL_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `RAM3_CTRL`"]
+pub struct RAM3_CTRL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RAM3_CTRL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RAM3_CTRL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(RAM3_CTRL_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(RAM3_CTRL_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
     }
 }
 #[doc = "Possible values of the field `RAM4_CTRL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RAM4_CTRLR {
+pub enum RAM4_CTRL_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl RAM4_CTRLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RAM4_CTRLR::DISABLE => false,
-            RAM4_CTRLR::ENABLE => true,
+impl From<RAM4_CTRL_A> for bool {
+    #[inline(always)]
+    fn from(variant: RAM4_CTRL_A) -> Self {
+        match variant {
+            RAM4_CTRL_A::DISABLE => false,
+            RAM4_CTRL_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RAM4_CTRLR {
-        match value {
-            false => RAM4_CTRLR::DISABLE,
-            true => RAM4_CTRLR::ENABLE,
+}
+#[doc = "Reader of field `RAM4_CTRL`"]
+pub type RAM4_CTRL_R = crate::R<bool, RAM4_CTRL_A>;
+impl RAM4_CTRL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RAM4_CTRL_A {
+        match self.bits {
+            false => RAM4_CTRL_A::DISABLE,
+            true => RAM4_CTRL_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == RAM4_CTRLR::DISABLE
+        *self == RAM4_CTRL_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == RAM4_CTRLR::ENABLE
+        *self == RAM4_CTRL_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `RAM4_CTRL`"]
+pub struct RAM4_CTRL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> RAM4_CTRL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RAM4_CTRL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(RAM4_CTRL_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(RAM4_CTRL_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SYNC0_APB`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SYNC0_APBR {
+pub enum SYNC0_APB_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl SYNC0_APBR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SYNC0_APBR::DISABLE => false,
-            SYNC0_APBR::ENABLE => true,
+impl From<SYNC0_APB_A> for bool {
+    #[inline(always)]
+    fn from(variant: SYNC0_APB_A) -> Self {
+        match variant {
+            SYNC0_APB_A::DISABLE => false,
+            SYNC0_APB_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SYNC0_APBR {
-        match value {
-            false => SYNC0_APBR::DISABLE,
-            true => SYNC0_APBR::ENABLE,
+}
+#[doc = "Reader of field `SYNC0_APB`"]
+pub type SYNC0_APB_R = crate::R<bool, SYNC0_APB_A>;
+impl SYNC0_APB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SYNC0_APB_A {
+        match self.bits {
+            false => SYNC0_APB_A::DISABLE,
+            true => SYNC0_APB_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == SYNC0_APBR::DISABLE
+        *self == SYNC0_APB_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == SYNC0_APBR::ENABLE
+        *self == SYNC0_APB_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `SYNC0_APB`"]
+pub struct SYNC0_APB_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SYNC0_APB_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SYNC0_APB_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(SYNC0_APB_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(SYNC0_APB_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SYNC1_APB`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SYNC1_APBR {
+pub enum SYNC1_APB_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl SYNC1_APBR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SYNC1_APBR::DISABLE => false,
-            SYNC1_APBR::ENABLE => true,
+impl From<SYNC1_APB_A> for bool {
+    #[inline(always)]
+    fn from(variant: SYNC1_APB_A) -> Self {
+        match variant {
+            SYNC1_APB_A::DISABLE => false,
+            SYNC1_APB_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SYNC1_APBR {
-        match value {
-            false => SYNC1_APBR::DISABLE,
-            true => SYNC1_APBR::ENABLE,
+}
+#[doc = "Reader of field `SYNC1_APB`"]
+pub type SYNC1_APB_R = crate::R<bool, SYNC1_APB_A>;
+impl SYNC1_APB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SYNC1_APB_A {
+        match self.bits {
+            false => SYNC1_APB_A::DISABLE,
+            true => SYNC1_APB_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == SYNC1_APBR::DISABLE
+        *self == SYNC1_APB_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == SYNC1_APBR::ENABLE
+        *self == SYNC1_APB_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `SYNC1_APB`"]
+pub struct SYNC1_APB_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SYNC1_APB_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SYNC1_APB_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(SYNC1_APB_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(SYNC1_APB_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
     }
 }
 #[doc = "Possible values of the field `FLASH`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FLASHR {
+pub enum FLASH_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl FLASHR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FLASHR::DISABLE => false,
-            FLASHR::ENABLE => true,
+impl From<FLASH_A> for bool {
+    #[inline(always)]
+    fn from(variant: FLASH_A) -> Self {
+        match variant {
+            FLASH_A::DISABLE => false,
+            FLASH_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FLASHR {
-        match value {
-            false => FLASHR::DISABLE,
-            true => FLASHR::ENABLE,
+}
+#[doc = "Reader of field `FLASH`"]
+pub type FLASH_R = crate::R<bool, FLASH_A>;
+impl FLASH_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FLASH_A {
+        match self.bits {
+            false => FLASH_A::DISABLE,
+            true => FLASH_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == FLASHR::DISABLE
+        *self == FLASH_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == FLASHR::ENABLE
+        *self == FLASH_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `FLASH`"]
+pub struct FLASH_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FLASH_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FLASH_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(FLASH_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(FLASH_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w
     }
 }
 #[doc = "Possible values of the field `FMC`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FMCR {
+pub enum FMC_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl FMCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            FMCR::DISABLE => false,
-            FMCR::ENABLE => true,
+impl From<FMC_A> for bool {
+    #[inline(always)]
+    fn from(variant: FMC_A) -> Self {
+        match variant {
+            FMC_A::DISABLE => false,
+            FMC_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> FMCR {
-        match value {
-            false => FMCR::DISABLE,
-            true => FMCR::ENABLE,
+}
+#[doc = "Reader of field `FMC`"]
+pub type FMC_R = crate::R<bool, FMC_A>;
+impl FMC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FMC_A {
+        match self.bits {
+            false => FMC_A::DISABLE,
+            true => FMC_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == FMCR::DISABLE
+        *self == FMC_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == FMCR::ENABLE
+        *self == FMC_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `FMC`"]
+pub struct FMC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FMC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FMC_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(FMC_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(FMC_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w
     }
 }
 #[doc = "Possible values of the field `CRCGEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CRCGENR {
+pub enum CRCGEN_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl CRCGENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CRCGENR::DISABLE => false,
-            CRCGENR::ENABLE => true,
+impl From<CRCGEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: CRCGEN_A) -> Self {
+        match variant {
+            CRCGEN_A::DISABLE => false,
+            CRCGEN_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CRCGENR {
-        match value {
-            false => CRCGENR::DISABLE,
-            true => CRCGENR::ENABLE,
+}
+#[doc = "Reader of field `CRCGEN`"]
+pub type CRCGEN_R = crate::R<bool, CRCGEN_A>;
+impl CRCGEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CRCGEN_A {
+        match self.bits {
+            false => CRCGEN_A::DISABLE,
+            true => CRCGEN_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CRCGENR::DISABLE
+        *self == CRCGEN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == CRCGENR::ENABLE
+        *self == CRCGEN_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `CRCGEN`"]
+pub struct CRCGEN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CRCGEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CRCGEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CRCGEN_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CRCGEN_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SDMA0`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SDMA0R {
+pub enum SDMA0_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl SDMA0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SDMA0R::DISABLE => false,
-            SDMA0R::ENABLE => true,
+impl From<SDMA0_A> for bool {
+    #[inline(always)]
+    fn from(variant: SDMA0_A) -> Self {
+        match variant {
+            SDMA0_A::DISABLE => false,
+            SDMA0_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SDMA0R {
-        match value {
-            false => SDMA0R::DISABLE,
-            true => SDMA0R::ENABLE,
+}
+#[doc = "Reader of field `SDMA0`"]
+pub type SDMA0_R = crate::R<bool, SDMA0_A>;
+impl SDMA0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SDMA0_A {
+        match self.bits {
+            false => SDMA0_A::DISABLE,
+            true => SDMA0_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == SDMA0R::DISABLE
+        *self == SDMA0_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == SDMA0R::ENABLE
+        *self == SDMA0_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `SDMA0`"]
+pub struct SDMA0_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SDMA0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SDMA0_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(SDMA0_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(SDMA0_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SDMA1`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SDMA1R {
+pub enum SDMA1_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl SDMA1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SDMA1R::DISABLE => false,
-            SDMA1R::ENABLE => true,
+impl From<SDMA1_A> for bool {
+    #[inline(always)]
+    fn from(variant: SDMA1_A) -> Self {
+        match variant {
+            SDMA1_A::DISABLE => false,
+            SDMA1_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SDMA1R {
-        match value {
-            false => SDMA1R::DISABLE,
-            true => SDMA1R::ENABLE,
+}
+#[doc = "Reader of field `SDMA1`"]
+pub type SDMA1_R = crate::R<bool, SDMA1_A>;
+impl SDMA1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SDMA1_A {
+        match self.bits {
+            false => SDMA1_A::DISABLE,
+            true => SDMA1_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == SDMA1R::DISABLE
+        *self == SDMA1_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == SDMA1R::ENABLE
+        *self == SDMA1_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `SDMA1`"]
+pub struct SDMA1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SDMA1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SDMA1_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(SDMA1_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(SDMA1_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w
     }
 }
 #[doc = "Possible values of the field `USB`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum USBR {
+pub enum USB_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl USBR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            USBR::DISABLE => false,
-            USBR::ENABLE => true,
+impl From<USB_A> for bool {
+    #[inline(always)]
+    fn from(variant: USB_A) -> Self {
+        match variant {
+            USB_A::DISABLE => false,
+            USB_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> USBR {
-        match value {
-            false => USBR::DISABLE,
-            true => USBR::ENABLE,
+}
+#[doc = "Reader of field `USB`"]
+pub type USB_R = crate::R<bool, USB_A>;
+impl USB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> USB_A {
+        match self.bits {
+            false => USB_A::DISABLE,
+            true => USB_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == USBR::DISABLE
+        *self == USB_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == USBR::ENABLE
+        *self == USB_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `USB`"]
+pub struct USB_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> USB_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: USB_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Automatic clock gating is not overridden."]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(USB_A::DISABLE)
+    }
+    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(USB_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w
     }
 }
 #[doc = "Possible values of the field `SYSCON`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SYSCONR {
+pub enum SYSCON_A {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl SYSCONR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SYSCONR::DISABLE => false,
-            SYSCONR::ENABLE => true,
+impl From<SYSCON_A> for bool {
+    #[inline(always)]
+    fn from(variant: SYSCON_A) -> Self {
+        match variant {
+            SYSCON_A::DISABLE => false,
+            SYSCON_A::ENABLE => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SYSCONR {
-        match value {
-            false => SYSCONR::DISABLE,
-            true => SYSCONR::ENABLE,
+}
+#[doc = "Reader of field `SYSCON`"]
+pub type SYSCON_R = crate::R<bool, SYSCON_A>;
+impl SYSCON_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SYSCON_A {
+        match self.bits {
+            false => SYSCON_A::DISABLE,
+            true => SYSCON_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == SYSCONR::DISABLE
+        *self == SYSCON_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == SYSCONR::ENABLE
+        *self == SYSCON_A::ENABLE
     }
 }
-#[doc = "Values that can be written to the field `ROM`"]
-pub enum ROMW {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl ROMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ROMW::DISABLE => false,
-            ROMW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ROMW<'a> {
+#[doc = "Write proxy for field `SYSCON`"]
+pub struct SYSCON_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ROMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ROMW) -> &'a mut W {
+impl<'a> SYSCON_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SYSCON_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(ROMW::DISABLE)
+        self.variant(SYSCON_A::DISABLE)
     }
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
+    #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(ROMW::ENABLE)
+        self.variant(SYSCON_A::ENABLE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `RAMX_CTRL`"]
-pub enum RAMX_CTRLW {
+#[doc = "Possible values of the field `ENABLEUPDATE`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ENABLEUPDATE_AW {
     #[doc = "Automatic clock gating is not overridden."]
     DISABLE,
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
     ENABLE,
 }
-impl RAMX_CTRLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RAMX_CTRLW::DISABLE => false,
-            RAMX_CTRLW::ENABLE => true,
+impl From<ENABLEUPDATE_AW> for u16 {
+    #[inline(always)]
+    fn from(variant: ENABLEUPDATE_AW) -> Self {
+        match variant {
+            ENABLEUPDATE_AW::DISABLE => 0,
+            ENABLEUPDATE_AW::ENABLE => 49374,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _RAMX_CTRLW<'a> {
+#[doc = "Write proxy for field `ENABLEUPDATE`"]
+pub struct ENABLEUPDATE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _RAMX_CTRLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RAMX_CTRLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
+impl<'a> ENABLEUPDATE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ENABLEUPDATE_AW) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(RAMX_CTRLW::DISABLE)
+        self.variant(ENABLEUPDATE_AW::DISABLE)
     }
     #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
+    #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(RAMX_CTRLW::ENABLE)
+        self.variant(ENABLEUPDATE_AW::ENABLE)
     }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RAM0_CTRL`"]
-pub enum RAM0_CTRLW {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl RAM0_CTRLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RAM0_CTRLW::DISABLE => false,
-            RAM0_CTRLW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RAM0_CTRLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RAM0_CTRLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RAM0_CTRLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(RAM0_CTRLW::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(RAM0_CTRLW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RAM1_CTRL`"]
-pub enum RAM1_CTRLW {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl RAM1_CTRLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RAM1_CTRLW::DISABLE => false,
-            RAM1_CTRLW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RAM1_CTRLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RAM1_CTRLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RAM1_CTRLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(RAM1_CTRLW::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(RAM1_CTRLW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RAM2_CTRL`"]
-pub enum RAM2_CTRLW {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl RAM2_CTRLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RAM2_CTRLW::DISABLE => false,
-            RAM2_CTRLW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RAM2_CTRLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RAM2_CTRLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RAM2_CTRLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(RAM2_CTRLW::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(RAM2_CTRLW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RAM3_CTRL`"]
-pub enum RAM3_CTRLW {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl RAM3_CTRLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RAM3_CTRLW::DISABLE => false,
-            RAM3_CTRLW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RAM3_CTRLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RAM3_CTRLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RAM3_CTRLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(RAM3_CTRLW::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(RAM3_CTRLW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RAM4_CTRL`"]
-pub enum RAM4_CTRLW {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl RAM4_CTRLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RAM4_CTRLW::DISABLE => false,
-            RAM4_CTRLW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RAM4_CTRLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RAM4_CTRLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RAM4_CTRLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(RAM4_CTRLW::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(RAM4_CTRLW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SYNC0_APB`"]
-pub enum SYNC0_APBW {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl SYNC0_APBW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SYNC0_APBW::DISABLE => false,
-            SYNC0_APBW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SYNC0_APBW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SYNC0_APBW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SYNC0_APBW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(SYNC0_APBW::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(SYNC0_APBW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SYNC1_APB`"]
-pub enum SYNC1_APBW {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl SYNC1_APBW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SYNC1_APBW::DISABLE => false,
-            SYNC1_APBW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SYNC1_APBW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SYNC1_APBW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SYNC1_APBW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(SYNC1_APBW::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(SYNC1_APBW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FLASH`"]
-pub enum FLASHW {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl FLASHW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FLASHW::DISABLE => false,
-            FLASHW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FLASHW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FLASHW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FLASHW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(FLASHW::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(FLASHW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `FMC`"]
-pub enum FMCW {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl FMCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            FMCW::DISABLE => false,
-            FMCW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FMCW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _FMCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FMCW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(FMCW::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(FMCW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CRCGEN`"]
-pub enum CRCGENW {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl CRCGENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CRCGENW::DISABLE => false,
-            CRCGENW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CRCGENW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CRCGENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CRCGENW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CRCGENW::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(CRCGENW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SDMA0`"]
-pub enum SDMA0W {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl SDMA0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SDMA0W::DISABLE => false,
-            SDMA0W::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SDMA0W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SDMA0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SDMA0W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(SDMA0W::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(SDMA0W::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SDMA1`"]
-pub enum SDMA1W {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl SDMA1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SDMA1W::DISABLE => false,
-            SDMA1W::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SDMA1W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SDMA1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SDMA1W) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(SDMA1W::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(SDMA1W::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 13;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `USB`"]
-pub enum USBW {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl USBW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            USBW::DISABLE => false,
-            USBW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _USBW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _USBW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: USBW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(USBW::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(USBW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SYSCON`"]
-pub enum SYSCONW {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl SYSCONW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SYSCONW::DISABLE => false,
-            SYSCONW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SYSCONW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SYSCONW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SYSCONW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(SYSCONW::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(SYSCONW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ENABLEUPDATE`"]
-pub enum ENABLEUPDATEW {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
-}
-impl ENABLEUPDATEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u16 {
-        match *self {
-            ENABLEUPDATEW::DISABLE => 0,
-            ENABLEUPDATEW::ENABLE => 49374,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ENABLEUPDATEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ENABLEUPDATEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ENABLEUPDATEW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Automatic clock gating is not overridden."]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(ENABLEUPDATEW::DISABLE)
-    }
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(ENABLEUPDATEW::ENABLE)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 16;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xffff << 16)) | (((value as u32) & 0xffff) << 16);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Control automatic clock gating of ROM controller."]
-    #[inline]
-    pub fn rom(&self) -> ROMR {
-        ROMR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rom(&self) -> ROM_R {
+        ROM_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Control automatic clock gating of RAMX controller."]
-    #[inline]
-    pub fn ramx_ctrl(&self) -> RAMX_CTRLR {
-        RAMX_CTRLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ramx_ctrl(&self) -> RAMX_CTRL_R {
+        RAMX_CTRL_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Control automatic clock gating of RAM0 controller."]
-    #[inline]
-    pub fn ram0_ctrl(&self) -> RAM0_CTRLR {
-        RAM0_CTRLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ram0_ctrl(&self) -> RAM0_CTRL_R {
+        RAM0_CTRL_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Control automatic clock gating of RAM1 controller."]
-    #[inline]
-    pub fn ram1_ctrl(&self) -> RAM1_CTRLR {
-        RAM1_CTRLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ram1_ctrl(&self) -> RAM1_CTRL_R {
+        RAM1_CTRL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Control automatic clock gating of RAM2 controller."]
-    #[inline]
-    pub fn ram2_ctrl(&self) -> RAM2_CTRLR {
-        RAM2_CTRLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ram2_ctrl(&self) -> RAM2_CTRL_R {
+        RAM2_CTRL_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Control automatic clock gating of RAM3 controller."]
-    #[inline]
-    pub fn ram3_ctrl(&self) -> RAM3_CTRLR {
-        RAM3_CTRLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ram3_ctrl(&self) -> RAM3_CTRL_R {
+        RAM3_CTRL_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Control automatic clock gating of RAM4 controller."]
-    #[inline]
-    pub fn ram4_ctrl(&self) -> RAM4_CTRLR {
-        RAM4_CTRLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ram4_ctrl(&self) -> RAM4_CTRL_R {
+        RAM4_CTRL_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Control automatic clock gating of synchronous bridge controller 0."]
-    #[inline]
-    pub fn sync0_apb(&self) -> SYNC0_APBR {
-        SYNC0_APBR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sync0_apb(&self) -> SYNC0_APB_R {
+        SYNC0_APB_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Control automatic clock gating of synchronous bridge controller 1."]
-    #[inline]
-    pub fn sync1_apb(&self) -> SYNC1_APBR {
-        SYNC1_APBR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sync1_apb(&self) -> SYNC1_APB_R {
+        SYNC1_APB_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Control automatic clock gating of FLASH controller."]
-    #[inline]
-    pub fn flash(&self) -> FLASHR {
-        FLASHR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn flash(&self) -> FLASH_R {
+        FLASH_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Control automatic clock gating of FMC controller."]
-    #[inline]
-    pub fn fmc(&self) -> FMCR {
-        FMCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn fmc(&self) -> FMC_R {
+        FMC_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Control automatic clock gating of CRCGEN controller."]
-    #[inline]
-    pub fn crcgen(&self) -> CRCGENR {
-        CRCGENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn crcgen(&self) -> CRCGEN_R {
+        CRCGEN_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Control automatic clock gating of DMA0 controller."]
-    #[inline]
-    pub fn sdma0(&self) -> SDMA0R {
-        SDMA0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sdma0(&self) -> SDMA0_R {
+        SDMA0_R::new(((self.bits >> 12) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Control automatic clock gating of DMA1 controller."]
-    #[inline]
-    pub fn sdma1(&self) -> SDMA1R {
-        SDMA1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 13;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sdma1(&self) -> SDMA1_R {
+        SDMA1_R::new(((self.bits >> 13) & 0x01) != 0)
     }
     #[doc = "Bit 14 - Control automatic clock gating of USB controller."]
-    #[inline]
-    pub fn usb(&self) -> USBR {
-        USBR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn usb(&self) -> USB_R {
+        USB_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Control automatic clock gating of synchronous system controller registers bank."]
-    #[inline]
-    pub fn syscon(&self) -> SYSCONR {
-        SYSCONR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn syscon(&self) -> SYSCON_R {
+        SYSCON_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 65535 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Control automatic clock gating of ROM controller."]
-    #[inline]
-    pub fn rom(&mut self) -> _ROMW {
-        _ROMW { w: self }
+    #[inline(always)]
+    pub fn rom(&mut self) -> ROM_W {
+        ROM_W { w: self }
     }
     #[doc = "Bit 1 - Control automatic clock gating of RAMX controller."]
-    #[inline]
-    pub fn ramx_ctrl(&mut self) -> _RAMX_CTRLW {
-        _RAMX_CTRLW { w: self }
+    #[inline(always)]
+    pub fn ramx_ctrl(&mut self) -> RAMX_CTRL_W {
+        RAMX_CTRL_W { w: self }
     }
     #[doc = "Bit 2 - Control automatic clock gating of RAM0 controller."]
-    #[inline]
-    pub fn ram0_ctrl(&mut self) -> _RAM0_CTRLW {
-        _RAM0_CTRLW { w: self }
+    #[inline(always)]
+    pub fn ram0_ctrl(&mut self) -> RAM0_CTRL_W {
+        RAM0_CTRL_W { w: self }
     }
     #[doc = "Bit 3 - Control automatic clock gating of RAM1 controller."]
-    #[inline]
-    pub fn ram1_ctrl(&mut self) -> _RAM1_CTRLW {
-        _RAM1_CTRLW { w: self }
+    #[inline(always)]
+    pub fn ram1_ctrl(&mut self) -> RAM1_CTRL_W {
+        RAM1_CTRL_W { w: self }
     }
     #[doc = "Bit 4 - Control automatic clock gating of RAM2 controller."]
-    #[inline]
-    pub fn ram2_ctrl(&mut self) -> _RAM2_CTRLW {
-        _RAM2_CTRLW { w: self }
+    #[inline(always)]
+    pub fn ram2_ctrl(&mut self) -> RAM2_CTRL_W {
+        RAM2_CTRL_W { w: self }
     }
     #[doc = "Bit 5 - Control automatic clock gating of RAM3 controller."]
-    #[inline]
-    pub fn ram3_ctrl(&mut self) -> _RAM3_CTRLW {
-        _RAM3_CTRLW { w: self }
+    #[inline(always)]
+    pub fn ram3_ctrl(&mut self) -> RAM3_CTRL_W {
+        RAM3_CTRL_W { w: self }
     }
     #[doc = "Bit 6 - Control automatic clock gating of RAM4 controller."]
-    #[inline]
-    pub fn ram4_ctrl(&mut self) -> _RAM4_CTRLW {
-        _RAM4_CTRLW { w: self }
+    #[inline(always)]
+    pub fn ram4_ctrl(&mut self) -> RAM4_CTRL_W {
+        RAM4_CTRL_W { w: self }
     }
     #[doc = "Bit 7 - Control automatic clock gating of synchronous bridge controller 0."]
-    #[inline]
-    pub fn sync0_apb(&mut self) -> _SYNC0_APBW {
-        _SYNC0_APBW { w: self }
+    #[inline(always)]
+    pub fn sync0_apb(&mut self) -> SYNC0_APB_W {
+        SYNC0_APB_W { w: self }
     }
     #[doc = "Bit 8 - Control automatic clock gating of synchronous bridge controller 1."]
-    #[inline]
-    pub fn sync1_apb(&mut self) -> _SYNC1_APBW {
-        _SYNC1_APBW { w: self }
+    #[inline(always)]
+    pub fn sync1_apb(&mut self) -> SYNC1_APB_W {
+        SYNC1_APB_W { w: self }
     }
     #[doc = "Bit 9 - Control automatic clock gating of FLASH controller."]
-    #[inline]
-    pub fn flash(&mut self) -> _FLASHW {
-        _FLASHW { w: self }
+    #[inline(always)]
+    pub fn flash(&mut self) -> FLASH_W {
+        FLASH_W { w: self }
     }
     #[doc = "Bit 10 - Control automatic clock gating of FMC controller."]
-    #[inline]
-    pub fn fmc(&mut self) -> _FMCW {
-        _FMCW { w: self }
+    #[inline(always)]
+    pub fn fmc(&mut self) -> FMC_W {
+        FMC_W { w: self }
     }
     #[doc = "Bit 11 - Control automatic clock gating of CRCGEN controller."]
-    #[inline]
-    pub fn crcgen(&mut self) -> _CRCGENW {
-        _CRCGENW { w: self }
+    #[inline(always)]
+    pub fn crcgen(&mut self) -> CRCGEN_W {
+        CRCGEN_W { w: self }
     }
     #[doc = "Bit 12 - Control automatic clock gating of DMA0 controller."]
-    #[inline]
-    pub fn sdma0(&mut self) -> _SDMA0W {
-        _SDMA0W { w: self }
+    #[inline(always)]
+    pub fn sdma0(&mut self) -> SDMA0_W {
+        SDMA0_W { w: self }
     }
     #[doc = "Bit 13 - Control automatic clock gating of DMA1 controller."]
-    #[inline]
-    pub fn sdma1(&mut self) -> _SDMA1W {
-        _SDMA1W { w: self }
+    #[inline(always)]
+    pub fn sdma1(&mut self) -> SDMA1_W {
+        SDMA1_W { w: self }
     }
     #[doc = "Bit 14 - Control automatic clock gating of USB controller."]
-    #[inline]
-    pub fn usb(&mut self) -> _USBW {
-        _USBW { w: self }
+    #[inline(always)]
+    pub fn usb(&mut self) -> USB_W {
+        USB_W { w: self }
     }
     #[doc = "Bit 15 - Control automatic clock gating of synchronous system controller registers bank."]
-    #[inline]
-    pub fn syscon(&mut self) -> _SYSCONW {
-        _SYSCONW { w: self }
+    #[inline(always)]
+    pub fn syscon(&mut self) -> SYSCON_W {
+        SYSCON_W { w: self }
     }
     #[doc = "Bits 16:31 - The value 0xC0DE must be written for AUTOCLKGATEOVERRIDE registers fields updates to have effect."]
-    #[inline]
-    pub fn enableupdate(&mut self) -> _ENABLEUPDATEW {
-        _ENABLEUPDATEW { w: self }
+    #[inline(always)]
+    pub fn enableupdate(&mut self) -> ENABLEUPDATE_W {
+        ENABLEUPDATE_W { w: self }
     }
 }
