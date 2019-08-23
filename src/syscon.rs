@@ -30,9 +30,12 @@ pub struct RegisterBlock {
     #[doc = "0x160 - generate a software_reset"]
     pub swr_reset: SWR_RESET,
     _reserved12: [u8; 156usize],
-    _reserved_12_ahbclkctrl0: [u8; 4usize],
-    _reserved_13_ahbclkctrl1: [u8; 4usize],
-    _reserved_14_ahbclkctrl2: [u8; 4usize],
+    #[doc = "0x200 - AHB Clock control 0"]
+    pub ahbclkctrl0: AHBCLKCTRL0,
+    #[doc = "0x204 - AHB Clock control 1"]
+    pub ahbclkctrl1: AHBCLKCTRL1,
+    #[doc = "0x208 - AHB Clock control 2"]
+    pub ahbclkctrl2: AHBCLKCTRL2,
     _reserved15: [u8; 20usize],
     #[doc = "0x220 - Peripheral reset control register"]
     pub ahbclkctrlset: [AHBCLKCTRLSET; 3],
@@ -327,66 +330,6 @@ impl RegisterBlock {
     #[inline(always)]
     pub fn presetctrl2_mut(&self) -> &mut PRESETCTRL2 {
         unsafe { &mut *(((self as *const Self) as *mut u8).add(264usize) as *mut PRESETCTRL2) }
-    }
-    #[doc = "0x200 - Peripheral reset control register"]
-    #[inline(always)]
-    pub fn ahbclkctrlx0(&self) -> &AHBCLKCTRLX0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(512usize) as *const AHBCLKCTRLX0) }
-    }
-    #[doc = "0x200 - Peripheral reset control register"]
-    #[inline(always)]
-    pub fn ahbclkctrlx0_mut(&self) -> &mut AHBCLKCTRLX0 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(512usize) as *mut AHBCLKCTRLX0) }
-    }
-    #[doc = "0x200 - AHB Clock control 0"]
-    #[inline(always)]
-    pub fn ahbclkctrl0(&self) -> &AHBCLKCTRL0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(512usize) as *const AHBCLKCTRL0) }
-    }
-    #[doc = "0x200 - AHB Clock control 0"]
-    #[inline(always)]
-    pub fn ahbclkctrl0_mut(&self) -> &mut AHBCLKCTRL0 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(512usize) as *mut AHBCLKCTRL0) }
-    }
-    #[doc = "0x204 - Peripheral reset control register"]
-    #[inline(always)]
-    pub fn ahbclkctrlx1(&self) -> &AHBCLKCTRLX1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(516usize) as *const AHBCLKCTRLX1) }
-    }
-    #[doc = "0x204 - Peripheral reset control register"]
-    #[inline(always)]
-    pub fn ahbclkctrlx1_mut(&self) -> &mut AHBCLKCTRLX1 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(516usize) as *mut AHBCLKCTRLX1) }
-    }
-    #[doc = "0x204 - AHB Clock control 1"]
-    #[inline(always)]
-    pub fn ahbclkctrl1(&self) -> &AHBCLKCTRL1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(516usize) as *const AHBCLKCTRL1) }
-    }
-    #[doc = "0x204 - AHB Clock control 1"]
-    #[inline(always)]
-    pub fn ahbclkctrl1_mut(&self) -> &mut AHBCLKCTRL1 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(516usize) as *mut AHBCLKCTRL1) }
-    }
-    #[doc = "0x208 - Peripheral reset control register"]
-    #[inline(always)]
-    pub fn ahbclkctrlx2(&self) -> &AHBCLKCTRLX2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(520usize) as *const AHBCLKCTRLX2) }
-    }
-    #[doc = "0x208 - Peripheral reset control register"]
-    #[inline(always)]
-    pub fn ahbclkctrlx2_mut(&self) -> &mut AHBCLKCTRLX2 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(520usize) as *mut AHBCLKCTRLX2) }
-    }
-    #[doc = "0x208 - AHB Clock control 2"]
-    #[inline(always)]
-    pub fn ahbclkctrl2(&self) -> &AHBCLKCTRL2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(520usize) as *const AHBCLKCTRL2) }
-    }
-    #[doc = "0x208 - AHB Clock control 2"]
-    #[inline(always)]
-    pub fn ahbclkctrl2_mut(&self) -> &mut AHBCLKCTRL2 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(520usize) as *mut AHBCLKCTRL2) }
     }
     #[doc = "0x260 - Peripheral reset control register"]
     #[inline(always)]
@@ -1023,17 +966,6 @@ impl crate::Readable for AHBCLKCTRL0 {}
 impl crate::Writable for AHBCLKCTRL0 {}
 #[doc = "AHB Clock control 0"]
 pub mod ahbclkctrl0;
-#[doc = "Peripheral reset control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ahbclkctrlx0](ahbclkctrlx0) module"]
-pub type AHBCLKCTRLX0 = crate::Reg<u32, _AHBCLKCTRLX0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _AHBCLKCTRLX0;
-#[doc = "`read()` method returns [ahbclkctrlx0::R](ahbclkctrlx0::R) reader structure"]
-impl crate::Readable for AHBCLKCTRLX0 {}
-#[doc = "`write(|w| ..)` method takes [ahbclkctrlx0::W](ahbclkctrlx0::W) writer structure"]
-impl crate::Writable for AHBCLKCTRLX0 {}
-#[doc = "Peripheral reset control register"]
-pub mod ahbclkctrlx0;
 #[doc = "AHB Clock control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ahbclkctrl1](ahbclkctrl1) module"]
 pub type AHBCLKCTRL1 = crate::Reg<u32, _AHBCLKCTRL1>;
 #[allow(missing_docs)]
@@ -1045,17 +977,6 @@ impl crate::Readable for AHBCLKCTRL1 {}
 impl crate::Writable for AHBCLKCTRL1 {}
 #[doc = "AHB Clock control 1"]
 pub mod ahbclkctrl1;
-#[doc = "Peripheral reset control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ahbclkctrlx1](ahbclkctrlx1) module"]
-pub type AHBCLKCTRLX1 = crate::Reg<u32, _AHBCLKCTRLX1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _AHBCLKCTRLX1;
-#[doc = "`read()` method returns [ahbclkctrlx1::R](ahbclkctrlx1::R) reader structure"]
-impl crate::Readable for AHBCLKCTRLX1 {}
-#[doc = "`write(|w| ..)` method takes [ahbclkctrlx1::W](ahbclkctrlx1::W) writer structure"]
-impl crate::Writable for AHBCLKCTRLX1 {}
-#[doc = "Peripheral reset control register"]
-pub mod ahbclkctrlx1;
 #[doc = "AHB Clock control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ahbclkctrl2](ahbclkctrl2) module"]
 pub type AHBCLKCTRL2 = crate::Reg<u32, _AHBCLKCTRL2>;
 #[allow(missing_docs)]
@@ -1067,17 +988,6 @@ impl crate::Readable for AHBCLKCTRL2 {}
 impl crate::Writable for AHBCLKCTRL2 {}
 #[doc = "AHB Clock control 2"]
 pub mod ahbclkctrl2;
-#[doc = "Peripheral reset control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ahbclkctrlx2](ahbclkctrlx2) module"]
-pub type AHBCLKCTRLX2 = crate::Reg<u32, _AHBCLKCTRLX2>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _AHBCLKCTRLX2;
-#[doc = "`read()` method returns [ahbclkctrlx2::R](ahbclkctrlx2::R) reader structure"]
-impl crate::Readable for AHBCLKCTRLX2 {}
-#[doc = "`write(|w| ..)` method takes [ahbclkctrlx2::W](ahbclkctrlx2::W) writer structure"]
-impl crate::Writable for AHBCLKCTRLX2 {}
-#[doc = "Peripheral reset control register"]
-pub mod ahbclkctrlx2;
 #[doc = "Peripheral reset control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ahbclkctrlset](ahbclkctrlset) module"]
 pub type AHBCLKCTRLSET = crate::Reg<u32, _AHBCLKCTRLSET>;
 #[allow(missing_docs)]

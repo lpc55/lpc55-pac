@@ -22,14 +22,22 @@ fetch-docs:
 		-o ref/datasheet-lpc55s6x.pdf
 	curl -s https://www.nxp.com/docs/en/user-guide/UM11126.pdf \
 		-o ref/usermanual-lpc55s6x.pdf
+	curl -s https://www.nxp.com/docs/en/errata/ES_LPC55S6x.pdf \
+		-o ref/errata-lpc55s6x.pdf
 	curl -sk https://static.docs.arm.com/100235/0004/arm_cortex_m33_dgug_100235_0004_00_en.pdf \
 		-o ref/genericuserguide-cortexm33.pdf
 
 # Maintenance
-VERSION_FILE := "VERSION"
-VERSION := $(shell cat $(VERSION_FILE))
+VERSION := $(shell grep version Cargo.toml|head -1|cut -d' ' -f 3|tr -d '"')
 tag:
 	git tag -a $(VERSION) -m"v$(VERSION)"
+
+# For CI
+rustup:
+	rustup target add thumbv8m.main-none-eabi
+
+version:
+	echo $(VERSION)
 
 # Documentation - hosted on <https://lpc55s6x.netlify.com/>
 docs-setup: lpc55s6x-pac-docs
