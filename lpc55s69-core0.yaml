@@ -8,6 +8,10 @@ _delete:
 #   ADC0:
 #     name: ADC
 
+_modify:
+  UTICK0:
+    name: UTICK
+
 SYSCON:
   _delete:
     _registers:

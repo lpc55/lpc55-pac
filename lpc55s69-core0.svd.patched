@@ -31704,7 +31704,7 @@ SPDX-License-Identifier: BSD-3-Clause
       </registers>
     </peripheral>
     <peripheral>
-      <name>UTICK0</name>
+      <name>UTICK</name>
       <description>Micro-tick Timer (UTICK)</description>
       <groupName>UTICK</groupName>
       <baseAddress>0x4000E000</baseAddress>
