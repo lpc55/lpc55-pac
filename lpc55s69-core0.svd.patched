@@ -7233,25 +7233,6 @@ SPDX-License-Identifier: BSD-3-Clause
           </fields>
         </register>
         <register>
-          <name>PRESETCTRLX0</name>
-          <description>Peripheral reset control register</description>
-          <alternateGroup>PRESETCTRL</alternateGroup>
-          <addressOffset>0x100</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0xFFFFFFFF</resetMask>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>Data array value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
-        </register>
-        <register>
           <name>PRESETCTRL1</name>
           <description>Peripheral reset control 1</description>
           <alternateGroup>PRESETCTRL</alternateGroup>
@@ -7640,25 +7621,6 @@ SPDX-License-Identifier: BSD-3-Clause
                   <value>0x1</value>
                 </enumeratedValue>
               </enumeratedValues>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>PRESETCTRLX1</name>
-          <description>Peripheral reset control register</description>
-          <alternateGroup>PRESETCTRL</alternateGroup>
-          <addressOffset>0x104</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0xFFFFFFFF</resetMask>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>Data array value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>read-write</access>
             </field>
           </fields>
         </register>
@@ -8184,25 +8146,6 @@ SPDX-License-Identifier: BSD-3-Clause
                   <value>0x1</value>
                 </enumeratedValue>
               </enumeratedValues>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>PRESETCTRLX2</name>
-          <description>Peripheral reset control register</description>
-          <alternateGroup>PRESETCTRL</alternateGroup>
-          <addressOffset>0x108</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0xFFFFFFFF</resetMask>
-          <fields>
-            <field>
-              <name>DATA</name>
-              <description>Data array value</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>read-write</access>
             </field>
           </fields>
         </register>

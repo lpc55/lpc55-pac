@@ -5,6 +5,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [v0.0.4] - 2019-08-31
+
+### Changed
+
+- Delete `SYSCON.PRESECTRLX?`, as `svd2rust` does not
+  handle them properly
+
 ## [v0.0.3] - 2019-08-31
 
 ### Changed
