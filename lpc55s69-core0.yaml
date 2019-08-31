@@ -4,10 +4,6 @@ _svd: lpc55s69-core0.svd
 _delete:
   INPUTMUX:
 
-# _modify:
-#   ADC0:
-#     name: ADC
-
 _modify:
   UTICK0:
     name: UTICK
@@ -16,3 +12,4 @@ SYSCON:
   _delete:
     _registers:
       - AHBCLKCTRLX?
+      - PRESETCTRLX?

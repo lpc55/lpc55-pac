@@ -17,9 +17,12 @@ pub struct RegisterBlock {
     #[doc = "0x48 - NMI Source Select"]
     pub nmisrc: NMISRC,
     _reserved6: [u8; 180usize],
-    _reserved_6_presetctrl0: [u8; 4usize],
-    _reserved_7_presetctrl1: [u8; 4usize],
-    _reserved_8_presetctrl2: [u8; 4usize],
+    #[doc = "0x100 - Peripheral reset control 0"]
+    pub presetctrl0: PRESETCTRL0,
+    #[doc = "0x104 - Peripheral reset control 1"]
+    pub presetctrl1: PRESETCTRL1,
+    #[doc = "0x108 - Peripheral reset control 2"]
+    pub presetctrl2: PRESETCTRL2,
     _reserved9: [u8; 20usize],
     #[doc = "0x120 - Peripheral reset control set register"]
     pub presetctrlset: [PRESETCTRLSET; 3],
@@ -271,66 +274,6 @@ pub struct RegisterBlock {
     pub dieid: DIEID,
 }
 impl RegisterBlock {
-    #[doc = "0x100 - Peripheral reset control register"]
-    #[inline(always)]
-    pub fn presetctrlx0(&self) -> &PRESETCTRLX0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(256usize) as *const PRESETCTRLX0) }
-    }
-    #[doc = "0x100 - Peripheral reset control register"]
-    #[inline(always)]
-    pub fn presetctrlx0_mut(&self) -> &mut PRESETCTRLX0 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(256usize) as *mut PRESETCTRLX0) }
-    }
-    #[doc = "0x100 - Peripheral reset control 0"]
-    #[inline(always)]
-    pub fn presetctrl0(&self) -> &PRESETCTRL0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(256usize) as *const PRESETCTRL0) }
-    }
-    #[doc = "0x100 - Peripheral reset control 0"]
-    #[inline(always)]
-    pub fn presetctrl0_mut(&self) -> &mut PRESETCTRL0 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(256usize) as *mut PRESETCTRL0) }
-    }
-    #[doc = "0x104 - Peripheral reset control register"]
-    #[inline(always)]
-    pub fn presetctrlx1(&self) -> &PRESETCTRLX1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(260usize) as *const PRESETCTRLX1) }
-    }
-    #[doc = "0x104 - Peripheral reset control register"]
-    #[inline(always)]
-    pub fn presetctrlx1_mut(&self) -> &mut PRESETCTRLX1 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(260usize) as *mut PRESETCTRLX1) }
-    }
-    #[doc = "0x104 - Peripheral reset control 1"]
-    #[inline(always)]
-    pub fn presetctrl1(&self) -> &PRESETCTRL1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(260usize) as *const PRESETCTRL1) }
-    }
-    #[doc = "0x104 - Peripheral reset control 1"]
-    #[inline(always)]
-    pub fn presetctrl1_mut(&self) -> &mut PRESETCTRL1 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(260usize) as *mut PRESETCTRL1) }
-    }
-    #[doc = "0x108 - Peripheral reset control register"]
-    #[inline(always)]
-    pub fn presetctrlx2(&self) -> &PRESETCTRLX2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(264usize) as *const PRESETCTRLX2) }
-    }
-    #[doc = "0x108 - Peripheral reset control register"]
-    #[inline(always)]
-    pub fn presetctrlx2_mut(&self) -> &mut PRESETCTRLX2 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(264usize) as *mut PRESETCTRLX2) }
-    }
-    #[doc = "0x108 - Peripheral reset control 2"]
-    #[inline(always)]
-    pub fn presetctrl2(&self) -> &PRESETCTRL2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(264usize) as *const PRESETCTRL2) }
-    }
-    #[doc = "0x108 - Peripheral reset control 2"]
-    #[inline(always)]
-    pub fn presetctrl2_mut(&self) -> &mut PRESETCTRL2 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(264usize) as *mut PRESETCTRL2) }
-    }
     #[doc = "0x260 - Peripheral reset control register"]
     #[inline(always)]
     pub fn systickclkselx0(&self) -> &SYSTICKCLKSELX0 {
@@ -869,17 +812,6 @@ impl crate::Readable for PRESETCTRL0 {}
 impl crate::Writable for PRESETCTRL0 {}
 #[doc = "Peripheral reset control 0"]
 pub mod presetctrl0;
-#[doc = "Peripheral reset control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [presetctrlx0](presetctrlx0) module"]
-pub type PRESETCTRLX0 = crate::Reg<u32, _PRESETCTRLX0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PRESETCTRLX0;
-#[doc = "`read()` method returns [presetctrlx0::R](presetctrlx0::R) reader structure"]
-impl crate::Readable for PRESETCTRLX0 {}
-#[doc = "`write(|w| ..)` method takes [presetctrlx0::W](presetctrlx0::W) writer structure"]
-impl crate::Writable for PRESETCTRLX0 {}
-#[doc = "Peripheral reset control register"]
-pub mod presetctrlx0;
 #[doc = "Peripheral reset control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [presetctrl1](presetctrl1) module"]
 pub type PRESETCTRL1 = crate::Reg<u32, _PRESETCTRL1>;
 #[allow(missing_docs)]
@@ -891,17 +823,6 @@ impl crate::Readable for PRESETCTRL1 {}
 impl crate::Writable for PRESETCTRL1 {}
 #[doc = "Peripheral reset control 1"]
 pub mod presetctrl1;
-#[doc = "Peripheral reset control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [presetctrlx1](presetctrlx1) module"]
-pub type PRESETCTRLX1 = crate::Reg<u32, _PRESETCTRLX1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PRESETCTRLX1;
-#[doc = "`read()` method returns [presetctrlx1::R](presetctrlx1::R) reader structure"]
-impl crate::Readable for PRESETCTRLX1 {}
-#[doc = "`write(|w| ..)` method takes [presetctrlx1::W](presetctrlx1::W) writer structure"]
-impl crate::Writable for PRESETCTRLX1 {}
-#[doc = "Peripheral reset control register"]
-pub mod presetctrlx1;
 #[doc = "Peripheral reset control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [presetctrl2](presetctrl2) module"]
 pub type PRESETCTRL2 = crate::Reg<u32, _PRESETCTRL2>;
 #[allow(missing_docs)]
@@ -913,17 +834,6 @@ impl crate::Readable for PRESETCTRL2 {}
 impl crate::Writable for PRESETCTRL2 {}
 #[doc = "Peripheral reset control 2"]
 pub mod presetctrl2;
-#[doc = "Peripheral reset control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [presetctrlx2](presetctrlx2) module"]
-pub type PRESETCTRLX2 = crate::Reg<u32, _PRESETCTRLX2>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PRESETCTRLX2;
-#[doc = "`read()` method returns [presetctrlx2::R](presetctrlx2::R) reader structure"]
-impl crate::Readable for PRESETCTRLX2 {}
-#[doc = "`write(|w| ..)` method takes [presetctrlx2::W](presetctrlx2::W) writer structure"]
-impl crate::Writable for PRESETCTRLX2 {}
-#[doc = "Peripheral reset control register"]
-pub mod presetctrlx2;
 #[doc = "Peripheral reset control set register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [presetctrlset](presetctrlset) module"]
 pub type PRESETCTRLSET = crate::Reg<u32, _PRESETCTRLSET>;
 #[allow(missing_docs)]
