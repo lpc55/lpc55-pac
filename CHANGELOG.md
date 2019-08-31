@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [v0.0.3] - 2019-08-31
+
+### Changed
+
+- Rename `UTICK0` to `UTICK` like UM
+
 ## [v0.0.2] - 2019-08-23
 
 ### Added

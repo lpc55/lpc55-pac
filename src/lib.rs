@@ -662,25 +662,25 @@ impl Deref for MRT0 {
 #[doc = "Multi-Rate Timer (MRT)"]
 pub mod mrt0;
 #[doc = "Micro-tick Timer (UTICK)"]
-pub struct UTICK0 {
+pub struct UTICK {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for UTICK0 {}
-impl UTICK0 {
+unsafe impl Send for UTICK {}
+impl UTICK {
     #[doc = r"Returns a pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const utick0::RegisterBlock {
+    pub const fn ptr() -> *const utick::RegisterBlock {
         0x4000_e000 as *const _
     }
 }
-impl Deref for UTICK0 {
-    type Target = utick0::RegisterBlock;
+impl Deref for UTICK {
+    type Target = utick::RegisterBlock;
     fn deref(&self) -> &Self::Target {
-        unsafe { &*UTICK0::ptr() }
+        unsafe { &*UTICK::ptr() }
     }
 }
 #[doc = "Micro-tick Timer (UTICK)"]
-pub mod utick0;
+pub mod utick;
 #[doc = "ANALOGCTRL"]
 pub struct ANACTRL {
     _marker: PhantomData<*const ()>,
@@ -2104,8 +2104,8 @@ pub struct Peripherals {
     pub WWDT: WWDT,
     #[doc = "MRT0"]
     pub MRT0: MRT0,
-    #[doc = "UTICK0"]
-    pub UTICK0: UTICK0,
+    #[doc = "UTICK"]
+    pub UTICK: UTICK,
     #[doc = "ANACTRL"]
     pub ANACTRL: ANACTRL,
     #[doc = "PMC"]
@@ -2323,7 +2323,7 @@ impl Peripherals {
             MRT0: MRT0 {
                 _marker: PhantomData,
             },
-            UTICK0: UTICK0 {
+            UTICK: UTICK {
                 _marker: PhantomData,
             },
             ANACTRL: ANACTRL {
