@@ -15,7 +15,7 @@ to the complete functionality of LPC55S6x microcontrollers.
 
 Very much work-in-progress!
 
-See also the higher-level companion crate: <https://github.com/nickray/lpc55s6x-pac>.
+See also the higher-level companion library [LPC55S6x HAL][lpc55s6x-hal].
 
 ## Documentation
 
@@ -44,6 +44,7 @@ The SVD files are from <https://mcuxpresso.nxp.com> and licensed under the [BSD-
 [build-link]: https://circleci.com/gh/nickray/lpc55s6x-pac/tree/master
 [docs-image]: https://docs.rs/lpc55s6x-pac/badge.svg
 [docs-link]: https://docs.rs/lpc55s6x-pac
+[lpc55s6x-hal]: https://libs.rs/lpc55s6x-hal
 [svd-docs-link]: https://docs.rs/svd2rust
 [license-image]: https://img.shields.io/badge/license-Apache2.0%2FMIT-blue.svg
 [apache2-link]: https://spdx.org/licenses/Apache-2.0.html
