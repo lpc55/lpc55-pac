@@ -10,84 +10,6 @@ impl crate::ResetValue for super::CLOCK_CTRL {
         0x01
     }
 }
-#[doc = "Possible values of the field `FLASH48MHZ_ENA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FLASH48MHZ_ENA_A {
-    #[doc = "The clock is not enabled."]
-    DISABLE,
-    #[doc = "The clock is enabled."]
-    ENABLE,
-}
-impl From<FLASH48MHZ_ENA_A> for bool {
-    #[inline(always)]
-    fn from(variant: FLASH48MHZ_ENA_A) -> Self {
-        match variant {
-            FLASH48MHZ_ENA_A::DISABLE => false,
-            FLASH48MHZ_ENA_A::ENABLE => true,
-        }
-    }
-}
-#[doc = "Reader of field `FLASH48MHZ_ENA`"]
-pub type FLASH48MHZ_ENA_R = crate::R<bool, FLASH48MHZ_ENA_A>;
-impl FLASH48MHZ_ENA_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> FLASH48MHZ_ENA_A {
-        match self.bits {
-            false => FLASH48MHZ_ENA_A::DISABLE,
-            true => FLASH48MHZ_ENA_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == FLASH48MHZ_ENA_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == FLASH48MHZ_ENA_A::ENABLE
-    }
-}
-#[doc = "Write proxy for field `FLASH48MHZ_ENA`"]
-pub struct FLASH48MHZ_ENA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLASH48MHZ_ENA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FLASH48MHZ_ENA_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "The clock is not enabled."]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(FLASH48MHZ_ENA_A::DISABLE)
-    }
-    #[doc = "The clock is enabled."]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(FLASH48MHZ_ENA_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
-    }
-}
 #[doc = "Possible values of the field `XTAL32MHZ_FREQM_ENA`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum XTAL32MHZ_FREQM_ENA_A {
@@ -791,11 +713,6 @@ impl<'a> PLU_DEGLITCH_CLK_ENA_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - Enable Flash 48 MHz clock."]
-    #[inline(always)]
-    pub fn flash48mhz_ena(&self) -> FLASH48MHZ_ENA_R {
-        FLASH48MHZ_ENA_R::new((self.bits & 0x01) != 0)
-    }
     #[doc = "Bit 1 - Enable XTAL32MHz clock for Frequency Measure module."]
     #[inline(always)]
     pub fn xtal32mhz_freqm_ena(&self) -> XTAL32MHZ_FREQM_ENA_R {
@@ -843,11 +760,6 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - Enable Flash 48 MHz clock."]
-    #[inline(always)]
-    pub fn flash48mhz_ena(&mut self) -> FLASH48MHZ_ENA_W {
-        FLASH48MHZ_ENA_W { w: self }
-    }
     #[doc = "Bit 1 - Enable XTAL32MHz clock for Frequency Measure module."]
     #[inline(always)]
     pub fn xtal32mhz_freqm_ena(&mut self) -> XTAL32MHZ_FREQM_ENA_W {

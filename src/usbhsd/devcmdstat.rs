@@ -96,30 +96,6 @@ impl<'a> FORCE_NEEDCLK_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `FORCE_VBUS`"]
-pub type FORCE_VBUS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FORCE_VBUS`"]
-pub struct FORCE_VBUS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FORCE_VBUS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-        self.w
-    }
-}
 #[doc = "Reader of field `LPM_SUP`"]
 pub type LPM_SUP_R = crate::R<bool, bool>;
 #[doc = "Write proxy for field `LPM_SUP`"]
@@ -425,11 +401,6 @@ impl R {
     pub fn force_needclk(&self) -> FORCE_NEEDCLK_R {
         FORCE_NEEDCLK_R::new(((self.bits >> 9) & 0x01) != 0)
     }
-    #[doc = "Bit 10 - If this bit is set to 1, the VBUS voltage indicators from the PHY are overruled."]
-    #[inline(always)]
-    pub fn force_vbus(&self) -> FORCE_VBUS_R {
-        FORCE_VBUS_R::new(((self.bits >> 10) & 0x01) != 0)
-    }
     #[doc = "Bit 11 - LPM Supported:."]
     #[inline(always)]
     pub fn lpm_sup(&self) -> LPM_SUP_R {
@@ -500,7 +471,7 @@ impl R {
     pub fn vbus_debounced(&self) -> VBUS_DEBOUNCED_R {
         VBUS_DEBOUNCED_R::new(((self.bits >> 28) & 0x01) != 0)
     }
-    #[doc = "Bits 29:31 - This field is written by firmware to put the PHY into a test mode as defined by the USB2."]
+    #[doc = "Bits 29:31 - This field is written by firmware to put the PHY into a test mode as defined by the USB2.0 specification"]
     #[inline(always)]
     pub fn phy_test_mode(&self) -> PHY_TEST_MODE_R {
         PHY_TEST_MODE_R::new(((self.bits >> 29) & 0x07) as u8)
@@ -526,11 +497,6 @@ impl W {
     #[inline(always)]
     pub fn force_needclk(&mut self) -> FORCE_NEEDCLK_W {
         FORCE_NEEDCLK_W { w: self }
-    }
-    #[doc = "Bit 10 - If this bit is set to 1, the VBUS voltage indicators from the PHY are overruled."]
-    #[inline(always)]
-    pub fn force_vbus(&mut self) -> FORCE_VBUS_W {
-        FORCE_VBUS_W { w: self }
     }
     #[doc = "Bit 11 - LPM Supported:."]
     #[inline(always)]
@@ -587,7 +553,7 @@ impl W {
     pub fn dres_c(&mut self) -> DRES_C_W {
         DRES_C_W { w: self }
     }
-    #[doc = "Bits 29:31 - This field is written by firmware to put the PHY into a test mode as defined by the USB2."]
+    #[doc = "Bits 29:31 - This field is written by firmware to put the PHY into a test mode as defined by the USB2.0 specification"]
     #[inline(always)]
     pub fn phy_test_mode(&mut self) -> PHY_TEST_MODE_W {
         PHY_TEST_MODE_W { w: self }

@@ -168,44 +168,6 @@ impl<'a> INT_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `HIRD`"]
-pub type HIRD_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `HIRD`"]
-pub struct HIRD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIRD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | (((value as u32) & 0x0f) << 24);
-        self.w
-    }
-}
-#[doc = "Reader of field `LPM_RWU`"]
-pub type LPM_RWU_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LPM_RWU`"]
-pub struct LPM_RWU_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LPM_RWU_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-        self.w
-    }
-}
 impl R {
     #[doc = "Bit 0 - Run/Stop: 1b = Run."]
     #[inline(always)]
@@ -241,16 +203,6 @@ impl R {
     #[inline(always)]
     pub fn int_en(&self) -> INT_EN_R {
         INT_EN_R::new(((self.bits >> 10) & 0x01) != 0)
-    }
-    #[doc = "Bits 24:27 - Host-Initiated Resume Duration."]
-    #[inline(always)]
-    pub fn hird(&self) -> HIRD_R {
-        HIRD_R::new(((self.bits >> 24) & 0x0f) as u8)
-    }
-    #[doc = "Bit 28 - bRemoteWake field."]
-    #[inline(always)]
-    pub fn lpm_rwu(&self) -> LPM_RWU_R {
-        LPM_RWU_R::new(((self.bits >> 28) & 0x01) != 0)
     }
 }
 impl W {
@@ -288,15 +240,5 @@ impl W {
     #[inline(always)]
     pub fn int_en(&mut self) -> INT_EN_W {
         INT_EN_W { w: self }
-    }
-    #[doc = "Bits 24:27 - Host-Initiated Resume Duration."]
-    #[inline(always)]
-    pub fn hird(&mut self) -> HIRD_W {
-        HIRD_W { w: self }
-    }
-    #[doc = "Bit 28 - bRemoteWake field."]
-    #[inline(always)]
-    pub fn lpm_rwu(&mut self) -> LPM_RWU_W {
-        LPM_RWU_W { w: self }
     }
 }

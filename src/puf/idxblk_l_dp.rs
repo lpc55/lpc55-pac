@@ -10,20 +10,6 @@ impl crate::ResetValue for super::IDXBLK_L_DP {
         0xaaaa
     }
 }
-#[doc = "Reader of field `IDX0`"]
-pub type IDX0_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `IDX0`"]
-pub struct IDX0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IDX0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
-        self.w
-    }
-}
 #[doc = "Reader of field `IDX1`"]
 pub type IDX1_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `IDX1`"]
@@ -123,11 +109,6 @@ impl<'a> IDX7_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:1 - Use to block PUF index 0"]
-    #[inline(always)]
-    pub fn idx0(&self) -> IDX0_R {
-        IDX0_R::new((self.bits & 0x03) as u8)
-    }
     #[doc = "Bits 2:3 - Use to block PUF index 1"]
     #[inline(always)]
     pub fn idx1(&self) -> IDX1_R {
@@ -165,11 +146,6 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - Use to block PUF index 0"]
-    #[inline(always)]
-    pub fn idx0(&mut self) -> IDX0_W {
-        IDX0_W { w: self }
-    }
     #[doc = "Bits 2:3 - Use to block PUF index 1"]
     #[inline(always)]
     pub fn idx1(&mut self) -> IDX1_W {

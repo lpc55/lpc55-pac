@@ -226,30 +226,6 @@ impl<'a> PR_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `SUS_L1`"]
-pub type SUS_L1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SUS_L1`"]
-pub struct SUS_L1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SUS_L1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-        self.w
-    }
-}
 #[doc = "Reader of field `LS`"]
 pub type LS_R = crate::R<u8, u8>;
 #[doc = "Reader of field `PP`"]
@@ -342,34 +318,6 @@ impl<'a> WOO_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `SUS_STAT`"]
-pub type SUS_STAT_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SUS_STAT`"]
-pub struct SUS_STAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SUS_STAT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 23)) | (((value as u32) & 0x03) << 23);
-        self.w
-    }
-}
-#[doc = "Reader of field `DEV_ADD`"]
-pub type DEV_ADD_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DEV_ADD`"]
-pub struct DEV_ADD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEV_ADD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 25)) | (((value as u32) & 0x7f) << 25);
-        self.w
-    }
-}
 impl R {
     #[doc = "Bit 0 - Current Connect Status: Logic 1 indicates a device is present on the port."]
     #[inline(always)]
@@ -416,11 +364,6 @@ impl R {
     pub fn pr(&self) -> PR_R {
         PR_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9 - Suspend using L1 0b = Suspend using L2 1b = Suspend using L1 When this bit is set to a 1 and a non-zero value is specified in the Device Address field, the host controller will generate an LPM Token to enter the L1 state whenever software writes a one to the Suspend bit, as well as L1 exit timing during any device or host-initiated resume."]
-    #[inline(always)]
-    pub fn sus_l1(&self) -> SUS_L1_R {
-        SUS_L1_R::new(((self.bits >> 9) & 0x01) != 0)
-    }
     #[doc = "Bits 10:11 - Line Status: This field reflects the current logical levels of the DP (bit 11) and DM (bit 10) signal lines."]
     #[inline(always)]
     pub fn ls(&self) -> LS_R {
@@ -450,16 +393,6 @@ impl R {
     #[inline(always)]
     pub fn woo(&self) -> WOO_R {
         WOO_R::new(((self.bits >> 22) & 0x01) != 0)
-    }
-    #[doc = "Bits 23:24 - These two bits are used by software to determine whether the most recent L1 suspend request was successful: 00b: Success-state transition was successful (ACK) 01b: Not Yet - Device was unable to enter the L1 state at this time (NYET) 10b: Not supported - Device does not support the L1 state (STALL) 11b: Timeout/Error - Device failed to respond or an error occurred."]
-    #[inline(always)]
-    pub fn sus_stat(&self) -> SUS_STAT_R {
-        SUS_STAT_R::new(((self.bits >> 23) & 0x03) as u8)
-    }
-    #[doc = "Bits 25:31 - Device Address for LPM tokens."]
-    #[inline(always)]
-    pub fn dev_add(&self) -> DEV_ADD_R {
-        DEV_ADD_R::new(((self.bits >> 25) & 0x7f) as u8)
     }
 }
 impl W {
@@ -508,11 +441,6 @@ impl W {
     pub fn pr(&mut self) -> PR_W {
         PR_W { w: self }
     }
-    #[doc = "Bit 9 - Suspend using L1 0b = Suspend using L2 1b = Suspend using L1 When this bit is set to a 1 and a non-zero value is specified in the Device Address field, the host controller will generate an LPM Token to enter the L1 state whenever software writes a one to the Suspend bit, as well as L1 exit timing during any device or host-initiated resume."]
-    #[inline(always)]
-    pub fn sus_l1(&mut self) -> SUS_L1_W {
-        SUS_L1_W { w: self }
-    }
     #[doc = "Bit 12 - Port Power: The function of this bit depends on the value of the Port Power Control (PPC) bit in the HCSPARAMS register."]
     #[inline(always)]
     pub fn pp(&mut self) -> PP_W {
@@ -537,15 +465,5 @@ impl W {
     #[inline(always)]
     pub fn woo(&mut self) -> WOO_W {
         WOO_W { w: self }
-    }
-    #[doc = "Bits 23:24 - These two bits are used by software to determine whether the most recent L1 suspend request was successful: 00b: Success-state transition was successful (ACK) 01b: Not Yet - Device was unable to enter the L1 state at this time (NYET) 10b: Not supported - Device does not support the L1 state (STALL) 11b: Timeout/Error - Device failed to respond or an error occurred."]
-    #[inline(always)]
-    pub fn sus_stat(&mut self) -> SUS_STAT_W {
-        SUS_STAT_W { w: self }
-    }
-    #[doc = "Bits 25:31 - Device Address for LPM tokens."]
-    #[inline(always)]
-    pub fn dev_add(&mut self) -> DEV_ADD_W {
-        DEV_ADD_W { w: self }
     }
 }

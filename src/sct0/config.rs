@@ -204,6 +204,22 @@ pub enum CKSEL_A {
     INPUT_3_RISING_EDGES,
     #[doc = "Falling edges on input 3."]
     INPUT_3_FALLING_EDGE,
+    #[doc = "Rising edges on input 4."]
+    INPUT_4_RISING_EDGES,
+    #[doc = "Falling edges on input 4."]
+    INPUT_4_FALLING_EDGE,
+    #[doc = "Rising edges on input 5."]
+    INPUT_5_RISING_EDGES,
+    #[doc = "Falling edges on input 5."]
+    INPUT_5_FALLING_EDGE,
+    #[doc = "Rising edges on input 6."]
+    INPUT_6_RISING_EDGES,
+    #[doc = "Falling edges on input 6."]
+    INPUT_6_FALLING_EDGE,
+    #[doc = "Rising edges on input 7."]
+    INPUT_7_RISING_EDGES,
+    #[doc = "Falling edges on input 7."]
+    INPUT_7_FALLING_EDGE,
 }
 impl From<CKSEL_A> for u8 {
     #[inline(always)]
@@ -217,6 +233,14 @@ impl From<CKSEL_A> for u8 {
             CKSEL_A::INPUT_2_FALLING_EDGE => 5,
             CKSEL_A::INPUT_3_RISING_EDGES => 6,
             CKSEL_A::INPUT_3_FALLING_EDGE => 7,
+            CKSEL_A::INPUT_4_RISING_EDGES => 8,
+            CKSEL_A::INPUT_4_FALLING_EDGE => 9,
+            CKSEL_A::INPUT_5_RISING_EDGES => 10,
+            CKSEL_A::INPUT_5_FALLING_EDGE => 11,
+            CKSEL_A::INPUT_6_RISING_EDGES => 12,
+            CKSEL_A::INPUT_6_FALLING_EDGE => 13,
+            CKSEL_A::INPUT_7_RISING_EDGES => 14,
+            CKSEL_A::INPUT_7_FALLING_EDGE => 15,
         }
     }
 }
@@ -225,18 +249,25 @@ pub type CKSEL_R = crate::R<u8, CKSEL_A>;
 impl CKSEL_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CKSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> CKSEL_A {
         match self.bits {
-            0 => Val(CKSEL_A::INPUT_0_RISING_EDGES),
-            1 => Val(CKSEL_A::INPUT_0_FALLING_EDGE),
-            2 => Val(CKSEL_A::INPUT_1_RISING_EDGES),
-            3 => Val(CKSEL_A::INPUT_1_FALLING_EDGE),
-            4 => Val(CKSEL_A::INPUT_2_RISING_EDGES),
-            5 => Val(CKSEL_A::INPUT_2_FALLING_EDGE),
-            6 => Val(CKSEL_A::INPUT_3_RISING_EDGES),
-            7 => Val(CKSEL_A::INPUT_3_FALLING_EDGE),
-            i => Res(i),
+            0 => CKSEL_A::INPUT_0_RISING_EDGES,
+            1 => CKSEL_A::INPUT_0_FALLING_EDGE,
+            2 => CKSEL_A::INPUT_1_RISING_EDGES,
+            3 => CKSEL_A::INPUT_1_FALLING_EDGE,
+            4 => CKSEL_A::INPUT_2_RISING_EDGES,
+            5 => CKSEL_A::INPUT_2_FALLING_EDGE,
+            6 => CKSEL_A::INPUT_3_RISING_EDGES,
+            7 => CKSEL_A::INPUT_3_FALLING_EDGE,
+            8 => CKSEL_A::INPUT_4_RISING_EDGES,
+            9 => CKSEL_A::INPUT_4_FALLING_EDGE,
+            10 => CKSEL_A::INPUT_5_RISING_EDGES,
+            11 => CKSEL_A::INPUT_5_FALLING_EDGE,
+            12 => CKSEL_A::INPUT_6_RISING_EDGES,
+            13 => CKSEL_A::INPUT_6_FALLING_EDGE,
+            14 => CKSEL_A::INPUT_7_RISING_EDGES,
+            15 => CKSEL_A::INPUT_7_FALLING_EDGE,
+            _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `INPUT_0_RISING_EDGES`"]
@@ -279,6 +310,46 @@ impl CKSEL_R {
     pub fn is_input_3_falling_edge(&self) -> bool {
         *self == CKSEL_A::INPUT_3_FALLING_EDGE
     }
+    #[doc = "Checks if the value of the field is `INPUT_4_RISING_EDGES`"]
+    #[inline(always)]
+    pub fn is_input_4_rising_edges(&self) -> bool {
+        *self == CKSEL_A::INPUT_4_RISING_EDGES
+    }
+    #[doc = "Checks if the value of the field is `INPUT_4_FALLING_EDGE`"]
+    #[inline(always)]
+    pub fn is_input_4_falling_edge(&self) -> bool {
+        *self == CKSEL_A::INPUT_4_FALLING_EDGE
+    }
+    #[doc = "Checks if the value of the field is `INPUT_5_RISING_EDGES`"]
+    #[inline(always)]
+    pub fn is_input_5_rising_edges(&self) -> bool {
+        *self == CKSEL_A::INPUT_5_RISING_EDGES
+    }
+    #[doc = "Checks if the value of the field is `INPUT_5_FALLING_EDGE`"]
+    #[inline(always)]
+    pub fn is_input_5_falling_edge(&self) -> bool {
+        *self == CKSEL_A::INPUT_5_FALLING_EDGE
+    }
+    #[doc = "Checks if the value of the field is `INPUT_6_RISING_EDGES`"]
+    #[inline(always)]
+    pub fn is_input_6_rising_edges(&self) -> bool {
+        *self == CKSEL_A::INPUT_6_RISING_EDGES
+    }
+    #[doc = "Checks if the value of the field is `INPUT_6_FALLING_EDGE`"]
+    #[inline(always)]
+    pub fn is_input_6_falling_edge(&self) -> bool {
+        *self == CKSEL_A::INPUT_6_FALLING_EDGE
+    }
+    #[doc = "Checks if the value of the field is `INPUT_7_RISING_EDGES`"]
+    #[inline(always)]
+    pub fn is_input_7_rising_edges(&self) -> bool {
+        *self == CKSEL_A::INPUT_7_RISING_EDGES
+    }
+    #[doc = "Checks if the value of the field is `INPUT_7_FALLING_EDGE`"]
+    #[inline(always)]
+    pub fn is_input_7_falling_edge(&self) -> bool {
+        *self == CKSEL_A::INPUT_7_FALLING_EDGE
+    }
 }
 #[doc = "Write proxy for field `CKSEL`"]
 pub struct CKSEL_W<'a> {
@@ -288,7 +359,9 @@ impl<'a> CKSEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CKSEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
+        {
+            self.bits(variant.into())
+        }
     }
     #[doc = "Rising edges on input 0."]
     #[inline(always)]
@@ -330,20 +403,60 @@ impl<'a> CKSEL_W<'a> {
     pub fn input_3_falling_edge(self) -> &'a mut W {
         self.variant(CKSEL_A::INPUT_3_FALLING_EDGE)
     }
+    #[doc = "Rising edges on input 4."]
+    #[inline(always)]
+    pub fn input_4_rising_edges(self) -> &'a mut W {
+        self.variant(CKSEL_A::INPUT_4_RISING_EDGES)
+    }
+    #[doc = "Falling edges on input 4."]
+    #[inline(always)]
+    pub fn input_4_falling_edge(self) -> &'a mut W {
+        self.variant(CKSEL_A::INPUT_4_FALLING_EDGE)
+    }
+    #[doc = "Rising edges on input 5."]
+    #[inline(always)]
+    pub fn input_5_rising_edges(self) -> &'a mut W {
+        self.variant(CKSEL_A::INPUT_5_RISING_EDGES)
+    }
+    #[doc = "Falling edges on input 5."]
+    #[inline(always)]
+    pub fn input_5_falling_edge(self) -> &'a mut W {
+        self.variant(CKSEL_A::INPUT_5_FALLING_EDGE)
+    }
+    #[doc = "Rising edges on input 6."]
+    #[inline(always)]
+    pub fn input_6_rising_edges(self) -> &'a mut W {
+        self.variant(CKSEL_A::INPUT_6_RISING_EDGES)
+    }
+    #[doc = "Falling edges on input 6."]
+    #[inline(always)]
+    pub fn input_6_falling_edge(self) -> &'a mut W {
+        self.variant(CKSEL_A::INPUT_6_FALLING_EDGE)
+    }
+    #[doc = "Rising edges on input 7."]
+    #[inline(always)]
+    pub fn input_7_rising_edges(self) -> &'a mut W {
+        self.variant(CKSEL_A::INPUT_7_RISING_EDGES)
+    }
+    #[doc = "Falling edges on input 7."]
+    #[inline(always)]
+    pub fn input_7_falling_edge(self) -> &'a mut W {
+        self.variant(CKSEL_A::INPUT_7_FALLING_EDGE)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         self.w.bits = (self.w.bits & !(0x0f << 3)) | (((value as u32) & 0x0f) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `NORELAOD_L`"]
-pub type NORELAOD_L_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `NORELAOD_L`"]
-pub struct NORELAOD_L_W<'a> {
+#[doc = "Reader of field `NORELOAD_L`"]
+pub type NORELOAD_L_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `NORELOAD_L`"]
+pub struct NORELOAD_L_W<'a> {
     w: &'a mut W,
 }
-impl<'a> NORELAOD_L_W<'a> {
+impl<'a> NORELOAD_L_W<'a> {
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -465,8 +578,8 @@ impl R {
     }
     #[doc = "Bit 7 - A 1 in this bit prevents the lower match registers from being reloaded from their respective reload registers. Setting this bit eliminates the need to write to the reload registers MATCHREL if the match values are fixed. Software can write to set or clear this bit at any time. This bit applies to both the higher and lower registers when the UNIFY bit is set."]
     #[inline(always)]
-    pub fn norelaod_l(&self) -> NORELAOD_L_R {
-        NORELAOD_L_R::new(((self.bits >> 7) & 0x01) != 0)
+    pub fn noreload_l(&self) -> NORELOAD_L_R {
+        NORELOAD_L_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - A 1 in this bit prevents the higher match registers from being reloaded from their respective reload registers. Setting this bit eliminates the need to write to the reload registers MATCHREL if the match values are fixed. Software can write to set or clear this bit at any time. This bit is not used when the UNIFY bit is set."]
     #[inline(always)]
@@ -507,8 +620,8 @@ impl W {
     }
     #[doc = "Bit 7 - A 1 in this bit prevents the lower match registers from being reloaded from their respective reload registers. Setting this bit eliminates the need to write to the reload registers MATCHREL if the match values are fixed. Software can write to set or clear this bit at any time. This bit applies to both the higher and lower registers when the UNIFY bit is set."]
     #[inline(always)]
-    pub fn norelaod_l(&mut self) -> NORELAOD_L_W {
-        NORELAOD_L_W { w: self }
+    pub fn noreload_l(&mut self) -> NORELOAD_L_W {
+        NORELOAD_L_W { w: self }
     }
     #[doc = "Bit 8 - A 1 in this bit prevents the higher match registers from being reloaded from their respective reload registers. Setting this bit eliminates the need to write to the reload registers MATCHREL if the match values are fixed. Software can write to set or clear this bit at any time. This bit is not used when the UNIFY bit is set."]
     #[inline(always)]

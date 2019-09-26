@@ -49,43 +49,43 @@ impl WAITING_R {
         *self == WAITING_A::WAITING
     }
 }
-#[doc = "Possible values of the field `DIGEST_aka_OUTDATA`"]
+#[doc = "Possible values of the field `DIGEST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DIGEST_AKA_OUTDATA_A {
+pub enum DIGEST_A {
     #[doc = "No Digest is ready"]
     NOT_READY,
     #[doc = "Digest is ready. Application may read it or may write more data"]
     READY,
 }
-impl From<DIGEST_AKA_OUTDATA_A> for bool {
+impl From<DIGEST_A> for bool {
     #[inline(always)]
-    fn from(variant: DIGEST_AKA_OUTDATA_A) -> Self {
+    fn from(variant: DIGEST_A) -> Self {
         match variant {
-            DIGEST_AKA_OUTDATA_A::NOT_READY => false,
-            DIGEST_AKA_OUTDATA_A::READY => true,
+            DIGEST_A::NOT_READY => false,
+            DIGEST_A::READY => true,
         }
     }
 }
-#[doc = "Reader of field `DIGEST_aka_OUTDATA`"]
-pub type DIGEST_AKA_OUTDATA_R = crate::R<bool, DIGEST_AKA_OUTDATA_A>;
-impl DIGEST_AKA_OUTDATA_R {
+#[doc = "Reader of field `DIGEST`"]
+pub type DIGEST_R = crate::R<bool, DIGEST_A>;
+impl DIGEST_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DIGEST_AKA_OUTDATA_A {
+    pub fn variant(&self) -> DIGEST_A {
         match self.bits {
-            false => DIGEST_AKA_OUTDATA_A::NOT_READY,
-            true => DIGEST_AKA_OUTDATA_A::READY,
+            false => DIGEST_A::NOT_READY,
+            true => DIGEST_A::READY,
         }
     }
     #[doc = "Checks if the value of the field is `NOT_READY`"]
     #[inline(always)]
     pub fn is_not_ready(&self) -> bool {
-        *self == DIGEST_AKA_OUTDATA_A::NOT_READY
+        *self == DIGEST_A::NOT_READY
     }
     #[doc = "Checks if the value of the field is `READY`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        *self == DIGEST_AKA_OUTDATA_A::READY
+        *self == DIGEST_A::READY
     }
 }
 #[doc = "Possible values of the field `ERROR`"]
@@ -254,8 +254,8 @@ impl R {
     }
     #[doc = "Bit 1 - For Hash, if 1 then a DIGEST is ready and waiting and there is no active next block already started. For Cryptographic uses, this will be set for each block processed, indicating OUTDATA (and OUTDATA2 if larger output) contains the next value to read out. This is cleared when any data is written, when New is written, for Cryptographic uses when the last word is read out, or when the block is disabled."]
     #[inline(always)]
-    pub fn digest_aka_outdata(&self) -> DIGEST_AKA_OUTDATA_R {
-        DIGEST_AKA_OUTDATA_R::new(((self.bits >> 1) & 0x01) != 0)
+    pub fn digest(&self) -> DIGEST_R {
+        DIGEST_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - If 1, an error occurred. For normal uses, this is due to an attempted overrun: INDATA was written when it was not appropriate. For Master cases, this is an AHB bus error; the COUNT field will indicate which block it was on."]
     #[inline(always)]

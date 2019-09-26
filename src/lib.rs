@@ -49,7 +49,7 @@ extern "C" {
     fn CTIMER4();
     fn OS_EVENT();
     fn SDIO();
-    fn USB1_UTMI();
+    fn USB1_PHY();
     fn USB1();
     fn USB1_NEEDCLK();
     fn SEC_GPIO_INT0_IRQ0();
@@ -134,9 +134,7 @@ pub static __INTERRUPTS: [Vector; 60] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
-    Vector {
-        _handler: USB1_UTMI,
-    },
+    Vector { _handler: USB1_PHY },
     Vector { _handler: USB1 },
     Vector {
         _handler: USB1_NEEDCLK,
@@ -234,8 +232,8 @@ pub enum Interrupt {
     OS_EVENT,
     #[doc = "42 - SDIO"]
     SDIO,
-    #[doc = "46 - USB1_UTMI"]
-    USB1_UTMI,
+    #[doc = "46 - USB1_PHY"]
+    USB1_PHY,
     #[doc = "47 - USB1"]
     USB1,
     #[doc = "48 - USB1_NEEDCLK"]
@@ -294,7 +292,7 @@ unsafe impl bare_metal::Nr for Interrupt {
             Interrupt::CTIMER4 => 37,
             Interrupt::OS_EVENT => 38,
             Interrupt::SDIO => 42,
-            Interrupt::USB1_UTMI => 46,
+            Interrupt::USB1_PHY => 46,
             Interrupt::USB1 => 47,
             Interrupt::USB1_NEEDCLK => 48,
             Interrupt::SEC_GPIO_INT0_IRQ0 => 50,
@@ -662,25 +660,25 @@ impl Deref for MRT0 {
 #[doc = "Multi-Rate Timer (MRT)"]
 pub mod mrt0;
 #[doc = "Micro-tick Timer (UTICK)"]
-pub struct UTICK {
+pub struct UTICK0 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for UTICK {}
-impl UTICK {
+unsafe impl Send for UTICK0 {}
+impl UTICK0 {
     #[doc = r"Returns a pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const utick::RegisterBlock {
+    pub const fn ptr() -> *const utick0::RegisterBlock {
         0x4000_e000 as *const _
     }
 }
-impl Deref for UTICK {
-    type Target = utick::RegisterBlock;
+impl Deref for UTICK0 {
+    type Target = utick0::RegisterBlock;
     fn deref(&self) -> &Self::Target {
-        unsafe { &*UTICK::ptr() }
+        unsafe { &*UTICK0::ptr() }
     }
 }
 #[doc = "Micro-tick Timer (UTICK)"]
-pub mod utick;
+pub mod utick0;
 #[doc = "ANALOGCTRL"]
 pub struct ANACTRL {
     _marker: PhantomData<*const ()>,
@@ -1785,24 +1783,6 @@ impl Deref for GPIO {
 }
 #[doc = "General Purpose I/O (GPIO)"]
 pub mod gpio;
-#[doc = "General Purpose I/O (GPIO)"]
-pub struct SECGPIO {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for SECGPIO {}
-impl SECGPIO {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const gpio::RegisterBlock {
-        0x400a_8000 as *const _
-    }
-}
-impl Deref for SECGPIO {
-    type Target = gpio::RegisterBlock;
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*SECGPIO::ptr() }
-    }
-}
 #[doc = "USB1 High-speed Device Controller"]
 pub struct USBHSD {
     _marker: PhantomData<*const ()>,
@@ -1864,25 +1844,25 @@ impl Deref for SDIF {
 #[doc = "SDMMC"]
 pub mod sdif;
 #[doc = "MCU Debugger Mailbox"]
-pub struct DGBMAILBOX {
+pub struct DBGMAILBOX {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for DGBMAILBOX {}
-impl DGBMAILBOX {
+unsafe impl Send for DBGMAILBOX {}
+impl DBGMAILBOX {
     #[doc = r"Returns a pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const dgbmailbox::RegisterBlock {
+    pub const fn ptr() -> *const dbgmailbox::RegisterBlock {
         0x4009_c000 as *const _
     }
 }
-impl Deref for DGBMAILBOX {
-    type Target = dgbmailbox::RegisterBlock;
+impl Deref for DBGMAILBOX {
+    type Target = dbgmailbox::RegisterBlock;
     fn deref(&self) -> &Self::Target {
-        unsafe { &*DGBMAILBOX::ptr() }
+        unsafe { &*DBGMAILBOX::ptr() }
     }
 }
 #[doc = "MCU Debugger Mailbox"]
-pub mod dgbmailbox;
+pub mod dbgmailbox;
 #[doc = "ADC"]
 pub struct ADC0 {
     _marker: PhantomData<*const ()>,
@@ -2003,6 +1983,26 @@ impl Deref for POWERQUAD {
 }
 #[doc = "Digital Signal Co-Processing companion to a Cortex-M v8M CPU core"]
 pub mod powerquad;
+#[doc = "General Purpose I/O (GPIO)"]
+pub struct SECGPIO {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SECGPIO {}
+impl SECGPIO {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const secgpio::RegisterBlock {
+        0x400a_8000 as *const _
+    }
+}
+impl Deref for SECGPIO {
+    type Target = secgpio::RegisterBlock;
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*SECGPIO::ptr() }
+    }
+}
+#[doc = "General Purpose I/O (GPIO)"]
+pub mod secgpio;
 #[doc = "AHB secure controller"]
 pub struct AHB_SECURE_CTRL {
     _marker: PhantomData<*const ()>,
@@ -2104,8 +2104,8 @@ pub struct Peripherals {
     pub WWDT: WWDT,
     #[doc = "MRT0"]
     pub MRT0: MRT0,
-    #[doc = "UTICK"]
-    pub UTICK: UTICK,
+    #[doc = "UTICK0"]
+    pub UTICK0: UTICK0,
     #[doc = "ANACTRL"]
     pub ANACTRL: ANACTRL,
     #[doc = "PMC"]
@@ -2224,16 +2224,14 @@ pub struct Peripherals {
     pub MAILBOX: MAILBOX,
     #[doc = "GPIO"]
     pub GPIO: GPIO,
-    #[doc = "SECGPIO"]
-    pub SECGPIO: SECGPIO,
     #[doc = "USBHSD"]
     pub USBHSD: USBHSD,
     #[doc = "CRC_ENGINE"]
     pub CRC_ENGINE: CRC_ENGINE,
     #[doc = "SDIF"]
     pub SDIF: SDIF,
-    #[doc = "DGBMAILBOX"]
-    pub DGBMAILBOX: DGBMAILBOX,
+    #[doc = "DBGMAILBOX"]
+    pub DBGMAILBOX: DBGMAILBOX,
     #[doc = "ADC0"]
     pub ADC0: ADC0,
     #[doc = "USBFSH"]
@@ -2246,6 +2244,8 @@ pub struct Peripherals {
     pub CASPER: CASPER,
     #[doc = "POWERQUAD"]
     pub POWERQUAD: POWERQUAD,
+    #[doc = "SECGPIO"]
+    pub SECGPIO: SECGPIO,
     #[doc = "AHB_SECURE_CTRL"]
     pub AHB_SECURE_CTRL: AHB_SECURE_CTRL,
     #[doc = "SCNSCB"]
@@ -2323,7 +2323,7 @@ impl Peripherals {
             MRT0: MRT0 {
                 _marker: PhantomData,
             },
-            UTICK: UTICK {
+            UTICK0: UTICK0 {
                 _marker: PhantomData,
             },
             ANACTRL: ANACTRL {
@@ -2503,9 +2503,6 @@ impl Peripherals {
             GPIO: GPIO {
                 _marker: PhantomData,
             },
-            SECGPIO: SECGPIO {
-                _marker: PhantomData,
-            },
             USBHSD: USBHSD {
                 _marker: PhantomData,
             },
@@ -2515,7 +2512,7 @@ impl Peripherals {
             SDIF: SDIF {
                 _marker: PhantomData,
             },
-            DGBMAILBOX: DGBMAILBOX {
+            DBGMAILBOX: DBGMAILBOX {
                 _marker: PhantomData,
             },
             ADC0: ADC0 {
@@ -2534,6 +2531,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             POWERQUAD: POWERQUAD {
+                _marker: PhantomData,
+            },
+            SECGPIO: SECGPIO {
                 _marker: PhantomData,
             },
             AHB_SECURE_CTRL: AHB_SECURE_CTRL {

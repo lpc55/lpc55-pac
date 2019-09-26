@@ -79,14 +79,14 @@ impl<'a> LOCK_ALL_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:3 - Control write access to CODESECURITYPROTTEST, CODESECURITYPROTCPU0, CODESECURITYPROTCPU1, CM33_DEBUG_FEATURES, MCM33_DEBUG_FEATURES and DBG_AUTH_SCRATCH registers."]
+    #[doc = "Bits 0:3 - Control write access to CODESECURITYPROTTEST, CODESECURITYPROTCPU0, CODESECURITYPROTCPU1, CPU0_DEBUG_FEATURES, CPU1_DEBUG_FEATURES and DBG_AUTH_SCRATCH registers."]
     #[inline(always)]
     pub fn lock_all(&self) -> LOCK_ALL_R {
         LOCK_ALL_R::new((self.bits & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Control write access to CODESECURITYPROTTEST, CODESECURITYPROTCPU0, CODESECURITYPROTCPU1, CM33_DEBUG_FEATURES, MCM33_DEBUG_FEATURES and DBG_AUTH_SCRATCH registers."]
+    #[doc = "Bits 0:3 - Control write access to CODESECURITYPROTTEST, CODESECURITYPROTCPU0, CODESECURITYPROTCPU1, CPU0_DEBUG_FEATURES, CPU1_DEBUG_FEATURES and DBG_AUTH_SCRATCH registers."]
     #[inline(always)]
     pub fn lock_all(&mut self) -> LOCK_ALL_W {
         LOCK_ALL_W { w: self }

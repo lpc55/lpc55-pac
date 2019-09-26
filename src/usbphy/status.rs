@@ -10,6 +10,8 @@ impl crate::ResetValue for super::STATUS {
         0
     }
 }
+#[doc = "Reader of field `OK_STATUS_3V`"]
+pub type OK_STATUS_3V_R = crate::R<bool, bool>;
 #[doc = "Possible values of the field `HOSTDISCONDETECT_STATUS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HOSTDISCONDETECT_STATUS_A {
@@ -47,45 +49,6 @@ impl HOSTDISCONDETECT_STATUS_R {
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
         *self == HOSTDISCONDETECT_STATUS_A::VALUE1
-    }
-}
-#[doc = "Write proxy for field `HOSTDISCONDETECT_STATUS`"]
-pub struct HOSTDISCONDETECT_STATUS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HOSTDISCONDETECT_STATUS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HOSTDISCONDETECT_STATUS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "USB cable disconnect has not been detected at the local host"]
-    #[inline(always)]
-    pub fn value0(self) -> &'a mut W {
-        self.variant(HOSTDISCONDETECT_STATUS_A::VALUE0)
-    }
-    #[doc = "USB cable disconnect has been detected at the local host"]
-    #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(HOSTDISCONDETECT_STATUS_A::VALUE1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
     }
 }
 #[doc = "Possible values of the field `DEVPLUGIN_STATUS`"]
@@ -127,94 +90,14 @@ impl DEVPLUGIN_STATUS_R {
         *self == DEVPLUGIN_STATUS_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `DEVPLUGIN_STATUS`"]
-pub struct DEVPLUGIN_STATUS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEVPLUGIN_STATUS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DEVPLUGIN_STATUS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "No attachment to a USB host is detected"]
-    #[inline(always)]
-    pub fn value0(self) -> &'a mut W {
-        self.variant(DEVPLUGIN_STATUS_A::VALUE0)
-    }
-    #[doc = "Cable attachment to a USB host is detected"]
-    #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(DEVPLUGIN_STATUS_A::VALUE1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Reader of field `OTGID_STATUS`"]
-pub type OTGID_STATUS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `OTGID_STATUS`"]
-pub struct OTGID_STATUS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OTGID_STATUS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-        self.w
-    }
-}
 #[doc = "Reader of field `RESUME_STATUS`"]
 pub type RESUME_STATUS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RESUME_STATUS`"]
-pub struct RESUME_STATUS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESUME_STATUS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-        self.w
-    }
-}
 impl R {
+    #[doc = "Bit 0 - Indicates the USB 3v power rails are in range."]
+    #[inline(always)]
+    pub fn ok_status_3v(&self) -> OK_STATUS_3V_R {
+        OK_STATUS_3V_R::new((self.bits & 0x01) != 0)
+    }
     #[doc = "Bit 3 - Indicates at the local host (downstream) port that the remote device has disconnected while in High-Speed mode"]
     #[inline(always)]
     pub fn hostdiscondetect_status(&self) -> HOSTDISCONDETECT_STATUS_R {
@@ -225,36 +108,10 @@ impl R {
     pub fn devplugin_status(&self) -> DEVPLUGIN_STATUS_R {
         DEVPLUGIN_STATUS_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 8 - Indicates the results of USB_ID pin on the USB cable plugged into the local Micro- or Mini-AB receptacle"]
-    #[inline(always)]
-    pub fn otgid_status(&self) -> OTGID_STATUS_R {
-        OTGID_STATUS_R::new(((self.bits >> 8) & 0x01) != 0)
-    }
     #[doc = "Bit 10 - Indicates that the host is sending a wake-up after Suspend and has triggered an interrupt."]
     #[inline(always)]
     pub fn resume_status(&self) -> RESUME_STATUS_R {
         RESUME_STATUS_R::new(((self.bits >> 10) & 0x01) != 0)
     }
 }
-impl W {
-    #[doc = "Bit 3 - Indicates at the local host (downstream) port that the remote device has disconnected while in High-Speed mode"]
-    #[inline(always)]
-    pub fn hostdiscondetect_status(&mut self) -> HOSTDISCONDETECT_STATUS_W {
-        HOSTDISCONDETECT_STATUS_W { w: self }
-    }
-    #[doc = "Bit 6 - Status indicator for non-standard resistive plugged-in detection Indicates that the device has been connected on the USB_DP and USB_DM lines using the nonstandard resistive plugged-in detection method controlled by CTRL\\[4\\]"]
-    #[inline(always)]
-    pub fn devplugin_status(&mut self) -> DEVPLUGIN_STATUS_W {
-        DEVPLUGIN_STATUS_W { w: self }
-    }
-    #[doc = "Bit 8 - Indicates the results of USB_ID pin on the USB cable plugged into the local Micro- or Mini-AB receptacle"]
-    #[inline(always)]
-    pub fn otgid_status(&mut self) -> OTGID_STATUS_W {
-        OTGID_STATUS_W { w: self }
-    }
-    #[doc = "Bit 10 - Indicates that the host is sending a wake-up after Suspend and has triggered an interrupt."]
-    #[inline(always)]
-    pub fn resume_status(&mut self) -> RESUME_STATUS_W {
-        RESUME_STATUS_W { w: self }
-    }
-}
+impl W {}

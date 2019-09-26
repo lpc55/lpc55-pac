@@ -2,12 +2,12 @@
 pub type R = crate::R<u32, super::BODVBAT>;
 #[doc = "Writer for register BODVBAT"]
 pub type W = crate::W<u32, super::BODVBAT>;
-#[doc = "Register BODVBAT `reset()`'s with value 0x69"]
+#[doc = "Register BODVBAT `reset()`'s with value 0x47"]
 impl crate::ResetValue for super::BODVBAT {
     type Type = u32;
     #[inline(always)]
     fn reset_value() -> Self::Type {
-        0x69
+        0x47
     }
 }
 #[doc = "Possible values of the field `TRIGLVL`"]

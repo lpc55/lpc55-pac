@@ -82,7 +82,7 @@ impl R {
     pub fn key2(&self) -> KEY2_R {
         KEY2_R::new(((self.bits >> 4) & 0x03) as u8)
     }
-    #[doc = "Bits 6:7 - \"10: Data coming out from PUF Index 0 interface are shifted in KEY2 register. 00, 01, 11 : Data coming out from PUF Index 0 interface are NOT shifted in KEY3 register.\""]
+    #[doc = "Bits 6:7 - \"10: Data coming out from PUF Index 0 interface are shifted in KEY3 register. 00, 01, 11 : Data coming out from PUF Index 0 interface are NOT shifted in KEY3 register.\""]
     #[inline(always)]
     pub fn key3(&self) -> KEY3_R {
         KEY3_R::new(((self.bits >> 6) & 0x03) as u8)
@@ -104,7 +104,7 @@ impl W {
     pub fn key2(&mut self) -> KEY2_W {
         KEY2_W { w: self }
     }
-    #[doc = "Bits 6:7 - \"10: Data coming out from PUF Index 0 interface are shifted in KEY2 register. 00, 01, 11 : Data coming out from PUF Index 0 interface are NOT shifted in KEY3 register.\""]
+    #[doc = "Bits 6:7 - \"10: Data coming out from PUF Index 0 interface are shifted in KEY3 register. 00, 01, 11 : Data coming out from PUF Index 0 interface are NOT shifted in KEY3 register.\""]
     #[inline(always)]
     pub fn key3(&mut self) -> KEY3_W {
         KEY3_W { w: self }

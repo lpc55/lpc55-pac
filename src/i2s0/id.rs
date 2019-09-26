@@ -1,10 +1,10 @@
 #[doc = "Reader of register ID"]
 pub type R = crate::R<u32, super::ID>;
-#[doc = "Reader of field `Aperture`"]
+#[doc = "Reader of field `APERTURE`"]
 pub type APERTURE_R = crate::R<u8, u8>;
-#[doc = "Reader of field `Minor_Rev`"]
+#[doc = "Reader of field `MINOR_REV`"]
 pub type MINOR_REV_R = crate::R<u8, u8>;
-#[doc = "Reader of field `Major_Rev`"]
+#[doc = "Reader of field `MAJOR_REV`"]
 pub type MAJOR_REV_R = crate::R<u8, u8>;
 #[doc = "Reader of field `ID`"]
 pub type ID_R = crate::R<u16, u16>;

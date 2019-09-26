@@ -204,9 +204,9 @@ impl<'a> RNG_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PUFF_RULE`"]
+#[doc = "Possible values of the field `PUF_RULE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PUFF_RULE_A {
+pub enum PUF_RULE_A {
     #[doc = "Non-secure and Non-priviledge user access allowed."]
     ENUM_NS_NP,
     #[doc = "Non-secure and Privilege access allowed."]
@@ -216,60 +216,60 @@ pub enum PUFF_RULE_A {
     #[doc = "Secure and Priviledge user access allowed."]
     ENUM_S_P,
 }
-impl From<PUFF_RULE_A> for u8 {
+impl From<PUF_RULE_A> for u8 {
     #[inline(always)]
-    fn from(variant: PUFF_RULE_A) -> Self {
+    fn from(variant: PUF_RULE_A) -> Self {
         match variant {
-            PUFF_RULE_A::ENUM_NS_NP => 0,
-            PUFF_RULE_A::ENUM_NS_P => 1,
-            PUFF_RULE_A::ENUM_S_NP => 2,
-            PUFF_RULE_A::ENUM_S_P => 3,
+            PUF_RULE_A::ENUM_NS_NP => 0,
+            PUF_RULE_A::ENUM_NS_P => 1,
+            PUF_RULE_A::ENUM_S_NP => 2,
+            PUF_RULE_A::ENUM_S_P => 3,
         }
     }
 }
-#[doc = "Reader of field `PUFF_RULE`"]
-pub type PUFF_RULE_R = crate::R<u8, PUFF_RULE_A>;
-impl PUFF_RULE_R {
+#[doc = "Reader of field `PUF_RULE`"]
+pub type PUF_RULE_R = crate::R<u8, PUF_RULE_A>;
+impl PUF_RULE_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PUFF_RULE_A {
+    pub fn variant(&self) -> PUF_RULE_A {
         match self.bits {
-            0 => PUFF_RULE_A::ENUM_NS_NP,
-            1 => PUFF_RULE_A::ENUM_NS_P,
-            2 => PUFF_RULE_A::ENUM_S_NP,
-            3 => PUFF_RULE_A::ENUM_S_P,
+            0 => PUF_RULE_A::ENUM_NS_NP,
+            1 => PUF_RULE_A::ENUM_NS_P,
+            2 => PUF_RULE_A::ENUM_S_NP,
+            3 => PUF_RULE_A::ENUM_S_P,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == PUFF_RULE_A::ENUM_NS_NP
+        *self == PUF_RULE_A::ENUM_NS_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == PUFF_RULE_A::ENUM_NS_P
+        *self == PUF_RULE_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == PUFF_RULE_A::ENUM_S_NP
+        *self == PUF_RULE_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == PUFF_RULE_A::ENUM_S_P
+        *self == PUF_RULE_A::ENUM_S_P
     }
 }
-#[doc = "Write proxy for field `PUFF_RULE`"]
-pub struct PUFF_RULE_W<'a> {
+#[doc = "Write proxy for field `PUF_RULE`"]
+pub struct PUF_RULE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> PUFF_RULE_W<'a> {
+impl<'a> PUF_RULE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: PUFF_RULE_A) -> &'a mut W {
+    pub fn variant(self, variant: PUF_RULE_A) -> &'a mut W {
         {
             self.bits(variant.into())
         }
@@ -277,22 +277,22 @@ impl<'a> PUFF_RULE_W<'a> {
     #[doc = "Non-secure and Non-priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_ns_np(self) -> &'a mut W {
-        self.variant(PUFF_RULE_A::ENUM_NS_NP)
+        self.variant(PUF_RULE_A::ENUM_NS_NP)
     }
     #[doc = "Non-secure and Privilege access allowed."]
     #[inline(always)]
     pub fn enum_ns_p(self) -> &'a mut W {
-        self.variant(PUFF_RULE_A::ENUM_NS_P)
+        self.variant(PUF_RULE_A::ENUM_NS_P)
     }
     #[doc = "Secure and Non-priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_s_np(self) -> &'a mut W {
-        self.variant(PUFF_RULE_A::ENUM_S_NP)
+        self.variant(PUF_RULE_A::ENUM_S_NP)
     }
     #[doc = "Secure and Priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_s_p(self) -> &'a mut W {
-        self.variant(PUFF_RULE_A::ENUM_S_P)
+        self.variant(PUF_RULE_A::ENUM_S_P)
     }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
@@ -411,8 +411,8 @@ impl R {
     }
     #[doc = "Bits 12:13 - PUF"]
     #[inline(always)]
-    pub fn puff_rule(&self) -> PUFF_RULE_R {
-        PUFF_RULE_R::new(((self.bits >> 12) & 0x03) as u8)
+    pub fn puf_rule(&self) -> PUF_RULE_R {
+        PUF_RULE_R::new(((self.bits >> 12) & 0x03) as u8)
     }
     #[doc = "Bits 20:21 - Programmable Look-Up logic"]
     #[inline(always)]
@@ -433,8 +433,8 @@ impl W {
     }
     #[doc = "Bits 12:13 - PUF"]
     #[inline(always)]
-    pub fn puff_rule(&mut self) -> PUFF_RULE_W {
-        PUFF_RULE_W { w: self }
+    pub fn puf_rule(&mut self) -> PUF_RULE_W {
+        PUF_RULE_W { w: self }
     }
     #[doc = "Bits 20:21 - Programmable Look-Up logic"]
     #[inline(always)]

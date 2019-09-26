@@ -5,17 +5,15 @@ pub struct RegisterBlock {
     pub cmd: CMD,
     #[doc = "0x04 - event register"]
     pub event: EVENT,
-    #[doc = "0x08 - read burst register"]
-    pub burst: BURST,
-    _reserved3: [u8; 4usize],
+    _reserved2: [u8; 8usize],
     #[doc = "0x10 - start (or only) address for next flash command"]
     pub starta: STARTA,
     #[doc = "0x14 - end address for next flash command, if command operates on address ranges"]
     pub stopa: STOPA,
-    _reserved5: [u8; 104usize],
+    _reserved4: [u8; 104usize],
     #[doc = "0x80 - data register, word 0-7; Memory data, or command parameter, or command result."]
-    pub dataw: [DATAW; 8],
-    _reserved6: [u8; 3896usize],
+    pub dataw: [DATAW; 4],
+    _reserved5: [u8; 3912usize],
     #[doc = "0xfd8 - Clear interrupt enable bits"]
     pub int_clr_enable: INT_CLR_ENABLE,
     #[doc = "0xfdc - Set interrupt enable bits"]
@@ -28,7 +26,7 @@ pub struct RegisterBlock {
     pub int_clr_status: INT_CLR_STATUS,
     #[doc = "0xfec - Set interrupt status bits"]
     pub int_set_status: INT_SET_STATUS,
-    _reserved12: [u8; 12usize],
+    _reserved11: [u8; 12usize],
     #[doc = "0xffc - Controller+Memory module identification"]
     pub module_id: MODULE_ID,
 }
@@ -50,17 +48,6 @@ pub struct _EVENT;
 impl crate::Writable for EVENT {}
 #[doc = "event register"]
 pub mod event;
-#[doc = "read burst register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [burst](burst) module"]
-pub type BURST = crate::Reg<u32, _BURST>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _BURST;
-#[doc = "`read()` method returns [burst::R](burst::R) reader structure"]
-impl crate::Readable for BURST {}
-#[doc = "`write(|w| ..)` method takes [burst::W](burst::W) writer structure"]
-impl crate::Writable for BURST {}
-#[doc = "read burst register"]
-pub mod burst;
 #[doc = "start (or only) address for next flash command\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [starta](starta) module"]
 pub type STARTA = crate::Reg<u32, _STARTA>;
 #[allow(missing_docs)]

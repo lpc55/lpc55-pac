@@ -528,84 +528,6 @@ impl<'a> EMPTYRX_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `POPDBG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum POPDBG_A {
-    #[doc = "Debug reads of the FIFO do not pop the FIFO."]
-    DO_NOT_POP,
-    #[doc = "A debug read will cause the FIFO to pop."]
-    POP,
-}
-impl From<POPDBG_A> for bool {
-    #[inline(always)]
-    fn from(variant: POPDBG_A) -> Self {
-        match variant {
-            POPDBG_A::DO_NOT_POP => false,
-            POPDBG_A::POP => true,
-        }
-    }
-}
-#[doc = "Reader of field `POPDBG`"]
-pub type POPDBG_R = crate::R<bool, POPDBG_A>;
-impl POPDBG_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> POPDBG_A {
-        match self.bits {
-            false => POPDBG_A::DO_NOT_POP,
-            true => POPDBG_A::POP,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DO_NOT_POP`"]
-    #[inline(always)]
-    pub fn is_do_not_pop(&self) -> bool {
-        *self == POPDBG_A::DO_NOT_POP
-    }
-    #[doc = "Checks if the value of the field is `POP`"]
-    #[inline(always)]
-    pub fn is_pop(&self) -> bool {
-        *self == POPDBG_A::POP
-    }
-}
-#[doc = "Write proxy for field `POPDBG`"]
-pub struct POPDBG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> POPDBG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: POPDBG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "Debug reads of the FIFO do not pop the FIFO."]
-    #[inline(always)]
-    pub fn do_not_pop(self) -> &'a mut W {
-        self.variant(POPDBG_A::DO_NOT_POP)
-    }
-    #[doc = "A debug read will cause the FIFO to pop."]
-    #[inline(always)]
-    pub fn pop(self) -> &'a mut W {
-        self.variant(POPDBG_A::POP)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-        self.w
-    }
-}
 impl R {
     #[doc = "Bit 0 - Enable the transmit FIFO."]
     #[inline(always)]
@@ -652,11 +574,6 @@ impl R {
     pub fn emptyrx(&self) -> EMPTYRX_R {
         EMPTYRX_R::new(((self.bits >> 17) & 0x01) != 0)
     }
-    #[doc = "Bit 18 - Pop FIFO for debug reads."]
-    #[inline(always)]
-    pub fn popdbg(&self) -> POPDBG_R {
-        POPDBG_R::new(((self.bits >> 18) & 0x01) != 0)
-    }
 }
 impl W {
     #[doc = "Bit 0 - Enable the transmit FIFO."]
@@ -698,10 +615,5 @@ impl W {
     #[inline(always)]
     pub fn emptyrx(&mut self) -> EMPTYRX_W {
         EMPTYRX_W { w: self }
-    }
-    #[doc = "Bit 18 - Pop FIFO for debug reads."]
-    #[inline(always)]
-    pub fn popdbg(&mut self) -> POPDBG_W {
-        POPDBG_W { w: self }
     }
 }

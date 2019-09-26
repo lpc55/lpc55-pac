@@ -52,54 +52,6 @@ impl<'a> SHIFT4X_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `DIS_ENH_ENTR_REFILL`"]
-pub type DIS_ENH_ENTR_REFILL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DIS_ENH_ENTR_REFILL`"]
-pub struct DIS_ENH_ENTR_REFILL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIS_ENH_ENTR_REFILL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-        self.w
-    }
-}
-#[doc = "Reader of field `FORCE_ENTR_SPREADING`"]
-pub type FORCE_ENTR_SPREADING_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FORCE_ENTR_SPREADING`"]
-pub struct FORCE_ENTR_SPREADING_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FORCE_ENTR_SPREADING_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-        self.w
-    }
-}
 impl R {
     #[doc = "Bits 0:1 - 00: disabled 01: update once."]
     #[inline(always)]
@@ -115,16 +67,6 @@ impl R {
     #[inline(always)]
     pub fn shift4x(&self) -> SHIFT4X_R {
         SHIFT4X_R::new(((self.bits >> 5) & 0x07) as u8)
-    }
-    #[doc = "Bit 8 - Disable 'enhanced entropy refill' feature, which is enabled by default when 'mode' > 00."]
-    #[inline(always)]
-    pub fn dis_enh_entr_refill(&self) -> DIS_ENH_ENTR_REFILL_R {
-        DIS_ENH_ENTR_REFILL_R::new(((self.bits >> 8) & 0x01) != 0)
-    }
-    #[doc = "Bit 9 - Forces entropy spreading (interactions between RNGs) even when 'clock_sel'>0."]
-    #[inline(always)]
-    pub fn force_entr_spreading(&self) -> FORCE_ENTR_SPREADING_R {
-        FORCE_ENTR_SPREADING_R::new(((self.bits >> 9) & 0x01) != 0)
     }
 }
 impl W {
@@ -142,15 +84,5 @@ impl W {
     #[inline(always)]
     pub fn shift4x(&mut self) -> SHIFT4X_W {
         SHIFT4X_W { w: self }
-    }
-    #[doc = "Bit 8 - Disable 'enhanced entropy refill' feature, which is enabled by default when 'mode' > 00."]
-    #[inline(always)]
-    pub fn dis_enh_entr_refill(&mut self) -> DIS_ENH_ENTR_REFILL_W {
-        DIS_ENH_ENTR_REFILL_W { w: self }
-    }
-    #[doc = "Bit 9 - Forces entropy spreading (interactions between RNGs) even when 'clock_sel'>0."]
-    #[inline(always)]
-    pub fn force_entr_spreading(&mut self) -> FORCE_ENTR_SPREADING_W {
-        FORCE_ENTR_SPREADING_W { w: self }
     }
 }

@@ -21,14 +21,6 @@ pub enum SEL_A {
     ENUM_0X2,
     #[doc = "Oscillator 32 kHz clock."]
     ENUM_0X3,
-    #[doc = "No clock."]
-    ENUM_0X4,
-    #[doc = "No clock."]
-    ENUM_0X5,
-    #[doc = "No clock."]
-    ENUM_0X6,
-    #[doc = "No clock."]
-    ENUM_0X7,
 }
 impl From<SEL_A> for u8 {
     #[inline(always)]
@@ -38,10 +30,6 @@ impl From<SEL_A> for u8 {
             SEL_A::ENUM_0X1 => 1,
             SEL_A::ENUM_0X2 => 2,
             SEL_A::ENUM_0X3 => 3,
-            SEL_A::ENUM_0X4 => 4,
-            SEL_A::ENUM_0X5 => 5,
-            SEL_A::ENUM_0X6 => 6,
-            SEL_A::ENUM_0X7 => 7,
         }
     }
 }
@@ -50,17 +38,14 @@ pub type SEL_R = crate::R<u8, SEL_A>;
 impl SEL_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SEL_A {
+    pub fn variant(&self) -> crate::Variant<u8, SEL_A> {
+        use crate::Variant::*;
         match self.bits {
-            0 => SEL_A::ENUM_0X0,
-            1 => SEL_A::ENUM_0X1,
-            2 => SEL_A::ENUM_0X2,
-            3 => SEL_A::ENUM_0X3,
-            4 => SEL_A::ENUM_0X4,
-            5 => SEL_A::ENUM_0X5,
-            6 => SEL_A::ENUM_0X6,
-            7 => SEL_A::ENUM_0X7,
-            _ => unreachable!(),
+            0 => Val(SEL_A::ENUM_0X0),
+            1 => Val(SEL_A::ENUM_0X1),
+            2 => Val(SEL_A::ENUM_0X2),
+            3 => Val(SEL_A::ENUM_0X3),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `ENUM_0X0`"]
@@ -83,26 +68,6 @@ impl SEL_R {
     pub fn is_enum_0x3(&self) -> bool {
         *self == SEL_A::ENUM_0X3
     }
-    #[doc = "Checks if the value of the field is `ENUM_0X4`"]
-    #[inline(always)]
-    pub fn is_enum_0x4(&self) -> bool {
-        *self == SEL_A::ENUM_0X4
-    }
-    #[doc = "Checks if the value of the field is `ENUM_0X5`"]
-    #[inline(always)]
-    pub fn is_enum_0x5(&self) -> bool {
-        *self == SEL_A::ENUM_0X5
-    }
-    #[doc = "Checks if the value of the field is `ENUM_0X6`"]
-    #[inline(always)]
-    pub fn is_enum_0x6(&self) -> bool {
-        *self == SEL_A::ENUM_0X6
-    }
-    #[doc = "Checks if the value of the field is `ENUM_0X7`"]
-    #[inline(always)]
-    pub fn is_enum_0x7(&self) -> bool {
-        *self == SEL_A::ENUM_0X7
-    }
 }
 #[doc = "Write proxy for field `SEL`"]
 pub struct SEL_W<'a> {
@@ -112,9 +77,7 @@ impl<'a> SEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Main Clock A."]
     #[inline(always)]
@@ -136,29 +99,9 @@ impl<'a> SEL_W<'a> {
     pub fn enum_0x3(self) -> &'a mut W {
         self.variant(SEL_A::ENUM_0X3)
     }
-    #[doc = "No clock."]
-    #[inline(always)]
-    pub fn enum_0x4(self) -> &'a mut W {
-        self.variant(SEL_A::ENUM_0X4)
-    }
-    #[doc = "No clock."]
-    #[inline(always)]
-    pub fn enum_0x5(self) -> &'a mut W {
-        self.variant(SEL_A::ENUM_0X5)
-    }
-    #[doc = "No clock."]
-    #[inline(always)]
-    pub fn enum_0x6(self) -> &'a mut W {
-        self.variant(SEL_A::ENUM_0X6)
-    }
-    #[doc = "No clock."]
-    #[inline(always)]
-    pub fn enum_0x7(self) -> &'a mut W {
-        self.variant(SEL_A::ENUM_0X7)
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
         self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }

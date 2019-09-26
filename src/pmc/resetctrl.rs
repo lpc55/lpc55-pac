@@ -166,84 +166,6 @@ impl<'a> BODVBATRESETENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BODCORERESETENABLE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BODCORERESETENABLE_A {
-    #[doc = "BOD CORE reset is disable."]
-    DISABLE,
-    #[doc = "BOD CORE reset is enable."]
-    ENABLE,
-}
-impl From<BODCORERESETENABLE_A> for bool {
-    #[inline(always)]
-    fn from(variant: BODCORERESETENABLE_A) -> Self {
-        match variant {
-            BODCORERESETENABLE_A::DISABLE => false,
-            BODCORERESETENABLE_A::ENABLE => true,
-        }
-    }
-}
-#[doc = "Reader of field `BODCORERESETENABLE`"]
-pub type BODCORERESETENABLE_R = crate::R<bool, BODCORERESETENABLE_A>;
-impl BODCORERESETENABLE_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> BODCORERESETENABLE_A {
-        match self.bits {
-            false => BODCORERESETENABLE_A::DISABLE,
-            true => BODCORERESETENABLE_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == BODCORERESETENABLE_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == BODCORERESETENABLE_A::ENABLE
-    }
-}
-#[doc = "Write proxy for field `BODCORERESETENABLE`"]
-pub struct BODCORERESETENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BODCORERESETENABLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BODCORERESETENABLE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "BOD CORE reset is disable."]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(BODCORERESETENABLE_A::DISABLE)
-    }
-    #[doc = "BOD CORE reset is enable."]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(BODCORERESETENABLE_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
-    }
-}
 #[doc = "Possible values of the field `SWRRESETENABLE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWRRESETENABLE_A {
@@ -333,11 +255,6 @@ impl R {
     pub fn bodvbatresetenable(&self) -> BODVBATRESETENABLE_R {
         BODVBATRESETENABLE_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - BOD CORE reset enable."]
-    #[inline(always)]
-    pub fn bodcoreresetenable(&self) -> BODCORERESETENABLE_R {
-        BODCORERESETENABLE_R::new(((self.bits >> 2) & 0x01) != 0)
-    }
     #[doc = "Bit 3 - Software reset enable."]
     #[inline(always)]
     pub fn swrresetenable(&self) -> SWRRESETENABLE_R {
@@ -354,11 +271,6 @@ impl W {
     #[inline(always)]
     pub fn bodvbatresetenable(&mut self) -> BODVBATRESETENABLE_W {
         BODVBATRESETENABLE_W { w: self }
-    }
-    #[doc = "Bit 2 - BOD CORE reset enable."]
-    #[inline(always)]
-    pub fn bodcoreresetenable(&mut self) -> BODCORERESETENABLE_W {
-        BODCORERESETENABLE_W { w: self }
     }
     #[doc = "Bit 3 - Software reset enable."]
     #[inline(always)]

@@ -534,20 +534,6 @@ impl<'a> FILTERCGF_CLKDIV_W<'a> {
         self.w
     }
 }
-#[doc = "Reader of field `PMUXCAPT`"]
-pub type PMUXCAPT_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PMUXCAPT`"]
-pub struct PMUXCAPT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PMUXCAPT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 21)) | (((value as u32) & 0x07) << 21);
-        self.w
-    }
-}
 impl R {
     #[doc = "Bit 1 - Hysteris when hyst = '1'."]
     #[inline(always)]
@@ -588,11 +574,6 @@ impl R {
     #[inline(always)]
     pub fn filtercgf_clkdiv(&self) -> FILTERCGF_CLKDIV_R {
         FILTERCGF_CLKDIV_R::new(((self.bits >> 18) & 0x07) as u8)
-    }
-    #[doc = "Bits 21:23 - Control word for P multiplexer for Capacitive Touch Controller."]
-    #[inline(always)]
-    pub fn pmuxcapt(&self) -> PMUXCAPT_R {
-        PMUXCAPT_R::new(((self.bits >> 21) & 0x07) as u8)
     }
 }
 impl W {
@@ -635,10 +616,5 @@ impl W {
     #[inline(always)]
     pub fn filtercgf_clkdiv(&mut self) -> FILTERCGF_CLKDIV_W {
         FILTERCGF_CLKDIV_W { w: self }
-    }
-    #[doc = "Bits 21:23 - Control word for P multiplexer for Capacitive Touch Controller."]
-    #[inline(always)]
-    pub fn pmuxcapt(&mut self) -> PMUXCAPT_W {
-        PMUXCAPT_W { w: self }
     }
 }

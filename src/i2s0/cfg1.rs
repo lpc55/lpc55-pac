@@ -691,84 +691,6 @@ impl<'a> ONECHANNEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PDMDATA`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PDMDATA_A {
-    #[doc = "Normal operation, data is transferred to or from the Flexcomm FIFO."]
-    NORMAL,
-    #[doc = "The data source is the D-Mic subsystem. When PDMDATA = 1, only the primary channel pair can be used in this Flexcomm. If ONECHANNEL = 1, only the PDM left data is used. the WS rate must match the Fs (sample rate) of the D-Mic decimator. A rate mismatch will at some point cause the I2S to overrun or underrun."]
-    DMIC_SUBSYSTEM,
-}
-impl From<PDMDATA_A> for bool {
-    #[inline(always)]
-    fn from(variant: PDMDATA_A) -> Self {
-        match variant {
-            PDMDATA_A::NORMAL => false,
-            PDMDATA_A::DMIC_SUBSYSTEM => true,
-        }
-    }
-}
-#[doc = "Reader of field `PDMDATA`"]
-pub type PDMDATA_R = crate::R<bool, PDMDATA_A>;
-impl PDMDATA_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> PDMDATA_A {
-        match self.bits {
-            false => PDMDATA_A::NORMAL,
-            true => PDMDATA_A::DMIC_SUBSYSTEM,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
-    #[inline(always)]
-    pub fn is_normal(&self) -> bool {
-        *self == PDMDATA_A::NORMAL
-    }
-    #[doc = "Checks if the value of the field is `DMIC_SUBSYSTEM`"]
-    #[inline(always)]
-    pub fn is_dmic_subsystem(&self) -> bool {
-        *self == PDMDATA_A::DMIC_SUBSYSTEM
-    }
-}
-#[doc = "Write proxy for field `PDMDATA`"]
-pub struct PDMDATA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PDMDATA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PDMDATA_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "Normal operation, data is transferred to or from the Flexcomm FIFO."]
-    #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
-        self.variant(PDMDATA_A::NORMAL)
-    }
-    #[doc = "The data source is the D-Mic subsystem. When PDMDATA = 1, only the primary channel pair can be used in this Flexcomm. If ONECHANNEL = 1, only the PDM left data is used. the WS rate must match the Fs (sample rate) of the D-Mic decimator. A rate mismatch will at some point cause the I2S to overrun or underrun."]
-    #[inline(always)]
-    pub fn dmic_subsystem(self) -> &'a mut W {
-        self.variant(PDMDATA_A::DMIC_SUBSYSTEM)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-        self.w
-    }
-}
 #[doc = "Possible values of the field `SCK_POL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SCK_POL_A {
@@ -980,11 +902,6 @@ impl R {
     pub fn onechannel(&self) -> ONECHANNEL_R {
         ONECHANNEL_R::new(((self.bits >> 10) & 0x01) != 0)
     }
-    #[doc = "Bit 11 - PDM Data selection. This bit controls the data source for I2S transmit, and cannot be set in Rx mode. This bit only has an effect if the device the Flexcomm resides in includes a D-Mic subsystem. For the LPC55xx, this bit applies only to Flexcomm 6,7."]
-    #[inline(always)]
-    pub fn pdmdata(&self) -> PDMDATA_R {
-        PDMDATA_R::new(((self.bits >> 11) & 0x01) != 0)
-    }
     #[doc = "Bit 12 - SCK polarity."]
     #[inline(always)]
     pub fn sck_pol(&self) -> SCK_POL_R {
@@ -1041,11 +958,6 @@ impl W {
     #[inline(always)]
     pub fn onechannel(&mut self) -> ONECHANNEL_W {
         ONECHANNEL_W { w: self }
-    }
-    #[doc = "Bit 11 - PDM Data selection. This bit controls the data source for I2S transmit, and cannot be set in Rx mode. This bit only has an effect if the device the Flexcomm resides in includes a D-Mic subsystem. For the LPC55xx, this bit applies only to Flexcomm 6,7."]
-    #[inline(always)]
-    pub fn pdmdata(&mut self) -> PDMDATA_W {
-        PDMDATA_W { w: self }
     }
     #[doc = "Bit 12 - SCK polarity."]
     #[inline(always)]

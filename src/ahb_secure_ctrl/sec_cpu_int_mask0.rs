@@ -1882,53 +1882,53 @@ impl<'a> RESERVED0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ACMP_CAPT0_IRQ`"]
+#[doc = "Possible values of the field `ACMP_IRQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ACMP_CAPT0_IRQ_A {
+pub enum ACMP_IRQ_A {
     #[doc = "no description available"]
     INVISIBLE,
     #[doc = "no description available"]
     VISIBLE,
 }
-impl From<ACMP_CAPT0_IRQ_A> for bool {
+impl From<ACMP_IRQ_A> for bool {
     #[inline(always)]
-    fn from(variant: ACMP_CAPT0_IRQ_A) -> Self {
+    fn from(variant: ACMP_IRQ_A) -> Self {
         match variant {
-            ACMP_CAPT0_IRQ_A::INVISIBLE => false,
-            ACMP_CAPT0_IRQ_A::VISIBLE => true,
+            ACMP_IRQ_A::INVISIBLE => false,
+            ACMP_IRQ_A::VISIBLE => true,
         }
     }
 }
-#[doc = "Reader of field `ACMP_CAPT0_IRQ`"]
-pub type ACMP_CAPT0_IRQ_R = crate::R<bool, ACMP_CAPT0_IRQ_A>;
-impl ACMP_CAPT0_IRQ_R {
+#[doc = "Reader of field `ACMP_IRQ`"]
+pub type ACMP_IRQ_R = crate::R<bool, ACMP_IRQ_A>;
+impl ACMP_IRQ_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ACMP_CAPT0_IRQ_A {
+    pub fn variant(&self) -> ACMP_IRQ_A {
         match self.bits {
-            false => ACMP_CAPT0_IRQ_A::INVISIBLE,
-            true => ACMP_CAPT0_IRQ_A::VISIBLE,
+            false => ACMP_IRQ_A::INVISIBLE,
+            true => ACMP_IRQ_A::VISIBLE,
         }
     }
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == ACMP_CAPT0_IRQ_A::INVISIBLE
+        *self == ACMP_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == ACMP_CAPT0_IRQ_A::VISIBLE
+        *self == ACMP_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `ACMP_CAPT0_IRQ`"]
-pub struct ACMP_CAPT0_IRQ_W<'a> {
+#[doc = "Write proxy for field `ACMP_IRQ`"]
+pub struct ACMP_IRQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> ACMP_CAPT0_IRQ_W<'a> {
+impl<'a> ACMP_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: ACMP_CAPT0_IRQ_A) -> &'a mut W {
+    pub fn variant(self, variant: ACMP_IRQ_A) -> &'a mut W {
         {
             self.bit(variant.into())
         }
@@ -1936,12 +1936,12 @@ impl<'a> ACMP_CAPT0_IRQ_W<'a> {
     #[doc = "no description available"]
     #[inline(always)]
     pub fn invisible(self) -> &'a mut W {
-        self.variant(ACMP_CAPT0_IRQ_A::INVISIBLE)
+        self.variant(ACMP_IRQ_A::INVISIBLE)
     }
     #[doc = "no description available"]
     #[inline(always)]
     pub fn visible(self) -> &'a mut W {
-        self.variant(ACMP_CAPT0_IRQ_A::VISIBLE)
+        self.variant(ACMP_IRQ_A::VISIBLE)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -2629,8 +2629,8 @@ impl R {
     }
     #[doc = "Bit 24 - Analog Comparator interrupt."]
     #[inline(always)]
-    pub fn acmp_capt0_irq(&self) -> ACMP_CAPT0_IRQ_R {
-        ACMP_CAPT0_IRQ_R::new(((self.bits >> 24) & 0x01) != 0)
+    pub fn acmp_irq(&self) -> ACMP_IRQ_R {
+        ACMP_IRQ_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Reserved. Read value is undefined, only zero should be written."]
     #[inline(always)]
@@ -2647,7 +2647,7 @@ impl R {
     pub fn usb0_needclk(&self) -> USB0_NEEDCLK_R {
         USB0_NEEDCLK_R::new(((self.bits >> 27) & 0x01) != 0)
     }
-    #[doc = "Bit 28 - USB High Speed Controller interrupt."]
+    #[doc = "Bit 28 - USB Full Speed Controller interrupt."]
     #[inline(always)]
     pub fn usb0_irq(&self) -> USB0_IRQ_R {
         USB0_IRQ_R::new(((self.bits >> 28) & 0x01) != 0)
@@ -2791,8 +2791,8 @@ impl W {
     }
     #[doc = "Bit 24 - Analog Comparator interrupt."]
     #[inline(always)]
-    pub fn acmp_capt0_irq(&mut self) -> ACMP_CAPT0_IRQ_W {
-        ACMP_CAPT0_IRQ_W { w: self }
+    pub fn acmp_irq(&mut self) -> ACMP_IRQ_W {
+        ACMP_IRQ_W { w: self }
     }
     #[doc = "Bit 25 - Reserved. Read value is undefined, only zero should be written."]
     #[inline(always)]
@@ -2809,7 +2809,7 @@ impl W {
     pub fn usb0_needclk(&mut self) -> USB0_NEEDCLK_W {
         USB0_NEEDCLK_W { w: self }
     }
-    #[doc = "Bit 28 - USB High Speed Controller interrupt."]
+    #[doc = "Bit 28 - USB Full Speed Controller interrupt."]
     #[inline(always)]
     pub fn usb0_irq(&mut self) -> USB0_IRQ_W {
         USB0_IRQ_W { w: self }

@@ -10,9 +10,9 @@ impl crate::ResetValue for super::SEC_CTRL_RAM1_SLAVE_RULE {
         0
     }
 }
-#[doc = "Possible values of the field `RAM0_RULE`"]
+#[doc = "Possible values of the field `RAM1_RULE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RAM0_RULE_A {
+pub enum RAM1_RULE_A {
     #[doc = "Non-secure and Non-priviledge user access allowed."]
     ENUM_NS_NP,
     #[doc = "Non-secure and Privilege access allowed."]
@@ -22,60 +22,60 @@ pub enum RAM0_RULE_A {
     #[doc = "Secure and Priviledge user access allowed."]
     ENUM_S_P,
 }
-impl From<RAM0_RULE_A> for u8 {
+impl From<RAM1_RULE_A> for u8 {
     #[inline(always)]
-    fn from(variant: RAM0_RULE_A) -> Self {
+    fn from(variant: RAM1_RULE_A) -> Self {
         match variant {
-            RAM0_RULE_A::ENUM_NS_NP => 0,
-            RAM0_RULE_A::ENUM_NS_P => 1,
-            RAM0_RULE_A::ENUM_S_NP => 2,
-            RAM0_RULE_A::ENUM_S_P => 3,
+            RAM1_RULE_A::ENUM_NS_NP => 0,
+            RAM1_RULE_A::ENUM_NS_P => 1,
+            RAM1_RULE_A::ENUM_S_NP => 2,
+            RAM1_RULE_A::ENUM_S_P => 3,
         }
     }
 }
-#[doc = "Reader of field `RAM0_RULE`"]
-pub type RAM0_RULE_R = crate::R<u8, RAM0_RULE_A>;
-impl RAM0_RULE_R {
+#[doc = "Reader of field `RAM1_RULE`"]
+pub type RAM1_RULE_R = crate::R<u8, RAM1_RULE_A>;
+impl RAM1_RULE_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RAM0_RULE_A {
+    pub fn variant(&self) -> RAM1_RULE_A {
         match self.bits {
-            0 => RAM0_RULE_A::ENUM_NS_NP,
-            1 => RAM0_RULE_A::ENUM_NS_P,
-            2 => RAM0_RULE_A::ENUM_S_NP,
-            3 => RAM0_RULE_A::ENUM_S_P,
+            0 => RAM1_RULE_A::ENUM_NS_NP,
+            1 => RAM1_RULE_A::ENUM_NS_P,
+            2 => RAM1_RULE_A::ENUM_S_NP,
+            3 => RAM1_RULE_A::ENUM_S_P,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == RAM0_RULE_A::ENUM_NS_NP
+        *self == RAM1_RULE_A::ENUM_NS_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == RAM0_RULE_A::ENUM_NS_P
+        *self == RAM1_RULE_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == RAM0_RULE_A::ENUM_S_NP
+        *self == RAM1_RULE_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == RAM0_RULE_A::ENUM_S_P
+        *self == RAM1_RULE_A::ENUM_S_P
     }
 }
-#[doc = "Write proxy for field `RAM0_RULE`"]
-pub struct RAM0_RULE_W<'a> {
+#[doc = "Write proxy for field `RAM1_RULE`"]
+pub struct RAM1_RULE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> RAM0_RULE_W<'a> {
+impl<'a> RAM1_RULE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: RAM0_RULE_A) -> &'a mut W {
+    pub fn variant(self, variant: RAM1_RULE_A) -> &'a mut W {
         {
             self.bits(variant.into())
         }
@@ -83,22 +83,22 @@ impl<'a> RAM0_RULE_W<'a> {
     #[doc = "Non-secure and Non-priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_ns_np(self) -> &'a mut W {
-        self.variant(RAM0_RULE_A::ENUM_NS_NP)
+        self.variant(RAM1_RULE_A::ENUM_NS_NP)
     }
     #[doc = "Non-secure and Privilege access allowed."]
     #[inline(always)]
     pub fn enum_ns_p(self) -> &'a mut W {
-        self.variant(RAM0_RULE_A::ENUM_NS_P)
+        self.variant(RAM1_RULE_A::ENUM_NS_P)
     }
     #[doc = "Secure and Non-priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_s_np(self) -> &'a mut W {
-        self.variant(RAM0_RULE_A::ENUM_S_NP)
+        self.variant(RAM1_RULE_A::ENUM_S_NP)
     }
     #[doc = "Secure and Priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_s_p(self) -> &'a mut W {
-        self.variant(RAM0_RULE_A::ENUM_S_P)
+        self.variant(RAM1_RULE_A::ENUM_S_P)
     }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
@@ -110,14 +110,14 @@ impl<'a> RAM0_RULE_W<'a> {
 impl R {
     #[doc = "Bits 0:1 - Security access rules for the whole RAM1 : 0x2001_0000 - 0x2001_FFFF\" name=\"0"]
     #[inline(always)]
-    pub fn ram0_rule(&self) -> RAM0_RULE_R {
-        RAM0_RULE_R::new((self.bits & 0x03) as u8)
+    pub fn ram1_rule(&self) -> RAM1_RULE_R {
+        RAM1_RULE_R::new((self.bits & 0x03) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Security access rules for the whole RAM1 : 0x2001_0000 - 0x2001_FFFF\" name=\"0"]
     #[inline(always)]
-    pub fn ram0_rule(&mut self) -> RAM0_RULE_W {
-        RAM0_RULE_W { w: self }
+    pub fn ram1_rule(&mut self) -> RAM1_RULE_W {
+        RAM1_RULE_W { w: self }
     }
 }

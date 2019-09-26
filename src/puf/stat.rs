@@ -35,7 +35,7 @@ impl R {
     pub fn success(&self) -> SUCCESS_R {
         SUCCESS_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - Quiddikey is in the Error state and no operations can be performed"]
+    #[doc = "Bit 2 - PUF is in the Error state and no operations can be performed"]
     #[inline(always)]
     pub fn error(&self) -> ERROR_R {
         ERROR_R::new(((self.bits >> 2) & 0x01) != 0)

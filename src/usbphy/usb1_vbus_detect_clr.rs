@@ -497,6 +497,210 @@ impl<'a> VBUS_SOURCE_SEL_W<'a> {
         self.w
     }
 }
+#[doc = "Reader of field `ID_OVERRIDE_EN`"]
+pub type ID_OVERRIDE_EN_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ID_OVERRIDE_EN`"]
+pub struct ID_OVERRIDE_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ID_OVERRIDE_EN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w
+    }
+}
+#[doc = "Reader of field `ID_OVERRIDE`"]
+pub type ID_OVERRIDE_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ID_OVERRIDE`"]
+pub struct ID_OVERRIDE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> ID_OVERRIDE_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w
+    }
+}
+#[doc = "Possible values of the field `EXT_ID_OVERRIDE_EN`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EXT_ID_OVERRIDE_EN_A {
+    #[doc = "Select the Muxed value chosen using ID_OVERRIDE_EN."]
+    VALUE0,
+    #[doc = "Select the external ID value."]
+    VALUE1,
+}
+impl From<EXT_ID_OVERRIDE_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: EXT_ID_OVERRIDE_EN_A) -> Self {
+        match variant {
+            EXT_ID_OVERRIDE_EN_A::VALUE0 => false,
+            EXT_ID_OVERRIDE_EN_A::VALUE1 => true,
+        }
+    }
+}
+#[doc = "Reader of field `EXT_ID_OVERRIDE_EN`"]
+pub type EXT_ID_OVERRIDE_EN_R = crate::R<bool, EXT_ID_OVERRIDE_EN_A>;
+impl EXT_ID_OVERRIDE_EN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EXT_ID_OVERRIDE_EN_A {
+        match self.bits {
+            false => EXT_ID_OVERRIDE_EN_A::VALUE0,
+            true => EXT_ID_OVERRIDE_EN_A::VALUE1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE0`"]
+    #[inline(always)]
+    pub fn is_value0(&self) -> bool {
+        *self == EXT_ID_OVERRIDE_EN_A::VALUE0
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EXT_ID_OVERRIDE_EN_A::VALUE1
+    }
+}
+#[doc = "Write proxy for field `EXT_ID_OVERRIDE_EN`"]
+pub struct EXT_ID_OVERRIDE_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EXT_ID_OVERRIDE_EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EXT_ID_OVERRIDE_EN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Select the Muxed value chosen using ID_OVERRIDE_EN."]
+    #[inline(always)]
+    pub fn value0(self) -> &'a mut W {
+        self.variant(EXT_ID_OVERRIDE_EN_A::VALUE0)
+    }
+    #[doc = "Select the external ID value."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(EXT_ID_OVERRIDE_EN_A::VALUE1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w
+    }
+}
+#[doc = "Possible values of the field `EXT_VBUS_OVERRIDE_EN`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EXT_VBUS_OVERRIDE_EN_A {
+    #[doc = "Select the muxed value chosen using VBUS_OVERRIDE_EN."]
+    VALUE0,
+    #[doc = "Select the external VBUS VALID value."]
+    VALUE1,
+}
+impl From<EXT_VBUS_OVERRIDE_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: EXT_VBUS_OVERRIDE_EN_A) -> Self {
+        match variant {
+            EXT_VBUS_OVERRIDE_EN_A::VALUE0 => false,
+            EXT_VBUS_OVERRIDE_EN_A::VALUE1 => true,
+        }
+    }
+}
+#[doc = "Reader of field `EXT_VBUS_OVERRIDE_EN`"]
+pub type EXT_VBUS_OVERRIDE_EN_R = crate::R<bool, EXT_VBUS_OVERRIDE_EN_A>;
+impl EXT_VBUS_OVERRIDE_EN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EXT_VBUS_OVERRIDE_EN_A {
+        match self.bits {
+            false => EXT_VBUS_OVERRIDE_EN_A::VALUE0,
+            true => EXT_VBUS_OVERRIDE_EN_A::VALUE1,
+        }
+    }
+    #[doc = "Checks if the value of the field is `VALUE0`"]
+    #[inline(always)]
+    pub fn is_value0(&self) -> bool {
+        *self == EXT_VBUS_OVERRIDE_EN_A::VALUE0
+    }
+    #[doc = "Checks if the value of the field is `VALUE1`"]
+    #[inline(always)]
+    pub fn is_value1(&self) -> bool {
+        *self == EXT_VBUS_OVERRIDE_EN_A::VALUE1
+    }
+}
+#[doc = "Write proxy for field `EXT_VBUS_OVERRIDE_EN`"]
+pub struct EXT_VBUS_OVERRIDE_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> EXT_VBUS_OVERRIDE_EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EXT_VBUS_OVERRIDE_EN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "Select the muxed value chosen using VBUS_OVERRIDE_EN."]
+    #[inline(always)]
+    pub fn value0(self) -> &'a mut W {
+        self.variant(EXT_VBUS_OVERRIDE_EN_A::VALUE0)
+    }
+    #[doc = "Select the external VBUS VALID value."]
+    #[inline(always)]
+    pub fn value1(self) -> &'a mut W {
+        self.variant(EXT_VBUS_OVERRIDE_EN_A::VALUE1)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w
+    }
+}
 #[doc = "Possible values of the field `VBUSVALID_TO_SESSVALID`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VBUSVALID_TO_SESSVALID_A {
@@ -575,6 +779,30 @@ impl<'a> VBUSVALID_TO_SESSVALID_W<'a> {
         self.w
     }
 }
+#[doc = "Reader of field `VBUSVALID_5VDETECT`"]
+pub type VBUSVALID_5VDETECT_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `VBUSVALID_5VDETECT`"]
+pub struct VBUSVALID_5VDETECT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> VBUSVALID_5VDETECT_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w
+    }
+}
 #[doc = "Possible values of the field `PWRUP_CMPS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWRUP_CMPS_A {
@@ -583,24 +811,26 @@ pub enum PWRUP_CMPS_A {
     #[doc = "Enables the VBUS_VALID comparator (default)"]
     VALUE1,
 }
-impl From<PWRUP_CMPS_A> for bool {
+impl From<PWRUP_CMPS_A> for u8 {
     #[inline(always)]
     fn from(variant: PWRUP_CMPS_A) -> Self {
         match variant {
-            PWRUP_CMPS_A::VALUE0 => false,
-            PWRUP_CMPS_A::VALUE1 => true,
+            PWRUP_CMPS_A::VALUE0 => 0,
+            PWRUP_CMPS_A::VALUE1 => 7,
         }
     }
 }
 #[doc = "Reader of field `PWRUP_CMPS`"]
-pub type PWRUP_CMPS_R = crate::R<bool, PWRUP_CMPS_A>;
+pub type PWRUP_CMPS_R = crate::R<u8, PWRUP_CMPS_A>;
 impl PWRUP_CMPS_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PWRUP_CMPS_A {
+    pub fn variant(&self) -> crate::Variant<u8, PWRUP_CMPS_A> {
+        use crate::Variant::*;
         match self.bits {
-            false => PWRUP_CMPS_A::VALUE0,
-            true => PWRUP_CMPS_A::VALUE1,
+            0 => Val(PWRUP_CMPS_A::VALUE0),
+            7 => Val(PWRUP_CMPS_A::VALUE1),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `VALUE0`"]
@@ -622,9 +852,7 @@ impl<'a> PWRUP_CMPS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PWRUP_CMPS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Powers down the VBUS_VALID comparator"]
     #[inline(always)]
@@ -636,20 +864,10 @@ impl<'a> PWRUP_CMPS_W<'a> {
     pub fn value1(self) -> &'a mut W {
         self.variant(PWRUP_CMPS_A::VALUE1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
         self.w
     }
 }
@@ -731,84 +949,6 @@ impl<'a> DISCHARGE_VBUS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EN_CHARGER_RESISTOR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EN_CHARGER_RESISTOR_A {
-    #[doc = "Disable resistive charger detection resistors on USB_DP and USB_DP"]
-    VALUE0,
-    #[doc = "Enable resistive charger detection resistors on USB_DP and USB_DP"]
-    VALUE1,
-}
-impl From<EN_CHARGER_RESISTOR_A> for bool {
-    #[inline(always)]
-    fn from(variant: EN_CHARGER_RESISTOR_A) -> Self {
-        match variant {
-            EN_CHARGER_RESISTOR_A::VALUE0 => false,
-            EN_CHARGER_RESISTOR_A::VALUE1 => true,
-        }
-    }
-}
-#[doc = "Reader of field `EN_CHARGER_RESISTOR`"]
-pub type EN_CHARGER_RESISTOR_R = crate::R<bool, EN_CHARGER_RESISTOR_A>;
-impl EN_CHARGER_RESISTOR_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> EN_CHARGER_RESISTOR_A {
-        match self.bits {
-            false => EN_CHARGER_RESISTOR_A::VALUE0,
-            true => EN_CHARGER_RESISTOR_A::VALUE1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `VALUE0`"]
-    #[inline(always)]
-    pub fn is_value0(&self) -> bool {
-        *self == EN_CHARGER_RESISTOR_A::VALUE0
-    }
-    #[doc = "Checks if the value of the field is `VALUE1`"]
-    #[inline(always)]
-    pub fn is_value1(&self) -> bool {
-        *self == EN_CHARGER_RESISTOR_A::VALUE1
-    }
-}
-#[doc = "Write proxy for field `EN_CHARGER_RESISTOR`"]
-pub struct EN_CHARGER_RESISTOR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EN_CHARGER_RESISTOR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EN_CHARGER_RESISTOR_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "Disable resistive charger detection resistors on USB_DP and USB_DP"]
-    #[inline(always)]
-    pub fn value0(self) -> &'a mut W {
-        self.variant(EN_CHARGER_RESISTOR_A::VALUE0)
-    }
-    #[doc = "Enable resistive charger detection resistors on USB_DP and USB_DP"]
-    #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(EN_CHARGER_RESISTOR_A::VALUE1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
 impl R {
     #[doc = "Bits 0:2 - Sets the threshold for the VBUSVALID comparator"]
     #[inline(always)]
@@ -850,25 +990,45 @@ impl R {
     pub fn vbus_source_sel(&self) -> VBUS_SOURCE_SEL_R {
         VBUS_SOURCE_SEL_R::new(((self.bits >> 9) & 0x03) as u8)
     }
+    #[doc = "Bit 11 - Enable ID override using the register field. This bit is only used if EXT_ID_OVERRIDE_EN = 1'b0."]
+    #[inline(always)]
+    pub fn id_override_en(&self) -> ID_OVERRIDE_EN_R {
+        ID_OVERRIDE_EN_R::new(((self.bits >> 11) & 0x01) != 0)
+    }
+    #[doc = "Bit 12 - ID override value."]
+    #[inline(always)]
+    pub fn id_override(&self) -> ID_OVERRIDE_R {
+        ID_OVERRIDE_R::new(((self.bits >> 12) & 0x01) != 0)
+    }
+    #[doc = "Bit 13 - Enable ID override using the pinmuxed value:"]
+    #[inline(always)]
+    pub fn ext_id_override_en(&self) -> EXT_ID_OVERRIDE_EN_R {
+        EXT_ID_OVERRIDE_EN_R::new(((self.bits >> 13) & 0x01) != 0)
+    }
+    #[doc = "Bit 14 - Enable VBUS override using the pin muxed value."]
+    #[inline(always)]
+    pub fn ext_vbus_override_en(&self) -> EXT_VBUS_OVERRIDE_EN_R {
+        EXT_VBUS_OVERRIDE_EN_R::new(((self.bits >> 14) & 0x01) != 0)
+    }
     #[doc = "Bit 18 - Selects the comparator used for VBUS_VALID This bit field controls the comparator used to report the VBUS_VALID results in USB1_VBUS_DETECT\\[3\\] between the VBUS_VALID comparator and the Session Valid comparator"]
     #[inline(always)]
     pub fn vbusvalid_to_sessvalid(&self) -> VBUSVALID_TO_SESSVALID_R {
         VBUSVALID_TO_SESSVALID_R::new(((self.bits >> 18) & 0x01) != 0)
     }
-    #[doc = "Bit 20 - Enables the VBUS_VALID comparator Powers up the comparator used for the VBUS_VALID detector"]
+    #[doc = "Bit 19 - no description available"]
+    #[inline(always)]
+    pub fn vbusvalid_5vdetect(&self) -> VBUSVALID_5VDETECT_R {
+        VBUSVALID_5VDETECT_R::new(((self.bits >> 19) & 0x01) != 0)
+    }
+    #[doc = "Bits 20:22 - Enables the VBUS_VALID comparator: Powers up the comparator used for the VBUS_VALID detector"]
     #[inline(always)]
     pub fn pwrup_cmps(&self) -> PWRUP_CMPS_R {
-        PWRUP_CMPS_R::new(((self.bits >> 20) & 0x01) != 0)
+        PWRUP_CMPS_R::new(((self.bits >> 20) & 0x07) as u8)
     }
     #[doc = "Bit 26 - Controls VBUS discharge resistor This bit field controls a nominal 22kohm resistor between the USB1_VBUS pin and ground"]
     #[inline(always)]
     pub fn discharge_vbus(&self) -> DISCHARGE_VBUS_R {
         DISCHARGE_VBUS_R::new(((self.bits >> 26) & 0x01) != 0)
-    }
-    #[doc = "Bit 31 - Enables resistors used for an older method of resistive battery charger detection"]
-    #[inline(always)]
-    pub fn en_charger_resistor(&self) -> EN_CHARGER_RESISTOR_R {
-        EN_CHARGER_RESISTOR_R::new(((self.bits >> 31) & 0x01) != 0)
     }
 }
 impl W {
@@ -912,12 +1072,37 @@ impl W {
     pub fn vbus_source_sel(&mut self) -> VBUS_SOURCE_SEL_W {
         VBUS_SOURCE_SEL_W { w: self }
     }
+    #[doc = "Bit 11 - Enable ID override using the register field. This bit is only used if EXT_ID_OVERRIDE_EN = 1'b0."]
+    #[inline(always)]
+    pub fn id_override_en(&mut self) -> ID_OVERRIDE_EN_W {
+        ID_OVERRIDE_EN_W { w: self }
+    }
+    #[doc = "Bit 12 - ID override value."]
+    #[inline(always)]
+    pub fn id_override(&mut self) -> ID_OVERRIDE_W {
+        ID_OVERRIDE_W { w: self }
+    }
+    #[doc = "Bit 13 - Enable ID override using the pinmuxed value:"]
+    #[inline(always)]
+    pub fn ext_id_override_en(&mut self) -> EXT_ID_OVERRIDE_EN_W {
+        EXT_ID_OVERRIDE_EN_W { w: self }
+    }
+    #[doc = "Bit 14 - Enable VBUS override using the pin muxed value."]
+    #[inline(always)]
+    pub fn ext_vbus_override_en(&mut self) -> EXT_VBUS_OVERRIDE_EN_W {
+        EXT_VBUS_OVERRIDE_EN_W { w: self }
+    }
     #[doc = "Bit 18 - Selects the comparator used for VBUS_VALID This bit field controls the comparator used to report the VBUS_VALID results in USB1_VBUS_DETECT\\[3\\] between the VBUS_VALID comparator and the Session Valid comparator"]
     #[inline(always)]
     pub fn vbusvalid_to_sessvalid(&mut self) -> VBUSVALID_TO_SESSVALID_W {
         VBUSVALID_TO_SESSVALID_W { w: self }
     }
-    #[doc = "Bit 20 - Enables the VBUS_VALID comparator Powers up the comparator used for the VBUS_VALID detector"]
+    #[doc = "Bit 19 - no description available"]
+    #[inline(always)]
+    pub fn vbusvalid_5vdetect(&mut self) -> VBUSVALID_5VDETECT_W {
+        VBUSVALID_5VDETECT_W { w: self }
+    }
+    #[doc = "Bits 20:22 - Enables the VBUS_VALID comparator: Powers up the comparator used for the VBUS_VALID detector"]
     #[inline(always)]
     pub fn pwrup_cmps(&mut self) -> PWRUP_CMPS_W {
         PWRUP_CMPS_W { w: self }
@@ -926,10 +1111,5 @@ impl W {
     #[inline(always)]
     pub fn discharge_vbus(&mut self) -> DISCHARGE_VBUS_W {
         DISCHARGE_VBUS_W { w: self }
-    }
-    #[doc = "Bit 31 - Enables resistors used for an older method of resistive battery charger detection"]
-    #[inline(always)]
-    pub fn en_charger_resistor(&mut self) -> EN_CHARGER_RESISTOR_W {
-        EN_CHARGER_RESISTOR_W { w: self }
     }
 }

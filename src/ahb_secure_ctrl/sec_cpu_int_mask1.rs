@@ -1102,53 +1102,53 @@ impl<'a> RESERVED5_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `USB1_UTMI_IRQ`"]
+#[doc = "Possible values of the field `USB1_PHY_IRQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum USB1_UTMI_IRQ_A {
+pub enum USB1_PHY_IRQ_A {
     #[doc = "no description available"]
     INVISIBLE,
     #[doc = "no description available"]
     VISIBLE,
 }
-impl From<USB1_UTMI_IRQ_A> for bool {
+impl From<USB1_PHY_IRQ_A> for bool {
     #[inline(always)]
-    fn from(variant: USB1_UTMI_IRQ_A) -> Self {
+    fn from(variant: USB1_PHY_IRQ_A) -> Self {
         match variant {
-            USB1_UTMI_IRQ_A::INVISIBLE => false,
-            USB1_UTMI_IRQ_A::VISIBLE => true,
+            USB1_PHY_IRQ_A::INVISIBLE => false,
+            USB1_PHY_IRQ_A::VISIBLE => true,
         }
     }
 }
-#[doc = "Reader of field `USB1_UTMI_IRQ`"]
-pub type USB1_UTMI_IRQ_R = crate::R<bool, USB1_UTMI_IRQ_A>;
-impl USB1_UTMI_IRQ_R {
+#[doc = "Reader of field `USB1_PHY_IRQ`"]
+pub type USB1_PHY_IRQ_R = crate::R<bool, USB1_PHY_IRQ_A>;
+impl USB1_PHY_IRQ_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> USB1_UTMI_IRQ_A {
+    pub fn variant(&self) -> USB1_PHY_IRQ_A {
         match self.bits {
-            false => USB1_UTMI_IRQ_A::INVISIBLE,
-            true => USB1_UTMI_IRQ_A::VISIBLE,
+            false => USB1_PHY_IRQ_A::INVISIBLE,
+            true => USB1_PHY_IRQ_A::VISIBLE,
         }
     }
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == USB1_UTMI_IRQ_A::INVISIBLE
+        *self == USB1_PHY_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == USB1_UTMI_IRQ_A::VISIBLE
+        *self == USB1_PHY_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `USB1_UTMI_IRQ`"]
-pub struct USB1_UTMI_IRQ_W<'a> {
+#[doc = "Write proxy for field `USB1_PHY_IRQ`"]
+pub struct USB1_PHY_IRQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> USB1_UTMI_IRQ_W<'a> {
+impl<'a> USB1_PHY_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: USB1_UTMI_IRQ_A) -> &'a mut W {
+    pub fn variant(self, variant: USB1_PHY_IRQ_A) -> &'a mut W {
         {
             self.bit(variant.into())
         }
@@ -1156,12 +1156,12 @@ impl<'a> USB1_UTMI_IRQ_W<'a> {
     #[doc = "no description available"]
     #[inline(always)]
     pub fn invisible(self) -> &'a mut W {
-        self.variant(USB1_UTMI_IRQ_A::INVISIBLE)
+        self.variant(USB1_PHY_IRQ_A::INVISIBLE)
     }
     #[doc = "no description available"]
     #[inline(always)]
     pub fn visible(self) -> &'a mut W {
-        self.variant(USB1_UTMI_IRQ_A::VISIBLE)
+        self.variant(USB1_PHY_IRQ_A::VISIBLE)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -1882,53 +1882,53 @@ impl<'a> CASPER_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `QDDKEY_IRQ`"]
+#[doc = "Possible values of the field `PUFKEY_IRQ`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum QDDKEY_IRQ_A {
+pub enum PUFKEY_IRQ_A {
     #[doc = "no description available"]
     INVISIBLE,
     #[doc = "no description available"]
     VISIBLE,
 }
-impl From<QDDKEY_IRQ_A> for bool {
+impl From<PUFKEY_IRQ_A> for bool {
     #[inline(always)]
-    fn from(variant: QDDKEY_IRQ_A) -> Self {
+    fn from(variant: PUFKEY_IRQ_A) -> Self {
         match variant {
-            QDDKEY_IRQ_A::INVISIBLE => false,
-            QDDKEY_IRQ_A::VISIBLE => true,
+            PUFKEY_IRQ_A::INVISIBLE => false,
+            PUFKEY_IRQ_A::VISIBLE => true,
         }
     }
 }
-#[doc = "Reader of field `QDDKEY_IRQ`"]
-pub type QDDKEY_IRQ_R = crate::R<bool, QDDKEY_IRQ_A>;
-impl QDDKEY_IRQ_R {
+#[doc = "Reader of field `PUFKEY_IRQ`"]
+pub type PUFKEY_IRQ_R = crate::R<bool, PUFKEY_IRQ_A>;
+impl PUFKEY_IRQ_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> QDDKEY_IRQ_A {
+    pub fn variant(&self) -> PUFKEY_IRQ_A {
         match self.bits {
-            false => QDDKEY_IRQ_A::INVISIBLE,
-            true => QDDKEY_IRQ_A::VISIBLE,
+            false => PUFKEY_IRQ_A::INVISIBLE,
+            true => PUFKEY_IRQ_A::VISIBLE,
         }
     }
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == QDDKEY_IRQ_A::INVISIBLE
+        *self == PUFKEY_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == QDDKEY_IRQ_A::VISIBLE
+        *self == PUFKEY_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `QDDKEY_IRQ`"]
-pub struct QDDKEY_IRQ_W<'a> {
+#[doc = "Write proxy for field `PUFKEY_IRQ`"]
+pub struct PUFKEY_IRQ_W<'a> {
     w: &'a mut W,
 }
-impl<'a> QDDKEY_IRQ_W<'a> {
+impl<'a> PUFKEY_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: QDDKEY_IRQ_A) -> &'a mut W {
+    pub fn variant(self, variant: PUFKEY_IRQ_A) -> &'a mut W {
         {
             self.bit(variant.into())
         }
@@ -1936,12 +1936,12 @@ impl<'a> QDDKEY_IRQ_W<'a> {
     #[doc = "no description available"]
     #[inline(always)]
     pub fn invisible(self) -> &'a mut W {
-        self.variant(QDDKEY_IRQ_A::INVISIBLE)
+        self.variant(PUFKEY_IRQ_A::INVISIBLE)
     }
     #[doc = "no description available"]
     #[inline(always)]
     pub fn visible(self) -> &'a mut W {
-        self.variant(QDDKEY_IRQ_A::VISIBLE)
+        self.variant(PUFKEY_IRQ_A::VISIBLE)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -2265,10 +2265,10 @@ impl R {
     pub fn reserved5(&self) -> RESERVED5_R {
         RESERVED5_R::new(((self.bits >> 13) & 0x01) != 0)
     }
-    #[doc = "Bit 14 - USB High Speed Controller UTMI interrupt."]
+    #[doc = "Bit 14 - USB High Speed PHY Controller interrupt."]
     #[inline(always)]
-    pub fn usb1_utmi_irq(&self) -> USB1_UTMI_IRQ_R {
-        USB1_UTMI_IRQ_R::new(((self.bits >> 14) & 0x01) != 0)
+    pub fn usb1_phy_irq(&self) -> USB1_PHY_IRQ_R {
+        USB1_PHY_IRQ_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - USB High Speed Controller interrupt."]
     #[inline(always)]
@@ -2317,8 +2317,8 @@ impl R {
     }
     #[doc = "Bit 24 - PUF interrupt."]
     #[inline(always)]
-    pub fn qddkey_irq(&self) -> QDDKEY_IRQ_R {
-        QDDKEY_IRQ_R::new(((self.bits >> 24) & 0x01) != 0)
+    pub fn pufkey_irq(&self) -> PUFKEY_IRQ_R {
+        PUFKEY_IRQ_R::new(((self.bits >> 24) & 0x01) != 0)
     }
     #[doc = "Bit 25 - Power Quad interrupt."]
     #[inline(always)]
@@ -2407,10 +2407,10 @@ impl W {
     pub fn reserved5(&mut self) -> RESERVED5_W {
         RESERVED5_W { w: self }
     }
-    #[doc = "Bit 14 - USB High Speed Controller UTMI interrupt."]
+    #[doc = "Bit 14 - USB High Speed PHY Controller interrupt."]
     #[inline(always)]
-    pub fn usb1_utmi_irq(&mut self) -> USB1_UTMI_IRQ_W {
-        USB1_UTMI_IRQ_W { w: self }
+    pub fn usb1_phy_irq(&mut self) -> USB1_PHY_IRQ_W {
+        USB1_PHY_IRQ_W { w: self }
     }
     #[doc = "Bit 15 - USB High Speed Controller interrupt."]
     #[inline(always)]
@@ -2459,8 +2459,8 @@ impl W {
     }
     #[doc = "Bit 24 - PUF interrupt."]
     #[inline(always)]
-    pub fn qddkey_irq(&mut self) -> QDDKEY_IRQ_W {
-        QDDKEY_IRQ_W { w: self }
+    pub fn pufkey_irq(&mut self) -> PUFKEY_IRQ_W {
+        PUFKEY_IRQ_W { w: self }
     }
     #[doc = "Bit 25 - Power Quad interrupt."]
     #[inline(always)]

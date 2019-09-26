@@ -19,16 +19,10 @@ pub enum MODE_A {
     SHA1,
     #[doc = "SHA2-256 is enabled"]
     SHA2_256,
-    #[doc = "SHA2-512 is enabled (if available)"]
-    SHA2_512,
     #[doc = "AES if available (see also CRYPTCFG register for more controls)"]
     AES,
     #[doc = "ICB-AES if available (see also CRYPTCFG register for more controls)"]
     ICB_AES,
-    #[doc = "Salsa20/20 if available (including XSalsa - see also CRYPTCFG register)"]
-    SALSA20,
-    #[doc = "ChaCha20 if available (see also CRYPTCFG register for more controls)"]
-    CHACHA20,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
@@ -37,11 +31,8 @@ impl From<MODE_A> for u8 {
             MODE_A::DISABLED => 0,
             MODE_A::SHA1 => 1,
             MODE_A::SHA2_256 => 2,
-            MODE_A::SHA2_512 => 3,
             MODE_A::AES => 4,
             MODE_A::ICB_AES => 5,
-            MODE_A::SALSA20 => 6,
-            MODE_A::CHACHA20 => 7,
         }
     }
 }
@@ -50,17 +41,15 @@ pub type MODE_R = crate::R<u8, MODE_A>;
 impl MODE_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MODE_A {
+    pub fn variant(&self) -> crate::Variant<u8, MODE_A> {
+        use crate::Variant::*;
         match self.bits {
-            0 => MODE_A::DISABLED,
-            1 => MODE_A::SHA1,
-            2 => MODE_A::SHA2_256,
-            3 => MODE_A::SHA2_512,
-            4 => MODE_A::AES,
-            5 => MODE_A::ICB_AES,
-            6 => MODE_A::SALSA20,
-            7 => MODE_A::CHACHA20,
-            _ => unreachable!(),
+            0 => Val(MODE_A::DISABLED),
+            1 => Val(MODE_A::SHA1),
+            2 => Val(MODE_A::SHA2_256),
+            4 => Val(MODE_A::AES),
+            5 => Val(MODE_A::ICB_AES),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
@@ -78,11 +67,6 @@ impl MODE_R {
     pub fn is_sha2_256(&self) -> bool {
         *self == MODE_A::SHA2_256
     }
-    #[doc = "Checks if the value of the field is `SHA2_512`"]
-    #[inline(always)]
-    pub fn is_sha2_512(&self) -> bool {
-        *self == MODE_A::SHA2_512
-    }
     #[doc = "Checks if the value of the field is `AES`"]
     #[inline(always)]
     pub fn is_aes(&self) -> bool {
@@ -93,16 +77,6 @@ impl MODE_R {
     pub fn is_icb_aes(&self) -> bool {
         *self == MODE_A::ICB_AES
     }
-    #[doc = "Checks if the value of the field is `SALSA20`"]
-    #[inline(always)]
-    pub fn is_salsa20(&self) -> bool {
-        *self == MODE_A::SALSA20
-    }
-    #[doc = "Checks if the value of the field is `CHACHA20`"]
-    #[inline(always)]
-    pub fn is_chacha20(&self) -> bool {
-        *self == MODE_A::CHACHA20
-    }
 }
 #[doc = "Write proxy for field `Mode`"]
 pub struct MODE_W<'a> {
@@ -112,9 +86,7 @@ impl<'a> MODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Disabled"]
     #[inline(always)]
@@ -131,11 +103,6 @@ impl<'a> MODE_W<'a> {
     pub fn sha2_256(self) -> &'a mut W {
         self.variant(MODE_A::SHA2_256)
     }
-    #[doc = "SHA2-512 is enabled (if available)"]
-    #[inline(always)]
-    pub fn sha2_512(self) -> &'a mut W {
-        self.variant(MODE_A::SHA2_512)
-    }
     #[doc = "AES if available (see also CRYPTCFG register for more controls)"]
     #[inline(always)]
     pub fn aes(self) -> &'a mut W {
@@ -146,53 +113,25 @@ impl<'a> MODE_W<'a> {
     pub fn icb_aes(self) -> &'a mut W {
         self.variant(MODE_A::ICB_AES)
     }
-    #[doc = "Salsa20/20 if available (including XSalsa - see also CRYPTCFG register)"]
-    #[inline(always)]
-    pub fn salsa20(self) -> &'a mut W {
-        self.variant(MODE_A::SALSA20)
-    }
-    #[doc = "ChaCha20 if available (see also CRYPTCFG register for more controls)"]
-    #[inline(always)]
-    pub fn chacha20(self) -> &'a mut W {
-        self.variant(MODE_A::CHACHA20)
-    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
         self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
         self.w
     }
 }
 #[doc = "Possible values of the field `New_Hash`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NEW_HASH_A {
+pub enum NEW_HASH_AW {
     #[doc = "Starts a new Hash/Crypto and initializes the Digest/Result."]
     START,
 }
-impl From<NEW_HASH_A> for bool {
+impl From<NEW_HASH_AW> for bool {
     #[inline(always)]
-    fn from(variant: NEW_HASH_A) -> Self {
+    fn from(variant: NEW_HASH_AW) -> Self {
         match variant {
-            NEW_HASH_A::START => true,
+            NEW_HASH_AW::START => true,
         }
-    }
-}
-#[doc = "Reader of field `New_Hash`"]
-pub type NEW_HASH_R = crate::R<bool, NEW_HASH_A>;
-impl NEW_HASH_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<bool, NEW_HASH_A> {
-        use crate::Variant::*;
-        match self.bits {
-            true => Val(NEW_HASH_A::START),
-            i => Res(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `START`"]
-    #[inline(always)]
-    pub fn is_start(&self) -> bool {
-        *self == NEW_HASH_A::START
     }
 }
 #[doc = "Write proxy for field `New_Hash`"]
@@ -202,7 +141,7 @@ pub struct NEW_HASH_W<'a> {
 impl<'a> NEW_HASH_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: NEW_HASH_A) -> &'a mut W {
+    pub fn variant(self, variant: NEW_HASH_AW) -> &'a mut W {
         {
             self.bit(variant.into())
         }
@@ -210,7 +149,7 @@ impl<'a> NEW_HASH_W<'a> {
     #[doc = "Starts a new Hash/Crypto and initializes the Digest/Result."]
     #[inline(always)]
     pub fn start(self) -> &'a mut W {
-        self.variant(NEW_HASH_A::START)
+        self.variant(NEW_HASH_AW::START)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -402,11 +341,6 @@ impl R {
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
         MODE_R::new((self.bits & 0x07) as u8)
-    }
-    #[doc = "Bit 4 - Written with 1 when starting a new Hash/Crypto. It self clears. Note that the WAITING Status bit will clear for a cycle during the initialization from New=1."]
-    #[inline(always)]
-    pub fn new_hash(&self) -> NEW_HASH_R {
-        NEW_HASH_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Written with 1 to use DMA to fill INDATA. If Hash, will request from DMA for 16 words and then will process the Hash. If Cryptographic, it will load as many words as needed, including key if not already loaded. It will then request again. Normal model is that the DMA interrupts the processor when its length expires. Note that if the processor will write the key and optionally IV, it should not enable this until it has done so. Otherwise, the DMA will be expected to load those for the 1st block (when needed)."]
     #[inline(always)]

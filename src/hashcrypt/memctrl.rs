@@ -103,7 +103,7 @@ impl<'a> COUNT_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bit 0 - no description available"]
+    #[doc = "Bit 0 - Enables mastering."]
     #[inline(always)]
     pub fn master(&self) -> MASTER_R {
         MASTER_R::new((self.bits & 0x01) != 0)
@@ -115,7 +115,7 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 0 - no description available"]
+    #[doc = "Bit 0 - Enables mastering."]
     #[inline(always)]
     pub fn master(&mut self) -> MASTER_W {
         MASTER_W { w: self }

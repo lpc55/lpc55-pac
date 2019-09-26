@@ -4,47 +4,33 @@ pub struct RegisterBlock {
     _reserved0: [u8; 8usize],
     #[doc = "0x08 - Reset Control \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]"]
     pub resetctrl: RESETCTRL,
-    #[doc = "0x0c - Reset Cause register \\[Reset by: PoR\\]"]
-    pub resetcause: RESETCAUSE,
-    _reserved2: [u8; 32usize],
+    _reserved1: [u8; 36usize],
     #[doc = "0x30 - VBAT Brown Out Dectector (BoD) control register \\[Reset by: PoR, Pin Reset, Software Reset\\]"]
     pub bodvbat: BODVBAT,
-    _reserved3: [u8; 4usize],
-    #[doc = "0x38 - Digital Core logic Brown Out Dectector control register \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]"]
-    pub bodcore: BODCORE,
-    _reserved4: [u8; 8usize],
-    #[doc = "0x44 - 1 MHz Free Running Oscillator control register \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]"]
-    pub fro1m: FRO1M,
-    #[doc = "0x48 - 32 KHz Free Running Oscillator (FRO) control register \\[Reset by: PoR, Brown Out Detectors Reset\\]"]
-    pub fro32k: FRO32K,
-    #[doc = "0x4c - 32 KHz Crystal oscillator (XTAL) control register \\[Reset by: PoR, Brown Out Detectors Reset\\]"]
-    pub xtal32k: XTAL32K,
+    _reserved2: [u8; 28usize],
     #[doc = "0x50 - Analog Comparator control register \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]"]
     pub comp: COMP,
-    _reserved8: [u8; 20usize],
+    _reserved3: [u8; 20usize],
     #[doc = "0x68 - Allows to identify the Wake-up I/O source from Deep Power Down mode"]
     pub wakeiocause: WAKEIOCAUSE,
-    _reserved9: [u8; 8usize],
+    _reserved4: [u8; 8usize],
     #[doc = "0x74 - FRO and XTAL status register \\[Reset by: PoR, Brown Out Detectors Reset\\]"]
     pub statusclk: STATUSCLK,
-    _reserved10: [u8; 12usize],
+    _reserved5: [u8; 12usize],
     #[doc = "0x84 - General purpose always on domain data storage \\[Reset by: PoR, Brown Out Detectors Reset\\]"]
     pub aoreg1: AOREG1,
-    _reserved11: [u8; 16usize],
+    _reserved6: [u8; 16usize],
     #[doc = "0x98 - RTC 1 KHZ and 1 Hz clocks source control register \\[Reset by: PoR, Brown Out Detectors Reset\\]"]
     pub rtcosc32k: RTCOSC32K,
     #[doc = "0x9c - OS Timer control register \\[Reset by: PoR, Brown Out Detectors Reset\\]"]
     pub ostimer: OSTIMER,
-    _reserved13: [u8; 16usize],
-    #[doc = "0xb0 - Controls the power to various modules during Low Power modes - DEEP SLEEP, POWER DOWN and DEEP POWER DOWN \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Software Reset\\]"]
-    pub pdsleepcfg0: PDSLEEPCFG0,
-    _reserved14: [u8; 4usize],
+    _reserved8: [u8; 24usize],
     #[doc = "0xb8 - Controls the power to various analog blocks \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]"]
     pub pdruncfg0: PDRUNCFG0,
-    _reserved15: [u8; 4usize],
+    _reserved9: [u8; 4usize],
     #[doc = "0xc0 - Controls the power to various analog blocks \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]"]
     pub pdruncfgset0: PDRUNCFGSET0,
-    _reserved16: [u8; 4usize],
+    _reserved10: [u8; 4usize],
     #[doc = "0xc8 - Controls the power to various analog blocks \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]"]
     pub pdruncfgclr0: PDRUNCFGCLR0,
 }
@@ -59,17 +45,6 @@ impl crate::Readable for RESETCTRL {}
 impl crate::Writable for RESETCTRL {}
 #[doc = "Reset Control \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]"]
 pub mod resetctrl;
-#[doc = "Reset Cause register \\[Reset by: PoR\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [resetcause](resetcause) module"]
-pub type RESETCAUSE = crate::Reg<u32, _RESETCAUSE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _RESETCAUSE;
-#[doc = "`read()` method returns [resetcause::R](resetcause::R) reader structure"]
-impl crate::Readable for RESETCAUSE {}
-#[doc = "`write(|w| ..)` method takes [resetcause::W](resetcause::W) writer structure"]
-impl crate::Writable for RESETCAUSE {}
-#[doc = "Reset Cause register \\[Reset by: PoR\\]"]
-pub mod resetcause;
 #[doc = "VBAT Brown Out Dectector (BoD) control register \\[Reset by: PoR, Pin Reset, Software Reset\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [bodvbat](bodvbat) module"]
 pub type BODVBAT = crate::Reg<u32, _BODVBAT>;
 #[allow(missing_docs)]
@@ -81,50 +56,6 @@ impl crate::Readable for BODVBAT {}
 impl crate::Writable for BODVBAT {}
 #[doc = "VBAT Brown Out Dectector (BoD) control register \\[Reset by: PoR, Pin Reset, Software Reset\\]"]
 pub mod bodvbat;
-#[doc = "Digital Core logic Brown Out Dectector control register \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [bodcore](bodcore) module"]
-pub type BODCORE = crate::Reg<u32, _BODCORE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _BODCORE;
-#[doc = "`read()` method returns [bodcore::R](bodcore::R) reader structure"]
-impl crate::Readable for BODCORE {}
-#[doc = "`write(|w| ..)` method takes [bodcore::W](bodcore::W) writer structure"]
-impl crate::Writable for BODCORE {}
-#[doc = "Digital Core logic Brown Out Dectector control register \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]"]
-pub mod bodcore;
-#[doc = "1 MHz Free Running Oscillator control register \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fro1m](fro1m) module"]
-pub type FRO1M = crate::Reg<u32, _FRO1M>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _FRO1M;
-#[doc = "`read()` method returns [fro1m::R](fro1m::R) reader structure"]
-impl crate::Readable for FRO1M {}
-#[doc = "`write(|w| ..)` method takes [fro1m::W](fro1m::W) writer structure"]
-impl crate::Writable for FRO1M {}
-#[doc = "1 MHz Free Running Oscillator control register \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]"]
-pub mod fro1m;
-#[doc = "32 KHz Free Running Oscillator (FRO) control register \\[Reset by: PoR, Brown Out Detectors Reset\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fro32k](fro32k) module"]
-pub type FRO32K = crate::Reg<u32, _FRO32K>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _FRO32K;
-#[doc = "`read()` method returns [fro32k::R](fro32k::R) reader structure"]
-impl crate::Readable for FRO32K {}
-#[doc = "`write(|w| ..)` method takes [fro32k::W](fro32k::W) writer structure"]
-impl crate::Writable for FRO32K {}
-#[doc = "32 KHz Free Running Oscillator (FRO) control register \\[Reset by: PoR, Brown Out Detectors Reset\\]"]
-pub mod fro32k;
-#[doc = "32 KHz Crystal oscillator (XTAL) control register \\[Reset by: PoR, Brown Out Detectors Reset\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [xtal32k](xtal32k) module"]
-pub type XTAL32K = crate::Reg<u32, _XTAL32K>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _XTAL32K;
-#[doc = "`read()` method returns [xtal32k::R](xtal32k::R) reader structure"]
-impl crate::Readable for XTAL32K {}
-#[doc = "`write(|w| ..)` method takes [xtal32k::W](xtal32k::W) writer structure"]
-impl crate::Writable for XTAL32K {}
-#[doc = "32 KHz Crystal oscillator (XTAL) control register \\[Reset by: PoR, Brown Out Detectors Reset\\]"]
-pub mod xtal32k;
 #[doc = "Analog Comparator control register \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [comp](comp) module"]
 pub type COMP = crate::Reg<u32, _COMP>;
 #[allow(missing_docs)]
@@ -191,17 +122,6 @@ impl crate::Readable for OSTIMER {}
 impl crate::Writable for OSTIMER {}
 #[doc = "OS Timer control register \\[Reset by: PoR, Brown Out Detectors Reset\\]"]
 pub mod ostimer;
-#[doc = "Controls the power to various modules during Low Power modes - DEEP SLEEP, POWER DOWN and DEEP POWER DOWN \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Software Reset\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pdsleepcfg0](pdsleepcfg0) module"]
-pub type PDSLEEPCFG0 = crate::Reg<u32, _PDSLEEPCFG0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PDSLEEPCFG0;
-#[doc = "`read()` method returns [pdsleepcfg0::R](pdsleepcfg0::R) reader structure"]
-impl crate::Readable for PDSLEEPCFG0 {}
-#[doc = "`write(|w| ..)` method takes [pdsleepcfg0::W](pdsleepcfg0::W) writer structure"]
-impl crate::Writable for PDSLEEPCFG0 {}
-#[doc = "Controls the power to various modules during Low Power modes - DEEP SLEEP, POWER DOWN and DEEP POWER DOWN \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Software Reset\\]"]
-pub mod pdsleepcfg0;
 #[doc = "Controls the power to various analog blocks \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pdruncfg0](pdruncfg0) module"]
 pub type PDRUNCFG0 = crate::Reg<u32, _PDRUNCFG0>;
 #[allow(missing_docs)]

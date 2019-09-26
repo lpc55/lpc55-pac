@@ -5,18 +5,17 @@ pub struct RegisterBlock {
     pub caplength_chipid: CAPLENGTH_CHIPID,
     #[doc = "0x04 - Host Controller Structural Parameters"]
     pub hcsparams: HCSPARAMS,
-    #[doc = "0x08 - Host Controller Capability Parameters"]
-    pub hccparams: HCCPARAMS,
+    _reserved2: [u8; 4usize],
     #[doc = "0x0c - Frame Length Adjustment"]
     pub fladj_frindex: FLADJ_FRINDEX,
     #[doc = "0x10 - Memory base address where ATL PTD0 is stored"]
-    pub atl_ptd_base_addr: ATL_PTD_BASE_ADDR,
+    pub atlptd: ATLPTD,
     #[doc = "0x14 - Memory base address where ISO PTD0 is stored"]
-    pub iso_ptd_base_addr: ISO_PTD_BASE_ADDR,
+    pub isoptd: ISOPTD,
     #[doc = "0x18 - Memory base address where INT PTD0 is stored"]
-    pub int_ptd_base_addr: INT_PTD_BASE_ADDR,
+    pub intptd: INTPTD,
     #[doc = "0x1c - Memory base address that indicates the start of the data payload buffers"]
-    pub data_payload_base_addr: DATA_PAYLOAD_BASE_ADDR,
+    pub datapayload: DATAPAYLOAD,
     #[doc = "0x20 - USB Command register"]
     pub usbcmd: USBCMD,
     #[doc = "0x24 - USB Interrupt Status register"]
@@ -26,21 +25,20 @@ pub struct RegisterBlock {
     #[doc = "0x2c - Port Status and Control register"]
     pub portsc1: PORTSC1,
     #[doc = "0x30 - Done map for each ATL PTD"]
-    pub atl_ptd_done_map: ATL_PTD_DONE_MAP,
+    pub atlptdd: ATLPTDD,
     #[doc = "0x34 - Skip map for each ATL PTD"]
-    pub atl_ptd_skip_map: ATL_PTD_SKIP_MAP,
+    pub atlptds: ATLPTDS,
     #[doc = "0x38 - Done map for each ISO PTD"]
-    pub iso_ptd_done_map: ISO_PTD_DONE_MAP,
+    pub isoptdd: ISOPTDD,
     #[doc = "0x3c - Skip map for each ISO PTD"]
-    pub iso_ptd_skip_map: ISO_PTD_SKIP_MAP,
+    pub isoptds: ISOPTDS,
     #[doc = "0x40 - Done map for each INT PTD"]
-    pub int_ptd_done_map: INT_PTD_DONE_MAP,
+    pub intptdd: INTPTDD,
     #[doc = "0x44 - Skip map for each INT PTD"]
-    pub int_ptd_skip_map: INT_PTD_SKIP_MAP,
+    pub intptds: INTPTDS,
     #[doc = "0x48 - Marks the last PTD in the list for ISO, INT and ATL"]
-    pub last_ptd_inuse: LAST_PTD_INUSE,
-    #[doc = "0x4c - Register to read/write registers in the attached USB PHY"]
-    pub utmiplus_ulpi_debug: UTMIPLUS_ULPI_DEBUG,
+    pub lastptd: LASTPTD,
+    _reserved18: [u8; 4usize],
     #[doc = "0x50 - Controls the port if it is attached to the host block or the device block"]
     pub portmode: PORTMODE,
 }
@@ -62,15 +60,6 @@ pub struct _HCSPARAMS;
 impl crate::Readable for HCSPARAMS {}
 #[doc = "Host Controller Structural Parameters"]
 pub mod hcsparams;
-#[doc = "Host Controller Capability Parameters\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hccparams](hccparams) module"]
-pub type HCCPARAMS = crate::Reg<u32, _HCCPARAMS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _HCCPARAMS;
-#[doc = "`read()` method returns [hccparams::R](hccparams::R) reader structure"]
-impl crate::Readable for HCCPARAMS {}
-#[doc = "Host Controller Capability Parameters"]
-pub mod hccparams;
 #[doc = "Frame Length Adjustment\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fladj_frindex](fladj_frindex) module"]
 pub type FLADJ_FRINDEX = crate::Reg<u32, _FLADJ_FRINDEX>;
 #[allow(missing_docs)]
@@ -82,50 +71,50 @@ impl crate::Readable for FLADJ_FRINDEX {}
 impl crate::Writable for FLADJ_FRINDEX {}
 #[doc = "Frame Length Adjustment"]
 pub mod fladj_frindex;
-#[doc = "Memory base address where ATL PTD0 is stored\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [atl_ptd_base_addr](atl_ptd_base_addr) module"]
-pub type ATL_PTD_BASE_ADDR = crate::Reg<u32, _ATL_PTD_BASE_ADDR>;
+#[doc = "Memory base address where ATL PTD0 is stored\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [atlptd](atlptd) module"]
+pub type ATLPTD = crate::Reg<u32, _ATLPTD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _ATL_PTD_BASE_ADDR;
-#[doc = "`read()` method returns [atl_ptd_base_addr::R](atl_ptd_base_addr::R) reader structure"]
-impl crate::Readable for ATL_PTD_BASE_ADDR {}
-#[doc = "`write(|w| ..)` method takes [atl_ptd_base_addr::W](atl_ptd_base_addr::W) writer structure"]
-impl crate::Writable for ATL_PTD_BASE_ADDR {}
+pub struct _ATLPTD;
+#[doc = "`read()` method returns [atlptd::R](atlptd::R) reader structure"]
+impl crate::Readable for ATLPTD {}
+#[doc = "`write(|w| ..)` method takes [atlptd::W](atlptd::W) writer structure"]
+impl crate::Writable for ATLPTD {}
 #[doc = "Memory base address where ATL PTD0 is stored"]
-pub mod atl_ptd_base_addr;
-#[doc = "Memory base address where ISO PTD0 is stored\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iso_ptd_base_addr](iso_ptd_base_addr) module"]
-pub type ISO_PTD_BASE_ADDR = crate::Reg<u32, _ISO_PTD_BASE_ADDR>;
+pub mod atlptd;
+#[doc = "Memory base address where ISO PTD0 is stored\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [isoptd](isoptd) module"]
+pub type ISOPTD = crate::Reg<u32, _ISOPTD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _ISO_PTD_BASE_ADDR;
-#[doc = "`read()` method returns [iso_ptd_base_addr::R](iso_ptd_base_addr::R) reader structure"]
-impl crate::Readable for ISO_PTD_BASE_ADDR {}
-#[doc = "`write(|w| ..)` method takes [iso_ptd_base_addr::W](iso_ptd_base_addr::W) writer structure"]
-impl crate::Writable for ISO_PTD_BASE_ADDR {}
+pub struct _ISOPTD;
+#[doc = "`read()` method returns [isoptd::R](isoptd::R) reader structure"]
+impl crate::Readable for ISOPTD {}
+#[doc = "`write(|w| ..)` method takes [isoptd::W](isoptd::W) writer structure"]
+impl crate::Writable for ISOPTD {}
 #[doc = "Memory base address where ISO PTD0 is stored"]
-pub mod iso_ptd_base_addr;
-#[doc = "Memory base address where INT PTD0 is stored\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [int_ptd_base_addr](int_ptd_base_addr) module"]
-pub type INT_PTD_BASE_ADDR = crate::Reg<u32, _INT_PTD_BASE_ADDR>;
+pub mod isoptd;
+#[doc = "Memory base address where INT PTD0 is stored\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intptd](intptd) module"]
+pub type INTPTD = crate::Reg<u32, _INTPTD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _INT_PTD_BASE_ADDR;
-#[doc = "`read()` method returns [int_ptd_base_addr::R](int_ptd_base_addr::R) reader structure"]
-impl crate::Readable for INT_PTD_BASE_ADDR {}
-#[doc = "`write(|w| ..)` method takes [int_ptd_base_addr::W](int_ptd_base_addr::W) writer structure"]
-impl crate::Writable for INT_PTD_BASE_ADDR {}
+pub struct _INTPTD;
+#[doc = "`read()` method returns [intptd::R](intptd::R) reader structure"]
+impl crate::Readable for INTPTD {}
+#[doc = "`write(|w| ..)` method takes [intptd::W](intptd::W) writer structure"]
+impl crate::Writable for INTPTD {}
 #[doc = "Memory base address where INT PTD0 is stored"]
-pub mod int_ptd_base_addr;
-#[doc = "Memory base address that indicates the start of the data payload buffers\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [data_payload_base_addr](data_payload_base_addr) module"]
-pub type DATA_PAYLOAD_BASE_ADDR = crate::Reg<u32, _DATA_PAYLOAD_BASE_ADDR>;
+pub mod intptd;
+#[doc = "Memory base address that indicates the start of the data payload buffers\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [datapayload](datapayload) module"]
+pub type DATAPAYLOAD = crate::Reg<u32, _DATAPAYLOAD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _DATA_PAYLOAD_BASE_ADDR;
-#[doc = "`read()` method returns [data_payload_base_addr::R](data_payload_base_addr::R) reader structure"]
-impl crate::Readable for DATA_PAYLOAD_BASE_ADDR {}
-#[doc = "`write(|w| ..)` method takes [data_payload_base_addr::W](data_payload_base_addr::W) writer structure"]
-impl crate::Writable for DATA_PAYLOAD_BASE_ADDR {}
+pub struct _DATAPAYLOAD;
+#[doc = "`read()` method returns [datapayload::R](datapayload::R) reader structure"]
+impl crate::Readable for DATAPAYLOAD {}
+#[doc = "`write(|w| ..)` method takes [datapayload::W](datapayload::W) writer structure"]
+impl crate::Writable for DATAPAYLOAD {}
 #[doc = "Memory base address that indicates the start of the data payload buffers"]
-pub mod data_payload_base_addr;
+pub mod datapayload;
 #[doc = "USB Command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usbcmd](usbcmd) module"]
 pub type USBCMD = crate::Reg<u32, _USBCMD>;
 #[allow(missing_docs)]
@@ -170,94 +159,83 @@ impl crate::Readable for PORTSC1 {}
 impl crate::Writable for PORTSC1 {}
 #[doc = "Port Status and Control register"]
 pub mod portsc1;
-#[doc = "Done map for each ATL PTD\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [atl_ptd_done_map](atl_ptd_done_map) module"]
-pub type ATL_PTD_DONE_MAP = crate::Reg<u32, _ATL_PTD_DONE_MAP>;
+#[doc = "Done map for each ATL PTD\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [atlptdd](atlptdd) module"]
+pub type ATLPTDD = crate::Reg<u32, _ATLPTDD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _ATL_PTD_DONE_MAP;
-#[doc = "`read()` method returns [atl_ptd_done_map::R](atl_ptd_done_map::R) reader structure"]
-impl crate::Readable for ATL_PTD_DONE_MAP {}
-#[doc = "`write(|w| ..)` method takes [atl_ptd_done_map::W](atl_ptd_done_map::W) writer structure"]
-impl crate::Writable for ATL_PTD_DONE_MAP {}
+pub struct _ATLPTDD;
+#[doc = "`read()` method returns [atlptdd::R](atlptdd::R) reader structure"]
+impl crate::Readable for ATLPTDD {}
+#[doc = "`write(|w| ..)` method takes [atlptdd::W](atlptdd::W) writer structure"]
+impl crate::Writable for ATLPTDD {}
 #[doc = "Done map for each ATL PTD"]
-pub mod atl_ptd_done_map;
-#[doc = "Skip map for each ATL PTD\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [atl_ptd_skip_map](atl_ptd_skip_map) module"]
-pub type ATL_PTD_SKIP_MAP = crate::Reg<u32, _ATL_PTD_SKIP_MAP>;
+pub mod atlptdd;
+#[doc = "Skip map for each ATL PTD\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [atlptds](atlptds) module"]
+pub type ATLPTDS = crate::Reg<u32, _ATLPTDS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _ATL_PTD_SKIP_MAP;
-#[doc = "`read()` method returns [atl_ptd_skip_map::R](atl_ptd_skip_map::R) reader structure"]
-impl crate::Readable for ATL_PTD_SKIP_MAP {}
-#[doc = "`write(|w| ..)` method takes [atl_ptd_skip_map::W](atl_ptd_skip_map::W) writer structure"]
-impl crate::Writable for ATL_PTD_SKIP_MAP {}
+pub struct _ATLPTDS;
+#[doc = "`read()` method returns [atlptds::R](atlptds::R) reader structure"]
+impl crate::Readable for ATLPTDS {}
+#[doc = "`write(|w| ..)` method takes [atlptds::W](atlptds::W) writer structure"]
+impl crate::Writable for ATLPTDS {}
 #[doc = "Skip map for each ATL PTD"]
-pub mod atl_ptd_skip_map;
-#[doc = "Done map for each ISO PTD\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iso_ptd_done_map](iso_ptd_done_map) module"]
-pub type ISO_PTD_DONE_MAP = crate::Reg<u32, _ISO_PTD_DONE_MAP>;
+pub mod atlptds;
+#[doc = "Done map for each ISO PTD\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [isoptdd](isoptdd) module"]
+pub type ISOPTDD = crate::Reg<u32, _ISOPTDD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _ISO_PTD_DONE_MAP;
-#[doc = "`read()` method returns [iso_ptd_done_map::R](iso_ptd_done_map::R) reader structure"]
-impl crate::Readable for ISO_PTD_DONE_MAP {}
-#[doc = "`write(|w| ..)` method takes [iso_ptd_done_map::W](iso_ptd_done_map::W) writer structure"]
-impl crate::Writable for ISO_PTD_DONE_MAP {}
+pub struct _ISOPTDD;
+#[doc = "`read()` method returns [isoptdd::R](isoptdd::R) reader structure"]
+impl crate::Readable for ISOPTDD {}
+#[doc = "`write(|w| ..)` method takes [isoptdd::W](isoptdd::W) writer structure"]
+impl crate::Writable for ISOPTDD {}
 #[doc = "Done map for each ISO PTD"]
-pub mod iso_ptd_done_map;
-#[doc = "Skip map for each ISO PTD\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iso_ptd_skip_map](iso_ptd_skip_map) module"]
-pub type ISO_PTD_SKIP_MAP = crate::Reg<u32, _ISO_PTD_SKIP_MAP>;
+pub mod isoptdd;
+#[doc = "Skip map for each ISO PTD\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [isoptds](isoptds) module"]
+pub type ISOPTDS = crate::Reg<u32, _ISOPTDS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _ISO_PTD_SKIP_MAP;
-#[doc = "`read()` method returns [iso_ptd_skip_map::R](iso_ptd_skip_map::R) reader structure"]
-impl crate::Readable for ISO_PTD_SKIP_MAP {}
-#[doc = "`write(|w| ..)` method takes [iso_ptd_skip_map::W](iso_ptd_skip_map::W) writer structure"]
-impl crate::Writable for ISO_PTD_SKIP_MAP {}
+pub struct _ISOPTDS;
+#[doc = "`read()` method returns [isoptds::R](isoptds::R) reader structure"]
+impl crate::Readable for ISOPTDS {}
+#[doc = "`write(|w| ..)` method takes [isoptds::W](isoptds::W) writer structure"]
+impl crate::Writable for ISOPTDS {}
 #[doc = "Skip map for each ISO PTD"]
-pub mod iso_ptd_skip_map;
-#[doc = "Done map for each INT PTD\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [int_ptd_done_map](int_ptd_done_map) module"]
-pub type INT_PTD_DONE_MAP = crate::Reg<u32, _INT_PTD_DONE_MAP>;
+pub mod isoptds;
+#[doc = "Done map for each INT PTD\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intptdd](intptdd) module"]
+pub type INTPTDD = crate::Reg<u32, _INTPTDD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _INT_PTD_DONE_MAP;
-#[doc = "`read()` method returns [int_ptd_done_map::R](int_ptd_done_map::R) reader structure"]
-impl crate::Readable for INT_PTD_DONE_MAP {}
-#[doc = "`write(|w| ..)` method takes [int_ptd_done_map::W](int_ptd_done_map::W) writer structure"]
-impl crate::Writable for INT_PTD_DONE_MAP {}
+pub struct _INTPTDD;
+#[doc = "`read()` method returns [intptdd::R](intptdd::R) reader structure"]
+impl crate::Readable for INTPTDD {}
+#[doc = "`write(|w| ..)` method takes [intptdd::W](intptdd::W) writer structure"]
+impl crate::Writable for INTPTDD {}
 #[doc = "Done map for each INT PTD"]
-pub mod int_ptd_done_map;
-#[doc = "Skip map for each INT PTD\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [int_ptd_skip_map](int_ptd_skip_map) module"]
-pub type INT_PTD_SKIP_MAP = crate::Reg<u32, _INT_PTD_SKIP_MAP>;
+pub mod intptdd;
+#[doc = "Skip map for each INT PTD\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intptds](intptds) module"]
+pub type INTPTDS = crate::Reg<u32, _INTPTDS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _INT_PTD_SKIP_MAP;
-#[doc = "`read()` method returns [int_ptd_skip_map::R](int_ptd_skip_map::R) reader structure"]
-impl crate::Readable for INT_PTD_SKIP_MAP {}
-#[doc = "`write(|w| ..)` method takes [int_ptd_skip_map::W](int_ptd_skip_map::W) writer structure"]
-impl crate::Writable for INT_PTD_SKIP_MAP {}
+pub struct _INTPTDS;
+#[doc = "`read()` method returns [intptds::R](intptds::R) reader structure"]
+impl crate::Readable for INTPTDS {}
+#[doc = "`write(|w| ..)` method takes [intptds::W](intptds::W) writer structure"]
+impl crate::Writable for INTPTDS {}
 #[doc = "Skip map for each INT PTD"]
-pub mod int_ptd_skip_map;
-#[doc = "Marks the last PTD in the list for ISO, INT and ATL\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [last_ptd_inuse](last_ptd_inuse) module"]
-pub type LAST_PTD_INUSE = crate::Reg<u32, _LAST_PTD_INUSE>;
+pub mod intptds;
+#[doc = "Marks the last PTD in the list for ISO, INT and ATL\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [lastptd](lastptd) module"]
+pub type LASTPTD = crate::Reg<u32, _LASTPTD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _LAST_PTD_INUSE;
-#[doc = "`read()` method returns [last_ptd_inuse::R](last_ptd_inuse::R) reader structure"]
-impl crate::Readable for LAST_PTD_INUSE {}
-#[doc = "`write(|w| ..)` method takes [last_ptd_inuse::W](last_ptd_inuse::W) writer structure"]
-impl crate::Writable for LAST_PTD_INUSE {}
+pub struct _LASTPTD;
+#[doc = "`read()` method returns [lastptd::R](lastptd::R) reader structure"]
+impl crate::Readable for LASTPTD {}
+#[doc = "`write(|w| ..)` method takes [lastptd::W](lastptd::W) writer structure"]
+impl crate::Writable for LASTPTD {}
 #[doc = "Marks the last PTD in the list for ISO, INT and ATL"]
-pub mod last_ptd_inuse;
-#[doc = "Register to read/write registers in the attached USB PHY\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [utmiplus_ulpi_debug](utmiplus_ulpi_debug) module"]
-pub type UTMIPLUS_ULPI_DEBUG = crate::Reg<u32, _UTMIPLUS_ULPI_DEBUG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _UTMIPLUS_ULPI_DEBUG;
-#[doc = "`read()` method returns [utmiplus_ulpi_debug::R](utmiplus_ulpi_debug::R) reader structure"]
-impl crate::Readable for UTMIPLUS_ULPI_DEBUG {}
-#[doc = "`write(|w| ..)` method takes [utmiplus_ulpi_debug::W](utmiplus_ulpi_debug::W) writer structure"]
-impl crate::Writable for UTMIPLUS_ULPI_DEBUG {}
-#[doc = "Register to read/write registers in the attached USB PHY"]
-pub mod utmiplus_ulpi_debug;
+pub mod lastptd;
 #[doc = "Controls the port if it is attached to the host block or the device block\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [portmode](portmode) module"]
 pub type PORTMODE = crate::Reg<u32, _PORTMODE>;
 #[allow(missing_docs)]

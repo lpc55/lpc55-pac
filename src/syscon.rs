@@ -12,7 +12,7 @@ pub struct RegisterBlock {
     #[doc = "0x3c - System tick calibration for non-secure part of CPU0"]
     pub cpu0nstckcal: CPU0NSTCKCAL,
     #[doc = "0x40 - System tick calibration for CPU1"]
-    pub cpu1tckcal: CPU1TCKCAL,
+    pub cpu1stckcal: CPU1STCKCAL,
     _reserved5: [u8; 4usize],
     #[doc = "0x48 - NMI Source Select"]
     pub nmisrc: NMISRC,
@@ -27,7 +27,7 @@ pub struct RegisterBlock {
     #[doc = "0x120 - Peripheral reset control set register"]
     pub presetctrlset: [PRESETCTRLSET; 3],
     _reserved10: [u8; 20usize],
-    #[doc = "0x140 - Peripheral reset contro clearl register"]
+    #[doc = "0x140 - Peripheral reset control clear register"]
     pub presetctrlclr: [PRESETCTRLCLR; 3],
     _reserved11: [u8; 20usize],
     #[doc = "0x160 - generate a software_reset"]
@@ -71,44 +71,43 @@ pub struct RegisterBlock {
     pub adcclksel: ADCCLKSEL,
     #[doc = "0x2a8 - FS USB clock source select"]
     pub usb0clksel: USB0CLKSEL,
-    #[doc = "0x2ac - HS USB clock source select - NOT USED"]
-    pub usb1clksel: USB1CLKSEL,
-    _reserved_33_fcclksel0: [u8; 4usize],
-    _reserved_34_fcclksel1: [u8; 4usize],
-    _reserved_35_fcclksel2: [u8; 4usize],
-    _reserved_36_fcclksel3: [u8; 4usize],
-    _reserved_37_fcclksel4: [u8; 4usize],
-    _reserved_38_fcclksel5: [u8; 4usize],
-    _reserved_39_fcclksel6: [u8; 4usize],
-    _reserved_40_fcclksel7: [u8; 4usize],
+    _reserved32: [u8; 4usize],
+    _reserved_32_fcclksel0: [u8; 4usize],
+    _reserved_33_fcclksel1: [u8; 4usize],
+    _reserved_34_fcclksel2: [u8; 4usize],
+    _reserved_35_fcclksel3: [u8; 4usize],
+    _reserved_36_fcclksel4: [u8; 4usize],
+    _reserved_37_fcclksel5: [u8; 4usize],
+    _reserved_38_fcclksel6: [u8; 4usize],
+    _reserved_39_fcclksel7: [u8; 4usize],
     #[doc = "0x2d0 - HS LSPI clock source select"]
     pub hslspiclksel: HSLSPICLKSEL,
-    _reserved42: [u8; 12usize],
+    _reserved41: [u8; 12usize],
     #[doc = "0x2e0 - MCLK clock source select"]
     pub mclkclksel: MCLKCLKSEL,
-    _reserved43: [u8; 12usize],
+    _reserved42: [u8; 12usize],
     #[doc = "0x2f0 - SCTimer/PWM clock source select"]
     pub sctclksel: SCTCLKSEL,
-    _reserved44: [u8; 4usize],
+    _reserved43: [u8; 4usize],
     #[doc = "0x2f8 - SDIO clock source select"]
     pub sdioclksel: SDIOCLKSEL,
-    _reserved45: [u8; 4usize],
+    _reserved44: [u8; 4usize],
     #[doc = "0x300 - System Tick Timer divider for CPU0"]
     pub systickclkdiv0: SYSTICKCLKDIV0,
     #[doc = "0x304 - System Tick Timer divider for CPU1"]
     pub systickclkdiv1: SYSTICKCLKDIV1,
     #[doc = "0x308 - TRACE clock divider"]
     pub traceclkdiv: TRACECLKDIV,
-    _reserved48: [u8; 20usize],
-    _reserved_48_flexfrg0ctrl: [u8; 4usize],
-    _reserved_49_flexfrg1ctrl: [u8; 4usize],
-    _reserved_50_flexfrg2ctrl: [u8; 4usize],
-    _reserved_51_flexfrg3ctrl: [u8; 4usize],
-    _reserved_52_flexfrg4ctrl: [u8; 4usize],
-    _reserved_53_flexfrg5ctrl: [u8; 4usize],
-    _reserved_54_flexfrg6ctrl: [u8; 4usize],
-    _reserved_55_flexfrg7ctrl: [u8; 4usize],
-    _reserved56: [u8; 64usize],
+    _reserved47: [u8; 20usize],
+    _reserved_47_flexfrg0ctrl: [u8; 4usize],
+    _reserved_48_flexfrg1ctrl: [u8; 4usize],
+    _reserved_49_flexfrg2ctrl: [u8; 4usize],
+    _reserved_50_flexfrg3ctrl: [u8; 4usize],
+    _reserved_51_flexfrg4ctrl: [u8; 4usize],
+    _reserved_52_flexfrg5ctrl: [u8; 4usize],
+    _reserved_53_flexfrg6ctrl: [u8; 4usize],
+    _reserved_54_flexfrg7ctrl: [u8; 4usize],
+    _reserved55: [u8; 64usize],
     #[doc = "0x380 - System clock divider"]
     pub ahbclkdiv: AHBCLKDIV,
     #[doc = "0x384 - CLKOUT clock divider"]
@@ -117,49 +116,46 @@ pub struct RegisterBlock {
     pub frohfdiv: FROHFDIV,
     #[doc = "0x38c - WDT clock divider"]
     pub wdtclkdiv: WDTCLKDIV,
-    _reserved60: [u8; 4usize],
+    _reserved59: [u8; 4usize],
     #[doc = "0x394 - ADC clock divider"]
     pub adcclkdiv: ADCCLKDIV,
     #[doc = "0x398 - USB0 Clock divider"]
     pub usb0clkdiv: USB0CLKDIV,
-    _reserved62: [u8; 16usize],
+    _reserved61: [u8; 16usize],
     #[doc = "0x3ac - I2S MCLK clock divider"]
     pub mclkdiv: MCLKDIV,
-    _reserved63: [u8; 4usize],
+    _reserved62: [u8; 4usize],
     #[doc = "0x3b4 - SCT/PWM clock divider"]
     pub sctclkdiv: SCTCLKDIV,
-    _reserved64: [u8; 4usize],
+    _reserved63: [u8; 4usize],
     #[doc = "0x3bc - SDIO clock divider"]
     pub sdioclkdiv: SDIOCLKDIV,
-    _reserved65: [u8; 4usize],
+    _reserved64: [u8; 4usize],
     #[doc = "0x3c4 - PLL0 clock divider"]
     pub pll0clkdiv: PLL0CLKDIV,
-    _reserved66: [u8; 52usize],
+    _reserved65: [u8; 52usize],
     #[doc = "0x3fc - Control clock configuration registers access (like xxxDIV, xxxSEL)"]
     pub clockgenupdatelockout: CLOCKGENUPDATELOCKOUT,
-    #[doc = "0x400 - FMC configuration register - INTERNAL USE ONLY"]
+    #[doc = "0x400 - FMC configuration register"]
     pub fmccr: FMCCR,
-    _reserved68: [u8; 8usize],
-    #[doc = "0x40c - USB0 clock control"]
-    pub usb0clkctrl: USB0CLKCTRL,
-    #[doc = "0x410 - USB0 clock status"]
-    pub usb0clkstat: USB0CLKSTAT,
-    _reserved70: [u8; 8usize],
+    _reserved67: [u8; 8usize],
+    #[doc = "0x40c - USB0 need clock control"]
+    pub usb0needclkctrl: USB0NEEDCLKCTRL,
+    #[doc = "0x410 - USB0 need clock status"]
+    pub usb0needclkstat: USB0NEEDCLKSTAT,
+    _reserved69: [u8; 8usize],
     #[doc = "0x41c - FMCflush control"]
     pub fmcflush: FMCFLUSH,
     #[doc = "0x420 - MCLK control"]
     pub mclkio: MCLKIO,
-    #[doc = "0x424 - USB1 clock control"]
-    pub usb1clkctrl: USB1CLKCTRL,
-    #[doc = "0x428 - USB1 clock status"]
-    pub usb1clkstat: USB1CLKSTAT,
-    _reserved74: [u8; 36usize],
-    #[doc = "0x450 - Flash Banks control"]
-    pub flashbankenable: FLASHBANKENABLE,
-    _reserved75: [u8; 12usize],
+    #[doc = "0x424 - USB1 need clock control"]
+    pub usb1needclkctrl: USB1NEEDCLKCTRL,
+    #[doc = "0x428 - USB1 need clock status"]
+    pub usb1needclkstat: USB1NEEDCLKSTAT,
+    _reserved73: [u8; 52usize],
     #[doc = "0x460 - SDIO CCLKIN phase and delay control"]
     pub sdioclkctrl: SDIOCLKCTRL,
-    _reserved76: [u8; 252usize],
+    _reserved74: [u8; 252usize],
     #[doc = "0x560 - PLL1 550m control"]
     pub pll1ctrl: PLL1CTRL,
     #[doc = "0x564 - PLL1 550m status"]
@@ -170,7 +166,7 @@ pub struct RegisterBlock {
     pub pll1mdec: PLL1MDEC,
     #[doc = "0x570 - PLL1 550m P divider"]
     pub pll1pdec: PLL1PDEC,
-    _reserved81: [u8; 12usize],
+    _reserved79: [u8; 12usize],
     #[doc = "0x580 - PLL0 550m control"]
     pub pll0ctrl: PLL0CTRL,
     #[doc = "0x584 - PLL0 550m status"]
@@ -183,91 +179,43 @@ pub struct RegisterBlock {
     pub pll0sscg0: PLL0SSCG0,
     #[doc = "0x594 - PLL0 Spread Spectrum Wrapper control register 1"]
     pub pll0sscg1: PLL0SSCG1,
-    _reserved87: [u8; 52usize],
-    #[doc = "0x5cc - eFUSE controller clock enable"]
-    pub efuseclkctrl: EFUSECLKCTRL,
-    _reserved88: [u8; 176usize],
-    #[doc = "0x680 - Start logic wake-up enable register"]
-    pub starter0: STARTER0,
-    #[doc = "0x684 - Start logic wake-up enable register"]
-    pub starter1: STARTER1,
-    _reserved90: [u8; 24usize],
-    #[doc = "0x6a0 - Set bits in STARTER"]
-    pub starterset0: STARTERSET0,
-    #[doc = "0x6a4 - Set bits in STARTER"]
-    pub starterset1: STARTERSET1,
-    _reserved92: [u8; 24usize],
-    #[doc = "0x6c0 - Clear bits in STARTER"]
-    pub starterclr0: STARTERCLR0,
-    #[doc = "0x6c4 - Clear bits in STARTER"]
-    pub starterclr1: STARTERCLR1,
-    _reserved94: [u8; 184usize],
-    #[doc = "0x780 - Hardware Sleep control"]
-    pub hardwaresleep: HARDWARESLEEP,
-    _reserved95: [u8; 124usize],
+    _reserved85: [u8; 616usize],
     #[doc = "0x800 - CPU Control for multiple processors"]
     pub cpuctrl: CPUCTRL,
     #[doc = "0x804 - Coprocessor Boot Address"]
     pub cpboot: CPBOOT,
-    #[doc = "0x808 - Coprocessor Stack Address"]
-    pub cpstack: CPSTACK,
+    _reserved87: [u8; 4usize],
     #[doc = "0x80c - CPU Status"]
     pub cpstat: CPSTAT,
-    _reserved99: [u8; 240usize],
-    #[doc = "0x900 - Composite Device Identifier"]
-    pub dice_reg0: DICE_REG0,
-    #[doc = "0x904 - Composite Device Identifier"]
-    pub dice_reg1: DICE_REG1,
-    #[doc = "0x908 - Composite Device Identifier"]
-    pub dice_reg2: DICE_REG2,
-    #[doc = "0x90c - Composite Device Identifier"]
-    pub dice_reg3: DICE_REG3,
-    #[doc = "0x910 - Composite Device Identifier"]
-    pub dice_reg4: DICE_REG4,
-    #[doc = "0x914 - Composite Device Identifier"]
-    pub dice_reg5: DICE_REG5,
-    #[doc = "0x918 - Composite Device Identifier"]
-    pub dice_reg6: DICE_REG6,
-    #[doc = "0x91c - Composite Device Identifier"]
-    pub dice_reg7: DICE_REG7,
-    _reserved107: [u8; 248usize],
+    _reserved88: [u8; 520usize],
     #[doc = "0xa18 - Various system clock controls : Flash clock (48 MHz) control, clocks to Frequency Measures"]
     pub clock_ctrl: CLOCK_CTRL,
-    _reserved108: [u8; 244usize],
+    _reserved89: [u8; 244usize],
     #[doc = "0xb10 - Comparator Interrupt control"]
     pub comp_int_ctrl: COMP_INT_CTRL,
     #[doc = "0xb14 - Comparator Interrupt status"]
     pub comp_int_status: COMP_INT_STATUS,
-    _reserved110: [u8; 748usize],
+    _reserved91: [u8; 748usize],
     #[doc = "0xe04 - Control automatic clock gating"]
     pub autoclkgateoverride: AUTOCLKGATEOVERRIDE,
     #[doc = "0xe08 - Enable bypass of the first stage of synchonization inside GPIO_INT module"]
     pub gpiopsync: GPIOPSYNC,
-    _reserved112: [u8; 404usize],
-    #[doc = "0xfa0 - Control write access to security registers -- FOR INTERNAl USE ONLY"]
+    _reserved93: [u8; 404usize],
+    #[doc = "0xfa0 - Control write access to security registers."]
     pub debug_lock_en: DEBUG_LOCK_EN,
-    #[doc = "0xfa4 - Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control -- FOR INTERNAl USE ONLY"]
+    #[doc = "0xfa4 - Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control."]
     pub debug_features: DEBUG_FEATURES,
-    #[doc = "0xfa8 - Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control DUPLICATE register -- FOR INTERNAl USE ONLY"]
+    #[doc = "0xfa8 - Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control DUPLICATE register."]
     pub debug_features_dp: DEBUG_FEATURES_DP,
-    _reserved115: [u8; 4usize],
-    #[doc = "0xfb0 - Security code to allow test (Design for Testability) access -- FOR INTERNAl USE ONLY"]
-    pub codesecurityprottest: CODESECURITYPROTTEST,
-    #[doc = "0xfb4 - Security code to allow CPU0 (CM33) Debug Access Port (DAP) -- FOR INTERNAl USE ONLY"]
-    pub codesecurityprotcpu0: CODESECURITYPROTCPU0,
-    #[doc = "0xfb8 - Security code to allow CPU1 (Micro CM33) Debug Access Port (DAP) -- FOR INTERNAl USE ONLY"]
-    pub codesecurityprotcpu1: CODESECURITYPROTCPU1,
-    #[doc = "0xfbc - block quiddikey/PUF all index. -- FOR INTERNAL USE ONLY"]
+    _reserved96: [u8; 16usize],
+    #[doc = "0xfbc - block quiddikey/PUF all index."]
     pub key_block: KEY_BLOCK,
-    #[doc = "0xfc0 - Debug authentication scratch registers -- FOR INTERNAL USE ONLY"]
-    pub debug_auth_scratch: DEBUG_AUTH_SCRATCH,
-    _reserved120: [u8; 16usize],
+    #[doc = "0xfc0 - Debug authentication BEACON register"]
+    pub debug_auth_beacon: DEBUG_AUTH_BEACON,
+    _reserved98: [u8; 16usize],
     #[doc = "0xfd4 - CPUs configuration register"]
     pub cpucfg: CPUCFG,
-    _reserved121: [u8; 20usize],
-    #[doc = "0xfec - peripheral enable configuration -- FOR INTERNAL USE ONLY"]
-    pub periphencfg: PERIPHENCFG,
-    _reserved122: [u8; 8usize],
+    _reserved99: [u8; 32usize],
     #[doc = "0xff8 - Device ID"]
     pub device_id0: DEVICE_ID0,
     #[doc = "0xffc - Chip revision ID and Number"]
@@ -779,17 +727,17 @@ impl crate::Readable for CPU0NSTCKCAL {}
 impl crate::Writable for CPU0NSTCKCAL {}
 #[doc = "System tick calibration for non-secure part of CPU0"]
 pub mod cpu0nstckcal;
-#[doc = "System tick calibration for CPU1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cpu1tckcal](cpu1tckcal) module"]
-pub type CPU1TCKCAL = crate::Reg<u32, _CPU1TCKCAL>;
+#[doc = "System tick calibration for CPU1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cpu1stckcal](cpu1stckcal) module"]
+pub type CPU1STCKCAL = crate::Reg<u32, _CPU1STCKCAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _CPU1TCKCAL;
-#[doc = "`read()` method returns [cpu1tckcal::R](cpu1tckcal::R) reader structure"]
-impl crate::Readable for CPU1TCKCAL {}
-#[doc = "`write(|w| ..)` method takes [cpu1tckcal::W](cpu1tckcal::W) writer structure"]
-impl crate::Writable for CPU1TCKCAL {}
+pub struct _CPU1STCKCAL;
+#[doc = "`read()` method returns [cpu1stckcal::R](cpu1stckcal::R) reader structure"]
+impl crate::Readable for CPU1STCKCAL {}
+#[doc = "`write(|w| ..)` method takes [cpu1stckcal::W](cpu1stckcal::W) writer structure"]
+impl crate::Writable for CPU1STCKCAL {}
 #[doc = "System tick calibration for CPU1"]
-pub mod cpu1tckcal;
+pub mod cpu1stckcal;
 #[doc = "NMI Source Select\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [nmisrc](nmisrc) module"]
 pub type NMISRC = crate::Reg<u32, _NMISRC>;
 #[allow(missing_docs)]
@@ -845,7 +793,7 @@ impl crate::Readable for PRESETCTRLSET {}
 impl crate::Writable for PRESETCTRLSET {}
 #[doc = "Peripheral reset control set register"]
 pub mod presetctrlset;
-#[doc = "Peripheral reset contro clearl register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [presetctrlclr](presetctrlclr) module"]
+#[doc = "Peripheral reset control clear register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [presetctrlclr](presetctrlclr) module"]
 pub type PRESETCTRLCLR = crate::Reg<u32, _PRESETCTRLCLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -854,7 +802,7 @@ pub struct _PRESETCTRLCLR;
 impl crate::Readable for PRESETCTRLCLR {}
 #[doc = "`write(|w| ..)` method takes [presetctrlclr::W](presetctrlclr::W) writer structure"]
 impl crate::Writable for PRESETCTRLCLR {}
-#[doc = "Peripheral reset contro clearl register"]
+#[doc = "Peripheral reset control clear register"]
 pub mod presetctrlclr;
 #[doc = "generate a software_reset\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [swr_reset](swr_reset) module"]
 pub type SWR_RESET = crate::Reg<u32, _SWR_RESET>;
@@ -1162,17 +1110,6 @@ impl crate::Readable for USB0CLKSEL {}
 impl crate::Writable for USB0CLKSEL {}
 #[doc = "FS USB clock source select"]
 pub mod usb0clksel;
-#[doc = "HS USB clock source select - NOT USED\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1clksel](usb1clksel) module"]
-pub type USB1CLKSEL = crate::Reg<u32, _USB1CLKSEL>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _USB1CLKSEL;
-#[doc = "`read()` method returns [usb1clksel::R](usb1clksel::R) reader structure"]
-impl crate::Readable for USB1CLKSEL {}
-#[doc = "`write(|w| ..)` method takes [usb1clksel::W](usb1clksel::W) writer structure"]
-impl crate::Writable for USB1CLKSEL {}
-#[doc = "HS USB clock source select - NOT USED"]
-pub mod usb1clksel;
 #[doc = "Flexcomm Interface 0 clock source select for Fractional Rate Divider\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fcclksel0](fcclksel0) module"]
 pub type FCCLKSEL0 = crate::Reg<u32, _FCCLKSEL0>;
 #[allow(missing_docs)]
@@ -1723,7 +1660,7 @@ impl crate::Readable for CLOCKGENUPDATELOCKOUT {}
 impl crate::Writable for CLOCKGENUPDATELOCKOUT {}
 #[doc = "Control clock configuration registers access (like xxxDIV, xxxSEL)"]
 pub mod clockgenupdatelockout;
-#[doc = "FMC configuration register - INTERNAL USE ONLY\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fmccr](fmccr) module"]
+#[doc = "FMC configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fmccr](fmccr) module"]
 pub type FMCCR = crate::Reg<u32, _FMCCR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1732,30 +1669,30 @@ pub struct _FMCCR;
 impl crate::Readable for FMCCR {}
 #[doc = "`write(|w| ..)` method takes [fmccr::W](fmccr::W) writer structure"]
 impl crate::Writable for FMCCR {}
-#[doc = "FMC configuration register - INTERNAL USE ONLY"]
+#[doc = "FMC configuration register"]
 pub mod fmccr;
-#[doc = "USB0 clock control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb0clkctrl](usb0clkctrl) module"]
-pub type USB0CLKCTRL = crate::Reg<u32, _USB0CLKCTRL>;
+#[doc = "USB0 need clock control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb0needclkctrl](usb0needclkctrl) module"]
+pub type USB0NEEDCLKCTRL = crate::Reg<u32, _USB0NEEDCLKCTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _USB0CLKCTRL;
-#[doc = "`read()` method returns [usb0clkctrl::R](usb0clkctrl::R) reader structure"]
-impl crate::Readable for USB0CLKCTRL {}
-#[doc = "`write(|w| ..)` method takes [usb0clkctrl::W](usb0clkctrl::W) writer structure"]
-impl crate::Writable for USB0CLKCTRL {}
-#[doc = "USB0 clock control"]
-pub mod usb0clkctrl;
-#[doc = "USB0 clock status\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb0clkstat](usb0clkstat) module"]
-pub type USB0CLKSTAT = crate::Reg<u32, _USB0CLKSTAT>;
+pub struct _USB0NEEDCLKCTRL;
+#[doc = "`read()` method returns [usb0needclkctrl::R](usb0needclkctrl::R) reader structure"]
+impl crate::Readable for USB0NEEDCLKCTRL {}
+#[doc = "`write(|w| ..)` method takes [usb0needclkctrl::W](usb0needclkctrl::W) writer structure"]
+impl crate::Writable for USB0NEEDCLKCTRL {}
+#[doc = "USB0 need clock control"]
+pub mod usb0needclkctrl;
+#[doc = "USB0 need clock status\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb0needclkstat](usb0needclkstat) module"]
+pub type USB0NEEDCLKSTAT = crate::Reg<u32, _USB0NEEDCLKSTAT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _USB0CLKSTAT;
-#[doc = "`read()` method returns [usb0clkstat::R](usb0clkstat::R) reader structure"]
-impl crate::Readable for USB0CLKSTAT {}
-#[doc = "`write(|w| ..)` method takes [usb0clkstat::W](usb0clkstat::W) writer structure"]
-impl crate::Writable for USB0CLKSTAT {}
-#[doc = "USB0 clock status"]
-pub mod usb0clkstat;
+pub struct _USB0NEEDCLKSTAT;
+#[doc = "`read()` method returns [usb0needclkstat::R](usb0needclkstat::R) reader structure"]
+impl crate::Readable for USB0NEEDCLKSTAT {}
+#[doc = "`write(|w| ..)` method takes [usb0needclkstat::W](usb0needclkstat::W) writer structure"]
+impl crate::Writable for USB0NEEDCLKSTAT {}
+#[doc = "USB0 need clock status"]
+pub mod usb0needclkstat;
 #[doc = "FMCflush control\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fmcflush](fmcflush) module"]
 pub type FMCFLUSH = crate::Reg<u32, _FMCFLUSH>;
 #[allow(missing_docs)]
@@ -1776,39 +1713,28 @@ impl crate::Readable for MCLKIO {}
 impl crate::Writable for MCLKIO {}
 #[doc = "MCLK control"]
 pub mod mclkio;
-#[doc = "USB1 clock control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1clkctrl](usb1clkctrl) module"]
-pub type USB1CLKCTRL = crate::Reg<u32, _USB1CLKCTRL>;
+#[doc = "USB1 need clock control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1needclkctrl](usb1needclkctrl) module"]
+pub type USB1NEEDCLKCTRL = crate::Reg<u32, _USB1NEEDCLKCTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _USB1CLKCTRL;
-#[doc = "`read()` method returns [usb1clkctrl::R](usb1clkctrl::R) reader structure"]
-impl crate::Readable for USB1CLKCTRL {}
-#[doc = "`write(|w| ..)` method takes [usb1clkctrl::W](usb1clkctrl::W) writer structure"]
-impl crate::Writable for USB1CLKCTRL {}
-#[doc = "USB1 clock control"]
-pub mod usb1clkctrl;
-#[doc = "USB1 clock status\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1clkstat](usb1clkstat) module"]
-pub type USB1CLKSTAT = crate::Reg<u32, _USB1CLKSTAT>;
+pub struct _USB1NEEDCLKCTRL;
+#[doc = "`read()` method returns [usb1needclkctrl::R](usb1needclkctrl::R) reader structure"]
+impl crate::Readable for USB1NEEDCLKCTRL {}
+#[doc = "`write(|w| ..)` method takes [usb1needclkctrl::W](usb1needclkctrl::W) writer structure"]
+impl crate::Writable for USB1NEEDCLKCTRL {}
+#[doc = "USB1 need clock control"]
+pub mod usb1needclkctrl;
+#[doc = "USB1 need clock status\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1needclkstat](usb1needclkstat) module"]
+pub type USB1NEEDCLKSTAT = crate::Reg<u32, _USB1NEEDCLKSTAT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _USB1CLKSTAT;
-#[doc = "`read()` method returns [usb1clkstat::R](usb1clkstat::R) reader structure"]
-impl crate::Readable for USB1CLKSTAT {}
-#[doc = "`write(|w| ..)` method takes [usb1clkstat::W](usb1clkstat::W) writer structure"]
-impl crate::Writable for USB1CLKSTAT {}
-#[doc = "USB1 clock status"]
-pub mod usb1clkstat;
-#[doc = "Flash Banks control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [flashbankenable](flashbankenable) module"]
-pub type FLASHBANKENABLE = crate::Reg<u32, _FLASHBANKENABLE>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _FLASHBANKENABLE;
-#[doc = "`read()` method returns [flashbankenable::R](flashbankenable::R) reader structure"]
-impl crate::Readable for FLASHBANKENABLE {}
-#[doc = "`write(|w| ..)` method takes [flashbankenable::W](flashbankenable::W) writer structure"]
-impl crate::Writable for FLASHBANKENABLE {}
-#[doc = "Flash Banks control"]
-pub mod flashbankenable;
+pub struct _USB1NEEDCLKSTAT;
+#[doc = "`read()` method returns [usb1needclkstat::R](usb1needclkstat::R) reader structure"]
+impl crate::Readable for USB1NEEDCLKSTAT {}
+#[doc = "`write(|w| ..)` method takes [usb1needclkstat::W](usb1needclkstat::W) writer structure"]
+impl crate::Writable for USB1NEEDCLKSTAT {}
+#[doc = "USB1 need clock status"]
+pub mod usb1needclkstat;
 #[doc = "SDIO CCLKIN phase and delay control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sdioclkctrl](sdioclkctrl) module"]
 pub type SDIOCLKCTRL = crate::Reg<u32, _SDIOCLKCTRL>;
 #[allow(missing_docs)]
@@ -1941,86 +1867,6 @@ impl crate::Readable for PLL0SSCG1 {}
 impl crate::Writable for PLL0SSCG1 {}
 #[doc = "PLL0 Spread Spectrum Wrapper control register 1"]
 pub mod pll0sscg1;
-#[doc = "eFUSE controller clock enable\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [efuseclkctrl](efuseclkctrl) module"]
-pub type EFUSECLKCTRL = crate::Reg<u32, _EFUSECLKCTRL>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _EFUSECLKCTRL;
-#[doc = "`read()` method returns [efuseclkctrl::R](efuseclkctrl::R) reader structure"]
-impl crate::Readable for EFUSECLKCTRL {}
-#[doc = "`write(|w| ..)` method takes [efuseclkctrl::W](efuseclkctrl::W) writer structure"]
-impl crate::Writable for EFUSECLKCTRL {}
-#[doc = "eFUSE controller clock enable"]
-pub mod efuseclkctrl;
-#[doc = "Start logic wake-up enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [starter0](starter0) module"]
-pub type STARTER0 = crate::Reg<u32, _STARTER0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _STARTER0;
-#[doc = "`read()` method returns [starter0::R](starter0::R) reader structure"]
-impl crate::Readable for STARTER0 {}
-#[doc = "`write(|w| ..)` method takes [starter0::W](starter0::W) writer structure"]
-impl crate::Writable for STARTER0 {}
-#[doc = "Start logic wake-up enable register"]
-pub mod starter0;
-#[doc = "Start logic wake-up enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [starter1](starter1) module"]
-pub type STARTER1 = crate::Reg<u32, _STARTER1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _STARTER1;
-#[doc = "`read()` method returns [starter1::R](starter1::R) reader structure"]
-impl crate::Readable for STARTER1 {}
-#[doc = "`write(|w| ..)` method takes [starter1::W](starter1::W) writer structure"]
-impl crate::Writable for STARTER1 {}
-#[doc = "Start logic wake-up enable register"]
-pub mod starter1;
-#[doc = "Set bits in STARTER\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [starterset0](starterset0) module"]
-pub type STARTERSET0 = crate::Reg<u32, _STARTERSET0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _STARTERSET0;
-#[doc = "`write(|w| ..)` method takes [starterset0::W](starterset0::W) writer structure"]
-impl crate::Writable for STARTERSET0 {}
-#[doc = "Set bits in STARTER"]
-pub mod starterset0;
-#[doc = "Set bits in STARTER\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [starterset1](starterset1) module"]
-pub type STARTERSET1 = crate::Reg<u32, _STARTERSET1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _STARTERSET1;
-#[doc = "`write(|w| ..)` method takes [starterset1::W](starterset1::W) writer structure"]
-impl crate::Writable for STARTERSET1 {}
-#[doc = "Set bits in STARTER"]
-pub mod starterset1;
-#[doc = "Clear bits in STARTER\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [starterclr0](starterclr0) module"]
-pub type STARTERCLR0 = crate::Reg<u32, _STARTERCLR0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _STARTERCLR0;
-#[doc = "`write(|w| ..)` method takes [starterclr0::W](starterclr0::W) writer structure"]
-impl crate::Writable for STARTERCLR0 {}
-#[doc = "Clear bits in STARTER"]
-pub mod starterclr0;
-#[doc = "Clear bits in STARTER\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [starterclr1](starterclr1) module"]
-pub type STARTERCLR1 = crate::Reg<u32, _STARTERCLR1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _STARTERCLR1;
-#[doc = "`write(|w| ..)` method takes [starterclr1::W](starterclr1::W) writer structure"]
-impl crate::Writable for STARTERCLR1 {}
-#[doc = "Clear bits in STARTER"]
-pub mod starterclr1;
-#[doc = "Hardware Sleep control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hardwaresleep](hardwaresleep) module"]
-pub type HARDWARESLEEP = crate::Reg<u32, _HARDWARESLEEP>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _HARDWARESLEEP;
-#[doc = "`read()` method returns [hardwaresleep::R](hardwaresleep::R) reader structure"]
-impl crate::Readable for HARDWARESLEEP {}
-#[doc = "`write(|w| ..)` method takes [hardwaresleep::W](hardwaresleep::W) writer structure"]
-impl crate::Writable for HARDWARESLEEP {}
-#[doc = "Hardware Sleep control"]
-pub mod hardwaresleep;
 #[doc = "CPU Control for multiple processors\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cpuctrl](cpuctrl) module"]
 pub type CPUCTRL = crate::Reg<u32, _CPUCTRL>;
 #[allow(missing_docs)]
@@ -2043,17 +1889,6 @@ impl crate::Readable for CPBOOT {}
 impl crate::Writable for CPBOOT {}
 #[doc = "Coprocessor Boot Address"]
 pub mod cpboot;
-#[doc = "Coprocessor Stack Address\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cpstack](cpstack) module"]
-pub type CPSTACK = crate::Reg<u32, _CPSTACK>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CPSTACK;
-#[doc = "`read()` method returns [cpstack::R](cpstack::R) reader structure"]
-impl crate::Readable for CPSTACK {}
-#[doc = "`write(|w| ..)` method takes [cpstack::W](cpstack::W) writer structure"]
-impl crate::Writable for CPSTACK {}
-#[doc = "Coprocessor Stack Address"]
-pub mod cpstack;
 #[doc = "CPU Status\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cpstat](cpstat) module"]
 pub type CPSTAT = crate::Reg<u32, _CPSTAT>;
 #[allow(missing_docs)]
@@ -2065,94 +1900,6 @@ impl crate::Readable for CPSTAT {}
 impl crate::Writable for CPSTAT {}
 #[doc = "CPU Status"]
 pub mod cpstat;
-#[doc = "Composite Device Identifier\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dice_reg0](dice_reg0) module"]
-pub type DICE_REG0 = crate::Reg<u32, _DICE_REG0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DICE_REG0;
-#[doc = "`read()` method returns [dice_reg0::R](dice_reg0::R) reader structure"]
-impl crate::Readable for DICE_REG0 {}
-#[doc = "`write(|w| ..)` method takes [dice_reg0::W](dice_reg0::W) writer structure"]
-impl crate::Writable for DICE_REG0 {}
-#[doc = "Composite Device Identifier"]
-pub mod dice_reg0;
-#[doc = "Composite Device Identifier\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dice_reg1](dice_reg1) module"]
-pub type DICE_REG1 = crate::Reg<u32, _DICE_REG1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DICE_REG1;
-#[doc = "`read()` method returns [dice_reg1::R](dice_reg1::R) reader structure"]
-impl crate::Readable for DICE_REG1 {}
-#[doc = "`write(|w| ..)` method takes [dice_reg1::W](dice_reg1::W) writer structure"]
-impl crate::Writable for DICE_REG1 {}
-#[doc = "Composite Device Identifier"]
-pub mod dice_reg1;
-#[doc = "Composite Device Identifier\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dice_reg2](dice_reg2) module"]
-pub type DICE_REG2 = crate::Reg<u32, _DICE_REG2>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DICE_REG2;
-#[doc = "`read()` method returns [dice_reg2::R](dice_reg2::R) reader structure"]
-impl crate::Readable for DICE_REG2 {}
-#[doc = "`write(|w| ..)` method takes [dice_reg2::W](dice_reg2::W) writer structure"]
-impl crate::Writable for DICE_REG2 {}
-#[doc = "Composite Device Identifier"]
-pub mod dice_reg2;
-#[doc = "Composite Device Identifier\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dice_reg3](dice_reg3) module"]
-pub type DICE_REG3 = crate::Reg<u32, _DICE_REG3>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DICE_REG3;
-#[doc = "`read()` method returns [dice_reg3::R](dice_reg3::R) reader structure"]
-impl crate::Readable for DICE_REG3 {}
-#[doc = "`write(|w| ..)` method takes [dice_reg3::W](dice_reg3::W) writer structure"]
-impl crate::Writable for DICE_REG3 {}
-#[doc = "Composite Device Identifier"]
-pub mod dice_reg3;
-#[doc = "Composite Device Identifier\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dice_reg4](dice_reg4) module"]
-pub type DICE_REG4 = crate::Reg<u32, _DICE_REG4>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DICE_REG4;
-#[doc = "`read()` method returns [dice_reg4::R](dice_reg4::R) reader structure"]
-impl crate::Readable for DICE_REG4 {}
-#[doc = "`write(|w| ..)` method takes [dice_reg4::W](dice_reg4::W) writer structure"]
-impl crate::Writable for DICE_REG4 {}
-#[doc = "Composite Device Identifier"]
-pub mod dice_reg4;
-#[doc = "Composite Device Identifier\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dice_reg5](dice_reg5) module"]
-pub type DICE_REG5 = crate::Reg<u32, _DICE_REG5>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DICE_REG5;
-#[doc = "`read()` method returns [dice_reg5::R](dice_reg5::R) reader structure"]
-impl crate::Readable for DICE_REG5 {}
-#[doc = "`write(|w| ..)` method takes [dice_reg5::W](dice_reg5::W) writer structure"]
-impl crate::Writable for DICE_REG5 {}
-#[doc = "Composite Device Identifier"]
-pub mod dice_reg5;
-#[doc = "Composite Device Identifier\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dice_reg6](dice_reg6) module"]
-pub type DICE_REG6 = crate::Reg<u32, _DICE_REG6>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DICE_REG6;
-#[doc = "`read()` method returns [dice_reg6::R](dice_reg6::R) reader structure"]
-impl crate::Readable for DICE_REG6 {}
-#[doc = "`write(|w| ..)` method takes [dice_reg6::W](dice_reg6::W) writer structure"]
-impl crate::Writable for DICE_REG6 {}
-#[doc = "Composite Device Identifier"]
-pub mod dice_reg6;
-#[doc = "Composite Device Identifier\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dice_reg7](dice_reg7) module"]
-pub type DICE_REG7 = crate::Reg<u32, _DICE_REG7>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DICE_REG7;
-#[doc = "`read()` method returns [dice_reg7::R](dice_reg7::R) reader structure"]
-impl crate::Readable for DICE_REG7 {}
-#[doc = "`write(|w| ..)` method takes [dice_reg7::W](dice_reg7::W) writer structure"]
-impl crate::Writable for DICE_REG7 {}
-#[doc = "Composite Device Identifier"]
-pub mod dice_reg7;
 #[doc = "Various system clock controls : Flash clock (48 MHz) control, clocks to Frequency Measures\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clock_ctrl](clock_ctrl) module"]
 pub type CLOCK_CTRL = crate::Reg<u32, _CLOCK_CTRL>;
 #[allow(missing_docs)]
@@ -2208,7 +1955,7 @@ impl crate::Readable for GPIOPSYNC {}
 impl crate::Writable for GPIOPSYNC {}
 #[doc = "Enable bypass of the first stage of synchonization inside GPIO_INT module"]
 pub mod gpiopsync;
-#[doc = "Control write access to security registers -- FOR INTERNAl USE ONLY\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug_lock_en](debug_lock_en) module"]
+#[doc = "Control write access to security registers.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug_lock_en](debug_lock_en) module"]
 pub type DEBUG_LOCK_EN = crate::Reg<u32, _DEBUG_LOCK_EN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2217,9 +1964,9 @@ pub struct _DEBUG_LOCK_EN;
 impl crate::Readable for DEBUG_LOCK_EN {}
 #[doc = "`write(|w| ..)` method takes [debug_lock_en::W](debug_lock_en::W) writer structure"]
 impl crate::Writable for DEBUG_LOCK_EN {}
-#[doc = "Control write access to security registers -- FOR INTERNAl USE ONLY"]
+#[doc = "Control write access to security registers."]
 pub mod debug_lock_en;
-#[doc = "Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control -- FOR INTERNAl USE ONLY\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug_features](debug_features) module"]
+#[doc = "Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug_features](debug_features) module"]
 pub type DEBUG_FEATURES = crate::Reg<u32, _DEBUG_FEATURES>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2228,9 +1975,9 @@ pub struct _DEBUG_FEATURES;
 impl crate::Readable for DEBUG_FEATURES {}
 #[doc = "`write(|w| ..)` method takes [debug_features::W](debug_features::W) writer structure"]
 impl crate::Writable for DEBUG_FEATURES {}
-#[doc = "Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control -- FOR INTERNAl USE ONLY"]
+#[doc = "Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control."]
 pub mod debug_features;
-#[doc = "Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control DUPLICATE register -- FOR INTERNAl USE ONLY\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug_features_dp](debug_features_dp) module"]
+#[doc = "Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control DUPLICATE register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug_features_dp](debug_features_dp) module"]
 pub type DEBUG_FEATURES_DP = crate::Reg<u32, _DEBUG_FEATURES_DP>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2239,55 +1986,28 @@ pub struct _DEBUG_FEATURES_DP;
 impl crate::Readable for DEBUG_FEATURES_DP {}
 #[doc = "`write(|w| ..)` method takes [debug_features_dp::W](debug_features_dp::W) writer structure"]
 impl crate::Writable for DEBUG_FEATURES_DP {}
-#[doc = "Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control DUPLICATE register -- FOR INTERNAl USE ONLY"]
+#[doc = "Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control DUPLICATE register."]
 pub mod debug_features_dp;
-#[doc = "Security code to allow test (Design for Testability) access -- FOR INTERNAl USE ONLY\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [codesecurityprottest](codesecurityprottest) module"]
-pub type CODESECURITYPROTTEST = crate::Reg<u32, _CODESECURITYPROTTEST>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CODESECURITYPROTTEST;
-#[doc = "`write(|w| ..)` method takes [codesecurityprottest::W](codesecurityprottest::W) writer structure"]
-impl crate::Writable for CODESECURITYPROTTEST {}
-#[doc = "Security code to allow test (Design for Testability) access -- FOR INTERNAl USE ONLY"]
-pub mod codesecurityprottest;
-#[doc = "Security code to allow CPU0 (CM33) Debug Access Port (DAP) -- FOR INTERNAl USE ONLY\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [codesecurityprotcpu0](codesecurityprotcpu0) module"]
-pub type CODESECURITYPROTCPU0 = crate::Reg<u32, _CODESECURITYPROTCPU0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CODESECURITYPROTCPU0;
-#[doc = "`write(|w| ..)` method takes [codesecurityprotcpu0::W](codesecurityprotcpu0::W) writer structure"]
-impl crate::Writable for CODESECURITYPROTCPU0 {}
-#[doc = "Security code to allow CPU0 (CM33) Debug Access Port (DAP) -- FOR INTERNAl USE ONLY"]
-pub mod codesecurityprotcpu0;
-#[doc = "Security code to allow CPU1 (Micro CM33) Debug Access Port (DAP) -- FOR INTERNAl USE ONLY\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [codesecurityprotcpu1](codesecurityprotcpu1) module"]
-pub type CODESECURITYPROTCPU1 = crate::Reg<u32, _CODESECURITYPROTCPU1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CODESECURITYPROTCPU1;
-#[doc = "`write(|w| ..)` method takes [codesecurityprotcpu1::W](codesecurityprotcpu1::W) writer structure"]
-impl crate::Writable for CODESECURITYPROTCPU1 {}
-#[doc = "Security code to allow CPU1 (Micro CM33) Debug Access Port (DAP) -- FOR INTERNAl USE ONLY"]
-pub mod codesecurityprotcpu1;
-#[doc = "block quiddikey/PUF all index. -- FOR INTERNAL USE ONLY\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [key_block](key_block) module"]
+#[doc = "block quiddikey/PUF all index.\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [key_block](key_block) module"]
 pub type KEY_BLOCK = crate::Reg<u32, _KEY_BLOCK>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _KEY_BLOCK;
 #[doc = "`write(|w| ..)` method takes [key_block::W](key_block::W) writer structure"]
 impl crate::Writable for KEY_BLOCK {}
-#[doc = "block quiddikey/PUF all index. -- FOR INTERNAL USE ONLY"]
+#[doc = "block quiddikey/PUF all index."]
 pub mod key_block;
-#[doc = "Debug authentication scratch registers -- FOR INTERNAL USE ONLY\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug_auth_scratch](debug_auth_scratch) module"]
-pub type DEBUG_AUTH_SCRATCH = crate::Reg<u32, _DEBUG_AUTH_SCRATCH>;
+#[doc = "Debug authentication BEACON register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug_auth_beacon](debug_auth_beacon) module"]
+pub type DEBUG_AUTH_BEACON = crate::Reg<u32, _DEBUG_AUTH_BEACON>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _DEBUG_AUTH_SCRATCH;
-#[doc = "`read()` method returns [debug_auth_scratch::R](debug_auth_scratch::R) reader structure"]
-impl crate::Readable for DEBUG_AUTH_SCRATCH {}
-#[doc = "`write(|w| ..)` method takes [debug_auth_scratch::W](debug_auth_scratch::W) writer structure"]
-impl crate::Writable for DEBUG_AUTH_SCRATCH {}
-#[doc = "Debug authentication scratch registers -- FOR INTERNAL USE ONLY"]
-pub mod debug_auth_scratch;
+pub struct _DEBUG_AUTH_BEACON;
+#[doc = "`read()` method returns [debug_auth_beacon::R](debug_auth_beacon::R) reader structure"]
+impl crate::Readable for DEBUG_AUTH_BEACON {}
+#[doc = "`write(|w| ..)` method takes [debug_auth_beacon::W](debug_auth_beacon::W) writer structure"]
+impl crate::Writable for DEBUG_AUTH_BEACON {}
+#[doc = "Debug authentication BEACON register"]
+pub mod debug_auth_beacon;
 #[doc = "CPUs configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cpucfg](cpucfg) module"]
 pub type CPUCFG = crate::Reg<u32, _CPUCFG>;
 #[allow(missing_docs)]
@@ -2299,17 +2019,6 @@ impl crate::Readable for CPUCFG {}
 impl crate::Writable for CPUCFG {}
 #[doc = "CPUs configuration register"]
 pub mod cpucfg;
-#[doc = "peripheral enable configuration -- FOR INTERNAL USE ONLY\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [periphencfg](periphencfg) module"]
-pub type PERIPHENCFG = crate::Reg<u32, _PERIPHENCFG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _PERIPHENCFG;
-#[doc = "`read()` method returns [periphencfg::R](periphencfg::R) reader structure"]
-impl crate::Readable for PERIPHENCFG {}
-#[doc = "`write(|w| ..)` method takes [periphencfg::W](periphencfg::W) writer structure"]
-impl crate::Writable for PERIPHENCFG {}
-#[doc = "peripheral enable configuration -- FOR INTERNAL USE ONLY"]
-pub mod periphencfg;
 #[doc = "Device ID\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [device_id0](device_id0) module"]
 pub type DEVICE_ID0 = crate::Reg<u32, _DEVICE_ID0>;
 #[allow(missing_docs)]

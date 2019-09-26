@@ -1,7 +1,7 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Is control register to enable and operate Hash and Crypto"]
+    #[doc = "0x00 - Control register to enable and operate Hash and Crypto"]
     pub ctrl: CTRL,
     #[doc = "0x04 - Indicates status of Hash peripheral."]
     pub status: STATUS,
@@ -19,20 +19,19 @@ pub struct RegisterBlock {
     #[doc = "0x24 - no description available"]
     pub alias: [ALIAS; 7],
     #[doc = "0x40 - no description available"]
-    pub outdata0: [OUTDATA0; 8],
-    #[doc = "0x60 - no description available"]
-    pub outdata1: [OUTDATA1; 8],
+    pub digest0: [DIGEST0; 8],
+    _reserved9: [u8; 32usize],
     #[doc = "0x80 - Crypto settings for AES and Salsa and ChaCha"]
     pub cryptcfg: CRYPTCFG,
     #[doc = "0x84 - Returns the configuration of this block in this chip - indicates what services are available."]
     pub config: CONFIG,
-    _reserved12: [u8; 4usize],
+    _reserved11: [u8; 4usize],
     #[doc = "0x8c - Lock register allows locking to the current security level or unlocking by the lock holding level."]
     pub lock: LOCK,
     #[doc = "0x90 - no description available"]
     pub mask: [MASK; 4],
 }
-#[doc = "Is control register to enable and operate Hash and Crypto\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctrl](ctrl) module"]
+#[doc = "Control register to enable and operate Hash and Crypto\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctrl](ctrl) module"]
 pub type CTRL = crate::Reg<u32, _CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -41,7 +40,7 @@ pub struct _CTRL;
 impl crate::Readable for CTRL {}
 #[doc = "`write(|w| ..)` method takes [ctrl::W](ctrl::W) writer structure"]
 impl crate::Writable for CTRL {}
-#[doc = "Is control register to enable and operate Hash and Crypto"]
+#[doc = "Control register to enable and operate Hash and Crypto"]
 pub mod ctrl;
 #[doc = "Indicates status of Hash peripheral.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [status](status) module"]
 pub type STATUS = crate::Reg<u32, _STATUS>;
@@ -116,24 +115,15 @@ pub struct _ALIAS;
 impl crate::Writable for ALIAS {}
 #[doc = "no description available"]
 pub mod alias;
-#[doc = "no description available\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [outdata0](outdata0) module"]
-pub type OUTDATA0 = crate::Reg<u32, _OUTDATA0>;
+#[doc = "no description available\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [digest0](digest0) module"]
+pub type DIGEST0 = crate::Reg<u32, _DIGEST0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _OUTDATA0;
-#[doc = "`read()` method returns [outdata0::R](outdata0::R) reader structure"]
-impl crate::Readable for OUTDATA0 {}
+pub struct _DIGEST0;
+#[doc = "`read()` method returns [digest0::R](digest0::R) reader structure"]
+impl crate::Readable for DIGEST0 {}
 #[doc = "no description available"]
-pub mod outdata0;
-#[doc = "no description available\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [outdata1](outdata1) module"]
-pub type OUTDATA1 = crate::Reg<u32, _OUTDATA1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _OUTDATA1;
-#[doc = "`read()` method returns [outdata1::R](outdata1::R) reader structure"]
-impl crate::Readable for OUTDATA1 {}
-#[doc = "no description available"]
-pub mod outdata1;
+pub mod digest0;
 #[doc = "Crypto settings for AES and Salsa and ChaCha\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cryptcfg](cryptcfg) module"]
 pub type CRYPTCFG = crate::Reg<u32, _CRYPTCFG>;
 #[allow(missing_docs)]

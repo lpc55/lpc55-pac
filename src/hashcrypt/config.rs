@@ -16,18 +16,12 @@ pub type DUAL_R = crate::R<bool, bool>;
 pub type DMA_R = crate::R<bool, bool>;
 #[doc = "Reader of field `AHB`"]
 pub type AHB_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SHA512`"]
-pub type SHA512_R = crate::R<bool, bool>;
 #[doc = "Reader of field `AES`"]
 pub type AES_R = crate::R<bool, bool>;
 #[doc = "Reader of field `AESKEY`"]
 pub type AESKEY_R = crate::R<bool, bool>;
 #[doc = "Reader of field `SECRET`"]
 pub type SECRET_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SALSA`"]
-pub type SALSA_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CHACHA`"]
-pub type CHACHA_R = crate::R<bool, bool>;
 #[doc = "Reader of field `ICB`"]
 pub type ICB_R = crate::R<bool, bool>;
 impl R {
@@ -46,11 +40,6 @@ impl R {
     pub fn ahb(&self) -> AHB_R {
         AHB_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - 1 if SHA2-512 included"]
-    #[inline(always)]
-    pub fn sha512(&self) -> SHA512_R {
-        SHA512_R::new(((self.bits >> 5) & 0x01) != 0)
-    }
     #[doc = "Bit 6 - 1 if AES 128 included"]
     #[inline(always)]
     pub fn aes(&self) -> AES_R {
@@ -65,16 +54,6 @@ impl R {
     #[inline(always)]
     pub fn secret(&self) -> SECRET_R {
         SECRET_R::new(((self.bits >> 8) & 0x01) != 0)
-    }
-    #[doc = "Bit 9 - 1 if Salsa included"]
-    #[inline(always)]
-    pub fn salsa(&self) -> SALSA_R {
-        SALSA_R::new(((self.bits >> 9) & 0x01) != 0)
-    }
-    #[doc = "Bit 10 - 1 if ChaCha included"]
-    #[inline(always)]
-    pub fn chacha(&self) -> CHACHA_R {
-        CHACHA_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - 1 if ICB over AES included"]
     #[inline(always)]

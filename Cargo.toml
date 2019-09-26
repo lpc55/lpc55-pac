@@ -1,6 +1,6 @@
 [package]
 name = "lpc55s6x-pac"
-version = "0.0.4"
+version = "0.0.5"
 edition = "2018"
 authors = [
   "Nicolas Stalder <n@stalder.io>",
@@ -17,10 +17,10 @@ keywords = ["no-std", "cortex-m", "nxp", "lpc", "svd2rust"]
 circle-ci = { repository = "nickray/lpc55s6x-pac" }
 
 [dependencies]
-bare-metal = "0.2"
-cortex-m = "0.6"
-cortex-m-rt = { version = "0.6", optional = true }
-vcell = "0.1"
+bare-metal = "0.2.5"
+cortex-m = "0.6.1"
+cortex-m-rt = { version = "0.6.10", optional = true }
+vcell = "0.1.2"
 
 [features]
 rt = ["cortex-m-rt/device"]

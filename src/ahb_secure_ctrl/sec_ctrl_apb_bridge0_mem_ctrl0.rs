@@ -592,9 +592,9 @@ impl<'a> SEC_PINT_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PMUX_RULE`"]
+#[doc = "Possible values of the field `INPUTMUX_RULE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PMUX_RULE_A {
+pub enum INPUTMUX_RULE_A {
     #[doc = "Non-secure and Non-priviledge user access allowed."]
     ENUM_NS_NP,
     #[doc = "Non-secure and Privilege access allowed."]
@@ -604,60 +604,60 @@ pub enum PMUX_RULE_A {
     #[doc = "Secure and Priviledge user access allowed."]
     ENUM_S_P,
 }
-impl From<PMUX_RULE_A> for u8 {
+impl From<INPUTMUX_RULE_A> for u8 {
     #[inline(always)]
-    fn from(variant: PMUX_RULE_A) -> Self {
+    fn from(variant: INPUTMUX_RULE_A) -> Self {
         match variant {
-            PMUX_RULE_A::ENUM_NS_NP => 0,
-            PMUX_RULE_A::ENUM_NS_P => 1,
-            PMUX_RULE_A::ENUM_S_NP => 2,
-            PMUX_RULE_A::ENUM_S_P => 3,
+            INPUTMUX_RULE_A::ENUM_NS_NP => 0,
+            INPUTMUX_RULE_A::ENUM_NS_P => 1,
+            INPUTMUX_RULE_A::ENUM_S_NP => 2,
+            INPUTMUX_RULE_A::ENUM_S_P => 3,
         }
     }
 }
-#[doc = "Reader of field `PMUX_RULE`"]
-pub type PMUX_RULE_R = crate::R<u8, PMUX_RULE_A>;
-impl PMUX_RULE_R {
+#[doc = "Reader of field `INPUTMUX_RULE`"]
+pub type INPUTMUX_RULE_R = crate::R<u8, INPUTMUX_RULE_A>;
+impl INPUTMUX_RULE_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PMUX_RULE_A {
+    pub fn variant(&self) -> INPUTMUX_RULE_A {
         match self.bits {
-            0 => PMUX_RULE_A::ENUM_NS_NP,
-            1 => PMUX_RULE_A::ENUM_NS_P,
-            2 => PMUX_RULE_A::ENUM_S_NP,
-            3 => PMUX_RULE_A::ENUM_S_P,
+            0 => INPUTMUX_RULE_A::ENUM_NS_NP,
+            1 => INPUTMUX_RULE_A::ENUM_NS_P,
+            2 => INPUTMUX_RULE_A::ENUM_S_NP,
+            3 => INPUTMUX_RULE_A::ENUM_S_P,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == PMUX_RULE_A::ENUM_NS_NP
+        *self == INPUTMUX_RULE_A::ENUM_NS_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == PMUX_RULE_A::ENUM_NS_P
+        *self == INPUTMUX_RULE_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == PMUX_RULE_A::ENUM_S_NP
+        *self == INPUTMUX_RULE_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == PMUX_RULE_A::ENUM_S_P
+        *self == INPUTMUX_RULE_A::ENUM_S_P
     }
 }
-#[doc = "Write proxy for field `PMUX_RULE`"]
-pub struct PMUX_RULE_W<'a> {
+#[doc = "Write proxy for field `INPUTMUX_RULE`"]
+pub struct INPUTMUX_RULE_W<'a> {
     w: &'a mut W,
 }
-impl<'a> PMUX_RULE_W<'a> {
+impl<'a> INPUTMUX_RULE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: PMUX_RULE_A) -> &'a mut W {
+    pub fn variant(self, variant: INPUTMUX_RULE_A) -> &'a mut W {
         {
             self.bits(variant.into())
         }
@@ -665,22 +665,22 @@ impl<'a> PMUX_RULE_W<'a> {
     #[doc = "Non-secure and Non-priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_ns_np(self) -> &'a mut W {
-        self.variant(PMUX_RULE_A::ENUM_NS_NP)
+        self.variant(INPUTMUX_RULE_A::ENUM_NS_NP)
     }
     #[doc = "Non-secure and Privilege access allowed."]
     #[inline(always)]
     pub fn enum_ns_p(self) -> &'a mut W {
-        self.variant(PMUX_RULE_A::ENUM_NS_P)
+        self.variant(INPUTMUX_RULE_A::ENUM_NS_P)
     }
     #[doc = "Secure and Non-priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_s_np(self) -> &'a mut W {
-        self.variant(PMUX_RULE_A::ENUM_S_NP)
+        self.variant(INPUTMUX_RULE_A::ENUM_S_NP)
     }
     #[doc = "Secure and Priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_s_p(self) -> &'a mut W {
-        self.variant(PMUX_RULE_A::ENUM_S_P)
+        self.variant(INPUTMUX_RULE_A::ENUM_S_P)
     }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
@@ -720,10 +720,10 @@ impl R {
     pub fn sec_pint_rule(&self) -> SEC_PINT_RULE_R {
         SEC_PINT_RULE_R::new(((self.bits >> 20) & 0x03) as u8)
     }
-    #[doc = "Bits 24:25 - Peripherals mux"]
+    #[doc = "Bits 24:25 - Peripheral input multiplexing"]
     #[inline(always)]
-    pub fn pmux_rule(&self) -> PMUX_RULE_R {
-        PMUX_RULE_R::new(((self.bits >> 24) & 0x03) as u8)
+    pub fn inputmux_rule(&self) -> INPUTMUX_RULE_R {
+        INPUTMUX_RULE_R::new(((self.bits >> 24) & 0x03) as u8)
     }
 }
 impl W {
@@ -757,9 +757,9 @@ impl W {
     pub fn sec_pint_rule(&mut self) -> SEC_PINT_RULE_W {
         SEC_PINT_RULE_W { w: self }
     }
-    #[doc = "Bits 24:25 - Peripherals mux"]
+    #[doc = "Bits 24:25 - Peripheral input multiplexing"]
     #[inline(always)]
-    pub fn pmux_rule(&mut self) -> PMUX_RULE_W {
-        PMUX_RULE_W { w: self }
+    pub fn inputmux_rule(&mut self) -> INPUTMUX_RULE_W {
+        INPUTMUX_RULE_W { w: self }
     }
 }
