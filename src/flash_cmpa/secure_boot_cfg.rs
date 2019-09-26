@@ -108,6 +108,20 @@ impl<'a> BLOCK_ENROLL_W<'a> {
         self.w
     }
 }
+#[doc = "Reader of field `DICE_INC_SEC_EPOCH`"]
+pub type DICE_INC_SEC_EPOCH_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DICE_INC_SEC_EPOCH`"]
+pub struct DICE_INC_SEC_EPOCH_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DICE_INC_SEC_EPOCH_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
+        self.w
+    }
+}
 #[doc = "Reader of field `SEC_BOOT_EN`"]
 pub type SEC_BOOT_EN_R = crate::R<u8, u8>;
 #[doc = "Write proxy for field `SEC_BOOT_EN`"]
@@ -158,6 +172,11 @@ impl R {
     pub fn block_enroll(&self) -> BLOCK_ENROLL_R {
         BLOCK_ENROLL_R::new(((self.bits >> 12) & 0x03) as u8)
     }
+    #[doc = "Bits 14:15 - Include security EPOCH in DICE"]
+    #[inline(always)]
+    pub fn dice_inc_sec_epoch(&self) -> DICE_INC_SEC_EPOCH_R {
+        DICE_INC_SEC_EPOCH_R::new(((self.bits >> 14) & 0x03) as u8)
+    }
     #[doc = "Bits 30:31 - Secure boot enable. 00 - Plain image (internal flash with or without CRC) 01, 10, 11 - Boot signed images. (internal flash, RSA signed)"]
     #[inline(always)]
     pub fn sec_boot_en(&self) -> SEC_BOOT_EN_R {
@@ -199,6 +218,11 @@ impl W {
     #[inline(always)]
     pub fn block_enroll(&mut self) -> BLOCK_ENROLL_W {
         BLOCK_ENROLL_W { w: self }
+    }
+    #[doc = "Bits 14:15 - Include security EPOCH in DICE"]
+    #[inline(always)]
+    pub fn dice_inc_sec_epoch(&mut self) -> DICE_INC_SEC_EPOCH_W {
+        DICE_INC_SEC_EPOCH_W { w: self }
     }
     #[doc = "Bits 30:31 - Secure boot enable. 00 - Plain image (internal flash with or without CRC) 01, 10, 11 - Boot signed images. (internal flash, RSA signed)"]
     #[inline(always)]

@@ -29,9 +29,9 @@ pub struct RegisterBlock {
     #[doc = "0x58 - SCT conflict resolution register"]
     pub res: RES,
     #[doc = "0x5c - SCT DMA request 0 register"]
-    pub dma0request: DMA0REQUEST,
+    pub dmareq0: DMAREQ0,
     #[doc = "0x60 - SCT DMA request 1 register"]
-    pub dma1request: DMA1REQUEST,
+    pub dmareq1: DMAREQ1,
     _reserved15: [u8; 140usize],
     #[doc = "0xf0 - SCT event interrupt enable register"]
     pub even: EVEN,
@@ -41,42 +41,42 @@ pub struct RegisterBlock {
     pub conen: CONEN,
     #[doc = "0xfc - SCT conflict flag register"]
     pub conflag: CONFLAG,
-    _reserved_19_sctcap0: [u8; 4usize],
-    _reserved_20_sctcap1: [u8; 4usize],
-    _reserved_21_sctcap2: [u8; 4usize],
-    _reserved_22_sctcap3: [u8; 4usize],
-    _reserved_23_sctcap4: [u8; 4usize],
-    _reserved_24_sctcap5: [u8; 4usize],
-    _reserved_25_sctcap6: [u8; 4usize],
-    _reserved_26_sctcap7: [u8; 4usize],
-    _reserved_27_sctcap8: [u8; 4usize],
-    _reserved_28_sctcap9: [u8; 4usize],
-    _reserved_29_sctcap10: [u8; 4usize],
-    _reserved_30_sctcap11: [u8; 4usize],
-    _reserved_31_sctcap12: [u8; 4usize],
-    _reserved_32_sctcap13: [u8; 4usize],
-    _reserved_33_sctcap14: [u8; 4usize],
-    _reserved_34_sctcap15: [u8; 4usize],
+    _reserved_19_cap0: [u8; 4usize],
+    _reserved_20_cap1: [u8; 4usize],
+    _reserved_21_cap2: [u8; 4usize],
+    _reserved_22_cap3: [u8; 4usize],
+    _reserved_23_cap4: [u8; 4usize],
+    _reserved_24_cap5: [u8; 4usize],
+    _reserved_25_cap6: [u8; 4usize],
+    _reserved_26_cap7: [u8; 4usize],
+    _reserved_27_cap8: [u8; 4usize],
+    _reserved_28_cap9: [u8; 4usize],
+    _reserved_29_cap10: [u8; 4usize],
+    _reserved_30_cap11: [u8; 4usize],
+    _reserved_31_cap12: [u8; 4usize],
+    _reserved_32_cap13: [u8; 4usize],
+    _reserved_33_cap14: [u8; 4usize],
+    _reserved_34_cap15: [u8; 4usize],
     _reserved35: [u8; 192usize],
-    _reserved_35_sctcapctrl0: [u8; 4usize],
-    _reserved_36_sctcapctrl1: [u8; 4usize],
-    _reserved_37_sctcapctrl2: [u8; 4usize],
-    _reserved_38_sctcapctrl3: [u8; 4usize],
-    _reserved_39_sctcapctrl4: [u8; 4usize],
-    _reserved_40_sctcapctrl5: [u8; 4usize],
-    _reserved_41_sctcapctrl6: [u8; 4usize],
-    _reserved_42_sctcapctrl7: [u8; 4usize],
-    _reserved_43_sctcapctrl8: [u8; 4usize],
-    _reserved_44_sctcapctrl9: [u8; 4usize],
-    _reserved_45_sctcapctrl10: [u8; 4usize],
-    _reserved_46_sctcapctrl11: [u8; 4usize],
-    _reserved_47_sctcapctrl12: [u8; 4usize],
-    _reserved_48_sctcapctrl13: [u8; 4usize],
-    _reserved_49_sctcapctrl14: [u8; 4usize],
-    _reserved_50_sctcapctrl15: [u8; 4usize],
+    _reserved_35_capctrl0: [u8; 4usize],
+    _reserved_36_capctrl1: [u8; 4usize],
+    _reserved_37_capctrl2: [u8; 4usize],
+    _reserved_38_capctrl3: [u8; 4usize],
+    _reserved_39_capctrl4: [u8; 4usize],
+    _reserved_40_capctrl5: [u8; 4usize],
+    _reserved_41_capctrl6: [u8; 4usize],
+    _reserved_42_capctrl7: [u8; 4usize],
+    _reserved_43_capctrl8: [u8; 4usize],
+    _reserved_44_capctrl9: [u8; 4usize],
+    _reserved_45_capctrl10: [u8; 4usize],
+    _reserved_46_capctrl11: [u8; 4usize],
+    _reserved_47_capctrl12: [u8; 4usize],
+    _reserved_48_capctrl13: [u8; 4usize],
+    _reserved_49_capctrl14: [u8; 4usize],
+    _reserved_50_capctrl15: [u8; 4usize],
     _reserved51: [u8; 192usize],
     #[doc = "0x300 - no description available"]
-    pub event: [EVENT; 16],
+    pub ev: [EV; 16],
     _reserved52: [u8; 384usize],
     #[doc = "0x500 - no description available"]
     pub out: [OUT; 10],
@@ -84,663 +84,663 @@ pub struct RegisterBlock {
 impl RegisterBlock {
     #[doc = "0x100 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch0(&self) -> &SCTMATCH0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(256usize) as *const SCTMATCH0) }
+    pub fn match0(&self) -> &MATCH0 {
+        unsafe { &*(((self as *const Self) as *const u8).add(256usize) as *const MATCH0) }
     }
     #[doc = "0x100 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch0_mut(&self) -> &mut SCTMATCH0 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(256usize) as *mut SCTMATCH0) }
+    pub fn match0_mut(&self) -> &mut MATCH0 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(256usize) as *mut MATCH0) }
     }
     #[doc = "0x100 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap0(&self) -> &SCTCAP0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(256usize) as *const SCTCAP0) }
+    pub fn cap0(&self) -> &CAP0 {
+        unsafe { &*(((self as *const Self) as *const u8).add(256usize) as *const CAP0) }
     }
     #[doc = "0x100 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap0_mut(&self) -> &mut SCTCAP0 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(256usize) as *mut SCTCAP0) }
+    pub fn cap0_mut(&self) -> &mut CAP0 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(256usize) as *mut CAP0) }
     }
     #[doc = "0x104 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch1(&self) -> &SCTMATCH1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(260usize) as *const SCTMATCH1) }
+    pub fn match1(&self) -> &MATCH1 {
+        unsafe { &*(((self as *const Self) as *const u8).add(260usize) as *const MATCH1) }
     }
     #[doc = "0x104 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch1_mut(&self) -> &mut SCTMATCH1 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(260usize) as *mut SCTMATCH1) }
+    pub fn match1_mut(&self) -> &mut MATCH1 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(260usize) as *mut MATCH1) }
     }
     #[doc = "0x104 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap1(&self) -> &SCTCAP1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(260usize) as *const SCTCAP1) }
+    pub fn cap1(&self) -> &CAP1 {
+        unsafe { &*(((self as *const Self) as *const u8).add(260usize) as *const CAP1) }
     }
     #[doc = "0x104 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap1_mut(&self) -> &mut SCTCAP1 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(260usize) as *mut SCTCAP1) }
+    pub fn cap1_mut(&self) -> &mut CAP1 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(260usize) as *mut CAP1) }
     }
     #[doc = "0x108 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch2(&self) -> &SCTMATCH2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(264usize) as *const SCTMATCH2) }
+    pub fn match2(&self) -> &MATCH2 {
+        unsafe { &*(((self as *const Self) as *const u8).add(264usize) as *const MATCH2) }
     }
     #[doc = "0x108 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch2_mut(&self) -> &mut SCTMATCH2 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(264usize) as *mut SCTMATCH2) }
+    pub fn match2_mut(&self) -> &mut MATCH2 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(264usize) as *mut MATCH2) }
     }
     #[doc = "0x108 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap2(&self) -> &SCTCAP2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(264usize) as *const SCTCAP2) }
+    pub fn cap2(&self) -> &CAP2 {
+        unsafe { &*(((self as *const Self) as *const u8).add(264usize) as *const CAP2) }
     }
     #[doc = "0x108 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap2_mut(&self) -> &mut SCTCAP2 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(264usize) as *mut SCTCAP2) }
+    pub fn cap2_mut(&self) -> &mut CAP2 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(264usize) as *mut CAP2) }
     }
     #[doc = "0x10c - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch3(&self) -> &SCTMATCH3 {
-        unsafe { &*(((self as *const Self) as *const u8).add(268usize) as *const SCTMATCH3) }
+    pub fn match3(&self) -> &MATCH3 {
+        unsafe { &*(((self as *const Self) as *const u8).add(268usize) as *const MATCH3) }
     }
     #[doc = "0x10c - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch3_mut(&self) -> &mut SCTMATCH3 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(268usize) as *mut SCTMATCH3) }
+    pub fn match3_mut(&self) -> &mut MATCH3 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(268usize) as *mut MATCH3) }
     }
     #[doc = "0x10c - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap3(&self) -> &SCTCAP3 {
-        unsafe { &*(((self as *const Self) as *const u8).add(268usize) as *const SCTCAP3) }
+    pub fn cap3(&self) -> &CAP3 {
+        unsafe { &*(((self as *const Self) as *const u8).add(268usize) as *const CAP3) }
     }
     #[doc = "0x10c - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap3_mut(&self) -> &mut SCTCAP3 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(268usize) as *mut SCTCAP3) }
+    pub fn cap3_mut(&self) -> &mut CAP3 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(268usize) as *mut CAP3) }
     }
     #[doc = "0x110 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch4(&self) -> &SCTMATCH4 {
-        unsafe { &*(((self as *const Self) as *const u8).add(272usize) as *const SCTMATCH4) }
+    pub fn match4(&self) -> &MATCH4 {
+        unsafe { &*(((self as *const Self) as *const u8).add(272usize) as *const MATCH4) }
     }
     #[doc = "0x110 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch4_mut(&self) -> &mut SCTMATCH4 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(272usize) as *mut SCTMATCH4) }
+    pub fn match4_mut(&self) -> &mut MATCH4 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(272usize) as *mut MATCH4) }
     }
     #[doc = "0x110 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap4(&self) -> &SCTCAP4 {
-        unsafe { &*(((self as *const Self) as *const u8).add(272usize) as *const SCTCAP4) }
+    pub fn cap4(&self) -> &CAP4 {
+        unsafe { &*(((self as *const Self) as *const u8).add(272usize) as *const CAP4) }
     }
     #[doc = "0x110 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap4_mut(&self) -> &mut SCTCAP4 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(272usize) as *mut SCTCAP4) }
+    pub fn cap4_mut(&self) -> &mut CAP4 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(272usize) as *mut CAP4) }
     }
     #[doc = "0x114 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch5(&self) -> &SCTMATCH5 {
-        unsafe { &*(((self as *const Self) as *const u8).add(276usize) as *const SCTMATCH5) }
+    pub fn match5(&self) -> &MATCH5 {
+        unsafe { &*(((self as *const Self) as *const u8).add(276usize) as *const MATCH5) }
     }
     #[doc = "0x114 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch5_mut(&self) -> &mut SCTMATCH5 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(276usize) as *mut SCTMATCH5) }
+    pub fn match5_mut(&self) -> &mut MATCH5 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(276usize) as *mut MATCH5) }
     }
     #[doc = "0x114 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap5(&self) -> &SCTCAP5 {
-        unsafe { &*(((self as *const Self) as *const u8).add(276usize) as *const SCTCAP5) }
+    pub fn cap5(&self) -> &CAP5 {
+        unsafe { &*(((self as *const Self) as *const u8).add(276usize) as *const CAP5) }
     }
     #[doc = "0x114 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap5_mut(&self) -> &mut SCTCAP5 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(276usize) as *mut SCTCAP5) }
+    pub fn cap5_mut(&self) -> &mut CAP5 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(276usize) as *mut CAP5) }
     }
     #[doc = "0x118 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch6(&self) -> &SCTMATCH6 {
-        unsafe { &*(((self as *const Self) as *const u8).add(280usize) as *const SCTMATCH6) }
+    pub fn match6(&self) -> &MATCH6 {
+        unsafe { &*(((self as *const Self) as *const u8).add(280usize) as *const MATCH6) }
     }
     #[doc = "0x118 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch6_mut(&self) -> &mut SCTMATCH6 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(280usize) as *mut SCTMATCH6) }
+    pub fn match6_mut(&self) -> &mut MATCH6 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(280usize) as *mut MATCH6) }
     }
     #[doc = "0x118 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap6(&self) -> &SCTCAP6 {
-        unsafe { &*(((self as *const Self) as *const u8).add(280usize) as *const SCTCAP6) }
+    pub fn cap6(&self) -> &CAP6 {
+        unsafe { &*(((self as *const Self) as *const u8).add(280usize) as *const CAP6) }
     }
     #[doc = "0x118 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap6_mut(&self) -> &mut SCTCAP6 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(280usize) as *mut SCTCAP6) }
+    pub fn cap6_mut(&self) -> &mut CAP6 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(280usize) as *mut CAP6) }
     }
     #[doc = "0x11c - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch7(&self) -> &SCTMATCH7 {
-        unsafe { &*(((self as *const Self) as *const u8).add(284usize) as *const SCTMATCH7) }
+    pub fn match7(&self) -> &MATCH7 {
+        unsafe { &*(((self as *const Self) as *const u8).add(284usize) as *const MATCH7) }
     }
     #[doc = "0x11c - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch7_mut(&self) -> &mut SCTMATCH7 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(284usize) as *mut SCTMATCH7) }
+    pub fn match7_mut(&self) -> &mut MATCH7 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(284usize) as *mut MATCH7) }
     }
     #[doc = "0x11c - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap7(&self) -> &SCTCAP7 {
-        unsafe { &*(((self as *const Self) as *const u8).add(284usize) as *const SCTCAP7) }
+    pub fn cap7(&self) -> &CAP7 {
+        unsafe { &*(((self as *const Self) as *const u8).add(284usize) as *const CAP7) }
     }
     #[doc = "0x11c - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap7_mut(&self) -> &mut SCTCAP7 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(284usize) as *mut SCTCAP7) }
+    pub fn cap7_mut(&self) -> &mut CAP7 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(284usize) as *mut CAP7) }
     }
     #[doc = "0x120 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch8(&self) -> &SCTMATCH8 {
-        unsafe { &*(((self as *const Self) as *const u8).add(288usize) as *const SCTMATCH8) }
+    pub fn match8(&self) -> &MATCH8 {
+        unsafe { &*(((self as *const Self) as *const u8).add(288usize) as *const MATCH8) }
     }
     #[doc = "0x120 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch8_mut(&self) -> &mut SCTMATCH8 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(288usize) as *mut SCTMATCH8) }
+    pub fn match8_mut(&self) -> &mut MATCH8 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(288usize) as *mut MATCH8) }
     }
     #[doc = "0x120 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap8(&self) -> &SCTCAP8 {
-        unsafe { &*(((self as *const Self) as *const u8).add(288usize) as *const SCTCAP8) }
+    pub fn cap8(&self) -> &CAP8 {
+        unsafe { &*(((self as *const Self) as *const u8).add(288usize) as *const CAP8) }
     }
     #[doc = "0x120 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap8_mut(&self) -> &mut SCTCAP8 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(288usize) as *mut SCTCAP8) }
+    pub fn cap8_mut(&self) -> &mut CAP8 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(288usize) as *mut CAP8) }
     }
     #[doc = "0x124 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch9(&self) -> &SCTMATCH9 {
-        unsafe { &*(((self as *const Self) as *const u8).add(292usize) as *const SCTMATCH9) }
+    pub fn match9(&self) -> &MATCH9 {
+        unsafe { &*(((self as *const Self) as *const u8).add(292usize) as *const MATCH9) }
     }
     #[doc = "0x124 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch9_mut(&self) -> &mut SCTMATCH9 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(292usize) as *mut SCTMATCH9) }
+    pub fn match9_mut(&self) -> &mut MATCH9 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(292usize) as *mut MATCH9) }
     }
     #[doc = "0x124 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap9(&self) -> &SCTCAP9 {
-        unsafe { &*(((self as *const Self) as *const u8).add(292usize) as *const SCTCAP9) }
+    pub fn cap9(&self) -> &CAP9 {
+        unsafe { &*(((self as *const Self) as *const u8).add(292usize) as *const CAP9) }
     }
     #[doc = "0x124 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap9_mut(&self) -> &mut SCTCAP9 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(292usize) as *mut SCTCAP9) }
+    pub fn cap9_mut(&self) -> &mut CAP9 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(292usize) as *mut CAP9) }
     }
     #[doc = "0x128 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch10(&self) -> &SCTMATCH10 {
-        unsafe { &*(((self as *const Self) as *const u8).add(296usize) as *const SCTMATCH10) }
+    pub fn match10(&self) -> &MATCH10 {
+        unsafe { &*(((self as *const Self) as *const u8).add(296usize) as *const MATCH10) }
     }
     #[doc = "0x128 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch10_mut(&self) -> &mut SCTMATCH10 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(296usize) as *mut SCTMATCH10) }
+    pub fn match10_mut(&self) -> &mut MATCH10 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(296usize) as *mut MATCH10) }
     }
     #[doc = "0x128 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap10(&self) -> &SCTCAP10 {
-        unsafe { &*(((self as *const Self) as *const u8).add(296usize) as *const SCTCAP10) }
+    pub fn cap10(&self) -> &CAP10 {
+        unsafe { &*(((self as *const Self) as *const u8).add(296usize) as *const CAP10) }
     }
     #[doc = "0x128 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap10_mut(&self) -> &mut SCTCAP10 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(296usize) as *mut SCTCAP10) }
+    pub fn cap10_mut(&self) -> &mut CAP10 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(296usize) as *mut CAP10) }
     }
     #[doc = "0x12c - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch11(&self) -> &SCTMATCH11 {
-        unsafe { &*(((self as *const Self) as *const u8).add(300usize) as *const SCTMATCH11) }
+    pub fn match11(&self) -> &MATCH11 {
+        unsafe { &*(((self as *const Self) as *const u8).add(300usize) as *const MATCH11) }
     }
     #[doc = "0x12c - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch11_mut(&self) -> &mut SCTMATCH11 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(300usize) as *mut SCTMATCH11) }
+    pub fn match11_mut(&self) -> &mut MATCH11 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(300usize) as *mut MATCH11) }
     }
     #[doc = "0x12c - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap11(&self) -> &SCTCAP11 {
-        unsafe { &*(((self as *const Self) as *const u8).add(300usize) as *const SCTCAP11) }
+    pub fn cap11(&self) -> &CAP11 {
+        unsafe { &*(((self as *const Self) as *const u8).add(300usize) as *const CAP11) }
     }
     #[doc = "0x12c - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap11_mut(&self) -> &mut SCTCAP11 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(300usize) as *mut SCTCAP11) }
+    pub fn cap11_mut(&self) -> &mut CAP11 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(300usize) as *mut CAP11) }
     }
     #[doc = "0x130 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch12(&self) -> &SCTMATCH12 {
-        unsafe { &*(((self as *const Self) as *const u8).add(304usize) as *const SCTMATCH12) }
+    pub fn match12(&self) -> &MATCH12 {
+        unsafe { &*(((self as *const Self) as *const u8).add(304usize) as *const MATCH12) }
     }
     #[doc = "0x130 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch12_mut(&self) -> &mut SCTMATCH12 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(304usize) as *mut SCTMATCH12) }
+    pub fn match12_mut(&self) -> &mut MATCH12 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(304usize) as *mut MATCH12) }
     }
     #[doc = "0x130 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap12(&self) -> &SCTCAP12 {
-        unsafe { &*(((self as *const Self) as *const u8).add(304usize) as *const SCTCAP12) }
+    pub fn cap12(&self) -> &CAP12 {
+        unsafe { &*(((self as *const Self) as *const u8).add(304usize) as *const CAP12) }
     }
     #[doc = "0x130 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap12_mut(&self) -> &mut SCTCAP12 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(304usize) as *mut SCTCAP12) }
+    pub fn cap12_mut(&self) -> &mut CAP12 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(304usize) as *mut CAP12) }
     }
     #[doc = "0x134 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch13(&self) -> &SCTMATCH13 {
-        unsafe { &*(((self as *const Self) as *const u8).add(308usize) as *const SCTMATCH13) }
+    pub fn match13(&self) -> &MATCH13 {
+        unsafe { &*(((self as *const Self) as *const u8).add(308usize) as *const MATCH13) }
     }
     #[doc = "0x134 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch13_mut(&self) -> &mut SCTMATCH13 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(308usize) as *mut SCTMATCH13) }
+    pub fn match13_mut(&self) -> &mut MATCH13 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(308usize) as *mut MATCH13) }
     }
     #[doc = "0x134 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap13(&self) -> &SCTCAP13 {
-        unsafe { &*(((self as *const Self) as *const u8).add(308usize) as *const SCTCAP13) }
+    pub fn cap13(&self) -> &CAP13 {
+        unsafe { &*(((self as *const Self) as *const u8).add(308usize) as *const CAP13) }
     }
     #[doc = "0x134 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap13_mut(&self) -> &mut SCTCAP13 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(308usize) as *mut SCTCAP13) }
+    pub fn cap13_mut(&self) -> &mut CAP13 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(308usize) as *mut CAP13) }
     }
     #[doc = "0x138 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch14(&self) -> &SCTMATCH14 {
-        unsafe { &*(((self as *const Self) as *const u8).add(312usize) as *const SCTMATCH14) }
+    pub fn match14(&self) -> &MATCH14 {
+        unsafe { &*(((self as *const Self) as *const u8).add(312usize) as *const MATCH14) }
     }
     #[doc = "0x138 - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch14_mut(&self) -> &mut SCTMATCH14 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(312usize) as *mut SCTMATCH14) }
+    pub fn match14_mut(&self) -> &mut MATCH14 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(312usize) as *mut MATCH14) }
     }
     #[doc = "0x138 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap14(&self) -> &SCTCAP14 {
-        unsafe { &*(((self as *const Self) as *const u8).add(312usize) as *const SCTCAP14) }
+    pub fn cap14(&self) -> &CAP14 {
+        unsafe { &*(((self as *const Self) as *const u8).add(312usize) as *const CAP14) }
     }
     #[doc = "0x138 - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap14_mut(&self) -> &mut SCTCAP14 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(312usize) as *mut SCTCAP14) }
+    pub fn cap14_mut(&self) -> &mut CAP14 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(312usize) as *mut CAP14) }
     }
     #[doc = "0x13c - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch15(&self) -> &SCTMATCH15 {
-        unsafe { &*(((self as *const Self) as *const u8).add(316usize) as *const SCTMATCH15) }
+    pub fn match15(&self) -> &MATCH15 {
+        unsafe { &*(((self as *const Self) as *const u8).add(316usize) as *const MATCH15) }
     }
     #[doc = "0x13c - SCT match value register of match channels"]
     #[inline(always)]
-    pub fn sctmatch15_mut(&self) -> &mut SCTMATCH15 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(316usize) as *mut SCTMATCH15) }
+    pub fn match15_mut(&self) -> &mut MATCH15 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(316usize) as *mut MATCH15) }
     }
     #[doc = "0x13c - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap15(&self) -> &SCTCAP15 {
-        unsafe { &*(((self as *const Self) as *const u8).add(316usize) as *const SCTCAP15) }
+    pub fn cap15(&self) -> &CAP15 {
+        unsafe { &*(((self as *const Self) as *const u8).add(316usize) as *const CAP15) }
     }
     #[doc = "0x13c - SCT capture register of capture channel"]
     #[inline(always)]
-    pub fn sctcap15_mut(&self) -> &mut SCTCAP15 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(316usize) as *mut SCTCAP15) }
+    pub fn cap15_mut(&self) -> &mut CAP15 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(316usize) as *mut CAP15) }
     }
     #[doc = "0x200 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel0(&self) -> &SCTMATCHREL0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(512usize) as *const SCTMATCHREL0) }
+    pub fn matchrel0(&self) -> &MATCHREL0 {
+        unsafe { &*(((self as *const Self) as *const u8).add(512usize) as *const MATCHREL0) }
     }
     #[doc = "0x200 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel0_mut(&self) -> &mut SCTMATCHREL0 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(512usize) as *mut SCTMATCHREL0) }
+    pub fn matchrel0_mut(&self) -> &mut MATCHREL0 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(512usize) as *mut MATCHREL0) }
     }
     #[doc = "0x200 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl0(&self) -> &SCTCAPCTRL0 {
-        unsafe { &*(((self as *const Self) as *const u8).add(512usize) as *const SCTCAPCTRL0) }
+    pub fn capctrl0(&self) -> &CAPCTRL0 {
+        unsafe { &*(((self as *const Self) as *const u8).add(512usize) as *const CAPCTRL0) }
     }
     #[doc = "0x200 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl0_mut(&self) -> &mut SCTCAPCTRL0 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(512usize) as *mut SCTCAPCTRL0) }
+    pub fn capctrl0_mut(&self) -> &mut CAPCTRL0 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(512usize) as *mut CAPCTRL0) }
     }
     #[doc = "0x204 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel1(&self) -> &SCTMATCHREL1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(516usize) as *const SCTMATCHREL1) }
+    pub fn matchrel1(&self) -> &MATCHREL1 {
+        unsafe { &*(((self as *const Self) as *const u8).add(516usize) as *const MATCHREL1) }
     }
     #[doc = "0x204 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel1_mut(&self) -> &mut SCTMATCHREL1 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(516usize) as *mut SCTMATCHREL1) }
+    pub fn matchrel1_mut(&self) -> &mut MATCHREL1 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(516usize) as *mut MATCHREL1) }
     }
     #[doc = "0x204 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl1(&self) -> &SCTCAPCTRL1 {
-        unsafe { &*(((self as *const Self) as *const u8).add(516usize) as *const SCTCAPCTRL1) }
+    pub fn capctrl1(&self) -> &CAPCTRL1 {
+        unsafe { &*(((self as *const Self) as *const u8).add(516usize) as *const CAPCTRL1) }
     }
     #[doc = "0x204 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl1_mut(&self) -> &mut SCTCAPCTRL1 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(516usize) as *mut SCTCAPCTRL1) }
+    pub fn capctrl1_mut(&self) -> &mut CAPCTRL1 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(516usize) as *mut CAPCTRL1) }
     }
     #[doc = "0x208 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel2(&self) -> &SCTMATCHREL2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(520usize) as *const SCTMATCHREL2) }
+    pub fn matchrel2(&self) -> &MATCHREL2 {
+        unsafe { &*(((self as *const Self) as *const u8).add(520usize) as *const MATCHREL2) }
     }
     #[doc = "0x208 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel2_mut(&self) -> &mut SCTMATCHREL2 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(520usize) as *mut SCTMATCHREL2) }
+    pub fn matchrel2_mut(&self) -> &mut MATCHREL2 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(520usize) as *mut MATCHREL2) }
     }
     #[doc = "0x208 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl2(&self) -> &SCTCAPCTRL2 {
-        unsafe { &*(((self as *const Self) as *const u8).add(520usize) as *const SCTCAPCTRL2) }
+    pub fn capctrl2(&self) -> &CAPCTRL2 {
+        unsafe { &*(((self as *const Self) as *const u8).add(520usize) as *const CAPCTRL2) }
     }
     #[doc = "0x208 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl2_mut(&self) -> &mut SCTCAPCTRL2 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(520usize) as *mut SCTCAPCTRL2) }
+    pub fn capctrl2_mut(&self) -> &mut CAPCTRL2 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(520usize) as *mut CAPCTRL2) }
     }
     #[doc = "0x20c - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel3(&self) -> &SCTMATCHREL3 {
-        unsafe { &*(((self as *const Self) as *const u8).add(524usize) as *const SCTMATCHREL3) }
+    pub fn matchrel3(&self) -> &MATCHREL3 {
+        unsafe { &*(((self as *const Self) as *const u8).add(524usize) as *const MATCHREL3) }
     }
     #[doc = "0x20c - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel3_mut(&self) -> &mut SCTMATCHREL3 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(524usize) as *mut SCTMATCHREL3) }
+    pub fn matchrel3_mut(&self) -> &mut MATCHREL3 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(524usize) as *mut MATCHREL3) }
     }
     #[doc = "0x20c - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl3(&self) -> &SCTCAPCTRL3 {
-        unsafe { &*(((self as *const Self) as *const u8).add(524usize) as *const SCTCAPCTRL3) }
+    pub fn capctrl3(&self) -> &CAPCTRL3 {
+        unsafe { &*(((self as *const Self) as *const u8).add(524usize) as *const CAPCTRL3) }
     }
     #[doc = "0x20c - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl3_mut(&self) -> &mut SCTCAPCTRL3 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(524usize) as *mut SCTCAPCTRL3) }
+    pub fn capctrl3_mut(&self) -> &mut CAPCTRL3 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(524usize) as *mut CAPCTRL3) }
     }
     #[doc = "0x210 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel4(&self) -> &SCTMATCHREL4 {
-        unsafe { &*(((self as *const Self) as *const u8).add(528usize) as *const SCTMATCHREL4) }
+    pub fn matchrel4(&self) -> &MATCHREL4 {
+        unsafe { &*(((self as *const Self) as *const u8).add(528usize) as *const MATCHREL4) }
     }
     #[doc = "0x210 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel4_mut(&self) -> &mut SCTMATCHREL4 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(528usize) as *mut SCTMATCHREL4) }
+    pub fn matchrel4_mut(&self) -> &mut MATCHREL4 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(528usize) as *mut MATCHREL4) }
     }
     #[doc = "0x210 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl4(&self) -> &SCTCAPCTRL4 {
-        unsafe { &*(((self as *const Self) as *const u8).add(528usize) as *const SCTCAPCTRL4) }
+    pub fn capctrl4(&self) -> &CAPCTRL4 {
+        unsafe { &*(((self as *const Self) as *const u8).add(528usize) as *const CAPCTRL4) }
     }
     #[doc = "0x210 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl4_mut(&self) -> &mut SCTCAPCTRL4 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(528usize) as *mut SCTCAPCTRL4) }
+    pub fn capctrl4_mut(&self) -> &mut CAPCTRL4 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(528usize) as *mut CAPCTRL4) }
     }
     #[doc = "0x214 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel5(&self) -> &SCTMATCHREL5 {
-        unsafe { &*(((self as *const Self) as *const u8).add(532usize) as *const SCTMATCHREL5) }
+    pub fn matchrel5(&self) -> &MATCHREL5 {
+        unsafe { &*(((self as *const Self) as *const u8).add(532usize) as *const MATCHREL5) }
     }
     #[doc = "0x214 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel5_mut(&self) -> &mut SCTMATCHREL5 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(532usize) as *mut SCTMATCHREL5) }
+    pub fn matchrel5_mut(&self) -> &mut MATCHREL5 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(532usize) as *mut MATCHREL5) }
     }
     #[doc = "0x214 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl5(&self) -> &SCTCAPCTRL5 {
-        unsafe { &*(((self as *const Self) as *const u8).add(532usize) as *const SCTCAPCTRL5) }
+    pub fn capctrl5(&self) -> &CAPCTRL5 {
+        unsafe { &*(((self as *const Self) as *const u8).add(532usize) as *const CAPCTRL5) }
     }
     #[doc = "0x214 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl5_mut(&self) -> &mut SCTCAPCTRL5 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(532usize) as *mut SCTCAPCTRL5) }
+    pub fn capctrl5_mut(&self) -> &mut CAPCTRL5 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(532usize) as *mut CAPCTRL5) }
     }
     #[doc = "0x218 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel6(&self) -> &SCTMATCHREL6 {
-        unsafe { &*(((self as *const Self) as *const u8).add(536usize) as *const SCTMATCHREL6) }
+    pub fn matchrel6(&self) -> &MATCHREL6 {
+        unsafe { &*(((self as *const Self) as *const u8).add(536usize) as *const MATCHREL6) }
     }
     #[doc = "0x218 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel6_mut(&self) -> &mut SCTMATCHREL6 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(536usize) as *mut SCTMATCHREL6) }
+    pub fn matchrel6_mut(&self) -> &mut MATCHREL6 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(536usize) as *mut MATCHREL6) }
     }
     #[doc = "0x218 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl6(&self) -> &SCTCAPCTRL6 {
-        unsafe { &*(((self as *const Self) as *const u8).add(536usize) as *const SCTCAPCTRL6) }
+    pub fn capctrl6(&self) -> &CAPCTRL6 {
+        unsafe { &*(((self as *const Self) as *const u8).add(536usize) as *const CAPCTRL6) }
     }
     #[doc = "0x218 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl6_mut(&self) -> &mut SCTCAPCTRL6 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(536usize) as *mut SCTCAPCTRL6) }
+    pub fn capctrl6_mut(&self) -> &mut CAPCTRL6 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(536usize) as *mut CAPCTRL6) }
     }
     #[doc = "0x21c - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel7(&self) -> &SCTMATCHREL7 {
-        unsafe { &*(((self as *const Self) as *const u8).add(540usize) as *const SCTMATCHREL7) }
+    pub fn matchrel7(&self) -> &MATCHREL7 {
+        unsafe { &*(((self as *const Self) as *const u8).add(540usize) as *const MATCHREL7) }
     }
     #[doc = "0x21c - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel7_mut(&self) -> &mut SCTMATCHREL7 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(540usize) as *mut SCTMATCHREL7) }
+    pub fn matchrel7_mut(&self) -> &mut MATCHREL7 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(540usize) as *mut MATCHREL7) }
     }
     #[doc = "0x21c - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl7(&self) -> &SCTCAPCTRL7 {
-        unsafe { &*(((self as *const Self) as *const u8).add(540usize) as *const SCTCAPCTRL7) }
+    pub fn capctrl7(&self) -> &CAPCTRL7 {
+        unsafe { &*(((self as *const Self) as *const u8).add(540usize) as *const CAPCTRL7) }
     }
     #[doc = "0x21c - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl7_mut(&self) -> &mut SCTCAPCTRL7 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(540usize) as *mut SCTCAPCTRL7) }
+    pub fn capctrl7_mut(&self) -> &mut CAPCTRL7 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(540usize) as *mut CAPCTRL7) }
     }
     #[doc = "0x220 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel8(&self) -> &SCTMATCHREL8 {
-        unsafe { &*(((self as *const Self) as *const u8).add(544usize) as *const SCTMATCHREL8) }
+    pub fn matchrel8(&self) -> &MATCHREL8 {
+        unsafe { &*(((self as *const Self) as *const u8).add(544usize) as *const MATCHREL8) }
     }
     #[doc = "0x220 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel8_mut(&self) -> &mut SCTMATCHREL8 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(544usize) as *mut SCTMATCHREL8) }
+    pub fn matchrel8_mut(&self) -> &mut MATCHREL8 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(544usize) as *mut MATCHREL8) }
     }
     #[doc = "0x220 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl8(&self) -> &SCTCAPCTRL8 {
-        unsafe { &*(((self as *const Self) as *const u8).add(544usize) as *const SCTCAPCTRL8) }
+    pub fn capctrl8(&self) -> &CAPCTRL8 {
+        unsafe { &*(((self as *const Self) as *const u8).add(544usize) as *const CAPCTRL8) }
     }
     #[doc = "0x220 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl8_mut(&self) -> &mut SCTCAPCTRL8 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(544usize) as *mut SCTCAPCTRL8) }
+    pub fn capctrl8_mut(&self) -> &mut CAPCTRL8 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(544usize) as *mut CAPCTRL8) }
     }
     #[doc = "0x224 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel9(&self) -> &SCTMATCHREL9 {
-        unsafe { &*(((self as *const Self) as *const u8).add(548usize) as *const SCTMATCHREL9) }
+    pub fn matchrel9(&self) -> &MATCHREL9 {
+        unsafe { &*(((self as *const Self) as *const u8).add(548usize) as *const MATCHREL9) }
     }
     #[doc = "0x224 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel9_mut(&self) -> &mut SCTMATCHREL9 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(548usize) as *mut SCTMATCHREL9) }
+    pub fn matchrel9_mut(&self) -> &mut MATCHREL9 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(548usize) as *mut MATCHREL9) }
     }
     #[doc = "0x224 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl9(&self) -> &SCTCAPCTRL9 {
-        unsafe { &*(((self as *const Self) as *const u8).add(548usize) as *const SCTCAPCTRL9) }
+    pub fn capctrl9(&self) -> &CAPCTRL9 {
+        unsafe { &*(((self as *const Self) as *const u8).add(548usize) as *const CAPCTRL9) }
     }
     #[doc = "0x224 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl9_mut(&self) -> &mut SCTCAPCTRL9 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(548usize) as *mut SCTCAPCTRL9) }
+    pub fn capctrl9_mut(&self) -> &mut CAPCTRL9 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(548usize) as *mut CAPCTRL9) }
     }
     #[doc = "0x228 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel10(&self) -> &SCTMATCHREL10 {
-        unsafe { &*(((self as *const Self) as *const u8).add(552usize) as *const SCTMATCHREL10) }
+    pub fn matchrel10(&self) -> &MATCHREL10 {
+        unsafe { &*(((self as *const Self) as *const u8).add(552usize) as *const MATCHREL10) }
     }
     #[doc = "0x228 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel10_mut(&self) -> &mut SCTMATCHREL10 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(552usize) as *mut SCTMATCHREL10) }
+    pub fn matchrel10_mut(&self) -> &mut MATCHREL10 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(552usize) as *mut MATCHREL10) }
     }
     #[doc = "0x228 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl10(&self) -> &SCTCAPCTRL10 {
-        unsafe { &*(((self as *const Self) as *const u8).add(552usize) as *const SCTCAPCTRL10) }
+    pub fn capctrl10(&self) -> &CAPCTRL10 {
+        unsafe { &*(((self as *const Self) as *const u8).add(552usize) as *const CAPCTRL10) }
     }
     #[doc = "0x228 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl10_mut(&self) -> &mut SCTCAPCTRL10 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(552usize) as *mut SCTCAPCTRL10) }
+    pub fn capctrl10_mut(&self) -> &mut CAPCTRL10 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(552usize) as *mut CAPCTRL10) }
     }
     #[doc = "0x22c - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel11(&self) -> &SCTMATCHREL11 {
-        unsafe { &*(((self as *const Self) as *const u8).add(556usize) as *const SCTMATCHREL11) }
+    pub fn matchrel11(&self) -> &MATCHREL11 {
+        unsafe { &*(((self as *const Self) as *const u8).add(556usize) as *const MATCHREL11) }
     }
     #[doc = "0x22c - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel11_mut(&self) -> &mut SCTMATCHREL11 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(556usize) as *mut SCTMATCHREL11) }
+    pub fn matchrel11_mut(&self) -> &mut MATCHREL11 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(556usize) as *mut MATCHREL11) }
     }
     #[doc = "0x22c - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl11(&self) -> &SCTCAPCTRL11 {
-        unsafe { &*(((self as *const Self) as *const u8).add(556usize) as *const SCTCAPCTRL11) }
+    pub fn capctrl11(&self) -> &CAPCTRL11 {
+        unsafe { &*(((self as *const Self) as *const u8).add(556usize) as *const CAPCTRL11) }
     }
     #[doc = "0x22c - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl11_mut(&self) -> &mut SCTCAPCTRL11 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(556usize) as *mut SCTCAPCTRL11) }
+    pub fn capctrl11_mut(&self) -> &mut CAPCTRL11 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(556usize) as *mut CAPCTRL11) }
     }
     #[doc = "0x230 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel12(&self) -> &SCTMATCHREL12 {
-        unsafe { &*(((self as *const Self) as *const u8).add(560usize) as *const SCTMATCHREL12) }
+    pub fn matchrel12(&self) -> &MATCHREL12 {
+        unsafe { &*(((self as *const Self) as *const u8).add(560usize) as *const MATCHREL12) }
     }
     #[doc = "0x230 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel12_mut(&self) -> &mut SCTMATCHREL12 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(560usize) as *mut SCTMATCHREL12) }
+    pub fn matchrel12_mut(&self) -> &mut MATCHREL12 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(560usize) as *mut MATCHREL12) }
     }
     #[doc = "0x230 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl12(&self) -> &SCTCAPCTRL12 {
-        unsafe { &*(((self as *const Self) as *const u8).add(560usize) as *const SCTCAPCTRL12) }
+    pub fn capctrl12(&self) -> &CAPCTRL12 {
+        unsafe { &*(((self as *const Self) as *const u8).add(560usize) as *const CAPCTRL12) }
     }
     #[doc = "0x230 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl12_mut(&self) -> &mut SCTCAPCTRL12 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(560usize) as *mut SCTCAPCTRL12) }
+    pub fn capctrl12_mut(&self) -> &mut CAPCTRL12 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(560usize) as *mut CAPCTRL12) }
     }
     #[doc = "0x234 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel13(&self) -> &SCTMATCHREL13 {
-        unsafe { &*(((self as *const Self) as *const u8).add(564usize) as *const SCTMATCHREL13) }
+    pub fn matchrel13(&self) -> &MATCHREL13 {
+        unsafe { &*(((self as *const Self) as *const u8).add(564usize) as *const MATCHREL13) }
     }
     #[doc = "0x234 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel13_mut(&self) -> &mut SCTMATCHREL13 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(564usize) as *mut SCTMATCHREL13) }
+    pub fn matchrel13_mut(&self) -> &mut MATCHREL13 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(564usize) as *mut MATCHREL13) }
     }
     #[doc = "0x234 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl13(&self) -> &SCTCAPCTRL13 {
-        unsafe { &*(((self as *const Self) as *const u8).add(564usize) as *const SCTCAPCTRL13) }
+    pub fn capctrl13(&self) -> &CAPCTRL13 {
+        unsafe { &*(((self as *const Self) as *const u8).add(564usize) as *const CAPCTRL13) }
     }
     #[doc = "0x234 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl13_mut(&self) -> &mut SCTCAPCTRL13 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(564usize) as *mut SCTCAPCTRL13) }
+    pub fn capctrl13_mut(&self) -> &mut CAPCTRL13 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(564usize) as *mut CAPCTRL13) }
     }
     #[doc = "0x238 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel14(&self) -> &SCTMATCHREL14 {
-        unsafe { &*(((self as *const Self) as *const u8).add(568usize) as *const SCTMATCHREL14) }
+    pub fn matchrel14(&self) -> &MATCHREL14 {
+        unsafe { &*(((self as *const Self) as *const u8).add(568usize) as *const MATCHREL14) }
     }
     #[doc = "0x238 - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel14_mut(&self) -> &mut SCTMATCHREL14 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(568usize) as *mut SCTMATCHREL14) }
+    pub fn matchrel14_mut(&self) -> &mut MATCHREL14 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(568usize) as *mut MATCHREL14) }
     }
     #[doc = "0x238 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl14(&self) -> &SCTCAPCTRL14 {
-        unsafe { &*(((self as *const Self) as *const u8).add(568usize) as *const SCTCAPCTRL14) }
+    pub fn capctrl14(&self) -> &CAPCTRL14 {
+        unsafe { &*(((self as *const Self) as *const u8).add(568usize) as *const CAPCTRL14) }
     }
     #[doc = "0x238 - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl14_mut(&self) -> &mut SCTCAPCTRL14 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(568usize) as *mut SCTCAPCTRL14) }
+    pub fn capctrl14_mut(&self) -> &mut CAPCTRL14 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(568usize) as *mut CAPCTRL14) }
     }
     #[doc = "0x23c - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel15(&self) -> &SCTMATCHREL15 {
-        unsafe { &*(((self as *const Self) as *const u8).add(572usize) as *const SCTMATCHREL15) }
+    pub fn matchrel15(&self) -> &MATCHREL15 {
+        unsafe { &*(((self as *const Self) as *const u8).add(572usize) as *const MATCHREL15) }
     }
     #[doc = "0x23c - SCT match reload value register"]
     #[inline(always)]
-    pub fn sctmatchrel15_mut(&self) -> &mut SCTMATCHREL15 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(572usize) as *mut SCTMATCHREL15) }
+    pub fn matchrel15_mut(&self) -> &mut MATCHREL15 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(572usize) as *mut MATCHREL15) }
     }
     #[doc = "0x23c - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl15(&self) -> &SCTCAPCTRL15 {
-        unsafe { &*(((self as *const Self) as *const u8).add(572usize) as *const SCTCAPCTRL15) }
+    pub fn capctrl15(&self) -> &CAPCTRL15 {
+        unsafe { &*(((self as *const Self) as *const u8).add(572usize) as *const CAPCTRL15) }
     }
     #[doc = "0x23c - SCT capture control register"]
     #[inline(always)]
-    pub fn sctcapctrl15_mut(&self) -> &mut SCTCAPCTRL15 {
-        unsafe { &mut *(((self as *const Self) as *mut u8).add(572usize) as *mut SCTCAPCTRL15) }
+    pub fn capctrl15_mut(&self) -> &mut CAPCTRL15 {
+        unsafe { &mut *(((self as *const Self) as *mut u8).add(572usize) as *mut CAPCTRL15) }
     }
 }
 #[doc = r"Register block"]
 #[repr(C)]
-pub struct EVENT {
+pub struct EV {
     #[doc = "0x00 - SCT event state register 0"]
-    pub state: self::event::STATE,
+    pub ev_state: self::ev::EV_STATE,
     #[doc = "0x04 - SCT event control register 0"]
-    pub ctrl: self::event::CTRL,
+    pub ev_ctrl: self::ev::EV_CTRL,
 }
 #[doc = r"Register block"]
 #[doc = "no description available"]
-pub mod event;
+pub mod ev;
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct OUT {
     #[doc = "0x00 - SCT output 0 set register"]
-    pub set: self::out::SET,
+    pub out_set: self::out::OUT_SET,
     #[doc = "0x04 - SCT output 0 clear register"]
-    pub clr: self::out::CLR,
+    pub out_clr: self::out::OUT_CLR,
 }
 #[doc = r"Register block"]
 #[doc = "no description available"]
@@ -886,28 +886,28 @@ impl crate::Readable for RES {}
 impl crate::Writable for RES {}
 #[doc = "SCT conflict resolution register"]
 pub mod res;
-#[doc = "SCT DMA request 0 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dma0request](dma0request) module"]
-pub type DMA0REQUEST = crate::Reg<u32, _DMA0REQUEST>;
+#[doc = "SCT DMA request 0 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dmareq0](dmareq0) module"]
+pub type DMAREQ0 = crate::Reg<u32, _DMAREQ0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _DMA0REQUEST;
-#[doc = "`read()` method returns [dma0request::R](dma0request::R) reader structure"]
-impl crate::Readable for DMA0REQUEST {}
-#[doc = "`write(|w| ..)` method takes [dma0request::W](dma0request::W) writer structure"]
-impl crate::Writable for DMA0REQUEST {}
+pub struct _DMAREQ0;
+#[doc = "`read()` method returns [dmareq0::R](dmareq0::R) reader structure"]
+impl crate::Readable for DMAREQ0 {}
+#[doc = "`write(|w| ..)` method takes [dmareq0::W](dmareq0::W) writer structure"]
+impl crate::Writable for DMAREQ0 {}
 #[doc = "SCT DMA request 0 register"]
-pub mod dma0request;
-#[doc = "SCT DMA request 1 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dma1request](dma1request) module"]
-pub type DMA1REQUEST = crate::Reg<u32, _DMA1REQUEST>;
+pub mod dmareq0;
+#[doc = "SCT DMA request 1 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dmareq1](dmareq1) module"]
+pub type DMAREQ1 = crate::Reg<u32, _DMAREQ1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _DMA1REQUEST;
-#[doc = "`read()` method returns [dma1request::R](dma1request::R) reader structure"]
-impl crate::Readable for DMA1REQUEST {}
-#[doc = "`write(|w| ..)` method takes [dma1request::W](dma1request::W) writer structure"]
-impl crate::Writable for DMA1REQUEST {}
+pub struct _DMAREQ1;
+#[doc = "`read()` method returns [dmareq1::R](dmareq1::R) reader structure"]
+impl crate::Readable for DMAREQ1 {}
+#[doc = "`write(|w| ..)` method takes [dmareq1::W](dmareq1::W) writer structure"]
+impl crate::Writable for DMAREQ1 {}
 #[doc = "SCT DMA request 1 register"]
-pub mod dma1request;
+pub mod dmareq1;
 #[doc = "SCT event interrupt enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [even](even) module"]
 pub type EVEN = crate::Reg<u32, _EVEN>;
 #[allow(missing_docs)]
@@ -952,707 +952,707 @@ impl crate::Readable for CONFLAG {}
 impl crate::Writable for CONFLAG {}
 #[doc = "SCT conflict flag register"]
 pub mod conflag;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap0](sctcap0) module"]
-pub type SCTCAP0 = crate::Reg<u32, _SCTCAP0>;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap0](cap0) module"]
+pub type CAP0 = crate::Reg<u32, _CAP0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP0;
-#[doc = "`read()` method returns [sctcap0::R](sctcap0::R) reader structure"]
-impl crate::Readable for SCTCAP0 {}
-#[doc = "`write(|w| ..)` method takes [sctcap0::W](sctcap0::W) writer structure"]
-impl crate::Writable for SCTCAP0 {}
+pub struct _CAP0;
+#[doc = "`read()` method returns [cap0::R](cap0::R) reader structure"]
+impl crate::Readable for CAP0 {}
+#[doc = "`write(|w| ..)` method takes [cap0::W](cap0::W) writer structure"]
+impl crate::Writable for CAP0 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap0;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch0](sctmatch0) module"]
-pub type SCTMATCH0 = crate::Reg<u32, _SCTMATCH0>;
+pub mod cap0;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match0](match0) module"]
+pub type MATCH0 = crate::Reg<u32, _MATCH0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH0;
-#[doc = "`read()` method returns [sctmatch0::R](sctmatch0::R) reader structure"]
-impl crate::Readable for SCTMATCH0 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch0::W](sctmatch0::W) writer structure"]
-impl crate::Writable for SCTMATCH0 {}
+pub struct _MATCH0;
+#[doc = "`read()` method returns [match0::R](match0::R) reader structure"]
+impl crate::Readable for MATCH0 {}
+#[doc = "`write(|w| ..)` method takes [match0::W](match0::W) writer structure"]
+impl crate::Writable for MATCH0 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch0;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap1](sctcap1) module"]
-pub type SCTCAP1 = crate::Reg<u32, _SCTCAP1>;
+pub mod match0;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap1](cap1) module"]
+pub type CAP1 = crate::Reg<u32, _CAP1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP1;
-#[doc = "`read()` method returns [sctcap1::R](sctcap1::R) reader structure"]
-impl crate::Readable for SCTCAP1 {}
-#[doc = "`write(|w| ..)` method takes [sctcap1::W](sctcap1::W) writer structure"]
-impl crate::Writable for SCTCAP1 {}
+pub struct _CAP1;
+#[doc = "`read()` method returns [cap1::R](cap1::R) reader structure"]
+impl crate::Readable for CAP1 {}
+#[doc = "`write(|w| ..)` method takes [cap1::W](cap1::W) writer structure"]
+impl crate::Writable for CAP1 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap1;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch1](sctmatch1) module"]
-pub type SCTMATCH1 = crate::Reg<u32, _SCTMATCH1>;
+pub mod cap1;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match1](match1) module"]
+pub type MATCH1 = crate::Reg<u32, _MATCH1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH1;
-#[doc = "`read()` method returns [sctmatch1::R](sctmatch1::R) reader structure"]
-impl crate::Readable for SCTMATCH1 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch1::W](sctmatch1::W) writer structure"]
-impl crate::Writable for SCTMATCH1 {}
+pub struct _MATCH1;
+#[doc = "`read()` method returns [match1::R](match1::R) reader structure"]
+impl crate::Readable for MATCH1 {}
+#[doc = "`write(|w| ..)` method takes [match1::W](match1::W) writer structure"]
+impl crate::Writable for MATCH1 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch1;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap2](sctcap2) module"]
-pub type SCTCAP2 = crate::Reg<u32, _SCTCAP2>;
+pub mod match1;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap2](cap2) module"]
+pub type CAP2 = crate::Reg<u32, _CAP2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP2;
-#[doc = "`read()` method returns [sctcap2::R](sctcap2::R) reader structure"]
-impl crate::Readable for SCTCAP2 {}
-#[doc = "`write(|w| ..)` method takes [sctcap2::W](sctcap2::W) writer structure"]
-impl crate::Writable for SCTCAP2 {}
+pub struct _CAP2;
+#[doc = "`read()` method returns [cap2::R](cap2::R) reader structure"]
+impl crate::Readable for CAP2 {}
+#[doc = "`write(|w| ..)` method takes [cap2::W](cap2::W) writer structure"]
+impl crate::Writable for CAP2 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap2;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch2](sctmatch2) module"]
-pub type SCTMATCH2 = crate::Reg<u32, _SCTMATCH2>;
+pub mod cap2;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match2](match2) module"]
+pub type MATCH2 = crate::Reg<u32, _MATCH2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH2;
-#[doc = "`read()` method returns [sctmatch2::R](sctmatch2::R) reader structure"]
-impl crate::Readable for SCTMATCH2 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch2::W](sctmatch2::W) writer structure"]
-impl crate::Writable for SCTMATCH2 {}
+pub struct _MATCH2;
+#[doc = "`read()` method returns [match2::R](match2::R) reader structure"]
+impl crate::Readable for MATCH2 {}
+#[doc = "`write(|w| ..)` method takes [match2::W](match2::W) writer structure"]
+impl crate::Writable for MATCH2 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch2;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap3](sctcap3) module"]
-pub type SCTCAP3 = crate::Reg<u32, _SCTCAP3>;
+pub mod match2;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap3](cap3) module"]
+pub type CAP3 = crate::Reg<u32, _CAP3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP3;
-#[doc = "`read()` method returns [sctcap3::R](sctcap3::R) reader structure"]
-impl crate::Readable for SCTCAP3 {}
-#[doc = "`write(|w| ..)` method takes [sctcap3::W](sctcap3::W) writer structure"]
-impl crate::Writable for SCTCAP3 {}
+pub struct _CAP3;
+#[doc = "`read()` method returns [cap3::R](cap3::R) reader structure"]
+impl crate::Readable for CAP3 {}
+#[doc = "`write(|w| ..)` method takes [cap3::W](cap3::W) writer structure"]
+impl crate::Writable for CAP3 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap3;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch3](sctmatch3) module"]
-pub type SCTMATCH3 = crate::Reg<u32, _SCTMATCH3>;
+pub mod cap3;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match3](match3) module"]
+pub type MATCH3 = crate::Reg<u32, _MATCH3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH3;
-#[doc = "`read()` method returns [sctmatch3::R](sctmatch3::R) reader structure"]
-impl crate::Readable for SCTMATCH3 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch3::W](sctmatch3::W) writer structure"]
-impl crate::Writable for SCTMATCH3 {}
+pub struct _MATCH3;
+#[doc = "`read()` method returns [match3::R](match3::R) reader structure"]
+impl crate::Readable for MATCH3 {}
+#[doc = "`write(|w| ..)` method takes [match3::W](match3::W) writer structure"]
+impl crate::Writable for MATCH3 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch3;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap4](sctcap4) module"]
-pub type SCTCAP4 = crate::Reg<u32, _SCTCAP4>;
+pub mod match3;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap4](cap4) module"]
+pub type CAP4 = crate::Reg<u32, _CAP4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP4;
-#[doc = "`read()` method returns [sctcap4::R](sctcap4::R) reader structure"]
-impl crate::Readable for SCTCAP4 {}
-#[doc = "`write(|w| ..)` method takes [sctcap4::W](sctcap4::W) writer structure"]
-impl crate::Writable for SCTCAP4 {}
+pub struct _CAP4;
+#[doc = "`read()` method returns [cap4::R](cap4::R) reader structure"]
+impl crate::Readable for CAP4 {}
+#[doc = "`write(|w| ..)` method takes [cap4::W](cap4::W) writer structure"]
+impl crate::Writable for CAP4 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap4;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch4](sctmatch4) module"]
-pub type SCTMATCH4 = crate::Reg<u32, _SCTMATCH4>;
+pub mod cap4;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match4](match4) module"]
+pub type MATCH4 = crate::Reg<u32, _MATCH4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH4;
-#[doc = "`read()` method returns [sctmatch4::R](sctmatch4::R) reader structure"]
-impl crate::Readable for SCTMATCH4 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch4::W](sctmatch4::W) writer structure"]
-impl crate::Writable for SCTMATCH4 {}
+pub struct _MATCH4;
+#[doc = "`read()` method returns [match4::R](match4::R) reader structure"]
+impl crate::Readable for MATCH4 {}
+#[doc = "`write(|w| ..)` method takes [match4::W](match4::W) writer structure"]
+impl crate::Writable for MATCH4 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch4;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap5](sctcap5) module"]
-pub type SCTCAP5 = crate::Reg<u32, _SCTCAP5>;
+pub mod match4;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap5](cap5) module"]
+pub type CAP5 = crate::Reg<u32, _CAP5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP5;
-#[doc = "`read()` method returns [sctcap5::R](sctcap5::R) reader structure"]
-impl crate::Readable for SCTCAP5 {}
-#[doc = "`write(|w| ..)` method takes [sctcap5::W](sctcap5::W) writer structure"]
-impl crate::Writable for SCTCAP5 {}
+pub struct _CAP5;
+#[doc = "`read()` method returns [cap5::R](cap5::R) reader structure"]
+impl crate::Readable for CAP5 {}
+#[doc = "`write(|w| ..)` method takes [cap5::W](cap5::W) writer structure"]
+impl crate::Writable for CAP5 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap5;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch5](sctmatch5) module"]
-pub type SCTMATCH5 = crate::Reg<u32, _SCTMATCH5>;
+pub mod cap5;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match5](match5) module"]
+pub type MATCH5 = crate::Reg<u32, _MATCH5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH5;
-#[doc = "`read()` method returns [sctmatch5::R](sctmatch5::R) reader structure"]
-impl crate::Readable for SCTMATCH5 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch5::W](sctmatch5::W) writer structure"]
-impl crate::Writable for SCTMATCH5 {}
+pub struct _MATCH5;
+#[doc = "`read()` method returns [match5::R](match5::R) reader structure"]
+impl crate::Readable for MATCH5 {}
+#[doc = "`write(|w| ..)` method takes [match5::W](match5::W) writer structure"]
+impl crate::Writable for MATCH5 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch5;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap6](sctcap6) module"]
-pub type SCTCAP6 = crate::Reg<u32, _SCTCAP6>;
+pub mod match5;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap6](cap6) module"]
+pub type CAP6 = crate::Reg<u32, _CAP6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP6;
-#[doc = "`read()` method returns [sctcap6::R](sctcap6::R) reader structure"]
-impl crate::Readable for SCTCAP6 {}
-#[doc = "`write(|w| ..)` method takes [sctcap6::W](sctcap6::W) writer structure"]
-impl crate::Writable for SCTCAP6 {}
+pub struct _CAP6;
+#[doc = "`read()` method returns [cap6::R](cap6::R) reader structure"]
+impl crate::Readable for CAP6 {}
+#[doc = "`write(|w| ..)` method takes [cap6::W](cap6::W) writer structure"]
+impl crate::Writable for CAP6 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap6;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch6](sctmatch6) module"]
-pub type SCTMATCH6 = crate::Reg<u32, _SCTMATCH6>;
+pub mod cap6;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match6](match6) module"]
+pub type MATCH6 = crate::Reg<u32, _MATCH6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH6;
-#[doc = "`read()` method returns [sctmatch6::R](sctmatch6::R) reader structure"]
-impl crate::Readable for SCTMATCH6 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch6::W](sctmatch6::W) writer structure"]
-impl crate::Writable for SCTMATCH6 {}
+pub struct _MATCH6;
+#[doc = "`read()` method returns [match6::R](match6::R) reader structure"]
+impl crate::Readable for MATCH6 {}
+#[doc = "`write(|w| ..)` method takes [match6::W](match6::W) writer structure"]
+impl crate::Writable for MATCH6 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch6;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap7](sctcap7) module"]
-pub type SCTCAP7 = crate::Reg<u32, _SCTCAP7>;
+pub mod match6;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap7](cap7) module"]
+pub type CAP7 = crate::Reg<u32, _CAP7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP7;
-#[doc = "`read()` method returns [sctcap7::R](sctcap7::R) reader structure"]
-impl crate::Readable for SCTCAP7 {}
-#[doc = "`write(|w| ..)` method takes [sctcap7::W](sctcap7::W) writer structure"]
-impl crate::Writable for SCTCAP7 {}
+pub struct _CAP7;
+#[doc = "`read()` method returns [cap7::R](cap7::R) reader structure"]
+impl crate::Readable for CAP7 {}
+#[doc = "`write(|w| ..)` method takes [cap7::W](cap7::W) writer structure"]
+impl crate::Writable for CAP7 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap7;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch7](sctmatch7) module"]
-pub type SCTMATCH7 = crate::Reg<u32, _SCTMATCH7>;
+pub mod cap7;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match7](match7) module"]
+pub type MATCH7 = crate::Reg<u32, _MATCH7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH7;
-#[doc = "`read()` method returns [sctmatch7::R](sctmatch7::R) reader structure"]
-impl crate::Readable for SCTMATCH7 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch7::W](sctmatch7::W) writer structure"]
-impl crate::Writable for SCTMATCH7 {}
+pub struct _MATCH7;
+#[doc = "`read()` method returns [match7::R](match7::R) reader structure"]
+impl crate::Readable for MATCH7 {}
+#[doc = "`write(|w| ..)` method takes [match7::W](match7::W) writer structure"]
+impl crate::Writable for MATCH7 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch7;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap8](sctcap8) module"]
-pub type SCTCAP8 = crate::Reg<u32, _SCTCAP8>;
+pub mod match7;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap8](cap8) module"]
+pub type CAP8 = crate::Reg<u32, _CAP8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP8;
-#[doc = "`read()` method returns [sctcap8::R](sctcap8::R) reader structure"]
-impl crate::Readable for SCTCAP8 {}
-#[doc = "`write(|w| ..)` method takes [sctcap8::W](sctcap8::W) writer structure"]
-impl crate::Writable for SCTCAP8 {}
+pub struct _CAP8;
+#[doc = "`read()` method returns [cap8::R](cap8::R) reader structure"]
+impl crate::Readable for CAP8 {}
+#[doc = "`write(|w| ..)` method takes [cap8::W](cap8::W) writer structure"]
+impl crate::Writable for CAP8 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap8;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch8](sctmatch8) module"]
-pub type SCTMATCH8 = crate::Reg<u32, _SCTMATCH8>;
+pub mod cap8;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match8](match8) module"]
+pub type MATCH8 = crate::Reg<u32, _MATCH8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH8;
-#[doc = "`read()` method returns [sctmatch8::R](sctmatch8::R) reader structure"]
-impl crate::Readable for SCTMATCH8 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch8::W](sctmatch8::W) writer structure"]
-impl crate::Writable for SCTMATCH8 {}
+pub struct _MATCH8;
+#[doc = "`read()` method returns [match8::R](match8::R) reader structure"]
+impl crate::Readable for MATCH8 {}
+#[doc = "`write(|w| ..)` method takes [match8::W](match8::W) writer structure"]
+impl crate::Writable for MATCH8 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch8;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap9](sctcap9) module"]
-pub type SCTCAP9 = crate::Reg<u32, _SCTCAP9>;
+pub mod match8;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap9](cap9) module"]
+pub type CAP9 = crate::Reg<u32, _CAP9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP9;
-#[doc = "`read()` method returns [sctcap9::R](sctcap9::R) reader structure"]
-impl crate::Readable for SCTCAP9 {}
-#[doc = "`write(|w| ..)` method takes [sctcap9::W](sctcap9::W) writer structure"]
-impl crate::Writable for SCTCAP9 {}
+pub struct _CAP9;
+#[doc = "`read()` method returns [cap9::R](cap9::R) reader structure"]
+impl crate::Readable for CAP9 {}
+#[doc = "`write(|w| ..)` method takes [cap9::W](cap9::W) writer structure"]
+impl crate::Writable for CAP9 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap9;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch9](sctmatch9) module"]
-pub type SCTMATCH9 = crate::Reg<u32, _SCTMATCH9>;
+pub mod cap9;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match9](match9) module"]
+pub type MATCH9 = crate::Reg<u32, _MATCH9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH9;
-#[doc = "`read()` method returns [sctmatch9::R](sctmatch9::R) reader structure"]
-impl crate::Readable for SCTMATCH9 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch9::W](sctmatch9::W) writer structure"]
-impl crate::Writable for SCTMATCH9 {}
+pub struct _MATCH9;
+#[doc = "`read()` method returns [match9::R](match9::R) reader structure"]
+impl crate::Readable for MATCH9 {}
+#[doc = "`write(|w| ..)` method takes [match9::W](match9::W) writer structure"]
+impl crate::Writable for MATCH9 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch9;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap10](sctcap10) module"]
-pub type SCTCAP10 = crate::Reg<u32, _SCTCAP10>;
+pub mod match9;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap10](cap10) module"]
+pub type CAP10 = crate::Reg<u32, _CAP10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP10;
-#[doc = "`read()` method returns [sctcap10::R](sctcap10::R) reader structure"]
-impl crate::Readable for SCTCAP10 {}
-#[doc = "`write(|w| ..)` method takes [sctcap10::W](sctcap10::W) writer structure"]
-impl crate::Writable for SCTCAP10 {}
+pub struct _CAP10;
+#[doc = "`read()` method returns [cap10::R](cap10::R) reader structure"]
+impl crate::Readable for CAP10 {}
+#[doc = "`write(|w| ..)` method takes [cap10::W](cap10::W) writer structure"]
+impl crate::Writable for CAP10 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap10;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch10](sctmatch10) module"]
-pub type SCTMATCH10 = crate::Reg<u32, _SCTMATCH10>;
+pub mod cap10;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match10](match10) module"]
+pub type MATCH10 = crate::Reg<u32, _MATCH10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH10;
-#[doc = "`read()` method returns [sctmatch10::R](sctmatch10::R) reader structure"]
-impl crate::Readable for SCTMATCH10 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch10::W](sctmatch10::W) writer structure"]
-impl crate::Writable for SCTMATCH10 {}
+pub struct _MATCH10;
+#[doc = "`read()` method returns [match10::R](match10::R) reader structure"]
+impl crate::Readable for MATCH10 {}
+#[doc = "`write(|w| ..)` method takes [match10::W](match10::W) writer structure"]
+impl crate::Writable for MATCH10 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch10;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap11](sctcap11) module"]
-pub type SCTCAP11 = crate::Reg<u32, _SCTCAP11>;
+pub mod match10;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap11](cap11) module"]
+pub type CAP11 = crate::Reg<u32, _CAP11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP11;
-#[doc = "`read()` method returns [sctcap11::R](sctcap11::R) reader structure"]
-impl crate::Readable for SCTCAP11 {}
-#[doc = "`write(|w| ..)` method takes [sctcap11::W](sctcap11::W) writer structure"]
-impl crate::Writable for SCTCAP11 {}
+pub struct _CAP11;
+#[doc = "`read()` method returns [cap11::R](cap11::R) reader structure"]
+impl crate::Readable for CAP11 {}
+#[doc = "`write(|w| ..)` method takes [cap11::W](cap11::W) writer structure"]
+impl crate::Writable for CAP11 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap11;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch11](sctmatch11) module"]
-pub type SCTMATCH11 = crate::Reg<u32, _SCTMATCH11>;
+pub mod cap11;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match11](match11) module"]
+pub type MATCH11 = crate::Reg<u32, _MATCH11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH11;
-#[doc = "`read()` method returns [sctmatch11::R](sctmatch11::R) reader structure"]
-impl crate::Readable for SCTMATCH11 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch11::W](sctmatch11::W) writer structure"]
-impl crate::Writable for SCTMATCH11 {}
+pub struct _MATCH11;
+#[doc = "`read()` method returns [match11::R](match11::R) reader structure"]
+impl crate::Readable for MATCH11 {}
+#[doc = "`write(|w| ..)` method takes [match11::W](match11::W) writer structure"]
+impl crate::Writable for MATCH11 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch11;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap12](sctcap12) module"]
-pub type SCTCAP12 = crate::Reg<u32, _SCTCAP12>;
+pub mod match11;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap12](cap12) module"]
+pub type CAP12 = crate::Reg<u32, _CAP12>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP12;
-#[doc = "`read()` method returns [sctcap12::R](sctcap12::R) reader structure"]
-impl crate::Readable for SCTCAP12 {}
-#[doc = "`write(|w| ..)` method takes [sctcap12::W](sctcap12::W) writer structure"]
-impl crate::Writable for SCTCAP12 {}
+pub struct _CAP12;
+#[doc = "`read()` method returns [cap12::R](cap12::R) reader structure"]
+impl crate::Readable for CAP12 {}
+#[doc = "`write(|w| ..)` method takes [cap12::W](cap12::W) writer structure"]
+impl crate::Writable for CAP12 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap12;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch12](sctmatch12) module"]
-pub type SCTMATCH12 = crate::Reg<u32, _SCTMATCH12>;
+pub mod cap12;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match12](match12) module"]
+pub type MATCH12 = crate::Reg<u32, _MATCH12>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH12;
-#[doc = "`read()` method returns [sctmatch12::R](sctmatch12::R) reader structure"]
-impl crate::Readable for SCTMATCH12 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch12::W](sctmatch12::W) writer structure"]
-impl crate::Writable for SCTMATCH12 {}
+pub struct _MATCH12;
+#[doc = "`read()` method returns [match12::R](match12::R) reader structure"]
+impl crate::Readable for MATCH12 {}
+#[doc = "`write(|w| ..)` method takes [match12::W](match12::W) writer structure"]
+impl crate::Writable for MATCH12 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch12;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap13](sctcap13) module"]
-pub type SCTCAP13 = crate::Reg<u32, _SCTCAP13>;
+pub mod match12;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap13](cap13) module"]
+pub type CAP13 = crate::Reg<u32, _CAP13>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP13;
-#[doc = "`read()` method returns [sctcap13::R](sctcap13::R) reader structure"]
-impl crate::Readable for SCTCAP13 {}
-#[doc = "`write(|w| ..)` method takes [sctcap13::W](sctcap13::W) writer structure"]
-impl crate::Writable for SCTCAP13 {}
+pub struct _CAP13;
+#[doc = "`read()` method returns [cap13::R](cap13::R) reader structure"]
+impl crate::Readable for CAP13 {}
+#[doc = "`write(|w| ..)` method takes [cap13::W](cap13::W) writer structure"]
+impl crate::Writable for CAP13 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap13;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch13](sctmatch13) module"]
-pub type SCTMATCH13 = crate::Reg<u32, _SCTMATCH13>;
+pub mod cap13;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match13](match13) module"]
+pub type MATCH13 = crate::Reg<u32, _MATCH13>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH13;
-#[doc = "`read()` method returns [sctmatch13::R](sctmatch13::R) reader structure"]
-impl crate::Readable for SCTMATCH13 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch13::W](sctmatch13::W) writer structure"]
-impl crate::Writable for SCTMATCH13 {}
+pub struct _MATCH13;
+#[doc = "`read()` method returns [match13::R](match13::R) reader structure"]
+impl crate::Readable for MATCH13 {}
+#[doc = "`write(|w| ..)` method takes [match13::W](match13::W) writer structure"]
+impl crate::Writable for MATCH13 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch13;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap14](sctcap14) module"]
-pub type SCTCAP14 = crate::Reg<u32, _SCTCAP14>;
+pub mod match13;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap14](cap14) module"]
+pub type CAP14 = crate::Reg<u32, _CAP14>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP14;
-#[doc = "`read()` method returns [sctcap14::R](sctcap14::R) reader structure"]
-impl crate::Readable for SCTCAP14 {}
-#[doc = "`write(|w| ..)` method takes [sctcap14::W](sctcap14::W) writer structure"]
-impl crate::Writable for SCTCAP14 {}
+pub struct _CAP14;
+#[doc = "`read()` method returns [cap14::R](cap14::R) reader structure"]
+impl crate::Readable for CAP14 {}
+#[doc = "`write(|w| ..)` method takes [cap14::W](cap14::W) writer structure"]
+impl crate::Writable for CAP14 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap14;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch14](sctmatch14) module"]
-pub type SCTMATCH14 = crate::Reg<u32, _SCTMATCH14>;
+pub mod cap14;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match14](match14) module"]
+pub type MATCH14 = crate::Reg<u32, _MATCH14>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH14;
-#[doc = "`read()` method returns [sctmatch14::R](sctmatch14::R) reader structure"]
-impl crate::Readable for SCTMATCH14 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch14::W](sctmatch14::W) writer structure"]
-impl crate::Writable for SCTMATCH14 {}
+pub struct _MATCH14;
+#[doc = "`read()` method returns [match14::R](match14::R) reader structure"]
+impl crate::Readable for MATCH14 {}
+#[doc = "`write(|w| ..)` method takes [match14::W](match14::W) writer structure"]
+impl crate::Writable for MATCH14 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch14;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcap15](sctcap15) module"]
-pub type SCTCAP15 = crate::Reg<u32, _SCTCAP15>;
+pub mod match14;
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap15](cap15) module"]
+pub type CAP15 = crate::Reg<u32, _CAP15>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAP15;
-#[doc = "`read()` method returns [sctcap15::R](sctcap15::R) reader structure"]
-impl crate::Readable for SCTCAP15 {}
-#[doc = "`write(|w| ..)` method takes [sctcap15::W](sctcap15::W) writer structure"]
-impl crate::Writable for SCTCAP15 {}
+pub struct _CAP15;
+#[doc = "`read()` method returns [cap15::R](cap15::R) reader structure"]
+impl crate::Readable for CAP15 {}
+#[doc = "`write(|w| ..)` method takes [cap15::W](cap15::W) writer structure"]
+impl crate::Writable for CAP15 {}
 #[doc = "SCT capture register of capture channel"]
-pub mod sctcap15;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatch15](sctmatch15) module"]
-pub type SCTMATCH15 = crate::Reg<u32, _SCTMATCH15>;
+pub mod cap15;
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match15](match15) module"]
+pub type MATCH15 = crate::Reg<u32, _MATCH15>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCH15;
-#[doc = "`read()` method returns [sctmatch15::R](sctmatch15::R) reader structure"]
-impl crate::Readable for SCTMATCH15 {}
-#[doc = "`write(|w| ..)` method takes [sctmatch15::W](sctmatch15::W) writer structure"]
-impl crate::Writable for SCTMATCH15 {}
+pub struct _MATCH15;
+#[doc = "`read()` method returns [match15::R](match15::R) reader structure"]
+impl crate::Readable for MATCH15 {}
+#[doc = "`write(|w| ..)` method takes [match15::W](match15::W) writer structure"]
+impl crate::Writable for MATCH15 {}
 #[doc = "SCT match value register of match channels"]
-pub mod sctmatch15;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl0](sctcapctrl0) module"]
-pub type SCTCAPCTRL0 = crate::Reg<u32, _SCTCAPCTRL0>;
+pub mod match15;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl0](capctrl0) module"]
+pub type CAPCTRL0 = crate::Reg<u32, _CAPCTRL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL0;
-#[doc = "`read()` method returns [sctcapctrl0::R](sctcapctrl0::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL0 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl0::W](sctcapctrl0::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL0 {}
+pub struct _CAPCTRL0;
+#[doc = "`read()` method returns [capctrl0::R](capctrl0::R) reader structure"]
+impl crate::Readable for CAPCTRL0 {}
+#[doc = "`write(|w| ..)` method takes [capctrl0::W](capctrl0::W) writer structure"]
+impl crate::Writable for CAPCTRL0 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl0;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel0](sctmatchrel0) module"]
-pub type SCTMATCHREL0 = crate::Reg<u32, _SCTMATCHREL0>;
+pub mod capctrl0;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel0](matchrel0) module"]
+pub type MATCHREL0 = crate::Reg<u32, _MATCHREL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL0;
-#[doc = "`read()` method returns [sctmatchrel0::R](sctmatchrel0::R) reader structure"]
-impl crate::Readable for SCTMATCHREL0 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel0::W](sctmatchrel0::W) writer structure"]
-impl crate::Writable for SCTMATCHREL0 {}
+pub struct _MATCHREL0;
+#[doc = "`read()` method returns [matchrel0::R](matchrel0::R) reader structure"]
+impl crate::Readable for MATCHREL0 {}
+#[doc = "`write(|w| ..)` method takes [matchrel0::W](matchrel0::W) writer structure"]
+impl crate::Writable for MATCHREL0 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel0;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl1](sctcapctrl1) module"]
-pub type SCTCAPCTRL1 = crate::Reg<u32, _SCTCAPCTRL1>;
+pub mod matchrel0;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl1](capctrl1) module"]
+pub type CAPCTRL1 = crate::Reg<u32, _CAPCTRL1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL1;
-#[doc = "`read()` method returns [sctcapctrl1::R](sctcapctrl1::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL1 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl1::W](sctcapctrl1::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL1 {}
+pub struct _CAPCTRL1;
+#[doc = "`read()` method returns [capctrl1::R](capctrl1::R) reader structure"]
+impl crate::Readable for CAPCTRL1 {}
+#[doc = "`write(|w| ..)` method takes [capctrl1::W](capctrl1::W) writer structure"]
+impl crate::Writable for CAPCTRL1 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl1;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel1](sctmatchrel1) module"]
-pub type SCTMATCHREL1 = crate::Reg<u32, _SCTMATCHREL1>;
+pub mod capctrl1;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel1](matchrel1) module"]
+pub type MATCHREL1 = crate::Reg<u32, _MATCHREL1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL1;
-#[doc = "`read()` method returns [sctmatchrel1::R](sctmatchrel1::R) reader structure"]
-impl crate::Readable for SCTMATCHREL1 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel1::W](sctmatchrel1::W) writer structure"]
-impl crate::Writable for SCTMATCHREL1 {}
+pub struct _MATCHREL1;
+#[doc = "`read()` method returns [matchrel1::R](matchrel1::R) reader structure"]
+impl crate::Readable for MATCHREL1 {}
+#[doc = "`write(|w| ..)` method takes [matchrel1::W](matchrel1::W) writer structure"]
+impl crate::Writable for MATCHREL1 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel1;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl2](sctcapctrl2) module"]
-pub type SCTCAPCTRL2 = crate::Reg<u32, _SCTCAPCTRL2>;
+pub mod matchrel1;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl2](capctrl2) module"]
+pub type CAPCTRL2 = crate::Reg<u32, _CAPCTRL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL2;
-#[doc = "`read()` method returns [sctcapctrl2::R](sctcapctrl2::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL2 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl2::W](sctcapctrl2::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL2 {}
+pub struct _CAPCTRL2;
+#[doc = "`read()` method returns [capctrl2::R](capctrl2::R) reader structure"]
+impl crate::Readable for CAPCTRL2 {}
+#[doc = "`write(|w| ..)` method takes [capctrl2::W](capctrl2::W) writer structure"]
+impl crate::Writable for CAPCTRL2 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl2;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel2](sctmatchrel2) module"]
-pub type SCTMATCHREL2 = crate::Reg<u32, _SCTMATCHREL2>;
+pub mod capctrl2;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel2](matchrel2) module"]
+pub type MATCHREL2 = crate::Reg<u32, _MATCHREL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL2;
-#[doc = "`read()` method returns [sctmatchrel2::R](sctmatchrel2::R) reader structure"]
-impl crate::Readable for SCTMATCHREL2 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel2::W](sctmatchrel2::W) writer structure"]
-impl crate::Writable for SCTMATCHREL2 {}
+pub struct _MATCHREL2;
+#[doc = "`read()` method returns [matchrel2::R](matchrel2::R) reader structure"]
+impl crate::Readable for MATCHREL2 {}
+#[doc = "`write(|w| ..)` method takes [matchrel2::W](matchrel2::W) writer structure"]
+impl crate::Writable for MATCHREL2 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel2;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl3](sctcapctrl3) module"]
-pub type SCTCAPCTRL3 = crate::Reg<u32, _SCTCAPCTRL3>;
+pub mod matchrel2;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl3](capctrl3) module"]
+pub type CAPCTRL3 = crate::Reg<u32, _CAPCTRL3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL3;
-#[doc = "`read()` method returns [sctcapctrl3::R](sctcapctrl3::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL3 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl3::W](sctcapctrl3::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL3 {}
+pub struct _CAPCTRL3;
+#[doc = "`read()` method returns [capctrl3::R](capctrl3::R) reader structure"]
+impl crate::Readable for CAPCTRL3 {}
+#[doc = "`write(|w| ..)` method takes [capctrl3::W](capctrl3::W) writer structure"]
+impl crate::Writable for CAPCTRL3 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl3;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel3](sctmatchrel3) module"]
-pub type SCTMATCHREL3 = crate::Reg<u32, _SCTMATCHREL3>;
+pub mod capctrl3;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel3](matchrel3) module"]
+pub type MATCHREL3 = crate::Reg<u32, _MATCHREL3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL3;
-#[doc = "`read()` method returns [sctmatchrel3::R](sctmatchrel3::R) reader structure"]
-impl crate::Readable for SCTMATCHREL3 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel3::W](sctmatchrel3::W) writer structure"]
-impl crate::Writable for SCTMATCHREL3 {}
+pub struct _MATCHREL3;
+#[doc = "`read()` method returns [matchrel3::R](matchrel3::R) reader structure"]
+impl crate::Readable for MATCHREL3 {}
+#[doc = "`write(|w| ..)` method takes [matchrel3::W](matchrel3::W) writer structure"]
+impl crate::Writable for MATCHREL3 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel3;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl4](sctcapctrl4) module"]
-pub type SCTCAPCTRL4 = crate::Reg<u32, _SCTCAPCTRL4>;
+pub mod matchrel3;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl4](capctrl4) module"]
+pub type CAPCTRL4 = crate::Reg<u32, _CAPCTRL4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL4;
-#[doc = "`read()` method returns [sctcapctrl4::R](sctcapctrl4::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL4 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl4::W](sctcapctrl4::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL4 {}
+pub struct _CAPCTRL4;
+#[doc = "`read()` method returns [capctrl4::R](capctrl4::R) reader structure"]
+impl crate::Readable for CAPCTRL4 {}
+#[doc = "`write(|w| ..)` method takes [capctrl4::W](capctrl4::W) writer structure"]
+impl crate::Writable for CAPCTRL4 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl4;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel4](sctmatchrel4) module"]
-pub type SCTMATCHREL4 = crate::Reg<u32, _SCTMATCHREL4>;
+pub mod capctrl4;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel4](matchrel4) module"]
+pub type MATCHREL4 = crate::Reg<u32, _MATCHREL4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL4;
-#[doc = "`read()` method returns [sctmatchrel4::R](sctmatchrel4::R) reader structure"]
-impl crate::Readable for SCTMATCHREL4 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel4::W](sctmatchrel4::W) writer structure"]
-impl crate::Writable for SCTMATCHREL4 {}
+pub struct _MATCHREL4;
+#[doc = "`read()` method returns [matchrel4::R](matchrel4::R) reader structure"]
+impl crate::Readable for MATCHREL4 {}
+#[doc = "`write(|w| ..)` method takes [matchrel4::W](matchrel4::W) writer structure"]
+impl crate::Writable for MATCHREL4 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel4;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl5](sctcapctrl5) module"]
-pub type SCTCAPCTRL5 = crate::Reg<u32, _SCTCAPCTRL5>;
+pub mod matchrel4;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl5](capctrl5) module"]
+pub type CAPCTRL5 = crate::Reg<u32, _CAPCTRL5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL5;
-#[doc = "`read()` method returns [sctcapctrl5::R](sctcapctrl5::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL5 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl5::W](sctcapctrl5::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL5 {}
+pub struct _CAPCTRL5;
+#[doc = "`read()` method returns [capctrl5::R](capctrl5::R) reader structure"]
+impl crate::Readable for CAPCTRL5 {}
+#[doc = "`write(|w| ..)` method takes [capctrl5::W](capctrl5::W) writer structure"]
+impl crate::Writable for CAPCTRL5 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl5;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel5](sctmatchrel5) module"]
-pub type SCTMATCHREL5 = crate::Reg<u32, _SCTMATCHREL5>;
+pub mod capctrl5;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel5](matchrel5) module"]
+pub type MATCHREL5 = crate::Reg<u32, _MATCHREL5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL5;
-#[doc = "`read()` method returns [sctmatchrel5::R](sctmatchrel5::R) reader structure"]
-impl crate::Readable for SCTMATCHREL5 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel5::W](sctmatchrel5::W) writer structure"]
-impl crate::Writable for SCTMATCHREL5 {}
+pub struct _MATCHREL5;
+#[doc = "`read()` method returns [matchrel5::R](matchrel5::R) reader structure"]
+impl crate::Readable for MATCHREL5 {}
+#[doc = "`write(|w| ..)` method takes [matchrel5::W](matchrel5::W) writer structure"]
+impl crate::Writable for MATCHREL5 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel5;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl6](sctcapctrl6) module"]
-pub type SCTCAPCTRL6 = crate::Reg<u32, _SCTCAPCTRL6>;
+pub mod matchrel5;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl6](capctrl6) module"]
+pub type CAPCTRL6 = crate::Reg<u32, _CAPCTRL6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL6;
-#[doc = "`read()` method returns [sctcapctrl6::R](sctcapctrl6::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL6 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl6::W](sctcapctrl6::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL6 {}
+pub struct _CAPCTRL6;
+#[doc = "`read()` method returns [capctrl6::R](capctrl6::R) reader structure"]
+impl crate::Readable for CAPCTRL6 {}
+#[doc = "`write(|w| ..)` method takes [capctrl6::W](capctrl6::W) writer structure"]
+impl crate::Writable for CAPCTRL6 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl6;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel6](sctmatchrel6) module"]
-pub type SCTMATCHREL6 = crate::Reg<u32, _SCTMATCHREL6>;
+pub mod capctrl6;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel6](matchrel6) module"]
+pub type MATCHREL6 = crate::Reg<u32, _MATCHREL6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL6;
-#[doc = "`read()` method returns [sctmatchrel6::R](sctmatchrel6::R) reader structure"]
-impl crate::Readable for SCTMATCHREL6 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel6::W](sctmatchrel6::W) writer structure"]
-impl crate::Writable for SCTMATCHREL6 {}
+pub struct _MATCHREL6;
+#[doc = "`read()` method returns [matchrel6::R](matchrel6::R) reader structure"]
+impl crate::Readable for MATCHREL6 {}
+#[doc = "`write(|w| ..)` method takes [matchrel6::W](matchrel6::W) writer structure"]
+impl crate::Writable for MATCHREL6 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel6;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl7](sctcapctrl7) module"]
-pub type SCTCAPCTRL7 = crate::Reg<u32, _SCTCAPCTRL7>;
+pub mod matchrel6;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl7](capctrl7) module"]
+pub type CAPCTRL7 = crate::Reg<u32, _CAPCTRL7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL7;
-#[doc = "`read()` method returns [sctcapctrl7::R](sctcapctrl7::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL7 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl7::W](sctcapctrl7::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL7 {}
+pub struct _CAPCTRL7;
+#[doc = "`read()` method returns [capctrl7::R](capctrl7::R) reader structure"]
+impl crate::Readable for CAPCTRL7 {}
+#[doc = "`write(|w| ..)` method takes [capctrl7::W](capctrl7::W) writer structure"]
+impl crate::Writable for CAPCTRL7 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl7;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel7](sctmatchrel7) module"]
-pub type SCTMATCHREL7 = crate::Reg<u32, _SCTMATCHREL7>;
+pub mod capctrl7;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel7](matchrel7) module"]
+pub type MATCHREL7 = crate::Reg<u32, _MATCHREL7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL7;
-#[doc = "`read()` method returns [sctmatchrel7::R](sctmatchrel7::R) reader structure"]
-impl crate::Readable for SCTMATCHREL7 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel7::W](sctmatchrel7::W) writer structure"]
-impl crate::Writable for SCTMATCHREL7 {}
+pub struct _MATCHREL7;
+#[doc = "`read()` method returns [matchrel7::R](matchrel7::R) reader structure"]
+impl crate::Readable for MATCHREL7 {}
+#[doc = "`write(|w| ..)` method takes [matchrel7::W](matchrel7::W) writer structure"]
+impl crate::Writable for MATCHREL7 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel7;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl8](sctcapctrl8) module"]
-pub type SCTCAPCTRL8 = crate::Reg<u32, _SCTCAPCTRL8>;
+pub mod matchrel7;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl8](capctrl8) module"]
+pub type CAPCTRL8 = crate::Reg<u32, _CAPCTRL8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL8;
-#[doc = "`read()` method returns [sctcapctrl8::R](sctcapctrl8::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL8 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl8::W](sctcapctrl8::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL8 {}
+pub struct _CAPCTRL8;
+#[doc = "`read()` method returns [capctrl8::R](capctrl8::R) reader structure"]
+impl crate::Readable for CAPCTRL8 {}
+#[doc = "`write(|w| ..)` method takes [capctrl8::W](capctrl8::W) writer structure"]
+impl crate::Writable for CAPCTRL8 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl8;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel8](sctmatchrel8) module"]
-pub type SCTMATCHREL8 = crate::Reg<u32, _SCTMATCHREL8>;
+pub mod capctrl8;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel8](matchrel8) module"]
+pub type MATCHREL8 = crate::Reg<u32, _MATCHREL8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL8;
-#[doc = "`read()` method returns [sctmatchrel8::R](sctmatchrel8::R) reader structure"]
-impl crate::Readable for SCTMATCHREL8 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel8::W](sctmatchrel8::W) writer structure"]
-impl crate::Writable for SCTMATCHREL8 {}
+pub struct _MATCHREL8;
+#[doc = "`read()` method returns [matchrel8::R](matchrel8::R) reader structure"]
+impl crate::Readable for MATCHREL8 {}
+#[doc = "`write(|w| ..)` method takes [matchrel8::W](matchrel8::W) writer structure"]
+impl crate::Writable for MATCHREL8 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel8;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl9](sctcapctrl9) module"]
-pub type SCTCAPCTRL9 = crate::Reg<u32, _SCTCAPCTRL9>;
+pub mod matchrel8;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl9](capctrl9) module"]
+pub type CAPCTRL9 = crate::Reg<u32, _CAPCTRL9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL9;
-#[doc = "`read()` method returns [sctcapctrl9::R](sctcapctrl9::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL9 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl9::W](sctcapctrl9::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL9 {}
+pub struct _CAPCTRL9;
+#[doc = "`read()` method returns [capctrl9::R](capctrl9::R) reader structure"]
+impl crate::Readable for CAPCTRL9 {}
+#[doc = "`write(|w| ..)` method takes [capctrl9::W](capctrl9::W) writer structure"]
+impl crate::Writable for CAPCTRL9 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl9;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel9](sctmatchrel9) module"]
-pub type SCTMATCHREL9 = crate::Reg<u32, _SCTMATCHREL9>;
+pub mod capctrl9;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel9](matchrel9) module"]
+pub type MATCHREL9 = crate::Reg<u32, _MATCHREL9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL9;
-#[doc = "`read()` method returns [sctmatchrel9::R](sctmatchrel9::R) reader structure"]
-impl crate::Readable for SCTMATCHREL9 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel9::W](sctmatchrel9::W) writer structure"]
-impl crate::Writable for SCTMATCHREL9 {}
+pub struct _MATCHREL9;
+#[doc = "`read()` method returns [matchrel9::R](matchrel9::R) reader structure"]
+impl crate::Readable for MATCHREL9 {}
+#[doc = "`write(|w| ..)` method takes [matchrel9::W](matchrel9::W) writer structure"]
+impl crate::Writable for MATCHREL9 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel9;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl10](sctcapctrl10) module"]
-pub type SCTCAPCTRL10 = crate::Reg<u32, _SCTCAPCTRL10>;
+pub mod matchrel9;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl10](capctrl10) module"]
+pub type CAPCTRL10 = crate::Reg<u32, _CAPCTRL10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL10;
-#[doc = "`read()` method returns [sctcapctrl10::R](sctcapctrl10::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL10 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl10::W](sctcapctrl10::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL10 {}
+pub struct _CAPCTRL10;
+#[doc = "`read()` method returns [capctrl10::R](capctrl10::R) reader structure"]
+impl crate::Readable for CAPCTRL10 {}
+#[doc = "`write(|w| ..)` method takes [capctrl10::W](capctrl10::W) writer structure"]
+impl crate::Writable for CAPCTRL10 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl10;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel10](sctmatchrel10) module"]
-pub type SCTMATCHREL10 = crate::Reg<u32, _SCTMATCHREL10>;
+pub mod capctrl10;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel10](matchrel10) module"]
+pub type MATCHREL10 = crate::Reg<u32, _MATCHREL10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL10;
-#[doc = "`read()` method returns [sctmatchrel10::R](sctmatchrel10::R) reader structure"]
-impl crate::Readable for SCTMATCHREL10 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel10::W](sctmatchrel10::W) writer structure"]
-impl crate::Writable for SCTMATCHREL10 {}
+pub struct _MATCHREL10;
+#[doc = "`read()` method returns [matchrel10::R](matchrel10::R) reader structure"]
+impl crate::Readable for MATCHREL10 {}
+#[doc = "`write(|w| ..)` method takes [matchrel10::W](matchrel10::W) writer structure"]
+impl crate::Writable for MATCHREL10 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel10;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl11](sctcapctrl11) module"]
-pub type SCTCAPCTRL11 = crate::Reg<u32, _SCTCAPCTRL11>;
+pub mod matchrel10;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl11](capctrl11) module"]
+pub type CAPCTRL11 = crate::Reg<u32, _CAPCTRL11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL11;
-#[doc = "`read()` method returns [sctcapctrl11::R](sctcapctrl11::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL11 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl11::W](sctcapctrl11::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL11 {}
+pub struct _CAPCTRL11;
+#[doc = "`read()` method returns [capctrl11::R](capctrl11::R) reader structure"]
+impl crate::Readable for CAPCTRL11 {}
+#[doc = "`write(|w| ..)` method takes [capctrl11::W](capctrl11::W) writer structure"]
+impl crate::Writable for CAPCTRL11 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl11;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel11](sctmatchrel11) module"]
-pub type SCTMATCHREL11 = crate::Reg<u32, _SCTMATCHREL11>;
+pub mod capctrl11;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel11](matchrel11) module"]
+pub type MATCHREL11 = crate::Reg<u32, _MATCHREL11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL11;
-#[doc = "`read()` method returns [sctmatchrel11::R](sctmatchrel11::R) reader structure"]
-impl crate::Readable for SCTMATCHREL11 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel11::W](sctmatchrel11::W) writer structure"]
-impl crate::Writable for SCTMATCHREL11 {}
+pub struct _MATCHREL11;
+#[doc = "`read()` method returns [matchrel11::R](matchrel11::R) reader structure"]
+impl crate::Readable for MATCHREL11 {}
+#[doc = "`write(|w| ..)` method takes [matchrel11::W](matchrel11::W) writer structure"]
+impl crate::Writable for MATCHREL11 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel11;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl12](sctcapctrl12) module"]
-pub type SCTCAPCTRL12 = crate::Reg<u32, _SCTCAPCTRL12>;
+pub mod matchrel11;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl12](capctrl12) module"]
+pub type CAPCTRL12 = crate::Reg<u32, _CAPCTRL12>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL12;
-#[doc = "`read()` method returns [sctcapctrl12::R](sctcapctrl12::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL12 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl12::W](sctcapctrl12::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL12 {}
+pub struct _CAPCTRL12;
+#[doc = "`read()` method returns [capctrl12::R](capctrl12::R) reader structure"]
+impl crate::Readable for CAPCTRL12 {}
+#[doc = "`write(|w| ..)` method takes [capctrl12::W](capctrl12::W) writer structure"]
+impl crate::Writable for CAPCTRL12 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl12;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel12](sctmatchrel12) module"]
-pub type SCTMATCHREL12 = crate::Reg<u32, _SCTMATCHREL12>;
+pub mod capctrl12;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel12](matchrel12) module"]
+pub type MATCHREL12 = crate::Reg<u32, _MATCHREL12>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL12;
-#[doc = "`read()` method returns [sctmatchrel12::R](sctmatchrel12::R) reader structure"]
-impl crate::Readable for SCTMATCHREL12 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel12::W](sctmatchrel12::W) writer structure"]
-impl crate::Writable for SCTMATCHREL12 {}
+pub struct _MATCHREL12;
+#[doc = "`read()` method returns [matchrel12::R](matchrel12::R) reader structure"]
+impl crate::Readable for MATCHREL12 {}
+#[doc = "`write(|w| ..)` method takes [matchrel12::W](matchrel12::W) writer structure"]
+impl crate::Writable for MATCHREL12 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel12;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl13](sctcapctrl13) module"]
-pub type SCTCAPCTRL13 = crate::Reg<u32, _SCTCAPCTRL13>;
+pub mod matchrel12;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl13](capctrl13) module"]
+pub type CAPCTRL13 = crate::Reg<u32, _CAPCTRL13>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL13;
-#[doc = "`read()` method returns [sctcapctrl13::R](sctcapctrl13::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL13 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl13::W](sctcapctrl13::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL13 {}
+pub struct _CAPCTRL13;
+#[doc = "`read()` method returns [capctrl13::R](capctrl13::R) reader structure"]
+impl crate::Readable for CAPCTRL13 {}
+#[doc = "`write(|w| ..)` method takes [capctrl13::W](capctrl13::W) writer structure"]
+impl crate::Writable for CAPCTRL13 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl13;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel13](sctmatchrel13) module"]
-pub type SCTMATCHREL13 = crate::Reg<u32, _SCTMATCHREL13>;
+pub mod capctrl13;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel13](matchrel13) module"]
+pub type MATCHREL13 = crate::Reg<u32, _MATCHREL13>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL13;
-#[doc = "`read()` method returns [sctmatchrel13::R](sctmatchrel13::R) reader structure"]
-impl crate::Readable for SCTMATCHREL13 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel13::W](sctmatchrel13::W) writer structure"]
-impl crate::Writable for SCTMATCHREL13 {}
+pub struct _MATCHREL13;
+#[doc = "`read()` method returns [matchrel13::R](matchrel13::R) reader structure"]
+impl crate::Readable for MATCHREL13 {}
+#[doc = "`write(|w| ..)` method takes [matchrel13::W](matchrel13::W) writer structure"]
+impl crate::Writable for MATCHREL13 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel13;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl14](sctcapctrl14) module"]
-pub type SCTCAPCTRL14 = crate::Reg<u32, _SCTCAPCTRL14>;
+pub mod matchrel13;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl14](capctrl14) module"]
+pub type CAPCTRL14 = crate::Reg<u32, _CAPCTRL14>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL14;
-#[doc = "`read()` method returns [sctcapctrl14::R](sctcapctrl14::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL14 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl14::W](sctcapctrl14::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL14 {}
+pub struct _CAPCTRL14;
+#[doc = "`read()` method returns [capctrl14::R](capctrl14::R) reader structure"]
+impl crate::Readable for CAPCTRL14 {}
+#[doc = "`write(|w| ..)` method takes [capctrl14::W](capctrl14::W) writer structure"]
+impl crate::Writable for CAPCTRL14 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl14;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel14](sctmatchrel14) module"]
-pub type SCTMATCHREL14 = crate::Reg<u32, _SCTMATCHREL14>;
+pub mod capctrl14;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel14](matchrel14) module"]
+pub type MATCHREL14 = crate::Reg<u32, _MATCHREL14>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL14;
-#[doc = "`read()` method returns [sctmatchrel14::R](sctmatchrel14::R) reader structure"]
-impl crate::Readable for SCTMATCHREL14 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel14::W](sctmatchrel14::W) writer structure"]
-impl crate::Writable for SCTMATCHREL14 {}
+pub struct _MATCHREL14;
+#[doc = "`read()` method returns [matchrel14::R](matchrel14::R) reader structure"]
+impl crate::Readable for MATCHREL14 {}
+#[doc = "`write(|w| ..)` method takes [matchrel14::W](matchrel14::W) writer structure"]
+impl crate::Writable for MATCHREL14 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel14;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctcapctrl15](sctcapctrl15) module"]
-pub type SCTCAPCTRL15 = crate::Reg<u32, _SCTCAPCTRL15>;
+pub mod matchrel14;
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl15](capctrl15) module"]
+pub type CAPCTRL15 = crate::Reg<u32, _CAPCTRL15>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTCAPCTRL15;
-#[doc = "`read()` method returns [sctcapctrl15::R](sctcapctrl15::R) reader structure"]
-impl crate::Readable for SCTCAPCTRL15 {}
-#[doc = "`write(|w| ..)` method takes [sctcapctrl15::W](sctcapctrl15::W) writer structure"]
-impl crate::Writable for SCTCAPCTRL15 {}
+pub struct _CAPCTRL15;
+#[doc = "`read()` method returns [capctrl15::R](capctrl15::R) reader structure"]
+impl crate::Readable for CAPCTRL15 {}
+#[doc = "`write(|w| ..)` method takes [capctrl15::W](capctrl15::W) writer structure"]
+impl crate::Writable for CAPCTRL15 {}
 #[doc = "SCT capture control register"]
-pub mod sctcapctrl15;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sctmatchrel15](sctmatchrel15) module"]
-pub type SCTMATCHREL15 = crate::Reg<u32, _SCTMATCHREL15>;
+pub mod capctrl15;
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel15](matchrel15) module"]
+pub type MATCHREL15 = crate::Reg<u32, _MATCHREL15>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SCTMATCHREL15;
-#[doc = "`read()` method returns [sctmatchrel15::R](sctmatchrel15::R) reader structure"]
-impl crate::Readable for SCTMATCHREL15 {}
-#[doc = "`write(|w| ..)` method takes [sctmatchrel15::W](sctmatchrel15::W) writer structure"]
-impl crate::Writable for SCTMATCHREL15 {}
+pub struct _MATCHREL15;
+#[doc = "`read()` method returns [matchrel15::R](matchrel15::R) reader structure"]
+impl crate::Readable for MATCHREL15 {}
+#[doc = "`write(|w| ..)` method takes [matchrel15::W](matchrel15::W) writer structure"]
+impl crate::Writable for MATCHREL15 {}
 #[doc = "SCT match reload value register"]
-pub mod sctmatchrel15;
+pub mod matchrel15;

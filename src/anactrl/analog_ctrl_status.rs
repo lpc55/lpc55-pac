@@ -1,9 +1,5 @@
 #[doc = "Reader of register ANALOG_CTRL_STATUS"]
 pub type R = crate::R<u32, super::ANALOG_CTRL_STATUS>;
-#[doc = "Reader of field `PMU_ID`"]
-pub type PMU_ID_R = crate::R<u8, u8>;
-#[doc = "Reader of field `OSC_ID`"]
-pub type OSC_ID_R = crate::R<u8, u8>;
 #[doc = "Possible values of the field `FLASH_PWRDWN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLASH_PWRDWN_A {
@@ -82,19 +78,7 @@ impl FLASH_INIT_ERROR_R {
         *self == FLASH_INIT_ERROR_A::ERROR
     }
 }
-#[doc = "Reader of field `FINAL_TEST_DONE_VECT`"]
-pub type FINAL_TEST_DONE_VECT_R = crate::R<u8, u8>;
 impl R {
-    #[doc = "Bits 0:5 - Power Management Unit (PMU) Analog macro-bloc identification number : ."]
-    #[inline(always)]
-    pub fn pmu_id(&self) -> PMU_ID_R {
-        PMU_ID_R::new((self.bits & 0x3f) as u8)
-    }
-    #[doc = "Bits 6:11 - Oscillators Analog macro-bloc identification number : ."]
-    #[inline(always)]
-    pub fn osc_id(&self) -> OSC_ID_R {
-        OSC_ID_R::new(((self.bits >> 6) & 0x3f) as u8)
-    }
     #[doc = "Bit 12 - Flash Power Down status."]
     #[inline(always)]
     pub fn flash_pwrdwn(&self) -> FLASH_PWRDWN_R {
@@ -104,10 +88,5 @@ impl R {
     #[inline(always)]
     pub fn flash_init_error(&self) -> FLASH_INIT_ERROR_R {
         FLASH_INIT_ERROR_R::new(((self.bits >> 13) & 0x01) != 0)
-    }
-    #[doc = "Bits 28:31 - Indicates current status of Final Test."]
-    #[inline(always)]
-    pub fn final_test_done_vect(&self) -> FINAL_TEST_DONE_VECT_R {
-        FINAL_TEST_DONE_VECT_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }

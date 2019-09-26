@@ -10,9 +10,9 @@ impl crate::ResetValue for super::MASTER_SEC_ANTI_POL_REG {
         0xbfff_ffff
     }
 }
-#[doc = "Possible values of the field `MCM33C`"]
+#[doc = "Possible values of the field `CPU1C`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MCM33C_A {
+pub enum CPU1C_A {
     #[doc = "Secure and Priviledge user access allowed."]
     ENUM_S_P,
     #[doc = "Secure and Non-priviledge user access allowed."]
@@ -22,60 +22,60 @@ pub enum MCM33C_A {
     #[doc = "Non-secure and Non-priviledge user access allowed."]
     ENUM_NS_NP,
 }
-impl From<MCM33C_A> for u8 {
+impl From<CPU1C_A> for u8 {
     #[inline(always)]
-    fn from(variant: MCM33C_A) -> Self {
+    fn from(variant: CPU1C_A) -> Self {
         match variant {
-            MCM33C_A::ENUM_S_P => 0,
-            MCM33C_A::ENUM_S_NP => 1,
-            MCM33C_A::ENUM_NS_P => 2,
-            MCM33C_A::ENUM_NS_NP => 3,
+            CPU1C_A::ENUM_S_P => 0,
+            CPU1C_A::ENUM_S_NP => 1,
+            CPU1C_A::ENUM_NS_P => 2,
+            CPU1C_A::ENUM_NS_NP => 3,
         }
     }
 }
-#[doc = "Reader of field `MCM33C`"]
-pub type MCM33C_R = crate::R<u8, MCM33C_A>;
-impl MCM33C_R {
+#[doc = "Reader of field `CPU1C`"]
+pub type CPU1C_R = crate::R<u8, CPU1C_A>;
+impl CPU1C_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MCM33C_A {
+    pub fn variant(&self) -> CPU1C_A {
         match self.bits {
-            0 => MCM33C_A::ENUM_S_P,
-            1 => MCM33C_A::ENUM_S_NP,
-            2 => MCM33C_A::ENUM_NS_P,
-            3 => MCM33C_A::ENUM_NS_NP,
+            0 => CPU1C_A::ENUM_S_P,
+            1 => CPU1C_A::ENUM_S_NP,
+            2 => CPU1C_A::ENUM_NS_P,
+            3 => CPU1C_A::ENUM_NS_NP,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == MCM33C_A::ENUM_S_P
+        *self == CPU1C_A::ENUM_S_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == MCM33C_A::ENUM_S_NP
+        *self == CPU1C_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == MCM33C_A::ENUM_NS_P
+        *self == CPU1C_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == MCM33C_A::ENUM_NS_NP
+        *self == CPU1C_A::ENUM_NS_NP
     }
 }
-#[doc = "Write proxy for field `MCM33C`"]
-pub struct MCM33C_W<'a> {
+#[doc = "Write proxy for field `CPU1C`"]
+pub struct CPU1C_W<'a> {
     w: &'a mut W,
 }
-impl<'a> MCM33C_W<'a> {
+impl<'a> CPU1C_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: MCM33C_A) -> &'a mut W {
+    pub fn variant(self, variant: CPU1C_A) -> &'a mut W {
         {
             self.bits(variant.into())
         }
@@ -83,22 +83,22 @@ impl<'a> MCM33C_W<'a> {
     #[doc = "Secure and Priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_s_p(self) -> &'a mut W {
-        self.variant(MCM33C_A::ENUM_S_P)
+        self.variant(CPU1C_A::ENUM_S_P)
     }
     #[doc = "Secure and Non-priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_s_np(self) -> &'a mut W {
-        self.variant(MCM33C_A::ENUM_S_NP)
+        self.variant(CPU1C_A::ENUM_S_NP)
     }
     #[doc = "Non-secure and Privilege access allowed."]
     #[inline(always)]
     pub fn enum_ns_p(self) -> &'a mut W {
-        self.variant(MCM33C_A::ENUM_NS_P)
+        self.variant(CPU1C_A::ENUM_NS_P)
     }
     #[doc = "Non-secure and Non-priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_ns_np(self) -> &'a mut W {
-        self.variant(MCM33C_A::ENUM_NS_NP)
+        self.variant(CPU1C_A::ENUM_NS_NP)
     }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
@@ -107,9 +107,9 @@ impl<'a> MCM33C_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MCM33S`"]
+#[doc = "Possible values of the field `CPU1S`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MCM33S_A {
+pub enum CPU1S_A {
     #[doc = "Secure and Priviledge user access allowed."]
     ENUM_S_P,
     #[doc = "Secure and Non-priviledge user access allowed."]
@@ -119,60 +119,60 @@ pub enum MCM33S_A {
     #[doc = "Non-secure and Non-priviledge user access allowed."]
     ENUM_NS_NP,
 }
-impl From<MCM33S_A> for u8 {
+impl From<CPU1S_A> for u8 {
     #[inline(always)]
-    fn from(variant: MCM33S_A) -> Self {
+    fn from(variant: CPU1S_A) -> Self {
         match variant {
-            MCM33S_A::ENUM_S_P => 0,
-            MCM33S_A::ENUM_S_NP => 1,
-            MCM33S_A::ENUM_NS_P => 2,
-            MCM33S_A::ENUM_NS_NP => 3,
+            CPU1S_A::ENUM_S_P => 0,
+            CPU1S_A::ENUM_S_NP => 1,
+            CPU1S_A::ENUM_NS_P => 2,
+            CPU1S_A::ENUM_NS_NP => 3,
         }
     }
 }
-#[doc = "Reader of field `MCM33S`"]
-pub type MCM33S_R = crate::R<u8, MCM33S_A>;
-impl MCM33S_R {
+#[doc = "Reader of field `CPU1S`"]
+pub type CPU1S_R = crate::R<u8, CPU1S_A>;
+impl CPU1S_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MCM33S_A {
+    pub fn variant(&self) -> CPU1S_A {
         match self.bits {
-            0 => MCM33S_A::ENUM_S_P,
-            1 => MCM33S_A::ENUM_S_NP,
-            2 => MCM33S_A::ENUM_NS_P,
-            3 => MCM33S_A::ENUM_NS_NP,
+            0 => CPU1S_A::ENUM_S_P,
+            1 => CPU1S_A::ENUM_S_NP,
+            2 => CPU1S_A::ENUM_NS_P,
+            3 => CPU1S_A::ENUM_NS_NP,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == MCM33S_A::ENUM_S_P
+        *self == CPU1S_A::ENUM_S_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == MCM33S_A::ENUM_S_NP
+        *self == CPU1S_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == MCM33S_A::ENUM_NS_P
+        *self == CPU1S_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == MCM33S_A::ENUM_NS_NP
+        *self == CPU1S_A::ENUM_NS_NP
     }
 }
-#[doc = "Write proxy for field `MCM33S`"]
-pub struct MCM33S_W<'a> {
+#[doc = "Write proxy for field `CPU1S`"]
+pub struct CPU1S_W<'a> {
     w: &'a mut W,
 }
-impl<'a> MCM33S_W<'a> {
+impl<'a> CPU1S_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: MCM33S_A) -> &'a mut W {
+    pub fn variant(self, variant: CPU1S_A) -> &'a mut W {
         {
             self.bits(variant.into())
         }
@@ -180,22 +180,22 @@ impl<'a> MCM33S_W<'a> {
     #[doc = "Secure and Priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_s_p(self) -> &'a mut W {
-        self.variant(MCM33S_A::ENUM_S_P)
+        self.variant(CPU1S_A::ENUM_S_P)
     }
     #[doc = "Secure and Non-priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_s_np(self) -> &'a mut W {
-        self.variant(MCM33S_A::ENUM_S_NP)
+        self.variant(CPU1S_A::ENUM_S_NP)
     }
     #[doc = "Non-secure and Privilege access allowed."]
     #[inline(always)]
     pub fn enum_ns_p(self) -> &'a mut W {
-        self.variant(MCM33S_A::ENUM_NS_P)
+        self.variant(CPU1S_A::ENUM_NS_P)
     }
     #[doc = "Non-secure and Non-priviledge user access allowed."]
     #[inline(always)]
     pub fn enum_ns_np(self) -> &'a mut W {
-        self.variant(MCM33S_A::ENUM_NS_NP)
+        self.variant(CPU1S_A::ENUM_NS_NP)
     }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
@@ -952,15 +952,15 @@ impl<'a> MASTER_SEC_LEVEL_ANTIPOL_LOCK_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 4:5 - Micro-CM33 (CPU1) Code bus. Must be equal to NOT(MASTER_SEC_LEVEL.MCM33C)"]
+    #[doc = "Bits 4:5 - Micro-Cortex M33 (CPU1) Code bus. Must be equal to NOT(MASTER_SEC_LEVEL.CPU1C)"]
     #[inline(always)]
-    pub fn mcm33c(&self) -> MCM33C_R {
-        MCM33C_R::new(((self.bits >> 4) & 0x03) as u8)
+    pub fn cpu1c(&self) -> CPU1C_R {
+        CPU1C_R::new(((self.bits >> 4) & 0x03) as u8)
     }
-    #[doc = "Bits 6:7 - Micro-CM33 (CPU1) System bus. Must be equal to NOT(MASTER_SEC_LEVEL.MCM33S)"]
+    #[doc = "Bits 6:7 - Micro-Cortex M33 (CPU1) System bus. Must be equal to NOT(MASTER_SEC_LEVEL.CPU1S)"]
     #[inline(always)]
-    pub fn mcm33s(&self) -> MCM33S_R {
-        MCM33S_R::new(((self.bits >> 6) & 0x03) as u8)
+    pub fn cpu1s(&self) -> CPU1S_R {
+        CPU1S_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bits 8:9 - USB Full Speed Device. Must be equal to NOT(MASTER_SEC_LEVEL.USBFSD)"]
     #[inline(always)]
@@ -1004,15 +1004,15 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 4:5 - Micro-CM33 (CPU1) Code bus. Must be equal to NOT(MASTER_SEC_LEVEL.MCM33C)"]
+    #[doc = "Bits 4:5 - Micro-Cortex M33 (CPU1) Code bus. Must be equal to NOT(MASTER_SEC_LEVEL.CPU1C)"]
     #[inline(always)]
-    pub fn mcm33c(&mut self) -> MCM33C_W {
-        MCM33C_W { w: self }
+    pub fn cpu1c(&mut self) -> CPU1C_W {
+        CPU1C_W { w: self }
     }
-    #[doc = "Bits 6:7 - Micro-CM33 (CPU1) System bus. Must be equal to NOT(MASTER_SEC_LEVEL.MCM33S)"]
+    #[doc = "Bits 6:7 - Micro-Cortex M33 (CPU1) System bus. Must be equal to NOT(MASTER_SEC_LEVEL.CPU1S)"]
     #[inline(always)]
-    pub fn mcm33s(&mut self) -> MCM33S_W {
-        MCM33S_W { w: self }
+    pub fn cpu1s(&mut self) -> CPU1S_W {
+        CPU1S_W { w: self }
     }
     #[doc = "Bits 8:9 - USB Full Speed Device. Must be equal to NOT(MASTER_SEC_LEVEL.USBFSD)"]
     #[inline(always)]

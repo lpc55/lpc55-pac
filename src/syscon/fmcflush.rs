@@ -8,11 +8,45 @@ impl crate::ResetValue for super::FMCFLUSH {
         0
     }
 }
+#[doc = "Possible values of the field `FLUSH`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FLUSH_AW {
+    #[doc = "No action is performed."]
+    NO_FLUSH,
+    #[doc = "Flush the FMC buffer contents."]
+    FLUSH,
+}
+impl From<FLUSH_AW> for bool {
+    #[inline(always)]
+    fn from(variant: FLUSH_AW) -> Self {
+        match variant {
+            FLUSH_AW::NO_FLUSH => false,
+            FLUSH_AW::FLUSH => true,
+        }
+    }
+}
 #[doc = "Write proxy for field `FLUSH`"]
 pub struct FLUSH_W<'a> {
     w: &'a mut W,
 }
 impl<'a> FLUSH_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FLUSH_AW) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
+    #[doc = "No action is performed."]
+    #[inline(always)]
+    pub fn no_flush(self) -> &'a mut W {
+        self.variant(FLUSH_AW::NO_FLUSH)
+    }
+    #[doc = "Flush the FMC buffer contents."]
+    #[inline(always)]
+    pub fn flush(self) -> &'a mut W {
+        self.variant(FLUSH_AW::FLUSH)
+    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -31,7 +65,7 @@ impl<'a> FLUSH_W<'a> {
     }
 }
 impl W {
-    #[doc = "Bit 0 - no description available"]
+    #[doc = "Bit 0 - Flush control"]
     #[inline(always)]
     pub fn flush(&mut self) -> FLUSH_W {
         FLUSH_W { w: self }

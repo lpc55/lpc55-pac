@@ -556,53 +556,53 @@ impl<'a> FMC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MUX0`"]
+#[doc = "Possible values of the field `MUX`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MUX0_A {
+pub enum MUX_A {
     #[doc = "Disable Clock."]
     DISABLE,
     #[doc = "Enable Clock."]
     ENABLE,
 }
-impl From<MUX0_A> for bool {
+impl From<MUX_A> for bool {
     #[inline(always)]
-    fn from(variant: MUX0_A) -> Self {
+    fn from(variant: MUX_A) -> Self {
         match variant {
-            MUX0_A::DISABLE => false,
-            MUX0_A::ENABLE => true,
+            MUX_A::DISABLE => false,
+            MUX_A::ENABLE => true,
         }
     }
 }
-#[doc = "Reader of field `MUX0`"]
-pub type MUX0_R = crate::R<bool, MUX0_A>;
-impl MUX0_R {
+#[doc = "Reader of field `MUX`"]
+pub type MUX_R = crate::R<bool, MUX_A>;
+impl MUX_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MUX0_A {
+    pub fn variant(&self) -> MUX_A {
         match self.bits {
-            false => MUX0_A::DISABLE,
-            true => MUX0_A::ENABLE,
+            false => MUX_A::DISABLE,
+            true => MUX_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == MUX0_A::DISABLE
+        *self == MUX_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == MUX0_A::ENABLE
+        *self == MUX_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `MUX0`"]
-pub struct MUX0_W<'a> {
+#[doc = "Write proxy for field `MUX`"]
+pub struct MUX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> MUX0_W<'a> {
+impl<'a> MUX_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: MUX0_A) -> &'a mut W {
+    pub fn variant(self, variant: MUX_A) -> &'a mut W {
         {
             self.bit(variant.into())
         }
@@ -610,12 +610,12 @@ impl<'a> MUX0_W<'a> {
     #[doc = "Disable Clock."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(MUX0_A::DISABLE)
+        self.variant(MUX_A::DISABLE)
     }
     #[doc = "Enable Clock."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(MUX0_A::ENABLE)
+        self.variant(MUX_A::ENABLE)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -1684,10 +1684,10 @@ impl R {
     pub fn fmc(&self) -> FMC_R {
         FMC_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 11 - Enables the clock for the Input Mux 0."]
+    #[doc = "Bit 11 - Enables the clock for the Input Mux."]
     #[inline(always)]
-    pub fn mux0(&self) -> MUX0_R {
-        MUX0_R::new(((self.bits >> 11) & 0x01) != 0)
+    pub fn mux(&self) -> MUX_R {
+        MUX_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 13 - Enables the clock for the I/O controller."]
     #[inline(always)]
@@ -1791,10 +1791,10 @@ impl W {
     pub fn fmc(&mut self) -> FMC_W {
         FMC_W { w: self }
     }
-    #[doc = "Bit 11 - Enables the clock for the Input Mux 0."]
+    #[doc = "Bit 11 - Enables the clock for the Input Mux."]
     #[inline(always)]
-    pub fn mux0(&mut self) -> MUX0_W {
-        MUX0_W { w: self }
+    pub fn mux(&mut self) -> MUX_W {
+        MUX_W { w: self }
     }
     #[doc = "Bit 13 - Enables the clock for the I/O controller."]
     #[inline(always)]

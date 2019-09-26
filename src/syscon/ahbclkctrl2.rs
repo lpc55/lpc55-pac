@@ -634,240 +634,6 @@ impl<'a> FREQME_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `GPIO4`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GPIO4_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
-}
-impl From<GPIO4_A> for bool {
-    #[inline(always)]
-    fn from(variant: GPIO4_A) -> Self {
-        match variant {
-            GPIO4_A::DISABLE => false,
-            GPIO4_A::ENABLE => true,
-        }
-    }
-}
-#[doc = "Reader of field `GPIO4`"]
-pub type GPIO4_R = crate::R<bool, GPIO4_A>;
-impl GPIO4_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> GPIO4_A {
-        match self.bits {
-            false => GPIO4_A::DISABLE,
-            true => GPIO4_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == GPIO4_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == GPIO4_A::ENABLE
-    }
-}
-#[doc = "Write proxy for field `GPIO4`"]
-pub struct GPIO4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPIO4_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GPIO4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "Disable Clock."]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(GPIO4_A::DISABLE)
-    }
-    #[doc = "Enable Clock."]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(GPIO4_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-        self.w
-    }
-}
-#[doc = "Possible values of the field `GPIO5`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GPIO5_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
-}
-impl From<GPIO5_A> for bool {
-    #[inline(always)]
-    fn from(variant: GPIO5_A) -> Self {
-        match variant {
-            GPIO5_A::DISABLE => false,
-            GPIO5_A::ENABLE => true,
-        }
-    }
-}
-#[doc = "Reader of field `GPIO5`"]
-pub type GPIO5_R = crate::R<bool, GPIO5_A>;
-impl GPIO5_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> GPIO5_A {
-        match self.bits {
-            false => GPIO5_A::DISABLE,
-            true => GPIO5_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == GPIO5_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == GPIO5_A::ENABLE
-    }
-}
-#[doc = "Write proxy for field `GPIO5`"]
-pub struct GPIO5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPIO5_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GPIO5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "Disable Clock."]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(GPIO5_A::DISABLE)
-    }
-    #[doc = "Enable Clock."]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(GPIO5_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-        self.w
-    }
-}
-#[doc = "Possible values of the field `OTP`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OTP_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
-}
-impl From<OTP_A> for bool {
-    #[inline(always)]
-    fn from(variant: OTP_A) -> Self {
-        match variant {
-            OTP_A::DISABLE => false,
-            OTP_A::ENABLE => true,
-        }
-    }
-}
-#[doc = "Reader of field `OTP`"]
-pub type OTP_R = crate::R<bool, OTP_A>;
-impl OTP_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> OTP_A {
-        match self.bits {
-            false => OTP_A::DISABLE,
-            true => OTP_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == OTP_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == OTP_A::ENABLE
-    }
-}
-#[doc = "Write proxy for field `OTP`"]
-pub struct OTP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OTP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OTP_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "Disable Clock."]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(OTP_A::DISABLE)
-    }
-    #[doc = "Enable Clock."]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(OTP_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-        self.w
-    }
-}
 #[doc = "Possible values of the field `RNG`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RNG_A {
@@ -946,53 +712,53 @@ impl<'a> RNG_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MUX1`"]
+#[doc = "Possible values of the field `SYSCTL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MUX1_A {
+pub enum SYSCTL_A {
     #[doc = "Disable Clock."]
     DISABLE,
     #[doc = "Enable Clock."]
     ENABLE,
 }
-impl From<MUX1_A> for bool {
+impl From<SYSCTL_A> for bool {
     #[inline(always)]
-    fn from(variant: MUX1_A) -> Self {
+    fn from(variant: SYSCTL_A) -> Self {
         match variant {
-            MUX1_A::DISABLE => false,
-            MUX1_A::ENABLE => true,
+            SYSCTL_A::DISABLE => false,
+            SYSCTL_A::ENABLE => true,
         }
     }
 }
-#[doc = "Reader of field `MUX1`"]
-pub type MUX1_R = crate::R<bool, MUX1_A>;
-impl MUX1_R {
+#[doc = "Reader of field `SYSCTL`"]
+pub type SYSCTL_R = crate::R<bool, SYSCTL_A>;
+impl SYSCTL_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MUX1_A {
+    pub fn variant(&self) -> SYSCTL_A {
         match self.bits {
-            false => MUX1_A::DISABLE,
-            true => MUX1_A::ENABLE,
+            false => SYSCTL_A::DISABLE,
+            true => SYSCTL_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == MUX1_A::DISABLE
+        *self == SYSCTL_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == MUX1_A::ENABLE
+        *self == SYSCTL_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `MUX1`"]
-pub struct MUX1_W<'a> {
+#[doc = "Write proxy for field `SYSCTL`"]
+pub struct SYSCTL_W<'a> {
     w: &'a mut W,
 }
-impl<'a> MUX1_W<'a> {
+impl<'a> SYSCTL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: MUX1_A) -> &'a mut W {
+    pub fn variant(self, variant: SYSCTL_A) -> &'a mut W {
         {
             self.bit(variant.into())
         }
@@ -1000,12 +766,12 @@ impl<'a> MUX1_W<'a> {
     #[doc = "Disable Clock."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(MUX1_A::DISABLE)
+        self.variant(SYSCTL_A::DISABLE)
     }
     #[doc = "Enable Clock."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(MUX1_A::ENABLE)
+        self.variant(SYSCTL_A::ENABLE)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -1020,7 +786,7 @@ impl<'a> MUX1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
@@ -1180,53 +946,53 @@ impl<'a> USB0_HOSTS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `HASH0`"]
+#[doc = "Possible values of the field `HASH_AES`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HASH0_A {
+pub enum HASH_AES_A {
     #[doc = "Disable Clock."]
     DISABLE,
     #[doc = "Enable Clock."]
     ENABLE,
 }
-impl From<HASH0_A> for bool {
+impl From<HASH_AES_A> for bool {
     #[inline(always)]
-    fn from(variant: HASH0_A) -> Self {
+    fn from(variant: HASH_AES_A) -> Self {
         match variant {
-            HASH0_A::DISABLE => false,
-            HASH0_A::ENABLE => true,
+            HASH_AES_A::DISABLE => false,
+            HASH_AES_A::ENABLE => true,
         }
     }
 }
-#[doc = "Reader of field `HASH0`"]
-pub type HASH0_R = crate::R<bool, HASH0_A>;
-impl HASH0_R {
+#[doc = "Reader of field `HASH_AES`"]
+pub type HASH_AES_R = crate::R<bool, HASH_AES_A>;
+impl HASH_AES_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HASH0_A {
+    pub fn variant(&self) -> HASH_AES_A {
         match self.bits {
-            false => HASH0_A::DISABLE,
-            true => HASH0_A::ENABLE,
+            false => HASH_AES_A::DISABLE,
+            true => HASH_AES_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == HASH0_A::DISABLE
+        *self == HASH_AES_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == HASH0_A::ENABLE
+        *self == HASH_AES_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `HASH0`"]
-pub struct HASH0_W<'a> {
+#[doc = "Write proxy for field `HASH_AES`"]
+pub struct HASH_AES_W<'a> {
     w: &'a mut W,
 }
-impl<'a> HASH0_W<'a> {
+impl<'a> HASH_AES_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: HASH0_A) -> &'a mut W {
+    pub fn variant(self, variant: HASH_AES_A) -> &'a mut W {
         {
             self.bit(variant.into())
         }
@@ -1234,12 +1000,12 @@ impl<'a> HASH0_W<'a> {
     #[doc = "Disable Clock."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(HASH0_A::DISABLE)
+        self.variant(HASH_AES_A::DISABLE)
     }
     #[doc = "Enable Clock."]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(HASH0_A::ENABLE)
+        self.variant(HASH_AES_A::ENABLE)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -1726,84 +1492,6 @@ impl<'a> CASPER_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CAPT0`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CAPT0_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
-}
-impl From<CAPT0_A> for bool {
-    #[inline(always)]
-    fn from(variant: CAPT0_A) -> Self {
-        match variant {
-            CAPT0_A::DISABLE => false,
-            CAPT0_A::ENABLE => true,
-        }
-    }
-}
-#[doc = "Reader of field `CAPT0`"]
-pub type CAPT0_R = crate::R<bool, CAPT0_A>;
-impl CAPT0_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CAPT0_A {
-        match self.bits {
-            false => CAPT0_A::DISABLE,
-            true => CAPT0_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == CAPT0_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == CAPT0_A::ENABLE
-    }
-}
-#[doc = "Write proxy for field `CAPT0`"]
-pub struct CAPT0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPT0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CAPT0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "Disable Clock."]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(CAPT0_A::DISABLE)
-    }
-    #[doc = "Enable Clock."]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(CAPT0_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-        self.w
-    }
-}
 #[doc = "Possible values of the field `ANALOG_CTRL`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ANALOG_CTRL_A {
@@ -2157,30 +1845,15 @@ impl R {
     pub fn freqme(&self) -> FREQME_R {
         FREQME_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9 - Enables the clock for the GPIO4."]
-    #[inline(always)]
-    pub fn gpio4(&self) -> GPIO4_R {
-        GPIO4_R::new(((self.bits >> 9) & 0x01) != 0)
-    }
-    #[doc = "Bit 10 - Enables the clock for the GPIO5."]
-    #[inline(always)]
-    pub fn gpio5(&self) -> GPIO5_R {
-        GPIO5_R::new(((self.bits >> 10) & 0x01) != 0)
-    }
-    #[doc = "Bit 12 - Enables the clock for the OTP."]
-    #[inline(always)]
-    pub fn otp(&self) -> OTP_R {
-        OTP_R::new(((self.bits >> 12) & 0x01) != 0)
-    }
     #[doc = "Bit 13 - Enables the clock for the RNG."]
     #[inline(always)]
     pub fn rng(&self) -> RNG_R {
         RNG_R::new(((self.bits >> 13) & 0x01) != 0)
     }
-    #[doc = "Bit 14 - Enables the clock for the Peripheral Input Mux 1."]
+    #[doc = "Bit 15 - SYSCTL block clock."]
     #[inline(always)]
-    pub fn mux1(&self) -> MUX1_R {
-        MUX1_R::new(((self.bits >> 14) & 0x01) != 0)
+    pub fn sysctl(&self) -> SYSCTL_R {
+        SYSCTL_R::new(((self.bits >> 15) & 0x01) != 0)
     }
     #[doc = "Bit 16 - Enables the clock for the USB0 Host Master."]
     #[inline(always)]
@@ -2192,10 +1865,10 @@ impl R {
     pub fn usb0_hosts(&self) -> USB0_HOSTS_R {
         USB0_HOSTS_R::new(((self.bits >> 17) & 0x01) != 0)
     }
-    #[doc = "Bit 18 - Enables the clock for the HASH0."]
+    #[doc = "Bit 18 - Enables the clock for the HASH_AES."]
     #[inline(always)]
-    pub fn hash0(&self) -> HASH0_R {
-        HASH0_R::new(((self.bits >> 18) & 0x01) != 0)
+    pub fn hash_aes(&self) -> HASH_AES_R {
+        HASH_AES_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 19 - Enables the clock for the Power Quad."]
     #[inline(always)]
@@ -2226,11 +1899,6 @@ impl R {
     #[inline(always)]
     pub fn casper(&self) -> CASPER_R {
         CASPER_R::new(((self.bits >> 24) & 0x01) != 0)
-    }
-    #[doc = "Bit 25 - Enables the clock for the CAPT0."]
-    #[inline(always)]
-    pub fn capt0(&self) -> CAPT0_R {
-        CAPT0_R::new(((self.bits >> 25) & 0x01) != 0)
     }
     #[doc = "Bit 27 - Enables the clock for the analog control."]
     #[inline(always)]
@@ -2294,30 +1962,15 @@ impl W {
     pub fn freqme(&mut self) -> FREQME_W {
         FREQME_W { w: self }
     }
-    #[doc = "Bit 9 - Enables the clock for the GPIO4."]
-    #[inline(always)]
-    pub fn gpio4(&mut self) -> GPIO4_W {
-        GPIO4_W { w: self }
-    }
-    #[doc = "Bit 10 - Enables the clock for the GPIO5."]
-    #[inline(always)]
-    pub fn gpio5(&mut self) -> GPIO5_W {
-        GPIO5_W { w: self }
-    }
-    #[doc = "Bit 12 - Enables the clock for the OTP."]
-    #[inline(always)]
-    pub fn otp(&mut self) -> OTP_W {
-        OTP_W { w: self }
-    }
     #[doc = "Bit 13 - Enables the clock for the RNG."]
     #[inline(always)]
     pub fn rng(&mut self) -> RNG_W {
         RNG_W { w: self }
     }
-    #[doc = "Bit 14 - Enables the clock for the Peripheral Input Mux 1."]
+    #[doc = "Bit 15 - SYSCTL block clock."]
     #[inline(always)]
-    pub fn mux1(&mut self) -> MUX1_W {
-        MUX1_W { w: self }
+    pub fn sysctl(&mut self) -> SYSCTL_W {
+        SYSCTL_W { w: self }
     }
     #[doc = "Bit 16 - Enables the clock for the USB0 Host Master."]
     #[inline(always)]
@@ -2329,10 +1982,10 @@ impl W {
     pub fn usb0_hosts(&mut self) -> USB0_HOSTS_W {
         USB0_HOSTS_W { w: self }
     }
-    #[doc = "Bit 18 - Enables the clock for the HASH0."]
+    #[doc = "Bit 18 - Enables the clock for the HASH_AES."]
     #[inline(always)]
-    pub fn hash0(&mut self) -> HASH0_W {
-        HASH0_W { w: self }
+    pub fn hash_aes(&mut self) -> HASH_AES_W {
+        HASH_AES_W { w: self }
     }
     #[doc = "Bit 19 - Enables the clock for the Power Quad."]
     #[inline(always)]
@@ -2363,11 +2016,6 @@ impl W {
     #[inline(always)]
     pub fn casper(&mut self) -> CASPER_W {
         CASPER_W { w: self }
-    }
-    #[doc = "Bit 25 - Enables the clock for the CAPT0."]
-    #[inline(always)]
-    pub fn capt0(&mut self) -> CAPT0_W {
-        CAPT0_W { w: self }
     }
     #[doc = "Bit 27 - Enables the clock for the analog control."]
     #[inline(always)]

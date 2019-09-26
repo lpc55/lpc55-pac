@@ -262,9 +262,9 @@ impl<'a> MODE_W<'a> {
 #[doc = "Possible values of the field `SLEW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEW_A {
-    #[doc = "Standard mode, output slew rate control is enabled. More outputs can be switched simultaneously."]
+    #[doc = "Standard-mode, output slew rate is slower. More outputs can be switched simultaneously."]
     STANDARD,
-    #[doc = "Fast mode, slew rate control is disabled. Refer to the appropriate specific device data sheet for details."]
+    #[doc = "Fast-mode, output slew rate is faster. Refer to the appropriate specific device data sheet for details."]
     FAST,
 }
 impl From<SLEW_A> for bool {
@@ -310,12 +310,12 @@ impl<'a> SLEW_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Standard mode, output slew rate control is enabled. More outputs can be switched simultaneously."]
+    #[doc = "Standard-mode, output slew rate is slower. More outputs can be switched simultaneously."]
     #[inline(always)]
     pub fn standard(self) -> &'a mut W {
         self.variant(SLEW_A::STANDARD)
     }
-    #[doc = "Fast mode, slew rate control is disabled. Refer to the appropriate specific device data sheet for details."]
+    #[doc = "Fast-mode, output slew rate is faster. Refer to the appropriate specific device data sheet for details."]
     #[inline(always)]
     pub fn fast(self) -> &'a mut W {
         self.variant(SLEW_A::FAST)
@@ -418,9 +418,9 @@ impl<'a> INVERT_W<'a> {
 #[doc = "Possible values of the field `DIGIMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIGIMODE_A {
-    #[doc = "Analog mode, digital input is disabled."]
+    #[doc = "Disable digital mode. Digital input set to 0."]
     ANALOG,
-    #[doc = "Digital mode, digital input is enabled."]
+    #[doc = "Enable Digital mode. Digital input is enabled."]
     DIGITAL,
 }
 impl From<DIGIMODE_A> for bool {
@@ -466,12 +466,12 @@ impl<'a> DIGIMODE_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Analog mode, digital input is disabled."]
+    #[doc = "Disable digital mode. Digital input set to 0."]
     #[inline(always)]
     pub fn analog(self) -> &'a mut W {
         self.variant(DIGIMODE_A::ANALOG)
     }
-    #[doc = "Digital mode, digital input is enabled."]
+    #[doc = "Enable Digital mode. Digital input is enabled."]
     #[inline(always)]
     pub fn digital(self) -> &'a mut W {
         self.variant(DIGIMODE_A::DIGITAL)

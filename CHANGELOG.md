@@ -5,6 +5,23 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [v0.0.5] - 2019-09-19
+
+### Changed
+
+- Update SVD to version from SDK 2.6.3, this is breaking
+  change that fixes a bunch of things
+- Revert `UTICK0` rename from v0.0.3
+- Update dependencies
+
+### Added
+- New SVD files from SDK 2.6.3
+
+### Removed
+- Unnecessary documentation generation
+- Old SDK 2.5.1 files
+- Unnecessary SDK 2.6.2 files
+
 ## [v0.0.4] - 2019-08-31
 
 ### Changed

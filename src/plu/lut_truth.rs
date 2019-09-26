@@ -10,13 +10,13 @@ impl crate::ResetValue for super::LUT_TRUTH {
         0
     }
 }
-#[doc = "Reader of field `TRUTH_TABLE`"]
-pub type TRUTH_TABLE_R = crate::R<u32, u32>;
-#[doc = "Write proxy for field `TRUTH_TABLE`"]
-pub struct TRUTH_TABLE_W<'a> {
+#[doc = "Reader of field `LUTn_TRUTH`"]
+pub type LUTN_TRUTH_R = crate::R<u32, u32>;
+#[doc = "Write proxy for field `LUTn_TRUTH`"]
+pub struct LUTN_TRUTH_W<'a> {
     w: &'a mut W,
 }
-impl<'a> TRUTH_TABLE_W<'a> {
+impl<'a> LUTN_TRUTH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
@@ -27,14 +27,14 @@ impl<'a> TRUTH_TABLE_W<'a> {
 impl R {
     #[doc = "Bits 0:31 - Specifies the Truth Table contents for LUT0.."]
     #[inline(always)]
-    pub fn truth_table(&self) -> TRUTH_TABLE_R {
-        TRUTH_TABLE_R::new((self.bits & 0xffff_ffff) as u32)
+    pub fn lutn_truth(&self) -> LUTN_TRUTH_R {
+        LUTN_TRUTH_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }
 impl W {
     #[doc = "Bits 0:31 - Specifies the Truth Table contents for LUT0.."]
     #[inline(always)]
-    pub fn truth_table(&mut self) -> TRUTH_TABLE_W {
-        TRUTH_TABLE_W { w: self }
+    pub fn lutn_truth(&mut self) -> LUTN_TRUTH_W {
+        LUTN_TRUTH_W { w: self }
     }
 }

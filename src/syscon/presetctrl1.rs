@@ -88,53 +88,53 @@ impl<'a> MRT_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `OSTIMER0_RST`"]
+#[doc = "Possible values of the field `OSTIMER_RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OSTIMER0_RST_A {
+pub enum OSTIMER_RST_A {
     #[doc = "Bloc is not reset."]
     RELEASED,
     #[doc = "Bloc is reset."]
     ASSERTED,
 }
-impl From<OSTIMER0_RST_A> for bool {
+impl From<OSTIMER_RST_A> for bool {
     #[inline(always)]
-    fn from(variant: OSTIMER0_RST_A) -> Self {
+    fn from(variant: OSTIMER_RST_A) -> Self {
         match variant {
-            OSTIMER0_RST_A::RELEASED => false,
-            OSTIMER0_RST_A::ASSERTED => true,
+            OSTIMER_RST_A::RELEASED => false,
+            OSTIMER_RST_A::ASSERTED => true,
         }
     }
 }
-#[doc = "Reader of field `OSTIMER0_RST`"]
-pub type OSTIMER0_RST_R = crate::R<bool, OSTIMER0_RST_A>;
-impl OSTIMER0_RST_R {
+#[doc = "Reader of field `OSTIMER_RST`"]
+pub type OSTIMER_RST_R = crate::R<bool, OSTIMER_RST_A>;
+impl OSTIMER_RST_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OSTIMER0_RST_A {
+    pub fn variant(&self) -> OSTIMER_RST_A {
         match self.bits {
-            false => OSTIMER0_RST_A::RELEASED,
-            true => OSTIMER0_RST_A::ASSERTED,
+            false => OSTIMER_RST_A::RELEASED,
+            true => OSTIMER_RST_A::ASSERTED,
         }
     }
     #[doc = "Checks if the value of the field is `RELEASED`"]
     #[inline(always)]
     pub fn is_released(&self) -> bool {
-        *self == OSTIMER0_RST_A::RELEASED
+        *self == OSTIMER_RST_A::RELEASED
     }
     #[doc = "Checks if the value of the field is `ASSERTED`"]
     #[inline(always)]
     pub fn is_asserted(&self) -> bool {
-        *self == OSTIMER0_RST_A::ASSERTED
+        *self == OSTIMER_RST_A::ASSERTED
     }
 }
-#[doc = "Write proxy for field `OSTIMER0_RST`"]
-pub struct OSTIMER0_RST_W<'a> {
+#[doc = "Write proxy for field `OSTIMER_RST`"]
+pub struct OSTIMER_RST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> OSTIMER0_RST_W<'a> {
+impl<'a> OSTIMER_RST_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: OSTIMER0_RST_A) -> &'a mut W {
+    pub fn variant(self, variant: OSTIMER_RST_A) -> &'a mut W {
         {
             self.bit(variant.into())
         }
@@ -142,12 +142,12 @@ impl<'a> OSTIMER0_RST_W<'a> {
     #[doc = "Bloc is not reset."]
     #[inline(always)]
     pub fn released(self) -> &'a mut W {
-        self.variant(OSTIMER0_RST_A::RELEASED)
+        self.variant(OSTIMER_RST_A::RELEASED)
     }
     #[doc = "Bloc is reset."]
     #[inline(always)]
     pub fn asserted(self) -> &'a mut W {
-        self.variant(OSTIMER0_RST_A::ASSERTED)
+        self.variant(OSTIMER_RST_A::ASSERTED)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -166,53 +166,53 @@ impl<'a> OSTIMER0_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SCT0_RST`"]
+#[doc = "Possible values of the field `SCT_RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SCT0_RST_A {
+pub enum SCT_RST_A {
     #[doc = "Bloc is not reset."]
     RELEASED,
     #[doc = "Bloc is reset."]
     ASSERTED,
 }
-impl From<SCT0_RST_A> for bool {
+impl From<SCT_RST_A> for bool {
     #[inline(always)]
-    fn from(variant: SCT0_RST_A) -> Self {
+    fn from(variant: SCT_RST_A) -> Self {
         match variant {
-            SCT0_RST_A::RELEASED => false,
-            SCT0_RST_A::ASSERTED => true,
+            SCT_RST_A::RELEASED => false,
+            SCT_RST_A::ASSERTED => true,
         }
     }
 }
-#[doc = "Reader of field `SCT0_RST`"]
-pub type SCT0_RST_R = crate::R<bool, SCT0_RST_A>;
-impl SCT0_RST_R {
+#[doc = "Reader of field `SCT_RST`"]
+pub type SCT_RST_R = crate::R<bool, SCT_RST_A>;
+impl SCT_RST_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SCT0_RST_A {
+    pub fn variant(&self) -> SCT_RST_A {
         match self.bits {
-            false => SCT0_RST_A::RELEASED,
-            true => SCT0_RST_A::ASSERTED,
+            false => SCT_RST_A::RELEASED,
+            true => SCT_RST_A::ASSERTED,
         }
     }
     #[doc = "Checks if the value of the field is `RELEASED`"]
     #[inline(always)]
     pub fn is_released(&self) -> bool {
-        *self == SCT0_RST_A::RELEASED
+        *self == SCT_RST_A::RELEASED
     }
     #[doc = "Checks if the value of the field is `ASSERTED`"]
     #[inline(always)]
     pub fn is_asserted(&self) -> bool {
-        *self == SCT0_RST_A::ASSERTED
+        *self == SCT_RST_A::ASSERTED
     }
 }
-#[doc = "Write proxy for field `SCT0_RST`"]
-pub struct SCT0_RST_W<'a> {
+#[doc = "Write proxy for field `SCT_RST`"]
+pub struct SCT_RST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> SCT0_RST_W<'a> {
+impl<'a> SCT_RST_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: SCT0_RST_A) -> &'a mut W {
+    pub fn variant(self, variant: SCT_RST_A) -> &'a mut W {
         {
             self.bit(variant.into())
         }
@@ -220,12 +220,12 @@ impl<'a> SCT0_RST_W<'a> {
     #[doc = "Bloc is not reset."]
     #[inline(always)]
     pub fn released(self) -> &'a mut W {
-        self.variant(SCT0_RST_A::RELEASED)
+        self.variant(SCT_RST_A::RELEASED)
     }
     #[doc = "Bloc is reset."]
     #[inline(always)]
     pub fn asserted(self) -> &'a mut W {
-        self.variant(SCT0_RST_A::ASSERTED)
+        self.variant(SCT_RST_A::ASSERTED)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -322,53 +322,53 @@ impl<'a> SCTIPU_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `UTICK0_RST`"]
+#[doc = "Possible values of the field `UTICK_RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UTICK0_RST_A {
+pub enum UTICK_RST_A {
     #[doc = "Bloc is not reset."]
     RELEASED,
     #[doc = "Bloc is reset."]
     ASSERTED,
 }
-impl From<UTICK0_RST_A> for bool {
+impl From<UTICK_RST_A> for bool {
     #[inline(always)]
-    fn from(variant: UTICK0_RST_A) -> Self {
+    fn from(variant: UTICK_RST_A) -> Self {
         match variant {
-            UTICK0_RST_A::RELEASED => false,
-            UTICK0_RST_A::ASSERTED => true,
+            UTICK_RST_A::RELEASED => false,
+            UTICK_RST_A::ASSERTED => true,
         }
     }
 }
-#[doc = "Reader of field `UTICK0_RST`"]
-pub type UTICK0_RST_R = crate::R<bool, UTICK0_RST_A>;
-impl UTICK0_RST_R {
+#[doc = "Reader of field `UTICK_RST`"]
+pub type UTICK_RST_R = crate::R<bool, UTICK_RST_A>;
+impl UTICK_RST_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> UTICK0_RST_A {
+    pub fn variant(&self) -> UTICK_RST_A {
         match self.bits {
-            false => UTICK0_RST_A::RELEASED,
-            true => UTICK0_RST_A::ASSERTED,
+            false => UTICK_RST_A::RELEASED,
+            true => UTICK_RST_A::ASSERTED,
         }
     }
     #[doc = "Checks if the value of the field is `RELEASED`"]
     #[inline(always)]
     pub fn is_released(&self) -> bool {
-        *self == UTICK0_RST_A::RELEASED
+        *self == UTICK_RST_A::RELEASED
     }
     #[doc = "Checks if the value of the field is `ASSERTED`"]
     #[inline(always)]
     pub fn is_asserted(&self) -> bool {
-        *self == UTICK0_RST_A::ASSERTED
+        *self == UTICK_RST_A::ASSERTED
     }
 }
-#[doc = "Write proxy for field `UTICK0_RST`"]
-pub struct UTICK0_RST_W<'a> {
+#[doc = "Write proxy for field `UTICK_RST`"]
+pub struct UTICK_RST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> UTICK0_RST_W<'a> {
+impl<'a> UTICK_RST_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: UTICK0_RST_A) -> &'a mut W {
+    pub fn variant(self, variant: UTICK_RST_A) -> &'a mut W {
         {
             self.bit(variant.into())
         }
@@ -376,12 +376,12 @@ impl<'a> UTICK0_RST_W<'a> {
     #[doc = "Bloc is not reset."]
     #[inline(always)]
     pub fn released(self) -> &'a mut W {
-        self.variant(UTICK0_RST_A::RELEASED)
+        self.variant(UTICK_RST_A::RELEASED)
     }
     #[doc = "Bloc is reset."]
     #[inline(always)]
     pub fn asserted(self) -> &'a mut W {
-        self.variant(UTICK0_RST_A::ASSERTED)
+        self.variant(UTICK_RST_A::ASSERTED)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -1336,265 +1336,31 @@ impl<'a> TIMER1_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PVT_RST`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PVT_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
-}
-impl From<PVT_RST_A> for bool {
-    #[inline(always)]
-    fn from(variant: PVT_RST_A) -> Self {
-        match variant {
-            PVT_RST_A::RELEASED => false,
-            PVT_RST_A::ASSERTED => true,
-        }
-    }
-}
-#[doc = "Reader of field `PVT_RST`"]
-pub type PVT_RST_R = crate::R<bool, PVT_RST_A>;
-impl PVT_RST_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> PVT_RST_A {
-        match self.bits {
-            false => PVT_RST_A::RELEASED,
-            true => PVT_RST_A::ASSERTED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `RELEASED`"]
-    #[inline(always)]
-    pub fn is_released(&self) -> bool {
-        *self == PVT_RST_A::RELEASED
-    }
-    #[doc = "Checks if the value of the field is `ASSERTED`"]
-    #[inline(always)]
-    pub fn is_asserted(&self) -> bool {
-        *self == PVT_RST_A::ASSERTED
-    }
-}
-#[doc = "Write proxy for field `PVT_RST`"]
-pub struct PVT_RST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PVT_RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PVT_RST_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "Bloc is not reset."]
-    #[inline(always)]
-    pub fn released(self) -> &'a mut W {
-        self.variant(PVT_RST_A::RELEASED)
-    }
-    #[doc = "Bloc is reset."]
-    #[inline(always)]
-    pub fn asserted(self) -> &'a mut W {
-        self.variant(PVT_RST_A::ASSERTED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-        self.w
-    }
-}
-#[doc = "Possible values of the field `EZHA_RST`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EZHA_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
-}
-impl From<EZHA_RST_A> for bool {
-    #[inline(always)]
-    fn from(variant: EZHA_RST_A) -> Self {
-        match variant {
-            EZHA_RST_A::RELEASED => false,
-            EZHA_RST_A::ASSERTED => true,
-        }
-    }
-}
-#[doc = "Reader of field `EZHA_RST`"]
-pub type EZHA_RST_R = crate::R<bool, EZHA_RST_A>;
-impl EZHA_RST_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> EZHA_RST_A {
-        match self.bits {
-            false => EZHA_RST_A::RELEASED,
-            true => EZHA_RST_A::ASSERTED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `RELEASED`"]
-    #[inline(always)]
-    pub fn is_released(&self) -> bool {
-        *self == EZHA_RST_A::RELEASED
-    }
-    #[doc = "Checks if the value of the field is `ASSERTED`"]
-    #[inline(always)]
-    pub fn is_asserted(&self) -> bool {
-        *self == EZHA_RST_A::ASSERTED
-    }
-}
-#[doc = "Write proxy for field `EZHA_RST`"]
-pub struct EZHA_RST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EZHA_RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EZHA_RST_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "Bloc is not reset."]
-    #[inline(always)]
-    pub fn released(self) -> &'a mut W {
-        self.variant(EZHA_RST_A::RELEASED)
-    }
-    #[doc = "Bloc is reset."]
-    #[inline(always)]
-    pub fn asserted(self) -> &'a mut W {
-        self.variant(EZHA_RST_A::ASSERTED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-        self.w
-    }
-}
-#[doc = "Possible values of the field `EZHB_RST`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EZHB_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
-}
-impl From<EZHB_RST_A> for bool {
-    #[inline(always)]
-    fn from(variant: EZHB_RST_A) -> Self {
-        match variant {
-            EZHB_RST_A::RELEASED => false,
-            EZHB_RST_A::ASSERTED => true,
-        }
-    }
-}
-#[doc = "Reader of field `EZHB_RST`"]
-pub type EZHB_RST_R = crate::R<bool, EZHB_RST_A>;
-impl EZHB_RST_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> EZHB_RST_A {
-        match self.bits {
-            false => EZHB_RST_A::RELEASED,
-            true => EZHB_RST_A::ASSERTED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `RELEASED`"]
-    #[inline(always)]
-    pub fn is_released(&self) -> bool {
-        *self == EZHB_RST_A::RELEASED
-    }
-    #[doc = "Checks if the value of the field is `ASSERTED`"]
-    #[inline(always)]
-    pub fn is_asserted(&self) -> bool {
-        *self == EZHB_RST_A::ASSERTED
-    }
-}
-#[doc = "Write proxy for field `EZHB_RST`"]
-pub struct EZHB_RST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EZHB_RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EZHB_RST_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "Bloc is not reset."]
-    #[inline(always)]
-    pub fn released(self) -> &'a mut W {
-        self.variant(EZHB_RST_A::RELEASED)
-    }
-    #[doc = "Bloc is reset."]
-    #[inline(always)]
-    pub fn asserted(self) -> &'a mut W {
-        self.variant(EZHB_RST_A::ASSERTED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
 impl R {
     #[doc = "Bit 0 - MRT reset control."]
     #[inline(always)]
     pub fn mrt_rst(&self) -> MRT_RST_R {
         MRT_RST_R::new((self.bits & 0x01) != 0)
     }
-    #[doc = "Bit 1 - OS Timer 0 reset control."]
+    #[doc = "Bit 1 - OS Event Timer reset control."]
     #[inline(always)]
-    pub fn ostimer0_rst(&self) -> OSTIMER0_RST_R {
-        OSTIMER0_RST_R::new(((self.bits >> 1) & 0x01) != 0)
+    pub fn ostimer_rst(&self) -> OSTIMER_RST_R {
+        OSTIMER_RST_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bit 2 - SCT0 reset control."]
+    #[doc = "Bit 2 - SCT reset control."]
     #[inline(always)]
-    pub fn sct0_rst(&self) -> SCT0_RST_R {
-        SCT0_RST_R::new(((self.bits >> 2) & 0x01) != 0)
+    pub fn sct_rst(&self) -> SCT_RST_R {
+        SCT_RST_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 6 - SCTIPU reset control."]
     #[inline(always)]
     pub fn sctipu_rst(&self) -> SCTIPU_RST_R {
         SCTIPU_RST_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 10 - UTICK0 reset control."]
+    #[doc = "Bit 10 - UTICK reset control."]
     #[inline(always)]
-    pub fn utick0_rst(&self) -> UTICK0_RST_R {
-        UTICK0_RST_R::new(((self.bits >> 10) & 0x01) != 0)
+    pub fn utick_rst(&self) -> UTICK_RST_R {
+        UTICK_RST_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - FC0 reset control."]
     #[inline(always)]
@@ -1656,21 +1422,6 @@ impl R {
     pub fn timer1_rst(&self) -> TIMER1_RST_R {
         TIMER1_RST_R::new(((self.bits >> 27) & 0x01) != 0)
     }
-    #[doc = "Bit 28 - PVT reset control."]
-    #[inline(always)]
-    pub fn pvt_rst(&self) -> PVT_RST_R {
-        PVT_RST_R::new(((self.bits >> 28) & 0x01) != 0)
-    }
-    #[doc = "Bit 30 - EZH a reset control."]
-    #[inline(always)]
-    pub fn ezha_rst(&self) -> EZHA_RST_R {
-        EZHA_RST_R::new(((self.bits >> 30) & 0x01) != 0)
-    }
-    #[doc = "Bit 31 - EZH b reset control."]
-    #[inline(always)]
-    pub fn ezhb_rst(&self) -> EZHB_RST_R {
-        EZHB_RST_R::new(((self.bits >> 31) & 0x01) != 0)
-    }
 }
 impl W {
     #[doc = "Bit 0 - MRT reset control."]
@@ -1678,25 +1429,25 @@ impl W {
     pub fn mrt_rst(&mut self) -> MRT_RST_W {
         MRT_RST_W { w: self }
     }
-    #[doc = "Bit 1 - OS Timer 0 reset control."]
+    #[doc = "Bit 1 - OS Event Timer reset control."]
     #[inline(always)]
-    pub fn ostimer0_rst(&mut self) -> OSTIMER0_RST_W {
-        OSTIMER0_RST_W { w: self }
+    pub fn ostimer_rst(&mut self) -> OSTIMER_RST_W {
+        OSTIMER_RST_W { w: self }
     }
-    #[doc = "Bit 2 - SCT0 reset control."]
+    #[doc = "Bit 2 - SCT reset control."]
     #[inline(always)]
-    pub fn sct0_rst(&mut self) -> SCT0_RST_W {
-        SCT0_RST_W { w: self }
+    pub fn sct_rst(&mut self) -> SCT_RST_W {
+        SCT_RST_W { w: self }
     }
     #[doc = "Bit 6 - SCTIPU reset control."]
     #[inline(always)]
     pub fn sctipu_rst(&mut self) -> SCTIPU_RST_W {
         SCTIPU_RST_W { w: self }
     }
-    #[doc = "Bit 10 - UTICK0 reset control."]
+    #[doc = "Bit 10 - UTICK reset control."]
     #[inline(always)]
-    pub fn utick0_rst(&mut self) -> UTICK0_RST_W {
-        UTICK0_RST_W { w: self }
+    pub fn utick_rst(&mut self) -> UTICK_RST_W {
+        UTICK_RST_W { w: self }
     }
     #[doc = "Bit 11 - FC0 reset control."]
     #[inline(always)]
@@ -1757,20 +1508,5 @@ impl W {
     #[inline(always)]
     pub fn timer1_rst(&mut self) -> TIMER1_RST_W {
         TIMER1_RST_W { w: self }
-    }
-    #[doc = "Bit 28 - PVT reset control."]
-    #[inline(always)]
-    pub fn pvt_rst(&mut self) -> PVT_RST_W {
-        PVT_RST_W { w: self }
-    }
-    #[doc = "Bit 30 - EZH a reset control."]
-    #[inline(always)]
-    pub fn ezha_rst(&mut self) -> EZHA_RST_W {
-        EZHA_RST_W { w: self }
-    }
-    #[doc = "Bit 31 - EZH b reset control."]
-    #[inline(always)]
-    pub fn ezhb_rst(&mut self) -> EZHB_RST_W {
-        EZHB_RST_W { w: self }
     }
 }

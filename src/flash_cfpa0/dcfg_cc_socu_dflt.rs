@@ -400,53 +400,53 @@ impl<'a> TAPEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MCM33_DBGEN`"]
+#[doc = "Possible values of the field `CPU1_DBGEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MCM33_DBGEN_A {
+pub enum CPU1_DBGEN_A {
     #[doc = "Disable"]
     DISABLE,
     #[doc = "Enable"]
     ENABLE,
 }
-impl From<MCM33_DBGEN_A> for bool {
+impl From<CPU1_DBGEN_A> for bool {
     #[inline(always)]
-    fn from(variant: MCM33_DBGEN_A) -> Self {
+    fn from(variant: CPU1_DBGEN_A) -> Self {
         match variant {
-            MCM33_DBGEN_A::DISABLE => false,
-            MCM33_DBGEN_A::ENABLE => true,
+            CPU1_DBGEN_A::DISABLE => false,
+            CPU1_DBGEN_A::ENABLE => true,
         }
     }
 }
-#[doc = "Reader of field `MCM33_DBGEN`"]
-pub type MCM33_DBGEN_R = crate::R<bool, MCM33_DBGEN_A>;
-impl MCM33_DBGEN_R {
+#[doc = "Reader of field `CPU1_DBGEN`"]
+pub type CPU1_DBGEN_R = crate::R<bool, CPU1_DBGEN_A>;
+impl CPU1_DBGEN_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MCM33_DBGEN_A {
+    pub fn variant(&self) -> CPU1_DBGEN_A {
         match self.bits {
-            false => MCM33_DBGEN_A::DISABLE,
-            true => MCM33_DBGEN_A::ENABLE,
+            false => CPU1_DBGEN_A::DISABLE,
+            true => CPU1_DBGEN_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == MCM33_DBGEN_A::DISABLE
+        *self == CPU1_DBGEN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == MCM33_DBGEN_A::ENABLE
+        *self == CPU1_DBGEN_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `MCM33_DBGEN`"]
-pub struct MCM33_DBGEN_W<'a> {
+#[doc = "Write proxy for field `CPU1_DBGEN`"]
+pub struct CPU1_DBGEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> MCM33_DBGEN_W<'a> {
+impl<'a> CPU1_DBGEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: MCM33_DBGEN_A) -> &'a mut W {
+    pub fn variant(self, variant: CPU1_DBGEN_A) -> &'a mut W {
         {
             self.bit(variant.into())
         }
@@ -454,12 +454,12 @@ impl<'a> MCM33_DBGEN_W<'a> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(MCM33_DBGEN_A::DISABLE)
+        self.variant(CPU1_DBGEN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(MCM33_DBGEN_A::ENABLE)
+        self.variant(CPU1_DBGEN_A::ENABLE)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -712,53 +712,53 @@ impl<'a> ME_CMD_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MCM33_NIDEN`"]
+#[doc = "Possible values of the field `CPU1_NIDEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MCM33_NIDEN_A {
+pub enum CPU1_NIDEN_A {
     #[doc = "Disable"]
     DISABLE,
     #[doc = "Enable"]
     ENABLE,
 }
-impl From<MCM33_NIDEN_A> for bool {
+impl From<CPU1_NIDEN_A> for bool {
     #[inline(always)]
-    fn from(variant: MCM33_NIDEN_A) -> Self {
+    fn from(variant: CPU1_NIDEN_A) -> Self {
         match variant {
-            MCM33_NIDEN_A::DISABLE => false,
-            MCM33_NIDEN_A::ENABLE => true,
+            CPU1_NIDEN_A::DISABLE => false,
+            CPU1_NIDEN_A::ENABLE => true,
         }
     }
 }
-#[doc = "Reader of field `MCM33_NIDEN`"]
-pub type MCM33_NIDEN_R = crate::R<bool, MCM33_NIDEN_A>;
-impl MCM33_NIDEN_R {
+#[doc = "Reader of field `CPU1_NIDEN`"]
+pub type CPU1_NIDEN_R = crate::R<bool, CPU1_NIDEN_A>;
+impl CPU1_NIDEN_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MCM33_NIDEN_A {
+    pub fn variant(&self) -> CPU1_NIDEN_A {
         match self.bits {
-            false => MCM33_NIDEN_A::DISABLE,
-            true => MCM33_NIDEN_A::ENABLE,
+            false => CPU1_NIDEN_A::DISABLE,
+            true => CPU1_NIDEN_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == MCM33_NIDEN_A::DISABLE
+        *self == CPU1_NIDEN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == MCM33_NIDEN_A::ENABLE
+        *self == CPU1_NIDEN_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `MCM33_NIDEN`"]
-pub struct MCM33_NIDEN_W<'a> {
+#[doc = "Write proxy for field `CPU1_NIDEN`"]
+pub struct CPU1_NIDEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> MCM33_NIDEN_W<'a> {
+impl<'a> CPU1_NIDEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: MCM33_NIDEN_A) -> &'a mut W {
+    pub fn variant(self, variant: CPU1_NIDEN_A) -> &'a mut W {
         {
             self.bit(variant.into())
         }
@@ -766,12 +766,12 @@ impl<'a> MCM33_NIDEN_W<'a> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(MCM33_NIDEN_A::DISABLE)
+        self.variant(CPU1_NIDEN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(MCM33_NIDEN_A::ENABLE)
+        self.variant(CPU1_NIDEN_A::ENABLE)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -830,10 +830,10 @@ impl R {
     pub fn tapen(&self) -> TAPEN_R {
         TAPEN_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - Micro CM33 invasive debug fixed state"]
+    #[doc = "Bit 5 - CPU1 (Micro cortex M33) invasive debug fixed state"]
     #[inline(always)]
-    pub fn mcm33_dbgen(&self) -> MCM33_DBGEN_R {
-        MCM33_DBGEN_R::new(((self.bits >> 5) & 0x01) != 0)
+    pub fn cpu1_dbgen(&self) -> CPU1_DBGEN_R {
+        CPU1_DBGEN_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - ISP Boot Command fixed state"]
     #[inline(always)]
@@ -850,10 +850,10 @@ impl R {
     pub fn me_cmd_en(&self) -> ME_CMD_EN_R {
         ME_CMD_EN_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9 - Micro CM33 non-invasive debug fixed state"]
+    #[doc = "Bit 9 - CPU1 (Micro cortex M33) non-invasive debug fixed state"]
     #[inline(always)]
-    pub fn mcm33_niden(&self) -> MCM33_NIDEN_R {
-        MCM33_NIDEN_R::new(((self.bits >> 9) & 0x01) != 0)
+    pub fn cpu1_niden(&self) -> CPU1_NIDEN_R {
+        CPU1_NIDEN_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bits 16:31 - inverse value of bits \\[15:0\\]"]
     #[inline(always)]
@@ -887,10 +887,10 @@ impl W {
     pub fn tapen(&mut self) -> TAPEN_W {
         TAPEN_W { w: self }
     }
-    #[doc = "Bit 5 - Micro CM33 invasive debug fixed state"]
+    #[doc = "Bit 5 - CPU1 (Micro cortex M33) invasive debug fixed state"]
     #[inline(always)]
-    pub fn mcm33_dbgen(&mut self) -> MCM33_DBGEN_W {
-        MCM33_DBGEN_W { w: self }
+    pub fn cpu1_dbgen(&mut self) -> CPU1_DBGEN_W {
+        CPU1_DBGEN_W { w: self }
     }
     #[doc = "Bit 6 - ISP Boot Command fixed state"]
     #[inline(always)]
@@ -907,10 +907,10 @@ impl W {
     pub fn me_cmd_en(&mut self) -> ME_CMD_EN_W {
         ME_CMD_EN_W { w: self }
     }
-    #[doc = "Bit 9 - Micro CM33 non-invasive debug fixed state"]
+    #[doc = "Bit 9 - CPU1 (Micro cortex M33) non-invasive debug fixed state"]
     #[inline(always)]
-    pub fn mcm33_niden(&mut self) -> MCM33_NIDEN_W {
-        MCM33_NIDEN_W { w: self }
+    pub fn cpu1_niden(&mut self) -> CPU1_NIDEN_W {
+        CPU1_NIDEN_W { w: self }
     }
     #[doc = "Bits 16:31 - inverse value of bits \\[15:0\\]"]
     #[inline(always)]

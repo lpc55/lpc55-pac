@@ -52,6 +52,6 @@ The SVD files are from <https://mcuxpresso.nxp.com> and licensed under the [BSD-
 [mit-link]: https://spdx.org/licenses/MIT.html
 [mcuxpresso]: https://mcuxpresso.nxp.com
 [datasheet]: https://www.nxp.com/docs/en/data-sheet/LPC55S6x.pdf
-[usermanual]: https://www.nxp.com/docs/en/user-guide/UM11126.pdf
+[usermanual]: https://www.nxp.com/webapp/Download?colCode=UM11126
 [errata]: https://www.nxp.com/docs/en/errata/ES_LPC55S6x.pdf
 [genericuserguide]: https://static.docs.arm.com/100235/0004/arm_cortex_m33_dgug_100235_0004_00_en.pdf

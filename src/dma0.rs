@@ -112,27 +112,6 @@ pub struct RegisterBlock {
     _reserved37: [u8; 4usize],
     #[doc = "0x560 - no description available"]
     pub channel22: CHANNEL,
-    _reserved38: [u8; 4usize],
-    #[doc = "0x570 - no description available"]
-    pub channel23: CHANNEL,
-    _reserved39: [u8; 4usize],
-    #[doc = "0x580 - no description available"]
-    pub channel24: CHANNEL,
-    _reserved40: [u8; 4usize],
-    #[doc = "0x590 - no description available"]
-    pub channel25: CHANNEL,
-    _reserved41: [u8; 4usize],
-    #[doc = "0x5a0 - no description available"]
-    pub channel26: CHANNEL,
-    _reserved42: [u8; 4usize],
-    #[doc = "0x5b0 - no description available"]
-    pub channel27: CHANNEL,
-    _reserved43: [u8; 4usize],
-    #[doc = "0x5c0 - no description available"]
-    pub channel28: CHANNEL,
-    _reserved44: [u8; 4usize],
-    #[doc = "0x5d0 - no description available"]
-    pub channel29: CHANNEL,
 }
 #[doc = r"Register block"]
 #[repr(C)]

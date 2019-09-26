@@ -13,9 +13,9 @@ impl crate::ResetValue for super::ENC_ENABLE {
 #[doc = "Possible values of the field `EN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EN_A {
-    #[doc = "Encryption of writes to the flash controller DATAW* registers is disabled.."]
+    #[doc = "Encryption of writes to the flash controller DATAW* registers is disabled."]
     DISABLED,
-    #[doc = "Encryption of writes to the flash controller DATAW* registers is enabled.."]
+    #[doc = "Encryption of writes to the flash controller DATAW* registers is enabled."]
     ENABLED,
 }
 impl From<EN_A> for bool {
@@ -61,12 +61,12 @@ impl<'a> EN_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Encryption of writes to the flash controller DATAW* registers is disabled.."]
+    #[doc = "Encryption of writes to the flash controller DATAW* registers is disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
         self.variant(EN_A::DISABLED)
     }
-    #[doc = "Encryption of writes to the flash controller DATAW* registers is enabled.."]
+    #[doc = "Encryption of writes to the flash controller DATAW* registers is enabled."]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(EN_A::ENABLED)

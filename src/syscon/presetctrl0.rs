@@ -556,53 +556,53 @@ impl<'a> FMC_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MUX0_RST`"]
+#[doc = "Possible values of the field `MUX_RST`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MUX0_RST_A {
+pub enum MUX_RST_A {
     #[doc = "Bloc is not reset."]
     RELEASED,
     #[doc = "Bloc is reset."]
     ASSERTED,
 }
-impl From<MUX0_RST_A> for bool {
+impl From<MUX_RST_A> for bool {
     #[inline(always)]
-    fn from(variant: MUX0_RST_A) -> Self {
+    fn from(variant: MUX_RST_A) -> Self {
         match variant {
-            MUX0_RST_A::RELEASED => false,
-            MUX0_RST_A::ASSERTED => true,
+            MUX_RST_A::RELEASED => false,
+            MUX_RST_A::ASSERTED => true,
         }
     }
 }
-#[doc = "Reader of field `MUX0_RST`"]
-pub type MUX0_RST_R = crate::R<bool, MUX0_RST_A>;
-impl MUX0_RST_R {
+#[doc = "Reader of field `MUX_RST`"]
+pub type MUX_RST_R = crate::R<bool, MUX_RST_A>;
+impl MUX_RST_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MUX0_RST_A {
+    pub fn variant(&self) -> MUX_RST_A {
         match self.bits {
-            false => MUX0_RST_A::RELEASED,
-            true => MUX0_RST_A::ASSERTED,
+            false => MUX_RST_A::RELEASED,
+            true => MUX_RST_A::ASSERTED,
         }
     }
     #[doc = "Checks if the value of the field is `RELEASED`"]
     #[inline(always)]
     pub fn is_released(&self) -> bool {
-        *self == MUX0_RST_A::RELEASED
+        *self == MUX_RST_A::RELEASED
     }
     #[doc = "Checks if the value of the field is `ASSERTED`"]
     #[inline(always)]
     pub fn is_asserted(&self) -> bool {
-        *self == MUX0_RST_A::ASSERTED
+        *self == MUX_RST_A::ASSERTED
     }
 }
-#[doc = "Write proxy for field `MUX0_RST`"]
-pub struct MUX0_RST_W<'a> {
+#[doc = "Write proxy for field `MUX_RST`"]
+pub struct MUX_RST_W<'a> {
     w: &'a mut W,
 }
-impl<'a> MUX0_RST_W<'a> {
+impl<'a> MUX_RST_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: MUX0_RST_A) -> &'a mut W {
+    pub fn variant(self, variant: MUX_RST_A) -> &'a mut W {
         {
             self.bit(variant.into())
         }
@@ -610,12 +610,12 @@ impl<'a> MUX0_RST_W<'a> {
     #[doc = "Bloc is not reset."]
     #[inline(always)]
     pub fn released(self) -> &'a mut W {
-        self.variant(MUX0_RST_A::RELEASED)
+        self.variant(MUX_RST_A::RELEASED)
     }
     #[doc = "Bloc is reset."]
     #[inline(always)]
     pub fn asserted(self) -> &'a mut W {
-        self.variant(MUX0_RST_A::ASSERTED)
+        self.variant(MUX_RST_A::ASSERTED)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -1684,10 +1684,10 @@ impl R {
     pub fn fmc_rst(&self) -> FMC_RST_R {
         FMC_RST_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 11 - Input Mux 0 reset control."]
+    #[doc = "Bit 11 - Input Mux reset control."]
     #[inline(always)]
-    pub fn mux0_rst(&self) -> MUX0_RST_R {
-        MUX0_RST_R::new(((self.bits >> 11) & 0x01) != 0)
+    pub fn mux_rst(&self) -> MUX_RST_R {
+        MUX_RST_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 13 - I/O controller reset control."]
     #[inline(always)]
@@ -1791,10 +1791,10 @@ impl W {
     pub fn fmc_rst(&mut self) -> FMC_RST_W {
         FMC_RST_W { w: self }
     }
-    #[doc = "Bit 11 - Input Mux 0 reset control."]
+    #[doc = "Bit 11 - Input Mux reset control."]
     #[inline(always)]
-    pub fn mux0_rst(&mut self) -> MUX0_RST_W {
-        MUX0_RST_W { w: self }
+    pub fn mux_rst(&mut self) -> MUX_RST_W {
+        MUX_RST_W { w: self }
     }
     #[doc = "Bit 13 - I/O controller reset control."]
     #[inline(always)]

@@ -1,7 +1,7 @@
 YAML = lpc55s69-core0.yaml
 SVD = lpc55s69-core0.svd.patched
 
-prepare: patch generate
+build: patch generate
 	cargo build
 
 patch:
@@ -20,8 +20,9 @@ fetch-docs:
 	mkdir -p ref
 	curl -s https://www.nxp.com/docs/en/data-sheet/LPC55S6x.pdf \
 		-o ref/datasheet-lpc55s6x.pdf
-	curl -s https://www.nxp.com/docs/en/user-guide/UM11126.pdf \
-		-o ref/usermanual-lpc55s6x.pdf
+	echo "For the LPC55S6x User manual (UM11126), login is needed"
+	# curl -s https://www.nxp.com/docs/en/user-guide/UM11126.pdf \
+	# 	-o ref/usermanual-lpc55s6x.pdf
 	curl -s https://www.nxp.com/docs/en/errata/ES_LPC55S6x.pdf \
 		-o ref/errata-lpc55s6x.pdf
 	curl -sk https://static.docs.arm.com/100235/0004/arm_cortex_m33_dgug_100235_0004_00_en.pdf \
@@ -38,19 +39,3 @@ rustup:
 
 version:
 	echo $(VERSION)
-
-# Documentation - hosted on <https://lpc55s6x.netlify.com/>
-docs-setup: lpc55s6x-pac-docs
-
-lpc55s6x-pac-docs:
-	git clone git@github.com:nickray/lpc55s6x-pac-docs.git
-
-docs-build:
-	cargo doc
-	cp -a target/doc/. lpc55s6x-pac-docs/docs/
-
-docs-open:
-	xdg-open lpc55s6x-pac-docs/docs/lpc55s6x_pac/index.html
-
-# docs-publish:
-# 	cd lpc55s6x-pac-docs && git add . && git commit -m'Update docs' && git push

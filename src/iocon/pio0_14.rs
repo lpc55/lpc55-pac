@@ -262,9 +262,9 @@ impl<'a> MODE_W<'a> {
 #[doc = "Possible values of the field `SLEW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEW_A {
-    #[doc = "Standard mode, output slew rate control is enabled. More outputs can be switched simultaneously."]
+    #[doc = "Standard-mode, output slew rate is slower. More outputs can be switched simultaneously."]
     STANDARD,
-    #[doc = "Fast mode, slew rate control is disabled. Refer to the appropriate specific device data sheet for details."]
+    #[doc = "Fast-mode, output slew rate is faster. Refer to the appropriate specific device data sheet for details."]
     FAST,
 }
 impl From<SLEW_A> for bool {
@@ -310,12 +310,12 @@ impl<'a> SLEW_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Standard mode, output slew rate control is enabled. More outputs can be switched simultaneously."]
+    #[doc = "Standard-mode, output slew rate is slower. More outputs can be switched simultaneously."]
     #[inline(always)]
     pub fn standard(self) -> &'a mut W {
         self.variant(SLEW_A::STANDARD)
     }
-    #[doc = "Fast mode, slew rate control is disabled. Refer to the appropriate specific device data sheet for details."]
+    #[doc = "Fast-mode, output slew rate is faster. Refer to the appropriate specific device data sheet for details."]
     #[inline(always)]
     pub fn fast(self) -> &'a mut W {
         self.variant(SLEW_A::FAST)
@@ -418,9 +418,9 @@ impl<'a> INVERT_W<'a> {
 #[doc = "Possible values of the field `DIGIMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIGIMODE_A {
-    #[doc = "Analog mode, digital input is disabled."]
+    #[doc = "Disable digital mode. Digital input set to 0."]
     ANALOG,
-    #[doc = "Digital mode, digital input is enabled."]
+    #[doc = "Enable Digital mode. Digital input is enabled."]
     DIGITAL,
 }
 impl From<DIGIMODE_A> for bool {
@@ -466,12 +466,12 @@ impl<'a> DIGIMODE_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Analog mode, digital input is disabled."]
+    #[doc = "Disable digital mode. Digital input set to 0."]
     #[inline(always)]
     pub fn analog(self) -> &'a mut W {
         self.variant(DIGIMODE_A::ANALOG)
     }
-    #[doc = "Digital mode, digital input is enabled."]
+    #[doc = "Enable Digital mode. Digital input is enabled."]
     #[inline(always)]
     pub fn digital(self) -> &'a mut W {
         self.variant(DIGIMODE_A::DIGITAL)
@@ -652,9 +652,9 @@ impl<'a> SSEL_W<'a> {
 #[doc = "Possible values of the field `FILTEROFF`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FILTEROFF_A {
-    #[doc = "Filter enabled. Noise pulses below approximately 10 ns are filtered out."]
+    #[doc = "Filter enabled."]
     ENABLED,
-    #[doc = "Filter disabled. No input filtering is done."]
+    #[doc = "Filter disabled."]
     DISABLED,
 }
 impl From<FILTEROFF_A> for bool {
@@ -700,12 +700,12 @@ impl<'a> FILTEROFF_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Filter enabled. Noise pulses below approximately 10 ns are filtered out."]
+    #[doc = "Filter enabled."]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(FILTEROFF_A::ENABLED)
     }
-    #[doc = "Filter disabled. No input filtering is done."]
+    #[doc = "Filter disabled."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
         self.variant(FILTEROFF_A::DISABLED)
@@ -730,7 +730,7 @@ impl<'a> FILTEROFF_W<'a> {
 #[doc = "Possible values of the field `ECS`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECS_A {
-    #[doc = "Disabled. IO is in open drain."]
+    #[doc = "Disabled. IO is in open drain cell."]
     DISABLED,
     #[doc = "Enabled. Pull resistor is conencted."]
     ENABLED,
@@ -778,7 +778,7 @@ impl<'a> ECS_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Disabled. IO is in open drain."]
+    #[doc = "Disabled. IO is in open drain cell."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
         self.variant(ECS_A::DISABLED)
@@ -886,9 +886,9 @@ impl<'a> EGP_W<'a> {
 #[doc = "Possible values of the field `I2CFILTER`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum I2CFILTER_A {
-    #[doc = "I2C 50 ns glitch filter enabled. Typically used for Fast-mode and Fast-mode Plus I2C."]
+    #[doc = "I2C 50 ns glitch filter enabled. Typically used for Standard-mode, Fast-mode and Fast-mode Plus I2C."]
     FAST_MODE,
-    #[doc = "I2C 10 ns glitch filter enabled. Typically used for Standard-mode I2C."]
+    #[doc = "I2C 10 ns glitch filter enabled. Typically used for High-speed mode I2C."]
     STANDARD_MODE,
 }
 impl From<I2CFILTER_A> for bool {
@@ -934,12 +934,12 @@ impl<'a> I2CFILTER_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "I2C 50 ns glitch filter enabled. Typically used for Fast-mode and Fast-mode Plus I2C."]
+    #[doc = "I2C 50 ns glitch filter enabled. Typically used for Standard-mode, Fast-mode and Fast-mode Plus I2C."]
     #[inline(always)]
     pub fn fast_mode(self) -> &'a mut W {
         self.variant(I2CFILTER_A::FAST_MODE)
     }
-    #[doc = "I2C 10 ns glitch filter enabled. Typically used for Standard-mode I2C."]
+    #[doc = "I2C 10 ns glitch filter enabled. Typically used for High-speed mode I2C."]
     #[inline(always)]
     pub fn standard_mode(self) -> &'a mut W {
         self.variant(I2CFILTER_A::STANDARD_MODE)
@@ -987,7 +987,7 @@ impl R {
     pub fn digimode(&self) -> DIGIMODE_R {
         DIGIMODE_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9 - Controls open-drain mode."]
+    #[doc = "Bit 9 - Controls open-drain mode in standard GPIO mode (EGP = 1). This bit has no effect in I2C mode (EGP=0)."]
     #[inline(always)]
     pub fn od(&self) -> OD_R {
         OD_R::new(((self.bits >> 9) & 0x01) != 0)
@@ -1002,17 +1002,17 @@ impl R {
     pub fn filteroff(&self) -> FILTEROFF_R {
         FILTEROFF_R::new(((self.bits >> 12) & 0x01) != 0)
     }
-    #[doc = "Bit 13 - Pull-up current source enable in IIC mode."]
+    #[doc = "Bit 13 - Pull-up current source enable in I2C mode."]
     #[inline(always)]
     pub fn ecs(&self) -> ECS_R {
         ECS_R::new(((self.bits >> 13) & 0x01) != 0)
     }
-    #[doc = "Bit 14 - Controls slew rate of I2C pad."]
+    #[doc = "Bit 14 - Switch between GPIO mode and I2C mode."]
     #[inline(always)]
     pub fn egp(&self) -> EGP_R {
         EGP_R::new(((self.bits >> 14) & 0x01) != 0)
     }
-    #[doc = "Bit 15 - Configures I2C features for standard mode, fast mode, and Fast Mode Plus operation."]
+    #[doc = "Bit 15 - Configures I2C features for standard mode, fast mode, and Fast Mode Plus operation and High-Speed mode operation."]
     #[inline(always)]
     pub fn i2cfilter(&self) -> I2CFILTER_R {
         I2CFILTER_R::new(((self.bits >> 15) & 0x01) != 0)
@@ -1044,7 +1044,7 @@ impl W {
     pub fn digimode(&mut self) -> DIGIMODE_W {
         DIGIMODE_W { w: self }
     }
-    #[doc = "Bit 9 - Controls open-drain mode."]
+    #[doc = "Bit 9 - Controls open-drain mode in standard GPIO mode (EGP = 1). This bit has no effect in I2C mode (EGP=0)."]
     #[inline(always)]
     pub fn od(&mut self) -> OD_W {
         OD_W { w: self }
@@ -1059,17 +1059,17 @@ impl W {
     pub fn filteroff(&mut self) -> FILTEROFF_W {
         FILTEROFF_W { w: self }
     }
-    #[doc = "Bit 13 - Pull-up current source enable in IIC mode."]
+    #[doc = "Bit 13 - Pull-up current source enable in I2C mode."]
     #[inline(always)]
     pub fn ecs(&mut self) -> ECS_W {
         ECS_W { w: self }
     }
-    #[doc = "Bit 14 - Controls slew rate of I2C pad."]
+    #[doc = "Bit 14 - Switch between GPIO mode and I2C mode."]
     #[inline(always)]
     pub fn egp(&mut self) -> EGP_W {
         EGP_W { w: self }
     }
-    #[doc = "Bit 15 - Configures I2C features for standard mode, fast mode, and Fast Mode Plus operation."]
+    #[doc = "Bit 15 - Configures I2C features for standard mode, fast mode, and Fast Mode Plus operation and High-Speed mode operation."]
     #[inline(always)]
     pub fn i2cfilter(&mut self) -> I2CFILTER_W {
         I2CFILTER_W { w: self }

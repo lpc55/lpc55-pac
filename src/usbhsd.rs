@@ -26,9 +26,6 @@ pub struct RegisterBlock {
     _reserved11: [u8; 8usize],
     #[doc = "0x34 - USB Endpoint toggle register"]
     pub eptoggle: EPTOGGLE,
-    _reserved12: [u8; 4usize],
-    #[doc = "0x3c - UTMI/ULPI debug register"]
-    pub ulpidebug: ULPIDEBUG,
 }
 #[doc = "USB Device Command/Status register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [devcmdstat](devcmdstat) module"]
 pub type DEVCMDSTAT = crate::Reg<u32, _DEVCMDSTAT>;
@@ -158,14 +155,3 @@ pub struct _EPTOGGLE;
 impl crate::Readable for EPTOGGLE {}
 #[doc = "USB Endpoint toggle register"]
 pub mod eptoggle;
-#[doc = "UTMI/ULPI debug register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ulpidebug](ulpidebug) module"]
-pub type ULPIDEBUG = crate::Reg<u32, _ULPIDEBUG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _ULPIDEBUG;
-#[doc = "`read()` method returns [ulpidebug::R](ulpidebug::R) reader structure"]
-impl crate::Readable for ULPIDEBUG {}
-#[doc = "`write(|w| ..)` method takes [ulpidebug::W](ulpidebug::W) writer structure"]
-impl crate::Writable for ULPIDEBUG {}
-#[doc = "UTMI/ULPI debug register"]
-pub mod ulpidebug;

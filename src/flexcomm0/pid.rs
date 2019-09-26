@@ -1,15 +1,15 @@
 #[doc = "Reader of register PID"]
 pub type R = crate::R<u32, super::PID>;
-#[doc = "Reader of field `Aperture`"]
+#[doc = "Reader of field `APERTURE`"]
 pub type APERTURE_R = crate::R<u8, u8>;
-#[doc = "Reader of field `Minor_Rev`"]
+#[doc = "Reader of field `MINOR_REV`"]
 pub type MINOR_REV_R = crate::R<u8, u8>;
-#[doc = "Reader of field `Major_Rev`"]
+#[doc = "Reader of field `MAJOR_REV`"]
 pub type MAJOR_REV_R = crate::R<u8, u8>;
 #[doc = "Reader of field `ID`"]
 pub type ID_R = crate::R<u16, u16>;
 impl R {
-    #[doc = "Bits 0:7 - no description available"]
+    #[doc = "Bits 0:7 - size aperture for the register port on the bus (APB or AHB)."]
     #[inline(always)]
     pub fn aperture(&self) -> APERTURE_R {
         APERTURE_R::new((self.bits & 0xff) as u8)

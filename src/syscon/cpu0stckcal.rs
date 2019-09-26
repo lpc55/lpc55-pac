@@ -10,13 +10,13 @@ impl crate::ResetValue for super::CPU0STCKCAL {
         0
     }
 }
-#[doc = "Reader of field `CAL`"]
-pub type CAL_R = crate::R<u32, u32>;
-#[doc = "Write proxy for field `CAL`"]
-pub struct CAL_W<'a> {
+#[doc = "Reader of field `TENMS`"]
+pub type TENMS_R = crate::R<u32, u32>;
+#[doc = "Write proxy for field `TENMS`"]
+pub struct TENMS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> CAL_W<'a> {
+impl<'a> TENMS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
@@ -73,34 +73,34 @@ impl<'a> NOREF_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:23 - System tick timer calibration value."]
+    #[doc = "Bits 0:23 - Reload value for 10ms (100Hz) timing, subject to system clock skew errors. If the value reads as zero, the calibration value is not known."]
     #[inline(always)]
-    pub fn cal(&self) -> CAL_R {
-        CAL_R::new((self.bits & 0x00ff_ffff) as u32)
+    pub fn tenms(&self) -> TENMS_R {
+        TENMS_R::new((self.bits & 0x00ff_ffff) as u32)
     }
     #[doc = "Bit 24 - Initial value for the Systick timer."]
     #[inline(always)]
     pub fn skew(&self) -> SKEW_R {
         SKEW_R::new(((self.bits >> 24) & 0x01) != 0)
     }
-    #[doc = "Bit 25 - Initial value for the Systick timer."]
+    #[doc = "Bit 25 - Indicates whether the device provides a reference clock to the processor: 0 = reference clock provided; 1 = no reference clock provided."]
     #[inline(always)]
     pub fn noref(&self) -> NOREF_R {
         NOREF_R::new(((self.bits >> 25) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:23 - System tick timer calibration value."]
+    #[doc = "Bits 0:23 - Reload value for 10ms (100Hz) timing, subject to system clock skew errors. If the value reads as zero, the calibration value is not known."]
     #[inline(always)]
-    pub fn cal(&mut self) -> CAL_W {
-        CAL_W { w: self }
+    pub fn tenms(&mut self) -> TENMS_W {
+        TENMS_W { w: self }
     }
     #[doc = "Bit 24 - Initial value for the Systick timer."]
     #[inline(always)]
     pub fn skew(&mut self) -> SKEW_W {
         SKEW_W { w: self }
     }
-    #[doc = "Bit 25 - Initial value for the Systick timer."]
+    #[doc = "Bit 25 - Indicates whether the device provides a reference clock to the processor: 0 = reference clock provided; 1 = no reference clock provided."]
     #[inline(always)]
     pub fn noref(&mut self) -> NOREF_W {
         NOREF_W { w: self }

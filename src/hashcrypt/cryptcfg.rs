@@ -192,7 +192,7 @@ impl<'a> AESMODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AESDECRYPT_A {
     #[doc = "Encrypt"]
-    AESDECRYPT_0,
+    ENCRYPT,
     #[doc = "Decrypt"]
     DECRYPT,
 }
@@ -200,7 +200,7 @@ impl From<AESDECRYPT_A> for bool {
     #[inline(always)]
     fn from(variant: AESDECRYPT_A) -> Self {
         match variant {
-            AESDECRYPT_A::AESDECRYPT_0 => false,
+            AESDECRYPT_A::ENCRYPT => false,
             AESDECRYPT_A::DECRYPT => true,
         }
     }
@@ -212,14 +212,14 @@ impl AESDECRYPT_R {
     #[inline(always)]
     pub fn variant(&self) -> AESDECRYPT_A {
         match self.bits {
-            false => AESDECRYPT_A::AESDECRYPT_0,
+            false => AESDECRYPT_A::ENCRYPT,
             true => AESDECRYPT_A::DECRYPT,
         }
     }
-    #[doc = "Checks if the value of the field is `AESDECRYPT_0`"]
+    #[doc = "Checks if the value of the field is `ENCRYPT`"]
     #[inline(always)]
-    pub fn is_aesdecrypt_0(&self) -> bool {
-        *self == AESDECRYPT_A::AESDECRYPT_0
+    pub fn is_encrypt(&self) -> bool {
+        *self == AESDECRYPT_A::ENCRYPT
     }
     #[doc = "Checks if the value of the field is `DECRYPT`"]
     #[inline(always)]
@@ -241,8 +241,8 @@ impl<'a> AESDECRYPT_W<'a> {
     }
     #[doc = "Encrypt"]
     #[inline(always)]
-    pub fn aesdecrypt_0(self) -> &'a mut W {
-        self.variant(AESDECRYPT_A::AESDECRYPT_0)
+    pub fn encrypt(self) -> &'a mut W {
+        self.variant(AESDECRYPT_A::ENCRYPT)
     }
     #[doc = "Decrypt"]
     #[inline(always)]
@@ -272,14 +272,14 @@ pub enum AESSECRET_A {
     #[doc = "User key provided in normal way"]
     NORMAL_WAY,
     #[doc = "Secret key provided in hidden way by HW"]
-    AESSECRET_1,
+    HIDDEN_WAY,
 }
 impl From<AESSECRET_A> for bool {
     #[inline(always)]
     fn from(variant: AESSECRET_A) -> Self {
         match variant {
             AESSECRET_A::NORMAL_WAY => false,
-            AESSECRET_A::AESSECRET_1 => true,
+            AESSECRET_A::HIDDEN_WAY => true,
         }
     }
 }
@@ -291,7 +291,7 @@ impl AESSECRET_R {
     pub fn variant(&self) -> AESSECRET_A {
         match self.bits {
             false => AESSECRET_A::NORMAL_WAY,
-            true => AESSECRET_A::AESSECRET_1,
+            true => AESSECRET_A::HIDDEN_WAY,
         }
     }
     #[doc = "Checks if the value of the field is `NORMAL_WAY`"]
@@ -299,10 +299,10 @@ impl AESSECRET_R {
     pub fn is_normal_way(&self) -> bool {
         *self == AESSECRET_A::NORMAL_WAY
     }
-    #[doc = "Checks if the value of the field is `AESSECRET_1`"]
+    #[doc = "Checks if the value of the field is `HIDDEN_WAY`"]
     #[inline(always)]
-    pub fn is_aessecret_1(&self) -> bool {
-        *self == AESSECRET_A::AESSECRET_1
+    pub fn is_hidden_way(&self) -> bool {
+        *self == AESSECRET_A::HIDDEN_WAY
     }
 }
 #[doc = "Write proxy for field `AESSECRET`"]
@@ -324,8 +324,8 @@ impl<'a> AESSECRET_W<'a> {
     }
     #[doc = "Secret key provided in hidden way by HW"]
     #[inline(always)]
-    pub fn aessecret_1(self) -> &'a mut W {
-        self.variant(AESSECRET_A::AESSECRET_1)
+    pub fn hidden_way(self) -> &'a mut W {
+        self.variant(AESSECRET_A::HIDDEN_WAY)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -461,30 +461,6 @@ impl<'a> STREAMLAST_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-        self.w
-    }
-}
-#[doc = "Reader of field `XSALSA`"]
-pub type XSALSA_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `XSALSA`"]
-pub struct XSALSA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XSALSA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
         self.w
     }
 }
@@ -733,11 +709,6 @@ impl R {
     pub fn streamlast(&self) -> STREAMLAST_R {
         STREAMLAST_R::new(((self.bits >> 16) & 0x01) != 0)
     }
-    #[doc = "Bit 17 - Is 1 if XSalsa 128b NONCE to be used vs. 64b"]
-    #[inline(always)]
-    pub fn xsalsa(&self) -> XSALSA_R {
-        XSALSA_R::new(((self.bits >> 17) & 0x01) != 0)
-    }
     #[doc = "Bits 20:21 - This sets the ICB size between 32 and 128 bits, using the following rules. Note that the counter is assumed to occupy the low order bits of the IV."]
     #[inline(always)]
     pub fn icbsz(&self) -> ICBSZ_R {
@@ -799,11 +770,6 @@ impl W {
     #[inline(always)]
     pub fn streamlast(&mut self) -> STREAMLAST_W {
         STREAMLAST_W { w: self }
-    }
-    #[doc = "Bit 17 - Is 1 if XSalsa 128b NONCE to be used vs. 64b"]
-    #[inline(always)]
-    pub fn xsalsa(&mut self) -> XSALSA_W {
-        XSALSA_W { w: self }
     }
     #[doc = "Bits 20:21 - This sets the ICB size between 32 and 128 bits, using the following rules. Note that the counter is assumed to occupy the low order bits of the IV."]
     #[inline(always)]

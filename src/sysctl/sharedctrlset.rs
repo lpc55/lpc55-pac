@@ -625,53 +625,53 @@ impl<'a> FC1DATAOUTEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `F20DATAOUTEN`"]
+#[doc = "Possible values of the field `FC2DATAOUTEN`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum F20DATAOUTEN_A {
+pub enum FC2DATAOUTEN_A {
     #[doc = "Data output from FC2 does not contribute to this shared set."]
     INPUT,
     #[doc = "Data output from FC2 does contribute to this shared set."]
     OUTPUT,
 }
-impl From<F20DATAOUTEN_A> for bool {
+impl From<FC2DATAOUTEN_A> for bool {
     #[inline(always)]
-    fn from(variant: F20DATAOUTEN_A) -> Self {
+    fn from(variant: FC2DATAOUTEN_A) -> Self {
         match variant {
-            F20DATAOUTEN_A::INPUT => false,
-            F20DATAOUTEN_A::OUTPUT => true,
+            FC2DATAOUTEN_A::INPUT => false,
+            FC2DATAOUTEN_A::OUTPUT => true,
         }
     }
 }
-#[doc = "Reader of field `F20DATAOUTEN`"]
-pub type F20DATAOUTEN_R = crate::R<bool, F20DATAOUTEN_A>;
-impl F20DATAOUTEN_R {
+#[doc = "Reader of field `FC2DATAOUTEN`"]
+pub type FC2DATAOUTEN_R = crate::R<bool, FC2DATAOUTEN_A>;
+impl FC2DATAOUTEN_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> F20DATAOUTEN_A {
+    pub fn variant(&self) -> FC2DATAOUTEN_A {
         match self.bits {
-            false => F20DATAOUTEN_A::INPUT,
-            true => F20DATAOUTEN_A::OUTPUT,
+            false => FC2DATAOUTEN_A::INPUT,
+            true => FC2DATAOUTEN_A::OUTPUT,
         }
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        *self == F20DATAOUTEN_A::INPUT
+        *self == FC2DATAOUTEN_A::INPUT
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        *self == F20DATAOUTEN_A::OUTPUT
+        *self == FC2DATAOUTEN_A::OUTPUT
     }
 }
-#[doc = "Write proxy for field `F20DATAOUTEN`"]
-pub struct F20DATAOUTEN_W<'a> {
+#[doc = "Write proxy for field `FC2DATAOUTEN`"]
+pub struct FC2DATAOUTEN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> F20DATAOUTEN_W<'a> {
+impl<'a> FC2DATAOUTEN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
-    pub fn variant(self, variant: F20DATAOUTEN_A) -> &'a mut W {
+    pub fn variant(self, variant: FC2DATAOUTEN_A) -> &'a mut W {
         {
             self.bit(variant.into())
         }
@@ -679,12 +679,12 @@ impl<'a> F20DATAOUTEN_W<'a> {
     #[doc = "Data output from FC2 does not contribute to this shared set."]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
-        self.variant(F20DATAOUTEN_A::INPUT)
+        self.variant(FC2DATAOUTEN_A::INPUT)
     }
     #[doc = "Data output from FC2 does contribute to this shared set."]
     #[inline(always)]
     pub fn output(self) -> &'a mut W {
-        self.variant(F20DATAOUTEN_A::OUTPUT)
+        self.variant(FC2DATAOUTEN_A::OUTPUT)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -700,84 +700,6 @@ impl<'a> F20DATAOUTEN_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-        self.w
-    }
-}
-#[doc = "Possible values of the field `FC3DATAOUTEN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FC3DATAOUTEN_A {
-    #[doc = "Data output from FC3 does not contribute to this shared set."]
-    INPUT,
-    #[doc = "Data output from FC3 does contribute to this shared set."]
-    OUTPUT,
-}
-impl From<FC3DATAOUTEN_A> for bool {
-    #[inline(always)]
-    fn from(variant: FC3DATAOUTEN_A) -> Self {
-        match variant {
-            FC3DATAOUTEN_A::INPUT => false,
-            FC3DATAOUTEN_A::OUTPUT => true,
-        }
-    }
-}
-#[doc = "Reader of field `FC3DATAOUTEN`"]
-pub type FC3DATAOUTEN_R = crate::R<bool, FC3DATAOUTEN_A>;
-impl FC3DATAOUTEN_R {
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> FC3DATAOUTEN_A {
-        match self.bits {
-            false => FC3DATAOUTEN_A::INPUT,
-            true => FC3DATAOUTEN_A::OUTPUT,
-        }
-    }
-    #[doc = "Checks if the value of the field is `INPUT`"]
-    #[inline(always)]
-    pub fn is_input(&self) -> bool {
-        *self == FC3DATAOUTEN_A::INPUT
-    }
-    #[doc = "Checks if the value of the field is `OUTPUT`"]
-    #[inline(always)]
-    pub fn is_output(&self) -> bool {
-        *self == FC3DATAOUTEN_A::OUTPUT
-    }
-}
-#[doc = "Write proxy for field `FC3DATAOUTEN`"]
-pub struct FC3DATAOUTEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FC3DATAOUTEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FC3DATAOUTEN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "Data output from FC3 does not contribute to this shared set."]
-    #[inline(always)]
-    pub fn input(self) -> &'a mut W {
-        self.variant(FC3DATAOUTEN_A::INPUT)
-    }
-    #[doc = "Data output from FC3 does contribute to this shared set."]
-    #[inline(always)]
-    pub fn output(self) -> &'a mut W {
-        self.variant(FC3DATAOUTEN_A::OUTPUT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
         self.w
     }
 }
@@ -1121,13 +1043,8 @@ impl R {
     }
     #[doc = "Bit 18 - Controls FC2 contribution to SHAREDDATAOUT for this shared set."]
     #[inline(always)]
-    pub fn f20dataouten(&self) -> F20DATAOUTEN_R {
-        F20DATAOUTEN_R::new(((self.bits >> 18) & 0x01) != 0)
-    }
-    #[doc = "Bit 19 - Controls FC3 contribution to SHAREDDATAOUT for this shared set."]
-    #[inline(always)]
-    pub fn fc3dataouten(&self) -> FC3DATAOUTEN_R {
-        FC3DATAOUTEN_R::new(((self.bits >> 19) & 0x01) != 0)
+    pub fn fc2dataouten(&self) -> FC2DATAOUTEN_R {
+        FC2DATAOUTEN_R::new(((self.bits >> 18) & 0x01) != 0)
     }
     #[doc = "Bit 20 - Controls FC4 contribution to SHAREDDATAOUT for this shared set."]
     #[inline(always)]
@@ -1178,13 +1095,8 @@ impl W {
     }
     #[doc = "Bit 18 - Controls FC2 contribution to SHAREDDATAOUT for this shared set."]
     #[inline(always)]
-    pub fn f20dataouten(&mut self) -> F20DATAOUTEN_W {
-        F20DATAOUTEN_W { w: self }
-    }
-    #[doc = "Bit 19 - Controls FC3 contribution to SHAREDDATAOUT for this shared set."]
-    #[inline(always)]
-    pub fn fc3dataouten(&mut self) -> FC3DATAOUTEN_W {
-        FC3DATAOUTEN_W { w: self }
+    pub fn fc2dataouten(&mut self) -> FC2DATAOUTEN_W {
+        FC2DATAOUTEN_W { w: self }
     }
     #[doc = "Bit 20 - Controls FC4 contribution to SHAREDDATAOUT for this shared set."]
     #[inline(always)]

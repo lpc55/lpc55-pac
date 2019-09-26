@@ -262,9 +262,9 @@ impl<'a> MODE_W<'a> {
 #[doc = "Possible values of the field `SLEW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEW_A {
-    #[doc = "Standard mode, output slew rate control is enabled. More outputs can be switched simultaneously."]
+    #[doc = "Standard-mode, output slew rate is slower. More outputs can be switched simultaneously."]
     STANDARD,
-    #[doc = "Fast mode, slew rate control is disabled. Refer to the appropriate specific device data sheet for details."]
+    #[doc = "Fast-mode, output slew rate is faster. Refer to the appropriate specific device data sheet for details."]
     FAST,
 }
 impl From<SLEW_A> for bool {
@@ -310,12 +310,12 @@ impl<'a> SLEW_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Standard mode, output slew rate control is enabled. More outputs can be switched simultaneously."]
+    #[doc = "Standard-mode, output slew rate is slower. More outputs can be switched simultaneously."]
     #[inline(always)]
     pub fn standard(self) -> &'a mut W {
         self.variant(SLEW_A::STANDARD)
     }
-    #[doc = "Fast mode, slew rate control is disabled. Refer to the appropriate specific device data sheet for details."]
+    #[doc = "Fast-mode, output slew rate is faster. Refer to the appropriate specific device data sheet for details."]
     #[inline(always)]
     pub fn fast(self) -> &'a mut W {
         self.variant(SLEW_A::FAST)
@@ -418,9 +418,9 @@ impl<'a> INVERT_W<'a> {
 #[doc = "Possible values of the field `DIGIMODE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIGIMODE_A {
-    #[doc = "Analog mode, digital input is disabled."]
+    #[doc = "Disable digital mode. Digital input set to 0."]
     ANALOG,
-    #[doc = "Digital mode, digital input is enabled."]
+    #[doc = "Enable Digital mode. Digital input is enabled."]
     DIGITAL,
 }
 impl From<DIGIMODE_A> for bool {
@@ -466,12 +466,12 @@ impl<'a> DIGIMODE_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Analog mode, digital input is disabled."]
+    #[doc = "Disable digital mode. Digital input set to 0."]
     #[inline(always)]
     pub fn analog(self) -> &'a mut W {
         self.variant(DIGIMODE_A::ANALOG)
     }
-    #[doc = "Digital mode, digital input is enabled."]
+    #[doc = "Enable Digital mode. Digital input is enabled."]
     #[inline(always)]
     pub fn digital(self) -> &'a mut W {
         self.variant(DIGIMODE_A::DIGITAL)
@@ -574,17 +574,17 @@ impl<'a> OD_W<'a> {
 #[doc = "Possible values of the field `ASW`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASW_A {
-    #[doc = "Analog switch is open."]
-    DISABLE,
-    #[doc = "Analog switch is closed."]
-    ENABLE,
+    #[doc = "For pins PIO0_9, PIO0_11, PIO0_12, PIO0_15, PIO0_18, PIO0_31, PIO1_0 and PIO1_9, analog switch is closed (enabled). For the other pins, analog switch is open (disabled)."]
+    VALUE0,
+    #[doc = "For all pins except PIO0_9, PIO0_11, PIO0_12, PIO0_15, PIO0_18, PIO0_31, PIO1_0 and PIO1_9 analog switch is closed (enabled)"]
+    VALUE1,
 }
 impl From<ASW_A> for bool {
     #[inline(always)]
     fn from(variant: ASW_A) -> Self {
         match variant {
-            ASW_A::DISABLE => false,
-            ASW_A::ENABLE => true,
+            ASW_A::VALUE0 => false,
+            ASW_A::VALUE1 => true,
         }
     }
 }
@@ -595,19 +595,19 @@ impl ASW_R {
     #[inline(always)]
     pub fn variant(&self) -> ASW_A {
         match self.bits {
-            false => ASW_A::DISABLE,
-            true => ASW_A::ENABLE,
+            false => ASW_A::VALUE0,
+            true => ASW_A::VALUE1,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == ASW_A::DISABLE
+    pub fn is_value0(&self) -> bool {
+        *self == ASW_A::VALUE0
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == ASW_A::ENABLE
+    pub fn is_value1(&self) -> bool {
+        *self == ASW_A::VALUE1
     }
 }
 #[doc = "Write proxy for field `ASW`"]
@@ -622,15 +622,15 @@ impl<'a> ASW_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Analog switch is open."]
+    #[doc = "For pins PIO0_9, PIO0_11, PIO0_12, PIO0_15, PIO0_18, PIO0_31, PIO1_0 and PIO1_9, analog switch is closed (enabled). For the other pins, analog switch is open (disabled)."]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(ASW_A::DISABLE)
+    pub fn value0(self) -> &'a mut W {
+        self.variant(ASW_A::VALUE0)
     }
-    #[doc = "Analog switch is closed."]
+    #[doc = "For all pins except PIO0_9, PIO0_11, PIO0_12, PIO0_15, PIO0_18, PIO0_31, PIO1_0 and PIO1_9 analog switch is closed (enabled)"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(ASW_A::ENABLE)
+    pub fn value1(self) -> &'a mut W {
+        self.variant(ASW_A::VALUE1)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -680,7 +680,7 @@ impl R {
     pub fn od(&self) -> OD_R {
         OD_R::new(((self.bits >> 9) & 0x01) != 0)
     }
-    #[doc = "Bit 10 - Analog switch input control. Usable only if DIGIMODE = 0b0"]
+    #[doc = "Bit 10 - Analog switch input control."]
     #[inline(always)]
     pub fn asw(&self) -> ASW_R {
         ASW_R::new(((self.bits >> 10) & 0x01) != 0)
@@ -717,7 +717,7 @@ impl W {
     pub fn od(&mut self) -> OD_W {
         OD_W { w: self }
     }
-    #[doc = "Bit 10 - Analog switch input control. Usable only if DIGIMODE = 0b0"]
+    #[doc = "Bit 10 - Analog switch input control."]
     #[inline(always)]
     pub fn asw(&mut self) -> ASW_W {
         ASW_W { w: self }

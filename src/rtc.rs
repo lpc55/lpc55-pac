@@ -9,7 +9,7 @@ pub struct RegisterBlock {
     pub count: COUNT,
     #[doc = "0x0c - High-resolution/wake-up timer control register"]
     pub wake: WAKE,
-    #[doc = "0x10 - RTC Sub-second Counter register"]
+    #[doc = "0x10 - Sub-second counter register"]
     pub subsec: SUBSEC,
     _reserved5: [u8; 44usize],
     #[doc = "0x40 - General Purpose register"]
@@ -59,7 +59,7 @@ impl crate::Readable for WAKE {}
 impl crate::Writable for WAKE {}
 #[doc = "High-resolution/wake-up timer control register"]
 pub mod wake;
-#[doc = "RTC Sub-second Counter register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [subsec](subsec) module"]
+#[doc = "Sub-second counter register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [subsec](subsec) module"]
 pub type SUBSEC = crate::Reg<u32, _SUBSEC>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -68,7 +68,7 @@ pub struct _SUBSEC;
 impl crate::Readable for SUBSEC {}
 #[doc = "`write(|w| ..)` method takes [subsec::W](subsec::W) writer structure"]
 impl crate::Writable for SUBSEC {}
-#[doc = "RTC Sub-second Counter register"]
+#[doc = "Sub-second counter register"]
 pub mod subsec;
 #[doc = "General Purpose register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [gpreg](gpreg) module"]
 pub type GPREG = crate::Reg<u32, _GPREG>;

@@ -10,11 +10,11 @@ pub struct RegisterBlock {
     #[doc = "0x0c - ."]
     pub sdio_cfg: SDIO_CFG,
     #[doc = "0x10 - ."]
-    pub dcfg_cc_socu_pin: DCFG_CC_SOCU_PIN,
+    pub cc_socu_pin: CC_SOCU_PIN,
     #[doc = "0x14 - ."]
-    pub dcfg_cc_socu_dflt: DCFG_CC_SOCU_DFLT,
+    pub cc_socu_dflt: CC_SOCU_DFLT,
     #[doc = "0x18 - ."]
-    pub dap_vendor_usage_fixed: DAP_VENDOR_USAGE_FIXED,
+    pub vendor_usage: VENDOR_USAGE,
     #[doc = "0x1c - ."]
     pub secure_boot_cfg: SECURE_BOOT_CFG,
     #[doc = "0x20 - ."]
@@ -25,10 +25,14 @@ pub struct RegisterBlock {
     pub prince_sr_1: PRINCE_SR_1,
     #[doc = "0x2c - Region 2, sub-region enable"]
     pub prince_sr_2: PRINCE_SR_2,
-    _reserved12: [u8; 32usize],
+    #[doc = "0x30 - Xtal 32kHz capabank triming."]
+    pub xtal_32khz_capabank_trim: XTAL_32KHZ_CAPABANK_TRIM,
+    #[doc = "0x34 - Xtal 16MHz capabank triming."]
+    pub xtal_16mhz_capabank_trim: XTAL_16MHZ_CAPABANK_TRIM,
+    _reserved14: [u8; 24usize],
     #[doc = "0x50 - ROTKH0 for Root of Trust Keys Table hash\\[255:224\\] ROTKH1 for Root of Trust Keys Table hash\\[223:192\\] ROTKH2 for Root of Trust Keys Table hash\\[191:160\\] ROTKH3 for Root of Trust Keys Table hash\\[159:128\\] ROTKH4 for Root of Trust Keys Table hash\\[127:96\\] ROTKH5 for Root of Trust Keys Table hash\\[95:64\\] ROTKH6 for Root of Trust Keys Table hash\\[63:32\\] ROTKH7 for Root of Trust Keys Table hash\\[31:0\\]"]
     pub rotkh: [ROTKH; 8],
-    _reserved13: [u8; 144usize],
+    _reserved15: [u8; 144usize],
     #[doc = "0x100 - Customer Defined (Programable through ROM API)"]
     pub customer_defined: [CUSTOMER_DEFINED; 56],
     #[doc = "0x1e0 - SHA256_DIGEST0 for DIGEST\\[31:0\\] SHA256_DIGEST1 for DIGEST\\[63:32\\] SHA256_DIGEST2 for DIGEST\\[95:64\\] SHA256_DIGEST3 for DIGEST\\[127:96\\] SHA256_DIGEST4 for DIGEST\\[159:128\\] SHA256_DIGEST5 for DIGEST\\[191:160\\] SHA256_DIGEST6 for DIGEST\\[223:192\\] SHA256_DIGEST7 for DIGEST\\[255:224\\]"]
@@ -78,39 +82,39 @@ impl crate::Readable for SDIO_CFG {}
 impl crate::Writable for SDIO_CFG {}
 #[doc = "."]
 pub mod sdio_cfg;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dcfg_cc_socu_pin](dcfg_cc_socu_pin) module"]
-pub type DCFG_CC_SOCU_PIN = crate::Reg<u32, _DCFG_CC_SOCU_PIN>;
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cc_socu_pin](cc_socu_pin) module"]
+pub type CC_SOCU_PIN = crate::Reg<u32, _CC_SOCU_PIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _DCFG_CC_SOCU_PIN;
-#[doc = "`read()` method returns [dcfg_cc_socu_pin::R](dcfg_cc_socu_pin::R) reader structure"]
-impl crate::Readable for DCFG_CC_SOCU_PIN {}
-#[doc = "`write(|w| ..)` method takes [dcfg_cc_socu_pin::W](dcfg_cc_socu_pin::W) writer structure"]
-impl crate::Writable for DCFG_CC_SOCU_PIN {}
+pub struct _CC_SOCU_PIN;
+#[doc = "`read()` method returns [cc_socu_pin::R](cc_socu_pin::R) reader structure"]
+impl crate::Readable for CC_SOCU_PIN {}
+#[doc = "`write(|w| ..)` method takes [cc_socu_pin::W](cc_socu_pin::W) writer structure"]
+impl crate::Writable for CC_SOCU_PIN {}
 #[doc = "."]
-pub mod dcfg_cc_socu_pin;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dcfg_cc_socu_dflt](dcfg_cc_socu_dflt) module"]
-pub type DCFG_CC_SOCU_DFLT = crate::Reg<u32, _DCFG_CC_SOCU_DFLT>;
+pub mod cc_socu_pin;
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cc_socu_dflt](cc_socu_dflt) module"]
+pub type CC_SOCU_DFLT = crate::Reg<u32, _CC_SOCU_DFLT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _DCFG_CC_SOCU_DFLT;
-#[doc = "`read()` method returns [dcfg_cc_socu_dflt::R](dcfg_cc_socu_dflt::R) reader structure"]
-impl crate::Readable for DCFG_CC_SOCU_DFLT {}
-#[doc = "`write(|w| ..)` method takes [dcfg_cc_socu_dflt::W](dcfg_cc_socu_dflt::W) writer structure"]
-impl crate::Writable for DCFG_CC_SOCU_DFLT {}
+pub struct _CC_SOCU_DFLT;
+#[doc = "`read()` method returns [cc_socu_dflt::R](cc_socu_dflt::R) reader structure"]
+impl crate::Readable for CC_SOCU_DFLT {}
+#[doc = "`write(|w| ..)` method takes [cc_socu_dflt::W](cc_socu_dflt::W) writer structure"]
+impl crate::Writable for CC_SOCU_DFLT {}
 #[doc = "."]
-pub mod dcfg_cc_socu_dflt;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dap_vendor_usage_fixed](dap_vendor_usage_fixed) module"]
-pub type DAP_VENDOR_USAGE_FIXED = crate::Reg<u32, _DAP_VENDOR_USAGE_FIXED>;
+pub mod cc_socu_dflt;
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [vendor_usage](vendor_usage) module"]
+pub type VENDOR_USAGE = crate::Reg<u32, _VENDOR_USAGE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _DAP_VENDOR_USAGE_FIXED;
-#[doc = "`read()` method returns [dap_vendor_usage_fixed::R](dap_vendor_usage_fixed::R) reader structure"]
-impl crate::Readable for DAP_VENDOR_USAGE_FIXED {}
-#[doc = "`write(|w| ..)` method takes [dap_vendor_usage_fixed::W](dap_vendor_usage_fixed::W) writer structure"]
-impl crate::Writable for DAP_VENDOR_USAGE_FIXED {}
+pub struct _VENDOR_USAGE;
+#[doc = "`read()` method returns [vendor_usage::R](vendor_usage::R) reader structure"]
+impl crate::Readable for VENDOR_USAGE {}
+#[doc = "`write(|w| ..)` method takes [vendor_usage::W](vendor_usage::W) writer structure"]
+impl crate::Writable for VENDOR_USAGE {}
 #[doc = "."]
-pub mod dap_vendor_usage_fixed;
+pub mod vendor_usage;
 #[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [secure_boot_cfg](secure_boot_cfg) module"]
 pub type SECURE_BOOT_CFG = crate::Reg<u32, _SECURE_BOOT_CFG>;
 #[allow(missing_docs)]
@@ -166,6 +170,28 @@ impl crate::Readable for PRINCE_SR_2 {}
 impl crate::Writable for PRINCE_SR_2 {}
 #[doc = "Region 2, sub-region enable"]
 pub mod prince_sr_2;
+#[doc = "Xtal 32kHz capabank triming.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [xtal_32khz_capabank_trim](xtal_32khz_capabank_trim) module"]
+pub type XTAL_32KHZ_CAPABANK_TRIM = crate::Reg<u32, _XTAL_32KHZ_CAPABANK_TRIM>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _XTAL_32KHZ_CAPABANK_TRIM;
+#[doc = "`read()` method returns [xtal_32khz_capabank_trim::R](xtal_32khz_capabank_trim::R) reader structure"]
+impl crate::Readable for XTAL_32KHZ_CAPABANK_TRIM {}
+#[doc = "`write(|w| ..)` method takes [xtal_32khz_capabank_trim::W](xtal_32khz_capabank_trim::W) writer structure"]
+impl crate::Writable for XTAL_32KHZ_CAPABANK_TRIM {}
+#[doc = "Xtal 32kHz capabank triming."]
+pub mod xtal_32khz_capabank_trim;
+#[doc = "Xtal 16MHz capabank triming.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [xtal_16mhz_capabank_trim](xtal_16mhz_capabank_trim) module"]
+pub type XTAL_16MHZ_CAPABANK_TRIM = crate::Reg<u32, _XTAL_16MHZ_CAPABANK_TRIM>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _XTAL_16MHZ_CAPABANK_TRIM;
+#[doc = "`read()` method returns [xtal_16mhz_capabank_trim::R](xtal_16mhz_capabank_trim::R) reader structure"]
+impl crate::Readable for XTAL_16MHZ_CAPABANK_TRIM {}
+#[doc = "`write(|w| ..)` method takes [xtal_16mhz_capabank_trim::W](xtal_16mhz_capabank_trim::W) writer structure"]
+impl crate::Writable for XTAL_16MHZ_CAPABANK_TRIM {}
+#[doc = "Xtal 16MHz capabank triming."]
+pub mod xtal_16mhz_capabank_trim;
 #[doc = "ROTKH0 for Root of Trust Keys Table hash\\[255:224\\] ROTKH1 for Root of Trust Keys Table hash\\[223:192\\] ROTKH2 for Root of Trust Keys Table hash\\[191:160\\] ROTKH3 for Root of Trust Keys Table hash\\[159:128\\] ROTKH4 for Root of Trust Keys Table hash\\[127:96\\] ROTKH5 for Root of Trust Keys Table hash\\[95:64\\] ROTKH6 for Root of Trust Keys Table hash\\[63:32\\] ROTKH7 for Root of Trust Keys Table hash\\[31:0\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [rotkh](rotkh) module"]
 pub type ROTKH = crate::Reg<u32, _ROTKH>;
 #[allow(missing_docs)]

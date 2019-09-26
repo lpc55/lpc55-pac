@@ -85,7 +85,7 @@ pub struct RegisterBlock {
     #[doc = "0x900 - Provides the current state of the 8 designated PLU Outputs."]
     pub outputs: OUTPUTS,
     #[doc = "0x904 - Wakeup interrupt control for PLU"]
-    pub wakeint: WAKEINT,
+    pub wakeint_ctrl: WAKEINT_CTRL,
     _reserved29: [u8; 760usize],
     #[doc = "0xc00 - Selects the source to be connected to PLU Output 0"]
     pub output_mux: [OUTPUT_MUX; 8],
@@ -93,8 +93,8 @@ pub struct RegisterBlock {
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct LUT {
-    #[doc = "0x00 - LUT0 input 0 MUX"]
-    pub lut_inp: [self::lut::LUT_INP; 5],
+    #[doc = "0x00 - LUTn input x MUX"]
+    pub lut_inp_mux: [self::lut::LUT_INP_MUX; 5],
 }
 #[doc = r"Register block"]
 #[doc = "no description available"]
@@ -121,17 +121,17 @@ impl crate::Readable for OUTPUTS {}
 impl crate::Writable for OUTPUTS {}
 #[doc = "Provides the current state of the 8 designated PLU Outputs."]
 pub mod outputs;
-#[doc = "Wakeup interrupt control for PLU\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [wakeint](wakeint) module"]
-pub type WAKEINT = crate::Reg<u32, _WAKEINT>;
+#[doc = "Wakeup interrupt control for PLU\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [wakeint_ctrl](wakeint_ctrl) module"]
+pub type WAKEINT_CTRL = crate::Reg<u32, _WAKEINT_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _WAKEINT;
-#[doc = "`read()` method returns [wakeint::R](wakeint::R) reader structure"]
-impl crate::Readable for WAKEINT {}
-#[doc = "`write(|w| ..)` method takes [wakeint::W](wakeint::W) writer structure"]
-impl crate::Writable for WAKEINT {}
+pub struct _WAKEINT_CTRL;
+#[doc = "`read()` method returns [wakeint_ctrl::R](wakeint_ctrl::R) reader structure"]
+impl crate::Readable for WAKEINT_CTRL {}
+#[doc = "`write(|w| ..)` method takes [wakeint_ctrl::W](wakeint_ctrl::W) writer structure"]
+impl crate::Writable for WAKEINT_CTRL {}
 #[doc = "Wakeup interrupt control for PLU"]
-pub mod wakeint;
+pub mod wakeint_ctrl;
 #[doc = "Selects the source to be connected to PLU Output 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [output_mux](output_mux) module"]
 pub type OUTPUT_MUX = crate::Reg<u32, _OUTPUT_MUX>;
 #[allow(missing_docs)]

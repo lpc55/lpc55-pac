@@ -10,30 +10,6 @@ impl crate::ResetValue for super::PLL_SIC {
         0x00d1_2000
     }
 }
-#[doc = "Reader of field `MISC2_CONTROL0`"]
-pub type MISC2_CONTROL0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MISC2_CONTROL0`"]
-pub struct MISC2_CONTROL0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MISC2_CONTROL0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
 #[doc = "Reader of field `PLL_EN_USB_CLKS`"]
 pub type PLL_EN_USB_CLKS_R = crate::R<bool, bool>;
 #[doc = "Write proxy for field `PLL_EN_USB_CLKS`"]
@@ -103,30 +79,6 @@ impl<'a> PLL_ENABLE_W<'a> {
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
         self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-        self.w
-    }
-}
-#[doc = "Reader of field `PLL_BYPASS`"]
-pub type PLL_BYPASS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PLL_BYPASS`"]
-pub struct PLL_BYPASS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLL_BYPASS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
         self.w
     }
 }
@@ -409,6 +361,30 @@ impl<'a> PLL_DIV_SEL_W<'a> {
         self.w
     }
 }
+#[doc = "Reader of field `PLL_PREDIV`"]
+pub type PLL_PREDIV_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `PLL_PREDIV`"]
+pub struct PLL_PREDIV_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PLL_PREDIV_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
+        self.w
+    }
+}
 #[doc = "Possible values of the field `PLL_LOCK`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLL_LOCK_A {
@@ -448,51 +424,7 @@ impl PLL_LOCK_R {
         *self == PLL_LOCK_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `PLL_LOCK`"]
-pub struct PLL_LOCK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLL_LOCK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PLL_LOCK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
-    #[doc = "PLL is not currently locked"]
-    #[inline(always)]
-    pub fn value0(self) -> &'a mut W {
-        self.variant(PLL_LOCK_A::VALUE0)
-    }
-    #[doc = "PLL is currently locked"]
-    #[inline(always)]
-    pub fn value1(self) -> &'a mut W {
-        self.variant(PLL_LOCK_A::VALUE1)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
 impl R {
-    #[doc = "Bit 5 - Modifies the operation of the pll_sic_power_int signal"]
-    #[inline(always)]
-    pub fn misc2_control0(&self) -> MISC2_CONTROL0_R {
-        MISC2_CONTROL0_R::new(((self.bits >> 5) & 0x01) != 0)
-    }
     #[doc = "Bit 6 - Enables the USB clock from PLL to USB PHY"]
     #[inline(always)]
     pub fn pll_en_usb_clks(&self) -> PLL_EN_USB_CLKS_R {
@@ -507,11 +439,6 @@ impl R {
     #[inline(always)]
     pub fn pll_enable(&self) -> PLL_ENABLE_R {
         PLL_ENABLE_R::new(((self.bits >> 13) & 0x01) != 0)
-    }
-    #[doc = "Bit 16 - Bypass the USB PLL."]
-    #[inline(always)]
-    pub fn pll_bypass(&self) -> PLL_BYPASS_R {
-        PLL_BYPASS_R::new(((self.bits >> 16) & 0x01) != 0)
     }
     #[doc = "Bit 19 - Reference bias power down select."]
     #[inline(always)]
@@ -533,6 +460,11 @@ impl R {
     pub fn pll_div_sel(&self) -> PLL_DIV_SEL_R {
         PLL_DIV_SEL_R::new(((self.bits >> 22) & 0x07) as u8)
     }
+    #[doc = "Bit 30 - This is selection between /1 or /2 to expand the range of ref input clock."]
+    #[inline(always)]
+    pub fn pll_prediv(&self) -> PLL_PREDIV_R {
+        PLL_PREDIV_R::new(((self.bits >> 30) & 0x01) != 0)
+    }
     #[doc = "Bit 31 - USB PLL lock status indicator"]
     #[inline(always)]
     pub fn pll_lock(&self) -> PLL_LOCK_R {
@@ -540,11 +472,6 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bit 5 - Modifies the operation of the pll_sic_power_int signal"]
-    #[inline(always)]
-    pub fn misc2_control0(&mut self) -> MISC2_CONTROL0_W {
-        MISC2_CONTROL0_W { w: self }
-    }
     #[doc = "Bit 6 - Enables the USB clock from PLL to USB PHY"]
     #[inline(always)]
     pub fn pll_en_usb_clks(&mut self) -> PLL_EN_USB_CLKS_W {
@@ -559,11 +486,6 @@ impl W {
     #[inline(always)]
     pub fn pll_enable(&mut self) -> PLL_ENABLE_W {
         PLL_ENABLE_W { w: self }
-    }
-    #[doc = "Bit 16 - Bypass the USB PLL."]
-    #[inline(always)]
-    pub fn pll_bypass(&mut self) -> PLL_BYPASS_W {
-        PLL_BYPASS_W { w: self }
     }
     #[doc = "Bit 19 - Reference bias power down select."]
     #[inline(always)]
@@ -585,9 +507,9 @@ impl W {
     pub fn pll_div_sel(&mut self) -> PLL_DIV_SEL_W {
         PLL_DIV_SEL_W { w: self }
     }
-    #[doc = "Bit 31 - USB PLL lock status indicator"]
+    #[doc = "Bit 30 - This is selection between /1 or /2 to expand the range of ref input clock."]
     #[inline(always)]
-    pub fn pll_lock(&mut self) -> PLL_LOCK_W {
-        PLL_LOCK_W { w: self }
+    pub fn pll_prediv(&mut self) -> PLL_PREDIV_W {
+        PLL_PREDIV_W { w: self }
     }
 }

@@ -555,22 +555,22 @@ impl<'a> IDAU_ALL_NS_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:1 - write lock."]
+    #[doc = "Bits 0:1 - Write lock."]
     #[inline(always)]
     pub fn write_lock(&self) -> WRITE_LOCK_R {
         WRITE_LOCK_R::new((self.bits & 0x03) as u8)
     }
-    #[doc = "Bits 2:3 - AHB bus matrix enable secure check."]
+    #[doc = "Bits 2:3 - Enable secure check for AHB matrix."]
     #[inline(always)]
     pub fn enable_secure_checking(&self) -> ENABLE_SECURE_CHECKING_R {
         ENABLE_SECURE_CHECKING_R::new(((self.bits >> 2) & 0x03) as u8)
     }
-    #[doc = "Bits 4:5 - AHB bus matrix enable secure privilege check."]
+    #[doc = "Bits 4:5 - Enable secure privilege check for AHB matrix."]
     #[inline(always)]
     pub fn enable_s_priv_check(&self) -> ENABLE_S_PRIV_CHECK_R {
         ENABLE_S_PRIV_CHECK_R::new(((self.bits >> 4) & 0x03) as u8)
     }
-    #[doc = "Bits 6:7 - AHB bus matrix enable non-secure privilege check."]
+    #[doc = "Bits 6:7 - Enable non-secure privilege check for AHB matrix."]
     #[inline(always)]
     pub fn enable_ns_priv_check(&self) -> ENABLE_NS_PRIV_CHECK_R {
         ENABLE_NS_PRIV_CHECK_R::new(((self.bits >> 6) & 0x03) as u8)
@@ -597,22 +597,22 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Bits 0:1 - write lock."]
+    #[doc = "Bits 0:1 - Write lock."]
     #[inline(always)]
     pub fn write_lock(&mut self) -> WRITE_LOCK_W {
         WRITE_LOCK_W { w: self }
     }
-    #[doc = "Bits 2:3 - AHB bus matrix enable secure check."]
+    #[doc = "Bits 2:3 - Enable secure check for AHB matrix."]
     #[inline(always)]
     pub fn enable_secure_checking(&mut self) -> ENABLE_SECURE_CHECKING_W {
         ENABLE_SECURE_CHECKING_W { w: self }
     }
-    #[doc = "Bits 4:5 - AHB bus matrix enable secure privilege check."]
+    #[doc = "Bits 4:5 - Enable secure privilege check for AHB matrix."]
     #[inline(always)]
     pub fn enable_s_priv_check(&mut self) -> ENABLE_S_PRIV_CHECK_W {
         ENABLE_S_PRIV_CHECK_W { w: self }
     }
-    #[doc = "Bits 6:7 - AHB bus matrix enable non-secure privilege check."]
+    #[doc = "Bits 6:7 - Enable non-secure privilege check for AHB matrix."]
     #[inline(always)]
     pub fn enable_ns_priv_check(&mut self) -> ENABLE_NS_PRIV_CHECK_W {
         ENABLE_NS_PRIV_CHECK_W { w: self }

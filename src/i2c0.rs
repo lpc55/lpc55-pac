@@ -29,13 +29,19 @@ pub struct RegisterBlock {
     #[doc = "0x844 - Combined Slave receiver and transmitter data register."]
     pub slvdat: SLVDAT,
     #[doc = "0x848 - Slave address register."]
-    pub slvadr: [SLVADR; 4],
+    pub slvadr0: SLVADR0,
+    #[doc = "0x84c - Slave address register."]
+    pub slvadr1: SLVADR1,
+    #[doc = "0x850 - Slave address register."]
+    pub slvadr2: SLVADR2,
+    #[doc = "0x854 - Slave address register."]
+    pub slvadr3: SLVADR3,
     #[doc = "0x858 - Slave Qualification for address 0."]
     pub slvqual0: SLVQUAL0,
-    _reserved14: [u8; 36usize],
+    _reserved17: [u8; 36usize],
     #[doc = "0x880 - Monitor receiver data register."]
     pub monrxdat: MONRXDAT,
-    _reserved15: [u8; 1912usize],
+    _reserved18: [u8; 1912usize],
     #[doc = "0xffc - Peripheral identification register."]
     pub id: ID,
 }
@@ -167,17 +173,50 @@ impl crate::Readable for SLVDAT {}
 impl crate::Writable for SLVDAT {}
 #[doc = "Combined Slave receiver and transmitter data register."]
 pub mod slvdat;
-#[doc = "Slave address register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [slvadr](slvadr) module"]
-pub type SLVADR = crate::Reg<u32, _SLVADR>;
+#[doc = "Slave address register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [slvadr0](slvadr0) module"]
+pub type SLVADR0 = crate::Reg<u32, _SLVADR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
-pub struct _SLVADR;
-#[doc = "`read()` method returns [slvadr::R](slvadr::R) reader structure"]
-impl crate::Readable for SLVADR {}
-#[doc = "`write(|w| ..)` method takes [slvadr::W](slvadr::W) writer structure"]
-impl crate::Writable for SLVADR {}
+pub struct _SLVADR0;
+#[doc = "`read()` method returns [slvadr0::R](slvadr0::R) reader structure"]
+impl crate::Readable for SLVADR0 {}
+#[doc = "`write(|w| ..)` method takes [slvadr0::W](slvadr0::W) writer structure"]
+impl crate::Writable for SLVADR0 {}
 #[doc = "Slave address register."]
-pub mod slvadr;
+pub mod slvadr0;
+#[doc = "Slave address register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [slvadr1](slvadr1) module"]
+pub type SLVADR1 = crate::Reg<u32, _SLVADR1>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _SLVADR1;
+#[doc = "`read()` method returns [slvadr1::R](slvadr1::R) reader structure"]
+impl crate::Readable for SLVADR1 {}
+#[doc = "`write(|w| ..)` method takes [slvadr1::W](slvadr1::W) writer structure"]
+impl crate::Writable for SLVADR1 {}
+#[doc = "Slave address register."]
+pub mod slvadr1;
+#[doc = "Slave address register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [slvadr2](slvadr2) module"]
+pub type SLVADR2 = crate::Reg<u32, _SLVADR2>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _SLVADR2;
+#[doc = "`read()` method returns [slvadr2::R](slvadr2::R) reader structure"]
+impl crate::Readable for SLVADR2 {}
+#[doc = "`write(|w| ..)` method takes [slvadr2::W](slvadr2::W) writer structure"]
+impl crate::Writable for SLVADR2 {}
+#[doc = "Slave address register."]
+pub mod slvadr2;
+#[doc = "Slave address register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [slvadr3](slvadr3) module"]
+pub type SLVADR3 = crate::Reg<u32, _SLVADR3>;
+#[allow(missing_docs)]
+#[doc(hidden)]
+pub struct _SLVADR3;
+#[doc = "`read()` method returns [slvadr3::R](slvadr3::R) reader structure"]
+impl crate::Readable for SLVADR3 {}
+#[doc = "`write(|w| ..)` method takes [slvadr3::W](slvadr3::W) writer structure"]
+impl crate::Writable for SLVADR3 {}
+#[doc = "Slave address register."]
+pub mod slvadr3;
 #[doc = "Slave Qualification for address 0.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [slvqual0](slvqual0) module"]
 pub type SLVQUAL0 = crate::Reg<u32, _SLVQUAL0>;
 #[allow(missing_docs)]

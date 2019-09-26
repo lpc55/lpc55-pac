@@ -4,9 +4,9 @@ pub type R = crate::R<u32, super::INFO>;
 pub type FRAME_NR_R = crate::R<u16, u16>;
 #[doc = "Reader of field `ERR_CODE`"]
 pub type ERR_CODE_R = crate::R<u8, u8>;
-#[doc = "Reader of field `Minrev`"]
+#[doc = "Reader of field `MINREV`"]
 pub type MINREV_R = crate::R<u8, u8>;
-#[doc = "Reader of field `Majrev`"]
+#[doc = "Reader of field `MAJREV`"]
 pub type MAJREV_R = crate::R<u8, u8>;
 impl R {
     #[doc = "Bits 0:10 - Frame number."]

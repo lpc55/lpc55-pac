@@ -26,13 +26,15 @@ pub struct _EVTIMERL;
 impl crate::Readable for EVTIMERL {}
 #[doc = "EVTIMER Low Register"]
 pub mod evtimerl;
-#[doc = "EVTIMER High Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [evtimerh](evtimerh) module"]
+#[doc = "EVTIMER High Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [evtimerh](evtimerh) module"]
 pub type EVTIMERH = crate::Reg<u32, _EVTIMERH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _EVTIMERH;
 #[doc = "`read()` method returns [evtimerh::R](evtimerh::R) reader structure"]
 impl crate::Readable for EVTIMERH {}
+#[doc = "`write(|w| ..)` method takes [evtimerh::W](evtimerh::W) writer structure"]
+impl crate::Writable for EVTIMERH {}
 #[doc = "EVTIMER High Register"]
 pub mod evtimerh;
 #[doc = "Local Capture Low Register for CPUn\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capturen_l](capturen_l) module"]
@@ -44,13 +46,15 @@ pub struct _CAPTUREN_L;
 impl crate::Readable for CAPTUREN_L {}
 #[doc = "Local Capture Low Register for CPUn"]
 pub mod capturen_l;
-#[doc = "Local Capture High Register for CPUn\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capturen_h](capturen_h) module"]
+#[doc = "Local Capture High Register for CPUn\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capturen_h](capturen_h) module"]
 pub type CAPTUREN_H = crate::Reg<u32, _CAPTUREN_H>;
 #[allow(missing_docs)]
 #[doc(hidden)]
 pub struct _CAPTUREN_H;
 #[doc = "`read()` method returns [capturen_h::R](capturen_h::R) reader structure"]
 impl crate::Readable for CAPTUREN_H {}
+#[doc = "`write(|w| ..)` method takes [capturen_h::W](capturen_h::W) writer structure"]
+impl crate::Writable for CAPTUREN_H {}
 #[doc = "Local Capture High Register for CPUn"]
 pub mod capturen_h;
 #[doc = "Local Match Low Register for CPUn\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchn_l](matchn_l) module"]

@@ -35,27 +35,7 @@ pub struct RegisterBlock {
     pub ctrl_tog: CTRL_TOG,
     #[doc = "0x40 - USB PHY Status Register"]
     pub status: STATUS,
-    _reserved17: [u8; 12usize],
-    #[doc = "0x50 - USB PHY Debug Register 0"]
-    pub debug0: DEBUG0,
-    #[doc = "0x54 - USB PHY Debug Register 0"]
-    pub debug0_set: DEBUG0_SET,
-    #[doc = "0x58 - USB PHY Debug Register 0"]
-    pub debug0_clr: DEBUG0_CLR,
-    #[doc = "0x5c - USB PHY Debug Register 0"]
-    pub debug0_tog: DEBUG0_TOG,
-    _reserved21: [u8; 16usize],
-    #[doc = "0x70 - UTMI Debug Status Register 1"]
-    pub debug1: DEBUG1,
-    #[doc = "0x74 - UTMI Debug Status Register 1"]
-    pub debug1_set: DEBUG1_SET,
-    #[doc = "0x78 - UTMI Debug Status Register 1"]
-    pub debug1_clr: DEBUG1_CLR,
-    #[doc = "0x7c - UTMI Debug Status Register 1"]
-    pub debug1_tog: DEBUG1_TOG,
-    #[doc = "0x80 - UTMI RTL Version"]
-    pub version: VERSION,
-    _reserved26: [u8; 28usize],
+    _reserved17: [u8; 92usize],
     #[doc = "0xa0 - USB PHY PLL Control/Status Register"]
     pub pll_sic: PLL_SIC,
     #[doc = "0xa4 - USB PHY PLL Control/Status Register"]
@@ -64,7 +44,7 @@ pub struct RegisterBlock {
     pub pll_sic_clr: PLL_SIC_CLR,
     #[doc = "0xac - USB PHY PLL Control/Status Register"]
     pub pll_sic_tog: PLL_SIC_TOG,
-    _reserved30: [u8; 16usize],
+    _reserved21: [u8; 16usize],
     #[doc = "0xc0 - USB PHY VBUS Detect Control Register"]
     pub usb1_vbus_detect: USB1_VBUS_DETECT,
     #[doc = "0xc4 - USB PHY VBUS Detect Control Register"]
@@ -73,20 +53,7 @@ pub struct RegisterBlock {
     pub usb1_vbus_detect_clr: USB1_VBUS_DETECT_CLR,
     #[doc = "0xcc - USB PHY VBUS Detect Control Register"]
     pub usb1_vbus_detect_tog: USB1_VBUS_DETECT_TOG,
-    #[doc = "0xd0 - USB PHY VBUS Detector Status Register"]
-    pub usb1_vbus_det_stat: USB1_VBUS_DET_STAT,
-    _reserved35: [u8; 12usize],
-    #[doc = "0xe0 - USB PHY Charger Detect Control Register"]
-    pub usb1_chrg_detect: USB1_CHRG_DETECT,
-    #[doc = "0xe4 - USB PHY Charger Detect Control Register"]
-    pub usb1_chrg_detect_set: USB1_CHRG_DETECT_SET,
-    #[doc = "0xe8 - USB PHY Charger Detect Control Register"]
-    pub usb1_chrg_detect_clr: USB1_CHRG_DETECT_CLR,
-    #[doc = "0xec - USB PHY Charger Detect Control Register"]
-    pub usb1_chrg_detect_tog: USB1_CHRG_DETECT_TOG,
-    #[doc = "0xf0 - USB PHY Charger Detect Status Register"]
-    pub usb1_chrg_det_stat: USB1_CHRG_DET_STAT,
-    _reserved40: [u8; 12usize],
+    _reserved25: [u8; 48usize],
     #[doc = "0x100 - USB PHY Analog Control Register"]
     pub anactrl: ANACTRL,
     #[doc = "0x104 - USB PHY Analog Control Register"]
@@ -283,103 +250,6 @@ impl crate::Readable for STATUS {}
 impl crate::Writable for STATUS {}
 #[doc = "USB PHY Status Register"]
 pub mod status;
-#[doc = "USB PHY Debug Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug0](debug0) module"]
-pub type DEBUG0 = crate::Reg<u32, _DEBUG0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DEBUG0;
-#[doc = "`read()` method returns [debug0::R](debug0::R) reader structure"]
-impl crate::Readable for DEBUG0 {}
-#[doc = "`write(|w| ..)` method takes [debug0::W](debug0::W) writer structure"]
-impl crate::Writable for DEBUG0 {}
-#[doc = "USB PHY Debug Register 0"]
-pub mod debug0;
-#[doc = "USB PHY Debug Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug0_set](debug0_set) module"]
-pub type DEBUG0_SET = crate::Reg<u32, _DEBUG0_SET>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DEBUG0_SET;
-#[doc = "`read()` method returns [debug0_set::R](debug0_set::R) reader structure"]
-impl crate::Readable for DEBUG0_SET {}
-#[doc = "`write(|w| ..)` method takes [debug0_set::W](debug0_set::W) writer structure"]
-impl crate::Writable for DEBUG0_SET {}
-#[doc = "USB PHY Debug Register 0"]
-pub mod debug0_set;
-#[doc = "USB PHY Debug Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug0_clr](debug0_clr) module"]
-pub type DEBUG0_CLR = crate::Reg<u32, _DEBUG0_CLR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DEBUG0_CLR;
-#[doc = "`read()` method returns [debug0_clr::R](debug0_clr::R) reader structure"]
-impl crate::Readable for DEBUG0_CLR {}
-#[doc = "`write(|w| ..)` method takes [debug0_clr::W](debug0_clr::W) writer structure"]
-impl crate::Writable for DEBUG0_CLR {}
-#[doc = "USB PHY Debug Register 0"]
-pub mod debug0_clr;
-#[doc = "USB PHY Debug Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug0_tog](debug0_tog) module"]
-pub type DEBUG0_TOG = crate::Reg<u32, _DEBUG0_TOG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DEBUG0_TOG;
-#[doc = "`read()` method returns [debug0_tog::R](debug0_tog::R) reader structure"]
-impl crate::Readable for DEBUG0_TOG {}
-#[doc = "`write(|w| ..)` method takes [debug0_tog::W](debug0_tog::W) writer structure"]
-impl crate::Writable for DEBUG0_TOG {}
-#[doc = "USB PHY Debug Register 0"]
-pub mod debug0_tog;
-#[doc = "UTMI Debug Status Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug1](debug1) module"]
-pub type DEBUG1 = crate::Reg<u32, _DEBUG1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DEBUG1;
-#[doc = "`read()` method returns [debug1::R](debug1::R) reader structure"]
-impl crate::Readable for DEBUG1 {}
-#[doc = "`write(|w| ..)` method takes [debug1::W](debug1::W) writer structure"]
-impl crate::Writable for DEBUG1 {}
-#[doc = "UTMI Debug Status Register 1"]
-pub mod debug1;
-#[doc = "UTMI Debug Status Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug1_set](debug1_set) module"]
-pub type DEBUG1_SET = crate::Reg<u32, _DEBUG1_SET>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DEBUG1_SET;
-#[doc = "`read()` method returns [debug1_set::R](debug1_set::R) reader structure"]
-impl crate::Readable for DEBUG1_SET {}
-#[doc = "`write(|w| ..)` method takes [debug1_set::W](debug1_set::W) writer structure"]
-impl crate::Writable for DEBUG1_SET {}
-#[doc = "UTMI Debug Status Register 1"]
-pub mod debug1_set;
-#[doc = "UTMI Debug Status Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug1_clr](debug1_clr) module"]
-pub type DEBUG1_CLR = crate::Reg<u32, _DEBUG1_CLR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DEBUG1_CLR;
-#[doc = "`read()` method returns [debug1_clr::R](debug1_clr::R) reader structure"]
-impl crate::Readable for DEBUG1_CLR {}
-#[doc = "`write(|w| ..)` method takes [debug1_clr::W](debug1_clr::W) writer structure"]
-impl crate::Writable for DEBUG1_CLR {}
-#[doc = "UTMI Debug Status Register 1"]
-pub mod debug1_clr;
-#[doc = "UTMI Debug Status Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [debug1_tog](debug1_tog) module"]
-pub type DEBUG1_TOG = crate::Reg<u32, _DEBUG1_TOG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DEBUG1_TOG;
-#[doc = "`read()` method returns [debug1_tog::R](debug1_tog::R) reader structure"]
-impl crate::Readable for DEBUG1_TOG {}
-#[doc = "`write(|w| ..)` method takes [debug1_tog::W](debug1_tog::W) writer structure"]
-impl crate::Writable for DEBUG1_TOG {}
-#[doc = "UTMI Debug Status Register 1"]
-pub mod debug1_tog;
-#[doc = "UTMI RTL Version\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [version](version) module"]
-pub type VERSION = crate::Reg<u32, _VERSION>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _VERSION;
-#[doc = "`read()` method returns [version::R](version::R) reader structure"]
-impl crate::Readable for VERSION {}
-#[doc = "UTMI RTL Version"]
-pub mod version;
 #[doc = "USB PHY PLL Control/Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pll_sic](pll_sic) module"]
 pub type PLL_SIC = crate::Reg<u32, _PLL_SIC>;
 #[allow(missing_docs)]
@@ -468,68 +338,6 @@ impl crate::Readable for USB1_VBUS_DETECT_TOG {}
 impl crate::Writable for USB1_VBUS_DETECT_TOG {}
 #[doc = "USB PHY VBUS Detect Control Register"]
 pub mod usb1_vbus_detect_tog;
-#[doc = "USB PHY VBUS Detector Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1_vbus_det_stat](usb1_vbus_det_stat) module"]
-pub type USB1_VBUS_DET_STAT = crate::Reg<u32, _USB1_VBUS_DET_STAT>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _USB1_VBUS_DET_STAT;
-#[doc = "`read()` method returns [usb1_vbus_det_stat::R](usb1_vbus_det_stat::R) reader structure"]
-impl crate::Readable for USB1_VBUS_DET_STAT {}
-#[doc = "USB PHY VBUS Detector Status Register"]
-pub mod usb1_vbus_det_stat;
-#[doc = "USB PHY Charger Detect Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1_chrg_detect](usb1_chrg_detect) module"]
-pub type USB1_CHRG_DETECT = crate::Reg<u32, _USB1_CHRG_DETECT>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _USB1_CHRG_DETECT;
-#[doc = "`read()` method returns [usb1_chrg_detect::R](usb1_chrg_detect::R) reader structure"]
-impl crate::Readable for USB1_CHRG_DETECT {}
-#[doc = "`write(|w| ..)` method takes [usb1_chrg_detect::W](usb1_chrg_detect::W) writer structure"]
-impl crate::Writable for USB1_CHRG_DETECT {}
-#[doc = "USB PHY Charger Detect Control Register"]
-pub mod usb1_chrg_detect;
-#[doc = "USB PHY Charger Detect Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1_chrg_detect_set](usb1_chrg_detect_set) module"]
-pub type USB1_CHRG_DETECT_SET = crate::Reg<u32, _USB1_CHRG_DETECT_SET>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _USB1_CHRG_DETECT_SET;
-#[doc = "`read()` method returns [usb1_chrg_detect_set::R](usb1_chrg_detect_set::R) reader structure"]
-impl crate::Readable for USB1_CHRG_DETECT_SET {}
-#[doc = "`write(|w| ..)` method takes [usb1_chrg_detect_set::W](usb1_chrg_detect_set::W) writer structure"]
-impl crate::Writable for USB1_CHRG_DETECT_SET {}
-#[doc = "USB PHY Charger Detect Control Register"]
-pub mod usb1_chrg_detect_set;
-#[doc = "USB PHY Charger Detect Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1_chrg_detect_clr](usb1_chrg_detect_clr) module"]
-pub type USB1_CHRG_DETECT_CLR = crate::Reg<u32, _USB1_CHRG_DETECT_CLR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _USB1_CHRG_DETECT_CLR;
-#[doc = "`read()` method returns [usb1_chrg_detect_clr::R](usb1_chrg_detect_clr::R) reader structure"]
-impl crate::Readable for USB1_CHRG_DETECT_CLR {}
-#[doc = "`write(|w| ..)` method takes [usb1_chrg_detect_clr::W](usb1_chrg_detect_clr::W) writer structure"]
-impl crate::Writable for USB1_CHRG_DETECT_CLR {}
-#[doc = "USB PHY Charger Detect Control Register"]
-pub mod usb1_chrg_detect_clr;
-#[doc = "USB PHY Charger Detect Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1_chrg_detect_tog](usb1_chrg_detect_tog) module"]
-pub type USB1_CHRG_DETECT_TOG = crate::Reg<u32, _USB1_CHRG_DETECT_TOG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _USB1_CHRG_DETECT_TOG;
-#[doc = "`read()` method returns [usb1_chrg_detect_tog::R](usb1_chrg_detect_tog::R) reader structure"]
-impl crate::Readable for USB1_CHRG_DETECT_TOG {}
-#[doc = "`write(|w| ..)` method takes [usb1_chrg_detect_tog::W](usb1_chrg_detect_tog::W) writer structure"]
-impl crate::Writable for USB1_CHRG_DETECT_TOG {}
-#[doc = "USB PHY Charger Detect Control Register"]
-pub mod usb1_chrg_detect_tog;
-#[doc = "USB PHY Charger Detect Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1_chrg_det_stat](usb1_chrg_det_stat) module"]
-pub type USB1_CHRG_DET_STAT = crate::Reg<u32, _USB1_CHRG_DET_STAT>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _USB1_CHRG_DET_STAT;
-#[doc = "`read()` method returns [usb1_chrg_det_stat::R](usb1_chrg_det_stat::R) reader structure"]
-impl crate::Readable for USB1_CHRG_DET_STAT {}
-#[doc = "USB PHY Charger Detect Status Register"]
-pub mod usb1_chrg_det_stat;
 #[doc = "USB PHY Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [anactrl](anactrl) module"]
 pub type ANACTRL = crate::Reg<u32, _ANACTRL>;
 #[allow(missing_docs)]

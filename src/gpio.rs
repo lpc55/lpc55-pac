@@ -2,40 +2,40 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - no description available"]
-    pub b: [B; 4],
-    _reserved1: [u8; 3968usize],
+    pub b: [B; 2],
+    _reserved1: [u8; 4032usize],
     #[doc = "0x1000 - no description available"]
-    pub w: [W; 4],
-    _reserved2: [u8; 3584usize],
+    pub w: [W; 2],
+    _reserved2: [u8; 3840usize],
     #[doc = "0x2000 - Direction registers for all port GPIO pins"]
-    pub dir: [DIR; 4],
-    _reserved3: [u8; 112usize],
+    pub dir: [DIR; 2],
+    _reserved3: [u8; 120usize],
     #[doc = "0x2080 - Mask register for all port GPIO pins"]
-    pub mask: [MASK; 4],
-    _reserved4: [u8; 112usize],
+    pub mask: [MASK; 2],
+    _reserved4: [u8; 120usize],
     #[doc = "0x2100 - Port pin register for all port GPIO pins"]
-    pub pin: [PIN; 4],
-    _reserved5: [u8; 112usize],
+    pub pin: [PIN; 2],
+    _reserved5: [u8; 120usize],
     #[doc = "0x2180 - Masked port register for all port GPIO pins"]
-    pub mpin: [MPIN; 4],
-    _reserved6: [u8; 112usize],
+    pub mpin: [MPIN; 2],
+    _reserved6: [u8; 120usize],
     #[doc = "0x2200 - Write: Set register for port. Read: output bits for port"]
-    pub set: [SET; 4],
-    _reserved7: [u8; 112usize],
+    pub set: [SET; 2],
+    _reserved7: [u8; 120usize],
     #[doc = "0x2280 - Clear port for all port GPIO pins"]
-    pub clr: [CLR; 4],
-    _reserved8: [u8; 112usize],
+    pub clr: [CLR; 2],
+    _reserved8: [u8; 120usize],
     #[doc = "0x2300 - Toggle port for all port GPIO pins"]
-    pub not: [NOT; 4],
-    _reserved9: [u8; 112usize],
+    pub not: [NOT; 2],
+    _reserved9: [u8; 120usize],
     #[doc = "0x2380 - Set pin direction bits for port"]
-    pub dirset: [DIRSET; 4],
-    _reserved10: [u8; 112usize],
+    pub dirset: [DIRSET; 2],
+    _reserved10: [u8; 120usize],
     #[doc = "0x2400 - Clear pin direction bits for port"]
-    pub dirclr: [DIRCLR; 4],
-    _reserved11: [u8; 112usize],
+    pub dirclr: [DIRCLR; 2],
+    _reserved11: [u8; 120usize],
     #[doc = "0x2480 - Toggle pin direction bits for port"]
-    pub dirnot: [DIRNOT; 4],
+    pub dirnot: [DIRNOT; 2],
 }
 #[doc = r"Register block"]
 #[repr(C)]

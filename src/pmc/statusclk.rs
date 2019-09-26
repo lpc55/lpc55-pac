@@ -12,8 +12,6 @@ impl crate::ResetValue for super::STATUSCLK {
 }
 #[doc = "Reader of field `XTAL32KOK`"]
 pub type XTAL32KOK_R = crate::R<bool, bool>;
-#[doc = "Reader of field `FRO1MCLKVALID`"]
-pub type FRO1MCLKVALID_R = crate::R<bool, bool>;
 #[doc = "Possible values of the field `XTAL32KOSCFAILURE`"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum XTAL32KOSCFAILURE_A {
@@ -97,11 +95,6 @@ impl R {
     #[inline(always)]
     pub fn xtal32kok(&self) -> XTAL32KOK_R {
         XTAL32KOK_R::new((self.bits & 0x01) != 0)
-    }
-    #[doc = "Bit 1 - FRO 1 MHz CCO voltage detector output."]
-    #[inline(always)]
-    pub fn fro1mclkvalid(&self) -> FRO1MCLKVALID_R {
-        FRO1MCLKVALID_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - XTAL32 KHZ oscillator oscillation failure detection indicator."]
     #[inline(always)]
