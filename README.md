@@ -40,8 +40,8 @@ The SVD files are from <https://mcuxpresso.nxp.com> and licensed under the [BSD-
 
 [crates-image]: https://img.shields.io/crates/v/lpc55s6x-pac.svg
 [crates-link]: https://crates.io/crates/lpc55s6x-pac
-[build-image]: https://img.shields.io/circleci/build/github/nickray/lpc55s6x-pac/master.svg
-[build-link]: https://circleci.com/gh/nickray/lpc55s6x-pac/tree/master
+[build-image]: https://img.shields.io/circleci/build/github/nickray/lpc55s6x-pac/main.svg
+[build-link]: https://circleci.com/gh/nickray/lpc55s6x-pac/tree/main
 [docs-image]: https://docs.rs/lpc55s6x-pac/badge.svg
 [docs-link]: https://docs.rs/lpc55s6x-pac
 [lpc55s6x-hal]: https://libs.rs/lpc55s6x-hal
