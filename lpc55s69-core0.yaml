@@ -9,3 +9,33 @@ SYSCON:
     _registers:
       - AHBCLKCTRLX?
       - PRESETCTRLX?
+  ADCCLKSEL:
+    _delete:
+      - SEL
+    _add:
+      SEL:
+        description: ADC clock source select
+        access: read-write
+        bitOffset: 0
+        bitWidth: 3
+    SEL:
+      mainclk: [0x00, "Main clk."]
+      pll0: [0x01, "PLL0 clk."]
+      fro96: [0x02, "FRO 96 MHZ clk."]
+      none: [0x04, "No clk."]
+
+
+PUF:
+  KEYENABLE:
+    _add:
+      KEY:
+        description: Key destination for PUF key.
+        access: read-write
+        bitOffset: 0
+        bitWidth: 8
+    KEY:
+      aes: [0x56, "Send key to AES engine."]
+      prince0: [0x59, "Send key to PRINCE engine for memory layout 0."]
+      prince1: [0x65, "Send key to PRINCE engine for memory layout 1."]
+      prince2: [0x95, "Send key to PRINCE engine for memory layout 2."]
+      none: [0x55, "Do not send key to any hardware engine."]
