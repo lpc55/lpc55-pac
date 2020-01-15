@@ -142,7 +142,7 @@ pub struct RegisterBlock {
     #[doc = "0xffc - secure control register"]
     pub misc_ctrl_reg: MISC_CTRL_REG,
 }
-#[doc = "Security access rules for Flash and ROM slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_flash_rom_slave_rule](sec_ctrl_flash_rom_slave_rule) module"]
+#[doc = "Security access rules for Flash and ROM slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_flash_rom_slave_rule](sec_ctrl_flash_rom_slave_rule) module"]
 pub type SEC_CTRL_FLASH_ROM_SLAVE_RULE = crate::Reg<u32, _SEC_CTRL_FLASH_ROM_SLAVE_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -153,7 +153,7 @@ impl crate::Readable for SEC_CTRL_FLASH_ROM_SLAVE_RULE {}
 impl crate::Writable for SEC_CTRL_FLASH_ROM_SLAVE_RULE {}
 #[doc = "Security access rules for Flash and ROM slaves."]
 pub mod sec_ctrl_flash_rom_slave_rule;
-#[doc = "Security access rules for FLASH sector 0 to sector 20. Each Flash sector is 32 Kbytes. There are 20 FLASH sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_flash_mem_rule0](sec_ctrl_flash_mem_rule0) module"]
+#[doc = "Security access rules for FLASH sector 0 to sector 20. Each Flash sector is 32 Kbytes. There are 20 FLASH sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_flash_mem_rule0](sec_ctrl_flash_mem_rule0) module"]
 pub type SEC_CTRL_FLASH_MEM_RULE0 = crate::Reg<u32, _SEC_CTRL_FLASH_MEM_RULE0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -164,7 +164,7 @@ impl crate::Readable for SEC_CTRL_FLASH_MEM_RULE0 {}
 impl crate::Writable for SEC_CTRL_FLASH_MEM_RULE0 {}
 #[doc = "Security access rules for FLASH sector 0 to sector 20. Each Flash sector is 32 Kbytes. There are 20 FLASH sectors in total."]
 pub mod sec_ctrl_flash_mem_rule0;
-#[doc = "Security access rules for FLASH sector 0 to sector 20. Each Flash sector is 32 Kbytes. There are 20 FLASH sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_flash_mem_rule1](sec_ctrl_flash_mem_rule1) module"]
+#[doc = "Security access rules for FLASH sector 0 to sector 20. Each Flash sector is 32 Kbytes. There are 20 FLASH sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_flash_mem_rule1](sec_ctrl_flash_mem_rule1) module"]
 pub type SEC_CTRL_FLASH_MEM_RULE1 = crate::Reg<u32, _SEC_CTRL_FLASH_MEM_RULE1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -175,7 +175,7 @@ impl crate::Readable for SEC_CTRL_FLASH_MEM_RULE1 {}
 impl crate::Writable for SEC_CTRL_FLASH_MEM_RULE1 {}
 #[doc = "Security access rules for FLASH sector 0 to sector 20. Each Flash sector is 32 Kbytes. There are 20 FLASH sectors in total."]
 pub mod sec_ctrl_flash_mem_rule1;
-#[doc = "Security access rules for FLASH sector 0 to sector 20. Each Flash sector is 32 Kbytes. There are 20 FLASH sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_flash_mem_rule2](sec_ctrl_flash_mem_rule2) module"]
+#[doc = "Security access rules for FLASH sector 0 to sector 20. Each Flash sector is 32 Kbytes. There are 20 FLASH sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_flash_mem_rule2](sec_ctrl_flash_mem_rule2) module"]
 pub type SEC_CTRL_FLASH_MEM_RULE2 = crate::Reg<u32, _SEC_CTRL_FLASH_MEM_RULE2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -186,7 +186,7 @@ impl crate::Readable for SEC_CTRL_FLASH_MEM_RULE2 {}
 impl crate::Writable for SEC_CTRL_FLASH_MEM_RULE2 {}
 #[doc = "Security access rules for FLASH sector 0 to sector 20. Each Flash sector is 32 Kbytes. There are 20 FLASH sectors in total."]
 pub mod sec_ctrl_flash_mem_rule2;
-#[doc = "Security access rules for ROM sector 0 to sector 31. Each ROM sector is 4 Kbytes. There are 32 ROM sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_rom_mem_rule0](sec_ctrl_rom_mem_rule0) module"]
+#[doc = "Security access rules for ROM sector 0 to sector 31. Each ROM sector is 4 Kbytes. There are 32 ROM sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_rom_mem_rule0](sec_ctrl_rom_mem_rule0) module"]
 pub type SEC_CTRL_ROM_MEM_RULE0 = crate::Reg<u32, _SEC_CTRL_ROM_MEM_RULE0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -197,7 +197,7 @@ impl crate::Readable for SEC_CTRL_ROM_MEM_RULE0 {}
 impl crate::Writable for SEC_CTRL_ROM_MEM_RULE0 {}
 #[doc = "Security access rules for ROM sector 0 to sector 31. Each ROM sector is 4 Kbytes. There are 32 ROM sectors in total."]
 pub mod sec_ctrl_rom_mem_rule0;
-#[doc = "Security access rules for ROM sector 0 to sector 31. Each ROM sector is 4 Kbytes. There are 32 ROM sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_rom_mem_rule1](sec_ctrl_rom_mem_rule1) module"]
+#[doc = "Security access rules for ROM sector 0 to sector 31. Each ROM sector is 4 Kbytes. There are 32 ROM sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_rom_mem_rule1](sec_ctrl_rom_mem_rule1) module"]
 pub type SEC_CTRL_ROM_MEM_RULE1 = crate::Reg<u32, _SEC_CTRL_ROM_MEM_RULE1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -208,7 +208,7 @@ impl crate::Readable for SEC_CTRL_ROM_MEM_RULE1 {}
 impl crate::Writable for SEC_CTRL_ROM_MEM_RULE1 {}
 #[doc = "Security access rules for ROM sector 0 to sector 31. Each ROM sector is 4 Kbytes. There are 32 ROM sectors in total."]
 pub mod sec_ctrl_rom_mem_rule1;
-#[doc = "Security access rules for ROM sector 0 to sector 31. Each ROM sector is 4 Kbytes. There are 32 ROM sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_rom_mem_rule2](sec_ctrl_rom_mem_rule2) module"]
+#[doc = "Security access rules for ROM sector 0 to sector 31. Each ROM sector is 4 Kbytes. There are 32 ROM sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_rom_mem_rule2](sec_ctrl_rom_mem_rule2) module"]
 pub type SEC_CTRL_ROM_MEM_RULE2 = crate::Reg<u32, _SEC_CTRL_ROM_MEM_RULE2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -219,7 +219,7 @@ impl crate::Readable for SEC_CTRL_ROM_MEM_RULE2 {}
 impl crate::Writable for SEC_CTRL_ROM_MEM_RULE2 {}
 #[doc = "Security access rules for ROM sector 0 to sector 31. Each ROM sector is 4 Kbytes. There are 32 ROM sectors in total."]
 pub mod sec_ctrl_rom_mem_rule2;
-#[doc = "Security access rules for ROM sector 0 to sector 31. Each ROM sector is 4 Kbytes. There are 32 ROM sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_rom_mem_rule3](sec_ctrl_rom_mem_rule3) module"]
+#[doc = "Security access rules for ROM sector 0 to sector 31. Each ROM sector is 4 Kbytes. There are 32 ROM sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_rom_mem_rule3](sec_ctrl_rom_mem_rule3) module"]
 pub type SEC_CTRL_ROM_MEM_RULE3 = crate::Reg<u32, _SEC_CTRL_ROM_MEM_RULE3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -230,7 +230,7 @@ impl crate::Readable for SEC_CTRL_ROM_MEM_RULE3 {}
 impl crate::Writable for SEC_CTRL_ROM_MEM_RULE3 {}
 #[doc = "Security access rules for ROM sector 0 to sector 31. Each ROM sector is 4 Kbytes. There are 32 ROM sectors in total."]
 pub mod sec_ctrl_rom_mem_rule3;
-#[doc = "Security access rules for RAMX slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ramx_slave_rule](sec_ctrl_ramx_slave_rule) module"]
+#[doc = "Security access rules for RAMX slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ramx_slave_rule](sec_ctrl_ramx_slave_rule) module"]
 pub type SEC_CTRL_RAMX_SLAVE_RULE = crate::Reg<u32, _SEC_CTRL_RAMX_SLAVE_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -241,7 +241,7 @@ impl crate::Readable for SEC_CTRL_RAMX_SLAVE_RULE {}
 impl crate::Writable for SEC_CTRL_RAMX_SLAVE_RULE {}
 #[doc = "Security access rules for RAMX slaves."]
 pub mod sec_ctrl_ramx_slave_rule;
-#[doc = "Security access rules for RAMX slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ramx_mem_rule0](sec_ctrl_ramx_mem_rule0) module"]
+#[doc = "Security access rules for RAMX slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ramx_mem_rule0](sec_ctrl_ramx_mem_rule0) module"]
 pub type SEC_CTRL_RAMX_MEM_RULE0 = crate::Reg<u32, _SEC_CTRL_RAMX_MEM_RULE0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -252,7 +252,7 @@ impl crate::Readable for SEC_CTRL_RAMX_MEM_RULE0 {}
 impl crate::Writable for SEC_CTRL_RAMX_MEM_RULE0 {}
 #[doc = "Security access rules for RAMX slaves."]
 pub mod sec_ctrl_ramx_mem_rule0;
-#[doc = "Security access rules for RAM0 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ram0_slave_rule](sec_ctrl_ram0_slave_rule) module"]
+#[doc = "Security access rules for RAM0 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ram0_slave_rule](sec_ctrl_ram0_slave_rule) module"]
 pub type SEC_CTRL_RAM0_SLAVE_RULE = crate::Reg<u32, _SEC_CTRL_RAM0_SLAVE_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -263,7 +263,7 @@ impl crate::Readable for SEC_CTRL_RAM0_SLAVE_RULE {}
 impl crate::Writable for SEC_CTRL_RAM0_SLAVE_RULE {}
 #[doc = "Security access rules for RAM0 slaves."]
 pub mod sec_ctrl_ram0_slave_rule;
-#[doc = "Security access rules for RAM0 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ram0_mem_rule0](sec_ctrl_ram0_mem_rule0) module"]
+#[doc = "Security access rules for RAM0 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ram0_mem_rule0](sec_ctrl_ram0_mem_rule0) module"]
 pub type SEC_CTRL_RAM0_MEM_RULE0 = crate::Reg<u32, _SEC_CTRL_RAM0_MEM_RULE0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -274,7 +274,7 @@ impl crate::Readable for SEC_CTRL_RAM0_MEM_RULE0 {}
 impl crate::Writable for SEC_CTRL_RAM0_MEM_RULE0 {}
 #[doc = "Security access rules for RAM0 slaves."]
 pub mod sec_ctrl_ram0_mem_rule0;
-#[doc = "Security access rules for RAM0 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ram0_mem_rule1](sec_ctrl_ram0_mem_rule1) module"]
+#[doc = "Security access rules for RAM0 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ram0_mem_rule1](sec_ctrl_ram0_mem_rule1) module"]
 pub type SEC_CTRL_RAM0_MEM_RULE1 = crate::Reg<u32, _SEC_CTRL_RAM0_MEM_RULE1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -285,7 +285,7 @@ impl crate::Readable for SEC_CTRL_RAM0_MEM_RULE1 {}
 impl crate::Writable for SEC_CTRL_RAM0_MEM_RULE1 {}
 #[doc = "Security access rules for RAM0 slaves."]
 pub mod sec_ctrl_ram0_mem_rule1;
-#[doc = "Security access rules for RAM1 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ram1_slave_rule](sec_ctrl_ram1_slave_rule) module"]
+#[doc = "Security access rules for RAM1 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ram1_slave_rule](sec_ctrl_ram1_slave_rule) module"]
 pub type SEC_CTRL_RAM1_SLAVE_RULE = crate::Reg<u32, _SEC_CTRL_RAM1_SLAVE_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -296,7 +296,7 @@ impl crate::Readable for SEC_CTRL_RAM1_SLAVE_RULE {}
 impl crate::Writable for SEC_CTRL_RAM1_SLAVE_RULE {}
 #[doc = "Security access rules for RAM1 slaves."]
 pub mod sec_ctrl_ram1_slave_rule;
-#[doc = "Security access rules for RAM1 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ram1_mem_rule0](sec_ctrl_ram1_mem_rule0) module"]
+#[doc = "Security access rules for RAM1 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ram1_mem_rule0](sec_ctrl_ram1_mem_rule0) module"]
 pub type SEC_CTRL_RAM1_MEM_RULE0 = crate::Reg<u32, _SEC_CTRL_RAM1_MEM_RULE0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -307,7 +307,7 @@ impl crate::Readable for SEC_CTRL_RAM1_MEM_RULE0 {}
 impl crate::Writable for SEC_CTRL_RAM1_MEM_RULE0 {}
 #[doc = "Security access rules for RAM1 slaves."]
 pub mod sec_ctrl_ram1_mem_rule0;
-#[doc = "Security access rules for RAM1 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ram1_mem_rule1](sec_ctrl_ram1_mem_rule1) module"]
+#[doc = "Security access rules for RAM1 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ram1_mem_rule1](sec_ctrl_ram1_mem_rule1) module"]
 pub type SEC_CTRL_RAM1_MEM_RULE1 = crate::Reg<u32, _SEC_CTRL_RAM1_MEM_RULE1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -318,7 +318,7 @@ impl crate::Readable for SEC_CTRL_RAM1_MEM_RULE1 {}
 impl crate::Writable for SEC_CTRL_RAM1_MEM_RULE1 {}
 #[doc = "Security access rules for RAM1 slaves."]
 pub mod sec_ctrl_ram1_mem_rule1;
-#[doc = "Security access rules for RAM2 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ram2_slave_rule](sec_ctrl_ram2_slave_rule) module"]
+#[doc = "Security access rules for RAM2 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ram2_slave_rule](sec_ctrl_ram2_slave_rule) module"]
 pub type SEC_CTRL_RAM2_SLAVE_RULE = crate::Reg<u32, _SEC_CTRL_RAM2_SLAVE_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -329,7 +329,7 @@ impl crate::Readable for SEC_CTRL_RAM2_SLAVE_RULE {}
 impl crate::Writable for SEC_CTRL_RAM2_SLAVE_RULE {}
 #[doc = "Security access rules for RAM2 slaves."]
 pub mod sec_ctrl_ram2_slave_rule;
-#[doc = "Security access rules for RAM2 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ram2_mem_rule0](sec_ctrl_ram2_mem_rule0) module"]
+#[doc = "Security access rules for RAM2 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ram2_mem_rule0](sec_ctrl_ram2_mem_rule0) module"]
 pub type SEC_CTRL_RAM2_MEM_RULE0 = crate::Reg<u32, _SEC_CTRL_RAM2_MEM_RULE0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -340,7 +340,7 @@ impl crate::Readable for SEC_CTRL_RAM2_MEM_RULE0 {}
 impl crate::Writable for SEC_CTRL_RAM2_MEM_RULE0 {}
 #[doc = "Security access rules for RAM2 slaves."]
 pub mod sec_ctrl_ram2_mem_rule0;
-#[doc = "Security access rules for RAM2 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ram2_mem_rule1](sec_ctrl_ram2_mem_rule1) module"]
+#[doc = "Security access rules for RAM2 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ram2_mem_rule1](sec_ctrl_ram2_mem_rule1) module"]
 pub type SEC_CTRL_RAM2_MEM_RULE1 = crate::Reg<u32, _SEC_CTRL_RAM2_MEM_RULE1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -351,7 +351,7 @@ impl crate::Readable for SEC_CTRL_RAM2_MEM_RULE1 {}
 impl crate::Writable for SEC_CTRL_RAM2_MEM_RULE1 {}
 #[doc = "Security access rules for RAM2 slaves."]
 pub mod sec_ctrl_ram2_mem_rule1;
-#[doc = "Security access rules for RAM3 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ram3_slave_rule](sec_ctrl_ram3_slave_rule) module"]
+#[doc = "Security access rules for RAM3 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ram3_slave_rule](sec_ctrl_ram3_slave_rule) module"]
 pub type SEC_CTRL_RAM3_SLAVE_RULE = crate::Reg<u32, _SEC_CTRL_RAM3_SLAVE_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -362,7 +362,7 @@ impl crate::Readable for SEC_CTRL_RAM3_SLAVE_RULE {}
 impl crate::Writable for SEC_CTRL_RAM3_SLAVE_RULE {}
 #[doc = "Security access rules for RAM3 slaves."]
 pub mod sec_ctrl_ram3_slave_rule;
-#[doc = "Security access rules for RAM3 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ram3_mem_rule0](sec_ctrl_ram3_mem_rule0) module"]
+#[doc = "Security access rules for RAM3 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ram3_mem_rule0](sec_ctrl_ram3_mem_rule0) module"]
 pub type SEC_CTRL_RAM3_MEM_RULE0 = crate::Reg<u32, _SEC_CTRL_RAM3_MEM_RULE0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -373,7 +373,7 @@ impl crate::Readable for SEC_CTRL_RAM3_MEM_RULE0 {}
 impl crate::Writable for SEC_CTRL_RAM3_MEM_RULE0 {}
 #[doc = "Security access rules for RAM3 slaves."]
 pub mod sec_ctrl_ram3_mem_rule0;
-#[doc = "Security access rules for RAM3 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ram3_mem_rule1](sec_ctrl_ram3_mem_rule1) module"]
+#[doc = "Security access rules for RAM3 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ram3_mem_rule1](sec_ctrl_ram3_mem_rule1) module"]
 pub type SEC_CTRL_RAM3_MEM_RULE1 = crate::Reg<u32, _SEC_CTRL_RAM3_MEM_RULE1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -384,7 +384,7 @@ impl crate::Readable for SEC_CTRL_RAM3_MEM_RULE1 {}
 impl crate::Writable for SEC_CTRL_RAM3_MEM_RULE1 {}
 #[doc = "Security access rules for RAM3 slaves."]
 pub mod sec_ctrl_ram3_mem_rule1;
-#[doc = "Security access rules for RAM4 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ram4_slave_rule](sec_ctrl_ram4_slave_rule) module"]
+#[doc = "Security access rules for RAM4 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ram4_slave_rule](sec_ctrl_ram4_slave_rule) module"]
 pub type SEC_CTRL_RAM4_SLAVE_RULE = crate::Reg<u32, _SEC_CTRL_RAM4_SLAVE_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -395,7 +395,7 @@ impl crate::Readable for SEC_CTRL_RAM4_SLAVE_RULE {}
 impl crate::Writable for SEC_CTRL_RAM4_SLAVE_RULE {}
 #[doc = "Security access rules for RAM4 slaves."]
 pub mod sec_ctrl_ram4_slave_rule;
-#[doc = "Security access rules for RAM4 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ram4_mem_rule0](sec_ctrl_ram4_mem_rule0) module"]
+#[doc = "Security access rules for RAM4 slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ram4_mem_rule0](sec_ctrl_ram4_mem_rule0) module"]
 pub type SEC_CTRL_RAM4_MEM_RULE0 = crate::Reg<u32, _SEC_CTRL_RAM4_MEM_RULE0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -406,7 +406,7 @@ impl crate::Readable for SEC_CTRL_RAM4_MEM_RULE0 {}
 impl crate::Writable for SEC_CTRL_RAM4_MEM_RULE0 {}
 #[doc = "Security access rules for RAM4 slaves."]
 pub mod sec_ctrl_ram4_mem_rule0;
-#[doc = "Security access rules for both APB Bridges slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_apb_bridge_slave_rule](sec_ctrl_apb_bridge_slave_rule) module"]
+#[doc = "Security access rules for both APB Bridges slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_apb_bridge_slave_rule](sec_ctrl_apb_bridge_slave_rule) module"]
 pub type SEC_CTRL_APB_BRIDGE_SLAVE_RULE = crate::Reg<u32, _SEC_CTRL_APB_BRIDGE_SLAVE_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -417,7 +417,7 @@ impl crate::Readable for SEC_CTRL_APB_BRIDGE_SLAVE_RULE {}
 impl crate::Writable for SEC_CTRL_APB_BRIDGE_SLAVE_RULE {}
 #[doc = "Security access rules for both APB Bridges slaves."]
 pub mod sec_ctrl_apb_bridge_slave_rule;
-#[doc = "Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 0 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_apb_bridge0_mem_ctrl0](sec_ctrl_apb_bridge0_mem_ctrl0) module"]
+#[doc = "Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 0 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_apb_bridge0_mem_ctrl0](sec_ctrl_apb_bridge0_mem_ctrl0) module"]
 pub type SEC_CTRL_APB_BRIDGE0_MEM_CTRL0 = crate::Reg<u32, _SEC_CTRL_APB_BRIDGE0_MEM_CTRL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -428,7 +428,7 @@ impl crate::Readable for SEC_CTRL_APB_BRIDGE0_MEM_CTRL0 {}
 impl crate::Writable for SEC_CTRL_APB_BRIDGE0_MEM_CTRL0 {}
 #[doc = "Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 0 sectors in total."]
 pub mod sec_ctrl_apb_bridge0_mem_ctrl0;
-#[doc = "Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 0 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_apb_bridge0_mem_ctrl1](sec_ctrl_apb_bridge0_mem_ctrl1) module"]
+#[doc = "Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 0 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_apb_bridge0_mem_ctrl1](sec_ctrl_apb_bridge0_mem_ctrl1) module"]
 pub type SEC_CTRL_APB_BRIDGE0_MEM_CTRL1 = crate::Reg<u32, _SEC_CTRL_APB_BRIDGE0_MEM_CTRL1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -439,7 +439,7 @@ impl crate::Readable for SEC_CTRL_APB_BRIDGE0_MEM_CTRL1 {}
 impl crate::Writable for SEC_CTRL_APB_BRIDGE0_MEM_CTRL1 {}
 #[doc = "Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 0 sectors in total."]
 pub mod sec_ctrl_apb_bridge0_mem_ctrl1;
-#[doc = "Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 0 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_apb_bridge0_mem_ctrl2](sec_ctrl_apb_bridge0_mem_ctrl2) module"]
+#[doc = "Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 0 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_apb_bridge0_mem_ctrl2](sec_ctrl_apb_bridge0_mem_ctrl2) module"]
 pub type SEC_CTRL_APB_BRIDGE0_MEM_CTRL2 = crate::Reg<u32, _SEC_CTRL_APB_BRIDGE0_MEM_CTRL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -450,7 +450,7 @@ impl crate::Readable for SEC_CTRL_APB_BRIDGE0_MEM_CTRL2 {}
 impl crate::Writable for SEC_CTRL_APB_BRIDGE0_MEM_CTRL2 {}
 #[doc = "Security access rules for APB Bridge 0 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 0 sectors in total."]
 pub mod sec_ctrl_apb_bridge0_mem_ctrl2;
-#[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 1 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_apb_bridge1_mem_ctrl0](sec_ctrl_apb_bridge1_mem_ctrl0) module"]
+#[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 1 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_apb_bridge1_mem_ctrl0](sec_ctrl_apb_bridge1_mem_ctrl0) module"]
 pub type SEC_CTRL_APB_BRIDGE1_MEM_CTRL0 = crate::Reg<u32, _SEC_CTRL_APB_BRIDGE1_MEM_CTRL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -461,7 +461,7 @@ impl crate::Readable for SEC_CTRL_APB_BRIDGE1_MEM_CTRL0 {}
 impl crate::Writable for SEC_CTRL_APB_BRIDGE1_MEM_CTRL0 {}
 #[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 1 sectors in total."]
 pub mod sec_ctrl_apb_bridge1_mem_ctrl0;
-#[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 1 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_apb_bridge1_mem_ctrl1](sec_ctrl_apb_bridge1_mem_ctrl1) module"]
+#[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 1 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_apb_bridge1_mem_ctrl1](sec_ctrl_apb_bridge1_mem_ctrl1) module"]
 pub type SEC_CTRL_APB_BRIDGE1_MEM_CTRL1 = crate::Reg<u32, _SEC_CTRL_APB_BRIDGE1_MEM_CTRL1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -472,7 +472,7 @@ impl crate::Readable for SEC_CTRL_APB_BRIDGE1_MEM_CTRL1 {}
 impl crate::Writable for SEC_CTRL_APB_BRIDGE1_MEM_CTRL1 {}
 #[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 1 sectors in total."]
 pub mod sec_ctrl_apb_bridge1_mem_ctrl1;
-#[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 1 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_apb_bridge1_mem_ctrl2](sec_ctrl_apb_bridge1_mem_ctrl2) module"]
+#[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 1 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_apb_bridge1_mem_ctrl2](sec_ctrl_apb_bridge1_mem_ctrl2) module"]
 pub type SEC_CTRL_APB_BRIDGE1_MEM_CTRL2 = crate::Reg<u32, _SEC_CTRL_APB_BRIDGE1_MEM_CTRL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -483,7 +483,7 @@ impl crate::Readable for SEC_CTRL_APB_BRIDGE1_MEM_CTRL2 {}
 impl crate::Writable for SEC_CTRL_APB_BRIDGE1_MEM_CTRL2 {}
 #[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 1 sectors in total."]
 pub mod sec_ctrl_apb_bridge1_mem_ctrl2;
-#[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 1 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_apb_bridge1_mem_ctrl3](sec_ctrl_apb_bridge1_mem_ctrl3) module"]
+#[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 1 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_apb_bridge1_mem_ctrl3](sec_ctrl_apb_bridge1_mem_ctrl3) module"]
 pub type SEC_CTRL_APB_BRIDGE1_MEM_CTRL3 = crate::Reg<u32, _SEC_CTRL_APB_BRIDGE1_MEM_CTRL3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -494,7 +494,7 @@ impl crate::Readable for SEC_CTRL_APB_BRIDGE1_MEM_CTRL3 {}
 impl crate::Writable for SEC_CTRL_APB_BRIDGE1_MEM_CTRL3 {}
 #[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 1 sectors in total."]
 pub mod sec_ctrl_apb_bridge1_mem_ctrl3;
-#[doc = "Security access rules for AHB peripherals.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ahb_port8_slave0_rule](sec_ctrl_ahb_port8_slave0_rule) module"]
+#[doc = "Security access rules for AHB peripherals.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ahb_port8_slave0_rule](sec_ctrl_ahb_port8_slave0_rule) module"]
 pub type SEC_CTRL_AHB_PORT8_SLAVE0_RULE = crate::Reg<u32, _SEC_CTRL_AHB_PORT8_SLAVE0_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -505,7 +505,7 @@ impl crate::Readable for SEC_CTRL_AHB_PORT8_SLAVE0_RULE {}
 impl crate::Writable for SEC_CTRL_AHB_PORT8_SLAVE0_RULE {}
 #[doc = "Security access rules for AHB peripherals."]
 pub mod sec_ctrl_ahb_port8_slave0_rule;
-#[doc = "Security access rules for AHB peripherals.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ahb_port8_slave1_rule](sec_ctrl_ahb_port8_slave1_rule) module"]
+#[doc = "Security access rules for AHB peripherals.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ahb_port8_slave1_rule](sec_ctrl_ahb_port8_slave1_rule) module"]
 pub type SEC_CTRL_AHB_PORT8_SLAVE1_RULE = crate::Reg<u32, _SEC_CTRL_AHB_PORT8_SLAVE1_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -516,7 +516,7 @@ impl crate::Readable for SEC_CTRL_AHB_PORT8_SLAVE1_RULE {}
 impl crate::Writable for SEC_CTRL_AHB_PORT8_SLAVE1_RULE {}
 #[doc = "Security access rules for AHB peripherals."]
 pub mod sec_ctrl_ahb_port8_slave1_rule;
-#[doc = "Security access rules for AHB peripherals.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ahb_port9_slave0_rule](sec_ctrl_ahb_port9_slave0_rule) module"]
+#[doc = "Security access rules for AHB peripherals.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ahb_port9_slave0_rule](sec_ctrl_ahb_port9_slave0_rule) module"]
 pub type SEC_CTRL_AHB_PORT9_SLAVE0_RULE = crate::Reg<u32, _SEC_CTRL_AHB_PORT9_SLAVE0_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -527,7 +527,7 @@ impl crate::Readable for SEC_CTRL_AHB_PORT9_SLAVE0_RULE {}
 impl crate::Writable for SEC_CTRL_AHB_PORT9_SLAVE0_RULE {}
 #[doc = "Security access rules for AHB peripherals."]
 pub mod sec_ctrl_ahb_port9_slave0_rule;
-#[doc = "Security access rules for AHB peripherals.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ahb_port9_slave1_rule](sec_ctrl_ahb_port9_slave1_rule) module"]
+#[doc = "Security access rules for AHB peripherals.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ahb_port9_slave1_rule](sec_ctrl_ahb_port9_slave1_rule) module"]
 pub type SEC_CTRL_AHB_PORT9_SLAVE1_RULE = crate::Reg<u32, _SEC_CTRL_AHB_PORT9_SLAVE1_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -538,7 +538,7 @@ impl crate::Readable for SEC_CTRL_AHB_PORT9_SLAVE1_RULE {}
 impl crate::Writable for SEC_CTRL_AHB_PORT9_SLAVE1_RULE {}
 #[doc = "Security access rules for AHB peripherals."]
 pub mod sec_ctrl_ahb_port9_slave1_rule;
-#[doc = "Security access rules for AHB peripherals.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ahb_port10_slave0_rule](sec_ctrl_ahb_port10_slave0_rule) module"]
+#[doc = "Security access rules for AHB peripherals.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ahb_port10_slave0_rule](sec_ctrl_ahb_port10_slave0_rule) module"]
 pub type SEC_CTRL_AHB_PORT10_SLAVE0_RULE = crate::Reg<u32, _SEC_CTRL_AHB_PORT10_SLAVE0_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -549,7 +549,7 @@ impl crate::Readable for SEC_CTRL_AHB_PORT10_SLAVE0_RULE {}
 impl crate::Writable for SEC_CTRL_AHB_PORT10_SLAVE0_RULE {}
 #[doc = "Security access rules for AHB peripherals."]
 pub mod sec_ctrl_ahb_port10_slave0_rule;
-#[doc = "Security access rules for AHB peripherals.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ahb_port10_slave1_rule](sec_ctrl_ahb_port10_slave1_rule) module"]
+#[doc = "Security access rules for AHB peripherals.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ahb_port10_slave1_rule](sec_ctrl_ahb_port10_slave1_rule) module"]
 pub type SEC_CTRL_AHB_PORT10_SLAVE1_RULE = crate::Reg<u32, _SEC_CTRL_AHB_PORT10_SLAVE1_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -560,7 +560,7 @@ impl crate::Readable for SEC_CTRL_AHB_PORT10_SLAVE1_RULE {}
 impl crate::Writable for SEC_CTRL_AHB_PORT10_SLAVE1_RULE {}
 #[doc = "Security access rules for AHB peripherals."]
 pub mod sec_ctrl_ahb_port10_slave1_rule;
-#[doc = "Security access rules for AHB_SEC_CTRL_AHB.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_ahb_sec_ctrl_mem_rule](sec_ctrl_ahb_sec_ctrl_mem_rule) module"]
+#[doc = "Security access rules for AHB_SEC_CTRL_AHB.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_ahb_sec_ctrl_mem_rule](sec_ctrl_ahb_sec_ctrl_mem_rule) module"]
 pub type SEC_CTRL_AHB_SEC_CTRL_MEM_RULE = crate::Reg<u32, _SEC_CTRL_AHB_SEC_CTRL_MEM_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -571,7 +571,7 @@ impl crate::Readable for SEC_CTRL_AHB_SEC_CTRL_MEM_RULE {}
 impl crate::Writable for SEC_CTRL_AHB_SEC_CTRL_MEM_RULE {}
 #[doc = "Security access rules for AHB_SEC_CTRL_AHB."]
 pub mod sec_ctrl_ahb_sec_ctrl_mem_rule;
-#[doc = "Security access rules for USB High speed RAM slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_usb_hs_slave_rule](sec_ctrl_usb_hs_slave_rule) module"]
+#[doc = "Security access rules for USB High speed RAM slaves.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_usb_hs_slave_rule](sec_ctrl_usb_hs_slave_rule) module"]
 pub type SEC_CTRL_USB_HS_SLAVE_RULE = crate::Reg<u32, _SEC_CTRL_USB_HS_SLAVE_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -582,7 +582,7 @@ impl crate::Readable for SEC_CTRL_USB_HS_SLAVE_RULE {}
 impl crate::Writable for SEC_CTRL_USB_HS_SLAVE_RULE {}
 #[doc = "Security access rules for USB High speed RAM slaves."]
 pub mod sec_ctrl_usb_hs_slave_rule;
-#[doc = "Security access rules for RAM_USB_HS.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_ctrl_usb_hs_mem_rule](sec_ctrl_usb_hs_mem_rule) module"]
+#[doc = "Security access rules for RAM_USB_HS.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_usb_hs_mem_rule](sec_ctrl_usb_hs_mem_rule) module"]
 pub type SEC_CTRL_USB_HS_MEM_RULE = crate::Reg<u32, _SEC_CTRL_USB_HS_MEM_RULE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -593,7 +593,7 @@ impl crate::Readable for SEC_CTRL_USB_HS_MEM_RULE {}
 impl crate::Writable for SEC_CTRL_USB_HS_MEM_RULE {}
 #[doc = "Security access rules for RAM_USB_HS."]
 pub mod sec_ctrl_usb_hs_mem_rule;
-#[doc = "most recent security violation address for AHB port n\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_vio_addr](sec_vio_addr) module"]
+#[doc = "most recent security violation address for AHB port n\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_vio_addr](sec_vio_addr) module"]
 pub type SEC_VIO_ADDR = crate::Reg<u32, _SEC_VIO_ADDR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -602,7 +602,7 @@ pub struct _SEC_VIO_ADDR;
 impl crate::Readable for SEC_VIO_ADDR {}
 #[doc = "most recent security violation address for AHB port n"]
 pub mod sec_vio_addr;
-#[doc = "most recent security violation miscellaneous information for AHB port n\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_vio_misc_info](sec_vio_misc_info) module"]
+#[doc = "most recent security violation miscellaneous information for AHB port n\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_vio_misc_info](sec_vio_misc_info) module"]
 pub type SEC_VIO_MISC_INFO = crate::Reg<u32, _SEC_VIO_MISC_INFO>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -611,7 +611,7 @@ pub struct _SEC_VIO_MISC_INFO;
 impl crate::Readable for SEC_VIO_MISC_INFO {}
 #[doc = "most recent security violation miscellaneous information for AHB port n"]
 pub mod sec_vio_misc_info;
-#[doc = "security violation address/information registers valid flags\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_vio_info_valid](sec_vio_info_valid) module"]
+#[doc = "security violation address/information registers valid flags\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_vio_info_valid](sec_vio_info_valid) module"]
 pub type SEC_VIO_INFO_VALID = crate::Reg<u32, _SEC_VIO_INFO_VALID>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -622,7 +622,7 @@ impl crate::Readable for SEC_VIO_INFO_VALID {}
 impl crate::Writable for SEC_VIO_INFO_VALID {}
 #[doc = "security violation address/information registers valid flags"]
 pub mod sec_vio_info_valid;
-#[doc = "Secure GPIO mask for port 0 pins.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_gpio_mask0](sec_gpio_mask0) module"]
+#[doc = "Secure GPIO mask for port 0 pins.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_gpio_mask0](sec_gpio_mask0) module"]
 pub type SEC_GPIO_MASK0 = crate::Reg<u32, _SEC_GPIO_MASK0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -633,7 +633,7 @@ impl crate::Readable for SEC_GPIO_MASK0 {}
 impl crate::Writable for SEC_GPIO_MASK0 {}
 #[doc = "Secure GPIO mask for port 0 pins."]
 pub mod sec_gpio_mask0;
-#[doc = "Secure GPIO mask for port 1 pins.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_gpio_mask1](sec_gpio_mask1) module"]
+#[doc = "Secure GPIO mask for port 1 pins.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_gpio_mask1](sec_gpio_mask1) module"]
 pub type SEC_GPIO_MASK1 = crate::Reg<u32, _SEC_GPIO_MASK1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -644,7 +644,7 @@ impl crate::Readable for SEC_GPIO_MASK1 {}
 impl crate::Writable for SEC_GPIO_MASK1 {}
 #[doc = "Secure GPIO mask for port 1 pins."]
 pub mod sec_gpio_mask1;
-#[doc = "Secure Interrupt mask for CPU1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_cpu_int_mask0](sec_cpu_int_mask0) module"]
+#[doc = "Secure Interrupt mask for CPU1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_cpu_int_mask0](sec_cpu_int_mask0) module"]
 pub type SEC_CPU_INT_MASK0 = crate::Reg<u32, _SEC_CPU_INT_MASK0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -655,7 +655,7 @@ impl crate::Readable for SEC_CPU_INT_MASK0 {}
 impl crate::Writable for SEC_CPU_INT_MASK0 {}
 #[doc = "Secure Interrupt mask for CPU1"]
 pub mod sec_cpu_int_mask0;
-#[doc = "Secure Interrupt mask for CPU1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_cpu_int_mask1](sec_cpu_int_mask1) module"]
+#[doc = "Secure Interrupt mask for CPU1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_cpu_int_mask1](sec_cpu_int_mask1) module"]
 pub type SEC_CPU_INT_MASK1 = crate::Reg<u32, _SEC_CPU_INT_MASK1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -666,7 +666,7 @@ impl crate::Readable for SEC_CPU_INT_MASK1 {}
 impl crate::Writable for SEC_CPU_INT_MASK1 {}
 #[doc = "Secure Interrupt mask for CPU1"]
 pub mod sec_cpu_int_mask1;
-#[doc = "Security General Purpose register access control.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sec_mask_lock](sec_mask_lock) module"]
+#[doc = "Security General Purpose register access control.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_mask_lock](sec_mask_lock) module"]
 pub type SEC_MASK_LOCK = crate::Reg<u32, _SEC_MASK_LOCK>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -677,7 +677,7 @@ impl crate::Readable for SEC_MASK_LOCK {}
 impl crate::Writable for SEC_MASK_LOCK {}
 #[doc = "Security General Purpose register access control."]
 pub mod sec_mask_lock;
-#[doc = "master secure level register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [master_sec_level](master_sec_level) module"]
+#[doc = "master secure level register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [master_sec_level](master_sec_level) module"]
 pub type MASTER_SEC_LEVEL = crate::Reg<u32, _MASTER_SEC_LEVEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -688,7 +688,7 @@ impl crate::Readable for MASTER_SEC_LEVEL {}
 impl crate::Writable for MASTER_SEC_LEVEL {}
 #[doc = "master secure level register"]
 pub mod master_sec_level;
-#[doc = "master secure level anti-pole register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [master_sec_anti_pol_reg](master_sec_anti_pol_reg) module"]
+#[doc = "master secure level anti-pole register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [master_sec_anti_pol_reg](master_sec_anti_pol_reg) module"]
 pub type MASTER_SEC_ANTI_POL_REG = crate::Reg<u32, _MASTER_SEC_ANTI_POL_REG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -699,7 +699,7 @@ impl crate::Readable for MASTER_SEC_ANTI_POL_REG {}
 impl crate::Writable for MASTER_SEC_ANTI_POL_REG {}
 #[doc = "master secure level anti-pole register"]
 pub mod master_sec_anti_pol_reg;
-#[doc = "Miscalleneous control signals for in Cortex M33 (CPU0)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cpu0_lock_reg](cpu0_lock_reg) module"]
+#[doc = "Miscalleneous control signals for in Cortex M33 (CPU0)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cpu0_lock_reg](cpu0_lock_reg) module"]
 pub type CPU0_LOCK_REG = crate::Reg<u32, _CPU0_LOCK_REG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -710,7 +710,7 @@ impl crate::Readable for CPU0_LOCK_REG {}
 impl crate::Writable for CPU0_LOCK_REG {}
 #[doc = "Miscalleneous control signals for in Cortex M33 (CPU0)"]
 pub mod cpu0_lock_reg;
-#[doc = "Miscalleneous control signals for in micro-Cortex M33 (CPU1)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cpu1_lock_reg](cpu1_lock_reg) module"]
+#[doc = "Miscalleneous control signals for in micro-Cortex M33 (CPU1)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cpu1_lock_reg](cpu1_lock_reg) module"]
 pub type CPU1_LOCK_REG = crate::Reg<u32, _CPU1_LOCK_REG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -721,7 +721,7 @@ impl crate::Readable for CPU1_LOCK_REG {}
 impl crate::Writable for CPU1_LOCK_REG {}
 #[doc = "Miscalleneous control signals for in micro-Cortex M33 (CPU1)"]
 pub mod cpu1_lock_reg;
-#[doc = "secure control duplicate register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [misc_ctrl_dp_reg](misc_ctrl_dp_reg) module"]
+#[doc = "secure control duplicate register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [misc_ctrl_dp_reg](misc_ctrl_dp_reg) module"]
 pub type MISC_CTRL_DP_REG = crate::Reg<u32, _MISC_CTRL_DP_REG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -732,7 +732,7 @@ impl crate::Readable for MISC_CTRL_DP_REG {}
 impl crate::Writable for MISC_CTRL_DP_REG {}
 #[doc = "secure control duplicate register"]
 pub mod misc_ctrl_dp_reg;
-#[doc = "secure control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [misc_ctrl_reg](misc_ctrl_reg) module"]
+#[doc = "secure control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [misc_ctrl_reg](misc_ctrl_reg) module"]
 pub type MISC_CTRL_REG = crate::Reg<u32, _MISC_CTRL_REG>;
 #[allow(missing_docs)]
 #[doc(hidden)]

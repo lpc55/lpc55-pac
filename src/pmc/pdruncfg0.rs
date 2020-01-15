@@ -10,21 +10,18 @@ impl crate::ResetValue for super::PDRUNCFG0 {
         0x00de_ffc4
     }
 }
-#[doc = "Possible values of the field `PDEN_BODVBAT`"]
+#[doc = "Controls power to VBAT Brown Out Detector (BOD).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDEN_BODVBAT_A {
-    #[doc = "BOD VBAT is powered."]
-    POWEREDON,
-    #[doc = "BOD VBAT is powered down."]
-    POWEREDOFF,
+    #[doc = "0: BOD VBAT is powered."]
+    POWEREDON = 0,
+    #[doc = "1: BOD VBAT is powered down."]
+    POWEREDOFF = 1,
 }
 impl From<PDEN_BODVBAT_A> for bool {
     #[inline(always)]
     fn from(variant: PDEN_BODVBAT_A) -> Self {
-        match variant {
-            PDEN_BODVBAT_A::POWEREDON => false,
-            PDEN_BODVBAT_A::POWEREDOFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDEN_BODVBAT`"]
@@ -88,21 +85,18 @@ impl<'a> PDEN_BODVBAT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PDEN_FRO32K`"]
+#[doc = "Controls power to the Free Running Oscillator (FRO) 32 KHz.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDEN_FRO32K_A {
-    #[doc = "FRO32KHz is powered."]
-    POWEREDON,
-    #[doc = "FRO32KHz is powered down."]
-    POWEREDOFF,
+    #[doc = "0: FRO32KHz is powered."]
+    POWEREDON = 0,
+    #[doc = "1: FRO32KHz is powered down."]
+    POWEREDOFF = 1,
 }
 impl From<PDEN_FRO32K_A> for bool {
     #[inline(always)]
     fn from(variant: PDEN_FRO32K_A) -> Self {
-        match variant {
-            PDEN_FRO32K_A::POWEREDON => false,
-            PDEN_FRO32K_A::POWEREDOFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDEN_FRO32K`"]
@@ -166,21 +160,18 @@ impl<'a> PDEN_FRO32K_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PDEN_XTAL32K`"]
+#[doc = "Controls power to crystal 32 KHz.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDEN_XTAL32K_A {
-    #[doc = "Crystal 32KHz is powered."]
-    POWEREDON,
-    #[doc = "Crystal 32KHz is powered down."]
-    POWEREDOFF,
+    #[doc = "0: Crystal 32KHz is powered."]
+    POWEREDON = 0,
+    #[doc = "1: Crystal 32KHz is powered down."]
+    POWEREDOFF = 1,
 }
 impl From<PDEN_XTAL32K_A> for bool {
     #[inline(always)]
     fn from(variant: PDEN_XTAL32K_A) -> Self {
-        match variant {
-            PDEN_XTAL32K_A::POWEREDON => false,
-            PDEN_XTAL32K_A::POWEREDOFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDEN_XTAL32K`"]
@@ -244,21 +235,18 @@ impl<'a> PDEN_XTAL32K_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PDEN_XTAL32M`"]
+#[doc = "Controls power to crystal 32 MHz.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDEN_XTAL32M_A {
-    #[doc = "Crystal 32MHz is powered."]
-    POWEREDON,
-    #[doc = "Crystal 32MHz is powered down."]
-    POWEREDOFF,
+    #[doc = "0: Crystal 32MHz is powered."]
+    POWEREDON = 0,
+    #[doc = "1: Crystal 32MHz is powered down."]
+    POWEREDOFF = 1,
 }
 impl From<PDEN_XTAL32M_A> for bool {
     #[inline(always)]
     fn from(variant: PDEN_XTAL32M_A) -> Self {
-        match variant {
-            PDEN_XTAL32M_A::POWEREDON => false,
-            PDEN_XTAL32M_A::POWEREDOFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDEN_XTAL32M`"]
@@ -322,21 +310,18 @@ impl<'a> PDEN_XTAL32M_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PDEN_PLL0`"]
+#[doc = "Controls power to System PLL (also refered as PLL0).\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDEN_PLL0_A {
-    #[doc = "PLL0 is powered."]
-    POWEREDON,
-    #[doc = "PLL0 is powered down."]
-    POWEREDOFF,
+    #[doc = "0: PLL0 is powered."]
+    POWEREDON = 0,
+    #[doc = "1: PLL0 is powered down."]
+    POWEREDOFF = 1,
 }
 impl From<PDEN_PLL0_A> for bool {
     #[inline(always)]
     fn from(variant: PDEN_PLL0_A) -> Self {
-        match variant {
-            PDEN_PLL0_A::POWEREDON => false,
-            PDEN_PLL0_A::POWEREDOFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDEN_PLL0`"]
@@ -400,21 +385,18 @@ impl<'a> PDEN_PLL0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PDEN_PLL1`"]
+#[doc = "Controls power to USB PLL (also refered as PLL1).\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDEN_PLL1_A {
-    #[doc = "PLL1 is powered."]
-    POWEREDON,
-    #[doc = "PLL1 is powered down."]
-    POWEREDOFF,
+    #[doc = "0: PLL1 is powered."]
+    POWEREDON = 0,
+    #[doc = "1: PLL1 is powered down."]
+    POWEREDOFF = 1,
 }
 impl From<PDEN_PLL1_A> for bool {
     #[inline(always)]
     fn from(variant: PDEN_PLL1_A) -> Self {
-        match variant {
-            PDEN_PLL1_A::POWEREDON => false,
-            PDEN_PLL1_A::POWEREDOFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDEN_PLL1`"]
@@ -478,21 +460,18 @@ impl<'a> PDEN_PLL1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PDEN_USBFSPHY`"]
+#[doc = "Controls power to USB Full Speed phy.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDEN_USBFSPHY_A {
-    #[doc = "USB Full Speed phy is powered."]
-    POWEREDON,
-    #[doc = "USB Full Speed phy is powered down."]
-    POWEREDOFF,
+    #[doc = "0: USB Full Speed phy is powered."]
+    POWEREDON = 0,
+    #[doc = "1: USB Full Speed phy is powered down."]
+    POWEREDOFF = 1,
 }
 impl From<PDEN_USBFSPHY_A> for bool {
     #[inline(always)]
     fn from(variant: PDEN_USBFSPHY_A) -> Self {
-        match variant {
-            PDEN_USBFSPHY_A::POWEREDON => false,
-            PDEN_USBFSPHY_A::POWEREDOFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDEN_USBFSPHY`"]
@@ -556,21 +535,18 @@ impl<'a> PDEN_USBFSPHY_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PDEN_USBHSPHY`"]
+#[doc = "Controls power to USB High Speed Phy.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDEN_USBHSPHY_A {
-    #[doc = "USB HS phy is powered."]
-    POWEREDON,
-    #[doc = "USB HS phy is powered down."]
-    POWEREDOFF,
+    #[doc = "0: USB HS phy is powered."]
+    POWEREDON = 0,
+    #[doc = "1: USB HS phy is powered down."]
+    POWEREDOFF = 1,
 }
 impl From<PDEN_USBHSPHY_A> for bool {
     #[inline(always)]
     fn from(variant: PDEN_USBHSPHY_A) -> Self {
-        match variant {
-            PDEN_USBHSPHY_A::POWEREDON => false,
-            PDEN_USBHSPHY_A::POWEREDOFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDEN_USBHSPHY`"]
@@ -634,21 +610,18 @@ impl<'a> PDEN_USBHSPHY_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PDEN_COMP`"]
+#[doc = "Controls power to Analog Comparator.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDEN_COMP_A {
-    #[doc = "Analog Comparator is powered."]
-    POWEREDON,
-    #[doc = "Analog Comparator is powered down."]
-    POWEREDOFF,
+    #[doc = "0: Analog Comparator is powered."]
+    POWEREDON = 0,
+    #[doc = "1: Analog Comparator is powered down."]
+    POWEREDOFF = 1,
 }
 impl From<PDEN_COMP_A> for bool {
     #[inline(always)]
     fn from(variant: PDEN_COMP_A) -> Self {
-        match variant {
-            PDEN_COMP_A::POWEREDON => false,
-            PDEN_COMP_A::POWEREDOFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDEN_COMP`"]
@@ -712,21 +685,18 @@ impl<'a> PDEN_COMP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PDEN_LDOUSBHS`"]
+#[doc = "Controls power to USB high speed LDO.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDEN_LDOUSBHS_A {
-    #[doc = "USB high speed LDO is powered."]
-    POWEREDON,
-    #[doc = "USB high speed LDO is powered down."]
-    POWEREDOFF,
+    #[doc = "0: USB high speed LDO is powered."]
+    POWEREDON = 0,
+    #[doc = "1: USB high speed LDO is powered down."]
+    POWEREDOFF = 1,
 }
 impl From<PDEN_LDOUSBHS_A> for bool {
     #[inline(always)]
     fn from(variant: PDEN_LDOUSBHS_A) -> Self {
-        match variant {
-            PDEN_LDOUSBHS_A::POWEREDON => false,
-            PDEN_LDOUSBHS_A::POWEREDOFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDEN_LDOUSBHS`"]
@@ -790,21 +760,18 @@ impl<'a> PDEN_LDOUSBHS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PDEN_AUXBIAS`"]
+#[doc = "Controls power to auxiliary biasing (AUXBIAS)\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDEN_AUXBIAS_A {
-    #[doc = "auxiliary biasing is powered."]
-    POWEREDON,
-    #[doc = "auxiliary biasing is powered down."]
-    POWEREDOFF,
+    #[doc = "0: auxiliary biasing is powered."]
+    POWEREDON = 0,
+    #[doc = "1: auxiliary biasing is powered down."]
+    POWEREDOFF = 1,
 }
 impl From<PDEN_AUXBIAS_A> for bool {
     #[inline(always)]
     fn from(variant: PDEN_AUXBIAS_A) -> Self {
-        match variant {
-            PDEN_AUXBIAS_A::POWEREDON => false,
-            PDEN_AUXBIAS_A::POWEREDOFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDEN_AUXBIAS`"]
@@ -868,21 +835,18 @@ impl<'a> PDEN_AUXBIAS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PDEN_LDOXO32M`"]
+#[doc = "Controls power to crystal 32 MHz LDO.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDEN_LDOXO32M_A {
-    #[doc = "crystal 32 MHz LDO is powered."]
-    POWEREDON,
-    #[doc = "crystal 32 MHz LDO is powered down."]
-    POWEREDOFF,
+    #[doc = "0: crystal 32 MHz LDO is powered."]
+    POWEREDON = 0,
+    #[doc = "1: crystal 32 MHz LDO is powered down."]
+    POWEREDOFF = 1,
 }
 impl From<PDEN_LDOXO32M_A> for bool {
     #[inline(always)]
     fn from(variant: PDEN_LDOXO32M_A) -> Self {
-        match variant {
-            PDEN_LDOXO32M_A::POWEREDON => false,
-            PDEN_LDOXO32M_A::POWEREDOFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDEN_LDOXO32M`"]
@@ -946,21 +910,18 @@ impl<'a> PDEN_LDOXO32M_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PDEN_RNG`"]
+#[doc = "Controls power to all True Random Number Genetaor (TRNG) clock sources.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDEN_RNG_A {
-    #[doc = "TRNG clocks are powered."]
-    POWEREDON,
-    #[doc = "TRNG clocks are powered down."]
-    POWEREDOFF,
+    #[doc = "0: TRNG clocks are powered."]
+    POWEREDON = 0,
+    #[doc = "1: TRNG clocks are powered down."]
+    POWEREDOFF = 1,
 }
 impl From<PDEN_RNG_A> for bool {
     #[inline(always)]
     fn from(variant: PDEN_RNG_A) -> Self {
-        match variant {
-            PDEN_RNG_A::POWEREDON => false,
-            PDEN_RNG_A::POWEREDOFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDEN_RNG`"]
@@ -1024,21 +985,18 @@ impl<'a> PDEN_RNG_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PDEN_PLL0_SSCG`"]
+#[doc = "Controls power to System PLL (PLL0) Spread Spectrum module.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PDEN_PLL0_SSCG_A {
-    #[doc = "PLL0 Sread spectrum module is powered."]
-    POWEREDON,
-    #[doc = "PLL0 Sread spectrum module is powered down."]
-    POWEREDOFF,
+    #[doc = "0: PLL0 Sread spectrum module is powered."]
+    POWEREDON = 0,
+    #[doc = "1: PLL0 Sread spectrum module is powered down."]
+    POWEREDOFF = 1,
 }
 impl From<PDEN_PLL0_SSCG_A> for bool {
     #[inline(always)]
     fn from(variant: PDEN_PLL0_SSCG_A) -> Self {
-        match variant {
-            PDEN_PLL0_SSCG_A::POWEREDON => false,
-            PDEN_PLL0_SSCG_A::POWEREDOFF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PDEN_PLL0_SSCG`"]

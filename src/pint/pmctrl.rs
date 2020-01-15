@@ -10,21 +10,18 @@ impl crate::ResetValue for super::PMCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `SEL_PMATCH`"]
+#[doc = "Specifies whether the 8 pin interrupts are controlled by the pin interrupt function or by the pattern match function.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEL_PMATCH_A {
-    #[doc = "Pin interrupt. Interrupts are driven in response to the standard pin interrupt function."]
-    PIN_INTERRUPT,
-    #[doc = "Pattern match. Interrupts are driven in response to pattern matches."]
-    PATTERN_MATCH,
+    #[doc = "0: Pin interrupt. Interrupts are driven in response to the standard pin interrupt function."]
+    PIN_INTERRUPT = 0,
+    #[doc = "1: Pattern match. Interrupts are driven in response to pattern matches."]
+    PATTERN_MATCH = 1,
 }
 impl From<SEL_PMATCH_A> for bool {
     #[inline(always)]
     fn from(variant: SEL_PMATCH_A) -> Self {
-        match variant {
-            SEL_PMATCH_A::PIN_INTERRUPT => false,
-            SEL_PMATCH_A::PATTERN_MATCH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEL_PMATCH`"]
@@ -88,21 +85,18 @@ impl<'a> SEL_PMATCH_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ENA_RXEV`"]
+#[doc = "Enables the RXEV output to the CPU and/or to a GPIO output when the specified boolean expression evaluates to true.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENA_RXEV_A {
-    #[doc = "Disabled. RXEV output to the CPU is disabled."]
-    DISABLED,
-    #[doc = "Enabled. RXEV output to the CPU is enabled."]
-    ENABLED,
+    #[doc = "0: Disabled. RXEV output to the CPU is disabled."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. RXEV output to the CPU is enabled."]
+    ENABLED = 1,
 }
 impl From<ENA_RXEV_A> for bool {
     #[inline(always)]
     fn from(variant: ENA_RXEV_A) -> Self {
-        match variant {
-            ENA_RXEV_A::DISABLED => false,
-            ENA_RXEV_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENA_RXEV`"]

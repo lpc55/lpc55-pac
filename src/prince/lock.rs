@@ -10,21 +10,18 @@ impl crate::ResetValue for super::LOCK {
         0
     }
 }
-#[doc = "Possible values of the field `LOCKREG0`"]
+#[doc = "Lock Region 0 registers.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCKREG0_A {
-    #[doc = "Disabled. IV_LSB0, IV_MSB0, BASE_ADDR0, and SR_ENABLE0 are writable.."]
-    DISABLED,
-    #[doc = "Enabled. IV_LSB0, IV_MSB0, BASE_ADDR0, and SR_ENABLE0 are not writable.."]
-    ENABLED,
+    #[doc = "0: Disabled. IV_LSB0, IV_MSB0, BASE_ADDR0, and SR_ENABLE0 are writable.."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. IV_LSB0, IV_MSB0, BASE_ADDR0, and SR_ENABLE0 are not writable.."]
+    ENABLED = 1,
 }
 impl From<LOCKREG0_A> for bool {
     #[inline(always)]
     fn from(variant: LOCKREG0_A) -> Self {
-        match variant {
-            LOCKREG0_A::DISABLED => false,
-            LOCKREG0_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOCKREG0`"]
@@ -88,21 +85,18 @@ impl<'a> LOCKREG0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LOCKREG1`"]
+#[doc = "Lock Region 1 registers.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCKREG1_A {
-    #[doc = "Disabled. IV_LSB1, IV_MSB1, BASE_ADDR1, and SR_ENABLE1 are writable.."]
-    DISABLED,
-    #[doc = "Enabled. IV_LSB1, IV_MSB1, BASE_ADDR1, and SR_ENABLE1 are not writable.."]
-    ENABLED,
+    #[doc = "0: Disabled. IV_LSB1, IV_MSB1, BASE_ADDR1, and SR_ENABLE1 are writable.."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. IV_LSB1, IV_MSB1, BASE_ADDR1, and SR_ENABLE1 are not writable.."]
+    ENABLED = 1,
 }
 impl From<LOCKREG1_A> for bool {
     #[inline(always)]
     fn from(variant: LOCKREG1_A) -> Self {
-        match variant {
-            LOCKREG1_A::DISABLED => false,
-            LOCKREG1_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOCKREG1`"]
@@ -166,21 +160,18 @@ impl<'a> LOCKREG1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LOCKREG2`"]
+#[doc = "Lock Region 2 registers.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCKREG2_A {
-    #[doc = "Disabled. IV_LSB2, IV_MSB2, BASE_ADDR2, and SR_ENABLE2 are writable.."]
-    DISABLED,
-    #[doc = "Enabled. IV_LSB2, IV_MSB2, BASE_ADDR2, and SR_ENABLE2 are not writable.."]
-    ENABLED,
+    #[doc = "0: Disabled. IV_LSB2, IV_MSB2, BASE_ADDR2, and SR_ENABLE2 are writable.."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. IV_LSB2, IV_MSB2, BASE_ADDR2, and SR_ENABLE2 are not writable.."]
+    ENABLED = 1,
 }
 impl From<LOCKREG2_A> for bool {
     #[inline(always)]
     fn from(variant: LOCKREG2_A) -> Self {
-        match variant {
-            LOCKREG2_A::DISABLED => false,
-            LOCKREG2_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOCKREG2`"]
@@ -244,21 +235,18 @@ impl<'a> LOCKREG2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LOCKMASK`"]
+#[doc = "Lock the Mask registers.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCKMASK_A {
-    #[doc = "Disabled. MASK_LSB, and MASK_MSB are writable.."]
-    DISABLED,
-    #[doc = "Enabled. MASK_LSB, and MASK_MSB are not writable.."]
-    ENABLED,
+    #[doc = "0: Disabled. MASK_LSB, and MASK_MSB are writable.."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. MASK_LSB, and MASK_MSB are not writable.."]
+    ENABLED = 1,
 }
 impl From<LOCKMASK_A> for bool {
     #[inline(always)]
     fn from(variant: LOCKMASK_A) -> Self {
-        match variant {
-            LOCKMASK_A::DISABLED => false,
-            LOCKMASK_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOCKMASK`"]

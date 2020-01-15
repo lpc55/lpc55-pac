@@ -10,21 +10,19 @@ impl crate::ResetValue for super::CPU0_LOCK_REG {
         0x8000_02aa
     }
 }
-#[doc = "Possible values of the field `LOCK_NS_VTOR`"]
+#[doc = "Cortex M33 (CPU0) VTOR_NS register write-lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LOCK_NS_VTOR_A {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
+    #[doc = "1: Restricted mode."]
+    BLOCKED = 1,
+    #[doc = "2: Writable."]
+    WRITABLE = 2,
 }
 impl From<LOCK_NS_VTOR_A> for u8 {
     #[inline(always)]
     fn from(variant: LOCK_NS_VTOR_A) -> Self {
-        match variant {
-            LOCK_NS_VTOR_A::BLOCKED => 1,
-            LOCK_NS_VTOR_A::WRITABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LOCK_NS_VTOR`"]
@@ -78,21 +76,19 @@ impl<'a> LOCK_NS_VTOR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LOCK_NS_MPU`"]
+#[doc = "Cortex M33 (CPU0) non-secure MPU register write-lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LOCK_NS_MPU_A {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
+    #[doc = "1: Restricted mode."]
+    BLOCKED = 1,
+    #[doc = "2: Writable."]
+    WRITABLE = 2,
 }
 impl From<LOCK_NS_MPU_A> for u8 {
     #[inline(always)]
     fn from(variant: LOCK_NS_MPU_A) -> Self {
-        match variant {
-            LOCK_NS_MPU_A::BLOCKED => 1,
-            LOCK_NS_MPU_A::WRITABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LOCK_NS_MPU`"]
@@ -146,21 +142,19 @@ impl<'a> LOCK_NS_MPU_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LOCK_S_VTAIRCR`"]
+#[doc = "Cortex M33 (CPU0) VTOR_S, AIRCR.PRIS, IRCR.BFHFNMINS registers write-lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LOCK_S_VTAIRCR_A {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
+    #[doc = "1: Restricted mode."]
+    BLOCKED = 1,
+    #[doc = "2: Writable."]
+    WRITABLE = 2,
 }
 impl From<LOCK_S_VTAIRCR_A> for u8 {
     #[inline(always)]
     fn from(variant: LOCK_S_VTAIRCR_A) -> Self {
-        match variant {
-            LOCK_S_VTAIRCR_A::BLOCKED => 1,
-            LOCK_S_VTAIRCR_A::WRITABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LOCK_S_VTAIRCR`"]
@@ -214,21 +208,19 @@ impl<'a> LOCK_S_VTAIRCR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LOCK_S_MPU`"]
+#[doc = "Cortex M33 (CPU0) Secure MPU registers write-lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LOCK_S_MPU_A {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
+    #[doc = "1: Restricted mode."]
+    BLOCKED = 1,
+    #[doc = "2: Writable."]
+    WRITABLE = 2,
 }
 impl From<LOCK_S_MPU_A> for u8 {
     #[inline(always)]
     fn from(variant: LOCK_S_MPU_A) -> Self {
-        match variant {
-            LOCK_S_MPU_A::BLOCKED => 1,
-            LOCK_S_MPU_A::WRITABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LOCK_S_MPU`"]
@@ -282,21 +274,19 @@ impl<'a> LOCK_S_MPU_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LOCK_SAU`"]
+#[doc = "Cortex M33 (CPU0) SAU registers write-lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LOCK_SAU_A {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
+    #[doc = "1: Restricted mode."]
+    BLOCKED = 1,
+    #[doc = "2: Writable."]
+    WRITABLE = 2,
 }
 impl From<LOCK_SAU_A> for u8 {
     #[inline(always)]
     fn from(variant: LOCK_SAU_A) -> Self {
-        match variant {
-            LOCK_SAU_A::BLOCKED => 1,
-            LOCK_SAU_A::WRITABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LOCK_SAU`"]
@@ -350,21 +340,19 @@ impl<'a> LOCK_SAU_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CPU0_LOCK_REG_LOCK`"]
+#[doc = "CPU0_LOCK_REG write-lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPU0_LOCK_REG_LOCK_A {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
+    #[doc = "1: Restricted mode."]
+    BLOCKED = 1,
+    #[doc = "2: Writable."]
+    WRITABLE = 2,
 }
 impl From<CPU0_LOCK_REG_LOCK_A> for u8 {
     #[inline(always)]
     fn from(variant: CPU0_LOCK_REG_LOCK_A) -> Self {
-        match variant {
-            CPU0_LOCK_REG_LOCK_A::BLOCKED => 1,
-            CPU0_LOCK_REG_LOCK_A::WRITABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPU0_LOCK_REG_LOCK`"]

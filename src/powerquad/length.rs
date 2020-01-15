@@ -25,14 +25,20 @@ impl<'a> INST_LENGTH_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 0:31 - Length register. When FIR : fir_xlength = inst_length\\[15:0\\] , fir_tlength = inst_len\\[31:16\\]. When MTX : rows_a = inst_length\\[4:0\\] , cols_a = inst_length\\[12:8\\] , cols_b = inst_length\\[20:16\\]"]
+    #[doc = "Bits 0:31 - Length register. When FIR : fir_xlength = inst_length\\[15:0\\]
+, fir_tlength = inst_len\\[31:16\\]. When MTX : rows_a = inst_length\\[4:0\\]
+, cols_a = inst_length\\[12:8\\]
+, cols_b = inst_length\\[20:16\\]"]
     #[inline(always)]
     pub fn inst_length(&self) -> INST_LENGTH_R {
         INST_LENGTH_R::new((self.bits & 0xffff_ffff) as u32)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Length register. When FIR : fir_xlength = inst_length\\[15:0\\] , fir_tlength = inst_len\\[31:16\\]. When MTX : rows_a = inst_length\\[4:0\\] , cols_a = inst_length\\[12:8\\] , cols_b = inst_length\\[20:16\\]"]
+    #[doc = "Bits 0:31 - Length register. When FIR : fir_xlength = inst_length\\[15:0\\]
+, fir_tlength = inst_len\\[31:16\\]. When MTX : rows_a = inst_length\\[4:0\\]
+, cols_a = inst_length\\[12:8\\]
+, cols_b = inst_length\\[20:16\\]"]
     #[inline(always)]
     pub fn inst_length(&mut self) -> INST_LENGTH_W {
         INST_LENGTH_W { w: self }

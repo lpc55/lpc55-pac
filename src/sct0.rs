@@ -745,7 +745,7 @@ pub struct OUT {
 #[doc = r"Register block"]
 #[doc = "no description available"]
 pub mod out;
-#[doc = "SCT configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [config](config) module"]
+#[doc = "SCT configuration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [config](config) module"]
 pub type CONFIG = crate::Reg<u32, _CONFIG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -756,7 +756,7 @@ impl crate::Readable for CONFIG {}
 impl crate::Writable for CONFIG {}
 #[doc = "SCT configuration register"]
 pub mod config;
-#[doc = "SCT control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctrl](ctrl) module"]
+#[doc = "SCT control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](ctrl) module"]
 pub type CTRL = crate::Reg<u32, _CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -767,7 +767,7 @@ impl crate::Readable for CTRL {}
 impl crate::Writable for CTRL {}
 #[doc = "SCT control register"]
 pub mod ctrl;
-#[doc = "SCT limit event select register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [limit](limit) module"]
+#[doc = "SCT limit event select register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [limit](limit) module"]
 pub type LIMIT = crate::Reg<u32, _LIMIT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -778,7 +778,7 @@ impl crate::Readable for LIMIT {}
 impl crate::Writable for LIMIT {}
 #[doc = "SCT limit event select register"]
 pub mod limit;
-#[doc = "SCT halt event select register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [halt](halt) module"]
+#[doc = "SCT halt event select register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [halt](halt) module"]
 pub type HALT = crate::Reg<u32, _HALT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -789,7 +789,7 @@ impl crate::Readable for HALT {}
 impl crate::Writable for HALT {}
 #[doc = "SCT halt event select register"]
 pub mod halt;
-#[doc = "SCT stop event select register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [stop](stop) module"]
+#[doc = "SCT stop event select register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [stop](stop) module"]
 pub type STOP = crate::Reg<u32, _STOP>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -800,7 +800,7 @@ impl crate::Readable for STOP {}
 impl crate::Writable for STOP {}
 #[doc = "SCT stop event select register"]
 pub mod stop;
-#[doc = "SCT start event select register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [start](start) module"]
+#[doc = "SCT start event select register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [start](start) module"]
 pub type START = crate::Reg<u32, _START>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -811,7 +811,7 @@ impl crate::Readable for START {}
 impl crate::Writable for START {}
 #[doc = "SCT start event select register"]
 pub mod start;
-#[doc = "SCT counter register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [count](count) module"]
+#[doc = "SCT counter register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [count](count) module"]
 pub type COUNT = crate::Reg<u32, _COUNT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -822,7 +822,7 @@ impl crate::Readable for COUNT {}
 impl crate::Writable for COUNT {}
 #[doc = "SCT counter register"]
 pub mod count;
-#[doc = "SCT state register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [state](state) module"]
+#[doc = "SCT state register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [state](state) module"]
 pub type STATE = crate::Reg<u32, _STATE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -833,7 +833,7 @@ impl crate::Readable for STATE {}
 impl crate::Writable for STATE {}
 #[doc = "SCT state register"]
 pub mod state;
-#[doc = "SCT input register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [input](input) module"]
+#[doc = "SCT input register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [input](input) module"]
 pub type INPUT = crate::Reg<u32, _INPUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -842,7 +842,7 @@ pub struct _INPUT;
 impl crate::Readable for INPUT {}
 #[doc = "SCT input register"]
 pub mod input;
-#[doc = "SCT match/capture mode register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [regmode](regmode) module"]
+#[doc = "SCT match/capture mode register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [regmode](regmode) module"]
 pub type REGMODE = crate::Reg<u32, _REGMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -853,7 +853,7 @@ impl crate::Readable for REGMODE {}
 impl crate::Writable for REGMODE {}
 #[doc = "SCT match/capture mode register"]
 pub mod regmode;
-#[doc = "SCT output register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [output](output) module"]
+#[doc = "SCT output register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [output](output) module"]
 pub type OUTPUT = crate::Reg<u32, _OUTPUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -864,7 +864,7 @@ impl crate::Readable for OUTPUT {}
 impl crate::Writable for OUTPUT {}
 #[doc = "SCT output register"]
 pub mod output;
-#[doc = "SCT output counter direction control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [outputdirctrl](outputdirctrl) module"]
+#[doc = "SCT output counter direction control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [outputdirctrl](outputdirctrl) module"]
 pub type OUTPUTDIRCTRL = crate::Reg<u32, _OUTPUTDIRCTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -875,7 +875,7 @@ impl crate::Readable for OUTPUTDIRCTRL {}
 impl crate::Writable for OUTPUTDIRCTRL {}
 #[doc = "SCT output counter direction control register"]
 pub mod outputdirctrl;
-#[doc = "SCT conflict resolution register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [res](res) module"]
+#[doc = "SCT conflict resolution register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [res](res) module"]
 pub type RES = crate::Reg<u32, _RES>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -886,7 +886,7 @@ impl crate::Readable for RES {}
 impl crate::Writable for RES {}
 #[doc = "SCT conflict resolution register"]
 pub mod res;
-#[doc = "SCT DMA request 0 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dmareq0](dmareq0) module"]
+#[doc = "SCT DMA request 0 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dmareq0](dmareq0) module"]
 pub type DMAREQ0 = crate::Reg<u32, _DMAREQ0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -897,7 +897,7 @@ impl crate::Readable for DMAREQ0 {}
 impl crate::Writable for DMAREQ0 {}
 #[doc = "SCT DMA request 0 register"]
 pub mod dmareq0;
-#[doc = "SCT DMA request 1 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dmareq1](dmareq1) module"]
+#[doc = "SCT DMA request 1 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dmareq1](dmareq1) module"]
 pub type DMAREQ1 = crate::Reg<u32, _DMAREQ1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -908,7 +908,7 @@ impl crate::Readable for DMAREQ1 {}
 impl crate::Writable for DMAREQ1 {}
 #[doc = "SCT DMA request 1 register"]
 pub mod dmareq1;
-#[doc = "SCT event interrupt enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [even](even) module"]
+#[doc = "SCT event interrupt enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [even](even) module"]
 pub type EVEN = crate::Reg<u32, _EVEN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -919,7 +919,7 @@ impl crate::Readable for EVEN {}
 impl crate::Writable for EVEN {}
 #[doc = "SCT event interrupt enable register"]
 pub mod even;
-#[doc = "SCT event flag register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [evflag](evflag) module"]
+#[doc = "SCT event flag register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [evflag](evflag) module"]
 pub type EVFLAG = crate::Reg<u32, _EVFLAG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -930,7 +930,7 @@ impl crate::Readable for EVFLAG {}
 impl crate::Writable for EVFLAG {}
 #[doc = "SCT event flag register"]
 pub mod evflag;
-#[doc = "SCT conflict interrupt enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [conen](conen) module"]
+#[doc = "SCT conflict interrupt enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [conen](conen) module"]
 pub type CONEN = crate::Reg<u32, _CONEN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -941,7 +941,7 @@ impl crate::Readable for CONEN {}
 impl crate::Writable for CONEN {}
 #[doc = "SCT conflict interrupt enable register"]
 pub mod conen;
-#[doc = "SCT conflict flag register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [conflag](conflag) module"]
+#[doc = "SCT conflict flag register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [conflag](conflag) module"]
 pub type CONFLAG = crate::Reg<u32, _CONFLAG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -952,7 +952,7 @@ impl crate::Readable for CONFLAG {}
 impl crate::Writable for CONFLAG {}
 #[doc = "SCT conflict flag register"]
 pub mod conflag;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap0](cap0) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap0](cap0) module"]
 pub type CAP0 = crate::Reg<u32, _CAP0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -963,7 +963,7 @@ impl crate::Readable for CAP0 {}
 impl crate::Writable for CAP0 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap0;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match0](match0) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match0](match0) module"]
 pub type MATCH0 = crate::Reg<u32, _MATCH0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -974,7 +974,7 @@ impl crate::Readable for MATCH0 {}
 impl crate::Writable for MATCH0 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match0;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap1](cap1) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap1](cap1) module"]
 pub type CAP1 = crate::Reg<u32, _CAP1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -985,7 +985,7 @@ impl crate::Readable for CAP1 {}
 impl crate::Writable for CAP1 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap1;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match1](match1) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match1](match1) module"]
 pub type MATCH1 = crate::Reg<u32, _MATCH1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -996,7 +996,7 @@ impl crate::Readable for MATCH1 {}
 impl crate::Writable for MATCH1 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match1;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap2](cap2) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap2](cap2) module"]
 pub type CAP2 = crate::Reg<u32, _CAP2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1007,7 +1007,7 @@ impl crate::Readable for CAP2 {}
 impl crate::Writable for CAP2 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap2;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match2](match2) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match2](match2) module"]
 pub type MATCH2 = crate::Reg<u32, _MATCH2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1018,7 +1018,7 @@ impl crate::Readable for MATCH2 {}
 impl crate::Writable for MATCH2 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match2;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap3](cap3) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap3](cap3) module"]
 pub type CAP3 = crate::Reg<u32, _CAP3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1029,7 +1029,7 @@ impl crate::Readable for CAP3 {}
 impl crate::Writable for CAP3 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap3;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match3](match3) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match3](match3) module"]
 pub type MATCH3 = crate::Reg<u32, _MATCH3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1040,7 +1040,7 @@ impl crate::Readable for MATCH3 {}
 impl crate::Writable for MATCH3 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match3;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap4](cap4) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap4](cap4) module"]
 pub type CAP4 = crate::Reg<u32, _CAP4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1051,7 +1051,7 @@ impl crate::Readable for CAP4 {}
 impl crate::Writable for CAP4 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap4;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match4](match4) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match4](match4) module"]
 pub type MATCH4 = crate::Reg<u32, _MATCH4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1062,7 +1062,7 @@ impl crate::Readable for MATCH4 {}
 impl crate::Writable for MATCH4 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match4;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap5](cap5) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap5](cap5) module"]
 pub type CAP5 = crate::Reg<u32, _CAP5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1073,7 +1073,7 @@ impl crate::Readable for CAP5 {}
 impl crate::Writable for CAP5 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap5;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match5](match5) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match5](match5) module"]
 pub type MATCH5 = crate::Reg<u32, _MATCH5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1084,7 +1084,7 @@ impl crate::Readable for MATCH5 {}
 impl crate::Writable for MATCH5 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match5;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap6](cap6) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap6](cap6) module"]
 pub type CAP6 = crate::Reg<u32, _CAP6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1095,7 +1095,7 @@ impl crate::Readable for CAP6 {}
 impl crate::Writable for CAP6 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap6;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match6](match6) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match6](match6) module"]
 pub type MATCH6 = crate::Reg<u32, _MATCH6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1106,7 +1106,7 @@ impl crate::Readable for MATCH6 {}
 impl crate::Writable for MATCH6 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match6;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap7](cap7) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap7](cap7) module"]
 pub type CAP7 = crate::Reg<u32, _CAP7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1117,7 +1117,7 @@ impl crate::Readable for CAP7 {}
 impl crate::Writable for CAP7 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap7;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match7](match7) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match7](match7) module"]
 pub type MATCH7 = crate::Reg<u32, _MATCH7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1128,7 +1128,7 @@ impl crate::Readable for MATCH7 {}
 impl crate::Writable for MATCH7 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match7;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap8](cap8) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap8](cap8) module"]
 pub type CAP8 = crate::Reg<u32, _CAP8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1139,7 +1139,7 @@ impl crate::Readable for CAP8 {}
 impl crate::Writable for CAP8 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap8;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match8](match8) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match8](match8) module"]
 pub type MATCH8 = crate::Reg<u32, _MATCH8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1150,7 +1150,7 @@ impl crate::Readable for MATCH8 {}
 impl crate::Writable for MATCH8 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match8;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap9](cap9) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap9](cap9) module"]
 pub type CAP9 = crate::Reg<u32, _CAP9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1161,7 +1161,7 @@ impl crate::Readable for CAP9 {}
 impl crate::Writable for CAP9 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap9;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match9](match9) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match9](match9) module"]
 pub type MATCH9 = crate::Reg<u32, _MATCH9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1172,7 +1172,7 @@ impl crate::Readable for MATCH9 {}
 impl crate::Writable for MATCH9 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match9;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap10](cap10) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap10](cap10) module"]
 pub type CAP10 = crate::Reg<u32, _CAP10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1183,7 +1183,7 @@ impl crate::Readable for CAP10 {}
 impl crate::Writable for CAP10 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap10;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match10](match10) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match10](match10) module"]
 pub type MATCH10 = crate::Reg<u32, _MATCH10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1194,7 +1194,7 @@ impl crate::Readable for MATCH10 {}
 impl crate::Writable for MATCH10 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match10;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap11](cap11) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap11](cap11) module"]
 pub type CAP11 = crate::Reg<u32, _CAP11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1205,7 +1205,7 @@ impl crate::Readable for CAP11 {}
 impl crate::Writable for CAP11 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap11;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match11](match11) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match11](match11) module"]
 pub type MATCH11 = crate::Reg<u32, _MATCH11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1216,7 +1216,7 @@ impl crate::Readable for MATCH11 {}
 impl crate::Writable for MATCH11 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match11;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap12](cap12) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap12](cap12) module"]
 pub type CAP12 = crate::Reg<u32, _CAP12>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1227,7 +1227,7 @@ impl crate::Readable for CAP12 {}
 impl crate::Writable for CAP12 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap12;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match12](match12) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match12](match12) module"]
 pub type MATCH12 = crate::Reg<u32, _MATCH12>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1238,7 +1238,7 @@ impl crate::Readable for MATCH12 {}
 impl crate::Writable for MATCH12 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match12;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap13](cap13) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap13](cap13) module"]
 pub type CAP13 = crate::Reg<u32, _CAP13>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1249,7 +1249,7 @@ impl crate::Readable for CAP13 {}
 impl crate::Writable for CAP13 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap13;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match13](match13) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match13](match13) module"]
 pub type MATCH13 = crate::Reg<u32, _MATCH13>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1260,7 +1260,7 @@ impl crate::Readable for MATCH13 {}
 impl crate::Writable for MATCH13 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match13;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap14](cap14) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap14](cap14) module"]
 pub type CAP14 = crate::Reg<u32, _CAP14>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1271,7 +1271,7 @@ impl crate::Readable for CAP14 {}
 impl crate::Writable for CAP14 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap14;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match14](match14) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match14](match14) module"]
 pub type MATCH14 = crate::Reg<u32, _MATCH14>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1282,7 +1282,7 @@ impl crate::Readable for MATCH14 {}
 impl crate::Writable for MATCH14 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match14;
-#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cap15](cap15) module"]
+#[doc = "SCT capture register of capture channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cap15](cap15) module"]
 pub type CAP15 = crate::Reg<u32, _CAP15>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1293,7 +1293,7 @@ impl crate::Readable for CAP15 {}
 impl crate::Writable for CAP15 {}
 #[doc = "SCT capture register of capture channel"]
 pub mod cap15;
-#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [match15](match15) module"]
+#[doc = "SCT match value register of match channels\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [match15](match15) module"]
 pub type MATCH15 = crate::Reg<u32, _MATCH15>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1304,7 +1304,7 @@ impl crate::Readable for MATCH15 {}
 impl crate::Writable for MATCH15 {}
 #[doc = "SCT match value register of match channels"]
 pub mod match15;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl0](capctrl0) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl0](capctrl0) module"]
 pub type CAPCTRL0 = crate::Reg<u32, _CAPCTRL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1315,7 +1315,7 @@ impl crate::Readable for CAPCTRL0 {}
 impl crate::Writable for CAPCTRL0 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl0;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel0](matchrel0) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel0](matchrel0) module"]
 pub type MATCHREL0 = crate::Reg<u32, _MATCHREL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1326,7 +1326,7 @@ impl crate::Readable for MATCHREL0 {}
 impl crate::Writable for MATCHREL0 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel0;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl1](capctrl1) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl1](capctrl1) module"]
 pub type CAPCTRL1 = crate::Reg<u32, _CAPCTRL1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1337,7 +1337,7 @@ impl crate::Readable for CAPCTRL1 {}
 impl crate::Writable for CAPCTRL1 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl1;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel1](matchrel1) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel1](matchrel1) module"]
 pub type MATCHREL1 = crate::Reg<u32, _MATCHREL1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1348,7 +1348,7 @@ impl crate::Readable for MATCHREL1 {}
 impl crate::Writable for MATCHREL1 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel1;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl2](capctrl2) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl2](capctrl2) module"]
 pub type CAPCTRL2 = crate::Reg<u32, _CAPCTRL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1359,7 +1359,7 @@ impl crate::Readable for CAPCTRL2 {}
 impl crate::Writable for CAPCTRL2 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl2;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel2](matchrel2) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel2](matchrel2) module"]
 pub type MATCHREL2 = crate::Reg<u32, _MATCHREL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1370,7 +1370,7 @@ impl crate::Readable for MATCHREL2 {}
 impl crate::Writable for MATCHREL2 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel2;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl3](capctrl3) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl3](capctrl3) module"]
 pub type CAPCTRL3 = crate::Reg<u32, _CAPCTRL3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1381,7 +1381,7 @@ impl crate::Readable for CAPCTRL3 {}
 impl crate::Writable for CAPCTRL3 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl3;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel3](matchrel3) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel3](matchrel3) module"]
 pub type MATCHREL3 = crate::Reg<u32, _MATCHREL3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1392,7 +1392,7 @@ impl crate::Readable for MATCHREL3 {}
 impl crate::Writable for MATCHREL3 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel3;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl4](capctrl4) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl4](capctrl4) module"]
 pub type CAPCTRL4 = crate::Reg<u32, _CAPCTRL4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1403,7 +1403,7 @@ impl crate::Readable for CAPCTRL4 {}
 impl crate::Writable for CAPCTRL4 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl4;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel4](matchrel4) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel4](matchrel4) module"]
 pub type MATCHREL4 = crate::Reg<u32, _MATCHREL4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1414,7 +1414,7 @@ impl crate::Readable for MATCHREL4 {}
 impl crate::Writable for MATCHREL4 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel4;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl5](capctrl5) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl5](capctrl5) module"]
 pub type CAPCTRL5 = crate::Reg<u32, _CAPCTRL5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1425,7 +1425,7 @@ impl crate::Readable for CAPCTRL5 {}
 impl crate::Writable for CAPCTRL5 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl5;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel5](matchrel5) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel5](matchrel5) module"]
 pub type MATCHREL5 = crate::Reg<u32, _MATCHREL5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1436,7 +1436,7 @@ impl crate::Readable for MATCHREL5 {}
 impl crate::Writable for MATCHREL5 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel5;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl6](capctrl6) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl6](capctrl6) module"]
 pub type CAPCTRL6 = crate::Reg<u32, _CAPCTRL6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1447,7 +1447,7 @@ impl crate::Readable for CAPCTRL6 {}
 impl crate::Writable for CAPCTRL6 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl6;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel6](matchrel6) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel6](matchrel6) module"]
 pub type MATCHREL6 = crate::Reg<u32, _MATCHREL6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1458,7 +1458,7 @@ impl crate::Readable for MATCHREL6 {}
 impl crate::Writable for MATCHREL6 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel6;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl7](capctrl7) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl7](capctrl7) module"]
 pub type CAPCTRL7 = crate::Reg<u32, _CAPCTRL7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1469,7 +1469,7 @@ impl crate::Readable for CAPCTRL7 {}
 impl crate::Writable for CAPCTRL7 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl7;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel7](matchrel7) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel7](matchrel7) module"]
 pub type MATCHREL7 = crate::Reg<u32, _MATCHREL7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1480,7 +1480,7 @@ impl crate::Readable for MATCHREL7 {}
 impl crate::Writable for MATCHREL7 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel7;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl8](capctrl8) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl8](capctrl8) module"]
 pub type CAPCTRL8 = crate::Reg<u32, _CAPCTRL8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1491,7 +1491,7 @@ impl crate::Readable for CAPCTRL8 {}
 impl crate::Writable for CAPCTRL8 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl8;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel8](matchrel8) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel8](matchrel8) module"]
 pub type MATCHREL8 = crate::Reg<u32, _MATCHREL8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1502,7 +1502,7 @@ impl crate::Readable for MATCHREL8 {}
 impl crate::Writable for MATCHREL8 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel8;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl9](capctrl9) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl9](capctrl9) module"]
 pub type CAPCTRL9 = crate::Reg<u32, _CAPCTRL9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1513,7 +1513,7 @@ impl crate::Readable for CAPCTRL9 {}
 impl crate::Writable for CAPCTRL9 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl9;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel9](matchrel9) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel9](matchrel9) module"]
 pub type MATCHREL9 = crate::Reg<u32, _MATCHREL9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1524,7 +1524,7 @@ impl crate::Readable for MATCHREL9 {}
 impl crate::Writable for MATCHREL9 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel9;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl10](capctrl10) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl10](capctrl10) module"]
 pub type CAPCTRL10 = crate::Reg<u32, _CAPCTRL10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1535,7 +1535,7 @@ impl crate::Readable for CAPCTRL10 {}
 impl crate::Writable for CAPCTRL10 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl10;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel10](matchrel10) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel10](matchrel10) module"]
 pub type MATCHREL10 = crate::Reg<u32, _MATCHREL10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1546,7 +1546,7 @@ impl crate::Readable for MATCHREL10 {}
 impl crate::Writable for MATCHREL10 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel10;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl11](capctrl11) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl11](capctrl11) module"]
 pub type CAPCTRL11 = crate::Reg<u32, _CAPCTRL11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1557,7 +1557,7 @@ impl crate::Readable for CAPCTRL11 {}
 impl crate::Writable for CAPCTRL11 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl11;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel11](matchrel11) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel11](matchrel11) module"]
 pub type MATCHREL11 = crate::Reg<u32, _MATCHREL11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1568,7 +1568,7 @@ impl crate::Readable for MATCHREL11 {}
 impl crate::Writable for MATCHREL11 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel11;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl12](capctrl12) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl12](capctrl12) module"]
 pub type CAPCTRL12 = crate::Reg<u32, _CAPCTRL12>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1579,7 +1579,7 @@ impl crate::Readable for CAPCTRL12 {}
 impl crate::Writable for CAPCTRL12 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl12;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel12](matchrel12) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel12](matchrel12) module"]
 pub type MATCHREL12 = crate::Reg<u32, _MATCHREL12>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1590,7 +1590,7 @@ impl crate::Readable for MATCHREL12 {}
 impl crate::Writable for MATCHREL12 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel12;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl13](capctrl13) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl13](capctrl13) module"]
 pub type CAPCTRL13 = crate::Reg<u32, _CAPCTRL13>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1601,7 +1601,7 @@ impl crate::Readable for CAPCTRL13 {}
 impl crate::Writable for CAPCTRL13 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl13;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel13](matchrel13) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel13](matchrel13) module"]
 pub type MATCHREL13 = crate::Reg<u32, _MATCHREL13>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1612,7 +1612,7 @@ impl crate::Readable for MATCHREL13 {}
 impl crate::Writable for MATCHREL13 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel13;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl14](capctrl14) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl14](capctrl14) module"]
 pub type CAPCTRL14 = crate::Reg<u32, _CAPCTRL14>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1623,7 +1623,7 @@ impl crate::Readable for CAPCTRL14 {}
 impl crate::Writable for CAPCTRL14 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl14;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel14](matchrel14) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel14](matchrel14) module"]
 pub type MATCHREL14 = crate::Reg<u32, _MATCHREL14>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1634,7 +1634,7 @@ impl crate::Readable for MATCHREL14 {}
 impl crate::Writable for MATCHREL14 {}
 #[doc = "SCT match reload value register"]
 pub mod matchrel14;
-#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [capctrl15](capctrl15) module"]
+#[doc = "SCT capture control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [capctrl15](capctrl15) module"]
 pub type CAPCTRL15 = crate::Reg<u32, _CAPCTRL15>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1645,7 +1645,7 @@ impl crate::Readable for CAPCTRL15 {}
 impl crate::Writable for CAPCTRL15 {}
 #[doc = "SCT capture control register"]
 pub mod capctrl15;
-#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [matchrel15](matchrel15) module"]
+#[doc = "SCT match reload value register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [matchrel15](matchrel15) module"]
 pub type MATCHREL15 = crate::Reg<u32, _MATCHREL15>;
 #[allow(missing_docs)]
 #[doc(hidden)]

@@ -10,21 +10,18 @@ impl crate::ResetValue for super::PWMC {
         0
     }
 }
-#[doc = "Possible values of the field `PWMEN0`"]
+#[doc = "PWM mode enable for channel0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWMEN0_A {
-    #[doc = "Match. CTIMERn_MAT0 is controlled by EM0."]
-    MATCH,
-    #[doc = "PWM. PWM mode is enabled for CTIMERn_MAT0."]
-    PWM,
+    #[doc = "0: Match. CTIMERn_MAT0 is controlled by EM0."]
+    MATCH = 0,
+    #[doc = "1: PWM. PWM mode is enabled for CTIMERn_MAT0."]
+    PWM = 1,
 }
 impl From<PWMEN0_A> for bool {
     #[inline(always)]
     fn from(variant: PWMEN0_A) -> Self {
-        match variant {
-            PWMEN0_A::MATCH => false,
-            PWMEN0_A::PWM => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PWMEN0`"]
@@ -88,21 +85,18 @@ impl<'a> PWMEN0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PWMEN1`"]
+#[doc = "PWM mode enable for channel1.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWMEN1_A {
-    #[doc = "Match. CTIMERn_MAT01 is controlled by EM1."]
-    MATCH,
-    #[doc = "PWM. PWM mode is enabled for CTIMERn_MAT1."]
-    PWM,
+    #[doc = "0: Match. CTIMERn_MAT01 is controlled by EM1."]
+    MATCH = 0,
+    #[doc = "1: PWM. PWM mode is enabled for CTIMERn_MAT1."]
+    PWM = 1,
 }
 impl From<PWMEN1_A> for bool {
     #[inline(always)]
     fn from(variant: PWMEN1_A) -> Self {
-        match variant {
-            PWMEN1_A::MATCH => false,
-            PWMEN1_A::PWM => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PWMEN1`"]
@@ -166,21 +160,18 @@ impl<'a> PWMEN1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PWMEN2`"]
+#[doc = "PWM mode enable for channel2.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWMEN2_A {
-    #[doc = "Match. CTIMERn_MAT2 is controlled by EM2."]
-    MATCH,
-    #[doc = "PWM. PWM mode is enabled for CTIMERn_MAT2."]
-    PWM,
+    #[doc = "0: Match. CTIMERn_MAT2 is controlled by EM2."]
+    MATCH = 0,
+    #[doc = "1: PWM. PWM mode is enabled for CTIMERn_MAT2."]
+    PWM = 1,
 }
 impl From<PWMEN2_A> for bool {
     #[inline(always)]
     fn from(variant: PWMEN2_A) -> Self {
-        match variant {
-            PWMEN2_A::MATCH => false,
-            PWMEN2_A::PWM => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PWMEN2`"]
@@ -244,21 +235,18 @@ impl<'a> PWMEN2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PWMEN3`"]
+#[doc = "PWM mode enable for channel3. Note: It is recommended to use match channel 3 to set the PWM cycle.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWMEN3_A {
-    #[doc = "Match. CTIMERn_MAT3 is controlled by EM3."]
-    MATCH,
-    #[doc = "PWM. PWM mode is enabled for CT132Bn_MAT3."]
-    PWM,
+    #[doc = "0: Match. CTIMERn_MAT3 is controlled by EM3."]
+    MATCH = 0,
+    #[doc = "1: PWM. PWM mode is enabled for CT132Bn_MAT3."]
+    PWM = 1,
 }
 impl From<PWMEN3_A> for bool {
     #[inline(always)]
     fn from(variant: PWMEN3_A) -> Self {
-        match variant {
-            PWMEN3_A::MATCH => false,
-            PWMEN3_A::PWM => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PWMEN3`"]

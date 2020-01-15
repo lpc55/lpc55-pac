@@ -72,21 +72,18 @@ impl<'a> SETUP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FORCE_NEEDCLK`"]
+#[doc = "Forces the NEEDCLK output to always be on:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FORCE_NEEDCLK_A {
-    #[doc = "USB_NEEDCLK has normal function."]
-    NORMAL,
-    #[doc = "USB_NEEDCLK always 1. Clock will not be stopped in case of suspend."]
-    ALWAYS_ON,
+    #[doc = "0: USB_NEEDCLK has normal function."]
+    NORMAL = 0,
+    #[doc = "1: USB_NEEDCLK always 1. Clock will not be stopped in case of suspend."]
+    ALWAYS_ON = 1,
 }
 impl From<FORCE_NEEDCLK_A> for bool {
     #[inline(always)]
     fn from(variant: FORCE_NEEDCLK_A) -> Self {
-        match variant {
-            FORCE_NEEDCLK_A::NORMAL => false,
-            FORCE_NEEDCLK_A::ALWAYS_ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FORCE_NEEDCLK`"]
@@ -150,21 +147,18 @@ impl<'a> FORCE_NEEDCLK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LPM_SUP`"]
+#[doc = "LPM Supported:\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LPM_SUP_A {
-    #[doc = "LPM not supported."]
-    NO,
-    #[doc = "LPM supported."]
-    YES,
+    #[doc = "0: LPM not supported."]
+    NO = 0,
+    #[doc = "1: LPM supported."]
+    YES = 1,
 }
 impl From<LPM_SUP_A> for bool {
     #[inline(always)]
     fn from(variant: LPM_SUP_A) -> Self {
-        match variant {
-            LPM_SUP_A::NO => false,
-            LPM_SUP_A::YES => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LPM_SUP`"]
@@ -228,21 +222,18 @@ impl<'a> LPM_SUP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INTONNAK_AO`"]
+#[doc = "Interrupt on NAK for interrupt and bulk OUT EP\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INTONNAK_AO_A {
-    #[doc = "Only acknowledged packets generate an interrupt"]
-    DISABLED,
-    #[doc = "Both acknowledged and NAKed packets generate interrupts."]
-    ENABLED,
+    #[doc = "0: Only acknowledged packets generate an interrupt"]
+    DISABLED = 0,
+    #[doc = "1: Both acknowledged and NAKed packets generate interrupts."]
+    ENABLED = 1,
 }
 impl From<INTONNAK_AO_A> for bool {
     #[inline(always)]
     fn from(variant: INTONNAK_AO_A) -> Self {
-        match variant {
-            INTONNAK_AO_A::DISABLED => false,
-            INTONNAK_AO_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INTONNAK_AO`"]
@@ -306,21 +297,18 @@ impl<'a> INTONNAK_AO_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INTONNAK_AI`"]
+#[doc = "Interrupt on NAK for interrupt and bulk IN EP\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INTONNAK_AI_A {
-    #[doc = "Only acknowledged packets generate an interrupt"]
-    DISABLED,
-    #[doc = "Both acknowledged and NAKed packets generate interrupts."]
-    ENABLED,
+    #[doc = "0: Only acknowledged packets generate an interrupt"]
+    DISABLED = 0,
+    #[doc = "1: Both acknowledged and NAKed packets generate interrupts."]
+    ENABLED = 1,
 }
 impl From<INTONNAK_AI_A> for bool {
     #[inline(always)]
     fn from(variant: INTONNAK_AI_A) -> Self {
-        match variant {
-            INTONNAK_AI_A::DISABLED => false,
-            INTONNAK_AI_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INTONNAK_AI`"]
@@ -384,21 +372,18 @@ impl<'a> INTONNAK_AI_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INTONNAK_CO`"]
+#[doc = "Interrupt on NAK for control OUT EP\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INTONNAK_CO_A {
-    #[doc = "Only acknowledged packets generate an interrupt"]
-    DISABLED,
-    #[doc = "Both acknowledged and NAKed packets generate interrupts."]
-    ENABLED,
+    #[doc = "0: Only acknowledged packets generate an interrupt"]
+    DISABLED = 0,
+    #[doc = "1: Both acknowledged and NAKed packets generate interrupts."]
+    ENABLED = 1,
 }
 impl From<INTONNAK_CO_A> for bool {
     #[inline(always)]
     fn from(variant: INTONNAK_CO_A) -> Self {
-        match variant {
-            INTONNAK_CO_A::DISABLED => false,
-            INTONNAK_CO_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INTONNAK_CO`"]
@@ -462,21 +447,18 @@ impl<'a> INTONNAK_CO_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INTONNAK_CI`"]
+#[doc = "Interrupt on NAK for control IN EP\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INTONNAK_CI_A {
-    #[doc = "Only acknowledged packets generate an interrupt"]
-    DISABLED,
-    #[doc = "Both acknowledged and NAKed packets generate interrupts."]
-    ENABLED,
+    #[doc = "0: Only acknowledged packets generate an interrupt"]
+    DISABLED = 0,
+    #[doc = "1: Both acknowledged and NAKed packets generate interrupts."]
+    ENABLED = 1,
 }
 impl From<INTONNAK_CI_A> for bool {
     #[inline(always)]
     fn from(variant: INTONNAK_CI_A) -> Self {
-        match variant {
-            INTONNAK_CI_A::DISABLED => false,
-            INTONNAK_CI_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INTONNAK_CI`"]

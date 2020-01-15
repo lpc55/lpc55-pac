@@ -197,12 +197,16 @@ impl R {
     pub fn md_req(&self) -> MD_REQ_R {
         MD_REQ_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bits 2:4 - programmable modulation frequency fm = Fref/Nss mf\\[2:0\\] = 000 => Nss=512 (fm ~ 3."]
+    #[doc = "Bits 2:4 - programmable modulation frequency fm = Fref/Nss mf\\[2:0\\]
+= 000 => Nss=512 (fm ~ 3."]
     #[inline(always)]
     pub fn mf(&self) -> MF_R {
         MF_R::new(((self.bits >> 2) & 0x07) as u8)
     }
-    #[doc = "Bits 5:7 - programmable frequency modulation depth Dfmodpk-pk = Fref*kss/Fcco = kss/(2*md\\[32:25\\]dec) mr\\[2:0\\] = 000 => kss = 0 (no spread spectrum) mr\\[2:0\\] = 001 => kss ~ 1 mr\\[2:0\\] = 010 => kss ~ 1."]
+    #[doc = "Bits 5:7 - programmable frequency modulation depth Dfmodpk-pk = Fref*kss/Fcco = kss/(2*md\\[32:25\\]dec) mr\\[2:0\\]
+= 000 => kss = 0 (no spread spectrum) mr\\[2:0\\]
+= 001 => kss ~ 1 mr\\[2:0\\]
+= 010 => kss ~ 1."]
     #[inline(always)]
     pub fn mr(&self) -> MR_R {
         MR_R::new(((self.bits >> 5) & 0x07) as u8)
@@ -244,12 +248,16 @@ impl W {
     pub fn md_req(&mut self) -> MD_REQ_W {
         MD_REQ_W { w: self }
     }
-    #[doc = "Bits 2:4 - programmable modulation frequency fm = Fref/Nss mf\\[2:0\\] = 000 => Nss=512 (fm ~ 3."]
+    #[doc = "Bits 2:4 - programmable modulation frequency fm = Fref/Nss mf\\[2:0\\]
+= 000 => Nss=512 (fm ~ 3."]
     #[inline(always)]
     pub fn mf(&mut self) -> MF_W {
         MF_W { w: self }
     }
-    #[doc = "Bits 5:7 - programmable frequency modulation depth Dfmodpk-pk = Fref*kss/Fcco = kss/(2*md\\[32:25\\]dec) mr\\[2:0\\] = 000 => kss = 0 (no spread spectrum) mr\\[2:0\\] = 001 => kss ~ 1 mr\\[2:0\\] = 010 => kss ~ 1."]
+    #[doc = "Bits 5:7 - programmable frequency modulation depth Dfmodpk-pk = Fref*kss/Fcco = kss/(2*md\\[32:25\\]dec) mr\\[2:0\\]
+= 000 => kss = 0 (no spread spectrum) mr\\[2:0\\]
+= 001 => kss ~ 1 mr\\[2:0\\]
+= 010 => kss ~ 1."]
     #[inline(always)]
     pub fn mr(&mut self) -> MR_W {
         MR_W { w: self }

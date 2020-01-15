@@ -10,21 +10,18 @@ impl crate::ResetValue for super::RTCOSC32K {
         0x03ff_0008
     }
 }
-#[doc = "Possible values of the field `SEL`"]
+#[doc = "Select the 32K oscillator to be used in Deep Power Down Mode for the RTC (either XTAL32KHz or FRO32KHz) .\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEL_A {
-    #[doc = "FRO 32 KHz."]
-    FRO32K,
-    #[doc = "XTAL 32KHz."]
-    XTAL32K,
+    #[doc = "0: FRO 32 KHz."]
+    FRO32K = 0,
+    #[doc = "1: XTAL 32KHz."]
+    XTAL32K = 1,
 }
 impl From<SEL_A> for bool {
     #[inline(always)]
     fn from(variant: SEL_A) -> Self {
-        match variant {
-            SEL_A::FRO32K => false,
-            SEL_A::XTAL32K => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEL`"]

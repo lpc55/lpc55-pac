@@ -10,21 +10,18 @@ impl crate::ResetValue for super::SLVCTL {
         0
     }
 }
-#[doc = "Possible values of the field `SLVCONTINUE`"]
+#[doc = "Slave Continue.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLVCONTINUE_A {
-    #[doc = "No effect."]
-    NO_EFFECT,
-    #[doc = "Continue. Informs the Slave function to continue to the next operation, by clearing the SLVPENDING flag in the STAT register. This must be done after writing transmit data, reading received data, or any other housekeeping related to the next bus operation. Automatic Operation has different requirements. SLVCONTINUE should not be set unless SLVPENDING = 1."]
-    CONTINUE,
+    #[doc = "0: No effect."]
+    NO_EFFECT = 0,
+    #[doc = "1: Continue. Informs the Slave function to continue to the next operation, by clearing the SLVPENDING flag in the STAT register. This must be done after writing transmit data, reading received data, or any other housekeeping related to the next bus operation. Automatic Operation has different requirements. SLVCONTINUE should not be set unless SLVPENDING = 1."]
+    CONTINUE = 1,
 }
 impl From<SLVCONTINUE_A> for bool {
     #[inline(always)]
     fn from(variant: SLVCONTINUE_A) -> Self {
-        match variant {
-            SLVCONTINUE_A::NO_EFFECT => false,
-            SLVCONTINUE_A::CONTINUE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SLVCONTINUE`"]
@@ -88,21 +85,18 @@ impl<'a> SLVCONTINUE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SLVNACK`"]
+#[doc = "Slave NACK.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLVNACK_A {
-    #[doc = "No effect."]
-    NO_EFFECT,
-    #[doc = "NACK. Causes the Slave function to NACK the master when the slave is receiving data from the master (Slave Receiver mode)."]
-    NACK,
+    #[doc = "0: No effect."]
+    NO_EFFECT = 0,
+    #[doc = "1: NACK. Causes the Slave function to NACK the master when the slave is receiving data from the master (Slave Receiver mode)."]
+    NACK = 1,
 }
 impl From<SLVNACK_A> for bool {
     #[inline(always)]
     fn from(variant: SLVNACK_A) -> Self {
-        match variant {
-            SLVNACK_A::NO_EFFECT => false,
-            SLVNACK_A::NACK => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SLVNACK`"]
@@ -166,21 +160,18 @@ impl<'a> SLVNACK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SLVDMA`"]
+#[doc = "Slave DMA enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLVDMA_A {
-    #[doc = "Disabled. No DMA requests are issued for Slave mode operation."]
-    DISABLED,
-    #[doc = "Enabled. DMA requests are issued for I2C slave data transmission and reception."]
-    ENABLED,
+    #[doc = "0: Disabled. No DMA requests are issued for Slave mode operation."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. DMA requests are issued for I2C slave data transmission and reception."]
+    ENABLED = 1,
 }
 impl From<SLVDMA_A> for bool {
     #[inline(always)]
     fn from(variant: SLVDMA_A) -> Self {
-        match variant {
-            SLVDMA_A::DISABLED => false,
-            SLVDMA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SLVDMA`"]
@@ -244,21 +235,18 @@ impl<'a> SLVDMA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AUTOACK`"]
+#[doc = "Automatic Acknowledge.When this bit is set, it will cause an I2C header which matches SLVADR0 and the direction set by AUTOMATCHREAD to be ACKed immediately; this is used with DMA to allow processing of the data without intervention. If this bit is clear and a header matches SLVADR0, the behavior is controlled by AUTONACK in the SLVADR0 register: allowing NACK or interrupt.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AUTOACK_A {
-    #[doc = "Normal, non-automatic operation. If AUTONACK = 0, an SlvPending interrupt is generated when a matching address is received. If AUTONACK = 1, received addresses are NACKed (ignored)."]
-    NORMAL,
-    #[doc = "A header with matching SLVADR0 and matching direction as set by AUTOMATCHREAD will be ACKed immediately, allowing the master to move on to the data bytes. If the address matches SLVADR0, but the direction does not match AUTOMATCHREAD, the behavior will depend on the AUTONACK bit in the SLVADR0 register: if AUTONACK is set, then it will be Nacked; else if AUTONACK is clear, then a SlvPending interrupt is generated."]
-    AUTOMATIC_ACK,
+    #[doc = "0: Normal, non-automatic operation. If AUTONACK = 0, an SlvPending interrupt is generated when a matching address is received. If AUTONACK = 1, received addresses are NACKed (ignored)."]
+    NORMAL = 0,
+    #[doc = "1: A header with matching SLVADR0 and matching direction as set by AUTOMATCHREAD will be ACKed immediately, allowing the master to move on to the data bytes. If the address matches SLVADR0, but the direction does not match AUTOMATCHREAD, the behavior will depend on the AUTONACK bit in the SLVADR0 register: if AUTONACK is set, then it will be Nacked; else if AUTONACK is clear, then a SlvPending interrupt is generated."]
+    AUTOMATIC_ACK = 1,
 }
 impl From<AUTOACK_A> for bool {
     #[inline(always)]
     fn from(variant: AUTOACK_A) -> Self {
-        match variant {
-            AUTOACK_A::NORMAL => false,
-            AUTOACK_A::AUTOMATIC_ACK => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AUTOACK`"]
@@ -322,21 +310,18 @@ impl<'a> AUTOACK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AUTOMATCHREAD`"]
+#[doc = "When AUTOACK is set, this bit controls whether it matches a read or write request on the next header with an address matching SLVADR0. Since DMA needs to be configured to match the transfer direction, the direction needs to be specified. This bit allows a direction to be chosen for the next operation.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AUTOMATCHREAD_A {
-    #[doc = "The expected next operation in Automatic Mode is an I2C write."]
-    I2C_WRITE,
-    #[doc = "The expected next operation in Automatic Mode is an I2C read."]
-    I2C_READ,
+    #[doc = "0: The expected next operation in Automatic Mode is an I2C write."]
+    I2C_WRITE = 0,
+    #[doc = "1: The expected next operation in Automatic Mode is an I2C read."]
+    I2C_READ = 1,
 }
 impl From<AUTOMATCHREAD_A> for bool {
     #[inline(always)]
     fn from(variant: AUTOMATCHREAD_A) -> Self {
-        match variant {
-            AUTOMATCHREAD_A::I2C_WRITE => false,
-            AUTOMATCHREAD_A::I2C_READ => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AUTOMATCHREAD`"]

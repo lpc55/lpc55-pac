@@ -11,7 +11,7 @@ pub struct RegisterBlock {
     #[doc = "0xfc - Identification register"]
     pub id: ID,
 }
-#[doc = "CRC mode register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [csw](csw) module"]
+#[doc = "CRC mode register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csw](csw) module"]
 pub type CSW = crate::Reg<u32, _CSW>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -22,7 +22,7 @@ impl crate::Readable for CSW {}
 impl crate::Writable for CSW {}
 #[doc = "CRC mode register"]
 pub mod csw;
-#[doc = "CRC seed register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [request](request) module"]
+#[doc = "CRC seed register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [request](request) module"]
 pub type REQUEST = crate::Reg<u32, _REQUEST>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -33,7 +33,7 @@ impl crate::Readable for REQUEST {}
 impl crate::Writable for REQUEST {}
 #[doc = "CRC seed register"]
 pub mod request;
-#[doc = "Return value from ROM.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [return_](return_) module"]
+#[doc = "Return value from ROM.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [return_](return_) module"]
 pub type RETURN = crate::Reg<u32, _RETURN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -44,7 +44,7 @@ impl crate::Readable for RETURN {}
 impl crate::Writable for RETURN {}
 #[doc = "Return value from ROM."]
 pub mod return_;
-#[doc = "Identification register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [id](id) module"]
+#[doc = "Identification register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [id](id) module"]
 pub type ID = crate::Reg<u32, _ID>;
 #[allow(missing_docs)]
 #[doc(hidden)]

@@ -10,21 +10,18 @@ impl crate::ResetValue for super::COMP {
         0x0a
     }
 }
-#[doc = "Possible values of the field `HYST`"]
+#[doc = "Hysteris when hyst = '1'.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HYST_A {
-    #[doc = "Hysteresis is disable."]
-    DISABLE,
-    #[doc = "Hysteresis is enable."]
-    ENABLE,
+    #[doc = "0: Hysteresis is disable."]
+    DISABLE = 0,
+    #[doc = "1: Hysteresis is enable."]
+    ENABLE = 1,
 }
 impl From<HYST_A> for bool {
     #[inline(always)]
     fn from(variant: HYST_A) -> Self {
-        match variant {
-            HYST_A::DISABLE => false,
-            HYST_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HYST`"]
@@ -88,21 +85,18 @@ impl<'a> HYST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VREFINPUT`"]
+#[doc = "Dedicated control bit to select between internal VREF and VDDA (for the resistive ladder).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VREFINPUT_A {
-    #[doc = "Select internal VREF."]
-    INTERNALREF,
-    #[doc = "Select VDDA."]
-    VDDA,
+    #[doc = "0: Select internal VREF."]
+    INTERNALREF = 0,
+    #[doc = "1: Select VDDA."]
+    VDDA = 1,
 }
 impl From<VREFINPUT_A> for bool {
     #[inline(always)]
     fn from(variant: VREFINPUT_A) -> Self {
-        match variant {
-            VREFINPUT_A::INTERNALREF => false,
-            VREFINPUT_A::VDDA => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VREFINPUT`"]
@@ -166,21 +160,18 @@ impl<'a> VREFINPUT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LOWPOWER`"]
+#[doc = "Low power mode.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOWPOWER_A {
-    #[doc = "High speed mode."]
-    HIGHSPEED,
-    #[doc = "Low power mode (Low speed)."]
-    LOWSPEED,
+    #[doc = "0: High speed mode."]
+    HIGHSPEED = 0,
+    #[doc = "1: Low power mode (Low speed)."]
+    LOWSPEED = 1,
 }
 impl From<LOWPOWER_A> for bool {
     #[inline(always)]
     fn from(variant: LOWPOWER_A) -> Self {
-        match variant {
-            LOWPOWER_A::HIGHSPEED => false,
-            LOWPOWER_A::LOWSPEED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOWPOWER`"]
@@ -244,33 +235,27 @@ impl<'a> LOWPOWER_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PMUX`"]
+#[doc = "Control word for P multiplexer:.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PMUX_A {
-    #[doc = "VREF (See fiedl VREFINPUT)."]
-    VREF,
-    #[doc = "Pin P0_0."]
-    CMP0_A,
-    #[doc = "Pin P0_9."]
-    CMP0_B,
-    #[doc = "Pin P0_18."]
-    CMP0_C,
-    #[doc = "Pin P1_14."]
-    CMP0_D,
-    #[doc = "Pin P2_23."]
-    CMP0_E,
+    #[doc = "0: VREF (See fiedl VREFINPUT)."]
+    VREF = 0,
+    #[doc = "1: Pin P0_0."]
+    CMP0_A = 1,
+    #[doc = "2: Pin P0_9."]
+    CMP0_B = 2,
+    #[doc = "3: Pin P0_18."]
+    CMP0_C = 3,
+    #[doc = "4: Pin P1_14."]
+    CMP0_D = 4,
+    #[doc = "5: Pin P2_23."]
+    CMP0_E = 5,
 }
 impl From<PMUX_A> for u8 {
     #[inline(always)]
     fn from(variant: PMUX_A) -> Self {
-        match variant {
-            PMUX_A::VREF => 0,
-            PMUX_A::CMP0_A => 1,
-            PMUX_A::CMP0_B => 2,
-            PMUX_A::CMP0_C => 3,
-            PMUX_A::CMP0_D => 4,
-            PMUX_A::CMP0_E => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PMUX`"]
@@ -368,33 +353,27 @@ impl<'a> PMUX_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `NMUX`"]
+#[doc = "Control word for N multiplexer:.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum NMUX_A {
-    #[doc = "VREF (See field VREFINPUT)."]
-    VREF,
-    #[doc = "Pin P0_0."]
-    CMP0_A,
-    #[doc = "Pin P0_9."]
-    CMP0_B,
-    #[doc = "Pin P0_18."]
-    CMP0_C,
-    #[doc = "Pin P1_14."]
-    CMP0_D,
-    #[doc = "Pin P2_23."]
-    CMP0_E,
+    #[doc = "0: VREF (See field VREFINPUT)."]
+    VREF = 0,
+    #[doc = "1: Pin P0_0."]
+    CMP0_A = 1,
+    #[doc = "2: Pin P0_9."]
+    CMP0_B = 2,
+    #[doc = "3: Pin P0_18."]
+    CMP0_C = 3,
+    #[doc = "4: Pin P1_14."]
+    CMP0_D = 4,
+    #[doc = "5: Pin P2_23."]
+    CMP0_E = 5,
 }
 impl From<NMUX_A> for u8 {
     #[inline(always)]
     fn from(variant: NMUX_A) -> Self {
-        match variant {
-            NMUX_A::VREF => 0,
-            NMUX_A::CMP0_A => 1,
-            NMUX_A::CMP0_B => 2,
-            NMUX_A::CMP0_C => 3,
-            NMUX_A::CMP0_D => 4,
-            NMUX_A::CMP0_E => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NMUX`"]
@@ -506,30 +485,240 @@ impl<'a> VREF_W<'a> {
         self.w
     }
 }
+#[doc = "Control the filtering of the Analog Comparator output.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FILTERCGF_SAMPLEMODE_A {
+    #[doc = "0: Bypass mode."]
+    BYPASS = 0,
+    #[doc = "1: Filter 1 clock period."]
+    FILTER1CLK = 1,
+    #[doc = "2: Filter 2 clock period."]
+    FILTER2CLK = 2,
+    #[doc = "3: Filter 3 clock period."]
+    FILTER3CLK = 3,
+}
+impl From<FILTERCGF_SAMPLEMODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FILTERCGF_SAMPLEMODE_A) -> Self {
+        variant as _
+    }
+}
 #[doc = "Reader of field `FILTERCGF_SAMPLEMODE`"]
-pub type FILTERCGF_SAMPLEMODE_R = crate::R<u8, u8>;
+pub type FILTERCGF_SAMPLEMODE_R = crate::R<u8, FILTERCGF_SAMPLEMODE_A>;
+impl FILTERCGF_SAMPLEMODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FILTERCGF_SAMPLEMODE_A {
+        match self.bits {
+            0 => FILTERCGF_SAMPLEMODE_A::BYPASS,
+            1 => FILTERCGF_SAMPLEMODE_A::FILTER1CLK,
+            2 => FILTERCGF_SAMPLEMODE_A::FILTER2CLK,
+            3 => FILTERCGF_SAMPLEMODE_A::FILTER3CLK,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `BYPASS`"]
+    #[inline(always)]
+    pub fn is_bypass(&self) -> bool {
+        *self == FILTERCGF_SAMPLEMODE_A::BYPASS
+    }
+    #[doc = "Checks if the value of the field is `FILTER1CLK`"]
+    #[inline(always)]
+    pub fn is_filter1clk(&self) -> bool {
+        *self == FILTERCGF_SAMPLEMODE_A::FILTER1CLK
+    }
+    #[doc = "Checks if the value of the field is `FILTER2CLK`"]
+    #[inline(always)]
+    pub fn is_filter2clk(&self) -> bool {
+        *self == FILTERCGF_SAMPLEMODE_A::FILTER2CLK
+    }
+    #[doc = "Checks if the value of the field is `FILTER3CLK`"]
+    #[inline(always)]
+    pub fn is_filter3clk(&self) -> bool {
+        *self == FILTERCGF_SAMPLEMODE_A::FILTER3CLK
+    }
+}
 #[doc = "Write proxy for field `FILTERCGF_SAMPLEMODE`"]
 pub struct FILTERCGF_SAMPLEMODE_W<'a> {
     w: &'a mut W,
 }
 impl<'a> FILTERCGF_SAMPLEMODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FILTERCGF_SAMPLEMODE_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
+        }
+    }
+    #[doc = "Bypass mode."]
+    #[inline(always)]
+    pub fn bypass(self) -> &'a mut W {
+        self.variant(FILTERCGF_SAMPLEMODE_A::BYPASS)
+    }
+    #[doc = "Filter 1 clock period."]
+    #[inline(always)]
+    pub fn filter1clk(self) -> &'a mut W {
+        self.variant(FILTERCGF_SAMPLEMODE_A::FILTER1CLK)
+    }
+    #[doc = "Filter 2 clock period."]
+    #[inline(always)]
+    pub fn filter2clk(self) -> &'a mut W {
+        self.variant(FILTERCGF_SAMPLEMODE_A::FILTER2CLK)
+    }
+    #[doc = "Filter 3 clock period."]
+    #[inline(always)]
+    pub fn filter3clk(self) -> &'a mut W {
+        self.variant(FILTERCGF_SAMPLEMODE_A::FILTER3CLK)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
         self.w
     }
 }
+#[doc = "Filter Clock divider.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FILTERCGF_CLKDIV_A {
+    #[doc = "0: Filter clock period duration equals 1 Analog Comparator clock period."]
+    FILTER_1CLK_PERIOD = 0,
+    #[doc = "1: Filter clock period duration equals 2 Analog Comparator clock period."]
+    FILTER_2CLK_PERIOD = 1,
+    #[doc = "2: Filter clock period duration equals 4 Analog Comparator clock period."]
+    FILTER_4CLK_PERIOD = 2,
+    #[doc = "3: Filter clock period duration equals 8 Analog Comparator clock period."]
+    FILTER_8CLK_PERIOD = 3,
+    #[doc = "4: Filter clock period duration equals 16 Analog Comparator clock period."]
+    FILTER_16CLK_PERIOD = 4,
+    #[doc = "5: Filter clock period duration equals 32 Analog Comparator clock period."]
+    FILTER_32CLK_PERIOD = 5,
+    #[doc = "6: Filter clock period duration equals 64 Analog Comparator clock period."]
+    FILTER_64CLK_PERIOD = 6,
+    #[doc = "7: Filter clock period duration equals 128 Analog Comparator clock period."]
+    FILTER_128CLK_PERIOD = 7,
+}
+impl From<FILTERCGF_CLKDIV_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FILTERCGF_CLKDIV_A) -> Self {
+        variant as _
+    }
+}
 #[doc = "Reader of field `FILTERCGF_CLKDIV`"]
-pub type FILTERCGF_CLKDIV_R = crate::R<u8, u8>;
+pub type FILTERCGF_CLKDIV_R = crate::R<u8, FILTERCGF_CLKDIV_A>;
+impl FILTERCGF_CLKDIV_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FILTERCGF_CLKDIV_A {
+        match self.bits {
+            0 => FILTERCGF_CLKDIV_A::FILTER_1CLK_PERIOD,
+            1 => FILTERCGF_CLKDIV_A::FILTER_2CLK_PERIOD,
+            2 => FILTERCGF_CLKDIV_A::FILTER_4CLK_PERIOD,
+            3 => FILTERCGF_CLKDIV_A::FILTER_8CLK_PERIOD,
+            4 => FILTERCGF_CLKDIV_A::FILTER_16CLK_PERIOD,
+            5 => FILTERCGF_CLKDIV_A::FILTER_32CLK_PERIOD,
+            6 => FILTERCGF_CLKDIV_A::FILTER_64CLK_PERIOD,
+            7 => FILTERCGF_CLKDIV_A::FILTER_128CLK_PERIOD,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `FILTER_1CLK_PERIOD`"]
+    #[inline(always)]
+    pub fn is_filter_1clk_period(&self) -> bool {
+        *self == FILTERCGF_CLKDIV_A::FILTER_1CLK_PERIOD
+    }
+    #[doc = "Checks if the value of the field is `FILTER_2CLK_PERIOD`"]
+    #[inline(always)]
+    pub fn is_filter_2clk_period(&self) -> bool {
+        *self == FILTERCGF_CLKDIV_A::FILTER_2CLK_PERIOD
+    }
+    #[doc = "Checks if the value of the field is `FILTER_4CLK_PERIOD`"]
+    #[inline(always)]
+    pub fn is_filter_4clk_period(&self) -> bool {
+        *self == FILTERCGF_CLKDIV_A::FILTER_4CLK_PERIOD
+    }
+    #[doc = "Checks if the value of the field is `FILTER_8CLK_PERIOD`"]
+    #[inline(always)]
+    pub fn is_filter_8clk_period(&self) -> bool {
+        *self == FILTERCGF_CLKDIV_A::FILTER_8CLK_PERIOD
+    }
+    #[doc = "Checks if the value of the field is `FILTER_16CLK_PERIOD`"]
+    #[inline(always)]
+    pub fn is_filter_16clk_period(&self) -> bool {
+        *self == FILTERCGF_CLKDIV_A::FILTER_16CLK_PERIOD
+    }
+    #[doc = "Checks if the value of the field is `FILTER_32CLK_PERIOD`"]
+    #[inline(always)]
+    pub fn is_filter_32clk_period(&self) -> bool {
+        *self == FILTERCGF_CLKDIV_A::FILTER_32CLK_PERIOD
+    }
+    #[doc = "Checks if the value of the field is `FILTER_64CLK_PERIOD`"]
+    #[inline(always)]
+    pub fn is_filter_64clk_period(&self) -> bool {
+        *self == FILTERCGF_CLKDIV_A::FILTER_64CLK_PERIOD
+    }
+    #[doc = "Checks if the value of the field is `FILTER_128CLK_PERIOD`"]
+    #[inline(always)]
+    pub fn is_filter_128clk_period(&self) -> bool {
+        *self == FILTERCGF_CLKDIV_A::FILTER_128CLK_PERIOD
+    }
+}
 #[doc = "Write proxy for field `FILTERCGF_CLKDIV`"]
 pub struct FILTERCGF_CLKDIV_W<'a> {
     w: &'a mut W,
 }
 impl<'a> FILTERCGF_CLKDIV_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FILTERCGF_CLKDIV_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
+        }
+    }
+    #[doc = "Filter clock period duration equals 1 Analog Comparator clock period."]
+    #[inline(always)]
+    pub fn filter_1clk_period(self) -> &'a mut W {
+        self.variant(FILTERCGF_CLKDIV_A::FILTER_1CLK_PERIOD)
+    }
+    #[doc = "Filter clock period duration equals 2 Analog Comparator clock period."]
+    #[inline(always)]
+    pub fn filter_2clk_period(self) -> &'a mut W {
+        self.variant(FILTERCGF_CLKDIV_A::FILTER_2CLK_PERIOD)
+    }
+    #[doc = "Filter clock period duration equals 4 Analog Comparator clock period."]
+    #[inline(always)]
+    pub fn filter_4clk_period(self) -> &'a mut W {
+        self.variant(FILTERCGF_CLKDIV_A::FILTER_4CLK_PERIOD)
+    }
+    #[doc = "Filter clock period duration equals 8 Analog Comparator clock period."]
+    #[inline(always)]
+    pub fn filter_8clk_period(self) -> &'a mut W {
+        self.variant(FILTERCGF_CLKDIV_A::FILTER_8CLK_PERIOD)
+    }
+    #[doc = "Filter clock period duration equals 16 Analog Comparator clock period."]
+    #[inline(always)]
+    pub fn filter_16clk_period(self) -> &'a mut W {
+        self.variant(FILTERCGF_CLKDIV_A::FILTER_16CLK_PERIOD)
+    }
+    #[doc = "Filter clock period duration equals 32 Analog Comparator clock period."]
+    #[inline(always)]
+    pub fn filter_32clk_period(self) -> &'a mut W {
+        self.variant(FILTERCGF_CLKDIV_A::FILTER_32CLK_PERIOD)
+    }
+    #[doc = "Filter clock period duration equals 64 Analog Comparator clock period."]
+    #[inline(always)]
+    pub fn filter_64clk_period(self) -> &'a mut W {
+        self.variant(FILTERCGF_CLKDIV_A::FILTER_64CLK_PERIOD)
+    }
+    #[doc = "Filter clock period duration equals 128 Analog Comparator clock period."]
+    #[inline(always)]
+    pub fn filter_128clk_period(self) -> &'a mut W {
+        self.variant(FILTERCGF_CLKDIV_A::FILTER_128CLK_PERIOD)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         self.w.bits = (self.w.bits & !(0x07 << 18)) | (((value as u32) & 0x07) << 18);
         self.w
     }
@@ -565,12 +754,12 @@ impl R {
     pub fn vref(&self) -> VREF_R {
         VREF_R::new(((self.bits >> 10) & 0x1f) as u8)
     }
-    #[doc = "Bits 16:17 - Filter Sample mode."]
+    #[doc = "Bits 16:17 - Control the filtering of the Analog Comparator output."]
     #[inline(always)]
     pub fn filtercgf_samplemode(&self) -> FILTERCGF_SAMPLEMODE_R {
         FILTERCGF_SAMPLEMODE_R::new(((self.bits >> 16) & 0x03) as u8)
     }
-    #[doc = "Bits 18:20 - Filter Clock div ."]
+    #[doc = "Bits 18:20 - Filter Clock divider."]
     #[inline(always)]
     pub fn filtercgf_clkdiv(&self) -> FILTERCGF_CLKDIV_R {
         FILTERCGF_CLKDIV_R::new(((self.bits >> 18) & 0x07) as u8)
@@ -607,12 +796,12 @@ impl W {
     pub fn vref(&mut self) -> VREF_W {
         VREF_W { w: self }
     }
-    #[doc = "Bits 16:17 - Filter Sample mode."]
+    #[doc = "Bits 16:17 - Control the filtering of the Analog Comparator output."]
     #[inline(always)]
     pub fn filtercgf_samplemode(&mut self) -> FILTERCGF_SAMPLEMODE_W {
         FILTERCGF_SAMPLEMODE_W { w: self }
     }
-    #[doc = "Bits 18:20 - Filter Clock div ."]
+    #[doc = "Bits 18:20 - Filter Clock divider."]
     #[inline(always)]
     pub fn filtercgf_clkdiv(&mut self) -> FILTERCGF_CLKDIV_W {
         FILTERCGF_CLKDIV_W { w: self }

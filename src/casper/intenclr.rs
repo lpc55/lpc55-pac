@@ -10,21 +10,18 @@ impl crate::ResetValue for super::INTENCLR {
         0
     }
 }
-#[doc = "Possible values of the field `DONE`"]
+#[doc = "Written to clear an interrupt set with INTENSET.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DONE_A {
-    #[doc = "If written 0, ignored"]
-    IGNORED,
-    #[doc = "If written 1, do not Interrupt when done"]
-    NO_INTERRUPT,
+    #[doc = "0: If written 0, ignored"]
+    IGNORED = 0,
+    #[doc = "1: If written 1, do not Interrupt when done"]
+    NO_INTERRUPT = 1,
 }
 impl From<DONE_A> for bool {
     #[inline(always)]
     fn from(variant: DONE_A) -> Self {
-        match variant {
-            DONE_A::IGNORED => false,
-            DONE_A::NO_INTERRUPT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DONE`"]

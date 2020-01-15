@@ -10,42 +10,33 @@ impl crate::ResetValue for super::FMCCR {
         0x2000
     }
 }
-#[doc = "Possible values of the field `FLASHTIM`"]
+#[doc = "Flash memory access time.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FLASHTIM_A {
-    #[doc = "1 system clock flash access time (for system clock rates up to 11 MHz)."]
-    FLASHTIM0,
-    #[doc = "2 system clocks flash access time (for system clock rates up to 22 MHz)."]
-    FLASHTIM1,
-    #[doc = "3 system clocks flash access time (for system clock rates up to 33 MHz)."]
-    FLASHTIM2,
-    #[doc = "4 system clocks flash access time (for system clock rates up to 44 MHz)."]
-    FLASHTIM3,
-    #[doc = "5 system clocks flash access time (for system clock rates up to 55 MHz)."]
-    FLASHTIM4,
-    #[doc = "6 system clocks flash access time (for system clock rates up to 66 MHz)."]
-    FLASHTIM5,
-    #[doc = "7 system clocks flash access time (for system clock rates up to 77 MHz)."]
-    FLASHTIM6,
-    #[doc = "8 system clocks flash access time (for system clock rates up to 88 MHz)."]
-    FLASHTIM7,
-    #[doc = "9 system clocks flash access time (for system clock rates up to 100 MHz)."]
-    FLASHTIM8,
+    #[doc = "0: 1 system clock flash access time (for system clock rates up to 11 MHz)."]
+    FLASHTIM0 = 0,
+    #[doc = "1: 2 system clocks flash access time (for system clock rates up to 22 MHz)."]
+    FLASHTIM1 = 1,
+    #[doc = "2: 3 system clocks flash access time (for system clock rates up to 33 MHz)."]
+    FLASHTIM2 = 2,
+    #[doc = "3: 4 system clocks flash access time (for system clock rates up to 44 MHz)."]
+    FLASHTIM3 = 3,
+    #[doc = "4: 5 system clocks flash access time (for system clock rates up to 55 MHz)."]
+    FLASHTIM4 = 4,
+    #[doc = "5: 6 system clocks flash access time (for system clock rates up to 66 MHz)."]
+    FLASHTIM5 = 5,
+    #[doc = "6: 7 system clocks flash access time (for system clock rates up to 77 MHz)."]
+    FLASHTIM6 = 6,
+    #[doc = "7: 8 system clocks flash access time (for system clock rates up to 88 MHz)."]
+    FLASHTIM7 = 7,
+    #[doc = "8: 9 system clocks flash access time (for system clock rates up to 100 MHz)."]
+    FLASHTIM8 = 8,
 }
 impl From<FLASHTIM_A> for u8 {
     #[inline(always)]
     fn from(variant: FLASHTIM_A) -> Self {
-        match variant {
-            FLASHTIM_A::FLASHTIM0 => 0,
-            FLASHTIM_A::FLASHTIM1 => 1,
-            FLASHTIM_A::FLASHTIM2 => 2,
-            FLASHTIM_A::FLASHTIM3 => 3,
-            FLASHTIM_A::FLASHTIM4 => 4,
-            FLASHTIM_A::FLASHTIM5 => 5,
-            FLASHTIM_A::FLASHTIM6 => 6,
-            FLASHTIM_A::FLASHTIM7 => 7,
-            FLASHTIM_A::FLASHTIM8 => 8,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FLASHTIM`"]

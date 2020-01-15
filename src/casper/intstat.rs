@@ -10,21 +10,18 @@ impl crate::ResetValue for super::INTSTAT {
         0
     }
 }
-#[doc = "Possible values of the field `DONE`"]
+#[doc = "If set, interrupt is caused by accelerator being done.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DONE_A {
-    #[doc = "Not caused by accelerator being done"]
-    NOT_CAUSED,
-    #[doc = "Caused by accelerator being done"]
-    CAUSED,
+    #[doc = "0: Not caused by accelerator being done"]
+    NOT_CAUSED = 0,
+    #[doc = "1: Caused by accelerator being done"]
+    CAUSED = 1,
 }
 impl From<DONE_A> for bool {
     #[inline(always)]
     fn from(variant: DONE_A) -> Self {
-        match variant {
-            DONE_A::NOT_CAUSED => false,
-            DONE_A::CAUSED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DONE`"]

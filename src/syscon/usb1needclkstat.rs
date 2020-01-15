@@ -10,21 +10,18 @@ impl crate::ResetValue for super::USB1NEEDCLKSTAT {
         0
     }
 }
-#[doc = "Possible values of the field `DEV_NEEDCLK`"]
+#[doc = "USB1 Device need_clock signal status:.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DEV_NEEDCLK_A {
-    #[doc = "DEV_NEEDCLK is low."]
-    LOW,
-    #[doc = "DEV_NEEDCLK is high."]
-    HIGH,
+    #[doc = "0: DEV_NEEDCLK is low."]
+    LOW = 0,
+    #[doc = "1: DEV_NEEDCLK is high."]
+    HIGH = 1,
 }
 impl From<DEV_NEEDCLK_A> for bool {
     #[inline(always)]
     fn from(variant: DEV_NEEDCLK_A) -> Self {
-        match variant {
-            DEV_NEEDCLK_A::LOW => false,
-            DEV_NEEDCLK_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DEV_NEEDCLK`"]
@@ -49,21 +46,18 @@ impl DEV_NEEDCLK_R {
         *self == DEV_NEEDCLK_A::HIGH
     }
 }
-#[doc = "Possible values of the field `HOST_NEEDCLK`"]
+#[doc = "USB1 Host need_clock signal status:.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HOST_NEEDCLK_A {
-    #[doc = "HOST_NEEDCLK is low."]
-    LOW,
-    #[doc = "HOST_NEEDCLK is high."]
-    HIGH,
+    #[doc = "0: HOST_NEEDCLK is low."]
+    LOW = 0,
+    #[doc = "1: HOST_NEEDCLK is high."]
+    HIGH = 1,
 }
 impl From<HOST_NEEDCLK_A> for bool {
     #[inline(always)]
     fn from(variant: HOST_NEEDCLK_A) -> Self {
-        match variant {
-            HOST_NEEDCLK_A::LOW => false,
-            HOST_NEEDCLK_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HOST_NEEDCLK`"]

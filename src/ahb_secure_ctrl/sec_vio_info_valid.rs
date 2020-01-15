@@ -10,21 +10,18 @@ impl crate::ResetValue for super::SEC_VIO_INFO_VALID {
         0
     }
 }
-#[doc = "Possible values of the field `VIO_INFO_VALID0`"]
+#[doc = "violation information valid flag for AHB port 0. Write 1 to clear.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VIO_INFO_VALID0_A {
-    #[doc = "Not valid."]
-    NOT_VALID,
-    #[doc = "Valid (violation occurred)."]
-    VALID,
+    #[doc = "0: Not valid."]
+    NOT_VALID = 0,
+    #[doc = "1: Valid (violation occurred)."]
+    VALID = 1,
 }
 impl From<VIO_INFO_VALID0_A> for bool {
     #[inline(always)]
     fn from(variant: VIO_INFO_VALID0_A) -> Self {
-        match variant {
-            VIO_INFO_VALID0_A::NOT_VALID => false,
-            VIO_INFO_VALID0_A::VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VIO_INFO_VALID0`"]
@@ -88,21 +85,18 @@ impl<'a> VIO_INFO_VALID0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VIO_INFO_VALID1`"]
+#[doc = "violation information valid flag for AHB port 1. Write 1 to clear.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VIO_INFO_VALID1_A {
-    #[doc = "Not valid."]
-    NOT_VALID,
-    #[doc = "Valid (violation occurred)."]
-    VALID,
+    #[doc = "0: Not valid."]
+    NOT_VALID = 0,
+    #[doc = "1: Valid (violation occurred)."]
+    VALID = 1,
 }
 impl From<VIO_INFO_VALID1_A> for bool {
     #[inline(always)]
     fn from(variant: VIO_INFO_VALID1_A) -> Self {
-        match variant {
-            VIO_INFO_VALID1_A::NOT_VALID => false,
-            VIO_INFO_VALID1_A::VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VIO_INFO_VALID1`"]
@@ -166,21 +160,18 @@ impl<'a> VIO_INFO_VALID1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VIO_INFO_VALID2`"]
+#[doc = "violation information valid flag for AHB port 2. Write 1 to clear.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VIO_INFO_VALID2_A {
-    #[doc = "Not valid."]
-    NOT_VALID,
-    #[doc = "Valid (violation occurred)."]
-    VALID,
+    #[doc = "0: Not valid."]
+    NOT_VALID = 0,
+    #[doc = "1: Valid (violation occurred)."]
+    VALID = 1,
 }
 impl From<VIO_INFO_VALID2_A> for bool {
     #[inline(always)]
     fn from(variant: VIO_INFO_VALID2_A) -> Self {
-        match variant {
-            VIO_INFO_VALID2_A::NOT_VALID => false,
-            VIO_INFO_VALID2_A::VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VIO_INFO_VALID2`"]
@@ -244,21 +235,18 @@ impl<'a> VIO_INFO_VALID2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VIO_INFO_VALID3`"]
+#[doc = "violation information valid flag for AHB port 3. Write 1 to clear.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VIO_INFO_VALID3_A {
-    #[doc = "Not valid."]
-    NOT_VALID,
-    #[doc = "Valid (violation occurred)."]
-    VALID,
+    #[doc = "0: Not valid."]
+    NOT_VALID = 0,
+    #[doc = "1: Valid (violation occurred)."]
+    VALID = 1,
 }
 impl From<VIO_INFO_VALID3_A> for bool {
     #[inline(always)]
     fn from(variant: VIO_INFO_VALID3_A) -> Self {
-        match variant {
-            VIO_INFO_VALID3_A::NOT_VALID => false,
-            VIO_INFO_VALID3_A::VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VIO_INFO_VALID3`"]
@@ -322,21 +310,18 @@ impl<'a> VIO_INFO_VALID3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VIO_INFO_VALID4`"]
+#[doc = "violation information valid flag for AHB port 4. Write 1 to clear.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VIO_INFO_VALID4_A {
-    #[doc = "Not valid."]
-    NOT_VALID,
-    #[doc = "Valid (violation occurred)."]
-    VALID,
+    #[doc = "0: Not valid."]
+    NOT_VALID = 0,
+    #[doc = "1: Valid (violation occurred)."]
+    VALID = 1,
 }
 impl From<VIO_INFO_VALID4_A> for bool {
     #[inline(always)]
     fn from(variant: VIO_INFO_VALID4_A) -> Self {
-        match variant {
-            VIO_INFO_VALID4_A::NOT_VALID => false,
-            VIO_INFO_VALID4_A::VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VIO_INFO_VALID4`"]
@@ -400,21 +385,18 @@ impl<'a> VIO_INFO_VALID4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VIO_INFO_VALID5`"]
+#[doc = "violation information valid flag for AHB port 5. Write 1 to clear.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VIO_INFO_VALID5_A {
-    #[doc = "Not valid."]
-    NOT_VALID,
-    #[doc = "Valid (violation occurred)."]
-    VALID,
+    #[doc = "0: Not valid."]
+    NOT_VALID = 0,
+    #[doc = "1: Valid (violation occurred)."]
+    VALID = 1,
 }
 impl From<VIO_INFO_VALID5_A> for bool {
     #[inline(always)]
     fn from(variant: VIO_INFO_VALID5_A) -> Self {
-        match variant {
-            VIO_INFO_VALID5_A::NOT_VALID => false,
-            VIO_INFO_VALID5_A::VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VIO_INFO_VALID5`"]
@@ -478,21 +460,18 @@ impl<'a> VIO_INFO_VALID5_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VIO_INFO_VALID6`"]
+#[doc = "violation information valid flag for AHB port 6. Write 1 to clear.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VIO_INFO_VALID6_A {
-    #[doc = "Not valid."]
-    NOT_VALID,
-    #[doc = "Valid (violation occurred)."]
-    VALID,
+    #[doc = "0: Not valid."]
+    NOT_VALID = 0,
+    #[doc = "1: Valid (violation occurred)."]
+    VALID = 1,
 }
 impl From<VIO_INFO_VALID6_A> for bool {
     #[inline(always)]
     fn from(variant: VIO_INFO_VALID6_A) -> Self {
-        match variant {
-            VIO_INFO_VALID6_A::NOT_VALID => false,
-            VIO_INFO_VALID6_A::VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VIO_INFO_VALID6`"]
@@ -556,21 +535,18 @@ impl<'a> VIO_INFO_VALID6_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VIO_INFO_VALID7`"]
+#[doc = "violation information valid flag for AHB port 7. Write 1 to clear.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VIO_INFO_VALID7_A {
-    #[doc = "Not valid."]
-    NOT_VALID,
-    #[doc = "Valid (violation occurred)."]
-    VALID,
+    #[doc = "0: Not valid."]
+    NOT_VALID = 0,
+    #[doc = "1: Valid (violation occurred)."]
+    VALID = 1,
 }
 impl From<VIO_INFO_VALID7_A> for bool {
     #[inline(always)]
     fn from(variant: VIO_INFO_VALID7_A) -> Self {
-        match variant {
-            VIO_INFO_VALID7_A::NOT_VALID => false,
-            VIO_INFO_VALID7_A::VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VIO_INFO_VALID7`"]
@@ -634,21 +610,18 @@ impl<'a> VIO_INFO_VALID7_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VIO_INFO_VALID8`"]
+#[doc = "violation information valid flag for AHB port 8. Write 1 to clear.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VIO_INFO_VALID8_A {
-    #[doc = "Not valid."]
-    NOT_VALID,
-    #[doc = "Valid (violation occurred)."]
-    VALID,
+    #[doc = "0: Not valid."]
+    NOT_VALID = 0,
+    #[doc = "1: Valid (violation occurred)."]
+    VALID = 1,
 }
 impl From<VIO_INFO_VALID8_A> for bool {
     #[inline(always)]
     fn from(variant: VIO_INFO_VALID8_A) -> Self {
-        match variant {
-            VIO_INFO_VALID8_A::NOT_VALID => false,
-            VIO_INFO_VALID8_A::VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VIO_INFO_VALID8`"]
@@ -712,21 +685,18 @@ impl<'a> VIO_INFO_VALID8_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VIO_INFO_VALID9`"]
+#[doc = "violation information valid flag for AHB port 9. Write 1 to clear.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VIO_INFO_VALID9_A {
-    #[doc = "Not valid."]
-    NOT_VALID,
-    #[doc = "Valid (violation occurred)."]
-    VALID,
+    #[doc = "0: Not valid."]
+    NOT_VALID = 0,
+    #[doc = "1: Valid (violation occurred)."]
+    VALID = 1,
 }
 impl From<VIO_INFO_VALID9_A> for bool {
     #[inline(always)]
     fn from(variant: VIO_INFO_VALID9_A) -> Self {
-        match variant {
-            VIO_INFO_VALID9_A::NOT_VALID => false,
-            VIO_INFO_VALID9_A::VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VIO_INFO_VALID9`"]
@@ -790,21 +760,18 @@ impl<'a> VIO_INFO_VALID9_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VIO_INFO_VALID10`"]
+#[doc = "violation information valid flag for AHB port 10. Write 1 to clear.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VIO_INFO_VALID10_A {
-    #[doc = "Not valid."]
-    NOT_VALID,
-    #[doc = "Valid (violation occurred)."]
-    VALID,
+    #[doc = "0: Not valid."]
+    NOT_VALID = 0,
+    #[doc = "1: Valid (violation occurred)."]
+    VALID = 1,
 }
 impl From<VIO_INFO_VALID10_A> for bool {
     #[inline(always)]
     fn from(variant: VIO_INFO_VALID10_A) -> Self {
-        match variant {
-            VIO_INFO_VALID10_A::NOT_VALID => false,
-            VIO_INFO_VALID10_A::VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VIO_INFO_VALID10`"]
@@ -868,21 +835,18 @@ impl<'a> VIO_INFO_VALID10_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VIO_INFO_VALID11`"]
+#[doc = "violation information valid flag for AHB port 11. Write 1 to clear.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VIO_INFO_VALID11_A {
-    #[doc = "Not valid."]
-    NOT_VALID,
-    #[doc = "Valid (violation occurred)."]
-    VALID,
+    #[doc = "0: Not valid."]
+    NOT_VALID = 0,
+    #[doc = "1: Valid (violation occurred)."]
+    VALID = 1,
 }
 impl From<VIO_INFO_VALID11_A> for bool {
     #[inline(always)]
     fn from(variant: VIO_INFO_VALID11_A) -> Self {
-        match variant {
-            VIO_INFO_VALID11_A::NOT_VALID => false,
-            VIO_INFO_VALID11_A::VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VIO_INFO_VALID11`"]

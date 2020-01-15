@@ -10,21 +10,18 @@ impl crate::ResetValue for super::USB_HS_STATUS {
         0
     }
 }
-#[doc = "Possible values of the field `USBHS_3V_NOK`"]
+#[doc = "USB_HS: Low voltage detection on 3.3V supply.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USBHS_3V_NOK_A {
-    #[doc = "3v3 supply is good."]
-    SUPPLY_3V_OK,
-    #[doc = "3v3 supply is too low."]
-    SUPPLY_3V_LOW,
+    #[doc = "0: 3v3 supply is good."]
+    SUPPLY_3V_OK = 0,
+    #[doc = "1: 3v3 supply is too low."]
+    SUPPLY_3V_LOW = 1,
 }
 impl From<USBHS_3V_NOK_A> for bool {
     #[inline(always)]
     fn from(variant: USBHS_3V_NOK_A) -> Self {
-        match variant {
-            USBHS_3V_NOK_A::SUPPLY_3V_OK => false,
-            USBHS_3V_NOK_A::SUPPLY_3V_LOW => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USBHS_3V_NOK`"]

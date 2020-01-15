@@ -10,21 +10,18 @@ impl crate::ResetValue for super::FIFOCFG {
         0
     }
 }
-#[doc = "Possible values of the field `ENABLETX`"]
+#[doc = "Enable the transmit FIFO.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENABLETX_A {
-    #[doc = "The transmit FIFO is not enabled."]
-    DISABLED,
-    #[doc = "The transmit FIFO is enabled."]
-    ENABLED,
+    #[doc = "0: The transmit FIFO is not enabled."]
+    DISABLED = 0,
+    #[doc = "1: The transmit FIFO is enabled."]
+    ENABLED = 1,
 }
 impl From<ENABLETX_A> for bool {
     #[inline(always)]
     fn from(variant: ENABLETX_A) -> Self {
-        match variant {
-            ENABLETX_A::DISABLED => false,
-            ENABLETX_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENABLETX`"]
@@ -88,21 +85,18 @@ impl<'a> ENABLETX_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ENABLERX`"]
+#[doc = "Enable the receive FIFO.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENABLERX_A {
-    #[doc = "The receive FIFO is not enabled."]
-    DISABLED,
-    #[doc = "The receive FIFO is enabled."]
-    ENABLED,
+    #[doc = "0: The receive FIFO is not enabled."]
+    DISABLED = 0,
+    #[doc = "1: The receive FIFO is enabled."]
+    ENABLED = 1,
 }
 impl From<ENABLERX_A> for bool {
     #[inline(always)]
     fn from(variant: ENABLERX_A) -> Self {
-        match variant {
-            ENABLERX_A::DISABLED => false,
-            ENABLERX_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENABLERX`"]
@@ -168,21 +162,18 @@ impl<'a> ENABLERX_W<'a> {
 }
 #[doc = "Reader of field `SIZE`"]
 pub type SIZE_R = crate::R<u8, u8>;
-#[doc = "Possible values of the field `DMATX`"]
+#[doc = "DMA configuration for transmit.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMATX_A {
-    #[doc = "DMA is not used for the transmit function."]
-    DISABLED,
-    #[doc = "Trigger DMA for the transmit function if the FIFO is not full. Generally, data interrupts would be disabled if DMA is enabled."]
-    ENABLED,
+    #[doc = "0: DMA is not used for the transmit function."]
+    DISABLED = 0,
+    #[doc = "1: Trigger DMA for the transmit function if the FIFO is not full. Generally, data interrupts would be disabled if DMA is enabled."]
+    ENABLED = 1,
 }
 impl From<DMATX_A> for bool {
     #[inline(always)]
     fn from(variant: DMATX_A) -> Self {
-        match variant {
-            DMATX_A::DISABLED => false,
-            DMATX_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DMATX`"]
@@ -246,21 +237,18 @@ impl<'a> DMATX_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DMARX`"]
+#[doc = "DMA configuration for receive.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMARX_A {
-    #[doc = "DMA is not used for the receive function."]
-    DISABLED,
-    #[doc = "Trigger DMA for the receive function if the FIFO is not empty. Generally, data interrupts would be disabled if DMA is enabled."]
-    ENABLED,
+    #[doc = "0: DMA is not used for the receive function."]
+    DISABLED = 0,
+    #[doc = "1: Trigger DMA for the receive function if the FIFO is not empty. Generally, data interrupts would be disabled if DMA is enabled."]
+    ENABLED = 1,
 }
 impl From<DMARX_A> for bool {
     #[inline(always)]
     fn from(variant: DMARX_A) -> Self {
-        match variant {
-            DMARX_A::DISABLED => false,
-            DMARX_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DMARX`"]
@@ -324,21 +312,18 @@ impl<'a> DMARX_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WAKETX`"]
+#[doc = "Wake-up for transmit FIFO level. This allows the device to be woken from reduced power modes (up to power-down, as long as the peripheral function works in that power mode) without enabling the TXLVL interrupt. Only DMA wakes up, processes data, and goes back to sleep. The CPU will remain stopped until woken by another cause, such as DMA completion. See Hardware Wake-up control register.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAKETX_A {
-    #[doc = "Only enabled interrupts will wake up the device form reduced power modes."]
-    DISABLED,
-    #[doc = "A device wake-up for DMA will occur if the transmit FIFO level reaches the value specified by TXLVL in FIFOTRIG, even when the TXLVL interrupt is not enabled."]
-    ENABLED,
+    #[doc = "0: Only enabled interrupts will wake up the device form reduced power modes."]
+    DISABLED = 0,
+    #[doc = "1: A device wake-up for DMA will occur if the transmit FIFO level reaches the value specified by TXLVL in FIFOTRIG, even when the TXLVL interrupt is not enabled."]
+    ENABLED = 1,
 }
 impl From<WAKETX_A> for bool {
     #[inline(always)]
     fn from(variant: WAKETX_A) -> Self {
-        match variant {
-            WAKETX_A::DISABLED => false,
-            WAKETX_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAKETX`"]
@@ -402,21 +387,18 @@ impl<'a> WAKETX_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WAKERX`"]
+#[doc = "Wake-up for receive FIFO level. This allows the device to be woken from reduced power modes (up to power-down, as long as the peripheral function works in that power mode) without enabling the TXLVL interrupt. Only DMA wakes up, processes data, and goes back to sleep. The CPU will remain stopped until woken by another cause, such as DMA completion. See Hardware Wake-up control register.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAKERX_A {
-    #[doc = "Only enabled interrupts will wake up the device form reduced power modes."]
-    DISABLED,
-    #[doc = "A device wake-up for DMA will occur if the receive FIFO level reaches the value specified by RXLVL in FIFOTRIG, even when the RXLVL interrupt is not enabled."]
-    ENABLED,
+    #[doc = "0: Only enabled interrupts will wake up the device form reduced power modes."]
+    DISABLED = 0,
+    #[doc = "1: A device wake-up for DMA will occur if the receive FIFO level reaches the value specified by RXLVL in FIFOTRIG, even when the RXLVL interrupt is not enabled."]
+    ENABLED = 1,
 }
 impl From<WAKERX_A> for bool {
     #[inline(always)]
     fn from(variant: WAKERX_A) -> Self {
-        match variant {
-            WAKERX_A::DISABLED => false,
-            WAKERX_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAKERX`"]

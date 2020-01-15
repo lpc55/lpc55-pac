@@ -99,7 +99,7 @@ pub struct LUT {
 #[doc = r"Register block"]
 #[doc = "no description available"]
 pub mod lut;
-#[doc = "Specifies the Truth Table contents for LUT0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [lut_truth](lut_truth) module"]
+#[doc = "Specifies the Truth Table contents for LUT0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lut_truth](lut_truth) module"]
 pub type LUT_TRUTH = crate::Reg<u32, _LUT_TRUTH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -110,7 +110,7 @@ impl crate::Readable for LUT_TRUTH {}
 impl crate::Writable for LUT_TRUTH {}
 #[doc = "Specifies the Truth Table contents for LUT0"]
 pub mod lut_truth;
-#[doc = "Provides the current state of the 8 designated PLU Outputs.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [outputs](outputs) module"]
+#[doc = "Provides the current state of the 8 designated PLU Outputs.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [outputs](outputs) module"]
 pub type OUTPUTS = crate::Reg<u32, _OUTPUTS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -121,7 +121,7 @@ impl crate::Readable for OUTPUTS {}
 impl crate::Writable for OUTPUTS {}
 #[doc = "Provides the current state of the 8 designated PLU Outputs."]
 pub mod outputs;
-#[doc = "Wakeup interrupt control for PLU\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [wakeint_ctrl](wakeint_ctrl) module"]
+#[doc = "Wakeup interrupt control for PLU\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wakeint_ctrl](wakeint_ctrl) module"]
 pub type WAKEINT_CTRL = crate::Reg<u32, _WAKEINT_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -132,7 +132,7 @@ impl crate::Readable for WAKEINT_CTRL {}
 impl crate::Writable for WAKEINT_CTRL {}
 #[doc = "Wakeup interrupt control for PLU"]
 pub mod wakeint_ctrl;
-#[doc = "Selects the source to be connected to PLU Output 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [output_mux](output_mux) module"]
+#[doc = "Selects the source to be connected to PLU Output 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [output_mux](output_mux) module"]
 pub type OUTPUT_MUX = crate::Reg<u32, _OUTPUT_MUX>;
 #[allow(missing_docs)]
 #[doc(hidden)]

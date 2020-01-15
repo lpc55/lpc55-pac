@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CTRL {
         0
     }
 }
-#[doc = "Possible values of the field `ENABLE`"]
+#[doc = "DMA controller master enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENABLE_A {
-    #[doc = "Disabled. The DMA controller is disabled. This clears any triggers that were asserted at the point when disabled, but does not prevent re-triggering when the DMA controller is re-enabled."]
-    DISABLED,
-    #[doc = "Enabled. The DMA controller is enabled."]
-    ENABLED,
+    #[doc = "0: Disabled. The DMA controller is disabled. This clears any triggers that were asserted at the point when disabled, but does not prevent re-triggering when the DMA controller is re-enabled."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. The DMA controller is enabled."]
+    ENABLED = 1,
 }
 impl From<ENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: ENABLE_A) -> Self {
-        match variant {
-            ENABLE_A::DISABLED => false,
-            ENABLE_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENABLE`"]

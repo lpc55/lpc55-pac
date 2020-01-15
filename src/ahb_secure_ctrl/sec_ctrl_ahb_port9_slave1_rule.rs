@@ -10,27 +10,23 @@ impl crate::ResetValue for super::SEC_CTRL_AHB_PORT9_SLAVE1_RULE {
         0
     }
 }
-#[doc = "Possible values of the field `FLEXCOMM7_RULE`"]
+#[doc = "Flexcomm interface 7\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FLEXCOMM7_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<FLEXCOMM7_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: FLEXCOMM7_RULE_A) -> Self {
-        match variant {
-            FLEXCOMM7_RULE_A::ENUM_NS_NP => 0,
-            FLEXCOMM7_RULE_A::ENUM_NS_P => 1,
-            FLEXCOMM7_RULE_A::ENUM_S_NP => 2,
-            FLEXCOMM7_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FLEXCOMM7_RULE`"]
@@ -107,27 +103,23 @@ impl<'a> FLEXCOMM7_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SDIO_RULE`"]
+#[doc = "SDMMC card interface\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SDIO_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<SDIO_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: SDIO_RULE_A) -> Self {
-        match variant {
-            SDIO_RULE_A::ENUM_NS_NP => 0,
-            SDIO_RULE_A::ENUM_NS_P => 1,
-            SDIO_RULE_A::ENUM_S_NP => 2,
-            SDIO_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SDIO_RULE`"]
@@ -204,27 +196,23 @@ impl<'a> SDIO_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DBG_MAILBOX_RULE`"]
+#[doc = "Debug mailbox (aka ISP-AP)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DBG_MAILBOX_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<DBG_MAILBOX_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: DBG_MAILBOX_RULE_A) -> Self {
-        match variant {
-            DBG_MAILBOX_RULE_A::ENUM_NS_NP => 0,
-            DBG_MAILBOX_RULE_A::ENUM_NS_P => 1,
-            DBG_MAILBOX_RULE_A::ENUM_S_NP => 2,
-            DBG_MAILBOX_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DBG_MAILBOX_RULE`"]
@@ -301,27 +289,23 @@ impl<'a> DBG_MAILBOX_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `HS_LSPI_RULE`"]
+#[doc = "High Speed SPI\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HS_LSPI_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<HS_LSPI_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: HS_LSPI_RULE_A) -> Self {
-        match variant {
-            HS_LSPI_RULE_A::ENUM_NS_NP => 0,
-            HS_LSPI_RULE_A::ENUM_NS_P => 1,
-            HS_LSPI_RULE_A::ENUM_S_NP => 2,
-            HS_LSPI_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HS_LSPI_RULE`"]

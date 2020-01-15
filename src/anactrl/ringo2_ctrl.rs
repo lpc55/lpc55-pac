@@ -10,21 +10,18 @@ impl crate::ResetValue for super::RINGO2_CTRL {
         0x40
     }
 }
-#[doc = "Possible values of the field `S`"]
+#[doc = "Select short or long ringo (for all ringos types).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum S_A {
-    #[doc = "Select short ringo (few elements)."]
-    SHORT,
-    #[doc = "Select long ringo (many elements)."]
-    LONG,
+    #[doc = "0: Select short ringo (few elements)."]
+    SHORT = 0,
+    #[doc = "1: Select long ringo (many elements)."]
+    LONG = 1,
 }
 impl From<S_A> for bool {
     #[inline(always)]
     fn from(variant: S_A) -> Self {
-        match variant {
-            S_A::SHORT => false,
-            S_A::LONG => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `S`"]
@@ -88,21 +85,18 @@ impl<'a> S_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FS`"]
+#[doc = "Ringo frequency output divider.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FS_A {
-    #[doc = "High frequency output (frequency lower than 100 MHz)."]
-    FAST,
-    #[doc = "Low frequency output (frequency lower than 10 MHz)."]
-    SLOW,
+    #[doc = "0: High frequency output (frequency lower than 100 MHz)."]
+    FAST = 0,
+    #[doc = "1: Low frequency output (frequency lower than 10 MHz)."]
+    SLOW = 1,
 }
 impl From<FS_A> for bool {
     #[inline(always)]
     fn from(variant: FS_A) -> Self {
-        match variant {
-            FS_A::FAST => false,
-            FS_A::SLOW => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FS`"]
@@ -166,21 +160,18 @@ impl<'a> FS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PD`"]
+#[doc = "Ringo module Power control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PD_A {
-    #[doc = "The Ringo module is enabled."]
-    POWERED_ON,
-    #[doc = "The Ringo module is disabled."]
-    POWERED_DOWN,
+    #[doc = "0: The Ringo module is enabled."]
+    POWERED_ON = 0,
+    #[doc = "1: The Ringo module is disabled."]
+    POWERED_DOWN = 1,
 }
 impl From<PD_A> for bool {
     #[inline(always)]
     fn from(variant: PD_A) -> Self {
-        match variant {
-            PD_A::POWERED_ON => false,
-            PD_A::POWERED_DOWN => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PD`"]
@@ -244,21 +235,18 @@ impl<'a> PD_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `E_R24`"]
+#[doc = ".\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E_R24_A {
-    #[doc = "Ringo is disabled."]
-    DISABLE,
-    #[doc = "Ringo is enabled."]
-    ENABLE,
+    #[doc = "0: Ringo is disabled."]
+    DISABLE = 0,
+    #[doc = "1: Ringo is enabled."]
+    ENABLE = 1,
 }
 impl From<E_R24_A> for bool {
     #[inline(always)]
     fn from(variant: E_R24_A) -> Self {
-        match variant {
-            E_R24_A::DISABLE => false,
-            E_R24_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E_R24`"]
@@ -322,21 +310,18 @@ impl<'a> E_R24_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `E_R35`"]
+#[doc = ".\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E_R35_A {
-    #[doc = "Ringo is disabled."]
-    DISABLE,
-    #[doc = "Ringo is enabled."]
-    ENABLE,
+    #[doc = "0: Ringo is disabled."]
+    DISABLE = 0,
+    #[doc = "1: Ringo is enabled."]
+    ENABLE = 1,
 }
 impl From<E_R35_A> for bool {
     #[inline(always)]
     fn from(variant: E_R35_A) -> Self {
-        match variant {
-            E_R35_A::DISABLE => false,
-            E_R35_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E_R35`"]
@@ -400,21 +385,18 @@ impl<'a> E_R35_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `E_M2`"]
+#[doc = "Metal 2 (M2) monitor control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E_M2_A {
-    #[doc = "Ringo is disabled."]
-    DISABLE,
-    #[doc = "Ringo is enabled."]
-    ENABLE,
+    #[doc = "0: Ringo is disabled."]
+    DISABLE = 0,
+    #[doc = "1: Ringo is enabled."]
+    ENABLE = 1,
 }
 impl From<E_M2_A> for bool {
     #[inline(always)]
     fn from(variant: E_M2_A) -> Self {
-        match variant {
-            E_M2_A::DISABLE => false,
-            E_M2_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E_M2`"]
@@ -478,21 +460,18 @@ impl<'a> E_M2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `E_M3`"]
+#[doc = "Metal 3 (M3) monitor control.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E_M3_A {
-    #[doc = "Ringo is disabled."]
-    DISABLE,
-    #[doc = "Ringo is enabled."]
-    ENABLE,
+    #[doc = "0: Ringo is disabled."]
+    DISABLE = 0,
+    #[doc = "1: Ringo is enabled."]
+    ENABLE = 1,
 }
 impl From<E_M3_A> for bool {
     #[inline(always)]
     fn from(variant: E_M3_A) -> Self {
-        match variant {
-            E_M3_A::DISABLE => false,
-            E_M3_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E_M3`"]
@@ -556,21 +535,18 @@ impl<'a> E_M3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `E_M4`"]
+#[doc = "Metal 4 (M4) monitor control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E_M4_A {
-    #[doc = "Ringo is disabled."]
-    DISABLE,
-    #[doc = "Ringo is enabled."]
-    ENABLE,
+    #[doc = "0: Ringo is disabled."]
+    DISABLE = 0,
+    #[doc = "1: Ringo is enabled."]
+    ENABLE = 1,
 }
 impl From<E_M4_A> for bool {
     #[inline(always)]
     fn from(variant: E_M4_A) -> Self {
-        match variant {
-            E_M4_A::DISABLE => false,
-            E_M4_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E_M4`"]
@@ -634,21 +610,18 @@ impl<'a> E_M4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `E_M5`"]
+#[doc = "Metal 5 (M5) monitor control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E_M5_A {
-    #[doc = "Ringo is disabled."]
-    DISABLE,
-    #[doc = "Ringo is enabled."]
-    ENABLE,
+    #[doc = "0: Ringo is disabled."]
+    DISABLE = 0,
+    #[doc = "1: Ringo is enabled."]
+    ENABLE = 1,
 }
 impl From<E_M5_A> for bool {
     #[inline(always)]
     fn from(variant: E_M5_A) -> Self {
-        match variant {
-            E_M5_A::DISABLE => false,
-            E_M5_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E_M5`"]

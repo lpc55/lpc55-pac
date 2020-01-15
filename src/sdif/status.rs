@@ -299,7 +299,8 @@ impl R {
     pub fn data_3_status(&self) -> DATA_3_STATUS_R {
         DATA_3_STATUS_R::new(((self.bits >> 8) & 0x01) != 0)
     }
-    #[doc = "Bit 9 - Inverted version of raw selected card_data\\[0\\] 0 - card data not busy 1 - card data busy."]
+    #[doc = "Bit 9 - Inverted version of raw selected card_data\\[0\\]
+0 - card data not busy 1 - card data busy."]
     #[inline(always)]
     pub fn data_busy(&self) -> DATA_BUSY_R {
         DATA_BUSY_R::new(((self.bits >> 9) & 0x01) != 0)
@@ -361,7 +362,8 @@ impl W {
     pub fn data_3_status(&mut self) -> DATA_3_STATUS_W {
         DATA_3_STATUS_W { w: self }
     }
-    #[doc = "Bit 9 - Inverted version of raw selected card_data\\[0\\] 0 - card data not busy 1 - card data busy."]
+    #[doc = "Bit 9 - Inverted version of raw selected card_data\\[0\\]
+0 - card data not busy 1 - card data busy."]
     #[inline(always)]
     pub fn data_busy(&mut self) -> DATA_BUSY_W {
         DATA_BUSY_W { w: self }

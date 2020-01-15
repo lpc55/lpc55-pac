@@ -10,21 +10,18 @@ impl crate::ResetValue for super::FIFOINTENSET {
         0
     }
 }
-#[doc = "Possible values of the field `TXERR`"]
+#[doc = "Determines whether an interrupt occurs when a transmit error occurs, based on the TXERR flag in the FIFOSTAT register.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXERR_A {
-    #[doc = "No interrupt will be generated for a transmit error."]
-    DISABLED,
-    #[doc = "An interrupt will be generated when a transmit error occurs."]
-    ENABLED,
+    #[doc = "0: No interrupt will be generated for a transmit error."]
+    DISABLED = 0,
+    #[doc = "1: An interrupt will be generated when a transmit error occurs."]
+    ENABLED = 1,
 }
 impl From<TXERR_A> for bool {
     #[inline(always)]
     fn from(variant: TXERR_A) -> Self {
-        match variant {
-            TXERR_A::DISABLED => false,
-            TXERR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXERR`"]
@@ -88,21 +85,18 @@ impl<'a> TXERR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RXERR`"]
+#[doc = "Determines whether an interrupt occurs when a receive error occurs, based on the RXERR flag in the FIFOSTAT register.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXERR_A {
-    #[doc = "No interrupt will be generated for a receive error."]
-    DISABLED,
-    #[doc = "An interrupt will be generated when a receive error occurs."]
-    ENABLED,
+    #[doc = "0: No interrupt will be generated for a receive error."]
+    DISABLED = 0,
+    #[doc = "1: An interrupt will be generated when a receive error occurs."]
+    ENABLED = 1,
 }
 impl From<RXERR_A> for bool {
     #[inline(always)]
     fn from(variant: RXERR_A) -> Self {
-        match variant {
-            RXERR_A::DISABLED => false,
-            RXERR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXERR`"]
@@ -166,21 +160,18 @@ impl<'a> RXERR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TXLVL`"]
+#[doc = "Determines whether an interrupt occurs when a the transmit FIFO reaches the level specified by the TXLVL field in the FIFOTRIG register.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXLVL_A {
-    #[doc = "No interrupt will be generated based on the TX FIFO level."]
-    DISABLED,
-    #[doc = "If TXLVLENA in the FIFOTRIG register = 1, an interrupt will be generated when the TX FIFO level decreases to the level specified by TXLVL in the FIFOTRIG register."]
-    ENABLED,
+    #[doc = "0: No interrupt will be generated based on the TX FIFO level."]
+    DISABLED = 0,
+    #[doc = "1: If TXLVLENA in the FIFOTRIG register = 1, an interrupt will be generated when the TX FIFO level decreases to the level specified by TXLVL in the FIFOTRIG register."]
+    ENABLED = 1,
 }
 impl From<TXLVL_A> for bool {
     #[inline(always)]
     fn from(variant: TXLVL_A) -> Self {
-        match variant {
-            TXLVL_A::DISABLED => false,
-            TXLVL_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXLVL`"]
@@ -244,21 +235,18 @@ impl<'a> TXLVL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RXLVL`"]
+#[doc = "Determines whether an interrupt occurs when a the receive FIFO reaches the level specified by the TXLVL field in the FIFOTRIG register.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXLVL_A {
-    #[doc = "No interrupt will be generated based on the RX FIFO level."]
-    DISABLED,
-    #[doc = "If RXLVLENA in the FIFOTRIG register = 1, an interrupt will be generated when the when the RX FIFO level increases to the level specified by RXLVL in the FIFOTRIG register."]
-    ENABLED,
+    #[doc = "0: No interrupt will be generated based on the RX FIFO level."]
+    DISABLED = 0,
+    #[doc = "1: If RXLVLENA in the FIFOTRIG register = 1, an interrupt will be generated when the when the RX FIFO level increases to the level specified by RXLVL in the FIFOTRIG register."]
+    ENABLED = 1,
 }
 impl From<RXLVL_A> for bool {
     #[inline(always)]
     fn from(variant: RXLVL_A) -> Self {
-        match variant {
-            RXLVL_A::DISABLED => false,
-            RXLVL_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXLVL`"]

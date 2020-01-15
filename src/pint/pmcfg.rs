@@ -10,21 +10,18 @@ impl crate::ResetValue for super::PMCFG {
         0
     }
 }
-#[doc = "Possible values of the field `PROD_ENDPTS0`"]
+#[doc = "Determines whether slice 0 is an endpoint.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROD_ENDPTS0_A {
-    #[doc = "No effect. Slice 0 is not an endpoint."]
-    NO_EFFECT,
-    #[doc = "endpoint. Slice 0 is the endpoint of a product term (minterm). Pin interrupt 0 in the NVIC is raised if the minterm evaluates as true."]
-    ENDPOINT,
+    #[doc = "0: No effect. Slice 0 is not an endpoint."]
+    NO_EFFECT = 0,
+    #[doc = "1: endpoint. Slice 0 is the endpoint of a product term (minterm). Pin interrupt 0 in the NVIC is raised if the minterm evaluates as true."]
+    ENDPOINT = 1,
 }
 impl From<PROD_ENDPTS0_A> for bool {
     #[inline(always)]
     fn from(variant: PROD_ENDPTS0_A) -> Self {
-        match variant {
-            PROD_ENDPTS0_A::NO_EFFECT => false,
-            PROD_ENDPTS0_A::ENDPOINT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PROD_ENDPTS0`"]
@@ -88,21 +85,18 @@ impl<'a> PROD_ENDPTS0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PROD_ENDPTS1`"]
+#[doc = "Determines whether slice 1 is an endpoint.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROD_ENDPTS1_A {
-    #[doc = "No effect. Slice 1 is not an endpoint."]
-    NO_EFFECT,
-    #[doc = "endpoint. Slice 1 is the endpoint of a product term (minterm). Pin interrupt 1 in the NVIC is raised if the minterm evaluates as true."]
-    ENDPOINT,
+    #[doc = "0: No effect. Slice 1 is not an endpoint."]
+    NO_EFFECT = 0,
+    #[doc = "1: endpoint. Slice 1 is the endpoint of a product term (minterm). Pin interrupt 1 in the NVIC is raised if the minterm evaluates as true."]
+    ENDPOINT = 1,
 }
 impl From<PROD_ENDPTS1_A> for bool {
     #[inline(always)]
     fn from(variant: PROD_ENDPTS1_A) -> Self {
-        match variant {
-            PROD_ENDPTS1_A::NO_EFFECT => false,
-            PROD_ENDPTS1_A::ENDPOINT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PROD_ENDPTS1`"]
@@ -166,21 +160,18 @@ impl<'a> PROD_ENDPTS1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PROD_ENDPTS2`"]
+#[doc = "Determines whether slice 2 is an endpoint.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROD_ENDPTS2_A {
-    #[doc = "No effect. Slice 2 is not an endpoint."]
-    NO_EFFECT,
-    #[doc = "endpoint. Slice 2 is the endpoint of a product term (minterm). Pin interrupt 2 in the NVIC is raised if the minterm evaluates as true."]
-    ENDPOINT,
+    #[doc = "0: No effect. Slice 2 is not an endpoint."]
+    NO_EFFECT = 0,
+    #[doc = "1: endpoint. Slice 2 is the endpoint of a product term (minterm). Pin interrupt 2 in the NVIC is raised if the minterm evaluates as true."]
+    ENDPOINT = 1,
 }
 impl From<PROD_ENDPTS2_A> for bool {
     #[inline(always)]
     fn from(variant: PROD_ENDPTS2_A) -> Self {
-        match variant {
-            PROD_ENDPTS2_A::NO_EFFECT => false,
-            PROD_ENDPTS2_A::ENDPOINT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PROD_ENDPTS2`"]
@@ -244,21 +235,18 @@ impl<'a> PROD_ENDPTS2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PROD_ENDPTS3`"]
+#[doc = "Determines whether slice 3 is an endpoint.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROD_ENDPTS3_A {
-    #[doc = "No effect. Slice 3 is not an endpoint."]
-    NO_EFFECT,
-    #[doc = "endpoint. Slice 3 is the endpoint of a product term (minterm). Pin interrupt 3 in the NVIC is raised if the minterm evaluates as true."]
-    ENDPOINT,
+    #[doc = "0: No effect. Slice 3 is not an endpoint."]
+    NO_EFFECT = 0,
+    #[doc = "1: endpoint. Slice 3 is the endpoint of a product term (minterm). Pin interrupt 3 in the NVIC is raised if the minterm evaluates as true."]
+    ENDPOINT = 1,
 }
 impl From<PROD_ENDPTS3_A> for bool {
     #[inline(always)]
     fn from(variant: PROD_ENDPTS3_A) -> Self {
-        match variant {
-            PROD_ENDPTS3_A::NO_EFFECT => false,
-            PROD_ENDPTS3_A::ENDPOINT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PROD_ENDPTS3`"]
@@ -322,21 +310,18 @@ impl<'a> PROD_ENDPTS3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PROD_ENDPTS4`"]
+#[doc = "Determines whether slice 4 is an endpoint.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROD_ENDPTS4_A {
-    #[doc = "No effect. Slice 4 is not an endpoint."]
-    NO_EFFECT,
-    #[doc = "endpoint. Slice 4 is the endpoint of a product term (minterm). Pin interrupt 4 in the NVIC is raised if the minterm evaluates as true."]
-    ENDPOINT,
+    #[doc = "0: No effect. Slice 4 is not an endpoint."]
+    NO_EFFECT = 0,
+    #[doc = "1: endpoint. Slice 4 is the endpoint of a product term (minterm). Pin interrupt 4 in the NVIC is raised if the minterm evaluates as true."]
+    ENDPOINT = 1,
 }
 impl From<PROD_ENDPTS4_A> for bool {
     #[inline(always)]
     fn from(variant: PROD_ENDPTS4_A) -> Self {
-        match variant {
-            PROD_ENDPTS4_A::NO_EFFECT => false,
-            PROD_ENDPTS4_A::ENDPOINT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PROD_ENDPTS4`"]
@@ -400,21 +385,18 @@ impl<'a> PROD_ENDPTS4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PROD_ENDPTS5`"]
+#[doc = "Determines whether slice 5 is an endpoint.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROD_ENDPTS5_A {
-    #[doc = "No effect. Slice 5 is not an endpoint."]
-    NO_EFFECT,
-    #[doc = "endpoint. Slice 5 is the endpoint of a product term (minterm). Pin interrupt 5 in the NVIC is raised if the minterm evaluates as true."]
-    ENDPOINT,
+    #[doc = "0: No effect. Slice 5 is not an endpoint."]
+    NO_EFFECT = 0,
+    #[doc = "1: endpoint. Slice 5 is the endpoint of a product term (minterm). Pin interrupt 5 in the NVIC is raised if the minterm evaluates as true."]
+    ENDPOINT = 1,
 }
 impl From<PROD_ENDPTS5_A> for bool {
     #[inline(always)]
     fn from(variant: PROD_ENDPTS5_A) -> Self {
-        match variant {
-            PROD_ENDPTS5_A::NO_EFFECT => false,
-            PROD_ENDPTS5_A::ENDPOINT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PROD_ENDPTS5`"]
@@ -478,21 +460,18 @@ impl<'a> PROD_ENDPTS5_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PROD_ENDPTS6`"]
+#[doc = "Determines whether slice 6 is an endpoint.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PROD_ENDPTS6_A {
-    #[doc = "No effect. Slice 6 is not an endpoint."]
-    NO_EFFECT,
-    #[doc = "endpoint. Slice 6 is the endpoint of a product term (minterm). Pin interrupt 6 in the NVIC is raised if the minterm evaluates as true."]
-    ENDPOINT,
+    #[doc = "0: No effect. Slice 6 is not an endpoint."]
+    NO_EFFECT = 0,
+    #[doc = "1: endpoint. Slice 6 is the endpoint of a product term (minterm). Pin interrupt 6 in the NVIC is raised if the minterm evaluates as true."]
+    ENDPOINT = 1,
 }
 impl From<PROD_ENDPTS6_A> for bool {
     #[inline(always)]
     fn from(variant: PROD_ENDPTS6_A) -> Self {
-        match variant {
-            PROD_ENDPTS6_A::NO_EFFECT => false,
-            PROD_ENDPTS6_A::ENDPOINT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PROD_ENDPTS6`"]
@@ -556,39 +535,31 @@ impl<'a> PROD_ENDPTS6_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CFG0`"]
+#[doc = "Specifies the match contribution condition for bit slice 0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CFG0_A {
-    #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH,
-    #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE,
-    #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE,
-    #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE,
-    #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL,
-    #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL,
-    #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO,
-    #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT,
+    #[doc = "0: Constant HIGH. This bit slice always contributes to a product term match."]
+    CONSTANT_HIGH = 0,
+    #[doc = "1: Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_EDGE = 1,
+    #[doc = "2: Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_FALLING_EDGE = 2,
+    #[doc = "3: Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_FALLING_EDGE = 3,
+    #[doc = "4: High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
+    HIGH_LEVEL = 4,
+    #[doc = "5: Low level. Match occurs when there is a low level on the specified input."]
+    LOW_LEVEL = 5,
+    #[doc = "6: Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
+    CONSTANT_ZERO = 6,
+    #[doc = "7: Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
+    EVENT = 7,
 }
 impl From<CFG0_A> for u8 {
     #[inline(always)]
     fn from(variant: CFG0_A) -> Self {
-        match variant {
-            CFG0_A::CONSTANT_HIGH => 0,
-            CFG0_A::STICKY_RISING_EDGE => 1,
-            CFG0_A::STICKY_FALLING_EDGE => 2,
-            CFG0_A::STICKY_RISING_FALLING_EDGE => 3,
-            CFG0_A::HIGH_LEVEL => 4,
-            CFG0_A::LOW_LEVEL => 5,
-            CFG0_A::CONSTANT_ZERO => 6,
-            CFG0_A::EVENT => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CFG0`"]
@@ -709,39 +680,31 @@ impl<'a> CFG0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CFG1`"]
+#[doc = "Specifies the match contribution condition for bit slice 1.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CFG1_A {
-    #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH,
-    #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE,
-    #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE,
-    #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE,
-    #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL,
-    #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL,
-    #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO,
-    #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT,
+    #[doc = "0: Constant HIGH. This bit slice always contributes to a product term match."]
+    CONSTANT_HIGH = 0,
+    #[doc = "1: Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_EDGE = 1,
+    #[doc = "2: Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_FALLING_EDGE = 2,
+    #[doc = "3: Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_FALLING_EDGE = 3,
+    #[doc = "4: High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
+    HIGH_LEVEL = 4,
+    #[doc = "5: Low level. Match occurs when there is a low level on the specified input."]
+    LOW_LEVEL = 5,
+    #[doc = "6: Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
+    CONSTANT_ZERO = 6,
+    #[doc = "7: Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
+    EVENT = 7,
 }
 impl From<CFG1_A> for u8 {
     #[inline(always)]
     fn from(variant: CFG1_A) -> Self {
-        match variant {
-            CFG1_A::CONSTANT_HIGH => 0,
-            CFG1_A::STICKY_RISING_EDGE => 1,
-            CFG1_A::STICKY_FALLING_EDGE => 2,
-            CFG1_A::STICKY_RISING_FALLING_EDGE => 3,
-            CFG1_A::HIGH_LEVEL => 4,
-            CFG1_A::LOW_LEVEL => 5,
-            CFG1_A::CONSTANT_ZERO => 6,
-            CFG1_A::EVENT => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CFG1`"]
@@ -862,39 +825,31 @@ impl<'a> CFG1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CFG2`"]
+#[doc = "Specifies the match contribution condition for bit slice 2.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CFG2_A {
-    #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH,
-    #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE,
-    #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE,
-    #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE,
-    #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL,
-    #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL,
-    #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO,
-    #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT,
+    #[doc = "0: Constant HIGH. This bit slice always contributes to a product term match."]
+    CONSTANT_HIGH = 0,
+    #[doc = "1: Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_EDGE = 1,
+    #[doc = "2: Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_FALLING_EDGE = 2,
+    #[doc = "3: Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_FALLING_EDGE = 3,
+    #[doc = "4: High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
+    HIGH_LEVEL = 4,
+    #[doc = "5: Low level. Match occurs when there is a low level on the specified input."]
+    LOW_LEVEL = 5,
+    #[doc = "6: Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
+    CONSTANT_ZERO = 6,
+    #[doc = "7: Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
+    EVENT = 7,
 }
 impl From<CFG2_A> for u8 {
     #[inline(always)]
     fn from(variant: CFG2_A) -> Self {
-        match variant {
-            CFG2_A::CONSTANT_HIGH => 0,
-            CFG2_A::STICKY_RISING_EDGE => 1,
-            CFG2_A::STICKY_FALLING_EDGE => 2,
-            CFG2_A::STICKY_RISING_FALLING_EDGE => 3,
-            CFG2_A::HIGH_LEVEL => 4,
-            CFG2_A::LOW_LEVEL => 5,
-            CFG2_A::CONSTANT_ZERO => 6,
-            CFG2_A::EVENT => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CFG2`"]
@@ -1015,39 +970,31 @@ impl<'a> CFG2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CFG3`"]
+#[doc = "Specifies the match contribution condition for bit slice 3.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CFG3_A {
-    #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH,
-    #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE,
-    #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE,
-    #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE,
-    #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL,
-    #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL,
-    #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO,
-    #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT,
+    #[doc = "0: Constant HIGH. This bit slice always contributes to a product term match."]
+    CONSTANT_HIGH = 0,
+    #[doc = "1: Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_EDGE = 1,
+    #[doc = "2: Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_FALLING_EDGE = 2,
+    #[doc = "3: Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_FALLING_EDGE = 3,
+    #[doc = "4: High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
+    HIGH_LEVEL = 4,
+    #[doc = "5: Low level. Match occurs when there is a low level on the specified input."]
+    LOW_LEVEL = 5,
+    #[doc = "6: Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
+    CONSTANT_ZERO = 6,
+    #[doc = "7: Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
+    EVENT = 7,
 }
 impl From<CFG3_A> for u8 {
     #[inline(always)]
     fn from(variant: CFG3_A) -> Self {
-        match variant {
-            CFG3_A::CONSTANT_HIGH => 0,
-            CFG3_A::STICKY_RISING_EDGE => 1,
-            CFG3_A::STICKY_FALLING_EDGE => 2,
-            CFG3_A::STICKY_RISING_FALLING_EDGE => 3,
-            CFG3_A::HIGH_LEVEL => 4,
-            CFG3_A::LOW_LEVEL => 5,
-            CFG3_A::CONSTANT_ZERO => 6,
-            CFG3_A::EVENT => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CFG3`"]
@@ -1168,39 +1115,31 @@ impl<'a> CFG3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CFG4`"]
+#[doc = "Specifies the match contribution condition for bit slice 4.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CFG4_A {
-    #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH,
-    #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE,
-    #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE,
-    #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE,
-    #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL,
-    #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL,
-    #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO,
-    #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT,
+    #[doc = "0: Constant HIGH. This bit slice always contributes to a product term match."]
+    CONSTANT_HIGH = 0,
+    #[doc = "1: Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_EDGE = 1,
+    #[doc = "2: Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_FALLING_EDGE = 2,
+    #[doc = "3: Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_FALLING_EDGE = 3,
+    #[doc = "4: High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
+    HIGH_LEVEL = 4,
+    #[doc = "5: Low level. Match occurs when there is a low level on the specified input."]
+    LOW_LEVEL = 5,
+    #[doc = "6: Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
+    CONSTANT_ZERO = 6,
+    #[doc = "7: Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
+    EVENT = 7,
 }
 impl From<CFG4_A> for u8 {
     #[inline(always)]
     fn from(variant: CFG4_A) -> Self {
-        match variant {
-            CFG4_A::CONSTANT_HIGH => 0,
-            CFG4_A::STICKY_RISING_EDGE => 1,
-            CFG4_A::STICKY_FALLING_EDGE => 2,
-            CFG4_A::STICKY_RISING_FALLING_EDGE => 3,
-            CFG4_A::HIGH_LEVEL => 4,
-            CFG4_A::LOW_LEVEL => 5,
-            CFG4_A::CONSTANT_ZERO => 6,
-            CFG4_A::EVENT => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CFG4`"]
@@ -1321,39 +1260,31 @@ impl<'a> CFG4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CFG5`"]
+#[doc = "Specifies the match contribution condition for bit slice 5.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CFG5_A {
-    #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH,
-    #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE,
-    #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE,
-    #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE,
-    #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL,
-    #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL,
-    #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO,
-    #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT,
+    #[doc = "0: Constant HIGH. This bit slice always contributes to a product term match."]
+    CONSTANT_HIGH = 0,
+    #[doc = "1: Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_EDGE = 1,
+    #[doc = "2: Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_FALLING_EDGE = 2,
+    #[doc = "3: Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_FALLING_EDGE = 3,
+    #[doc = "4: High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
+    HIGH_LEVEL = 4,
+    #[doc = "5: Low level. Match occurs when there is a low level on the specified input."]
+    LOW_LEVEL = 5,
+    #[doc = "6: Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
+    CONSTANT_ZERO = 6,
+    #[doc = "7: Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
+    EVENT = 7,
 }
 impl From<CFG5_A> for u8 {
     #[inline(always)]
     fn from(variant: CFG5_A) -> Self {
-        match variant {
-            CFG5_A::CONSTANT_HIGH => 0,
-            CFG5_A::STICKY_RISING_EDGE => 1,
-            CFG5_A::STICKY_FALLING_EDGE => 2,
-            CFG5_A::STICKY_RISING_FALLING_EDGE => 3,
-            CFG5_A::HIGH_LEVEL => 4,
-            CFG5_A::LOW_LEVEL => 5,
-            CFG5_A::CONSTANT_ZERO => 6,
-            CFG5_A::EVENT => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CFG5`"]
@@ -1474,39 +1405,31 @@ impl<'a> CFG5_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CFG6`"]
+#[doc = "Specifies the match contribution condition for bit slice 6.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CFG6_A {
-    #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH,
-    #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE,
-    #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE,
-    #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE,
-    #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL,
-    #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL,
-    #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO,
-    #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT,
+    #[doc = "0: Constant HIGH. This bit slice always contributes to a product term match."]
+    CONSTANT_HIGH = 0,
+    #[doc = "1: Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_EDGE = 1,
+    #[doc = "2: Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_FALLING_EDGE = 2,
+    #[doc = "3: Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_FALLING_EDGE = 3,
+    #[doc = "4: High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
+    HIGH_LEVEL = 4,
+    #[doc = "5: Low level. Match occurs when there is a low level on the specified input."]
+    LOW_LEVEL = 5,
+    #[doc = "6: Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
+    CONSTANT_ZERO = 6,
+    #[doc = "7: Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
+    EVENT = 7,
 }
 impl From<CFG6_A> for u8 {
     #[inline(always)]
     fn from(variant: CFG6_A) -> Self {
-        match variant {
-            CFG6_A::CONSTANT_HIGH => 0,
-            CFG6_A::STICKY_RISING_EDGE => 1,
-            CFG6_A::STICKY_FALLING_EDGE => 2,
-            CFG6_A::STICKY_RISING_FALLING_EDGE => 3,
-            CFG6_A::HIGH_LEVEL => 4,
-            CFG6_A::LOW_LEVEL => 5,
-            CFG6_A::CONSTANT_ZERO => 6,
-            CFG6_A::EVENT => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CFG6`"]
@@ -1627,39 +1550,31 @@ impl<'a> CFG6_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CFG7`"]
+#[doc = "Specifies the match contribution condition for bit slice 7.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CFG7_A {
-    #[doc = "Constant HIGH. This bit slice always contributes to a product term match."]
-    CONSTANT_HIGH,
-    #[doc = "Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_EDGE,
-    #[doc = "Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_FALLING_EDGE,
-    #[doc = "Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
-    STICKY_RISING_FALLING_EDGE,
-    #[doc = "High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
-    HIGH_LEVEL,
-    #[doc = "Low level. Match occurs when there is a low level on the specified input."]
-    LOW_LEVEL,
-    #[doc = "Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
-    CONSTANT_ZERO,
-    #[doc = "Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
-    EVENT,
+    #[doc = "0: Constant HIGH. This bit slice always contributes to a product term match."]
+    CONSTANT_HIGH = 0,
+    #[doc = "1: Sticky rising edge. Match occurs if a rising edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_EDGE = 1,
+    #[doc = "2: Sticky falling edge. Match occurs if a falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_FALLING_EDGE = 2,
+    #[doc = "3: Sticky rising or falling edge. Match occurs if either a rising or falling edge on the specified input has occurred since the last time the edge detection for this bit slice was cleared. This bit is only cleared when the PMCFG or the PMSRC registers are written to."]
+    STICKY_RISING_FALLING_EDGE = 3,
+    #[doc = "4: High level. Match (for this bit slice) occurs when there is a high level on the input specified for this bit slice in the PMSRC register."]
+    HIGH_LEVEL = 4,
+    #[doc = "5: Low level. Match occurs when there is a low level on the specified input."]
+    LOW_LEVEL = 5,
+    #[doc = "6: Constant 0. This bit slice never contributes to a match (should be used to disable any unused bit slices)."]
+    CONSTANT_ZERO = 6,
+    #[doc = "7: Event. Non-sticky rising or falling edge. Match occurs on an event - i.e. when either a rising or falling edge is first detected on the specified input (this is a non-sticky version of value 0x3) . This bit is cleared after one clock cycle."]
+    EVENT = 7,
 }
 impl From<CFG7_A> for u8 {
     #[inline(always)]
     fn from(variant: CFG7_A) -> Self {
-        match variant {
-            CFG7_A::CONSTANT_HIGH => 0,
-            CFG7_A::STICKY_RISING_EDGE => 1,
-            CFG7_A::STICKY_FALLING_EDGE => 2,
-            CFG7_A::STICKY_RISING_FALLING_EDGE => 3,
-            CFG7_A::HIGH_LEVEL => 4,
-            CFG7_A::LOW_LEVEL => 5,
-            CFG7_A::CONSTANT_ZERO => 6,
-            CFG7_A::EVENT => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CFG7`"]

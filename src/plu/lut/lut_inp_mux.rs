@@ -10,123 +10,87 @@ impl crate::ResetValue for super::LUT_INP_MUX {
         0
     }
 }
-#[doc = "Possible values of the field `LUTn_INPx`"]
+#[doc = "Selects the input source to be connected to LUT0 input0. For each LUT, the slot associated with the output from LUTn itself is tied low.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LUTN_INPX_A {
-    #[doc = "The PLU primary inputs 0."]
-    PLU_INPUTS0,
-    #[doc = "The PLU primary inputs 1."]
-    PLU_INPUTS1,
-    #[doc = "The PLU primary inputs 2."]
-    PLU_INPUTS2,
-    #[doc = "The PLU primary inputs 3."]
-    PLU_INPUTS3,
-    #[doc = "The PLU primary inputs 4."]
-    PLU_INPUTS4,
-    #[doc = "The PLU primary inputs 5."]
-    PLU_INPUTS5,
-    #[doc = "The output of LUT0."]
-    LUT_OUTPUTS0,
-    #[doc = "The output of LUT1."]
-    LUT_OUTPUTS1,
-    #[doc = "The output of LUT2."]
-    LUT_OUTPUTS2,
-    #[doc = "The output of LUT3."]
-    LUT_OUTPUTS3,
-    #[doc = "The output of LUT4."]
-    LUT_OUTPUTS4,
-    #[doc = "The output of LUT5."]
-    LUT_OUTPUTS5,
-    #[doc = "The output of LUT6."]
-    LUT_OUTPUTS6,
-    #[doc = "The output of LUT7."]
-    LUT_OUTPUTS7,
-    #[doc = "The output of LUT8."]
-    LUT_OUTPUTS8,
-    #[doc = "The output of LUT9."]
-    LUT_OUTPUTS9,
-    #[doc = "The output of LUT10."]
-    LUT_OUTPUTS10,
-    #[doc = "The output of LUT11."]
-    LUT_OUTPUTS11,
-    #[doc = "The output of LUT12."]
-    LUT_OUTPUTS12,
-    #[doc = "The output of LUT13."]
-    LUT_OUTPUTS13,
-    #[doc = "The output of LUT14."]
-    LUT_OUTPUTS14,
-    #[doc = "The output of LUT15."]
-    LUT_OUTPUTS15,
-    #[doc = "The output of LUT16."]
-    LUT_OUTPUTS16,
-    #[doc = "The output of LUT17."]
-    LUT_OUTPUTS17,
-    #[doc = "The output of LUT18."]
-    LUT_OUTPUTS18,
-    #[doc = "The output of LUT19."]
-    LUT_OUTPUTS19,
-    #[doc = "The output of LUT20."]
-    LUT_OUTPUTS20,
-    #[doc = "The output of LUT21."]
-    LUT_OUTPUTS21,
-    #[doc = "The output of LUT22."]
-    LUT_OUTPUTS22,
-    #[doc = "The output of LUT23."]
-    LUT_OUTPUTS23,
-    #[doc = "The output of LUT24."]
-    LUT_OUTPUTS24,
-    #[doc = "The output of LUT25."]
-    LUT_OUTPUTS25,
-    #[doc = "state(0)."]
-    STATE0,
-    #[doc = "state(1)."]
-    STATE1,
-    #[doc = "state(2)."]
-    STATE2,
-    #[doc = "state(3)."]
-    STATE3,
+    #[doc = "0: The PLU primary inputs 0."]
+    PLU_INPUTS0 = 0,
+    #[doc = "1: The PLU primary inputs 1."]
+    PLU_INPUTS1 = 1,
+    #[doc = "2: The PLU primary inputs 2."]
+    PLU_INPUTS2 = 2,
+    #[doc = "3: The PLU primary inputs 3."]
+    PLU_INPUTS3 = 3,
+    #[doc = "4: The PLU primary inputs 4."]
+    PLU_INPUTS4 = 4,
+    #[doc = "5: The PLU primary inputs 5."]
+    PLU_INPUTS5 = 5,
+    #[doc = "6: The output of LUT0."]
+    LUT_OUTPUTS0 = 6,
+    #[doc = "7: The output of LUT1."]
+    LUT_OUTPUTS1 = 7,
+    #[doc = "8: The output of LUT2."]
+    LUT_OUTPUTS2 = 8,
+    #[doc = "9: The output of LUT3."]
+    LUT_OUTPUTS3 = 9,
+    #[doc = "10: The output of LUT4."]
+    LUT_OUTPUTS4 = 10,
+    #[doc = "11: The output of LUT5."]
+    LUT_OUTPUTS5 = 11,
+    #[doc = "12: The output of LUT6."]
+    LUT_OUTPUTS6 = 12,
+    #[doc = "13: The output of LUT7."]
+    LUT_OUTPUTS7 = 13,
+    #[doc = "14: The output of LUT8."]
+    LUT_OUTPUTS8 = 14,
+    #[doc = "15: The output of LUT9."]
+    LUT_OUTPUTS9 = 15,
+    #[doc = "16: The output of LUT10."]
+    LUT_OUTPUTS10 = 16,
+    #[doc = "17: The output of LUT11."]
+    LUT_OUTPUTS11 = 17,
+    #[doc = "18: The output of LUT12."]
+    LUT_OUTPUTS12 = 18,
+    #[doc = "19: The output of LUT13."]
+    LUT_OUTPUTS13 = 19,
+    #[doc = "20: The output of LUT14."]
+    LUT_OUTPUTS14 = 20,
+    #[doc = "21: The output of LUT15."]
+    LUT_OUTPUTS15 = 21,
+    #[doc = "22: The output of LUT16."]
+    LUT_OUTPUTS16 = 22,
+    #[doc = "23: The output of LUT17."]
+    LUT_OUTPUTS17 = 23,
+    #[doc = "24: The output of LUT18."]
+    LUT_OUTPUTS18 = 24,
+    #[doc = "25: The output of LUT19."]
+    LUT_OUTPUTS19 = 25,
+    #[doc = "26: The output of LUT20."]
+    LUT_OUTPUTS20 = 26,
+    #[doc = "27: The output of LUT21."]
+    LUT_OUTPUTS21 = 27,
+    #[doc = "28: The output of LUT22."]
+    LUT_OUTPUTS22 = 28,
+    #[doc = "29: The output of LUT23."]
+    LUT_OUTPUTS23 = 29,
+    #[doc = "30: The output of LUT24."]
+    LUT_OUTPUTS24 = 30,
+    #[doc = "31: The output of LUT25."]
+    LUT_OUTPUTS25 = 31,
+    #[doc = "32: state(0)."]
+    STATE0 = 32,
+    #[doc = "33: state(1)."]
+    STATE1 = 33,
+    #[doc = "34: state(2)."]
+    STATE2 = 34,
+    #[doc = "35: state(3)."]
+    STATE3 = 35,
 }
 impl From<LUTN_INPX_A> for u8 {
     #[inline(always)]
     fn from(variant: LUTN_INPX_A) -> Self {
-        match variant {
-            LUTN_INPX_A::PLU_INPUTS0 => 0,
-            LUTN_INPX_A::PLU_INPUTS1 => 1,
-            LUTN_INPX_A::PLU_INPUTS2 => 2,
-            LUTN_INPX_A::PLU_INPUTS3 => 3,
-            LUTN_INPX_A::PLU_INPUTS4 => 4,
-            LUTN_INPX_A::PLU_INPUTS5 => 5,
-            LUTN_INPX_A::LUT_OUTPUTS0 => 6,
-            LUTN_INPX_A::LUT_OUTPUTS1 => 7,
-            LUTN_INPX_A::LUT_OUTPUTS2 => 8,
-            LUTN_INPX_A::LUT_OUTPUTS3 => 9,
-            LUTN_INPX_A::LUT_OUTPUTS4 => 10,
-            LUTN_INPX_A::LUT_OUTPUTS5 => 11,
-            LUTN_INPX_A::LUT_OUTPUTS6 => 12,
-            LUTN_INPX_A::LUT_OUTPUTS7 => 13,
-            LUTN_INPX_A::LUT_OUTPUTS8 => 14,
-            LUTN_INPX_A::LUT_OUTPUTS9 => 15,
-            LUTN_INPX_A::LUT_OUTPUTS10 => 16,
-            LUTN_INPX_A::LUT_OUTPUTS11 => 17,
-            LUTN_INPX_A::LUT_OUTPUTS12 => 18,
-            LUTN_INPX_A::LUT_OUTPUTS13 => 19,
-            LUTN_INPX_A::LUT_OUTPUTS14 => 20,
-            LUTN_INPX_A::LUT_OUTPUTS15 => 21,
-            LUTN_INPX_A::LUT_OUTPUTS16 => 22,
-            LUTN_INPX_A::LUT_OUTPUTS17 => 23,
-            LUTN_INPX_A::LUT_OUTPUTS18 => 24,
-            LUTN_INPX_A::LUT_OUTPUTS19 => 25,
-            LUTN_INPX_A::LUT_OUTPUTS20 => 26,
-            LUTN_INPX_A::LUT_OUTPUTS21 => 27,
-            LUTN_INPX_A::LUT_OUTPUTS22 => 28,
-            LUTN_INPX_A::LUT_OUTPUTS23 => 29,
-            LUTN_INPX_A::LUT_OUTPUTS24 => 30,
-            LUTN_INPX_A::LUT_OUTPUTS25 => 31,
-            LUTN_INPX_A::STATE0 => 32,
-            LUTN_INPX_A::STATE1 => 33,
-            LUTN_INPX_A::STATE2 => 34,
-            LUTN_INPX_A::STATE3 => 35,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LUTn_INPx`"]

@@ -10,27 +10,23 @@ impl crate::ResetValue for super::RX_SET {
         0
     }
 }
-#[doc = "Possible values of the field `ENVADJ`"]
+#[doc = "The ENVADJ field adjusts the trip point for the envelope detector\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ENVADJ_A {
-    #[doc = "Trip-Level Voltage is 0.1000 V"]
-    VALUE0,
-    #[doc = "Trip-Level Voltage is 0.1125 V"]
-    VALUE1,
-    #[doc = "Trip-Level Voltage is 0.1250 V"]
-    VALUE2,
-    #[doc = "Trip-Level Voltage is 0.0875 V"]
-    VALUE3,
+    #[doc = "0: Trip-Level Voltage is 0.1000 V"]
+    VALUE0 = 0,
+    #[doc = "1: Trip-Level Voltage is 0.1125 V"]
+    VALUE1 = 1,
+    #[doc = "2: Trip-Level Voltage is 0.1250 V"]
+    VALUE2 = 2,
+    #[doc = "3: Trip-Level Voltage is 0.0875 V"]
+    VALUE3 = 3,
 }
 impl From<ENVADJ_A> for u8 {
     #[inline(always)]
     fn from(variant: ENVADJ_A) -> Self {
-        match variant {
-            ENVADJ_A::VALUE0 => 0,
-            ENVADJ_A::VALUE1 => 1,
-            ENVADJ_A::VALUE2 => 2,
-            ENVADJ_A::VALUE3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ENVADJ`"]
@@ -106,27 +102,23 @@ impl<'a> ENVADJ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DISCONADJ`"]
+#[doc = "The DISCONADJ field adjusts the trip point for the disconnect detector.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DISCONADJ_A {
-    #[doc = "Trip-Level Voltage is 0.56875 V"]
-    VALUE0,
-    #[doc = "Trip-Level Voltage is 0.55000 V"]
-    VALUE1,
-    #[doc = "Trip-Level Voltage is 0.58125 V"]
-    VALUE2,
-    #[doc = "Trip-Level Voltage is 0.60000 V"]
-    VALUE3,
+    #[doc = "0: Trip-Level Voltage is 0.56875 V"]
+    VALUE0 = 0,
+    #[doc = "1: Trip-Level Voltage is 0.55000 V"]
+    VALUE1 = 1,
+    #[doc = "2: Trip-Level Voltage is 0.58125 V"]
+    VALUE2 = 2,
+    #[doc = "3: Trip-Level Voltage is 0.60000 V"]
+    VALUE3 = 3,
 }
 impl From<DISCONADJ_A> for u8 {
     #[inline(always)]
     fn from(variant: DISCONADJ_A) -> Self {
-        match variant {
-            DISCONADJ_A::VALUE0 => 0,
-            DISCONADJ_A::VALUE1 => 1,
-            DISCONADJ_A::VALUE2 => 2,
-            DISCONADJ_A::VALUE3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DISCONADJ`"]
@@ -202,21 +194,18 @@ impl<'a> DISCONADJ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RXDBYPASS`"]
+#[doc = "This test mode is intended for lab use only, replace FS differential receiver with DP single ended receiver\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXDBYPASS_A {
-    #[doc = "Normal operation."]
-    VALUE0,
-    #[doc = "Use the output of the USB_DP single-ended receiver in place of the full-speed differential receiver"]
-    VALUE1,
+    #[doc = "0: Normal operation."]
+    VALUE0 = 0,
+    #[doc = "1: Use the output of the USB_DP single-ended receiver in place of the full-speed differential receiver"]
+    VALUE1 = 1,
 }
 impl From<RXDBYPASS_A> for bool {
     #[inline(always)]
     fn from(variant: RXDBYPASS_A) -> Self {
-        match variant {
-            RXDBYPASS_A::VALUE0 => false,
-            RXDBYPASS_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXDBYPASS`"]

@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::PRESETCTRLCLR>;
 #[doc = "Writer for register PRESETCTRLCLR[%s]"]
 pub type W = crate::W<u32, super::PRESETCTRLCLR>;
-#[doc = "Register PRESETCTRLCLR[%s] `reset()`'s with value 0"]
+#[doc = "Register PRESETCTRLCLR[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::PRESETCTRLCLR {
     type Type = u32;
     #[inline(always)]

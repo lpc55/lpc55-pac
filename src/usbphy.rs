@@ -63,7 +63,7 @@ pub struct RegisterBlock {
     #[doc = "0x10c - USB PHY Analog Control Register"]
     pub anactrl_tog: ANACTRL_TOG,
 }
-#[doc = "USB PHY Power-Down Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwd](pwd) module"]
+#[doc = "USB PHY Power-Down Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwd](pwd) module"]
 pub type PWD = crate::Reg<u32, _PWD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -74,7 +74,7 @@ impl crate::Readable for PWD {}
 impl crate::Writable for PWD {}
 #[doc = "USB PHY Power-Down Register"]
 pub mod pwd;
-#[doc = "USB PHY Power-Down Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwd_set](pwd_set) module"]
+#[doc = "USB PHY Power-Down Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwd_set](pwd_set) module"]
 pub type PWD_SET = crate::Reg<u32, _PWD_SET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -85,7 +85,7 @@ impl crate::Readable for PWD_SET {}
 impl crate::Writable for PWD_SET {}
 #[doc = "USB PHY Power-Down Register"]
 pub mod pwd_set;
-#[doc = "USB PHY Power-Down Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwd_clr](pwd_clr) module"]
+#[doc = "USB PHY Power-Down Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwd_clr](pwd_clr) module"]
 pub type PWD_CLR = crate::Reg<u32, _PWD_CLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -96,7 +96,7 @@ impl crate::Readable for PWD_CLR {}
 impl crate::Writable for PWD_CLR {}
 #[doc = "USB PHY Power-Down Register"]
 pub mod pwd_clr;
-#[doc = "USB PHY Power-Down Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwd_tog](pwd_tog) module"]
+#[doc = "USB PHY Power-Down Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwd_tog](pwd_tog) module"]
 pub type PWD_TOG = crate::Reg<u32, _PWD_TOG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -107,7 +107,7 @@ impl crate::Readable for PWD_TOG {}
 impl crate::Writable for PWD_TOG {}
 #[doc = "USB PHY Power-Down Register"]
 pub mod pwd_tog;
-#[doc = "USB PHY Transmitter Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tx](tx) module"]
+#[doc = "USB PHY Transmitter Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx](tx) module"]
 pub type TX = crate::Reg<u32, _TX>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -118,7 +118,7 @@ impl crate::Readable for TX {}
 impl crate::Writable for TX {}
 #[doc = "USB PHY Transmitter Control Register"]
 pub mod tx;
-#[doc = "USB PHY Transmitter Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tx_set](tx_set) module"]
+#[doc = "USB PHY Transmitter Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_set](tx_set) module"]
 pub type TX_SET = crate::Reg<u32, _TX_SET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -129,7 +129,7 @@ impl crate::Readable for TX_SET {}
 impl crate::Writable for TX_SET {}
 #[doc = "USB PHY Transmitter Control Register"]
 pub mod tx_set;
-#[doc = "USB PHY Transmitter Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tx_clr](tx_clr) module"]
+#[doc = "USB PHY Transmitter Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_clr](tx_clr) module"]
 pub type TX_CLR = crate::Reg<u32, _TX_CLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -140,7 +140,7 @@ impl crate::Readable for TX_CLR {}
 impl crate::Writable for TX_CLR {}
 #[doc = "USB PHY Transmitter Control Register"]
 pub mod tx_clr;
-#[doc = "USB PHY Transmitter Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tx_tog](tx_tog) module"]
+#[doc = "USB PHY Transmitter Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tx_tog](tx_tog) module"]
 pub type TX_TOG = crate::Reg<u32, _TX_TOG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -151,7 +151,7 @@ impl crate::Readable for TX_TOG {}
 impl crate::Writable for TX_TOG {}
 #[doc = "USB PHY Transmitter Control Register"]
 pub mod tx_tog;
-#[doc = "USB PHY Receiver Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [rx](rx) module"]
+#[doc = "USB PHY Receiver Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx](rx) module"]
 pub type RX = crate::Reg<u32, _RX>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -162,7 +162,7 @@ impl crate::Readable for RX {}
 impl crate::Writable for RX {}
 #[doc = "USB PHY Receiver Control Register"]
 pub mod rx;
-#[doc = "USB PHY Receiver Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [rx_set](rx_set) module"]
+#[doc = "USB PHY Receiver Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_set](rx_set) module"]
 pub type RX_SET = crate::Reg<u32, _RX_SET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -173,7 +173,7 @@ impl crate::Readable for RX_SET {}
 impl crate::Writable for RX_SET {}
 #[doc = "USB PHY Receiver Control Register"]
 pub mod rx_set;
-#[doc = "USB PHY Receiver Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [rx_clr](rx_clr) module"]
+#[doc = "USB PHY Receiver Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_clr](rx_clr) module"]
 pub type RX_CLR = crate::Reg<u32, _RX_CLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -184,7 +184,7 @@ impl crate::Readable for RX_CLR {}
 impl crate::Writable for RX_CLR {}
 #[doc = "USB PHY Receiver Control Register"]
 pub mod rx_clr;
-#[doc = "USB PHY Receiver Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [rx_tog](rx_tog) module"]
+#[doc = "USB PHY Receiver Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_tog](rx_tog) module"]
 pub type RX_TOG = crate::Reg<u32, _RX_TOG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -195,7 +195,7 @@ impl crate::Readable for RX_TOG {}
 impl crate::Writable for RX_TOG {}
 #[doc = "USB PHY Receiver Control Register"]
 pub mod rx_tog;
-#[doc = "USB PHY General Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctrl](ctrl) module"]
+#[doc = "USB PHY General Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](ctrl) module"]
 pub type CTRL = crate::Reg<u32, _CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -206,7 +206,7 @@ impl crate::Readable for CTRL {}
 impl crate::Writable for CTRL {}
 #[doc = "USB PHY General Control Register"]
 pub mod ctrl;
-#[doc = "USB PHY General Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctrl_set](ctrl_set) module"]
+#[doc = "USB PHY General Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl_set](ctrl_set) module"]
 pub type CTRL_SET = crate::Reg<u32, _CTRL_SET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -217,7 +217,7 @@ impl crate::Readable for CTRL_SET {}
 impl crate::Writable for CTRL_SET {}
 #[doc = "USB PHY General Control Register"]
 pub mod ctrl_set;
-#[doc = "USB PHY General Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctrl_clr](ctrl_clr) module"]
+#[doc = "USB PHY General Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl_clr](ctrl_clr) module"]
 pub type CTRL_CLR = crate::Reg<u32, _CTRL_CLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -228,7 +228,7 @@ impl crate::Readable for CTRL_CLR {}
 impl crate::Writable for CTRL_CLR {}
 #[doc = "USB PHY General Control Register"]
 pub mod ctrl_clr;
-#[doc = "USB PHY General Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctrl_tog](ctrl_tog) module"]
+#[doc = "USB PHY General Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl_tog](ctrl_tog) module"]
 pub type CTRL_TOG = crate::Reg<u32, _CTRL_TOG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -239,7 +239,7 @@ impl crate::Readable for CTRL_TOG {}
 impl crate::Writable for CTRL_TOG {}
 #[doc = "USB PHY General Control Register"]
 pub mod ctrl_tog;
-#[doc = "USB PHY Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [status](status) module"]
+#[doc = "USB PHY Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](status) module"]
 pub type STATUS = crate::Reg<u32, _STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -250,7 +250,7 @@ impl crate::Readable for STATUS {}
 impl crate::Writable for STATUS {}
 #[doc = "USB PHY Status Register"]
 pub mod status;
-#[doc = "USB PHY PLL Control/Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pll_sic](pll_sic) module"]
+#[doc = "USB PHY PLL Control/Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pll_sic](pll_sic) module"]
 pub type PLL_SIC = crate::Reg<u32, _PLL_SIC>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -261,7 +261,7 @@ impl crate::Readable for PLL_SIC {}
 impl crate::Writable for PLL_SIC {}
 #[doc = "USB PHY PLL Control/Status Register"]
 pub mod pll_sic;
-#[doc = "USB PHY PLL Control/Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pll_sic_set](pll_sic_set) module"]
+#[doc = "USB PHY PLL Control/Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pll_sic_set](pll_sic_set) module"]
 pub type PLL_SIC_SET = crate::Reg<u32, _PLL_SIC_SET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -272,7 +272,7 @@ impl crate::Readable for PLL_SIC_SET {}
 impl crate::Writable for PLL_SIC_SET {}
 #[doc = "USB PHY PLL Control/Status Register"]
 pub mod pll_sic_set;
-#[doc = "USB PHY PLL Control/Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pll_sic_clr](pll_sic_clr) module"]
+#[doc = "USB PHY PLL Control/Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pll_sic_clr](pll_sic_clr) module"]
 pub type PLL_SIC_CLR = crate::Reg<u32, _PLL_SIC_CLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -283,7 +283,7 @@ impl crate::Readable for PLL_SIC_CLR {}
 impl crate::Writable for PLL_SIC_CLR {}
 #[doc = "USB PHY PLL Control/Status Register"]
 pub mod pll_sic_clr;
-#[doc = "USB PHY PLL Control/Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pll_sic_tog](pll_sic_tog) module"]
+#[doc = "USB PHY PLL Control/Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pll_sic_tog](pll_sic_tog) module"]
 pub type PLL_SIC_TOG = crate::Reg<u32, _PLL_SIC_TOG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -294,7 +294,7 @@ impl crate::Readable for PLL_SIC_TOG {}
 impl crate::Writable for PLL_SIC_TOG {}
 #[doc = "USB PHY PLL Control/Status Register"]
 pub mod pll_sic_tog;
-#[doc = "USB PHY VBUS Detect Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1_vbus_detect](usb1_vbus_detect) module"]
+#[doc = "USB PHY VBUS Detect Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usb1_vbus_detect](usb1_vbus_detect) module"]
 pub type USB1_VBUS_DETECT = crate::Reg<u32, _USB1_VBUS_DETECT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -305,7 +305,7 @@ impl crate::Readable for USB1_VBUS_DETECT {}
 impl crate::Writable for USB1_VBUS_DETECT {}
 #[doc = "USB PHY VBUS Detect Control Register"]
 pub mod usb1_vbus_detect;
-#[doc = "USB PHY VBUS Detect Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1_vbus_detect_set](usb1_vbus_detect_set) module"]
+#[doc = "USB PHY VBUS Detect Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usb1_vbus_detect_set](usb1_vbus_detect_set) module"]
 pub type USB1_VBUS_DETECT_SET = crate::Reg<u32, _USB1_VBUS_DETECT_SET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -316,7 +316,7 @@ impl crate::Readable for USB1_VBUS_DETECT_SET {}
 impl crate::Writable for USB1_VBUS_DETECT_SET {}
 #[doc = "USB PHY VBUS Detect Control Register"]
 pub mod usb1_vbus_detect_set;
-#[doc = "USB PHY VBUS Detect Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1_vbus_detect_clr](usb1_vbus_detect_clr) module"]
+#[doc = "USB PHY VBUS Detect Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usb1_vbus_detect_clr](usb1_vbus_detect_clr) module"]
 pub type USB1_VBUS_DETECT_CLR = crate::Reg<u32, _USB1_VBUS_DETECT_CLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -327,7 +327,7 @@ impl crate::Readable for USB1_VBUS_DETECT_CLR {}
 impl crate::Writable for USB1_VBUS_DETECT_CLR {}
 #[doc = "USB PHY VBUS Detect Control Register"]
 pub mod usb1_vbus_detect_clr;
-#[doc = "USB PHY VBUS Detect Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb1_vbus_detect_tog](usb1_vbus_detect_tog) module"]
+#[doc = "USB PHY VBUS Detect Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usb1_vbus_detect_tog](usb1_vbus_detect_tog) module"]
 pub type USB1_VBUS_DETECT_TOG = crate::Reg<u32, _USB1_VBUS_DETECT_TOG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -338,7 +338,7 @@ impl crate::Readable for USB1_VBUS_DETECT_TOG {}
 impl crate::Writable for USB1_VBUS_DETECT_TOG {}
 #[doc = "USB PHY VBUS Detect Control Register"]
 pub mod usb1_vbus_detect_tog;
-#[doc = "USB PHY Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [anactrl](anactrl) module"]
+#[doc = "USB PHY Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [anactrl](anactrl) module"]
 pub type ANACTRL = crate::Reg<u32, _ANACTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -349,7 +349,7 @@ impl crate::Readable for ANACTRL {}
 impl crate::Writable for ANACTRL {}
 #[doc = "USB PHY Analog Control Register"]
 pub mod anactrl;
-#[doc = "USB PHY Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [anactrl_set](anactrl_set) module"]
+#[doc = "USB PHY Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [anactrl_set](anactrl_set) module"]
 pub type ANACTRL_SET = crate::Reg<u32, _ANACTRL_SET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -360,7 +360,7 @@ impl crate::Readable for ANACTRL_SET {}
 impl crate::Writable for ANACTRL_SET {}
 #[doc = "USB PHY Analog Control Register"]
 pub mod anactrl_set;
-#[doc = "USB PHY Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [anactrl_clr](anactrl_clr) module"]
+#[doc = "USB PHY Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [anactrl_clr](anactrl_clr) module"]
 pub type ANACTRL_CLR = crate::Reg<u32, _ANACTRL_CLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -371,7 +371,7 @@ impl crate::Readable for ANACTRL_CLR {}
 impl crate::Writable for ANACTRL_CLR {}
 #[doc = "USB PHY Analog Control Register"]
 pub mod anactrl_clr;
-#[doc = "USB PHY Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [anactrl_tog](anactrl_tog) module"]
+#[doc = "USB PHY Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [anactrl_tog](anactrl_tog) module"]
 pub type ANACTRL_TOG = crate::Reg<u32, _ANACTRL_TOG>;
 #[allow(missing_docs)]
 #[doc(hidden)]

@@ -10,33 +10,27 @@ impl crate::ResetValue for super::PSELID {
         0x0010_1000
     }
 }
-#[doc = "Possible values of the field `PERSEL`"]
+#[doc = "Peripheral Select. This field is writable by software.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PERSEL_A {
-    #[doc = "No peripheral selected."]
-    NO_PERIPH_SELECTED,
-    #[doc = "USART function selected."]
-    USART,
-    #[doc = "SPI function selected."]
-    SPI,
-    #[doc = "I2C function selected."]
-    I2C,
-    #[doc = "I2S transmit function selected."]
-    I2S_TRANSMIT,
-    #[doc = "I2S receive function selected."]
-    I2S_RECEIVE,
+    #[doc = "0: No peripheral selected."]
+    NO_PERIPH_SELECTED = 0,
+    #[doc = "1: USART function selected."]
+    USART = 1,
+    #[doc = "2: SPI function selected."]
+    SPI = 2,
+    #[doc = "3: I2C function selected."]
+    I2C = 3,
+    #[doc = "4: I2S transmit function selected."]
+    I2S_TRANSMIT = 4,
+    #[doc = "5: I2S receive function selected."]
+    I2S_RECEIVE = 5,
 }
 impl From<PERSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PERSEL_A) -> Self {
-        match variant {
-            PERSEL_A::NO_PERIPH_SELECTED => 0,
-            PERSEL_A::USART => 1,
-            PERSEL_A::SPI => 2,
-            PERSEL_A::I2C => 3,
-            PERSEL_A::I2S_TRANSMIT => 4,
-            PERSEL_A::I2S_RECEIVE => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PERSEL`"]
@@ -134,21 +128,18 @@ impl<'a> PERSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LOCK`"]
+#[doc = "Lock the peripheral select. This field is writable by software.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCK_A {
-    #[doc = "Peripheral select can be changed by software."]
-    UNLOCKED,
-    #[doc = "Peripheral select is locked and cannot be changed until this Flexcomm or the entire device is reset."]
-    LOCKED,
+    #[doc = "0: Peripheral select can be changed by software."]
+    UNLOCKED = 0,
+    #[doc = "1: Peripheral select is locked and cannot be changed until this Flexcomm or the entire device is reset."]
+    LOCKED = 1,
 }
 impl From<LOCK_A> for bool {
     #[inline(always)]
     fn from(variant: LOCK_A) -> Self {
-        match variant {
-            LOCK_A::UNLOCKED => false,
-            LOCK_A::LOCKED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOCK`"]
@@ -212,21 +203,18 @@ impl<'a> LOCK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `USARTPRESENT`"]
+#[doc = "USART present indicator. This field is Read-only.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USARTPRESENT_A {
-    #[doc = "This Flexcomm does not include the USART function."]
-    NOT_PRESENT,
-    #[doc = "This Flexcomm includes the USART function."]
-    PRESENT,
+    #[doc = "0: This Flexcomm does not include the USART function."]
+    NOT_PRESENT = 0,
+    #[doc = "1: This Flexcomm includes the USART function."]
+    PRESENT = 1,
 }
 impl From<USARTPRESENT_A> for bool {
     #[inline(always)]
     fn from(variant: USARTPRESENT_A) -> Self {
-        match variant {
-            USARTPRESENT_A::NOT_PRESENT => false,
-            USARTPRESENT_A::PRESENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USARTPRESENT`"]
@@ -251,21 +239,18 @@ impl USARTPRESENT_R {
         *self == USARTPRESENT_A::PRESENT
     }
 }
-#[doc = "Possible values of the field `SPIPRESENT`"]
+#[doc = "SPI present indicator. This field is Read-only.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPIPRESENT_A {
-    #[doc = "This Flexcomm does not include the SPI function."]
-    NOT_PRESENT,
-    #[doc = "This Flexcomm includes the SPI function."]
-    PRESENT,
+    #[doc = "0: This Flexcomm does not include the SPI function."]
+    NOT_PRESENT = 0,
+    #[doc = "1: This Flexcomm includes the SPI function."]
+    PRESENT = 1,
 }
 impl From<SPIPRESENT_A> for bool {
     #[inline(always)]
     fn from(variant: SPIPRESENT_A) -> Self {
-        match variant {
-            SPIPRESENT_A::NOT_PRESENT => false,
-            SPIPRESENT_A::PRESENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SPIPRESENT`"]
@@ -290,21 +275,18 @@ impl SPIPRESENT_R {
         *self == SPIPRESENT_A::PRESENT
     }
 }
-#[doc = "Possible values of the field `I2CPRESENT`"]
+#[doc = "I2C present indicator. This field is Read-only.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum I2CPRESENT_A {
-    #[doc = "This Flexcomm does not include the I2C function."]
-    NOT_PRESENT,
-    #[doc = "This Flexcomm includes the I2C function."]
-    PRESENT,
+    #[doc = "0: This Flexcomm does not include the I2C function."]
+    NOT_PRESENT = 0,
+    #[doc = "1: This Flexcomm includes the I2C function."]
+    PRESENT = 1,
 }
 impl From<I2CPRESENT_A> for bool {
     #[inline(always)]
     fn from(variant: I2CPRESENT_A) -> Self {
-        match variant {
-            I2CPRESENT_A::NOT_PRESENT => false,
-            I2CPRESENT_A::PRESENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `I2CPRESENT`"]
@@ -329,21 +311,18 @@ impl I2CPRESENT_R {
         *self == I2CPRESENT_A::PRESENT
     }
 }
-#[doc = "Possible values of the field `I2SPRESENT`"]
+#[doc = "I 2S present indicator. This field is Read-only.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum I2SPRESENT_A {
-    #[doc = "This Flexcomm does not include the I2S function."]
-    NOT_PRESENT,
-    #[doc = "This Flexcomm includes the I2S function."]
-    PRESENT,
+    #[doc = "0: This Flexcomm does not include the I2S function."]
+    NOT_PRESENT = 0,
+    #[doc = "1: This Flexcomm includes the I2S function."]
+    PRESENT = 1,
 }
 impl From<I2SPRESENT_A> for bool {
     #[inline(always)]
     fn from(variant: I2SPRESENT_A) -> Self {
-        match variant {
-            I2SPRESENT_A::NOT_PRESENT => false,
-            I2SPRESENT_A::PRESENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `I2SPRESENT`"]

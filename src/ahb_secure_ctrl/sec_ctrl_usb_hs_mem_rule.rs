@@ -10,27 +10,23 @@ impl crate::ResetValue for super::SEC_CTRL_USB_HS_MEM_RULE {
         0
     }
 }
-#[doc = "Possible values of the field `SRAM_SECT_0_RULE`"]
+#[doc = "Address space: 0x4010_0000 - 0x4010_0FFF\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRAM_SECT_0_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<SRAM_SECT_0_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: SRAM_SECT_0_RULE_A) -> Self {
-        match variant {
-            SRAM_SECT_0_RULE_A::ENUM_NS_NP => 0,
-            SRAM_SECT_0_RULE_A::ENUM_NS_P => 1,
-            SRAM_SECT_0_RULE_A::ENUM_S_NP => 2,
-            SRAM_SECT_0_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRAM_SECT_0_RULE`"]
@@ -107,27 +103,23 @@ impl<'a> SRAM_SECT_0_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRAM_SECT_1_RULE`"]
+#[doc = "Address space: 0x4010_1000 - 0x4010_1FFF\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRAM_SECT_1_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<SRAM_SECT_1_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: SRAM_SECT_1_RULE_A) -> Self {
-        match variant {
-            SRAM_SECT_1_RULE_A::ENUM_NS_NP => 0,
-            SRAM_SECT_1_RULE_A::ENUM_NS_P => 1,
-            SRAM_SECT_1_RULE_A::ENUM_S_NP => 2,
-            SRAM_SECT_1_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRAM_SECT_1_RULE`"]
@@ -204,27 +196,23 @@ impl<'a> SRAM_SECT_1_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRAM_SECT_2_RULE`"]
+#[doc = "Address space: 0x4010_2000 - 0x4010_2FFF\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRAM_SECT_2_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<SRAM_SECT_2_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: SRAM_SECT_2_RULE_A) -> Self {
-        match variant {
-            SRAM_SECT_2_RULE_A::ENUM_NS_NP => 0,
-            SRAM_SECT_2_RULE_A::ENUM_NS_P => 1,
-            SRAM_SECT_2_RULE_A::ENUM_S_NP => 2,
-            SRAM_SECT_2_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRAM_SECT_2_RULE`"]
@@ -301,27 +289,23 @@ impl<'a> SRAM_SECT_2_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRAM_SECT_3_RULE`"]
+#[doc = "Address space: 0x4010_3000 - 0x4010_3FFF\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRAM_SECT_3_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<SRAM_SECT_3_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: SRAM_SECT_3_RULE_A) -> Self {
-        match variant {
-            SRAM_SECT_3_RULE_A::ENUM_NS_NP => 0,
-            SRAM_SECT_3_RULE_A::ENUM_NS_P => 1,
-            SRAM_SECT_3_RULE_A::ENUM_S_NP => 2,
-            SRAM_SECT_3_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRAM_SECT_3_RULE`"]

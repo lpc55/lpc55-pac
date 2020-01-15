@@ -38,21 +38,18 @@ impl<'a> NOB_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MULTITASK`"]
+#[doc = "Selects the operating mode for the INUSE flags and the IDLE_CH register.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MULTITASK_A {
-    #[doc = "Hardware status mode. In this mode, the INUSE(n) flags for all channels are reset."]
-    HARDWARE_STATUS_MODE,
-    #[doc = "Multi-task mode."]
-    MULTI_TASK_MODE,
+    #[doc = "0: Hardware status mode. In this mode, the INUSE(n) flags for all channels are reset."]
+    HARDWARE_STATUS_MODE = 0,
+    #[doc = "1: Multi-task mode."]
+    MULTI_TASK_MODE = 1,
 }
 impl From<MULTITASK_A> for bool {
     #[inline(always)]
     fn from(variant: MULTITASK_A) -> Self {
-        match variant {
-            MULTITASK_A::HARDWARE_STATUS_MODE => false,
-            MULTITASK_A::MULTI_TASK_MODE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MULTITASK`"]

@@ -49,7 +49,7 @@ pub struct RegisterBlock {
     #[doc = "0x5c - Controls the port if it is attached to the host block or the device block"]
     pub portmode: PORTMODE,
 }
-#[doc = "BCD representation of the version of the HCI specification that is implemented by the Host Controller (HC)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcrevision](hcrevision) module"]
+#[doc = "BCD representation of the version of the HCI specification that is implemented by the Host Controller (HC)\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcrevision](hcrevision) module"]
 pub type HCREVISION = crate::Reg<u32, _HCREVISION>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -58,7 +58,7 @@ pub struct _HCREVISION;
 impl crate::Readable for HCREVISION {}
 #[doc = "BCD representation of the version of the HCI specification that is implemented by the Host Controller (HC)"]
 pub mod hcrevision;
-#[doc = "Defines the operating modes of the HC\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hccontrol](hccontrol) module"]
+#[doc = "Defines the operating modes of the HC\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hccontrol](hccontrol) module"]
 pub type HCCONTROL = crate::Reg<u32, _HCCONTROL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -69,7 +69,7 @@ impl crate::Readable for HCCONTROL {}
 impl crate::Writable for HCCONTROL {}
 #[doc = "Defines the operating modes of the HC"]
 pub mod hccontrol;
-#[doc = "This register is used to receive the commands from the Host Controller Driver (HCD)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hccommandstatus](hccommandstatus) module"]
+#[doc = "This register is used to receive the commands from the Host Controller Driver (HCD)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hccommandstatus](hccommandstatus) module"]
 pub type HCCOMMANDSTATUS = crate::Reg<u32, _HCCOMMANDSTATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -80,7 +80,7 @@ impl crate::Readable for HCCOMMANDSTATUS {}
 impl crate::Writable for HCCOMMANDSTATUS {}
 #[doc = "This register is used to receive the commands from the Host Controller Driver (HCD)"]
 pub mod hccommandstatus;
-#[doc = "Indicates the status on various events that cause hardware interrupts by setting the appropriate bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcinterruptstatus](hcinterruptstatus) module"]
+#[doc = "Indicates the status on various events that cause hardware interrupts by setting the appropriate bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcinterruptstatus](hcinterruptstatus) module"]
 pub type HCINTERRUPTSTATUS = crate::Reg<u32, _HCINTERRUPTSTATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -91,7 +91,7 @@ impl crate::Readable for HCINTERRUPTSTATUS {}
 impl crate::Writable for HCINTERRUPTSTATUS {}
 #[doc = "Indicates the status on various events that cause hardware interrupts by setting the appropriate bits"]
 pub mod hcinterruptstatus;
-#[doc = "Controls the bits in the HcInterruptStatus register and indicates which events will generate a hardware interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcinterruptenable](hcinterruptenable) module"]
+#[doc = "Controls the bits in the HcInterruptStatus register and indicates which events will generate a hardware interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcinterruptenable](hcinterruptenable) module"]
 pub type HCINTERRUPTENABLE = crate::Reg<u32, _HCINTERRUPTENABLE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -102,7 +102,7 @@ impl crate::Readable for HCINTERRUPTENABLE {}
 impl crate::Writable for HCINTERRUPTENABLE {}
 #[doc = "Controls the bits in the HcInterruptStatus register and indicates which events will generate a hardware interrupt"]
 pub mod hcinterruptenable;
-#[doc = "The bits in this register are used to disable corresponding bits in the HCInterruptStatus register and in turn disable that event leading to hardware interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcinterruptdisable](hcinterruptdisable) module"]
+#[doc = "The bits in this register are used to disable corresponding bits in the HCInterruptStatus register and in turn disable that event leading to hardware interrupt\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcinterruptdisable](hcinterruptdisable) module"]
 pub type HCINTERRUPTDISABLE = crate::Reg<u32, _HCINTERRUPTDISABLE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -113,7 +113,7 @@ impl crate::Readable for HCINTERRUPTDISABLE {}
 impl crate::Writable for HCINTERRUPTDISABLE {}
 #[doc = "The bits in this register are used to disable corresponding bits in the HCInterruptStatus register and in turn disable that event leading to hardware interrupt"]
 pub mod hcinterruptdisable;
-#[doc = "Contains the physical address of the host controller communication area\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hchcca](hchcca) module"]
+#[doc = "Contains the physical address of the host controller communication area\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hchcca](hchcca) module"]
 pub type HCHCCA = crate::Reg<u32, _HCHCCA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -124,7 +124,7 @@ impl crate::Readable for HCHCCA {}
 impl crate::Writable for HCHCCA {}
 #[doc = "Contains the physical address of the host controller communication area"]
 pub mod hchcca;
-#[doc = "Contains the physical address of the current isochronous or interrupt endpoint descriptor\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcperiodcurrented](hcperiodcurrented) module"]
+#[doc = "Contains the physical address of the current isochronous or interrupt endpoint descriptor\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcperiodcurrented](hcperiodcurrented) module"]
 pub type HCPERIODCURRENTED = crate::Reg<u32, _HCPERIODCURRENTED>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -135,7 +135,7 @@ impl crate::Readable for HCPERIODCURRENTED {}
 impl crate::Writable for HCPERIODCURRENTED {}
 #[doc = "Contains the physical address of the current isochronous or interrupt endpoint descriptor"]
 pub mod hcperiodcurrented;
-#[doc = "Contains the physical address of the first endpoint descriptor of the control list\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hccontrolheaded](hccontrolheaded) module"]
+#[doc = "Contains the physical address of the first endpoint descriptor of the control list\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hccontrolheaded](hccontrolheaded) module"]
 pub type HCCONTROLHEADED = crate::Reg<u32, _HCCONTROLHEADED>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -146,7 +146,7 @@ impl crate::Readable for HCCONTROLHEADED {}
 impl crate::Writable for HCCONTROLHEADED {}
 #[doc = "Contains the physical address of the first endpoint descriptor of the control list"]
 pub mod hccontrolheaded;
-#[doc = "Contains the physical address of the current endpoint descriptor of the control list\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hccontrolcurrented](hccontrolcurrented) module"]
+#[doc = "Contains the physical address of the current endpoint descriptor of the control list\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hccontrolcurrented](hccontrolcurrented) module"]
 pub type HCCONTROLCURRENTED = crate::Reg<u32, _HCCONTROLCURRENTED>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -157,7 +157,7 @@ impl crate::Readable for HCCONTROLCURRENTED {}
 impl crate::Writable for HCCONTROLCURRENTED {}
 #[doc = "Contains the physical address of the current endpoint descriptor of the control list"]
 pub mod hccontrolcurrented;
-#[doc = "Contains the physical address of the first endpoint descriptor of the bulk list\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcbulkheaded](hcbulkheaded) module"]
+#[doc = "Contains the physical address of the first endpoint descriptor of the bulk list\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcbulkheaded](hcbulkheaded) module"]
 pub type HCBULKHEADED = crate::Reg<u32, _HCBULKHEADED>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -168,7 +168,7 @@ impl crate::Readable for HCBULKHEADED {}
 impl crate::Writable for HCBULKHEADED {}
 #[doc = "Contains the physical address of the first endpoint descriptor of the bulk list"]
 pub mod hcbulkheaded;
-#[doc = "Contains the physical address of the current endpoint descriptor of the bulk list\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcbulkcurrented](hcbulkcurrented) module"]
+#[doc = "Contains the physical address of the current endpoint descriptor of the bulk list\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcbulkcurrented](hcbulkcurrented) module"]
 pub type HCBULKCURRENTED = crate::Reg<u32, _HCBULKCURRENTED>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -179,7 +179,7 @@ impl crate::Readable for HCBULKCURRENTED {}
 impl crate::Writable for HCBULKCURRENTED {}
 #[doc = "Contains the physical address of the current endpoint descriptor of the bulk list"]
 pub mod hcbulkcurrented;
-#[doc = "Contains the physical address of the last transfer descriptor added to the 'Done' queue\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcdonehead](hcdonehead) module"]
+#[doc = "Contains the physical address of the last transfer descriptor added to the 'Done' queue\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcdonehead](hcdonehead) module"]
 pub type HCDONEHEAD = crate::Reg<u32, _HCDONEHEAD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -190,7 +190,7 @@ impl crate::Readable for HCDONEHEAD {}
 impl crate::Writable for HCDONEHEAD {}
 #[doc = "Contains the physical address of the last transfer descriptor added to the 'Done' queue"]
 pub mod hcdonehead;
-#[doc = "Defines the bit time interval in a frame and the full speed maximum packet size which would not cause an overrun\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcfminterval](hcfminterval) module"]
+#[doc = "Defines the bit time interval in a frame and the full speed maximum packet size which would not cause an overrun\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcfminterval](hcfminterval) module"]
 pub type HCFMINTERVAL = crate::Reg<u32, _HCFMINTERVAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -201,7 +201,7 @@ impl crate::Readable for HCFMINTERVAL {}
 impl crate::Writable for HCFMINTERVAL {}
 #[doc = "Defines the bit time interval in a frame and the full speed maximum packet size which would not cause an overrun"]
 pub mod hcfminterval;
-#[doc = "A 14-bit counter showing the bit time remaining in the current frame\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcfmremaining](hcfmremaining) module"]
+#[doc = "A 14-bit counter showing the bit time remaining in the current frame\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcfmremaining](hcfmremaining) module"]
 pub type HCFMREMAINING = crate::Reg<u32, _HCFMREMAINING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -212,7 +212,7 @@ impl crate::Readable for HCFMREMAINING {}
 impl crate::Writable for HCFMREMAINING {}
 #[doc = "A 14-bit counter showing the bit time remaining in the current frame"]
 pub mod hcfmremaining;
-#[doc = "Contains a 16-bit counter and provides the timing reference among events happening in the HC and the HCD\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcfmnumber](hcfmnumber) module"]
+#[doc = "Contains a 16-bit counter and provides the timing reference among events happening in the HC and the HCD\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcfmnumber](hcfmnumber) module"]
 pub type HCFMNUMBER = crate::Reg<u32, _HCFMNUMBER>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -223,7 +223,7 @@ impl crate::Readable for HCFMNUMBER {}
 impl crate::Writable for HCFMNUMBER {}
 #[doc = "Contains a 16-bit counter and provides the timing reference among events happening in the HC and the HCD"]
 pub mod hcfmnumber;
-#[doc = "Contains a programmable 14-bit value which determines the earliest time HC should start processing a periodic list\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcperiodicstart](hcperiodicstart) module"]
+#[doc = "Contains a programmable 14-bit value which determines the earliest time HC should start processing a periodic list\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcperiodicstart](hcperiodicstart) module"]
 pub type HCPERIODICSTART = crate::Reg<u32, _HCPERIODICSTART>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -234,7 +234,7 @@ impl crate::Readable for HCPERIODICSTART {}
 impl crate::Writable for HCPERIODICSTART {}
 #[doc = "Contains a programmable 14-bit value which determines the earliest time HC should start processing a periodic list"]
 pub mod hcperiodicstart;
-#[doc = "Contains 11-bit value which is used by the HC to determine whether to commit to transfer a maximum of 8-byte LS packet before EOF\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hclsthreshold](hclsthreshold) module"]
+#[doc = "Contains 11-bit value which is used by the HC to determine whether to commit to transfer a maximum of 8-byte LS packet before EOF\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hclsthreshold](hclsthreshold) module"]
 pub type HCLSTHRESHOLD = crate::Reg<u32, _HCLSTHRESHOLD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -245,7 +245,7 @@ impl crate::Readable for HCLSTHRESHOLD {}
 impl crate::Writable for HCLSTHRESHOLD {}
 #[doc = "Contains 11-bit value which is used by the HC to determine whether to commit to transfer a maximum of 8-byte LS packet before EOF"]
 pub mod hclsthreshold;
-#[doc = "First of the two registers which describes the characteristics of the root hub\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcrhdescriptora](hcrhdescriptora) module"]
+#[doc = "First of the two registers which describes the characteristics of the root hub\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcrhdescriptora](hcrhdescriptora) module"]
 pub type HCRHDESCRIPTORA = crate::Reg<u32, _HCRHDESCRIPTORA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -256,7 +256,7 @@ impl crate::Readable for HCRHDESCRIPTORA {}
 impl crate::Writable for HCRHDESCRIPTORA {}
 #[doc = "First of the two registers which describes the characteristics of the root hub"]
 pub mod hcrhdescriptora;
-#[doc = "Second of the two registers which describes the characteristics of the Root Hub\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcrhdescriptorb](hcrhdescriptorb) module"]
+#[doc = "Second of the two registers which describes the characteristics of the Root Hub\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcrhdescriptorb](hcrhdescriptorb) module"]
 pub type HCRHDESCRIPTORB = crate::Reg<u32, _HCRHDESCRIPTORB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -267,7 +267,7 @@ impl crate::Readable for HCRHDESCRIPTORB {}
 impl crate::Writable for HCRHDESCRIPTORB {}
 #[doc = "Second of the two registers which describes the characteristics of the Root Hub"]
 pub mod hcrhdescriptorb;
-#[doc = "This register is divided into two parts\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcrhstatus](hcrhstatus) module"]
+#[doc = "This register is divided into two parts\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcrhstatus](hcrhstatus) module"]
 pub type HCRHSTATUS = crate::Reg<u32, _HCRHSTATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -278,7 +278,7 @@ impl crate::Readable for HCRHSTATUS {}
 impl crate::Writable for HCRHSTATUS {}
 #[doc = "This register is divided into two parts"]
 pub mod hcrhstatus;
-#[doc = "Controls and reports the port events on a per-port basis\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [hcrhportstatus](hcrhportstatus) module"]
+#[doc = "Controls and reports the port events on a per-port basis\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcrhportstatus](hcrhportstatus) module"]
 pub type HCRHPORTSTATUS = crate::Reg<u32, _HCRHPORTSTATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -289,7 +289,7 @@ impl crate::Readable for HCRHPORTSTATUS {}
 impl crate::Writable for HCRHPORTSTATUS {}
 #[doc = "Controls and reports the port events on a per-port basis"]
 pub mod hcrhportstatus;
-#[doc = "Controls the port if it is attached to the host block or the device block\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [portmode](portmode) module"]
+#[doc = "Controls the port if it is attached to the host block or the device block\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [portmode](portmode) module"]
 pub type PORTMODE = crate::Reg<u32, _PORTMODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]

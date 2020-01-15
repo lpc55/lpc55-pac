@@ -10,21 +10,18 @@ impl crate::ResetValue for super::IE {
         0
     }
 }
-#[doc = "Possible values of the field `FWMIE0`"]
+#[doc = "FIFO 0 Watermark Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FWMIE0_A {
-    #[doc = "FIFO 0 watermark interrupts are not enabled."]
-    FWMIE0_0,
-    #[doc = "FIFO 0 watermark interrupts are enabled."]
-    FWMIE0_1,
+    #[doc = "0: FIFO 0 watermark interrupts are not enabled."]
+    FWMIE0_0 = 0,
+    #[doc = "1: FIFO 0 watermark interrupts are enabled."]
+    FWMIE0_1 = 1,
 }
 impl From<FWMIE0_A> for bool {
     #[inline(always)]
     fn from(variant: FWMIE0_A) -> Self {
-        match variant {
-            FWMIE0_A::FWMIE0_0 => false,
-            FWMIE0_A::FWMIE0_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FWMIE0`"]
@@ -88,21 +85,18 @@ impl<'a> FWMIE0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FOFIE0`"]
+#[doc = "Result FIFO 0 Overflow Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FOFIE0_A {
-    #[doc = "FIFO 0 overflow interrupts are not enabled."]
-    FOFIE0_0,
-    #[doc = "FIFO 0 overflow interrupts are enabled."]
-    FOFIE0_1,
+    #[doc = "0: FIFO 0 overflow interrupts are not enabled."]
+    FOFIE0_0 = 0,
+    #[doc = "1: FIFO 0 overflow interrupts are enabled."]
+    FOFIE0_1 = 1,
 }
 impl From<FOFIE0_A> for bool {
     #[inline(always)]
     fn from(variant: FOFIE0_A) -> Self {
-        match variant {
-            FOFIE0_A::FOFIE0_0 => false,
-            FOFIE0_A::FOFIE0_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FOFIE0`"]
@@ -166,21 +160,18 @@ impl<'a> FOFIE0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FWMIE1`"]
+#[doc = "FIFO1 Watermark Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FWMIE1_A {
-    #[doc = "FIFO1 watermark interrupts are not enabled."]
-    FWMIE1_0,
-    #[doc = "FIFO1 watermark interrupts are enabled."]
-    FWMIE1_1,
+    #[doc = "0: FIFO1 watermark interrupts are not enabled."]
+    FWMIE1_0 = 0,
+    #[doc = "1: FIFO1 watermark interrupts are enabled."]
+    FWMIE1_1 = 1,
 }
 impl From<FWMIE1_A> for bool {
     #[inline(always)]
     fn from(variant: FWMIE1_A) -> Self {
-        match variant {
-            FWMIE1_A::FWMIE1_0 => false,
-            FWMIE1_A::FWMIE1_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FWMIE1`"]
@@ -244,21 +235,18 @@ impl<'a> FWMIE1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FOFIE1`"]
+#[doc = "Result FIFO1 Overflow Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FOFIE1_A {
-    #[doc = "No result FIFO1 overflow has occurred since the last time the flag was cleared."]
-    FOFIE1_0,
-    #[doc = "At least one result FIFO1 overflow has occurred since the last time the flag was cleared."]
-    FOFIE1_1,
+    #[doc = "0: No result FIFO1 overflow has occurred since the last time the flag was cleared."]
+    FOFIE1_0 = 0,
+    #[doc = "1: At least one result FIFO1 overflow has occurred since the last time the flag was cleared."]
+    FOFIE1_1 = 1,
 }
 impl From<FOFIE1_A> for bool {
     #[inline(always)]
     fn from(variant: FOFIE1_A) -> Self {
-        match variant {
-            FOFIE1_A::FOFIE1_0 => false,
-            FOFIE1_A::FOFIE1_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FOFIE1`"]
@@ -322,21 +310,18 @@ impl<'a> FOFIE1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TEXC_IE`"]
+#[doc = "Trigger Exception Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TEXC_IE_A {
-    #[doc = "Trigger exception interrupts are disabled."]
-    TEXC_IE_0,
-    #[doc = "Trigger exception interrupts are enabled."]
-    TEXC_IE_1,
+    #[doc = "0: Trigger exception interrupts are disabled."]
+    TEXC_IE_0 = 0,
+    #[doc = "1: Trigger exception interrupts are enabled."]
+    TEXC_IE_1 = 1,
 }
 impl From<TEXC_IE_A> for bool {
     #[inline(always)]
     fn from(variant: TEXC_IE_A) -> Self {
-        match variant {
-            TEXC_IE_A::TEXC_IE_0 => false,
-            TEXC_IE_A::TEXC_IE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TEXC_IE`"]
@@ -400,48 +385,37 @@ impl<'a> TEXC_IE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TCOMP_IE`"]
+#[doc = "Trigger Completion Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum TCOMP_IE_A {
-    #[doc = "Trigger completion interrupts are disabled."]
-    TCOMP_IE_0,
-    #[doc = "Trigger completion interrupts are enabled for trigger source 0 only."]
-    TCOMP_IE_1,
-    #[doc = "Trigger completion interrupts are enabled for trigger source 1 only."]
-    TCOMP_IE_2,
-    #[doc = "Associated trigger completion interrupts are enabled."]
-    TCOMP_IE_3,
-    #[doc = "Associated trigger completion interrupts are enabled."]
-    TCOMP_IE_4,
-    #[doc = "Associated trigger completion interrupts are enabled."]
-    TCOMP_IE_5,
-    #[doc = "Associated trigger completion interrupts are enabled."]
-    TCOMP_IE_6,
-    #[doc = "Associated trigger completion interrupts are enabled."]
-    TCOMP_IE_7,
-    #[doc = "Associated trigger completion interrupts are enabled."]
-    TCOMP_IE_8,
-    #[doc = "Associated trigger completion interrupts are enabled."]
-    TCOMP_IE_9,
-    #[doc = "Trigger completion interrupts are enabled for every trigger source."]
-    TCOMP_IE_65535,
+    #[doc = "0: Trigger completion interrupts are disabled."]
+    TCOMP_IE_0 = 0,
+    #[doc = "1: Trigger completion interrupts are enabled for trigger source 0 only."]
+    TCOMP_IE_1 = 1,
+    #[doc = "2: Trigger completion interrupts are enabled for trigger source 1 only."]
+    TCOMP_IE_2 = 2,
+    #[doc = "3: Associated trigger completion interrupts are enabled."]
+    TCOMP_IE_3 = 3,
+    #[doc = "4: Associated trigger completion interrupts are enabled."]
+    TCOMP_IE_4 = 4,
+    #[doc = "5: Associated trigger completion interrupts are enabled."]
+    TCOMP_IE_5 = 5,
+    #[doc = "6: Associated trigger completion interrupts are enabled."]
+    TCOMP_IE_6 = 6,
+    #[doc = "7: Associated trigger completion interrupts are enabled."]
+    TCOMP_IE_7 = 7,
+    #[doc = "8: Associated trigger completion interrupts are enabled."]
+    TCOMP_IE_8 = 8,
+    #[doc = "9: Associated trigger completion interrupts are enabled."]
+    TCOMP_IE_9 = 9,
+    #[doc = "65535: Trigger completion interrupts are enabled for every trigger source."]
+    TCOMP_IE_65535 = 65535,
 }
 impl From<TCOMP_IE_A> for u16 {
     #[inline(always)]
     fn from(variant: TCOMP_IE_A) -> Self {
-        match variant {
-            TCOMP_IE_A::TCOMP_IE_0 => 0,
-            TCOMP_IE_A::TCOMP_IE_1 => 1,
-            TCOMP_IE_A::TCOMP_IE_2 => 2,
-            TCOMP_IE_A::TCOMP_IE_3 => 3,
-            TCOMP_IE_A::TCOMP_IE_4 => 4,
-            TCOMP_IE_A::TCOMP_IE_5 => 5,
-            TCOMP_IE_A::TCOMP_IE_6 => 6,
-            TCOMP_IE_A::TCOMP_IE_7 => 7,
-            TCOMP_IE_A::TCOMP_IE_8 => 8,
-            TCOMP_IE_A::TCOMP_IE_9 => 9,
-            TCOMP_IE_A::TCOMP_IE_65535 => 65535,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TCOMP_IE`"]

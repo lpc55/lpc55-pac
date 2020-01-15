@@ -10,27 +10,23 @@ impl crate::ResetValue for super::SEC_CTRL_RAM4_MEM_RULE0 {
         0
     }
 }
-#[doc = "Possible values of the field `RULE0`"]
+#[doc = "secure control rule0. it can be set when check_reg's write_lock is '0'\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RULE0_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<RULE0_A> for u8 {
     #[inline(always)]
     fn from(variant: RULE0_A) -> Self {
-        match variant {
-            RULE0_A::ENUM_NS_NP => 0,
-            RULE0_A::ENUM_NS_P => 1,
-            RULE0_A::ENUM_S_NP => 2,
-            RULE0_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RULE0`"]
@@ -107,27 +103,23 @@ impl<'a> RULE0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RULE1`"]
+#[doc = "secure control rule1. it can be set when check_reg's write_lock is '0'\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RULE1_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<RULE1_A> for u8 {
     #[inline(always)]
     fn from(variant: RULE1_A) -> Self {
-        match variant {
-            RULE1_A::ENUM_NS_NP => 0,
-            RULE1_A::ENUM_NS_P => 1,
-            RULE1_A::ENUM_S_NP => 2,
-            RULE1_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RULE1`"]
@@ -204,27 +196,23 @@ impl<'a> RULE1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RULE2`"]
+#[doc = "secure control rule2. it can be set when check_reg's write_lock is '0'\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RULE2_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<RULE2_A> for u8 {
     #[inline(always)]
     fn from(variant: RULE2_A) -> Self {
-        match variant {
-            RULE2_A::ENUM_NS_NP => 0,
-            RULE2_A::ENUM_NS_P => 1,
-            RULE2_A::ENUM_S_NP => 2,
-            RULE2_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RULE2`"]
@@ -301,27 +289,23 @@ impl<'a> RULE2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RULE3`"]
+#[doc = "secure control rule3. it can be set when check_reg's write_lock is '0'\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RULE3_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<RULE3_A> for u8 {
     #[inline(always)]
     fn from(variant: RULE3_A) -> Self {
-        match variant {
-            RULE3_A::ENUM_NS_NP => 0,
-            RULE3_A::ENUM_NS_P => 1,
-            RULE3_A::ENUM_S_NP => 2,
-            RULE3_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RULE3`"]

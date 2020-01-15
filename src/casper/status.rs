@@ -10,21 +10,18 @@ impl crate::ResetValue for super::STATUS {
         0
     }
 }
-#[doc = "Possible values of the field `DONE`"]
+#[doc = "Indicates if the accelerator has finished an operation. Write 1 to clear, or write CTRL1 to clear.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DONE_A {
-    #[doc = "Busy or just cleared"]
-    BUSY,
-    #[doc = "Completed last operation"]
-    COMPLETED,
+    #[doc = "0: Busy or just cleared"]
+    BUSY = 0,
+    #[doc = "1: Completed last operation"]
+    COMPLETED = 1,
 }
 impl From<DONE_A> for bool {
     #[inline(always)]
     fn from(variant: DONE_A) -> Self {
-        match variant {
-            DONE_A::BUSY => false,
-            DONE_A::COMPLETED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DONE`"]
@@ -88,21 +85,18 @@ impl<'a> DONE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CARRY`"]
+#[doc = "Last carry value if operation produced a carry bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARRY_A {
-    #[doc = "Carry was 0 or no carry"]
-    NO_CARRY,
-    #[doc = "Carry was 1"]
-    CARRY,
+    #[doc = "0: Carry was 0 or no carry"]
+    NO_CARRY = 0,
+    #[doc = "1: Carry was 1"]
+    CARRY = 1,
 }
 impl From<CARRY_A> for bool {
     #[inline(always)]
     fn from(variant: CARRY_A) -> Self {
-        match variant {
-            CARRY_A::NO_CARRY => false,
-            CARRY_A::CARRY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CARRY`"]
@@ -127,21 +121,18 @@ impl CARRY_R {
         *self == CARRY_A::CARRY
     }
 }
-#[doc = "Possible values of the field `BUSY`"]
+#[doc = "Indicates if the accelerator is busy performing an operation\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUSY_A {
-    #[doc = "Not busy - is idle"]
-    IDLE,
-    #[doc = "Is busy"]
-    BUSY,
+    #[doc = "0: Not busy - is idle"]
+    IDLE = 0,
+    #[doc = "1: Is busy"]
+    BUSY = 1,
 }
 impl From<BUSY_A> for bool {
     #[inline(always)]
     fn from(variant: BUSY_A) -> Self {
-        match variant {
-            BUSY_A::IDLE => false,
-            BUSY_A::BUSY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BUSY`"]

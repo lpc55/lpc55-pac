@@ -10,21 +10,18 @@ impl crate::ResetValue for super::RINGO0_CTRL {
         0x40
     }
 }
-#[doc = "Possible values of the field `SL`"]
+#[doc = "Select short or long ringo (for all ringos types).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SL_A {
-    #[doc = "Select short ringo (few elements)."]
-    SHORT,
-    #[doc = "Select long ringo (many elements)."]
-    LONG,
+    #[doc = "0: Select short ringo (few elements)."]
+    SHORT = 0,
+    #[doc = "1: Select long ringo (many elements)."]
+    LONG = 1,
 }
 impl From<SL_A> for bool {
     #[inline(always)]
     fn from(variant: SL_A) -> Self {
-        match variant {
-            SL_A::SHORT => false,
-            SL_A::LONG => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SL`"]
@@ -88,21 +85,18 @@ impl<'a> SL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FS`"]
+#[doc = "Ringo frequency output divider.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FS_A {
-    #[doc = "High frequency output (frequency lower than 100 MHz)."]
-    FAST,
-    #[doc = "Low frequency output (frequency lower than 10 MHz)."]
-    SLOW,
+    #[doc = "0: High frequency output (frequency lower than 100 MHz)."]
+    FAST = 0,
+    #[doc = "1: Low frequency output (frequency lower than 10 MHz)."]
+    SLOW = 1,
 }
 impl From<FS_A> for bool {
     #[inline(always)]
     fn from(variant: FS_A) -> Self {
-        match variant {
-            FS_A::FAST => false,
-            FS_A::SLOW => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FS`"]
@@ -166,27 +160,23 @@ impl<'a> FS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWN_SWP`"]
+#[doc = "PN-Ringos (P-Transistor and N-Transistor processing) control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SWN_SWP_A {
-    #[doc = "Normal mode."]
-    NORMAL,
-    #[doc = "P-Monitor mode. Measure with weak P transistor."]
-    P_MONITOR,
-    #[doc = "P-Monitor mode. Measure with weak N transistor."]
-    N_MONITOR,
-    #[doc = "Don't use."]
-    FORBIDDEN,
+    #[doc = "0: Normal mode."]
+    NORMAL = 0,
+    #[doc = "1: P-Monitor mode. Measure with weak P transistor."]
+    P_MONITOR = 1,
+    #[doc = "2: P-Monitor mode. Measure with weak N transistor."]
+    N_MONITOR = 2,
+    #[doc = "3: Don't use."]
+    FORBIDDEN = 3,
 }
 impl From<SWN_SWP_A> for u8 {
     #[inline(always)]
     fn from(variant: SWN_SWP_A) -> Self {
-        match variant {
-            SWN_SWP_A::NORMAL => 0,
-            SWN_SWP_A::P_MONITOR => 1,
-            SWN_SWP_A::N_MONITOR => 2,
-            SWN_SWP_A::FORBIDDEN => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SWN_SWP`"]
@@ -263,21 +253,18 @@ impl<'a> SWN_SWP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PD`"]
+#[doc = "Ringo module Power control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PD_A {
-    #[doc = "The Ringo module is enabled."]
-    POWERED_ON,
-    #[doc = "The Ringo module is disabled."]
-    POWERED_DOWN,
+    #[doc = "0: The Ringo module is enabled."]
+    POWERED_ON = 0,
+    #[doc = "1: The Ringo module is disabled."]
+    POWERED_DOWN = 1,
 }
 impl From<PD_A> for bool {
     #[inline(always)]
     fn from(variant: PD_A) -> Self {
-        match variant {
-            PD_A::POWERED_ON => false,
-            PD_A::POWERED_DOWN => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PD`"]
@@ -341,21 +328,18 @@ impl<'a> PD_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `E_ND0`"]
+#[doc = "First NAND2-based ringo control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E_ND0_A {
-    #[doc = "First NAND2-based ringo is disabled."]
-    DISABLE,
-    #[doc = "First NAND2-based ringo is enabled."]
-    ENABLE,
+    #[doc = "0: First NAND2-based ringo is disabled."]
+    DISABLE = 0,
+    #[doc = "1: First NAND2-based ringo is enabled."]
+    ENABLE = 1,
 }
 impl From<E_ND0_A> for bool {
     #[inline(always)]
     fn from(variant: E_ND0_A) -> Self {
-        match variant {
-            E_ND0_A::DISABLE => false,
-            E_ND0_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E_ND0`"]
@@ -419,21 +403,18 @@ impl<'a> E_ND0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `E_ND1`"]
+#[doc = "Second NAND2-based ringo control.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E_ND1_A {
-    #[doc = "Second NAND2-based ringo is disabled."]
-    DISABLE,
-    #[doc = "Second NAND2-based ringo is enabled."]
-    ENABLE,
+    #[doc = "0: Second NAND2-based ringo is disabled."]
+    DISABLE = 0,
+    #[doc = "1: Second NAND2-based ringo is enabled."]
+    ENABLE = 1,
 }
 impl From<E_ND1_A> for bool {
     #[inline(always)]
     fn from(variant: E_ND1_A) -> Self {
-        match variant {
-            E_ND1_A::DISABLE => false,
-            E_ND1_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E_ND1`"]
@@ -497,21 +478,18 @@ impl<'a> E_ND1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `E_NR0`"]
+#[doc = "First NOR2-based ringo control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E_NR0_A {
-    #[doc = "First NOR2-based ringo is disabled."]
-    DISABLE,
-    #[doc = "First NOR2-based ringo is enabled."]
-    ENABLE,
+    #[doc = "0: First NOR2-based ringo is disabled."]
+    DISABLE = 0,
+    #[doc = "1: First NOR2-based ringo is enabled."]
+    ENABLE = 1,
 }
 impl From<E_NR0_A> for bool {
     #[inline(always)]
     fn from(variant: E_NR0_A) -> Self {
-        match variant {
-            E_NR0_A::DISABLE => false,
-            E_NR0_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E_NR0`"]
@@ -575,21 +553,18 @@ impl<'a> E_NR0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `E_NR1`"]
+#[doc = "Second NOR2-based ringo control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E_NR1_A {
-    #[doc = "Second NORD2-based ringo is disabled."]
-    DISABLE,
-    #[doc = "Second NORD2-based ringo is enabled."]
-    ENABLE,
+    #[doc = "0: Second NORD2-based ringo is disabled."]
+    DISABLE = 0,
+    #[doc = "1: Second NORD2-based ringo is enabled."]
+    ENABLE = 1,
 }
 impl From<E_NR1_A> for bool {
     #[inline(always)]
     fn from(variant: E_NR1_A) -> Self {
-        match variant {
-            E_NR1_A::DISABLE => false,
-            E_NR1_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E_NR1`"]
@@ -653,21 +628,18 @@ impl<'a> E_NR1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `E_IV0`"]
+#[doc = "First Inverter-based ringo control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E_IV0_A {
-    #[doc = "First INV-based ringo is disabled."]
-    DISABLE,
-    #[doc = "First INV-based ringo is enabled."]
-    ENABLE,
+    #[doc = "0: First INV-based ringo is disabled."]
+    DISABLE = 0,
+    #[doc = "1: First INV-based ringo is enabled."]
+    ENABLE = 1,
 }
 impl From<E_IV0_A> for bool {
     #[inline(always)]
     fn from(variant: E_IV0_A) -> Self {
-        match variant {
-            E_IV0_A::DISABLE => false,
-            E_IV0_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E_IV0`"]
@@ -731,21 +703,18 @@ impl<'a> E_IV0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `E_IV1`"]
+#[doc = "Second Inverter-based ringo control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E_IV1_A {
-    #[doc = "Second INV-based ringo is disabled."]
-    DISABLE,
-    #[doc = "Second INV-based ringo is enabled."]
-    ENABLE,
+    #[doc = "0: Second INV-based ringo is disabled."]
+    DISABLE = 0,
+    #[doc = "1: Second INV-based ringo is enabled."]
+    ENABLE = 1,
 }
 impl From<E_IV1_A> for bool {
     #[inline(always)]
     fn from(variant: E_IV1_A) -> Self {
-        match variant {
-            E_IV1_A::DISABLE => false,
-            E_IV1_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E_IV1`"]
@@ -809,21 +778,18 @@ impl<'a> E_IV1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `E_PN0`"]
+#[doc = "First PN (P-Transistor and N-Transistor processing) monitor control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E_PN0_A {
-    #[doc = "First PN-based ringo is disabled."]
-    DISABLE,
-    #[doc = "First PN-based ringo is enabled."]
-    ENABLE,
+    #[doc = "0: First PN-based ringo is disabled."]
+    DISABLE = 0,
+    #[doc = "1: First PN-based ringo is enabled."]
+    ENABLE = 1,
 }
 impl From<E_PN0_A> for bool {
     #[inline(always)]
     fn from(variant: E_PN0_A) -> Self {
-        match variant {
-            E_PN0_A::DISABLE => false,
-            E_PN0_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E_PN0`"]
@@ -887,21 +853,18 @@ impl<'a> E_PN0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `E_PN1`"]
+#[doc = "Second PN (P-Transistor and N-Transistor processing) monitor control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum E_PN1_A {
-    #[doc = "Second PN-based ringo is disabled."]
-    DISABLE,
-    #[doc = "Second PN-based ringo is enabled."]
-    ENABLE,
+    #[doc = "0: Second PN-based ringo is disabled."]
+    DISABLE = 0,
+    #[doc = "1: Second PN-based ringo is enabled."]
+    ENABLE = 1,
 }
 impl From<E_PN1_A> for bool {
     #[inline(always)]
     fn from(variant: E_PN1_A) -> Self {
-        match variant {
-            E_PN1_A::DISABLE => false,
-            E_PN1_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `E_PN1`"]

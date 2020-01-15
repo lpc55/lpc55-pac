@@ -10,51 +10,39 @@ impl crate::ResetValue for super::CMDL4 {
         0
     }
 }
-#[doc = "Possible values of the field `ADCH`"]
+#[doc = "Input channel select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADCH_A {
-    #[doc = "Select CH0A or CH0B or CH0A/CH0B pair."]
-    ADCH_0,
-    #[doc = "Select CH1A or CH1B or CH1A/CH1B pair."]
-    ADCH_1,
-    #[doc = "Select CH2A or CH2B or CH2A/CH2B pair."]
-    ADCH_2,
-    #[doc = "Select CH3A or CH3B or CH3A/CH3B pair."]
-    ADCH_3,
-    #[doc = "Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
-    ADCH_4,
-    #[doc = "Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
-    ADCH_5,
-    #[doc = "Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
-    ADCH_6,
-    #[doc = "Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
-    ADCH_7,
-    #[doc = "Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
-    ADCH_8,
-    #[doc = "Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
-    ADCH_9,
-    #[doc = "Select CH30A or CH30B or CH30A/CH30B pair."]
-    ADCH_30,
-    #[doc = "Select CH31A or CH31B or CH31A/CH31B pair."]
-    ADCH_31,
+    #[doc = "0: Select CH0A or CH0B or CH0A/CH0B pair."]
+    ADCH_0 = 0,
+    #[doc = "1: Select CH1A or CH1B or CH1A/CH1B pair."]
+    ADCH_1 = 1,
+    #[doc = "2: Select CH2A or CH2B or CH2A/CH2B pair."]
+    ADCH_2 = 2,
+    #[doc = "3: Select CH3A or CH3B or CH3A/CH3B pair."]
+    ADCH_3 = 3,
+    #[doc = "4: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
+    ADCH_4 = 4,
+    #[doc = "5: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
+    ADCH_5 = 5,
+    #[doc = "6: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
+    ADCH_6 = 6,
+    #[doc = "7: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
+    ADCH_7 = 7,
+    #[doc = "8: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
+    ADCH_8 = 8,
+    #[doc = "9: Select corresponding channel CHnA or CHnB or CHnA/CHnB pair."]
+    ADCH_9 = 9,
+    #[doc = "30: Select CH30A or CH30B or CH30A/CH30B pair."]
+    ADCH_30 = 30,
+    #[doc = "31: Select CH31A or CH31B or CH31A/CH31B pair."]
+    ADCH_31 = 31,
 }
 impl From<ADCH_A> for u8 {
     #[inline(always)]
     fn from(variant: ADCH_A) -> Self {
-        match variant {
-            ADCH_A::ADCH_0 => 0,
-            ADCH_A::ADCH_1 => 1,
-            ADCH_A::ADCH_2 => 2,
-            ADCH_A::ADCH_3 => 3,
-            ADCH_A::ADCH_4 => 4,
-            ADCH_A::ADCH_5 => 5,
-            ADCH_A::ADCH_6 => 6,
-            ADCH_A::ADCH_7 => 7,
-            ADCH_A::ADCH_8 => 8,
-            ADCH_A::ADCH_9 => 9,
-            ADCH_A::ADCH_30 => 30,
-            ADCH_A::ADCH_31 => 31,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADCH`"]
@@ -218,27 +206,23 @@ impl<'a> ADCH_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CTYPE`"]
+#[doc = "Conversion Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CTYPE_A {
-    #[doc = "Single-Ended Mode. Only A side channel is converted."]
-    CTYPE_0,
-    #[doc = "Single-Ended Mode. Only B side channel is converted."]
-    CTYPE_1,
-    #[doc = "Differential Mode. A-B."]
-    CTYPE_2,
-    #[doc = "Dual-Single-Ended Mode. Both A side and B side channels are converted independently."]
-    CTYPE_3,
+    #[doc = "0: Single-Ended Mode. Only A side channel is converted."]
+    CTYPE_0 = 0,
+    #[doc = "1: Single-Ended Mode. Only B side channel is converted."]
+    CTYPE_1 = 1,
+    #[doc = "2: Differential Mode. A-B."]
+    CTYPE_2 = 2,
+    #[doc = "3: Dual-Single-Ended Mode. Both A side and B side channels are converted independently."]
+    CTYPE_3 = 3,
 }
 impl From<CTYPE_A> for u8 {
     #[inline(always)]
     fn from(variant: CTYPE_A) -> Self {
-        match variant {
-            CTYPE_A::CTYPE_0 => 0,
-            CTYPE_A::CTYPE_1 => 1,
-            CTYPE_A::CTYPE_2 => 2,
-            CTYPE_A::CTYPE_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CTYPE`"]
@@ -315,21 +299,18 @@ impl<'a> CTYPE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MODE`"]
+#[doc = "Select resolution of conversions\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_A {
-    #[doc = "Standard resolution. Single-ended 12-bit conversion; Differential 13-bit conversion with 2's complement output."]
-    MODE_0,
-    #[doc = "High resolution. Single-ended 16-bit conversion; Differential 16-bit conversion with 2's complement output."]
-    MODE_1,
+    #[doc = "0: Standard resolution. Single-ended 12-bit conversion; Differential 13-bit conversion with 2's complement output."]
+    MODE_0 = 0,
+    #[doc = "1: High resolution. Single-ended 16-bit conversion; Differential 16-bit conversion with 2's complement output."]
+    MODE_1 = 1,
 }
 impl From<MODE_A> for bool {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::MODE_0 => false,
-            MODE_A::MODE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MODE`"]

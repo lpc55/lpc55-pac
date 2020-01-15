@@ -13,7 +13,7 @@ pub struct RegisterBlock {
     #[doc = "0x100 - Status register for USB HS"]
     pub usb_hs_status: USB_HS_STATUS,
 }
-#[doc = "update lock out control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [updatelckout](updatelckout) module"]
+#[doc = "update lock out control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [updatelckout](updatelckout) module"]
 pub type UPDATELCKOUT = crate::Reg<u32, _UPDATELCKOUT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -24,7 +24,7 @@ impl crate::Readable for UPDATELCKOUT {}
 impl crate::Writable for UPDATELCKOUT {}
 #[doc = "update lock out control"]
 pub mod updatelckout;
-#[doc = "Selects the source for SCK going into Flexcomm 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fcctrlsel](fcctrlsel) module"]
+#[doc = "Selects the source for SCK going into Flexcomm 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fcctrlsel](fcctrlsel) module"]
 pub type FCCTRLSEL = crate::Reg<u32, _FCCTRLSEL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -35,7 +35,7 @@ impl crate::Readable for FCCTRLSEL {}
 impl crate::Writable for FCCTRLSEL {}
 #[doc = "Selects the source for SCK going into Flexcomm 0"]
 pub mod fcctrlsel;
-#[doc = "Selects sources and data combinations for shared signal set 0.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sharedctrlset](sharedctrlset) module"]
+#[doc = "Selects sources and data combinations for shared signal set 0.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sharedctrlset](sharedctrlset) module"]
 pub type SHAREDCTRLSET = crate::Reg<u32, _SHAREDCTRLSET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -46,7 +46,7 @@ impl crate::Readable for SHAREDCTRLSET {}
 impl crate::Writable for SHAREDCTRLSET {}
 #[doc = "Selects sources and data combinations for shared signal set 0."]
 pub mod sharedctrlset;
-#[doc = "Status register for USB HS\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb_hs_status](usb_hs_status) module"]
+#[doc = "Status register for USB HS\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usb_hs_status](usb_hs_status) module"]
 pub type USB_HS_STATUS = crate::Reg<u32, _USB_HS_STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]

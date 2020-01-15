@@ -12,21 +12,18 @@ impl crate::ResetValue for super::STATUS {
 }
 #[doc = "Reader of field `OK_STATUS_3V`"]
 pub type OK_STATUS_3V_R = crate::R<bool, bool>;
-#[doc = "Possible values of the field `HOSTDISCONDETECT_STATUS`"]
+#[doc = "Indicates at the local host (downstream) port that the remote device has disconnected while in High-Speed mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HOSTDISCONDETECT_STATUS_A {
-    #[doc = "USB cable disconnect has not been detected at the local host"]
-    VALUE0,
-    #[doc = "USB cable disconnect has been detected at the local host"]
-    VALUE1,
+    #[doc = "0: USB cable disconnect has not been detected at the local host"]
+    VALUE0 = 0,
+    #[doc = "1: USB cable disconnect has been detected at the local host"]
+    VALUE1 = 1,
 }
 impl From<HOSTDISCONDETECT_STATUS_A> for bool {
     #[inline(always)]
     fn from(variant: HOSTDISCONDETECT_STATUS_A) -> Self {
-        match variant {
-            HOSTDISCONDETECT_STATUS_A::VALUE0 => false,
-            HOSTDISCONDETECT_STATUS_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HOSTDISCONDETECT_STATUS`"]
@@ -51,21 +48,18 @@ impl HOSTDISCONDETECT_STATUS_R {
         *self == HOSTDISCONDETECT_STATUS_A::VALUE1
     }
 }
-#[doc = "Possible values of the field `DEVPLUGIN_STATUS`"]
+#[doc = "Status indicator for non-standard resistive plugged-in detection Indicates that the device has been connected on the USB_DP and USB_DM lines using the nonstandard resistive plugged-in detection method controlled by CTRL\\[4\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DEVPLUGIN_STATUS_A {
-    #[doc = "No attachment to a USB host is detected"]
-    VALUE0,
-    #[doc = "Cable attachment to a USB host is detected"]
-    VALUE1,
+    #[doc = "0: No attachment to a USB host is detected"]
+    VALUE0 = 0,
+    #[doc = "1: Cable attachment to a USB host is detected"]
+    VALUE1 = 1,
 }
 impl From<DEVPLUGIN_STATUS_A> for bool {
     #[inline(always)]
     fn from(variant: DEVPLUGIN_STATUS_A) -> Self {
-        match variant {
-            DEVPLUGIN_STATUS_A::VALUE0 => false,
-            DEVPLUGIN_STATUS_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DEVPLUGIN_STATUS`"]

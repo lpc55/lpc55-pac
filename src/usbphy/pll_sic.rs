@@ -82,21 +82,18 @@ impl<'a> PLL_ENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `REFBIAS_PWD_SEL`"]
+#[doc = "Reference bias power down select.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REFBIAS_PWD_SEL_A {
-    #[doc = "Selects PLL_POWER to control the reference bias"]
-    VALUE0,
-    #[doc = "Selects REFBIAS_PWD to control the reference bias"]
-    VALUE1,
+    #[doc = "0: Selects PLL_POWER to control the reference bias"]
+    VALUE0 = 0,
+    #[doc = "1: Selects REFBIAS_PWD to control the reference bias"]
+    VALUE1 = 1,
 }
 impl From<REFBIAS_PWD_SEL_A> for bool {
     #[inline(always)]
     fn from(variant: REFBIAS_PWD_SEL_A) -> Self {
-        match variant {
-            REFBIAS_PWD_SEL_A::VALUE0 => false,
-            REFBIAS_PWD_SEL_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REFBIAS_PWD_SEL`"]
@@ -208,39 +205,31 @@ impl<'a> PLL_REG_ENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PLL_DIV_SEL`"]
+#[doc = "This field controls the USB PLL feedback loop divider\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PLL_DIV_SEL_A {
-    #[doc = "Divide by 13"]
-    VALUE0,
-    #[doc = "Divide by 15"]
-    VALUE1,
-    #[doc = "Divide by 16"]
-    VALUE2,
-    #[doc = "Divide by 20"]
-    VALUE3,
-    #[doc = "Divide by 22"]
-    VALUE4,
-    #[doc = "Divide by 25"]
-    VALUE5,
-    #[doc = "Divide by 30"]
-    VALUE6,
-    #[doc = "Divide by 240"]
-    VALUE7,
+    #[doc = "0: Divide by 13"]
+    VALUE0 = 0,
+    #[doc = "1: Divide by 15"]
+    VALUE1 = 1,
+    #[doc = "2: Divide by 16"]
+    VALUE2 = 2,
+    #[doc = "3: Divide by 20"]
+    VALUE3 = 3,
+    #[doc = "4: Divide by 22"]
+    VALUE4 = 4,
+    #[doc = "5: Divide by 25"]
+    VALUE5 = 5,
+    #[doc = "6: Divide by 30"]
+    VALUE6 = 6,
+    #[doc = "7: Divide by 240"]
+    VALUE7 = 7,
 }
 impl From<PLL_DIV_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PLL_DIV_SEL_A) -> Self {
-        match variant {
-            PLL_DIV_SEL_A::VALUE0 => 0,
-            PLL_DIV_SEL_A::VALUE1 => 1,
-            PLL_DIV_SEL_A::VALUE2 => 2,
-            PLL_DIV_SEL_A::VALUE3 => 3,
-            PLL_DIV_SEL_A::VALUE4 => 4,
-            PLL_DIV_SEL_A::VALUE5 => 5,
-            PLL_DIV_SEL_A::VALUE6 => 6,
-            PLL_DIV_SEL_A::VALUE7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PLL_DIV_SEL`"]
@@ -385,21 +374,18 @@ impl<'a> PLL_PREDIV_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PLL_LOCK`"]
+#[doc = "USB PLL lock status indicator\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLL_LOCK_A {
-    #[doc = "PLL is not currently locked"]
-    VALUE0,
-    #[doc = "PLL is currently locked"]
-    VALUE1,
+    #[doc = "0: PLL is not currently locked"]
+    VALUE0 = 0,
+    #[doc = "1: PLL is currently locked"]
+    VALUE1 = 1,
 }
 impl From<PLL_LOCK_A> for bool {
     #[inline(always)]
     fn from(variant: PLL_LOCK_A) -> Self {
-        match variant {
-            PLL_LOCK_A::VALUE0 => false,
-            PLL_LOCK_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PLL_LOCK`"]

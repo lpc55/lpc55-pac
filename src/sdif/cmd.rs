@@ -264,21 +264,19 @@ impl<'a> SEND_INITIALIZATION_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CARD_NUMBER`"]
+#[doc = "Specifies the card number of SDCARD for which the current Command is being executed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CARD_NUMBER_A {
-    #[doc = "Command will be execute on SDCARD 0"]
-    CARD0,
-    #[doc = "Command will be execute on SDCARD 1"]
-    CARD1,
+    #[doc = "0: Command will be execute on SDCARD 0"]
+    CARD0 = 0,
+    #[doc = "1: Command will be execute on SDCARD 1"]
+    CARD1 = 1,
 }
 impl From<CARD_NUMBER_A> for u8 {
     #[inline(always)]
     fn from(variant: CARD_NUMBER_A) -> Self {
-        match variant {
-            CARD_NUMBER_A::CARD0 => 0,
-            CARD_NUMBER_A::CARD1 => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CARD_NUMBER`"]

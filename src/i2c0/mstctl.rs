@@ -10,21 +10,18 @@ impl crate::ResetValue for super::MSTCTL {
         0
     }
 }
-#[doc = "Possible values of the field `MSTCONTINUE`"]
+#[doc = "Master Continue. This bit is write-only.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSTCONTINUE_AW {
-    #[doc = "No effect."]
-    NO_EFFECT,
-    #[doc = "Continue. Informs the Master function to continue to the next operation. This must done after writing transmit data, reading received data, or any other housekeeping related to the next bus operation."]
-    CONTINUE,
+    #[doc = "0: No effect."]
+    NO_EFFECT = 0,
+    #[doc = "1: Continue. Informs the Master function to continue to the next operation. This must done after writing transmit data, reading received data, or any other housekeeping related to the next bus operation."]
+    CONTINUE = 1,
 }
 impl From<MSTCONTINUE_AW> for bool {
     #[inline(always)]
     fn from(variant: MSTCONTINUE_AW) -> Self {
-        match variant {
-            MSTCONTINUE_AW::NO_EFFECT => false,
-            MSTCONTINUE_AW::CONTINUE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `MSTCONTINUE`"]
@@ -66,21 +63,18 @@ impl<'a> MSTCONTINUE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MSTSTART`"]
+#[doc = "Master Start control. This bit is write-only.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSTSTART_A {
-    #[doc = "No effect."]
-    NO_EFFECT,
-    #[doc = "Start. A Start will be generated on the I2C bus at the next allowed time."]
-    START,
+    #[doc = "0: No effect."]
+    NO_EFFECT = 0,
+    #[doc = "1: Start. A Start will be generated on the I2C bus at the next allowed time."]
+    START = 1,
 }
 impl From<MSTSTART_A> for bool {
     #[inline(always)]
     fn from(variant: MSTSTART_A) -> Self {
-        match variant {
-            MSTSTART_A::NO_EFFECT => false,
-            MSTSTART_A::START => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSTSTART`"]
@@ -144,21 +138,18 @@ impl<'a> MSTSTART_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MSTSTOP`"]
+#[doc = "Master Stop control. This bit is write-only.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSTSTOP_A {
-    #[doc = "No effect."]
-    NO_EFFECT,
-    #[doc = "Stop. A Stop will be generated on the I2C bus at the next allowed time, preceded by a NACK to the slave if the master is receiving data from the slave (Master Receiver mode)."]
-    STOP,
+    #[doc = "0: No effect."]
+    NO_EFFECT = 0,
+    #[doc = "1: Stop. A Stop will be generated on the I2C bus at the next allowed time, preceded by a NACK to the slave if the master is receiving data from the slave (Master Receiver mode)."]
+    STOP = 1,
 }
 impl From<MSTSTOP_A> for bool {
     #[inline(always)]
     fn from(variant: MSTSTOP_A) -> Self {
-        match variant {
-            MSTSTOP_A::NO_EFFECT => false,
-            MSTSTOP_A::STOP => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSTSTOP`"]
@@ -222,21 +213,18 @@ impl<'a> MSTSTOP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MSTDMA`"]
+#[doc = "Master DMA enable. Data operations of the I2C can be performed with DMA. Protocol type operations such as Start, address, Stop, and address match must always be done with software, typically via an interrupt. Address acknowledgement must also be done by software except when the I2C is configured to be HSCAPABLE (and address acknowledgement is handled entirely by hardware) or when Automatic Operation is enabled. When a DMA data transfer is complete, MSTDMA must be cleared prior to beginning the next operation, typically a Start or Stop.This bit is read/write.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSTDMA_A {
-    #[doc = "Disable. No DMA requests are generated for master operation."]
-    DISABLED,
-    #[doc = "Enable. A DMA request is generated for I2C master data operations. When this I2C master is generating Acknowledge bits in Master Receiver mode, the acknowledge is generated automatically."]
-    ENABLED,
+    #[doc = "0: Disable. No DMA requests are generated for master operation."]
+    DISABLED = 0,
+    #[doc = "1: Enable. A DMA request is generated for I2C master data operations. When this I2C master is generating Acknowledge bits in Master Receiver mode, the acknowledge is generated automatically."]
+    ENABLED = 1,
 }
 impl From<MSTDMA_A> for bool {
     #[inline(always)]
     fn from(variant: MSTDMA_A) -> Self {
-        match variant {
-            MSTDMA_A::DISABLED => false,
-            MSTDMA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSTDMA`"]

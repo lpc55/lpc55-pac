@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CFG {
         0
     }
 }
-#[doc = "Possible values of the field `MSTEN`"]
+#[doc = "Master Enable. When disabled, configurations settings for the Master function are not changed, but the Master function is internally reset.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSTEN_A {
-    #[doc = "Disabled. The I2C Master function is disabled."]
-    DISABLED,
-    #[doc = "Enabled. The I2C Master function is enabled."]
-    ENABLED,
+    #[doc = "0: Disabled. The I2C Master function is disabled."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. The I2C Master function is enabled."]
+    ENABLED = 1,
 }
 impl From<MSTEN_A> for bool {
     #[inline(always)]
     fn from(variant: MSTEN_A) -> Self {
-        match variant {
-            MSTEN_A::DISABLED => false,
-            MSTEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSTEN`"]
@@ -88,21 +85,18 @@ impl<'a> MSTEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SLVEN`"]
+#[doc = "Slave Enable. When disabled, configurations settings for the Slave function are not changed, but the Slave function is internally reset.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLVEN_A {
-    #[doc = "Disabled. The I2C slave function is disabled."]
-    DISABLED,
-    #[doc = "Enabled. The I2C slave function is enabled."]
-    ENABLED,
+    #[doc = "0: Disabled. The I2C slave function is disabled."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. The I2C slave function is enabled."]
+    ENABLED = 1,
 }
 impl From<SLVEN_A> for bool {
     #[inline(always)]
     fn from(variant: SLVEN_A) -> Self {
-        match variant {
-            SLVEN_A::DISABLED => false,
-            SLVEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SLVEN`"]
@@ -166,21 +160,18 @@ impl<'a> SLVEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MONEN`"]
+#[doc = "Monitor Enable. When disabled, configurations settings for the Monitor function are not changed, but the Monitor function is internally reset.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MONEN_A {
-    #[doc = "Disabled. The I2C Monitor function is disabled."]
-    DISABLED,
-    #[doc = "Enabled. The I2C Monitor function is enabled."]
-    ENABLED,
+    #[doc = "0: Disabled. The I2C Monitor function is disabled."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. The I2C Monitor function is enabled."]
+    ENABLED = 1,
 }
 impl From<MONEN_A> for bool {
     #[inline(always)]
     fn from(variant: MONEN_A) -> Self {
-        match variant {
-            MONEN_A::DISABLED => false,
-            MONEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MONEN`"]
@@ -244,21 +235,18 @@ impl<'a> MONEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TIMEOUTEN`"]
+#[doc = "I2C bus Time-out Enable. When disabled, the time-out function is internally reset.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMEOUTEN_A {
-    #[doc = "Disabled. Time-out function is disabled."]
-    DISABLED,
-    #[doc = "Enabled. Time-out function is enabled. Both types of time-out flags will be generated and will cause interrupts if they are enabled. Typically, only one time-out will be used in a system."]
-    ENABLED,
+    #[doc = "0: Disabled. Time-out function is disabled."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. Time-out function is enabled. Both types of time-out flags will be generated and will cause interrupts if they are enabled. Typically, only one time-out will be used in a system."]
+    ENABLED = 1,
 }
 impl From<TIMEOUTEN_A> for bool {
     #[inline(always)]
     fn from(variant: TIMEOUTEN_A) -> Self {
-        match variant {
-            TIMEOUTEN_A::DISABLED => false,
-            TIMEOUTEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TIMEOUTEN`"]
@@ -322,21 +310,18 @@ impl<'a> TIMEOUTEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MONCLKSTR`"]
+#[doc = "Monitor function Clock Stretching.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MONCLKSTR_A {
-    #[doc = "Disabled. The Monitor function will not perform clock stretching. Software or DMA may not always be able to read data provided by the Monitor function before it is overwritten. This mode may be used when non-invasive monitoring is critical."]
-    DISABLED,
-    #[doc = "Enabled. The Monitor function will perform clock stretching in order to ensure that software or DMA can read all incoming data supplied by the Monitor function."]
-    ENABLED,
+    #[doc = "0: Disabled. The Monitor function will not perform clock stretching. Software or DMA may not always be able to read data provided by the Monitor function before it is overwritten. This mode may be used when non-invasive monitoring is critical."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. The Monitor function will perform clock stretching in order to ensure that software or DMA can read all incoming data supplied by the Monitor function."]
+    ENABLED = 1,
 }
 impl From<MONCLKSTR_A> for bool {
     #[inline(always)]
     fn from(variant: MONCLKSTR_A) -> Self {
-        match variant {
-            MONCLKSTR_A::DISABLED => false,
-            MONCLKSTR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MONCLKSTR`"]
@@ -400,21 +385,18 @@ impl<'a> MONCLKSTR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `HSCAPABLE`"]
+#[doc = "High-speed mode Capable enable. Since High Speed mode alters the way I2C pins drive and filter, as well as the timing for certain I2C signalling, enabling High-speed mode applies to all functions: Master, Slave, and Monitor.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSCAPABLE_A {
-    #[doc = "Fast-mode plus. The I 2C interface will support Standard-mode, Fast-mode, and Fast-mode Plus, to the extent that the pin electronics support these modes. Any changes that need to be made to the pin controls, such as changing the drive strength or filtering, must be made by software via the IOCON register associated with each I2C pin,"]
-    FAST_MODE_PLUS,
-    #[doc = "High-speed. In addition to Standard-mode, Fast-mode, and Fast-mode Plus, the I 2C interface will support High-speed mode to the extent that the pin electronics support these modes. See Section 25.7.2.2 for more information."]
-    HIGH_SPEED,
+    #[doc = "0: Fast-mode plus. The I 2C interface will support Standard-mode, Fast-mode, and Fast-mode Plus, to the extent that the pin electronics support these modes. Any changes that need to be made to the pin controls, such as changing the drive strength or filtering, must be made by software via the IOCON register associated with each I2C pin,"]
+    FAST_MODE_PLUS = 0,
+    #[doc = "1: High-speed. In addition to Standard-mode, Fast-mode, and Fast-mode Plus, the I 2C interface will support High-speed mode to the extent that the pin electronics support these modes. See Section 25.7.2.2 for more information."]
+    HIGH_SPEED = 1,
 }
 impl From<HSCAPABLE_A> for bool {
     #[inline(always)]
     fn from(variant: HSCAPABLE_A) -> Self {
-        match variant {
-            HSCAPABLE_A::FAST_MODE_PLUS => false,
-            HSCAPABLE_A::HIGH_SPEED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HSCAPABLE`"]

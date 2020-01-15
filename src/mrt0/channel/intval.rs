@@ -24,21 +24,18 @@ impl<'a> IVALUE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LOAD`"]
+#[doc = "Determines how the timer interval value IVALUE -1 is loaded into the TIMERn register. This bit is write-only. Reading this bit always returns 0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOAD_A {
-    #[doc = "No force load. The load from the INTVALn register to the TIMERn register is processed at the end of the time interval if the repeat mode is selected."]
-    NO_FORCE_LOAD,
-    #[doc = "Force load. The INTVALn interval value IVALUE -1 is immediately loaded into the TIMERn register while TIMERn is running."]
-    FORCE_LOAD,
+    #[doc = "0: No force load. The load from the INTVALn register to the TIMERn register is processed at the end of the time interval if the repeat mode is selected."]
+    NO_FORCE_LOAD = 0,
+    #[doc = "1: Force load. The INTVALn interval value IVALUE -1 is immediately loaded into the TIMERn register while TIMERn is running."]
+    FORCE_LOAD = 1,
 }
 impl From<LOAD_A> for bool {
     #[inline(always)]
     fn from(variant: LOAD_A) -> Self {
-        match variant {
-            LOAD_A::NO_FORCE_LOAD => false,
-            LOAD_A::FORCE_LOAD => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOAD`"]

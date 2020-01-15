@@ -10,21 +10,18 @@ impl crate::ResetValue for super::STATUS {
         0
     }
 }
-#[doc = "Possible values of the field `WAITING`"]
+#[doc = "If 1, the block is waiting for more data to process.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAITING_A {
-    #[doc = "Not waiting for data - may be disabled or may be busy. Note that for cryptographic uses, this is not set if IsLast is set nor will it set until at least 1 word is read of the output."]
-    NOT_WAITING,
-    #[doc = "Waiting for data to be written in (16 words)"]
-    WAITING,
+    #[doc = "0: Not waiting for data - may be disabled or may be busy. Note that for cryptographic uses, this is not set if IsLast is set nor will it set until at least 1 word is read of the output."]
+    NOT_WAITING = 0,
+    #[doc = "1: Waiting for data to be written in (16 words)"]
+    WAITING = 1,
 }
 impl From<WAITING_A> for bool {
     #[inline(always)]
     fn from(variant: WAITING_A) -> Self {
-        match variant {
-            WAITING_A::NOT_WAITING => false,
-            WAITING_A::WAITING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAITING`"]
@@ -49,21 +46,18 @@ impl WAITING_R {
         *self == WAITING_A::WAITING
     }
 }
-#[doc = "Possible values of the field `DIGEST`"]
+#[doc = "For Hash, if 1 then a DIGEST is ready and waiting and there is no active next block already started. For Cryptographic uses, this will be set for each block processed, indicating OUTDATA (and OUTDATA2 if larger output) contains the next value to read out. This is cleared when any data is written, when New is written, for Cryptographic uses when the last word is read out, or when the block is disabled.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIGEST_A {
-    #[doc = "No Digest is ready"]
-    NOT_READY,
-    #[doc = "Digest is ready. Application may read it or may write more data"]
-    READY,
+    #[doc = "0: No Digest is ready"]
+    NOT_READY = 0,
+    #[doc = "1: Digest is ready. Application may read it or may write more data"]
+    READY = 1,
 }
 impl From<DIGEST_A> for bool {
     #[inline(always)]
     fn from(variant: DIGEST_A) -> Self {
-        match variant {
-            DIGEST_A::NOT_READY => false,
-            DIGEST_A::READY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIGEST`"]
@@ -88,21 +82,18 @@ impl DIGEST_R {
         *self == DIGEST_A::READY
     }
 }
-#[doc = "Possible values of the field `ERROR`"]
+#[doc = "If 1, an error occurred. For normal uses, this is due to an attempted overrun: INDATA was written when it was not appropriate. For Master cases, this is an AHB bus error; the COUNT field will indicate which block it was on.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERROR_A {
-    #[doc = "No error."]
-    NO_ERROR,
-    #[doc = "An error occurred since last cleared (written 1 to clear)."]
-    ERROR,
+    #[doc = "0: No error."]
+    NO_ERROR = 0,
+    #[doc = "1: An error occurred since last cleared (written 1 to clear)."]
+    ERROR = 1,
 }
 impl From<ERROR_A> for bool {
     #[inline(always)]
     fn from(variant: ERROR_A) -> Self {
-        match variant {
-            ERROR_A::NO_ERROR => false,
-            ERROR_A::ERROR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERROR`"]
@@ -166,21 +157,18 @@ impl<'a> ERROR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `NEEDKEY`"]
+#[doc = "Indicates the block wants the key to be written in (set along with WAITING)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NEEDKEY_A {
-    #[doc = "No Key is needed and writes will not be treated as Key"]
-    NOT_NEED,
-    #[doc = "Key is needed and INDATA/ALIAS will be accepted as Key. Will also set WAITING."]
-    NEED,
+    #[doc = "0: No Key is needed and writes will not be treated as Key"]
+    NOT_NEED = 0,
+    #[doc = "1: Key is needed and INDATA/ALIAS will be accepted as Key. Will also set WAITING."]
+    NEED = 1,
 }
 impl From<NEEDKEY_A> for bool {
     #[inline(always)]
     fn from(variant: NEEDKEY_A) -> Self {
-        match variant {
-            NEEDKEY_A::NOT_NEED => false,
-            NEEDKEY_A::NEED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NEEDKEY`"]
@@ -205,21 +193,18 @@ impl NEEDKEY_R {
         *self == NEEDKEY_A::NEED
     }
 }
-#[doc = "Possible values of the field `NEEDIV`"]
+#[doc = "Indicates the block wants an IV/NONE to be written in (set along with WAITING)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NEEDIV_A {
-    #[doc = "No IV/Nonce is needed, either because written already or because not needed."]
-    NOT_NEED,
-    #[doc = "IV/Nonce is needed and INDATA/ALIAS will be accepted as IV/Nonce. Will also set WAITING."]
-    NEED,
+    #[doc = "0: No IV/Nonce is needed, either because written already or because not needed."]
+    NOT_NEED = 0,
+    #[doc = "1: IV/Nonce is needed and INDATA/ALIAS will be accepted as IV/Nonce. Will also set WAITING."]
+    NEED = 1,
 }
 impl From<NEEDIV_A> for bool {
     #[inline(always)]
     fn from(variant: NEEDIV_A) -> Self {
-        match variant {
-            NEEDIV_A::NOT_NEED => false,
-            NEEDIV_A::NEED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NEEDIV`"]

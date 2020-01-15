@@ -10,21 +10,18 @@ impl crate::ResetValue for super::COMP_INT_CTRL {
         0
     }
 }
-#[doc = "Possible values of the field `INT_ENABLE`"]
+#[doc = "Analog Comparator interrupt enable control:.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT_ENABLE_A {
-    #[doc = "interrupt disable."]
-    INT_DISABLE,
-    #[doc = "interrupt enable."]
-    INT_ENABLE,
+    #[doc = "0: interrupt disable."]
+    INT_DISABLE = 0,
+    #[doc = "1: interrupt enable."]
+    INT_ENABLE = 1,
 }
 impl From<INT_ENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: INT_ENABLE_A) -> Self {
-        match variant {
-            INT_ENABLE_A::INT_DISABLE => false,
-            INT_ENABLE_A::INT_ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INT_ENABLE`"]
@@ -88,21 +85,18 @@ impl<'a> INT_ENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INT_CLEAR`"]
+#[doc = "Analog Comparator interrupt clear.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT_CLEAR_A {
-    #[doc = "No effect."]
-    NONE,
-    #[doc = "Clear the interrupt. Self-cleared bit."]
-    CLEAR,
+    #[doc = "0: No effect."]
+    NONE = 0,
+    #[doc = "1: Clear the interrupt. Self-cleared bit."]
+    CLEAR = 1,
 }
 impl From<INT_CLEAR_A> for bool {
     #[inline(always)]
     fn from(variant: INT_CLEAR_A) -> Self {
-        match variant {
-            INT_CLEAR_A::NONE => false,
-            INT_CLEAR_A::CLEAR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INT_CLEAR`"]
@@ -166,39 +160,31 @@ impl<'a> INT_CLEAR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INT_CTRL`"]
+#[doc = "Comparator interrupt type selector:.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INT_CTRL_A {
-    #[doc = "The analog comparator interrupt edge sensitive is disabled."]
-    EDGE_DISABLE,
-    #[doc = "The analog comparator interrupt level sensitive is disabled."]
-    LVL_DISABLE,
-    #[doc = "analog comparator interrupt is rising edge sensitive."]
-    EDGE_RISING,
-    #[doc = "Analog Comparator interrupt is high level sensitive."]
-    LVL_HIGH,
-    #[doc = "analog comparator interrupt is falling edge sensitive."]
-    EDGE_FALLING,
-    #[doc = "Analog Comparator interrupt is low level sensitive."]
-    LVL_LOW,
-    #[doc = "analog comparator interrupt is rising and falling edge sensitive."]
-    EDGE_BOTH,
-    #[doc = "The analog comparator interrupt level sensitive is disabled."]
-    LVL_DIS2,
+    #[doc = "0: The analog comparator interrupt edge sensitive is disabled."]
+    EDGE_DISABLE = 0,
+    #[doc = "1: The analog comparator interrupt level sensitive is disabled."]
+    LVL_DISABLE = 1,
+    #[doc = "2: analog comparator interrupt is rising edge sensitive."]
+    EDGE_RISING = 2,
+    #[doc = "3: Analog Comparator interrupt is high level sensitive."]
+    LVL_HIGH = 3,
+    #[doc = "4: analog comparator interrupt is falling edge sensitive."]
+    EDGE_FALLING = 4,
+    #[doc = "5: Analog Comparator interrupt is low level sensitive."]
+    LVL_LOW = 5,
+    #[doc = "6: analog comparator interrupt is rising and falling edge sensitive."]
+    EDGE_BOTH = 6,
+    #[doc = "7: The analog comparator interrupt level sensitive is disabled."]
+    LVL_DIS2 = 7,
 }
 impl From<INT_CTRL_A> for u8 {
     #[inline(always)]
     fn from(variant: INT_CTRL_A) -> Self {
-        match variant {
-            INT_CTRL_A::EDGE_DISABLE => 0,
-            INT_CTRL_A::LVL_DISABLE => 1,
-            INT_CTRL_A::EDGE_RISING => 2,
-            INT_CTRL_A::LVL_HIGH => 3,
-            INT_CTRL_A::EDGE_FALLING => 4,
-            INT_CTRL_A::LVL_LOW => 5,
-            INT_CTRL_A::EDGE_BOTH => 6,
-            INT_CTRL_A::LVL_DIS2 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INT_CTRL`"]
@@ -319,21 +305,18 @@ impl<'a> INT_CTRL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INT_SOURCE`"]
+#[doc = "Select which Analog comparator output (filtered our un-filtered) is used for interrupt detection.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT_SOURCE_A {
-    #[doc = "Select Analog Comparator filtered output as input for interrupt detection."]
-    FILTER_INT,
-    #[doc = "Select Analog Comparator raw output (unfiltered) as input for interrupt detection. Must be used when Analog comparator is used as wake up source in Power down mode."]
-    RAW_INT,
+    #[doc = "0: Select Analog Comparator filtered output as input for interrupt detection."]
+    FILTER_INT = 0,
+    #[doc = "1: Select Analog Comparator raw output (unfiltered) as input for interrupt detection. Must be used when Analog comparator is used as wake up source in Power down mode."]
+    RAW_INT = 1,
 }
 impl From<INT_SOURCE_A> for bool {
     #[inline(always)]
     fn from(variant: INT_SOURCE_A) -> Self {
-        match variant {
-            INT_SOURCE_A::FILTER_INT => false,
-            INT_SOURCE_A::RAW_INT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INT_SOURCE`"]

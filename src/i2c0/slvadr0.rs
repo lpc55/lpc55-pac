@@ -10,21 +10,18 @@ impl crate::ResetValue for super::SLVADR0 {
         0x01
     }
 }
-#[doc = "Possible values of the field `SADISABLE`"]
+#[doc = "Slave Address n Disable.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SADISABLE_A {
-    #[doc = "Enabled. Slave Address n is enabled."]
-    ENABLED,
-    #[doc = "Ignored Slave Address n is ignored."]
-    DISABLED,
+    #[doc = "0: Enabled. Slave Address n is enabled."]
+    ENABLED = 0,
+    #[doc = "1: Ignored Slave Address n is ignored."]
+    DISABLED = 1,
 }
 impl From<SADISABLE_A> for bool {
     #[inline(always)]
     fn from(variant: SADISABLE_A) -> Self {
-        match variant {
-            SADISABLE_A::ENABLED => false,
-            SADISABLE_A::DISABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SADISABLE`"]
@@ -102,21 +99,18 @@ impl<'a> SLVADR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AUTONACK`"]
+#[doc = "Automatic NACK operation. Used in conjunction with AUTOACK and AUTOMATCHREAD, allows software to ignore I2C traffic while handling previous I2C data or other operations.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AUTONACK_A {
-    #[doc = "Normal operation, matching I2C addresses are not ignored."]
-    NORMAL,
-    #[doc = "Automatic-only mode. All incoming addresses are ignored (NACKed), unless AUTOACK is set, it matches SLVADRn, and AUTOMATCHREAD matches the direction."]
-    AUTOMATIC,
+    #[doc = "0: Normal operation, matching I2C addresses are not ignored."]
+    NORMAL = 0,
+    #[doc = "1: Automatic-only mode. All incoming addresses are ignored (NACKed), unless AUTOACK is set, it matches SLVADRn, and AUTOMATCHREAD matches the direction."]
+    AUTOMATIC = 1,
 }
 impl From<AUTONACK_A> for bool {
     #[inline(always)]
     fn from(variant: AUTONACK_A) -> Self {
-        match variant {
-            AUTONACK_A::NORMAL => false,
-            AUTONACK_A::AUTOMATIC => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AUTONACK`"]

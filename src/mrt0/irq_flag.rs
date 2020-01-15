@@ -10,21 +10,18 @@ impl crate::ResetValue for super::IRQ_FLAG {
         0
     }
 }
-#[doc = "Possible values of the field `GFLAG0`"]
+#[doc = "Monitors the interrupt flag of TIMER0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GFLAG0_A {
-    #[doc = "No pending interrupt. Writing a zero is equivalent to no operation."]
-    NO_PENDING_INTERRUPT,
-    #[doc = "Pending interrupt. The interrupt is pending because TIMER0 has reached the end of the time interval. If the INTEN bit in the CONTROL0 register is also set to 1, the interrupt for timer channel 0 and the global interrupt are raised. Writing a 1 to this bit clears the interrupt request."]
-    PENDING_INTERRUPT,
+    #[doc = "0: No pending interrupt. Writing a zero is equivalent to no operation."]
+    NO_PENDING_INTERRUPT = 0,
+    #[doc = "1: Pending interrupt. The interrupt is pending because TIMER0 has reached the end of the time interval. If the INTEN bit in the CONTROL0 register is also set to 1, the interrupt for timer channel 0 and the global interrupt are raised. Writing a 1 to this bit clears the interrupt request."]
+    PENDING_INTERRUPT = 1,
 }
 impl From<GFLAG0_A> for bool {
     #[inline(always)]
     fn from(variant: GFLAG0_A) -> Self {
-        match variant {
-            GFLAG0_A::NO_PENDING_INTERRUPT => false,
-            GFLAG0_A::PENDING_INTERRUPT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GFLAG0`"]

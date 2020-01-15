@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CTRL {
         0
     }
 }
-#[doc = "Possible values of the field `ADCEN`"]
+#[doc = "ADC Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADCEN_A {
-    #[doc = "ADC is disabled."]
-    ADCEN_0,
-    #[doc = "ADC is enabled."]
-    ADCEN_1,
+    #[doc = "0: ADC is disabled."]
+    ADCEN_0 = 0,
+    #[doc = "1: ADC is enabled."]
+    ADCEN_1 = 1,
 }
 impl From<ADCEN_A> for bool {
     #[inline(always)]
     fn from(variant: ADCEN_A) -> Self {
-        match variant {
-            ADCEN_A::ADCEN_0 => false,
-            ADCEN_A::ADCEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADCEN`"]
@@ -88,21 +85,18 @@ impl<'a> ADCEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RST`"]
+#[doc = "Software Reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RST_A {
-    #[doc = "ADC logic is not reset."]
-    RST_0,
-    #[doc = "ADC logic is reset."]
-    RST_1,
+    #[doc = "0: ADC logic is not reset."]
+    RST_0 = 0,
+    #[doc = "1: ADC logic is reset."]
+    RST_1 = 1,
 }
 impl From<RST_A> for bool {
     #[inline(always)]
     fn from(variant: RST_A) -> Self {
-        match variant {
-            RST_A::RST_0 => false,
-            RST_A::RST_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RST`"]
@@ -166,21 +160,18 @@ impl<'a> RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DOZEN`"]
+#[doc = "Doze Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DOZEN_A {
-    #[doc = "ADC is enabled in Doze mode."]
-    DOZEN_0,
-    #[doc = "ADC is disabled in Doze mode."]
-    DOZEN_1,
+    #[doc = "0: ADC is enabled in Doze mode."]
+    DOZEN_0 = 0,
+    #[doc = "1: ADC is disabled in Doze mode."]
+    DOZEN_1 = 1,
 }
 impl From<DOZEN_A> for bool {
     #[inline(always)]
     fn from(variant: DOZEN_A) -> Self {
-        match variant {
-            DOZEN_A::DOZEN_0 => false,
-            DOZEN_A::DOZEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DOZEN`"]
@@ -244,21 +235,18 @@ impl<'a> DOZEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CAL_REQ`"]
+#[doc = "Auto-Calibration Request\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CAL_REQ_A {
-    #[doc = "No request for auto-calibration has been made."]
-    CAL_REQ_0,
-    #[doc = "A request for auto-calibration has been made"]
-    CAL_REQ_1,
+    #[doc = "0: No request for auto-calibration has been made."]
+    CAL_REQ_0 = 0,
+    #[doc = "1: A request for auto-calibration has been made"]
+    CAL_REQ_1 = 1,
 }
 impl From<CAL_REQ_A> for bool {
     #[inline(always)]
     fn from(variant: CAL_REQ_A) -> Self {
-        match variant {
-            CAL_REQ_A::CAL_REQ_0 => false,
-            CAL_REQ_A::CAL_REQ_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CAL_REQ`"]
@@ -322,21 +310,18 @@ impl<'a> CAL_REQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CALOFS`"]
+#[doc = "Configure for offset calibration function\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CALOFS_A {
-    #[doc = "Calibration function disabled"]
-    CALOFS_0,
-    #[doc = "Request for offset calibration function"]
-    CALOFS_1,
+    #[doc = "0: Calibration function disabled"]
+    CALOFS_0 = 0,
+    #[doc = "1: Request for offset calibration function"]
+    CALOFS_1 = 1,
 }
 impl From<CALOFS_A> for bool {
     #[inline(always)]
     fn from(variant: CALOFS_A) -> Self {
-        match variant {
-            CALOFS_A::CALOFS_0 => false,
-            CALOFS_A::CALOFS_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CALOFS`"]
@@ -400,21 +385,18 @@ impl<'a> CALOFS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RSTFIFO0`"]
+#[doc = "Reset FIFO 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RSTFIFO0_A {
-    #[doc = "No effect."]
-    RSTFIFO0_0,
-    #[doc = "FIFO 0 is reset."]
-    RSTFIFO0_1,
+    #[doc = "0: No effect."]
+    RSTFIFO0_0 = 0,
+    #[doc = "1: FIFO 0 is reset."]
+    RSTFIFO0_1 = 1,
 }
 impl From<RSTFIFO0_A> for bool {
     #[inline(always)]
     fn from(variant: RSTFIFO0_A) -> Self {
-        match variant {
-            RSTFIFO0_A::RSTFIFO0_0 => false,
-            RSTFIFO0_A::RSTFIFO0_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RSTFIFO0`"]
@@ -478,21 +460,18 @@ impl<'a> RSTFIFO0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RSTFIFO1`"]
+#[doc = "Reset FIFO 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RSTFIFO1_A {
-    #[doc = "No effect."]
-    RSTFIFO1_0,
-    #[doc = "FIFO 1 is reset."]
-    RSTFIFO1_1,
+    #[doc = "0: No effect."]
+    RSTFIFO1_0 = 0,
+    #[doc = "1: FIFO 1 is reset."]
+    RSTFIFO1_1 = 1,
 }
 impl From<RSTFIFO1_A> for bool {
     #[inline(always)]
     fn from(variant: RSTFIFO1_A) -> Self {
-        match variant {
-            RSTFIFO1_A::RSTFIFO1_0 => false,
-            RSTFIFO1_A::RSTFIFO1_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RSTFIFO1`"]
@@ -556,39 +535,31 @@ impl<'a> RSTFIFO1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CAL_AVGS`"]
+#[doc = "Auto-Calibration Averages\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CAL_AVGS_A {
-    #[doc = "Single conversion."]
-    CAL_AVGS_0,
-    #[doc = "2 conversions averaged."]
-    CAL_AVGS_1,
-    #[doc = "4 conversions averaged."]
-    CAL_AVGS_2,
-    #[doc = "8 conversions averaged."]
-    CAL_AVGS_3,
-    #[doc = "16 conversions averaged."]
-    CAL_AVGS_4,
-    #[doc = "32 conversions averaged."]
-    CAL_AVGS_5,
-    #[doc = "64 conversions averaged."]
-    CAL_AVGS_6,
-    #[doc = "128 conversions averaged."]
-    CAL_AVGS_7,
+    #[doc = "0: Single conversion."]
+    CAL_AVGS_0 = 0,
+    #[doc = "1: 2 conversions averaged."]
+    CAL_AVGS_1 = 1,
+    #[doc = "2: 4 conversions averaged."]
+    CAL_AVGS_2 = 2,
+    #[doc = "3: 8 conversions averaged."]
+    CAL_AVGS_3 = 3,
+    #[doc = "4: 16 conversions averaged."]
+    CAL_AVGS_4 = 4,
+    #[doc = "5: 32 conversions averaged."]
+    CAL_AVGS_5 = 5,
+    #[doc = "6: 64 conversions averaged."]
+    CAL_AVGS_6 = 6,
+    #[doc = "7: 128 conversions averaged."]
+    CAL_AVGS_7 = 7,
 }
 impl From<CAL_AVGS_A> for u8 {
     #[inline(always)]
     fn from(variant: CAL_AVGS_A) -> Self {
-        match variant {
-            CAL_AVGS_A::CAL_AVGS_0 => 0,
-            CAL_AVGS_A::CAL_AVGS_1 => 1,
-            CAL_AVGS_A::CAL_AVGS_2 => 2,
-            CAL_AVGS_A::CAL_AVGS_3 => 3,
-            CAL_AVGS_A::CAL_AVGS_4 => 4,
-            CAL_AVGS_A::CAL_AVGS_5 => 5,
-            CAL_AVGS_A::CAL_AVGS_6 => 6,
-            CAL_AVGS_A::CAL_AVGS_7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CAL_AVGS`"]

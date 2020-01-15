@@ -25,14 +25,18 @@ impl<'a> BADDR_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 5:31 - Base address. Holds bits\\[31:5\\] of the base address for the selected SAU region. Bits\\[4:0\\] of the base address are defined as 0x00."]
+    #[doc = "Bits 5:31 - Base address. Holds bits\\[31:5\\]
+of the base address for the selected SAU region. Bits\\[4:0\\]
+of the base address are defined as 0x00."]
     #[inline(always)]
     pub fn baddr(&self) -> BADDR_R {
         BADDR_R::new(((self.bits >> 5) & 0x07ff_ffff) as u32)
     }
 }
 impl W {
-    #[doc = "Bits 5:31 - Base address. Holds bits\\[31:5\\] of the base address for the selected SAU region. Bits\\[4:0\\] of the base address are defined as 0x00."]
+    #[doc = "Bits 5:31 - Base address. Holds bits\\[31:5\\]
+of the base address for the selected SAU region. Bits\\[4:0\\]
+of the base address are defined as 0x00."]
     #[inline(always)]
     pub fn baddr(&mut self) -> BADDR_W {
         BADDR_W { w: self }

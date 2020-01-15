@@ -10,24 +10,21 @@ impl crate::ResetValue for super::FCCTRLSEL {
         0
     }
 }
-#[doc = "Possible values of the field `SCKINSEL`"]
+#[doc = "Selects the source for SCK going into this Flexcomm.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SCKINSEL_A {
-    #[doc = "Selects the dedicated FCn_SCK function for this Flexcomm."]
-    ORIG_FLEX_I2S_SIGNALS,
-    #[doc = "SCK is taken from shared signal set 0 (defined by SHAREDCTRLSET0)."]
-    SHARED_SET0_I2S_SIGNALS,
-    #[doc = "SCK is taken from shared signal set 1 (defined by SHAREDCTRLSET1)."]
-    SHARED_SET1_I2S_SIGNALS,
+    #[doc = "0: Selects the dedicated FCn_SCK function for this Flexcomm."]
+    ORIG_FLEX_I2S_SIGNALS = 0,
+    #[doc = "1: SCK is taken from shared signal set 0 (defined by SHAREDCTRLSET0)."]
+    SHARED_SET0_I2S_SIGNALS = 1,
+    #[doc = "2: SCK is taken from shared signal set 1 (defined by SHAREDCTRLSET1)."]
+    SHARED_SET1_I2S_SIGNALS = 2,
 }
 impl From<SCKINSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SCKINSEL_A) -> Self {
-        match variant {
-            SCKINSEL_A::ORIG_FLEX_I2S_SIGNALS => 0,
-            SCKINSEL_A::SHARED_SET0_I2S_SIGNALS => 1,
-            SCKINSEL_A::SHARED_SET1_I2S_SIGNALS => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SCKINSEL`"]
@@ -92,24 +89,21 @@ impl<'a> SCKINSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WSINSEL`"]
+#[doc = "Selects the source for WS going into this Flexcomm.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WSINSEL_A {
-    #[doc = "Selects the dedicated (FCn_TXD_SCL_MISO_WS) function for this Flexcomm."]
-    ORIG_FLEX_I2S_SIGNALS,
-    #[doc = "WS is taken from shared signal set 0 (defined by SHAREDCTRLSET0)."]
-    SHARED_SET0_I2S_SIGNALS,
-    #[doc = "WS is taken from shared signal set 1 (defined by SHAREDCTRLSET1)."]
-    SHARED_SET1_I2S_SIGNALS,
+    #[doc = "0: Selects the dedicated (FCn_TXD_SCL_MISO_WS) function for this Flexcomm."]
+    ORIG_FLEX_I2S_SIGNALS = 0,
+    #[doc = "1: WS is taken from shared signal set 0 (defined by SHAREDCTRLSET0)."]
+    SHARED_SET0_I2S_SIGNALS = 1,
+    #[doc = "2: WS is taken from shared signal set 1 (defined by SHAREDCTRLSET1)."]
+    SHARED_SET1_I2S_SIGNALS = 2,
 }
 impl From<WSINSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: WSINSEL_A) -> Self {
-        match variant {
-            WSINSEL_A::ORIG_FLEX_I2S_SIGNALS => 0,
-            WSINSEL_A::SHARED_SET0_I2S_SIGNALS => 1,
-            WSINSEL_A::SHARED_SET1_I2S_SIGNALS => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WSINSEL`"]
@@ -174,24 +168,21 @@ impl<'a> WSINSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DATAINSEL`"]
+#[doc = "Selects the source for DATA input to this Flexcomm.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DATAINSEL_A {
-    #[doc = "Selects the dedicated FCn_RXD_SDA_MOSI_DATA input for this Flexcomm."]
-    ORIG_FLEX_I2S_SIGNALS,
-    #[doc = "Input data is taken from shared signal set 0 (defined by SHAREDCTRLSET0)."]
-    SHARED_SET0_I2S_SIGNALS,
-    #[doc = "Input data is taken from shared signal set 1 (defined by SHAREDCTRLSET1)."]
-    SHARED_SET1_I2S_SIGNALS,
+    #[doc = "0: Selects the dedicated FCn_RXD_SDA_MOSI_DATA input for this Flexcomm."]
+    ORIG_FLEX_I2S_SIGNALS = 0,
+    #[doc = "1: Input data is taken from shared signal set 0 (defined by SHAREDCTRLSET0)."]
+    SHARED_SET0_I2S_SIGNALS = 1,
+    #[doc = "2: Input data is taken from shared signal set 1 (defined by SHAREDCTRLSET1)."]
+    SHARED_SET1_I2S_SIGNALS = 2,
 }
 impl From<DATAINSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: DATAINSEL_A) -> Self {
-        match variant {
-            DATAINSEL_A::ORIG_FLEX_I2S_SIGNALS => 0,
-            DATAINSEL_A::SHARED_SET0_I2S_SIGNALS => 1,
-            DATAINSEL_A::SHARED_SET1_I2S_SIGNALS => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DATAINSEL`"]
@@ -256,24 +247,21 @@ impl<'a> DATAINSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DATAOUTSEL`"]
+#[doc = "Selects the source for DATA output from this Flexcomm.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DATAOUTSEL_A {
-    #[doc = "Selects the dedicated FCn_RXD_SDA_MOSI_DATA output from this Flexcomm."]
-    ORIG_FLEX_I2S_SIGNALS,
-    #[doc = "Output data is taken from shared signal set 0 (defined by SHAREDCTRLSET0)."]
-    SHARED_SET0_I2S_SIGNALS,
-    #[doc = "Output data is taken from shared signal set 1 (defined by SHAREDCTRLSET1)."]
-    SHARED_SET1_I2S_SIGNALS,
+    #[doc = "0: Selects the dedicated FCn_RXD_SDA_MOSI_DATA output from this Flexcomm."]
+    ORIG_FLEX_I2S_SIGNALS = 0,
+    #[doc = "1: Output data is taken from shared signal set 0 (defined by SHAREDCTRLSET0)."]
+    SHARED_SET0_I2S_SIGNALS = 1,
+    #[doc = "2: Output data is taken from shared signal set 1 (defined by SHAREDCTRLSET1)."]
+    SHARED_SET1_I2S_SIGNALS = 2,
 }
 impl From<DATAOUTSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: DATAOUTSEL_A) -> Self {
-        match variant {
-            DATAOUTSEL_A::ORIG_FLEX_I2S_SIGNALS => 0,
-            DATAOUTSEL_A::SHARED_SET0_I2S_SIGNALS => 1,
-            DATAOUTSEL_A::SHARED_SET1_I2S_SIGNALS => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DATAOUTSEL`"]

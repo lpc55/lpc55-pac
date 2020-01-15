@@ -1,20 +1,17 @@
 #[doc = "Reader of register BOD_DCDC_INT_STATUS"]
 pub type R = crate::R<u32, super::BOD_DCDC_INT_STATUS>;
-#[doc = "Possible values of the field `BODVBAT_STATUS`"]
+#[doc = "BOD VBAT Interrupt status before Interrupt Enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BODVBAT_STATUS_A {
-    #[doc = "No interrupt pending.."]
-    NOT_PENDING,
-    #[doc = "Interrupt pending.."]
-    PENDING,
+    #[doc = "0: No interrupt pending.."]
+    NOT_PENDING = 0,
+    #[doc = "1: Interrupt pending.."]
+    PENDING = 1,
 }
 impl From<BODVBAT_STATUS_A> for bool {
     #[inline(always)]
     fn from(variant: BODVBAT_STATUS_A) -> Self {
-        match variant {
-            BODVBAT_STATUS_A::NOT_PENDING => false,
-            BODVBAT_STATUS_A::PENDING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BODVBAT_STATUS`"]
@@ -39,21 +36,18 @@ impl BODVBAT_STATUS_R {
         *self == BODVBAT_STATUS_A::PENDING
     }
 }
-#[doc = "Possible values of the field `BODVBAT_INT_STATUS`"]
+#[doc = "BOD VBAT Interrupt status after Interrupt Enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BODVBAT_INT_STATUS_A {
-    #[doc = "No interrupt pending.."]
-    NOT_PENDING,
-    #[doc = "Interrupt pending.."]
-    PENDING,
+    #[doc = "0: No interrupt pending.."]
+    NOT_PENDING = 0,
+    #[doc = "1: Interrupt pending.."]
+    PENDING = 1,
 }
 impl From<BODVBAT_INT_STATUS_A> for bool {
     #[inline(always)]
     fn from(variant: BODVBAT_INT_STATUS_A) -> Self {
-        match variant {
-            BODVBAT_INT_STATUS_A::NOT_PENDING => false,
-            BODVBAT_INT_STATUS_A::PENDING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BODVBAT_INT_STATUS`"]
@@ -78,21 +72,18 @@ impl BODVBAT_INT_STATUS_R {
         *self == BODVBAT_INT_STATUS_A::PENDING
     }
 }
-#[doc = "Possible values of the field `BODVBAT_VAL`"]
+#[doc = "Current value of BOD VBAT power status output.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BODVBAT_VAL_A {
-    #[doc = "VBAT voltage level is below the threshold."]
-    NOT_OK,
-    #[doc = "VBAT voltage level is above the threshold."]
-    OK,
+    #[doc = "0: VBAT voltage level is below the threshold."]
+    NOT_OK = 0,
+    #[doc = "1: VBAT voltage level is above the threshold."]
+    OK = 1,
 }
 impl From<BODVBAT_VAL_A> for bool {
     #[inline(always)]
     fn from(variant: BODVBAT_VAL_A) -> Self {
-        match variant {
-            BODVBAT_VAL_A::NOT_OK => false,
-            BODVBAT_VAL_A::OK => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BODVBAT_VAL`"]
@@ -117,21 +108,18 @@ impl BODVBAT_VAL_R {
         *self == BODVBAT_VAL_A::OK
     }
 }
-#[doc = "Possible values of the field `BODCORE_STATUS`"]
+#[doc = "BOD CORE Interrupt status before Interrupt Enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BODCORE_STATUS_A {
-    #[doc = "No interrupt pending.."]
-    NOT_PENDING,
-    #[doc = "Interrupt pending.."]
-    PENDING,
+    #[doc = "0: No interrupt pending.."]
+    NOT_PENDING = 0,
+    #[doc = "1: Interrupt pending.."]
+    PENDING = 1,
 }
 impl From<BODCORE_STATUS_A> for bool {
     #[inline(always)]
     fn from(variant: BODCORE_STATUS_A) -> Self {
-        match variant {
-            BODCORE_STATUS_A::NOT_PENDING => false,
-            BODCORE_STATUS_A::PENDING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BODCORE_STATUS`"]
@@ -156,21 +144,18 @@ impl BODCORE_STATUS_R {
         *self == BODCORE_STATUS_A::PENDING
     }
 }
-#[doc = "Possible values of the field `BODCORE_INT_STATUS`"]
+#[doc = "BOD CORE Interrupt status after Interrupt Enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BODCORE_INT_STATUS_A {
-    #[doc = "No interrupt pending.."]
-    NOT_PENDING,
-    #[doc = "Interrupt pending.."]
-    PENDING,
+    #[doc = "0: No interrupt pending.."]
+    NOT_PENDING = 0,
+    #[doc = "1: Interrupt pending.."]
+    PENDING = 1,
 }
 impl From<BODCORE_INT_STATUS_A> for bool {
     #[inline(always)]
     fn from(variant: BODCORE_INT_STATUS_A) -> Self {
-        match variant {
-            BODCORE_INT_STATUS_A::NOT_PENDING => false,
-            BODCORE_INT_STATUS_A::PENDING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BODCORE_INT_STATUS`"]
@@ -195,21 +180,18 @@ impl BODCORE_INT_STATUS_R {
         *self == BODCORE_INT_STATUS_A::PENDING
     }
 }
-#[doc = "Possible values of the field `BODCORE_VAL`"]
+#[doc = "Current value of BOD CORE power status output.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BODCORE_VAL_A {
-    #[doc = "CORE voltage level is below the threshold."]
-    NOT_OK,
-    #[doc = "CORE voltage level is above the threshold."]
-    OK,
+    #[doc = "0: CORE voltage level is below the threshold."]
+    NOT_OK = 0,
+    #[doc = "1: CORE voltage level is above the threshold."]
+    OK = 1,
 }
 impl From<BODCORE_VAL_A> for bool {
     #[inline(always)]
     fn from(variant: BODCORE_VAL_A) -> Self {
-        match variant {
-            BODCORE_VAL_A::NOT_OK => false,
-            BODCORE_VAL_A::OK => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BODCORE_VAL`"]
@@ -234,21 +216,18 @@ impl BODCORE_VAL_R {
         *self == BODCORE_VAL_A::OK
     }
 }
-#[doc = "Possible values of the field `DCDC_STATUS`"]
+#[doc = "DCDC Interrupt status before Interrupt Enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCDC_STATUS_A {
-    #[doc = "No interrupt pending.."]
-    NOT_PENDING,
-    #[doc = "Interrupt pending.."]
-    PENDING,
+    #[doc = "0: No interrupt pending.."]
+    NOT_PENDING = 0,
+    #[doc = "1: Interrupt pending.."]
+    PENDING = 1,
 }
 impl From<DCDC_STATUS_A> for bool {
     #[inline(always)]
     fn from(variant: DCDC_STATUS_A) -> Self {
-        match variant {
-            DCDC_STATUS_A::NOT_PENDING => false,
-            DCDC_STATUS_A::PENDING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DCDC_STATUS`"]
@@ -273,21 +252,18 @@ impl DCDC_STATUS_R {
         *self == DCDC_STATUS_A::PENDING
     }
 }
-#[doc = "Possible values of the field `DCDC_INT_STATUS`"]
+#[doc = "DCDC Interrupt status after Interrupt Enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCDC_INT_STATUS_A {
-    #[doc = "No interrupt pending.."]
-    NOT_PENDING,
-    #[doc = "Interrupt pending.."]
-    PENDING,
+    #[doc = "0: No interrupt pending.."]
+    NOT_PENDING = 0,
+    #[doc = "1: Interrupt pending.."]
+    PENDING = 1,
 }
 impl From<DCDC_INT_STATUS_A> for bool {
     #[inline(always)]
     fn from(variant: DCDC_INT_STATUS_A) -> Self {
-        match variant {
-            DCDC_INT_STATUS_A::NOT_PENDING => false,
-            DCDC_INT_STATUS_A::PENDING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DCDC_INT_STATUS`"]
@@ -312,21 +288,18 @@ impl DCDC_INT_STATUS_R {
         *self == DCDC_INT_STATUS_A::PENDING
     }
 }
-#[doc = "Possible values of the field `DCDC_VAL`"]
+#[doc = "Current value of DCDC power status output.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCDC_VAL_A {
-    #[doc = "DCDC output Voltage is below the targeted regulation level."]
-    NOT_OK,
-    #[doc = "DCDC output Voltage is above the targeted regulation level."]
-    OK,
+    #[doc = "0: DCDC output Voltage is below the targeted regulation level."]
+    NOT_OK = 0,
+    #[doc = "1: DCDC output Voltage is above the targeted regulation level."]
+    OK = 1,
 }
 impl From<DCDC_VAL_A> for bool {
     #[inline(always)]
     fn from(variant: DCDC_VAL_A) -> Self {
-        match variant {
-            DCDC_VAL_A::NOT_OK => false,
-            DCDC_VAL_A::OK => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DCDC_VAL`"]

@@ -10,21 +10,18 @@ impl crate::ResetValue for super::LOCK {
         0
     }
 }
-#[doc = "Possible values of the field `LOCK`"]
+#[doc = "Reads back with security level locked to, or 0. Writes as 0 to unlock, 1 to lock.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOCK_A {
-    #[doc = "unlock"]
-    UNLOCK,
-    #[doc = "Lock to current security level"]
-    LOCK,
+    #[doc = "0: unlock"]
+    UNLOCK = 0,
+    #[doc = "1: Lock to current security level"]
+    LOCK = 1,
 }
 impl From<LOCK_A> for bool {
     #[inline(always)]
     fn from(variant: LOCK_A) -> Self {
-        match variant {
-            LOCK_A::UNLOCK => false,
-            LOCK_A::LOCK => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOCK`"]
@@ -88,18 +85,17 @@ impl<'a> LOCK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `KEY`"]
+#[doc = "Must be written as 0x73D to change the register.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum KEY_A {
-    #[doc = "If set during write, will allow lock or unlock"]
-    KWY_VALUE,
+    #[doc = "1853: If set during write, will allow lock or unlock"]
+    KWY_VALUE = 1853,
 }
 impl From<KEY_A> for u16 {
     #[inline(always)]
     fn from(variant: KEY_A) -> Self {
-        match variant {
-            KEY_A::KWY_VALUE => 1853,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `KEY`"]

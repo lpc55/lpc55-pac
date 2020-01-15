@@ -18,8 +18,8 @@ circle-ci = { repository = "nickray/lpc55s6x-pac" }
 
 [dependencies]
 bare-metal = "0.2.5"
-cortex-m = "0.6.1"
-cortex-m-rt = { version = "0.6.10", optional = true }
+cortex-m = "0.6.2"
+cortex-m-rt = { version = "0.6.11", optional = true }
 vcell = "0.1.2"
 
 [features]

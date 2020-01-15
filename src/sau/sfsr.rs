@@ -10,21 +10,18 @@ impl crate::ResetValue for super::SFSR {
         0
     }
 }
-#[doc = "Possible values of the field `INVEP`"]
+#[doc = "Invalid entry point.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INVEP_A {
-    #[doc = "Error has not occurred."]
-    NO_ERROR,
-    #[doc = "Error has occurred."]
-    ERROR,
+    #[doc = "0: Error has not occurred."]
+    NO_ERROR = 0,
+    #[doc = "1: Error has occurred."]
+    ERROR = 1,
 }
 impl From<INVEP_A> for bool {
     #[inline(always)]
     fn from(variant: INVEP_A) -> Self {
-        match variant {
-            INVEP_A::NO_ERROR => false,
-            INVEP_A::ERROR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INVEP`"]
@@ -88,21 +85,18 @@ impl<'a> INVEP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INVIS`"]
+#[doc = "Invalid integrity signature flag.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INVIS_A {
-    #[doc = "Error has not occurred."]
-    NO_ERROR,
-    #[doc = "Error has occurred."]
-    ERROR,
+    #[doc = "0: Error has not occurred."]
+    NO_ERROR = 0,
+    #[doc = "1: Error has occurred."]
+    ERROR = 1,
 }
 impl From<INVIS_A> for bool {
     #[inline(always)]
     fn from(variant: INVIS_A) -> Self {
-        match variant {
-            INVIS_A::NO_ERROR => false,
-            INVIS_A::ERROR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INVIS`"]
@@ -166,21 +160,18 @@ impl<'a> INVIS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INVER`"]
+#[doc = "Invalid exception return flag.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INVER_A {
-    #[doc = "Error has not occurred."]
-    NO_ERROR,
-    #[doc = "Error has occurred."]
-    ERROR,
+    #[doc = "0: Error has not occurred."]
+    NO_ERROR = 0,
+    #[doc = "1: Error has occurred."]
+    ERROR = 1,
 }
 impl From<INVER_A> for bool {
     #[inline(always)]
     fn from(variant: INVER_A) -> Self {
-        match variant {
-            INVER_A::NO_ERROR => false,
-            INVER_A::ERROR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INVER`"]
@@ -244,21 +235,18 @@ impl<'a> INVER_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AUVIOL`"]
+#[doc = "Attribution unit violation flag.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AUVIOL_A {
-    #[doc = "Error has not occurred."]
-    NO_ERROR,
-    #[doc = "Error has occurred."]
-    ERROR,
+    #[doc = "0: Error has not occurred."]
+    NO_ERROR = 0,
+    #[doc = "1: Error has occurred."]
+    ERROR = 1,
 }
 impl From<AUVIOL_A> for bool {
     #[inline(always)]
     fn from(variant: AUVIOL_A) -> Self {
-        match variant {
-            AUVIOL_A::NO_ERROR => false,
-            AUVIOL_A::ERROR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AUVIOL`"]
@@ -322,21 +310,18 @@ impl<'a> AUVIOL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INVTRAN`"]
+#[doc = "Invalid transition flag.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INVTRAN_A {
-    #[doc = "Error has not occurred."]
-    NO_ERROR,
-    #[doc = "Error has occurred."]
-    ERROR,
+    #[doc = "0: Error has not occurred."]
+    NO_ERROR = 0,
+    #[doc = "1: Error has occurred."]
+    ERROR = 1,
 }
 impl From<INVTRAN_A> for bool {
     #[inline(always)]
     fn from(variant: INVTRAN_A) -> Self {
-        match variant {
-            INVTRAN_A::NO_ERROR => false,
-            INVTRAN_A::ERROR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INVTRAN`"]
@@ -400,21 +385,18 @@ impl<'a> INVTRAN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LSPERR`"]
+#[doc = "Lazy state preservation error flag.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSPERR_A {
-    #[doc = "Error has not occurred."]
-    NO_ERROR,
-    #[doc = "Error has occurred."]
-    ERROR,
+    #[doc = "0: Error has not occurred."]
+    NO_ERROR = 0,
+    #[doc = "1: Error has occurred."]
+    ERROR = 1,
 }
 impl From<LSPERR_A> for bool {
     #[inline(always)]
     fn from(variant: LSPERR_A) -> Self {
-        match variant {
-            LSPERR_A::NO_ERROR => false,
-            LSPERR_A::ERROR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LSPERR`"]
@@ -478,21 +460,18 @@ impl<'a> LSPERR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SFARVALID`"]
+#[doc = "Secure fault address valid.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SFARVALID_A {
-    #[doc = "SFAR content not valid."]
-    NOT_VALID,
-    #[doc = "SFAR content valid."]
-    VALID,
+    #[doc = "0: SFAR content not valid."]
+    NOT_VALID = 0,
+    #[doc = "1: SFAR content valid."]
+    VALID = 1,
 }
 impl From<SFARVALID_A> for bool {
     #[inline(always)]
     fn from(variant: SFARVALID_A) -> Self {
-        match variant {
-            SFARVALID_A::NOT_VALID => false,
-            SFARVALID_A::VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SFARVALID`"]
@@ -556,21 +535,18 @@ impl<'a> SFARVALID_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LSERR`"]
+#[doc = "Lazy state error flag.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSERR_A {
-    #[doc = "Error has not occurred"]
-    NO_ERROR,
-    #[doc = "Error has occurred."]
-    ERROR,
+    #[doc = "0: Error has not occurred"]
+    NO_ERROR = 0,
+    #[doc = "1: Error has occurred."]
+    ERROR = 1,
 }
 impl From<LSERR_A> for bool {
     #[inline(always)]
     fn from(variant: LSERR_A) -> Self {
-        match variant {
-            LSERR_A::NO_ERROR => false,
-            LSERR_A::ERROR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LSERR`"]

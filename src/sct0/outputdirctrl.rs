@@ -10,24 +10,21 @@ impl crate::ResetValue for super::OUTPUTDIRCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `SETCLR0`"]
+#[doc = "Set/clear operation on output 0. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR0_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR0_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR0_A) -> Self {
-        match variant {
-            SETCLR0_A::INDEPENDENT => 0,
-            SETCLR0_A::L_REVERSED => 1,
-            SETCLR0_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR0`"]
@@ -92,24 +89,21 @@ impl<'a> SETCLR0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR1`"]
+#[doc = "Set/clear operation on output 1. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR1_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR1_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR1_A) -> Self {
-        match variant {
-            SETCLR1_A::INDEPENDENT => 0,
-            SETCLR1_A::L_REVERSED => 1,
-            SETCLR1_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR1`"]
@@ -174,24 +168,21 @@ impl<'a> SETCLR1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR2`"]
+#[doc = "Set/clear operation on output 2. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR2_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR2_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR2_A) -> Self {
-        match variant {
-            SETCLR2_A::INDEPENDENT => 0,
-            SETCLR2_A::L_REVERSED => 1,
-            SETCLR2_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR2`"]
@@ -256,24 +247,21 @@ impl<'a> SETCLR2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR3`"]
+#[doc = "Set/clear operation on output 3. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR3_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR3_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR3_A) -> Self {
-        match variant {
-            SETCLR3_A::INDEPENDENT => 0,
-            SETCLR3_A::L_REVERSED => 1,
-            SETCLR3_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR3`"]
@@ -338,24 +326,21 @@ impl<'a> SETCLR3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR4`"]
+#[doc = "Set/clear operation on output 4. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR4_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR4_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR4_A) -> Self {
-        match variant {
-            SETCLR4_A::INDEPENDENT => 0,
-            SETCLR4_A::L_REVERSED => 1,
-            SETCLR4_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR4`"]
@@ -420,24 +405,21 @@ impl<'a> SETCLR4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR5`"]
+#[doc = "Set/clear operation on output 5. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR5_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR5_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR5_A) -> Self {
-        match variant {
-            SETCLR5_A::INDEPENDENT => 0,
-            SETCLR5_A::L_REVERSED => 1,
-            SETCLR5_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR5`"]
@@ -502,24 +484,21 @@ impl<'a> SETCLR5_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR6`"]
+#[doc = "Set/clear operation on output 6. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR6_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR6_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR6_A) -> Self {
-        match variant {
-            SETCLR6_A::INDEPENDENT => 0,
-            SETCLR6_A::L_REVERSED => 1,
-            SETCLR6_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR6`"]
@@ -584,24 +563,21 @@ impl<'a> SETCLR6_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR7`"]
+#[doc = "Set/clear operation on output 7. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR7_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR7_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR7_A) -> Self {
-        match variant {
-            SETCLR7_A::INDEPENDENT => 0,
-            SETCLR7_A::L_REVERSED => 1,
-            SETCLR7_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR7`"]
@@ -666,24 +642,21 @@ impl<'a> SETCLR7_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR8`"]
+#[doc = "Set/clear operation on output 8. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR8_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR8_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR8_A) -> Self {
-        match variant {
-            SETCLR8_A::INDEPENDENT => 0,
-            SETCLR8_A::L_REVERSED => 1,
-            SETCLR8_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR8`"]
@@ -748,24 +721,21 @@ impl<'a> SETCLR8_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR9`"]
+#[doc = "Set/clear operation on output 9. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR9_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR9_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR9_A) -> Self {
-        match variant {
-            SETCLR9_A::INDEPENDENT => 0,
-            SETCLR9_A::L_REVERSED => 1,
-            SETCLR9_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR9`"]
@@ -830,24 +800,21 @@ impl<'a> SETCLR9_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR10`"]
+#[doc = "Set/clear operation on output 10. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR10_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR10_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR10_A) -> Self {
-        match variant {
-            SETCLR10_A::INDEPENDENT => 0,
-            SETCLR10_A::L_REVERSED => 1,
-            SETCLR10_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR10`"]
@@ -912,24 +879,21 @@ impl<'a> SETCLR10_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR11`"]
+#[doc = "Set/clear operation on output 11. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR11_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR11_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR11_A) -> Self {
-        match variant {
-            SETCLR11_A::INDEPENDENT => 0,
-            SETCLR11_A::L_REVERSED => 1,
-            SETCLR11_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR11`"]
@@ -994,24 +958,21 @@ impl<'a> SETCLR11_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR12`"]
+#[doc = "Set/clear operation on output 12. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR12_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR12_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR12_A) -> Self {
-        match variant {
-            SETCLR12_A::INDEPENDENT => 0,
-            SETCLR12_A::L_REVERSED => 1,
-            SETCLR12_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR12`"]
@@ -1076,24 +1037,21 @@ impl<'a> SETCLR12_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR13`"]
+#[doc = "Set/clear operation on output 13. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR13_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR13_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR13_A) -> Self {
-        match variant {
-            SETCLR13_A::INDEPENDENT => 0,
-            SETCLR13_A::L_REVERSED => 1,
-            SETCLR13_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR13`"]
@@ -1158,24 +1116,21 @@ impl<'a> SETCLR13_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR14`"]
+#[doc = "Set/clear operation on output 14. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR14_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR14_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR14_A) -> Self {
-        match variant {
-            SETCLR14_A::INDEPENDENT => 0,
-            SETCLR14_A::L_REVERSED => 1,
-            SETCLR14_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR14`"]
@@ -1240,24 +1195,21 @@ impl<'a> SETCLR14_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETCLR15`"]
+#[doc = "Set/clear operation on output 15. Value 0x3 is reserved. Do not program this value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SETCLR15_A {
-    #[doc = "Set and clear do not depend on the direction of any counter."]
-    INDEPENDENT,
-    #[doc = "Set and clear are reversed when counter L or the unified counter is counting down."]
-    L_REVERSED,
-    #[doc = "Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
-    H_REVERSED,
+    #[doc = "0: Set and clear do not depend on the direction of any counter."]
+    INDEPENDENT = 0,
+    #[doc = "1: Set and clear are reversed when counter L or the unified counter is counting down."]
+    L_REVERSED = 1,
+    #[doc = "2: Set and clear are reversed when counter H is counting down. Do not use if UNIFY = 1."]
+    H_REVERSED = 2,
 }
 impl From<SETCLR15_A> for u8 {
     #[inline(always)]
     fn from(variant: SETCLR15_A) -> Self {
-        match variant {
-            SETCLR15_A::INDEPENDENT => 0,
-            SETCLR15_A::L_REVERSED => 1,
-            SETCLR15_A::H_REVERSED => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SETCLR15`"]

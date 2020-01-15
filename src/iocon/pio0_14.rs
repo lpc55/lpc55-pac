@@ -10,39 +10,31 @@ impl crate::ResetValue for super::PIO0_14 {
         0x5000
     }
 }
-#[doc = "Possible values of the field `FUNC`"]
+#[doc = "Selects pin function.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FUNC_A {
-    #[doc = "Alternative connection 0."]
-    ALT0,
-    #[doc = "Alternative connection 1."]
-    ALT1,
-    #[doc = "Alternative connection 2."]
-    ALT2,
-    #[doc = "Alternative connection 3."]
-    ALT3,
-    #[doc = "Alternative connection 4."]
-    ALT4,
-    #[doc = "Alternative connection 5."]
-    ALT5,
-    #[doc = "Alternative connection 6."]
-    ALT6,
-    #[doc = "Alternative connection 7."]
-    ALT7,
+    #[doc = "0: Alternative connection 0."]
+    ALT0 = 0,
+    #[doc = "1: Alternative connection 1."]
+    ALT1 = 1,
+    #[doc = "2: Alternative connection 2."]
+    ALT2 = 2,
+    #[doc = "3: Alternative connection 3."]
+    ALT3 = 3,
+    #[doc = "4: Alternative connection 4."]
+    ALT4 = 4,
+    #[doc = "5: Alternative connection 5."]
+    ALT5 = 5,
+    #[doc = "6: Alternative connection 6."]
+    ALT6 = 6,
+    #[doc = "7: Alternative connection 7."]
+    ALT7 = 7,
 }
 impl From<FUNC_A> for u8 {
     #[inline(always)]
     fn from(variant: FUNC_A) -> Self {
-        match variant {
-            FUNC_A::ALT0 => 0,
-            FUNC_A::ALT1 => 1,
-            FUNC_A::ALT2 => 2,
-            FUNC_A::ALT3 => 3,
-            FUNC_A::ALT4 => 4,
-            FUNC_A::ALT5 => 5,
-            FUNC_A::ALT6 => 6,
-            FUNC_A::ALT7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FUNC`"]
@@ -162,27 +154,23 @@ impl<'a> FUNC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MODE`"]
+#[doc = "Selects function mode (on-chip pull-up/pull-down resistor control).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
-    #[doc = "Inactive. Inactive (no pull-down/pull-up resistor enabled)."]
-    INACTIVE,
-    #[doc = "Pull-down. Pull-down resistor enabled."]
-    PULL_DOWN,
-    #[doc = "Pull-up. Pull-up resistor enabled."]
-    PULL_UP,
-    #[doc = "Repeater. Repeater mode."]
-    REPEATER,
+    #[doc = "0: Inactive. Inactive (no pull-down/pull-up resistor enabled)."]
+    INACTIVE = 0,
+    #[doc = "1: Pull-down. Pull-down resistor enabled."]
+    PULL_DOWN = 1,
+    #[doc = "2: Pull-up. Pull-up resistor enabled."]
+    PULL_UP = 2,
+    #[doc = "3: Repeater. Repeater mode."]
+    REPEATER = 3,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::INACTIVE => 0,
-            MODE_A::PULL_DOWN => 1,
-            MODE_A::PULL_UP => 2,
-            MODE_A::REPEATER => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -259,21 +247,18 @@ impl<'a> MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SLEW`"]
+#[doc = "Driver slew rate.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLEW_A {
-    #[doc = "Standard-mode, output slew rate is slower. More outputs can be switched simultaneously."]
-    STANDARD,
-    #[doc = "Fast-mode, output slew rate is faster. Refer to the appropriate specific device data sheet for details."]
-    FAST,
+    #[doc = "0: Standard-mode, output slew rate is slower. More outputs can be switched simultaneously."]
+    STANDARD = 0,
+    #[doc = "1: Fast-mode, output slew rate is faster. Refer to the appropriate specific device data sheet for details."]
+    FAST = 1,
 }
 impl From<SLEW_A> for bool {
     #[inline(always)]
     fn from(variant: SLEW_A) -> Self {
-        match variant {
-            SLEW_A::STANDARD => false,
-            SLEW_A::FAST => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SLEW`"]
@@ -337,21 +322,18 @@ impl<'a> SLEW_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `INVERT`"]
+#[doc = "Input polarity.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INVERT_A {
-    #[doc = "Disabled. Input function is not inverted."]
-    DISABLED,
-    #[doc = "Enabled. Input is function inverted."]
-    ENABLED,
+    #[doc = "0: Disabled. Input function is not inverted."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. Input is function inverted."]
+    ENABLED = 1,
 }
 impl From<INVERT_A> for bool {
     #[inline(always)]
     fn from(variant: INVERT_A) -> Self {
-        match variant {
-            INVERT_A::DISABLED => false,
-            INVERT_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INVERT`"]
@@ -415,21 +397,18 @@ impl<'a> INVERT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DIGIMODE`"]
+#[doc = "Select Digital mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIGIMODE_A {
-    #[doc = "Disable digital mode. Digital input set to 0."]
-    ANALOG,
-    #[doc = "Enable Digital mode. Digital input is enabled."]
-    DIGITAL,
+    #[doc = "0: Disable digital mode. Digital input set to 0."]
+    ANALOG = 0,
+    #[doc = "1: Enable Digital mode. Digital input is enabled."]
+    DIGITAL = 1,
 }
 impl From<DIGIMODE_A> for bool {
     #[inline(always)]
     fn from(variant: DIGIMODE_A) -> Self {
-        match variant {
-            DIGIMODE_A::ANALOG => false,
-            DIGIMODE_A::DIGITAL => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIGIMODE`"]
@@ -493,21 +472,18 @@ impl<'a> DIGIMODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `OD`"]
+#[doc = "Controls open-drain mode in standard GPIO mode (EGP = 1). This bit has no effect in I2C mode (EGP=0).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OD_A {
-    #[doc = "Normal. Normal push-pull output"]
-    NORMAL,
-    #[doc = "Open-drain. Simulated open-drain output (high drive disabled)."]
-    OPEN_DRAIN,
+    #[doc = "0: Normal. Normal push-pull output"]
+    NORMAL = 0,
+    #[doc = "1: Open-drain. Simulated open-drain output (high drive disabled)."]
+    OPEN_DRAIN = 1,
 }
 impl From<OD_A> for bool {
     #[inline(always)]
     fn from(variant: OD_A) -> Self {
-        match variant {
-            OD_A::NORMAL => false,
-            OD_A::OPEN_DRAIN => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OD`"]
@@ -571,21 +547,18 @@ impl<'a> OD_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SSEL`"]
+#[doc = "Supply Selection bit.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSEL_A {
-    #[doc = "3V3 Signaling in I2C Mode."]
-    SEL3V3,
-    #[doc = "1V8 Signaling in I2C Mode."]
-    SEL1V8,
+    #[doc = "0: 3V3 Signaling in I2C Mode."]
+    SEL3V3 = 0,
+    #[doc = "1: 1V8 Signaling in I2C Mode."]
+    SEL1V8 = 1,
 }
 impl From<SSEL_A> for bool {
     #[inline(always)]
     fn from(variant: SSEL_A) -> Self {
-        match variant {
-            SSEL_A::SEL3V3 => false,
-            SSEL_A::SEL1V8 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SSEL`"]
@@ -649,21 +622,18 @@ impl<'a> SSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FILTEROFF`"]
+#[doc = "Controls input glitch filter.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FILTEROFF_A {
-    #[doc = "Filter enabled."]
-    ENABLED,
-    #[doc = "Filter disabled."]
-    DISABLED,
+    #[doc = "0: Filter enabled."]
+    ENABLED = 0,
+    #[doc = "1: Filter disabled."]
+    DISABLED = 1,
 }
 impl From<FILTEROFF_A> for bool {
     #[inline(always)]
     fn from(variant: FILTEROFF_A) -> Self {
-        match variant {
-            FILTEROFF_A::ENABLED => false,
-            FILTEROFF_A::DISABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FILTEROFF`"]
@@ -727,21 +697,18 @@ impl<'a> FILTEROFF_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ECS`"]
+#[doc = "Pull-up current source enable in I2C mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ECS_A {
-    #[doc = "Disabled. IO is in open drain cell."]
-    DISABLED,
-    #[doc = "Enabled. Pull resistor is conencted."]
-    ENABLED,
+    #[doc = "0: Disabled. IO is in open drain cell."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. Pull resistor is conencted."]
+    ENABLED = 1,
 }
 impl From<ECS_A> for bool {
     #[inline(always)]
     fn from(variant: ECS_A) -> Self {
-        match variant {
-            ECS_A::DISABLED => false,
-            ECS_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ECS`"]
@@ -805,21 +772,18 @@ impl<'a> ECS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EGP`"]
+#[doc = "Switch between GPIO mode and I2C mode.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EGP_A {
-    #[doc = "I2C mode."]
-    I2C_MODE,
-    #[doc = "GPIO mode."]
-    GPIO_MODE,
+    #[doc = "0: I2C mode."]
+    I2C_MODE = 0,
+    #[doc = "1: GPIO mode."]
+    GPIO_MODE = 1,
 }
 impl From<EGP_A> for bool {
     #[inline(always)]
     fn from(variant: EGP_A) -> Self {
-        match variant {
-            EGP_A::I2C_MODE => false,
-            EGP_A::GPIO_MODE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EGP`"]
@@ -883,21 +847,18 @@ impl<'a> EGP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `I2CFILTER`"]
+#[doc = "Configures I2C features for standard mode, fast mode, and Fast Mode Plus operation and High-Speed mode operation.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum I2CFILTER_A {
-    #[doc = "I2C 50 ns glitch filter enabled. Typically used for Standard-mode, Fast-mode and Fast-mode Plus I2C."]
-    FAST_MODE,
-    #[doc = "I2C 10 ns glitch filter enabled. Typically used for High-speed mode I2C."]
-    STANDARD_MODE,
+    #[doc = "0: I2C 50 ns glitch filter enabled. Typically used for Standard-mode, Fast-mode and Fast-mode Plus I2C."]
+    FAST_MODE = 0,
+    #[doc = "1: I2C 10 ns glitch filter enabled. Typically used for High-speed mode I2C."]
+    STANDARD_MODE = 1,
 }
 impl From<I2CFILTER_A> for bool {
     #[inline(always)]
     fn from(variant: I2CFILTER_A) -> Self {
-        match variant {
-            I2CFILTER_A::FAST_MODE => false,
-            I2CFILTER_A::STANDARD_MODE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `I2CFILTER`"]

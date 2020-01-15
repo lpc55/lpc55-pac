@@ -10,30 +10,25 @@ impl crate::ResetValue for super::CTRL {
         0
     }
 }
-#[doc = "Possible values of the field `Mode`"]
+#[doc = "The operational mode to use, or 0 if none. Note that the CONFIG register will indicate if specific modes beyond SHA1 and SHA2-256 are available.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
-    #[doc = "Disabled"]
-    DISABLED,
-    #[doc = "SHA1 is enabled"]
-    SHA1,
-    #[doc = "SHA2-256 is enabled"]
-    SHA2_256,
-    #[doc = "AES if available (see also CRYPTCFG register for more controls)"]
-    AES,
-    #[doc = "ICB-AES if available (see also CRYPTCFG register for more controls)"]
-    ICB_AES,
+    #[doc = "0: Disabled"]
+    DISABLED = 0,
+    #[doc = "1: SHA1 is enabled"]
+    SHA1 = 1,
+    #[doc = "2: SHA2-256 is enabled"]
+    SHA2_256 = 2,
+    #[doc = "4: AES if available (see also CRYPTCFG register for more controls)"]
+    AES = 4,
+    #[doc = "5: ICB-AES if available (see also CRYPTCFG register for more controls)"]
+    ICB_AES = 5,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::DISABLED => 0,
-            MODE_A::SHA1 => 1,
-            MODE_A::SHA2_256 => 2,
-            MODE_A::AES => 4,
-            MODE_A::ICB_AES => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `Mode`"]
@@ -120,18 +115,16 @@ impl<'a> MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `New_Hash`"]
+#[doc = "Written with 1 when starting a new Hash/Crypto. It self clears. Note that the WAITING Status bit will clear for a cycle during the initialization from New=1.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NEW_HASH_AW {
-    #[doc = "Starts a new Hash/Crypto and initializes the Digest/Result."]
-    START,
+    #[doc = "1: Starts a new Hash/Crypto and initializes the Digest/Result."]
+    START = 1,
 }
 impl From<NEW_HASH_AW> for bool {
     #[inline(always)]
     fn from(variant: NEW_HASH_AW) -> Self {
-        match variant {
-            NEW_HASH_AW::START => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `New_Hash`"]
@@ -168,21 +161,18 @@ impl<'a> NEW_HASH_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DMA_I`"]
+#[doc = "Written with 1 to use DMA to fill INDATA. If Hash, will request from DMA for 16 words and then will process the Hash. If Cryptographic, it will load as many words as needed, including key if not already loaded. It will then request again. Normal model is that the DMA interrupts the processor when its length expires. Note that if the processor will write the key and optionally IV, it should not enable this until it has done so. Otherwise, the DMA will be expected to load those for the 1st block (when needed).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA_I_A {
-    #[doc = "DMA is not used. Processor writes the necessary words when WAITING is set (interrupts), unless AHB Master is used."]
-    NOT_USED,
-    #[doc = "DMA will push in the data."]
-    PUSH,
+    #[doc = "0: DMA is not used. Processor writes the necessary words when WAITING is set (interrupts), unless AHB Master is used."]
+    NOT_USED = 0,
+    #[doc = "1: DMA will push in the data."]
+    PUSH = 1,
 }
 impl From<DMA_I_A> for bool {
     #[inline(always)]
     fn from(variant: DMA_I_A) -> Self {
-        match variant {
-            DMA_I_A::NOT_USED => false,
-            DMA_I_A::PUSH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DMA_I`"]
@@ -246,18 +236,16 @@ impl<'a> DMA_I_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DMA_O`"]
+#[doc = "Written to 1 to use DMA to drain the digest/output. If both DMA_I and DMA_O are set, the DMA has to know to switch direction and the locations. This can be used for crypto uses.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA_O_A {
-    #[doc = "DMA is not used. Processor reads the digest/output in response to DIGEST interrupt."]
-    NOTUSED,
+    #[doc = "0: DMA is not used. Processor reads the digest/output in response to DIGEST interrupt."]
+    NOTUSED = 0,
 }
 impl From<DMA_O_A> for bool {
     #[inline(always)]
     fn from(variant: DMA_O_A) -> Self {
-        match variant {
-            DMA_O_A::NOTUSED => false,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DMA_O`"]

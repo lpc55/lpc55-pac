@@ -32,7 +32,7 @@ pub struct RegisterBlock {
     #[doc = "0x100 - USB High Speed Phy Control"]
     pub usbhs_phy_ctrl: USBHS_PHY_CTRL,
 }
-#[doc = "Analog Macroblock Identity registers, Flash Status registers\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [analog_ctrl_status](analog_ctrl_status) module"]
+#[doc = "Analog Macroblock Identity registers, Flash Status registers\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [analog_ctrl_status](analog_ctrl_status) module"]
 pub type ANALOG_CTRL_STATUS = crate::Reg<u32, _ANALOG_CTRL_STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -41,7 +41,7 @@ pub struct _ANALOG_CTRL_STATUS;
 impl crate::Readable for ANALOG_CTRL_STATUS {}
 #[doc = "Analog Macroblock Identity registers, Flash Status registers"]
 pub mod analog_ctrl_status;
-#[doc = "Frequency Measure function control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [freq_me_ctrl](freq_me_ctrl) module"]
+#[doc = "Frequency Measure function control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [freq_me_ctrl](freq_me_ctrl) module"]
 pub type FREQ_ME_CTRL = crate::Reg<u32, _FREQ_ME_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -52,7 +52,7 @@ impl crate::Readable for FREQ_ME_CTRL {}
 impl crate::Writable for FREQ_ME_CTRL {}
 #[doc = "Frequency Measure function control register"]
 pub mod freq_me_ctrl;
-#[doc = "192MHz Free Running OScillator (FRO) Control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fro192m_ctrl](fro192m_ctrl) module"]
+#[doc = "192MHz Free Running OScillator (FRO) Control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fro192m_ctrl](fro192m_ctrl) module"]
 pub type FRO192M_CTRL = crate::Reg<u32, _FRO192M_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -63,7 +63,7 @@ impl crate::Readable for FRO192M_CTRL {}
 impl crate::Writable for FRO192M_CTRL {}
 #[doc = "192MHz Free Running OScillator (FRO) Control register"]
 pub mod fro192m_ctrl;
-#[doc = "192MHz Free Running OScillator (FRO) Status register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [fro192m_status](fro192m_status) module"]
+#[doc = "192MHz Free Running OScillator (FRO) Status register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fro192m_status](fro192m_status) module"]
 pub type FRO192M_STATUS = crate::Reg<u32, _FRO192M_STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -74,7 +74,7 @@ impl crate::Readable for FRO192M_STATUS {}
 impl crate::Writable for FRO192M_STATUS {}
 #[doc = "192MHz Free Running OScillator (FRO) Status register"]
 pub mod fro192m_status;
-#[doc = "High speed Crystal Oscillator Control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [xo32m_ctrl](xo32m_ctrl) module"]
+#[doc = "High speed Crystal Oscillator Control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [xo32m_ctrl](xo32m_ctrl) module"]
 pub type XO32M_CTRL = crate::Reg<u32, _XO32M_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -85,7 +85,7 @@ impl crate::Readable for XO32M_CTRL {}
 impl crate::Writable for XO32M_CTRL {}
 #[doc = "High speed Crystal Oscillator Control register"]
 pub mod xo32m_ctrl;
-#[doc = "High speed Crystal Oscillator Status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [xo32m_status](xo32m_status) module"]
+#[doc = "High speed Crystal Oscillator Status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [xo32m_status](xo32m_status) module"]
 pub type XO32M_STATUS = crate::Reg<u32, _XO32M_STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -94,7 +94,7 @@ pub struct _XO32M_STATUS;
 impl crate::Readable for XO32M_STATUS {}
 #[doc = "High speed Crystal Oscillator Status register"]
 pub mod xo32m_status;
-#[doc = "Brown Out Detectors (BoDs) & DCDC interrupts generation control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [bod_dcdc_int_ctrl](bod_dcdc_int_ctrl) module"]
+#[doc = "Brown Out Detectors (BoDs) & DCDC interrupts generation control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bod_dcdc_int_ctrl](bod_dcdc_int_ctrl) module"]
 pub type BOD_DCDC_INT_CTRL = crate::Reg<u32, _BOD_DCDC_INT_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -105,7 +105,7 @@ impl crate::Readable for BOD_DCDC_INT_CTRL {}
 impl crate::Writable for BOD_DCDC_INT_CTRL {}
 #[doc = "Brown Out Detectors (BoDs) & DCDC interrupts generation control register"]
 pub mod bod_dcdc_int_ctrl;
-#[doc = "BoDs & DCDC interrupts status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [bod_dcdc_int_status](bod_dcdc_int_status) module"]
+#[doc = "BoDs & DCDC interrupts status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bod_dcdc_int_status](bod_dcdc_int_status) module"]
 pub type BOD_DCDC_INT_STATUS = crate::Reg<u32, _BOD_DCDC_INT_STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -114,7 +114,7 @@ pub struct _BOD_DCDC_INT_STATUS;
 impl crate::Readable for BOD_DCDC_INT_STATUS {}
 #[doc = "BoDs & DCDC interrupts status register"]
 pub mod bod_dcdc_int_status;
-#[doc = "First Ring Oscillator module control register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ringo0_ctrl](ringo0_ctrl) module"]
+#[doc = "First Ring Oscillator module control register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ringo0_ctrl](ringo0_ctrl) module"]
 pub type RINGO0_CTRL = crate::Reg<u32, _RINGO0_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -125,7 +125,7 @@ impl crate::Readable for RINGO0_CTRL {}
 impl crate::Writable for RINGO0_CTRL {}
 #[doc = "First Ring Oscillator module control register."]
 pub mod ringo0_ctrl;
-#[doc = "Second Ring Oscillator module control register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ringo1_ctrl](ringo1_ctrl) module"]
+#[doc = "Second Ring Oscillator module control register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ringo1_ctrl](ringo1_ctrl) module"]
 pub type RINGO1_CTRL = crate::Reg<u32, _RINGO1_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -136,7 +136,7 @@ impl crate::Readable for RINGO1_CTRL {}
 impl crate::Writable for RINGO1_CTRL {}
 #[doc = "Second Ring Oscillator module control register."]
 pub mod ringo1_ctrl;
-#[doc = "Third Ring Oscillator module control register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ringo2_ctrl](ringo2_ctrl) module"]
+#[doc = "Third Ring Oscillator module control register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ringo2_ctrl](ringo2_ctrl) module"]
 pub type RINGO2_CTRL = crate::Reg<u32, _RINGO2_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -147,7 +147,7 @@ impl crate::Readable for RINGO2_CTRL {}
 impl crate::Writable for RINGO2_CTRL {}
 #[doc = "Third Ring Oscillator module control register."]
 pub mod ringo2_ctrl;
-#[doc = "USB High Speed Phy Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usbhs_phy_ctrl](usbhs_phy_ctrl) module"]
+#[doc = "USB High Speed Phy Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usbhs_phy_ctrl](usbhs_phy_ctrl) module"]
 pub type USBHS_PHY_CTRL = crate::Reg<u32, _USBHS_PHY_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]

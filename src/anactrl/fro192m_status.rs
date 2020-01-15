@@ -10,21 +10,18 @@ impl crate::ResetValue for super::FRO192M_STATUS {
         0x03
     }
 }
-#[doc = "Possible values of the field `CLK_VALID`"]
+#[doc = "Output clock valid signal. Indicates that CCO clock has settled.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLK_VALID_A {
-    #[doc = "No output clock present (None of 12 MHz, 48 MHz or 96 MHz clock is available)."]
-    NOCLKOUT,
-    #[doc = "Clock is present (12 MHz, 48 MHz or 96 MHz can be output if they are enable respectively by FRO192M_CTRL.ENA_12MHZCLK/ENA_48MHZCLK/ENA_96MHZCLK)."]
-    CLKOUT,
+    #[doc = "0: No output clock present (None of 12 MHz, 48 MHz or 96 MHz clock is available)."]
+    NOCLKOUT = 0,
+    #[doc = "1: Clock is present (12 MHz, 48 MHz or 96 MHz can be output if they are enable respectively by FRO192M_CTRL.ENA_12MHZCLK/ENA_48MHZCLK/ENA_96MHZCLK)."]
+    CLKOUT = 1,
 }
 impl From<CLK_VALID_A> for bool {
     #[inline(always)]
     fn from(variant: CLK_VALID_A) -> Self {
-        match variant {
-            CLK_VALID_A::NOCLKOUT => false,
-            CLK_VALID_A::CLKOUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CLK_VALID`"]

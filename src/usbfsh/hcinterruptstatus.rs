@@ -223,7 +223,8 @@ impl R {
     pub fn fno(&self) -> FNO_R {
         FNO_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - RootHubStatusChange This bit is set when the content of HcRhStatus or the content of any of HcRhPortStatus\\[NumberofDownstreamPort\\] has changed."]
+    #[doc = "Bit 6 - RootHubStatusChange This bit is set when the content of HcRhStatus or the content of any of HcRhPortStatus\\[NumberofDownstreamPort\\]
+has changed."]
     #[inline(always)]
     pub fn rhsc(&self) -> RHSC_R {
         RHSC_R::new(((self.bits >> 6) & 0x01) != 0)
@@ -265,7 +266,8 @@ impl W {
     pub fn fno(&mut self) -> FNO_W {
         FNO_W { w: self }
     }
-    #[doc = "Bit 6 - RootHubStatusChange This bit is set when the content of HcRhStatus or the content of any of HcRhPortStatus\\[NumberofDownstreamPort\\] has changed."]
+    #[doc = "Bit 6 - RootHubStatusChange This bit is set when the content of HcRhStatus or the content of any of HcRhPortStatus\\[NumberofDownstreamPort\\]
+has changed."]
     #[inline(always)]
     pub fn rhsc(&mut self) -> RHSC_W {
         RHSC_W { w: self }

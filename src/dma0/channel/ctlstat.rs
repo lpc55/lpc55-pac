@@ -1,20 +1,17 @@
 #[doc = "Reader of register CTLSTAT"]
 pub type R = crate::R<u32, super::CTLSTAT>;
-#[doc = "Possible values of the field `VALIDPENDING`"]
+#[doc = "Valid pending flag for this channel. This bit is set when a 1 is written to the corresponding bit in the related SETVALID register when CFGVALID = 1 for the same channel.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VALIDPENDING_A {
-    #[doc = "No effect. No effect on DMA operation."]
-    NO_EFFECT,
-    #[doc = "Valid pending."]
-    VALID_PENDING,
+    #[doc = "0: No effect. No effect on DMA operation."]
+    NO_EFFECT = 0,
+    #[doc = "1: Valid pending."]
+    VALID_PENDING = 1,
 }
 impl From<VALIDPENDING_A> for bool {
     #[inline(always)]
     fn from(variant: VALIDPENDING_A) -> Self {
-        match variant {
-            VALIDPENDING_A::NO_EFFECT => false,
-            VALIDPENDING_A::VALID_PENDING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VALIDPENDING`"]
@@ -39,21 +36,18 @@ impl VALIDPENDING_R {
         *self == VALIDPENDING_A::VALID_PENDING
     }
 }
-#[doc = "Possible values of the field `TRIG`"]
+#[doc = "Trigger flag. Indicates that the trigger for this channel is currently set. This bit is cleared at the end of an entire transfer or upon reload when CLRTRIG = 1.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIG_A {
-    #[doc = "Not triggered. The trigger for this DMA channel is not set. DMA operations will not be carried out."]
-    NOT_TRIGGERED,
-    #[doc = "Triggered. The trigger for this DMA channel is set. DMA operations will be carried out."]
-    TRIGGERED,
+    #[doc = "0: Not triggered. The trigger for this DMA channel is not set. DMA operations will not be carried out."]
+    NOT_TRIGGERED = 0,
+    #[doc = "1: Triggered. The trigger for this DMA channel is set. DMA operations will be carried out."]
+    TRIGGERED = 1,
 }
 impl From<TRIG_A> for bool {
     #[inline(always)]
     fn from(variant: TRIG_A) -> Self {
-        match variant {
-            TRIG_A::NOT_TRIGGERED => false,
-            TRIG_A::TRIGGERED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIG`"]

@@ -10,21 +10,18 @@ impl crate::ResetValue for super::GPIOPSYNC {
         0
     }
 }
-#[doc = "Possible values of the field `PSYNC`"]
+#[doc = "Enable bypass of the first stage of synchonization inside GPIO_INT module.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PSYNC_A {
-    #[doc = "use the first stage of synchonization inside GPIO_INT module."]
-    USED,
-    #[doc = "bypass of the first stage of synchonization inside GPIO_INT module."]
-    BYPASS,
+    #[doc = "0: use the first stage of synchonization inside GPIO_INT module."]
+    USED = 0,
+    #[doc = "1: bypass of the first stage of synchonization inside GPIO_INT module."]
+    BYPASS = 1,
 }
 impl From<PSYNC_A> for bool {
     #[inline(always)]
     fn from(variant: PSYNC_A) -> Self {
-        match variant {
-            PSYNC_A::USED => false,
-            PSYNC_A::BYPASS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PSYNC`"]

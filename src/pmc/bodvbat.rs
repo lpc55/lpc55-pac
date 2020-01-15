@@ -10,111 +10,79 @@ impl crate::ResetValue for super::BODVBAT {
         0x47
     }
 }
-#[doc = "Possible values of the field `TRIGLVL`"]
+#[doc = "BoD trigger level.\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TRIGLVL_A {
-    #[doc = "1.00 V."]
-    V_1P00,
-    #[doc = "1.10 V."]
-    V_1P10,
-    #[doc = "1.20 V."]
-    V_1P20,
-    #[doc = "1.30 V."]
-    V_1P30,
-    #[doc = "1.40 V."]
-    V_1P40,
-    #[doc = "1.50 V."]
-    V_1P50,
-    #[doc = "1.60 V."]
-    V_1P60,
-    #[doc = "1.65 V."]
-    V_1P65,
-    #[doc = "1.70 V."]
-    V_1P70,
-    #[doc = "1.75 V."]
-    V_1P75,
-    #[doc = "1.80 V."]
-    V_1P80,
-    #[doc = "1.90 V."]
-    V_1P90,
-    #[doc = "2.00 V."]
-    V_2P00,
-    #[doc = "2.10 V."]
-    V_2P10,
-    #[doc = "2.20 V."]
-    V_2P20,
-    #[doc = "2.30 V."]
-    V_2P30,
-    #[doc = "2.40 V."]
-    V_2P40,
-    #[doc = "2.50 V."]
-    V_2P50,
-    #[doc = "2.60 V."]
-    V_2P60,
-    #[doc = "2.70 V."]
-    V_2P70,
-    #[doc = "2.806 V."]
-    V_2P80,
-    #[doc = "2.90 V."]
-    V_2P90,
-    #[doc = "3.00 V."]
-    V_3P00,
-    #[doc = "3.10 V."]
-    V_3P10,
-    #[doc = "3.20 V."]
-    V_3P20,
-    #[doc = "3.30 V."]
-    V_3P30_2,
-    #[doc = "3.30 V."]
-    V_3P30_3,
-    #[doc = "3.30 V."]
-    V_3P30_4,
-    #[doc = "3.30 V."]
-    V_3P30_5,
-    #[doc = "3.30 V."]
-    V_3P30_6,
-    #[doc = "3.30 V."]
-    V_3P30_7,
-    #[doc = "3.30 V."]
-    V_3P30_8,
+    #[doc = "0: 1.00 V."]
+    V_1P00 = 0,
+    #[doc = "1: 1.10 V."]
+    V_1P10 = 1,
+    #[doc = "2: 1.20 V."]
+    V_1P20 = 2,
+    #[doc = "3: 1.30 V."]
+    V_1P30 = 3,
+    #[doc = "4: 1.40 V."]
+    V_1P40 = 4,
+    #[doc = "5: 1.50 V."]
+    V_1P50 = 5,
+    #[doc = "6: 1.60 V."]
+    V_1P60 = 6,
+    #[doc = "7: 1.65 V."]
+    V_1P65 = 7,
+    #[doc = "8: 1.70 V."]
+    V_1P70 = 8,
+    #[doc = "9: 1.75 V."]
+    V_1P75 = 9,
+    #[doc = "10: 1.80 V."]
+    V_1P80 = 10,
+    #[doc = "11: 1.90 V."]
+    V_1P90 = 11,
+    #[doc = "12: 2.00 V."]
+    V_2P00 = 12,
+    #[doc = "13: 2.10 V."]
+    V_2P10 = 13,
+    #[doc = "14: 2.20 V."]
+    V_2P20 = 14,
+    #[doc = "15: 2.30 V."]
+    V_2P30 = 15,
+    #[doc = "16: 2.40 V."]
+    V_2P40 = 16,
+    #[doc = "17: 2.50 V."]
+    V_2P50 = 17,
+    #[doc = "18: 2.60 V."]
+    V_2P60 = 18,
+    #[doc = "19: 2.70 V."]
+    V_2P70 = 19,
+    #[doc = "20: 2.806 V."]
+    V_2P80 = 20,
+    #[doc = "21: 2.90 V."]
+    V_2P90 = 21,
+    #[doc = "22: 3.00 V."]
+    V_3P00 = 22,
+    #[doc = "23: 3.10 V."]
+    V_3P10 = 23,
+    #[doc = "24: 3.20 V."]
+    V_3P20 = 24,
+    #[doc = "25: 3.30 V."]
+    V_3P30_2 = 25,
+    #[doc = "26: 3.30 V."]
+    V_3P30_3 = 26,
+    #[doc = "27: 3.30 V."]
+    V_3P30_4 = 27,
+    #[doc = "28: 3.30 V."]
+    V_3P30_5 = 28,
+    #[doc = "29: 3.30 V."]
+    V_3P30_6 = 29,
+    #[doc = "30: 3.30 V."]
+    V_3P30_7 = 30,
+    #[doc = "31: 3.30 V."]
+    V_3P30_8 = 31,
 }
 impl From<TRIGLVL_A> for u8 {
     #[inline(always)]
     fn from(variant: TRIGLVL_A) -> Self {
-        match variant {
-            TRIGLVL_A::V_1P00 => 0,
-            TRIGLVL_A::V_1P10 => 1,
-            TRIGLVL_A::V_1P20 => 2,
-            TRIGLVL_A::V_1P30 => 3,
-            TRIGLVL_A::V_1P40 => 4,
-            TRIGLVL_A::V_1P50 => 5,
-            TRIGLVL_A::V_1P60 => 6,
-            TRIGLVL_A::V_1P65 => 7,
-            TRIGLVL_A::V_1P70 => 8,
-            TRIGLVL_A::V_1P75 => 9,
-            TRIGLVL_A::V_1P80 => 10,
-            TRIGLVL_A::V_1P90 => 11,
-            TRIGLVL_A::V_2P00 => 12,
-            TRIGLVL_A::V_2P10 => 13,
-            TRIGLVL_A::V_2P20 => 14,
-            TRIGLVL_A::V_2P30 => 15,
-            TRIGLVL_A::V_2P40 => 16,
-            TRIGLVL_A::V_2P50 => 17,
-            TRIGLVL_A::V_2P60 => 18,
-            TRIGLVL_A::V_2P70 => 19,
-            TRIGLVL_A::V_2P80 => 20,
-            TRIGLVL_A::V_2P90 => 21,
-            TRIGLVL_A::V_3P00 => 22,
-            TRIGLVL_A::V_3P10 => 23,
-            TRIGLVL_A::V_3P20 => 24,
-            TRIGLVL_A::V_3P30_2 => 25,
-            TRIGLVL_A::V_3P30_3 => 26,
-            TRIGLVL_A::V_3P30_4 => 27,
-            TRIGLVL_A::V_3P30_5 => 28,
-            TRIGLVL_A::V_3P30_6 => 29,
-            TRIGLVL_A::V_3P30_7 => 30,
-            TRIGLVL_A::V_3P30_8 => 31,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TRIGLVL`"]
@@ -499,27 +467,23 @@ impl<'a> TRIGLVL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `HYST`"]
+#[doc = "BoD Hysteresis control.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HYST_A {
-    #[doc = "25 mV."]
-    HYST_25MV,
-    #[doc = "50 mV."]
-    HYST_50MV,
-    #[doc = "75 mV."]
-    HYST_75MV,
-    #[doc = "100 mV."]
-    HYST_100MV,
+    #[doc = "0: 25 mV."]
+    HYST_25MV = 0,
+    #[doc = "1: 50 mV."]
+    HYST_50MV = 1,
+    #[doc = "2: 75 mV."]
+    HYST_75MV = 2,
+    #[doc = "3: 100 mV."]
+    HYST_100MV = 3,
 }
 impl From<HYST_A> for u8 {
     #[inline(always)]
     fn from(variant: HYST_A) -> Self {
-        match variant {
-            HYST_A::HYST_25MV => 0,
-            HYST_A::HYST_50MV => 1,
-            HYST_A::HYST_75MV => 2,
-            HYST_A::HYST_100MV => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HYST`"]

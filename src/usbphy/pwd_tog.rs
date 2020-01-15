@@ -10,21 +10,18 @@ impl crate::ResetValue for super::PWD_TOG {
         0x001e_1c00
     }
 }
-#[doc = "Possible values of the field `TXPWDFS`"]
+#[doc = "Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXPWDFS_A {
-    #[doc = "Normal operation."]
-    VALUE0,
-    #[doc = "Power-down the USB full-speed drivers. This turns off the current starvation sources and puts the"]
-    VALUE1,
+    #[doc = "0: Normal operation."]
+    VALUE0 = 0,
+    #[doc = "1: Power-down the USB full-speed drivers. This turns off the current starvation sources and puts the"]
+    VALUE1 = 1,
 }
 impl From<TXPWDFS_A> for bool {
     #[inline(always)]
     fn from(variant: TXPWDFS_A) -> Self {
-        match variant {
-            TXPWDFS_A::VALUE0 => false,
-            TXPWDFS_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXPWDFS`"]
@@ -88,21 +85,18 @@ impl<'a> TXPWDFS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TXPWDIBIAS`"]
+#[doc = "Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXPWDIBIAS_A {
-    #[doc = "Normal operation."]
-    VALUE0,
-    #[doc = "Power-down the USB PHY current bias block for the transmitter. This bit should be set only when the"]
-    VALUE1,
+    #[doc = "0: Normal operation."]
+    VALUE0 = 0,
+    #[doc = "1: Power-down the USB PHY current bias block for the transmitter. This bit should be set only when the"]
+    VALUE1 = 1,
 }
 impl From<TXPWDIBIAS_A> for bool {
     #[inline(always)]
     fn from(variant: TXPWDIBIAS_A) -> Self {
-        match variant {
-            TXPWDIBIAS_A::VALUE0 => false,
-            TXPWDIBIAS_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXPWDIBIAS`"]
@@ -166,21 +160,18 @@ impl<'a> TXPWDIBIAS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TXPWDV2I`"]
+#[doc = "Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXPWDV2I_A {
-    #[doc = "Normal operation."]
-    VALUE0,
-    #[doc = "Power-down the USB PHY transmit V-to-I converter and the current mirror"]
-    VALUE1,
+    #[doc = "0: Normal operation."]
+    VALUE0 = 0,
+    #[doc = "1: Power-down the USB PHY transmit V-to-I converter and the current mirror"]
+    VALUE1 = 1,
 }
 impl From<TXPWDV2I_A> for bool {
     #[inline(always)]
     fn from(variant: TXPWDV2I_A) -> Self {
-        match variant {
-            TXPWDV2I_A::VALUE0 => false,
-            TXPWDV2I_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXPWDV2I`"]
@@ -244,21 +235,18 @@ impl<'a> TXPWDV2I_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RXPWDENV`"]
+#[doc = "Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXPWDENV_A {
-    #[doc = "Normal operation."]
-    VALUE0,
-    #[doc = "Power-down the USB high-speed receiver envelope detector (squelch signal)"]
-    VALUE1,
+    #[doc = "0: Normal operation."]
+    VALUE0 = 0,
+    #[doc = "1: Power-down the USB high-speed receiver envelope detector (squelch signal)"]
+    VALUE1 = 1,
 }
 impl From<RXPWDENV_A> for bool {
     #[inline(always)]
     fn from(variant: RXPWDENV_A) -> Self {
-        match variant {
-            RXPWDENV_A::VALUE0 => false,
-            RXPWDENV_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXPWDENV`"]
@@ -322,21 +310,18 @@ impl<'a> RXPWDENV_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RXPWD1PT1`"]
+#[doc = "Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXPWD1PT1_A {
-    #[doc = "Normal operation."]
-    VALUE0,
-    #[doc = "Power-down the USB full-speed differential receiver."]
-    VALUE1,
+    #[doc = "0: Normal operation."]
+    VALUE0 = 0,
+    #[doc = "1: Power-down the USB full-speed differential receiver."]
+    VALUE1 = 1,
 }
 impl From<RXPWD1PT1_A> for bool {
     #[inline(always)]
     fn from(variant: RXPWD1PT1_A) -> Self {
-        match variant {
-            RXPWD1PT1_A::VALUE0 => false,
-            RXPWD1PT1_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXPWD1PT1`"]
@@ -400,21 +385,18 @@ impl<'a> RXPWD1PT1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RXPWDDIFF`"]
+#[doc = "Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXPWDDIFF_A {
-    #[doc = "Normal operation."]
-    VALUE0,
-    #[doc = "Power-down the USB high-speed differential receive"]
-    VALUE1,
+    #[doc = "0: Normal operation."]
+    VALUE0 = 0,
+    #[doc = "1: Power-down the USB high-speed differential receive"]
+    VALUE1 = 1,
 }
 impl From<RXPWDDIFF_A> for bool {
     #[inline(always)]
     fn from(variant: RXPWDDIFF_A) -> Self {
-        match variant {
-            RXPWDDIFF_A::VALUE0 => false,
-            RXPWDDIFF_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXPWDDIFF`"]
@@ -478,21 +460,18 @@ impl<'a> RXPWDDIFF_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RXPWDRX`"]
+#[doc = "This bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXPWDRX_A {
-    #[doc = "Normal operation."]
-    VALUE0,
-    #[doc = "Power-down the entire USB PHY receiver block except for the full-speed differential receiver"]
-    VALUE1,
+    #[doc = "0: Normal operation."]
+    VALUE0 = 0,
+    #[doc = "1: Power-down the entire USB PHY receiver block except for the full-speed differential receiver"]
+    VALUE1 = 1,
 }
 impl From<RXPWDRX_A> for bool {
     #[inline(always)]
     fn from(variant: RXPWDRX_A) -> Self {
-        match variant {
-            RXPWDRX_A::VALUE0 => false,
-            RXPWDRX_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXPWDRX`"]

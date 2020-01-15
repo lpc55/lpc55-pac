@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CFG {
         0
     }
 }
-#[doc = "Possible values of the field `PERIPHREQEN`"]
+#[doc = "Peripheral request Enable. If a DMA channel is used to perform a memory-to-memory move, any peripheral DMA request associated with that channel can be disabled to prevent any interaction between the peripheral and the DMA controller.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PERIPHREQEN_A {
-    #[doc = "Disabled. Peripheral DMA requests are disabled."]
-    DISABLED,
-    #[doc = "Enabled. Peripheral DMA requests are enabled."]
-    ENABLED,
+    #[doc = "0: Disabled. Peripheral DMA requests are disabled."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. Peripheral DMA requests are enabled."]
+    ENABLED = 1,
 }
 impl From<PERIPHREQEN_A> for bool {
     #[inline(always)]
     fn from(variant: PERIPHREQEN_A) -> Self {
-        match variant {
-            PERIPHREQEN_A::DISABLED => false,
-            PERIPHREQEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PERIPHREQEN`"]
@@ -88,21 +85,18 @@ impl<'a> PERIPHREQEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `HWTRIGEN`"]
+#[doc = "Hardware Triggering Enable for this channel.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HWTRIGEN_A {
-    #[doc = "Disabled. Hardware triggering is not used."]
-    DISABLED,
-    #[doc = "Enabled. Use hardware triggering."]
-    ENABLED,
+    #[doc = "0: Disabled. Hardware triggering is not used."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. Use hardware triggering."]
+    ENABLED = 1,
 }
 impl From<HWTRIGEN_A> for bool {
     #[inline(always)]
     fn from(variant: HWTRIGEN_A) -> Self {
-        match variant {
-            HWTRIGEN_A::DISABLED => false,
-            HWTRIGEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HWTRIGEN`"]
@@ -166,21 +160,18 @@ impl<'a> HWTRIGEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TRIGPOL`"]
+#[doc = "Trigger Polarity. Selects the polarity of a hardware trigger for this channel.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGPOL_A {
-    #[doc = "Active low - falling edge. Hardware trigger is active low or falling edge triggered, based on TRIGTYPE."]
-    ACTIVE_LOW_FALLING,
-    #[doc = "Active high - rising edge. Hardware trigger is active high or rising edge triggered, based on TRIGTYPE."]
-    ACTIVE_HIGH_RISING,
+    #[doc = "0: Active low - falling edge. Hardware trigger is active low or falling edge triggered, based on TRIGTYPE."]
+    ACTIVE_LOW_FALLING = 0,
+    #[doc = "1: Active high - rising edge. Hardware trigger is active high or rising edge triggered, based on TRIGTYPE."]
+    ACTIVE_HIGH_RISING = 1,
 }
 impl From<TRIGPOL_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGPOL_A) -> Self {
-        match variant {
-            TRIGPOL_A::ACTIVE_LOW_FALLING => false,
-            TRIGPOL_A::ACTIVE_HIGH_RISING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGPOL`"]
@@ -244,21 +235,18 @@ impl<'a> TRIGPOL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TRIGTYPE`"]
+#[doc = "Trigger Type. Selects hardware trigger as edge triggered or level triggered.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGTYPE_A {
-    #[doc = "Edge. Hardware trigger is edge triggered. Transfers will be initiated and completed, as specified for a single trigger."]
-    EDGE,
-    #[doc = "Level. Hardware trigger is level triggered. Note that when level triggering without burst (BURSTPOWER = 0) is selected, only hardware triggers should be used on that channel. Transfers continue as long as the trigger level is asserted. Once the trigger is de-asserted, the transfer will be paused until the trigger is, again, asserted. However, the transfer will not be paused until any remaining transfers within the current BURSTPOWER length are completed."]
-    LEVEL,
+    #[doc = "0: Edge. Hardware trigger is edge triggered. Transfers will be initiated and completed, as specified for a single trigger."]
+    EDGE = 0,
+    #[doc = "1: Level. Hardware trigger is level triggered. Note that when level triggering without burst (BURSTPOWER = 0) is selected, only hardware triggers should be used on that channel. Transfers continue as long as the trigger level is asserted. Once the trigger is de-asserted, the transfer will be paused until the trigger is, again, asserted. However, the transfer will not be paused until any remaining transfers within the current BURSTPOWER length are completed."]
+    LEVEL = 1,
 }
 impl From<TRIGTYPE_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGTYPE_A) -> Self {
-        match variant {
-            TRIGTYPE_A::EDGE => false,
-            TRIGTYPE_A::LEVEL => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGTYPE`"]
@@ -322,21 +310,18 @@ impl<'a> TRIGTYPE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TRIGBURST`"]
+#[doc = "Trigger Burst. Selects whether hardware triggers cause a single or burst transfer.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIGBURST_A {
-    #[doc = "Single transfer. Hardware trigger causes a single transfer."]
-    SINGLE,
-    #[doc = "Burst transfer. When the trigger for this channel is set to edge triggered, a hardware trigger causes a burst transfer, as defined by BURSTPOWER. When the trigger for this channel is set to level triggered, a hardware trigger causes transfers to continue as long as the trigger is asserted, unless the transfer is complete."]
-    BURST,
+    #[doc = "0: Single transfer. Hardware trigger causes a single transfer."]
+    SINGLE = 0,
+    #[doc = "1: Burst transfer. When the trigger for this channel is set to edge triggered, a hardware trigger causes a burst transfer, as defined by BURSTPOWER. When the trigger for this channel is set to level triggered, a hardware trigger causes transfers to continue as long as the trigger is asserted, unless the transfer is complete."]
+    BURST = 1,
 }
 impl From<TRIGBURST_A> for bool {
     #[inline(always)]
     fn from(variant: TRIGBURST_A) -> Self {
-        match variant {
-            TRIGBURST_A::SINGLE => false,
-            TRIGBURST_A::BURST => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIGBURST`"]
@@ -414,21 +399,18 @@ impl<'a> BURSTPOWER_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRCBURSTWRAP`"]
+#[doc = "Source Burst Wrap. When enabled, the source data address for the DMA is 'wrapped', meaning that the source address range for each burst will be the same. As an example, this could be used to read several sequential registers from a peripheral for each DMA burst, reading the same registers again for each burst.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRCBURSTWRAP_A {
-    #[doc = "Disabled. Source burst wrapping is not enabled for this DMA channel."]
-    DISABLED,
-    #[doc = "Enabled. Source burst wrapping is enabled for this DMA channel."]
-    ENABLED,
+    #[doc = "0: Disabled. Source burst wrapping is not enabled for this DMA channel."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. Source burst wrapping is enabled for this DMA channel."]
+    ENABLED = 1,
 }
 impl From<SRCBURSTWRAP_A> for bool {
     #[inline(always)]
     fn from(variant: SRCBURSTWRAP_A) -> Self {
-        match variant {
-            SRCBURSTWRAP_A::DISABLED => false,
-            SRCBURSTWRAP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRCBURSTWRAP`"]
@@ -492,21 +474,18 @@ impl<'a> SRCBURSTWRAP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DSTBURSTWRAP`"]
+#[doc = "Destination Burst Wrap. When enabled, the destination data address for the DMA is 'wrapped', meaning that the destination address range for each burst will be the same. As an example, this could be used to write several sequential registers to a peripheral for each DMA burst, writing the same registers again for each burst.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DSTBURSTWRAP_A {
-    #[doc = "Disabled. Destination burst wrapping is not enabled for this DMA channel."]
-    DISABLED,
-    #[doc = "Enabled. Destination burst wrapping is enabled for this DMA channel."]
-    ENABLED,
+    #[doc = "0: Disabled. Destination burst wrapping is not enabled for this DMA channel."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. Destination burst wrapping is enabled for this DMA channel."]
+    ENABLED = 1,
 }
 impl From<DSTBURSTWRAP_A> for bool {
     #[inline(always)]
     fn from(variant: DSTBURSTWRAP_A) -> Self {
-        match variant {
-            DSTBURSTWRAP_A::DISABLED => false,
-            DSTBURSTWRAP_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DSTBURSTWRAP`"]

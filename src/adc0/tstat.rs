@@ -10,48 +10,38 @@ impl crate::ResetValue for super::TSTAT {
         0
     }
 }
-#[doc = "Possible values of the field `TEXC_NUM`"]
+#[doc = "Trigger Exception Number\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum TEXC_NUM_A {
-    #[doc = "No triggers have been interrupted by a high priority exception. Or CFG\\[TRES\\] = 1."]
-    TEXC_NUM_0,
-    #[doc = "Trigger 0 has been interrupted by a high priority exception."]
-    TEXC_NUM_1,
-    #[doc = "Trigger 1 has been interrupted by a high priority exception."]
-    TEXC_NUM_2,
-    #[doc = "Associated trigger sequence has interrupted by a high priority exception."]
-    TEXC_NUM_3,
-    #[doc = "Associated trigger sequence has interrupted by a high priority exception."]
-    TEXC_NUM_4,
-    #[doc = "Associated trigger sequence has interrupted by a high priority exception."]
-    TEXC_NUM_5,
-    #[doc = "Associated trigger sequence has interrupted by a high priority exception."]
-    TEXC_NUM_6,
-    #[doc = "Associated trigger sequence has interrupted by a high priority exception."]
-    TEXC_NUM_7,
-    #[doc = "Associated trigger sequence has interrupted by a high priority exception."]
-    TEXC_NUM_8,
-    #[doc = "Associated trigger sequence has interrupted by a high priority exception."]
-    TEXC_NUM_9,
-    #[doc = "Every trigger sequence has been interrupted by a high priority exception."]
-    TEXC_NUM_65535,
+    #[doc = "0: No triggers have been interrupted by a high priority exception. Or CFG\\[TRES\\]
+= 1."]
+    TEXC_NUM_0 = 0,
+    #[doc = "1: Trigger 0 has been interrupted by a high priority exception."]
+    TEXC_NUM_1 = 1,
+    #[doc = "2: Trigger 1 has been interrupted by a high priority exception."]
+    TEXC_NUM_2 = 2,
+    #[doc = "3: Associated trigger sequence has interrupted by a high priority exception."]
+    TEXC_NUM_3 = 3,
+    #[doc = "4: Associated trigger sequence has interrupted by a high priority exception."]
+    TEXC_NUM_4 = 4,
+    #[doc = "5: Associated trigger sequence has interrupted by a high priority exception."]
+    TEXC_NUM_5 = 5,
+    #[doc = "6: Associated trigger sequence has interrupted by a high priority exception."]
+    TEXC_NUM_6 = 6,
+    #[doc = "7: Associated trigger sequence has interrupted by a high priority exception."]
+    TEXC_NUM_7 = 7,
+    #[doc = "8: Associated trigger sequence has interrupted by a high priority exception."]
+    TEXC_NUM_8 = 8,
+    #[doc = "9: Associated trigger sequence has interrupted by a high priority exception."]
+    TEXC_NUM_9 = 9,
+    #[doc = "65535: Every trigger sequence has been interrupted by a high priority exception."]
+    TEXC_NUM_65535 = 65535,
 }
 impl From<TEXC_NUM_A> for u16 {
     #[inline(always)]
     fn from(variant: TEXC_NUM_A) -> Self {
-        match variant {
-            TEXC_NUM_A::TEXC_NUM_0 => 0,
-            TEXC_NUM_A::TEXC_NUM_1 => 1,
-            TEXC_NUM_A::TEXC_NUM_2 => 2,
-            TEXC_NUM_A::TEXC_NUM_3 => 3,
-            TEXC_NUM_A::TEXC_NUM_4 => 4,
-            TEXC_NUM_A::TEXC_NUM_5 => 5,
-            TEXC_NUM_A::TEXC_NUM_6 => 6,
-            TEXC_NUM_A::TEXC_NUM_7 => 7,
-            TEXC_NUM_A::TEXC_NUM_8 => 8,
-            TEXC_NUM_A::TEXC_NUM_9 => 9,
-            TEXC_NUM_A::TEXC_NUM_65535 => 65535,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TEXC_NUM`"]
@@ -142,7 +132,8 @@ impl<'a> TEXC_NUM_W<'a> {
     pub fn variant(self, variant: TEXC_NUM_A) -> &'a mut W {
         unsafe { self.bits(variant.into()) }
     }
-    #[doc = "No triggers have been interrupted by a high priority exception. Or CFG\\[TRES\\] = 1."]
+    #[doc = "No triggers have been interrupted by a high priority exception. Or CFG\\[TRES\\]
+= 1."]
     #[inline(always)]
     pub fn texc_num_0(self) -> &'a mut W {
         self.variant(TEXC_NUM_A::TEXC_NUM_0)
@@ -204,48 +195,37 @@ impl<'a> TEXC_NUM_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TCOMP_FLAG`"]
+#[doc = "Trigger Completion Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum TCOMP_FLAG_A {
-    #[doc = "No triggers have been completed. Trigger completion interrupts are disabled."]
-    TCOMP_FLAG_0,
-    #[doc = "Trigger 0 has been completed and triger 0 has enabled completion interrupts."]
-    TCOMP_FLAG_1,
-    #[doc = "Trigger 1 has been completed and triger 1 has enabled completion interrupts."]
-    TCOMP_FLAG_2,
-    #[doc = "Associated trigger sequence has completed and has enabled completion interrupts."]
-    TCOMP_FLAG_3,
-    #[doc = "Associated trigger sequence has completed and has enabled completion interrupts."]
-    TCOMP_FLAG_4,
-    #[doc = "Associated trigger sequence has completed and has enabled completion interrupts."]
-    TCOMP_FLAG_5,
-    #[doc = "Associated trigger sequence has completed and has enabled completion interrupts."]
-    TCOMP_FLAG_6,
-    #[doc = "Associated trigger sequence has completed and has enabled completion interrupts."]
-    TCOMP_FLAG_7,
-    #[doc = "Associated trigger sequence has completed and has enabled completion interrupts."]
-    TCOMP_FLAG_8,
-    #[doc = "Associated trigger sequence has completed and has enabled completion interrupts."]
-    TCOMP_FLAG_9,
-    #[doc = "Every trigger sequence has been completed and every trigger has enabled completion interrupts."]
-    TCOMP_FLAG_65535,
+    #[doc = "0: No triggers have been completed. Trigger completion interrupts are disabled."]
+    TCOMP_FLAG_0 = 0,
+    #[doc = "1: Trigger 0 has been completed and triger 0 has enabled completion interrupts."]
+    TCOMP_FLAG_1 = 1,
+    #[doc = "2: Trigger 1 has been completed and triger 1 has enabled completion interrupts."]
+    TCOMP_FLAG_2 = 2,
+    #[doc = "3: Associated trigger sequence has completed and has enabled completion interrupts."]
+    TCOMP_FLAG_3 = 3,
+    #[doc = "4: Associated trigger sequence has completed and has enabled completion interrupts."]
+    TCOMP_FLAG_4 = 4,
+    #[doc = "5: Associated trigger sequence has completed and has enabled completion interrupts."]
+    TCOMP_FLAG_5 = 5,
+    #[doc = "6: Associated trigger sequence has completed and has enabled completion interrupts."]
+    TCOMP_FLAG_6 = 6,
+    #[doc = "7: Associated trigger sequence has completed and has enabled completion interrupts."]
+    TCOMP_FLAG_7 = 7,
+    #[doc = "8: Associated trigger sequence has completed and has enabled completion interrupts."]
+    TCOMP_FLAG_8 = 8,
+    #[doc = "9: Associated trigger sequence has completed and has enabled completion interrupts."]
+    TCOMP_FLAG_9 = 9,
+    #[doc = "65535: Every trigger sequence has been completed and every trigger has enabled completion interrupts."]
+    TCOMP_FLAG_65535 = 65535,
 }
 impl From<TCOMP_FLAG_A> for u16 {
     #[inline(always)]
     fn from(variant: TCOMP_FLAG_A) -> Self {
-        match variant {
-            TCOMP_FLAG_A::TCOMP_FLAG_0 => 0,
-            TCOMP_FLAG_A::TCOMP_FLAG_1 => 1,
-            TCOMP_FLAG_A::TCOMP_FLAG_2 => 2,
-            TCOMP_FLAG_A::TCOMP_FLAG_3 => 3,
-            TCOMP_FLAG_A::TCOMP_FLAG_4 => 4,
-            TCOMP_FLAG_A::TCOMP_FLAG_5 => 5,
-            TCOMP_FLAG_A::TCOMP_FLAG_6 => 6,
-            TCOMP_FLAG_A::TCOMP_FLAG_7 => 7,
-            TCOMP_FLAG_A::TCOMP_FLAG_8 => 8,
-            TCOMP_FLAG_A::TCOMP_FLAG_9 => 9,
-            TCOMP_FLAG_A::TCOMP_FLAG_65535 => 65535,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TCOMP_FLAG`"]

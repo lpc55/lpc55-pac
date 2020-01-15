@@ -10,21 +10,18 @@ impl crate::ResetValue for super::COMP_INT_STATUS {
         0
     }
 }
-#[doc = "Possible values of the field `STATUS`"]
+#[doc = "Interrupt status BEFORE Interrupt Enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STATUS_A {
-    #[doc = "no interrupt pending."]
-    NO_INT,
-    #[doc = "interrupt pending."]
-    PENDING,
+    #[doc = "0: no interrupt pending."]
+    NO_INT = 0,
+    #[doc = "1: interrupt pending."]
+    PENDING = 1,
 }
 impl From<STATUS_A> for bool {
     #[inline(always)]
     fn from(variant: STATUS_A) -> Self {
-        match variant {
-            STATUS_A::NO_INT => false,
-            STATUS_A::PENDING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STATUS`"]
@@ -49,21 +46,18 @@ impl STATUS_R {
         *self == STATUS_A::PENDING
     }
 }
-#[doc = "Possible values of the field `INT_STATUS`"]
+#[doc = "Interrupt status AFTER Interrupt Enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT_STATUS_A {
-    #[doc = "no interrupt pending."]
-    NO_INT,
-    #[doc = "interrupt pending."]
-    PENDING,
+    #[doc = "0: no interrupt pending."]
+    NO_INT = 0,
+    #[doc = "1: interrupt pending."]
+    PENDING = 1,
 }
 impl From<INT_STATUS_A> for bool {
     #[inline(always)]
     fn from(variant: INT_STATUS_A) -> Self {
-        match variant {
-            INT_STATUS_A::NO_INT => false,
-            INT_STATUS_A::PENDING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INT_STATUS`"]
@@ -88,21 +82,18 @@ impl INT_STATUS_R {
         *self == INT_STATUS_A::PENDING
     }
 }
-#[doc = "Possible values of the field `VAL`"]
+#[doc = "comparator analog output.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VAL_A {
-    #[doc = "P+ is smaller than P-."]
-    SMALLER,
-    #[doc = "P+ is greater than P-."]
-    GREATER,
+    #[doc = "0: P+ is smaller than P-."]
+    SMALLER = 0,
+    #[doc = "1: P+ is greater than P-."]
+    GREATER = 1,
 }
 impl From<VAL_A> for bool {
     #[inline(always)]
     fn from(variant: VAL_A) -> Self {
-        match variant {
-            VAL_A::SMALLER => false,
-            VAL_A::GREATER => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VAL`"]

@@ -1,20 +1,17 @@
 #[doc = "Reader of register XO32M_STATUS"]
 pub type R = crate::R<u32, super::XO32M_STATUS>;
-#[doc = "Possible values of the field `XO_READY`"]
+#[doc = "Indicates XO out frequency statibilty.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum XO_READY_A {
-    #[doc = "XO output frequency is not yet stable."]
-    NOT_STABLE,
-    #[doc = "XO output frequency is stable."]
-    STABLE,
+    #[doc = "0: XO output frequency is not yet stable."]
+    NOT_STABLE = 0,
+    #[doc = "1: XO output frequency is stable."]
+    STABLE = 1,
 }
 impl From<XO_READY_A> for bool {
     #[inline(always)]
     fn from(variant: XO_READY_A) -> Self {
-        match variant {
-            XO_READY_A::NOT_STABLE => false,
-            XO_READY_A::STABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `XO_READY`"]

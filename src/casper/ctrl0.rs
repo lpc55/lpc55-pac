@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CTRL0 {
         0
     }
 }
-#[doc = "Possible values of the field `ABBPAIR`"]
+#[doc = "Which bank-pair the offset ABOFF is within. This must be 0 if only 2-up\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ABBPAIR_A {
-    #[doc = "Bank-pair 0 (1st)"]
-    PAIR0,
-    #[doc = "Bank-pair 1 (2nd)"]
-    PAIR1,
+    #[doc = "0: Bank-pair 0 (1st)"]
+    PAIR0 = 0,
+    #[doc = "1: Bank-pair 1 (2nd)"]
+    PAIR1 = 1,
 }
 impl From<ABBPAIR_A> for bool {
     #[inline(always)]
     fn from(variant: ABBPAIR_A) -> Self {
-        match variant {
-            ABBPAIR_A::PAIR0 => false,
-            ABBPAIR_A::PAIR1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ABBPAIR`"]
@@ -112,21 +109,18 @@ impl<'a> ABOFF_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CDBPAIR`"]
+#[doc = "Which bank-pair the offset CDOFF is within. This must be 0 if only 2-up\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CDBPAIR_A {
-    #[doc = "Bank-pair 0 (1st)"]
-    PAIR0,
-    #[doc = "Bank-pair 1 (2nd)"]
-    PAIR1,
+    #[doc = "0: Bank-pair 0 (1st)"]
+    PAIR0 = 0,
+    #[doc = "1: Bank-pair 1 (2nd)"]
+    PAIR1 = 1,
 }
 impl From<CDBPAIR_A> for bool {
     #[inline(always)]
     fn from(variant: CDBPAIR_A) -> Self {
-        match variant {
-            CDBPAIR_A::PAIR0 => false,
-            CDBPAIR_A::PAIR1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CDBPAIR`"]

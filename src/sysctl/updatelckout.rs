@@ -10,21 +10,18 @@ impl crate::ResetValue for super::UPDATELCKOUT {
         0
     }
 }
-#[doc = "Possible values of the field `UPDATELCKOUT`"]
+#[doc = "All Registers\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UPDATELCKOUT_A {
-    #[doc = "Normal Mode. Can be written to."]
-    NORMAL_MODE,
-    #[doc = "Protected Mode. Cannot be written to."]
-    PROTECTED_MODE,
+    #[doc = "0: Normal Mode. Can be written to."]
+    NORMAL_MODE = 0,
+    #[doc = "1: Protected Mode. Cannot be written to."]
+    PROTECTED_MODE = 1,
 }
 impl From<UPDATELCKOUT_A> for bool {
     #[inline(always)]
     fn from(variant: UPDATELCKOUT_A) -> Self {
-        match variant {
-            UPDATELCKOUT_A::NORMAL_MODE => false,
-            UPDATELCKOUT_A::PROTECTED_MODE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UPDATELCKOUT`"]

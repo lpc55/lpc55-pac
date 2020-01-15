@@ -10,21 +10,19 @@ impl crate::ResetValue for super::MISC_CTRL_REG {
         0xaaaa
     }
 }
-#[doc = "Possible values of the field `WRITE_LOCK`"]
+#[doc = "Write lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WRITE_LOCK_A {
-    #[doc = "Restricted mode."]
-    RESTRICTED,
-    #[doc = "Secure control registers can be written."]
-    ACCESSIBLE,
+    #[doc = "1: Restricted mode."]
+    RESTRICTED = 1,
+    #[doc = "2: Secure control registers can be written."]
+    ACCESSIBLE = 2,
 }
 impl From<WRITE_LOCK_A> for u8 {
     #[inline(always)]
     fn from(variant: WRITE_LOCK_A) -> Self {
-        match variant {
-            WRITE_LOCK_A::RESTRICTED => 1,
-            WRITE_LOCK_A::ACCESSIBLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WRITE_LOCK`"]
@@ -78,21 +76,19 @@ impl<'a> WRITE_LOCK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ENABLE_SECURE_CHECKING`"]
+#[doc = "Enable secure check for AHB matrix.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ENABLE_SECURE_CHECKING_A {
-    #[doc = "Restricted mode."]
-    ENABLE,
-    #[doc = "Disable check."]
-    DISABLE,
+    #[doc = "1: Restricted mode."]
+    ENABLE = 1,
+    #[doc = "2: Disable check."]
+    DISABLE = 2,
 }
 impl From<ENABLE_SECURE_CHECKING_A> for u8 {
     #[inline(always)]
     fn from(variant: ENABLE_SECURE_CHECKING_A) -> Self {
-        match variant {
-            ENABLE_SECURE_CHECKING_A::ENABLE => 1,
-            ENABLE_SECURE_CHECKING_A::DISABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ENABLE_SECURE_CHECKING`"]
@@ -146,21 +142,19 @@ impl<'a> ENABLE_SECURE_CHECKING_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ENABLE_S_PRIV_CHECK`"]
+#[doc = "Enable secure privilege check for AHB matrix.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ENABLE_S_PRIV_CHECK_A {
-    #[doc = "Restricted mode."]
-    ENABLE,
-    #[doc = "Disable check."]
-    DISABLE,
+    #[doc = "1: Restricted mode."]
+    ENABLE = 1,
+    #[doc = "2: Disable check."]
+    DISABLE = 2,
 }
 impl From<ENABLE_S_PRIV_CHECK_A> for u8 {
     #[inline(always)]
     fn from(variant: ENABLE_S_PRIV_CHECK_A) -> Self {
-        match variant {
-            ENABLE_S_PRIV_CHECK_A::ENABLE => 1,
-            ENABLE_S_PRIV_CHECK_A::DISABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ENABLE_S_PRIV_CHECK`"]
@@ -214,21 +208,19 @@ impl<'a> ENABLE_S_PRIV_CHECK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ENABLE_NS_PRIV_CHECK`"]
+#[doc = "Enable non-secure privilege check for AHB matrix.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ENABLE_NS_PRIV_CHECK_A {
-    #[doc = "Restricted mode."]
-    ENABLE,
-    #[doc = "Disable check."]
-    DISABLE,
+    #[doc = "1: Restricted mode."]
+    ENABLE = 1,
+    #[doc = "2: Disable check."]
+    DISABLE = 2,
 }
 impl From<ENABLE_NS_PRIV_CHECK_A> for u8 {
     #[inline(always)]
     fn from(variant: ENABLE_NS_PRIV_CHECK_A) -> Self {
-        match variant {
-            ENABLE_NS_PRIV_CHECK_A::ENABLE => 1,
-            ENABLE_NS_PRIV_CHECK_A::DISABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ENABLE_NS_PRIV_CHECK`"]
@@ -282,21 +274,19 @@ impl<'a> ENABLE_NS_PRIV_CHECK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DISABLE_VIOLATION_ABORT`"]
+#[doc = "Disable secure violation abort.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DISABLE_VIOLATION_ABORT_A {
-    #[doc = "Disable abort fort secure checker."]
-    DISABLE,
-    #[doc = "Enable abort fort secure checker."]
-    ENABLE,
+    #[doc = "1: Disable abort fort secure checker."]
+    DISABLE = 1,
+    #[doc = "2: Enable abort fort secure checker."]
+    ENABLE = 2,
 }
 impl From<DISABLE_VIOLATION_ABORT_A> for u8 {
     #[inline(always)]
     fn from(variant: DISABLE_VIOLATION_ABORT_A) -> Self {
-        match variant {
-            DISABLE_VIOLATION_ABORT_A::DISABLE => 1,
-            DISABLE_VIOLATION_ABORT_A::ENABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DISABLE_VIOLATION_ABORT`"]
@@ -350,21 +340,19 @@ impl<'a> DISABLE_VIOLATION_ABORT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DISABLE_SIMPLE_MASTER_STRICT_MODE`"]
+#[doc = "Disable simple master strict mode.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DISABLE_SIMPLE_MASTER_STRICT_MODE_A {
-    #[doc = "Simple master in tier mode."]
-    TIER_MODE,
-    #[doc = "Simple master in strict mode."]
-    STRICT_MODE,
+    #[doc = "1: Simple master in tier mode."]
+    TIER_MODE = 1,
+    #[doc = "2: Simple master in strict mode."]
+    STRICT_MODE = 2,
 }
 impl From<DISABLE_SIMPLE_MASTER_STRICT_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: DISABLE_SIMPLE_MASTER_STRICT_MODE_A) -> Self {
-        match variant {
-            DISABLE_SIMPLE_MASTER_STRICT_MODE_A::TIER_MODE => 1,
-            DISABLE_SIMPLE_MASTER_STRICT_MODE_A::STRICT_MODE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DISABLE_SIMPLE_MASTER_STRICT_MODE`"]
@@ -418,21 +406,19 @@ impl<'a> DISABLE_SIMPLE_MASTER_STRICT_MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DISABLE_SMART_MASTER_STRICT_MODE`"]
+#[doc = "Disable smart master strict mode.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DISABLE_SMART_MASTER_STRICT_MODE_A {
-    #[doc = "Smart master in tier mode."]
-    TIER_MODE,
-    #[doc = "Smart master in strict mode."]
-    STRICT_MODE,
+    #[doc = "1: Smart master in tier mode."]
+    TIER_MODE = 1,
+    #[doc = "2: Smart master in strict mode."]
+    STRICT_MODE = 2,
 }
 impl From<DISABLE_SMART_MASTER_STRICT_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: DISABLE_SMART_MASTER_STRICT_MODE_A) -> Self {
-        match variant {
-            DISABLE_SMART_MASTER_STRICT_MODE_A::TIER_MODE => 1,
-            DISABLE_SMART_MASTER_STRICT_MODE_A::STRICT_MODE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DISABLE_SMART_MASTER_STRICT_MODE`"]
@@ -486,21 +472,19 @@ impl<'a> DISABLE_SMART_MASTER_STRICT_MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `IDAU_ALL_NS`"]
+#[doc = "Disable IDAU.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum IDAU_ALL_NS_A {
-    #[doc = "IDAU is disable."]
-    DISABLE,
-    #[doc = "IDAU is enabled."]
-    ENABLE,
+    #[doc = "1: IDAU is disable."]
+    DISABLE = 1,
+    #[doc = "2: IDAU is enabled."]
+    ENABLE = 2,
 }
 impl From<IDAU_ALL_NS_A> for u8 {
     #[inline(always)]
     fn from(variant: IDAU_ALL_NS_A) -> Self {
-        match variant {
-            IDAU_ALL_NS_A::DISABLE => 1,
-            IDAU_ALL_NS_A::ENABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `IDAU_ALL_NS`"]

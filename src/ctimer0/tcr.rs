@@ -10,21 +10,18 @@ impl crate::ResetValue for super::TCR {
         0
     }
 }
-#[doc = "Possible values of the field `CEN`"]
+#[doc = "Counter enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEN_A {
-    #[doc = "Disabled.The counters are disabled."]
-    DISABLED,
-    #[doc = "Enabled. The Timer Counter and Prescale Counter are enabled."]
-    ENABLED,
+    #[doc = "0: Disabled.The counters are disabled."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. The Timer Counter and Prescale Counter are enabled."]
+    ENABLED = 1,
 }
 impl From<CEN_A> for bool {
     #[inline(always)]
     fn from(variant: CEN_A) -> Self {
-        match variant {
-            CEN_A::DISABLED => false,
-            CEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CEN`"]
@@ -88,21 +85,19 @@ impl<'a> CEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CRST`"]
+#[doc = "Counter reset.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRST_A {
-    #[doc = "Disabled. Do nothing."]
-    DISABLED,
-    #[doc = "Enabled. The Timer Counter and the Prescale Counter are synchronously reset on the next positive edge of the APB bus clock. The counters remain reset until TCR\\[1\\] is returned to zero."]
-    ENABLED,
+    #[doc = "0: Disabled. Do nothing."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. The Timer Counter and the Prescale Counter are synchronously reset on the next positive edge of the APB bus clock. The counters remain reset until TCR\\[1\\]
+is returned to zero."]
+    ENABLED = 1,
 }
 impl From<CRST_A> for bool {
     #[inline(always)]
     fn from(variant: CRST_A) -> Self {
-        match variant {
-            CRST_A::DISABLED => false,
-            CRST_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CRST`"]
@@ -144,7 +139,8 @@ impl<'a> CRST_W<'a> {
     pub fn disabled(self) -> &'a mut W {
         self.variant(CRST_A::DISABLED)
     }
-    #[doc = "Enabled. The Timer Counter and the Prescale Counter are synchronously reset on the next positive edge of the APB bus clock. The counters remain reset until TCR\\[1\\] is returned to zero."]
+    #[doc = "Enabled. The Timer Counter and the Prescale Counter are synchronously reset on the next positive edge of the APB bus clock. The counters remain reset until TCR\\[1\\]
+is returned to zero."]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(CRST_A::ENABLED)

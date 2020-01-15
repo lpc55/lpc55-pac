@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::CUSTOMER_DEFINED>;
 #[doc = "Writer for register CUSTOMER_DEFINED[%s]"]
 pub type W = crate::W<u32, super::CUSTOMER_DEFINED>;
-#[doc = "Register CUSTOMER_DEFINED[%s] `reset()`'s with value 0"]
+#[doc = "Register CUSTOMER_DEFINED[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::CUSTOMER_DEFINED {
     type Type = u32;
     #[inline(always)]

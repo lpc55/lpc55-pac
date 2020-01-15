@@ -10,21 +10,19 @@ impl crate::ResetValue for super::LOCK {
         0
     }
 }
-#[doc = "Possible values of the field `SECLOCK`"]
+#[doc = "Write 1 to secure-lock this block (if running in a security state). Write 0 to unlock. If locked already, may only write if at same or higher security level as lock. Reads as: 0 if unlocked, else 1, 2, 3 to indicate security level it is locked at. NOTE: this and ID are the only readable registers if locked and current state is lower than lock level.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SECLOCK_A {
-    #[doc = "Unlocks, so block is open to all. But, AHB Master will only issue non-secure requests."]
-    UNLOCK,
-    #[doc = "Locks to the current security level. AHB Master will issue requests at this level."]
-    LOCK,
+    #[doc = "0: Unlocks, so block is open to all. But, AHB Master will only issue non-secure requests."]
+    UNLOCK = 0,
+    #[doc = "1: Locks to the current security level. AHB Master will issue requests at this level."]
+    LOCK = 1,
 }
 impl From<SECLOCK_A> for u8 {
     #[inline(always)]
     fn from(variant: SECLOCK_A) -> Self {
-        match variant {
-            SECLOCK_A::UNLOCK => 0,
-            SECLOCK_A::LOCK => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SECLOCK`"]

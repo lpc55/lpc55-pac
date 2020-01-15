@@ -10,39 +10,31 @@ impl crate::ResetValue for super::FCCLKSEL1 {
         0x07
     }
 }
-#[doc = "Possible values of the field `SEL`"]
+#[doc = "Flexcomm Interface 1 clock source select for Fractional Rate Divider.\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SEL_A {
-    #[doc = "Main clock."]
-    ENUM_0X0,
-    #[doc = "system PLL divided clock."]
-    ENUM_0X1,
-    #[doc = "FRO 12 MHz clock."]
-    ENUM_0X2,
-    #[doc = "FRO 96 MHz clock."]
-    ENUM_0X3,
-    #[doc = "FRO 1MHz clock."]
-    ENUM_0X4,
-    #[doc = "MCLK clock."]
-    ENUM_0X5,
-    #[doc = "Oscillator 32 kHz clock."]
-    ENUM_0X6,
-    #[doc = "No clock."]
-    ENUM_0X7,
+    #[doc = "0: Main clock."]
+    ENUM_0X0 = 0,
+    #[doc = "1: system PLL divided clock."]
+    ENUM_0X1 = 1,
+    #[doc = "2: FRO 12 MHz clock."]
+    ENUM_0X2 = 2,
+    #[doc = "3: FRO 96 MHz clock."]
+    ENUM_0X3 = 3,
+    #[doc = "4: FRO 1MHz clock."]
+    ENUM_0X4 = 4,
+    #[doc = "5: MCLK clock."]
+    ENUM_0X5 = 5,
+    #[doc = "6: Oscillator 32 kHz clock."]
+    ENUM_0X6 = 6,
+    #[doc = "7: No clock."]
+    ENUM_0X7 = 7,
 }
 impl From<SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SEL_A) -> Self {
-        match variant {
-            SEL_A::ENUM_0X0 => 0,
-            SEL_A::ENUM_0X1 => 1,
-            SEL_A::ENUM_0X2 => 2,
-            SEL_A::ENUM_0X3 => 3,
-            SEL_A::ENUM_0X4 => 4,
-            SEL_A::ENUM_0X5 => 5,
-            SEL_A::ENUM_0X6 => 6,
-            SEL_A::ENUM_0X7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SEL`"]

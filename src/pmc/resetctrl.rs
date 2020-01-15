@@ -10,21 +10,18 @@ impl crate::ResetValue for super::RESETCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `DPDWAKEUPRESETENABLE`"]
+#[doc = "Wake-up from DEEP POWER DOWN reset event (either from wake up I/O or RTC or OS Event Timer).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DPDWAKEUPRESETENABLE_A {
-    #[doc = "Reset event from DEEP POWER DOWN mode is disable."]
-    DISABLE,
-    #[doc = "Reset event from DEEP POWER DOWN mode is enable."]
-    ENABLE,
+    #[doc = "0: Reset event from DEEP POWER DOWN mode is disable."]
+    DISABLE = 0,
+    #[doc = "1: Reset event from DEEP POWER DOWN mode is enable."]
+    ENABLE = 1,
 }
 impl From<DPDWAKEUPRESETENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: DPDWAKEUPRESETENABLE_A) -> Self {
-        match variant {
-            DPDWAKEUPRESETENABLE_A::DISABLE => false,
-            DPDWAKEUPRESETENABLE_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DPDWAKEUPRESETENABLE`"]
@@ -88,21 +85,18 @@ impl<'a> DPDWAKEUPRESETENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BODVBATRESETENABLE`"]
+#[doc = "BOD VBAT reset enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BODVBATRESETENABLE_A {
-    #[doc = "BOD VBAT reset is disable."]
-    DISABLE,
-    #[doc = "BOD VBAT reset is enable."]
-    ENABLE,
+    #[doc = "0: BOD VBAT reset is disable."]
+    DISABLE = 0,
+    #[doc = "1: BOD VBAT reset is enable."]
+    ENABLE = 1,
 }
 impl From<BODVBATRESETENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: BODVBATRESETENABLE_A) -> Self {
-        match variant {
-            BODVBATRESETENABLE_A::DISABLE => false,
-            BODVBATRESETENABLE_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BODVBATRESETENABLE`"]
@@ -166,21 +160,18 @@ impl<'a> BODVBATRESETENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWRRESETENABLE`"]
+#[doc = "Software reset enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWRRESETENABLE_A {
-    #[doc = "Software reset is disable."]
-    DISABLE,
-    #[doc = "Software reset is enable."]
-    ENABLE,
+    #[doc = "0: Software reset is disable."]
+    DISABLE = 0,
+    #[doc = "1: Software reset is enable."]
+    ENABLE = 1,
 }
 impl From<SWRRESETENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: SWRRESETENABLE_A) -> Self {
-        match variant {
-            SWRRESETENABLE_A::DISABLE => false,
-            SWRRESETENABLE_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWRRESETENABLE`"]

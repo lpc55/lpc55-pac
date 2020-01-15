@@ -10,39 +10,31 @@ impl crate::ResetValue for super::SHAREDCTRLSET {
         0
     }
 }
-#[doc = "Possible values of the field `SHAREDSCKSEL`"]
+#[doc = "Selects the source for SCK of this shared signal set.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SHAREDSCKSEL_A {
-    #[doc = "SCK for this shared signal set comes from Flexcomm 0."]
-    FLEXCOMM0,
-    #[doc = "SCK for this shared signal set comes from Flexcomm 1."]
-    FLEXCOMM1,
-    #[doc = "SCK for this shared signal set comes from Flexcomm 2."]
-    FLEXCOMM2,
-    #[doc = "SCK for this shared signal set comes from Flexcomm 3."]
-    FLEXCOMM3,
-    #[doc = "SCK for this shared signal set comes from Flexcomm 4."]
-    FLEXCOMM4,
-    #[doc = "SCK for this shared signal set comes from Flexcomm 5."]
-    FLEXCOMM5,
-    #[doc = "SCK for this shared signal set comes from Flexcomm 6."]
-    FLEXCOMM6,
-    #[doc = "SCK for this shared signal set comes from Flexcomm 7."]
-    FLEXCOMM7,
+    #[doc = "0: SCK for this shared signal set comes from Flexcomm 0."]
+    FLEXCOMM0 = 0,
+    #[doc = "1: SCK for this shared signal set comes from Flexcomm 1."]
+    FLEXCOMM1 = 1,
+    #[doc = "2: SCK for this shared signal set comes from Flexcomm 2."]
+    FLEXCOMM2 = 2,
+    #[doc = "3: SCK for this shared signal set comes from Flexcomm 3."]
+    FLEXCOMM3 = 3,
+    #[doc = "4: SCK for this shared signal set comes from Flexcomm 4."]
+    FLEXCOMM4 = 4,
+    #[doc = "5: SCK for this shared signal set comes from Flexcomm 5."]
+    FLEXCOMM5 = 5,
+    #[doc = "6: SCK for this shared signal set comes from Flexcomm 6."]
+    FLEXCOMM6 = 6,
+    #[doc = "7: SCK for this shared signal set comes from Flexcomm 7."]
+    FLEXCOMM7 = 7,
 }
 impl From<SHAREDSCKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SHAREDSCKSEL_A) -> Self {
-        match variant {
-            SHAREDSCKSEL_A::FLEXCOMM0 => 0,
-            SHAREDSCKSEL_A::FLEXCOMM1 => 1,
-            SHAREDSCKSEL_A::FLEXCOMM2 => 2,
-            SHAREDSCKSEL_A::FLEXCOMM3 => 3,
-            SHAREDSCKSEL_A::FLEXCOMM4 => 4,
-            SHAREDSCKSEL_A::FLEXCOMM5 => 5,
-            SHAREDSCKSEL_A::FLEXCOMM6 => 6,
-            SHAREDSCKSEL_A::FLEXCOMM7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SHAREDSCKSEL`"]
@@ -163,39 +155,31 @@ impl<'a> SHAREDSCKSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SHAREDWSSEL`"]
+#[doc = "Selects the source for WS of this shared signal set.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SHAREDWSSEL_A {
-    #[doc = "WS for this shared signal set comes from Flexcomm 0."]
-    FLEXCOMM0,
-    #[doc = "WS for this shared signal set comes from Flexcomm 1."]
-    FLEXCOMM1,
-    #[doc = "WS for this shared signal set comes from Flexcomm 2."]
-    FLEXCOMM2,
-    #[doc = "WS for this shared signal set comes from Flexcomm 3."]
-    FLEXCOMM3,
-    #[doc = "WS for this shared signal set comes from Flexcomm 4."]
-    FLEXCOMM4,
-    #[doc = "WS for this shared signal set comes from Flexcomm 5."]
-    FLEXCOMM5,
-    #[doc = "WS for this shared signal set comes from Flexcomm 6."]
-    FLEXCOMM6,
-    #[doc = "WS for this shared signal set comes from Flexcomm 7."]
-    FLEXCOMM7,
+    #[doc = "0: WS for this shared signal set comes from Flexcomm 0."]
+    FLEXCOMM0 = 0,
+    #[doc = "1: WS for this shared signal set comes from Flexcomm 1."]
+    FLEXCOMM1 = 1,
+    #[doc = "2: WS for this shared signal set comes from Flexcomm 2."]
+    FLEXCOMM2 = 2,
+    #[doc = "3: WS for this shared signal set comes from Flexcomm 3."]
+    FLEXCOMM3 = 3,
+    #[doc = "4: WS for this shared signal set comes from Flexcomm 4."]
+    FLEXCOMM4 = 4,
+    #[doc = "5: WS for this shared signal set comes from Flexcomm 5."]
+    FLEXCOMM5 = 5,
+    #[doc = "6: WS for this shared signal set comes from Flexcomm 6."]
+    FLEXCOMM6 = 6,
+    #[doc = "7: WS for this shared signal set comes from Flexcomm 7."]
+    FLEXCOMM7 = 7,
 }
 impl From<SHAREDWSSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SHAREDWSSEL_A) -> Self {
-        match variant {
-            SHAREDWSSEL_A::FLEXCOMM0 => 0,
-            SHAREDWSSEL_A::FLEXCOMM1 => 1,
-            SHAREDWSSEL_A::FLEXCOMM2 => 2,
-            SHAREDWSSEL_A::FLEXCOMM3 => 3,
-            SHAREDWSSEL_A::FLEXCOMM4 => 4,
-            SHAREDWSSEL_A::FLEXCOMM5 => 5,
-            SHAREDWSSEL_A::FLEXCOMM6 => 6,
-            SHAREDWSSEL_A::FLEXCOMM7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SHAREDWSSEL`"]
@@ -316,39 +300,31 @@ impl<'a> SHAREDWSSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SHAREDDATASEL`"]
+#[doc = "Selects the source for DATA input for this shared signal set.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SHAREDDATASEL_A {
-    #[doc = "DATA input for this shared signal set comes from Flexcomm 0."]
-    FLEXCOMM0,
-    #[doc = "DATA input for this shared signal set comes from Flexcomm 1."]
-    FLEXCOMM1,
-    #[doc = "DATA input for this shared signal set comes from Flexcomm 2."]
-    FLEXCOMM2,
-    #[doc = "DATA input for this shared signal set comes from Flexcomm 3."]
-    FLEXCOMM3,
-    #[doc = "DATA input for this shared signal set comes from Flexcomm 4."]
-    FLEXCOMM4,
-    #[doc = "DATA input for this shared signal set comes from Flexcomm 5."]
-    FLEXCOMM5,
-    #[doc = "DATA input for this shared signal set comes from Flexcomm 6."]
-    FLEXCOMM6,
-    #[doc = "DATA input for this shared signal set comes from Flexcomm 7."]
-    FLEXCOMM7,
+    #[doc = "0: DATA input for this shared signal set comes from Flexcomm 0."]
+    FLEXCOMM0 = 0,
+    #[doc = "1: DATA input for this shared signal set comes from Flexcomm 1."]
+    FLEXCOMM1 = 1,
+    #[doc = "2: DATA input for this shared signal set comes from Flexcomm 2."]
+    FLEXCOMM2 = 2,
+    #[doc = "3: DATA input for this shared signal set comes from Flexcomm 3."]
+    FLEXCOMM3 = 3,
+    #[doc = "4: DATA input for this shared signal set comes from Flexcomm 4."]
+    FLEXCOMM4 = 4,
+    #[doc = "5: DATA input for this shared signal set comes from Flexcomm 5."]
+    FLEXCOMM5 = 5,
+    #[doc = "6: DATA input for this shared signal set comes from Flexcomm 6."]
+    FLEXCOMM6 = 6,
+    #[doc = "7: DATA input for this shared signal set comes from Flexcomm 7."]
+    FLEXCOMM7 = 7,
 }
 impl From<SHAREDDATASEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SHAREDDATASEL_A) -> Self {
-        match variant {
-            SHAREDDATASEL_A::FLEXCOMM0 => 0,
-            SHAREDDATASEL_A::FLEXCOMM1 => 1,
-            SHAREDDATASEL_A::FLEXCOMM2 => 2,
-            SHAREDDATASEL_A::FLEXCOMM3 => 3,
-            SHAREDDATASEL_A::FLEXCOMM4 => 4,
-            SHAREDDATASEL_A::FLEXCOMM5 => 5,
-            SHAREDDATASEL_A::FLEXCOMM6 => 6,
-            SHAREDDATASEL_A::FLEXCOMM7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SHAREDDATASEL`"]
@@ -469,21 +445,18 @@ impl<'a> SHAREDDATASEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FC0DATAOUTEN`"]
+#[doc = "Controls FC0 contribution to SHAREDDATAOUT for this shared set.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FC0DATAOUTEN_A {
-    #[doc = "Data output from FC0 does not contribute to this shared set."]
-    INPUT,
-    #[doc = "Data output from FC0 does contribute to this shared set."]
-    OUTPUT,
+    #[doc = "0: Data output from FC0 does not contribute to this shared set."]
+    INPUT = 0,
+    #[doc = "1: Data output from FC0 does contribute to this shared set."]
+    OUTPUT = 1,
 }
 impl From<FC0DATAOUTEN_A> for bool {
     #[inline(always)]
     fn from(variant: FC0DATAOUTEN_A) -> Self {
-        match variant {
-            FC0DATAOUTEN_A::INPUT => false,
-            FC0DATAOUTEN_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FC0DATAOUTEN`"]
@@ -547,21 +520,18 @@ impl<'a> FC0DATAOUTEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FC1DATAOUTEN`"]
+#[doc = "Controls FC1 contribution to SHAREDDATAOUT for this shared set.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FC1DATAOUTEN_A {
-    #[doc = "Data output from FC1 does not contribute to this shared set."]
-    INPUT,
-    #[doc = "Data output from FC1 does contribute to this shared set."]
-    OUTPUT,
+    #[doc = "0: Data output from FC1 does not contribute to this shared set."]
+    INPUT = 0,
+    #[doc = "1: Data output from FC1 does contribute to this shared set."]
+    OUTPUT = 1,
 }
 impl From<FC1DATAOUTEN_A> for bool {
     #[inline(always)]
     fn from(variant: FC1DATAOUTEN_A) -> Self {
-        match variant {
-            FC1DATAOUTEN_A::INPUT => false,
-            FC1DATAOUTEN_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FC1DATAOUTEN`"]
@@ -625,21 +595,18 @@ impl<'a> FC1DATAOUTEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FC2DATAOUTEN`"]
+#[doc = "Controls FC2 contribution to SHAREDDATAOUT for this shared set.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FC2DATAOUTEN_A {
-    #[doc = "Data output from FC2 does not contribute to this shared set."]
-    INPUT,
-    #[doc = "Data output from FC2 does contribute to this shared set."]
-    OUTPUT,
+    #[doc = "0: Data output from FC2 does not contribute to this shared set."]
+    INPUT = 0,
+    #[doc = "1: Data output from FC2 does contribute to this shared set."]
+    OUTPUT = 1,
 }
 impl From<FC2DATAOUTEN_A> for bool {
     #[inline(always)]
     fn from(variant: FC2DATAOUTEN_A) -> Self {
-        match variant {
-            FC2DATAOUTEN_A::INPUT => false,
-            FC2DATAOUTEN_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FC2DATAOUTEN`"]
@@ -703,21 +670,18 @@ impl<'a> FC2DATAOUTEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FC4DATAOUTEN`"]
+#[doc = "Controls FC4 contribution to SHAREDDATAOUT for this shared set.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FC4DATAOUTEN_A {
-    #[doc = "Data output from FC4 does not contribute to this shared set."]
-    INPUT,
-    #[doc = "Data output from FC4 does contribute to this shared set."]
-    OUTPUT,
+    #[doc = "0: Data output from FC4 does not contribute to this shared set."]
+    INPUT = 0,
+    #[doc = "1: Data output from FC4 does contribute to this shared set."]
+    OUTPUT = 1,
 }
 impl From<FC4DATAOUTEN_A> for bool {
     #[inline(always)]
     fn from(variant: FC4DATAOUTEN_A) -> Self {
-        match variant {
-            FC4DATAOUTEN_A::INPUT => false,
-            FC4DATAOUTEN_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FC4DATAOUTEN`"]
@@ -781,21 +745,18 @@ impl<'a> FC4DATAOUTEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FC5DATAOUTEN`"]
+#[doc = "Controls FC5 contribution to SHAREDDATAOUT for this shared set.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FC5DATAOUTEN_A {
-    #[doc = "Data output from FC5 does not contribute to this shared set."]
-    INPUT,
-    #[doc = "Data output from FC5 does contribute to this shared set."]
-    OUTPUT,
+    #[doc = "0: Data output from FC5 does not contribute to this shared set."]
+    INPUT = 0,
+    #[doc = "1: Data output from FC5 does contribute to this shared set."]
+    OUTPUT = 1,
 }
 impl From<FC5DATAOUTEN_A> for bool {
     #[inline(always)]
     fn from(variant: FC5DATAOUTEN_A) -> Self {
-        match variant {
-            FC5DATAOUTEN_A::INPUT => false,
-            FC5DATAOUTEN_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FC5DATAOUTEN`"]
@@ -859,21 +820,18 @@ impl<'a> FC5DATAOUTEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FC6DATAOUTEN`"]
+#[doc = "Controls FC6 contribution to SHAREDDATAOUT for this shared set.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FC6DATAOUTEN_A {
-    #[doc = "Data output from FC6 does not contribute to this shared set."]
-    INPUT,
-    #[doc = "Data output from FC6 does contribute to this shared set."]
-    OUTPUT,
+    #[doc = "0: Data output from FC6 does not contribute to this shared set."]
+    INPUT = 0,
+    #[doc = "1: Data output from FC6 does contribute to this shared set."]
+    OUTPUT = 1,
 }
 impl From<FC6DATAOUTEN_A> for bool {
     #[inline(always)]
     fn from(variant: FC6DATAOUTEN_A) -> Self {
-        match variant {
-            FC6DATAOUTEN_A::INPUT => false,
-            FC6DATAOUTEN_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FC6DATAOUTEN`"]
@@ -937,21 +895,18 @@ impl<'a> FC6DATAOUTEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FC7DATAOUTEN`"]
+#[doc = "Controls FC7 contribution to SHAREDDATAOUT for this shared set.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FC7DATAOUTEN_A {
-    #[doc = "Data output from FC7 does not contribute to this shared set."]
-    INPUT,
-    #[doc = "Data output from FC7 does contribute to this shared set."]
-    OUTPUT,
+    #[doc = "0: Data output from FC7 does not contribute to this shared set."]
+    INPUT = 0,
+    #[doc = "1: Data output from FC7 does contribute to this shared set."]
+    OUTPUT = 1,
 }
 impl From<FC7DATAOUTEN_A> for bool {
     #[inline(always)]
     fn from(variant: FC7DATAOUTEN_A) -> Self {
-        match variant {
-            FC7DATAOUTEN_A::INPUT => false,
-            FC7DATAOUTEN_A::OUTPUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FC7DATAOUTEN`"]

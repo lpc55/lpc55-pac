@@ -10,21 +10,18 @@ impl crate::ResetValue for super::XFERCFG {
         0
     }
 }
-#[doc = "Possible values of the field `CFGVALID`"]
+#[doc = "Configuration Valid flag. This bit indicates whether the current channel descriptor is valid and can potentially be acted upon, if all other activation criteria are fulfilled.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CFGVALID_A {
-    #[doc = "Not valid. The channel descriptor is not considered valid until validated by an associated SETVALID0 setting."]
-    NOT_VALID,
-    #[doc = "Valid. The current channel descriptor is considered valid."]
-    VALID,
+    #[doc = "0: Not valid. The channel descriptor is not considered valid until validated by an associated SETVALID0 setting."]
+    NOT_VALID = 0,
+    #[doc = "1: Valid. The current channel descriptor is considered valid."]
+    VALID = 1,
 }
 impl From<CFGVALID_A> for bool {
     #[inline(always)]
     fn from(variant: CFGVALID_A) -> Self {
-        match variant {
-            CFGVALID_A::NOT_VALID => false,
-            CFGVALID_A::VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CFGVALID`"]
@@ -88,21 +85,18 @@ impl<'a> CFGVALID_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RELOAD`"]
+#[doc = "Indicates whether the channel's control structure will be reloaded when the current descriptor is exhausted. Reloading allows ping-pong and linked transfers.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RELOAD_A {
-    #[doc = "Disabled. Do not reload the channels' control structure when the current descriptor is exhausted."]
-    DISABLED,
-    #[doc = "Enabled. Reload the channels' control structure when the current descriptor is exhausted."]
-    ENABLED,
+    #[doc = "0: Disabled. Do not reload the channels' control structure when the current descriptor is exhausted."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. Reload the channels' control structure when the current descriptor is exhausted."]
+    ENABLED = 1,
 }
 impl From<RELOAD_A> for bool {
     #[inline(always)]
     fn from(variant: RELOAD_A) -> Self {
-        match variant {
-            RELOAD_A::DISABLED => false,
-            RELOAD_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RELOAD`"]
@@ -166,21 +160,18 @@ impl<'a> RELOAD_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWTRIG`"]
+#[doc = "Software Trigger.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWTRIG_A {
-    #[doc = "Not set. When written by software, the trigger for this channel is not set. A new trigger, as defined by the HWTRIGEN, TRIGPOL, and TRIGTYPE will be needed to start the channel."]
-    NOT_SET,
-    #[doc = "Set. When written by software, the trigger for this channel is set immediately. This feature should not be used with level triggering when TRIGBURST = 0."]
-    SET,
+    #[doc = "0: Not set. When written by software, the trigger for this channel is not set. A new trigger, as defined by the HWTRIGEN, TRIGPOL, and TRIGTYPE will be needed to start the channel."]
+    NOT_SET = 0,
+    #[doc = "1: Set. When written by software, the trigger for this channel is set immediately. This feature should not be used with level triggering when TRIGBURST = 0."]
+    SET = 1,
 }
 impl From<SWTRIG_A> for bool {
     #[inline(always)]
     fn from(variant: SWTRIG_A) -> Self {
-        match variant {
-            SWTRIG_A::NOT_SET => false,
-            SWTRIG_A::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWTRIG`"]
@@ -244,21 +235,18 @@ impl<'a> SWTRIG_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CLRTRIG`"]
+#[doc = "Clear Trigger.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLRTRIG_A {
-    #[doc = "Not cleared. The trigger is not cleared when this descriptor is exhausted. If there is a reload, the next descriptor will be started."]
-    NOT_CLEARED,
-    #[doc = "Cleared. The trigger is cleared when this descriptor is exhausted"]
-    CLEARED,
+    #[doc = "0: Not cleared. The trigger is not cleared when this descriptor is exhausted. If there is a reload, the next descriptor will be started."]
+    NOT_CLEARED = 0,
+    #[doc = "1: Cleared. The trigger is cleared when this descriptor is exhausted"]
+    CLEARED = 1,
 }
 impl From<CLRTRIG_A> for bool {
     #[inline(always)]
     fn from(variant: CLRTRIG_A) -> Self {
-        match variant {
-            CLRTRIG_A::NOT_CLEARED => false,
-            CLRTRIG_A::CLEARED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CLRTRIG`"]
@@ -322,21 +310,18 @@ impl<'a> CLRTRIG_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETINTA`"]
+#[doc = "Set Interrupt flag A for this channel. There is no hardware distinction between interrupt A and B. They can be used by software to assist with more complex descriptor usage. By convention, interrupt A may be used when only one interrupt flag is needed.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SETINTA_A {
-    #[doc = "No effect."]
-    NO_EFFECT,
-    #[doc = "Set. The INTA flag for this channel will be set when the current descriptor is exhausted."]
-    SET,
+    #[doc = "0: No effect."]
+    NO_EFFECT = 0,
+    #[doc = "1: Set. The INTA flag for this channel will be set when the current descriptor is exhausted."]
+    SET = 1,
 }
 impl From<SETINTA_A> for bool {
     #[inline(always)]
     fn from(variant: SETINTA_A) -> Self {
-        match variant {
-            SETINTA_A::NO_EFFECT => false,
-            SETINTA_A::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SETINTA`"]
@@ -400,21 +385,18 @@ impl<'a> SETINTA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SETINTB`"]
+#[doc = "Set Interrupt flag B for this channel. There is no hardware distinction between interrupt A and B. They can be used by software to assist with more complex descriptor usage. By convention, interrupt A may be used when only one interrupt flag is needed.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SETINTB_A {
-    #[doc = "No effect."]
-    NO_EFFECT,
-    #[doc = "Set. The INTB flag for this channel will be set when the current descriptor is exhausted."]
-    SET,
+    #[doc = "0: No effect."]
+    NO_EFFECT = 0,
+    #[doc = "1: Set. The INTB flag for this channel will be set when the current descriptor is exhausted."]
+    SET = 1,
 }
 impl From<SETINTB_A> for bool {
     #[inline(always)]
     fn from(variant: SETINTB_A) -> Self {
-        match variant {
-            SETINTB_A::NO_EFFECT => false,
-            SETINTB_A::SET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SETINTB`"]
@@ -478,24 +460,21 @@ impl<'a> SETINTB_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WIDTH`"]
+#[doc = "Transfer width used for this DMA channel.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WIDTH_A {
-    #[doc = "8-bit. 8-bit transfers are performed (8-bit source reads and destination writes)."]
-    BIT_8,
-    #[doc = "16-bit. 6-bit transfers are performed (16-bit source reads and destination writes)."]
-    BIT_16,
-    #[doc = "32-bit. 32-bit transfers are performed (32-bit source reads and destination writes)."]
-    BIT_32,
+    #[doc = "0: 8-bit. 8-bit transfers are performed (8-bit source reads and destination writes)."]
+    BIT_8 = 0,
+    #[doc = "1: 16-bit. 6-bit transfers are performed (16-bit source reads and destination writes)."]
+    BIT_16 = 1,
+    #[doc = "2: 32-bit. 32-bit transfers are performed (32-bit source reads and destination writes)."]
+    BIT_32 = 2,
 }
 impl From<WIDTH_A> for u8 {
     #[inline(always)]
     fn from(variant: WIDTH_A) -> Self {
-        match variant {
-            WIDTH_A::BIT_8 => 0,
-            WIDTH_A::BIT_16 => 1,
-            WIDTH_A::BIT_32 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WIDTH`"]
@@ -560,27 +539,23 @@ impl<'a> WIDTH_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRCINC`"]
+#[doc = "Determines whether the source address is incremented for each DMA transfer.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRCINC_A {
-    #[doc = "No increment. The source address is not incremented for each transfer. This is the usual case when the source is a peripheral device."]
-    NO_INCREMENT,
-    #[doc = "1 x width. The source address is incremented by the amount specified by Width for each transfer. This is the usual case when the source is memory."]
-    WIDTH_X_1,
-    #[doc = "2 x width. The source address is incremented by 2 times the amount specified by Width for each transfer."]
-    WIDTH_X_2,
-    #[doc = "4 x width. The source address is incremented by 4 times the amount specified by Width for each transfer."]
-    WIDTH_X_4,
+    #[doc = "0: No increment. The source address is not incremented for each transfer. This is the usual case when the source is a peripheral device."]
+    NO_INCREMENT = 0,
+    #[doc = "1: 1 x width. The source address is incremented by the amount specified by Width for each transfer. This is the usual case when the source is memory."]
+    WIDTH_X_1 = 1,
+    #[doc = "2: 2 x width. The source address is incremented by 2 times the amount specified by Width for each transfer."]
+    WIDTH_X_2 = 2,
+    #[doc = "3: 4 x width. The source address is incremented by 4 times the amount specified by Width for each transfer."]
+    WIDTH_X_4 = 3,
 }
 impl From<SRCINC_A> for u8 {
     #[inline(always)]
     fn from(variant: SRCINC_A) -> Self {
-        match variant {
-            SRCINC_A::NO_INCREMENT => 0,
-            SRCINC_A::WIDTH_X_1 => 1,
-            SRCINC_A::WIDTH_X_2 => 2,
-            SRCINC_A::WIDTH_X_4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRCINC`"]
@@ -657,27 +632,23 @@ impl<'a> SRCINC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DSTINC`"]
+#[doc = "Determines whether the destination address is incremented for each DMA transfer.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DSTINC_A {
-    #[doc = "No increment. The destination address is not incremented for each transfer. This is the usual case when the destination is a peripheral device."]
-    NO_INCREMENT,
-    #[doc = "1 x width. The destination address is incremented by the amount specified by Width for each transfer. This is the usual case when the destination is memory."]
-    WIDTH_X_1,
-    #[doc = "2 x width. The destination address is incremented by 2 times the amount specified by Width for each transfer."]
-    WIDTH_X_2,
-    #[doc = "4 x width. The destination address is incremented by 4 times the amount specified by Width for each transfer."]
-    WIDTH_X_4,
+    #[doc = "0: No increment. The destination address is not incremented for each transfer. This is the usual case when the destination is a peripheral device."]
+    NO_INCREMENT = 0,
+    #[doc = "1: 1 x width. The destination address is incremented by the amount specified by Width for each transfer. This is the usual case when the destination is memory."]
+    WIDTH_X_1 = 1,
+    #[doc = "2: 2 x width. The destination address is incremented by 2 times the amount specified by Width for each transfer."]
+    WIDTH_X_2 = 2,
+    #[doc = "3: 4 x width. The destination address is incremented by 4 times the amount specified by Width for each transfer."]
+    WIDTH_X_4 = 3,
 }
 impl From<DSTINC_A> for u8 {
     #[inline(always)]
     fn from(variant: DSTINC_A) -> Self {
-        match variant {
-            DSTINC_A::NO_INCREMENT => 0,
-            DSTINC_A::WIDTH_X_1 => 1,
-            DSTINC_A::WIDTH_X_2 => 2,
-            DSTINC_A::WIDTH_X_4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DSTINC`"]

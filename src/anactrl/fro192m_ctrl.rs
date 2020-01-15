@@ -10,21 +10,18 @@ impl crate::ResetValue for super::FRO192M_CTRL {
         0x0080_d01a
     }
 }
-#[doc = "Possible values of the field `ENA_12MHZCLK`"]
+#[doc = "12 MHz clock control.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENA_12MHZCLK_A {
-    #[doc = "12 MHz clock is disabled."]
-    DISABLE,
-    #[doc = "12 MHz clock is enabled."]
-    ENABLE,
+    #[doc = "0: 12 MHz clock is disabled."]
+    DISABLE = 0,
+    #[doc = "1: 12 MHz clock is enabled."]
+    ENABLE = 1,
 }
 impl From<ENA_12MHZCLK_A> for bool {
     #[inline(always)]
     fn from(variant: ENA_12MHZCLK_A) -> Self {
-        match variant {
-            ENA_12MHZCLK_A::DISABLE => false,
-            ENA_12MHZCLK_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENA_12MHZCLK`"]
@@ -88,18 +85,16 @@ impl<'a> ENA_12MHZCLK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ENA_48MHZCLK`"]
+#[doc = "48 MHz clock control.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENA_48MHZCLK_A {
-    #[doc = "48 MHz clock is enabled."]
-    ENABLE,
+    #[doc = "1: 48 MHz clock is enabled."]
+    ENABLE = 1,
 }
 impl From<ENA_48MHZCLK_A> for bool {
     #[inline(always)]
     fn from(variant: ENA_48MHZCLK_A) -> Self {
-        match variant {
-            ENA_48MHZCLK_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENA_48MHZCLK`"]
@@ -194,21 +189,18 @@ impl<'a> USBCLKADJ_W<'a> {
 }
 #[doc = "Reader of field `USBMODCHG`"]
 pub type USBMODCHG_R = crate::R<bool, bool>;
-#[doc = "Possible values of the field `ENA_96MHZCLK`"]
+#[doc = "96 MHz clock control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENA_96MHZCLK_A {
-    #[doc = "96 MHz clock is disabled."]
-    DISABLE,
-    #[doc = "96 MHz clock is enabled."]
-    ENABLE,
+    #[doc = "0: 96 MHz clock is disabled."]
+    DISABLE = 0,
+    #[doc = "1: 96 MHz clock is enabled."]
+    ENABLE = 1,
 }
 impl From<ENA_96MHZCLK_A> for bool {
     #[inline(always)]
     fn from(variant: ENA_96MHZCLK_A) -> Self {
-        match variant {
-            ENA_96MHZCLK_A::DISABLE => false,
-            ENA_96MHZCLK_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENA_96MHZCLK`"]

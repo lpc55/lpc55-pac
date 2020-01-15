@@ -12,63 +12,47 @@ impl crate::ResetValue for super::INFO {
 }
 #[doc = "Reader of field `FRAME_NR`"]
 pub type FRAME_NR_R = crate::R<u16, u16>;
-#[doc = "Possible values of the field `ERR_CODE`"]
+#[doc = "The error code which last occurred:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ERR_CODE_A {
-    #[doc = "No error"]
-    NO_ERROR,
-    #[doc = "PID encoding error"]
-    PID_ENCODING_ERROR,
-    #[doc = "PID unknown"]
-    PID_UNKNOWN,
-    #[doc = "Packet unexpected"]
-    PACKET_UNEXPECTED,
-    #[doc = "Token CRC error"]
-    TOKEN_CRC_ERROR,
-    #[doc = "Data CRC error"]
-    DATA_CRC_ERROR,
-    #[doc = "Time out"]
-    TIMEOUT,
-    #[doc = "Babble"]
-    BABBLE,
-    #[doc = "Truncated EOP"]
-    TRUNCATED_EOP,
-    #[doc = "Sent/Received NAK"]
-    SENT_RECEIVED_NAK,
-    #[doc = "Sent Stall"]
-    SENT_STALL,
-    #[doc = "Overrun"]
-    OVERRUN,
-    #[doc = "Sent empty packet"]
-    SENT_EMPTY_PACKET,
-    #[doc = "Bitstuff error"]
-    BITSTUFF_ERROR,
-    #[doc = "Sync error"]
-    SYNC_ERROR,
-    #[doc = "Wrong data toggle"]
-    WRONG_DATA_TOGGLE,
+    #[doc = "0: No error"]
+    NO_ERROR = 0,
+    #[doc = "1: PID encoding error"]
+    PID_ENCODING_ERROR = 1,
+    #[doc = "2: PID unknown"]
+    PID_UNKNOWN = 2,
+    #[doc = "3: Packet unexpected"]
+    PACKET_UNEXPECTED = 3,
+    #[doc = "4: Token CRC error"]
+    TOKEN_CRC_ERROR = 4,
+    #[doc = "5: Data CRC error"]
+    DATA_CRC_ERROR = 5,
+    #[doc = "6: Time out"]
+    TIMEOUT = 6,
+    #[doc = "7: Babble"]
+    BABBLE = 7,
+    #[doc = "8: Truncated EOP"]
+    TRUNCATED_EOP = 8,
+    #[doc = "9: Sent/Received NAK"]
+    SENT_RECEIVED_NAK = 9,
+    #[doc = "10: Sent Stall"]
+    SENT_STALL = 10,
+    #[doc = "11: Overrun"]
+    OVERRUN = 11,
+    #[doc = "12: Sent empty packet"]
+    SENT_EMPTY_PACKET = 12,
+    #[doc = "13: Bitstuff error"]
+    BITSTUFF_ERROR = 13,
+    #[doc = "14: Sync error"]
+    SYNC_ERROR = 14,
+    #[doc = "15: Wrong data toggle"]
+    WRONG_DATA_TOGGLE = 15,
 }
 impl From<ERR_CODE_A> for u8 {
     #[inline(always)]
     fn from(variant: ERR_CODE_A) -> Self {
-        match variant {
-            ERR_CODE_A::NO_ERROR => 0,
-            ERR_CODE_A::PID_ENCODING_ERROR => 1,
-            ERR_CODE_A::PID_UNKNOWN => 2,
-            ERR_CODE_A::PACKET_UNEXPECTED => 3,
-            ERR_CODE_A::TOKEN_CRC_ERROR => 4,
-            ERR_CODE_A::DATA_CRC_ERROR => 5,
-            ERR_CODE_A::TIMEOUT => 6,
-            ERR_CODE_A::BABBLE => 7,
-            ERR_CODE_A::TRUNCATED_EOP => 8,
-            ERR_CODE_A::SENT_RECEIVED_NAK => 9,
-            ERR_CODE_A::SENT_STALL => 10,
-            ERR_CODE_A::OVERRUN => 11,
-            ERR_CODE_A::SENT_EMPTY_PACKET => 12,
-            ERR_CODE_A::BITSTUFF_ERROR => 13,
-            ERR_CODE_A::SYNC_ERROR => 14,
-            ERR_CODE_A::WRONG_DATA_TOGGLE => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ERR_CODE`"]
