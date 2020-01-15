@@ -10,21 +10,18 @@ impl crate::ResetValue for super::DCFG_CC_SOCU_DFLT {
         0
     }
 }
-#[doc = "Possible values of the field `NIDEN`"]
+#[doc = "Non Secure non-invasive debug fixed state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NIDEN_A {
-    #[doc = "Disable"]
-    DISABLE,
-    #[doc = "Enable"]
-    ENABLE,
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
 }
 impl From<NIDEN_A> for bool {
     #[inline(always)]
     fn from(variant: NIDEN_A) -> Self {
-        match variant {
-            NIDEN_A::DISABLE => false,
-            NIDEN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NIDEN`"]
@@ -88,21 +85,18 @@ impl<'a> NIDEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DBGEN`"]
+#[doc = "Non Secure debug fixed state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBGEN_A {
-    #[doc = "Disable"]
-    DISABLE,
-    #[doc = "Enable"]
-    ENABLE,
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
 }
 impl From<DBGEN_A> for bool {
     #[inline(always)]
     fn from(variant: DBGEN_A) -> Self {
-        match variant {
-            DBGEN_A::DISABLE => false,
-            DBGEN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DBGEN`"]
@@ -166,21 +160,18 @@ impl<'a> DBGEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SPNIDEN`"]
+#[doc = "Secure non-invasive debug fixed state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPNIDEN_A {
-    #[doc = "Disable"]
-    DISABLE,
-    #[doc = "Enable"]
-    ENABLE,
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
 }
 impl From<SPNIDEN_A> for bool {
     #[inline(always)]
     fn from(variant: SPNIDEN_A) -> Self {
-        match variant {
-            SPNIDEN_A::DISABLE => false,
-            SPNIDEN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SPNIDEN`"]
@@ -244,21 +235,18 @@ impl<'a> SPNIDEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SPIDEN`"]
+#[doc = "Secure invasive debug fixed state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPIDEN_A {
-    #[doc = "Disable"]
-    DISABLE,
-    #[doc = "Enable"]
-    ENABLE,
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
 }
 impl From<SPIDEN_A> for bool {
     #[inline(always)]
     fn from(variant: SPIDEN_A) -> Self {
-        match variant {
-            SPIDEN_A::DISABLE => false,
-            SPIDEN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SPIDEN`"]
@@ -322,21 +310,18 @@ impl<'a> SPIDEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TAPEN`"]
+#[doc = "JTAG TAP fixed state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAPEN_A {
-    #[doc = "Disable"]
-    DISABLE,
-    #[doc = "Enable"]
-    ENABLE,
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
 }
 impl From<TAPEN_A> for bool {
     #[inline(always)]
     fn from(variant: TAPEN_A) -> Self {
-        match variant {
-            TAPEN_A::DISABLE => false,
-            TAPEN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TAPEN`"]
@@ -400,21 +385,18 @@ impl<'a> TAPEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CPU1_DBGEN`"]
+#[doc = "CPU1 (Micro cortex M33) invasive debug fixed state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPU1_DBGEN_A {
-    #[doc = "Disable"]
-    DISABLE,
-    #[doc = "Enable"]
-    ENABLE,
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
 }
 impl From<CPU1_DBGEN_A> for bool {
     #[inline(always)]
     fn from(variant: CPU1_DBGEN_A) -> Self {
-        match variant {
-            CPU1_DBGEN_A::DISABLE => false,
-            CPU1_DBGEN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPU1_DBGEN`"]
@@ -478,21 +460,18 @@ impl<'a> CPU1_DBGEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ISP_CMD_EN`"]
+#[doc = "ISP Boot Command fixed state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ISP_CMD_EN_A {
-    #[doc = "Disable"]
-    DISABLE,
-    #[doc = "Enable"]
-    ENABLE,
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
 }
 impl From<ISP_CMD_EN_A> for bool {
     #[inline(always)]
     fn from(variant: ISP_CMD_EN_A) -> Self {
-        match variant {
-            ISP_CMD_EN_A::DISABLE => false,
-            ISP_CMD_EN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ISP_CMD_EN`"]
@@ -556,21 +535,18 @@ impl<'a> ISP_CMD_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FA_CMD_EN`"]
+#[doc = "FA Command fixed state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FA_CMD_EN_A {
-    #[doc = "Disable"]
-    DISABLE,
-    #[doc = "Enable"]
-    ENABLE,
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
 }
 impl From<FA_CMD_EN_A> for bool {
     #[inline(always)]
     fn from(variant: FA_CMD_EN_A) -> Self {
-        match variant {
-            FA_CMD_EN_A::DISABLE => false,
-            FA_CMD_EN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FA_CMD_EN`"]
@@ -634,21 +610,18 @@ impl<'a> FA_CMD_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ME_CMD_EN`"]
+#[doc = "Flash Mass Erase Command fixed state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ME_CMD_EN_A {
-    #[doc = "Disable"]
-    DISABLE,
-    #[doc = "Enable"]
-    ENABLE,
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
 }
 impl From<ME_CMD_EN_A> for bool {
     #[inline(always)]
     fn from(variant: ME_CMD_EN_A) -> Self {
-        match variant {
-            ME_CMD_EN_A::DISABLE => false,
-            ME_CMD_EN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ME_CMD_EN`"]
@@ -712,21 +685,18 @@ impl<'a> ME_CMD_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CPU1_NIDEN`"]
+#[doc = "CPU1 (Micro cortex M33) non-invasive debug fixed state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPU1_NIDEN_A {
-    #[doc = "Disable"]
-    DISABLE,
-    #[doc = "Enable"]
-    ENABLE,
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
 }
 impl From<CPU1_NIDEN_A> for bool {
     #[inline(always)]
     fn from(variant: CPU1_NIDEN_A) -> Self {
-        match variant {
-            CPU1_NIDEN_A::DISABLE => false,
-            CPU1_NIDEN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPU1_NIDEN`"]

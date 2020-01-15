@@ -10,34 +10,29 @@ impl crate::ResetValue for super::MCLKIO {
         0
     }
 }
-#[doc = "Possible values of the field `MCLKIO`"]
+#[doc = "MCLK control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MCLKIO_A {
-    #[doc = "input mode."]
-    INPUT,
-    #[doc = "output mode."]
-    OUTPUT,
+    #[doc = "0: input mode."]
+    INPUT = 0,
+    #[doc = "1: output mode."]
+    OUTPUT = 1,
 }
-impl From<MCLKIO_A> for u32 {
+impl From<MCLKIO_A> for bool {
     #[inline(always)]
     fn from(variant: MCLKIO_A) -> Self {
-        match variant {
-            MCLKIO_A::INPUT => 0,
-            MCLKIO_A::OUTPUT => 1,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MCLKIO`"]
-pub type MCLKIO_R = crate::R<u32, MCLKIO_A>;
+pub type MCLKIO_R = crate::R<bool, MCLKIO_A>;
 impl MCLKIO_R {
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u32, MCLKIO_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> MCLKIO_A {
         match self.bits {
-            0 => Val(MCLKIO_A::INPUT),
-            1 => Val(MCLKIO_A::OUTPUT),
-            i => Res(i),
+            false => MCLKIO_A::INPUT,
+            true => MCLKIO_A::OUTPUT,
         }
     }
     #[doc = "Checks if the value of the field is `INPUT`"]
@@ -59,7 +54,9 @@ impl<'a> MCLKIO_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MCLKIO_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
+        {
+            self.bit(variant.into())
+        }
     }
     #[doc = "input mode."]
     #[inline(always)]
@@ -71,22 +68,32 @@ impl<'a> MCLKIO_W<'a> {
     pub fn output(self) -> &'a mut W {
         self.variant(MCLKIO_A::OUTPUT)
     }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
 impl R {
-    #[doc = "Bits 0:31 - MCLK control."]
+    #[doc = "Bit 0 - MCLK control."]
     #[inline(always)]
     pub fn mclkio(&self) -> MCLKIO_R {
-        MCLKIO_R::new((self.bits & 0xffff_ffff) as u32)
+        MCLKIO_R::new((self.bits & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - MCLK control."]
+    #[doc = "Bit 0 - MCLK control."]
     #[inline(always)]
     pub fn mclkio(&mut self) -> MCLKIO_W {
         MCLKIO_W { w: self }

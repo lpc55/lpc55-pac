@@ -10,27 +10,23 @@ impl crate::ResetValue for super::MEMORYREMAP {
         0
     }
 }
-#[doc = "Possible values of the field `MAP`"]
+#[doc = "Select the location of the vector table :.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MAP_A {
-    #[doc = "Vector Table in ROM."]
-    ROM0,
-    #[doc = "Vector Table in RAM."]
-    RAM1,
-    #[doc = "Vector Table in Flash."]
-    FLASH0,
-    #[doc = "Vector Table in Flash."]
-    FLASH1,
+    #[doc = "0: Vector Table in ROM."]
+    ROM0 = 0,
+    #[doc = "1: Vector Table in RAM."]
+    RAM1 = 1,
+    #[doc = "2: Vector Table in Flash."]
+    FLASH0 = 2,
+    #[doc = "3: Vector Table in Flash."]
+    FLASH1 = 3,
 }
 impl From<MAP_A> for u8 {
     #[inline(always)]
     fn from(variant: MAP_A) -> Self {
-        match variant {
-            MAP_A::ROM0 => 0,
-            MAP_A::RAM1 => 1,
-            MAP_A::FLASH0 => 2,
-            MAP_A::FLASH1 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MAP`"]

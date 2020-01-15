@@ -24,27 +24,23 @@ impl<'a> MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FILTER_MODE`"]
+#[doc = "control input of the PLU, add filtering for glitch.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FILTER_MODE_A {
-    #[doc = "Bypass mode."]
-    BYPASS,
-    #[doc = "Filter 1 clock period."]
-    FILTER1CLK,
-    #[doc = "Filter 2 clock period."]
-    FILTER2CLK,
-    #[doc = "Filter 3 clock period."]
-    FILTER3CLK,
+    #[doc = "0: Bypass mode."]
+    BYPASS = 0,
+    #[doc = "1: Filter 1 clock period."]
+    FILTER1CLK = 1,
+    #[doc = "2: Filter 2 clock period."]
+    FILTER2CLK = 2,
+    #[doc = "3: Filter 3 clock period."]
+    FILTER3CLK = 3,
 }
 impl From<FILTER_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: FILTER_MODE_A) -> Self {
-        match variant {
-            FILTER_MODE_A::BYPASS => 0,
-            FILTER_MODE_A::FILTER1CLK => 1,
-            FILTER_MODE_A::FILTER2CLK => 2,
-            FILTER_MODE_A::FILTER3CLK => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FILTER_MODE`"]
@@ -121,24 +117,21 @@ impl<'a> FILTER_MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FILTER_CLKSEL`"]
+#[doc = "hclk is divided by 2**filter_clksel.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FILTER_CLKSEL_A {
-    #[doc = "Selects the 1 MHz low-power oscillator as the filter clock."]
-    FRO1MHZ,
-    #[doc = "Selects the 12 Mhz FRO as the filter clock."]
-    FRO12MHZ,
-    #[doc = "Selects a third filter clock source, if provided."]
-    OTHER_CLOCK,
+    #[doc = "0: Selects the 1 MHz low-power oscillator as the filter clock."]
+    FRO1MHZ = 0,
+    #[doc = "1: Selects the 12 Mhz FRO as the filter clock."]
+    FRO12MHZ = 1,
+    #[doc = "2: Selects a third filter clock source, if provided."]
+    OTHER_CLOCK = 2,
 }
 impl From<FILTER_CLKSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: FILTER_CLKSEL_A) -> Self {
-        match variant {
-            FILTER_CLKSEL_A::FRO1MHZ => 0,
-            FILTER_CLKSEL_A::FRO12MHZ => 1,
-            FILTER_CLKSEL_A::OTHER_CLOCK => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FILTER_CLKSEL`"]

@@ -69,7 +69,14 @@ pub struct RegisterBlock {
     _reserved53: [u8; 40usize],
     #[doc = "0x100 - Customer Defined (Programable through ROM API)"]
     pub customer_defined: [CUSTOMER_DEFINED; 56],
-    #[doc = "0x1e0 - SHA256_DIGEST0 for DIGEST\\[31:0\\] SHA256_DIGEST1 for DIGEST\\[63:32\\] SHA256_DIGEST2 for DIGEST\\[95:64\\] SHA256_DIGEST3 for DIGEST\\[127:96\\] SHA256_DIGEST4 for DIGEST\\[159:128\\] SHA256_DIGEST5 for DIGEST\\[191:160\\] SHA256_DIGEST6 for DIGEST\\[223:192\\] SHA256_DIGEST7 for DIGEST\\[255:224\\]"]
+    #[doc = "0x1e0 - SHA256_DIGEST0 for DIGEST\\[31:0\\]
+SHA256_DIGEST1 for DIGEST\\[63:32\\]
+SHA256_DIGEST2 for DIGEST\\[95:64\\]
+SHA256_DIGEST3 for DIGEST\\[127:96\\]
+SHA256_DIGEST4 for DIGEST\\[159:128\\]
+SHA256_DIGEST5 for DIGEST\\[191:160\\]
+SHA256_DIGEST6 for DIGEST\\[223:192\\]
+SHA256_DIGEST7 for DIGEST\\[255:224\\]"]
     pub sha256_digest: [SHA256_DIGEST; 8],
 }
 impl RegisterBlock {
@@ -1290,7 +1297,7 @@ impl RegisterBlock {
         }
     }
 }
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [header](header) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [header](header) module"]
 pub type HEADER = crate::Reg<u32, _HEADER>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1301,7 +1308,7 @@ impl crate::Readable for HEADER {}
 impl crate::Writable for HEADER {}
 #[doc = "."]
 pub mod header;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [version](version) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [version](version) module"]
 pub type VERSION = crate::Reg<u32, _VERSION>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1312,7 +1319,7 @@ impl crate::Readable for VERSION {}
 impl crate::Writable for VERSION {}
 #[doc = "."]
 pub mod version;
-#[doc = "Secure firmware version (Monotonic counter)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [s_fw_version](s_fw_version) module"]
+#[doc = "Secure firmware version (Monotonic counter)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [s_fw_version](s_fw_version) module"]
 pub type S_FW_VERSION = crate::Reg<u32, _S_FW_VERSION>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1323,7 +1330,7 @@ impl crate::Readable for S_FW_VERSION {}
 impl crate::Writable for S_FW_VERSION {}
 #[doc = "Secure firmware version (Monotonic counter)"]
 pub mod s_fw_version;
-#[doc = "Non-Secure firmware version (Monotonic counter)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ns_fw_version](ns_fw_version) module"]
+#[doc = "Non-Secure firmware version (Monotonic counter)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ns_fw_version](ns_fw_version) module"]
 pub type NS_FW_VERSION = crate::Reg<u32, _NS_FW_VERSION>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1334,7 +1341,7 @@ impl crate::Readable for NS_FW_VERSION {}
 impl crate::Writable for NS_FW_VERSION {}
 #[doc = "Non-Secure firmware version (Monotonic counter)"]
 pub mod ns_fw_version;
-#[doc = "Image key revocation ID (Monotonic counter)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [image_key_revoke](image_key_revoke) module"]
+#[doc = "Image key revocation ID (Monotonic counter)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [image_key_revoke](image_key_revoke) module"]
 pub type IMAGE_KEY_REVOKE = crate::Reg<u32, _IMAGE_KEY_REVOKE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1345,7 +1352,7 @@ impl crate::Readable for IMAGE_KEY_REVOKE {}
 impl crate::Writable for IMAGE_KEY_REVOKE {}
 #[doc = "Image key revocation ID (Monotonic counter)"]
 pub mod image_key_revoke;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [rotkh_revoke](rotkh_revoke) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rotkh_revoke](rotkh_revoke) module"]
 pub type ROTKH_REVOKE = crate::Reg<u32, _ROTKH_REVOKE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1356,7 +1363,7 @@ impl crate::Readable for ROTKH_REVOKE {}
 impl crate::Writable for ROTKH_REVOKE {}
 #[doc = "."]
 pub mod rotkh_revoke;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [vendor_usage](vendor_usage) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vendor_usage](vendor_usage) module"]
 pub type VENDOR_USAGE = crate::Reg<u32, _VENDOR_USAGE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1367,7 +1374,7 @@ impl crate::Readable for VENDOR_USAGE {}
 impl crate::Writable for VENDOR_USAGE {}
 #[doc = "."]
 pub mod vendor_usage;
-#[doc = "With TZ-M, the part can be sold by level 1 customers (secure code developer) to level-2 customers who develops non-secure code only. - In this scenario, or easy of development, Level-I customer releases the part to always allow non-secure debug. - To allow level-2 customers to further seal the part DCFG_CC_SOCU_NS is used. - ROM will use this word to further restrict the debug access.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dcfg_cc_socu_pin](dcfg_cc_socu_pin) module"]
+#[doc = "With TZ-M, the part can be sold by level 1 customers (secure code developer) to level-2 customers who develops non-secure code only. - In this scenario, or easy of development, Level-I customer releases the part to always allow non-secure debug. - To allow level-2 customers to further seal the part DCFG_CC_SOCU_NS is used. - ROM will use this word to further restrict the debug access.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dcfg_cc_socu_pin](dcfg_cc_socu_pin) module"]
 pub type DCFG_CC_SOCU_PIN = crate::Reg<u32, _DCFG_CC_SOCU_PIN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1378,7 +1385,7 @@ impl crate::Readable for DCFG_CC_SOCU_PIN {}
 impl crate::Writable for DCFG_CC_SOCU_PIN {}
 #[doc = "With TZ-M, the part can be sold by level 1 customers (secure code developer) to level-2 customers who develops non-secure code only. - In this scenario, or easy of development, Level-I customer releases the part to always allow non-secure debug. - To allow level-2 customers to further seal the part DCFG_CC_SOCU_NS is used. - ROM will use this word to further restrict the debug access."]
 pub mod dcfg_cc_socu_pin;
-#[doc = "With TZ-M, the part can be sold by level 1 customers (secure code developer) to level-2 customers who develops non-secure code only. - In this scenario, or easy of development, Level-I customer releases the part to always allow non-secure debug. - To allow level-2 customers to further seal the part DCFG_CC_SOCU_NS is used. - ROM will use this word to further restrict the debug access.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dcfg_cc_socu_dflt](dcfg_cc_socu_dflt) module"]
+#[doc = "With TZ-M, the part can be sold by level 1 customers (secure code developer) to level-2 customers who develops non-secure code only. - In this scenario, or easy of development, Level-I customer releases the part to always allow non-secure debug. - To allow level-2 customers to further seal the part DCFG_CC_SOCU_NS is used. - ROM will use this word to further restrict the debug access.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dcfg_cc_socu_dflt](dcfg_cc_socu_dflt) module"]
 pub type DCFG_CC_SOCU_DFLT = crate::Reg<u32, _DCFG_CC_SOCU_DFLT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1389,7 +1396,7 @@ impl crate::Readable for DCFG_CC_SOCU_DFLT {}
 impl crate::Writable for DCFG_CC_SOCU_DFLT {}
 #[doc = "With TZ-M, the part can be sold by level 1 customers (secure code developer) to level-2 customers who develops non-secure code only. - In this scenario, or easy of development, Level-I customer releases the part to always allow non-secure debug. - To allow level-2 customers to further seal the part DCFG_CC_SOCU_NS is used. - ROM will use this word to further restrict the debug access."]
 pub mod dcfg_cc_socu_dflt;
-#[doc = "Enable FA mode. SET_FA_MODE Command should write 0xC33CA55A to this word to indicate boot ROM to enter FA mode.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [enable_fa_mode](enable_fa_mode) module"]
+#[doc = "Enable FA mode. SET_FA_MODE Command should write 0xC33CA55A to this word to indicate boot ROM to enter FA mode.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [enable_fa_mode](enable_fa_mode) module"]
 pub type ENABLE_FA_MODE = crate::Reg<u32, _ENABLE_FA_MODE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1400,7 +1407,7 @@ impl crate::Readable for ENABLE_FA_MODE {}
 impl crate::Writable for ENABLE_FA_MODE {}
 #[doc = "Enable FA mode. SET_FA_MODE Command should write 0xC33CA55A to this word to indicate boot ROM to enter FA mode."]
 pub mod enable_fa_mode;
-#[doc = "CMPA Page programming on going. This field shall be set to 0x5CC55AA5 in the active CFPA page each time CMPA page programming is going on. It shall always be set to 0x00000000 in the CFPA scratch area.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cmpa_prog_in_progress](cmpa_prog_in_progress) module"]
+#[doc = "CMPA Page programming on going. This field shall be set to 0x5CC55AA5 in the active CFPA page each time CMPA page programming is going on. It shall always be set to 0x00000000 in the CFPA scratch area.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmpa_prog_in_progress](cmpa_prog_in_progress) module"]
 pub type CMPA_PROG_IN_PROGRESS = crate::Reg<u32, _CMPA_PROG_IN_PROGRESS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1411,7 +1418,7 @@ impl crate::Readable for CMPA_PROG_IN_PROGRESS {}
 impl crate::Writable for CMPA_PROG_IN_PROGRESS {}
 #[doc = "CMPA Page programming on going. This field shall be set to 0x5CC55AA5 in the active CFPA page each time CMPA page programming is going on. It shall always be set to 0x00000000 in the CFPA scratch area."]
 pub mod cmpa_prog_in_progress;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_code0](prince_region0_iv_code0) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_code0](prince_region0_iv_code0) module"]
 pub type PRINCE_REGION0_IV_CODE0 = crate::Reg<u32, _PRINCE_REGION0_IV_CODE0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1422,7 +1429,7 @@ impl crate::Readable for PRINCE_REGION0_IV_CODE0 {}
 impl crate::Writable for PRINCE_REGION0_IV_CODE0 {}
 #[doc = "."]
 pub mod prince_region0_iv_code0;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_header0](prince_region0_iv_header0) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_header0](prince_region0_iv_header0) module"]
 pub type PRINCE_REGION0_IV_HEADER0 = crate::Reg<u32, _PRINCE_REGION0_IV_HEADER0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1433,7 +1440,7 @@ impl crate::Readable for PRINCE_REGION0_IV_HEADER0 {}
 impl crate::Writable for PRINCE_REGION0_IV_HEADER0 {}
 #[doc = "."]
 pub mod prince_region0_iv_header0;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_code1](prince_region0_iv_code1) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_code1](prince_region0_iv_code1) module"]
 pub type PRINCE_REGION0_IV_CODE1 = crate::Reg<u32, _PRINCE_REGION0_IV_CODE1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1444,7 +1451,7 @@ impl crate::Readable for PRINCE_REGION0_IV_CODE1 {}
 impl crate::Writable for PRINCE_REGION0_IV_CODE1 {}
 #[doc = "."]
 pub mod prince_region0_iv_code1;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_header1](prince_region0_iv_header1) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_header1](prince_region0_iv_header1) module"]
 pub type PRINCE_REGION0_IV_HEADER1 = crate::Reg<u32, _PRINCE_REGION0_IV_HEADER1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1455,7 +1462,7 @@ impl crate::Readable for PRINCE_REGION0_IV_HEADER1 {}
 impl crate::Writable for PRINCE_REGION0_IV_HEADER1 {}
 #[doc = "."]
 pub mod prince_region0_iv_header1;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_body0](prince_region0_iv_body0) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_body0](prince_region0_iv_body0) module"]
 pub type PRINCE_REGION0_IV_BODY0 = crate::Reg<u32, _PRINCE_REGION0_IV_BODY0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1466,7 +1473,7 @@ impl crate::Readable for PRINCE_REGION0_IV_BODY0 {}
 impl crate::Writable for PRINCE_REGION0_IV_BODY0 {}
 #[doc = "."]
 pub mod prince_region0_iv_body0;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_code2](prince_region0_iv_code2) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_code2](prince_region0_iv_code2) module"]
 pub type PRINCE_REGION0_IV_CODE2 = crate::Reg<u32, _PRINCE_REGION0_IV_CODE2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1477,7 +1484,7 @@ impl crate::Readable for PRINCE_REGION0_IV_CODE2 {}
 impl crate::Writable for PRINCE_REGION0_IV_CODE2 {}
 #[doc = "."]
 pub mod prince_region0_iv_code2;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_body1](prince_region0_iv_body1) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_body1](prince_region0_iv_body1) module"]
 pub type PRINCE_REGION0_IV_BODY1 = crate::Reg<u32, _PRINCE_REGION0_IV_BODY1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1488,7 +1495,7 @@ impl crate::Readable for PRINCE_REGION0_IV_BODY1 {}
 impl crate::Writable for PRINCE_REGION0_IV_BODY1 {}
 #[doc = "."]
 pub mod prince_region0_iv_body1;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_code3](prince_region0_iv_code3) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_code3](prince_region0_iv_code3) module"]
 pub type PRINCE_REGION0_IV_CODE3 = crate::Reg<u32, _PRINCE_REGION0_IV_CODE3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1499,7 +1506,7 @@ impl crate::Readable for PRINCE_REGION0_IV_CODE3 {}
 impl crate::Writable for PRINCE_REGION0_IV_CODE3 {}
 #[doc = "."]
 pub mod prince_region0_iv_code3;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_body2](prince_region0_iv_body2) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_body2](prince_region0_iv_body2) module"]
 pub type PRINCE_REGION0_IV_BODY2 = crate::Reg<u32, _PRINCE_REGION0_IV_BODY2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1510,7 +1517,7 @@ impl crate::Readable for PRINCE_REGION0_IV_BODY2 {}
 impl crate::Writable for PRINCE_REGION0_IV_BODY2 {}
 #[doc = "."]
 pub mod prince_region0_iv_body2;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_code4](prince_region0_iv_code4) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_code4](prince_region0_iv_code4) module"]
 pub type PRINCE_REGION0_IV_CODE4 = crate::Reg<u32, _PRINCE_REGION0_IV_CODE4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1521,7 +1528,7 @@ impl crate::Readable for PRINCE_REGION0_IV_CODE4 {}
 impl crate::Writable for PRINCE_REGION0_IV_CODE4 {}
 #[doc = "."]
 pub mod prince_region0_iv_code4;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_body3](prince_region0_iv_body3) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_body3](prince_region0_iv_body3) module"]
 pub type PRINCE_REGION0_IV_BODY3 = crate::Reg<u32, _PRINCE_REGION0_IV_BODY3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1532,7 +1539,7 @@ impl crate::Readable for PRINCE_REGION0_IV_BODY3 {}
 impl crate::Writable for PRINCE_REGION0_IV_BODY3 {}
 #[doc = "."]
 pub mod prince_region0_iv_body3;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_code5](prince_region0_iv_code5) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_code5](prince_region0_iv_code5) module"]
 pub type PRINCE_REGION0_IV_CODE5 = crate::Reg<u32, _PRINCE_REGION0_IV_CODE5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1543,7 +1550,7 @@ impl crate::Readable for PRINCE_REGION0_IV_CODE5 {}
 impl crate::Writable for PRINCE_REGION0_IV_CODE5 {}
 #[doc = "."]
 pub mod prince_region0_iv_code5;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_body4](prince_region0_iv_body4) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_body4](prince_region0_iv_body4) module"]
 pub type PRINCE_REGION0_IV_BODY4 = crate::Reg<u32, _PRINCE_REGION0_IV_BODY4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1554,7 +1561,7 @@ impl crate::Readable for PRINCE_REGION0_IV_BODY4 {}
 impl crate::Writable for PRINCE_REGION0_IV_BODY4 {}
 #[doc = "."]
 pub mod prince_region0_iv_body4;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_code6](prince_region0_iv_code6) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_code6](prince_region0_iv_code6) module"]
 pub type PRINCE_REGION0_IV_CODE6 = crate::Reg<u32, _PRINCE_REGION0_IV_CODE6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1565,7 +1572,7 @@ impl crate::Readable for PRINCE_REGION0_IV_CODE6 {}
 impl crate::Writable for PRINCE_REGION0_IV_CODE6 {}
 #[doc = "."]
 pub mod prince_region0_iv_code6;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_body5](prince_region0_iv_body5) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_body5](prince_region0_iv_body5) module"]
 pub type PRINCE_REGION0_IV_BODY5 = crate::Reg<u32, _PRINCE_REGION0_IV_BODY5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1576,7 +1583,7 @@ impl crate::Readable for PRINCE_REGION0_IV_BODY5 {}
 impl crate::Writable for PRINCE_REGION0_IV_BODY5 {}
 #[doc = "."]
 pub mod prince_region0_iv_body5;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_code7](prince_region0_iv_code7) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_code7](prince_region0_iv_code7) module"]
 pub type PRINCE_REGION0_IV_CODE7 = crate::Reg<u32, _PRINCE_REGION0_IV_CODE7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1587,7 +1594,7 @@ impl crate::Readable for PRINCE_REGION0_IV_CODE7 {}
 impl crate::Writable for PRINCE_REGION0_IV_CODE7 {}
 #[doc = "."]
 pub mod prince_region0_iv_code7;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_body6](prince_region0_iv_body6) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_body6](prince_region0_iv_body6) module"]
 pub type PRINCE_REGION0_IV_BODY6 = crate::Reg<u32, _PRINCE_REGION0_IV_BODY6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1598,7 +1605,7 @@ impl crate::Readable for PRINCE_REGION0_IV_BODY6 {}
 impl crate::Writable for PRINCE_REGION0_IV_BODY6 {}
 #[doc = "."]
 pub mod prince_region0_iv_body6;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_code8](prince_region0_iv_code8) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_code8](prince_region0_iv_code8) module"]
 pub type PRINCE_REGION0_IV_CODE8 = crate::Reg<u32, _PRINCE_REGION0_IV_CODE8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1609,7 +1616,7 @@ impl crate::Readable for PRINCE_REGION0_IV_CODE8 {}
 impl crate::Writable for PRINCE_REGION0_IV_CODE8 {}
 #[doc = "."]
 pub mod prince_region0_iv_code8;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_body7](prince_region0_iv_body7) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_body7](prince_region0_iv_body7) module"]
 pub type PRINCE_REGION0_IV_BODY7 = crate::Reg<u32, _PRINCE_REGION0_IV_BODY7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1620,7 +1627,7 @@ impl crate::Readable for PRINCE_REGION0_IV_BODY7 {}
 impl crate::Writable for PRINCE_REGION0_IV_BODY7 {}
 #[doc = "."]
 pub mod prince_region0_iv_body7;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_code9](prince_region0_iv_code9) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_code9](prince_region0_iv_code9) module"]
 pub type PRINCE_REGION0_IV_CODE9 = crate::Reg<u32, _PRINCE_REGION0_IV_CODE9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1631,7 +1638,7 @@ impl crate::Readable for PRINCE_REGION0_IV_CODE9 {}
 impl crate::Writable for PRINCE_REGION0_IV_CODE9 {}
 #[doc = "."]
 pub mod prince_region0_iv_code9;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_body8](prince_region0_iv_body8) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_body8](prince_region0_iv_body8) module"]
 pub type PRINCE_REGION0_IV_BODY8 = crate::Reg<u32, _PRINCE_REGION0_IV_BODY8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1642,7 +1649,7 @@ impl crate::Readable for PRINCE_REGION0_IV_BODY8 {}
 impl crate::Writable for PRINCE_REGION0_IV_BODY8 {}
 #[doc = "."]
 pub mod prince_region0_iv_body8;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_code10](prince_region0_iv_code10) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_code10](prince_region0_iv_code10) module"]
 pub type PRINCE_REGION0_IV_CODE10 = crate::Reg<u32, _PRINCE_REGION0_IV_CODE10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1653,7 +1660,7 @@ impl crate::Readable for PRINCE_REGION0_IV_CODE10 {}
 impl crate::Writable for PRINCE_REGION0_IV_CODE10 {}
 #[doc = "."]
 pub mod prince_region0_iv_code10;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_body9](prince_region0_iv_body9) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_body9](prince_region0_iv_body9) module"]
 pub type PRINCE_REGION0_IV_BODY9 = crate::Reg<u32, _PRINCE_REGION0_IV_BODY9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1664,7 +1671,7 @@ impl crate::Readable for PRINCE_REGION0_IV_BODY9 {}
 impl crate::Writable for PRINCE_REGION0_IV_BODY9 {}
 #[doc = "."]
 pub mod prince_region0_iv_body9;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_code11](prince_region0_iv_code11) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_code11](prince_region0_iv_code11) module"]
 pub type PRINCE_REGION0_IV_CODE11 = crate::Reg<u32, _PRINCE_REGION0_IV_CODE11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1675,7 +1682,7 @@ impl crate::Readable for PRINCE_REGION0_IV_CODE11 {}
 impl crate::Writable for PRINCE_REGION0_IV_CODE11 {}
 #[doc = "."]
 pub mod prince_region0_iv_code11;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_body10](prince_region0_iv_body10) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_body10](prince_region0_iv_body10) module"]
 pub type PRINCE_REGION0_IV_BODY10 = crate::Reg<u32, _PRINCE_REGION0_IV_BODY10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1686,7 +1693,7 @@ impl crate::Readable for PRINCE_REGION0_IV_BODY10 {}
 impl crate::Writable for PRINCE_REGION0_IV_BODY10 {}
 #[doc = "."]
 pub mod prince_region0_iv_body10;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_code12](prince_region0_iv_code12) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_code12](prince_region0_iv_code12) module"]
 pub type PRINCE_REGION0_IV_CODE12 = crate::Reg<u32, _PRINCE_REGION0_IV_CODE12>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1697,7 +1704,7 @@ impl crate::Readable for PRINCE_REGION0_IV_CODE12 {}
 impl crate::Writable for PRINCE_REGION0_IV_CODE12 {}
 #[doc = "."]
 pub mod prince_region0_iv_code12;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_body11](prince_region0_iv_body11) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_body11](prince_region0_iv_body11) module"]
 pub type PRINCE_REGION0_IV_BODY11 = crate::Reg<u32, _PRINCE_REGION0_IV_BODY11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1708,7 +1715,7 @@ impl crate::Readable for PRINCE_REGION0_IV_BODY11 {}
 impl crate::Writable for PRINCE_REGION0_IV_BODY11 {}
 #[doc = "."]
 pub mod prince_region0_iv_body11;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region0_iv_code13](prince_region0_iv_code13) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region0_iv_code13](prince_region0_iv_code13) module"]
 pub type PRINCE_REGION0_IV_CODE13 = crate::Reg<u32, _PRINCE_REGION0_IV_CODE13>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1719,7 +1726,7 @@ impl crate::Readable for PRINCE_REGION0_IV_CODE13 {}
 impl crate::Writable for PRINCE_REGION0_IV_CODE13 {}
 #[doc = "."]
 pub mod prince_region0_iv_code13;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_code0](prince_region1_iv_code0) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_code0](prince_region1_iv_code0) module"]
 pub type PRINCE_REGION1_IV_CODE0 = crate::Reg<u32, _PRINCE_REGION1_IV_CODE0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1730,7 +1737,7 @@ impl crate::Readable for PRINCE_REGION1_IV_CODE0 {}
 impl crate::Writable for PRINCE_REGION1_IV_CODE0 {}
 #[doc = "."]
 pub mod prince_region1_iv_code0;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_header0](prince_region1_iv_header0) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_header0](prince_region1_iv_header0) module"]
 pub type PRINCE_REGION1_IV_HEADER0 = crate::Reg<u32, _PRINCE_REGION1_IV_HEADER0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1741,7 +1748,7 @@ impl crate::Readable for PRINCE_REGION1_IV_HEADER0 {}
 impl crate::Writable for PRINCE_REGION1_IV_HEADER0 {}
 #[doc = "."]
 pub mod prince_region1_iv_header0;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_code1](prince_region1_iv_code1) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_code1](prince_region1_iv_code1) module"]
 pub type PRINCE_REGION1_IV_CODE1 = crate::Reg<u32, _PRINCE_REGION1_IV_CODE1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1752,7 +1759,7 @@ impl crate::Readable for PRINCE_REGION1_IV_CODE1 {}
 impl crate::Writable for PRINCE_REGION1_IV_CODE1 {}
 #[doc = "."]
 pub mod prince_region1_iv_code1;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_header1](prince_region1_iv_header1) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_header1](prince_region1_iv_header1) module"]
 pub type PRINCE_REGION1_IV_HEADER1 = crate::Reg<u32, _PRINCE_REGION1_IV_HEADER1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1763,7 +1770,7 @@ impl crate::Readable for PRINCE_REGION1_IV_HEADER1 {}
 impl crate::Writable for PRINCE_REGION1_IV_HEADER1 {}
 #[doc = "."]
 pub mod prince_region1_iv_header1;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_body0](prince_region1_iv_body0) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_body0](prince_region1_iv_body0) module"]
 pub type PRINCE_REGION1_IV_BODY0 = crate::Reg<u32, _PRINCE_REGION1_IV_BODY0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1774,7 +1781,7 @@ impl crate::Readable for PRINCE_REGION1_IV_BODY0 {}
 impl crate::Writable for PRINCE_REGION1_IV_BODY0 {}
 #[doc = "."]
 pub mod prince_region1_iv_body0;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_code2](prince_region1_iv_code2) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_code2](prince_region1_iv_code2) module"]
 pub type PRINCE_REGION1_IV_CODE2 = crate::Reg<u32, _PRINCE_REGION1_IV_CODE2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1785,7 +1792,7 @@ impl crate::Readable for PRINCE_REGION1_IV_CODE2 {}
 impl crate::Writable for PRINCE_REGION1_IV_CODE2 {}
 #[doc = "."]
 pub mod prince_region1_iv_code2;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_body1](prince_region1_iv_body1) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_body1](prince_region1_iv_body1) module"]
 pub type PRINCE_REGION1_IV_BODY1 = crate::Reg<u32, _PRINCE_REGION1_IV_BODY1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1796,7 +1803,7 @@ impl crate::Readable for PRINCE_REGION1_IV_BODY1 {}
 impl crate::Writable for PRINCE_REGION1_IV_BODY1 {}
 #[doc = "."]
 pub mod prince_region1_iv_body1;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_code3](prince_region1_iv_code3) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_code3](prince_region1_iv_code3) module"]
 pub type PRINCE_REGION1_IV_CODE3 = crate::Reg<u32, _PRINCE_REGION1_IV_CODE3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1807,7 +1814,7 @@ impl crate::Readable for PRINCE_REGION1_IV_CODE3 {}
 impl crate::Writable for PRINCE_REGION1_IV_CODE3 {}
 #[doc = "."]
 pub mod prince_region1_iv_code3;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_body2](prince_region1_iv_body2) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_body2](prince_region1_iv_body2) module"]
 pub type PRINCE_REGION1_IV_BODY2 = crate::Reg<u32, _PRINCE_REGION1_IV_BODY2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1818,7 +1825,7 @@ impl crate::Readable for PRINCE_REGION1_IV_BODY2 {}
 impl crate::Writable for PRINCE_REGION1_IV_BODY2 {}
 #[doc = "."]
 pub mod prince_region1_iv_body2;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_code4](prince_region1_iv_code4) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_code4](prince_region1_iv_code4) module"]
 pub type PRINCE_REGION1_IV_CODE4 = crate::Reg<u32, _PRINCE_REGION1_IV_CODE4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1829,7 +1836,7 @@ impl crate::Readable for PRINCE_REGION1_IV_CODE4 {}
 impl crate::Writable for PRINCE_REGION1_IV_CODE4 {}
 #[doc = "."]
 pub mod prince_region1_iv_code4;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_body3](prince_region1_iv_body3) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_body3](prince_region1_iv_body3) module"]
 pub type PRINCE_REGION1_IV_BODY3 = crate::Reg<u32, _PRINCE_REGION1_IV_BODY3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1840,7 +1847,7 @@ impl crate::Readable for PRINCE_REGION1_IV_BODY3 {}
 impl crate::Writable for PRINCE_REGION1_IV_BODY3 {}
 #[doc = "."]
 pub mod prince_region1_iv_body3;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_code5](prince_region1_iv_code5) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_code5](prince_region1_iv_code5) module"]
 pub type PRINCE_REGION1_IV_CODE5 = crate::Reg<u32, _PRINCE_REGION1_IV_CODE5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1851,7 +1858,7 @@ impl crate::Readable for PRINCE_REGION1_IV_CODE5 {}
 impl crate::Writable for PRINCE_REGION1_IV_CODE5 {}
 #[doc = "."]
 pub mod prince_region1_iv_code5;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_body4](prince_region1_iv_body4) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_body4](prince_region1_iv_body4) module"]
 pub type PRINCE_REGION1_IV_BODY4 = crate::Reg<u32, _PRINCE_REGION1_IV_BODY4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1862,7 +1869,7 @@ impl crate::Readable for PRINCE_REGION1_IV_BODY4 {}
 impl crate::Writable for PRINCE_REGION1_IV_BODY4 {}
 #[doc = "."]
 pub mod prince_region1_iv_body4;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_code6](prince_region1_iv_code6) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_code6](prince_region1_iv_code6) module"]
 pub type PRINCE_REGION1_IV_CODE6 = crate::Reg<u32, _PRINCE_REGION1_IV_CODE6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1873,7 +1880,7 @@ impl crate::Readable for PRINCE_REGION1_IV_CODE6 {}
 impl crate::Writable for PRINCE_REGION1_IV_CODE6 {}
 #[doc = "."]
 pub mod prince_region1_iv_code6;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_body5](prince_region1_iv_body5) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_body5](prince_region1_iv_body5) module"]
 pub type PRINCE_REGION1_IV_BODY5 = crate::Reg<u32, _PRINCE_REGION1_IV_BODY5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1884,7 +1891,7 @@ impl crate::Readable for PRINCE_REGION1_IV_BODY5 {}
 impl crate::Writable for PRINCE_REGION1_IV_BODY5 {}
 #[doc = "."]
 pub mod prince_region1_iv_body5;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_code7](prince_region1_iv_code7) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_code7](prince_region1_iv_code7) module"]
 pub type PRINCE_REGION1_IV_CODE7 = crate::Reg<u32, _PRINCE_REGION1_IV_CODE7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1895,7 +1902,7 @@ impl crate::Readable for PRINCE_REGION1_IV_CODE7 {}
 impl crate::Writable for PRINCE_REGION1_IV_CODE7 {}
 #[doc = "."]
 pub mod prince_region1_iv_code7;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_body6](prince_region1_iv_body6) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_body6](prince_region1_iv_body6) module"]
 pub type PRINCE_REGION1_IV_BODY6 = crate::Reg<u32, _PRINCE_REGION1_IV_BODY6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1906,7 +1913,7 @@ impl crate::Readable for PRINCE_REGION1_IV_BODY6 {}
 impl crate::Writable for PRINCE_REGION1_IV_BODY6 {}
 #[doc = "."]
 pub mod prince_region1_iv_body6;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_code8](prince_region1_iv_code8) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_code8](prince_region1_iv_code8) module"]
 pub type PRINCE_REGION1_IV_CODE8 = crate::Reg<u32, _PRINCE_REGION1_IV_CODE8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1917,7 +1924,7 @@ impl crate::Readable for PRINCE_REGION1_IV_CODE8 {}
 impl crate::Writable for PRINCE_REGION1_IV_CODE8 {}
 #[doc = "."]
 pub mod prince_region1_iv_code8;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_body7](prince_region1_iv_body7) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_body7](prince_region1_iv_body7) module"]
 pub type PRINCE_REGION1_IV_BODY7 = crate::Reg<u32, _PRINCE_REGION1_IV_BODY7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1928,7 +1935,7 @@ impl crate::Readable for PRINCE_REGION1_IV_BODY7 {}
 impl crate::Writable for PRINCE_REGION1_IV_BODY7 {}
 #[doc = "."]
 pub mod prince_region1_iv_body7;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_code9](prince_region1_iv_code9) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_code9](prince_region1_iv_code9) module"]
 pub type PRINCE_REGION1_IV_CODE9 = crate::Reg<u32, _PRINCE_REGION1_IV_CODE9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1939,7 +1946,7 @@ impl crate::Readable for PRINCE_REGION1_IV_CODE9 {}
 impl crate::Writable for PRINCE_REGION1_IV_CODE9 {}
 #[doc = "."]
 pub mod prince_region1_iv_code9;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_body8](prince_region1_iv_body8) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_body8](prince_region1_iv_body8) module"]
 pub type PRINCE_REGION1_IV_BODY8 = crate::Reg<u32, _PRINCE_REGION1_IV_BODY8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1950,7 +1957,7 @@ impl crate::Readable for PRINCE_REGION1_IV_BODY8 {}
 impl crate::Writable for PRINCE_REGION1_IV_BODY8 {}
 #[doc = "."]
 pub mod prince_region1_iv_body8;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_code10](prince_region1_iv_code10) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_code10](prince_region1_iv_code10) module"]
 pub type PRINCE_REGION1_IV_CODE10 = crate::Reg<u32, _PRINCE_REGION1_IV_CODE10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1961,7 +1968,7 @@ impl crate::Readable for PRINCE_REGION1_IV_CODE10 {}
 impl crate::Writable for PRINCE_REGION1_IV_CODE10 {}
 #[doc = "."]
 pub mod prince_region1_iv_code10;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_body9](prince_region1_iv_body9) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_body9](prince_region1_iv_body9) module"]
 pub type PRINCE_REGION1_IV_BODY9 = crate::Reg<u32, _PRINCE_REGION1_IV_BODY9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1972,7 +1979,7 @@ impl crate::Readable for PRINCE_REGION1_IV_BODY9 {}
 impl crate::Writable for PRINCE_REGION1_IV_BODY9 {}
 #[doc = "."]
 pub mod prince_region1_iv_body9;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_code11](prince_region1_iv_code11) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_code11](prince_region1_iv_code11) module"]
 pub type PRINCE_REGION1_IV_CODE11 = crate::Reg<u32, _PRINCE_REGION1_IV_CODE11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1983,7 +1990,7 @@ impl crate::Readable for PRINCE_REGION1_IV_CODE11 {}
 impl crate::Writable for PRINCE_REGION1_IV_CODE11 {}
 #[doc = "."]
 pub mod prince_region1_iv_code11;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_body10](prince_region1_iv_body10) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_body10](prince_region1_iv_body10) module"]
 pub type PRINCE_REGION1_IV_BODY10 = crate::Reg<u32, _PRINCE_REGION1_IV_BODY10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1994,7 +2001,7 @@ impl crate::Readable for PRINCE_REGION1_IV_BODY10 {}
 impl crate::Writable for PRINCE_REGION1_IV_BODY10 {}
 #[doc = "."]
 pub mod prince_region1_iv_body10;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_code12](prince_region1_iv_code12) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_code12](prince_region1_iv_code12) module"]
 pub type PRINCE_REGION1_IV_CODE12 = crate::Reg<u32, _PRINCE_REGION1_IV_CODE12>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2005,7 +2012,7 @@ impl crate::Readable for PRINCE_REGION1_IV_CODE12 {}
 impl crate::Writable for PRINCE_REGION1_IV_CODE12 {}
 #[doc = "."]
 pub mod prince_region1_iv_code12;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_body11](prince_region1_iv_body11) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_body11](prince_region1_iv_body11) module"]
 pub type PRINCE_REGION1_IV_BODY11 = crate::Reg<u32, _PRINCE_REGION1_IV_BODY11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2016,7 +2023,7 @@ impl crate::Readable for PRINCE_REGION1_IV_BODY11 {}
 impl crate::Writable for PRINCE_REGION1_IV_BODY11 {}
 #[doc = "."]
 pub mod prince_region1_iv_body11;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region1_iv_code13](prince_region1_iv_code13) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region1_iv_code13](prince_region1_iv_code13) module"]
 pub type PRINCE_REGION1_IV_CODE13 = crate::Reg<u32, _PRINCE_REGION1_IV_CODE13>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2027,7 +2034,7 @@ impl crate::Readable for PRINCE_REGION1_IV_CODE13 {}
 impl crate::Writable for PRINCE_REGION1_IV_CODE13 {}
 #[doc = "."]
 pub mod prince_region1_iv_code13;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_code0](prince_region2_iv_code0) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_code0](prince_region2_iv_code0) module"]
 pub type PRINCE_REGION2_IV_CODE0 = crate::Reg<u32, _PRINCE_REGION2_IV_CODE0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2038,7 +2045,7 @@ impl crate::Readable for PRINCE_REGION2_IV_CODE0 {}
 impl crate::Writable for PRINCE_REGION2_IV_CODE0 {}
 #[doc = "."]
 pub mod prince_region2_iv_code0;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_header0](prince_region2_iv_header0) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_header0](prince_region2_iv_header0) module"]
 pub type PRINCE_REGION2_IV_HEADER0 = crate::Reg<u32, _PRINCE_REGION2_IV_HEADER0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2049,7 +2056,7 @@ impl crate::Readable for PRINCE_REGION2_IV_HEADER0 {}
 impl crate::Writable for PRINCE_REGION2_IV_HEADER0 {}
 #[doc = "."]
 pub mod prince_region2_iv_header0;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_code1](prince_region2_iv_code1) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_code1](prince_region2_iv_code1) module"]
 pub type PRINCE_REGION2_IV_CODE1 = crate::Reg<u32, _PRINCE_REGION2_IV_CODE1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2060,7 +2067,7 @@ impl crate::Readable for PRINCE_REGION2_IV_CODE1 {}
 impl crate::Writable for PRINCE_REGION2_IV_CODE1 {}
 #[doc = "."]
 pub mod prince_region2_iv_code1;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_header1](prince_region2_iv_header1) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_header1](prince_region2_iv_header1) module"]
 pub type PRINCE_REGION2_IV_HEADER1 = crate::Reg<u32, _PRINCE_REGION2_IV_HEADER1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2071,7 +2078,7 @@ impl crate::Readable for PRINCE_REGION2_IV_HEADER1 {}
 impl crate::Writable for PRINCE_REGION2_IV_HEADER1 {}
 #[doc = "."]
 pub mod prince_region2_iv_header1;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_body0](prince_region2_iv_body0) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_body0](prince_region2_iv_body0) module"]
 pub type PRINCE_REGION2_IV_BODY0 = crate::Reg<u32, _PRINCE_REGION2_IV_BODY0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2082,7 +2089,7 @@ impl crate::Readable for PRINCE_REGION2_IV_BODY0 {}
 impl crate::Writable for PRINCE_REGION2_IV_BODY0 {}
 #[doc = "."]
 pub mod prince_region2_iv_body0;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_code2](prince_region2_iv_code2) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_code2](prince_region2_iv_code2) module"]
 pub type PRINCE_REGION2_IV_CODE2 = crate::Reg<u32, _PRINCE_REGION2_IV_CODE2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2093,7 +2100,7 @@ impl crate::Readable for PRINCE_REGION2_IV_CODE2 {}
 impl crate::Writable for PRINCE_REGION2_IV_CODE2 {}
 #[doc = "."]
 pub mod prince_region2_iv_code2;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_body1](prince_region2_iv_body1) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_body1](prince_region2_iv_body1) module"]
 pub type PRINCE_REGION2_IV_BODY1 = crate::Reg<u32, _PRINCE_REGION2_IV_BODY1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2104,7 +2111,7 @@ impl crate::Readable for PRINCE_REGION2_IV_BODY1 {}
 impl crate::Writable for PRINCE_REGION2_IV_BODY1 {}
 #[doc = "."]
 pub mod prince_region2_iv_body1;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_code3](prince_region2_iv_code3) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_code3](prince_region2_iv_code3) module"]
 pub type PRINCE_REGION2_IV_CODE3 = crate::Reg<u32, _PRINCE_REGION2_IV_CODE3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2115,7 +2122,7 @@ impl crate::Readable for PRINCE_REGION2_IV_CODE3 {}
 impl crate::Writable for PRINCE_REGION2_IV_CODE3 {}
 #[doc = "."]
 pub mod prince_region2_iv_code3;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_body2](prince_region2_iv_body2) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_body2](prince_region2_iv_body2) module"]
 pub type PRINCE_REGION2_IV_BODY2 = crate::Reg<u32, _PRINCE_REGION2_IV_BODY2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2126,7 +2133,7 @@ impl crate::Readable for PRINCE_REGION2_IV_BODY2 {}
 impl crate::Writable for PRINCE_REGION2_IV_BODY2 {}
 #[doc = "."]
 pub mod prince_region2_iv_body2;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_code4](prince_region2_iv_code4) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_code4](prince_region2_iv_code4) module"]
 pub type PRINCE_REGION2_IV_CODE4 = crate::Reg<u32, _PRINCE_REGION2_IV_CODE4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2137,7 +2144,7 @@ impl crate::Readable for PRINCE_REGION2_IV_CODE4 {}
 impl crate::Writable for PRINCE_REGION2_IV_CODE4 {}
 #[doc = "."]
 pub mod prince_region2_iv_code4;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_body3](prince_region2_iv_body3) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_body3](prince_region2_iv_body3) module"]
 pub type PRINCE_REGION2_IV_BODY3 = crate::Reg<u32, _PRINCE_REGION2_IV_BODY3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2148,7 +2155,7 @@ impl crate::Readable for PRINCE_REGION2_IV_BODY3 {}
 impl crate::Writable for PRINCE_REGION2_IV_BODY3 {}
 #[doc = "."]
 pub mod prince_region2_iv_body3;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_code5](prince_region2_iv_code5) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_code5](prince_region2_iv_code5) module"]
 pub type PRINCE_REGION2_IV_CODE5 = crate::Reg<u32, _PRINCE_REGION2_IV_CODE5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2159,7 +2166,7 @@ impl crate::Readable for PRINCE_REGION2_IV_CODE5 {}
 impl crate::Writable for PRINCE_REGION2_IV_CODE5 {}
 #[doc = "."]
 pub mod prince_region2_iv_code5;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_body4](prince_region2_iv_body4) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_body4](prince_region2_iv_body4) module"]
 pub type PRINCE_REGION2_IV_BODY4 = crate::Reg<u32, _PRINCE_REGION2_IV_BODY4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2170,7 +2177,7 @@ impl crate::Readable for PRINCE_REGION2_IV_BODY4 {}
 impl crate::Writable for PRINCE_REGION2_IV_BODY4 {}
 #[doc = "."]
 pub mod prince_region2_iv_body4;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_code6](prince_region2_iv_code6) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_code6](prince_region2_iv_code6) module"]
 pub type PRINCE_REGION2_IV_CODE6 = crate::Reg<u32, _PRINCE_REGION2_IV_CODE6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2181,7 +2188,7 @@ impl crate::Readable for PRINCE_REGION2_IV_CODE6 {}
 impl crate::Writable for PRINCE_REGION2_IV_CODE6 {}
 #[doc = "."]
 pub mod prince_region2_iv_code6;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_body5](prince_region2_iv_body5) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_body5](prince_region2_iv_body5) module"]
 pub type PRINCE_REGION2_IV_BODY5 = crate::Reg<u32, _PRINCE_REGION2_IV_BODY5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2192,7 +2199,7 @@ impl crate::Readable for PRINCE_REGION2_IV_BODY5 {}
 impl crate::Writable for PRINCE_REGION2_IV_BODY5 {}
 #[doc = "."]
 pub mod prince_region2_iv_body5;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_code7](prince_region2_iv_code7) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_code7](prince_region2_iv_code7) module"]
 pub type PRINCE_REGION2_IV_CODE7 = crate::Reg<u32, _PRINCE_REGION2_IV_CODE7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2203,7 +2210,7 @@ impl crate::Readable for PRINCE_REGION2_IV_CODE7 {}
 impl crate::Writable for PRINCE_REGION2_IV_CODE7 {}
 #[doc = "."]
 pub mod prince_region2_iv_code7;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_body6](prince_region2_iv_body6) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_body6](prince_region2_iv_body6) module"]
 pub type PRINCE_REGION2_IV_BODY6 = crate::Reg<u32, _PRINCE_REGION2_IV_BODY6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2214,7 +2221,7 @@ impl crate::Readable for PRINCE_REGION2_IV_BODY6 {}
 impl crate::Writable for PRINCE_REGION2_IV_BODY6 {}
 #[doc = "."]
 pub mod prince_region2_iv_body6;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_code8](prince_region2_iv_code8) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_code8](prince_region2_iv_code8) module"]
 pub type PRINCE_REGION2_IV_CODE8 = crate::Reg<u32, _PRINCE_REGION2_IV_CODE8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2225,7 +2232,7 @@ impl crate::Readable for PRINCE_REGION2_IV_CODE8 {}
 impl crate::Writable for PRINCE_REGION2_IV_CODE8 {}
 #[doc = "."]
 pub mod prince_region2_iv_code8;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_body7](prince_region2_iv_body7) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_body7](prince_region2_iv_body7) module"]
 pub type PRINCE_REGION2_IV_BODY7 = crate::Reg<u32, _PRINCE_REGION2_IV_BODY7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2236,7 +2243,7 @@ impl crate::Readable for PRINCE_REGION2_IV_BODY7 {}
 impl crate::Writable for PRINCE_REGION2_IV_BODY7 {}
 #[doc = "."]
 pub mod prince_region2_iv_body7;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_code9](prince_region2_iv_code9) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_code9](prince_region2_iv_code9) module"]
 pub type PRINCE_REGION2_IV_CODE9 = crate::Reg<u32, _PRINCE_REGION2_IV_CODE9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2247,7 +2254,7 @@ impl crate::Readable for PRINCE_REGION2_IV_CODE9 {}
 impl crate::Writable for PRINCE_REGION2_IV_CODE9 {}
 #[doc = "."]
 pub mod prince_region2_iv_code9;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_body8](prince_region2_iv_body8) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_body8](prince_region2_iv_body8) module"]
 pub type PRINCE_REGION2_IV_BODY8 = crate::Reg<u32, _PRINCE_REGION2_IV_BODY8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2258,7 +2265,7 @@ impl crate::Readable for PRINCE_REGION2_IV_BODY8 {}
 impl crate::Writable for PRINCE_REGION2_IV_BODY8 {}
 #[doc = "."]
 pub mod prince_region2_iv_body8;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_code10](prince_region2_iv_code10) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_code10](prince_region2_iv_code10) module"]
 pub type PRINCE_REGION2_IV_CODE10 = crate::Reg<u32, _PRINCE_REGION2_IV_CODE10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2269,7 +2276,7 @@ impl crate::Readable for PRINCE_REGION2_IV_CODE10 {}
 impl crate::Writable for PRINCE_REGION2_IV_CODE10 {}
 #[doc = "."]
 pub mod prince_region2_iv_code10;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_body9](prince_region2_iv_body9) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_body9](prince_region2_iv_body9) module"]
 pub type PRINCE_REGION2_IV_BODY9 = crate::Reg<u32, _PRINCE_REGION2_IV_BODY9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2280,7 +2287,7 @@ impl crate::Readable for PRINCE_REGION2_IV_BODY9 {}
 impl crate::Writable for PRINCE_REGION2_IV_BODY9 {}
 #[doc = "."]
 pub mod prince_region2_iv_body9;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_code11](prince_region2_iv_code11) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_code11](prince_region2_iv_code11) module"]
 pub type PRINCE_REGION2_IV_CODE11 = crate::Reg<u32, _PRINCE_REGION2_IV_CODE11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2291,7 +2298,7 @@ impl crate::Readable for PRINCE_REGION2_IV_CODE11 {}
 impl crate::Writable for PRINCE_REGION2_IV_CODE11 {}
 #[doc = "."]
 pub mod prince_region2_iv_code11;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_body10](prince_region2_iv_body10) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_body10](prince_region2_iv_body10) module"]
 pub type PRINCE_REGION2_IV_BODY10 = crate::Reg<u32, _PRINCE_REGION2_IV_BODY10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2302,7 +2309,7 @@ impl crate::Readable for PRINCE_REGION2_IV_BODY10 {}
 impl crate::Writable for PRINCE_REGION2_IV_BODY10 {}
 #[doc = "."]
 pub mod prince_region2_iv_body10;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_code12](prince_region2_iv_code12) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_code12](prince_region2_iv_code12) module"]
 pub type PRINCE_REGION2_IV_CODE12 = crate::Reg<u32, _PRINCE_REGION2_IV_CODE12>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2313,7 +2320,7 @@ impl crate::Readable for PRINCE_REGION2_IV_CODE12 {}
 impl crate::Writable for PRINCE_REGION2_IV_CODE12 {}
 #[doc = "."]
 pub mod prince_region2_iv_code12;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_body11](prince_region2_iv_body11) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_body11](prince_region2_iv_body11) module"]
 pub type PRINCE_REGION2_IV_BODY11 = crate::Reg<u32, _PRINCE_REGION2_IV_BODY11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2324,7 +2331,7 @@ impl crate::Readable for PRINCE_REGION2_IV_BODY11 {}
 impl crate::Writable for PRINCE_REGION2_IV_BODY11 {}
 #[doc = "."]
 pub mod prince_region2_iv_body11;
-#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [prince_region2_iv_code13](prince_region2_iv_code13) module"]
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prince_region2_iv_code13](prince_region2_iv_code13) module"]
 pub type PRINCE_REGION2_IV_CODE13 = crate::Reg<u32, _PRINCE_REGION2_IV_CODE13>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2335,7 +2342,7 @@ impl crate::Readable for PRINCE_REGION2_IV_CODE13 {}
 impl crate::Writable for PRINCE_REGION2_IV_CODE13 {}
 #[doc = "."]
 pub mod prince_region2_iv_code13;
-#[doc = "Customer Defined (Programable through ROM API)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [customer_defined](customer_defined) module"]
+#[doc = "Customer Defined (Programable through ROM API)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [customer_defined](customer_defined) module"]
 pub type CUSTOMER_DEFINED = crate::Reg<u32, _CUSTOMER_DEFINED>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2346,7 +2353,14 @@ impl crate::Readable for CUSTOMER_DEFINED {}
 impl crate::Writable for CUSTOMER_DEFINED {}
 #[doc = "Customer Defined (Programable through ROM API)"]
 pub mod customer_defined;
-#[doc = "SHA256_DIGEST0 for DIGEST\\[31:0\\] SHA256_DIGEST1 for DIGEST\\[63:32\\] SHA256_DIGEST2 for DIGEST\\[95:64\\] SHA256_DIGEST3 for DIGEST\\[127:96\\] SHA256_DIGEST4 for DIGEST\\[159:128\\] SHA256_DIGEST5 for DIGEST\\[191:160\\] SHA256_DIGEST6 for DIGEST\\[223:192\\] SHA256_DIGEST7 for DIGEST\\[255:224\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sha256_digest](sha256_digest) module"]
+#[doc = "SHA256_DIGEST0 for DIGEST\\[31:0\\]
+SHA256_DIGEST1 for DIGEST\\[63:32\\]
+SHA256_DIGEST2 for DIGEST\\[95:64\\]
+SHA256_DIGEST3 for DIGEST\\[127:96\\]
+SHA256_DIGEST4 for DIGEST\\[159:128\\]
+SHA256_DIGEST5 for DIGEST\\[191:160\\]
+SHA256_DIGEST6 for DIGEST\\[223:192\\]
+SHA256_DIGEST7 for DIGEST\\[255:224\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sha256_digest](sha256_digest) module"]
 pub type SHA256_DIGEST = crate::Reg<u32, _SHA256_DIGEST>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -2355,5 +2369,12 @@ pub struct _SHA256_DIGEST;
 impl crate::Readable for SHA256_DIGEST {}
 #[doc = "`write(|w| ..)` method takes [sha256_digest::W](sha256_digest::W) writer structure"]
 impl crate::Writable for SHA256_DIGEST {}
-#[doc = "SHA256_DIGEST0 for DIGEST\\[31:0\\] SHA256_DIGEST1 for DIGEST\\[63:32\\] SHA256_DIGEST2 for DIGEST\\[95:64\\] SHA256_DIGEST3 for DIGEST\\[127:96\\] SHA256_DIGEST4 for DIGEST\\[159:128\\] SHA256_DIGEST5 for DIGEST\\[191:160\\] SHA256_DIGEST6 for DIGEST\\[223:192\\] SHA256_DIGEST7 for DIGEST\\[255:224\\]"]
+#[doc = "SHA256_DIGEST0 for DIGEST\\[31:0\\]
+SHA256_DIGEST1 for DIGEST\\[63:32\\]
+SHA256_DIGEST2 for DIGEST\\[95:64\\]
+SHA256_DIGEST3 for DIGEST\\[127:96\\]
+SHA256_DIGEST4 for DIGEST\\[159:128\\]
+SHA256_DIGEST5 for DIGEST\\[191:160\\]
+SHA256_DIGEST6 for DIGEST\\[223:192\\]
+SHA256_DIGEST7 for DIGEST\\[255:224\\]"]
 pub mod sha256_digest;

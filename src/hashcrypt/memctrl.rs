@@ -10,21 +10,18 @@ impl crate::ResetValue for super::MEMCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `MASTER`"]
+#[doc = "Enables mastering.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MASTER_A {
-    #[doc = "Mastering is not used and the normal DMA or Interrupt based model is used with INDATA."]
-    NOT_USED,
-    #[doc = "Mastering is enabled and DMA and INDATA should not be used."]
-    ENABLED,
+    #[doc = "0: Mastering is not used and the normal DMA or Interrupt based model is used with INDATA."]
+    NOT_USED = 0,
+    #[doc = "1: Mastering is enabled and DMA and INDATA should not be used."]
+    ENABLED = 1,
 }
 impl From<MASTER_A> for bool {
     #[inline(always)]
     fn from(variant: MASTER_A) -> Self {
-        match variant {
-            MASTER_A::NOT_USED => false,
-            MASTER_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MASTER`"]

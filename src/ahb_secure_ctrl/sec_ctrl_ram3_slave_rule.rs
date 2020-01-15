@@ -10,27 +10,23 @@ impl crate::ResetValue for super::SEC_CTRL_RAM3_SLAVE_RULE {
         0
     }
 }
-#[doc = "Possible values of the field `RAM3_RULE`"]
+#[doc = "Security access rules for the whole RAM3: 0x2003_0000 - 0x2003_FFFF\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RAM3_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<RAM3_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: RAM3_RULE_A) -> Self {
-        match variant {
-            RAM3_RULE_A::ENUM_NS_NP => 0,
-            RAM3_RULE_A::ENUM_NS_P => 1,
-            RAM3_RULE_A::ENUM_S_NP => 2,
-            RAM3_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RAM3_RULE`"]

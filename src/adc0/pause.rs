@@ -24,21 +24,18 @@ impl<'a> PAUSEDLY_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PAUSEEN`"]
+#[doc = "PAUSE Option Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PAUSEEN_A {
-    #[doc = "Pause operation disabled"]
-    PAUSEEN_0,
-    #[doc = "Pause operation enabled"]
-    PAUSEEN_1,
+    #[doc = "0: Pause operation disabled"]
+    PAUSEEN_0 = 0,
+    #[doc = "1: Pause operation enabled"]
+    PAUSEEN_1 = 1,
 }
 impl From<PAUSEEN_A> for bool {
     #[inline(always)]
     fn from(variant: PAUSEEN_A) -> Self {
-        match variant {
-            PAUSEEN_A::PAUSEEN_0 => false,
-            PAUSEEN_A::PAUSEEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PAUSEEN`"]

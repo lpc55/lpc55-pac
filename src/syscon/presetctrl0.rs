@@ -10,21 +10,18 @@ impl crate::ResetValue for super::PRESETCTRL0 {
         0
     }
 }
-#[doc = "Possible values of the field `ROM_RST`"]
+#[doc = "ROM reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ROM_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<ROM_RST_A> for bool {
     #[inline(always)]
     fn from(variant: ROM_RST_A) -> Self {
-        match variant {
-            ROM_RST_A::RELEASED => false,
-            ROM_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ROM_RST`"]
@@ -88,21 +85,18 @@ impl<'a> ROM_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRAM_CTRL1_RST`"]
+#[doc = "SRAM Controller 1 reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAM_CTRL1_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<SRAM_CTRL1_RST_A> for bool {
     #[inline(always)]
     fn from(variant: SRAM_CTRL1_RST_A) -> Self {
-        match variant {
-            SRAM_CTRL1_RST_A::RELEASED => false,
-            SRAM_CTRL1_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRAM_CTRL1_RST`"]
@@ -166,21 +160,18 @@ impl<'a> SRAM_CTRL1_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRAM_CTRL2_RST`"]
+#[doc = "SRAM Controller 2 reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAM_CTRL2_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<SRAM_CTRL2_RST_A> for bool {
     #[inline(always)]
     fn from(variant: SRAM_CTRL2_RST_A) -> Self {
-        match variant {
-            SRAM_CTRL2_RST_A::RELEASED => false,
-            SRAM_CTRL2_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRAM_CTRL2_RST`"]
@@ -244,21 +235,18 @@ impl<'a> SRAM_CTRL2_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRAM_CTRL3_RST`"]
+#[doc = "SRAM Controller 3 reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAM_CTRL3_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<SRAM_CTRL3_RST_A> for bool {
     #[inline(always)]
     fn from(variant: SRAM_CTRL3_RST_A) -> Self {
-        match variant {
-            SRAM_CTRL3_RST_A::RELEASED => false,
-            SRAM_CTRL3_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRAM_CTRL3_RST`"]
@@ -322,21 +310,18 @@ impl<'a> SRAM_CTRL3_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRAM_CTRL4_RST`"]
+#[doc = "SRAM Controller 4 reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAM_CTRL4_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<SRAM_CTRL4_RST_A> for bool {
     #[inline(always)]
     fn from(variant: SRAM_CTRL4_RST_A) -> Self {
-        match variant {
-            SRAM_CTRL4_RST_A::RELEASED => false,
-            SRAM_CTRL4_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRAM_CTRL4_RST`"]
@@ -400,21 +385,18 @@ impl<'a> SRAM_CTRL4_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FLASH_RST`"]
+#[doc = "Flash controller reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLASH_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<FLASH_RST_A> for bool {
     #[inline(always)]
     fn from(variant: FLASH_RST_A) -> Self {
-        match variant {
-            FLASH_RST_A::RELEASED => false,
-            FLASH_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FLASH_RST`"]
@@ -478,21 +460,18 @@ impl<'a> FLASH_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FMC_RST`"]
+#[doc = "FMC controller reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FMC_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<FMC_RST_A> for bool {
     #[inline(always)]
     fn from(variant: FMC_RST_A) -> Self {
-        match variant {
-            FMC_RST_A::RELEASED => false,
-            FMC_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FMC_RST`"]
@@ -556,21 +535,18 @@ impl<'a> FMC_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MUX_RST`"]
+#[doc = "Input Mux reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MUX_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<MUX_RST_A> for bool {
     #[inline(always)]
     fn from(variant: MUX_RST_A) -> Self {
-        match variant {
-            MUX_RST_A::RELEASED => false,
-            MUX_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MUX_RST`"]
@@ -634,21 +610,18 @@ impl<'a> MUX_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `IOCON_RST`"]
+#[doc = "I/O controller reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IOCON_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<IOCON_RST_A> for bool {
     #[inline(always)]
     fn from(variant: IOCON_RST_A) -> Self {
-        match variant {
-            IOCON_RST_A::RELEASED => false,
-            IOCON_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IOCON_RST`"]
@@ -712,21 +685,18 @@ impl<'a> IOCON_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `GPIO0_RST`"]
+#[doc = "GPIO0 reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIO0_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<GPIO0_RST_A> for bool {
     #[inline(always)]
     fn from(variant: GPIO0_RST_A) -> Self {
-        match variant {
-            GPIO0_RST_A::RELEASED => false,
-            GPIO0_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GPIO0_RST`"]
@@ -790,21 +760,18 @@ impl<'a> GPIO0_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `GPIO1_RST`"]
+#[doc = "GPIO1 reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIO1_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<GPIO1_RST_A> for bool {
     #[inline(always)]
     fn from(variant: GPIO1_RST_A) -> Self {
-        match variant {
-            GPIO1_RST_A::RELEASED => false,
-            GPIO1_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GPIO1_RST`"]
@@ -868,21 +835,18 @@ impl<'a> GPIO1_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `GPIO2_RST`"]
+#[doc = "GPIO2 reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIO2_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<GPIO2_RST_A> for bool {
     #[inline(always)]
     fn from(variant: GPIO2_RST_A) -> Self {
-        match variant {
-            GPIO2_RST_A::RELEASED => false,
-            GPIO2_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GPIO2_RST`"]
@@ -946,21 +910,18 @@ impl<'a> GPIO2_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `GPIO3_RST`"]
+#[doc = "GPIO3 reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIO3_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<GPIO3_RST_A> for bool {
     #[inline(always)]
     fn from(variant: GPIO3_RST_A) -> Self {
-        match variant {
-            GPIO3_RST_A::RELEASED => false,
-            GPIO3_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GPIO3_RST`"]
@@ -1024,21 +985,18 @@ impl<'a> GPIO3_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PINT_RST`"]
+#[doc = "Pin interrupt (PINT) reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PINT_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<PINT_RST_A> for bool {
     #[inline(always)]
     fn from(variant: PINT_RST_A) -> Self {
-        match variant {
-            PINT_RST_A::RELEASED => false,
-            PINT_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PINT_RST`"]
@@ -1102,21 +1060,18 @@ impl<'a> PINT_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `GINT_RST`"]
+#[doc = "Group interrupt (GINT) reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GINT_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<GINT_RST_A> for bool {
     #[inline(always)]
     fn from(variant: GINT_RST_A) -> Self {
-        match variant {
-            GINT_RST_A::RELEASED => false,
-            GINT_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GINT_RST`"]
@@ -1180,21 +1135,18 @@ impl<'a> GINT_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DMA0_RST`"]
+#[doc = "DMA0 reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA0_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<DMA0_RST_A> for bool {
     #[inline(always)]
     fn from(variant: DMA0_RST_A) -> Self {
-        match variant {
-            DMA0_RST_A::RELEASED => false,
-            DMA0_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DMA0_RST`"]
@@ -1258,21 +1210,18 @@ impl<'a> DMA0_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CRCGEN_RST`"]
+#[doc = "CRCGEN reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCGEN_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<CRCGEN_RST_A> for bool {
     #[inline(always)]
     fn from(variant: CRCGEN_RST_A) -> Self {
-        match variant {
-            CRCGEN_RST_A::RELEASED => false,
-            CRCGEN_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CRCGEN_RST`"]
@@ -1336,21 +1285,18 @@ impl<'a> CRCGEN_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WWDT_RST`"]
+#[doc = "Watchdog Timer reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WWDT_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<WWDT_RST_A> for bool {
     #[inline(always)]
     fn from(variant: WWDT_RST_A) -> Self {
-        match variant {
-            WWDT_RST_A::RELEASED => false,
-            WWDT_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WWDT_RST`"]
@@ -1414,21 +1360,18 @@ impl<'a> WWDT_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RTC_RST`"]
+#[doc = "Real Time Clock (RTC) reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<RTC_RST_A> for bool {
     #[inline(always)]
     fn from(variant: RTC_RST_A) -> Self {
-        match variant {
-            RTC_RST_A::RELEASED => false,
-            RTC_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTC_RST`"]
@@ -1492,21 +1435,18 @@ impl<'a> RTC_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MAILBOX_RST`"]
+#[doc = "Inter CPU communication Mailbox reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MAILBOX_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<MAILBOX_RST_A> for bool {
     #[inline(always)]
     fn from(variant: MAILBOX_RST_A) -> Self {
-        match variant {
-            MAILBOX_RST_A::RELEASED => false,
-            MAILBOX_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MAILBOX_RST`"]
@@ -1570,21 +1510,18 @@ impl<'a> MAILBOX_RST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ADC_RST`"]
+#[doc = "ADC reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC_RST_A {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Bloc is reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Bloc is reset."]
+    ASSERTED = 1,
 }
 impl From<ADC_RST_A> for bool {
     #[inline(always)]
     fn from(variant: ADC_RST_A) -> Self {
-        match variant {
-            ADC_RST_A::RELEASED => false,
-            ADC_RST_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADC_RST`"]

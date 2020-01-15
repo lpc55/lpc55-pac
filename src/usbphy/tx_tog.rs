@@ -10,24 +10,21 @@ impl crate::ResetValue for super::TX_TOG {
         0x0a00_0402
     }
 }
-#[doc = "Possible values of the field `D_CAL`"]
+#[doc = "Decode to trim the nominal 17\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum D_CAL_A {
-    #[doc = "Maximum current, approximately 19% above nominal."]
-    VALUE0,
-    #[doc = "Nominal"]
-    VALUE7,
-    #[doc = "Minimum current, approximately 19% below nominal."]
-    VALUE15,
+    #[doc = "0: Maximum current, approximately 19% above nominal."]
+    VALUE0 = 0,
+    #[doc = "7: Nominal"]
+    VALUE7 = 7,
+    #[doc = "15: Minimum current, approximately 19% below nominal."]
+    VALUE15 = 15,
 }
 impl From<D_CAL_A> for u8 {
     #[inline(always)]
     fn from(variant: D_CAL_A) -> Self {
-        match variant {
-            D_CAL_A::VALUE0 => 0,
-            D_CAL_A::VALUE7 => 7,
-            D_CAL_A::VALUE15 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `D_CAL`"]

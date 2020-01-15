@@ -10,21 +10,18 @@ impl crate::ResetValue for super::SWTRIG {
         0
     }
 }
-#[doc = "Possible values of the field `SWT0`"]
+#[doc = "Software trigger 0 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT0_A {
-    #[doc = "No trigger 0 event generated."]
-    SWT0_0,
-    #[doc = "Trigger 0 event generated."]
-    SWT0_1,
+    #[doc = "0: No trigger 0 event generated."]
+    SWT0_0 = 0,
+    #[doc = "1: Trigger 0 event generated."]
+    SWT0_1 = 1,
 }
 impl From<SWT0_A> for bool {
     #[inline(always)]
     fn from(variant: SWT0_A) -> Self {
-        match variant {
-            SWT0_A::SWT0_0 => false,
-            SWT0_A::SWT0_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT0`"]
@@ -88,21 +85,18 @@ impl<'a> SWT0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT1`"]
+#[doc = "Software trigger 1 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT1_A {
-    #[doc = "No trigger 1 event generated."]
-    SWT1_0,
-    #[doc = "Trigger 1 event generated."]
-    SWT1_1,
+    #[doc = "0: No trigger 1 event generated."]
+    SWT1_0 = 0,
+    #[doc = "1: Trigger 1 event generated."]
+    SWT1_1 = 1,
 }
 impl From<SWT1_A> for bool {
     #[inline(always)]
     fn from(variant: SWT1_A) -> Self {
-        match variant {
-            SWT1_A::SWT1_0 => false,
-            SWT1_A::SWT1_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT1`"]
@@ -166,21 +160,18 @@ impl<'a> SWT1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT2`"]
+#[doc = "Software trigger 2 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT2_A {
-    #[doc = "No trigger 2 event generated."]
-    SWT2_0,
-    #[doc = "Trigger 2 event generated."]
-    SWT2_1,
+    #[doc = "0: No trigger 2 event generated."]
+    SWT2_0 = 0,
+    #[doc = "1: Trigger 2 event generated."]
+    SWT2_1 = 1,
 }
 impl From<SWT2_A> for bool {
     #[inline(always)]
     fn from(variant: SWT2_A) -> Self {
-        match variant {
-            SWT2_A::SWT2_0 => false,
-            SWT2_A::SWT2_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT2`"]
@@ -244,21 +235,18 @@ impl<'a> SWT2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT3`"]
+#[doc = "Software trigger 3 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT3_A {
-    #[doc = "No trigger 3 event generated."]
-    SWT3_0,
-    #[doc = "Trigger 3 event generated."]
-    SWT3_1,
+    #[doc = "0: No trigger 3 event generated."]
+    SWT3_0 = 0,
+    #[doc = "1: Trigger 3 event generated."]
+    SWT3_1 = 1,
 }
 impl From<SWT3_A> for bool {
     #[inline(always)]
     fn from(variant: SWT3_A) -> Self {
-        match variant {
-            SWT3_A::SWT3_0 => false,
-            SWT3_A::SWT3_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT3`"]
@@ -322,21 +310,18 @@ impl<'a> SWT3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT4`"]
+#[doc = "Software trigger 4 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT4_A {
-    #[doc = "No trigger 4 event generated."]
-    SWT4_0,
-    #[doc = "Trigger 4 event generated."]
-    SWT4_1,
+    #[doc = "0: No trigger 4 event generated."]
+    SWT4_0 = 0,
+    #[doc = "1: Trigger 4 event generated."]
+    SWT4_1 = 1,
 }
 impl From<SWT4_A> for bool {
     #[inline(always)]
     fn from(variant: SWT4_A) -> Self {
-        match variant {
-            SWT4_A::SWT4_0 => false,
-            SWT4_A::SWT4_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT4`"]
@@ -400,21 +385,18 @@ impl<'a> SWT4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT5`"]
+#[doc = "Software trigger 5 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT5_A {
-    #[doc = "No trigger 5 event generated."]
-    SWT5_0,
-    #[doc = "Trigger 5 event generated."]
-    SWT5_1,
+    #[doc = "0: No trigger 5 event generated."]
+    SWT5_0 = 0,
+    #[doc = "1: Trigger 5 event generated."]
+    SWT5_1 = 1,
 }
 impl From<SWT5_A> for bool {
     #[inline(always)]
     fn from(variant: SWT5_A) -> Self {
-        match variant {
-            SWT5_A::SWT5_0 => false,
-            SWT5_A::SWT5_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT5`"]
@@ -478,21 +460,18 @@ impl<'a> SWT5_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT6`"]
+#[doc = "Software trigger 6 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT6_A {
-    #[doc = "No trigger 6 event generated."]
-    SWT6_0,
-    #[doc = "Trigger 6 event generated."]
-    SWT6_1,
+    #[doc = "0: No trigger 6 event generated."]
+    SWT6_0 = 0,
+    #[doc = "1: Trigger 6 event generated."]
+    SWT6_1 = 1,
 }
 impl From<SWT6_A> for bool {
     #[inline(always)]
     fn from(variant: SWT6_A) -> Self {
-        match variant {
-            SWT6_A::SWT6_0 => false,
-            SWT6_A::SWT6_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT6`"]
@@ -556,21 +535,18 @@ impl<'a> SWT6_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT7`"]
+#[doc = "Software trigger 7 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT7_A {
-    #[doc = "No trigger 7 event generated."]
-    SWT7_0,
-    #[doc = "Trigger 7 event generated."]
-    SWT7_1,
+    #[doc = "0: No trigger 7 event generated."]
+    SWT7_0 = 0,
+    #[doc = "1: Trigger 7 event generated."]
+    SWT7_1 = 1,
 }
 impl From<SWT7_A> for bool {
     #[inline(always)]
     fn from(variant: SWT7_A) -> Self {
-        match variant {
-            SWT7_A::SWT7_0 => false,
-            SWT7_A::SWT7_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT7`"]
@@ -634,21 +610,18 @@ impl<'a> SWT7_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT8`"]
+#[doc = "Software trigger 8 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT8_A {
-    #[doc = "No trigger 8 event generated."]
-    SWT8_0,
-    #[doc = "Trigger 8 event generated."]
-    SWT8_1,
+    #[doc = "0: No trigger 8 event generated."]
+    SWT8_0 = 0,
+    #[doc = "1: Trigger 8 event generated."]
+    SWT8_1 = 1,
 }
 impl From<SWT8_A> for bool {
     #[inline(always)]
     fn from(variant: SWT8_A) -> Self {
-        match variant {
-            SWT8_A::SWT8_0 => false,
-            SWT8_A::SWT8_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT8`"]
@@ -712,21 +685,18 @@ impl<'a> SWT8_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT9`"]
+#[doc = "Software trigger 9 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT9_A {
-    #[doc = "No trigger 9 event generated."]
-    SWT9_0,
-    #[doc = "Trigger 9 event generated."]
-    SWT9_1,
+    #[doc = "0: No trigger 9 event generated."]
+    SWT9_0 = 0,
+    #[doc = "1: Trigger 9 event generated."]
+    SWT9_1 = 1,
 }
 impl From<SWT9_A> for bool {
     #[inline(always)]
     fn from(variant: SWT9_A) -> Self {
-        match variant {
-            SWT9_A::SWT9_0 => false,
-            SWT9_A::SWT9_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT9`"]
@@ -790,21 +760,18 @@ impl<'a> SWT9_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT10`"]
+#[doc = "Software trigger 10 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT10_A {
-    #[doc = "No trigger 10 event generated."]
-    SWT10_0,
-    #[doc = "Trigger 10 event generated."]
-    SWT10_1,
+    #[doc = "0: No trigger 10 event generated."]
+    SWT10_0 = 0,
+    #[doc = "1: Trigger 10 event generated."]
+    SWT10_1 = 1,
 }
 impl From<SWT10_A> for bool {
     #[inline(always)]
     fn from(variant: SWT10_A) -> Self {
-        match variant {
-            SWT10_A::SWT10_0 => false,
-            SWT10_A::SWT10_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT10`"]
@@ -868,21 +835,18 @@ impl<'a> SWT10_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT11`"]
+#[doc = "Software trigger 11 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT11_A {
-    #[doc = "No trigger 11 event generated."]
-    SWT11_0,
-    #[doc = "Trigger 11 event generated."]
-    SWT11_1,
+    #[doc = "0: No trigger 11 event generated."]
+    SWT11_0 = 0,
+    #[doc = "1: Trigger 11 event generated."]
+    SWT11_1 = 1,
 }
 impl From<SWT11_A> for bool {
     #[inline(always)]
     fn from(variant: SWT11_A) -> Self {
-        match variant {
-            SWT11_A::SWT11_0 => false,
-            SWT11_A::SWT11_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT11`"]
@@ -946,21 +910,18 @@ impl<'a> SWT11_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT12`"]
+#[doc = "Software trigger 12 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT12_A {
-    #[doc = "No trigger 12 event generated."]
-    SWT12_0,
-    #[doc = "Trigger 12 event generated."]
-    SWT12_1,
+    #[doc = "0: No trigger 12 event generated."]
+    SWT12_0 = 0,
+    #[doc = "1: Trigger 12 event generated."]
+    SWT12_1 = 1,
 }
 impl From<SWT12_A> for bool {
     #[inline(always)]
     fn from(variant: SWT12_A) -> Self {
-        match variant {
-            SWT12_A::SWT12_0 => false,
-            SWT12_A::SWT12_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT12`"]
@@ -1024,21 +985,18 @@ impl<'a> SWT12_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT13`"]
+#[doc = "Software trigger 13 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT13_A {
-    #[doc = "No trigger 13 event generated."]
-    SWT13_0,
-    #[doc = "Trigger 13 event generated."]
-    SWT13_1,
+    #[doc = "0: No trigger 13 event generated."]
+    SWT13_0 = 0,
+    #[doc = "1: Trigger 13 event generated."]
+    SWT13_1 = 1,
 }
 impl From<SWT13_A> for bool {
     #[inline(always)]
     fn from(variant: SWT13_A) -> Self {
-        match variant {
-            SWT13_A::SWT13_0 => false,
-            SWT13_A::SWT13_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT13`"]
@@ -1102,21 +1060,18 @@ impl<'a> SWT13_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT14`"]
+#[doc = "Software trigger 14 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT14_A {
-    #[doc = "No trigger 14 event generated."]
-    SWT14_0,
-    #[doc = "Trigger 14 event generated."]
-    SWT14_1,
+    #[doc = "0: No trigger 14 event generated."]
+    SWT14_0 = 0,
+    #[doc = "1: Trigger 14 event generated."]
+    SWT14_1 = 1,
 }
 impl From<SWT14_A> for bool {
     #[inline(always)]
     fn from(variant: SWT14_A) -> Self {
-        match variant {
-            SWT14_A::SWT14_0 => false,
-            SWT14_A::SWT14_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT14`"]
@@ -1180,21 +1135,18 @@ impl<'a> SWT14_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SWT15`"]
+#[doc = "Software trigger 15 event\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWT15_A {
-    #[doc = "No trigger 15 event generated."]
-    SWT15_0,
-    #[doc = "Trigger 15 event generated."]
-    SWT15_1,
+    #[doc = "0: No trigger 15 event generated."]
+    SWT15_0 = 0,
+    #[doc = "1: Trigger 15 event generated."]
+    SWT15_1 = 1,
 }
 impl From<SWT15_A> for bool {
     #[inline(always)]
     fn from(variant: SWT15_A) -> Self {
-        match variant {
-            SWT15_A::SWT15_0 => false,
-            SWT15_A::SWT15_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWT15`"]

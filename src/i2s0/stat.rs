@@ -10,21 +10,18 @@ impl crate::ResetValue for super::STAT {
         0
     }
 }
-#[doc = "Possible values of the field `BUSY`"]
+#[doc = "Busy status for the primary channel pair. Other BUSY flags may be found in the STAT register for each channel pair.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUSY_A {
-    #[doc = "The transmitter/receiver for channel pair is currently idle."]
-    IDLE,
-    #[doc = "The transmitter/receiver for channel pair is currently processing data."]
-    BUSY,
+    #[doc = "0: The transmitter/receiver for channel pair is currently idle."]
+    IDLE = 0,
+    #[doc = "1: The transmitter/receiver for channel pair is currently processing data."]
+    BUSY = 1,
 }
 impl From<BUSY_A> for bool {
     #[inline(always)]
     fn from(variant: BUSY_A) -> Self {
-        match variant {
-            BUSY_A::IDLE => false,
-            BUSY_A::BUSY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BUSY`"]
@@ -49,21 +46,18 @@ impl BUSY_R {
         *self == BUSY_A::BUSY
     }
 }
-#[doc = "Possible values of the field `SLVFRMERR`"]
+#[doc = "Slave Frame Error flag. This applies when at least one channel pair is operating as a slave. An error indicates that the incoming WS signal did not transition as expected due to a mismatch between FRAMELEN and the actual incoming I2S stream.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SLVFRMERR_AW {
-    #[doc = "No error has been recorded."]
-    NO_ERROR,
-    #[doc = "An error has been recorded for some channel pair that is operating in slave mode. ERROR is cleared by writing a 1 to this bit position."]
-    ERROR,
+    #[doc = "0: No error has been recorded."]
+    NO_ERROR = 0,
+    #[doc = "1: An error has been recorded for some channel pair that is operating in slave mode. ERROR is cleared by writing a 1 to this bit position."]
+    ERROR = 1,
 }
 impl From<SLVFRMERR_AW> for bool {
     #[inline(always)]
     fn from(variant: SLVFRMERR_AW) -> Self {
-        match variant {
-            SLVFRMERR_AW::NO_ERROR => false,
-            SLVFRMERR_AW::ERROR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `SLVFRMERR`"]
@@ -105,21 +99,18 @@ impl<'a> SLVFRMERR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LR`"]
+#[doc = "Left/Right indication. This flag is considered to be a debugging aid and is not expected to be used by an I2S driver. Valid when one channel pair is busy. Indicates left or right data being processed for the currently busy channel pair.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LR_A {
-    #[doc = "Left channel."]
-    LEFT_CHANNEL,
-    #[doc = "Right channel."]
-    RIGHT_CHANNEL,
+    #[doc = "0: Left channel."]
+    LEFT_CHANNEL = 0,
+    #[doc = "1: Right channel."]
+    RIGHT_CHANNEL = 1,
 }
 impl From<LR_A> for bool {
     #[inline(always)]
     fn from(variant: LR_A) -> Self {
-        match variant {
-            LR_A::LEFT_CHANNEL => false,
-            LR_A::RIGHT_CHANNEL => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LR`"]
@@ -144,21 +135,18 @@ impl LR_R {
         *self == LR_A::RIGHT_CHANNEL
     }
 }
-#[doc = "Possible values of the field `DATAPAUSED`"]
+#[doc = "Data Paused status flag. Applies to all I2S channels\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATAPAUSED_A {
-    #[doc = "Data is not currently paused. A data pause may have been requested but is not yet in force, waiting for an allowed pause point. Refer to the description of the DATAPAUSE control bit in the CFG1 register."]
-    NOT_PAUSED,
-    #[doc = "A data pause has been requested and is now in force."]
-    PAUSED,
+    #[doc = "0: Data is not currently paused. A data pause may have been requested but is not yet in force, waiting for an allowed pause point. Refer to the description of the DATAPAUSE control bit in the CFG1 register."]
+    NOT_PAUSED = 0,
+    #[doc = "1: A data pause has been requested and is now in force."]
+    PAUSED = 1,
 }
 impl From<DATAPAUSED_A> for bool {
     #[inline(always)]
     fn from(variant: DATAPAUSED_A) -> Self {
-        match variant {
-            DATAPAUSED_A::NOT_PAUSED => false,
-            DATAPAUSED_A::PAUSED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATAPAUSED`"]

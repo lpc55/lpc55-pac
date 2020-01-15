@@ -10,21 +10,18 @@ impl crate::ResetValue for super::FIFOTRIG {
         0
     }
 }
-#[doc = "Possible values of the field `TXLVLENA`"]
+#[doc = "Transmit FIFO level trigger enable. This trigger will become an interrupt if enabled in FIFOINTENSET, or a DMA trigger if DMATX in FIFOCFG is set.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXLVLENA_A {
-    #[doc = "Transmit FIFO level does not generate a FIFO level trigger."]
-    DISABLED,
-    #[doc = "An trigger will be generated if the transmit FIFO level reaches the value specified by the TXLVL field in this register."]
-    ENABLED,
+    #[doc = "0: Transmit FIFO level does not generate a FIFO level trigger."]
+    DISABLED = 0,
+    #[doc = "1: An trigger will be generated if the transmit FIFO level reaches the value specified by the TXLVL field in this register."]
+    ENABLED = 1,
 }
 impl From<TXLVLENA_A> for bool {
     #[inline(always)]
     fn from(variant: TXLVLENA_A) -> Self {
-        match variant {
-            TXLVLENA_A::DISABLED => false,
-            TXLVLENA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXLVLENA`"]
@@ -88,21 +85,18 @@ impl<'a> TXLVLENA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RXLVLENA`"]
+#[doc = "Receive FIFO level trigger enable. This trigger will become an interrupt if enabled in FIFOINTENSET, or a DMA trigger if DMARX in FIFOCFG is set.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXLVLENA_A {
-    #[doc = "Receive FIFO level does not generate a FIFO level trigger."]
-    DISABLED,
-    #[doc = "An trigger will be generated if the receive FIFO level reaches the value specified by the RXLVL field in this register."]
-    ENABLED,
+    #[doc = "0: Receive FIFO level does not generate a FIFO level trigger."]
+    DISABLED = 0,
+    #[doc = "1: An trigger will be generated if the receive FIFO level reaches the value specified by the RXLVL field in this register."]
+    ENABLED = 1,
 }
 impl From<RXLVLENA_A> for bool {
     #[inline(always)]
     fn from(variant: RXLVLENA_A) -> Self {
-        match variant {
-            RXLVLENA_A::DISABLED => false,
-            RXLVLENA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXLVLENA`"]

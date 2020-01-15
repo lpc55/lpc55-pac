@@ -10,21 +10,18 @@ impl crate::ResetValue for super::DE {
         0
     }
 }
-#[doc = "Possible values of the field `FWMDE0`"]
+#[doc = "FIFO 0 Watermark DMA Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FWMDE0_A {
-    #[doc = "DMA request disabled."]
-    FWMDE0_0,
-    #[doc = "DMA request enabled."]
-    FWMDE0_1,
+    #[doc = "0: DMA request disabled."]
+    FWMDE0_0 = 0,
+    #[doc = "1: DMA request enabled."]
+    FWMDE0_1 = 1,
 }
 impl From<FWMDE0_A> for bool {
     #[inline(always)]
     fn from(variant: FWMDE0_A) -> Self {
-        match variant {
-            FWMDE0_A::FWMDE0_0 => false,
-            FWMDE0_A::FWMDE0_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FWMDE0`"]
@@ -88,21 +85,18 @@ impl<'a> FWMDE0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FWMDE1`"]
+#[doc = "FIFO1 Watermark DMA Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FWMDE1_A {
-    #[doc = "DMA request disabled."]
-    FWMDE1_0,
-    #[doc = "DMA request enabled."]
-    FWMDE1_1,
+    #[doc = "0: DMA request disabled."]
+    FWMDE1_0 = 0,
+    #[doc = "1: DMA request enabled."]
+    FWMDE1_1 = 1,
 }
 impl From<FWMDE1_A> for bool {
     #[inline(always)]
     fn from(variant: FWMDE1_A) -> Self {
-        match variant {
-            FWMDE1_A::FWMDE1_0 => false,
-            FWMDE1_A::FWMDE1_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FWMDE1`"]

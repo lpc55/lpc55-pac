@@ -10,21 +10,18 @@ impl crate::ResetValue for super::INTENSET {
         0
     }
 }
-#[doc = "Possible values of the field `WAITING`"]
+#[doc = "Indicates if should interrupt when waiting for data input.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAITING_A {
-    #[doc = "Will not interrupt when waiting."]
-    NO_INTERRUPT,
-    #[doc = "Will interrupt when waiting"]
-    INTERRUPT,
+    #[doc = "0: Will not interrupt when waiting."]
+    NO_INTERRUPT = 0,
+    #[doc = "1: Will interrupt when waiting"]
+    INTERRUPT = 1,
 }
 impl From<WAITING_A> for bool {
     #[inline(always)]
     fn from(variant: WAITING_A) -> Self {
-        match variant {
-            WAITING_A::NO_INTERRUPT => false,
-            WAITING_A::INTERRUPT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAITING`"]
@@ -88,21 +85,18 @@ impl<'a> WAITING_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DIGEST`"]
+#[doc = "Indicates if should interrupt when Digest (or Outdata) is ready (completed a hash/crypto or completed a full sequence).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIGEST_A {
-    #[doc = "Will not interrupt when Digest is ready"]
-    NO_INTERRUPT,
-    #[doc = "Will interrupt when Digest is ready. Interrupt cleared by writing more data, starting a new Hash, or disabling (done)."]
-    INTERRUPT,
+    #[doc = "0: Will not interrupt when Digest is ready"]
+    NO_INTERRUPT = 0,
+    #[doc = "1: Will interrupt when Digest is ready. Interrupt cleared by writing more data, starting a new Hash, or disabling (done)."]
+    INTERRUPT = 1,
 }
 impl From<DIGEST_A> for bool {
     #[inline(always)]
     fn from(variant: DIGEST_A) -> Self {
-        match variant {
-            DIGEST_A::NO_INTERRUPT => false,
-            DIGEST_A::INTERRUPT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIGEST`"]
@@ -166,21 +160,18 @@ impl<'a> DIGEST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ERROR`"]
+#[doc = "Indicates if should interrupt on an ERROR (as defined in Status)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERROR_A {
-    #[doc = "Will not interrupt on Error."]
-    NOT_INTERRUPT,
-    #[doc = "Will interrupt on Error (until cleared)."]
-    INTERRUPT,
+    #[doc = "0: Will not interrupt on Error."]
+    NOT_INTERRUPT = 0,
+    #[doc = "1: Will interrupt on Error (until cleared)."]
+    INTERRUPT = 1,
 }
 impl From<ERROR_A> for bool {
     #[inline(always)]
     fn from(variant: ERROR_A) -> Self {
-        match variant {
-            ERROR_A::NOT_INTERRUPT => false,
-            ERROR_A::INTERRUPT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ERROR`"]

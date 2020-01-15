@@ -22,21 +22,18 @@ impl<'a> TXDATA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TXSSEL0_N`"]
+#[doc = "Transmit slave select. This field asserts SSEL0 in master mode. The output on the pin is active LOW by default.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXSSEL0_N_AW {
-    #[doc = "SSEL0 asserted."]
-    ASSERTED,
-    #[doc = "SSEL0 not asserted."]
-    NOT_ASSERTED,
+    #[doc = "0: SSEL0 asserted."]
+    ASSERTED = 0,
+    #[doc = "1: SSEL0 not asserted."]
+    NOT_ASSERTED = 1,
 }
 impl From<TXSSEL0_N_AW> for bool {
     #[inline(always)]
     fn from(variant: TXSSEL0_N_AW) -> Self {
-        match variant {
-            TXSSEL0_N_AW::ASSERTED => false,
-            TXSSEL0_N_AW::NOT_ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TXSSEL0_N`"]
@@ -78,21 +75,18 @@ impl<'a> TXSSEL0_N_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TXSSEL1_N`"]
+#[doc = "Transmit slave select. This field asserts SSEL1 in master mode. The output on the pin is active LOW by default.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXSSEL1_N_AW {
-    #[doc = "SSEL1 asserted."]
-    ASSERTED,
-    #[doc = "SSEL1 not asserted."]
-    NOT_ASSERTED,
+    #[doc = "0: SSEL1 asserted."]
+    ASSERTED = 0,
+    #[doc = "1: SSEL1 not asserted."]
+    NOT_ASSERTED = 1,
 }
 impl From<TXSSEL1_N_AW> for bool {
     #[inline(always)]
     fn from(variant: TXSSEL1_N_AW) -> Self {
-        match variant {
-            TXSSEL1_N_AW::ASSERTED => false,
-            TXSSEL1_N_AW::NOT_ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TXSSEL1_N`"]
@@ -134,21 +128,18 @@ impl<'a> TXSSEL1_N_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TXSSEL2_N`"]
+#[doc = "Transmit slave select. This field asserts SSEL2 in master mode. The output on the pin is active LOW by default.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXSSEL2_N_AW {
-    #[doc = "SSEL2 asserted."]
-    ASSERTED,
-    #[doc = "SSEL2 not asserted."]
-    NOT_ASSERTED,
+    #[doc = "0: SSEL2 asserted."]
+    ASSERTED = 0,
+    #[doc = "1: SSEL2 not asserted."]
+    NOT_ASSERTED = 1,
 }
 impl From<TXSSEL2_N_AW> for bool {
     #[inline(always)]
     fn from(variant: TXSSEL2_N_AW) -> Self {
-        match variant {
-            TXSSEL2_N_AW::ASSERTED => false,
-            TXSSEL2_N_AW::NOT_ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TXSSEL2_N`"]
@@ -190,21 +181,18 @@ impl<'a> TXSSEL2_N_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TXSSEL3_N`"]
+#[doc = "Transmit slave select. This field asserts SSEL3 in master mode. The output on the pin is active LOW by default.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXSSEL3_N_AW {
-    #[doc = "SSEL3 asserted."]
-    ASSERTED,
-    #[doc = "SSEL3 not asserted."]
-    NOT_ASSERTED,
+    #[doc = "0: SSEL3 asserted."]
+    ASSERTED = 0,
+    #[doc = "1: SSEL3 not asserted."]
+    NOT_ASSERTED = 1,
 }
 impl From<TXSSEL3_N_AW> for bool {
     #[inline(always)]
     fn from(variant: TXSSEL3_N_AW) -> Self {
-        match variant {
-            TXSSEL3_N_AW::ASSERTED => false,
-            TXSSEL3_N_AW::NOT_ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `TXSSEL3_N`"]
@@ -246,21 +234,18 @@ impl<'a> TXSSEL3_N_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EOT`"]
+#[doc = "End of transfer. The asserted SSEL will be deasserted at the end of a transfer and remain so far at least the time specified by the Transfer_delay value in the DLY register.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EOT_AW {
-    #[doc = "SSEL not deasserted. This piece of data is not treated as the end of a transfer. SSEL will not be deasserted at the end of this data."]
-    NOT_DEASSERTED,
-    #[doc = "SSEL deasserted. This piece of data is treated as the end of a transfer. SSEL will be deasserted at the end of this piece of data."]
-    DEASSERTED,
+    #[doc = "0: SSEL not deasserted. This piece of data is not treated as the end of a transfer. SSEL will not be deasserted at the end of this data."]
+    NOT_DEASSERTED = 0,
+    #[doc = "1: SSEL deasserted. This piece of data is treated as the end of a transfer. SSEL will be deasserted at the end of this piece of data."]
+    DEASSERTED = 1,
 }
 impl From<EOT_AW> for bool {
     #[inline(always)]
     fn from(variant: EOT_AW) -> Self {
-        match variant {
-            EOT_AW::NOT_DEASSERTED => false,
-            EOT_AW::DEASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `EOT`"]
@@ -302,21 +287,18 @@ impl<'a> EOT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EOF`"]
+#[doc = "End of frame. Between frames, a delay may be inserted, as defined by the Frame_delay value in the DLY register. The end of a frame may not be particularly meaningful if the Frame_delay value = 0. This control can be used as part of the support for frame lengths greater than 16 bits.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EOF_AW {
-    #[doc = "Data not EOF. This piece of data transmitted is not treated as the end of a frame."]
-    NOT_EOF,
-    #[doc = "Data EOF. This piece of data is treated as the end of a frame, causing the Frame_delay time to be inserted before subsequent data is transmitted."]
-    EOF,
+    #[doc = "0: Data not EOF. This piece of data transmitted is not treated as the end of a frame."]
+    NOT_EOF = 0,
+    #[doc = "1: Data EOF. This piece of data is treated as the end of a frame, causing the Frame_delay time to be inserted before subsequent data is transmitted."]
+    EOF = 1,
 }
 impl From<EOF_AW> for bool {
     #[inline(always)]
     fn from(variant: EOF_AW) -> Self {
-        match variant {
-            EOF_AW::NOT_EOF => false,
-            EOF_AW::EOF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `EOF`"]
@@ -358,21 +340,18 @@ impl<'a> EOF_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RXIGNORE`"]
+#[doc = "Receive Ignore. This allows data to be transmitted using the SPI without the need to read unneeded data from the receiver. Setting this bit simplifies the transmit process and can be used with the DMA.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXIGNORE_AW {
-    #[doc = "Read received data. Received data must be read in order to allow transmission to progress. SPI transmit will halt when the receive data FIFO is full. In slave mode, an overrun error will occur if received data is not read before new data is received."]
-    READ,
-    #[doc = "Ignore received data. Received data is ignored, allowing transmission without reading unneeded received data. No receiver flags are generated."]
-    IGNORE,
+    #[doc = "0: Read received data. Received data must be read in order to allow transmission to progress. SPI transmit will halt when the receive data FIFO is full. In slave mode, an overrun error will occur if received data is not read before new data is received."]
+    READ = 0,
+    #[doc = "1: Ignore received data. Received data is ignored, allowing transmission without reading unneeded received data. No receiver flags are generated."]
+    IGNORE = 1,
 }
 impl From<RXIGNORE_AW> for bool {
     #[inline(always)]
     fn from(variant: RXIGNORE_AW) -> Self {
-        match variant {
-            RXIGNORE_AW::READ => false,
-            RXIGNORE_AW::IGNORE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RXIGNORE`"]

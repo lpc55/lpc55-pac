@@ -10,21 +10,18 @@ impl crate::ResetValue for super::USB0NEEDCLKCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `AP_FS_DEV_NEEDCLK`"]
+#[doc = "USB0 Device USB0_NEEDCLK signal control:.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AP_FS_DEV_NEEDCLK_A {
-    #[doc = "Under hardware control."]
-    HW_CTRL,
-    #[doc = "Forced high."]
-    FORCED,
+    #[doc = "0: Under hardware control."]
+    HW_CTRL = 0,
+    #[doc = "1: Forced high."]
+    FORCED = 1,
 }
 impl From<AP_FS_DEV_NEEDCLK_A> for bool {
     #[inline(always)]
     fn from(variant: AP_FS_DEV_NEEDCLK_A) -> Self {
-        match variant {
-            AP_FS_DEV_NEEDCLK_A::HW_CTRL => false,
-            AP_FS_DEV_NEEDCLK_A::FORCED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AP_FS_DEV_NEEDCLK`"]
@@ -88,21 +85,18 @@ impl<'a> AP_FS_DEV_NEEDCLK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `POL_FS_DEV_NEEDCLK`"]
+#[doc = "USB0 Device USB0_NEEDCLK polarity for triggering the USB0 wake-up interrupt:.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POL_FS_DEV_NEEDCLK_A {
-    #[doc = "Falling edge of device USB0_NEEDCLK triggers wake-up."]
-    FALLING,
-    #[doc = "Rising edge of device USB0_NEEDCLK triggers wake-up."]
-    RISING,
+    #[doc = "0: Falling edge of device USB0_NEEDCLK triggers wake-up."]
+    FALLING = 0,
+    #[doc = "1: Rising edge of device USB0_NEEDCLK triggers wake-up."]
+    RISING = 1,
 }
 impl From<POL_FS_DEV_NEEDCLK_A> for bool {
     #[inline(always)]
     fn from(variant: POL_FS_DEV_NEEDCLK_A) -> Self {
-        match variant {
-            POL_FS_DEV_NEEDCLK_A::FALLING => false,
-            POL_FS_DEV_NEEDCLK_A::RISING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `POL_FS_DEV_NEEDCLK`"]
@@ -166,21 +160,18 @@ impl<'a> POL_FS_DEV_NEEDCLK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AP_FS_HOST_NEEDCLK`"]
+#[doc = "USB0 Host USB0_NEEDCLK signal control:.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AP_FS_HOST_NEEDCLK_A {
-    #[doc = "Under hardware control."]
-    HW_CTRL,
-    #[doc = "Forced high."]
-    FORCED,
+    #[doc = "0: Under hardware control."]
+    HW_CTRL = 0,
+    #[doc = "1: Forced high."]
+    FORCED = 1,
 }
 impl From<AP_FS_HOST_NEEDCLK_A> for bool {
     #[inline(always)]
     fn from(variant: AP_FS_HOST_NEEDCLK_A) -> Self {
-        match variant {
-            AP_FS_HOST_NEEDCLK_A::HW_CTRL => false,
-            AP_FS_HOST_NEEDCLK_A::FORCED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AP_FS_HOST_NEEDCLK`"]
@@ -244,21 +235,18 @@ impl<'a> AP_FS_HOST_NEEDCLK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `POL_FS_HOST_NEEDCLK`"]
+#[doc = "USB0 Host USB0_NEEDCLK polarity for triggering the USB0 wake-up interrupt:.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POL_FS_HOST_NEEDCLK_A {
-    #[doc = "Falling edge of device USB0_NEEDCLK triggers wake-up."]
-    FALLING,
-    #[doc = "Rising edge of device USB0_NEEDCLK triggers wake-up."]
-    RISING,
+    #[doc = "0: Falling edge of device USB0_NEEDCLK triggers wake-up."]
+    FALLING = 0,
+    #[doc = "1: Rising edge of device USB0_NEEDCLK triggers wake-up."]
+    RISING = 1,
 }
 impl From<POL_FS_HOST_NEEDCLK_A> for bool {
     #[inline(always)]
     fn from(variant: POL_FS_HOST_NEEDCLK_A) -> Self {
-        match variant {
-            POL_FS_HOST_NEEDCLK_A::FALLING => false,
-            POL_FS_HOST_NEEDCLK_A::RISING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `POL_FS_HOST_NEEDCLK`"]

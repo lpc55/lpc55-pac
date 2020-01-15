@@ -130,7 +130,7 @@ pub struct RegisterBlock {
     #[doc = "0xfc - Digital I/O control for port 1 pins PIO1_31"]
     pub pio1_31: PIO1_31,
 }
-#[doc = "Digital I/O control for port 0 pins PIO0_0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_0](pio0_0) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_0](pio0_0) module"]
 pub type PIO0_0 = crate::Reg<u32, _PIO0_0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -141,7 +141,7 @@ impl crate::Readable for PIO0_0 {}
 impl crate::Writable for PIO0_0 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_0"]
 pub mod pio0_0;
-#[doc = "Digital I/O control for port 0 pins PIO0_1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_1](pio0_1) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_1](pio0_1) module"]
 pub type PIO0_1 = crate::Reg<u32, _PIO0_1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -152,7 +152,7 @@ impl crate::Readable for PIO0_1 {}
 impl crate::Writable for PIO0_1 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_1"]
 pub mod pio0_1;
-#[doc = "Digital I/O control for port 0 pins PIO0_2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_2](pio0_2) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_2](pio0_2) module"]
 pub type PIO0_2 = crate::Reg<u32, _PIO0_2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -163,7 +163,7 @@ impl crate::Readable for PIO0_2 {}
 impl crate::Writable for PIO0_2 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_2"]
 pub mod pio0_2;
-#[doc = "Digital I/O control for port 0 pins PIO0_3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_3](pio0_3) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_3](pio0_3) module"]
 pub type PIO0_3 = crate::Reg<u32, _PIO0_3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -174,7 +174,7 @@ impl crate::Readable for PIO0_3 {}
 impl crate::Writable for PIO0_3 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_3"]
 pub mod pio0_3;
-#[doc = "Digital I/O control for port 0 pins PIO0_4\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_4](pio0_4) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_4\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_4](pio0_4) module"]
 pub type PIO0_4 = crate::Reg<u32, _PIO0_4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -185,7 +185,7 @@ impl crate::Readable for PIO0_4 {}
 impl crate::Writable for PIO0_4 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_4"]
 pub mod pio0_4;
-#[doc = "Digital I/O control for port 0 pins PIO0_5\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_5](pio0_5) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_5\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_5](pio0_5) module"]
 pub type PIO0_5 = crate::Reg<u32, _PIO0_5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -196,7 +196,7 @@ impl crate::Readable for PIO0_5 {}
 impl crate::Writable for PIO0_5 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_5"]
 pub mod pio0_5;
-#[doc = "Digital I/O control for port 0 pins PIO0_6\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_6](pio0_6) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_6\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_6](pio0_6) module"]
 pub type PIO0_6 = crate::Reg<u32, _PIO0_6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -207,7 +207,7 @@ impl crate::Readable for PIO0_6 {}
 impl crate::Writable for PIO0_6 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_6"]
 pub mod pio0_6;
-#[doc = "Digital I/O control for port 0 pins PIO0_7\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_7](pio0_7) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_7\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_7](pio0_7) module"]
 pub type PIO0_7 = crate::Reg<u32, _PIO0_7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -218,7 +218,7 @@ impl crate::Readable for PIO0_7 {}
 impl crate::Writable for PIO0_7 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_7"]
 pub mod pio0_7;
-#[doc = "Digital I/O control for port 0 pins PIO0_8\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_8](pio0_8) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_8\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_8](pio0_8) module"]
 pub type PIO0_8 = crate::Reg<u32, _PIO0_8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -229,7 +229,7 @@ impl crate::Readable for PIO0_8 {}
 impl crate::Writable for PIO0_8 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_8"]
 pub mod pio0_8;
-#[doc = "Digital I/O control for port 0 pins PIO0_9\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_9](pio0_9) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_9\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_9](pio0_9) module"]
 pub type PIO0_9 = crate::Reg<u32, _PIO0_9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -240,7 +240,7 @@ impl crate::Readable for PIO0_9 {}
 impl crate::Writable for PIO0_9 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_9"]
 pub mod pio0_9;
-#[doc = "Digital I/O control for port 0 pins PIO0_10\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_10](pio0_10) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_10\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_10](pio0_10) module"]
 pub type PIO0_10 = crate::Reg<u32, _PIO0_10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -251,7 +251,7 @@ impl crate::Readable for PIO0_10 {}
 impl crate::Writable for PIO0_10 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_10"]
 pub mod pio0_10;
-#[doc = "Digital I/O control for port 0 pins PIO0_11\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_11](pio0_11) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_11\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_11](pio0_11) module"]
 pub type PIO0_11 = crate::Reg<u32, _PIO0_11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -262,7 +262,7 @@ impl crate::Readable for PIO0_11 {}
 impl crate::Writable for PIO0_11 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_11"]
 pub mod pio0_11;
-#[doc = "Digital I/O control for port 0 pins PIO0_12\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_12](pio0_12) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_12\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_12](pio0_12) module"]
 pub type PIO0_12 = crate::Reg<u32, _PIO0_12>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -273,7 +273,7 @@ impl crate::Readable for PIO0_12 {}
 impl crate::Writable for PIO0_12 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_12"]
 pub mod pio0_12;
-#[doc = "Digital I/O control for port 0 pins PIO0_13\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_13](pio0_13) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_13\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_13](pio0_13) module"]
 pub type PIO0_13 = crate::Reg<u32, _PIO0_13>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -284,7 +284,7 @@ impl crate::Readable for PIO0_13 {}
 impl crate::Writable for PIO0_13 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_13"]
 pub mod pio0_13;
-#[doc = "Digital I/O control for port 0 pins PIO0_14\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_14](pio0_14) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_14\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_14](pio0_14) module"]
 pub type PIO0_14 = crate::Reg<u32, _PIO0_14>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -295,7 +295,7 @@ impl crate::Readable for PIO0_14 {}
 impl crate::Writable for PIO0_14 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_14"]
 pub mod pio0_14;
-#[doc = "Digital I/O control for port 0 pins PIO0_15\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_15](pio0_15) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_15\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_15](pio0_15) module"]
 pub type PIO0_15 = crate::Reg<u32, _PIO0_15>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -306,7 +306,7 @@ impl crate::Readable for PIO0_15 {}
 impl crate::Writable for PIO0_15 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_15"]
 pub mod pio0_15;
-#[doc = "Digital I/O control for port 0 pins PIO0_16\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_16](pio0_16) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_16\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_16](pio0_16) module"]
 pub type PIO0_16 = crate::Reg<u32, _PIO0_16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -317,7 +317,7 @@ impl crate::Readable for PIO0_16 {}
 impl crate::Writable for PIO0_16 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_16"]
 pub mod pio0_16;
-#[doc = "Digital I/O control for port 0 pins PIO0_17\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_17](pio0_17) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_17\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_17](pio0_17) module"]
 pub type PIO0_17 = crate::Reg<u32, _PIO0_17>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -328,7 +328,7 @@ impl crate::Readable for PIO0_17 {}
 impl crate::Writable for PIO0_17 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_17"]
 pub mod pio0_17;
-#[doc = "Digital I/O control for port 0 pins PIO0_18\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_18](pio0_18) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_18\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_18](pio0_18) module"]
 pub type PIO0_18 = crate::Reg<u32, _PIO0_18>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -339,7 +339,7 @@ impl crate::Readable for PIO0_18 {}
 impl crate::Writable for PIO0_18 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_18"]
 pub mod pio0_18;
-#[doc = "Digital I/O control for port 0 pins PIO0_19\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_19](pio0_19) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_19\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_19](pio0_19) module"]
 pub type PIO0_19 = crate::Reg<u32, _PIO0_19>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -350,7 +350,7 @@ impl crate::Readable for PIO0_19 {}
 impl crate::Writable for PIO0_19 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_19"]
 pub mod pio0_19;
-#[doc = "Digital I/O control for port 0 pins PIO0_20\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_20](pio0_20) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_20\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_20](pio0_20) module"]
 pub type PIO0_20 = crate::Reg<u32, _PIO0_20>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -361,7 +361,7 @@ impl crate::Readable for PIO0_20 {}
 impl crate::Writable for PIO0_20 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_20"]
 pub mod pio0_20;
-#[doc = "Digital I/O control for port 0 pins PIO0_21\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_21](pio0_21) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_21\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_21](pio0_21) module"]
 pub type PIO0_21 = crate::Reg<u32, _PIO0_21>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -372,7 +372,7 @@ impl crate::Readable for PIO0_21 {}
 impl crate::Writable for PIO0_21 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_21"]
 pub mod pio0_21;
-#[doc = "Digital I/O control for port 0 pins PIO0_22\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_22](pio0_22) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_22\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_22](pio0_22) module"]
 pub type PIO0_22 = crate::Reg<u32, _PIO0_22>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -383,7 +383,7 @@ impl crate::Readable for PIO0_22 {}
 impl crate::Writable for PIO0_22 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_22"]
 pub mod pio0_22;
-#[doc = "Digital I/O control for port 0 pins PIO0_23\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_23](pio0_23) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_23\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_23](pio0_23) module"]
 pub type PIO0_23 = crate::Reg<u32, _PIO0_23>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -394,7 +394,7 @@ impl crate::Readable for PIO0_23 {}
 impl crate::Writable for PIO0_23 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_23"]
 pub mod pio0_23;
-#[doc = "Digital I/O control for port 0 pins PIO0_24\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_24](pio0_24) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_24\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_24](pio0_24) module"]
 pub type PIO0_24 = crate::Reg<u32, _PIO0_24>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -405,7 +405,7 @@ impl crate::Readable for PIO0_24 {}
 impl crate::Writable for PIO0_24 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_24"]
 pub mod pio0_24;
-#[doc = "Digital I/O control for port 0 pins PIO0_25\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_25](pio0_25) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_25\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_25](pio0_25) module"]
 pub type PIO0_25 = crate::Reg<u32, _PIO0_25>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -416,7 +416,7 @@ impl crate::Readable for PIO0_25 {}
 impl crate::Writable for PIO0_25 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_25"]
 pub mod pio0_25;
-#[doc = "Digital I/O control for port 0 pins PIO0_26\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_26](pio0_26) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_26\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_26](pio0_26) module"]
 pub type PIO0_26 = crate::Reg<u32, _PIO0_26>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -427,7 +427,7 @@ impl crate::Readable for PIO0_26 {}
 impl crate::Writable for PIO0_26 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_26"]
 pub mod pio0_26;
-#[doc = "Digital I/O control for port 0 pins PIO0_27\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_27](pio0_27) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_27\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_27](pio0_27) module"]
 pub type PIO0_27 = crate::Reg<u32, _PIO0_27>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -438,7 +438,7 @@ impl crate::Readable for PIO0_27 {}
 impl crate::Writable for PIO0_27 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_27"]
 pub mod pio0_27;
-#[doc = "Digital I/O control for port 0 pins PIO0_28\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_28](pio0_28) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_28\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_28](pio0_28) module"]
 pub type PIO0_28 = crate::Reg<u32, _PIO0_28>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -449,7 +449,7 @@ impl crate::Readable for PIO0_28 {}
 impl crate::Writable for PIO0_28 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_28"]
 pub mod pio0_28;
-#[doc = "Digital I/O control for port 0 pins PIO0_29\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_29](pio0_29) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_29\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_29](pio0_29) module"]
 pub type PIO0_29 = crate::Reg<u32, _PIO0_29>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -460,7 +460,7 @@ impl crate::Readable for PIO0_29 {}
 impl crate::Writable for PIO0_29 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_29"]
 pub mod pio0_29;
-#[doc = "Digital I/O control for port 0 pins PIO0_30\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_30](pio0_30) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_30\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_30](pio0_30) module"]
 pub type PIO0_30 = crate::Reg<u32, _PIO0_30>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -471,7 +471,7 @@ impl crate::Readable for PIO0_30 {}
 impl crate::Writable for PIO0_30 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_30"]
 pub mod pio0_30;
-#[doc = "Digital I/O control for port 0 pins PIO0_31\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio0_31](pio0_31) module"]
+#[doc = "Digital I/O control for port 0 pins PIO0_31\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio0_31](pio0_31) module"]
 pub type PIO0_31 = crate::Reg<u32, _PIO0_31>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -482,7 +482,7 @@ impl crate::Readable for PIO0_31 {}
 impl crate::Writable for PIO0_31 {}
 #[doc = "Digital I/O control for port 0 pins PIO0_31"]
 pub mod pio0_31;
-#[doc = "Digital I/O control for port 1 pins PIO1_0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_0](pio1_0) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_0](pio1_0) module"]
 pub type PIO1_0 = crate::Reg<u32, _PIO1_0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -493,7 +493,7 @@ impl crate::Readable for PIO1_0 {}
 impl crate::Writable for PIO1_0 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_0"]
 pub mod pio1_0;
-#[doc = "Digital I/O control for port 1 pins PIO1_1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_1](pio1_1) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_1](pio1_1) module"]
 pub type PIO1_1 = crate::Reg<u32, _PIO1_1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -504,7 +504,7 @@ impl crate::Readable for PIO1_1 {}
 impl crate::Writable for PIO1_1 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_1"]
 pub mod pio1_1;
-#[doc = "Digital I/O control for port 1 pins PIO1_2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_2](pio1_2) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_2](pio1_2) module"]
 pub type PIO1_2 = crate::Reg<u32, _PIO1_2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -515,7 +515,7 @@ impl crate::Readable for PIO1_2 {}
 impl crate::Writable for PIO1_2 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_2"]
 pub mod pio1_2;
-#[doc = "Digital I/O control for port 1 pins PIO1_3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_3](pio1_3) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_3](pio1_3) module"]
 pub type PIO1_3 = crate::Reg<u32, _PIO1_3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -526,7 +526,7 @@ impl crate::Readable for PIO1_3 {}
 impl crate::Writable for PIO1_3 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_3"]
 pub mod pio1_3;
-#[doc = "Digital I/O control for port 1 pins PIO1_4\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_4](pio1_4) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_4\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_4](pio1_4) module"]
 pub type PIO1_4 = crate::Reg<u32, _PIO1_4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -537,7 +537,7 @@ impl crate::Readable for PIO1_4 {}
 impl crate::Writable for PIO1_4 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_4"]
 pub mod pio1_4;
-#[doc = "Digital I/O control for port 1 pins PIO1_5\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_5](pio1_5) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_5\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_5](pio1_5) module"]
 pub type PIO1_5 = crate::Reg<u32, _PIO1_5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -548,7 +548,7 @@ impl crate::Readable for PIO1_5 {}
 impl crate::Writable for PIO1_5 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_5"]
 pub mod pio1_5;
-#[doc = "Digital I/O control for port 1 pins PIO1_6\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_6](pio1_6) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_6\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_6](pio1_6) module"]
 pub type PIO1_6 = crate::Reg<u32, _PIO1_6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -559,7 +559,7 @@ impl crate::Readable for PIO1_6 {}
 impl crate::Writable for PIO1_6 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_6"]
 pub mod pio1_6;
-#[doc = "Digital I/O control for port 1 pins PIO1_7\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_7](pio1_7) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_7\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_7](pio1_7) module"]
 pub type PIO1_7 = crate::Reg<u32, _PIO1_7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -570,7 +570,7 @@ impl crate::Readable for PIO1_7 {}
 impl crate::Writable for PIO1_7 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_7"]
 pub mod pio1_7;
-#[doc = "Digital I/O control for port 1 pins PIO1_8\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_8](pio1_8) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_8\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_8](pio1_8) module"]
 pub type PIO1_8 = crate::Reg<u32, _PIO1_8>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -581,7 +581,7 @@ impl crate::Readable for PIO1_8 {}
 impl crate::Writable for PIO1_8 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_8"]
 pub mod pio1_8;
-#[doc = "Digital I/O control for port 1 pins PIO1_9\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_9](pio1_9) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_9\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_9](pio1_9) module"]
 pub type PIO1_9 = crate::Reg<u32, _PIO1_9>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -592,7 +592,7 @@ impl crate::Readable for PIO1_9 {}
 impl crate::Writable for PIO1_9 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_9"]
 pub mod pio1_9;
-#[doc = "Digital I/O control for port 1 pins PIO1_10\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_10](pio1_10) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_10\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_10](pio1_10) module"]
 pub type PIO1_10 = crate::Reg<u32, _PIO1_10>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -603,7 +603,7 @@ impl crate::Readable for PIO1_10 {}
 impl crate::Writable for PIO1_10 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_10"]
 pub mod pio1_10;
-#[doc = "Digital I/O control for port 1 pins PIO1_11\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_11](pio1_11) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_11\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_11](pio1_11) module"]
 pub type PIO1_11 = crate::Reg<u32, _PIO1_11>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -614,7 +614,7 @@ impl crate::Readable for PIO1_11 {}
 impl crate::Writable for PIO1_11 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_11"]
 pub mod pio1_11;
-#[doc = "Digital I/O control for port 1 pins PIO1_12\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_12](pio1_12) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_12\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_12](pio1_12) module"]
 pub type PIO1_12 = crate::Reg<u32, _PIO1_12>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -625,7 +625,7 @@ impl crate::Readable for PIO1_12 {}
 impl crate::Writable for PIO1_12 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_12"]
 pub mod pio1_12;
-#[doc = "Digital I/O control for port 1 pins PIO1_13\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_13](pio1_13) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_13\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_13](pio1_13) module"]
 pub type PIO1_13 = crate::Reg<u32, _PIO1_13>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -636,7 +636,7 @@ impl crate::Readable for PIO1_13 {}
 impl crate::Writable for PIO1_13 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_13"]
 pub mod pio1_13;
-#[doc = "Digital I/O control for port 1 pins PIO1_14\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_14](pio1_14) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_14\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_14](pio1_14) module"]
 pub type PIO1_14 = crate::Reg<u32, _PIO1_14>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -647,7 +647,7 @@ impl crate::Readable for PIO1_14 {}
 impl crate::Writable for PIO1_14 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_14"]
 pub mod pio1_14;
-#[doc = "Digital I/O control for port 1 pins PIO1_15\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_15](pio1_15) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_15\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_15](pio1_15) module"]
 pub type PIO1_15 = crate::Reg<u32, _PIO1_15>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -658,7 +658,7 @@ impl crate::Readable for PIO1_15 {}
 impl crate::Writable for PIO1_15 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_15"]
 pub mod pio1_15;
-#[doc = "Digital I/O control for port 1 pins PIO1_16\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_16](pio1_16) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_16\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_16](pio1_16) module"]
 pub type PIO1_16 = crate::Reg<u32, _PIO1_16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -669,7 +669,7 @@ impl crate::Readable for PIO1_16 {}
 impl crate::Writable for PIO1_16 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_16"]
 pub mod pio1_16;
-#[doc = "Digital I/O control for port 1 pins PIO1_17\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_17](pio1_17) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_17\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_17](pio1_17) module"]
 pub type PIO1_17 = crate::Reg<u32, _PIO1_17>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -680,7 +680,7 @@ impl crate::Readable for PIO1_17 {}
 impl crate::Writable for PIO1_17 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_17"]
 pub mod pio1_17;
-#[doc = "Digital I/O control for port 1 pins PIO1_18\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_18](pio1_18) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_18\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_18](pio1_18) module"]
 pub type PIO1_18 = crate::Reg<u32, _PIO1_18>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -691,7 +691,7 @@ impl crate::Readable for PIO1_18 {}
 impl crate::Writable for PIO1_18 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_18"]
 pub mod pio1_18;
-#[doc = "Digital I/O control for port 1 pins PIO1_19\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_19](pio1_19) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_19\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_19](pio1_19) module"]
 pub type PIO1_19 = crate::Reg<u32, _PIO1_19>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -702,7 +702,7 @@ impl crate::Readable for PIO1_19 {}
 impl crate::Writable for PIO1_19 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_19"]
 pub mod pio1_19;
-#[doc = "Digital I/O control for port 1 pins PIO1_20\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_20](pio1_20) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_20\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_20](pio1_20) module"]
 pub type PIO1_20 = crate::Reg<u32, _PIO1_20>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -713,7 +713,7 @@ impl crate::Readable for PIO1_20 {}
 impl crate::Writable for PIO1_20 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_20"]
 pub mod pio1_20;
-#[doc = "Digital I/O control for port 1 pins PIO1_21\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_21](pio1_21) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_21\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_21](pio1_21) module"]
 pub type PIO1_21 = crate::Reg<u32, _PIO1_21>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -724,7 +724,7 @@ impl crate::Readable for PIO1_21 {}
 impl crate::Writable for PIO1_21 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_21"]
 pub mod pio1_21;
-#[doc = "Digital I/O control for port 1 pins PIO1_22\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_22](pio1_22) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_22\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_22](pio1_22) module"]
 pub type PIO1_22 = crate::Reg<u32, _PIO1_22>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -735,7 +735,7 @@ impl crate::Readable for PIO1_22 {}
 impl crate::Writable for PIO1_22 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_22"]
 pub mod pio1_22;
-#[doc = "Digital I/O control for port 1 pins PIO1_23\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_23](pio1_23) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_23\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_23](pio1_23) module"]
 pub type PIO1_23 = crate::Reg<u32, _PIO1_23>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -746,7 +746,7 @@ impl crate::Readable for PIO1_23 {}
 impl crate::Writable for PIO1_23 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_23"]
 pub mod pio1_23;
-#[doc = "Digital I/O control for port 1 pins PIO1_24\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_24](pio1_24) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_24\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_24](pio1_24) module"]
 pub type PIO1_24 = crate::Reg<u32, _PIO1_24>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -757,7 +757,7 @@ impl crate::Readable for PIO1_24 {}
 impl crate::Writable for PIO1_24 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_24"]
 pub mod pio1_24;
-#[doc = "Digital I/O control for port 1 pins PIO1_25\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_25](pio1_25) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_25\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_25](pio1_25) module"]
 pub type PIO1_25 = crate::Reg<u32, _PIO1_25>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -768,7 +768,7 @@ impl crate::Readable for PIO1_25 {}
 impl crate::Writable for PIO1_25 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_25"]
 pub mod pio1_25;
-#[doc = "Digital I/O control for port 1 pins PIO1_26\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_26](pio1_26) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_26\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_26](pio1_26) module"]
 pub type PIO1_26 = crate::Reg<u32, _PIO1_26>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -779,7 +779,7 @@ impl crate::Readable for PIO1_26 {}
 impl crate::Writable for PIO1_26 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_26"]
 pub mod pio1_26;
-#[doc = "Digital I/O control for port 1 pins PIO1_27\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_27](pio1_27) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_27\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_27](pio1_27) module"]
 pub type PIO1_27 = crate::Reg<u32, _PIO1_27>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -790,7 +790,7 @@ impl crate::Readable for PIO1_27 {}
 impl crate::Writable for PIO1_27 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_27"]
 pub mod pio1_27;
-#[doc = "Digital I/O control for port 1 pins PIO1_28\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_28](pio1_28) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_28\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_28](pio1_28) module"]
 pub type PIO1_28 = crate::Reg<u32, _PIO1_28>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -801,7 +801,7 @@ impl crate::Readable for PIO1_28 {}
 impl crate::Writable for PIO1_28 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_28"]
 pub mod pio1_28;
-#[doc = "Digital I/O control for port 1 pins PIO1_29\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_29](pio1_29) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_29\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_29](pio1_29) module"]
 pub type PIO1_29 = crate::Reg<u32, _PIO1_29>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -812,7 +812,7 @@ impl crate::Readable for PIO1_29 {}
 impl crate::Writable for PIO1_29 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_29"]
 pub mod pio1_29;
-#[doc = "Digital I/O control for port 1 pins PIO1_30\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_30](pio1_30) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_30\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_30](pio1_30) module"]
 pub type PIO1_30 = crate::Reg<u32, _PIO1_30>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -823,7 +823,7 @@ impl crate::Readable for PIO1_30 {}
 impl crate::Writable for PIO1_30 {}
 #[doc = "Digital I/O control for port 1 pins PIO1_30"]
 pub mod pio1_30;
-#[doc = "Digital I/O control for port 1 pins PIO1_31\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pio1_31](pio1_31) module"]
+#[doc = "Digital I/O control for port 1 pins PIO1_31\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio1_31](pio1_31) module"]
 pub type PIO1_31 = crate::Reg<u32, _PIO1_31>;
 #[allow(missing_docs)]
 #[doc(hidden)]

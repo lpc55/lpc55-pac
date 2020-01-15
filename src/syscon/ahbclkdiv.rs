@@ -24,21 +24,18 @@ impl<'a> DIV_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RESET`"]
+#[doc = "Resets the divider counter.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESET_AW {
-    #[doc = "Divider is not reset."]
-    RELEASED,
-    #[doc = "Divider is reset."]
-    ASSERTED,
+    #[doc = "0: Divider is not reset."]
+    RELEASED = 0,
+    #[doc = "1: Divider is reset."]
+    ASSERTED = 1,
 }
 impl From<RESET_AW> for bool {
     #[inline(always)]
     fn from(variant: RESET_AW) -> Self {
-        match variant {
-            RESET_AW::RELEASED => false,
-            RESET_AW::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `RESET`"]
@@ -80,21 +77,18 @@ impl<'a> RESET_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `HALT`"]
+#[doc = "Halts the divider counter.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HALT_A {
-    #[doc = "Divider clock is running."]
-    RUN,
-    #[doc = "Divider clock is stoped."]
-    HALT,
+    #[doc = "0: Divider clock is running."]
+    RUN = 0,
+    #[doc = "1: Divider clock is stoped."]
+    HALT = 1,
 }
 impl From<HALT_A> for bool {
     #[inline(always)]
     fn from(variant: HALT_A) -> Self {
-        match variant {
-            HALT_A::RUN => false,
-            HALT_A::HALT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HALT`"]
@@ -158,21 +152,18 @@ impl<'a> HALT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `REQFLAG`"]
+#[doc = "Divider status flag.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REQFLAG_A {
-    #[doc = "Divider clock is stable."]
-    STABLE,
-    #[doc = "Clock frequency is not stable."]
-    ONGOING,
+    #[doc = "0: Divider clock is stable."]
+    STABLE = 0,
+    #[doc = "1: Clock frequency is not stable."]
+    ONGOING = 1,
 }
 impl From<REQFLAG_A> for bool {
     #[inline(always)]
     fn from(variant: REQFLAG_A) -> Self {
-        match variant {
-            REQFLAG_A::STABLE => false,
-            REQFLAG_A::ONGOING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REQFLAG`"]

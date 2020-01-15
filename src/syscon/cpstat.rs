@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CPSTAT {
         0
     }
 }
-#[doc = "Possible values of the field `CPU0SLEEPING`"]
+#[doc = "The CPU0 sleeping state.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPU0SLEEPING_A {
-    #[doc = "the CPU is not sleeping."]
-    AWAKE,
-    #[doc = "the CPU is sleeping."]
-    SLEEPING,
+    #[doc = "0: the CPU is not sleeping."]
+    AWAKE = 0,
+    #[doc = "1: the CPU is sleeping."]
+    SLEEPING = 1,
 }
 impl From<CPU0SLEEPING_A> for bool {
     #[inline(always)]
     fn from(variant: CPU0SLEEPING_A) -> Self {
-        match variant {
-            CPU0SLEEPING_A::AWAKE => false,
-            CPU0SLEEPING_A::SLEEPING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPU0SLEEPING`"]
@@ -49,21 +46,18 @@ impl CPU0SLEEPING_R {
         *self == CPU0SLEEPING_A::SLEEPING
     }
 }
-#[doc = "Possible values of the field `CPU1SLEEPING`"]
+#[doc = "The CPU1 sleeping state.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPU1SLEEPING_A {
-    #[doc = "the CPU is not sleeping."]
-    AWAKE,
-    #[doc = "the CPU is sleeping."]
-    SLEEPING,
+    #[doc = "0: the CPU is not sleeping."]
+    AWAKE = 0,
+    #[doc = "1: the CPU is sleeping."]
+    SLEEPING = 1,
 }
 impl From<CPU1SLEEPING_A> for bool {
     #[inline(always)]
     fn from(variant: CPU1SLEEPING_A) -> Self {
-        match variant {
-            CPU1SLEEPING_A::AWAKE => false,
-            CPU1SLEEPING_A::SLEEPING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPU1SLEEPING`"]
@@ -88,21 +82,18 @@ impl CPU1SLEEPING_R {
         *self == CPU1SLEEPING_A::SLEEPING
     }
 }
-#[doc = "Possible values of the field `CPU0LOCKUP`"]
+#[doc = "The CPU0 lockup state.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPU0LOCKUP_A {
-    #[doc = "the CPU is not in lockup."]
-    AWAKE,
-    #[doc = "the CPU is in lockup."]
-    SLEEPING,
+    #[doc = "0: the CPU is not in lockup."]
+    AWAKE = 0,
+    #[doc = "1: the CPU is in lockup."]
+    SLEEPING = 1,
 }
 impl From<CPU0LOCKUP_A> for bool {
     #[inline(always)]
     fn from(variant: CPU0LOCKUP_A) -> Self {
-        match variant {
-            CPU0LOCKUP_A::AWAKE => false,
-            CPU0LOCKUP_A::SLEEPING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPU0LOCKUP`"]
@@ -127,21 +118,18 @@ impl CPU0LOCKUP_R {
         *self == CPU0LOCKUP_A::SLEEPING
     }
 }
-#[doc = "Possible values of the field `CPU1LOCKUP`"]
+#[doc = "The CPU1 lockup state.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPU1LOCKUP_A {
-    #[doc = "the CPU is not in lockup."]
-    AWAKE,
-    #[doc = "the CPU is in lockup."]
-    SLEEPING,
+    #[doc = "0: the CPU is not in lockup."]
+    AWAKE = 0,
+    #[doc = "1: the CPU is in lockup."]
+    SLEEPING = 1,
 }
 impl From<CPU1LOCKUP_A> for bool {
     #[inline(always)]
     fn from(variant: CPU1LOCKUP_A) -> Self {
-        match variant {
-            CPU1LOCKUP_A::AWAKE => false,
-            CPU1LOCKUP_A::SLEEPING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPU1LOCKUP`"]

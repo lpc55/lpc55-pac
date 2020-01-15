@@ -24,21 +24,18 @@ impl<'a> COUNT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CTRLBPAIR`"]
+#[doc = "Which bank-pair the offset CTRLOFF is within. This must be 0 if only 2-up. Does not matter which bank is used as this is loaded when not performing an operation.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTRLBPAIR_A {
-    #[doc = "Bank-pair 0 (1st)"]
-    PAIR0,
-    #[doc = "Bank-pair 1 (2nd)"]
-    PAIR1,
+    #[doc = "0: Bank-pair 0 (1st)"]
+    PAIR0 = 0,
+    #[doc = "1: Bank-pair 1 (2nd)"]
+    PAIR1 = 1,
 }
 impl From<CTRLBPAIR_A> for bool {
     #[inline(always)]
     fn from(variant: CTRLBPAIR_A) -> Self {
-        match variant {
-            CTRLBPAIR_A::PAIR0 => false,
-            CTRLBPAIR_A::PAIR1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CTRLBPAIR`"]

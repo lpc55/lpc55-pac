@@ -12,21 +12,18 @@ impl crate::ResetValue for super::STATUSCLK {
 }
 #[doc = "Reader of field `XTAL32KOK`"]
 pub type XTAL32KOK_R = crate::R<bool, bool>;
-#[doc = "Possible values of the field `XTAL32KOSCFAILURE`"]
+#[doc = "XTAL32 KHZ oscillator oscillation failure detection indicator.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum XTAL32KOSCFAILURE_A {
-    #[doc = "No oscillation failure has been detetced since the last time this bit has been cleared.."]
-    NOFAIL,
-    #[doc = "At least one oscillation failure has been detetced since the last time this bit has been cleared.."]
-    FAILURE,
+    #[doc = "0: No oscillation failure has been detetced since the last time this bit has been cleared.."]
+    NOFAIL = 0,
+    #[doc = "1: At least one oscillation failure has been detetced since the last time this bit has been cleared.."]
+    FAILURE = 1,
 }
 impl From<XTAL32KOSCFAILURE_A> for bool {
     #[inline(always)]
     fn from(variant: XTAL32KOSCFAILURE_A) -> Self {
-        match variant {
-            XTAL32KOSCFAILURE_A::NOFAIL => false,
-            XTAL32KOSCFAILURE_A::FAILURE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `XTAL32KOSCFAILURE`"]

@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CPUCFG {
         0x02
     }
 }
-#[doc = "Possible values of the field `CPU1ENABLE`"]
+#[doc = "Enable CPU1.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPU1ENABLE_A {
-    #[doc = "CPU1 is disable (Processor in reset)."]
-    DISABLE,
-    #[doc = "CPU1 is enable."]
-    ENABLE,
+    #[doc = "0: CPU1 is disable (Processor in reset)."]
+    DISABLE = 0,
+    #[doc = "1: CPU1 is enable."]
+    ENABLE = 1,
 }
 impl From<CPU1ENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: CPU1ENABLE_A) -> Self {
-        match variant {
-            CPU1ENABLE_A::DISABLE => false,
-            CPU1ENABLE_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPU1ENABLE`"]

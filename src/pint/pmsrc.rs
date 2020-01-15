@@ -10,39 +10,31 @@ impl crate::ResetValue for super::PMSRC {
         0
     }
 }
-#[doc = "Possible values of the field `SRC0`"]
+#[doc = "Selects the input source for bit slice 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRC0_A {
-    #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 0."]
-    INPUT0,
-    #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 0."]
-    INPUT1,
-    #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 0."]
-    INPUT2,
-    #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 0."]
-    INPUT3,
-    #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 0."]
-    INPUT4,
-    #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 0."]
-    INPUT5,
-    #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 0."]
-    INPUT6,
-    #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 0."]
-    INPUT7,
+    #[doc = "0: Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 0."]
+    INPUT0 = 0,
+    #[doc = "1: Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 0."]
+    INPUT1 = 1,
+    #[doc = "2: Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 0."]
+    INPUT2 = 2,
+    #[doc = "3: Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 0."]
+    INPUT3 = 3,
+    #[doc = "4: Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 0."]
+    INPUT4 = 4,
+    #[doc = "5: Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 0."]
+    INPUT5 = 5,
+    #[doc = "6: Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 0."]
+    INPUT6 = 6,
+    #[doc = "7: Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 0."]
+    INPUT7 = 7,
 }
 impl From<SRC0_A> for u8 {
     #[inline(always)]
     fn from(variant: SRC0_A) -> Self {
-        match variant {
-            SRC0_A::INPUT0 => 0,
-            SRC0_A::INPUT1 => 1,
-            SRC0_A::INPUT2 => 2,
-            SRC0_A::INPUT3 => 3,
-            SRC0_A::INPUT4 => 4,
-            SRC0_A::INPUT5 => 5,
-            SRC0_A::INPUT6 => 6,
-            SRC0_A::INPUT7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRC0`"]
@@ -163,39 +155,31 @@ impl<'a> SRC0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRC1`"]
+#[doc = "Selects the input source for bit slice 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRC1_A {
-    #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 1."]
-    INPUT0,
-    #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 1."]
-    INPUT1,
-    #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 1."]
-    INPUT2,
-    #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 1."]
-    INPUT3,
-    #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 1."]
-    INPUT4,
-    #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 1."]
-    INPUT5,
-    #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 1."]
-    INPUT6,
-    #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 1."]
-    INPUT7,
+    #[doc = "0: Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 1."]
+    INPUT0 = 0,
+    #[doc = "1: Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 1."]
+    INPUT1 = 1,
+    #[doc = "2: Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 1."]
+    INPUT2 = 2,
+    #[doc = "3: Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 1."]
+    INPUT3 = 3,
+    #[doc = "4: Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 1."]
+    INPUT4 = 4,
+    #[doc = "5: Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 1."]
+    INPUT5 = 5,
+    #[doc = "6: Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 1."]
+    INPUT6 = 6,
+    #[doc = "7: Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 1."]
+    INPUT7 = 7,
 }
 impl From<SRC1_A> for u8 {
     #[inline(always)]
     fn from(variant: SRC1_A) -> Self {
-        match variant {
-            SRC1_A::INPUT0 => 0,
-            SRC1_A::INPUT1 => 1,
-            SRC1_A::INPUT2 => 2,
-            SRC1_A::INPUT3 => 3,
-            SRC1_A::INPUT4 => 4,
-            SRC1_A::INPUT5 => 5,
-            SRC1_A::INPUT6 => 6,
-            SRC1_A::INPUT7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRC1`"]
@@ -316,39 +300,31 @@ impl<'a> SRC1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRC2`"]
+#[doc = "Selects the input source for bit slice 2\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRC2_A {
-    #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 2."]
-    INPUT0,
-    #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 2."]
-    INPUT1,
-    #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 2."]
-    INPUT2,
-    #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 2."]
-    INPUT3,
-    #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 2."]
-    INPUT4,
-    #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 2."]
-    INPUT5,
-    #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 2."]
-    INPUT6,
-    #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 2."]
-    INPUT7,
+    #[doc = "0: Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 2."]
+    INPUT0 = 0,
+    #[doc = "1: Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 2."]
+    INPUT1 = 1,
+    #[doc = "2: Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 2."]
+    INPUT2 = 2,
+    #[doc = "3: Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 2."]
+    INPUT3 = 3,
+    #[doc = "4: Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 2."]
+    INPUT4 = 4,
+    #[doc = "5: Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 2."]
+    INPUT5 = 5,
+    #[doc = "6: Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 2."]
+    INPUT6 = 6,
+    #[doc = "7: Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 2."]
+    INPUT7 = 7,
 }
 impl From<SRC2_A> for u8 {
     #[inline(always)]
     fn from(variant: SRC2_A) -> Self {
-        match variant {
-            SRC2_A::INPUT0 => 0,
-            SRC2_A::INPUT1 => 1,
-            SRC2_A::INPUT2 => 2,
-            SRC2_A::INPUT3 => 3,
-            SRC2_A::INPUT4 => 4,
-            SRC2_A::INPUT5 => 5,
-            SRC2_A::INPUT6 => 6,
-            SRC2_A::INPUT7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRC2`"]
@@ -469,39 +445,31 @@ impl<'a> SRC2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRC3`"]
+#[doc = "Selects the input source for bit slice 3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRC3_A {
-    #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 3."]
-    INPUT0,
-    #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 3."]
-    INPUT1,
-    #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 3."]
-    INPUT2,
-    #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 3."]
-    INPUT3,
-    #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 3."]
-    INPUT4,
-    #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 3."]
-    INPUT5,
-    #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 3."]
-    INPUT6,
-    #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 3."]
-    INPUT7,
+    #[doc = "0: Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 3."]
+    INPUT0 = 0,
+    #[doc = "1: Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 3."]
+    INPUT1 = 1,
+    #[doc = "2: Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 3."]
+    INPUT2 = 2,
+    #[doc = "3: Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 3."]
+    INPUT3 = 3,
+    #[doc = "4: Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 3."]
+    INPUT4 = 4,
+    #[doc = "5: Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 3."]
+    INPUT5 = 5,
+    #[doc = "6: Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 3."]
+    INPUT6 = 6,
+    #[doc = "7: Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 3."]
+    INPUT7 = 7,
 }
 impl From<SRC3_A> for u8 {
     #[inline(always)]
     fn from(variant: SRC3_A) -> Self {
-        match variant {
-            SRC3_A::INPUT0 => 0,
-            SRC3_A::INPUT1 => 1,
-            SRC3_A::INPUT2 => 2,
-            SRC3_A::INPUT3 => 3,
-            SRC3_A::INPUT4 => 4,
-            SRC3_A::INPUT5 => 5,
-            SRC3_A::INPUT6 => 6,
-            SRC3_A::INPUT7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRC3`"]
@@ -622,39 +590,31 @@ impl<'a> SRC3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRC4`"]
+#[doc = "Selects the input source for bit slice 4\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRC4_A {
-    #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 4."]
-    INPUT0,
-    #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 4."]
-    INPUT1,
-    #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 4."]
-    INPUT2,
-    #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 4."]
-    INPUT3,
-    #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 4."]
-    INPUT4,
-    #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 4."]
-    INPUT5,
-    #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 4."]
-    INPUT6,
-    #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 4."]
-    INPUT7,
+    #[doc = "0: Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 4."]
+    INPUT0 = 0,
+    #[doc = "1: Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 4."]
+    INPUT1 = 1,
+    #[doc = "2: Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 4."]
+    INPUT2 = 2,
+    #[doc = "3: Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 4."]
+    INPUT3 = 3,
+    #[doc = "4: Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 4."]
+    INPUT4 = 4,
+    #[doc = "5: Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 4."]
+    INPUT5 = 5,
+    #[doc = "6: Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 4."]
+    INPUT6 = 6,
+    #[doc = "7: Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 4."]
+    INPUT7 = 7,
 }
 impl From<SRC4_A> for u8 {
     #[inline(always)]
     fn from(variant: SRC4_A) -> Self {
-        match variant {
-            SRC4_A::INPUT0 => 0,
-            SRC4_A::INPUT1 => 1,
-            SRC4_A::INPUT2 => 2,
-            SRC4_A::INPUT3 => 3,
-            SRC4_A::INPUT4 => 4,
-            SRC4_A::INPUT5 => 5,
-            SRC4_A::INPUT6 => 6,
-            SRC4_A::INPUT7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRC4`"]
@@ -775,39 +735,31 @@ impl<'a> SRC4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRC5`"]
+#[doc = "Selects the input source for bit slice 5\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRC5_A {
-    #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 5."]
-    INPUT0,
-    #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 5."]
-    INPUT1,
-    #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 5."]
-    INPUT2,
-    #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 5."]
-    INPUT3,
-    #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 5."]
-    INPUT4,
-    #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 5."]
-    INPUT5,
-    #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 5."]
-    INPUT6,
-    #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 5."]
-    INPUT7,
+    #[doc = "0: Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 5."]
+    INPUT0 = 0,
+    #[doc = "1: Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 5."]
+    INPUT1 = 1,
+    #[doc = "2: Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 5."]
+    INPUT2 = 2,
+    #[doc = "3: Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 5."]
+    INPUT3 = 3,
+    #[doc = "4: Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 5."]
+    INPUT4 = 4,
+    #[doc = "5: Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 5."]
+    INPUT5 = 5,
+    #[doc = "6: Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 5."]
+    INPUT6 = 6,
+    #[doc = "7: Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 5."]
+    INPUT7 = 7,
 }
 impl From<SRC5_A> for u8 {
     #[inline(always)]
     fn from(variant: SRC5_A) -> Self {
-        match variant {
-            SRC5_A::INPUT0 => 0,
-            SRC5_A::INPUT1 => 1,
-            SRC5_A::INPUT2 => 2,
-            SRC5_A::INPUT3 => 3,
-            SRC5_A::INPUT4 => 4,
-            SRC5_A::INPUT5 => 5,
-            SRC5_A::INPUT6 => 6,
-            SRC5_A::INPUT7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRC5`"]
@@ -928,39 +880,31 @@ impl<'a> SRC5_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRC6`"]
+#[doc = "Selects the input source for bit slice 6\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRC6_A {
-    #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 6."]
-    INPUT0,
-    #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 6."]
-    INPUT1,
-    #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 6."]
-    INPUT2,
-    #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 6."]
-    INPUT3,
-    #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 6."]
-    INPUT4,
-    #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 6."]
-    INPUT5,
-    #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 6."]
-    INPUT6,
-    #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 6."]
-    INPUT7,
+    #[doc = "0: Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 6."]
+    INPUT0 = 0,
+    #[doc = "1: Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 6."]
+    INPUT1 = 1,
+    #[doc = "2: Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 6."]
+    INPUT2 = 2,
+    #[doc = "3: Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 6."]
+    INPUT3 = 3,
+    #[doc = "4: Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 6."]
+    INPUT4 = 4,
+    #[doc = "5: Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 6."]
+    INPUT5 = 5,
+    #[doc = "6: Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 6."]
+    INPUT6 = 6,
+    #[doc = "7: Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 6."]
+    INPUT7 = 7,
 }
 impl From<SRC6_A> for u8 {
     #[inline(always)]
     fn from(variant: SRC6_A) -> Self {
-        match variant {
-            SRC6_A::INPUT0 => 0,
-            SRC6_A::INPUT1 => 1,
-            SRC6_A::INPUT2 => 2,
-            SRC6_A::INPUT3 => 3,
-            SRC6_A::INPUT4 => 4,
-            SRC6_A::INPUT5 => 5,
-            SRC6_A::INPUT6 => 6,
-            SRC6_A::INPUT7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRC6`"]
@@ -1081,39 +1025,31 @@ impl<'a> SRC6_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRC7`"]
+#[doc = "Selects the input source for bit slice 7\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SRC7_A {
-    #[doc = "Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 7."]
-    INPUT0,
-    #[doc = "Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 7."]
-    INPUT1,
-    #[doc = "Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 7."]
-    INPUT2,
-    #[doc = "Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 7."]
-    INPUT3,
-    #[doc = "Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 7."]
-    INPUT4,
-    #[doc = "Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 7."]
-    INPUT5,
-    #[doc = "Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 7."]
-    INPUT6,
-    #[doc = "Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 7."]
-    INPUT7,
+    #[doc = "0: Input 0. Selects the pin selected in the PINTSEL0 register as the source to bit slice 7."]
+    INPUT0 = 0,
+    #[doc = "1: Input 1. Selects the pin selected in the PINTSEL1 register as the source to bit slice 7."]
+    INPUT1 = 1,
+    #[doc = "2: Input 2. Selects the pin selected in the PINTSEL2 register as the source to bit slice 7."]
+    INPUT2 = 2,
+    #[doc = "3: Input 3. Selects the pin selected in the PINTSEL3 register as the source to bit slice 7."]
+    INPUT3 = 3,
+    #[doc = "4: Input 4. Selects the pin selected in the PINTSEL4 register as the source to bit slice 7."]
+    INPUT4 = 4,
+    #[doc = "5: Input 5. Selects the pin selected in the PINTSEL5 register as the source to bit slice 7."]
+    INPUT5 = 5,
+    #[doc = "6: Input 6. Selects the pin selected in the PINTSEL6 register as the source to bit slice 7."]
+    INPUT6 = 6,
+    #[doc = "7: Input 7. Selects the pin selected in the PINTSEL7 register as the source to bit slice 7."]
+    INPUT7 = 7,
 }
 impl From<SRC7_A> for u8 {
     #[inline(always)]
     fn from(variant: SRC7_A) -> Self {
-        match variant {
-            SRC7_A::INPUT0 => 0,
-            SRC7_A::INPUT1 => 1,
-            SRC7_A::INPUT2 => 2,
-            SRC7_A::INPUT3 => 3,
-            SRC7_A::INPUT4 => 4,
-            SRC7_A::INPUT5 => 5,
-            SRC7_A::INPUT6 => 6,
-            SRC7_A::INPUT7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SRC7`"]

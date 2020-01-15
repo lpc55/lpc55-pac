@@ -10,27 +10,23 @@ impl crate::ResetValue for super::SEC_CTRL_APB_BRIDGE1_MEM_CTRL2 {
         0
     }
 }
-#[doc = "Possible values of the field `FLASH_CTRL_RULE`"]
+#[doc = "Flash Controller\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FLASH_CTRL_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<FLASH_CTRL_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: FLASH_CTRL_RULE_A) -> Self {
-        match variant {
-            FLASH_CTRL_RULE_A::ENUM_NS_NP => 0,
-            FLASH_CTRL_RULE_A::ENUM_NS_P => 1,
-            FLASH_CTRL_RULE_A::ENUM_S_NP => 2,
-            FLASH_CTRL_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FLASH_CTRL_RULE`"]
@@ -107,27 +103,23 @@ impl<'a> FLASH_CTRL_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PRINCE_RULE`"]
+#[doc = "Prince\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PRINCE_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<PRINCE_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: PRINCE_RULE_A) -> Self {
-        match variant {
-            PRINCE_RULE_A::ENUM_NS_NP => 0,
-            PRINCE_RULE_A::ENUM_NS_P => 1,
-            PRINCE_RULE_A::ENUM_S_NP => 2,
-            PRINCE_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PRINCE_RULE`"]

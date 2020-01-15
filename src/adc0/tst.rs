@@ -10,21 +10,18 @@ impl crate::ResetValue for super::TST {
         0
     }
 }
-#[doc = "Possible values of the field `CST_LONG`"]
+#[doc = "Calibration Sample Time Long\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CST_LONG_A {
-    #[doc = "Normal sample time. Minimum sample time of 3 ADCK cycles."]
-    CST_LONG_0,
-    #[doc = "Increased sample time. 67 ADCK cycles total sample time."]
-    CST_LONG_1,
+    #[doc = "0: Normal sample time. Minimum sample time of 3 ADCK cycles."]
+    CST_LONG_0 = 0,
+    #[doc = "1: Increased sample time. 67 ADCK cycles total sample time."]
+    CST_LONG_1 = 1,
 }
 impl From<CST_LONG_A> for bool {
     #[inline(always)]
     fn from(variant: CST_LONG_A) -> Self {
-        match variant {
-            CST_LONG_A::CST_LONG_0 => false,
-            CST_LONG_A::CST_LONG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CST_LONG`"]
@@ -88,21 +85,18 @@ impl<'a> CST_LONG_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FOFFM`"]
+#[doc = "Force M-side positive offset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FOFFM_A {
-    #[doc = "Normal operation. No forced offset."]
-    FOFFM_0,
-    #[doc = "Test configuration. Forced positive offset on MDAC."]
-    FOFFM_1,
+    #[doc = "0: Normal operation. No forced offset."]
+    FOFFM_0 = 0,
+    #[doc = "1: Test configuration. Forced positive offset on MDAC."]
+    FOFFM_1 = 1,
 }
 impl From<FOFFM_A> for bool {
     #[inline(always)]
     fn from(variant: FOFFM_A) -> Self {
-        match variant {
-            FOFFM_A::FOFFM_0 => false,
-            FOFFM_A::FOFFM_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FOFFM`"]
@@ -166,21 +160,18 @@ impl<'a> FOFFM_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FOFFP`"]
+#[doc = "Force P-side positive offset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FOFFP_A {
-    #[doc = "Normal operation. No forced offset."]
-    FOFFP_0,
-    #[doc = "Test configuration. Forced positive offset on PDAC."]
-    FOFFP_1,
+    #[doc = "0: Normal operation. No forced offset."]
+    FOFFP_0 = 0,
+    #[doc = "1: Test configuration. Forced positive offset on PDAC."]
+    FOFFP_1 = 1,
 }
 impl From<FOFFP_A> for bool {
     #[inline(always)]
     fn from(variant: FOFFP_A) -> Self {
-        match variant {
-            FOFFP_A::FOFFP_0 => false,
-            FOFFP_A::FOFFP_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FOFFP`"]
@@ -244,21 +235,18 @@ impl<'a> FOFFP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FOFFM2`"]
+#[doc = "Force M-side negative offset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FOFFM2_A {
-    #[doc = "Normal operation. No forced offset."]
-    FOFFM2_0,
-    #[doc = "Test configuration. Forced negative offset on MDAC."]
-    FOFFM2_1,
+    #[doc = "0: Normal operation. No forced offset."]
+    FOFFM2_0 = 0,
+    #[doc = "1: Test configuration. Forced negative offset on MDAC."]
+    FOFFM2_1 = 1,
 }
 impl From<FOFFM2_A> for bool {
     #[inline(always)]
     fn from(variant: FOFFM2_A) -> Self {
-        match variant {
-            FOFFM2_A::FOFFM2_0 => false,
-            FOFFM2_A::FOFFM2_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FOFFM2`"]
@@ -322,21 +310,18 @@ impl<'a> FOFFM2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FOFFP2`"]
+#[doc = "Force P-side negative offset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FOFFP2_A {
-    #[doc = "Normal operation. No forced offset."]
-    FOFFP2_0,
-    #[doc = "Test configuration. Forced negative offset on PDAC."]
-    FOFFP2_1,
+    #[doc = "0: Normal operation. No forced offset."]
+    FOFFP2_0 = 0,
+    #[doc = "1: Test configuration. Forced negative offset on PDAC."]
+    FOFFP2_1 = 1,
 }
 impl From<FOFFP2_A> for bool {
     #[inline(always)]
     fn from(variant: FOFFP2_A) -> Self {
-        match variant {
-            FOFFP2_A::FOFFP2_0 => false,
-            FOFFP2_A::FOFFP2_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FOFFP2`"]
@@ -400,21 +385,18 @@ impl<'a> FOFFP2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TESTEN`"]
+#[doc = "Enable test configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TESTEN_A {
-    #[doc = "Normal operation. Test configuration not enabled."]
-    TESTEN_0,
-    #[doc = "Hardware BIST Test in progress."]
-    TESTEN_1,
+    #[doc = "0: Normal operation. Test configuration not enabled."]
+    TESTEN_0 = 0,
+    #[doc = "1: Hardware BIST Test in progress."]
+    TESTEN_1 = 1,
 }
 impl From<TESTEN_A> for bool {
     #[inline(always)]
     fn from(variant: TESTEN_A) -> Self {
-        match variant {
-            TESTEN_A::TESTEN_0 => false,
-            TESTEN_A::TESTEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TESTEN`"]

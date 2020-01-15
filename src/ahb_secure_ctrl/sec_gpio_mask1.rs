@@ -10,21 +10,18 @@ impl crate::ResetValue for super::SEC_GPIO_MASK1 {
         0xffff_ffff
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN0_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_0\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN0_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN0_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN0_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN0_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN0_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN0_SEC_MASK`"]
@@ -88,21 +85,18 @@ impl<'a> PIO1_PIN0_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN1_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_1\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN1_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN1_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN1_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN1_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN1_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN1_SEC_MASK`"]
@@ -166,21 +160,18 @@ impl<'a> PIO1_PIN1_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN2_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_2\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN2_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN2_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN2_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN2_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN2_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN2_SEC_MASK`"]
@@ -244,21 +235,18 @@ impl<'a> PIO1_PIN2_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN3_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_3\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN3_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN3_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN3_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN3_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN3_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN3_SEC_MASK`"]
@@ -322,21 +310,18 @@ impl<'a> PIO1_PIN3_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN4_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_4\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN4_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN4_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN4_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN4_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN4_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN4_SEC_MASK`"]
@@ -400,21 +385,18 @@ impl<'a> PIO1_PIN4_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN5_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_5\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN5_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN5_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN5_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN5_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN5_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN5_SEC_MASK`"]
@@ -478,21 +460,18 @@ impl<'a> PIO1_PIN5_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN6_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_6\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN6_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN6_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN6_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN6_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN6_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN6_SEC_MASK`"]
@@ -556,21 +535,18 @@ impl<'a> PIO1_PIN6_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN7_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_7\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN7_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN7_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN7_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN7_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN7_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN7_SEC_MASK`"]
@@ -634,21 +610,18 @@ impl<'a> PIO1_PIN7_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN8_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_8\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN8_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN8_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN8_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN8_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN8_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN8_SEC_MASK`"]
@@ -712,21 +685,18 @@ impl<'a> PIO1_PIN8_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN9_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_9\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN9_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN9_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN9_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN9_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN9_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN9_SEC_MASK`"]
@@ -790,21 +760,18 @@ impl<'a> PIO1_PIN9_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN10_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_10\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN10_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN10_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN10_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN10_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN10_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN10_SEC_MASK`"]
@@ -868,21 +835,18 @@ impl<'a> PIO1_PIN10_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN11_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_11\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN11_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN11_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN11_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN11_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN11_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN11_SEC_MASK`"]
@@ -946,21 +910,18 @@ impl<'a> PIO1_PIN11_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN12_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_12\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN12_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN12_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN12_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN12_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN12_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN12_SEC_MASK`"]
@@ -1024,21 +985,18 @@ impl<'a> PIO1_PIN12_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN13_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_13\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN13_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN13_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN13_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN13_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN13_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN13_SEC_MASK`"]
@@ -1102,21 +1060,18 @@ impl<'a> PIO1_PIN13_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN14_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_14\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN14_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN14_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN14_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN14_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN14_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN14_SEC_MASK`"]
@@ -1180,21 +1135,18 @@ impl<'a> PIO1_PIN14_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN15_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_15\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN15_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN15_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN15_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN15_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN15_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN15_SEC_MASK`"]
@@ -1258,21 +1210,18 @@ impl<'a> PIO1_PIN15_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN16_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_16\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN16_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN16_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN16_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN16_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN16_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN16_SEC_MASK`"]
@@ -1336,21 +1285,18 @@ impl<'a> PIO1_PIN16_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN17_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_17\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN17_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN17_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN17_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN17_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN17_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN17_SEC_MASK`"]
@@ -1414,21 +1360,18 @@ impl<'a> PIO1_PIN17_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN18_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_18\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN18_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN18_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN18_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN18_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN18_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN18_SEC_MASK`"]
@@ -1492,21 +1435,18 @@ impl<'a> PIO1_PIN18_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN19_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_19\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN19_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN19_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN19_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN19_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN19_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN19_SEC_MASK`"]
@@ -1570,21 +1510,18 @@ impl<'a> PIO1_PIN19_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN20_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_20\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN20_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN20_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN20_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN20_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN20_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN20_SEC_MASK`"]
@@ -1648,21 +1585,18 @@ impl<'a> PIO1_PIN20_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN21_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_21\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN21_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN21_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN21_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN21_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN21_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN21_SEC_MASK`"]
@@ -1726,21 +1660,18 @@ impl<'a> PIO1_PIN21_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN22_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_22\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN22_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN22_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN22_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN22_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN22_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN22_SEC_MASK`"]
@@ -1804,21 +1735,18 @@ impl<'a> PIO1_PIN22_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN23_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_23\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN23_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN23_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN23_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN23_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN23_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN23_SEC_MASK`"]
@@ -1882,21 +1810,18 @@ impl<'a> PIO1_PIN23_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN24_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_24\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN24_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN24_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN24_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN24_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN24_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN24_SEC_MASK`"]
@@ -1960,21 +1885,18 @@ impl<'a> PIO1_PIN24_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN25_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_25\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN25_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN25_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN25_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN25_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN25_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN25_SEC_MASK`"]
@@ -2038,21 +1960,18 @@ impl<'a> PIO1_PIN25_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN26_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_26\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN26_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN26_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN26_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN26_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN26_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN26_SEC_MASK`"]
@@ -2116,21 +2035,18 @@ impl<'a> PIO1_PIN26_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN27_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_27\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN27_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN27_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN27_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN27_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN27_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN27_SEC_MASK`"]
@@ -2194,21 +2110,18 @@ impl<'a> PIO1_PIN27_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN28_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_28\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN28_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN28_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN28_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN28_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN28_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN28_SEC_MASK`"]
@@ -2272,21 +2185,18 @@ impl<'a> PIO1_PIN28_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN29_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_29\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN29_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN29_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN29_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN29_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN29_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN29_SEC_MASK`"]
@@ -2350,21 +2260,18 @@ impl<'a> PIO1_PIN29_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN30_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_30\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN30_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN30_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN30_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN30_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN30_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN30_SEC_MASK`"]
@@ -2428,21 +2335,18 @@ impl<'a> PIO1_PIN30_SEC_MASK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PIO1_PIN31_SEC_MASK`"]
+#[doc = "Secure mask for pin P1_31\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO1_PIN31_SEC_MASK_A {
-    #[doc = "Pin state is blocked to non-secure world."]
-    BLOCKED,
-    #[doc = "Pin state is readable by non-secure world."]
-    READABLE,
+    #[doc = "0: Pin state is blocked to non-secure world."]
+    BLOCKED = 0,
+    #[doc = "1: Pin state is readable by non-secure world."]
+    READABLE = 1,
 }
 impl From<PIO1_PIN31_SEC_MASK_A> for bool {
     #[inline(always)]
     fn from(variant: PIO1_PIN31_SEC_MASK_A) -> Self {
-        match variant {
-            PIO1_PIN31_SEC_MASK_A::BLOCKED => false,
-            PIO1_PIN31_SEC_MASK_A::READABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PIO1_PIN31_SEC_MASK`"]

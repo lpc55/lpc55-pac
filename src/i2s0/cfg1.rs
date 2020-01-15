@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CFG1 {
         0
     }
 }
-#[doc = "Possible values of the field `MAINENABLE`"]
+#[doc = "Main enable for I 2S function in this Flexcomm\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MAINENABLE_A {
-    #[doc = "All I 2S channel pairs in this Flexcomm are disabled and the internal state machines, counters, and flags are reset. No other channel pairs can be enabled."]
-    DISABLED,
-    #[doc = "This I 2S channel pair is enabled. Other channel pairs in this Flexcomm may be enabled in their individual PAIRENABLE bits."]
-    ENABLED,
+    #[doc = "0: All I 2S channel pairs in this Flexcomm are disabled and the internal state machines, counters, and flags are reset. No other channel pairs can be enabled."]
+    DISABLED = 0,
+    #[doc = "1: This I 2S channel pair is enabled. Other channel pairs in this Flexcomm may be enabled in their individual PAIRENABLE bits."]
+    ENABLED = 1,
 }
 impl From<MAINENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: MAINENABLE_A) -> Self {
-        match variant {
-            MAINENABLE_A::DISABLED => false,
-            MAINENABLE_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MAINENABLE`"]
@@ -88,21 +85,18 @@ impl<'a> MAINENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DATAPAUSE`"]
+#[doc = "Data flow Pause. Allows pausing data flow between the I2S serializer/deserializer and the FIFO. This could be done in order to change streams, or while restarting after a data underflow or overflow. When paused, FIFO operations can be done without corrupting data that is in the process of being sent or received. Once a data pause has been requested, the interface may need to complete sending data that was in progress before interrupting the flow of data. Software must check that the pause is actually in effect before taking action. This is done by monitoring the DATAPAUSED flag in the STAT register. When DATAPAUSE is cleared, data transfer will resume at the beginning of the next frame.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATAPAUSE_A {
-    #[doc = "Normal operation, or resuming normal operation at the next frame if the I2S has already been paused."]
-    NORMAL,
-    #[doc = "A pause in the data flow is being requested. It is in effect when DATAPAUSED in STAT = 1."]
-    PAUSE,
+    #[doc = "0: Normal operation, or resuming normal operation at the next frame if the I2S has already been paused."]
+    NORMAL = 0,
+    #[doc = "1: A pause in the data flow is being requested. It is in effect when DATAPAUSED in STAT = 1."]
+    PAUSE = 1,
 }
 impl From<DATAPAUSE_A> for bool {
     #[inline(always)]
     fn from(variant: DATAPAUSE_A) -> Self {
-        match variant {
-            DATAPAUSE_A::NORMAL => false,
-            DATAPAUSE_A::PAUSE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATAPAUSE`"]
@@ -166,27 +160,23 @@ impl<'a> DATAPAUSE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PAIRCOUNT`"]
+#[doc = "Provides the number of I2S channel pairs in this Flexcomm This is a read-only field whose value may be different in other Flexcomms. 00 = there is 1 I2S channel pair in this Flexcomm. 01 = there are 2 I2S channel pairs in this Flexcomm. 10 = there are 3 I2S channel pairs in this Flexcomm. 11 = there are 4 I2S channel pairs in this Flexcomm.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PAIRCOUNT_A {
-    #[doc = "1 I2S channel pairs in this flexcomm"]
-    PAIRS_1,
-    #[doc = "2 I2S channel pairs in this flexcomm"]
-    PAIRS_2,
-    #[doc = "3 I2S channel pairs in this flexcomm"]
-    PAIRS_3,
-    #[doc = "4 I2S channel pairs in this flexcomm"]
-    PAIRS_4,
+    #[doc = "0: 1 I2S channel pairs in this flexcomm"]
+    PAIRS_1 = 0,
+    #[doc = "1: 2 I2S channel pairs in this flexcomm"]
+    PAIRS_2 = 1,
+    #[doc = "2: 3 I2S channel pairs in this flexcomm"]
+    PAIRS_3 = 2,
+    #[doc = "3: 4 I2S channel pairs in this flexcomm"]
+    PAIRS_4 = 3,
 }
 impl From<PAIRCOUNT_A> for u8 {
     #[inline(always)]
     fn from(variant: PAIRCOUNT_A) -> Self {
-        match variant {
-            PAIRCOUNT_A::PAIRS_1 => 0,
-            PAIRCOUNT_A::PAIRS_2 => 1,
-            PAIRCOUNT_A::PAIRS_3 => 2,
-            PAIRCOUNT_A::PAIRS_4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PAIRCOUNT`"]
@@ -263,27 +253,23 @@ impl<'a> PAIRCOUNT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MSTSLVCFG`"]
+#[doc = "Master / slave configuration selection, determining how SCK and WS are used by all channel pairs in this Flexcomm.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MSTSLVCFG_A {
-    #[doc = "Normal slave mode, the default mode. SCK and WS are received from a master and used to transmit or receive data."]
-    NORMAL_SLAVE_MODE,
-    #[doc = "WS synchronized master. WS is received from another master and used to synchronize the generation of SCK, when divided from the Flexcomm function clock."]
-    WS_SYNC_MASTER,
-    #[doc = "Master using an existing SCK. SCK is received and used directly to generate WS, as well as transmitting or receiving data."]
-    MASTER_USING_SCK,
-    #[doc = "Normal master mode. SCK and WS are generated so they can be sent to one or more slave devices."]
-    NORMAL_MASTER,
+    #[doc = "0: Normal slave mode, the default mode. SCK and WS are received from a master and used to transmit or receive data."]
+    NORMAL_SLAVE_MODE = 0,
+    #[doc = "1: WS synchronized master. WS is received from another master and used to synchronize the generation of SCK, when divided from the Flexcomm function clock."]
+    WS_SYNC_MASTER = 1,
+    #[doc = "2: Master using an existing SCK. SCK is received and used directly to generate WS, as well as transmitting or receiving data."]
+    MASTER_USING_SCK = 2,
+    #[doc = "3: Normal master mode. SCK and WS are generated so they can be sent to one or more slave devices."]
+    NORMAL_MASTER = 3,
 }
 impl From<MSTSLVCFG_A> for u8 {
     #[inline(always)]
     fn from(variant: MSTSLVCFG_A) -> Self {
-        match variant {
-            MSTSLVCFG_A::NORMAL_SLAVE_MODE => 0,
-            MSTSLVCFG_A::WS_SYNC_MASTER => 1,
-            MSTSLVCFG_A::MASTER_USING_SCK => 2,
-            MSTSLVCFG_A::NORMAL_MASTER => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MSTSLVCFG`"]
@@ -360,27 +346,23 @@ impl<'a> MSTSLVCFG_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MODE`"]
+#[doc = "Selects the basic I2S operating mode. Other configurations modify this to obtain all supported cases. See Formats and modes for examples.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
-    #[doc = "I2S mode a.k.a. 'classic' mode. WS has a 50% duty cycle, with (for each enabled channel pair) one piece of left channel data occurring during the first phase, and one pieces of right channel data occurring during the second phase. In this mode, the data region begins one clock after the leading WS edge for the frame. For a 50% WS duty cycle, FRAMELEN must define an even number of I2S clocks for the frame. If FRAMELEN defines an odd number of clocks per frame, the extra clock will occur on the right."]
-    CLASSIC_MODE,
-    #[doc = "DSP mode where WS has a 50% duty cycle. See remark for mode 0."]
-    DSP_MODE_WS_50_DUTYCYCLE,
-    #[doc = "DSP mode where WS has a one clock long pulse at the beginning of each data frame."]
-    DSP_MODE_WS_1_CLOCK,
-    #[doc = "DSP mode where WS has a one data slot long pulse at the beginning of each data frame."]
-    DSP_MODE_WS_1_DATA,
+    #[doc = "0: I2S mode a.k.a. 'classic' mode. WS has a 50% duty cycle, with (for each enabled channel pair) one piece of left channel data occurring during the first phase, and one pieces of right channel data occurring during the second phase. In this mode, the data region begins one clock after the leading WS edge for the frame. For a 50% WS duty cycle, FRAMELEN must define an even number of I2S clocks for the frame. If FRAMELEN defines an odd number of clocks per frame, the extra clock will occur on the right."]
+    CLASSIC_MODE = 0,
+    #[doc = "1: DSP mode where WS has a 50% duty cycle. See remark for mode 0."]
+    DSP_MODE_WS_50_DUTYCYCLE = 1,
+    #[doc = "2: DSP mode where WS has a one clock long pulse at the beginning of each data frame."]
+    DSP_MODE_WS_1_CLOCK = 2,
+    #[doc = "3: DSP mode where WS has a one data slot long pulse at the beginning of each data frame."]
+    DSP_MODE_WS_1_DATA = 3,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::CLASSIC_MODE => 0,
-            MODE_A::DSP_MODE_WS_50_DUTYCYCLE => 1,
-            MODE_A::DSP_MODE_WS_1_CLOCK => 2,
-            MODE_A::DSP_MODE_WS_1_DATA => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -457,21 +439,18 @@ impl<'a> MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RIGHTLOW`"]
+#[doc = "Right channel data is in the Low portion of FIFO data. Essentially, this swaps left and right channel data as it is transferred to or from the FIFO. This bit is not used if the data width is greater than 24 bits or if PDMDATA = 1. Note that if the ONECHANNEL field (bit 10 of this register) = 1, the one channel to be used is the nominally the left channel. POSITION can still place that data in the frame where right channel data is normally located. if all enabled channel pairs have ONECHANNEL = 1, then RIGHTLOW = 1 is not allowed.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RIGHTLOW_A {
-    #[doc = "The right channel is taken from the high part of the FIFO data. For example, when data is 16 bits, FIFO bits 31:16 are used for the right channel."]
-    RIGHT_HIGH,
-    #[doc = "The right channel is taken from the low part of the FIFO data. For example, when data is 16 bits, FIFO bits 15:0 are used for the right channel."]
-    RIGHT_LOW,
+    #[doc = "0: The right channel is taken from the high part of the FIFO data. For example, when data is 16 bits, FIFO bits 31:16 are used for the right channel."]
+    RIGHT_HIGH = 0,
+    #[doc = "1: The right channel is taken from the low part of the FIFO data. For example, when data is 16 bits, FIFO bits 15:0 are used for the right channel."]
+    RIGHT_LOW = 1,
 }
 impl From<RIGHTLOW_A> for bool {
     #[inline(always)]
     fn from(variant: RIGHTLOW_A) -> Self {
-        match variant {
-            RIGHTLOW_A::RIGHT_HIGH => false,
-            RIGHTLOW_A::RIGHT_LOW => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RIGHTLOW`"]
@@ -535,21 +514,18 @@ impl<'a> RIGHTLOW_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LEFTJUST`"]
+#[doc = "Left Justify data.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LEFTJUST_A {
-    #[doc = "Data is transferred between the FIFO and the I2S serializer/deserializer right justified, i.e. starting from bit 0 and continuing to the position defined by DATALEN. This would correspond to right justified data in the stream on the data bus."]
-    RIGHT_JUSTIFIED,
-    #[doc = "Data is transferred between the FIFO and the I2S serializer/deserializer left justified, i.e. starting from the MSB of the FIFO entry and continuing for the number of bits defined by DATALEN. This would correspond to left justified data in the stream on the data bus."]
-    LEFT_JUSTIFIED,
+    #[doc = "0: Data is transferred between the FIFO and the I2S serializer/deserializer right justified, i.e. starting from bit 0 and continuing to the position defined by DATALEN. This would correspond to right justified data in the stream on the data bus."]
+    RIGHT_JUSTIFIED = 0,
+    #[doc = "1: Data is transferred between the FIFO and the I2S serializer/deserializer left justified, i.e. starting from the MSB of the FIFO entry and continuing for the number of bits defined by DATALEN. This would correspond to left justified data in the stream on the data bus."]
+    LEFT_JUSTIFIED = 1,
 }
 impl From<LEFTJUST_A> for bool {
     #[inline(always)]
     fn from(variant: LEFTJUST_A) -> Self {
-        match variant {
-            LEFTJUST_A::RIGHT_JUSTIFIED => false,
-            LEFTJUST_A::LEFT_JUSTIFIED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LEFTJUST`"]
@@ -613,21 +589,18 @@ impl<'a> LEFTJUST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ONECHANNEL`"]
+#[doc = "Single channel mode. Applies to both transmit and receive. This configuration bit applies only to the first I2S channel pair. Other channel pairs may select this mode independently in their separate CFG1 registers.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ONECHANNEL_A {
-    #[doc = "I2S data for this channel pair is treated as left and right channels."]
-    DUAL_CHANNEL,
-    #[doc = "I2S data for this channel pair is treated as a single channel, functionally the left channel for this pair. In mode 0 only, the right side of the frame begins at POSITION = 0x100. This is because mode 0 makes a clear distinction between the left and right sides of the frame. When ONECHANNEL = 1, the single channel of data may be placed on the right by setting POSITION to 0x100 + the data position within the right side (e.g. 0x108 would place data starting at the 8th clock after the middle of the frame). In other modes, data for the single channel of data is placed at the clock defined by POSITION."]
-    SINGLE_CHANNEL,
+    #[doc = "0: I2S data for this channel pair is treated as left and right channels."]
+    DUAL_CHANNEL = 0,
+    #[doc = "1: I2S data for this channel pair is treated as a single channel, functionally the left channel for this pair. In mode 0 only, the right side of the frame begins at POSITION = 0x100. This is because mode 0 makes a clear distinction between the left and right sides of the frame. When ONECHANNEL = 1, the single channel of data may be placed on the right by setting POSITION to 0x100 + the data position within the right side (e.g. 0x108 would place data starting at the 8th clock after the middle of the frame). In other modes, data for the single channel of data is placed at the clock defined by POSITION."]
+    SINGLE_CHANNEL = 1,
 }
 impl From<ONECHANNEL_A> for bool {
     #[inline(always)]
     fn from(variant: ONECHANNEL_A) -> Self {
-        match variant {
-            ONECHANNEL_A::DUAL_CHANNEL => false,
-            ONECHANNEL_A::SINGLE_CHANNEL => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ONECHANNEL`"]
@@ -691,21 +664,18 @@ impl<'a> ONECHANNEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SCK_POL`"]
+#[doc = "SCK polarity.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SCK_POL_A {
-    #[doc = "Data is launched on SCK falling edges and sampled on SCK rising edges (standard for I2S)."]
-    FALLING_EDGE,
-    #[doc = "Data is launched on SCK rising edges and sampled on SCK falling edges."]
-    RISING_EDGE,
+    #[doc = "0: Data is launched on SCK falling edges and sampled on SCK rising edges (standard for I2S)."]
+    FALLING_EDGE = 0,
+    #[doc = "1: Data is launched on SCK rising edges and sampled on SCK falling edges."]
+    RISING_EDGE = 1,
 }
 impl From<SCK_POL_A> for bool {
     #[inline(always)]
     fn from(variant: SCK_POL_A) -> Self {
-        match variant {
-            SCK_POL_A::FALLING_EDGE => false,
-            SCK_POL_A::RISING_EDGE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SCK_POL`"]
@@ -769,21 +739,18 @@ impl<'a> SCK_POL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WS_POL`"]
+#[doc = "WS polarity.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WS_POL_A {
-    #[doc = "Data frames begin at a falling edge of WS (standard for classic I2S)."]
-    NOT_INVERTED,
-    #[doc = "WS is inverted, resulting in a data frame beginning at a rising edge of WS (standard for most 'non-classic' variations of I2S)."]
-    INVERTED,
+    #[doc = "0: Data frames begin at a falling edge of WS (standard for classic I2S)."]
+    NOT_INVERTED = 0,
+    #[doc = "1: WS is inverted, resulting in a data frame beginning at a rising edge of WS (standard for most 'non-classic' variations of I2S)."]
+    INVERTED = 1,
 }
 impl From<WS_POL_A> for bool {
     #[inline(always)]
     fn from(variant: WS_POL_A) -> Self {
-        match variant {
-            WS_POL_A::NOT_INVERTED => false,
-            WS_POL_A::INVERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WS_POL`"]

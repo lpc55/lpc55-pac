@@ -10,21 +10,18 @@ impl crate::ResetValue for super::INTENSET {
         0
     }
 }
-#[doc = "Possible values of the field `DONE`"]
+#[doc = "Set if the accelerator should interrupt when done.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DONE_A {
-    #[doc = "Do not interrupt when done"]
-    NO_INTERRUPT,
-    #[doc = "Interrupt when done"]
-    INTERRUPT,
+    #[doc = "0: Do not interrupt when done"]
+    NO_INTERRUPT = 0,
+    #[doc = "1: Interrupt when done"]
+    INTERRUPT = 1,
 }
 impl From<DONE_A> for bool {
     #[inline(always)]
     fn from(variant: DONE_A) -> Self {
-        match variant {
-            DONE_A::NO_INTERRUPT => false,
-            DONE_A::INTERRUPT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DONE`"]

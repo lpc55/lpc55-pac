@@ -10,21 +10,18 @@ impl crate::ResetValue for super::STAT {
         0
     }
 }
-#[doc = "Possible values of the field `RDY0`"]
+#[doc = "Result FIFO 0 Ready Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDY0_A {
-    #[doc = "Result FIFO 0 data level not above watermark level."]
-    RDY0_0,
-    #[doc = "Result FIFO 0 holding data above watermark level."]
-    RDY0_1,
+    #[doc = "0: Result FIFO 0 data level not above watermark level."]
+    RDY0_0 = 0,
+    #[doc = "1: Result FIFO 0 holding data above watermark level."]
+    RDY0_1 = 1,
 }
 impl From<RDY0_A> for bool {
     #[inline(always)]
     fn from(variant: RDY0_A) -> Self {
-        match variant {
-            RDY0_A::RDY0_0 => false,
-            RDY0_A::RDY0_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RDY0`"]
@@ -49,21 +46,18 @@ impl RDY0_R {
         *self == RDY0_A::RDY0_1
     }
 }
-#[doc = "Possible values of the field `FOF0`"]
+#[doc = "Result FIFO 0 Overflow Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FOF0_A {
-    #[doc = "No result FIFO 0 overflow has occurred since the last time the flag was cleared."]
-    FOF0_0,
-    #[doc = "At least one result FIFO 0 overflow has occurred since the last time the flag was cleared."]
-    FOF0_1,
+    #[doc = "0: No result FIFO 0 overflow has occurred since the last time the flag was cleared."]
+    FOF0_0 = 0,
+    #[doc = "1: At least one result FIFO 0 overflow has occurred since the last time the flag was cleared."]
+    FOF0_1 = 1,
 }
 impl From<FOF0_A> for bool {
     #[inline(always)]
     fn from(variant: FOF0_A) -> Self {
-        match variant {
-            FOF0_A::FOF0_0 => false,
-            FOF0_A::FOF0_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FOF0`"]
@@ -127,21 +121,18 @@ impl<'a> FOF0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RDY1`"]
+#[doc = "Result FIFO1 Ready Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDY1_A {
-    #[doc = "Result FIFO1 data level not above watermark level."]
-    RDY1_0,
-    #[doc = "Result FIFO1 holding data above watermark level."]
-    RDY1_1,
+    #[doc = "0: Result FIFO1 data level not above watermark level."]
+    RDY1_0 = 0,
+    #[doc = "1: Result FIFO1 holding data above watermark level."]
+    RDY1_1 = 1,
 }
 impl From<RDY1_A> for bool {
     #[inline(always)]
     fn from(variant: RDY1_A) -> Self {
-        match variant {
-            RDY1_A::RDY1_0 => false,
-            RDY1_A::RDY1_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RDY1`"]
@@ -166,21 +157,18 @@ impl RDY1_R {
         *self == RDY1_A::RDY1_1
     }
 }
-#[doc = "Possible values of the field `FOF1`"]
+#[doc = "Result FIFO1 Overflow Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FOF1_A {
-    #[doc = "No result FIFO1 overflow has occurred since the last time the flag was cleared."]
-    FOF1_0,
-    #[doc = "At least one result FIFO1 overflow has occurred since the last time the flag was cleared."]
-    FOF1_1,
+    #[doc = "0: No result FIFO1 overflow has occurred since the last time the flag was cleared."]
+    FOF1_0 = 0,
+    #[doc = "1: At least one result FIFO1 overflow has occurred since the last time the flag was cleared."]
+    FOF1_1 = 1,
 }
 impl From<FOF1_A> for bool {
     #[inline(always)]
     fn from(variant: FOF1_A) -> Self {
-        match variant {
-            FOF1_A::FOF1_0 => false,
-            FOF1_A::FOF1_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FOF1`"]
@@ -244,21 +232,18 @@ impl<'a> FOF1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TEXC_INT`"]
+#[doc = "Interrupt Flag For High Priority Trigger Exception\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TEXC_INT_A {
-    #[doc = "No trigger exceptions have occurred."]
-    TEXC_INT_0,
-    #[doc = "A trigger exception has occurred and is pending acknowledgement."]
-    TEXC_INT_1,
+    #[doc = "0: No trigger exceptions have occurred."]
+    TEXC_INT_0 = 0,
+    #[doc = "1: A trigger exception has occurred and is pending acknowledgement."]
+    TEXC_INT_1 = 1,
 }
 impl From<TEXC_INT_A> for bool {
     #[inline(always)]
     fn from(variant: TEXC_INT_A) -> Self {
-        match variant {
-            TEXC_INT_A::TEXC_INT_0 => false,
-            TEXC_INT_A::TEXC_INT_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TEXC_INT`"]
@@ -322,21 +307,19 @@ impl<'a> TEXC_INT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TCOMP_INT`"]
+#[doc = "Interrupt Flag For Trigger Completion\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCOMP_INT_A {
-    #[doc = "Either IE\\[TCOMP_IE\\] is set to 0, or no trigger sequences have run to completion."]
-    TCOMP_INT_0,
-    #[doc = "Trigger sequence has been completed and all data is stored in the associated FIFO."]
-    TCOMP_INT_1,
+    #[doc = "0: Either IE\\[TCOMP_IE\\]
+is set to 0, or no trigger sequences have run to completion."]
+    TCOMP_INT_0 = 0,
+    #[doc = "1: Trigger sequence has been completed and all data is stored in the associated FIFO."]
+    TCOMP_INT_1 = 1,
 }
 impl From<TCOMP_INT_A> for bool {
     #[inline(always)]
     fn from(variant: TCOMP_INT_A) -> Self {
-        match variant {
-            TCOMP_INT_A::TCOMP_INT_0 => false,
-            TCOMP_INT_A::TCOMP_INT_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TCOMP_INT`"]
@@ -373,7 +356,8 @@ impl<'a> TCOMP_INT_W<'a> {
             self.bit(variant.into())
         }
     }
-    #[doc = "Either IE\\[TCOMP_IE\\] is set to 0, or no trigger sequences have run to completion."]
+    #[doc = "Either IE\\[TCOMP_IE\\]
+is set to 0, or no trigger sequences have run to completion."]
     #[inline(always)]
     pub fn tcomp_int_0(self) -> &'a mut W {
         self.variant(TCOMP_INT_A::TCOMP_INT_0)
@@ -400,21 +384,18 @@ impl<'a> TCOMP_INT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CAL_RDY`"]
+#[doc = "Calibration Ready\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CAL_RDY_A {
-    #[doc = "Calibration is incomplete or hasn't been ran."]
-    CAL_RDY_0,
-    #[doc = "The ADC is calibrated."]
-    CAL_RDY_1,
+    #[doc = "0: Calibration is incomplete or hasn't been ran."]
+    CAL_RDY_0 = 0,
+    #[doc = "1: The ADC is calibrated."]
+    CAL_RDY_1 = 1,
 }
 impl From<CAL_RDY_A> for bool {
     #[inline(always)]
     fn from(variant: CAL_RDY_A) -> Self {
-        match variant {
-            CAL_RDY_A::CAL_RDY_0 => false,
-            CAL_RDY_A::CAL_RDY_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CAL_RDY`"]
@@ -439,21 +420,18 @@ impl CAL_RDY_R {
         *self == CAL_RDY_A::CAL_RDY_1
     }
 }
-#[doc = "Possible values of the field `ADC_ACTIVE`"]
+#[doc = "ADC Active\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC_ACTIVE_A {
-    #[doc = "The ADC is IDLE. There are no pending triggers to service and no active commands are being processed."]
-    ADC_ACTIVE_0,
-    #[doc = "The ADC is processing a conversion, running through the power up delay, or servicing a trigger."]
-    ADC_ACTIVE_1,
+    #[doc = "0: The ADC is IDLE. There are no pending triggers to service and no active commands are being processed."]
+    ADC_ACTIVE_0 = 0,
+    #[doc = "1: The ADC is processing a conversion, running through the power up delay, or servicing a trigger."]
+    ADC_ACTIVE_1 = 1,
 }
 impl From<ADC_ACTIVE_A> for bool {
     #[inline(always)]
     fn from(variant: ADC_ACTIVE_A) -> Self {
-        match variant {
-            ADC_ACTIVE_A::ADC_ACTIVE_0 => false,
-            ADC_ACTIVE_A::ADC_ACTIVE_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADC_ACTIVE`"]
@@ -478,45 +456,35 @@ impl ADC_ACTIVE_R {
         *self == ADC_ACTIVE_A::ADC_ACTIVE_1
     }
 }
-#[doc = "Possible values of the field `TRGACT`"]
+#[doc = "Trigger Active\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TRGACT_A {
-    #[doc = "Command (sequence) associated with Trigger 0 currently being executed."]
-    TRGACT_0,
-    #[doc = "Command (sequence) associated with Trigger 1 currently being executed."]
-    TRGACT_1,
-    #[doc = "Command (sequence) associated with Trigger 2 currently being executed."]
-    TRGACT_2,
-    #[doc = "Command (sequence) from the associated Trigger number is currently being executed."]
-    TRGACT_3,
-    #[doc = "Command (sequence) from the associated Trigger number is currently being executed."]
-    TRGACT_4,
-    #[doc = "Command (sequence) from the associated Trigger number is currently being executed."]
-    TRGACT_5,
-    #[doc = "Command (sequence) from the associated Trigger number is currently being executed."]
-    TRGACT_6,
-    #[doc = "Command (sequence) from the associated Trigger number is currently being executed."]
-    TRGACT_7,
-    #[doc = "Command (sequence) from the associated Trigger number is currently being executed."]
-    TRGACT_8,
-    #[doc = "Command (sequence) from the associated Trigger number is currently being executed."]
-    TRGACT_9,
+    #[doc = "0: Command (sequence) associated with Trigger 0 currently being executed."]
+    TRGACT_0 = 0,
+    #[doc = "1: Command (sequence) associated with Trigger 1 currently being executed."]
+    TRGACT_1 = 1,
+    #[doc = "2: Command (sequence) associated with Trigger 2 currently being executed."]
+    TRGACT_2 = 2,
+    #[doc = "3: Command (sequence) from the associated Trigger number is currently being executed."]
+    TRGACT_3 = 3,
+    #[doc = "4: Command (sequence) from the associated Trigger number is currently being executed."]
+    TRGACT_4 = 4,
+    #[doc = "5: Command (sequence) from the associated Trigger number is currently being executed."]
+    TRGACT_5 = 5,
+    #[doc = "6: Command (sequence) from the associated Trigger number is currently being executed."]
+    TRGACT_6 = 6,
+    #[doc = "7: Command (sequence) from the associated Trigger number is currently being executed."]
+    TRGACT_7 = 7,
+    #[doc = "8: Command (sequence) from the associated Trigger number is currently being executed."]
+    TRGACT_8 = 8,
+    #[doc = "9: Command (sequence) from the associated Trigger number is currently being executed."]
+    TRGACT_9 = 9,
 }
 impl From<TRGACT_A> for u8 {
     #[inline(always)]
     fn from(variant: TRGACT_A) -> Self {
-        match variant {
-            TRGACT_A::TRGACT_0 => 0,
-            TRGACT_A::TRGACT_1 => 1,
-            TRGACT_A::TRGACT_2 => 2,
-            TRGACT_A::TRGACT_3 => 3,
-            TRGACT_A::TRGACT_4 => 4,
-            TRGACT_A::TRGACT_5 => 5,
-            TRGACT_A::TRGACT_6 => 6,
-            TRGACT_A::TRGACT_7 => 7,
-            TRGACT_A::TRGACT_8 => 8,
-            TRGACT_A::TRGACT_9 => 9,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TRGACT`"]
@@ -591,45 +559,35 @@ impl TRGACT_R {
         *self == TRGACT_A::TRGACT_9
     }
 }
-#[doc = "Possible values of the field `CMDACT`"]
+#[doc = "Command Active\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CMDACT_A {
-    #[doc = "No command is currently in progress."]
-    CMDACT_0,
-    #[doc = "Command 1 currently being executed."]
-    CMDACT_1,
-    #[doc = "Command 2 currently being executed."]
-    CMDACT_2,
-    #[doc = "Associated command number is currently being executed."]
-    CMDACT_3,
-    #[doc = "Associated command number is currently being executed."]
-    CMDACT_4,
-    #[doc = "Associated command number is currently being executed."]
-    CMDACT_5,
-    #[doc = "Associated command number is currently being executed."]
-    CMDACT_6,
-    #[doc = "Associated command number is currently being executed."]
-    CMDACT_7,
-    #[doc = "Associated command number is currently being executed."]
-    CMDACT_8,
-    #[doc = "Associated command number is currently being executed."]
-    CMDACT_9,
+    #[doc = "0: No command is currently in progress."]
+    CMDACT_0 = 0,
+    #[doc = "1: Command 1 currently being executed."]
+    CMDACT_1 = 1,
+    #[doc = "2: Command 2 currently being executed."]
+    CMDACT_2 = 2,
+    #[doc = "3: Associated command number is currently being executed."]
+    CMDACT_3 = 3,
+    #[doc = "4: Associated command number is currently being executed."]
+    CMDACT_4 = 4,
+    #[doc = "5: Associated command number is currently being executed."]
+    CMDACT_5 = 5,
+    #[doc = "6: Associated command number is currently being executed."]
+    CMDACT_6 = 6,
+    #[doc = "7: Associated command number is currently being executed."]
+    CMDACT_7 = 7,
+    #[doc = "8: Associated command number is currently being executed."]
+    CMDACT_8 = 8,
+    #[doc = "9: Associated command number is currently being executed."]
+    CMDACT_9 = 9,
 }
 impl From<CMDACT_A> for u8 {
     #[inline(always)]
     fn from(variant: CMDACT_A) -> Self {
-        match variant {
-            CMDACT_A::CMDACT_0 => 0,
-            CMDACT_A::CMDACT_1 => 1,
-            CMDACT_A::CMDACT_2 => 2,
-            CMDACT_A::CMDACT_3 => 3,
-            CMDACT_A::CMDACT_4 => 4,
-            CMDACT_A::CMDACT_5 => 5,
-            CMDACT_A::CMDACT_6 => 6,
-            CMDACT_A::CMDACT_7 => 7,
-            CMDACT_A::CMDACT_8 => 8,
-            CMDACT_A::CMDACT_9 => 9,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CMDACT`"]

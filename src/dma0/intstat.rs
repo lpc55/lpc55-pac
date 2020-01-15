@@ -1,20 +1,17 @@
 #[doc = "Reader of register INTSTAT"]
 pub type R = crate::R<u32, super::INTSTAT>;
-#[doc = "Possible values of the field `ACTIVEINT`"]
+#[doc = "Summarizes whether any enabled interrupts (other than error interrupts) are pending.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACTIVEINT_A {
-    #[doc = "Not pending. No enabled interrupts are pending."]
-    NOT_PENDING,
-    #[doc = "Pending. At least one enabled interrupt is pending."]
-    PENDING,
+    #[doc = "0: Not pending. No enabled interrupts are pending."]
+    NOT_PENDING = 0,
+    #[doc = "1: Pending. At least one enabled interrupt is pending."]
+    PENDING = 1,
 }
 impl From<ACTIVEINT_A> for bool {
     #[inline(always)]
     fn from(variant: ACTIVEINT_A) -> Self {
-        match variant {
-            ACTIVEINT_A::NOT_PENDING => false,
-            ACTIVEINT_A::PENDING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACTIVEINT`"]
@@ -39,21 +36,18 @@ impl ACTIVEINT_R {
         *self == ACTIVEINT_A::PENDING
     }
 }
-#[doc = "Possible values of the field `ACTIVEERRINT`"]
+#[doc = "Summarizes whether any error interrupts are pending.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACTIVEERRINT_A {
-    #[doc = "Not pending. No error interrupts are pending."]
-    NOT_PENDING,
-    #[doc = "Pending. At least one error interrupt is pending."]
-    PENDING,
+    #[doc = "0: Not pending. No error interrupts are pending."]
+    NOT_PENDING = 0,
+    #[doc = "1: Pending. At least one error interrupt is pending."]
+    PENDING = 1,
 }
 impl From<ACTIVEERRINT_A> for bool {
     #[inline(always)]
     fn from(variant: ACTIVEERRINT_A) -> Self {
-        match variant {
-            ACTIVEERRINT_A::NOT_PENDING => false,
-            ACTIVEERRINT_A::PENDING => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACTIVEERRINT`"]

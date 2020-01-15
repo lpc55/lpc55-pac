@@ -8,21 +8,18 @@ impl crate::ResetValue for super::FMCFLUSH {
         0
     }
 }
-#[doc = "Possible values of the field `FLUSH`"]
+#[doc = "Flush control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLUSH_AW {
-    #[doc = "No action is performed."]
-    NO_FLUSH,
-    #[doc = "Flush the FMC buffer contents."]
-    FLUSH,
+    #[doc = "0: No action is performed."]
+    NO_FLUSH = 0,
+    #[doc = "1: Flush the FMC buffer contents."]
+    FLUSH = 1,
 }
 impl From<FLUSH_AW> for bool {
     #[inline(always)]
     fn from(variant: FLUSH_AW) -> Self {
-        match variant {
-            FLUSH_AW::NO_FLUSH => false,
-            FLUSH_AW::FLUSH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Write proxy for field `FLUSH`"]

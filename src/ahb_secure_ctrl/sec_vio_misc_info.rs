@@ -1,20 +1,17 @@
 #[doc = "Reader of register sec_vio_misc_info[%s]"]
 pub type R = crate::R<u32, super::SEC_VIO_MISC_INFO>;
-#[doc = "Possible values of the field `SEC_VIO_INFO_WRITE`"]
+#[doc = "security violation access read/write indicator.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEC_VIO_INFO_WRITE_A {
-    #[doc = "Read access."]
-    READ,
-    #[doc = "Write access."]
-    WRITE,
+    #[doc = "0: Read access."]
+    READ = 0,
+    #[doc = "1: Write access."]
+    WRITE = 1,
 }
 impl From<SEC_VIO_INFO_WRITE_A> for bool {
     #[inline(always)]
     fn from(variant: SEC_VIO_INFO_WRITE_A) -> Self {
-        match variant {
-            SEC_VIO_INFO_WRITE_A::READ => false,
-            SEC_VIO_INFO_WRITE_A::WRITE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEC_VIO_INFO_WRITE`"]
@@ -39,21 +36,18 @@ impl SEC_VIO_INFO_WRITE_R {
         *self == SEC_VIO_INFO_WRITE_A::WRITE
     }
 }
-#[doc = "Possible values of the field `SEC_VIO_INFO_DATA_ACCESS`"]
+#[doc = "security violation access data/code indicator.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEC_VIO_INFO_DATA_ACCESS_A {
-    #[doc = "Code access."]
-    CODE,
-    #[doc = "Data access."]
-    DATA,
+    #[doc = "0: Code access."]
+    CODE = 0,
+    #[doc = "1: Data access."]
+    DATA = 1,
 }
 impl From<SEC_VIO_INFO_DATA_ACCESS_A> for bool {
     #[inline(always)]
     fn from(variant: SEC_VIO_INFO_DATA_ACCESS_A) -> Self {
-        match variant {
-            SEC_VIO_INFO_DATA_ACCESS_A::CODE => false,
-            SEC_VIO_INFO_DATA_ACCESS_A::DATA => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEC_VIO_INFO_DATA_ACCESS`"]
@@ -80,48 +74,37 @@ impl SEC_VIO_INFO_DATA_ACCESS_R {
 }
 #[doc = "Reader of field `SEC_VIO_INFO_MASTER_SEC_LEVEL`"]
 pub type SEC_VIO_INFO_MASTER_SEC_LEVEL_R = crate::R<u8, u8>;
-#[doc = "Possible values of the field `SEC_VIO_INFO_MASTER`"]
+#[doc = "security violation master number\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SEC_VIO_INFO_MASTER_A {
-    #[doc = "CPU0 Code."]
-    VALUE_0,
-    #[doc = "CPU0 System."]
-    VALUE_1,
-    #[doc = "CPU1 Data."]
-    VALUE_2,
-    #[doc = "CPU1 System."]
-    VALUE_3,
-    #[doc = "USB-HS Device."]
-    VALUE_4,
-    #[doc = "SDMA0."]
-    VALUE_5,
-    #[doc = "SDIO."]
-    VALUE_8,
-    #[doc = "PowerQuad."]
-    VALUE_9,
-    #[doc = "HASH."]
-    VALUE_10,
-    #[doc = "USB-FS Host."]
-    VALUE_11,
-    #[doc = "SDMA1."]
-    VALUE_12,
+    #[doc = "0: CPU0 Code."]
+    VALUE_0 = 0,
+    #[doc = "1: CPU0 System."]
+    VALUE_1 = 1,
+    #[doc = "2: CPU1 Data."]
+    VALUE_2 = 2,
+    #[doc = "3: CPU1 System."]
+    VALUE_3 = 3,
+    #[doc = "4: USB-HS Device."]
+    VALUE_4 = 4,
+    #[doc = "5: SDMA0."]
+    VALUE_5 = 5,
+    #[doc = "8: SDIO."]
+    VALUE_8 = 8,
+    #[doc = "9: PowerQuad."]
+    VALUE_9 = 9,
+    #[doc = "10: HASH."]
+    VALUE_10 = 10,
+    #[doc = "11: USB-FS Host."]
+    VALUE_11 = 11,
+    #[doc = "12: SDMA1."]
+    VALUE_12 = 12,
 }
 impl From<SEC_VIO_INFO_MASTER_A> for u8 {
     #[inline(always)]
     fn from(variant: SEC_VIO_INFO_MASTER_A) -> Self {
-        match variant {
-            SEC_VIO_INFO_MASTER_A::VALUE_0 => 0,
-            SEC_VIO_INFO_MASTER_A::VALUE_1 => 1,
-            SEC_VIO_INFO_MASTER_A::VALUE_2 => 2,
-            SEC_VIO_INFO_MASTER_A::VALUE_3 => 3,
-            SEC_VIO_INFO_MASTER_A::VALUE_4 => 4,
-            SEC_VIO_INFO_MASTER_A::VALUE_5 => 5,
-            SEC_VIO_INFO_MASTER_A::VALUE_8 => 8,
-            SEC_VIO_INFO_MASTER_A::VALUE_9 => 9,
-            SEC_VIO_INFO_MASTER_A::VALUE_10 => 10,
-            SEC_VIO_INFO_MASTER_A::VALUE_11 => 11,
-            SEC_VIO_INFO_MASTER_A::VALUE_12 => 12,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SEC_VIO_INFO_MASTER`"]

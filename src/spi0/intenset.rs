@@ -10,21 +10,18 @@ impl crate::ResetValue for super::INTENSET {
         0
     }
 }
-#[doc = "Possible values of the field `SSAEN`"]
+#[doc = "Slave select assert interrupt enable. Determines whether an interrupt occurs when the Slave Select is asserted.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSAEN_A {
-    #[doc = "Disabled. No interrupt will be generated when any Slave Select transitions from deasserted to asserted."]
-    DISABLED,
-    #[doc = "Enabled. An interrupt will be generated when any Slave Select transitions from deasserted to asserted."]
-    ENABLED,
+    #[doc = "0: Disabled. No interrupt will be generated when any Slave Select transitions from deasserted to asserted."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. An interrupt will be generated when any Slave Select transitions from deasserted to asserted."]
+    ENABLED = 1,
 }
 impl From<SSAEN_A> for bool {
     #[inline(always)]
     fn from(variant: SSAEN_A) -> Self {
-        match variant {
-            SSAEN_A::DISABLED => false,
-            SSAEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SSAEN`"]
@@ -88,21 +85,18 @@ impl<'a> SSAEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SSDEN`"]
+#[doc = "Slave select deassert interrupt enable. Determines whether an interrupt occurs when the Slave Select is deasserted.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SSDEN_A {
-    #[doc = "Disabled. No interrupt will be generated when all asserted Slave Selects transition to deasserted."]
-    DISABLED,
-    #[doc = "Enabled. An interrupt will be generated when all asserted Slave Selects transition to deasserted."]
-    ENABLED,
+    #[doc = "0: Disabled. No interrupt will be generated when all asserted Slave Selects transition to deasserted."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. An interrupt will be generated when all asserted Slave Selects transition to deasserted."]
+    ENABLED = 1,
 }
 impl From<SSDEN_A> for bool {
     #[inline(always)]
     fn from(variant: SSDEN_A) -> Self {
-        match variant {
-            SSDEN_A::DISABLED => false,
-            SSDEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SSDEN`"]
@@ -166,21 +160,18 @@ impl<'a> SSDEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MSTIDLEEN`"]
+#[doc = "Master idle interrupt enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSTIDLEEN_A {
-    #[doc = "No interrupt will be generated when the SPI master function is idle."]
-    DISABLED,
-    #[doc = "An interrupt will be generated when the SPI master function is fully idle."]
-    ENABLED,
+    #[doc = "0: No interrupt will be generated when the SPI master function is idle."]
+    DISABLED = 0,
+    #[doc = "1: An interrupt will be generated when the SPI master function is fully idle."]
+    ENABLED = 1,
 }
 impl From<MSTIDLEEN_A> for bool {
     #[inline(always)]
     fn from(variant: MSTIDLEEN_A) -> Self {
-        match variant {
-            MSTIDLEEN_A::DISABLED => false,
-            MSTIDLEEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MSTIDLEEN`"]

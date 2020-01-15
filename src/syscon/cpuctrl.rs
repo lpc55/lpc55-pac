@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CPUCTRL {
         0x2c
     }
 }
-#[doc = "Possible values of the field `CPU1CLKEN`"]
+#[doc = "CPU1 clock enable.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPU1CLKEN_A {
-    #[doc = "The CPU1 clock is not enabled."]
-    DISABLE,
-    #[doc = "The CPU1 clock is enabled."]
-    ENABLE,
+    #[doc = "0: The CPU1 clock is not enabled."]
+    DISABLE = 0,
+    #[doc = "1: The CPU1 clock is enabled."]
+    ENABLE = 1,
 }
 impl From<CPU1CLKEN_A> for bool {
     #[inline(always)]
     fn from(variant: CPU1CLKEN_A) -> Self {
-        match variant {
-            CPU1CLKEN_A::DISABLE => false,
-            CPU1CLKEN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPU1CLKEN`"]
@@ -88,21 +85,18 @@ impl<'a> CPU1CLKEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CPU1RSTEN`"]
+#[doc = "CPU1 reset.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPU1RSTEN_A {
-    #[doc = "The CPU1 is not being reset."]
-    RELEASED,
-    #[doc = "The CPU1 is being reset."]
-    ASSERTED,
+    #[doc = "0: The CPU1 is not being reset."]
+    RELEASED = 0,
+    #[doc = "1: The CPU1 is being reset."]
+    ASSERTED = 1,
 }
 impl From<CPU1RSTEN_A> for bool {
     #[inline(always)]
     fn from(variant: CPU1RSTEN_A) -> Self {
-        match variant {
-            CPU1RSTEN_A::RELEASED => false,
-            CPU1RSTEN_A::ASSERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CPU1RSTEN`"]

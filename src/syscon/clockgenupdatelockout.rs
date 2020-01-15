@@ -10,21 +10,19 @@ impl crate::ResetValue for super::CLOCKGENUPDATELOCKOUT {
         0
     }
 }
-#[doc = "Possible values of the field `CLOCKGENUPDATELOCKOUT`"]
+#[doc = "Control clock configuration registers access (like xxxDIV, xxxSEL).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum CLOCKGENUPDATELOCKOUT_A {
-    #[doc = "all hardware clock configruration are freeze."]
-    FREEZE,
-    #[doc = "update all clock configuration."]
-    ENABLE,
+    #[doc = "0: all hardware clock configruration are freeze."]
+    FREEZE = 0,
+    #[doc = "1: update all clock configuration."]
+    ENABLE = 1,
 }
 impl From<CLOCKGENUPDATELOCKOUT_A> for u32 {
     #[inline(always)]
     fn from(variant: CLOCKGENUPDATELOCKOUT_A) -> Self {
-        match variant {
-            CLOCKGENUPDATELOCKOUT_A::FREEZE => 0,
-            CLOCKGENUPDATELOCKOUT_A::ENABLE => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CLOCKGENUPDATELOCKOUT`"]

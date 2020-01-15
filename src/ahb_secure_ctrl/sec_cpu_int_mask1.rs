@@ -10,21 +10,18 @@ impl crate::ResetValue for super::SEC_CPU_INT_MASK1 {
         0xffff_ffff
     }
 }
-#[doc = "Possible values of the field `GPIO_INT0_IRQ4`"]
+#[doc = "Pin interrupt 4 or pattern match engine slice 4 interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIO_INT0_IRQ4_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<GPIO_INT0_IRQ4_A> for bool {
     #[inline(always)]
     fn from(variant: GPIO_INT0_IRQ4_A) -> Self {
-        match variant {
-            GPIO_INT0_IRQ4_A::INVISIBLE => false,
-            GPIO_INT0_IRQ4_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GPIO_INT0_IRQ4`"]
@@ -88,21 +85,18 @@ impl<'a> GPIO_INT0_IRQ4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `GPIO_INT0_IRQ5`"]
+#[doc = "Pin interrupt 5 or pattern match engine slice 5 interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIO_INT0_IRQ5_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<GPIO_INT0_IRQ5_A> for bool {
     #[inline(always)]
     fn from(variant: GPIO_INT0_IRQ5_A) -> Self {
-        match variant {
-            GPIO_INT0_IRQ5_A::INVISIBLE => false,
-            GPIO_INT0_IRQ5_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GPIO_INT0_IRQ5`"]
@@ -166,21 +160,18 @@ impl<'a> GPIO_INT0_IRQ5_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `GPIO_INT0_IRQ6`"]
+#[doc = "Pin interrupt 6 or pattern match engine slice 6 interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIO_INT0_IRQ6_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<GPIO_INT0_IRQ6_A> for bool {
     #[inline(always)]
     fn from(variant: GPIO_INT0_IRQ6_A) -> Self {
-        match variant {
-            GPIO_INT0_IRQ6_A::INVISIBLE => false,
-            GPIO_INT0_IRQ6_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GPIO_INT0_IRQ6`"]
@@ -244,21 +235,18 @@ impl<'a> GPIO_INT0_IRQ6_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `GPIO_INT0_IRQ7`"]
+#[doc = "Pin interrupt 7 or pattern match engine slice 7 interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIO_INT0_IRQ7_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<GPIO_INT0_IRQ7_A> for bool {
     #[inline(always)]
     fn from(variant: GPIO_INT0_IRQ7_A) -> Self {
-        match variant {
-            GPIO_INT0_IRQ7_A::INVISIBLE => false,
-            GPIO_INT0_IRQ7_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GPIO_INT0_IRQ7`"]
@@ -322,21 +310,18 @@ impl<'a> GPIO_INT0_IRQ7_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CTIMER2_IRQ`"]
+#[doc = "Standard counter/timer 2 interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTIMER2_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<CTIMER2_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: CTIMER2_IRQ_A) -> Self {
-        match variant {
-            CTIMER2_IRQ_A::INVISIBLE => false,
-            CTIMER2_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CTIMER2_IRQ`"]
@@ -400,21 +385,18 @@ impl<'a> CTIMER2_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CTIMER4_IRQ`"]
+#[doc = "Standard counter/timer 4 interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTIMER4_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<CTIMER4_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: CTIMER4_IRQ_A) -> Self {
-        match variant {
-            CTIMER4_IRQ_A::INVISIBLE => false,
-            CTIMER4_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CTIMER4_IRQ`"]
@@ -478,21 +460,18 @@ impl<'a> CTIMER4_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `OS_EVENT_TIMER_IRQ`"]
+#[doc = "OS Event Timer and OS Event Timer Wakeup interrupts\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OS_EVENT_TIMER_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<OS_EVENT_TIMER_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: OS_EVENT_TIMER_IRQ_A) -> Self {
-        match variant {
-            OS_EVENT_TIMER_IRQ_A::INVISIBLE => false,
-            OS_EVENT_TIMER_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OS_EVENT_TIMER_IRQ`"]
@@ -556,21 +535,18 @@ impl<'a> OS_EVENT_TIMER_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RESERVED0`"]
+#[doc = "Reserved. Read value is undefined, only zero should be written.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESERVED0_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<RESERVED0_A> for bool {
     #[inline(always)]
     fn from(variant: RESERVED0_A) -> Self {
-        match variant {
-            RESERVED0_A::INVISIBLE => false,
-            RESERVED0_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RESERVED0`"]
@@ -634,21 +610,18 @@ impl<'a> RESERVED0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RESERVED1`"]
+#[doc = "Reserved. Read value is undefined, only zero should be written.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESERVED1_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<RESERVED1_A> for bool {
     #[inline(always)]
     fn from(variant: RESERVED1_A) -> Self {
-        match variant {
-            RESERVED1_A::INVISIBLE => false,
-            RESERVED1_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RESERVED1`"]
@@ -712,21 +685,18 @@ impl<'a> RESERVED1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RESERVED2`"]
+#[doc = "Reserved. Read value is undefined, only zero should be written.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESERVED2_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<RESERVED2_A> for bool {
     #[inline(always)]
     fn from(variant: RESERVED2_A) -> Self {
-        match variant {
-            RESERVED2_A::INVISIBLE => false,
-            RESERVED2_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RESERVED2`"]
@@ -790,21 +760,18 @@ impl<'a> RESERVED2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SDIO_IRQ`"]
+#[doc = "SDIO Controller interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDIO_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<SDIO_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: SDIO_IRQ_A) -> Self {
-        match variant {
-            SDIO_IRQ_A::INVISIBLE => false,
-            SDIO_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SDIO_IRQ`"]
@@ -868,21 +835,18 @@ impl<'a> SDIO_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RESERVED3`"]
+#[doc = "Reserved. Read value is undefined, only zero should be written.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESERVED3_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<RESERVED3_A> for bool {
     #[inline(always)]
     fn from(variant: RESERVED3_A) -> Self {
-        match variant {
-            RESERVED3_A::INVISIBLE => false,
-            RESERVED3_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RESERVED3`"]
@@ -946,21 +910,18 @@ impl<'a> RESERVED3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RESERVED4`"]
+#[doc = "Reserved. Read value is undefined, only zero should be written.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESERVED4_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<RESERVED4_A> for bool {
     #[inline(always)]
     fn from(variant: RESERVED4_A) -> Self {
-        match variant {
-            RESERVED4_A::INVISIBLE => false,
-            RESERVED4_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RESERVED4`"]
@@ -1024,21 +985,18 @@ impl<'a> RESERVED4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RESERVED5`"]
+#[doc = "Reserved. Read value is undefined, only zero should be written.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESERVED5_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<RESERVED5_A> for bool {
     #[inline(always)]
     fn from(variant: RESERVED5_A) -> Self {
-        match variant {
-            RESERVED5_A::INVISIBLE => false,
-            RESERVED5_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RESERVED5`"]
@@ -1102,21 +1060,18 @@ impl<'a> RESERVED5_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `USB1_PHY_IRQ`"]
+#[doc = "USB High Speed PHY Controller interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USB1_PHY_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<USB1_PHY_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: USB1_PHY_IRQ_A) -> Self {
-        match variant {
-            USB1_PHY_IRQ_A::INVISIBLE => false,
-            USB1_PHY_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USB1_PHY_IRQ`"]
@@ -1180,21 +1135,18 @@ impl<'a> USB1_PHY_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `USB1_IRQ`"]
+#[doc = "USB High Speed Controller interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USB1_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<USB1_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: USB1_IRQ_A) -> Self {
-        match variant {
-            USB1_IRQ_A::INVISIBLE => false,
-            USB1_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USB1_IRQ`"]
@@ -1258,21 +1210,18 @@ impl<'a> USB1_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `USB1_NEEDCLK`"]
+#[doc = "USB High Speed Controller Clock request interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USB1_NEEDCLK_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<USB1_NEEDCLK_A> for bool {
     #[inline(always)]
     fn from(variant: USB1_NEEDCLK_A) -> Self {
-        match variant {
-            USB1_NEEDCLK_A::INVISIBLE => false,
-            USB1_NEEDCLK_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USB1_NEEDCLK`"]
@@ -1336,21 +1285,18 @@ impl<'a> USB1_NEEDCLK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SEC_HYPERVISOR_CALL_IRQ`"]
+#[doc = "Secure fault Hyper Visor call interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEC_HYPERVISOR_CALL_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<SEC_HYPERVISOR_CALL_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: SEC_HYPERVISOR_CALL_IRQ_A) -> Self {
-        match variant {
-            SEC_HYPERVISOR_CALL_IRQ_A::INVISIBLE => false,
-            SEC_HYPERVISOR_CALL_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEC_HYPERVISOR_CALL_IRQ`"]
@@ -1414,21 +1360,18 @@ impl<'a> SEC_HYPERVISOR_CALL_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SEC_GPIO_INT0_IRQ0`"]
+#[doc = "Secure Pin interrupt 0 or pattern match engine slice 0 interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEC_GPIO_INT0_IRQ0_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<SEC_GPIO_INT0_IRQ0_A> for bool {
     #[inline(always)]
     fn from(variant: SEC_GPIO_INT0_IRQ0_A) -> Self {
-        match variant {
-            SEC_GPIO_INT0_IRQ0_A::INVISIBLE => false,
-            SEC_GPIO_INT0_IRQ0_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEC_GPIO_INT0_IRQ0`"]
@@ -1492,21 +1435,18 @@ impl<'a> SEC_GPIO_INT0_IRQ0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SEC_GPIO_INT0_IRQ1`"]
+#[doc = "Secure Pin interrupt 1 or pattern match engine slice 1 interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEC_GPIO_INT0_IRQ1_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<SEC_GPIO_INT0_IRQ1_A> for bool {
     #[inline(always)]
     fn from(variant: SEC_GPIO_INT0_IRQ1_A) -> Self {
-        match variant {
-            SEC_GPIO_INT0_IRQ1_A::INVISIBLE => false,
-            SEC_GPIO_INT0_IRQ1_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEC_GPIO_INT0_IRQ1`"]
@@ -1570,21 +1510,18 @@ impl<'a> SEC_GPIO_INT0_IRQ1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PLU_IRQ`"]
+#[doc = "Programmable Look-Up Controller interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLU_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<PLU_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: PLU_IRQ_A) -> Self {
-        match variant {
-            PLU_IRQ_A::INVISIBLE => false,
-            PLU_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PLU_IRQ`"]
@@ -1648,21 +1585,18 @@ impl<'a> PLU_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SEC_VIO_IRQ`"]
+#[doc = "Security Violation interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEC_VIO_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<SEC_VIO_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: SEC_VIO_IRQ_A) -> Self {
-        match variant {
-            SEC_VIO_IRQ_A::INVISIBLE => false,
-            SEC_VIO_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SEC_VIO_IRQ`"]
@@ -1726,21 +1660,18 @@ impl<'a> SEC_VIO_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SHA_IRQ`"]
+#[doc = "HASH-AES interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SHA_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<SHA_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: SHA_IRQ_A) -> Self {
-        match variant {
-            SHA_IRQ_A::INVISIBLE => false,
-            SHA_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SHA_IRQ`"]
@@ -1804,21 +1735,18 @@ impl<'a> SHA_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CASPER_IRQ`"]
+#[doc = "CASPER interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CASPER_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<CASPER_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: CASPER_IRQ_A) -> Self {
-        match variant {
-            CASPER_IRQ_A::INVISIBLE => false,
-            CASPER_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CASPER_IRQ`"]
@@ -1882,21 +1810,18 @@ impl<'a> CASPER_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PUFKEY_IRQ`"]
+#[doc = "PUF interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PUFKEY_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<PUFKEY_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: PUFKEY_IRQ_A) -> Self {
-        match variant {
-            PUFKEY_IRQ_A::INVISIBLE => false,
-            PUFKEY_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PUFKEY_IRQ`"]
@@ -1960,21 +1885,18 @@ impl<'a> PUFKEY_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PQ_IRQ`"]
+#[doc = "Power Quad interrupt.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PQ_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<PQ_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: PQ_IRQ_A) -> Self {
-        match variant {
-            PQ_IRQ_A::INVISIBLE => false,
-            PQ_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PQ_IRQ`"]
@@ -2038,21 +1960,18 @@ impl<'a> PQ_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SDMA1_IRQ`"]
+#[doc = "System DMA 1 (Secure) interrupt\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDMA1_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<SDMA1_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: SDMA1_IRQ_A) -> Self {
-        match variant {
-            SDMA1_IRQ_A::INVISIBLE => false,
-            SDMA1_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SDMA1_IRQ`"]
@@ -2116,21 +2035,18 @@ impl<'a> SDMA1_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LSPI_HS_IRQ`"]
+#[doc = "High Speed SPI interrupt\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LSPI_HS_IRQ_A {
-    #[doc = "no description available"]
-    INVISIBLE,
-    #[doc = "no description available"]
-    VISIBLE,
+    #[doc = "0: no description available"]
+    INVISIBLE = 0,
+    #[doc = "1: no description available"]
+    VISIBLE = 1,
 }
 impl From<LSPI_HS_IRQ_A> for bool {
     #[inline(always)]
     fn from(variant: LSPI_HS_IRQ_A) -> Self {
-        match variant {
-            LSPI_HS_IRQ_A::INVISIBLE => false,
-            LSPI_HS_IRQ_A::VISIBLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LSPI_HS_IRQ`"]

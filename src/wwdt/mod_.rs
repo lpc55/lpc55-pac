@@ -10,21 +10,18 @@ impl crate::ResetValue for super::MOD {
         0
     }
 }
-#[doc = "Possible values of the field `WDEN`"]
+#[doc = "Watchdog enable bit. Once this bit is set to one and a watchdog feed is performed, the watchdog timer will run permanently.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDEN_A {
-    #[doc = "Stop. The watchdog timer is stopped."]
-    STOP,
-    #[doc = "Run. The watchdog timer is running."]
-    RUN,
+    #[doc = "0: Stop. The watchdog timer is stopped."]
+    STOP = 0,
+    #[doc = "1: Run. The watchdog timer is running."]
+    RUN = 1,
 }
 impl From<WDEN_A> for bool {
     #[inline(always)]
     fn from(variant: WDEN_A) -> Self {
-        match variant {
-            WDEN_A::STOP => false,
-            WDEN_A::RUN => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WDEN`"]
@@ -88,21 +85,18 @@ impl<'a> WDEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WDRESET`"]
+#[doc = "Watchdog reset enable bit. Once this bit has been written with a 1 it cannot be re-written with a 0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDRESET_A {
-    #[doc = "Interrupt. A watchdog time-out will not cause a chip reset."]
-    INTERRUPT,
-    #[doc = "Reset. A watchdog time-out will cause a chip reset."]
-    RESET,
+    #[doc = "0: Interrupt. A watchdog time-out will not cause a chip reset."]
+    INTERRUPT = 0,
+    #[doc = "1: Reset. A watchdog time-out will cause a chip reset."]
+    RESET = 1,
 }
 impl From<WDRESET_A> for bool {
     #[inline(always)]
     fn from(variant: WDRESET_A) -> Self {
-        match variant {
-            WDRESET_A::INTERRUPT => false,
-            WDRESET_A::RESET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WDRESET`"]
@@ -214,21 +208,18 @@ impl<'a> WDINT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WDPROTECT`"]
+#[doc = "Watchdog update mode. This bit can be set once by software and is only cleared by a reset.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDPROTECT_A {
-    #[doc = "Flexible. The watchdog time-out value (TC) can be changed at any time."]
-    FLEXIBLE,
-    #[doc = "Threshold. The watchdog time-out value (TC) can be changed only after the counter is below the value of WDWARNINT and WDWINDOW."]
-    THRESHOLD,
+    #[doc = "0: Flexible. The watchdog time-out value (TC) can be changed at any time."]
+    FLEXIBLE = 0,
+    #[doc = "1: Threshold. The watchdog time-out value (TC) can be changed only after the counter is below the value of WDWARNINT and WDWINDOW."]
+    THRESHOLD = 1,
 }
 impl From<WDPROTECT_A> for bool {
     #[inline(always)]
     fn from(variant: WDPROTECT_A) -> Self {
-        match variant {
-            WDPROTECT_A::FLEXIBLE => false,
-            WDPROTECT_A::THRESHOLD => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WDPROTECT`"]

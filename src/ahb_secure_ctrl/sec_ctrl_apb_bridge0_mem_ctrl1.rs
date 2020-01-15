@@ -10,27 +10,23 @@ impl crate::ResetValue for super::SEC_CTRL_APB_BRIDGE0_MEM_CTRL1 {
         0
     }
 }
-#[doc = "Possible values of the field `CTIMER0_RULE`"]
+#[doc = "Standard counter/Timer 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CTIMER0_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<CTIMER0_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: CTIMER0_RULE_A) -> Self {
-        match variant {
-            CTIMER0_RULE_A::ENUM_NS_NP => 0,
-            CTIMER0_RULE_A::ENUM_NS_P => 1,
-            CTIMER0_RULE_A::ENUM_S_NP => 2,
-            CTIMER0_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CTIMER0_RULE`"]
@@ -107,27 +103,23 @@ impl<'a> CTIMER0_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CTIMER1_RULE`"]
+#[doc = "Standard counter/Timer 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CTIMER1_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<CTIMER1_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: CTIMER1_RULE_A) -> Self {
-        match variant {
-            CTIMER1_RULE_A::ENUM_NS_NP => 0,
-            CTIMER1_RULE_A::ENUM_NS_P => 1,
-            CTIMER1_RULE_A::ENUM_S_NP => 2,
-            CTIMER1_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CTIMER1_RULE`"]
@@ -204,27 +196,23 @@ impl<'a> CTIMER1_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WWDT_RULE`"]
+#[doc = "Windiwed wtachdog Timer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WWDT_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<WWDT_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: WWDT_RULE_A) -> Self {
-        match variant {
-            WWDT_RULE_A::ENUM_NS_NP => 0,
-            WWDT_RULE_A::ENUM_NS_P => 1,
-            WWDT_RULE_A::ENUM_S_NP => 2,
-            WWDT_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WWDT_RULE`"]
@@ -301,27 +289,23 @@ impl<'a> WWDT_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MRT_RULE`"]
+#[doc = "Multi-rate Timer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MRT_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<MRT_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: MRT_RULE_A) -> Self {
-        match variant {
-            MRT_RULE_A::ENUM_NS_NP => 0,
-            MRT_RULE_A::ENUM_NS_P => 1,
-            MRT_RULE_A::ENUM_S_NP => 2,
-            MRT_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MRT_RULE`"]
@@ -398,27 +382,23 @@ impl<'a> MRT_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `UTICK_RULE`"]
+#[doc = "Micro-Timer\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UTICK_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<UTICK_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: UTICK_RULE_A) -> Self {
-        match variant {
-            UTICK_RULE_A::ENUM_NS_NP => 0,
-            UTICK_RULE_A::ENUM_NS_P => 1,
-            UTICK_RULE_A::ENUM_S_NP => 2,
-            UTICK_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UTICK_RULE`"]

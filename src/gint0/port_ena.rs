@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::PORT_ENA>;
 #[doc = "Writer for register PORT_ENA[%s]"]
 pub type W = crate::W<u32, super::PORT_ENA>;
-#[doc = "Register PORT_ENA[%s] `reset()`'s with value 0"]
+#[doc = "Register PORT_ENA[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::PORT_ENA {
     type Type = u32;
     #[inline(always)]

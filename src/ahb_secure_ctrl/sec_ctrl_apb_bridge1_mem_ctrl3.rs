@@ -10,27 +10,23 @@ impl crate::ResetValue for super::SEC_CTRL_APB_BRIDGE1_MEM_CTRL3 {
         0
     }
 }
-#[doc = "Possible values of the field `USBHPHY_RULE`"]
+#[doc = "USB High Speed Phy controller\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum USBHPHY_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<USBHPHY_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: USBHPHY_RULE_A) -> Self {
-        match variant {
-            USBHPHY_RULE_A::ENUM_NS_NP => 0,
-            USBHPHY_RULE_A::ENUM_NS_P => 1,
-            USBHPHY_RULE_A::ENUM_S_NP => 2,
-            USBHPHY_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `USBHPHY_RULE`"]
@@ -107,27 +103,23 @@ impl<'a> USBHPHY_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RNG_RULE`"]
+#[doc = "True Random Number Generator\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RNG_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<RNG_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: RNG_RULE_A) -> Self {
-        match variant {
-            RNG_RULE_A::ENUM_NS_NP => 0,
-            RNG_RULE_A::ENUM_NS_P => 1,
-            RNG_RULE_A::ENUM_S_NP => 2,
-            RNG_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RNG_RULE`"]
@@ -204,27 +196,23 @@ impl<'a> RNG_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PUF_RULE`"]
+#[doc = "PUF\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PUF_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<PUF_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: PUF_RULE_A) -> Self {
-        match variant {
-            PUF_RULE_A::ENUM_NS_NP => 0,
-            PUF_RULE_A::ENUM_NS_P => 1,
-            PUF_RULE_A::ENUM_S_NP => 2,
-            PUF_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PUF_RULE`"]
@@ -301,27 +289,23 @@ impl<'a> PUF_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PLU_RULE`"]
+#[doc = "Programmable Look-Up logic\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PLU_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<PLU_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: PLU_RULE_A) -> Self {
-        match variant {
-            PLU_RULE_A::ENUM_NS_NP => 0,
-            PLU_RULE_A::ENUM_NS_P => 1,
-            PLU_RULE_A::ENUM_S_NP => 2,
-            PLU_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PLU_RULE`"]

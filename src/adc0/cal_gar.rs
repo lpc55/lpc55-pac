@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::CAL_GAR>;
 #[doc = "Writer for register CAL_GAR[%s]"]
 pub type W = crate::W<u32, super::CAL_GAR>;
-#[doc = "Register CAL_GAR[%s] `reset()`'s with value 0"]
+#[doc = "Register CAL_GAR[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::CAL_GAR {
     type Type = u32;
     #[inline(always)]

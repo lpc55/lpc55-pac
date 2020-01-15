@@ -2,33 +2,27 @@
 pub type R = crate::R<u32, super::PARAM>;
 #[doc = "Reader of field `TRIG_NUM`"]
 pub type TRIG_NUM_R = crate::R<u8, u8>;
-#[doc = "Possible values of the field `FIFOSIZE`"]
+#[doc = "Result FIFO Depth\n\nValue on reset: 16"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FIFOSIZE_A {
-    #[doc = "Result FIFO depth = 1 dataword."]
-    FIFOSIZE_1,
-    #[doc = "Result FIFO depth = 4 datawords."]
-    FIFOSIZE_4,
-    #[doc = "Result FIFO depth = 8 datawords."]
-    FIFOSIZE_8,
-    #[doc = "Result FIFO depth = 16 datawords."]
-    FIFOSIZE_16,
-    #[doc = "Result FIFO depth = 32 datawords."]
-    FIFOSIZE_32,
-    #[doc = "Result FIFO depth = 64 datawords."]
-    FIFOSIZE_64,
+    #[doc = "1: Result FIFO depth = 1 dataword."]
+    FIFOSIZE_1 = 1,
+    #[doc = "4: Result FIFO depth = 4 datawords."]
+    FIFOSIZE_4 = 4,
+    #[doc = "8: Result FIFO depth = 8 datawords."]
+    FIFOSIZE_8 = 8,
+    #[doc = "16: Result FIFO depth = 16 datawords."]
+    FIFOSIZE_16 = 16,
+    #[doc = "32: Result FIFO depth = 32 datawords."]
+    FIFOSIZE_32 = 32,
+    #[doc = "64: Result FIFO depth = 64 datawords."]
+    FIFOSIZE_64 = 64,
 }
 impl From<FIFOSIZE_A> for u8 {
     #[inline(always)]
     fn from(variant: FIFOSIZE_A) -> Self {
-        match variant {
-            FIFOSIZE_A::FIFOSIZE_1 => 1,
-            FIFOSIZE_A::FIFOSIZE_4 => 4,
-            FIFOSIZE_A::FIFOSIZE_8 => 8,
-            FIFOSIZE_A::FIFOSIZE_16 => 16,
-            FIFOSIZE_A::FIFOSIZE_32 => 32,
-            FIFOSIZE_A::FIFOSIZE_64 => 64,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FIFOSIZE`"]

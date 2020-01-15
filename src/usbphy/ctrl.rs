@@ -82,21 +82,18 @@ impl<'a> HOSTDISCONDETECT_IRQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ENDEVPLUGINDET`"]
+#[doc = "Enables non-standard resistive plugged-in detection This bit field controls connection of nominal 200kohm resistors to both the USB_DP and USB_DM pins as one method of detecting when a USB cable is attached in device mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENDEVPLUGINDET_A {
-    #[doc = "Disables 200kohm pullup resistors on USB_DP and USB_DM pins (Default)"]
-    VALUE0,
-    #[doc = "Enables 200kohm pullup resistors on USB_DP and USB_DM pins"]
-    VALUE1,
+    #[doc = "0: Disables 200kohm pullup resistors on USB_DP and USB_DM pins (Default)"]
+    VALUE0 = 0,
+    #[doc = "1: Enables 200kohm pullup resistors on USB_DP and USB_DM pins"]
+    VALUE1 = 1,
 }
 impl From<ENDEVPLUGINDET_A> for bool {
     #[inline(always)]
     fn from(variant: ENDEVPLUGINDET_A) -> Self {
-        match variant {
-            ENDEVPLUGINDET_A::VALUE0 => false,
-            ENDEVPLUGINDET_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENDEVPLUGINDET`"]

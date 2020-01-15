@@ -10,21 +10,19 @@ impl crate::ResetValue for super::CPU1_LOCK_REG {
         0x8000_000a
     }
 }
-#[doc = "Possible values of the field `LOCK_NS_VTOR`"]
+#[doc = "micro-Cortex M33 (CPU1) VTOR_NS register write-lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LOCK_NS_VTOR_A {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
+    #[doc = "1: Restricted mode."]
+    BLOCKED = 1,
+    #[doc = "2: Writable."]
+    WRITABLE = 2,
 }
 impl From<LOCK_NS_VTOR_A> for u8 {
     #[inline(always)]
     fn from(variant: LOCK_NS_VTOR_A) -> Self {
-        match variant {
-            LOCK_NS_VTOR_A::BLOCKED => 1,
-            LOCK_NS_VTOR_A::WRITABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LOCK_NS_VTOR`"]
@@ -78,21 +76,19 @@ impl<'a> LOCK_NS_VTOR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LOCK_NS_MPU`"]
+#[doc = "micro-Cortex M33 (CPU1) non-secure MPU register write-lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LOCK_NS_MPU_A {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
+    #[doc = "1: Restricted mode."]
+    BLOCKED = 1,
+    #[doc = "2: Writable."]
+    WRITABLE = 2,
 }
 impl From<LOCK_NS_MPU_A> for u8 {
     #[inline(always)]
     fn from(variant: LOCK_NS_MPU_A) -> Self {
-        match variant {
-            LOCK_NS_MPU_A::BLOCKED => 1,
-            LOCK_NS_MPU_A::WRITABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LOCK_NS_MPU`"]
@@ -146,21 +142,19 @@ impl<'a> LOCK_NS_MPU_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CPU1_LOCK_REG_LOCK`"]
+#[doc = "CPU1_LOCK_REG write-lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPU1_LOCK_REG_LOCK_A {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
+    #[doc = "1: Restricted mode."]
+    BLOCKED = 1,
+    #[doc = "2: Writable."]
+    WRITABLE = 2,
 }
 impl From<CPU1_LOCK_REG_LOCK_A> for u8 {
     #[inline(always)]
     fn from(variant: CPU1_LOCK_REG_LOCK_A) -> Self {
-        match variant {
-            CPU1_LOCK_REG_LOCK_A::BLOCKED => 1,
-            CPU1_LOCK_REG_LOCK_A::WRITABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPU1_LOCK_REG_LOCK`"]

@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::TCTRL>;
 #[doc = "Writer for register TCTRL[%s]"]
 pub type W = crate::W<u32, super::TCTRL>;
-#[doc = "Register TCTRL[%s] `reset()`'s with value 0"]
+#[doc = "Register TCTRL[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::TCTRL {
     type Type = u32;
     #[inline(always)]
@@ -10,21 +11,18 @@ impl crate::ResetValue for super::TCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `HTEN`"]
+#[doc = "Trigger enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HTEN_A {
-    #[doc = "Hardware trigger source disabled"]
-    HTEN_0,
-    #[doc = "Hardware trigger source enabled"]
-    HTEN_1,
+    #[doc = "0: Hardware trigger source disabled"]
+    HTEN_0 = 0,
+    #[doc = "1: Hardware trigger source enabled"]
+    HTEN_1 = 1,
 }
 impl From<HTEN_A> for bool {
     #[inline(always)]
     fn from(variant: HTEN_A) -> Self {
-        match variant {
-            HTEN_A::HTEN_0 => false,
-            HTEN_A::HTEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HTEN`"]
@@ -88,21 +86,18 @@ impl<'a> HTEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FIFO_SEL_A`"]
+#[doc = "SAR Result Destination For Channel A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIFO_SEL_A_A {
-    #[doc = "Result written to FIFO 0"]
-    FIFO_SEL_A_0,
-    #[doc = "Result written to FIFO 1"]
-    FIFO_SEL_A_1,
+    #[doc = "0: Result written to FIFO 0"]
+    FIFO_SEL_A_0 = 0,
+    #[doc = "1: Result written to FIFO 1"]
+    FIFO_SEL_A_1 = 1,
 }
 impl From<FIFO_SEL_A_A> for bool {
     #[inline(always)]
     fn from(variant: FIFO_SEL_A_A) -> Self {
-        match variant {
-            FIFO_SEL_A_A::FIFO_SEL_A_0 => false,
-            FIFO_SEL_A_A::FIFO_SEL_A_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FIFO_SEL_A`"]
@@ -166,21 +161,18 @@ impl<'a> FIFO_SEL_A_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FIFO_SEL_B`"]
+#[doc = "SAR Result Destination For Channel B\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIFO_SEL_B_A {
-    #[doc = "Result written to FIFO 0"]
-    FIFO_SEL_B_0,
-    #[doc = "Result written to FIFO 1"]
-    FIFO_SEL_B_1,
+    #[doc = "0: Result written to FIFO 0"]
+    FIFO_SEL_B_0 = 0,
+    #[doc = "1: Result written to FIFO 1"]
+    FIFO_SEL_B_1 = 1,
 }
 impl From<FIFO_SEL_B_A> for bool {
     #[inline(always)]
     fn from(variant: FIFO_SEL_B_A) -> Self {
-        match variant {
-            FIFO_SEL_B_A::FIFO_SEL_B_0 => false,
-            FIFO_SEL_B_A::FIFO_SEL_B_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FIFO_SEL_B`"]
@@ -244,48 +236,37 @@ impl<'a> FIFO_SEL_B_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TPRI`"]
+#[doc = "Trigger priority setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TPRI_A {
-    #[doc = "Set to highest priority, Level 1"]
-    TPRI_0,
-    #[doc = "Set to corresponding priority level"]
-    TPRI_1,
-    #[doc = "Set to corresponding priority level"]
-    TPRI_2,
-    #[doc = "Set to corresponding priority level"]
-    TPRI_3,
-    #[doc = "Set to corresponding priority level"]
-    TPRI_4,
-    #[doc = "Set to corresponding priority level"]
-    TPRI_5,
-    #[doc = "Set to corresponding priority level"]
-    TPRI_6,
-    #[doc = "Set to corresponding priority level"]
-    TPRI_7,
-    #[doc = "Set to corresponding priority level"]
-    TPRI_8,
-    #[doc = "Set to corresponding priority level"]
-    TPRI_9,
-    #[doc = "Set to lowest priority, Level 16"]
-    TPRI_15,
+    #[doc = "0: Set to highest priority, Level 1"]
+    TPRI_0 = 0,
+    #[doc = "1: Set to corresponding priority level"]
+    TPRI_1 = 1,
+    #[doc = "2: Set to corresponding priority level"]
+    TPRI_2 = 2,
+    #[doc = "3: Set to corresponding priority level"]
+    TPRI_3 = 3,
+    #[doc = "4: Set to corresponding priority level"]
+    TPRI_4 = 4,
+    #[doc = "5: Set to corresponding priority level"]
+    TPRI_5 = 5,
+    #[doc = "6: Set to corresponding priority level"]
+    TPRI_6 = 6,
+    #[doc = "7: Set to corresponding priority level"]
+    TPRI_7 = 7,
+    #[doc = "8: Set to corresponding priority level"]
+    TPRI_8 = 8,
+    #[doc = "9: Set to corresponding priority level"]
+    TPRI_9 = 9,
+    #[doc = "15: Set to lowest priority, Level 16"]
+    TPRI_15 = 15,
 }
 impl From<TPRI_A> for u8 {
     #[inline(always)]
     fn from(variant: TPRI_A) -> Self {
-        match variant {
-            TPRI_A::TPRI_0 => 0,
-            TPRI_A::TPRI_1 => 1,
-            TPRI_A::TPRI_2 => 2,
-            TPRI_A::TPRI_3 => 3,
-            TPRI_A::TPRI_4 => 4,
-            TPRI_A::TPRI_5 => 5,
-            TPRI_A::TPRI_6 => 6,
-            TPRI_A::TPRI_7 => 7,
-            TPRI_A::TPRI_8 => 8,
-            TPRI_A::TPRI_9 => 9,
-            TPRI_A::TPRI_15 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TPRI`"]
@@ -476,48 +457,37 @@ impl<'a> TDLY_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TCMD`"]
+#[doc = "Trigger command select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TCMD_A {
-    #[doc = "Not a valid selection from the command buffer. Trigger event is ignored."]
-    TCMD_0,
-    #[doc = "CMD1 is executed"]
-    TCMD_1,
-    #[doc = "Corresponding CMD is executed"]
-    TCMD_2,
-    #[doc = "Corresponding CMD is executed"]
-    TCMD_3,
-    #[doc = "Corresponding CMD is executed"]
-    TCMD_4,
-    #[doc = "Corresponding CMD is executed"]
-    TCMD_5,
-    #[doc = "Corresponding CMD is executed"]
-    TCMD_6,
-    #[doc = "Corresponding CMD is executed"]
-    TCMD_7,
-    #[doc = "Corresponding CMD is executed"]
-    TCMD_8,
-    #[doc = "Corresponding CMD is executed"]
-    TCMD_9,
-    #[doc = "CMD15 is executed"]
-    TCMD_15,
+    #[doc = "0: Not a valid selection from the command buffer. Trigger event is ignored."]
+    TCMD_0 = 0,
+    #[doc = "1: CMD1 is executed"]
+    TCMD_1 = 1,
+    #[doc = "2: Corresponding CMD is executed"]
+    TCMD_2 = 2,
+    #[doc = "3: Corresponding CMD is executed"]
+    TCMD_3 = 3,
+    #[doc = "4: Corresponding CMD is executed"]
+    TCMD_4 = 4,
+    #[doc = "5: Corresponding CMD is executed"]
+    TCMD_5 = 5,
+    #[doc = "6: Corresponding CMD is executed"]
+    TCMD_6 = 6,
+    #[doc = "7: Corresponding CMD is executed"]
+    TCMD_7 = 7,
+    #[doc = "8: Corresponding CMD is executed"]
+    TCMD_8 = 8,
+    #[doc = "9: Corresponding CMD is executed"]
+    TCMD_9 = 9,
+    #[doc = "15: CMD15 is executed"]
+    TCMD_15 = 15,
 }
 impl From<TCMD_A> for u8 {
     #[inline(always)]
     fn from(variant: TCMD_A) -> Self {
-        match variant {
-            TCMD_A::TCMD_0 => 0,
-            TCMD_A::TCMD_1 => 1,
-            TCMD_A::TCMD_2 => 2,
-            TCMD_A::TCMD_3 => 3,
-            TCMD_A::TCMD_4 => 4,
-            TCMD_A::TCMD_5 => 5,
-            TCMD_A::TCMD_6 => 6,
-            TCMD_A::TCMD_7 => 7,
-            TCMD_A::TCMD_8 => 8,
-            TCMD_A::TCMD_9 => 9,
-            TCMD_A::TCMD_15 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TCMD`"]

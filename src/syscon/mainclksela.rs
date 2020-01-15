@@ -10,27 +10,23 @@ impl crate::ResetValue for super::MAINCLKSELA {
         0
     }
 }
-#[doc = "Possible values of the field `SEL`"]
+#[doc = "Main clock A source select.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SEL_A {
-    #[doc = "FRO 12 MHz clock."]
-    ENUM_0X0,
-    #[doc = "CLKIN clock."]
-    ENUM_0X1,
-    #[doc = "FRO 1MHz clock."]
-    ENUM_0X2,
-    #[doc = "FRO 96 MHz clock."]
-    ENUM_0X3,
+    #[doc = "0: FRO 12 MHz clock."]
+    ENUM_0X0 = 0,
+    #[doc = "1: CLKIN clock."]
+    ENUM_0X1 = 1,
+    #[doc = "2: FRO 1MHz clock."]
+    ENUM_0X2 = 2,
+    #[doc = "3: FRO 96 MHz clock."]
+    ENUM_0X3 = 3,
 }
 impl From<SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SEL_A) -> Self {
-        match variant {
-            SEL_A::ENUM_0X0 => 0,
-            SEL_A::ENUM_0X1 => 1,
-            SEL_A::ENUM_0X2 => 2,
-            SEL_A::ENUM_0X3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SEL`"]

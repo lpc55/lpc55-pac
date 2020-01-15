@@ -8,21 +8,19 @@ impl crate::ResetValue for super::SWR_RESET {
         0
     }
 }
-#[doc = "Possible values of the field `SWR_RESET`"]
+#[doc = "Write 0x5A00_0001 to generate a software_reset.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
 pub enum SWR_RESET_AW {
-    #[doc = "Bloc is not reset."]
-    RELEASED,
-    #[doc = "Generate a software reset."]
-    ASSERTED,
+    #[doc = "0: Bloc is not reset."]
+    RELEASED = 0,
+    #[doc = "1509949441: Generate a software reset."]
+    ASSERTED = 1509949441,
 }
 impl From<SWR_RESET_AW> for u32 {
     #[inline(always)]
     fn from(variant: SWR_RESET_AW) -> Self {
-        match variant {
-            SWR_RESET_AW::RELEASED => 0,
-            SWR_RESET_AW::ASSERTED => 1509949441,
-        }
+        variant as _
     }
 }
 #[doc = "Write proxy for field `SWR_RESET`"]

@@ -38,21 +38,18 @@ impl<'a> MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RESBPAIR`"]
+#[doc = "Which bank-pair the offset RESOFF is within. This must be 0 if only 2-up. Ideally this is not the same bank as ABBPAIR (when 4-up supported)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESBPAIR_A {
-    #[doc = "Bank-pair 0 (1st)"]
-    PAIR0,
-    #[doc = "Bank-pair 1 (2nd)"]
-    PAIR1,
+    #[doc = "0: Bank-pair 0 (1st)"]
+    PAIR0 = 0,
+    #[doc = "1: Bank-pair 1 (2nd)"]
+    PAIR1 = 1,
 }
 impl From<RESBPAIR_A> for bool {
     #[inline(always)]
     fn from(variant: RESBPAIR_A) -> Self {
-        match variant {
-            RESBPAIR_A::PAIR0 => false,
-            RESBPAIR_A::PAIR1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RESBPAIR`"]
@@ -130,27 +127,23 @@ impl<'a> RESOFF_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CSKIP`"]
+#[doc = "Skip rules on Carry if needed. This operation will be skipped based on Carry value (from previous operation) if not 0:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CSKIP_A {
-    #[doc = "No Skip"]
-    NO_SKIP,
-    #[doc = "Skip if Carry is 1"]
-    SKIP_IF_1,
-    #[doc = "Skip if Carry is 0"]
-    SKIP_IF_0,
-    #[doc = "Set CTRLOFF to CDOFF and Skip"]
-    SET_AND_SKIP,
+    #[doc = "0: No Skip"]
+    NO_SKIP = 0,
+    #[doc = "1: Skip if Carry is 1"]
+    SKIP_IF_1 = 1,
+    #[doc = "2: Skip if Carry is 0"]
+    SKIP_IF_0 = 2,
+    #[doc = "3: Set CTRLOFF to CDOFF and Skip"]
+    SET_AND_SKIP = 3,
 }
 impl From<CSKIP_A> for u8 {
     #[inline(always)]
     fn from(variant: CSKIP_A) -> Self {
-        match variant {
-            CSKIP_A::NO_SKIP => 0,
-            CSKIP_A::SKIP_IF_1 => 1,
-            CSKIP_A::SKIP_IF_0 => 2,
-            CSKIP_A::SET_AND_SKIP => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CSKIP`"]

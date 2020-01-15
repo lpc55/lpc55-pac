@@ -10,21 +10,18 @@ impl crate::ResetValue for super::XO32M_CTRL {
         0x0021_428a
     }
 }
-#[doc = "Possible values of the field `ACBUF_PASS_ENABLE`"]
+#[doc = "Bypass enable of XO AC buffer enable in pll and top level.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACBUF_PASS_ENABLE_A {
-    #[doc = "XO AC buffer bypass is disabled."]
-    DISABLE,
-    #[doc = "XO AC buffer bypass is enabled."]
-    ENABLE,
+    #[doc = "0: XO AC buffer bypass is disabled."]
+    DISABLE = 0,
+    #[doc = "1: XO AC buffer bypass is enabled."]
+    ENABLE = 1,
 }
 impl From<ACBUF_PASS_ENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: ACBUF_PASS_ENABLE_A) -> Self {
-        match variant {
-            ACBUF_PASS_ENABLE_A::DISABLE => false,
-            ACBUF_PASS_ENABLE_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACBUF_PASS_ENABLE`"]
@@ -88,21 +85,18 @@ impl<'a> ACBUF_PASS_ENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ENABLE_PLL_USB_OUT`"]
+#[doc = "Enable High speed Crystal oscillator output to USB HS PLL.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENABLE_PLL_USB_OUT_A {
-    #[doc = "High speed Crystal oscillator output to USB HS PLL is disabled."]
-    DISABLE,
-    #[doc = "High speed Crystal oscillator output to USB HS PLL is enabled."]
-    ENABLE,
+    #[doc = "0: High speed Crystal oscillator output to USB HS PLL is disabled."]
+    DISABLE = 0,
+    #[doc = "1: High speed Crystal oscillator output to USB HS PLL is enabled."]
+    ENABLE = 1,
 }
 impl From<ENABLE_PLL_USB_OUT_A> for bool {
     #[inline(always)]
     fn from(variant: ENABLE_PLL_USB_OUT_A) -> Self {
-        match variant {
-            ENABLE_PLL_USB_OUT_A::DISABLE => false,
-            ENABLE_PLL_USB_OUT_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENABLE_PLL_USB_OUT`"]
@@ -166,21 +160,18 @@ impl<'a> ENABLE_PLL_USB_OUT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ENABLE_SYSTEM_CLK_OUT`"]
+#[doc = "Enable XO 32 MHz output to CPU system.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENABLE_SYSTEM_CLK_OUT_A {
-    #[doc = "High speed Crystal oscillator output to CPU system is disabled."]
-    DISABLE,
-    #[doc = "High speed Crystal oscillator output to CPU system is enabled."]
-    ENABLE,
+    #[doc = "0: High speed Crystal oscillator output to CPU system is disabled."]
+    DISABLE = 0,
+    #[doc = "1: High speed Crystal oscillator output to CPU system is enabled."]
+    ENABLE = 1,
 }
 impl From<ENABLE_SYSTEM_CLK_OUT_A> for bool {
     #[inline(always)]
     fn from(variant: ENABLE_SYSTEM_CLK_OUT_A) -> Self {
-        match variant {
-            ENABLE_SYSTEM_CLK_OUT_A::DISABLE => false,
-            ENABLE_SYSTEM_CLK_OUT_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENABLE_SYSTEM_CLK_OUT`"]

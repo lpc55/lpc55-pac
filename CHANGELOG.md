@@ -5,6 +5,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- Update SVD to version from SDK 2.7.0
+- Use svd2rust 0.17.0 (changes most files somewhat)
+- Use svdtools 0.1.0
+- Bump dependencies
+
 ## [v0.0.5] - 2019-09-19
 
 ### Changed

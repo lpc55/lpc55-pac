@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CFG {
         0
     }
 }
-#[doc = "Possible values of the field `ENABLE`"]
+#[doc = "USART Enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENABLE_A {
-    #[doc = "Disabled. The USART is disabled and the internal state machine and counters are reset. While Enable = 0, all USART interrupts and DMA transfers are disabled. When Enable is set again, CFG and most other control bits remain unchanged. When re-enabled, the USART will immediately be ready to transmit because the transmitter has been reset and is therefore available."]
-    DISABLED,
-    #[doc = "Enabled. The USART is enabled for operation."]
-    ENABLED,
+    #[doc = "0: Disabled. The USART is disabled and the internal state machine and counters are reset. While Enable = 0, all USART interrupts and DMA transfers are disabled. When Enable is set again, CFG and most other control bits remain unchanged. When re-enabled, the USART will immediately be ready to transmit because the transmitter has been reset and is therefore available."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. The USART is enabled for operation."]
+    ENABLED = 1,
 }
 impl From<ENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: ENABLE_A) -> Self {
-        match variant {
-            ENABLE_A::DISABLED => false,
-            ENABLE_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENABLE`"]
@@ -88,24 +85,21 @@ impl<'a> ENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DATALEN`"]
+#[doc = "Selects the data size for the USART.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DATALEN_A {
-    #[doc = "7 bit Data length."]
-    BIT_7,
-    #[doc = "8 bit Data length."]
-    BIT_8,
-    #[doc = "9 bit data length. The 9th bit is commonly used for addressing in multidrop mode. See the ADDRDET bit in the CTL register."]
-    BIT_9,
+    #[doc = "0: 7 bit Data length."]
+    BIT_7 = 0,
+    #[doc = "1: 8 bit Data length."]
+    BIT_8 = 1,
+    #[doc = "2: 9 bit data length. The 9th bit is commonly used for addressing in multidrop mode. See the ADDRDET bit in the CTL register."]
+    BIT_9 = 2,
 }
 impl From<DATALEN_A> for u8 {
     #[inline(always)]
     fn from(variant: DATALEN_A) -> Self {
-        match variant {
-            DATALEN_A::BIT_7 => 0,
-            DATALEN_A::BIT_8 => 1,
-            DATALEN_A::BIT_9 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DATALEN`"]
@@ -170,24 +164,21 @@ impl<'a> DATALEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PARITYSEL`"]
+#[doc = "Selects what type of parity is used by the USART.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PARITYSEL_A {
-    #[doc = "No parity."]
-    NO_PARITY,
-    #[doc = "Even parity. Adds a bit to each character such that the number of 1s in a transmitted character is even, and the number of 1s in a received character is expected to be even."]
-    EVEN_PARITY,
-    #[doc = "Odd parity. Adds a bit to each character such that the number of 1s in a transmitted character is odd, and the number of 1s in a received character is expected to be odd."]
-    ODD_PARITY,
+    #[doc = "0: No parity."]
+    NO_PARITY = 0,
+    #[doc = "2: Even parity. Adds a bit to each character such that the number of 1s in a transmitted character is even, and the number of 1s in a received character is expected to be even."]
+    EVEN_PARITY = 2,
+    #[doc = "3: Odd parity. Adds a bit to each character such that the number of 1s in a transmitted character is odd, and the number of 1s in a received character is expected to be odd."]
+    ODD_PARITY = 3,
 }
 impl From<PARITYSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PARITYSEL_A) -> Self {
-        match variant {
-            PARITYSEL_A::NO_PARITY => 0,
-            PARITYSEL_A::EVEN_PARITY => 2,
-            PARITYSEL_A::ODD_PARITY => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PARITYSEL`"]
@@ -252,21 +243,18 @@ impl<'a> PARITYSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `STOPLEN`"]
+#[doc = "Number of stop bits appended to transmitted data. Only a single stop bit is required for received data.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STOPLEN_A {
-    #[doc = "1 stop bit."]
-    BIT_1,
-    #[doc = "2 stop bits. This setting should only be used for asynchronous communication."]
-    BITS_2,
+    #[doc = "0: 1 stop bit."]
+    BIT_1 = 0,
+    #[doc = "1: 2 stop bits. This setting should only be used for asynchronous communication."]
+    BITS_2 = 1,
 }
 impl From<STOPLEN_A> for bool {
     #[inline(always)]
     fn from(variant: STOPLEN_A) -> Self {
-        match variant {
-            STOPLEN_A::BIT_1 => false,
-            STOPLEN_A::BITS_2 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `STOPLEN`"]
@@ -330,21 +318,18 @@ impl<'a> STOPLEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MODE32K`"]
+#[doc = "Selects standard or 32 kHz clocking mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE32K_A {
-    #[doc = "Disabled. USART uses standard clocking."]
-    DISABLED,
-    #[doc = "Enabled. USART uses the 32 kHz clock from the RTC oscillator as the clock source to the BRG, and uses a special bit clocking scheme."]
-    ENABLED,
+    #[doc = "0: Disabled. USART uses standard clocking."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. USART uses the 32 kHz clock from the RTC oscillator as the clock source to the BRG, and uses a special bit clocking scheme."]
+    ENABLED = 1,
 }
 impl From<MODE32K_A> for bool {
     #[inline(always)]
     fn from(variant: MODE32K_A) -> Self {
-        match variant {
-            MODE32K_A::DISABLED => false,
-            MODE32K_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MODE32K`"]
@@ -408,21 +393,18 @@ impl<'a> MODE32K_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LINMODE`"]
+#[doc = "LIN break mode enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LINMODE_A {
-    #[doc = "Disabled. Break detect and generate is configured for normal operation."]
-    DISABLED,
-    #[doc = "Enabled. Break detect and generate is configured for LIN bus operation."]
-    ENABLED,
+    #[doc = "0: Disabled. Break detect and generate is configured for normal operation."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. Break detect and generate is configured for LIN bus operation."]
+    ENABLED = 1,
 }
 impl From<LINMODE_A> for bool {
     #[inline(always)]
     fn from(variant: LINMODE_A) -> Self {
-        match variant {
-            LINMODE_A::DISABLED => false,
-            LINMODE_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LINMODE`"]
@@ -486,21 +468,18 @@ impl<'a> LINMODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CTSEN`"]
+#[doc = "CTS Enable. Determines whether CTS is used for flow control. CTS can be from the input pin, or from the USART's own RTS if loopback mode is enabled.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTSEN_A {
-    #[doc = "No flow control. The transmitter does not receive any automatic flow control signal."]
-    DISABLED,
-    #[doc = "Flow control enabled. The transmitter uses the CTS input (or RTS output in loopback mode) for flow control purposes."]
-    ENABLED,
+    #[doc = "0: No flow control. The transmitter does not receive any automatic flow control signal."]
+    DISABLED = 0,
+    #[doc = "1: Flow control enabled. The transmitter uses the CTS input (or RTS output in loopback mode) for flow control purposes."]
+    ENABLED = 1,
 }
 impl From<CTSEN_A> for bool {
     #[inline(always)]
     fn from(variant: CTSEN_A) -> Self {
-        match variant {
-            CTSEN_A::DISABLED => false,
-            CTSEN_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CTSEN`"]
@@ -564,21 +543,18 @@ impl<'a> CTSEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SYNCEN`"]
+#[doc = "Selects synchronous or asynchronous operation.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNCEN_A {
-    #[doc = "Asynchronous mode."]
-    ASYNCHRONOUS_MODE,
-    #[doc = "Synchronous mode."]
-    SYNCHRONOUS_MODE,
+    #[doc = "0: Asynchronous mode."]
+    ASYNCHRONOUS_MODE = 0,
+    #[doc = "1: Synchronous mode."]
+    SYNCHRONOUS_MODE = 1,
 }
 impl From<SYNCEN_A> for bool {
     #[inline(always)]
     fn from(variant: SYNCEN_A) -> Self {
-        match variant {
-            SYNCEN_A::ASYNCHRONOUS_MODE => false,
-            SYNCEN_A::SYNCHRONOUS_MODE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYNCEN`"]
@@ -642,21 +618,18 @@ impl<'a> SYNCEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CLKPOL`"]
+#[doc = "Selects the clock polarity and sampling edge of received data in synchronous mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKPOL_A {
-    #[doc = "Falling edge. Un_RXD is sampled on the falling edge of SCLK."]
-    FALLING_EDGE,
-    #[doc = "Rising edge. Un_RXD is sampled on the rising edge of SCLK."]
-    RISING_EDGE,
+    #[doc = "0: Falling edge. Un_RXD is sampled on the falling edge of SCLK."]
+    FALLING_EDGE = 0,
+    #[doc = "1: Rising edge. Un_RXD is sampled on the rising edge of SCLK."]
+    RISING_EDGE = 1,
 }
 impl From<CLKPOL_A> for bool {
     #[inline(always)]
     fn from(variant: CLKPOL_A) -> Self {
-        match variant {
-            CLKPOL_A::FALLING_EDGE => false,
-            CLKPOL_A::RISING_EDGE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CLKPOL`"]
@@ -720,21 +693,18 @@ impl<'a> CLKPOL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SYNCMST`"]
+#[doc = "Synchronous mode Master select.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNCMST_A {
-    #[doc = "Slave. When synchronous mode is enabled, the USART is a slave."]
-    SLAVE,
-    #[doc = "Master. When synchronous mode is enabled, the USART is a master."]
-    MASTER,
+    #[doc = "0: Slave. When synchronous mode is enabled, the USART is a slave."]
+    SLAVE = 0,
+    #[doc = "1: Master. When synchronous mode is enabled, the USART is a master."]
+    MASTER = 1,
 }
 impl From<SYNCMST_A> for bool {
     #[inline(always)]
     fn from(variant: SYNCMST_A) -> Self {
-        match variant {
-            SYNCMST_A::SLAVE => false,
-            SYNCMST_A::MASTER => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYNCMST`"]
@@ -798,21 +768,18 @@ impl<'a> SYNCMST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LOOP`"]
+#[doc = "Selects data loopback mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LOOP_A {
-    #[doc = "Normal operation."]
-    NORMAL,
-    #[doc = "Loopback mode. This provides a mechanism to perform diagnostic loopback testing for USART data. Serial data from the transmitter (Un_TXD) is connected internally to serial input of the receive (Un_RXD). Un_TXD and Un_RTS activity will also appear on external pins if these functions are configured to appear on device pins. The receiver RTS signal is also looped back to CTS and performs flow control if enabled by CTSEN."]
-    LOOPBACK,
+    #[doc = "0: Normal operation."]
+    NORMAL = 0,
+    #[doc = "1: Loopback mode. This provides a mechanism to perform diagnostic loopback testing for USART data. Serial data from the transmitter (Un_TXD) is connected internally to serial input of the receive (Un_RXD). Un_TXD and Un_RTS activity will also appear on external pins if these functions are configured to appear on device pins. The receiver RTS signal is also looped back to CTS and performs flow control if enabled by CTSEN."]
+    LOOPBACK = 1,
 }
 impl From<LOOP_A> for bool {
     #[inline(always)]
     fn from(variant: LOOP_A) -> Self {
-        match variant {
-            LOOP_A::NORMAL => false,
-            LOOP_A::LOOPBACK => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LOOP`"]
@@ -876,21 +843,18 @@ impl<'a> LOOP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `OETA`"]
+#[doc = "Output Enable Turnaround time enable for RS-485 operation.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OETA_A {
-    #[doc = "Disabled. If selected by OESEL, the Output Enable signal deasserted at the end of the last stop bit of a transmission."]
-    DISABLED,
-    #[doc = "Enabled. If selected by OESEL, the Output Enable signal remains asserted for one character time after the end of the last stop bit of a transmission. OE will also remain asserted if another transmit begins before it is deasserted."]
-    ENABLED,
+    #[doc = "0: Disabled. If selected by OESEL, the Output Enable signal deasserted at the end of the last stop bit of a transmission."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. If selected by OESEL, the Output Enable signal remains asserted for one character time after the end of the last stop bit of a transmission. OE will also remain asserted if another transmit begins before it is deasserted."]
+    ENABLED = 1,
 }
 impl From<OETA_A> for bool {
     #[inline(always)]
     fn from(variant: OETA_A) -> Self {
-        match variant {
-            OETA_A::DISABLED => false,
-            OETA_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OETA`"]
@@ -954,21 +918,18 @@ impl<'a> OETA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AUTOADDR`"]
+#[doc = "Automatic Address matching enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AUTOADDR_A {
-    #[doc = "Disabled. When addressing is enabled by ADDRDET, address matching is done by software. This provides the possibility of versatile addressing (e.g. respond to more than one address)."]
-    DISABLED,
-    #[doc = "Enabled. When addressing is enabled by ADDRDET, address matching is done by hardware, using the value in the ADDR register as the address to match."]
-    ENABLED,
+    #[doc = "0: Disabled. When addressing is enabled by ADDRDET, address matching is done by software. This provides the possibility of versatile addressing (e.g. respond to more than one address)."]
+    DISABLED = 0,
+    #[doc = "1: Enabled. When addressing is enabled by ADDRDET, address matching is done by hardware, using the value in the ADDR register as the address to match."]
+    ENABLED = 1,
 }
 impl From<AUTOADDR_A> for bool {
     #[inline(always)]
     fn from(variant: AUTOADDR_A) -> Self {
-        match variant {
-            AUTOADDR_A::DISABLED => false,
-            AUTOADDR_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AUTOADDR`"]
@@ -1032,21 +993,18 @@ impl<'a> AUTOADDR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `OESEL`"]
+#[doc = "Output Enable Select.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OESEL_A {
-    #[doc = "Standard. The RTS signal is used as the standard flow control function."]
-    STANDARD,
-    #[doc = "RS-485. The RTS signal configured to provide an output enable signal to control an RS-485 transceiver."]
-    RS_485,
+    #[doc = "0: Standard. The RTS signal is used as the standard flow control function."]
+    STANDARD = 0,
+    #[doc = "1: RS-485. The RTS signal configured to provide an output enable signal to control an RS-485 transceiver."]
+    RS_485 = 1,
 }
 impl From<OESEL_A> for bool {
     #[inline(always)]
     fn from(variant: OESEL_A) -> Self {
-        match variant {
-            OESEL_A::STANDARD => false,
-            OESEL_A::RS_485 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OESEL`"]
@@ -1110,21 +1068,18 @@ impl<'a> OESEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `OEPOL`"]
+#[doc = "Output Enable Polarity.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OEPOL_A {
-    #[doc = "Low. If selected by OESEL, the output enable is active low."]
-    LOW,
-    #[doc = "High. If selected by OESEL, the output enable is active high."]
-    HIGH,
+    #[doc = "0: Low. If selected by OESEL, the output enable is active low."]
+    LOW = 0,
+    #[doc = "1: High. If selected by OESEL, the output enable is active high."]
+    HIGH = 1,
 }
 impl From<OEPOL_A> for bool {
     #[inline(always)]
     fn from(variant: OEPOL_A) -> Self {
-        match variant {
-            OEPOL_A::LOW => false,
-            OEPOL_A::HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OEPOL`"]
@@ -1188,21 +1143,18 @@ impl<'a> OEPOL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RXPOL`"]
+#[doc = "Receive data polarity.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RXPOL_A {
-    #[doc = "Standard. The RX signal is used as it arrives from the pin. This means that the RX rest value is 1, start bit is 0, data is not inverted, and the stop bit is 1."]
-    STANDARD,
-    #[doc = "Inverted. The RX signal is inverted before being used by the USART. This means that the RX rest value is 0, start bit is 1, data is inverted, and the stop bit is 0."]
-    INVERTED,
+    #[doc = "0: Standard. The RX signal is used as it arrives from the pin. This means that the RX rest value is 1, start bit is 0, data is not inverted, and the stop bit is 1."]
+    STANDARD = 0,
+    #[doc = "1: Inverted. The RX signal is inverted before being used by the USART. This means that the RX rest value is 0, start bit is 1, data is inverted, and the stop bit is 0."]
+    INVERTED = 1,
 }
 impl From<RXPOL_A> for bool {
     #[inline(always)]
     fn from(variant: RXPOL_A) -> Self {
-        match variant {
-            RXPOL_A::STANDARD => false,
-            RXPOL_A::INVERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RXPOL`"]
@@ -1266,21 +1218,18 @@ impl<'a> RXPOL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TXPOL`"]
+#[doc = "Transmit data polarity.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXPOL_A {
-    #[doc = "Standard. The TX signal is sent out without change. This means that the TX rest value is 1, start bit is 0, data is not inverted, and the stop bit is 1."]
-    STANDARD,
-    #[doc = "Inverted. The TX signal is inverted by the USART before being sent out. This means that the TX rest value is 0, start bit is 1, data is inverted, and the stop bit is 0."]
-    INVERTED,
+    #[doc = "0: Standard. The TX signal is sent out without change. This means that the TX rest value is 1, start bit is 0, data is not inverted, and the stop bit is 1."]
+    STANDARD = 0,
+    #[doc = "1: Inverted. The TX signal is inverted by the USART before being sent out. This means that the TX rest value is 0, start bit is 1, data is inverted, and the stop bit is 0."]
+    INVERTED = 1,
 }
 impl From<TXPOL_A> for bool {
     #[inline(always)]
     fn from(variant: TXPOL_A) -> Self {
-        match variant {
-            TXPOL_A::STANDARD => false,
-            TXPOL_A::INVERTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TXPOL`"]

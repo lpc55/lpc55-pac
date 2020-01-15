@@ -10,21 +10,18 @@ impl crate::ResetValue for super::BOD_DCDC_INT_CTRL {
         0
     }
 }
-#[doc = "Possible values of the field `BODVBAT_INT_ENABLE`"]
+#[doc = "BOD VBAT interrupt control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BODVBAT_INT_ENABLE_A {
-    #[doc = "BOD VBAT interrupt is disabled."]
-    DISABLE,
-    #[doc = "BOD VBAT interrupt is enabled."]
-    ENABLE,
+    #[doc = "0: BOD VBAT interrupt is disabled."]
+    DISABLE = 0,
+    #[doc = "1: BOD VBAT interrupt is enabled."]
+    ENABLE = 1,
 }
 impl From<BODVBAT_INT_ENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: BODVBAT_INT_ENABLE_A) -> Self {
-        match variant {
-            BODVBAT_INT_ENABLE_A::DISABLE => false,
-            BODVBAT_INT_ENABLE_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BODVBAT_INT_ENABLE`"]
@@ -112,21 +109,18 @@ impl<'a> BODVBAT_INT_CLEAR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BODCORE_INT_ENABLE`"]
+#[doc = "BOD CORE interrupt control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BODCORE_INT_ENABLE_A {
-    #[doc = "BOD CORE interrupt is disabled."]
-    DISABLE,
-    #[doc = "BOD CORE interrupt is enabled."]
-    ENABLE,
+    #[doc = "0: BOD CORE interrupt is disabled."]
+    DISABLE = 0,
+    #[doc = "1: BOD CORE interrupt is enabled."]
+    ENABLE = 1,
 }
 impl From<BODCORE_INT_ENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: BODCORE_INT_ENABLE_A) -> Self {
-        match variant {
-            BODCORE_INT_ENABLE_A::DISABLE => false,
-            BODCORE_INT_ENABLE_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BODCORE_INT_ENABLE`"]
@@ -214,21 +208,18 @@ impl<'a> BODCORE_INT_CLEAR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DCDC_INT_ENABLE`"]
+#[doc = "DCDC interrupt control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DCDC_INT_ENABLE_A {
-    #[doc = "DCDC interrupt is disabled."]
-    DISABLE,
-    #[doc = "DCDC interrupt is enabled."]
-    ENABLE,
+    #[doc = "0: DCDC interrupt is disabled."]
+    DISABLE = 0,
+    #[doc = "1: DCDC interrupt is enabled."]
+    ENABLE = 1,
 }
 impl From<DCDC_INT_ENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: DCDC_INT_ENABLE_A) -> Self {
-        match variant {
-            DCDC_INT_ENABLE_A::DISABLE => false,
-            DCDC_INT_ENABLE_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DCDC_INT_ENABLE`"]

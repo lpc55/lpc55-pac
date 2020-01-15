@@ -2,21 +2,19 @@
 pub type R = crate::R<u32, super::GCC>;
 #[doc = "Reader of field `GAIN_CAL`"]
 pub type GAIN_CAL_R = crate::R<u16, u16>;
-#[doc = "Possible values of the field `RDY`"]
+#[doc = "Gain Calibration Value Valid\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDY_A {
-    #[doc = "The gain calibration value is invalid. Run the auto-calibration routine for this value to be written."]
-    RDY_0,
-    #[doc = "The gain calibration value is valid. It should be used to update the GCRa\\[GCALR\\] register field."]
-    RDY_1,
+    #[doc = "0: The gain calibration value is invalid. Run the auto-calibration routine for this value to be written."]
+    RDY_0 = 0,
+    #[doc = "1: The gain calibration value is valid. It should be used to update the GCRa\\[GCALR\\]
+register field."]
+    RDY_1 = 1,
 }
 impl From<RDY_A> for bool {
     #[inline(always)]
     fn from(variant: RDY_A) -> Self {
-        match variant {
-            RDY_A::RDY_0 => false,
-            RDY_A::RDY_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RDY`"]

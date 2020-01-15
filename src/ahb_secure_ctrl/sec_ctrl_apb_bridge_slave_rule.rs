@@ -10,27 +10,23 @@ impl crate::ResetValue for super::SEC_CTRL_APB_BRIDGE_SLAVE_RULE {
         0
     }
 }
-#[doc = "Possible values of the field `APBBRIDGE0_RULE`"]
+#[doc = "Security access rules for the whole APB Bridge 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum APBBRIDGE0_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<APBBRIDGE0_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: APBBRIDGE0_RULE_A) -> Self {
-        match variant {
-            APBBRIDGE0_RULE_A::ENUM_NS_NP => 0,
-            APBBRIDGE0_RULE_A::ENUM_NS_P => 1,
-            APBBRIDGE0_RULE_A::ENUM_S_NP => 2,
-            APBBRIDGE0_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `APBBRIDGE0_RULE`"]
@@ -107,27 +103,23 @@ impl<'a> APBBRIDGE0_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `APBBRIDGE1_RULE`"]
+#[doc = "Security access rules for the whole APB Bridge 1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum APBBRIDGE1_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<APBBRIDGE1_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: APBBRIDGE1_RULE_A) -> Self {
-        match variant {
-            APBBRIDGE1_RULE_A::ENUM_NS_NP => 0,
-            APBBRIDGE1_RULE_A::ENUM_NS_P => 1,
-            APBBRIDGE1_RULE_A::ENUM_S_NP => 2,
-            APBBRIDGE1_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `APBBRIDGE1_RULE`"]

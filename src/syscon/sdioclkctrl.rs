@@ -10,27 +10,23 @@ impl crate::ResetValue for super::SDIOCLKCTRL {
         0
     }
 }
-#[doc = "Possible values of the field `CCLK_DRV_PHASE`"]
+#[doc = "Programmable delay value by which cclk_in_drv is phase-shifted with regard to cclk_in.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CCLK_DRV_PHASE_A {
-    #[doc = "0 degree shift."]
-    ENUM_0_DEG,
-    #[doc = "90 degree shift."]
-    ENUM_90_DEG,
-    #[doc = "180 degree shift."]
-    ENUM_180_DEG,
-    #[doc = "270 degree shift."]
-    ENUM_270_DEG,
+    #[doc = "0: 0 degree shift."]
+    ENUM_0_DEG = 0,
+    #[doc = "1: 90 degree shift."]
+    ENUM_90_DEG = 1,
+    #[doc = "2: 180 degree shift."]
+    ENUM_180_DEG = 2,
+    #[doc = "3: 270 degree shift."]
+    ENUM_270_DEG = 3,
 }
 impl From<CCLK_DRV_PHASE_A> for u8 {
     #[inline(always)]
     fn from(variant: CCLK_DRV_PHASE_A) -> Self {
-        match variant {
-            CCLK_DRV_PHASE_A::ENUM_0_DEG => 0,
-            CCLK_DRV_PHASE_A::ENUM_90_DEG => 1,
-            CCLK_DRV_PHASE_A::ENUM_180_DEG => 2,
-            CCLK_DRV_PHASE_A::ENUM_270_DEG => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CCLK_DRV_PHASE`"]
@@ -107,27 +103,23 @@ impl<'a> CCLK_DRV_PHASE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CCLK_SAMPLE_PHASE`"]
+#[doc = "Programmable delay value by which cclk_in_sample is delayed with regard to cclk_in.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CCLK_SAMPLE_PHASE_A {
-    #[doc = "0 degree shift."]
-    ENUM_0_DEG,
-    #[doc = "90 degree shift."]
-    ENUM_90_DEG,
-    #[doc = "180 degree shift."]
-    ENUM_180_DEG,
-    #[doc = "270 degree shift."]
-    ENUM_270_DEG,
+    #[doc = "0: 0 degree shift."]
+    ENUM_0_DEG = 0,
+    #[doc = "1: 90 degree shift."]
+    ENUM_90_DEG = 1,
+    #[doc = "2: 180 degree shift."]
+    ENUM_180_DEG = 2,
+    #[doc = "3: 270 degree shift."]
+    ENUM_270_DEG = 3,
 }
 impl From<CCLK_SAMPLE_PHASE_A> for u8 {
     #[inline(always)]
     fn from(variant: CCLK_SAMPLE_PHASE_A) -> Self {
-        match variant {
-            CCLK_SAMPLE_PHASE_A::ENUM_0_DEG => 0,
-            CCLK_SAMPLE_PHASE_A::ENUM_90_DEG => 1,
-            CCLK_SAMPLE_PHASE_A::ENUM_180_DEG => 2,
-            CCLK_SAMPLE_PHASE_A::ENUM_270_DEG => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CCLK_SAMPLE_PHASE`"]
@@ -204,21 +196,18 @@ impl<'a> CCLK_SAMPLE_PHASE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PHASE_ACTIVE`"]
+#[doc = "Enables the delays CCLK_DRV_PHASE and CCLK_SAMPLE_PHASE.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PHASE_ACTIVE_A {
-    #[doc = "Bypassed."]
-    BYPASSED,
-    #[doc = "Activates phase shift logic. When active, the clock divider is active and phase delays are enabled."]
-    PH_SHIFT,
+    #[doc = "0: Bypassed."]
+    BYPASSED = 0,
+    #[doc = "1: Activates phase shift logic. When active, the clock divider is active and phase delays are enabled."]
+    PH_SHIFT = 1,
 }
 impl From<PHASE_ACTIVE_A> for bool {
     #[inline(always)]
     fn from(variant: PHASE_ACTIVE_A) -> Self {
-        match variant {
-            PHASE_ACTIVE_A::BYPASSED => false,
-            PHASE_ACTIVE_A::PH_SHIFT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PHASE_ACTIVE`"]
@@ -296,21 +285,18 @@ impl<'a> CCLK_DRV_DELAY_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CCLK_DRV_DELAY_ACTIVE`"]
+#[doc = "Enables drive delay, as controlled by the CCLK_DRV_DELAY field.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCLK_DRV_DELAY_ACTIVE_A {
-    #[doc = "Disable drive delay."]
-    DISABLE,
-    #[doc = "Enable drive delay."]
-    ENABLE,
+    #[doc = "0: Disable drive delay."]
+    DISABLE = 0,
+    #[doc = "1: Enable drive delay."]
+    ENABLE = 1,
 }
 impl From<CCLK_DRV_DELAY_ACTIVE_A> for bool {
     #[inline(always)]
     fn from(variant: CCLK_DRV_DELAY_ACTIVE_A) -> Self {
-        match variant {
-            CCLK_DRV_DELAY_ACTIVE_A::DISABLE => false,
-            CCLK_DRV_DELAY_ACTIVE_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CCLK_DRV_DELAY_ACTIVE`"]
@@ -388,21 +374,18 @@ impl<'a> CCLK_SAMPLE_DELAY_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CCLK_SAMPLE_DELAY_ACTIVE`"]
+#[doc = "Enables sample delay, as controlled by the CCLK_SAMPLE_DELAY field.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CCLK_SAMPLE_DELAY_ACTIVE_A {
-    #[doc = "Disables sample delay."]
-    DISABLE,
-    #[doc = "Enables sample delay."]
-    ENABLE,
+    #[doc = "0: Disables sample delay."]
+    DISABLE = 0,
+    #[doc = "1: Enables sample delay."]
+    ENABLE = 1,
 }
 impl From<CCLK_SAMPLE_DELAY_ACTIVE_A> for bool {
     #[inline(always)]
     fn from(variant: CCLK_SAMPLE_DELAY_ACTIVE_A) -> Self {
-        match variant {
-            CCLK_SAMPLE_DELAY_ACTIVE_A::DISABLE => false,
-            CCLK_SAMPLE_DELAY_ACTIVE_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CCLK_SAMPLE_DELAY_ACTIVE`"]

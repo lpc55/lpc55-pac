@@ -10,27 +10,23 @@ impl crate::ResetValue for super::MASTER_SEC_LEVEL {
         0x8000_0000
     }
 }
-#[doc = "Possible values of the field `CPU1C`"]
+#[doc = "Micro-Cortex M33 (CPU1) Code bus.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPU1C_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<CPU1C_A> for u8 {
     #[inline(always)]
     fn from(variant: CPU1C_A) -> Self {
-        match variant {
-            CPU1C_A::ENUM_NS_NP => 0,
-            CPU1C_A::ENUM_NS_P => 1,
-            CPU1C_A::ENUM_S_NP => 2,
-            CPU1C_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPU1C`"]
@@ -107,27 +103,23 @@ impl<'a> CPU1C_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CPU1S`"]
+#[doc = "Micro-Cortex M33 (CPU1) System bus.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPU1S_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<CPU1S_A> for u8 {
     #[inline(always)]
     fn from(variant: CPU1S_A) -> Self {
-        match variant {
-            CPU1S_A::ENUM_NS_NP => 0,
-            CPU1S_A::ENUM_NS_P => 1,
-            CPU1S_A::ENUM_S_NP => 2,
-            CPU1S_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPU1S`"]
@@ -204,27 +196,23 @@ impl<'a> CPU1S_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `USBFSD`"]
+#[doc = "USB Full Speed Device.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum USBFSD_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<USBFSD_A> for u8 {
     #[inline(always)]
     fn from(variant: USBFSD_A) -> Self {
-        match variant {
-            USBFSD_A::ENUM_NS_NP => 0,
-            USBFSD_A::ENUM_NS_P => 1,
-            USBFSD_A::ENUM_S_NP => 2,
-            USBFSD_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `USBFSD`"]
@@ -301,27 +289,23 @@ impl<'a> USBFSD_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SDMA0`"]
+#[doc = "System DMA 0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SDMA0_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<SDMA0_A> for u8 {
     #[inline(always)]
     fn from(variant: SDMA0_A) -> Self {
-        match variant {
-            SDMA0_A::ENUM_NS_NP => 0,
-            SDMA0_A::ENUM_NS_P => 1,
-            SDMA0_A::ENUM_S_NP => 2,
-            SDMA0_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SDMA0`"]
@@ -398,27 +382,23 @@ impl<'a> SDMA0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SDIO`"]
+#[doc = "SDIO.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SDIO_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<SDIO_A> for u8 {
     #[inline(always)]
     fn from(variant: SDIO_A) -> Self {
-        match variant {
-            SDIO_A::ENUM_NS_NP => 0,
-            SDIO_A::ENUM_NS_P => 1,
-            SDIO_A::ENUM_S_NP => 2,
-            SDIO_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SDIO`"]
@@ -495,27 +475,23 @@ impl<'a> SDIO_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PQ`"]
+#[doc = "Power Quad.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PQ_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<PQ_A> for u8 {
     #[inline(always)]
     fn from(variant: PQ_A) -> Self {
-        match variant {
-            PQ_A::ENUM_NS_NP => 0,
-            PQ_A::ENUM_NS_P => 1,
-            PQ_A::ENUM_S_NP => 2,
-            PQ_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PQ`"]
@@ -592,27 +568,23 @@ impl<'a> PQ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `HASH`"]
+#[doc = "Hash.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HASH_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<HASH_A> for u8 {
     #[inline(always)]
     fn from(variant: HASH_A) -> Self {
-        match variant {
-            HASH_A::ENUM_NS_NP => 0,
-            HASH_A::ENUM_NS_P => 1,
-            HASH_A::ENUM_S_NP => 2,
-            HASH_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HASH`"]
@@ -689,27 +661,23 @@ impl<'a> HASH_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `USBFSH`"]
+#[doc = "USB Full speed Host.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum USBFSH_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<USBFSH_A> for u8 {
     #[inline(always)]
     fn from(variant: USBFSH_A) -> Self {
-        match variant {
-            USBFSH_A::ENUM_NS_NP => 0,
-            USBFSH_A::ENUM_NS_P => 1,
-            USBFSH_A::ENUM_S_NP => 2,
-            USBFSH_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `USBFSH`"]
@@ -786,27 +754,23 @@ impl<'a> USBFSH_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SDMA1`"]
+#[doc = "System DMA 1 security level.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SDMA1_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<SDMA1_A> for u8 {
     #[inline(always)]
     fn from(variant: SDMA1_A) -> Self {
-        match variant {
-            SDMA1_A::ENUM_NS_NP => 0,
-            SDMA1_A::ENUM_NS_P => 1,
-            SDMA1_A::ENUM_S_NP => 2,
-            SDMA1_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SDMA1`"]
@@ -883,21 +847,19 @@ impl<'a> SDMA1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MASTER_SEC_LEVEL_LOCK`"]
+#[doc = "MASTER_SEC_LEVEL write-lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MASTER_SEC_LEVEL_LOCK_A {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
+    #[doc = "1: Restricted mode."]
+    BLOCKED = 1,
+    #[doc = "2: Writable."]
+    WRITABLE = 2,
 }
 impl From<MASTER_SEC_LEVEL_LOCK_A> for u8 {
     #[inline(always)]
     fn from(variant: MASTER_SEC_LEVEL_LOCK_A) -> Self {
-        match variant {
-            MASTER_SEC_LEVEL_LOCK_A::BLOCKED => 1,
-            MASTER_SEC_LEVEL_LOCK_A::WRITABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MASTER_SEC_LEVEL_LOCK`"]

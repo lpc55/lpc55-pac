@@ -10,39 +10,31 @@ impl crate::ResetValue for super::USB1_VBUS_DETECT_CLR {
         0x0070_0004
     }
 }
-#[doc = "Possible values of the field `VBUSVALID_THRESH`"]
+#[doc = "Sets the threshold for the VBUSVALID comparator\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum VBUSVALID_THRESH_A {
-    #[doc = "4.0V"]
-    VALUE0,
-    #[doc = "4.1V"]
-    VALUE1,
-    #[doc = "4.2V"]
-    VALUE2,
-    #[doc = "4.3V"]
-    VALUE3,
-    #[doc = "4.4V(Default)"]
-    VALUE4,
-    #[doc = "4.5V"]
-    VALUE5,
-    #[doc = "4.6V"]
-    VALUE6,
-    #[doc = "4.7V"]
-    VALUE7,
+    #[doc = "0: 4.0V"]
+    VALUE0 = 0,
+    #[doc = "1: 4.1V"]
+    VALUE1 = 1,
+    #[doc = "2: 4.2V"]
+    VALUE2 = 2,
+    #[doc = "3: 4.3V"]
+    VALUE3 = 3,
+    #[doc = "4: 4.4V(Default)"]
+    VALUE4 = 4,
+    #[doc = "5: 4.5V"]
+    VALUE5 = 5,
+    #[doc = "6: 4.6V"]
+    VALUE6 = 6,
+    #[doc = "7: 4.7V"]
+    VALUE7 = 7,
 }
 impl From<VBUSVALID_THRESH_A> for u8 {
     #[inline(always)]
     fn from(variant: VBUSVALID_THRESH_A) -> Self {
-        match variant {
-            VBUSVALID_THRESH_A::VALUE0 => 0,
-            VBUSVALID_THRESH_A::VALUE1 => 1,
-            VBUSVALID_THRESH_A::VALUE2 => 2,
-            VBUSVALID_THRESH_A::VALUE3 => 3,
-            VBUSVALID_THRESH_A::VALUE4 => 4,
-            VBUSVALID_THRESH_A::VALUE5 => 5,
-            VBUSVALID_THRESH_A::VALUE6 => 6,
-            VBUSVALID_THRESH_A::VALUE7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `VBUSVALID_THRESH`"]
@@ -163,21 +155,18 @@ impl<'a> VBUSVALID_THRESH_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VBUS_OVERRIDE_EN`"]
+#[doc = "VBUS detect signal override enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VBUS_OVERRIDE_EN_A {
-    #[doc = "Use the results of the internal VBUS_VALID and Session Valid comparators for VBUS_VALID, AVALID, BVALID, and SESSEND (Default)"]
-    VALUE0,
-    #[doc = "Use the override values for VBUS_VALID, AVALID, BVALID, and SESSEND"]
-    VALUE1,
+    #[doc = "0: Use the results of the internal VBUS_VALID and Session Valid comparators for VBUS_VALID, AVALID, BVALID, and SESSEND (Default)"]
+    VALUE0 = 0,
+    #[doc = "1: Use the override values for VBUS_VALID, AVALID, BVALID, and SESSEND"]
+    VALUE1 = 1,
 }
 impl From<VBUS_OVERRIDE_EN_A> for bool {
     #[inline(always)]
     fn from(variant: VBUS_OVERRIDE_EN_A) -> Self {
-        match variant {
-            VBUS_OVERRIDE_EN_A::VALUE0 => false,
-            VBUS_OVERRIDE_EN_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VBUS_OVERRIDE_EN`"]
@@ -337,21 +326,18 @@ impl<'a> VBUSVALID_OVERRIDE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VBUSVALID_SEL`"]
+#[doc = "Selects the source of the VBUS_VALID signal reported to the USB controller This is one of the bit fields that selects the source of the VBUS_VALID signal reported to the USB controller\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VBUSVALID_SEL_A {
-    #[doc = "Use the VBUS_VALID comparator results for signal reported to the USB controller (Default)"]
-    VALUE0,
-    #[doc = "Use the VBUS_VALID_3V detector results for signal reported to the USB controller"]
-    VALUE1,
+    #[doc = "0: Use the VBUS_VALID comparator results for signal reported to the USB controller (Default)"]
+    VALUE0 = 0,
+    #[doc = "1: Use the VBUS_VALID_3V detector results for signal reported to the USB controller"]
+    VALUE1 = 1,
 }
 impl From<VBUSVALID_SEL_A> for bool {
     #[inline(always)]
     fn from(variant: VBUSVALID_SEL_A) -> Self {
-        match variant {
-            VBUSVALID_SEL_A::VALUE0 => false,
-            VBUSVALID_SEL_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VBUSVALID_SEL`"]
@@ -415,24 +401,21 @@ impl<'a> VBUSVALID_SEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VBUS_SOURCE_SEL`"]
+#[doc = "Selects the source of the VBUS_VALID signal reported to the USB controller This is one of the bit fields that selects the source of the VBUS_VALID signal reported to the USB controller\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum VBUS_SOURCE_SEL_A {
-    #[doc = "Use the VBUS_VALID comparator results for signal reported to the USB controller (Default)"]
-    VALUE0,
-    #[doc = "Use the Session Valid comparator results for signal reported to the USB controller"]
-    VALUE1,
-    #[doc = "Use the Session Valid comparator results for signal reported to the USB controller"]
-    VALUE2,
+    #[doc = "0: Use the VBUS_VALID comparator results for signal reported to the USB controller (Default)"]
+    VALUE0 = 0,
+    #[doc = "1: Use the Session Valid comparator results for signal reported to the USB controller"]
+    VALUE1 = 1,
+    #[doc = "2: Use the Session Valid comparator results for signal reported to the USB controller"]
+    VALUE2 = 2,
 }
 impl From<VBUS_SOURCE_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: VBUS_SOURCE_SEL_A) -> Self {
-        match variant {
-            VBUS_SOURCE_SEL_A::VALUE0 => 0,
-            VBUS_SOURCE_SEL_A::VALUE1 => 1,
-            VBUS_SOURCE_SEL_A::VALUE2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `VBUS_SOURCE_SEL`"]
@@ -545,21 +528,18 @@ impl<'a> ID_OVERRIDE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXT_ID_OVERRIDE_EN`"]
+#[doc = "Enable ID override using the pinmuxed value:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXT_ID_OVERRIDE_EN_A {
-    #[doc = "Select the Muxed value chosen using ID_OVERRIDE_EN."]
-    VALUE0,
-    #[doc = "Select the external ID value."]
-    VALUE1,
+    #[doc = "0: Select the Muxed value chosen using ID_OVERRIDE_EN."]
+    VALUE0 = 0,
+    #[doc = "1: Select the external ID value."]
+    VALUE1 = 1,
 }
 impl From<EXT_ID_OVERRIDE_EN_A> for bool {
     #[inline(always)]
     fn from(variant: EXT_ID_OVERRIDE_EN_A) -> Self {
-        match variant {
-            EXT_ID_OVERRIDE_EN_A::VALUE0 => false,
-            EXT_ID_OVERRIDE_EN_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EXT_ID_OVERRIDE_EN`"]
@@ -623,21 +603,18 @@ impl<'a> EXT_ID_OVERRIDE_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `EXT_VBUS_OVERRIDE_EN`"]
+#[doc = "Enable VBUS override using the pin muxed value.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EXT_VBUS_OVERRIDE_EN_A {
-    #[doc = "Select the muxed value chosen using VBUS_OVERRIDE_EN."]
-    VALUE0,
-    #[doc = "Select the external VBUS VALID value."]
-    VALUE1,
+    #[doc = "0: Select the muxed value chosen using VBUS_OVERRIDE_EN."]
+    VALUE0 = 0,
+    #[doc = "1: Select the external VBUS VALID value."]
+    VALUE1 = 1,
 }
 impl From<EXT_VBUS_OVERRIDE_EN_A> for bool {
     #[inline(always)]
     fn from(variant: EXT_VBUS_OVERRIDE_EN_A) -> Self {
-        match variant {
-            EXT_VBUS_OVERRIDE_EN_A::VALUE0 => false,
-            EXT_VBUS_OVERRIDE_EN_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EXT_VBUS_OVERRIDE_EN`"]
@@ -701,21 +678,19 @@ impl<'a> EXT_VBUS_OVERRIDE_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `VBUSVALID_TO_SESSVALID`"]
+#[doc = "Selects the comparator used for VBUS_VALID This bit field controls the comparator used to report the VBUS_VALID results in USB1_VBUS_DETECT\\[3\\]
+between the VBUS_VALID comparator and the Session Valid comparator\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VBUSVALID_TO_SESSVALID_A {
-    #[doc = "Use the VBUS_VALID comparator for VBUS_VALID results"]
-    VALUE0,
-    #[doc = "Use the Session End comparator for VBUS_VALID results. The Session End threshold is >0.8V and <4.0V."]
-    VALUE1,
+    #[doc = "0: Use the VBUS_VALID comparator for VBUS_VALID results"]
+    VALUE0 = 0,
+    #[doc = "1: Use the Session End comparator for VBUS_VALID results. The Session End threshold is >0.8V and <4.0V."]
+    VALUE1 = 1,
 }
 impl From<VBUSVALID_TO_SESSVALID_A> for bool {
     #[inline(always)]
     fn from(variant: VBUSVALID_TO_SESSVALID_A) -> Self {
-        match variant {
-            VBUSVALID_TO_SESSVALID_A::VALUE0 => false,
-            VBUSVALID_TO_SESSVALID_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VBUSVALID_TO_SESSVALID`"]
@@ -803,21 +778,19 @@ impl<'a> VBUSVALID_5VDETECT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PWRUP_CMPS`"]
+#[doc = "Enables the VBUS_VALID comparator: Powers up the comparator used for the VBUS_VALID detector\n\nValue on reset: 7"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PWRUP_CMPS_A {
-    #[doc = "Powers down the VBUS_VALID comparator"]
-    VALUE0,
-    #[doc = "Enables the VBUS_VALID comparator (default)"]
-    VALUE1,
+    #[doc = "0: Powers down the VBUS_VALID comparator"]
+    VALUE0 = 0,
+    #[doc = "7: Enables the VBUS_VALID comparator (default)"]
+    VALUE1 = 7,
 }
 impl From<PWRUP_CMPS_A> for u8 {
     #[inline(always)]
     fn from(variant: PWRUP_CMPS_A) -> Self {
-        match variant {
-            PWRUP_CMPS_A::VALUE0 => 0,
-            PWRUP_CMPS_A::VALUE1 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PWRUP_CMPS`"]
@@ -871,21 +844,18 @@ impl<'a> PWRUP_CMPS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DISCHARGE_VBUS`"]
+#[doc = "Controls VBUS discharge resistor This bit field controls a nominal 22kohm resistor between the USB1_VBUS pin and ground\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DISCHARGE_VBUS_A {
-    #[doc = "VBUS discharge resistor is disabled (Default)"]
-    VALUE0,
-    #[doc = "VBUS discharge resistor is enabled"]
-    VALUE1,
+    #[doc = "0: VBUS discharge resistor is disabled (Default)"]
+    VALUE0 = 0,
+    #[doc = "1: VBUS discharge resistor is enabled"]
+    VALUE1 = 1,
 }
 impl From<DISCHARGE_VBUS_A> for bool {
     #[inline(always)]
     fn from(variant: DISCHARGE_VBUS_A) -> Self {
-        match variant {
-            DISCHARGE_VBUS_A::VALUE0 => false,
-            DISCHARGE_VBUS_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DISCHARGE_VBUS`"]
@@ -960,22 +930,29 @@ impl R {
     pub fn vbus_override_en(&self) -> VBUS_OVERRIDE_EN_R {
         VBUS_OVERRIDE_EN_R::new(((self.bits >> 3) & 0x01) != 0)
     }
-    #[doc = "Bit 4 - Override value for SESSEND The bit field provides the value for USB1_VBUS_DET_STAT\\[0\\] if USB_VBUS_DETECT\\[3\\] is set to value 1'b1"]
+    #[doc = "Bit 4 - Override value for SESSEND The bit field provides the value for USB1_VBUS_DET_STAT\\[0\\]
+if USB_VBUS_DETECT\\[3\\]
+is set to value 1'b1"]
     #[inline(always)]
     pub fn sessend_override(&self) -> SESSEND_OVERRIDE_R {
         SESSEND_OVERRIDE_R::new(((self.bits >> 4) & 0x01) != 0)
     }
-    #[doc = "Bit 5 - Override value for B-Device Session Valid The bit field provides the value for USB1_VBUS_DET_STAT\\[1\\] if USB_VBUS_DETECT\\[3\\] is set to value 1'b1"]
+    #[doc = "Bit 5 - Override value for B-Device Session Valid The bit field provides the value for USB1_VBUS_DET_STAT\\[1\\]
+if USB_VBUS_DETECT\\[3\\]
+is set to value 1'b1"]
     #[inline(always)]
     pub fn bvalid_override(&self) -> BVALID_OVERRIDE_R {
         BVALID_OVERRIDE_R::new(((self.bits >> 5) & 0x01) != 0)
     }
-    #[doc = "Bit 6 - Override value for A-Device Session Valid The bit field provides the value for USB1_VBUS_DET_STAT\\[2\\] if USB_VBUS_DETECT\\[3\\] is set to value 1'b1"]
+    #[doc = "Bit 6 - Override value for A-Device Session Valid The bit field provides the value for USB1_VBUS_DET_STAT\\[2\\]
+if USB_VBUS_DETECT\\[3\\]
+is set to value 1'b1"]
     #[inline(always)]
     pub fn avalid_override(&self) -> AVALID_OVERRIDE_R {
         AVALID_OVERRIDE_R::new(((self.bits >> 6) & 0x01) != 0)
     }
-    #[doc = "Bit 7 - Override value for VBUS_VALID signal sent to USB controller The bit field provides the value for VBUS_VALID reported to the USB controller if the value of USB1_VBUS_DETECT\\[3\\] is set to 1'b1"]
+    #[doc = "Bit 7 - Override value for VBUS_VALID signal sent to USB controller The bit field provides the value for VBUS_VALID reported to the USB controller if the value of USB1_VBUS_DETECT\\[3\\]
+is set to 1'b1"]
     #[inline(always)]
     pub fn vbusvalid_override(&self) -> VBUSVALID_OVERRIDE_R {
         VBUSVALID_OVERRIDE_R::new(((self.bits >> 7) & 0x01) != 0)
@@ -1010,7 +987,8 @@ impl R {
     pub fn ext_vbus_override_en(&self) -> EXT_VBUS_OVERRIDE_EN_R {
         EXT_VBUS_OVERRIDE_EN_R::new(((self.bits >> 14) & 0x01) != 0)
     }
-    #[doc = "Bit 18 - Selects the comparator used for VBUS_VALID This bit field controls the comparator used to report the VBUS_VALID results in USB1_VBUS_DETECT\\[3\\] between the VBUS_VALID comparator and the Session Valid comparator"]
+    #[doc = "Bit 18 - Selects the comparator used for VBUS_VALID This bit field controls the comparator used to report the VBUS_VALID results in USB1_VBUS_DETECT\\[3\\]
+between the VBUS_VALID comparator and the Session Valid comparator"]
     #[inline(always)]
     pub fn vbusvalid_to_sessvalid(&self) -> VBUSVALID_TO_SESSVALID_R {
         VBUSVALID_TO_SESSVALID_R::new(((self.bits >> 18) & 0x01) != 0)
@@ -1042,22 +1020,29 @@ impl W {
     pub fn vbus_override_en(&mut self) -> VBUS_OVERRIDE_EN_W {
         VBUS_OVERRIDE_EN_W { w: self }
     }
-    #[doc = "Bit 4 - Override value for SESSEND The bit field provides the value for USB1_VBUS_DET_STAT\\[0\\] if USB_VBUS_DETECT\\[3\\] is set to value 1'b1"]
+    #[doc = "Bit 4 - Override value for SESSEND The bit field provides the value for USB1_VBUS_DET_STAT\\[0\\]
+if USB_VBUS_DETECT\\[3\\]
+is set to value 1'b1"]
     #[inline(always)]
     pub fn sessend_override(&mut self) -> SESSEND_OVERRIDE_W {
         SESSEND_OVERRIDE_W { w: self }
     }
-    #[doc = "Bit 5 - Override value for B-Device Session Valid The bit field provides the value for USB1_VBUS_DET_STAT\\[1\\] if USB_VBUS_DETECT\\[3\\] is set to value 1'b1"]
+    #[doc = "Bit 5 - Override value for B-Device Session Valid The bit field provides the value for USB1_VBUS_DET_STAT\\[1\\]
+if USB_VBUS_DETECT\\[3\\]
+is set to value 1'b1"]
     #[inline(always)]
     pub fn bvalid_override(&mut self) -> BVALID_OVERRIDE_W {
         BVALID_OVERRIDE_W { w: self }
     }
-    #[doc = "Bit 6 - Override value for A-Device Session Valid The bit field provides the value for USB1_VBUS_DET_STAT\\[2\\] if USB_VBUS_DETECT\\[3\\] is set to value 1'b1"]
+    #[doc = "Bit 6 - Override value for A-Device Session Valid The bit field provides the value for USB1_VBUS_DET_STAT\\[2\\]
+if USB_VBUS_DETECT\\[3\\]
+is set to value 1'b1"]
     #[inline(always)]
     pub fn avalid_override(&mut self) -> AVALID_OVERRIDE_W {
         AVALID_OVERRIDE_W { w: self }
     }
-    #[doc = "Bit 7 - Override value for VBUS_VALID signal sent to USB controller The bit field provides the value for VBUS_VALID reported to the USB controller if the value of USB1_VBUS_DETECT\\[3\\] is set to 1'b1"]
+    #[doc = "Bit 7 - Override value for VBUS_VALID signal sent to USB controller The bit field provides the value for VBUS_VALID reported to the USB controller if the value of USB1_VBUS_DETECT\\[3\\]
+is set to 1'b1"]
     #[inline(always)]
     pub fn vbusvalid_override(&mut self) -> VBUSVALID_OVERRIDE_W {
         VBUSVALID_OVERRIDE_W { w: self }
@@ -1092,7 +1077,8 @@ impl W {
     pub fn ext_vbus_override_en(&mut self) -> EXT_VBUS_OVERRIDE_EN_W {
         EXT_VBUS_OVERRIDE_EN_W { w: self }
     }
-    #[doc = "Bit 18 - Selects the comparator used for VBUS_VALID This bit field controls the comparator used to report the VBUS_VALID results in USB1_VBUS_DETECT\\[3\\] between the VBUS_VALID comparator and the Session Valid comparator"]
+    #[doc = "Bit 18 - Selects the comparator used for VBUS_VALID This bit field controls the comparator used to report the VBUS_VALID results in USB1_VBUS_DETECT\\[3\\]
+between the VBUS_VALID comparator and the Session Valid comparator"]
     #[inline(always)]
     pub fn vbusvalid_to_sessvalid(&mut self) -> VBUSVALID_TO_SESSVALID_W {
         VBUSVALID_TO_SESSVALID_W { w: self }

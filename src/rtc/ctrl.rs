@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CTRL {
         0x01
     }
 }
-#[doc = "Possible values of the field `SWRESET`"]
+#[doc = "Software reset control\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SWRESET_A {
-    #[doc = "Not in reset. The RTC is not held in reset. This bit must be cleared prior to configuring or initiating any operation of the RTC."]
-    NOT_IN_RESET,
-    #[doc = "In reset. The RTC is held in reset. All register bits within the RTC will be forced to their reset value except the OFD bit. This bit must be cleared before writing to any register in the RTC - including writes to set any of the other bits within this register. Do not attempt to write to any bits of this register at the same time that the reset bit is being cleared."]
-    IN_RESET,
+    #[doc = "0: Not in reset. The RTC is not held in reset. This bit must be cleared prior to configuring or initiating any operation of the RTC."]
+    NOT_IN_RESET = 0,
+    #[doc = "1: In reset. The RTC is held in reset. All register bits within the RTC will be forced to their reset value except the OFD bit. This bit must be cleared before writing to any register in the RTC - including writes to set any of the other bits within this register. Do not attempt to write to any bits of this register at the same time that the reset bit is being cleared."]
+    IN_RESET = 1,
 }
 impl From<SWRESET_A> for bool {
     #[inline(always)]
     fn from(variant: SWRESET_A) -> Self {
-        match variant {
-            SWRESET_A::NOT_IN_RESET => false,
-            SWRESET_A::IN_RESET => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SWRESET`"]
@@ -88,21 +85,18 @@ impl<'a> SWRESET_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ALARM1HZ`"]
+#[doc = "RTC 1 Hz timer alarm flag status.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALARM1HZ_A {
-    #[doc = "No match. No match has occurred on the 1 Hz RTC timer. Writing a 0 has no effect."]
-    NO_MATCH,
-    #[doc = "Match. A match condition has occurred on the 1 Hz RTC timer. This flag generates an RTC alarm interrupt request RTC_ALARM which can also wake up the part from any low power mode. Writing a 1 clears this bit."]
-    MATCH,
+    #[doc = "0: No match. No match has occurred on the 1 Hz RTC timer. Writing a 0 has no effect."]
+    NO_MATCH = 0,
+    #[doc = "1: Match. A match condition has occurred on the 1 Hz RTC timer. This flag generates an RTC alarm interrupt request RTC_ALARM which can also wake up the part from any low power mode. Writing a 1 clears this bit."]
+    MATCH = 1,
 }
 impl From<ALARM1HZ_A> for bool {
     #[inline(always)]
     fn from(variant: ALARM1HZ_A) -> Self {
-        match variant {
-            ALARM1HZ_A::NO_MATCH => false,
-            ALARM1HZ_A::MATCH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ALARM1HZ`"]
@@ -166,21 +160,18 @@ impl<'a> ALARM1HZ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WAKE1KHZ`"]
+#[doc = "RTC 1 kHz timer wake-up flag status.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAKE1KHZ_A {
-    #[doc = "Run. The RTC 1 kHz timer is running. Writing a 0 has no effect."]
-    RUN,
-    #[doc = "Time-out. The 1 kHz high-resolution/wake-up timer has timed out. This flag generates an RTC wake-up interrupt request RTC-WAKE which can also wake up the part from any low power mode. Writing a 1 clears this bit."]
-    TIMEOUT,
+    #[doc = "0: Run. The RTC 1 kHz timer is running. Writing a 0 has no effect."]
+    RUN = 0,
+    #[doc = "1: Time-out. The 1 kHz high-resolution/wake-up timer has timed out. This flag generates an RTC wake-up interrupt request RTC-WAKE which can also wake up the part from any low power mode. Writing a 1 clears this bit."]
+    TIMEOUT = 1,
 }
 impl From<WAKE1KHZ_A> for bool {
     #[inline(always)]
     fn from(variant: WAKE1KHZ_A) -> Self {
-        match variant {
-            WAKE1KHZ_A::RUN => false,
-            WAKE1KHZ_A::TIMEOUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAKE1KHZ`"]
@@ -244,21 +235,18 @@ impl<'a> WAKE1KHZ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ALARMDPD_EN`"]
+#[doc = "RTC 1 Hz timer alarm enable for Deep power-down.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALARMDPD_EN_A {
-    #[doc = "Disable. A match on the 1 Hz RTC timer will not bring the part out of Deep power-down mode."]
-    DISABLE,
-    #[doc = "Enable. A match on the 1 Hz RTC timer bring the part out of Deep power-down mode."]
-    ENABLE,
+    #[doc = "0: Disable. A match on the 1 Hz RTC timer will not bring the part out of Deep power-down mode."]
+    DISABLE = 0,
+    #[doc = "1: Enable. A match on the 1 Hz RTC timer bring the part out of Deep power-down mode."]
+    ENABLE = 1,
 }
 impl From<ALARMDPD_EN_A> for bool {
     #[inline(always)]
     fn from(variant: ALARMDPD_EN_A) -> Self {
-        match variant {
-            ALARMDPD_EN_A::DISABLE => false,
-            ALARMDPD_EN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ALARMDPD_EN`"]
@@ -322,21 +310,18 @@ impl<'a> ALARMDPD_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WAKEDPD_EN`"]
+#[doc = "RTC 1 kHz timer wake-up enable for Deep power-down.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAKEDPD_EN_A {
-    #[doc = "Disable. A match on the 1 kHz RTC timer will not bring the part out of Deep power-down mode."]
-    DISABLE,
-    #[doc = "Enable. A match on the 1 kHz RTC timer bring the part out of Deep power-down mode."]
-    ENABLE,
+    #[doc = "0: Disable. A match on the 1 kHz RTC timer will not bring the part out of Deep power-down mode."]
+    DISABLE = 0,
+    #[doc = "1: Enable. A match on the 1 kHz RTC timer bring the part out of Deep power-down mode."]
+    ENABLE = 1,
 }
 impl From<WAKEDPD_EN_A> for bool {
     #[inline(always)]
     fn from(variant: WAKEDPD_EN_A) -> Self {
-        match variant {
-            WAKEDPD_EN_A::DISABLE => false,
-            WAKEDPD_EN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAKEDPD_EN`"]
@@ -400,21 +385,18 @@ impl<'a> WAKEDPD_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RTC1KHZ_EN`"]
+#[doc = "RTC 1 kHz clock enable. This bit can be set to 0 to conserve power if the 1 kHz timer is not used. This bit has no effect when the RTC is disabled (bit 7 of this register is 0).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC1KHZ_EN_A {
-    #[doc = "Disable. A match on the 1 kHz RTC timer will not bring the part out of Deep power-down mode."]
-    DISABLE,
-    #[doc = "Enable. The 1 kHz RTC timer is enabled."]
-    ENABLE,
+    #[doc = "0: Disable. A match on the 1 kHz RTC timer will not bring the part out of Deep power-down mode."]
+    DISABLE = 0,
+    #[doc = "1: Enable. The 1 kHz RTC timer is enabled."]
+    ENABLE = 1,
 }
 impl From<RTC1KHZ_EN_A> for bool {
     #[inline(always)]
     fn from(variant: RTC1KHZ_EN_A) -> Self {
-        match variant {
-            RTC1KHZ_EN_A::DISABLE => false,
-            RTC1KHZ_EN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTC1KHZ_EN`"]
@@ -478,21 +460,18 @@ impl<'a> RTC1KHZ_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RTC_EN`"]
+#[doc = "RTC enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC_EN_A {
-    #[doc = "Disable. The RTC 1 Hz and 1 kHz clocks are shut down and the RTC operation is disabled. This bit should be 0 when writing to load a value in the RTC counter register."]
-    DISABLE,
-    #[doc = "Enable. The 1 Hz RTC clock is running and RTC operation is enabled. This bit must be set to initiate operation of the RTC. The first clock to the RTC counter occurs 1 s after this bit is set. To also enable the high-resolution, 1 kHz clock, set bit 6 in this register."]
-    ENABLE,
+    #[doc = "0: Disable. The RTC 1 Hz and 1 kHz clocks are shut down and the RTC operation is disabled. This bit should be 0 when writing to load a value in the RTC counter register."]
+    DISABLE = 0,
+    #[doc = "1: Enable. The 1 Hz RTC clock is running and RTC operation is enabled. This bit must be set to initiate operation of the RTC. The first clock to the RTC counter occurs 1 s after this bit is set. To also enable the high-resolution, 1 kHz clock, set bit 6 in this register."]
+    ENABLE = 1,
 }
 impl From<RTC_EN_A> for bool {
     #[inline(always)]
     fn from(variant: RTC_EN_A) -> Self {
-        match variant {
-            RTC_EN_A::DISABLE => false,
-            RTC_EN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTC_EN`"]
@@ -556,21 +535,18 @@ impl<'a> RTC_EN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RTC_OSC_PD`"]
+#[doc = "RTC oscillator power-down control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC_OSC_PD_A {
-    #[doc = "See RTC_OSC_BYPASS"]
-    POWER_UP,
-    #[doc = "RTC oscillator is powered-down."]
-    POWERED_DOWN,
+    #[doc = "0: See RTC_OSC_BYPASS"]
+    POWER_UP = 0,
+    #[doc = "1: RTC oscillator is powered-down."]
+    POWERED_DOWN = 1,
 }
 impl From<RTC_OSC_PD_A> for bool {
     #[inline(always)]
     fn from(variant: RTC_OSC_PD_A) -> Self {
-        match variant {
-            RTC_OSC_PD_A::POWER_UP => false,
-            RTC_OSC_PD_A::POWERED_DOWN => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTC_OSC_PD`"]
@@ -634,21 +610,18 @@ impl<'a> RTC_OSC_PD_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RTC_OSC_BYPASS`"]
+#[doc = "RTC oscillator bypass control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC_OSC_BYPASS_A {
-    #[doc = "The RTC Oscillator operates normally as a crystal oscillator with the crystal connected between the RTC_XTALIN and RTC_XTALOUT pins."]
-    USED,
-    #[doc = "The RTC Oscillator is in bypass mode. In this mode a clock can be directly input into the RTC_XTALIN pin."]
-    BYPASS,
+    #[doc = "0: The RTC Oscillator operates normally as a crystal oscillator with the crystal connected between the RTC_XTALIN and RTC_XTALOUT pins."]
+    USED = 0,
+    #[doc = "1: The RTC Oscillator is in bypass mode. In this mode a clock can be directly input into the RTC_XTALIN pin."]
+    BYPASS = 1,
 }
 impl From<RTC_OSC_BYPASS_A> for bool {
     #[inline(always)]
     fn from(variant: RTC_OSC_BYPASS_A) -> Self {
-        match variant {
-            RTC_OSC_BYPASS_A::USED => false,
-            RTC_OSC_BYPASS_A::BYPASS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTC_OSC_BYPASS`"]
@@ -712,21 +685,18 @@ impl<'a> RTC_OSC_BYPASS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RTC_SUBSEC_ENA`"]
+#[doc = "RTC Sub-second counter control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC_SUBSEC_ENA_A {
-    #[doc = "The sub-second counter (if implemented) is disabled. This bit is cleared by a system-level POR or BOD reset as well as a by the RTC_ENA bit (bit 7 in this register). On modules not equipped with a sub-second counter, this bit will always read-back as a '0'."]
-    POWER_UP,
-    #[doc = "The 32 KHz sub-second counter is enabled (if implemented). Counting commences on the start of the first one-second interval after this bit is set. Note: This bit can only be set after the RTC_ENA bit (bit 7) is set by a previous write operation. Note: The RTC sub-second counter must be re-enabled whenever the chip exits deep power-down mode."]
-    POWERED_DOWN,
+    #[doc = "0: The sub-second counter (if implemented) is disabled. This bit is cleared by a system-level POR or BOD reset as well as a by the RTC_ENA bit (bit 7 in this register). On modules not equipped with a sub-second counter, this bit will always read-back as a '0'."]
+    POWER_UP = 0,
+    #[doc = "1: The 32 KHz sub-second counter is enabled (if implemented). Counting commences on the start of the first one-second interval after this bit is set. Note: This bit can only be set after the RTC_ENA bit (bit 7) is set by a previous write operation. Note: The RTC sub-second counter must be re-enabled whenever the chip exits deep power-down mode."]
+    POWERED_DOWN = 1,
 }
 impl From<RTC_SUBSEC_ENA_A> for bool {
     #[inline(always)]
     fn from(variant: RTC_SUBSEC_ENA_A) -> Self {
-        match variant {
-            RTC_SUBSEC_ENA_A::POWER_UP => false,
-            RTC_SUBSEC_ENA_A::POWERED_DOWN => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTC_SUBSEC_ENA`"]

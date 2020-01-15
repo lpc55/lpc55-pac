@@ -1,6 +1,7 @@
 #[doc = "Writer for register KEYMASK[%s]"]
 pub type W = crate::W<u32, super::KEYMASK>;
-#[doc = "Register KEYMASK[%s] `reset()`'s with value 0"]
+#[doc = "Register KEYMASK[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::KEYMASK {
     type Type = u32;
     #[inline(always)]

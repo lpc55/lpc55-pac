@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CMDH10 {
         0
     }
 }
-#[doc = "Possible values of the field `WAIT_TRIG`"]
+#[doc = "Wait for trigger assertion before execution.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAIT_TRIG_A {
-    #[doc = "This command will be automatically executed."]
-    WAIT_TRIG_0,
-    #[doc = "The active trigger must be asserted again before executing this command."]
-    WAIT_TRIG_1,
+    #[doc = "0: This command will be automatically executed."]
+    WAIT_TRIG_0 = 0,
+    #[doc = "1: The active trigger must be asserted again before executing this command."]
+    WAIT_TRIG_1 = 1,
 }
 impl From<WAIT_TRIG_A> for bool {
     #[inline(always)]
     fn from(variant: WAIT_TRIG_A) -> Self {
-        match variant {
-            WAIT_TRIG_A::WAIT_TRIG_0 => false,
-            WAIT_TRIG_A::WAIT_TRIG_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAIT_TRIG`"]
@@ -88,21 +85,18 @@ impl<'a> WAIT_TRIG_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LWI`"]
+#[doc = "Loop with Increment\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LWI_A {
-    #[doc = "Auto channel increment disabled"]
-    LWI_0,
-    #[doc = "Auto channel increment enabled"]
-    LWI_1,
+    #[doc = "0: Auto channel increment disabled"]
+    LWI_0 = 0,
+    #[doc = "1: Auto channel increment enabled"]
+    LWI_1 = 1,
 }
 impl From<LWI_A> for bool {
     #[inline(always)]
     fn from(variant: LWI_A) -> Self {
-        match variant {
-            LWI_A::LWI_0 => false,
-            LWI_A::LWI_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LWI`"]
@@ -166,39 +160,31 @@ impl<'a> LWI_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `STS`"]
+#[doc = "Sample Time Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STS_A {
-    #[doc = "Minimum sample time of 3 ADCK cycles."]
-    STS_0,
-    #[doc = "3 + 21 ADCK cycles; 5 ADCK cycles total sample time."]
-    STS_1,
-    #[doc = "3 + 22 ADCK cycles; 7 ADCK cycles total sample time."]
-    STS_2,
-    #[doc = "3 + 23 ADCK cycles; 11 ADCK cycles total sample time."]
-    STS_3,
-    #[doc = "3 + 24 ADCK cycles; 19 ADCK cycles total sample time."]
-    STS_4,
-    #[doc = "3 + 25 ADCK cycles; 35 ADCK cycles total sample time."]
-    STS_5,
-    #[doc = "3 + 26 ADCK cycles; 67 ADCK cycles total sample time."]
-    STS_6,
-    #[doc = "3 + 27 ADCK cycles; 131 ADCK cycles total sample time."]
-    STS_7,
+    #[doc = "0: Minimum sample time of 3 ADCK cycles."]
+    STS_0 = 0,
+    #[doc = "1: 3 + 21 ADCK cycles; 5 ADCK cycles total sample time."]
+    STS_1 = 1,
+    #[doc = "2: 3 + 22 ADCK cycles; 7 ADCK cycles total sample time."]
+    STS_2 = 2,
+    #[doc = "3: 3 + 23 ADCK cycles; 11 ADCK cycles total sample time."]
+    STS_3 = 3,
+    #[doc = "4: 3 + 24 ADCK cycles; 19 ADCK cycles total sample time."]
+    STS_4 = 4,
+    #[doc = "5: 3 + 25 ADCK cycles; 35 ADCK cycles total sample time."]
+    STS_5 = 5,
+    #[doc = "6: 3 + 26 ADCK cycles; 67 ADCK cycles total sample time."]
+    STS_6 = 6,
+    #[doc = "7: 3 + 27 ADCK cycles; 131 ADCK cycles total sample time."]
+    STS_7 = 7,
 }
 impl From<STS_A> for u8 {
     #[inline(always)]
     fn from(variant: STS_A) -> Self {
-        match variant {
-            STS_A::STS_0 => 0,
-            STS_A::STS_1 => 1,
-            STS_A::STS_2 => 2,
-            STS_A::STS_3 => 3,
-            STS_A::STS_4 => 4,
-            STS_A::STS_5 => 5,
-            STS_A::STS_6 => 6,
-            STS_A::STS_7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `STS`"]
@@ -319,39 +305,31 @@ impl<'a> STS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AVGS`"]
+#[doc = "Hardware Average Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum AVGS_A {
-    #[doc = "Single conversion."]
-    AVGS_0,
-    #[doc = "2 conversions averaged."]
-    AVGS_1,
-    #[doc = "4 conversions averaged."]
-    AVGS_2,
-    #[doc = "8 conversions averaged."]
-    AVGS_3,
-    #[doc = "16 conversions averaged."]
-    AVGS_4,
-    #[doc = "32 conversions averaged."]
-    AVGS_5,
-    #[doc = "64 conversions averaged."]
-    AVGS_6,
-    #[doc = "128 conversions averaged."]
-    AVGS_7,
+    #[doc = "0: Single conversion."]
+    AVGS_0 = 0,
+    #[doc = "1: 2 conversions averaged."]
+    AVGS_1 = 1,
+    #[doc = "2: 4 conversions averaged."]
+    AVGS_2 = 2,
+    #[doc = "3: 8 conversions averaged."]
+    AVGS_3 = 3,
+    #[doc = "4: 16 conversions averaged."]
+    AVGS_4 = 4,
+    #[doc = "5: 32 conversions averaged."]
+    AVGS_5 = 5,
+    #[doc = "6: 64 conversions averaged."]
+    AVGS_6 = 6,
+    #[doc = "7: 128 conversions averaged."]
+    AVGS_7 = 7,
 }
 impl From<AVGS_A> for u8 {
     #[inline(always)]
     fn from(variant: AVGS_A) -> Self {
-        match variant {
-            AVGS_A::AVGS_0 => 0,
-            AVGS_A::AVGS_1 => 1,
-            AVGS_A::AVGS_2 => 2,
-            AVGS_A::AVGS_3 => 3,
-            AVGS_A::AVGS_4 => 4,
-            AVGS_A::AVGS_5 => 5,
-            AVGS_A::AVGS_6 => 6,
-            AVGS_A::AVGS_7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `AVGS`"]
@@ -472,48 +450,37 @@ impl<'a> AVGS_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `LOOP`"]
+#[doc = "Loop Count Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LOOP_A {
-    #[doc = "Looping not enabled. Command executes 1 time."]
-    LOOP_0,
-    #[doc = "Loop 1 time. Command executes 2 times."]
-    LOOP_1,
-    #[doc = "Loop 2 times. Command executes 3 times."]
-    LOOP_2,
-    #[doc = "Loop corresponding number of times. Command executes LOOP+1 times."]
-    LOOP_3,
-    #[doc = "Loop corresponding number of times. Command executes LOOP+1 times."]
-    LOOP_4,
-    #[doc = "Loop corresponding number of times. Command executes LOOP+1 times."]
-    LOOP_5,
-    #[doc = "Loop corresponding number of times. Command executes LOOP+1 times."]
-    LOOP_6,
-    #[doc = "Loop corresponding number of times. Command executes LOOP+1 times."]
-    LOOP_7,
-    #[doc = "Loop corresponding number of times. Command executes LOOP+1 times."]
-    LOOP_8,
-    #[doc = "Loop corresponding number of times. Command executes LOOP+1 times."]
-    LOOP_9,
-    #[doc = "Loop 15 times. Command executes 16 times."]
-    LOOP_15,
+    #[doc = "0: Looping not enabled. Command executes 1 time."]
+    LOOP_0 = 0,
+    #[doc = "1: Loop 1 time. Command executes 2 times."]
+    LOOP_1 = 1,
+    #[doc = "2: Loop 2 times. Command executes 3 times."]
+    LOOP_2 = 2,
+    #[doc = "3: Loop corresponding number of times. Command executes LOOP+1 times."]
+    LOOP_3 = 3,
+    #[doc = "4: Loop corresponding number of times. Command executes LOOP+1 times."]
+    LOOP_4 = 4,
+    #[doc = "5: Loop corresponding number of times. Command executes LOOP+1 times."]
+    LOOP_5 = 5,
+    #[doc = "6: Loop corresponding number of times. Command executes LOOP+1 times."]
+    LOOP_6 = 6,
+    #[doc = "7: Loop corresponding number of times. Command executes LOOP+1 times."]
+    LOOP_7 = 7,
+    #[doc = "8: Loop corresponding number of times. Command executes LOOP+1 times."]
+    LOOP_8 = 8,
+    #[doc = "9: Loop corresponding number of times. Command executes LOOP+1 times."]
+    LOOP_9 = 9,
+    #[doc = "15: Loop 15 times. Command executes 16 times."]
+    LOOP_15 = 15,
 }
 impl From<LOOP_A> for u8 {
     #[inline(always)]
     fn from(variant: LOOP_A) -> Self {
-        match variant {
-            LOOP_A::LOOP_0 => 0,
-            LOOP_A::LOOP_1 => 1,
-            LOOP_A::LOOP_2 => 2,
-            LOOP_A::LOOP_3 => 3,
-            LOOP_A::LOOP_4 => 4,
-            LOOP_A::LOOP_5 => 5,
-            LOOP_A::LOOP_6 => 6,
-            LOOP_A::LOOP_7 => 7,
-            LOOP_A::LOOP_8 => 8,
-            LOOP_A::LOOP_9 => 9,
-            LOOP_A::LOOP_15 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LOOP`"]
@@ -666,48 +633,37 @@ impl<'a> LOOP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `NEXT`"]
+#[doc = "Next Command Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum NEXT_A {
-    #[doc = "No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
-    NEXT_0,
-    #[doc = "Select CMD1 command buffer register as next command."]
-    NEXT_1,
-    #[doc = "Select corresponding CMD command buffer register as next command"]
-    NEXT_2,
-    #[doc = "Select corresponding CMD command buffer register as next command"]
-    NEXT_3,
-    #[doc = "Select corresponding CMD command buffer register as next command"]
-    NEXT_4,
-    #[doc = "Select corresponding CMD command buffer register as next command"]
-    NEXT_5,
-    #[doc = "Select corresponding CMD command buffer register as next command"]
-    NEXT_6,
-    #[doc = "Select corresponding CMD command buffer register as next command"]
-    NEXT_7,
-    #[doc = "Select corresponding CMD command buffer register as next command"]
-    NEXT_8,
-    #[doc = "Select corresponding CMD command buffer register as next command"]
-    NEXT_9,
-    #[doc = "Select CMD15 command buffer register as next command."]
-    NEXT_15,
+    #[doc = "0: No next command defined. Terminate conversions at completion of current command. If lower priority trigger pending, begin command associated with lower priority trigger."]
+    NEXT_0 = 0,
+    #[doc = "1: Select CMD1 command buffer register as next command."]
+    NEXT_1 = 1,
+    #[doc = "2: Select corresponding CMD command buffer register as next command"]
+    NEXT_2 = 2,
+    #[doc = "3: Select corresponding CMD command buffer register as next command"]
+    NEXT_3 = 3,
+    #[doc = "4: Select corresponding CMD command buffer register as next command"]
+    NEXT_4 = 4,
+    #[doc = "5: Select corresponding CMD command buffer register as next command"]
+    NEXT_5 = 5,
+    #[doc = "6: Select corresponding CMD command buffer register as next command"]
+    NEXT_6 = 6,
+    #[doc = "7: Select corresponding CMD command buffer register as next command"]
+    NEXT_7 = 7,
+    #[doc = "8: Select corresponding CMD command buffer register as next command"]
+    NEXT_8 = 8,
+    #[doc = "9: Select corresponding CMD command buffer register as next command"]
+    NEXT_9 = 9,
+    #[doc = "15: Select CMD15 command buffer register as next command."]
+    NEXT_15 = 15,
 }
 impl From<NEXT_A> for u8 {
     #[inline(always)]
     fn from(variant: NEXT_A) -> Self {
-        match variant {
-            NEXT_A::NEXT_0 => 0,
-            NEXT_A::NEXT_1 => 1,
-            NEXT_A::NEXT_2 => 2,
-            NEXT_A::NEXT_3 => 3,
-            NEXT_A::NEXT_4 => 4,
-            NEXT_A::NEXT_5 => 5,
-            NEXT_A::NEXT_6 => 6,
-            NEXT_A::NEXT_7 => 7,
-            NEXT_A::NEXT_8 => 8,
-            NEXT_A::NEXT_9 => 9,
-            NEXT_A::NEXT_15 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NEXT`"]

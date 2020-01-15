@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CPPWR {
         0
     }
 }
-#[doc = "Possible values of the field `SU0`"]
+#[doc = "State UNKNOWN 0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SU0_A {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
+    #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
+    UNKNOWN_NOT_PERMITTED = 0,
+    #[doc = "1: The coprocessor state is permitted to become UNKNOWN."]
+    UNKNOWN_PERMITTED = 1,
 }
 impl From<SU0_A> for bool {
     #[inline(always)]
     fn from(variant: SU0_A) -> Self {
-        match variant {
-            SU0_A::UNKNOWN_NOT_PERMITTED => false,
-            SU0_A::UNKNOWN_PERMITTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SU0`"]
@@ -88,21 +85,18 @@ impl<'a> SU0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SUS0`"]
+#[doc = "State UNKNOWN Secure only 0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUS0_A {
-    #[doc = "The SU0 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU0 field is only accessible from the Secure state."]
-    SECURE_ONLY,
+    #[doc = "0: The SU0 field is accessible from both Security states."]
+    SECURE_AND_NON_SECURE = 0,
+    #[doc = "1: The SU0 field is only accessible from the Secure state."]
+    SECURE_ONLY = 1,
 }
 impl From<SUS0_A> for bool {
     #[inline(always)]
     fn from(variant: SUS0_A) -> Self {
-        match variant {
-            SUS0_A::SECURE_AND_NON_SECURE => false,
-            SUS0_A::SECURE_ONLY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SUS0`"]
@@ -166,21 +160,18 @@ impl<'a> SUS0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SU1`"]
+#[doc = "State UNKNOWN 1.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SU1_A {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
+    #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
+    UNKNOWN_NOT_PERMITTED = 0,
+    #[doc = "1: The coprocessor state is permitted to become UNKNOWN."]
+    UNKNOWN_PERMITTED = 1,
 }
 impl From<SU1_A> for bool {
     #[inline(always)]
     fn from(variant: SU1_A) -> Self {
-        match variant {
-            SU1_A::UNKNOWN_NOT_PERMITTED => false,
-            SU1_A::UNKNOWN_PERMITTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SU1`"]
@@ -244,21 +235,18 @@ impl<'a> SU1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SUS1`"]
+#[doc = "State UNKNOWN Secure only 1.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUS1_A {
-    #[doc = "The SU7 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU7 field is only accessible from the Secure state."]
-    SECURE_ONLY,
+    #[doc = "0: The SU7 field is accessible from both Security states."]
+    SECURE_AND_NON_SECURE = 0,
+    #[doc = "1: The SU7 field is only accessible from the Secure state."]
+    SECURE_ONLY = 1,
 }
 impl From<SUS1_A> for bool {
     #[inline(always)]
     fn from(variant: SUS1_A) -> Self {
-        match variant {
-            SUS1_A::SECURE_AND_NON_SECURE => false,
-            SUS1_A::SECURE_ONLY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SUS1`"]
@@ -322,21 +310,18 @@ impl<'a> SUS1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SU2`"]
+#[doc = "State UNKNOWN 2.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SU2_A {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
+    #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
+    UNKNOWN_NOT_PERMITTED = 0,
+    #[doc = "1: The coprocessor state is permitted to become UNKNOWN."]
+    UNKNOWN_PERMITTED = 1,
 }
 impl From<SU2_A> for bool {
     #[inline(always)]
     fn from(variant: SU2_A) -> Self {
-        match variant {
-            SU2_A::UNKNOWN_NOT_PERMITTED => false,
-            SU2_A::UNKNOWN_PERMITTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SU2`"]
@@ -400,21 +385,18 @@ impl<'a> SU2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SUS2`"]
+#[doc = "State UNKNOWN Secure only 2.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUS2_A {
-    #[doc = "The SU2 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU2 field is only accessible from the Secure state."]
-    SECURE_ONLY,
+    #[doc = "0: The SU2 field is accessible from both Security states."]
+    SECURE_AND_NON_SECURE = 0,
+    #[doc = "1: The SU2 field is only accessible from the Secure state."]
+    SECURE_ONLY = 1,
 }
 impl From<SUS2_A> for bool {
     #[inline(always)]
     fn from(variant: SUS2_A) -> Self {
-        match variant {
-            SUS2_A::SECURE_AND_NON_SECURE => false,
-            SUS2_A::SECURE_ONLY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SUS2`"]
@@ -478,21 +460,18 @@ impl<'a> SUS2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SU3`"]
+#[doc = "State UNKNOWN 3.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SU3_A {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
+    #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
+    UNKNOWN_NOT_PERMITTED = 0,
+    #[doc = "1: The coprocessor state is permitted to become UNKNOWN."]
+    UNKNOWN_PERMITTED = 1,
 }
 impl From<SU3_A> for bool {
     #[inline(always)]
     fn from(variant: SU3_A) -> Self {
-        match variant {
-            SU3_A::UNKNOWN_NOT_PERMITTED => false,
-            SU3_A::UNKNOWN_PERMITTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SU3`"]
@@ -556,21 +535,18 @@ impl<'a> SU3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SUS3`"]
+#[doc = "State UNKNOWN Secure only 3.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUS3_A {
-    #[doc = "The SU3 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU3 field is only accessible from the Secure state."]
-    SECURE_ONLY,
+    #[doc = "0: The SU3 field is accessible from both Security states."]
+    SECURE_AND_NON_SECURE = 0,
+    #[doc = "1: The SU3 field is only accessible from the Secure state."]
+    SECURE_ONLY = 1,
 }
 impl From<SUS3_A> for bool {
     #[inline(always)]
     fn from(variant: SUS3_A) -> Self {
-        match variant {
-            SUS3_A::SECURE_AND_NON_SECURE => false,
-            SUS3_A::SECURE_ONLY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SUS3`"]
@@ -634,21 +610,18 @@ impl<'a> SUS3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SU4`"]
+#[doc = "State UNKNOWN 4.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SU4_A {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
+    #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
+    UNKNOWN_NOT_PERMITTED = 0,
+    #[doc = "1: The coprocessor state is permitted to become UNKNOWN."]
+    UNKNOWN_PERMITTED = 1,
 }
 impl From<SU4_A> for bool {
     #[inline(always)]
     fn from(variant: SU4_A) -> Self {
-        match variant {
-            SU4_A::UNKNOWN_NOT_PERMITTED => false,
-            SU4_A::UNKNOWN_PERMITTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SU4`"]
@@ -712,21 +685,18 @@ impl<'a> SU4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SUS4`"]
+#[doc = "State UNKNOWN Secure only 4.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUS4_A {
-    #[doc = "The SU4 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU4 field is only accessible from the Secure state."]
-    SECURE_ONLY,
+    #[doc = "0: The SU4 field is accessible from both Security states."]
+    SECURE_AND_NON_SECURE = 0,
+    #[doc = "1: The SU4 field is only accessible from the Secure state."]
+    SECURE_ONLY = 1,
 }
 impl From<SUS4_A> for bool {
     #[inline(always)]
     fn from(variant: SUS4_A) -> Self {
-        match variant {
-            SUS4_A::SECURE_AND_NON_SECURE => false,
-            SUS4_A::SECURE_ONLY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SUS4`"]
@@ -790,21 +760,18 @@ impl<'a> SUS4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SU5`"]
+#[doc = "State UNKNOWN 5.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SU5_A {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
+    #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
+    UNKNOWN_NOT_PERMITTED = 0,
+    #[doc = "1: The coprocessor state is permitted to become UNKNOWN."]
+    UNKNOWN_PERMITTED = 1,
 }
 impl From<SU5_A> for bool {
     #[inline(always)]
     fn from(variant: SU5_A) -> Self {
-        match variant {
-            SU5_A::UNKNOWN_NOT_PERMITTED => false,
-            SU5_A::UNKNOWN_PERMITTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SU5`"]
@@ -868,21 +835,18 @@ impl<'a> SU5_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SUS5`"]
+#[doc = "State UNKNOWN Secure only 5.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUS5_A {
-    #[doc = "The SU5 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU5 field is only accessible from the Secure state."]
-    SECURE_ONLY,
+    #[doc = "0: The SU5 field is accessible from both Security states."]
+    SECURE_AND_NON_SECURE = 0,
+    #[doc = "1: The SU5 field is only accessible from the Secure state."]
+    SECURE_ONLY = 1,
 }
 impl From<SUS5_A> for bool {
     #[inline(always)]
     fn from(variant: SUS5_A) -> Self {
-        match variant {
-            SUS5_A::SECURE_AND_NON_SECURE => false,
-            SUS5_A::SECURE_ONLY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SUS5`"]
@@ -946,21 +910,18 @@ impl<'a> SUS5_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SU6`"]
+#[doc = "State UNKNOWN 6.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SU6_A {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
+    #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
+    UNKNOWN_NOT_PERMITTED = 0,
+    #[doc = "1: The coprocessor state is permitted to become UNKNOWN."]
+    UNKNOWN_PERMITTED = 1,
 }
 impl From<SU6_A> for bool {
     #[inline(always)]
     fn from(variant: SU6_A) -> Self {
-        match variant {
-            SU6_A::UNKNOWN_NOT_PERMITTED => false,
-            SU6_A::UNKNOWN_PERMITTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SU6`"]
@@ -1024,21 +985,18 @@ impl<'a> SU6_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SUS6`"]
+#[doc = "State UNKNOWN Secure only 6.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUS6_A {
-    #[doc = "The SU6 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU6 field is only accessible from the Secure state."]
-    SECURE_ONLY,
+    #[doc = "0: The SU6 field is accessible from both Security states."]
+    SECURE_AND_NON_SECURE = 0,
+    #[doc = "1: The SU6 field is only accessible from the Secure state."]
+    SECURE_ONLY = 1,
 }
 impl From<SUS6_A> for bool {
     #[inline(always)]
     fn from(variant: SUS6_A) -> Self {
-        match variant {
-            SUS6_A::SECURE_AND_NON_SECURE => false,
-            SUS6_A::SECURE_ONLY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SUS6`"]
@@ -1102,21 +1060,18 @@ impl<'a> SUS6_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SU7`"]
+#[doc = "State UNKNOWN 7.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SU7_A {
-    #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The coprocessor state is permitted to become UNKNOWN."]
-    UNKNOWN_PERMITTED,
+    #[doc = "0: The coprocessor state is not permitted to become UNKNOWN."]
+    UNKNOWN_NOT_PERMITTED = 0,
+    #[doc = "1: The coprocessor state is permitted to become UNKNOWN."]
+    UNKNOWN_PERMITTED = 1,
 }
 impl From<SU7_A> for bool {
     #[inline(always)]
     fn from(variant: SU7_A) -> Self {
-        match variant {
-            SU7_A::UNKNOWN_NOT_PERMITTED => false,
-            SU7_A::UNKNOWN_PERMITTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SU7`"]
@@ -1180,21 +1135,18 @@ impl<'a> SU7_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SUS7`"]
+#[doc = "State UNKNOWN Secure only 7.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUS7_A {
-    #[doc = "The SU7 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU7 field is only accessible from the Secure state."]
-    SECURE_ONLY,
+    #[doc = "0: The SU7 field is accessible from both Security states."]
+    SECURE_AND_NON_SECURE = 0,
+    #[doc = "1: The SU7 field is only accessible from the Secure state."]
+    SECURE_ONLY = 1,
 }
 impl From<SUS7_A> for bool {
     #[inline(always)]
     fn from(variant: SUS7_A) -> Self {
-        match variant {
-            SUS7_A::SECURE_AND_NON_SECURE => false,
-            SUS7_A::SECURE_ONLY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SUS7`"]
@@ -1258,21 +1210,18 @@ impl<'a> SUS7_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SU10`"]
+#[doc = "State UNKNOWN 10.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SU10_A {
-    #[doc = "The floating-point state is not permitted to become UNKNOWN."]
-    UNKNOWN_NOT_PERMITTED,
-    #[doc = "The floating-point state is permitted to become UNKNOWN"]
-    UNKNOWN_PERMITTED,
+    #[doc = "0: The floating-point state is not permitted to become UNKNOWN."]
+    UNKNOWN_NOT_PERMITTED = 0,
+    #[doc = "1: The floating-point state is permitted to become UNKNOWN"]
+    UNKNOWN_PERMITTED = 1,
 }
 impl From<SU10_A> for bool {
     #[inline(always)]
     fn from(variant: SU10_A) -> Self {
-        match variant {
-            SU10_A::UNKNOWN_NOT_PERMITTED => false,
-            SU10_A::UNKNOWN_PERMITTED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SU10`"]
@@ -1336,21 +1285,18 @@ impl<'a> SU10_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SUS10`"]
+#[doc = "State UNKNOWN Secure only 10.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SUS10_A {
-    #[doc = "The SU10 field is accessible from both Security states."]
-    SECURE_AND_NON_SECURE,
-    #[doc = "The SU10 field is only accessible from the Secure state."]
-    SECURE_ONLY,
+    #[doc = "0: The SU10 field is accessible from both Security states."]
+    SECURE_AND_NON_SECURE = 0,
+    #[doc = "1: The SU10 field is only accessible from the Secure state."]
+    SECURE_ONLY = 1,
 }
 impl From<SUS10_A> for bool {
     #[inline(always)]
     fn from(variant: SUS10_A) -> Self {
-        match variant {
-            SUS10_A::SECURE_AND_NON_SECURE => false,
-            SUS10_A::SECURE_ONLY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SUS10`"]

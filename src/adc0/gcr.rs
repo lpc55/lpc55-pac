@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::GCR>;
 #[doc = "Writer for register GCR[%s]"]
 pub type W = crate::W<u32, super::GCR>;
-#[doc = "Register GCR[%s] `reset()`'s with value 0"]
+#[doc = "Register GCR[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::GCR {
     type Type = u32;
     #[inline(always)]
@@ -24,21 +25,18 @@ impl<'a> GCALR_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RDY`"]
+#[doc = "Gain Calculation Ready\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RDY_A {
-    #[doc = "The gain offset calculation value is invalid."]
-    RDY_0,
-    #[doc = "The gain calibration value is valid."]
-    RDY_1,
+    #[doc = "0: The gain offset calculation value is invalid."]
+    RDY_0 = 0,
+    #[doc = "1: The gain calibration value is valid."]
+    RDY_1 = 1,
 }
 impl From<RDY_A> for bool {
     #[inline(always)]
     fn from(variant: RDY_A) -> Self {
-        match variant {
-            RDY_A::RDY_0 => false,
-            RDY_A::RDY_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RDY`"]

@@ -10,21 +10,18 @@ impl crate::ResetValue for super::AHBCLKCTRL0 {
         0x0180
     }
 }
-#[doc = "Possible values of the field `ROM`"]
+#[doc = "Enables the clock for the ROM.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ROM_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<ROM_A> for bool {
     #[inline(always)]
     fn from(variant: ROM_A) -> Self {
-        match variant {
-            ROM_A::DISABLE => false,
-            ROM_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ROM`"]
@@ -88,21 +85,18 @@ impl<'a> ROM_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRAM_CTRL1`"]
+#[doc = "Enables the clock for the SRAM Controller 1.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAM_CTRL1_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<SRAM_CTRL1_A> for bool {
     #[inline(always)]
     fn from(variant: SRAM_CTRL1_A) -> Self {
-        match variant {
-            SRAM_CTRL1_A::DISABLE => false,
-            SRAM_CTRL1_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRAM_CTRL1`"]
@@ -166,21 +160,18 @@ impl<'a> SRAM_CTRL1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRAM_CTRL2`"]
+#[doc = "Enables the clock for the SRAM Controller 2.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAM_CTRL2_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<SRAM_CTRL2_A> for bool {
     #[inline(always)]
     fn from(variant: SRAM_CTRL2_A) -> Self {
-        match variant {
-            SRAM_CTRL2_A::DISABLE => false,
-            SRAM_CTRL2_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRAM_CTRL2`"]
@@ -244,21 +235,18 @@ impl<'a> SRAM_CTRL2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRAM_CTRL3`"]
+#[doc = "Enables the clock for the SRAM Controller 3.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAM_CTRL3_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<SRAM_CTRL3_A> for bool {
     #[inline(always)]
     fn from(variant: SRAM_CTRL3_A) -> Self {
-        match variant {
-            SRAM_CTRL3_A::DISABLE => false,
-            SRAM_CTRL3_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRAM_CTRL3`"]
@@ -322,21 +310,18 @@ impl<'a> SRAM_CTRL3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SRAM_CTRL4`"]
+#[doc = "Enables the clock for the SRAM Controller 4.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SRAM_CTRL4_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<SRAM_CTRL4_A> for bool {
     #[inline(always)]
     fn from(variant: SRAM_CTRL4_A) -> Self {
-        match variant {
-            SRAM_CTRL4_A::DISABLE => false,
-            SRAM_CTRL4_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SRAM_CTRL4`"]
@@ -400,21 +385,18 @@ impl<'a> SRAM_CTRL4_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FLASH`"]
+#[doc = "Enables the clock for the Flash controller.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLASH_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<FLASH_A> for bool {
     #[inline(always)]
     fn from(variant: FLASH_A) -> Self {
-        match variant {
-            FLASH_A::DISABLE => false,
-            FLASH_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FLASH`"]
@@ -478,21 +460,18 @@ impl<'a> FLASH_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FMC`"]
+#[doc = "Enables the clock for the FMC controller.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FMC_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<FMC_A> for bool {
     #[inline(always)]
     fn from(variant: FMC_A) -> Self {
-        match variant {
-            FMC_A::DISABLE => false,
-            FMC_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FMC`"]
@@ -556,21 +535,18 @@ impl<'a> FMC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MUX`"]
+#[doc = "Enables the clock for the Input Mux.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MUX_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<MUX_A> for bool {
     #[inline(always)]
     fn from(variant: MUX_A) -> Self {
-        match variant {
-            MUX_A::DISABLE => false,
-            MUX_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MUX`"]
@@ -634,21 +610,18 @@ impl<'a> MUX_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `IOCON`"]
+#[doc = "Enables the clock for the I/O controller.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IOCON_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<IOCON_A> for bool {
     #[inline(always)]
     fn from(variant: IOCON_A) -> Self {
-        match variant {
-            IOCON_A::DISABLE => false,
-            IOCON_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IOCON`"]
@@ -712,21 +685,18 @@ impl<'a> IOCON_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `GPIO0`"]
+#[doc = "Enables the clock for the GPIO0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIO0_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<GPIO0_A> for bool {
     #[inline(always)]
     fn from(variant: GPIO0_A) -> Self {
-        match variant {
-            GPIO0_A::DISABLE => false,
-            GPIO0_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GPIO0`"]
@@ -790,21 +760,18 @@ impl<'a> GPIO0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `GPIO1`"]
+#[doc = "Enables the clock for the GPIO1.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIO1_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<GPIO1_A> for bool {
     #[inline(always)]
     fn from(variant: GPIO1_A) -> Self {
-        match variant {
-            GPIO1_A::DISABLE => false,
-            GPIO1_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GPIO1`"]
@@ -868,21 +835,18 @@ impl<'a> GPIO1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `GPIO2`"]
+#[doc = "Enables the clock for the GPIO2.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIO2_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<GPIO2_A> for bool {
     #[inline(always)]
     fn from(variant: GPIO2_A) -> Self {
-        match variant {
-            GPIO2_A::DISABLE => false,
-            GPIO2_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GPIO2`"]
@@ -946,21 +910,18 @@ impl<'a> GPIO2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `GPIO3`"]
+#[doc = "Enables the clock for the GPIO3.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GPIO3_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<GPIO3_A> for bool {
     #[inline(always)]
     fn from(variant: GPIO3_A) -> Self {
-        match variant {
-            GPIO3_A::DISABLE => false,
-            GPIO3_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GPIO3`"]
@@ -1024,21 +985,18 @@ impl<'a> GPIO3_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PINT`"]
+#[doc = "Enables the clock for the Pin interrupt (PINT).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PINT_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<PINT_A> for bool {
     #[inline(always)]
     fn from(variant: PINT_A) -> Self {
-        match variant {
-            PINT_A::DISABLE => false,
-            PINT_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PINT`"]
@@ -1102,21 +1060,18 @@ impl<'a> PINT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `GINT`"]
+#[doc = "Enables the clock for the Group interrupt (GINT).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GINT_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<GINT_A> for bool {
     #[inline(always)]
     fn from(variant: GINT_A) -> Self {
-        match variant {
-            GINT_A::DISABLE => false,
-            GINT_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `GINT`"]
@@ -1180,21 +1135,18 @@ impl<'a> GINT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DMA0`"]
+#[doc = "Enables the clock for the DMA0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA0_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<DMA0_A> for bool {
     #[inline(always)]
     fn from(variant: DMA0_A) -> Self {
-        match variant {
-            DMA0_A::DISABLE => false,
-            DMA0_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DMA0`"]
@@ -1258,21 +1210,18 @@ impl<'a> DMA0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CRCGEN`"]
+#[doc = "Enables the clock for the CRCGEN.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCGEN_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<CRCGEN_A> for bool {
     #[inline(always)]
     fn from(variant: CRCGEN_A) -> Self {
-        match variant {
-            CRCGEN_A::DISABLE => false,
-            CRCGEN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CRCGEN`"]
@@ -1336,21 +1285,18 @@ impl<'a> CRCGEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WWDT`"]
+#[doc = "Enables the clock for the Watchdog Timer.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WWDT_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<WWDT_A> for bool {
     #[inline(always)]
     fn from(variant: WWDT_A) -> Self {
-        match variant {
-            WWDT_A::DISABLE => false,
-            WWDT_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WWDT`"]
@@ -1414,21 +1360,18 @@ impl<'a> WWDT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RTC`"]
+#[doc = "Enables the clock for the Real Time Clock (RTC).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RTC_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<RTC_A> for bool {
     #[inline(always)]
     fn from(variant: RTC_A) -> Self {
-        match variant {
-            RTC_A::DISABLE => false,
-            RTC_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RTC`"]
@@ -1492,21 +1435,18 @@ impl<'a> RTC_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `MAILBOX`"]
+#[doc = "Enables the clock for the Inter CPU communication Mailbox.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MAILBOX_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<MAILBOX_A> for bool {
     #[inline(always)]
     fn from(variant: MAILBOX_A) -> Self {
-        match variant {
-            MAILBOX_A::DISABLE => false,
-            MAILBOX_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MAILBOX`"]
@@ -1570,21 +1510,18 @@ impl<'a> MAILBOX_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ADC`"]
+#[doc = "Enables the clock for the ADC.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC_A {
-    #[doc = "Disable Clock."]
-    DISABLE,
-    #[doc = "Enable Clock."]
-    ENABLE,
+    #[doc = "0: Disable Clock."]
+    DISABLE = 0,
+    #[doc = "1: Enable Clock."]
+    ENABLE = 1,
 }
 impl From<ADC_A> for bool {
     #[inline(always)]
     fn from(variant: ADC_A) -> Self {
-        match variant {
-            ADC_A::DISABLE => false,
-            ADC_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ADC`"]

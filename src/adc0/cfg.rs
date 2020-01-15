@@ -10,24 +10,22 @@ impl crate::ResetValue for super::CFG {
         0x0080_0000
     }
 }
-#[doc = "Possible values of the field `TPRICTRL`"]
+#[doc = "ADC trigger priority control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TPRICTRL_A {
-    #[doc = "If a higher priority trigger is detected during command processing, the current conversion is aborted and the new command specified by the trigger is started."]
-    TPRICTRL_0,
-    #[doc = "If a higher priority trigger is received during command processing, the current command is stopped after after completing the current conversion. If averaging is enabled, the averaging loop will be completed. However, CMDHa\\[LOOP\\] will be ignored and the higher priority trigger will be serviced."]
-    TPRICTRL_1,
-    #[doc = "If a higher priority trigger is received during command processing, the current command will be completed (averaging, looping, compare) before servicing the higher priority trigger."]
-    TPRICTRL_2,
+    #[doc = "0: If a higher priority trigger is detected during command processing, the current conversion is aborted and the new command specified by the trigger is started."]
+    TPRICTRL_0 = 0,
+    #[doc = "1: If a higher priority trigger is received during command processing, the current command is stopped after after completing the current conversion. If averaging is enabled, the averaging loop will be completed. However, CMDHa\\[LOOP\\]
+will be ignored and the higher priority trigger will be serviced."]
+    TPRICTRL_1 = 1,
+    #[doc = "2: If a higher priority trigger is received during command processing, the current command will be completed (averaging, looping, compare) before servicing the higher priority trigger."]
+    TPRICTRL_2 = 2,
 }
 impl From<TPRICTRL_A> for u8 {
     #[inline(always)]
     fn from(variant: TPRICTRL_A) -> Self {
-        match variant {
-            TPRICTRL_A::TPRICTRL_0 => 0,
-            TPRICTRL_A::TPRICTRL_1 => 1,
-            TPRICTRL_A::TPRICTRL_2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TPRICTRL`"]
@@ -75,7 +73,8 @@ impl<'a> TPRICTRL_W<'a> {
     pub fn tprictrl_0(self) -> &'a mut W {
         self.variant(TPRICTRL_A::TPRICTRL_0)
     }
-    #[doc = "If a higher priority trigger is received during command processing, the current command is stopped after after completing the current conversion. If averaging is enabled, the averaging loop will be completed. However, CMDHa\\[LOOP\\] will be ignored and the higher priority trigger will be serviced."]
+    #[doc = "If a higher priority trigger is received during command processing, the current command is stopped after after completing the current conversion. If averaging is enabled, the averaging loop will be completed. However, CMDHa\\[LOOP\\]
+will be ignored and the higher priority trigger will be serviced."]
     #[inline(always)]
     pub fn tprictrl_1(self) -> &'a mut W {
         self.variant(TPRICTRL_A::TPRICTRL_1)
@@ -92,27 +91,23 @@ impl<'a> TPRICTRL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PWRSEL`"]
+#[doc = "Power Configuration Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PWRSEL_A {
-    #[doc = "Lowest power setting."]
-    PWRSEL_0,
-    #[doc = "Higher power setting than 0b0."]
-    PWRSEL_1,
-    #[doc = "Higher power setting than 0b1."]
-    PWRSEL_2,
-    #[doc = "Highest power setting."]
-    PWRSEL_3,
+    #[doc = "0: Lowest power setting."]
+    PWRSEL_0 = 0,
+    #[doc = "1: Higher power setting than 0b0."]
+    PWRSEL_1 = 1,
+    #[doc = "2: Higher power setting than 0b1."]
+    PWRSEL_2 = 2,
+    #[doc = "3: Highest power setting."]
+    PWRSEL_3 = 3,
 }
 impl From<PWRSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: PWRSEL_A) -> Self {
-        match variant {
-            PWRSEL_A::PWRSEL_0 => 0,
-            PWRSEL_A::PWRSEL_1 => 1,
-            PWRSEL_A::PWRSEL_2 => 2,
-            PWRSEL_A::PWRSEL_3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PWRSEL`"]
@@ -189,24 +184,21 @@ impl<'a> PWRSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `REFSEL`"]
+#[doc = "Voltage Reference Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REFSEL_A {
-    #[doc = "(Default) Option 1 setting."]
-    REFSEL_0,
-    #[doc = "Option 2 setting."]
-    REFSEL_1,
-    #[doc = "Option 3 setting."]
-    REFSEL_2,
+    #[doc = "0: (Default) Option 1 setting."]
+    REFSEL_0 = 0,
+    #[doc = "1: Option 2 setting."]
+    REFSEL_1 = 1,
+    #[doc = "2: Option 3 setting."]
+    REFSEL_2 = 2,
 }
 impl From<REFSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: REFSEL_A) -> Self {
-        match variant {
-            REFSEL_A::REFSEL_0 => 0,
-            REFSEL_A::REFSEL_1 => 1,
-            REFSEL_A::REFSEL_2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REFSEL`"]
@@ -271,21 +263,18 @@ impl<'a> REFSEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TRES`"]
+#[doc = "Trigger Resume Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRES_A {
-    #[doc = "Trigger sequences interrupted by a high priority trigger exception will not be automatically resumed or restarted."]
-    TRES_0,
-    #[doc = "Trigger sequences interrupted by a high priority trigger exception will be automatically resumed or restarted."]
-    TRES_1,
+    #[doc = "0: Trigger sequences interrupted by a high priority trigger exception will not be automatically resumed or restarted."]
+    TRES_0 = 0,
+    #[doc = "1: Trigger sequences interrupted by a high priority trigger exception will be automatically resumed or restarted."]
+    TRES_1 = 1,
 }
 impl From<TRES_A> for bool {
     #[inline(always)]
     fn from(variant: TRES_A) -> Self {
-        match variant {
-            TRES_A::TRES_0 => false,
-            TRES_A::TRES_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRES`"]
@@ -349,21 +338,18 @@ impl<'a> TRES_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TCMDRES`"]
+#[doc = "Trigger Command Resume\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TCMDRES_A {
-    #[doc = "Trigger sequences interrupted by a high priority trigger exception will be automatically restarted."]
-    TCMDRES_0,
-    #[doc = "Trigger sequences interrupted by a high priority trigger exception will be resumed from the command executing before the exception."]
-    TCMDRES_1,
+    #[doc = "0: Trigger sequences interrupted by a high priority trigger exception will be automatically restarted."]
+    TCMDRES_0 = 0,
+    #[doc = "1: Trigger sequences interrupted by a high priority trigger exception will be resumed from the command executing before the exception."]
+    TCMDRES_1 = 1,
 }
 impl From<TCMDRES_A> for bool {
     #[inline(always)]
     fn from(variant: TCMDRES_A) -> Self {
-        match variant {
-            TCMDRES_A::TCMDRES_0 => false,
-            TCMDRES_A::TCMDRES_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TCMDRES`"]
@@ -427,21 +413,18 @@ impl<'a> TCMDRES_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `HPT_EXDI`"]
+#[doc = "High Priority Trigger Exception Disable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HPT_EXDI_A {
-    #[doc = "High priority trigger exceptions are enabled."]
-    HPT_EXDI_0,
-    #[doc = "High priority trigger exceptions are disabled."]
-    HPT_EXDI_1,
+    #[doc = "0: High priority trigger exceptions are enabled."]
+    HPT_EXDI_0 = 0,
+    #[doc = "1: High priority trigger exceptions are disabled."]
+    HPT_EXDI_1 = 1,
 }
 impl From<HPT_EXDI_A> for bool {
     #[inline(always)]
     fn from(variant: HPT_EXDI_A) -> Self {
-        match variant {
-            HPT_EXDI_A::HPT_EXDI_0 => false,
-            HPT_EXDI_A::HPT_EXDI_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HPT_EXDI`"]
@@ -519,21 +502,18 @@ impl<'a> PUDLY_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PWREN`"]
+#[doc = "ADC Analog Pre-Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWREN_A {
-    #[doc = "ADC analog circuits are only enabled while conversions are active. Performance is affected due to analog startup delays."]
-    PWREN_0,
-    #[doc = "ADC analog circuits are pre-enabled and ready to execute conversions without startup delays (at the cost of higher DC current consumption). A single power up delay (CFG\\[PUDLY\\]) is executed immediately once PWREN is set, and any detected trigger does not begin ADC operation until the power up delay time has passed. After this initial delay expires the analog will remain pre-enabled, and no additional delays will be executed."]
-    PWREN_1,
+    #[doc = "0: ADC analog circuits are only enabled while conversions are active. Performance is affected due to analog startup delays."]
+    PWREN_0 = 0,
+    #[doc = "1: ADC analog circuits are pre-enabled and ready to execute conversions without startup delays (at the cost of higher DC current consumption). A single power up delay (CFG\\[PUDLY\\]) is executed immediately once PWREN is set, and any detected trigger does not begin ADC operation until the power up delay time has passed. After this initial delay expires the analog will remain pre-enabled, and no additional delays will be executed."]
+    PWREN_1 = 1,
 }
 impl From<PWREN_A> for bool {
     #[inline(always)]
     fn from(variant: PWREN_A) -> Self {
-        match variant {
-            PWREN_A::PWREN_0 => false,
-            PWREN_A::PWREN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PWREN`"]

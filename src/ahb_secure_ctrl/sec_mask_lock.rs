@@ -10,21 +10,19 @@ impl crate::ResetValue for super::SEC_MASK_LOCK {
         0x0aaa
     }
 }
-#[doc = "Possible values of the field `SEC_GPIO_MASK0_LOCK`"]
+#[doc = "SEC_GPIO_MASK0 register write-lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SEC_GPIO_MASK0_LOCK_A {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
+    #[doc = "1: Restricted mode."]
+    BLOCKED = 1,
+    #[doc = "2: Writable."]
+    WRITABLE = 2,
 }
 impl From<SEC_GPIO_MASK0_LOCK_A> for u8 {
     #[inline(always)]
     fn from(variant: SEC_GPIO_MASK0_LOCK_A) -> Self {
-        match variant {
-            SEC_GPIO_MASK0_LOCK_A::BLOCKED => 1,
-            SEC_GPIO_MASK0_LOCK_A::WRITABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SEC_GPIO_MASK0_LOCK`"]
@@ -78,21 +76,19 @@ impl<'a> SEC_GPIO_MASK0_LOCK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SEC_GPIO_MASK1_LOCK`"]
+#[doc = "SEC_GPIO_MASK1 register write-lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SEC_GPIO_MASK1_LOCK_A {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
+    #[doc = "1: Restricted mode."]
+    BLOCKED = 1,
+    #[doc = "2: Writable."]
+    WRITABLE = 2,
 }
 impl From<SEC_GPIO_MASK1_LOCK_A> for u8 {
     #[inline(always)]
     fn from(variant: SEC_GPIO_MASK1_LOCK_A) -> Self {
-        match variant {
-            SEC_GPIO_MASK1_LOCK_A::BLOCKED => 1,
-            SEC_GPIO_MASK1_LOCK_A::WRITABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SEC_GPIO_MASK1_LOCK`"]
@@ -146,21 +142,19 @@ impl<'a> SEC_GPIO_MASK1_LOCK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SEC_CPU1_INT_MASK0_LOCK`"]
+#[doc = "SEC_CPU_INT_MASK0 register write-lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SEC_CPU1_INT_MASK0_LOCK_A {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
+    #[doc = "1: Restricted mode."]
+    BLOCKED = 1,
+    #[doc = "2: Writable."]
+    WRITABLE = 2,
 }
 impl From<SEC_CPU1_INT_MASK0_LOCK_A> for u8 {
     #[inline(always)]
     fn from(variant: SEC_CPU1_INT_MASK0_LOCK_A) -> Self {
-        match variant {
-            SEC_CPU1_INT_MASK0_LOCK_A::BLOCKED => 1,
-            SEC_CPU1_INT_MASK0_LOCK_A::WRITABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SEC_CPU1_INT_MASK0_LOCK`"]
@@ -214,21 +208,19 @@ impl<'a> SEC_CPU1_INT_MASK0_LOCK_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SEC_CPU1_INT_MASK1_LOCK`"]
+#[doc = "SEC_CPU_INT_MASK1 register write-lock.\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SEC_CPU1_INT_MASK1_LOCK_A {
-    #[doc = "Restricted mode."]
-    BLOCKED,
-    #[doc = "Writable."]
-    WRITABLE,
+    #[doc = "1: Restricted mode."]
+    BLOCKED = 1,
+    #[doc = "2: Writable."]
+    WRITABLE = 2,
 }
 impl From<SEC_CPU1_INT_MASK1_LOCK_A> for u8 {
     #[inline(always)]
     fn from(variant: SEC_CPU1_INT_MASK1_LOCK_A) -> Self {
-        match variant {
-            SEC_CPU1_INT_MASK1_LOCK_A::BLOCKED => 1,
-            SEC_CPU1_INT_MASK1_LOCK_A::WRITABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SEC_CPU1_INT_MASK1_LOCK`"]

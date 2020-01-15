@@ -10,21 +10,19 @@ impl crate::ResetValue for super::DEBUG_FEATURES_DP {
         0x0555
     }
 }
-#[doc = "Possible values of the field `CPU0_DBGEN`"]
+#[doc = "CPU0 (CPU0) Invasive debug control:.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPU0_DBGEN_A {
-    #[doc = "Any other value than b10: invasive debug is disable."]
-    DISABLE,
-    #[doc = "10: Invasive debug is enabled."]
-    ENABLE,
+    #[doc = "1: Any other value than b10: invasive debug is disable."]
+    DISABLE = 1,
+    #[doc = "2: 10: Invasive debug is enabled."]
+    ENABLE = 2,
 }
 impl From<CPU0_DBGEN_A> for u8 {
     #[inline(always)]
     fn from(variant: CPU0_DBGEN_A) -> Self {
-        match variant {
-            CPU0_DBGEN_A::DISABLE => 1,
-            CPU0_DBGEN_A::ENABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPU0_DBGEN`"]
@@ -78,21 +76,19 @@ impl<'a> CPU0_DBGEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CPU0_NIDEN`"]
+#[doc = "CPU0 Non Invasive debug control:.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPU0_NIDEN_A {
-    #[doc = "Any other value than b10: invasive debug is disable."]
-    DISABLE,
-    #[doc = "10: Invasive debug is enabled."]
-    ENABLE,
+    #[doc = "1: Any other value than b10: invasive debug is disable."]
+    DISABLE = 1,
+    #[doc = "2: 10: Invasive debug is enabled."]
+    ENABLE = 2,
 }
 impl From<CPU0_NIDEN_A> for u8 {
     #[inline(always)]
     fn from(variant: CPU0_NIDEN_A) -> Self {
-        match variant {
-            CPU0_NIDEN_A::DISABLE => 1,
-            CPU0_NIDEN_A::ENABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPU0_NIDEN`"]
@@ -146,21 +142,19 @@ impl<'a> CPU0_NIDEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CPU0_SPIDEN`"]
+#[doc = "CPU0 Secure Invasive debug control:.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPU0_SPIDEN_A {
-    #[doc = "Any other value than b10: invasive debug is disable."]
-    DISABLE,
-    #[doc = "10: Invasive debug is enabled."]
-    ENABLE,
+    #[doc = "1: Any other value than b10: invasive debug is disable."]
+    DISABLE = 1,
+    #[doc = "2: 10: Invasive debug is enabled."]
+    ENABLE = 2,
 }
 impl From<CPU0_SPIDEN_A> for u8 {
     #[inline(always)]
     fn from(variant: CPU0_SPIDEN_A) -> Self {
-        match variant {
-            CPU0_SPIDEN_A::DISABLE => 1,
-            CPU0_SPIDEN_A::ENABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPU0_SPIDEN`"]
@@ -214,21 +208,19 @@ impl<'a> CPU0_SPIDEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CPU0_SPNIDEN`"]
+#[doc = "CPU0 Secure Non Invasive debug control:.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPU0_SPNIDEN_A {
-    #[doc = "Any other value than b10: invasive debug is disable."]
-    DISABLE,
-    #[doc = "10: Invasive debug is enabled."]
-    ENABLE,
+    #[doc = "1: Any other value than b10: invasive debug is disable."]
+    DISABLE = 1,
+    #[doc = "2: 10: Invasive debug is enabled."]
+    ENABLE = 2,
 }
 impl From<CPU0_SPNIDEN_A> for u8 {
     #[inline(always)]
     fn from(variant: CPU0_SPNIDEN_A) -> Self {
-        match variant {
-            CPU0_SPNIDEN_A::DISABLE => 1,
-            CPU0_SPNIDEN_A::ENABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPU0_SPNIDEN`"]
@@ -282,21 +274,19 @@ impl<'a> CPU0_SPNIDEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CPU1_DBGEN`"]
+#[doc = "CPU1 Invasive debug control:.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPU1_DBGEN_A {
-    #[doc = "Any other value than b10: invasive debug is disable."]
-    DISABLE,
-    #[doc = "10: Invasive debug is enabled."]
-    ENABLE,
+    #[doc = "1: Any other value than b10: invasive debug is disable."]
+    DISABLE = 1,
+    #[doc = "2: 10: Invasive debug is enabled."]
+    ENABLE = 2,
 }
 impl From<CPU1_DBGEN_A> for u8 {
     #[inline(always)]
     fn from(variant: CPU1_DBGEN_A) -> Self {
-        match variant {
-            CPU1_DBGEN_A::DISABLE => 1,
-            CPU1_DBGEN_A::ENABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPU1_DBGEN`"]
@@ -350,21 +340,19 @@ impl<'a> CPU1_DBGEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CPU1_NIDEN`"]
+#[doc = "CPU1 Non Invasive debug control:.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CPU1_NIDEN_A {
-    #[doc = "Any other value than b10: invasive debug is disable."]
-    DISABLE,
-    #[doc = "10: Invasive debug is enabled."]
-    ENABLE,
+    #[doc = "1: Any other value than b10: invasive debug is disable."]
+    DISABLE = 1,
+    #[doc = "2: 10: Invasive debug is enabled."]
+    ENABLE = 2,
 }
 impl From<CPU1_NIDEN_A> for u8 {
     #[inline(always)]
     fn from(variant: CPU1_NIDEN_A) -> Self {
-        match variant {
-            CPU1_NIDEN_A::DISABLE => 1,
-            CPU1_NIDEN_A::ENABLE => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CPU1_NIDEN`"]

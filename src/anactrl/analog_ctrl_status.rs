@@ -1,20 +1,17 @@
 #[doc = "Reader of register ANALOG_CTRL_STATUS"]
 pub type R = crate::R<u32, super::ANALOG_CTRL_STATUS>;
-#[doc = "Possible values of the field `FLASH_PWRDWN`"]
+#[doc = "Flash Power Down status.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLASH_PWRDWN_A {
-    #[doc = "Flash is not in power down mode."]
-    PWRUP,
-    #[doc = "Flash is in power down mode."]
-    PWRDWN,
+    #[doc = "0: Flash is not in power down mode."]
+    PWRUP = 0,
+    #[doc = "1: Flash is in power down mode."]
+    PWRDWN = 1,
 }
 impl From<FLASH_PWRDWN_A> for bool {
     #[inline(always)]
     fn from(variant: FLASH_PWRDWN_A) -> Self {
-        match variant {
-            FLASH_PWRDWN_A::PWRUP => false,
-            FLASH_PWRDWN_A::PWRDWN => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FLASH_PWRDWN`"]
@@ -39,21 +36,18 @@ impl FLASH_PWRDWN_R {
         *self == FLASH_PWRDWN_A::PWRDWN
     }
 }
-#[doc = "Possible values of the field `FLASH_INIT_ERROR`"]
+#[doc = "Flash initialization error status.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FLASH_INIT_ERROR_A {
-    #[doc = "No error."]
-    NOERROR,
-    #[doc = "At least one error occured during flash initialization.."]
-    ERROR,
+    #[doc = "0: No error."]
+    NOERROR = 0,
+    #[doc = "1: At least one error occured during flash initialization.."]
+    ERROR = 1,
 }
 impl From<FLASH_INIT_ERROR_A> for bool {
     #[inline(always)]
     fn from(variant: FLASH_INIT_ERROR_A) -> Self {
-        match variant {
-            FLASH_INIT_ERROR_A::NOERROR => false,
-            FLASH_INIT_ERROR_A::ERROR => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FLASH_INIT_ERROR`"]

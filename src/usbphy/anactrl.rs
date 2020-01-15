@@ -48,21 +48,18 @@ impl<'a> PFD_CLK_SEL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `DEV_PULLDOWN`"]
+#[doc = "Setting this field to 1'b1 will enable the 15kohm pulldown resistors on both USB_DP and USB_DM pins\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DEV_PULLDOWN_A {
-    #[doc = "The 15kohm nominal pulldowns on the USB_DP and USB_DM pinsare disabled in device mode."]
-    VALUE0,
-    #[doc = "The 15kohm nominal pulldowns on the USB_DP and USB_DM pinsare enabled in device mode."]
-    VALUE1,
+    #[doc = "0: The 15kohm nominal pulldowns on the USB_DP and USB_DM pinsare disabled in device mode."]
+    VALUE0 = 0,
+    #[doc = "1: The 15kohm nominal pulldowns on the USB_DP and USB_DM pinsare enabled in device mode."]
+    VALUE1 = 1,
 }
 impl From<DEV_PULLDOWN_A> for bool {
     #[inline(always)]
     fn from(variant: DEV_PULLDOWN_A) -> Self {
-        match variant {
-            DEV_PULLDOWN_A::VALUE0 => false,
-            DEV_PULLDOWN_A::VALUE1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DEV_PULLDOWN`"]

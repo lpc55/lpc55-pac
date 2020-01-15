@@ -21,7 +21,8 @@ pub type POSTDIVACK_R = crate::R<bool, bool>;
 #[doc = "Reader of field `FRMDET`"]
 pub type FRMDET_R = crate::R<bool, bool>;
 impl R {
-    #[doc = "Bit 0 - lock detector output (active high) Warning: The lock signal is only reliable between fref\\[2\\] :100 kHz to 20 MHz."]
+    #[doc = "Bit 0 - lock detector output (active high) Warning: The lock signal is only reliable between fref\\[2\\]
+:100 kHz to 20 MHz."]
     #[inline(always)]
     pub fn lock(&self) -> LOCK_R {
         LOCK_R::new((self.bits & 0x01) != 0)

@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CTRL {
         0
     }
 }
-#[doc = "Possible values of the field `INT`"]
+#[doc = "Group interrupt status. This bit is cleared by writing a one to it. Writing zero has no effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum INT_A {
-    #[doc = "No request. No interrupt request is pending."]
-    NO_REQUEST,
-    #[doc = "Request active. Interrupt request is active."]
-    REQUEST_ACTIVE,
+    #[doc = "0: No request. No interrupt request is pending."]
+    NO_REQUEST = 0,
+    #[doc = "1: Request active. Interrupt request is active."]
+    REQUEST_ACTIVE = 1,
 }
 impl From<INT_A> for bool {
     #[inline(always)]
     fn from(variant: INT_A) -> Self {
-        match variant {
-            INT_A::NO_REQUEST => false,
-            INT_A::REQUEST_ACTIVE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `INT`"]
@@ -88,21 +85,18 @@ impl<'a> INT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `COMB`"]
+#[doc = "Combine enabled inputs for group interrupt\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COMB_A {
-    #[doc = "Or. OR functionality: A grouped interrupt is generated when any one of the enabled inputs is active (based on its programmed polarity)."]
-    OR,
-    #[doc = "And. AND functionality: An interrupt is generated when all enabled bits are active (based on their programmed polarity)."]
-    AND,
+    #[doc = "0: Or. OR functionality: A grouped interrupt is generated when any one of the enabled inputs is active (based on its programmed polarity)."]
+    OR = 0,
+    #[doc = "1: And. AND functionality: An interrupt is generated when all enabled bits are active (based on their programmed polarity)."]
+    AND = 1,
 }
 impl From<COMB_A> for bool {
     #[inline(always)]
     fn from(variant: COMB_A) -> Self {
-        match variant {
-            COMB_A::OR => false,
-            COMB_A::AND => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `COMB`"]
@@ -166,21 +160,18 @@ impl<'a> COMB_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `TRIG`"]
+#[doc = "Group interrupt trigger\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRIG_A {
-    #[doc = "Edge-triggered."]
-    EDGE_TRIGGERED,
-    #[doc = "Level-triggered."]
-    LEVEL_TRIGGERED,
+    #[doc = "0: Edge-triggered."]
+    EDGE_TRIGGERED = 0,
+    #[doc = "1: Level-triggered."]
+    LEVEL_TRIGGERED = 1,
 }
 impl From<TRIG_A> for bool {
     #[inline(always)]
     fn from(variant: TRIG_A) -> Self {
-        match variant {
-            TRIG_A::EDGE_TRIGGERED => false,
-            TRIG_A::LEVEL_TRIGGERED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TRIG`"]

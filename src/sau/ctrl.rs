@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CTRL {
         0
     }
 }
-#[doc = "Possible values of the field `ENABLE`"]
+#[doc = "Enable. Enables the SAU. This bit is RAZ/WI when the Security Extension is implemented without an SAU region.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENABLE_A {
-    #[doc = "The SAU is disabled."]
-    DISABLED,
-    #[doc = "The SAU is enabled."]
-    ENABLED,
+    #[doc = "0: The SAU is disabled."]
+    DISABLED = 0,
+    #[doc = "1: The SAU is enabled."]
+    ENABLED = 1,
 }
 impl From<ENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: ENABLE_A) -> Self {
-        match variant {
-            ENABLE_A::DISABLED => false,
-            ENABLE_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENABLE`"]
@@ -88,21 +85,18 @@ impl<'a> ENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ALLNS`"]
+#[doc = "All Non-secure.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALLNS_A {
-    #[doc = "Memory is marked as Secure and is not Non-secure callable."]
-    SECURED_MEMORY,
-    #[doc = "Memory is marked as Non-secure."]
-    NON_SECURED_MEMORY,
+    #[doc = "0: Memory is marked as Secure and is not Non-secure callable."]
+    SECURED_MEMORY = 0,
+    #[doc = "1: Memory is marked as Non-secure."]
+    NON_SECURED_MEMORY = 1,
 }
 impl From<ALLNS_A> for bool {
     #[inline(always)]
     fn from(variant: ALLNS_A) -> Self {
-        match variant {
-            ALLNS_A::SECURED_MEMORY => false,
-            ALLNS_A::NON_SECURED_MEMORY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ALLNS`"]

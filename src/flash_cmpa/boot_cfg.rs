@@ -10,30 +10,25 @@ impl crate::ResetValue for super::BOOT_CFG {
         0
     }
 }
-#[doc = "Possible values of the field `DEFAULT_ISP_MODE`"]
+#[doc = "Default ISP mode:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DEFAULT_ISP_MODE_A {
-    #[doc = "Auto ISP"]
-    VALUE_0,
-    #[doc = "USB_HID_MSC"]
-    VALUE_1,
-    #[doc = "SPI Slave ISP"]
-    VALUE_2,
-    #[doc = "I2C Slave ISP"]
-    VALUE_3,
-    #[doc = "Disable ISP fall through"]
-    VALUE_7,
+    #[doc = "0: Auto ISP"]
+    VALUE_0 = 0,
+    #[doc = "1: USB_HID_MSC"]
+    VALUE_1 = 1,
+    #[doc = "2: SPI Slave ISP"]
+    VALUE_2 = 2,
+    #[doc = "3: I2C Slave ISP"]
+    VALUE_3 = 3,
+    #[doc = "7: Disable ISP fall through"]
+    VALUE_7 = 7,
 }
 impl From<DEFAULT_ISP_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: DEFAULT_ISP_MODE_A) -> Self {
-        match variant {
-            DEFAULT_ISP_MODE_A::VALUE_0 => 0,
-            DEFAULT_ISP_MODE_A::VALUE_1 => 1,
-            DEFAULT_ISP_MODE_A::VALUE_2 => 2,
-            DEFAULT_ISP_MODE_A::VALUE_3 => 3,
-            DEFAULT_ISP_MODE_A::VALUE_7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DEFAULT_ISP_MODE`"]
@@ -120,24 +115,21 @@ impl<'a> DEFAULT_ISP_MODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BOOT_SPEED`"]
+#[doc = "Core clock:\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BOOT_SPEED_A {
-    #[doc = "Defined by NMPA.SYSTEM_SPEED_CODE"]
-    VALUE_0,
-    #[doc = "48MHz FRO"]
-    VALUE_1,
-    #[doc = "96MHz FRO"]
-    VALUE_2,
+    #[doc = "0: Defined by NMPA.SYSTEM_SPEED_CODE"]
+    VALUE_0 = 0,
+    #[doc = "1: 48MHz FRO"]
+    VALUE_1 = 1,
+    #[doc = "2: 96MHz FRO"]
+    VALUE_2 = 2,
 }
 impl From<BOOT_SPEED_A> for u8 {
     #[inline(always)]
     fn from(variant: BOOT_SPEED_A) -> Self {
-        match variant {
-            BOOT_SPEED_A::VALUE_0 => 0,
-            BOOT_SPEED_A::VALUE_1 => 1,
-            BOOT_SPEED_A::VALUE_2 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BOOT_SPEED`"]
@@ -227,7 +219,9 @@ impl R {
     pub fn boot_speed(&self) -> BOOT_SPEED_R {
         BOOT_SPEED_R::new(((self.bits >> 7) & 0x03) as u8)
     }
-    #[doc = "Bits 24:31 - GPIO port and pin number to use for indicating failure reason. The toggle rate of the pin is used to decode the error type. \\[2:0\\] - Defines GPIO port \\[7:3\\] - Defines GPIO pin"]
+    #[doc = "Bits 24:31 - GPIO port and pin number to use for indicating failure reason. The toggle rate of the pin is used to decode the error type. \\[2:0\\]
+- Defines GPIO port \\[7:3\\]
+- Defines GPIO pin"]
     #[inline(always)]
     pub fn boot_failure_pin(&self) -> BOOT_FAILURE_PIN_R {
         BOOT_FAILURE_PIN_R::new(((self.bits >> 24) & 0xff) as u8)
@@ -244,7 +238,9 @@ impl W {
     pub fn boot_speed(&mut self) -> BOOT_SPEED_W {
         BOOT_SPEED_W { w: self }
     }
-    #[doc = "Bits 24:31 - GPIO port and pin number to use for indicating failure reason. The toggle rate of the pin is used to decode the error type. \\[2:0\\] - Defines GPIO port \\[7:3\\] - Defines GPIO pin"]
+    #[doc = "Bits 24:31 - GPIO port and pin number to use for indicating failure reason. The toggle rate of the pin is used to decode the error type. \\[2:0\\]
+- Defines GPIO port \\[7:3\\]
+- Defines GPIO pin"]
     #[inline(always)]
     pub fn boot_failure_pin(&mut self) -> BOOT_FAILURE_PIN_W {
         BOOT_FAILURE_PIN_W { w: self }

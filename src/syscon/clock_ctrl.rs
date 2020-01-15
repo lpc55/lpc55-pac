@@ -10,21 +10,18 @@ impl crate::ResetValue for super::CLOCK_CTRL {
         0x01
     }
 }
-#[doc = "Possible values of the field `XTAL32MHZ_FREQM_ENA`"]
+#[doc = "Enable XTAL32MHz clock for Frequency Measure module.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum XTAL32MHZ_FREQM_ENA_A {
-    #[doc = "The clock is not enabled."]
-    DISABLE,
-    #[doc = "The clock is enabled."]
-    ENABLE,
+    #[doc = "0: The clock is not enabled."]
+    DISABLE = 0,
+    #[doc = "1: The clock is enabled."]
+    ENABLE = 1,
 }
 impl From<XTAL32MHZ_FREQM_ENA_A> for bool {
     #[inline(always)]
     fn from(variant: XTAL32MHZ_FREQM_ENA_A) -> Self {
-        match variant {
-            XTAL32MHZ_FREQM_ENA_A::DISABLE => false,
-            XTAL32MHZ_FREQM_ENA_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `XTAL32MHZ_FREQM_ENA`"]
@@ -88,21 +85,18 @@ impl<'a> XTAL32MHZ_FREQM_ENA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FRO1MHZ_UTICK_ENA`"]
+#[doc = "Enable FRO 1MHz clock for Frequency Measure module and for UTICK.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRO1MHZ_UTICK_ENA_A {
-    #[doc = "The clock is not enabled."]
-    DISABLE,
-    #[doc = "The clock is enabled."]
-    ENABLE,
+    #[doc = "0: The clock is not enabled."]
+    DISABLE = 0,
+    #[doc = "1: The clock is enabled."]
+    ENABLE = 1,
 }
 impl From<FRO1MHZ_UTICK_ENA_A> for bool {
     #[inline(always)]
     fn from(variant: FRO1MHZ_UTICK_ENA_A) -> Self {
-        match variant {
-            FRO1MHZ_UTICK_ENA_A::DISABLE => false,
-            FRO1MHZ_UTICK_ENA_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FRO1MHZ_UTICK_ENA`"]
@@ -166,21 +160,18 @@ impl<'a> FRO1MHZ_UTICK_ENA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FRO12MHZ_FREQM_ENA`"]
+#[doc = "Enable FRO 12MHz clock for Frequency Measure module.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRO12MHZ_FREQM_ENA_A {
-    #[doc = "The clock is not enabled."]
-    DISABLE,
-    #[doc = "The clock is enabled."]
-    ENABLE,
+    #[doc = "0: The clock is not enabled."]
+    DISABLE = 0,
+    #[doc = "1: The clock is enabled."]
+    ENABLE = 1,
 }
 impl From<FRO12MHZ_FREQM_ENA_A> for bool {
     #[inline(always)]
     fn from(variant: FRO12MHZ_FREQM_ENA_A) -> Self {
-        match variant {
-            FRO12MHZ_FREQM_ENA_A::DISABLE => false,
-            FRO12MHZ_FREQM_ENA_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FRO12MHZ_FREQM_ENA`"]
@@ -244,21 +235,18 @@ impl<'a> FRO12MHZ_FREQM_ENA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FRO_HF_FREQM_ENA`"]
+#[doc = "Enable FRO 96MHz clock for Frequency Measure module.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRO_HF_FREQM_ENA_A {
-    #[doc = "The clock is not enabled."]
-    DISABLE,
-    #[doc = "The clock is enabled."]
-    ENABLE,
+    #[doc = "0: The clock is not enabled."]
+    DISABLE = 0,
+    #[doc = "1: The clock is enabled."]
+    ENABLE = 1,
 }
 impl From<FRO_HF_FREQM_ENA_A> for bool {
     #[inline(always)]
     fn from(variant: FRO_HF_FREQM_ENA_A) -> Self {
-        match variant {
-            FRO_HF_FREQM_ENA_A::DISABLE => false,
-            FRO_HF_FREQM_ENA_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FRO_HF_FREQM_ENA`"]
@@ -322,21 +310,18 @@ impl<'a> FRO_HF_FREQM_ENA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CLKIN_ENA`"]
+#[doc = "Enable clock_in clock for clock module.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKIN_ENA_A {
-    #[doc = "The clock is not enabled."]
-    DISABLE,
-    #[doc = "The clock is enabled."]
-    ENABLE,
+    #[doc = "0: The clock is not enabled."]
+    DISABLE = 0,
+    #[doc = "1: The clock is enabled."]
+    ENABLE = 1,
 }
 impl From<CLKIN_ENA_A> for bool {
     #[inline(always)]
     fn from(variant: CLKIN_ENA_A) -> Self {
-        match variant {
-            CLKIN_ENA_A::DISABLE => false,
-            CLKIN_ENA_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CLKIN_ENA`"]
@@ -400,21 +385,18 @@ impl<'a> CLKIN_ENA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FRO1MHZ_CLK_ENA`"]
+#[doc = "Enable FRO 1MHz clock for clock muxing in clock gen.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRO1MHZ_CLK_ENA_A {
-    #[doc = "The clock is not enabled."]
-    DISABLE,
-    #[doc = "The clock is enabled."]
-    ENABLE,
+    #[doc = "0: The clock is not enabled."]
+    DISABLE = 0,
+    #[doc = "1: The clock is enabled."]
+    ENABLE = 1,
 }
 impl From<FRO1MHZ_CLK_ENA_A> for bool {
     #[inline(always)]
     fn from(variant: FRO1MHZ_CLK_ENA_A) -> Self {
-        match variant {
-            FRO1MHZ_CLK_ENA_A::DISABLE => false,
-            FRO1MHZ_CLK_ENA_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FRO1MHZ_CLK_ENA`"]
@@ -478,21 +460,18 @@ impl<'a> FRO1MHZ_CLK_ENA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ANA_FRO12M_CLK_ENA`"]
+#[doc = "Enable FRO 12MHz clock for analog control of the FRO 192MHz.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ANA_FRO12M_CLK_ENA_A {
-    #[doc = "The clock is not enabled."]
-    DISABLE,
-    #[doc = "The clock is enabled."]
-    ENABLE,
+    #[doc = "0: The clock is not enabled."]
+    DISABLE = 0,
+    #[doc = "1: The clock is enabled."]
+    ENABLE = 1,
 }
 impl From<ANA_FRO12M_CLK_ENA_A> for bool {
     #[inline(always)]
     fn from(variant: ANA_FRO12M_CLK_ENA_A) -> Self {
-        match variant {
-            ANA_FRO12M_CLK_ENA_A::DISABLE => false,
-            ANA_FRO12M_CLK_ENA_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ANA_FRO12M_CLK_ENA`"]
@@ -556,21 +535,18 @@ impl<'a> ANA_FRO12M_CLK_ENA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `XO_CAL_CLK_ENA`"]
+#[doc = "Enable clock for cristal oscilator calibration.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum XO_CAL_CLK_ENA_A {
-    #[doc = "The clock is not enabled."]
-    DISABLE,
-    #[doc = "The clock is enabled."]
-    ENABLE,
+    #[doc = "0: The clock is not enabled."]
+    DISABLE = 0,
+    #[doc = "1: The clock is enabled."]
+    ENABLE = 1,
 }
 impl From<XO_CAL_CLK_ENA_A> for bool {
     #[inline(always)]
     fn from(variant: XO_CAL_CLK_ENA_A) -> Self {
-        match variant {
-            XO_CAL_CLK_ENA_A::DISABLE => false,
-            XO_CAL_CLK_ENA_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `XO_CAL_CLK_ENA`"]
@@ -634,21 +610,18 @@ impl<'a> XO_CAL_CLK_ENA_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `PLU_DEGLITCH_CLK_ENA`"]
+#[doc = "Enable clocks FRO_1MHz and FRO_12MHz for PLU deglitching.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLU_DEGLITCH_CLK_ENA_A {
-    #[doc = "The clock is not enabled."]
-    DISABLE,
-    #[doc = "The clock is enabled."]
-    ENABLE,
+    #[doc = "0: The clock is not enabled."]
+    DISABLE = 0,
+    #[doc = "1: The clock is enabled."]
+    ENABLE = 1,
 }
 impl From<PLU_DEGLITCH_CLK_ENA_A> for bool {
     #[inline(always)]
     fn from(variant: PLU_DEGLITCH_CLK_ENA_A) -> Self {
-        match variant {
-            PLU_DEGLITCH_CLK_ENA_A::DISABLE => false,
-            PLU_DEGLITCH_CLK_ENA_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `PLU_DEGLITCH_CLK_ENA`"]

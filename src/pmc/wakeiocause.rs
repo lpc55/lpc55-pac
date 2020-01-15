@@ -10,21 +10,18 @@ impl crate::ResetValue for super::WAKEIOCAUSE {
         0
     }
 }
-#[doc = "Possible values of the field `WAKEUP0`"]
+#[doc = "Allows to identify Wake up I/O 0 as the wake-up source from Deep Power Down mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAKEUP0_A {
-    #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 0."]
-    NOEVENT,
-    #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 0."]
-    EVENT,
+    #[doc = "0: Last wake up from Deep Power down mode was NOT triggred by wake up I/O 0."]
+    NOEVENT = 0,
+    #[doc = "1: Last wake up from Deep Power down mode was triggred by wake up I/O 0."]
+    EVENT = 1,
 }
 impl From<WAKEUP0_A> for bool {
     #[inline(always)]
     fn from(variant: WAKEUP0_A) -> Self {
-        match variant {
-            WAKEUP0_A::NOEVENT => false,
-            WAKEUP0_A::EVENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAKEUP0`"]
@@ -49,21 +46,18 @@ impl WAKEUP0_R {
         *self == WAKEUP0_A::EVENT
     }
 }
-#[doc = "Possible values of the field `WAKEUP1`"]
+#[doc = "Allows to identify Wake up I/O 1 as the wake-up source from Deep Power Down mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAKEUP1_A {
-    #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 1."]
-    NOEVENT,
-    #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 1."]
-    EVENT,
+    #[doc = "0: Last wake up from Deep Power down mode was NOT triggred by wake up I/O 1."]
+    NOEVENT = 0,
+    #[doc = "1: Last wake up from Deep Power down mode was triggred by wake up I/O 1."]
+    EVENT = 1,
 }
 impl From<WAKEUP1_A> for bool {
     #[inline(always)]
     fn from(variant: WAKEUP1_A) -> Self {
-        match variant {
-            WAKEUP1_A::NOEVENT => false,
-            WAKEUP1_A::EVENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAKEUP1`"]
@@ -127,21 +121,18 @@ impl<'a> WAKEUP1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WAKEUP2`"]
+#[doc = "Allows to identify Wake up I/O 2 as the wake-up source from Deep Power Down mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAKEUP2_A {
-    #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 2."]
-    NOEVENT,
-    #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 2."]
-    EVENT,
+    #[doc = "0: Last wake up from Deep Power down mode was NOT triggred by wake up I/O 2."]
+    NOEVENT = 0,
+    #[doc = "1: Last wake up from Deep Power down mode was triggred by wake up I/O 2."]
+    EVENT = 1,
 }
 impl From<WAKEUP2_A> for bool {
     #[inline(always)]
     fn from(variant: WAKEUP2_A) -> Self {
-        match variant {
-            WAKEUP2_A::NOEVENT => false,
-            WAKEUP2_A::EVENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAKEUP2`"]
@@ -205,21 +196,18 @@ impl<'a> WAKEUP2_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `WAKEUP3`"]
+#[doc = "Allows to identify Wake up I/O 3 as the wake-up source from Deep Power Down mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAKEUP3_A {
-    #[doc = "Last wake up from Deep Power down mode was NOT triggred by wake up I/O 3."]
-    NOEVENT,
-    #[doc = "Last wake up from Deep Power down mode was triggred by wake up I/O 3."]
-    EVENT,
+    #[doc = "0: Last wake up from Deep Power down mode was NOT triggred by wake up I/O 3."]
+    NOEVENT = 0,
+    #[doc = "1: Last wake up from Deep Power down mode was triggred by wake up I/O 3."]
+    EVENT = 1,
 }
 impl From<WAKEUP3_A> for bool {
     #[inline(always)]
     fn from(variant: WAKEUP3_A) -> Self {
-        match variant {
-            WAKEUP3_A::NOEVENT => false,
-            WAKEUP3_A::EVENT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WAKEUP3`"]

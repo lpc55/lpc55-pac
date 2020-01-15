@@ -34,7 +34,7 @@ pub struct RegisterBlock {
     #[doc = "0x3c - Sub-Region Enable register for region 2"]
     pub sr_enable2: SR_ENABLE2,
 }
-#[doc = "Encryption Enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [enc_enable](enc_enable) module"]
+#[doc = "Encryption Enable register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [enc_enable](enc_enable) module"]
 pub type ENC_ENABLE = crate::Reg<u32, _ENC_ENABLE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -45,7 +45,7 @@ impl crate::Readable for ENC_ENABLE {}
 impl crate::Writable for ENC_ENABLE {}
 #[doc = "Encryption Enable register"]
 pub mod enc_enable;
-#[doc = "Data Mask register, 32 Least Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [mask_lsb](mask_lsb) module"]
+#[doc = "Data Mask register, 32 Least Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mask_lsb](mask_lsb) module"]
 pub type MASK_LSB = crate::Reg<u32, _MASK_LSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -54,7 +54,7 @@ pub struct _MASK_LSB;
 impl crate::Writable for MASK_LSB {}
 #[doc = "Data Mask register, 32 Least Significant Bits"]
 pub mod mask_lsb;
-#[doc = "Data Mask register, 32 Most Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [mask_msb](mask_msb) module"]
+#[doc = "Data Mask register, 32 Most Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mask_msb](mask_msb) module"]
 pub type MASK_MSB = crate::Reg<u32, _MASK_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -63,7 +63,7 @@ pub struct _MASK_MSB;
 impl crate::Writable for MASK_MSB {}
 #[doc = "Data Mask register, 32 Most Significant Bits"]
 pub mod mask_msb;
-#[doc = "Lock register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [lock](lock) module"]
+#[doc = "Lock register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lock](lock) module"]
 pub type LOCK = crate::Reg<u32, _LOCK>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -74,7 +74,7 @@ impl crate::Readable for LOCK {}
 impl crate::Writable for LOCK {}
 #[doc = "Lock register"]
 pub mod lock;
-#[doc = "Initial Vector register for region 0, Least Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iv_lsb0](iv_lsb0) module"]
+#[doc = "Initial Vector register for region 0, Least Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iv_lsb0](iv_lsb0) module"]
 pub type IV_LSB0 = crate::Reg<u32, _IV_LSB0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -83,7 +83,7 @@ pub struct _IV_LSB0;
 impl crate::Writable for IV_LSB0 {}
 #[doc = "Initial Vector register for region 0, Least Significant Bits"]
 pub mod iv_lsb0;
-#[doc = "Initial Vector register for region 0, Most Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iv_msb0](iv_msb0) module"]
+#[doc = "Initial Vector register for region 0, Most Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iv_msb0](iv_msb0) module"]
 pub type IV_MSB0 = crate::Reg<u32, _IV_MSB0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -92,7 +92,7 @@ pub struct _IV_MSB0;
 impl crate::Writable for IV_MSB0 {}
 #[doc = "Initial Vector register for region 0, Most Significant Bits"]
 pub mod iv_msb0;
-#[doc = "Base Address for region 0 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [base_addr0](base_addr0) module"]
+#[doc = "Base Address for region 0 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [base_addr0](base_addr0) module"]
 pub type BASE_ADDR0 = crate::Reg<u32, _BASE_ADDR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -103,7 +103,7 @@ impl crate::Readable for BASE_ADDR0 {}
 impl crate::Writable for BASE_ADDR0 {}
 #[doc = "Base Address for region 0 register"]
 pub mod base_addr0;
-#[doc = "Sub-Region Enable register for region 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sr_enable0](sr_enable0) module"]
+#[doc = "Sub-Region Enable register for region 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr_enable0](sr_enable0) module"]
 pub type SR_ENABLE0 = crate::Reg<u32, _SR_ENABLE0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -114,7 +114,7 @@ impl crate::Readable for SR_ENABLE0 {}
 impl crate::Writable for SR_ENABLE0 {}
 #[doc = "Sub-Region Enable register for region 0"]
 pub mod sr_enable0;
-#[doc = "Initial Vector register for region 1, Least Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iv_lsb1](iv_lsb1) module"]
+#[doc = "Initial Vector register for region 1, Least Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iv_lsb1](iv_lsb1) module"]
 pub type IV_LSB1 = crate::Reg<u32, _IV_LSB1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -123,7 +123,7 @@ pub struct _IV_LSB1;
 impl crate::Writable for IV_LSB1 {}
 #[doc = "Initial Vector register for region 1, Least Significant Bits"]
 pub mod iv_lsb1;
-#[doc = "Initial Vector register for region 1, Most Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iv_msb1](iv_msb1) module"]
+#[doc = "Initial Vector register for region 1, Most Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iv_msb1](iv_msb1) module"]
 pub type IV_MSB1 = crate::Reg<u32, _IV_MSB1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -132,7 +132,7 @@ pub struct _IV_MSB1;
 impl crate::Writable for IV_MSB1 {}
 #[doc = "Initial Vector register for region 1, Most Significant Bits"]
 pub mod iv_msb1;
-#[doc = "Base Address for region 1 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [base_addr1](base_addr1) module"]
+#[doc = "Base Address for region 1 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [base_addr1](base_addr1) module"]
 pub type BASE_ADDR1 = crate::Reg<u32, _BASE_ADDR1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -143,7 +143,7 @@ impl crate::Readable for BASE_ADDR1 {}
 impl crate::Writable for BASE_ADDR1 {}
 #[doc = "Base Address for region 1 register"]
 pub mod base_addr1;
-#[doc = "Sub-Region Enable register for region 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sr_enable1](sr_enable1) module"]
+#[doc = "Sub-Region Enable register for region 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr_enable1](sr_enable1) module"]
 pub type SR_ENABLE1 = crate::Reg<u32, _SR_ENABLE1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -154,7 +154,7 @@ impl crate::Readable for SR_ENABLE1 {}
 impl crate::Writable for SR_ENABLE1 {}
 #[doc = "Sub-Region Enable register for region 1"]
 pub mod sr_enable1;
-#[doc = "Initial Vector register for region 2, Least Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iv_lsb2](iv_lsb2) module"]
+#[doc = "Initial Vector register for region 2, Least Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iv_lsb2](iv_lsb2) module"]
 pub type IV_LSB2 = crate::Reg<u32, _IV_LSB2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -163,7 +163,7 @@ pub struct _IV_LSB2;
 impl crate::Writable for IV_LSB2 {}
 #[doc = "Initial Vector register for region 2, Least Significant Bits"]
 pub mod iv_lsb2;
-#[doc = "Initial Vector register for region 2, Most Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iv_msb2](iv_msb2) module"]
+#[doc = "Initial Vector register for region 2, Most Significant Bits\n\nThis register you can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iv_msb2](iv_msb2) module"]
 pub type IV_MSB2 = crate::Reg<u32, _IV_MSB2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -172,7 +172,7 @@ pub struct _IV_MSB2;
 impl crate::Writable for IV_MSB2 {}
 #[doc = "Initial Vector register for region 2, Most Significant Bits"]
 pub mod iv_msb2;
-#[doc = "Base Address for region 2 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [base_addr2](base_addr2) module"]
+#[doc = "Base Address for region 2 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [base_addr2](base_addr2) module"]
 pub type BASE_ADDR2 = crate::Reg<u32, _BASE_ADDR2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -183,7 +183,7 @@ impl crate::Readable for BASE_ADDR2 {}
 impl crate::Writable for BASE_ADDR2 {}
 #[doc = "Base Address for region 2 register"]
 pub mod base_addr2;
-#[doc = "Sub-Region Enable register for region 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sr_enable2](sr_enable2) module"]
+#[doc = "Sub-Region Enable register for region 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sr_enable2](sr_enable2) module"]
 pub type SR_ENABLE2 = crate::Reg<u32, _SR_ENABLE2>;
 #[allow(missing_docs)]
 #[doc(hidden)]

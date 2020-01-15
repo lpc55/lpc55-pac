@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::AHBCLKCTRLSET>;
 #[doc = "Writer for register AHBCLKCTRLSET[%s]"]
 pub type W = crate::W<u32, super::AHBCLKCTRLSET>;
-#[doc = "Register AHBCLKCTRLSET[%s] `reset()`'s with value 0"]
+#[doc = "Register AHBCLKCTRLSET[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::AHBCLKCTRLSET {
     type Type = u32;
     #[inline(always)]

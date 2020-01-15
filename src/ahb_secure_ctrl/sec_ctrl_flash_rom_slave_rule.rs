@@ -10,27 +10,23 @@ impl crate::ResetValue for super::SEC_CTRL_FLASH_ROM_SLAVE_RULE {
         0
     }
 }
-#[doc = "Possible values of the field `FLASH_RULE`"]
+#[doc = "Security access rules for the whole FLASH : 0x0000_0000 - 0x0009_FFFF\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FLASH_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<FLASH_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: FLASH_RULE_A) -> Self {
-        match variant {
-            FLASH_RULE_A::ENUM_NS_NP => 0,
-            FLASH_RULE_A::ENUM_NS_P => 1,
-            FLASH_RULE_A::ENUM_S_NP => 2,
-            FLASH_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FLASH_RULE`"]
@@ -107,27 +103,23 @@ impl<'a> FLASH_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ROM_RULE`"]
+#[doc = "Security access rules for the whole ROM : 0x0300_0000 - 0x0301_FFFF\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ROM_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<ROM_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: ROM_RULE_A) -> Self {
-        match variant {
-            ROM_RULE_A::ENUM_NS_NP => 0,
-            ROM_RULE_A::ENUM_NS_P => 1,
-            ROM_RULE_A::ENUM_S_NP => 2,
-            ROM_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ROM_RULE`"]

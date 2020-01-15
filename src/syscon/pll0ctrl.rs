@@ -52,21 +52,18 @@ impl<'a> SELP_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BYPASSPLL`"]
+#[doc = "Bypass PLL input clock is sent directly to the PLL output (default).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BYPASSPLL_A {
-    #[doc = "use PLL."]
-    USED,
-    #[doc = "Bypass PLL input clock is sent directly to the PLL output."]
-    BYPASSED,
+    #[doc = "0: use PLL."]
+    USED = 0,
+    #[doc = "1: Bypass PLL input clock is sent directly to the PLL output."]
+    BYPASSED = 1,
 }
 impl From<BYPASSPLL_A> for bool {
     #[inline(always)]
     fn from(variant: BYPASSPLL_A) -> Self {
-        match variant {
-            BYPASSPLL_A::USED => false,
-            BYPASSPLL_A::BYPASSED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BYPASSPLL`"]
@@ -130,21 +127,18 @@ impl<'a> BYPASSPLL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BYPASSPOSTDIV2`"]
+#[doc = "bypass of the divide-by-2 divider in the post-divider.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BYPASSPOSTDIV2_A {
-    #[doc = "use the divide-by-2 divider in the post-divider."]
-    USED,
-    #[doc = "bypass of the divide-by-2 divider in the post-divider."]
-    BYPASSED,
+    #[doc = "0: use the divide-by-2 divider in the post-divider."]
+    USED = 0,
+    #[doc = "1: bypass of the divide-by-2 divider in the post-divider."]
+    BYPASSED = 1,
 }
 impl From<BYPASSPOSTDIV2_A> for bool {
     #[inline(always)]
     fn from(variant: BYPASSPOSTDIV2_A) -> Self {
-        match variant {
-            BYPASSPOSTDIV2_A::USED => false,
-            BYPASSPOSTDIV2_A::BYPASSED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BYPASSPOSTDIV2`"]
@@ -232,21 +226,18 @@ impl<'a> LIMUPOFF_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BWDIRECT`"]
+#[doc = "Control of the bandwidth of the PLL.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BWDIRECT_A {
-    #[doc = "the bandwidth is changed synchronously with the feedback-divider."]
-    SYNC,
-    #[doc = "modify the bandwidth of the PLL directly."]
-    DIRECT,
+    #[doc = "0: the bandwidth is changed synchronously with the feedback-divider."]
+    SYNC = 0,
+    #[doc = "1: modify the bandwidth of the PLL directly."]
+    DIRECT = 1,
 }
 impl From<BWDIRECT_A> for bool {
     #[inline(always)]
     fn from(variant: BWDIRECT_A) -> Self {
-        match variant {
-            BWDIRECT_A::SYNC => false,
-            BWDIRECT_A::DIRECT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BWDIRECT`"]
@@ -310,21 +301,18 @@ impl<'a> BWDIRECT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BYPASSPREDIV`"]
+#[doc = "bypass of the pre-divider.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BYPASSPREDIV_A {
-    #[doc = "use the pre-divider."]
-    USED,
-    #[doc = "bypass of the pre-divider."]
-    BYPASSED,
+    #[doc = "0: use the pre-divider."]
+    USED = 0,
+    #[doc = "1: bypass of the pre-divider."]
+    BYPASSED = 1,
 }
 impl From<BYPASSPREDIV_A> for bool {
     #[inline(always)]
     fn from(variant: BYPASSPREDIV_A) -> Self {
-        match variant {
-            BYPASSPREDIV_A::USED => false,
-            BYPASSPREDIV_A::BYPASSED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BYPASSPREDIV`"]
@@ -388,21 +376,18 @@ impl<'a> BYPASSPREDIV_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `BYPASSPOSTDIV`"]
+#[doc = "bypass of the post-divider.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BYPASSPOSTDIV_A {
-    #[doc = "use the post-divider."]
-    USED,
-    #[doc = "bypass of the post-divider."]
-    BYPASSED,
+    #[doc = "0: use the post-divider."]
+    USED = 0,
+    #[doc = "1: bypass of the post-divider."]
+    BYPASSED = 1,
 }
 impl From<BYPASSPOSTDIV_A> for bool {
     #[inline(always)]
     fn from(variant: BYPASSPOSTDIV_A) -> Self {
-        match variant {
-            BYPASSPOSTDIV_A::USED => false,
-            BYPASSPOSTDIV_A::BYPASSED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BYPASSPOSTDIV`"]
@@ -466,21 +451,18 @@ impl<'a> BYPASSPOSTDIV_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CLKEN`"]
+#[doc = "enable the output clock.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKEN_A {
-    #[doc = "disable the output clock."]
-    DISABLE,
-    #[doc = "enable the output clock."]
-    ENABLE,
+    #[doc = "0: disable the output clock."]
+    DISABLE = 0,
+    #[doc = "1: enable the output clock."]
+    ENABLE = 1,
 }
 impl From<CLKEN_A> for bool {
     #[inline(always)]
     fn from(variant: CLKEN_A) -> Self {
-        match variant {
-            CLKEN_A::DISABLE => false,
-            CLKEN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CLKEN`"]
@@ -544,21 +526,18 @@ impl<'a> CLKEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `FRMEN`"]
+#[doc = "free running mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRMEN_A {
-    #[doc = "free running mode is disable."]
-    DISABLE,
-    #[doc = "free running mode is enable."]
-    ENABLE,
+    #[doc = "0: free running mode is disable."]
+    DISABLE = 0,
+    #[doc = "1: free running mode is enable."]
+    ENABLE = 1,
 }
 impl From<FRMEN_A> for bool {
     #[inline(always)]
     fn from(variant: FRMEN_A) -> Self {
-        match variant {
-            FRMEN_A::DISABLE => false,
-            FRMEN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FRMEN`"]
@@ -646,21 +625,18 @@ impl<'a> FRMCLKSTABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SKEWEN`"]
+#[doc = "skew mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SKEWEN_A {
-    #[doc = "skew mode is disable."]
-    DISABLE,
-    #[doc = "skew mode is enable."]
-    ENABLE,
+    #[doc = "0: skew mode is disable."]
+    DISABLE = 0,
+    #[doc = "1: skew mode is enable."]
+    ENABLE = 1,
 }
 impl From<SKEWEN_A> for bool {
     #[inline(always)]
     fn from(variant: SKEWEN_A) -> Self {
-        match variant {
-            SKEWEN_A::DISABLE => false,
-            SKEWEN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SKEWEN`"]

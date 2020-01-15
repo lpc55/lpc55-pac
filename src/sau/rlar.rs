@@ -10,21 +10,18 @@ impl crate::ResetValue for super::RLAR {
         0
     }
 }
-#[doc = "Possible values of the field `ENABLE`"]
+#[doc = "Enable. SAU region enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENABLE_A {
-    #[doc = "SAU region is enabled."]
-    ENABLED,
-    #[doc = "SAU region is disabled."]
-    DISABLED,
+    #[doc = "0: SAU region is enabled."]
+    ENABLED = 0,
+    #[doc = "1: SAU region is disabled."]
+    DISABLED = 1,
 }
 impl From<ENABLE_A> for bool {
     #[inline(always)]
     fn from(variant: ENABLE_A) -> Self {
-        match variant {
-            ENABLE_A::ENABLED => false,
-            ENABLE_A::DISABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENABLE`"]
@@ -88,21 +85,18 @@ impl<'a> ENABLE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `NSC`"]
+#[doc = "Non-secure callable. Controls whether Non-secure state is permitted to execute an SG instruction from this region.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NSC_A {
-    #[doc = "Region is not Non-secure callable."]
-    NOT_NON_SECURE_CALLABLE,
-    #[doc = "Region is Non-secure callable."]
-    NON_SECURE_CALLABLE,
+    #[doc = "0: Region is not Non-secure callable."]
+    NOT_NON_SECURE_CALLABLE = 0,
+    #[doc = "1: Region is Non-secure callable."]
+    NON_SECURE_CALLABLE = 1,
 }
 impl From<NSC_A> for bool {
     #[inline(always)]
     fn from(variant: NSC_A) -> Self {
-        match variant {
-            NSC_A::NOT_NON_SECURE_CALLABLE => false,
-            NSC_A::NON_SECURE_CALLABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NSC`"]
@@ -191,7 +185,9 @@ impl R {
     pub fn nsc(&self) -> NSC_R {
         NSC_R::new(((self.bits >> 1) & 0x01) != 0)
     }
-    #[doc = "Bits 5:31 - Limit address. Holds bits\\[31:5\\] of the limit address for the selected SAU region. Bits\\[4:0\\] of the limit address are defined as 0x1F."]
+    #[doc = "Bits 5:31 - Limit address. Holds bits\\[31:5\\]
+of the limit address for the selected SAU region. Bits\\[4:0\\]
+of the limit address are defined as 0x1F."]
     #[inline(always)]
     pub fn laddr(&self) -> LADDR_R {
         LADDR_R::new(((self.bits >> 5) & 0x07ff_ffff) as u32)
@@ -208,7 +204,9 @@ impl W {
     pub fn nsc(&mut self) -> NSC_W {
         NSC_W { w: self }
     }
-    #[doc = "Bits 5:31 - Limit address. Holds bits\\[31:5\\] of the limit address for the selected SAU region. Bits\\[4:0\\] of the limit address are defined as 0x1F."]
+    #[doc = "Bits 5:31 - Limit address. Holds bits\\[31:5\\]
+of the limit address for the selected SAU region. Bits\\[4:0\\]
+of the limit address are defined as 0x1F."]
     #[inline(always)]
     pub fn laddr(&mut self) -> LADDR_W {
         LADDR_W { w: self }

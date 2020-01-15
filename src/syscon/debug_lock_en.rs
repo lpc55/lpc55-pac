@@ -10,21 +10,19 @@ impl crate::ResetValue for super::DEBUG_LOCK_EN {
         0x05
     }
 }
-#[doc = "Possible values of the field `LOCK_ALL`"]
+#[doc = "Control write access to CODESECURITYPROTTEST, CODESECURITYPROTCPU0, CODESECURITYPROTCPU1, CPU0_DEBUG_FEATURES, CPU1_DEBUG_FEATURES and DBG_AUTH_SCRATCH registers.\n\nValue on reset: 5"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LOCK_ALL_A {
-    #[doc = "Any other value than b1010: disable write access to all 6 registers."]
-    DISABLE,
-    #[doc = "1010: Enable write access to all 6 registers."]
-    ENABLE,
+    #[doc = "0: Any other value than b1010: disable write access to all 6 registers."]
+    DISABLE = 0,
+    #[doc = "10: 1010: Enable write access to all 6 registers."]
+    ENABLE = 10,
 }
 impl From<LOCK_ALL_A> for u8 {
     #[inline(always)]
     fn from(variant: LOCK_ALL_A) -> Self {
-        match variant {
-            LOCK_ALL_A::DISABLE => 0,
-            LOCK_ALL_A::ENABLE => 10,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LOCK_ALL`"]

@@ -10,27 +10,23 @@ impl crate::ResetValue for super::SEC_CTRL_APB_BRIDGE1_MEM_CTRL0 {
         0
     }
 }
-#[doc = "Possible values of the field `PMC_RULE`"]
+#[doc = "Power Management Controller\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PMC_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<PMC_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: PMC_RULE_A) -> Self {
-        match variant {
-            PMC_RULE_A::ENUM_NS_NP => 0,
-            PMC_RULE_A::ENUM_NS_P => 1,
-            PMC_RULE_A::ENUM_S_NP => 2,
-            PMC_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PMC_RULE`"]
@@ -107,27 +103,23 @@ impl<'a> PMC_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SYSCTRL_RULE`"]
+#[doc = "System Controller\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SYSCTRL_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<SYSCTRL_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: SYSCTRL_RULE_A) -> Self {
-        match variant {
-            SYSCTRL_RULE_A::ENUM_NS_NP => 0,
-            SYSCTRL_RULE_A::ENUM_NS_P => 1,
-            SYSCTRL_RULE_A::ENUM_S_NP => 2,
-            SYSCTRL_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SYSCTRL_RULE`"]

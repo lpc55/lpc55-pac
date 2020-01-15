@@ -10,27 +10,23 @@ impl crate::ResetValue for super::SEC_CTRL_AHB_PORT10_SLAVE1_RULE {
         0
     }
 }
-#[doc = "Possible values of the field `GPIO1_RULE`"]
+#[doc = "Secure High Speed GPIO\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum GPIO1_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<GPIO1_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: GPIO1_RULE_A) -> Self {
-        match variant {
-            GPIO1_RULE_A::ENUM_NS_NP => 0,
-            GPIO1_RULE_A::ENUM_NS_P => 1,
-            GPIO1_RULE_A::ENUM_S_NP => 2,
-            GPIO1_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `GPIO1_RULE`"]
@@ -107,27 +103,23 @@ impl<'a> GPIO1_RULE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AHB_SEC_CTRL_RULE`"]
+#[doc = "AHB Secure Controller\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum AHB_SEC_CTRL_RULE_A {
-    #[doc = "Non-secure and Non-priviledge user access allowed."]
-    ENUM_NS_NP,
-    #[doc = "Non-secure and Privilege access allowed."]
-    ENUM_NS_P,
-    #[doc = "Secure and Non-priviledge user access allowed."]
-    ENUM_S_NP,
-    #[doc = "Secure and Priviledge user access allowed."]
-    ENUM_S_P,
+    #[doc = "0: Non-secure and Non-priviledge user access allowed."]
+    ENUM_NS_NP = 0,
+    #[doc = "1: Non-secure and Privilege access allowed."]
+    ENUM_NS_P = 1,
+    #[doc = "2: Secure and Non-priviledge user access allowed."]
+    ENUM_S_NP = 2,
+    #[doc = "3: Secure and Priviledge user access allowed."]
+    ENUM_S_P = 3,
 }
 impl From<AHB_SEC_CTRL_RULE_A> for u8 {
     #[inline(always)]
     fn from(variant: AHB_SEC_CTRL_RULE_A) -> Self {
-        match variant {
-            AHB_SEC_CTRL_RULE_A::ENUM_NS_NP => 0,
-            AHB_SEC_CTRL_RULE_A::ENUM_NS_P => 1,
-            AHB_SEC_CTRL_RULE_A::ENUM_S_NP => 2,
-            AHB_SEC_CTRL_RULE_A::ENUM_S_P => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `AHB_SEC_CTRL_RULE`"]

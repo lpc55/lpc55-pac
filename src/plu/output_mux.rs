@@ -2,7 +2,8 @@
 pub type R = crate::R<u32, super::OUTPUT_MUX>;
 #[doc = "Writer for register OUTPUT_MUX[%s]"]
 pub type W = crate::W<u32, super::OUTPUT_MUX>;
-#[doc = "Register OUTPUT_MUX[%s] `reset()`'s with value 0"]
+#[doc = "Register OUTPUT_MUX[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::OUTPUT_MUX {
     type Type = u32;
     #[inline(always)]
@@ -10,105 +11,75 @@ impl crate::ResetValue for super::OUTPUT_MUX {
         0
     }
 }
-#[doc = "Possible values of the field `OUTPUTn`"]
+#[doc = "Selects the source to be connected to PLU Output 0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OUTPUTN_A {
-    #[doc = "The PLU output 0."]
-    PLU_OUTPUT0,
-    #[doc = "The PLU output 1."]
-    PLU_OUTPUT1,
-    #[doc = "The PLU output 2."]
-    PLU_OUTPUT2,
-    #[doc = "The PLU output 3."]
-    PLU_OUTPUT3,
-    #[doc = "The PLU output 4."]
-    PLU_OUTPUT4,
-    #[doc = "The PLU output 5."]
-    PLU_OUTPUT5,
-    #[doc = "The PLU output 6."]
-    PLU_OUTPUT6,
-    #[doc = "The PLU output 7."]
-    PLU_OUTPUT7,
-    #[doc = "The PLU output 8."]
-    PLU_OUTPUT8,
-    #[doc = "The PLU output 9."]
-    PLU_OUTPUT9,
-    #[doc = "The PLU output 10."]
-    PLU_OUTPUT10,
-    #[doc = "The PLU output 11."]
-    PLU_OUTPUT11,
-    #[doc = "The PLU output 12."]
-    PLU_OUTPUT12,
-    #[doc = "The PLU output 13."]
-    PLU_OUTPUT13,
-    #[doc = "The PLU output 14."]
-    PLU_OUTPUT14,
-    #[doc = "The PLU output 15."]
-    PLU_OUTPUT15,
-    #[doc = "The PLU output 16."]
-    PLU_OUTPUT16,
-    #[doc = "The PLU output 17."]
-    PLU_OUTPUT17,
-    #[doc = "The PLU output 18."]
-    PLU_OUTPUT18,
-    #[doc = "The PLU output 19."]
-    PLU_OUTPUT19,
-    #[doc = "The PLU output 20."]
-    PLU_OUTPUT20,
-    #[doc = "The PLU output 21."]
-    PLU_OUTPUT21,
-    #[doc = "The PLU output 22."]
-    PLU_OUTPUT22,
-    #[doc = "The PLU output 23."]
-    PLU_OUTPUT23,
-    #[doc = "The PLU output 24."]
-    PLU_OUTPUT24,
-    #[doc = "The PLU output 25."]
-    PLU_OUTPUT25,
-    #[doc = "state(0)."]
-    STATE0,
-    #[doc = "state(1)."]
-    STATE1,
-    #[doc = "state(2)."]
-    STATE2,
-    #[doc = "state(3)."]
-    STATE3,
+    #[doc = "0: The PLU output 0."]
+    PLU_OUTPUT0 = 0,
+    #[doc = "1: The PLU output 1."]
+    PLU_OUTPUT1 = 1,
+    #[doc = "2: The PLU output 2."]
+    PLU_OUTPUT2 = 2,
+    #[doc = "3: The PLU output 3."]
+    PLU_OUTPUT3 = 3,
+    #[doc = "4: The PLU output 4."]
+    PLU_OUTPUT4 = 4,
+    #[doc = "5: The PLU output 5."]
+    PLU_OUTPUT5 = 5,
+    #[doc = "6: The PLU output 6."]
+    PLU_OUTPUT6 = 6,
+    #[doc = "7: The PLU output 7."]
+    PLU_OUTPUT7 = 7,
+    #[doc = "8: The PLU output 8."]
+    PLU_OUTPUT8 = 8,
+    #[doc = "9: The PLU output 9."]
+    PLU_OUTPUT9 = 9,
+    #[doc = "10: The PLU output 10."]
+    PLU_OUTPUT10 = 10,
+    #[doc = "11: The PLU output 11."]
+    PLU_OUTPUT11 = 11,
+    #[doc = "12: The PLU output 12."]
+    PLU_OUTPUT12 = 12,
+    #[doc = "13: The PLU output 13."]
+    PLU_OUTPUT13 = 13,
+    #[doc = "14: The PLU output 14."]
+    PLU_OUTPUT14 = 14,
+    #[doc = "15: The PLU output 15."]
+    PLU_OUTPUT15 = 15,
+    #[doc = "16: The PLU output 16."]
+    PLU_OUTPUT16 = 16,
+    #[doc = "17: The PLU output 17."]
+    PLU_OUTPUT17 = 17,
+    #[doc = "18: The PLU output 18."]
+    PLU_OUTPUT18 = 18,
+    #[doc = "19: The PLU output 19."]
+    PLU_OUTPUT19 = 19,
+    #[doc = "20: The PLU output 20."]
+    PLU_OUTPUT20 = 20,
+    #[doc = "21: The PLU output 21."]
+    PLU_OUTPUT21 = 21,
+    #[doc = "22: The PLU output 22."]
+    PLU_OUTPUT22 = 22,
+    #[doc = "23: The PLU output 23."]
+    PLU_OUTPUT23 = 23,
+    #[doc = "24: The PLU output 24."]
+    PLU_OUTPUT24 = 24,
+    #[doc = "25: The PLU output 25."]
+    PLU_OUTPUT25 = 25,
+    #[doc = "26: state(0)."]
+    STATE0 = 26,
+    #[doc = "27: state(1)."]
+    STATE1 = 27,
+    #[doc = "28: state(2)."]
+    STATE2 = 28,
+    #[doc = "29: state(3)."]
+    STATE3 = 29,
 }
 impl From<OUTPUTN_A> for u8 {
     #[inline(always)]
     fn from(variant: OUTPUTN_A) -> Self {
-        match variant {
-            OUTPUTN_A::PLU_OUTPUT0 => 0,
-            OUTPUTN_A::PLU_OUTPUT1 => 1,
-            OUTPUTN_A::PLU_OUTPUT2 => 2,
-            OUTPUTN_A::PLU_OUTPUT3 => 3,
-            OUTPUTN_A::PLU_OUTPUT4 => 4,
-            OUTPUTN_A::PLU_OUTPUT5 => 5,
-            OUTPUTN_A::PLU_OUTPUT6 => 6,
-            OUTPUTN_A::PLU_OUTPUT7 => 7,
-            OUTPUTN_A::PLU_OUTPUT8 => 8,
-            OUTPUTN_A::PLU_OUTPUT9 => 9,
-            OUTPUTN_A::PLU_OUTPUT10 => 10,
-            OUTPUTN_A::PLU_OUTPUT11 => 11,
-            OUTPUTN_A::PLU_OUTPUT12 => 12,
-            OUTPUTN_A::PLU_OUTPUT13 => 13,
-            OUTPUTN_A::PLU_OUTPUT14 => 14,
-            OUTPUTN_A::PLU_OUTPUT15 => 15,
-            OUTPUTN_A::PLU_OUTPUT16 => 16,
-            OUTPUTN_A::PLU_OUTPUT17 => 17,
-            OUTPUTN_A::PLU_OUTPUT18 => 18,
-            OUTPUTN_A::PLU_OUTPUT19 => 19,
-            OUTPUTN_A::PLU_OUTPUT20 => 20,
-            OUTPUTN_A::PLU_OUTPUT21 => 21,
-            OUTPUTN_A::PLU_OUTPUT22 => 22,
-            OUTPUTN_A::PLU_OUTPUT23 => 23,
-            OUTPUTN_A::PLU_OUTPUT24 => 24,
-            OUTPUTN_A::PLU_OUTPUT25 => 25,
-            OUTPUTN_A::STATE0 => 26,
-            OUTPUTN_A::STATE1 => 27,
-            OUTPUTN_A::STATE2 => 28,
-            OUTPUTN_A::STATE3 => 29,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OUTPUTn`"]

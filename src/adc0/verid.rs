@@ -1,20 +1,17 @@
 #[doc = "Reader of register VERID"]
 pub type R = crate::R<u32, super::VERID>;
-#[doc = "Possible values of the field `RES`"]
+#[doc = "Resolution\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RES_A {
-    #[doc = "Up to 13-bit differential/12-bit single ended resolution supported."]
-    RES_0,
-    #[doc = "Up to 16-bit differential/16-bit single ended resolution supported."]
-    RES_1,
+    #[doc = "0: Up to 13-bit differential/12-bit single ended resolution supported."]
+    RES_0 = 0,
+    #[doc = "1: Up to 16-bit differential/16-bit single ended resolution supported."]
+    RES_1 = 1,
 }
 impl From<RES_A> for bool {
     #[inline(always)]
     fn from(variant: RES_A) -> Self {
-        match variant {
-            RES_A::RES_0 => false,
-            RES_A::RES_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RES`"]
@@ -39,21 +36,19 @@ impl RES_R {
         *self == RES_A::RES_1
     }
 }
-#[doc = "Possible values of the field `DIFFEN`"]
+#[doc = "Differential Supported\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIFFEN_A {
-    #[doc = "Differential operation not supported."]
-    DIFFEN_0,
-    #[doc = "Differential operation supported. CMDLa\\[CTYPE\\] controls fields implemented."]
-    DIFFEN_1,
+    #[doc = "0: Differential operation not supported."]
+    DIFFEN_0 = 0,
+    #[doc = "1: Differential operation supported. CMDLa\\[CTYPE\\]
+controls fields implemented."]
+    DIFFEN_1 = 1,
 }
 impl From<DIFFEN_A> for bool {
     #[inline(always)]
     fn from(variant: DIFFEN_A) -> Self {
-        match variant {
-            DIFFEN_A::DIFFEN_0 => false,
-            DIFFEN_A::DIFFEN_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIFFEN`"]
@@ -78,21 +73,18 @@ impl DIFFEN_R {
         *self == DIFFEN_A::DIFFEN_1
     }
 }
-#[doc = "Possible values of the field `MVI`"]
+#[doc = "Multi Vref Implemented\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MVI_A {
-    #[doc = "Single voltage reference high (VREFH) input supported."]
-    MVI_0,
-    #[doc = "Multiple voltage reference high (VREFH) inputs supported."]
-    MVI_1,
+    #[doc = "0: Single voltage reference high (VREFH) input supported."]
+    MVI_0 = 0,
+    #[doc = "1: Multiple voltage reference high (VREFH) inputs supported."]
+    MVI_1 = 1,
 }
 impl From<MVI_A> for bool {
     #[inline(always)]
     fn from(variant: MVI_A) -> Self {
-        match variant {
-            MVI_A::MVI_0 => false,
-            MVI_A::MVI_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MVI`"]
@@ -117,24 +109,21 @@ impl MVI_R {
         *self == MVI_A::MVI_1
     }
 }
-#[doc = "Possible values of the field `CSW`"]
+#[doc = "Channel Scale Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CSW_A {
-    #[doc = "Channel scaling not supported."]
-    CSW_0,
-    #[doc = "Channel scaling supported. 1-bit CSCALE control field."]
-    CSW_1,
-    #[doc = "Channel scaling supported. 6-bit CSCALE control field."]
-    CSW_6,
+    #[doc = "0: Channel scaling not supported."]
+    CSW_0 = 0,
+    #[doc = "1: Channel scaling supported. 1-bit CSCALE control field."]
+    CSW_1 = 1,
+    #[doc = "6: Channel scaling supported. 6-bit CSCALE control field."]
+    CSW_6 = 6,
 }
 impl From<CSW_A> for u8 {
     #[inline(always)]
     fn from(variant: CSW_A) -> Self {
-        match variant {
-            CSW_A::CSW_0 => 0,
-            CSW_A::CSW_1 => 1,
-            CSW_A::CSW_6 => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CSW`"]
@@ -167,21 +156,20 @@ impl CSW_R {
         *self == CSW_A::CSW_6
     }
 }
-#[doc = "Possible values of the field `VR1RNGI`"]
+#[doc = "Voltage Reference 1 Range Control Bit Implemented\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VR1RNGI_A {
-    #[doc = "Range control not required. CFG\\[VREF1RNG\\] is not implemented."]
-    VR1RNGI_0,
-    #[doc = "Range control required. CFG\\[VREF1RNG\\] is implemented."]
-    VR1RNGI_1,
+    #[doc = "0: Range control not required. CFG\\[VREF1RNG\\]
+is not implemented."]
+    VR1RNGI_0 = 0,
+    #[doc = "1: Range control required. CFG\\[VREF1RNG\\]
+is implemented."]
+    VR1RNGI_1 = 1,
 }
 impl From<VR1RNGI_A> for bool {
     #[inline(always)]
     fn from(variant: VR1RNGI_A) -> Self {
-        match variant {
-            VR1RNGI_A::VR1RNGI_0 => false,
-            VR1RNGI_A::VR1RNGI_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VR1RNGI`"]
@@ -206,21 +194,18 @@ impl VR1RNGI_R {
         *self == VR1RNGI_A::VR1RNGI_1
     }
 }
-#[doc = "Possible values of the field `IADCKI`"]
+#[doc = "Internal ADC Clock implemented\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IADCKI_A {
-    #[doc = "Internal clock source not implemented."]
-    IADCKI_0,
-    #[doc = "Internal clock source (and CFG\\[ADCKEN\\]) implemented."]
-    IADCKI_1,
+    #[doc = "0: Internal clock source not implemented."]
+    IADCKI_0 = 0,
+    #[doc = "1: Internal clock source (and CFG\\[ADCKEN\\]) implemented."]
+    IADCKI_1 = 1,
 }
 impl From<IADCKI_A> for bool {
     #[inline(always)]
     fn from(variant: IADCKI_A) -> Self {
-        match variant {
-            IADCKI_A::IADCKI_0 => false,
-            IADCKI_A::IADCKI_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IADCKI`"]
@@ -245,21 +230,18 @@ impl IADCKI_R {
         *self == IADCKI_A::IADCKI_1
     }
 }
-#[doc = "Possible values of the field `CALOFSI`"]
+#[doc = "Calibration Function Implemented\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CALOFSI_A {
-    #[doc = "Calibration Not Implemented."]
-    CALOFSI_0,
-    #[doc = "Calibration Implemented."]
-    CALOFSI_1,
+    #[doc = "0: Calibration Not Implemented."]
+    CALOFSI_0 = 0,
+    #[doc = "1: Calibration Implemented."]
+    CALOFSI_1 = 1,
 }
 impl From<CALOFSI_A> for bool {
     #[inline(always)]
     fn from(variant: CALOFSI_A) -> Self {
-        match variant {
-            CALOFSI_A::CALOFSI_0 => false,
-            CALOFSI_A::CALOFSI_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CALOFSI`"]
@@ -284,21 +266,18 @@ impl CALOFSI_R {
         *self == CALOFSI_A::CALOFSI_1
     }
 }
-#[doc = "Possible values of the field `NUM_SEC`"]
+#[doc = "Number of Single Ended Outputs Supported\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NUM_SEC_A {
-    #[doc = "This design supports one single ended conversion at a time."]
-    NUM_SEC_0,
-    #[doc = "This design supports two simultanious single ended conversions."]
-    NUM_SEC_1,
+    #[doc = "0: This design supports one single ended conversion at a time."]
+    NUM_SEC_0 = 0,
+    #[doc = "1: This design supports two simultanious single ended conversions."]
+    NUM_SEC_1 = 1,
 }
 impl From<NUM_SEC_A> for bool {
     #[inline(always)]
     fn from(variant: NUM_SEC_A) -> Self {
-        match variant {
-            NUM_SEC_A::NUM_SEC_0 => false,
-            NUM_SEC_A::NUM_SEC_1 => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `NUM_SEC`"]
@@ -323,30 +302,25 @@ impl NUM_SEC_R {
         *self == NUM_SEC_A::NUM_SEC_1
     }
 }
-#[doc = "Possible values of the field `NUM_FIFO`"]
+#[doc = "Number of FIFOs\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum NUM_FIFO_A {
-    #[doc = "N/A"]
-    NUM_FIFO_0,
-    #[doc = "This design supports one result FIFO."]
-    NUM_FIFO_1,
-    #[doc = "This design supports two result FIFOs."]
-    NUM_FIFO_2,
-    #[doc = "This design supports three result FIFOs."]
-    NUM_FIFO_3,
-    #[doc = "This design supports four result FIFOs."]
-    NUM_FIFO_4,
+    #[doc = "0: N/A"]
+    NUM_FIFO_0 = 0,
+    #[doc = "1: This design supports one result FIFO."]
+    NUM_FIFO_1 = 1,
+    #[doc = "2: This design supports two result FIFOs."]
+    NUM_FIFO_2 = 2,
+    #[doc = "3: This design supports three result FIFOs."]
+    NUM_FIFO_3 = 3,
+    #[doc = "4: This design supports four result FIFOs."]
+    NUM_FIFO_4 = 4,
 }
 impl From<NUM_FIFO_A> for u8 {
     #[inline(always)]
     fn from(variant: NUM_FIFO_A) -> Self {
-        match variant {
-            NUM_FIFO_A::NUM_FIFO_0 => 0,
-            NUM_FIFO_A::NUM_FIFO_1 => 1,
-            NUM_FIFO_A::NUM_FIFO_2 => 2,
-            NUM_FIFO_A::NUM_FIFO_3 => 3,
-            NUM_FIFO_A::NUM_FIFO_4 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NUM_FIFO`"]

@@ -106,24 +106,21 @@ impl<'a> MSW1ST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AESMODE`"]
+#[doc = "AES Cipher mode to use if plain AES\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum AESMODE_A {
-    #[doc = "ECB - used as is"]
-    ECB,
-    #[doc = "CBC mode (see details on IV/nonce)"]
-    CBC,
-    #[doc = "CTR mode (see details on IV/nonce). See also AESCTRPOS."]
-    CTR,
+    #[doc = "0: ECB - used as is"]
+    ECB = 0,
+    #[doc = "1: CBC mode (see details on IV/nonce)"]
+    CBC = 1,
+    #[doc = "2: CTR mode (see details on IV/nonce). See also AESCTRPOS."]
+    CTR = 2,
 }
 impl From<AESMODE_A> for u8 {
     #[inline(always)]
     fn from(variant: AESMODE_A) -> Self {
-        match variant {
-            AESMODE_A::ECB => 0,
-            AESMODE_A::CBC => 1,
-            AESMODE_A::CTR => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `AESMODE`"]
@@ -188,21 +185,18 @@ impl<'a> AESMODE_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AESDECRYPT`"]
+#[doc = "AES ECB direction. Only encryption used if CTR mode or manual modes such as CFB\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AESDECRYPT_A {
-    #[doc = "Encrypt"]
-    ENCRYPT,
-    #[doc = "Decrypt"]
-    DECRYPT,
+    #[doc = "0: Encrypt"]
+    ENCRYPT = 0,
+    #[doc = "1: Decrypt"]
+    DECRYPT = 1,
 }
 impl From<AESDECRYPT_A> for bool {
     #[inline(always)]
     fn from(variant: AESDECRYPT_A) -> Self {
-        match variant {
-            AESDECRYPT_A::ENCRYPT => false,
-            AESDECRYPT_A::DECRYPT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AESDECRYPT`"]
@@ -266,21 +260,18 @@ impl<'a> AESDECRYPT_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AESSECRET`"]
+#[doc = "Selects the Hidden Secret key vs. User key, if provided. If security levels are used, only the highest level is permitted to select this.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AESSECRET_A {
-    #[doc = "User key provided in normal way"]
-    NORMAL_WAY,
-    #[doc = "Secret key provided in hidden way by HW"]
-    HIDDEN_WAY,
+    #[doc = "0: User key provided in normal way"]
+    NORMAL_WAY = 0,
+    #[doc = "1: Secret key provided in hidden way by HW"]
+    HIDDEN_WAY = 1,
 }
 impl From<AESSECRET_A> for bool {
     #[inline(always)]
     fn from(variant: AESSECRET_A) -> Self {
-        match variant {
-            AESSECRET_A::NORMAL_WAY => false,
-            AESSECRET_A::HIDDEN_WAY => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AESSECRET`"]
@@ -344,24 +335,21 @@ impl<'a> AESSECRET_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `AESKEYSZ`"]
+#[doc = "Sets the AES key size\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum AESKEYSZ_A {
-    #[doc = "128 bit key"]
-    BITS_128,
-    #[doc = "192 bit key"]
-    BITS_192,
-    #[doc = "256 bit key"]
-    BITS_256,
+    #[doc = "0: 128 bit key"]
+    BITS_128 = 0,
+    #[doc = "1: 192 bit key"]
+    BITS_192 = 1,
+    #[doc = "2: 256 bit key"]
+    BITS_256 = 2,
 }
 impl From<AESKEYSZ_A> for u8 {
     #[inline(always)]
     fn from(variant: AESKEYSZ_A) -> Self {
-        match variant {
-            AESKEYSZ_A::BITS_128 => 0,
-            AESKEYSZ_A::BITS_192 => 1,
-            AESKEYSZ_A::BITS_256 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `AESKEYSZ`"]
@@ -464,27 +452,23 @@ impl<'a> STREAMLAST_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ICBSZ`"]
+#[doc = "This sets the ICB size between 32 and 128 bits, using the following rules. Note that the counter is assumed to occupy the low order bits of the IV.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ICBSZ_A {
-    #[doc = "32 bits of the IV/ctr are used (from 127:96)"]
-    BITS_32,
-    #[doc = "64 bits of the IV/ctr are used (from 127:64)"]
-    BITS_64,
-    #[doc = "96 bits of the IV/ctr are used (from 127:32)"]
-    BITS_96,
-    #[doc = "All 128 bits of the IV/ctr are used"]
-    BIT_128,
+    #[doc = "0: 32 bits of the IV/ctr are used (from 127:96)"]
+    BITS_32 = 0,
+    #[doc = "1: 64 bits of the IV/ctr are used (from 127:64)"]
+    BITS_64 = 1,
+    #[doc = "2: 96 bits of the IV/ctr are used (from 127:32)"]
+    BITS_96 = 2,
+    #[doc = "3: All 128 bits of the IV/ctr are used"]
+    BIT_128 = 3,
 }
 impl From<ICBSZ_A> for u8 {
     #[inline(always)]
     fn from(variant: ICBSZ_A) -> Self {
-        match variant {
-            ICBSZ_A::BITS_32 => 0,
-            ICBSZ_A::BITS_64 => 1,
-            ICBSZ_A::BITS_96 => 2,
-            ICBSZ_A::BIT_128 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ICBSZ`"]
@@ -561,27 +545,23 @@ impl<'a> ICBSZ_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ICBSTRM`"]
+#[doc = "The size of the ICB-AES stream that can be pushed before needing to compute a new IV/ctr (counter start). This optimizes the performance of the stream of blocks after the 1st.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ICBSTRM_A {
-    #[doc = "8 blocks"]
-    BLOCKS_8,
-    #[doc = "16 blocks"]
-    BLOCKS_16,
-    #[doc = "32 blocks"]
-    BLOCKS_32,
-    #[doc = "64 blocks"]
-    BLOCKS_64,
+    #[doc = "0: 8 blocks"]
+    BLOCKS_8 = 0,
+    #[doc = "1: 16 blocks"]
+    BLOCKS_16 = 1,
+    #[doc = "2: 32 blocks"]
+    BLOCKS_32 = 2,
+    #[doc = "3: 64 blocks"]
+    BLOCKS_64 = 3,
 }
 impl From<ICBSTRM_A> for u8 {
     #[inline(always)]
     fn from(variant: ICBSTRM_A) -> Self {
-        match variant {
-            ICBSTRM_A::BLOCKS_8 => 0,
-            ICBSTRM_A::BLOCKS_16 => 1,
-            ICBSTRM_A::BLOCKS_32 => 2,
-            ICBSTRM_A::BLOCKS_64 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ICBSTRM`"]

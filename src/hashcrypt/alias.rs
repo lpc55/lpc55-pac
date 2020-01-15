@@ -1,6 +1,7 @@
 #[doc = "Writer for register ALIAS[%s]"]
 pub type W = crate::W<u32, super::ALIAS>;
-#[doc = "Register ALIAS[%s] `reset()`'s with value 0"]
+#[doc = "Register ALIAS[%s]
+`reset()`'s with value 0"]
 impl crate::ResetValue for super::ALIAS {
     type Type = u32;
     #[inline(always)]

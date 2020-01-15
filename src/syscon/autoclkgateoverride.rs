@@ -10,21 +10,18 @@ impl crate::ResetValue for super::AUTOCLKGATEOVERRIDE {
         0xffff
     }
 }
-#[doc = "Possible values of the field `ROM`"]
+#[doc = "Control automatic clock gating of ROM controller.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ROM_A {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
+    #[doc = "0: Automatic clock gating is not overridden."]
+    DISABLE = 0,
+    #[doc = "1: Automatic clock gating is overridden (Clock gating is disabled)."]
+    ENABLE = 1,
 }
 impl From<ROM_A> for bool {
     #[inline(always)]
     fn from(variant: ROM_A) -> Self {
-        match variant {
-            ROM_A::DISABLE => false,
-            ROM_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ROM`"]
@@ -88,21 +85,18 @@ impl<'a> ROM_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RAMX_CTRL`"]
+#[doc = "Control automatic clock gating of RAMX controller.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAMX_CTRL_A {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
+    #[doc = "0: Automatic clock gating is not overridden."]
+    DISABLE = 0,
+    #[doc = "1: Automatic clock gating is overridden (Clock gating is disabled)."]
+    ENABLE = 1,
 }
 impl From<RAMX_CTRL_A> for bool {
     #[inline(always)]
     fn from(variant: RAMX_CTRL_A) -> Self {
-        match variant {
-            RAMX_CTRL_A::DISABLE => false,
-            RAMX_CTRL_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RAMX_CTRL`"]
@@ -166,21 +160,18 @@ impl<'a> RAMX_CTRL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RAM0_CTRL`"]
+#[doc = "Control automatic clock gating of RAM0 controller.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAM0_CTRL_A {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
+    #[doc = "0: Automatic clock gating is not overridden."]
+    DISABLE = 0,
+    #[doc = "1: Automatic clock gating is overridden (Clock gating is disabled)."]
+    ENABLE = 1,
 }
 impl From<RAM0_CTRL_A> for bool {
     #[inline(always)]
     fn from(variant: RAM0_CTRL_A) -> Self {
-        match variant {
-            RAM0_CTRL_A::DISABLE => false,
-            RAM0_CTRL_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RAM0_CTRL`"]
@@ -244,21 +235,18 @@ impl<'a> RAM0_CTRL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RAM1_CTRL`"]
+#[doc = "Control automatic clock gating of RAM1 controller.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAM1_CTRL_A {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
+    #[doc = "0: Automatic clock gating is not overridden."]
+    DISABLE = 0,
+    #[doc = "1: Automatic clock gating is overridden (Clock gating is disabled)."]
+    ENABLE = 1,
 }
 impl From<RAM1_CTRL_A> for bool {
     #[inline(always)]
     fn from(variant: RAM1_CTRL_A) -> Self {
-        match variant {
-            RAM1_CTRL_A::DISABLE => false,
-            RAM1_CTRL_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RAM1_CTRL`"]
@@ -322,21 +310,18 @@ impl<'a> RAM1_CTRL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RAM2_CTRL`"]
+#[doc = "Control automatic clock gating of RAM2 controller.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAM2_CTRL_A {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
+    #[doc = "0: Automatic clock gating is not overridden."]
+    DISABLE = 0,
+    #[doc = "1: Automatic clock gating is overridden (Clock gating is disabled)."]
+    ENABLE = 1,
 }
 impl From<RAM2_CTRL_A> for bool {
     #[inline(always)]
     fn from(variant: RAM2_CTRL_A) -> Self {
-        match variant {
-            RAM2_CTRL_A::DISABLE => false,
-            RAM2_CTRL_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RAM2_CTRL`"]
@@ -400,21 +385,18 @@ impl<'a> RAM2_CTRL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RAM3_CTRL`"]
+#[doc = "Control automatic clock gating of RAM3 controller.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAM3_CTRL_A {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
+    #[doc = "0: Automatic clock gating is not overridden."]
+    DISABLE = 0,
+    #[doc = "1: Automatic clock gating is overridden (Clock gating is disabled)."]
+    ENABLE = 1,
 }
 impl From<RAM3_CTRL_A> for bool {
     #[inline(always)]
     fn from(variant: RAM3_CTRL_A) -> Self {
-        match variant {
-            RAM3_CTRL_A::DISABLE => false,
-            RAM3_CTRL_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RAM3_CTRL`"]
@@ -478,21 +460,18 @@ impl<'a> RAM3_CTRL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `RAM4_CTRL`"]
+#[doc = "Control automatic clock gating of RAM4 controller.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RAM4_CTRL_A {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
+    #[doc = "0: Automatic clock gating is not overridden."]
+    DISABLE = 0,
+    #[doc = "1: Automatic clock gating is overridden (Clock gating is disabled)."]
+    ENABLE = 1,
 }
 impl From<RAM4_CTRL_A> for bool {
     #[inline(always)]
     fn from(variant: RAM4_CTRL_A) -> Self {
-        match variant {
-            RAM4_CTRL_A::DISABLE => false,
-            RAM4_CTRL_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RAM4_CTRL`"]
@@ -556,21 +535,18 @@ impl<'a> RAM4_CTRL_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SYNC0_APB`"]
+#[doc = "Control automatic clock gating of synchronous bridge controller 0.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNC0_APB_A {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
+    #[doc = "0: Automatic clock gating is not overridden."]
+    DISABLE = 0,
+    #[doc = "1: Automatic clock gating is overridden (Clock gating is disabled)."]
+    ENABLE = 1,
 }
 impl From<SYNC0_APB_A> for bool {
     #[inline(always)]
     fn from(variant: SYNC0_APB_A) -> Self {
-        match variant {
-            SYNC0_APB_A::DISABLE => false,
-            SYNC0_APB_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYNC0_APB`"]
@@ -634,21 +610,18 @@ impl<'a> SYNC0_APB_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SYNC1_APB`"]
+#[doc = "Control automatic clock gating of synchronous bridge controller 1.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYNC1_APB_A {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
+    #[doc = "0: Automatic clock gating is not overridden."]
+    DISABLE = 0,
+    #[doc = "1: Automatic clock gating is overridden (Clock gating is disabled)."]
+    ENABLE = 1,
 }
 impl From<SYNC1_APB_A> for bool {
     #[inline(always)]
     fn from(variant: SYNC1_APB_A) -> Self {
-        match variant {
-            SYNC1_APB_A::DISABLE => false,
-            SYNC1_APB_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYNC1_APB`"]
@@ -712,21 +685,18 @@ impl<'a> SYNC1_APB_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `CRCGEN`"]
+#[doc = "Control automatic clock gating of CRCGEN controller.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRCGEN_A {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
+    #[doc = "0: Automatic clock gating is not overridden."]
+    DISABLE = 0,
+    #[doc = "1: Automatic clock gating is overridden (Clock gating is disabled)."]
+    ENABLE = 1,
 }
 impl From<CRCGEN_A> for bool {
     #[inline(always)]
     fn from(variant: CRCGEN_A) -> Self {
-        match variant {
-            CRCGEN_A::DISABLE => false,
-            CRCGEN_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CRCGEN`"]
@@ -790,21 +760,18 @@ impl<'a> CRCGEN_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SDMA0`"]
+#[doc = "Control automatic clock gating of DMA0 controller.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDMA0_A {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
+    #[doc = "0: Automatic clock gating is not overridden."]
+    DISABLE = 0,
+    #[doc = "1: Automatic clock gating is overridden (Clock gating is disabled)."]
+    ENABLE = 1,
 }
 impl From<SDMA0_A> for bool {
     #[inline(always)]
     fn from(variant: SDMA0_A) -> Self {
-        match variant {
-            SDMA0_A::DISABLE => false,
-            SDMA0_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SDMA0`"]
@@ -868,21 +835,18 @@ impl<'a> SDMA0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SDMA1`"]
+#[doc = "Control automatic clock gating of DMA1 controller.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDMA1_A {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
+    #[doc = "0: Automatic clock gating is not overridden."]
+    DISABLE = 0,
+    #[doc = "1: Automatic clock gating is overridden (Clock gating is disabled)."]
+    ENABLE = 1,
 }
 impl From<SDMA1_A> for bool {
     #[inline(always)]
     fn from(variant: SDMA1_A) -> Self {
-        match variant {
-            SDMA1_A::DISABLE => false,
-            SDMA1_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SDMA1`"]
@@ -946,21 +910,18 @@ impl<'a> SDMA1_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `USB0`"]
+#[doc = "Control automatic clock gating of USB controller.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum USB0_A {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
+    #[doc = "0: Automatic clock gating is not overridden."]
+    DISABLE = 0,
+    #[doc = "1: Automatic clock gating is overridden (Clock gating is disabled)."]
+    ENABLE = 1,
 }
 impl From<USB0_A> for bool {
     #[inline(always)]
     fn from(variant: USB0_A) -> Self {
-        match variant {
-            USB0_A::DISABLE => false,
-            USB0_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `USB0`"]
@@ -1024,21 +985,18 @@ impl<'a> USB0_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `SYSCON`"]
+#[doc = "Control automatic clock gating of synchronous system controller registers bank.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SYSCON_A {
-    #[doc = "Automatic clock gating is not overridden."]
-    DISABLE,
-    #[doc = "Automatic clock gating is overridden (Clock gating is disabled)."]
-    ENABLE,
+    #[doc = "0: Automatic clock gating is not overridden."]
+    DISABLE = 0,
+    #[doc = "1: Automatic clock gating is overridden (Clock gating is disabled)."]
+    ENABLE = 1,
 }
 impl From<SYSCON_A> for bool {
     #[inline(always)]
     fn from(variant: SYSCON_A) -> Self {
-        match variant {
-            SYSCON_A::DISABLE => false,
-            SYSCON_A::ENABLE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SYSCON`"]
@@ -1102,21 +1060,19 @@ impl<'a> SYSCON_W<'a> {
         self.w
     }
 }
-#[doc = "Possible values of the field `ENABLEUPDATE`"]
+#[doc = "The value 0xC0DE must be written for AUTOCLKGATEOVERRIDE registers fields updates to have effect.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
 pub enum ENABLEUPDATE_AW {
-    #[doc = "Bit Fields 0 - 15 of this register are not updated"]
-    DISABLE,
-    #[doc = "Bit Fields 0 - 15 of this register are updated"]
-    ENABLE,
+    #[doc = "0: Bit Fields 0 - 15 of this register are not updated"]
+    DISABLE = 0,
+    #[doc = "49374: Bit Fields 0 - 15 of this register are updated"]
+    ENABLE = 49374,
 }
 impl From<ENABLEUPDATE_AW> for u16 {
     #[inline(always)]
     fn from(variant: ENABLEUPDATE_AW) -> Self {
-        match variant {
-            ENABLEUPDATE_AW::DISABLE => 0,
-            ENABLEUPDATE_AW::ENABLE => 49374,
-        }
+        variant as _
     }
 }
 #[doc = "Write proxy for field `ENABLEUPDATE`"]
