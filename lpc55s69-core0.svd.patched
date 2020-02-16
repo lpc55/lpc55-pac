@@ -10262,51 +10262,9 @@ SPDX-License-Identifier: BSD-3-Clause
           <resetValue>0x7</resetValue>
           <resetMask>0x7</resetMask>
           <fields>
-            <field>
-              <name>SEL</name>
-              <description>ADC clock source select.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>3</bitWidth>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>ENUM_0x0</name>
-                  <description>Main clock.</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>ENUM_0x1</name>
-                  <description>PLL0 clock.</description>
-                  <value>0x1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>ENUM_0x2</name>
-                  <description>FRO 96 MHz clock.</description>
-                  <value>0x2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>ENUM_0x4</name>
-                  <description>No clock.</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>ENUM_0x5</name>
-                  <description>No clock.</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>ENUM_0x6</name>
-                  <description>No clock.</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>ENUM_0x7</name>
-                  <description>No clock.</description>
-                  <value>0x7</value>
-                </enumeratedValue>
-              </enumeratedValues>
+            <field><name>SEL</name><description>ADC clock source select</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>3</bitWidth><enumeratedValues><name>SEL</name><usage>read-write</usage><enumeratedValue><name>mainclk</name><description>Main clk.</description><value>0</value></enumeratedValue><enumeratedValue><name>pll0</name><description>PLL0 clk.</description><value>1</value></enumeratedValue><enumeratedValue><name>fro96</name><description>FRO 96 MHZ clk.</description><value>2</value></enumeratedValue><enumeratedValue><name>none</name><description>No clk.</description><value>4</value></enumeratedValue></enumeratedValues>
             </field>
-          </fields>
+            </fields>
         </register>
         <register>
           <name>USB0CLKSEL</name>
@@ -37820,7 +37778,9 @@ SPDX-License-Identifier: BSD-3-Clause
               <bitWidth>2</bitWidth>
               <access>read-write</access>
             </field>
-          </fields>
+          <field><name>KEY</name><description>Key destination for PUF key.</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>8</bitWidth><enumeratedValues><name>KEY</name><usage>read-write</usage><enumeratedValue><name>aes</name><description>Send key to AES engine.</description><value>86</value></enumeratedValue><enumeratedValue><name>prince0</name><description>Send key to PRINCE engine for memory layout 0.</description><value>89</value></enumeratedValue><enumeratedValue><name>prince1</name><description>Send key to PRINCE engine for memory layout 1.</description><value>101</value></enumeratedValue><enumeratedValue><name>prince2</name><description>Send key to PRINCE engine for memory layout 2.</description><value>149</value></enumeratedValue><enumeratedValue><name>none</name><description>Do not send key to any hardware engine.</description><value>85</value></enumeratedValue></enumeratedValues>
+            </field>
+            </fields>
         </register>
         <register>
           <name>KEYRESET</name>

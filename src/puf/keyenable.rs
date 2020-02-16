@@ -66,6 +66,111 @@ impl<'a> KEY3_W<'a> {
         self.w
     }
 }
+#[doc = "Key destination for PUF key.\n\nValue on reset: 85"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum KEY_A {
+    #[doc = "86: Send key to AES engine."]
+    AES = 86,
+    #[doc = "89: Send key to PRINCE engine for memory layout 0."]
+    PRINCE0 = 89,
+    #[doc = "101: Send key to PRINCE engine for memory layout 1."]
+    PRINCE1 = 101,
+    #[doc = "149: Send key to PRINCE engine for memory layout 2."]
+    PRINCE2 = 149,
+    #[doc = "85: Do not send key to any hardware engine."]
+    NONE = 85,
+}
+impl From<KEY_A> for u8 {
+    #[inline(always)]
+    fn from(variant: KEY_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Reader of field `KEY`"]
+pub type KEY_R = crate::R<u8, KEY_A>;
+impl KEY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, KEY_A> {
+        use crate::Variant::*;
+        match self.bits {
+            86 => Val(KEY_A::AES),
+            89 => Val(KEY_A::PRINCE0),
+            101 => Val(KEY_A::PRINCE1),
+            149 => Val(KEY_A::PRINCE2),
+            85 => Val(KEY_A::NONE),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `AES`"]
+    #[inline(always)]
+    pub fn is_aes(&self) -> bool {
+        *self == KEY_A::AES
+    }
+    #[doc = "Checks if the value of the field is `PRINCE0`"]
+    #[inline(always)]
+    pub fn is_prince0(&self) -> bool {
+        *self == KEY_A::PRINCE0
+    }
+    #[doc = "Checks if the value of the field is `PRINCE1`"]
+    #[inline(always)]
+    pub fn is_prince1(&self) -> bool {
+        *self == KEY_A::PRINCE1
+    }
+    #[doc = "Checks if the value of the field is `PRINCE2`"]
+    #[inline(always)]
+    pub fn is_prince2(&self) -> bool {
+        *self == KEY_A::PRINCE2
+    }
+    #[doc = "Checks if the value of the field is `NONE`"]
+    #[inline(always)]
+    pub fn is_none(&self) -> bool {
+        *self == KEY_A::NONE
+    }
+}
+#[doc = "Write proxy for field `KEY`"]
+pub struct KEY_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> KEY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: KEY_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Send key to AES engine."]
+    #[inline(always)]
+    pub fn aes(self) -> &'a mut W {
+        self.variant(KEY_A::AES)
+    }
+    #[doc = "Send key to PRINCE engine for memory layout 0."]
+    #[inline(always)]
+    pub fn prince0(self) -> &'a mut W {
+        self.variant(KEY_A::PRINCE0)
+    }
+    #[doc = "Send key to PRINCE engine for memory layout 1."]
+    #[inline(always)]
+    pub fn prince1(self) -> &'a mut W {
+        self.variant(KEY_A::PRINCE1)
+    }
+    #[doc = "Send key to PRINCE engine for memory layout 2."]
+    #[inline(always)]
+    pub fn prince2(self) -> &'a mut W {
+        self.variant(KEY_A::PRINCE2)
+    }
+    #[doc = "Do not send key to any hardware engine."]
+    #[inline(always)]
+    pub fn none(self) -> &'a mut W {
+        self.variant(KEY_A::NONE)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w
+    }
+}
 impl R {
     #[doc = "Bits 0:1 - \"10: Data coming out from PUF Index 0 interface are shifted in KEY0 register. 00, 01, 11 : Data coming out from PUF Index 0 interface are NOT shifted in KEY0 register.\""]
     #[inline(always)]
@@ -86,6 +191,11 @@ impl R {
     #[inline(always)]
     pub fn key3(&self) -> KEY3_R {
         KEY3_R::new(((self.bits >> 6) & 0x03) as u8)
+    }
+    #[doc = "Bits 0:7 - Key destination for PUF key."]
+    #[inline(always)]
+    pub fn key(&self) -> KEY_R {
+        KEY_R::new((self.bits & 0xff) as u8)
     }
 }
 impl W {
@@ -108,5 +218,10 @@ impl W {
     #[inline(always)]
     pub fn key3(&mut self) -> KEY3_W {
         KEY3_W { w: self }
+    }
+    #[doc = "Bits 0:7 - Key destination for PUF key."]
+    #[inline(always)]
+    pub fn key(&mut self) -> KEY_W {
+        KEY_W { w: self }
     }
 }

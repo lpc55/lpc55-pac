@@ -7,6 +7,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
+## [v0.0.7] - 2020-02-20
+
+- Actually build the new patched SVD...
+
+## [v0.0.6] - 2020-02-20
+
 - Update SVD to version from SDK 2.7.0
 - Use svd2rust 0.17.0 (changes most files somewhat)
 - Use svdtools 0.1.0
