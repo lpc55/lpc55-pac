@@ -1,6 +1,6 @@
 [package]
 name = "lpc55s6x-pac"
-version = "0.0.6"
+version = "0.0.7"
 edition = "2018"
 authors = [
   "Nicolas Stalder <n@stalder.io>",
