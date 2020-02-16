@@ -11,6 +11,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Use svd2rust 0.17.0 (changes most files somewhat)
 - Use svdtools 0.1.0
 - Bump dependencies
+- ADC and PUF fixes
 
 ## [v0.0.5] - 2019-09-19
 
