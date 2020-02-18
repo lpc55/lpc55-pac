@@ -1,8 +1,35 @@
 _svd: lpc55s69-core0.svd
 
-# TODO: fix instead of delete
-_delete:
-  INPUTMUX:
+INPUTMUX:
+  TIMER*CAPTSEL*:
+    _delete:
+      - CAPTSEL
+    _add:
+      CAPTSEL:
+        description: Input number to TIMER%s capture inputs 0 to 4
+        access: read-write
+        bitOffset: 0
+        bitWidth: 5
+
+  SCT0_INMUX*:
+    _delete:
+      - INP_N 
+    _add:
+      INP_N:
+        description: Input number to SCT0 inputs 0 to 6.
+        access: read-write
+        bitOffset: 0
+        bitWidth: 5
+
+  DMA0_ITRIG_INMUX*:
+    _delete:
+      - INP
+    _add:
+      INP:
+        description: Trigger input number (decimal value) for DMA channel n (n = 0 to 22).
+        access: read-write
+        bitOffset: 0
+        bitWidth: 5
 
 SYSCON:
   _delete:
