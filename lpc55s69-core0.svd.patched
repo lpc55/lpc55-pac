@@ -27478,6 +27478,551 @@ SPDX-License-Identifier: BSD-3-Clause
       </interrupt>
     </peripheral>
     <peripheral>
+      <name>INPUTMUX</name>
+      <description>Input multiplexing (INPUT MUX)</description>
+      <groupName>INPUTMUX</groupName>
+      <baseAddress>0x40006000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x7B4</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <dim>7</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>SCT0_INMUX[%s]</name>
+          <description>Input mux register for SCT0 input</description>
+          <addressOffset>0</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x1F</resetValue>
+          <resetMask>0x1F</resetMask>
+          <fields>
+            <field><name>INP_N</name><description>Input number to SCT0 inputs 0 to 6.</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>5</bitWidth></field>
+            </fields>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>TIMER0CAPTSEL[%s]</name>
+          <description>Capture select registers for TIMER0 inputs</description>
+          <addressOffset>0x20</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x1F</resetValue>
+          <resetMask>0x1F</resetMask>
+          <fields>
+            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>5</bitWidth></field>
+            </fields>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>TIMER1CAPTSEL[%s]</name>
+          <description>Capture select registers for TIMER1 inputs</description>
+          <addressOffset>0x40</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x1F</resetValue>
+          <resetMask>0x1F</resetMask>
+          <fields>
+            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>5</bitWidth></field>
+            </fields>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>TIMER2CAPTSEL[%s]</name>
+          <description>Capture select registers for TIMER2 inputs</description>
+          <addressOffset>0x60</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x1F</resetValue>
+          <resetMask>0x1F</resetMask>
+          <fields>
+            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>5</bitWidth></field>
+            </fields>
+        </register>
+        <register>
+          <dim>8</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>PINTSEL[%s]</name>
+          <description>Pin interrupt select register</description>
+          <addressOffset>0xC0</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x7F</resetValue>
+          <resetMask>0x7F</resetMask>
+          <fields>
+            <field>
+              <name>INTPIN</name>
+              <description>Pin number select for pin interrupt or pattern match engine input. For PIOx_y: INTPIN = (x * 32) + y. PIO0_0 to PIO1_31 correspond to numbers 0 to 63.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>7</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>23</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>DMA0_ITRIG_INMUX[%s]</name>
+          <description>Trigger select register for DMA0 channel</description>
+          <addressOffset>0xE0</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x1F</resetValue>
+          <resetMask>0x1F</resetMask>
+          <fields>
+            <field><name>INP</name><description>Trigger input number (decimal value) for DMA channel n (n = 0 to 22).</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>5</bitWidth></field>
+            </fields>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>DMA0_OTRIG_INMUX[%s]</name>
+          <description>DMA0 output trigger selection to become DMA0 trigger</description>
+          <addressOffset>0x160</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x1F</resetValue>
+          <resetMask>0x1F</resetMask>
+          <fields>
+            <field>
+              <name>INP</name>
+              <description>DMA trigger output number (decimal value) for DMA channel n (n = 0 to 22).</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>5</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>FREQMEAS_REF</name>
+          <description>Selection for frequency measurement reference clock</description>
+          <addressOffset>0x180</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x1F</resetValue>
+          <resetMask>0x1F</resetMask>
+          <fields>
+            <field>
+              <name>CLKIN</name>
+              <description>Clock source number (decimal value) for frequency measure function target clock: 0 = CLK_IN 1 = FRO 12 MHz oscillator 2 = Watchdog oscillator 3 = 32 kHz RTC oscillator 4 = Main clock (see Section 4.5.23) 5 = PIO0_4 6 = PIO0_20 7 = PIO0_24 8 = PIO1_4</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>5</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>FREQMEAS_TARGET</name>
+          <description>Selection for frequency measurement target clock</description>
+          <addressOffset>0x184</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x1F</resetValue>
+          <resetMask>0x1F</resetMask>
+          <fields>
+            <field>
+              <name>CLKIN</name>
+              <description>Clock source number (decimal value) for frequency measure function target clock: 0 = CLK_IN 1 = FRO 12 MHz oscillator 2 = Watchdog oscillator 3 = 32 kHz RTC oscillator 4 = Main clock (see Section 4.5.23) 5 = PIO0_4 6 = PIO0_20 7 = PIO0_24 8 = PIO1_4</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>5</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>TIMER3CAPTSEL[%s]</name>
+          <description>Capture select registers for TIMER3 inputs</description>
+          <addressOffset>0x1A0</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x1F</resetValue>
+          <resetMask>0x1F</resetMask>
+          <fields>
+            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>5</bitWidth></field>
+            </fields>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>TIMER4CAPTSEL[%s]</name>
+          <description>Capture select registers for TIMER4 inputs</description>
+          <addressOffset>0x1C0</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x1F</resetValue>
+          <resetMask>0x1F</resetMask>
+          <fields>
+            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>5</bitWidth></field>
+            </fields>
+        </register>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>PINTSECSEL[%s]</name>
+          <description>Pin interrupt secure select register</description>
+          <addressOffset>0x1E0</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x3F</resetValue>
+          <resetMask>0x3F</resetMask>
+          <fields>
+            <field>
+              <name>INTPIN</name>
+              <description>Pin number select for pin interrupt secure or pattern match engine input. For PIO0_x: INTPIN = x. PIO0_0 to PIO0_31 correspond to numbers 0 to 31.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>6</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>10</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>DMA1_ITRIG_INMUX[%s]</name>
+          <description>Trigger select register for DMA1 channel</description>
+          <addressOffset>0x200</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0xF</resetValue>
+          <resetMask>0xF</resetMask>
+          <fields>
+            <field>
+              <name>INP</name>
+              <description>Trigger input number (decimal value) for DMA channel n (n = 0 to 9).</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>val0</name>
+                  <description>Pin interrupt 0</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val1</name>
+                  <description>Pin interrupt 1</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val2</name>
+                  <description>Pin interrupt 2</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val3</name>
+                  <description>Pin interrupt 3</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val4</name>
+                  <description>Timer CTIMER0 Match 0</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val5</name>
+                  <description>Timer CTIMER0 Match 1</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val6</name>
+                  <description>Timer CTIMER2 Match 0</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val7</name>
+                  <description>Timer CTIMER4 Match 0</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val8</name>
+                  <description>DMA1 output trigger mux 0</description>
+                  <value>0x8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val9</name>
+                  <description>DMA1 output trigger mux 1</description>
+                  <value>0x9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val10</name>
+                  <description>DMA1 output trigger mux 2</description>
+                  <value>0xA</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val11</name>
+                  <description>DMA1 output trigger mux 3</description>
+                  <value>0xB</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val12</name>
+                  <description>SCT0 DMA request 0</description>
+                  <value>0xC</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val13</name>
+                  <description>SCT0 DMA request 1</description>
+                  <value>0xD</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val14</name>
+                  <description>HASH DMA RX trigger</description>
+                  <value>0xE</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>val15</name>
+                  <description>None</description>
+                  <value>0xF</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>DMA1_OTRIG_INMUX[%s]</name>
+          <description>DMA1 output trigger selection to become DMA1 trigger</description>
+          <addressOffset>0x240</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0xF</resetValue>
+          <resetMask>0xF</resetMask>
+          <fields>
+            <field>
+              <name>INP</name>
+              <description>DMA trigger output number (decimal value) for DMA channel n (n = 0 to 9).</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>4</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DMA0_REQ_ENA</name>
+          <description>Enable DMA0 requests</description>
+          <addressOffset>0x740</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x7FFFFF</resetValue>
+          <resetMask>0x7FFFFF</resetMask>
+          <fields>
+            <field>
+              <name>REQ_ENA</name>
+              <description>Controls the 23 request inputs of DMA0. If bit i is '1' the DMA request input #i is enabled.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>23</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DMA0_REQ_ENA_SET</name>
+          <description>Set one or several bits in DMA0_REQ_ENA register</description>
+          <addressOffset>0x748</addressOffset>
+          <size>32</size>
+          <access>write-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0x7FFFFF</resetMask>
+          <fields>
+            <field>
+              <name>SET</name>
+              <description>Write : If bit #i = 1, bit #i in DMA0_REQ_ENA register is set to 1; if bit #i = 0 , no change in DMA0_REQ_ENA register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>23</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DMA0_REQ_ENA_CLR</name>
+          <description>Clear one or several bits in DMA0_REQ_ENA register</description>
+          <addressOffset>0x750</addressOffset>
+          <size>32</size>
+          <access>write-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0x7FFFFF</resetMask>
+          <fields>
+            <field>
+              <name>CLR</name>
+              <description>Write : If bit #i = 1, bit #i in DMA0_REQ_ENA register is reset to 0; if bit #i = 0 , no change in DMA0_REQ_ENA register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>23</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DMA1_REQ_ENA</name>
+          <description>Enable DMA1 requests</description>
+          <addressOffset>0x760</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x3FF</resetValue>
+          <resetMask>0x3FF</resetMask>
+          <fields>
+            <field>
+              <name>REQ_ENA</name>
+              <description>Controls the 10 request inputs of DMA1. If bit i is '1' the DMA request input #i is enabled.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DMA1_REQ_ENA_SET</name>
+          <description>Set one or several bits in DMA1_REQ_ENA register</description>
+          <addressOffset>0x768</addressOffset>
+          <size>32</size>
+          <access>write-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0x3FF</resetMask>
+          <fields>
+            <field>
+              <name>SET</name>
+              <description>Write : If bit #i = 1, bit #i in DMA1_REQ_ENA register is set to 1; if bit #i = 0 , no change in DMA1_REQ_ENA register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DMA1_REQ_ENA_CLR</name>
+          <description>Clear one or several bits in DMA1_REQ_ENA register</description>
+          <addressOffset>0x770</addressOffset>
+          <size>32</size>
+          <access>write-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0x3FF</resetMask>
+          <fields>
+            <field>
+              <name>CLR</name>
+              <description>Write : If bit #i = 1, bit #i in DMA1_REQ_ENA register is reset to 0; if bit #i = 0 , no change in DMA1_REQ_ENA register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>10</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DMA0_ITRIG_ENA</name>
+          <description>Enable DMA0 triggers</description>
+          <addressOffset>0x780</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x3FFFFF</resetValue>
+          <resetMask>0x3FFFFF</resetMask>
+          <fields>
+            <field>
+              <name>ITRIG_ENA</name>
+              <description>Controls the 22 trigger inputs of DMA0. If bit i is '1' the DMA trigger input #i is enabled.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>22</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DMA0_ITRIG_ENA_SET</name>
+          <description>Set one or several bits in DMA0_ITRIG_ENA register</description>
+          <addressOffset>0x788</addressOffset>
+          <size>32</size>
+          <access>write-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0x3FFFFF</resetMask>
+          <fields>
+            <field>
+              <name>SET</name>
+              <description>Write : If bit #i = 1, bit #i in DMA0_ITRIG_ENA register is set to 1; if bit #i = 0 , no change in DMA0_ITRIG_ENA register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>22</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DMA0_ITRIG_ENA_CLR</name>
+          <description>Clear one or several bits in DMA0_ITRIG_ENA register</description>
+          <addressOffset>0x790</addressOffset>
+          <size>32</size>
+          <access>write-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0x3FFFFF</resetMask>
+          <fields>
+            <field>
+              <name>CLR</name>
+              <description>Write : If bit #i = 1, bit #i in DMA0_ITRIG_ENA register is reset to 0; if bit #i = 0 , no change in DMA0_ITRIG_ENA register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>22</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DMA1_ITRIG_ENA</name>
+          <description>Enable DMA1 triggers</description>
+          <addressOffset>0x7A0</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x7FFF</resetValue>
+          <resetMask>0x7FFF</resetMask>
+          <fields>
+            <field>
+              <name>ITRIG_ENA</name>
+              <description>Controls the 15 trigger inputs of DMA1. If bit i is '1' the DMA trigger input #i is enabled.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>15</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DMA1_ITRIG_ENA_SET</name>
+          <description>Set one or several bits in DMA1_ITRIG_ENA register</description>
+          <addressOffset>0x7A8</addressOffset>
+          <size>32</size>
+          <access>write-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0x7FFF</resetMask>
+          <fields>
+            <field>
+              <name>SET</name>
+              <description>Write : If bit #i = 1, bit #i in DMA1_ITRIG_ENA register is set to 1; if bit #i = 0 , no change in DMA1_ITRIG_ENA register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>15</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>DMA1_ITRIG_ENA_CLR</name>
+          <description>Clear one or several bits in DMA1_ITRIG_ENA register</description>
+          <addressOffset>0x7B0</addressOffset>
+          <size>32</size>
+          <access>write-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0x7FFF</resetMask>
+          <fields>
+            <field>
+              <name>CLR</name>
+              <description>Write : If bit #i = 1, bit #i in DMA1_ITRIG_ENA register is reset to 0; if bit #i = 0 , no change in DMA1_ITRIG_ENA register</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>15</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+    <peripheral>
       <name>CTIMER0</name>
       <description>Standard counter/timers (CTIMER0 to 4)</description>
       <groupName>CTIMER</groupName>

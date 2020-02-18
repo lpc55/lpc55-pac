@@ -7,7 +7,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-## [v0.0.7] - 2020-02-20
+## [v0.0.8] - 2020-02-20
+
+- INPUTMUX is back
+
+## [v0.0.7] - 2020-02-16
 
 - Actually build the new patched SVD...
 
