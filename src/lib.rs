@@ -511,6 +511,27 @@ impl Deref for SECPINT {
         unsafe { &*SECPINT::ptr() }
     }
 }
+#[doc = "Input multiplexing (INPUT MUX)"]
+pub struct INPUTMUX {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for INPUTMUX {}
+impl INPUTMUX {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const inputmux::RegisterBlock {
+        0x4000_6000 as *const _
+    }
+}
+impl Deref for INPUTMUX {
+    type Target = inputmux::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*INPUTMUX::ptr() }
+    }
+}
+#[doc = "Input multiplexing (INPUT MUX)"]
+pub mod inputmux;
 #[doc = "Standard counter/timers (CTIMER0 to 4)"]
 pub struct CTIMER0 {
     _marker: PhantomData<*const ()>,
@@ -2155,6 +2176,8 @@ pub struct Peripherals {
     pub PINT: PINT,
     #[doc = "SECPINT"]
     pub SECPINT: SECPINT,
+    #[doc = "INPUTMUX"]
+    pub INPUTMUX: INPUTMUX,
     #[doc = "CTIMER0"]
     pub CTIMER0: CTIMER0,
     #[doc = "CTIMER1"]
@@ -2366,6 +2389,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             SECPINT: SECPINT {
+                _marker: PhantomData,
+            },
+            INPUTMUX: INPUTMUX {
                 _marker: PhantomData,
             },
             CTIMER0: CTIMER0 {

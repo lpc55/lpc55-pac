@@ -1,9 +1,10 @@
 [package]
 name = "lpc55s6x-pac"
-version = "0.0.7"
+version = "0.0.8"
 edition = "2018"
 authors = [
   "Nicolas Stalder <n@stalder.io>",
+  "Conor Patrick <conorpp94@gmail.com>",
 ]
 description = "Peripheral access API for NXP LPC55s6x microcontrollers"
 repository = "https://github.com/nickray/lpc55s6x-pac"
