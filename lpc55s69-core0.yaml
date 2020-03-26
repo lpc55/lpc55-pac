@@ -66,3 +66,33 @@ PUF:
       prince1: [0x65, "Send key to PRINCE engine for memory layout 1."]
       prince2: [0x95, "Send key to PRINCE engine for memory layout 2."]
       none: [0x55, "Do not send key to any hardware engine."]
+
+# Make USB0 and USB1 have the same register block
+_modify:
+  USBHSD:
+    name: USB1
+
+USB1:
+  EPLISTSTART:
+    _delete:
+      - EP_LIST_PRG
+      - EP_LIST_FIXED
+    ## Making this field larger is more safe, otherwise bits get truncated for USB0.
+    _add:
+      EP_LIST:
+        description: Programmable portion of the USB EP command/status list address.  The upper 12 bits should be 0x401.
+        bitOffset: 8
+        bitWidth: 24
+
+_delete:
+  - USB0
+
+_add:
+  USB0:
+    derivedFrom: USB1
+    baseAddress: "0x40084000"
+    interrupts:
+      USB0_NEEDCLK:
+        value: 27
+      USB0:
+        value: 28
