@@ -3,9 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [v0.1.0] - 2020-04-28
 
-### Changed
+- Derive USB0 from USB1 @conorpp
+- Rename from `lpc55s6x-pac` to `lpc55-pac`
+- SDK 2.7.1 has no changes, skipping
 
 ## [v0.0.8] - 2020-02-20
 

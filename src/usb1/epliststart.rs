@@ -25,14 +25,14 @@ impl<'a> EP_LIST_W<'a> {
     }
 }
 impl R {
-    #[doc = "Bits 8:31 - Start address of the USB EP Command/Status List."]
+    #[doc = "Bits 8:31 - Programmable portion of the USB EP command/status list address. The upper 12 bits should be 0x401."]
     #[inline(always)]
     pub fn ep_list(&self) -> EP_LIST_R {
         EP_LIST_R::new(((self.bits >> 8) & 0x00ff_ffff) as u32)
     }
 }
 impl W {
-    #[doc = "Bits 8:31 - Start address of the USB EP Command/Status List."]
+    #[doc = "Bits 8:31 - Programmable portion of the USB EP command/status list address. The upper 12 bits should be 0x401."]
     #[inline(always)]
     pub fn ep_list(&mut self) -> EP_LIST_W {
         EP_LIST_W { w: self }

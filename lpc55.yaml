@@ -1,4 +1,4 @@
-_svd: lpc55s69-core0.svd
+_svd: lpc55.svd
 
 INPUTMUX:
   TIMER*CAPTSEL*:
@@ -13,7 +13,7 @@ INPUTMUX:
 
   SCT0_INMUX*:
     _delete:
-      - INP_N 
+      - INP_N
     _add:
       INP_N:
         description: Input number to SCT0 inputs 0 to 6.
