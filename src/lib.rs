@@ -2,18 +2,14 @@
 #![deny(const_err)]
 #![deny(dead_code)]
 #![deny(improper_ctypes)]
-#![deny(legacy_directory_ownership)]
 #![deny(missing_docs)]
 #![deny(no_mangle_generic_items)]
 #![deny(non_shorthand_field_patterns)]
 #![deny(overflowing_literals)]
 #![deny(path_statements)]
 #![deny(patterns_in_fns_without_body)]
-#![deny(plugin_as_library)]
 #![deny(private_in_public)]
-#![deny(safe_extern_statics)]
 #![deny(unconditional_recursion)]
-#![deny(unions_with_drop_fields)]
 #![deny(unused_allocation)]
 #![deny(unused_comparisons)]
 #![deny(unused_parens)]
@@ -963,27 +959,6 @@ impl Deref for DMA1 {
         unsafe { &*DMA1::ptr() }
     }
 }
-#[doc = "USB 2.0 Device Controller"]
-pub struct USB0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for USB0 {}
-impl USB0 {
-    #[doc = r"Returns a pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const usb0::RegisterBlock {
-        0x4008_4000 as *const _
-    }
-}
-impl Deref for USB0 {
-    type Target = usb0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*USB0::ptr() }
-    }
-}
-#[doc = "USB 2.0 Device Controller"]
-pub mod usb0;
 #[doc = "SCTimer/PWM (SCT)"]
 pub struct SCT0 {
     _marker: PhantomData<*const ()>,
@@ -1856,26 +1831,26 @@ impl Deref for GPIO {
 #[doc = "General Purpose I/O (GPIO)"]
 pub mod gpio;
 #[doc = "USB1 High-speed Device Controller"]
-pub struct USBHSD {
+pub struct USB1 {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for USBHSD {}
-impl USBHSD {
+unsafe impl Send for USB1 {}
+impl USB1 {
     #[doc = r"Returns a pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const usbhsd::RegisterBlock {
+    pub const fn ptr() -> *const usb1::RegisterBlock {
         0x4009_4000 as *const _
     }
 }
-impl Deref for USBHSD {
-    type Target = usbhsd::RegisterBlock;
+impl Deref for USB1 {
+    type Target = usb1::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
-        unsafe { &*USBHSD::ptr() }
+        unsafe { &*USB1::ptr() }
     }
 }
 #[doc = "USB1 High-speed Device Controller"]
-pub mod usbhsd;
+pub mod usb1;
 #[doc = "CRC engine"]
 pub struct CRC_ENGINE {
     _marker: PhantomData<*const ()>,
@@ -2149,6 +2124,25 @@ impl Deref for SAU {
 }
 #[doc = "no description available"]
 pub mod sau;
+#[doc = "USB1 High-speed Device Controller"]
+pub struct USB0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for USB0 {}
+impl USB0 {
+    #[doc = r"Returns a pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const usb1::RegisterBlock {
+        0x4008_4000 as *const _
+    }
+}
+impl Deref for USB0 {
+    type Target = usb1::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*USB0::ptr() }
+    }
+}
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r"All the peripherals"]
@@ -2220,8 +2214,6 @@ pub struct Peripherals {
     pub DMA0: DMA0,
     #[doc = "DMA1"]
     pub DMA1: DMA1,
-    #[doc = "USB0"]
-    pub USB0: USB0,
     #[doc = "SCT0"]
     pub SCT0: SCT0,
     #[doc = "FLEXCOMM0"]
@@ -2312,8 +2304,8 @@ pub struct Peripherals {
     pub MAILBOX: MAILBOX,
     #[doc = "GPIO"]
     pub GPIO: GPIO,
-    #[doc = "USBHSD"]
-    pub USBHSD: USBHSD,
+    #[doc = "USB1"]
+    pub USB1: USB1,
     #[doc = "CRC_ENGINE"]
     pub CRC_ENGINE: CRC_ENGINE,
     #[doc = "SDIF"]
@@ -2340,6 +2332,8 @@ pub struct Peripherals {
     pub SCNSCB: SCNSCB,
     #[doc = "SAU"]
     pub SAU: SAU,
+    #[doc = "USB0"]
+    pub USB0: USB0,
 }
 impl Peripherals {
     #[doc = r"Returns all the peripherals *once*"]
@@ -2455,9 +2449,6 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             DMA1: DMA1 {
-                _marker: PhantomData,
-            },
-            USB0: USB0 {
                 _marker: PhantomData,
             },
             SCT0: SCT0 {
@@ -2595,7 +2586,7 @@ impl Peripherals {
             GPIO: GPIO {
                 _marker: PhantomData,
             },
-            USBHSD: USBHSD {
+            USB1: USB1 {
                 _marker: PhantomData,
             },
             CRC_ENGINE: CRC_ENGINE {
@@ -2635,6 +2626,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             SAU: SAU {
+                _marker: PhantomData,
+            },
+            USB0: USB0 {
                 _marker: PhantomData,
             },
         }

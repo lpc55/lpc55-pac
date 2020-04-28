@@ -1,5 +1,5 @@
-YAML = lpc55s69-core0.yaml
-SVD = lpc55s69-core0.svd.patched
+YAML = lpc55.yaml
+SVD = lpc55.svd.patched
 
 build: patch generate
 	cargo build

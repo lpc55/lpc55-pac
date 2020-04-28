@@ -1,27 +1,31 @@
-# LPC55s6x PAC (peripheral access crate)
+# LPC55 PAC (peripheral access crate)
 
-Low-level register mappings for the NXP LPC55S6x family of ARM Cortex-M33 microcontrollers, written in Rust.
+Low-level register mappings for the NXP LPC55 family of ARM Cortex-M33 microcontrollers, written in Rust.
 The code is generated automatically from a patched version of the vendor-supplied SVD file, using `svd2rust`.
 
 The purpose of this crate is to give embedded programs or libraries written in Rust access
-to the complete functionality of LPC55S6x microcontrollers.
+to the complete functionality of LPC55 microcontrollers.
 
 [![crates.io][crates-image]][crates-link]
 [![Documentation][docs-image]][docs-link]
 ![LICENSE][license-image]
 [![Build Status][build-image]][build-link]
+[![Action Status][github-action-image]][github-action-link]
 
 ## Status
 
-Very much work-in-progress!
+Functional and in use by [SoloKeys][solokeys]. Patches welcome!
 
-See also the higher-level companion library [LPC55S6x HAL][lpc55s6x-hal].
+This PAC is currently based on SDK v2.7.0 SVD for LPC55S6x (core0), differences between chip family
+members would be modeled in the HAL.
+
+See also the higher-level companion library [LPC55 HAL][lpc55-hal].
 
 ## Documentation
 
-The API documentation is located at <https://docs.rs/lpc55s6x-pac>.
+The API documentation is located at <https://docs.rs/lpc55-pac>.
 
-To get an understanding of `svd2rust`-generated APIs, checkout its documentation at <https://docs.rs/svd2rust>.
+To gain an understanding of `svd2rust`-generated APIs, checkout documentation at <https://docs.rs/svd2rust>.
 
 In addition, `make fetch-docs` downloads various vendor-supplied documentation:
 
@@ -38,13 +42,16 @@ The SVD files are from <https://mcuxpresso.nxp.com> and licensed under the [BSD-
 
 [//]: # (links)
 
-[crates-image]: https://img.shields.io/crates/v/lpc55s6x-pac.svg
-[crates-link]: https://crates.io/crates/lpc55s6x-pac
-[build-image]: https://img.shields.io/circleci/build/github/nickray/lpc55s6x-pac/main.svg
-[build-link]: https://circleci.com/gh/nickray/lpc55s6x-pac/tree/main
-[docs-image]: https://docs.rs/lpc55s6x-pac/badge.svg
-[docs-link]: https://docs.rs/lpc55s6x-pac
-[lpc55s6x-hal]: https://lib.rs/lpc55s6x-hal
+[crates-image]: https://img.shields.io/crates/v/lpc55-pac.svg
+[crates-link]: https://crates.io/crates/lpc55-pac
+[solokeys]: https://github.com/solokeys
+[build-image]: https://img.shields.io/circleci/build/github/nickray/lpc55-pac/main.svg
+[build-link]: https://circleci.com/gh/nickray/lpc55-pac/tree/main
+[github-action-image]: https://github.com/nickray/lpc55-pac/workflows/build/badge.svg?branch=main
+[github-action-link]: https://github.com/nickray/lpc55-pac/actions
+[docs-image]: https://docs.rs/lpc55-pac/badge.svg
+[docs-link]: https://docs.rs/lpc55s-pac
+[lpc55-hal]: https://lib.rs/lpc55-hal
 [svd-docs-link]: https://docs.rs/svd2rust
 [license-image]: https://img.shields.io/badge/license-Apache2.0%2FMIT-blue.svg
 [apache2-link]: https://spdx.org/licenses/Apache-2.0.html
