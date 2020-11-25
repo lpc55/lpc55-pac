@@ -67,10 +67,33 @@ PUF:
       prince2: [0x95, "Send key to PRINCE engine for memory layout 2."]
       none: [0x55, "Do not send key to any hardware engine."]
 
-# Make USB0 and USB1 have the same register block
+# Fix bogus offsets
+SAU:
+  _modify:
+    description: Security Attribution Unit
+    CTRL:
+      addressOffset: 0x00
+    TYPE:
+      addressOffset: 0x04
+    RNR:
+      addressOffset: 0x08
+    RBAR:
+      addressOffset: 0x0c
+    RLAR:
+      addressOffset: 0x10
+    SFSR:
+      addressOffset: 0x14
+    SFAR:
+      addressOffset: 0x18
+
 _modify:
+  # Make USB0 and USB1 have the same register block
   USBHSD:
     name: USB1
+  # Fix size of block (see offsets above)
+  SAU:
+    addressBlock:
+      size: 0x1C
 
 USB1:
   EPLISTSTART:
