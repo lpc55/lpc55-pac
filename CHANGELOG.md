@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [v0.1.1] - 2020-12-29
+
+- SAU fixes @samueltardieu
+- cortex-m bump to v0.7 @labott
+- move to lpc55 organization
+- remove Circle CI
+
 ## [v0.1.0] - 2020-04-28
 
 - Derive USB0 from USB1 @conorpp

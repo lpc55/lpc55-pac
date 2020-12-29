@@ -21,6 +21,10 @@ members would be modeled in the HAL.
 
 See also the higher-level companion library [LPC55 HAL][lpc55-hal].
 
+## Community
+
+There is a Matrix chat for all things LPC55 at [#lpc55:matrix.org][matrix-lpc55].
+
 ## Documentation
 
 The API documentation is located at <https://docs.rs/lpc55-pac>.
@@ -45,10 +49,10 @@ The SVD files are from <https://mcuxpresso.nxp.com> and licensed under the [BSD-
 [crates-image]: https://img.shields.io/crates/v/lpc55-pac.svg
 [crates-link]: https://crates.io/crates/lpc55-pac
 [solokeys]: https://github.com/solokeys
-[build-image]: https://img.shields.io/circleci/build/github/nickray/lpc55-pac/main.svg
-[build-link]: https://circleci.com/gh/nickray/lpc55-pac/tree/main
-[github-action-image]: https://github.com/nickray/lpc55-pac/workflows/build/badge.svg?branch=main
-[github-action-link]: https://github.com/nickray/lpc55-pac/actions
+[build-image]: https://img.shields.io/circleci/build/github/lpc55/lpc55-pac/main.svg
+[build-link]: https://circleci.com/gh/lpc55/lpc55-pac/tree/main
+[github-action-image]: https://github.com/lpc55/lpc55-pac/workflows/build/badge.svg?branch=main
+[github-action-link]: https://github.com/lpc55/lpc55-pac/actions
 [docs-image]: https://docs.rs/lpc55-pac/badge.svg
 [docs-link]: https://docs.rs/lpc55s-pac
 [lpc55-hal]: https://lib.rs/lpc55-hal
@@ -62,3 +66,4 @@ The SVD files are from <https://mcuxpresso.nxp.com> and licensed under the [BSD-
 [usermanual]: https://www.nxp.com/webapp/Download?colCode=UM11126
 [errata]: https://www.nxp.com/docs/en/errata/ES_LPC55S6x.pdf
 [genericuserguide]: https://static.docs.arm.com/100235/0004/arm_cortex_m33_dgug_100235_0004_00_en.pdf
+[matrix-lpc55]: https://matrix.to/#/#lpc55:matrix.org
