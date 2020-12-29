@@ -1,20 +1,19 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    _reserved0: [u8; 208usize],
-    #[doc = "0xd0 - Security Attribution Unit Control Register"]
+    #[doc = "0x00 - Security Attribution Unit Control Register"]
     pub ctrl: CTRL,
-    #[doc = "0xd4 - Security Attribution Unit Type Register"]
+    #[doc = "0x04 - Security Attribution Unit Type Register"]
     pub type_: TYPE,
-    #[doc = "0xd8 - Security Attribution Unit Region Number Register"]
+    #[doc = "0x08 - Security Attribution Unit Region Number Register"]
     pub rnr: RNR,
-    #[doc = "0xdc - Security Attribution Unit Region Base Address Register"]
+    #[doc = "0x0c - Security Attribution Unit Region Base Address Register"]
     pub rbar: RBAR,
-    #[doc = "0xe0 - Security Attribution Unit Region Limit Address Register"]
+    #[doc = "0x10 - Security Attribution Unit Region Limit Address Register"]
     pub rlar: RLAR,
-    #[doc = "0xe4 - Secure Fault Status Register"]
+    #[doc = "0x14 - Secure Fault Status Register"]
     pub sfsr: SFSR,
-    #[doc = "0xe8 - Secure Fault Address Register"]
+    #[doc = "0x18 - Secure Fault Address Register"]
     pub sfar: SFAR,
 }
 #[doc = "Security Attribution Unit Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](ctrl) module"]

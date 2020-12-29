@@ -1,13 +1,13 @@
 [package]
 name = "lpc55-pac"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2018"
 authors = [
   "Nicolas Stalder <n@stalder.io>",
   "Conor Patrick <conorpp94@gmail.com>",
 ]
 description = "Peripheral access API for NXP LPC55 microcontrollers"
-repository = "https://github.com/nickray/lpc55-pac"
+repository = "https://github.com/lpc55/lpc55-pac"
 license = "Apache-2.0 OR MIT"
 readme = "README.md"
 documentation = "https://docs.rs/lpc55-pac"
@@ -22,16 +22,14 @@ exclude = [
 features = ["rt"]
 targets = []
 
-
-
 [badges]
-circle-ci = { repository = "nickray/lpc55-pac" }
-maintenance = { status = "actively-maintained" }
+maintenance = { status = "actively-developed" }
 
 [dependencies]
+# can't update: https://github.com/rust-embedded/svd2rust/issues/453
 bare-metal = "0.2.5"
 cortex-m = "0.7.0"
-cortex-m-rt = { version = "0.6.12", optional = true }
+cortex-m-rt = { version = "0.6.13", optional = true }
 vcell = "0.1.2"
 
 [features]
