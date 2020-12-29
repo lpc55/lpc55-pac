@@ -10262,7 +10262,7 @@ SPDX-License-Identifier: BSD-3-Clause
           <resetValue>0x7</resetValue>
           <resetMask>0x7</resetMask>
           <fields>
-            <field><name>SEL</name><description>ADC clock source select</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>3</bitWidth><enumeratedValues><name>SEL</name><usage>read-write</usage><enumeratedValue><name>mainclk</name><description>Main clk.</description><value>0</value></enumeratedValue><enumeratedValue><name>pll0</name><description>PLL0 clk.</description><value>1</value></enumeratedValue><enumeratedValue><name>fro96</name><description>FRO 96 MHZ clk.</description><value>2</value></enumeratedValue><enumeratedValue><name>none</name><description>No clk.</description><value>4</value></enumeratedValue></enumeratedValues>
+            <field><name>SEL</name><description>ADC clock source select</description><bitOffset>0</bitOffset><bitWidth>3</bitWidth><access>read-write</access><enumeratedValues><name>SEL</name><usage>read-write</usage><enumeratedValue><name>mainclk</name><description>Main clk.</description><value>0</value></enumeratedValue><enumeratedValue><name>pll0</name><description>PLL0 clk.</description><value>1</value></enumeratedValue><enumeratedValue><name>fro96</name><description>FRO 96 MHZ clk.</description><value>2</value></enumeratedValue><enumeratedValue><name>none</name><description>No clk.</description><value>4</value></enumeratedValue></enumeratedValues>
             </field>
             </fields>
         </register>
@@ -27499,7 +27499,7 @@ SPDX-License-Identifier: BSD-3-Clause
           <resetValue>0x1F</resetValue>
           <resetMask>0x1F</resetMask>
           <fields>
-            <field><name>INP_N</name><description>Input number to SCT0 inputs 0 to 6.</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>5</bitWidth></field>
+            <field><name>INP_N</name><description>Input number to SCT0 inputs 0 to 6.</description><bitOffset>0</bitOffset><bitWidth>5</bitWidth><access>read-write</access></field>
             </fields>
         </register>
         <register>
@@ -27513,7 +27513,7 @@ SPDX-License-Identifier: BSD-3-Clause
           <resetValue>0x1F</resetValue>
           <resetMask>0x1F</resetMask>
           <fields>
-            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>5</bitWidth></field>
+            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><bitOffset>0</bitOffset><bitWidth>5</bitWidth><access>read-write</access></field>
             </fields>
         </register>
         <register>
@@ -27527,7 +27527,7 @@ SPDX-License-Identifier: BSD-3-Clause
           <resetValue>0x1F</resetValue>
           <resetMask>0x1F</resetMask>
           <fields>
-            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>5</bitWidth></field>
+            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><bitOffset>0</bitOffset><bitWidth>5</bitWidth><access>read-write</access></field>
             </fields>
         </register>
         <register>
@@ -27541,7 +27541,7 @@ SPDX-License-Identifier: BSD-3-Clause
           <resetValue>0x1F</resetValue>
           <resetMask>0x1F</resetMask>
           <fields>
-            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>5</bitWidth></field>
+            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><bitOffset>0</bitOffset><bitWidth>5</bitWidth><access>read-write</access></field>
             </fields>
         </register>
         <register>
@@ -27575,7 +27575,7 @@ SPDX-License-Identifier: BSD-3-Clause
           <resetValue>0x1F</resetValue>
           <resetMask>0x1F</resetMask>
           <fields>
-            <field><name>INP</name><description>Trigger input number (decimal value) for DMA channel n (n = 0 to 22).</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>5</bitWidth></field>
+            <field><name>INP</name><description>Trigger input number (decimal value) for DMA channel n (n = 0 to 22).</description><bitOffset>0</bitOffset><bitWidth>5</bitWidth><access>read-write</access></field>
             </fields>
         </register>
         <register>
@@ -27645,7 +27645,7 @@ SPDX-License-Identifier: BSD-3-Clause
           <resetValue>0x1F</resetValue>
           <resetMask>0x1F</resetMask>
           <fields>
-            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>5</bitWidth></field>
+            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><bitOffset>0</bitOffset><bitWidth>5</bitWidth><access>read-write</access></field>
             </fields>
         </register>
         <register>
@@ -27659,7 +27659,7 @@ SPDX-License-Identifier: BSD-3-Clause
           <resetValue>0x1F</resetValue>
           <resetMask>0x1F</resetMask>
           <fields>
-            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>5</bitWidth></field>
+            <field><name>CAPTSEL</name><description>Input number to TIMER%s capture inputs 0 to 4</description><bitOffset>0</bitOffset><bitWidth>5</bitWidth><access>read-write</access></field>
             </fields>
         </register>
         <register>
@@ -38323,7 +38323,7 @@ SPDX-License-Identifier: BSD-3-Clause
               <bitWidth>2</bitWidth>
               <access>read-write</access>
             </field>
-          <field><name>KEY</name><description>Key destination for PUF key.</description><access>read-write</access><bitOffset>0</bitOffset><bitWidth>8</bitWidth><enumeratedValues><name>KEY</name><usage>read-write</usage><enumeratedValue><name>aes</name><description>Send key to AES engine.</description><value>86</value></enumeratedValue><enumeratedValue><name>prince0</name><description>Send key to PRINCE engine for memory layout 0.</description><value>89</value></enumeratedValue><enumeratedValue><name>prince1</name><description>Send key to PRINCE engine for memory layout 1.</description><value>101</value></enumeratedValue><enumeratedValue><name>prince2</name><description>Send key to PRINCE engine for memory layout 2.</description><value>149</value></enumeratedValue><enumeratedValue><name>none</name><description>Do not send key to any hardware engine.</description><value>85</value></enumeratedValue></enumeratedValues>
+          <field><name>KEY</name><description>Key destination for PUF key.</description><bitOffset>0</bitOffset><bitWidth>8</bitWidth><access>read-write</access><enumeratedValues><name>KEY</name><usage>read-write</usage><enumeratedValue><name>aes</name><description>Send key to AES engine.</description><value>86</value></enumeratedValue><enumeratedValue><name>prince0</name><description>Send key to PRINCE engine for memory layout 0.</description><value>89</value></enumeratedValue><enumeratedValue><name>prince1</name><description>Send key to PRINCE engine for memory layout 1.</description><value>101</value></enumeratedValue><enumeratedValue><name>prince2</name><description>Send key to PRINCE engine for memory layout 2.</description><value>149</value></enumeratedValue><enumeratedValue><name>none</name><description>Do not send key to any hardware engine.</description><value>85</value></enumeratedValue></enumeratedValues>
             </field>
             </fields>
         </register>
@@ -39234,319 +39234,6 @@ SPDX-License-Identifier: BSD-3-Clause
         <value>1</value>
       </interrupt>
       <registers>
-        <register>
-          <name>CTRL</name>
-          <description>DMA control.</description>
-          <addressOffset>0</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0x1</resetMask>
-          <fields>
-            <field>
-              <name>ENABLE</name>
-              <description>DMA controller master enable.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>DISABLED</name>
-                  <description>Disabled. The DMA controller is disabled. This clears any triggers that were asserted at the point when disabled, but does not prevent re-triggering when the DMA controller is re-enabled.</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>ENABLED</name>
-                  <description>Enabled. The DMA controller is enabled.</description>
-                  <value>0x1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>INTSTAT</name>
-          <description>Interrupt status.</description>
-          <addressOffset>0x4</addressOffset>
-          <size>32</size>
-          <access>read-only</access>
-          <resetValue>0</resetValue>
-          <resetMask>0x6</resetMask>
-          <fields>
-            <field>
-              <name>ACTIVEINT</name>
-              <description>Summarizes whether any enabled interrupts (other than error interrupts) are pending.</description>
-              <bitOffset>1</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>NOT_PENDING</name>
-                  <description>Not pending. No enabled interrupts are pending.</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>PENDING</name>
-                  <description>Pending. At least one enabled interrupt is pending.</description>
-                  <value>0x1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-            <field>
-              <name>ACTIVEERRINT</name>
-              <description>Summarizes whether any error interrupts are pending.</description>
-              <bitOffset>2</bitOffset>
-              <bitWidth>1</bitWidth>
-              <access>read-only</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>NOT_PENDING</name>
-                  <description>Not pending. No error interrupts are pending.</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>PENDING</name>
-                  <description>Pending. At least one error interrupt is pending.</description>
-                  <value>0x1</value>
-                </enumeratedValue>
-              </enumeratedValues>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SRAMBASE</name>
-          <description>SRAM address of the channel configuration table.</description>
-          <addressOffset>0x8</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0xFFFFFE00</resetMask>
-          <fields>
-            <field>
-              <name>OFFSET</name>
-              <description>Address bits 31:9 of the beginning of the DMA descriptor table. For 18 channels, the table must begin on a 512 byte boundary.</description>
-              <bitOffset>9</bitOffset>
-              <bitWidth>23</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ENABLESET0</name>
-          <description>Channel Enable read and Set for all DMA channels.</description>
-          <addressOffset>0x20</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0xFFFFFFFF</resetMask>
-          <fields>
-            <field>
-              <name>ENA</name>
-              <description>Enable for DMA channels. Bit n enables or disables DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = disabled. 1 = enabled.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ENABLECLR0</name>
-          <description>Channel Enable Clear for all DMA channels.</description>
-          <addressOffset>0x28</addressOffset>
-          <size>32</size>
-          <access>write-only</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>CLR</name>
-              <description>Writing ones to this register clears the corresponding bits in ENABLESET0. Bit n clears the channel enable bit n. The number of bits = number of DMA channels in this device. Other bits are reserved.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>write-only</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ACTIVE0</name>
-          <description>Channel Active status for all DMA channels.</description>
-          <addressOffset>0x30</addressOffset>
-          <size>32</size>
-          <access>read-only</access>
-          <resetValue>0</resetValue>
-          <resetMask>0xFFFFFFFF</resetMask>
-          <fields>
-            <field>
-              <name>ACT</name>
-              <description>Active flag for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = not active. 1 = active.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>read-only</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>BUSY0</name>
-          <description>Channel Busy status for all DMA channels.</description>
-          <addressOffset>0x38</addressOffset>
-          <size>32</size>
-          <access>read-only</access>
-          <resetValue>0</resetValue>
-          <resetMask>0xFFFFFFFF</resetMask>
-          <fields>
-            <field>
-              <name>BSY</name>
-              <description>Busy flag for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = not busy. 1 = busy.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>read-only</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ERRINT0</name>
-          <description>Error Interrupt status for all DMA channels.</description>
-          <addressOffset>0x40</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0xFFFFFFFF</resetMask>
-          <fields>
-            <field>
-              <name>ERR</name>
-              <description>Error Interrupt flag for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = error interrupt is not active. 1 = error interrupt is active.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>INTENSET0</name>
-          <description>Interrupt Enable read and Set for all DMA channels.</description>
-          <addressOffset>0x48</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0xFFFFFFFF</resetMask>
-          <fields>
-            <field>
-              <name>INTEN</name>
-              <description>Interrupt Enable read and set for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = interrupt for DMA channel is disabled. 1 = interrupt for DMA channel is enabled.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>INTENCLR0</name>
-          <description>Interrupt Enable Clear for all DMA channels.</description>
-          <addressOffset>0x50</addressOffset>
-          <size>32</size>
-          <access>write-only</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>CLR</name>
-              <description>Writing ones to this register clears corresponding bits in the INTENSET0. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>write-only</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>INTA0</name>
-          <description>Interrupt A status for all DMA channels.</description>
-          <addressOffset>0x58</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0xFFFFFFFF</resetMask>
-          <fields>
-            <field>
-              <name>IA</name>
-              <description>Interrupt A status for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = the DMA channel interrupt A is not active. 1 = the DMA channel interrupt A is active.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>INTB0</name>
-          <description>Interrupt B status for all DMA channels.</description>
-          <addressOffset>0x60</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0xFFFFFFFF</resetMask>
-          <fields>
-            <field>
-              <name>IB</name>
-              <description>Interrupt B status for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = the DMA channel interrupt B is not active. 1 = the DMA channel interrupt B is active.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>read-write</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SETVALID0</name>
-          <description>Set ValidPending control bits for all DMA channels.</description>
-          <addressOffset>0x68</addressOffset>
-          <size>32</size>
-          <access>write-only</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>SV</name>
-              <description>SETVALID control for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = no effect. 1 = sets the VALIDPENDING control bit for DMA channel n</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>write-only</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>SETTRIG0</name>
-          <description>Set Trigger control bits for all DMA channels.</description>
-          <addressOffset>0x70</addressOffset>
-          <size>32</size>
-          <access>write-only</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>TRIG</name>
-              <description>Set Trigger control bit for DMA channel 0. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = no effect. 1 = sets the TRIG bit for DMA channel n.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>write-only</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>ABORT0</name>
-          <description>Channel Abort control for all DMA channels.</description>
-          <addressOffset>0x78</addressOffset>
-          <size>32</size>
-          <access>write-only</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>ABORTCTRL</name>
-              <description>Abort control for DMA channel 0. Bit n corresponds to DMA channel n. 0 = no effect. 1 = aborts DMA operations on channel n.</description>
-              <bitOffset>0</bitOffset>
-              <bitWidth>32</bitWidth>
-              <access>write-only</access>
-            </field>
-          </fields>
-        </register>
         <cluster>
           <dim>23</dim>
           <dimIncrement>0x10</dimIncrement>
@@ -39975,7 +39662,320 @@ SPDX-License-Identifier: BSD-3-Clause
             </fields>
           </register>
         </cluster>
-      </registers>
+      <register>
+          <name>CTRL</name>
+          <description>DMA control.</description>
+          <addressOffset>0</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0x1</resetMask>
+          <fields>
+            <field>
+              <name>ENABLE</name>
+              <description>DMA controller master enable.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>Disabled. The DMA controller is disabled. This clears any triggers that were asserted at the point when disabled, but does not prevent re-triggering when the DMA controller is re-enabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>Enabled. The DMA controller is enabled.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>INTSTAT</name>
+          <description>Interrupt status.</description>
+          <addressOffset>0x4</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0x6</resetMask>
+          <fields>
+            <field>
+              <name>ACTIVEINT</name>
+              <description>Summarizes whether any enabled interrupts (other than error interrupts) are pending.</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_PENDING</name>
+                  <description>Not pending. No enabled interrupts are pending.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Pending. At least one enabled interrupt is pending.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ACTIVEERRINT</name>
+              <description>Summarizes whether any error interrupts are pending.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_PENDING</name>
+                  <description>Not pending. No error interrupts are pending.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Pending. At least one error interrupt is pending.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SRAMBASE</name>
+          <description>SRAM address of the channel configuration table.</description>
+          <addressOffset>0x8</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0xFFFFFE00</resetMask>
+          <fields>
+            <field>
+              <name>OFFSET</name>
+              <description>Address bits 31:9 of the beginning of the DMA descriptor table. For 18 channels, the table must begin on a 512 byte boundary.</description>
+              <bitOffset>9</bitOffset>
+              <bitWidth>23</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ENABLESET0</name>
+          <description>Channel Enable read and Set for all DMA channels.</description>
+          <addressOffset>0x20</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>ENA</name>
+              <description>Enable for DMA channels. Bit n enables or disables DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = disabled. 1 = enabled.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ENABLECLR0</name>
+          <description>Channel Enable Clear for all DMA channels.</description>
+          <addressOffset>0x28</addressOffset>
+          <size>32</size>
+          <access>write-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>CLR</name>
+              <description>Writing ones to this register clears the corresponding bits in ENABLESET0. Bit n clears the channel enable bit n. The number of bits = number of DMA channels in this device. Other bits are reserved.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ACTIVE0</name>
+          <description>Channel Active status for all DMA channels.</description>
+          <addressOffset>0x30</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>ACT</name>
+              <description>Active flag for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = not active. 1 = active.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>BUSY0</name>
+          <description>Channel Busy status for all DMA channels.</description>
+          <addressOffset>0x38</addressOffset>
+          <size>32</size>
+          <access>read-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>BSY</name>
+              <description>Busy flag for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = not busy. 1 = busy.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ERRINT0</name>
+          <description>Error Interrupt status for all DMA channels.</description>
+          <addressOffset>0x40</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>ERR</name>
+              <description>Error Interrupt flag for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = error interrupt is not active. 1 = error interrupt is active.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>INTENSET0</name>
+          <description>Interrupt Enable read and Set for all DMA channels.</description>
+          <addressOffset>0x48</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>INTEN</name>
+              <description>Interrupt Enable read and set for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = interrupt for DMA channel is disabled. 1 = interrupt for DMA channel is enabled.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>INTENCLR0</name>
+          <description>Interrupt Enable Clear for all DMA channels.</description>
+          <addressOffset>0x50</addressOffset>
+          <size>32</size>
+          <access>write-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>CLR</name>
+              <description>Writing ones to this register clears corresponding bits in the INTENSET0. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>INTA0</name>
+          <description>Interrupt A status for all DMA channels.</description>
+          <addressOffset>0x58</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>IA</name>
+              <description>Interrupt A status for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = the DMA channel interrupt A is not active. 1 = the DMA channel interrupt A is active.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>INTB0</name>
+          <description>Interrupt B status for all DMA channels.</description>
+          <addressOffset>0x60</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>IB</name>
+              <description>Interrupt B status for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = the DMA channel interrupt B is not active. 1 = the DMA channel interrupt B is active.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SETVALID0</name>
+          <description>Set ValidPending control bits for all DMA channels.</description>
+          <addressOffset>0x68</addressOffset>
+          <size>32</size>
+          <access>write-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>SV</name>
+              <description>SETVALID control for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = no effect. 1 = sets the VALIDPENDING control bit for DMA channel n</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SETTRIG0</name>
+          <description>Set Trigger control bits for all DMA channels.</description>
+          <addressOffset>0x70</addressOffset>
+          <size>32</size>
+          <access>write-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>TRIG</name>
+              <description>Set Trigger control bit for DMA channel 0. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = no effect. 1 = sets the TRIG bit for DMA channel n.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ABORT0</name>
+          <description>Channel Abort control for all DMA channels.</description>
+          <addressOffset>0x78</addressOffset>
+          <size>32</size>
+          <access>write-only</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>ABORTCTRL</name>
+              <description>Abort control for DMA channel 0. Bit n corresponds to DMA channel n. 0 = no effect. 1 = aborts DMA operations on channel n.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>32</bitWidth>
+              <access>write-only</access>
+            </field>
+          </fields>
+        </register>
+        </registers>
     </peripheral>
     <peripheral derivedFrom="DMA0">
       <name>DMA1</name>
@@ -40007,7 +40007,253 @@ SPDX-License-Identifier: BSD-3-Clause
         <value>12</value>
       </interrupt>
       <registers>
-        <register>
+        <cluster>
+          <dim>16</dim>
+          <dimIncrement>0x8</dimIncrement>
+          <name>EV[%s]</name>
+          <description>no description available</description>
+          <addressOffset>0x300</addressOffset>
+          <register>
+            <name>EV_STATE</name>
+            <description>SCT event state register 0</description>
+            <addressOffset>0</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0</resetValue>
+            <resetMask>0xFFFF</resetMask>
+            <fields>
+              <field>
+                <name>STATEMSKn</name>
+                <description>If bit m is one, event n happens in state m of the counter selected by the HEVENT bit (n = event number, m = state number; state 0 = bit 0, state 1= bit 1, etc.). The number of bits = number of states in this SCT.</description>
+                <bitOffset>0</bitOffset>
+                <bitWidth>16</bitWidth>
+                <access>read-write</access>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>EV_CTRL</name>
+            <description>SCT event control register 0</description>
+            <addressOffset>0x4</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0</resetValue>
+            <resetMask>0x7FFFFF</resetMask>
+            <fields>
+              <field>
+                <name>MATCHSEL</name>
+                <description>Selects the Match register associated with this event (if any). A match can occur only when the counter selected by the HEVENT bit is running.</description>
+                <bitOffset>0</bitOffset>
+                <bitWidth>4</bitWidth>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>HEVENT</name>
+                <description>Select L/H counter. Do not set this bit if UNIFY = 1.</description>
+                <bitOffset>4</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>L_COUNTER</name>
+                    <description>Selects the L state and the L match register selected by MATCHSEL.</description>
+                    <value>0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>H_COUNTER</name>
+                    <description>Selects the H state and the H match register selected by MATCHSEL.</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>OUTSEL</name>
+                <description>Input/output select</description>
+                <bitOffset>5</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>INPUT</name>
+                    <description>Selects the inputs selected by IOSEL.</description>
+                    <value>0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>OUTPUT</name>
+                    <description>Selects the outputs selected by IOSEL.</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>IOSEL</name>
+                <description>Selects the input or output signal number associated with this event (if any). Do not select an input in this register if CKMODE is 1x. In this case the clock input is an implicit ingredient of every event.</description>
+                <bitOffset>6</bitOffset>
+                <bitWidth>4</bitWidth>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>IOCOND</name>
+                <description>Selects the I/O condition for event n. (The detection of edges on outputs lag the conditions that switch the outputs by one SCT clock). In order to guarantee proper edge/state detection, an input must have a minimum pulse width of at least one SCT clock period .</description>
+                <bitOffset>10</bitOffset>
+                <bitWidth>2</bitWidth>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>LOW</name>
+                    <description>LOW</description>
+                    <value>0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>RISE</name>
+                    <description>Rise</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>FALL</name>
+                    <description>Fall</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>HIGH</name>
+                    <description>HIGH</description>
+                    <value>0x3</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>COMBMODE</name>
+                <description>Selects how the specified match and I/O condition are used and combined.</description>
+                <bitOffset>12</bitOffset>
+                <bitWidth>2</bitWidth>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>OR</name>
+                    <description>OR. The event occurs when either the specified match or I/O condition occurs.</description>
+                    <value>0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>MATCH</name>
+                    <description>MATCH. Uses the specified match only.</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>IO</name>
+                    <description>IO. Uses the specified I/O condition only.</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>AND</name>
+                    <description>AND. The event occurs when the specified match and I/O condition occur simultaneously.</description>
+                    <value>0x3</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>STATELD</name>
+                <description>This bit controls how the STATEV value modifies the state selected by HEVENT when this event is the highest-numbered event occurring for that state.</description>
+                <bitOffset>14</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>ADD</name>
+                    <description>STATEV value is added into STATE (the carry-out is ignored).</description>
+                    <value>0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>LOAD</name>
+                    <description>STATEV value is loaded into STATE.</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>STATEV</name>
+                <description>This value is loaded into or added to the state selected by HEVENT, depending on STATELD, when this event is the highest-numbered event occurring for that state. If STATELD and STATEV are both zero, there is no change to the STATE value.</description>
+                <bitOffset>15</bitOffset>
+                <bitWidth>5</bitWidth>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>MATCHMEM</name>
+                <description>If this bit is one and the COMBMODE field specifies a match component to the triggering of this event, then a match is considered to be active whenever the counter value is GREATER THAN OR EQUAL TO the value specified in the match register when counting up, LESS THEN OR EQUAL TO the match value when counting down. If this bit is zero, a match is only be active during the cycle when the counter is equal to the match value.</description>
+                <bitOffset>20</bitOffset>
+                <bitWidth>1</bitWidth>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>DIRECTION</name>
+                <description>Direction qualifier for event generation. This field only applies when the counters are operating in BIDIR mode. If BIDIR = 0, the SCT ignores this field. Value 0x3 is reserved.</description>
+                <bitOffset>21</bitOffset>
+                <bitWidth>2</bitWidth>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DIRECTION_INDEPENDENT</name>
+                    <description>Direction independent. This event is triggered regardless of the count direction.</description>
+                    <value>0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>COUNTING_UP</name>
+                    <description>Counting up. This event is triggered only during up-counting when BIDIR = 1.</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>COUNTING_DOWN</name>
+                    <description>Counting down. This event is triggered only during down-counting when BIDIR = 1.</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
+          </register>
+        </cluster>
+        <cluster>
+          <dim>10</dim>
+          <dimIncrement>0x8</dimIncrement>
+          <name>OUT[%s]</name>
+          <description>no description available</description>
+          <addressOffset>0x500</addressOffset>
+          <register>
+            <name>OUT_SET</name>
+            <description>SCT output 0 set register</description>
+            <addressOffset>0</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0</resetValue>
+            <resetMask>0xFFFF</resetMask>
+            <fields>
+              <field>
+                <name>SET</name>
+                <description>A 1 in bit m selects event m to set output n (or clear it if SETCLRn = 0x1 or 0x2) output 0 = bit 0, output 1 = bit 1, etc. The number of bits = number of events in this SCT. When the counter is used in bi-directional mode, it is possible to reverse the action specified by the output set and clear registers when counting down, See the OUTPUTCTRL register.</description>
+                <bitOffset>0</bitOffset>
+                <bitWidth>16</bitWidth>
+                <access>read-write</access>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>OUT_CLR</name>
+            <description>SCT output 0 clear register</description>
+            <addressOffset>0x4</addressOffset>
+            <size>32</size>
+            <access>read-write</access>
+            <resetValue>0</resetValue>
+            <resetMask>0xFFFF</resetMask>
+            <fields>
+              <field>
+                <name>CLR</name>
+                <description>A 1 in bit m selects event m to clear output n (or set it if SETCLRn = 0x1 or 0x2) event 0 = bit 0, event 1 = bit 1, etc. The number of bits = number of events in this SCT. When the counter is used in bi-directional mode, it is possible to reverse the action specified by the output set and clear registers when counting down, See the OUTPUTCTRL register.</description>
+                <bitOffset>0</bitOffset>
+                <bitWidth>16</bitWidth>
+                <access>read-write</access>
+              </field>
+            </fields>
+          </register>
+        </cluster>
+      <register>
           <name>CONFIG</name>
           <description>SCT configuration register</description>
           <addressOffset>0</addressOffset>
@@ -43421,253 +43667,7 @@ SPDX-License-Identifier: BSD-3-Clause
             </field>
           </fields>
         </register>
-        <cluster>
-          <dim>16</dim>
-          <dimIncrement>0x8</dimIncrement>
-          <name>EV[%s]</name>
-          <description>no description available</description>
-          <addressOffset>0x300</addressOffset>
-          <register>
-            <name>EV_STATE</name>
-            <description>SCT event state register 0</description>
-            <addressOffset>0</addressOffset>
-            <size>32</size>
-            <access>read-write</access>
-            <resetValue>0</resetValue>
-            <resetMask>0xFFFF</resetMask>
-            <fields>
-              <field>
-                <name>STATEMSKn</name>
-                <description>If bit m is one, event n happens in state m of the counter selected by the HEVENT bit (n = event number, m = state number; state 0 = bit 0, state 1= bit 1, etc.). The number of bits = number of states in this SCT.</description>
-                <bitOffset>0</bitOffset>
-                <bitWidth>16</bitWidth>
-                <access>read-write</access>
-              </field>
-            </fields>
-          </register>
-          <register>
-            <name>EV_CTRL</name>
-            <description>SCT event control register 0</description>
-            <addressOffset>0x4</addressOffset>
-            <size>32</size>
-            <access>read-write</access>
-            <resetValue>0</resetValue>
-            <resetMask>0x7FFFFF</resetMask>
-            <fields>
-              <field>
-                <name>MATCHSEL</name>
-                <description>Selects the Match register associated with this event (if any). A match can occur only when the counter selected by the HEVENT bit is running.</description>
-                <bitOffset>0</bitOffset>
-                <bitWidth>4</bitWidth>
-                <access>read-write</access>
-              </field>
-              <field>
-                <name>HEVENT</name>
-                <description>Select L/H counter. Do not set this bit if UNIFY = 1.</description>
-                <bitOffset>4</bitOffset>
-                <bitWidth>1</bitWidth>
-                <access>read-write</access>
-                <enumeratedValues>
-                  <enumeratedValue>
-                    <name>L_COUNTER</name>
-                    <description>Selects the L state and the L match register selected by MATCHSEL.</description>
-                    <value>0</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>H_COUNTER</name>
-                    <description>Selects the H state and the H match register selected by MATCHSEL.</description>
-                    <value>0x1</value>
-                  </enumeratedValue>
-                </enumeratedValues>
-              </field>
-              <field>
-                <name>OUTSEL</name>
-                <description>Input/output select</description>
-                <bitOffset>5</bitOffset>
-                <bitWidth>1</bitWidth>
-                <access>read-write</access>
-                <enumeratedValues>
-                  <enumeratedValue>
-                    <name>INPUT</name>
-                    <description>Selects the inputs selected by IOSEL.</description>
-                    <value>0</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>OUTPUT</name>
-                    <description>Selects the outputs selected by IOSEL.</description>
-                    <value>0x1</value>
-                  </enumeratedValue>
-                </enumeratedValues>
-              </field>
-              <field>
-                <name>IOSEL</name>
-                <description>Selects the input or output signal number associated with this event (if any). Do not select an input in this register if CKMODE is 1x. In this case the clock input is an implicit ingredient of every event.</description>
-                <bitOffset>6</bitOffset>
-                <bitWidth>4</bitWidth>
-                <access>read-write</access>
-              </field>
-              <field>
-                <name>IOCOND</name>
-                <description>Selects the I/O condition for event n. (The detection of edges on outputs lag the conditions that switch the outputs by one SCT clock). In order to guarantee proper edge/state detection, an input must have a minimum pulse width of at least one SCT clock period .</description>
-                <bitOffset>10</bitOffset>
-                <bitWidth>2</bitWidth>
-                <access>read-write</access>
-                <enumeratedValues>
-                  <enumeratedValue>
-                    <name>LOW</name>
-                    <description>LOW</description>
-                    <value>0</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>RISE</name>
-                    <description>Rise</description>
-                    <value>0x1</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>FALL</name>
-                    <description>Fall</description>
-                    <value>0x2</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>HIGH</name>
-                    <description>HIGH</description>
-                    <value>0x3</value>
-                  </enumeratedValue>
-                </enumeratedValues>
-              </field>
-              <field>
-                <name>COMBMODE</name>
-                <description>Selects how the specified match and I/O condition are used and combined.</description>
-                <bitOffset>12</bitOffset>
-                <bitWidth>2</bitWidth>
-                <access>read-write</access>
-                <enumeratedValues>
-                  <enumeratedValue>
-                    <name>OR</name>
-                    <description>OR. The event occurs when either the specified match or I/O condition occurs.</description>
-                    <value>0</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>MATCH</name>
-                    <description>MATCH. Uses the specified match only.</description>
-                    <value>0x1</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>IO</name>
-                    <description>IO. Uses the specified I/O condition only.</description>
-                    <value>0x2</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>AND</name>
-                    <description>AND. The event occurs when the specified match and I/O condition occur simultaneously.</description>
-                    <value>0x3</value>
-                  </enumeratedValue>
-                </enumeratedValues>
-              </field>
-              <field>
-                <name>STATELD</name>
-                <description>This bit controls how the STATEV value modifies the state selected by HEVENT when this event is the highest-numbered event occurring for that state.</description>
-                <bitOffset>14</bitOffset>
-                <bitWidth>1</bitWidth>
-                <access>read-write</access>
-                <enumeratedValues>
-                  <enumeratedValue>
-                    <name>ADD</name>
-                    <description>STATEV value is added into STATE (the carry-out is ignored).</description>
-                    <value>0</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>LOAD</name>
-                    <description>STATEV value is loaded into STATE.</description>
-                    <value>0x1</value>
-                  </enumeratedValue>
-                </enumeratedValues>
-              </field>
-              <field>
-                <name>STATEV</name>
-                <description>This value is loaded into or added to the state selected by HEVENT, depending on STATELD, when this event is the highest-numbered event occurring for that state. If STATELD and STATEV are both zero, there is no change to the STATE value.</description>
-                <bitOffset>15</bitOffset>
-                <bitWidth>5</bitWidth>
-                <access>read-write</access>
-              </field>
-              <field>
-                <name>MATCHMEM</name>
-                <description>If this bit is one and the COMBMODE field specifies a match component to the triggering of this event, then a match is considered to be active whenever the counter value is GREATER THAN OR EQUAL TO the value specified in the match register when counting up, LESS THEN OR EQUAL TO the match value when counting down. If this bit is zero, a match is only be active during the cycle when the counter is equal to the match value.</description>
-                <bitOffset>20</bitOffset>
-                <bitWidth>1</bitWidth>
-                <access>read-write</access>
-              </field>
-              <field>
-                <name>DIRECTION</name>
-                <description>Direction qualifier for event generation. This field only applies when the counters are operating in BIDIR mode. If BIDIR = 0, the SCT ignores this field. Value 0x3 is reserved.</description>
-                <bitOffset>21</bitOffset>
-                <bitWidth>2</bitWidth>
-                <access>read-write</access>
-                <enumeratedValues>
-                  <enumeratedValue>
-                    <name>DIRECTION_INDEPENDENT</name>
-                    <description>Direction independent. This event is triggered regardless of the count direction.</description>
-                    <value>0</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>COUNTING_UP</name>
-                    <description>Counting up. This event is triggered only during up-counting when BIDIR = 1.</description>
-                    <value>0x1</value>
-                  </enumeratedValue>
-                  <enumeratedValue>
-                    <name>COUNTING_DOWN</name>
-                    <description>Counting down. This event is triggered only during down-counting when BIDIR = 1.</description>
-                    <value>0x2</value>
-                  </enumeratedValue>
-                </enumeratedValues>
-              </field>
-            </fields>
-          </register>
-        </cluster>
-        <cluster>
-          <dim>10</dim>
-          <dimIncrement>0x8</dimIncrement>
-          <name>OUT[%s]</name>
-          <description>no description available</description>
-          <addressOffset>0x500</addressOffset>
-          <register>
-            <name>OUT_SET</name>
-            <description>SCT output 0 set register</description>
-            <addressOffset>0</addressOffset>
-            <size>32</size>
-            <access>read-write</access>
-            <resetValue>0</resetValue>
-            <resetMask>0xFFFF</resetMask>
-            <fields>
-              <field>
-                <name>SET</name>
-                <description>A 1 in bit m selects event m to set output n (or clear it if SETCLRn = 0x1 or 0x2) output 0 = bit 0, output 1 = bit 1, etc. The number of bits = number of events in this SCT. When the counter is used in bi-directional mode, it is possible to reverse the action specified by the output set and clear registers when counting down, See the OUTPUTCTRL register.</description>
-                <bitOffset>0</bitOffset>
-                <bitWidth>16</bitWidth>
-                <access>read-write</access>
-              </field>
-            </fields>
-          </register>
-          <register>
-            <name>OUT_CLR</name>
-            <description>SCT output 0 clear register</description>
-            <addressOffset>0x4</addressOffset>
-            <size>32</size>
-            <access>read-write</access>
-            <resetValue>0</resetValue>
-            <resetMask>0xFFFF</resetMask>
-            <fields>
-              <field>
-                <name>CLR</name>
-                <description>A 1 in bit m selects event m to clear output n (or set it if SETCLRn = 0x1 or 0x2) event 0 = bit 0, event 1 = bit 1, etc. The number of bits = number of events in this SCT. When the counter is used in bi-directional mode, it is possible to reverse the action specified by the output set and clear registers when counting down, See the OUTPUTCTRL register.</description>
-                <bitOffset>0</bitOffset>
-                <bitWidth>16</bitWidth>
-                <access>read-write</access>
-              </field>
-            </fields>
-          </register>
-        </cluster>
-      </registers>
+        </registers>
     </peripheral>
     <peripheral>
       <name>FLEXCOMM0</name>
@@ -81050,14 +81050,13 @@ SPDX-License-Identifier: BSD-3-Clause
       <baseAddress>0xE000EDD0</baseAddress>
       <addressBlock>
         <offset>0</offset>
-        <size>0xEC</size>
-        <usage>registers</usage>
+        <size>28</size><usage>registers</usage>
       </addressBlock>
       <registers>
         <register>
           <name>CTRL</name>
           <description>Security Attribution Unit Control Register</description>
-          <addressOffset>0xD0</addressOffset>
+          <addressOffset>0</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -81106,7 +81105,7 @@ SPDX-License-Identifier: BSD-3-Clause
         <register>
           <name>TYPE</name>
           <description>Security Attribution Unit Type Register</description>
-          <addressOffset>0xD4</addressOffset>
+          <addressOffset>4</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -81124,7 +81123,7 @@ SPDX-License-Identifier: BSD-3-Clause
         <register>
           <name>RNR</name>
           <description>Security Attribution Unit Region Number Register</description>
-          <addressOffset>0xD8</addressOffset>
+          <addressOffset>8</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -81142,7 +81141,7 @@ SPDX-License-Identifier: BSD-3-Clause
         <register>
           <name>RBAR</name>
           <description>Security Attribution Unit Region Base Address Register</description>
-          <addressOffset>0xDC</addressOffset>
+          <addressOffset>12</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -81160,7 +81159,7 @@ SPDX-License-Identifier: BSD-3-Clause
         <register>
           <name>RLAR</name>
           <description>Security Attribution Unit Region Limit Address Register</description>
-          <addressOffset>0xE0</addressOffset>
+          <addressOffset>16</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -81216,7 +81215,7 @@ SPDX-License-Identifier: BSD-3-Clause
         <register>
           <name>SFSR</name>
           <description>Secure Fault Status Register</description>
-          <addressOffset>0xE4</addressOffset>
+          <addressOffset>20</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -81379,7 +81378,7 @@ SPDX-License-Identifier: BSD-3-Clause
         <register>
           <name>SFAR</name>
           <description>Secure Fault Address Register</description>
-          <addressOffset>0xE8</addressOffset>
+          <addressOffset>24</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
