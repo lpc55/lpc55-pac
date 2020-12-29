@@ -9,8 +9,8 @@ to the complete functionality of LPC55 microcontrollers.
 [![crates.io][crates-image]][crates-link]
 [![Documentation][docs-image]][docs-link]
 ![LICENSE][license-image]
-[![Build Status][build-image]][build-link]
 [![Action Status][github-action-image]][github-action-link]
+[![Matrix][matrix-chat-image]][matrix-lpc55]
 
 ## Status
 
@@ -49,8 +49,6 @@ The SVD files are from <https://mcuxpresso.nxp.com> and licensed under the [BSD-
 [crates-image]: https://img.shields.io/crates/v/lpc55-pac.svg
 [crates-link]: https://crates.io/crates/lpc55-pac
 [solokeys]: https://github.com/solokeys
-[build-image]: https://img.shields.io/circleci/build/github/lpc55/lpc55-pac/main.svg
-[build-link]: https://circleci.com/gh/lpc55/lpc55-pac/tree/main
 [github-action-image]: https://github.com/lpc55/lpc55-pac/workflows/build/badge.svg?branch=main
 [github-action-link]: https://github.com/lpc55/lpc55-pac/actions
 [docs-image]: https://docs.rs/lpc55-pac/badge.svg
@@ -67,3 +65,4 @@ The SVD files are from <https://mcuxpresso.nxp.com> and licensed under the [BSD-
 [errata]: https://www.nxp.com/docs/en/errata/ES_LPC55S6x.pdf
 [genericuserguide]: https://static.docs.arm.com/100235/0004/arm_cortex_m33_dgug_100235_0004_00_en.pdf
 [matrix-lpc55]: https://matrix.to/#/#lpc55:matrix.org
+[matrix-chat-image]: https://img.shields.io/matrix/lpc55:matrix.org
