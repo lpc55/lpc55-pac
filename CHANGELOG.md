@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [v0.2.0] - 2020-12-30
+
+- republish previous v0.1.1 as v0.2.0, as the cortex-m bump
+  breaks e.g. RTIC which is still on cortex-m 0.6
+
 ## [v0.1.1] - 2020-12-29
 
 - SAU fixes @samueltardieu
