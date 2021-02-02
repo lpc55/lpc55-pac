@@ -30,12 +30,12 @@ fetch-docs:
 	# `pip install nxp-dlagent` for the following step
 	nxp-dl UM11126 && mv UM11126.pdf ref/
 
-# TODO: find out if/how to query the latest available.
-# There are supposed to be .pidx files (package index files)
-PACK_VERSION := 12.4.0
+# PACK_VERSION := 12.4.0
+# Get https://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.pidx to see if there's a newer pack
+PACK_VERSION := $(shell wget -O - -qq https://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.pidx|grep LPC55S69|python -c'import sys; print(sys.stdin.read().rsplit("version=\"", 1)[1].split("\"", 1)[0])')
+PACK := NXP.LPC55S69_DFP.$(PACK_VERSION).pack
 fetch-latest-svd:
-	wget https://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.LPC55S69_DFP.12.4.0.pack
-	unzip NXP.LPC55S69_DFP.12.4.0.pack LPC55S69_cm33_core0.xml
+	wget -qqO- https://mcuxpresso.nxp.com/cmsis_pack/repo/$(PACK) | bsdtar -xf- LPC55S69_cm33_core0.xml
 
 # Maintenance
 VERSION := $(shell grep version Cargo.toml|head -1|cut -d' ' -f 3|tr -d '"')
