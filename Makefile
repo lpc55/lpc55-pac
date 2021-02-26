@@ -1,7 +1,7 @@
 YAML = lpc55.yaml
 SVD = lpc55.svd.patched
 
-build: patch generate
+build: patch generate work-around-missing-svd2rust-release
 	cargo build
 
 patch:
@@ -14,6 +14,15 @@ generate:
 	svd2rust -i ./$(SVD)
 	form -i lib.rs -o src/ && rm lib.rs
 	cargo fmt
+
+work-around-missing-svd2rust-release:
+	sed -i '/bare-metal/d' Cargo.toml
+	sed -i 's/bare_metal::Nr/cortex_m::interrupt::Nr/' src/lib.rs
+	sed -i '/bare_metal/d' src/lib.rs
+	sed -i '/legacy_directory_ownership/d' src/lib.rs
+	sed -i '/plugin_as_library/d' src/lib.rs
+	sed -i '/safe_extern_statics/d' src/lib.rs
+	sed -i '/unions_with_drop_fields/d' src/lib.rs
 
 # External documentation
 fetch-docs:
