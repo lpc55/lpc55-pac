@@ -1,6 +1,10 @@
 YAML = lpc55.yaml
 SVD = lpc55.svd.patched
 
+# this make target runs under svdtools, ensure it works at all times.
+check: patch generate work-around-missing-svd2rust-release
+	cargo check
+
 build: patch generate work-around-missing-svd2rust-release
 	cargo build
 
