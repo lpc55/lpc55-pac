@@ -1,13 +1,35 @@
-#[doc = "Reader of register RLAR"]
-pub type R = crate::R<u32, super::RLAR>;
-#[doc = "Writer for register RLAR"]
-pub type W = crate::W<u32, super::RLAR>;
-#[doc = "Register RLAR `reset()`'s with value 0"]
-impl crate::ResetValue for super::RLAR {
-    type Type = u32;
+#[doc = "Register `RLAR` reader"]
+pub struct R(crate::R<RLAR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RLAR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<RLAR_SPEC>> for R {
+    fn from(reader: crate::R<RLAR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `RLAR` writer"]
+pub struct W(crate::W<RLAR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RLAR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<RLAR_SPEC>> for W {
+    fn from(writer: crate::W<RLAR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Enable. SAU region enable.\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ENABLE`"]
-pub type ENABLE_R = crate::R<bool, ENABLE_A>;
+#[doc = "Field `ENABLE` reader - Enable. SAU region enable."]
+pub struct ENABLE_R(crate::FieldReader<bool, ENABLE_A>);
 impl ENABLE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ENABLE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ENABLE_A {
@@ -38,15 +63,22 @@ impl ENABLE_R {
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == ENABLE_A::ENABLED
+        **self == ENABLE_A::ENABLED
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == ENABLE_A::DISABLED
+        **self == ENABLE_A::DISABLED
     }
 }
-#[doc = "Write proxy for field `ENABLE`"]
+impl core::ops::Deref for ENABLE_R {
+    type Target = crate::FieldReader<bool, ENABLE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ENABLE` writer - Enable. SAU region enable."]
 pub struct ENABLE_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> ENABLE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ENABLE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "SAU region is enabled."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<NSC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `NSC`"]
-pub type NSC_R = crate::R<bool, NSC_A>;
+#[doc = "Field `NSC` reader - Non-secure callable. Controls whether Non-secure state is permitted to execute an SG instruction from this region."]
+pub struct NSC_R(crate::FieldReader<bool, NSC_A>);
 impl NSC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NSC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NSC_A {
@@ -113,15 +146,22 @@ impl NSC_R {
     #[doc = "Checks if the value of the field is `NOT_NON_SECURE_CALLABLE`"]
     #[inline(always)]
     pub fn is_not_non_secure_callable(&self) -> bool {
-        *self == NSC_A::NOT_NON_SECURE_CALLABLE
+        **self == NSC_A::NOT_NON_SECURE_CALLABLE
     }
     #[doc = "Checks if the value of the field is `NON_SECURE_CALLABLE`"]
     #[inline(always)]
     pub fn is_non_secure_callable(&self) -> bool {
-        *self == NSC_A::NON_SECURE_CALLABLE
+        **self == NSC_A::NON_SECURE_CALLABLE
     }
 }
-#[doc = "Write proxy for field `NSC`"]
+impl core::ops::Deref for NSC_R {
+    type Target = crate::FieldReader<bool, NSC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `NSC` writer - Non-secure callable. Controls whether Non-secure state is permitted to execute an SG instruction from this region."]
 pub struct NSC_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> NSC_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: NSC_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Region is not Non-secure callable."]
     #[inline(always)]
@@ -156,13 +194,29 @@ impl<'a> NSC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `LADDR`"]
-pub type LADDR_R = crate::R<u32, u32>;
-#[doc = "Write proxy for field `LADDR`"]
+#[doc = "Field `LADDR` reader - Limit address. Holds bits\\[31:5\\]
+of the limit address for the selected SAU region. Bits\\[4:0\\]
+of the limit address are defined as 0x1F."]
+pub struct LADDR_R(crate::FieldReader<u32, u32>);
+impl LADDR_R {
+    pub(crate) fn new(bits: u32) -> Self {
+        LADDR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LADDR_R {
+    type Target = crate::FieldReader<u32, u32>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LADDR` writer - Limit address. Holds bits\\[31:5\\]
+of the limit address for the selected SAU region. Bits\\[4:0\\]
+of the limit address are defined as 0x1F."]
 pub struct LADDR_W<'a> {
     w: &'a mut W,
 }
@@ -170,7 +224,7 @@ impl<'a> LADDR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07ff_ffff << 5)) | (((value as u32) & 0x07ff_ffff) << 5);
+        self.w.bits = (self.w.bits & !(0x07ff_ffff << 5)) | ((value as u32 & 0x07ff_ffff) << 5);
         self.w
     }
 }
@@ -210,5 +264,30 @@ of the limit address are defined as 0x1F."]
     #[inline(always)]
     pub fn laddr(&mut self) -> LADDR_W {
         LADDR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Security Attribution Unit Region Limit Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rlar](index.html) module"]
+pub struct RLAR_SPEC;
+impl crate::RegisterSpec for RLAR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [rlar::R](R) reader structure"]
+impl crate::Readable for RLAR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [rlar::W](W) writer structure"]
+impl crate::Writable for RLAR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RLAR to value 0"]
+impl crate::Resettable for RLAR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

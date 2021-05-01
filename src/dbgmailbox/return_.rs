@@ -1,18 +1,52 @@
-#[doc = "Reader of register RETURN"]
-pub type R = crate::R<u32, super::RETURN>;
-#[doc = "Writer for register RETURN"]
-pub type W = crate::W<u32, super::RETURN>;
-#[doc = "Register RETURN `reset()`'s with value 0"]
-impl crate::ResetValue for super::RETURN {
-    type Type = u32;
+#[doc = "Register `RETURN` reader"]
+pub struct R(crate::R<RETURN_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RETURN_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `RET`"]
-pub type RET_R = crate::R<u32, u32>;
-#[doc = "Write proxy for field `RET`"]
+impl core::convert::From<crate::R<RETURN_SPEC>> for R {
+    fn from(reader: crate::R<RETURN_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `RETURN` writer"]
+pub struct W(crate::W<RETURN_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RETURN_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<RETURN_SPEC>> for W {
+    fn from(writer: crate::W<RETURN_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `RET` reader - The Return value from ROM."]
+pub struct RET_R(crate::FieldReader<u32, u32>);
+impl RET_R {
+    pub(crate) fn new(bits: u32) -> Self {
+        RET_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RET_R {
+    type Target = crate::FieldReader<u32, u32>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RET` writer - The Return value from ROM."]
 pub struct RET_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +54,7 @@ impl<'a> RET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
+        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
         self.w
     }
 }
@@ -36,5 +70,30 @@ impl W {
     #[inline(always)]
     pub fn ret(&mut self) -> RET_W {
         RET_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Return value from ROM.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [return_](index.html) module"]
+pub struct RETURN_SPEC;
+impl crate::RegisterSpec for RETURN_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [return_::R](R) reader structure"]
+impl crate::Readable for RETURN_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [return_::W](W) writer structure"]
+impl crate::Writable for RETURN_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RETURN to value 0"]
+impl crate::Resettable for RETURN_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

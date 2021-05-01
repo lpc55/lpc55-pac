@@ -1,13 +1,35 @@
-#[doc = "Reader of register PDRUNCFG0"]
-pub type R = crate::R<u32, super::PDRUNCFG0>;
-#[doc = "Writer for register PDRUNCFG0"]
-pub type W = crate::W<u32, super::PDRUNCFG0>;
-#[doc = "Register PDRUNCFG0 `reset()`'s with value 0x00de_ffc4"]
-impl crate::ResetValue for super::PDRUNCFG0 {
-    type Type = u32;
+#[doc = "Register `PDRUNCFG0` reader"]
+pub struct R(crate::R<PDRUNCFG0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PDRUNCFG0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x00de_ffc4
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<PDRUNCFG0_SPEC>> for R {
+    fn from(reader: crate::R<PDRUNCFG0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PDRUNCFG0` writer"]
+pub struct W(crate::W<PDRUNCFG0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PDRUNCFG0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<PDRUNCFG0_SPEC>> for W {
+    fn from(writer: crate::W<PDRUNCFG0_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Controls power to VBAT Brown Out Detector (BOD).\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<PDEN_BODVBAT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDEN_BODVBAT`"]
-pub type PDEN_BODVBAT_R = crate::R<bool, PDEN_BODVBAT_A>;
+#[doc = "Field `PDEN_BODVBAT` reader - Controls power to VBAT Brown Out Detector (BOD)."]
+pub struct PDEN_BODVBAT_R(crate::FieldReader<bool, PDEN_BODVBAT_A>);
 impl PDEN_BODVBAT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDEN_BODVBAT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDEN_BODVBAT_A {
@@ -38,15 +63,22 @@ impl PDEN_BODVBAT_R {
     #[doc = "Checks if the value of the field is `POWEREDON`"]
     #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_BODVBAT_A::POWEREDON
+        **self == PDEN_BODVBAT_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
     #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_BODVBAT_A::POWEREDOFF
+        **self == PDEN_BODVBAT_A::POWEREDOFF
     }
 }
-#[doc = "Write proxy for field `PDEN_BODVBAT`"]
+impl core::ops::Deref for PDEN_BODVBAT_R {
+    type Target = crate::FieldReader<bool, PDEN_BODVBAT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDEN_BODVBAT` writer - Controls power to VBAT Brown Out Detector (BOD)."]
 pub struct PDEN_BODVBAT_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> PDEN_BODVBAT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PDEN_BODVBAT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "BOD VBAT is powered."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> PDEN_BODVBAT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<PDEN_FRO32K_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDEN_FRO32K`"]
-pub type PDEN_FRO32K_R = crate::R<bool, PDEN_FRO32K_A>;
+#[doc = "Field `PDEN_FRO32K` reader - Controls power to the Free Running Oscillator (FRO) 32 KHz."]
+pub struct PDEN_FRO32K_R(crate::FieldReader<bool, PDEN_FRO32K_A>);
 impl PDEN_FRO32K_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDEN_FRO32K_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDEN_FRO32K_A {
@@ -113,15 +146,22 @@ impl PDEN_FRO32K_R {
     #[doc = "Checks if the value of the field is `POWEREDON`"]
     #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_FRO32K_A::POWEREDON
+        **self == PDEN_FRO32K_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
     #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_FRO32K_A::POWEREDOFF
+        **self == PDEN_FRO32K_A::POWEREDOFF
     }
 }
-#[doc = "Write proxy for field `PDEN_FRO32K`"]
+impl core::ops::Deref for PDEN_FRO32K_R {
+    type Target = crate::FieldReader<bool, PDEN_FRO32K_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDEN_FRO32K` writer - Controls power to the Free Running Oscillator (FRO) 32 KHz."]
 pub struct PDEN_FRO32K_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> PDEN_FRO32K_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PDEN_FRO32K_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "FRO32KHz is powered."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> PDEN_FRO32K_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<PDEN_XTAL32K_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDEN_XTAL32K`"]
-pub type PDEN_XTAL32K_R = crate::R<bool, PDEN_XTAL32K_A>;
+#[doc = "Field `PDEN_XTAL32K` reader - Controls power to crystal 32 KHz."]
+pub struct PDEN_XTAL32K_R(crate::FieldReader<bool, PDEN_XTAL32K_A>);
 impl PDEN_XTAL32K_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDEN_XTAL32K_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDEN_XTAL32K_A {
@@ -188,15 +229,22 @@ impl PDEN_XTAL32K_R {
     #[doc = "Checks if the value of the field is `POWEREDON`"]
     #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_XTAL32K_A::POWEREDON
+        **self == PDEN_XTAL32K_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
     #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_XTAL32K_A::POWEREDOFF
+        **self == PDEN_XTAL32K_A::POWEREDOFF
     }
 }
-#[doc = "Write proxy for field `PDEN_XTAL32K`"]
+impl core::ops::Deref for PDEN_XTAL32K_R {
+    type Target = crate::FieldReader<bool, PDEN_XTAL32K_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDEN_XTAL32K` writer - Controls power to crystal 32 KHz."]
 pub struct PDEN_XTAL32K_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> PDEN_XTAL32K_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PDEN_XTAL32K_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Crystal 32KHz is powered."]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> PDEN_XTAL32K_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<PDEN_XTAL32M_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDEN_XTAL32M`"]
-pub type PDEN_XTAL32M_R = crate::R<bool, PDEN_XTAL32M_A>;
+#[doc = "Field `PDEN_XTAL32M` reader - Controls power to crystal 32 MHz."]
+pub struct PDEN_XTAL32M_R(crate::FieldReader<bool, PDEN_XTAL32M_A>);
 impl PDEN_XTAL32M_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDEN_XTAL32M_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDEN_XTAL32M_A {
@@ -263,15 +312,22 @@ impl PDEN_XTAL32M_R {
     #[doc = "Checks if the value of the field is `POWEREDON`"]
     #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_XTAL32M_A::POWEREDON
+        **self == PDEN_XTAL32M_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
     #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_XTAL32M_A::POWEREDOFF
+        **self == PDEN_XTAL32M_A::POWEREDOFF
     }
 }
-#[doc = "Write proxy for field `PDEN_XTAL32M`"]
+impl core::ops::Deref for PDEN_XTAL32M_R {
+    type Target = crate::FieldReader<bool, PDEN_XTAL32M_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDEN_XTAL32M` writer - Controls power to crystal 32 MHz."]
 pub struct PDEN_XTAL32M_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> PDEN_XTAL32M_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PDEN_XTAL32M_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Crystal 32MHz is powered."]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> PDEN_XTAL32M_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<PDEN_PLL0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDEN_PLL0`"]
-pub type PDEN_PLL0_R = crate::R<bool, PDEN_PLL0_A>;
+#[doc = "Field `PDEN_PLL0` reader - Controls power to System PLL (also refered as PLL0)."]
+pub struct PDEN_PLL0_R(crate::FieldReader<bool, PDEN_PLL0_A>);
 impl PDEN_PLL0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDEN_PLL0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDEN_PLL0_A {
@@ -338,15 +395,22 @@ impl PDEN_PLL0_R {
     #[doc = "Checks if the value of the field is `POWEREDON`"]
     #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_PLL0_A::POWEREDON
+        **self == PDEN_PLL0_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
     #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_PLL0_A::POWEREDOFF
+        **self == PDEN_PLL0_A::POWEREDOFF
     }
 }
-#[doc = "Write proxy for field `PDEN_PLL0`"]
+impl core::ops::Deref for PDEN_PLL0_R {
+    type Target = crate::FieldReader<bool, PDEN_PLL0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDEN_PLL0` writer - Controls power to System PLL (also refered as PLL0)."]
 pub struct PDEN_PLL0_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> PDEN_PLL0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PDEN_PLL0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "PLL0 is powered."]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> PDEN_PLL0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<PDEN_PLL1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDEN_PLL1`"]
-pub type PDEN_PLL1_R = crate::R<bool, PDEN_PLL1_A>;
+#[doc = "Field `PDEN_PLL1` reader - Controls power to USB PLL (also refered as PLL1)."]
+pub struct PDEN_PLL1_R(crate::FieldReader<bool, PDEN_PLL1_A>);
 impl PDEN_PLL1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDEN_PLL1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDEN_PLL1_A {
@@ -413,15 +478,22 @@ impl PDEN_PLL1_R {
     #[doc = "Checks if the value of the field is `POWEREDON`"]
     #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_PLL1_A::POWEREDON
+        **self == PDEN_PLL1_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
     #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_PLL1_A::POWEREDOFF
+        **self == PDEN_PLL1_A::POWEREDOFF
     }
 }
-#[doc = "Write proxy for field `PDEN_PLL1`"]
+impl core::ops::Deref for PDEN_PLL1_R {
+    type Target = crate::FieldReader<bool, PDEN_PLL1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDEN_PLL1` writer - Controls power to USB PLL (also refered as PLL1)."]
 pub struct PDEN_PLL1_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> PDEN_PLL1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PDEN_PLL1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "PLL1 is powered."]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> PDEN_PLL1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<PDEN_USBFSPHY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDEN_USBFSPHY`"]
-pub type PDEN_USBFSPHY_R = crate::R<bool, PDEN_USBFSPHY_A>;
+#[doc = "Field `PDEN_USBFSPHY` reader - Controls power to USB Full Speed phy."]
+pub struct PDEN_USBFSPHY_R(crate::FieldReader<bool, PDEN_USBFSPHY_A>);
 impl PDEN_USBFSPHY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDEN_USBFSPHY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDEN_USBFSPHY_A {
@@ -488,15 +561,22 @@ impl PDEN_USBFSPHY_R {
     #[doc = "Checks if the value of the field is `POWEREDON`"]
     #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_USBFSPHY_A::POWEREDON
+        **self == PDEN_USBFSPHY_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
     #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_USBFSPHY_A::POWEREDOFF
+        **self == PDEN_USBFSPHY_A::POWEREDOFF
     }
 }
-#[doc = "Write proxy for field `PDEN_USBFSPHY`"]
+impl core::ops::Deref for PDEN_USBFSPHY_R {
+    type Target = crate::FieldReader<bool, PDEN_USBFSPHY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDEN_USBFSPHY` writer - Controls power to USB Full Speed phy."]
 pub struct PDEN_USBFSPHY_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> PDEN_USBFSPHY_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PDEN_USBFSPHY_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "USB Full Speed phy is powered."]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> PDEN_USBFSPHY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<PDEN_USBHSPHY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDEN_USBHSPHY`"]
-pub type PDEN_USBHSPHY_R = crate::R<bool, PDEN_USBHSPHY_A>;
+#[doc = "Field `PDEN_USBHSPHY` reader - Controls power to USB High Speed Phy."]
+pub struct PDEN_USBHSPHY_R(crate::FieldReader<bool, PDEN_USBHSPHY_A>);
 impl PDEN_USBHSPHY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDEN_USBHSPHY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDEN_USBHSPHY_A {
@@ -563,15 +644,22 @@ impl PDEN_USBHSPHY_R {
     #[doc = "Checks if the value of the field is `POWEREDON`"]
     #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_USBHSPHY_A::POWEREDON
+        **self == PDEN_USBHSPHY_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
     #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_USBHSPHY_A::POWEREDOFF
+        **self == PDEN_USBHSPHY_A::POWEREDOFF
     }
 }
-#[doc = "Write proxy for field `PDEN_USBHSPHY`"]
+impl core::ops::Deref for PDEN_USBHSPHY_R {
+    type Target = crate::FieldReader<bool, PDEN_USBHSPHY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDEN_USBHSPHY` writer - Controls power to USB High Speed Phy."]
 pub struct PDEN_USBHSPHY_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +667,7 @@ impl<'a> PDEN_USBHSPHY_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PDEN_USBHSPHY_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "USB HS phy is powered."]
     #[inline(always)]
@@ -606,7 +692,7 @@ impl<'a> PDEN_USBHSPHY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -624,9 +710,12 @@ impl From<PDEN_COMP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDEN_COMP`"]
-pub type PDEN_COMP_R = crate::R<bool, PDEN_COMP_A>;
+#[doc = "Field `PDEN_COMP` reader - Controls power to Analog Comparator."]
+pub struct PDEN_COMP_R(crate::FieldReader<bool, PDEN_COMP_A>);
 impl PDEN_COMP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDEN_COMP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDEN_COMP_A {
@@ -638,15 +727,22 @@ impl PDEN_COMP_R {
     #[doc = "Checks if the value of the field is `POWEREDON`"]
     #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_COMP_A::POWEREDON
+        **self == PDEN_COMP_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
     #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_COMP_A::POWEREDOFF
+        **self == PDEN_COMP_A::POWEREDOFF
     }
 }
-#[doc = "Write proxy for field `PDEN_COMP`"]
+impl core::ops::Deref for PDEN_COMP_R {
+    type Target = crate::FieldReader<bool, PDEN_COMP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDEN_COMP` writer - Controls power to Analog Comparator."]
 pub struct PDEN_COMP_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +750,7 @@ impl<'a> PDEN_COMP_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PDEN_COMP_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Analog Comparator is powered."]
     #[inline(always)]
@@ -681,7 +775,7 @@ impl<'a> PDEN_COMP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -699,9 +793,12 @@ impl From<PDEN_LDOUSBHS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDEN_LDOUSBHS`"]
-pub type PDEN_LDOUSBHS_R = crate::R<bool, PDEN_LDOUSBHS_A>;
+#[doc = "Field `PDEN_LDOUSBHS` reader - Controls power to USB high speed LDO."]
+pub struct PDEN_LDOUSBHS_R(crate::FieldReader<bool, PDEN_LDOUSBHS_A>);
 impl PDEN_LDOUSBHS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDEN_LDOUSBHS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDEN_LDOUSBHS_A {
@@ -713,15 +810,22 @@ impl PDEN_LDOUSBHS_R {
     #[doc = "Checks if the value of the field is `POWEREDON`"]
     #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_LDOUSBHS_A::POWEREDON
+        **self == PDEN_LDOUSBHS_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
     #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_LDOUSBHS_A::POWEREDOFF
+        **self == PDEN_LDOUSBHS_A::POWEREDOFF
     }
 }
-#[doc = "Write proxy for field `PDEN_LDOUSBHS`"]
+impl core::ops::Deref for PDEN_LDOUSBHS_R {
+    type Target = crate::FieldReader<bool, PDEN_LDOUSBHS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDEN_LDOUSBHS` writer - Controls power to USB high speed LDO."]
 pub struct PDEN_LDOUSBHS_W<'a> {
     w: &'a mut W,
 }
@@ -729,9 +833,7 @@ impl<'a> PDEN_LDOUSBHS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PDEN_LDOUSBHS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "USB high speed LDO is powered."]
     #[inline(always)]
@@ -756,7 +858,7 @@ impl<'a> PDEN_LDOUSBHS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
@@ -774,9 +876,12 @@ impl From<PDEN_AUXBIAS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDEN_AUXBIAS`"]
-pub type PDEN_AUXBIAS_R = crate::R<bool, PDEN_AUXBIAS_A>;
+#[doc = "Field `PDEN_AUXBIAS` reader - Controls power to auxiliary biasing (AUXBIAS)"]
+pub struct PDEN_AUXBIAS_R(crate::FieldReader<bool, PDEN_AUXBIAS_A>);
 impl PDEN_AUXBIAS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDEN_AUXBIAS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDEN_AUXBIAS_A {
@@ -788,15 +893,22 @@ impl PDEN_AUXBIAS_R {
     #[doc = "Checks if the value of the field is `POWEREDON`"]
     #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_AUXBIAS_A::POWEREDON
+        **self == PDEN_AUXBIAS_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
     #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_AUXBIAS_A::POWEREDOFF
+        **self == PDEN_AUXBIAS_A::POWEREDOFF
     }
 }
-#[doc = "Write proxy for field `PDEN_AUXBIAS`"]
+impl core::ops::Deref for PDEN_AUXBIAS_R {
+    type Target = crate::FieldReader<bool, PDEN_AUXBIAS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDEN_AUXBIAS` writer - Controls power to auxiliary biasing (AUXBIAS)"]
 pub struct PDEN_AUXBIAS_W<'a> {
     w: &'a mut W,
 }
@@ -804,9 +916,7 @@ impl<'a> PDEN_AUXBIAS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PDEN_AUXBIAS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "auxiliary biasing is powered."]
     #[inline(always)]
@@ -831,7 +941,7 @@ impl<'a> PDEN_AUXBIAS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -849,9 +959,12 @@ impl From<PDEN_LDOXO32M_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDEN_LDOXO32M`"]
-pub type PDEN_LDOXO32M_R = crate::R<bool, PDEN_LDOXO32M_A>;
+#[doc = "Field `PDEN_LDOXO32M` reader - Controls power to crystal 32 MHz LDO."]
+pub struct PDEN_LDOXO32M_R(crate::FieldReader<bool, PDEN_LDOXO32M_A>);
 impl PDEN_LDOXO32M_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDEN_LDOXO32M_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDEN_LDOXO32M_A {
@@ -863,15 +976,22 @@ impl PDEN_LDOXO32M_R {
     #[doc = "Checks if the value of the field is `POWEREDON`"]
     #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_LDOXO32M_A::POWEREDON
+        **self == PDEN_LDOXO32M_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
     #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_LDOXO32M_A::POWEREDOFF
+        **self == PDEN_LDOXO32M_A::POWEREDOFF
     }
 }
-#[doc = "Write proxy for field `PDEN_LDOXO32M`"]
+impl core::ops::Deref for PDEN_LDOXO32M_R {
+    type Target = crate::FieldReader<bool, PDEN_LDOXO32M_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDEN_LDOXO32M` writer - Controls power to crystal 32 MHz LDO."]
 pub struct PDEN_LDOXO32M_W<'a> {
     w: &'a mut W,
 }
@@ -879,9 +999,7 @@ impl<'a> PDEN_LDOXO32M_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PDEN_LDOXO32M_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "crystal 32 MHz LDO is powered."]
     #[inline(always)]
@@ -906,7 +1024,7 @@ impl<'a> PDEN_LDOXO32M_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
@@ -924,9 +1042,12 @@ impl From<PDEN_RNG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDEN_RNG`"]
-pub type PDEN_RNG_R = crate::R<bool, PDEN_RNG_A>;
+#[doc = "Field `PDEN_RNG` reader - Controls power to all True Random Number Genetaor (TRNG) clock sources."]
+pub struct PDEN_RNG_R(crate::FieldReader<bool, PDEN_RNG_A>);
 impl PDEN_RNG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDEN_RNG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDEN_RNG_A {
@@ -938,15 +1059,22 @@ impl PDEN_RNG_R {
     #[doc = "Checks if the value of the field is `POWEREDON`"]
     #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_RNG_A::POWEREDON
+        **self == PDEN_RNG_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
     #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_RNG_A::POWEREDOFF
+        **self == PDEN_RNG_A::POWEREDOFF
     }
 }
-#[doc = "Write proxy for field `PDEN_RNG`"]
+impl core::ops::Deref for PDEN_RNG_R {
+    type Target = crate::FieldReader<bool, PDEN_RNG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDEN_RNG` writer - Controls power to all True Random Number Genetaor (TRNG) clock sources."]
 pub struct PDEN_RNG_W<'a> {
     w: &'a mut W,
 }
@@ -954,9 +1082,7 @@ impl<'a> PDEN_RNG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PDEN_RNG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "TRNG clocks are powered."]
     #[inline(always)]
@@ -981,7 +1107,7 @@ impl<'a> PDEN_RNG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
         self.w
     }
 }
@@ -999,9 +1125,12 @@ impl From<PDEN_PLL0_SSCG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PDEN_PLL0_SSCG`"]
-pub type PDEN_PLL0_SSCG_R = crate::R<bool, PDEN_PLL0_SSCG_A>;
+#[doc = "Field `PDEN_PLL0_SSCG` reader - Controls power to System PLL (PLL0) Spread Spectrum module."]
+pub struct PDEN_PLL0_SSCG_R(crate::FieldReader<bool, PDEN_PLL0_SSCG_A>);
 impl PDEN_PLL0_SSCG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PDEN_PLL0_SSCG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PDEN_PLL0_SSCG_A {
@@ -1013,15 +1142,22 @@ impl PDEN_PLL0_SSCG_R {
     #[doc = "Checks if the value of the field is `POWEREDON`"]
     #[inline(always)]
     pub fn is_poweredon(&self) -> bool {
-        *self == PDEN_PLL0_SSCG_A::POWEREDON
+        **self == PDEN_PLL0_SSCG_A::POWEREDON
     }
     #[doc = "Checks if the value of the field is `POWEREDOFF`"]
     #[inline(always)]
     pub fn is_poweredoff(&self) -> bool {
-        *self == PDEN_PLL0_SSCG_A::POWEREDOFF
+        **self == PDEN_PLL0_SSCG_A::POWEREDOFF
     }
 }
-#[doc = "Write proxy for field `PDEN_PLL0_SSCG`"]
+impl core::ops::Deref for PDEN_PLL0_SSCG_R {
+    type Target = crate::FieldReader<bool, PDEN_PLL0_SSCG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PDEN_PLL0_SSCG` writer - Controls power to System PLL (PLL0) Spread Spectrum module."]
 pub struct PDEN_PLL0_SSCG_W<'a> {
     w: &'a mut W,
 }
@@ -1029,9 +1165,7 @@ impl<'a> PDEN_PLL0_SSCG_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PDEN_PLL0_SSCG_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "PLL0 Sread spectrum module is powered."]
     #[inline(always)]
@@ -1056,7 +1190,7 @@ impl<'a> PDEN_PLL0_SSCG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
         self.w
     }
 }
@@ -1202,5 +1336,30 @@ impl W {
     #[inline(always)]
     pub fn pden_pll0_sscg(&mut self) -> PDEN_PLL0_SSCG_W {
         PDEN_PLL0_SSCG_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Controls the power to various analog blocks \\[Reset by: PoR, Pin Reset, Brown Out Detectors Reset, Deep Power Down Reset, Software Reset\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdruncfg0](index.html) module"]
+pub struct PDRUNCFG0_SPEC;
+impl crate::RegisterSpec for PDRUNCFG0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pdruncfg0::R](R) reader structure"]
+impl crate::Readable for PDRUNCFG0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pdruncfg0::W](W) writer structure"]
+impl crate::Writable for PDRUNCFG0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PDRUNCFG0 to value 0x00de_ffc4"]
+impl crate::Resettable for PDRUNCFG0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x00de_ffc4
     }
 }

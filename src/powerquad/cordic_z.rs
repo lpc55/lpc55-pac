@@ -1,18 +1,52 @@
-#[doc = "Reader of register CORDIC_Z"]
-pub type R = crate::R<u32, super::CORDIC_Z>;
-#[doc = "Writer for register CORDIC_Z"]
-pub type W = crate::W<u32, super::CORDIC_Z>;
-#[doc = "Register CORDIC_Z `reset()`'s with value 0"]
-impl crate::ResetValue for super::CORDIC_Z {
-    type Type = u32;
+#[doc = "Register `CORDIC_Z` reader"]
+pub struct R(crate::R<CORDIC_Z_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CORDIC_Z_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `cordic_z`"]
-pub type CORDIC_Z_R = crate::R<u32, u32>;
-#[doc = "Write proxy for field `cordic_z`"]
+impl core::convert::From<crate::R<CORDIC_Z_SPEC>> for R {
+    fn from(reader: crate::R<CORDIC_Z_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CORDIC_Z` writer"]
+pub struct W(crate::W<CORDIC_Z_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CORDIC_Z_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<CORDIC_Z_SPEC>> for W {
+    fn from(writer: crate::W<CORDIC_Z_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `cordic_z` reader - Cordic input z"]
+pub struct CORDIC_Z_R(crate::FieldReader<u32, u32>);
+impl CORDIC_Z_R {
+    pub(crate) fn new(bits: u32) -> Self {
+        CORDIC_Z_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CORDIC_Z_R {
+    type Target = crate::FieldReader<u32, u32>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `cordic_z` writer - Cordic input z"]
 pub struct CORDIC_Z_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +54,7 @@ impl<'a> CORDIC_Z_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
+        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
         self.w
     }
 }
@@ -36,5 +70,30 @@ impl W {
     #[inline(always)]
     pub fn cordic_z(&mut self) -> CORDIC_Z_W {
         CORDIC_Z_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Cordic input Z register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cordic_z](index.html) module"]
+pub struct CORDIC_Z_SPEC;
+impl crate::RegisterSpec for CORDIC_Z_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [cordic_z::R](R) reader structure"]
+impl crate::Readable for CORDIC_Z_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cordic_z::W](W) writer structure"]
+impl crate::Writable for CORDIC_Z_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CORDIC_Z to value 0"]
+impl crate::Resettable for CORDIC_Z_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

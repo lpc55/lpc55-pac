@@ -1,13 +1,35 @@
-#[doc = "Reader of register BOD_DCDC_INT_CTRL"]
-pub type R = crate::R<u32, super::BOD_DCDC_INT_CTRL>;
-#[doc = "Writer for register BOD_DCDC_INT_CTRL"]
-pub type W = crate::W<u32, super::BOD_DCDC_INT_CTRL>;
-#[doc = "Register BOD_DCDC_INT_CTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::BOD_DCDC_INT_CTRL {
-    type Type = u32;
+#[doc = "Register `BOD_DCDC_INT_CTRL` reader"]
+pub struct R(crate::R<BOD_DCDC_INT_CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<BOD_DCDC_INT_CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<BOD_DCDC_INT_CTRL_SPEC>> for R {
+    fn from(reader: crate::R<BOD_DCDC_INT_CTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `BOD_DCDC_INT_CTRL` writer"]
+pub struct W(crate::W<BOD_DCDC_INT_CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<BOD_DCDC_INT_CTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<BOD_DCDC_INT_CTRL_SPEC>> for W {
+    fn from(writer: crate::W<BOD_DCDC_INT_CTRL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "BOD VBAT interrupt control.\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<BODVBAT_INT_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BODVBAT_INT_ENABLE`"]
-pub type BODVBAT_INT_ENABLE_R = crate::R<bool, BODVBAT_INT_ENABLE_A>;
+#[doc = "Field `BODVBAT_INT_ENABLE` reader - BOD VBAT interrupt control."]
+pub struct BODVBAT_INT_ENABLE_R(crate::FieldReader<bool, BODVBAT_INT_ENABLE_A>);
 impl BODVBAT_INT_ENABLE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BODVBAT_INT_ENABLE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BODVBAT_INT_ENABLE_A {
@@ -38,15 +63,22 @@ impl BODVBAT_INT_ENABLE_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == BODVBAT_INT_ENABLE_A::DISABLE
+        **self == BODVBAT_INT_ENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == BODVBAT_INT_ENABLE_A::ENABLE
+        **self == BODVBAT_INT_ENABLE_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `BODVBAT_INT_ENABLE`"]
+impl core::ops::Deref for BODVBAT_INT_ENABLE_R {
+    type Target = crate::FieldReader<bool, BODVBAT_INT_ENABLE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BODVBAT_INT_ENABLE` writer - BOD VBAT interrupt control."]
 pub struct BODVBAT_INT_ENABLE_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> BODVBAT_INT_ENABLE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BODVBAT_INT_ENABLE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "BOD VBAT interrupt is disabled."]
     #[inline(always)]
@@ -81,13 +111,25 @@ impl<'a> BODVBAT_INT_ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `BODVBAT_INT_CLEAR`"]
-pub type BODVBAT_INT_CLEAR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `BODVBAT_INT_CLEAR`"]
+#[doc = "Field `BODVBAT_INT_CLEAR` reader - BOD VBAT interrupt clear.1: Clear the interrupt. Self-cleared bit."]
+pub struct BODVBAT_INT_CLEAR_R(crate::FieldReader<bool, bool>);
+impl BODVBAT_INT_CLEAR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BODVBAT_INT_CLEAR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BODVBAT_INT_CLEAR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BODVBAT_INT_CLEAR` writer - BOD VBAT interrupt clear.1: Clear the interrupt. Self-cleared bit."]
 pub struct BODVBAT_INT_CLEAR_W<'a> {
     w: &'a mut W,
 }
@@ -105,7 +147,7 @@ impl<'a> BODVBAT_INT_CLEAR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -123,9 +165,12 @@ impl From<BODCORE_INT_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BODCORE_INT_ENABLE`"]
-pub type BODCORE_INT_ENABLE_R = crate::R<bool, BODCORE_INT_ENABLE_A>;
+#[doc = "Field `BODCORE_INT_ENABLE` reader - BOD CORE interrupt control."]
+pub struct BODCORE_INT_ENABLE_R(crate::FieldReader<bool, BODCORE_INT_ENABLE_A>);
 impl BODCORE_INT_ENABLE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BODCORE_INT_ENABLE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BODCORE_INT_ENABLE_A {
@@ -137,15 +182,22 @@ impl BODCORE_INT_ENABLE_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == BODCORE_INT_ENABLE_A::DISABLE
+        **self == BODCORE_INT_ENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == BODCORE_INT_ENABLE_A::ENABLE
+        **self == BODCORE_INT_ENABLE_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `BODCORE_INT_ENABLE`"]
+impl core::ops::Deref for BODCORE_INT_ENABLE_R {
+    type Target = crate::FieldReader<bool, BODCORE_INT_ENABLE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BODCORE_INT_ENABLE` writer - BOD CORE interrupt control."]
 pub struct BODCORE_INT_ENABLE_W<'a> {
     w: &'a mut W,
 }
@@ -153,9 +205,7 @@ impl<'a> BODCORE_INT_ENABLE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: BODCORE_INT_ENABLE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "BOD CORE interrupt is disabled."]
     #[inline(always)]
@@ -180,13 +230,25 @@ impl<'a> BODCORE_INT_ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `BODCORE_INT_CLEAR`"]
-pub type BODCORE_INT_CLEAR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `BODCORE_INT_CLEAR`"]
+#[doc = "Field `BODCORE_INT_CLEAR` reader - BOD CORE interrupt clear.1: Clear the interrupt. Self-cleared bit."]
+pub struct BODCORE_INT_CLEAR_R(crate::FieldReader<bool, bool>);
+impl BODCORE_INT_CLEAR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BODCORE_INT_CLEAR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BODCORE_INT_CLEAR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BODCORE_INT_CLEAR` writer - BOD CORE interrupt clear.1: Clear the interrupt. Self-cleared bit."]
 pub struct BODCORE_INT_CLEAR_W<'a> {
     w: &'a mut W,
 }
@@ -204,7 +266,7 @@ impl<'a> BODCORE_INT_CLEAR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -222,9 +284,12 @@ impl From<DCDC_INT_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCDC_INT_ENABLE`"]
-pub type DCDC_INT_ENABLE_R = crate::R<bool, DCDC_INT_ENABLE_A>;
+#[doc = "Field `DCDC_INT_ENABLE` reader - DCDC interrupt control."]
+pub struct DCDC_INT_ENABLE_R(crate::FieldReader<bool, DCDC_INT_ENABLE_A>);
 impl DCDC_INT_ENABLE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DCDC_INT_ENABLE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCDC_INT_ENABLE_A {
@@ -236,15 +301,22 @@ impl DCDC_INT_ENABLE_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == DCDC_INT_ENABLE_A::DISABLE
+        **self == DCDC_INT_ENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == DCDC_INT_ENABLE_A::ENABLE
+        **self == DCDC_INT_ENABLE_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `DCDC_INT_ENABLE`"]
+impl core::ops::Deref for DCDC_INT_ENABLE_R {
+    type Target = crate::FieldReader<bool, DCDC_INT_ENABLE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DCDC_INT_ENABLE` writer - DCDC interrupt control."]
 pub struct DCDC_INT_ENABLE_W<'a> {
     w: &'a mut W,
 }
@@ -252,9 +324,7 @@ impl<'a> DCDC_INT_ENABLE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DCDC_INT_ENABLE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "DCDC interrupt is disabled."]
     #[inline(always)]
@@ -279,13 +349,25 @@ impl<'a> DCDC_INT_ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `DCDC_INT_CLEAR`"]
-pub type DCDC_INT_CLEAR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DCDC_INT_CLEAR`"]
+#[doc = "Field `DCDC_INT_CLEAR` reader - DCDC interrupt clear.1: Clear the interrupt. Self-cleared bit."]
+pub struct DCDC_INT_CLEAR_R(crate::FieldReader<bool, bool>);
+impl DCDC_INT_CLEAR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DCDC_INT_CLEAR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DCDC_INT_CLEAR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DCDC_INT_CLEAR` writer - DCDC interrupt clear.1: Clear the interrupt. Self-cleared bit."]
 pub struct DCDC_INT_CLEAR_W<'a> {
     w: &'a mut W,
 }
@@ -303,7 +385,7 @@ impl<'a> DCDC_INT_CLEAR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -369,5 +451,30 @@ impl W {
     #[inline(always)]
     pub fn dcdc_int_clear(&mut self) -> DCDC_INT_CLEAR_W {
         DCDC_INT_CLEAR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Brown Out Detectors (BoDs) & DCDC interrupts generation control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bod_dcdc_int_ctrl](index.html) module"]
+pub struct BOD_DCDC_INT_CTRL_SPEC;
+impl crate::RegisterSpec for BOD_DCDC_INT_CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [bod_dcdc_int_ctrl::R](R) reader structure"]
+impl crate::Readable for BOD_DCDC_INT_CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [bod_dcdc_int_ctrl::W](W) writer structure"]
+impl crate::Writable for BOD_DCDC_INT_CTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets BOD_DCDC_INT_CTRL to value 0"]
+impl crate::Resettable for BOD_DCDC_INT_CTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

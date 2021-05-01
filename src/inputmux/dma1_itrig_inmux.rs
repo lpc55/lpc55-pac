@@ -1,14 +1,35 @@
-#[doc = "Reader of register DMA1_ITRIG_INMUX[%s]"]
-pub type R = crate::R<u32, super::DMA1_ITRIG_INMUX>;
-#[doc = "Writer for register DMA1_ITRIG_INMUX[%s]"]
-pub type W = crate::W<u32, super::DMA1_ITRIG_INMUX>;
-#[doc = "Register DMA1_ITRIG_INMUX[%s]
-`reset()`'s with value 0x0f"]
-impl crate::ResetValue for super::DMA1_ITRIG_INMUX {
-    type Type = u32;
+#[doc = "Register `DMA1_ITRIG_INMUX[%s]` reader"]
+pub struct R(crate::R<DMA1_ITRIG_INMUX_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DMA1_ITRIG_INMUX_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0f
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<DMA1_ITRIG_INMUX_SPEC>> for R {
+    fn from(reader: crate::R<DMA1_ITRIG_INMUX_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DMA1_ITRIG_INMUX[%s]` writer"]
+pub struct W(crate::W<DMA1_ITRIG_INMUX_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DMA1_ITRIG_INMUX_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<DMA1_ITRIG_INMUX_SPEC>> for W {
+    fn from(writer: crate::W<DMA1_ITRIG_INMUX_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Trigger input number (decimal value) for DMA channel n (n = 0 to 9).\n\nValue on reset: 15"]
@@ -54,9 +75,12 @@ impl From<INP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `INP`"]
-pub type INP_R = crate::R<u8, INP_A>;
+#[doc = "Field `INP` reader - Trigger input number (decimal value) for DMA channel n (n = 0 to 9)."]
+pub struct INP_R(crate::FieldReader<u8, INP_A>);
 impl INP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        INP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INP_A {
@@ -83,85 +107,92 @@ impl INP_R {
     #[doc = "Checks if the value of the field is `VAL0`"]
     #[inline(always)]
     pub fn is_val0(&self) -> bool {
-        *self == INP_A::VAL0
+        **self == INP_A::VAL0
     }
     #[doc = "Checks if the value of the field is `VAL1`"]
     #[inline(always)]
     pub fn is_val1(&self) -> bool {
-        *self == INP_A::VAL1
+        **self == INP_A::VAL1
     }
     #[doc = "Checks if the value of the field is `VAL2`"]
     #[inline(always)]
     pub fn is_val2(&self) -> bool {
-        *self == INP_A::VAL2
+        **self == INP_A::VAL2
     }
     #[doc = "Checks if the value of the field is `VAL3`"]
     #[inline(always)]
     pub fn is_val3(&self) -> bool {
-        *self == INP_A::VAL3
+        **self == INP_A::VAL3
     }
     #[doc = "Checks if the value of the field is `VAL4`"]
     #[inline(always)]
     pub fn is_val4(&self) -> bool {
-        *self == INP_A::VAL4
+        **self == INP_A::VAL4
     }
     #[doc = "Checks if the value of the field is `VAL5`"]
     #[inline(always)]
     pub fn is_val5(&self) -> bool {
-        *self == INP_A::VAL5
+        **self == INP_A::VAL5
     }
     #[doc = "Checks if the value of the field is `VAL6`"]
     #[inline(always)]
     pub fn is_val6(&self) -> bool {
-        *self == INP_A::VAL6
+        **self == INP_A::VAL6
     }
     #[doc = "Checks if the value of the field is `VAL7`"]
     #[inline(always)]
     pub fn is_val7(&self) -> bool {
-        *self == INP_A::VAL7
+        **self == INP_A::VAL7
     }
     #[doc = "Checks if the value of the field is `VAL8`"]
     #[inline(always)]
     pub fn is_val8(&self) -> bool {
-        *self == INP_A::VAL8
+        **self == INP_A::VAL8
     }
     #[doc = "Checks if the value of the field is `VAL9`"]
     #[inline(always)]
     pub fn is_val9(&self) -> bool {
-        *self == INP_A::VAL9
+        **self == INP_A::VAL9
     }
     #[doc = "Checks if the value of the field is `VAL10`"]
     #[inline(always)]
     pub fn is_val10(&self) -> bool {
-        *self == INP_A::VAL10
+        **self == INP_A::VAL10
     }
     #[doc = "Checks if the value of the field is `VAL11`"]
     #[inline(always)]
     pub fn is_val11(&self) -> bool {
-        *self == INP_A::VAL11
+        **self == INP_A::VAL11
     }
     #[doc = "Checks if the value of the field is `VAL12`"]
     #[inline(always)]
     pub fn is_val12(&self) -> bool {
-        *self == INP_A::VAL12
+        **self == INP_A::VAL12
     }
     #[doc = "Checks if the value of the field is `VAL13`"]
     #[inline(always)]
     pub fn is_val13(&self) -> bool {
-        *self == INP_A::VAL13
+        **self == INP_A::VAL13
     }
     #[doc = "Checks if the value of the field is `VAL14`"]
     #[inline(always)]
     pub fn is_val14(&self) -> bool {
-        *self == INP_A::VAL14
+        **self == INP_A::VAL14
     }
     #[doc = "Checks if the value of the field is `VAL15`"]
     #[inline(always)]
     pub fn is_val15(&self) -> bool {
-        *self == INP_A::VAL15
+        **self == INP_A::VAL15
     }
 }
-#[doc = "Write proxy for field `INP`"]
+impl core::ops::Deref for INP_R {
+    type Target = crate::FieldReader<u8, INP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INP` writer - Trigger input number (decimal value) for DMA channel n (n = 0 to 9)."]
 pub struct INP_W<'a> {
     w: &'a mut W,
 }
@@ -169,9 +200,7 @@ impl<'a> INP_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INP_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Pin interrupt 0"]
     #[inline(always)]
@@ -256,7 +285,7 @@ impl<'a> INP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
+        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
         self.w
     }
 }
@@ -272,5 +301,31 @@ impl W {
     #[inline(always)]
     pub fn inp(&mut self) -> INP_W {
         INP_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Trigger select register for DMA1 channel\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma1_itrig_inmux](index.html) module"]
+pub struct DMA1_ITRIG_INMUX_SPEC;
+impl crate::RegisterSpec for DMA1_ITRIG_INMUX_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dma1_itrig_inmux::R](R) reader structure"]
+impl crate::Readable for DMA1_ITRIG_INMUX_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [dma1_itrig_inmux::W](W) writer structure"]
+impl crate::Writable for DMA1_ITRIG_INMUX_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DMA1_ITRIG_INMUX[%s]
+to value 0x0f"]
+impl crate::Resettable for DMA1_ITRIG_INMUX_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0f
     }
 }

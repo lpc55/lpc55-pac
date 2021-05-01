@@ -1,5 +1,17 @@
-#[doc = "Reader of register VERID"]
-pub type R = crate::R<u32, super::VERID>;
+#[doc = "Register `VERID` reader"]
+pub struct R(crate::R<VERID_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<VERID_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<VERID_SPEC>> for R {
+    fn from(reader: crate::R<VERID_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "Resolution\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RES_A {
@@ -14,9 +26,12 @@ impl From<RES_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RES`"]
-pub type RES_R = crate::R<bool, RES_A>;
+#[doc = "Field `RES` reader - Resolution"]
+pub struct RES_R(crate::FieldReader<bool, RES_A>);
 impl RES_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RES_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RES_A {
@@ -28,12 +43,19 @@ impl RES_R {
     #[doc = "Checks if the value of the field is `RES_0`"]
     #[inline(always)]
     pub fn is_res_0(&self) -> bool {
-        *self == RES_A::RES_0
+        **self == RES_A::RES_0
     }
     #[doc = "Checks if the value of the field is `RES_1`"]
     #[inline(always)]
     pub fn is_res_1(&self) -> bool {
-        *self == RES_A::RES_1
+        **self == RES_A::RES_1
+    }
+}
+impl core::ops::Deref for RES_R {
+    type Target = crate::FieldReader<bool, RES_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Differential Supported\n\nValue on reset: 1"]
@@ -51,9 +73,12 @@ impl From<DIFFEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DIFFEN`"]
-pub type DIFFEN_R = crate::R<bool, DIFFEN_A>;
+#[doc = "Field `DIFFEN` reader - Differential Supported"]
+pub struct DIFFEN_R(crate::FieldReader<bool, DIFFEN_A>);
 impl DIFFEN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DIFFEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIFFEN_A {
@@ -65,12 +90,19 @@ impl DIFFEN_R {
     #[doc = "Checks if the value of the field is `DIFFEN_0`"]
     #[inline(always)]
     pub fn is_diffen_0(&self) -> bool {
-        *self == DIFFEN_A::DIFFEN_0
+        **self == DIFFEN_A::DIFFEN_0
     }
     #[doc = "Checks if the value of the field is `DIFFEN_1`"]
     #[inline(always)]
     pub fn is_diffen_1(&self) -> bool {
-        *self == DIFFEN_A::DIFFEN_1
+        **self == DIFFEN_A::DIFFEN_1
+    }
+}
+impl core::ops::Deref for DIFFEN_R {
+    type Target = crate::FieldReader<bool, DIFFEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Multi Vref Implemented\n\nValue on reset: 1"]
@@ -87,9 +119,12 @@ impl From<MVI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MVI`"]
-pub type MVI_R = crate::R<bool, MVI_A>;
+#[doc = "Field `MVI` reader - Multi Vref Implemented"]
+pub struct MVI_R(crate::FieldReader<bool, MVI_A>);
 impl MVI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MVI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MVI_A {
@@ -101,12 +136,19 @@ impl MVI_R {
     #[doc = "Checks if the value of the field is `MVI_0`"]
     #[inline(always)]
     pub fn is_mvi_0(&self) -> bool {
-        *self == MVI_A::MVI_0
+        **self == MVI_A::MVI_0
     }
     #[doc = "Checks if the value of the field is `MVI_1`"]
     #[inline(always)]
     pub fn is_mvi_1(&self) -> bool {
-        *self == MVI_A::MVI_1
+        **self == MVI_A::MVI_1
+    }
+}
+impl core::ops::Deref for MVI_R {
+    type Target = crate::FieldReader<bool, MVI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Channel Scale Width\n\nValue on reset: 0"]
@@ -126,34 +168,43 @@ impl From<CSW_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CSW`"]
-pub type CSW_R = crate::R<u8, CSW_A>;
+#[doc = "Field `CSW` reader - Channel Scale Width"]
+pub struct CSW_R(crate::FieldReader<u8, CSW_A>);
 impl CSW_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CSW_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CSW_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CSW_A> {
         match self.bits {
-            0 => Val(CSW_A::CSW_0),
-            1 => Val(CSW_A::CSW_1),
-            6 => Val(CSW_A::CSW_6),
-            i => Res(i),
+            0 => Some(CSW_A::CSW_0),
+            1 => Some(CSW_A::CSW_1),
+            6 => Some(CSW_A::CSW_6),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `CSW_0`"]
     #[inline(always)]
     pub fn is_csw_0(&self) -> bool {
-        *self == CSW_A::CSW_0
+        **self == CSW_A::CSW_0
     }
     #[doc = "Checks if the value of the field is `CSW_1`"]
     #[inline(always)]
     pub fn is_csw_1(&self) -> bool {
-        *self == CSW_A::CSW_1
+        **self == CSW_A::CSW_1
     }
     #[doc = "Checks if the value of the field is `CSW_6`"]
     #[inline(always)]
     pub fn is_csw_6(&self) -> bool {
-        *self == CSW_A::CSW_6
+        **self == CSW_A::CSW_6
+    }
+}
+impl core::ops::Deref for CSW_R {
+    type Target = crate::FieldReader<u8, CSW_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Voltage Reference 1 Range Control Bit Implemented\n\nValue on reset: 0"]
@@ -172,9 +223,12 @@ impl From<VR1RNGI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VR1RNGI`"]
-pub type VR1RNGI_R = crate::R<bool, VR1RNGI_A>;
+#[doc = "Field `VR1RNGI` reader - Voltage Reference 1 Range Control Bit Implemented"]
+pub struct VR1RNGI_R(crate::FieldReader<bool, VR1RNGI_A>);
 impl VR1RNGI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VR1RNGI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VR1RNGI_A {
@@ -186,12 +240,19 @@ impl VR1RNGI_R {
     #[doc = "Checks if the value of the field is `VR1RNGI_0`"]
     #[inline(always)]
     pub fn is_vr1rngi_0(&self) -> bool {
-        *self == VR1RNGI_A::VR1RNGI_0
+        **self == VR1RNGI_A::VR1RNGI_0
     }
     #[doc = "Checks if the value of the field is `VR1RNGI_1`"]
     #[inline(always)]
     pub fn is_vr1rngi_1(&self) -> bool {
-        *self == VR1RNGI_A::VR1RNGI_1
+        **self == VR1RNGI_A::VR1RNGI_1
+    }
+}
+impl core::ops::Deref for VR1RNGI_R {
+    type Target = crate::FieldReader<bool, VR1RNGI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Internal ADC Clock implemented\n\nValue on reset: 0"]
@@ -208,9 +269,12 @@ impl From<IADCKI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `IADCKI`"]
-pub type IADCKI_R = crate::R<bool, IADCKI_A>;
+#[doc = "Field `IADCKI` reader - Internal ADC Clock implemented"]
+pub struct IADCKI_R(crate::FieldReader<bool, IADCKI_A>);
 impl IADCKI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        IADCKI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IADCKI_A {
@@ -222,12 +286,19 @@ impl IADCKI_R {
     #[doc = "Checks if the value of the field is `IADCKI_0`"]
     #[inline(always)]
     pub fn is_iadcki_0(&self) -> bool {
-        *self == IADCKI_A::IADCKI_0
+        **self == IADCKI_A::IADCKI_0
     }
     #[doc = "Checks if the value of the field is `IADCKI_1`"]
     #[inline(always)]
     pub fn is_iadcki_1(&self) -> bool {
-        *self == IADCKI_A::IADCKI_1
+        **self == IADCKI_A::IADCKI_1
+    }
+}
+impl core::ops::Deref for IADCKI_R {
+    type Target = crate::FieldReader<bool, IADCKI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Calibration Function Implemented\n\nValue on reset: 1"]
@@ -244,9 +315,12 @@ impl From<CALOFSI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CALOFSI`"]
-pub type CALOFSI_R = crate::R<bool, CALOFSI_A>;
+#[doc = "Field `CALOFSI` reader - Calibration Function Implemented"]
+pub struct CALOFSI_R(crate::FieldReader<bool, CALOFSI_A>);
 impl CALOFSI_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CALOFSI_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CALOFSI_A {
@@ -258,12 +332,19 @@ impl CALOFSI_R {
     #[doc = "Checks if the value of the field is `CALOFSI_0`"]
     #[inline(always)]
     pub fn is_calofsi_0(&self) -> bool {
-        *self == CALOFSI_A::CALOFSI_0
+        **self == CALOFSI_A::CALOFSI_0
     }
     #[doc = "Checks if the value of the field is `CALOFSI_1`"]
     #[inline(always)]
     pub fn is_calofsi_1(&self) -> bool {
-        *self == CALOFSI_A::CALOFSI_1
+        **self == CALOFSI_A::CALOFSI_1
+    }
+}
+impl core::ops::Deref for CALOFSI_R {
+    type Target = crate::FieldReader<bool, CALOFSI_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Number of Single Ended Outputs Supported\n\nValue on reset: 1"]
@@ -280,9 +361,12 @@ impl From<NUM_SEC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `NUM_SEC`"]
-pub type NUM_SEC_R = crate::R<bool, NUM_SEC_A>;
+#[doc = "Field `NUM_SEC` reader - Number of Single Ended Outputs Supported"]
+pub struct NUM_SEC_R(crate::FieldReader<bool, NUM_SEC_A>);
 impl NUM_SEC_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NUM_SEC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NUM_SEC_A {
@@ -294,12 +378,19 @@ impl NUM_SEC_R {
     #[doc = "Checks if the value of the field is `NUM_SEC_0`"]
     #[inline(always)]
     pub fn is_num_sec_0(&self) -> bool {
-        *self == NUM_SEC_A::NUM_SEC_0
+        **self == NUM_SEC_A::NUM_SEC_0
     }
     #[doc = "Checks if the value of the field is `NUM_SEC_1`"]
     #[inline(always)]
     pub fn is_num_sec_1(&self) -> bool {
-        *self == NUM_SEC_A::NUM_SEC_1
+        **self == NUM_SEC_A::NUM_SEC_1
+    }
+}
+impl core::ops::Deref for NUM_SEC_R {
+    type Target = crate::FieldReader<bool, NUM_SEC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Number of FIFOs\n\nValue on reset: 2"]
@@ -323,52 +414,85 @@ impl From<NUM_FIFO_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `NUM_FIFO`"]
-pub type NUM_FIFO_R = crate::R<u8, NUM_FIFO_A>;
+#[doc = "Field `NUM_FIFO` reader - Number of FIFOs"]
+pub struct NUM_FIFO_R(crate::FieldReader<u8, NUM_FIFO_A>);
 impl NUM_FIFO_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        NUM_FIFO_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, NUM_FIFO_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<NUM_FIFO_A> {
         match self.bits {
-            0 => Val(NUM_FIFO_A::NUM_FIFO_0),
-            1 => Val(NUM_FIFO_A::NUM_FIFO_1),
-            2 => Val(NUM_FIFO_A::NUM_FIFO_2),
-            3 => Val(NUM_FIFO_A::NUM_FIFO_3),
-            4 => Val(NUM_FIFO_A::NUM_FIFO_4),
-            i => Res(i),
+            0 => Some(NUM_FIFO_A::NUM_FIFO_0),
+            1 => Some(NUM_FIFO_A::NUM_FIFO_1),
+            2 => Some(NUM_FIFO_A::NUM_FIFO_2),
+            3 => Some(NUM_FIFO_A::NUM_FIFO_3),
+            4 => Some(NUM_FIFO_A::NUM_FIFO_4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `NUM_FIFO_0`"]
     #[inline(always)]
     pub fn is_num_fifo_0(&self) -> bool {
-        *self == NUM_FIFO_A::NUM_FIFO_0
+        **self == NUM_FIFO_A::NUM_FIFO_0
     }
     #[doc = "Checks if the value of the field is `NUM_FIFO_1`"]
     #[inline(always)]
     pub fn is_num_fifo_1(&self) -> bool {
-        *self == NUM_FIFO_A::NUM_FIFO_1
+        **self == NUM_FIFO_A::NUM_FIFO_1
     }
     #[doc = "Checks if the value of the field is `NUM_FIFO_2`"]
     #[inline(always)]
     pub fn is_num_fifo_2(&self) -> bool {
-        *self == NUM_FIFO_A::NUM_FIFO_2
+        **self == NUM_FIFO_A::NUM_FIFO_2
     }
     #[doc = "Checks if the value of the field is `NUM_FIFO_3`"]
     #[inline(always)]
     pub fn is_num_fifo_3(&self) -> bool {
-        *self == NUM_FIFO_A::NUM_FIFO_3
+        **self == NUM_FIFO_A::NUM_FIFO_3
     }
     #[doc = "Checks if the value of the field is `NUM_FIFO_4`"]
     #[inline(always)]
     pub fn is_num_fifo_4(&self) -> bool {
-        *self == NUM_FIFO_A::NUM_FIFO_4
+        **self == NUM_FIFO_A::NUM_FIFO_4
     }
 }
-#[doc = "Reader of field `MINOR`"]
-pub type MINOR_R = crate::R<u8, u8>;
-#[doc = "Reader of field `MAJOR`"]
-pub type MAJOR_R = crate::R<u8, u8>;
+impl core::ops::Deref for NUM_FIFO_R {
+    type Target = crate::FieldReader<u8, NUM_FIFO_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MINOR` reader - Minor Version Number"]
+pub struct MINOR_R(crate::FieldReader<u8, u8>);
+impl MINOR_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        MINOR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MINOR_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MAJOR` reader - Major Version Number"]
+pub struct MAJOR_R(crate::FieldReader<u8, u8>);
+impl MAJOR_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        MAJOR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MAJOR_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Resolution"]
     #[inline(always)]
@@ -424,5 +548,21 @@ impl R {
     #[inline(always)]
     pub fn major(&self) -> MAJOR_R {
         MAJOR_R::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
+#[doc = "Version ID Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [verid](index.html) module"]
+pub struct VERID_SPEC;
+impl crate::RegisterSpec for VERID_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [verid::R](R) reader structure"]
+impl crate::Readable for VERID_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets VERID to value 0x0100_2c0b"]
+impl crate::Resettable for VERID_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0100_2c0b
     }
 }

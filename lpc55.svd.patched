@@ -1,10 +1,10 @@
-<device xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.3" xsi:noNamespaceSchemaLocation="CMSIS-SVD.xsd">
+<device xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.3" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd">
   <vendor>nxp.com</vendor>
   <name>LPC55S69_cm33_core0</name>
   <version>1.0</version>
   <description>LPC55S69JBD100,LPC55S69JBD64,LPC55S69JEV98</description>
   <licenseText>
-Copyright 2016-2019 NXP
+Copyright 2016-2020 NXP
 All rights reserved.
 
 SPDX-License-Identifier: BSD-3-Clause
@@ -151,6 +151,13 @@ SPDX-License-Identifier: BSD-3-Clause
               <name>RoTK2_EN</name>
               <description>RoT Key 2 enable. 00 - Invalid 01 - Enabled 10, 11 - Key revoked</description>
               <bitOffset>4</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>RoTK3_EN</name>
+              <description>RoT Key 3 enable. 00 - Invalid 01 - Enabled 10, 11 - Key revoked</description>
+              <bitOffset>6</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
             </field>
@@ -2410,12 +2417,12 @@ SPDX-License-Identifier: BSD-3-Clause
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>VALUE_1</name>
-                  <description>48MHz FRO</description>
+                  <description>96MHz FRO</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>VALUE_2</name>
-                  <description>96MHz FRO</description>
+                  <description>48MHz FRO</description>
                   <value>0x2</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -12571,6 +12578,111 @@ SPDX-License-Identifier: BSD-3-Clause
           <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
+              <name>FETCHCFG</name>
+              <description>Instruction fetch configuration.</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOBUF</name>
+                  <description>Instruction fetches from flash are not buffered.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ONEBUF</name>
+                  <description>One buffer is used for all instruction fetches.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ALLBUF</name>
+                  <description>All buffers may be used for instruction fetches.</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DATACFG</name>
+              <description>Data read configuration.</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>2</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOBUF</name>
+                  <description>Data accesses from flash are not buffered.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ONEBUF</name>
+                  <description>One buffer is used for all data accesses.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ALLBUF</name>
+                  <description>All buffers can be used for data accesses.</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ACCEL</name>
+              <description>Acceleration enable.</description>
+              <bitOffset>4</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Flash acceleration is disabled.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Flash acceleration is enabled.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PREFEN</name>
+              <description>Prefetch enable.</description>
+              <bitOffset>5</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>No instruction prefetch is performed.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Instruction prefetch is enabled.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PREFOVR</name>
+              <description>Prefetch override.</description>
+              <bitOffset>6</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <description>Any previously initiated prefetch will be completed.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OVERRIDE</name>
+                  <description>Any previously initiated prefetch will be aborted, and the next flash line following the current execution address will be prefetched if not already buffered.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
               <name>FLASHTIM</name>
               <description>Flash memory access time.</description>
               <bitOffset>12</bitOffset>
@@ -12621,6 +12733,21 @@ SPDX-License-Identifier: BSD-3-Clause
                   <name>FLASHTIM8</name>
                   <description>9 system clocks flash access time (for system clock rates up to 100 MHz).</description>
                   <value>0x8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLASHTIM9</name>
+                  <description>10 system clocks flash access time (for system clock rates up to 115 MHz).</description>
+                  <value>0x9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLASHTIM10</name>
+                  <description>11 system clocks flash access time (for system clock rates up to 130 MHz).</description>
+                  <value>0xA</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLASHTIM11</name>
+                  <description>12 system clocks flash access time (for system clock rates up to 150 MHz).</description>
+                  <value>0xB</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
@@ -27469,12 +27596,20 @@ SPDX-License-Identifier: BSD-3-Clause
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
+        <name>SEC_HYPERVISOR_CALL</name>
+        <value>49</value>
+      </interrupt>
+      <interrupt>
         <name>SEC_GPIO_INT0_IRQ0</name>
         <value>50</value>
       </interrupt>
       <interrupt>
         <name>SEC_GPIO_INT0_IRQ1</name>
         <value>51</value>
+      </interrupt>
+      <interrupt>
+        <name>SEC_VIO</name>
+        <value>53</value>
       </interrupt>
     </peripheral>
     <peripheral>
@@ -30875,6 +31010,10 @@ SPDX-License-Identifier: BSD-3-Clause
         <size>0xCC</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>ACMP</name>
+        <value>24</value>
+      </interrupt>
       <registers>
         <register>
           <name>RESETCTRL</name>
@@ -31306,81 +31445,17 @@ SPDX-License-Identifier: BSD-3-Clause
             </field>
             <field>
               <name>FILTERCGF_SAMPLEMODE</name>
-              <description>Control the filtering of the Analog Comparator output.</description>
+              <description>Filter Sample mode.</description>
               <bitOffset>16</bitOffset>
               <bitWidth>2</bitWidth>
               <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>BYPASS</name>
-                  <description>Bypass mode.</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>FILTER1CLK</name>
-                  <description>Filter 1 clock period.</description>
-                  <value>0x1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>FILTER2CLK</name>
-                  <description>Filter 2 clock period.</description>
-                  <value>0x2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>FILTER3CLK</name>
-                  <description>Filter 3 clock period.</description>
-                  <value>0x3</value>
-                </enumeratedValue>
-              </enumeratedValues>
             </field>
             <field>
               <name>FILTERCGF_CLKDIV</name>
-              <description>Filter Clock divider.</description>
+              <description>Filter Clock div .</description>
               <bitOffset>18</bitOffset>
               <bitWidth>3</bitWidth>
               <access>read-write</access>
-              <enumeratedValues>
-                <enumeratedValue>
-                  <name>FILTER_1CLK_PERIOD</name>
-                  <description>Filter clock period duration equals 1 Analog Comparator clock period.</description>
-                  <value>0</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>FILTER_2CLK_PERIOD</name>
-                  <description>Filter clock period duration equals 2 Analog Comparator clock period.</description>
-                  <value>0x1</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>FILTER_4CLK_PERIOD</name>
-                  <description>Filter clock period duration equals 4 Analog Comparator clock period.</description>
-                  <value>0x2</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>FILTER_8CLK_PERIOD</name>
-                  <description>Filter clock period duration equals 8 Analog Comparator clock period.</description>
-                  <value>0x3</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>FILTER_16CLK_PERIOD</name>
-                  <description>Filter clock period duration equals 16 Analog Comparator clock period.</description>
-                  <value>0x4</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>FILTER_32CLK_PERIOD</name>
-                  <description>Filter clock period duration equals 32 Analog Comparator clock period.</description>
-                  <value>0x5</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>FILTER_64CLK_PERIOD</name>
-                  <description>Filter clock period duration equals 64 Analog Comparator clock period.</description>
-                  <value>0x6</value>
-                </enumeratedValue>
-                <enumeratedValue>
-                  <name>FILTER_128CLK_PERIOD</name>
-                  <description>Filter clock period duration equals 128 Analog Comparator clock period.</description>
-                  <value>0x7</value>
-                </enumeratedValue>
-              </enumeratedValues>
             </field>
           </fields>
         </register>
@@ -32054,7 +32129,7 @@ SPDX-License-Identifier: BSD-3-Clause
           <dimIncrement>0x4</dimIncrement>
           <dimIndex>0,1,2,3,4,5,6,7</dimIndex>
           <name>FCCTRLSEL%s</name>
-          <description>Selects the source for SCK going into Flexcomm 0</description>
+          <description>Selects the source for SCK going into Flexcomm index</description>
           <addressOffset>0x40</addressOffset>
           <size>32</size>
           <access>read-write</access>
@@ -32164,7 +32239,7 @@ SPDX-License-Identifier: BSD-3-Clause
           <dimIncrement>0x4</dimIncrement>
           <dimIndex>0,1</dimIndex>
           <name>SHAREDCTRLSET%s</name>
-          <description>Selects sources and data combinations for shared signal set 0.</description>
+          <description>Selects sources and data combinations for shared signal set index.</description>
           <addressOffset>0x80</addressOffset>
           <size>32</size>
           <access>read-write</access>
@@ -32821,7 +32896,7 @@ SPDX-License-Identifier: BSD-3-Clause
           <fields>
             <field>
               <name>EVTIMER_COUNT_VALUE</name>
-              <description>A read reflects the current value of the lower 32 bits of the EVTIMER. Note there is physically only one EVTimer, readable from all domains.</description>
+              <description>A read reflects the current value of the lower 32 bits of the 42-bits EVTIMER. Note: There is only one EVTIMER, readable from all domains.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -32839,7 +32914,7 @@ SPDX-License-Identifier: BSD-3-Clause
           <fields>
             <field>
               <name>EVTIMER_COUNT_VALUE</name>
-              <description>A read reflects the current value of the upper 32 bits of the EVTIMER. Note there is physically only one EVTimer, readable from all domains.</description>
+              <description>A read reflects the current value of the upper 10 bits of the 42-bits EVTIMER. Note there is only one EVTIMER, readable from all domains.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-only</access>
@@ -32847,8 +32922,8 @@ SPDX-License-Identifier: BSD-3-Clause
           </fields>
         </register>
         <register>
-          <name>CAPTUREn_L</name>
-          <description>Local Capture Low Register for CPUn</description>
+          <name>CAPTURE_L</name>
+          <description>Capture Low Register</description>
           <addressOffset>0x8</addressOffset>
           <size>32</size>
           <access>read-only</access>
@@ -32856,8 +32931,8 @@ SPDX-License-Identifier: BSD-3-Clause
           <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
-              <name>CAPTUREn_VALUE</name>
-              <description>A read reflects the value of the lower 32 bits of the central EVTIMER at the time the last capture signal was generated by the CPU. A separate pair of CAPTURE registers are implemented for each CPU. Each CPU reads its own capture value at the same pair of addresses.</description>
+              <name>CAPTURE_VALUE</name>
+              <description>A read reflects the value of the lower 32 bits of the central 42-bits EVTIMER at the time the last capture signal was generated by the CPU (using CMSIS C function "__SEV();").</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-only</access>
@@ -32865,8 +32940,8 @@ SPDX-License-Identifier: BSD-3-Clause
           </fields>
         </register>
         <register>
-          <name>CAPTUREn_H</name>
-          <description>Local Capture High Register for CPUn</description>
+          <name>CAPTURE_H</name>
+          <description>Capture High Register</description>
           <addressOffset>0xC</addressOffset>
           <size>32</size>
           <access>read-write</access>
@@ -32874,8 +32949,8 @@ SPDX-License-Identifier: BSD-3-Clause
           <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
-              <name>CAPTUREn_VALUE</name>
-              <description>A read reflects the value of the upper 32 bits of the central EVTIMER at the time the last capture signal was generated by the CPU. A separate pair of CAPTURE registers are implemented for each CPU. Each CPU reads its own capture value at the same pair of addresses.</description>
+              <name>CAPTURE_VALUE</name>
+              <description>A read reflects the value of the upper 10 bits of the central 42-bits EVTIMER at the time the last capture signal was generated by the CPU (using CMSIS C function "__SEV();").</description>
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-only</access>
@@ -32883,8 +32958,8 @@ SPDX-License-Identifier: BSD-3-Clause
           </fields>
         </register>
         <register>
-          <name>MATCHn_L</name>
-          <description>Local Match Low Register for CPUn</description>
+          <name>MATCH_L</name>
+          <description>Match Low Register</description>
           <addressOffset>0x10</addressOffset>
           <size>32</size>
           <access>read-write</access>
@@ -32892,8 +32967,8 @@ SPDX-License-Identifier: BSD-3-Clause
           <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
-              <name>MATCHn_VALUE</name>
-              <description>The value written to the MATCH (L/H) register pair is compared against the central EVTIMER. When a match occurs, an interrupt request is generated if enabled. A separate pair of MATCH registers are implemented for each CPU. Each CPU reads its own local value at the same pair of addresses.</description>
+              <name>MATCH_VALUE</name>
+              <description>The value written to the MATCH (L/H) register pair is compared against the central EVTIMER. When a match occurs, an interrupt request is generated if enabled.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>32</bitWidth>
               <access>read-write</access>
@@ -32901,8 +32976,8 @@ SPDX-License-Identifier: BSD-3-Clause
           </fields>
         </register>
         <register>
-          <name>MATCHn_H</name>
-          <description>Match High Register for CPUn</description>
+          <name>MATCH_H</name>
+          <description>Match High Register</description>
           <addressOffset>0x14</addressOffset>
           <size>32</size>
           <access>read-write</access>
@@ -32910,8 +32985,8 @@ SPDX-License-Identifier: BSD-3-Clause
           <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
-              <name>MATCHn_VALUE</name>
-              <description>The value written to the MATCH (L/H) register pair is compared against the central EVTIMER. When a match occurs, an interrupt request is generated if enabled. A separate pair of MATCH registers are implemented for each CPU. Each CPU reads its own local value at the same pair of addresses.</description>
+              <name>MATCH_VALUE</name>
+              <description>The value written (upper 10 bits) to the MATCH (L/H) register pair is compared against the central EVTIMER. When a match occurs, an interrupt request is generated if enabled.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>10</bitWidth>
               <access>read-write</access>
@@ -32920,26 +32995,33 @@ SPDX-License-Identifier: BSD-3-Clause
         </register>
         <register>
           <name>OSEVENT_CTRL</name>
-          <description>OS_EVENT TIMER Control Register for CPUn</description>
+          <description>OS_EVENT TIMER Control Register</description>
           <addressOffset>0x1C</addressOffset>
           <size>32</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
-          <resetMask>0x3</resetMask>
+          <resetMask>0x7</resetMask>
           <fields>
             <field>
               <name>OSTIMER_INTRFLAG</name>
-              <description>This bit is set when a match occurs between the central 64-bit EVTIMER and the value programmed in the Match-register pair for the associated CPU This bit is cleared by writing a '1'. Writes to clear this bit are asynchronous. This should be done before a new match value is written into the MATCH_L/H registers</description>
+              <description>This bit is set when a match occurs between the central 42-bits EVTIMER and the value programmed in the match-register pair. This bit is cleared by writing a '1'. Writes to clear this bit are asynchronous. It should be done before a new match value is written into the MATCH_L/H registers.</description>
               <bitOffset>0</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
             </field>
             <field>
               <name>OSTIMER_INTENA</name>
-              <description>When this bit is '1' an interrupt/wakeup request to the Domainn processor will be asserted when the OSTIMER_INTR flag is set. When this bit is '0', interrupt/wakeup requests due to the OSTIMER_INTR flag are blocked.A separate OSEVENT_CTRL register is implemented for each CPU. Each CPU reads its own local value at the same address.</description>
+              <description>When this bit is '1' an interrupt/wakeup request to the domain processor will be asserted when the OSTIMER_INTR flag is set. When this bit is '0', interrupt/wakeup requests due to the OSTIMER_INTR flag are blocked.</description>
               <bitOffset>1</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
+            </field>
+            <field>
+              <name>MATCH_WR_RDY</name>
+              <description>This bit will be low when it is safe to write to reload the Match Registers. In typical applications it should not be necessary to test this bit. [1]</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+              <access>read-only</access>
             </field>
           </fields>
         </register>
@@ -38924,7 +39006,7 @@ SPDX-License-Identifier: BSD-3-Clause
           <dim>26</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>LUT_TRUTH[%s]</name>
-          <description>Specifies the Truth Table contents for LUT0</description>
+          <description>Specifies the Truth Table contents for LUTLUTn</description>
           <addressOffset>0x800</addressOffset>
           <size>32</size>
           <access>read-write</access>
@@ -39048,7 +39130,7 @@ SPDX-License-Identifier: BSD-3-Clause
           <dim>8</dim>
           <dimIncrement>0x4</dimIncrement>
           <name>OUTPUT_MUX[%s]</name>
-          <description>Selects the source to be connected to PLU Output 0</description>
+          <description>Selects the source to be connected to PLU Output OUTPUT_n</description>
           <addressOffset>0xC00</addressOffset>
           <size>32</size>
           <access>read-write</access>
@@ -63189,6 +63271,10 @@ SPDX-License-Identifier: BSD-3-Clause
         <size>0x84</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>CASER</name>
+        <value>55</value>
+      </interrupt>
       <registers>
         <register>
           <name>CTRL0</name>
@@ -63772,6 +63858,10 @@ SPDX-License-Identifier: BSD-3-Clause
         <size>0x260</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>PQ</name>
+        <value>57</value>
+      </interrupt>
       <registers>
         <register>
           <name>OUTBASE</name>
@@ -70942,7 +71032,9 @@ SPDX-License-Identifier: BSD-3-Clause
                 </enumeratedValue>
               </enumeratedValues>
             </field>
-          </fields>
+          <field><name>RPU_RULE</name><description>ROM patch unit access</description><bitOffset>24</bitOffset><bitWidth>2</bitWidth><access>read-write</access><enumeratedValues><name>RPU_RULE</name><usage>read-write</usage><enumeratedValue><name>ENUM_NS_NP</name><description>Non-secure and Non-priviledge user access allowed.</description><value>0</value></enumeratedValue><enumeratedValue><name>ENUM_NS_P</name><description>Non-secure and Priviledge user access allowed.</description><value>1</value></enumeratedValue><enumeratedValue><name>ENUM_S_NP</name><description>Secure and Non-priviledge user access allowed.</description><value>2</value></enumeratedValue><enumeratedValue><name>ENUM_S_P</name><description>Secure and Priviledge user access allowed.</description><value>3</value></enumeratedValue></enumeratedValues>
+            </field>
+            </fields>
         </register>
         <register>
           <name>SEC_CTRL_AHB_PORT8_SLAVE0_RULE</name>
@@ -81395,8 +81487,69 @@ SPDX-License-Identifier: BSD-3-Clause
         </register>
       </registers>
     </peripheral>
-  <peripheral derivedFrom="USB1"><name>USB0</name><baseAddress>0x40084000</baseAddress><interrupt><name>USB0_NEEDCLK</name><value>27</value></interrupt>
-    <interrupt><name>USB0</name><value>28</value></interrupt>
-    </peripheral>
+  <peripheral><name>RPU</name><description>NXP ROM patch unit.
+
+Undocumented by NXP, this peripheral is experimentally modeled following research by
+Oxide Computer Company: &lt;https://oxide.computer/blog/lpc55/&gt;.
+</description><groupName>RPU</groupName><baseAddress>1073995776</baseAddress><addressBlock><offset>0</offset><size>320</size><usage>Known RPU registers</usage></addressBlock><registers><register><name>VALUE7</name><description>Value replacement 7</description><addressOffset>212</addressOffset><size>32</size></register>
+        <register><name>VALUE6</name><description>Value replacement 6</description><addressOffset>216</addressOffset><size>32</size></register>
+        <register><name>VALUE5</name><description>Value replacement 5</description><addressOffset>220</addressOffset><size>32</size></register>
+        <register><name>VALUE4</name><description>Value replacement 4</description><addressOffset>224</addressOffset><size>32</size></register>
+        <register><name>VALUE3</name><description>Value replacement 3</description><addressOffset>228</addressOffset><size>32</size></register>
+        <register><name>VALUE2</name><description>Value replacement 2</description><addressOffset>232</addressOffset><size>32</size></register>
+        <register><name>VALUE1</name><description>Value replacement 1</description><addressOffset>236</addressOffset><size>32</size></register>
+        <register><name>VALUE0</name><description>Value replacement 0</description><addressOffset>240</addressOffset><size>32</size></register>
+        <register><name>CONTROL</name><description>Control register</description><addressOffset>244</addressOffset><size>32</size><access>read-write</access><resetValue>0</resetValue><fields><field><name>PATCH0</name><description>Patch 0 control bit</description><bitOffset>0</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH1</name><description>Patch 1 control bit</description><bitOffset>1</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH2</name><description>Patch 2 control bit</description><bitOffset>2</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH3</name><description>Patch 3 control bit</description><bitOffset>3</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH4</name><description>Patch 4 control bit</description><bitOffset>4</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH5</name><description>Patch 5 control bit</description><bitOffset>5</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH6</name><description>Patch 6 control bit</description><bitOffset>6</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH7</name><description>Patch 7 control bit</description><bitOffset>7</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH8</name><description>Patch 8 control bit</description><bitOffset>8</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH9</name><description>Patch 9 control bit</description><bitOffset>9</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH10</name><description>Patch 10 control bit</description><bitOffset>10</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH11</name><description>Patch 11 control bit</description><bitOffset>11</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH12</name><description>Patch 12 control bit</description><bitOffset>12</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH13</name><description>Patch 13 control bit</description><bitOffset>13</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH14</name><description>Patch 14 control bit</description><bitOffset>14</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH15</name><description>Patch 15 control bit</description><bitOffset>15</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>DISABLE</name><description>disable bit</description><bitOffset>29</bitOffset><bitWidth>1</bitWidth></field>
+            </fields></register>
+        <register><name>ENABLE</name><description>Enable register</description><addressOffset>252</addressOffset><size>32</size><access>read-write</access><resetValue>0</resetValue><fields><field><name>PATCH0</name><description>Patch 0 control bit</description><bitOffset>0</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH1</name><description>Patch 1 control bit</description><bitOffset>1</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH2</name><description>Patch 2 control bit</description><bitOffset>2</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH3</name><description>Patch 3 control bit</description><bitOffset>3</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH4</name><description>Patch 4 control bit</description><bitOffset>4</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH5</name><description>Patch 5 control bit</description><bitOffset>5</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH6</name><description>Patch 6 control bit</description><bitOffset>6</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH7</name><description>Patch 7 control bit</description><bitOffset>7</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH8</name><description>Patch 8 control bit</description><bitOffset>8</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH9</name><description>Patch 9 control bit</description><bitOffset>9</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH10</name><description>Patch 10 control bit</description><bitOffset>10</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH11</name><description>Patch 11 control bit</description><bitOffset>11</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH12</name><description>Patch 12 control bit</description><bitOffset>12</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH13</name><description>Patch 13 control bit</description><bitOffset>13</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH14</name><description>Patch 14 control bit</description><bitOffset>14</bitOffset><bitWidth>1</bitWidth></field>
+            <field><name>PATCH15</name><description>Patch 15 control bit</description><bitOffset>15</bitOffset><bitWidth>1</bitWidth></field>
+            </fields></register>
+        <register><name>ADDRESS0</name><description>Replacement address 0</description><addressOffset>256</addressOffset><size>32</size></register>
+        <register><name>ADDRESS1</name><description>Replacement address 2</description><addressOffset>260</addressOffset><size>32</size></register>
+        <register><name>ADDRESS2</name><description>Replacement address 2</description><addressOffset>264</addressOffset><size>32</size></register>
+        <register><name>ADDRESS3</name><description>Replacement address 3</description><addressOffset>268</addressOffset><size>32</size></register>
+        <register><name>ADDRESS4</name><description>Replacement address 4</description><addressOffset>272</addressOffset><size>32</size></register>
+        <register><name>ADDRESS5</name><description>Replacement address 5</description><addressOffset>276</addressOffset><size>32</size></register>
+        <register><name>ADDRESS6</name><description>Replacement address 6</description><addressOffset>280</addressOffset><size>32</size></register>
+        <register><name>ADDRESS7</name><description>Replacement address 7</description><addressOffset>284</addressOffset><size>32</size></register>
+        <register><name>ADDRESS8</name><description>Replacement address 8</description><addressOffset>288</addressOffset><size>32</size></register>
+        <register><name>ADDRESS9</name><description>Replacement address 9</description><addressOffset>292</addressOffset><size>32</size></register>
+        <register><name>ADDRESS10</name><description>Replacement address 10</description><addressOffset>296</addressOffset><size>32</size></register>
+        <register><name>ADDRESS11</name><description>Replacement address 11</description><addressOffset>300</addressOffset><size>32</size></register>
+        <register><name>ADDRESS12</name><description>Replacement address 12</description><addressOffset>304</addressOffset><size>32</size></register>
+        <register><name>ADDRESS13</name><description>Replacement address 13</description><addressOffset>308</addressOffset><size>32</size></register>
+        <register><name>ADDRESS14</name><description>Replacement address 14</description><addressOffset>312</addressOffset><size>32</size></register>
+        <register><name>ADDRESS15</name><description>Replacement address 15</description><addressOffset>316</addressOffset><size>32</size></register>
+        </registers></peripheral>
     </peripherals>
 </device>

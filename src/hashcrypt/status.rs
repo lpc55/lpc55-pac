@@ -1,13 +1,35 @@
-#[doc = "Reader of register STATUS"]
-pub type R = crate::R<u32, super::STATUS>;
-#[doc = "Writer for register STATUS"]
-pub type W = crate::W<u32, super::STATUS>;
-#[doc = "Register STATUS `reset()`'s with value 0"]
-impl crate::ResetValue for super::STATUS {
-    type Type = u32;
+#[doc = "Register `STATUS` reader"]
+pub struct R(crate::R<STATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<STATUS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<STATUS_SPEC>> for R {
+    fn from(reader: crate::R<STATUS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `STATUS` writer"]
+pub struct W(crate::W<STATUS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<STATUS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<STATUS_SPEC>> for W {
+    fn from(writer: crate::W<STATUS_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "If 1, the block is waiting for more data to process.\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<WAITING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `WAITING`"]
-pub type WAITING_R = crate::R<bool, WAITING_A>;
+#[doc = "Field `WAITING` reader - If 1, the block is waiting for more data to process."]
+pub struct WAITING_R(crate::FieldReader<bool, WAITING_A>);
 impl WAITING_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        WAITING_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WAITING_A {
@@ -38,12 +63,19 @@ impl WAITING_R {
     #[doc = "Checks if the value of the field is `NOT_WAITING`"]
     #[inline(always)]
     pub fn is_not_waiting(&self) -> bool {
-        *self == WAITING_A::NOT_WAITING
+        **self == WAITING_A::NOT_WAITING
     }
     #[doc = "Checks if the value of the field is `WAITING`"]
     #[inline(always)]
     pub fn is_waiting(&self) -> bool {
-        *self == WAITING_A::WAITING
+        **self == WAITING_A::WAITING
+    }
+}
+impl core::ops::Deref for WAITING_R {
+    type Target = crate::FieldReader<bool, WAITING_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "For Hash, if 1 then a DIGEST is ready and waiting and there is no active next block already started. For Cryptographic uses, this will be set for each block processed, indicating OUTDATA (and OUTDATA2 if larger output) contains the next value to read out. This is cleared when any data is written, when New is written, for Cryptographic uses when the last word is read out, or when the block is disabled.\n\nValue on reset: 0"]
@@ -60,9 +92,12 @@ impl From<DIGEST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DIGEST`"]
-pub type DIGEST_R = crate::R<bool, DIGEST_A>;
+#[doc = "Field `DIGEST` reader - For Hash, if 1 then a DIGEST is ready and waiting and there is no active next block already started. For Cryptographic uses, this will be set for each block processed, indicating OUTDATA (and OUTDATA2 if larger output) contains the next value to read out. This is cleared when any data is written, when New is written, for Cryptographic uses when the last word is read out, or when the block is disabled."]
+pub struct DIGEST_R(crate::FieldReader<bool, DIGEST_A>);
 impl DIGEST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DIGEST_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DIGEST_A {
@@ -74,12 +109,19 @@ impl DIGEST_R {
     #[doc = "Checks if the value of the field is `NOT_READY`"]
     #[inline(always)]
     pub fn is_not_ready(&self) -> bool {
-        *self == DIGEST_A::NOT_READY
+        **self == DIGEST_A::NOT_READY
     }
     #[doc = "Checks if the value of the field is `READY`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        *self == DIGEST_A::READY
+        **self == DIGEST_A::READY
+    }
+}
+impl core::ops::Deref for DIGEST_R {
+    type Target = crate::FieldReader<bool, DIGEST_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "If 1, an error occurred. For normal uses, this is due to an attempted overrun: INDATA was written when it was not appropriate. For Master cases, this is an AHB bus error; the COUNT field will indicate which block it was on.\n\nValue on reset: 0"]
@@ -96,9 +138,12 @@ impl From<ERROR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `ERROR`"]
-pub type ERROR_R = crate::R<bool, ERROR_A>;
+#[doc = "Field `ERROR` reader - If 1, an error occurred. For normal uses, this is due to an attempted overrun: INDATA was written when it was not appropriate. For Master cases, this is an AHB bus error; the COUNT field will indicate which block it was on."]
+pub struct ERROR_R(crate::FieldReader<bool, ERROR_A>);
 impl ERROR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ERROR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ERROR_A {
@@ -110,15 +155,22 @@ impl ERROR_R {
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == ERROR_A::NO_ERROR
+        **self == ERROR_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == ERROR_A::ERROR
+        **self == ERROR_A::ERROR
     }
 }
-#[doc = "Write proxy for field `ERROR`"]
+impl core::ops::Deref for ERROR_R {
+    type Target = crate::FieldReader<bool, ERROR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ERROR` writer - If 1, an error occurred. For normal uses, this is due to an attempted overrun: INDATA was written when it was not appropriate. For Master cases, this is an AHB bus error; the COUNT field will indicate which block it was on."]
 pub struct ERROR_W<'a> {
     w: &'a mut W,
 }
@@ -126,9 +178,7 @@ impl<'a> ERROR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ERROR_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No error."]
     #[inline(always)]
@@ -153,7 +203,7 @@ impl<'a> ERROR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -171,9 +221,12 @@ impl From<NEEDKEY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `NEEDKEY`"]
-pub type NEEDKEY_R = crate::R<bool, NEEDKEY_A>;
+#[doc = "Field `NEEDKEY` reader - Indicates the block wants the key to be written in (set along with WAITING)"]
+pub struct NEEDKEY_R(crate::FieldReader<bool, NEEDKEY_A>);
 impl NEEDKEY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NEEDKEY_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NEEDKEY_A {
@@ -185,12 +238,19 @@ impl NEEDKEY_R {
     #[doc = "Checks if the value of the field is `NOT_NEED`"]
     #[inline(always)]
     pub fn is_not_need(&self) -> bool {
-        *self == NEEDKEY_A::NOT_NEED
+        **self == NEEDKEY_A::NOT_NEED
     }
     #[doc = "Checks if the value of the field is `NEED`"]
     #[inline(always)]
     pub fn is_need(&self) -> bool {
-        *self == NEEDKEY_A::NEED
+        **self == NEEDKEY_A::NEED
+    }
+}
+impl core::ops::Deref for NEEDKEY_R {
+    type Target = crate::FieldReader<bool, NEEDKEY_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Indicates the block wants an IV/NONE to be written in (set along with WAITING)\n\nValue on reset: 0"]
@@ -207,9 +267,12 @@ impl From<NEEDIV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `NEEDIV`"]
-pub type NEEDIV_R = crate::R<bool, NEEDIV_A>;
+#[doc = "Field `NEEDIV` reader - Indicates the block wants an IV/NONE to be written in (set along with WAITING)"]
+pub struct NEEDIV_R(crate::FieldReader<bool, NEEDIV_A>);
 impl NEEDIV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NEEDIV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> NEEDIV_A {
@@ -221,16 +284,35 @@ impl NEEDIV_R {
     #[doc = "Checks if the value of the field is `NOT_NEED`"]
     #[inline(always)]
     pub fn is_not_need(&self) -> bool {
-        *self == NEEDIV_A::NOT_NEED
+        **self == NEEDIV_A::NOT_NEED
     }
     #[doc = "Checks if the value of the field is `NEED`"]
     #[inline(always)]
     pub fn is_need(&self) -> bool {
-        *self == NEEDIV_A::NEED
+        **self == NEEDIV_A::NEED
     }
 }
-#[doc = "Reader of field `ICBIDX`"]
-pub type ICBIDX_R = crate::R<u8, u8>;
+impl core::ops::Deref for NEEDIV_R {
+    type Target = crate::FieldReader<bool, NEEDIV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ICBIDX` reader - If ICB-AES is selected, then reads as the ICB index count based on ICBSTRM (from CRYPTCFG). That is, if 3 bits of ICBSTRM, then this will count from 0 to 7 and then back to 0. On 0, it has to compute the full ICB, quicker when not 0."]
+pub struct ICBIDX_R(crate::FieldReader<u8, u8>);
+impl ICBIDX_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ICBIDX_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ICBIDX_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - If 1, the block is waiting for more data to process."]
     #[inline(always)]
@@ -268,5 +350,30 @@ impl W {
     #[inline(always)]
     pub fn error(&mut self) -> ERROR_W {
         ERROR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Indicates status of Hash peripheral.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
+pub struct STATUS_SPEC;
+impl crate::RegisterSpec for STATUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [status::R](R) reader structure"]
+impl crate::Readable for STATUS_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [status::W](W) writer structure"]
+impl crate::Writable for STATUS_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets STATUS to value 0"]
+impl crate::Resettable for STATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

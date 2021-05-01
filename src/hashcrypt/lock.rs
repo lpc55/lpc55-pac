@@ -1,13 +1,35 @@
-#[doc = "Reader of register LOCK"]
-pub type R = crate::R<u32, super::LOCK>;
-#[doc = "Writer for register LOCK"]
-pub type W = crate::W<u32, super::LOCK>;
-#[doc = "Register LOCK `reset()`'s with value 0"]
-impl crate::ResetValue for super::LOCK {
-    type Type = u32;
+#[doc = "Register `LOCK` reader"]
+pub struct R(crate::R<LOCK_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LOCK_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<LOCK_SPEC>> for R {
+    fn from(reader: crate::R<LOCK_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `LOCK` writer"]
+pub struct W(crate::W<LOCK_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LOCK_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<LOCK_SPEC>> for W {
+    fn from(writer: crate::W<LOCK_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Write 1 to secure-lock this block (if running in a security state). Write 0 to unlock. If locked already, may only write if at same or higher security level as lock. Reads as: 0 if unlocked, else 1, 2, 3 to indicate security level it is locked at. NOTE: this and ID are the only readable registers if locked and current state is lower than lock level.\n\nValue on reset: 0"]
@@ -25,31 +47,40 @@ impl From<SECLOCK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SECLOCK`"]
-pub type SECLOCK_R = crate::R<u8, SECLOCK_A>;
+#[doc = "Field `SECLOCK` reader - Write 1 to secure-lock this block (if running in a security state). Write 0 to unlock. If locked already, may only write if at same or higher security level as lock. Reads as: 0 if unlocked, else 1, 2, 3 to indicate security level it is locked at. NOTE: this and ID are the only readable registers if locked and current state is lower than lock level."]
+pub struct SECLOCK_R(crate::FieldReader<u8, SECLOCK_A>);
 impl SECLOCK_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SECLOCK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, SECLOCK_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SECLOCK_A> {
         match self.bits {
-            0 => Val(SECLOCK_A::UNLOCK),
-            1 => Val(SECLOCK_A::LOCK),
-            i => Res(i),
+            0 => Some(SECLOCK_A::UNLOCK),
+            1 => Some(SECLOCK_A::LOCK),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `UNLOCK`"]
     #[inline(always)]
     pub fn is_unlock(&self) -> bool {
-        *self == SECLOCK_A::UNLOCK
+        **self == SECLOCK_A::UNLOCK
     }
     #[doc = "Checks if the value of the field is `LOCK`"]
     #[inline(always)]
     pub fn is_lock(&self) -> bool {
-        *self == SECLOCK_A::LOCK
+        **self == SECLOCK_A::LOCK
     }
 }
-#[doc = "Write proxy for field `SECLOCK`"]
+impl core::ops::Deref for SECLOCK_R {
+    type Target = crate::FieldReader<u8, SECLOCK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SECLOCK` writer - Write 1 to secure-lock this block (if running in a security state). Write 0 to unlock. If locked already, may only write if at same or higher security level as lock. Reads as: 0 if unlocked, else 1, 2, 3 to indicate security level it is locked at. NOTE: this and ID are the only readable registers if locked and current state is lower than lock level."]
 pub struct SECLOCK_W<'a> {
     w: &'a mut W,
 }
@@ -72,13 +103,25 @@ impl<'a> SECLOCK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
-#[doc = "Reader of field `PATTERN`"]
-pub type PATTERN_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `PATTERN`"]
+#[doc = "Field `PATTERN` reader - Must write 0xA75 to change lock state. A75:Pattern needed to change bits 1:0"]
+pub struct PATTERN_R(crate::FieldReader<u16, u16>);
+impl PATTERN_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        PATTERN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PATTERN_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PATTERN` writer - Must write 0xA75 to change lock state. A75:Pattern needed to change bits 1:0"]
 pub struct PATTERN_W<'a> {
     w: &'a mut W,
 }
@@ -86,7 +129,7 @@ impl<'a> PATTERN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0fff << 4)) | (((value as u32) & 0x0fff) << 4);
+        self.w.bits = (self.w.bits & !(0x0fff << 4)) | ((value as u32 & 0x0fff) << 4);
         self.w
     }
 }
@@ -112,5 +155,30 @@ impl W {
     #[inline(always)]
     pub fn pattern(&mut self) -> PATTERN_W {
         PATTERN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Lock register allows locking to the current security level or unlocking by the lock holding level.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lock](index.html) module"]
+pub struct LOCK_SPEC;
+impl crate::RegisterSpec for LOCK_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [lock::R](R) reader structure"]
+impl crate::Readable for LOCK_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [lock::W](W) writer structure"]
+impl crate::Writable for LOCK_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets LOCK to value 0"]
+impl crate::Resettable for LOCK_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

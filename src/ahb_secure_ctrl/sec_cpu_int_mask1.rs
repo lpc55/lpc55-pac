@@ -1,13 +1,35 @@
-#[doc = "Reader of register SEC_CPU_INT_MASK1"]
-pub type R = crate::R<u32, super::SEC_CPU_INT_MASK1>;
-#[doc = "Writer for register SEC_CPU_INT_MASK1"]
-pub type W = crate::W<u32, super::SEC_CPU_INT_MASK1>;
-#[doc = "Register SEC_CPU_INT_MASK1 `reset()`'s with value 0xffff_ffff"]
-impl crate::ResetValue for super::SEC_CPU_INT_MASK1 {
-    type Type = u32;
+#[doc = "Register `SEC_CPU_INT_MASK1` reader"]
+pub struct R(crate::R<SEC_CPU_INT_MASK1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SEC_CPU_INT_MASK1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xffff_ffff
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<SEC_CPU_INT_MASK1_SPEC>> for R {
+    fn from(reader: crate::R<SEC_CPU_INT_MASK1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SEC_CPU_INT_MASK1` writer"]
+pub struct W(crate::W<SEC_CPU_INT_MASK1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SEC_CPU_INT_MASK1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<SEC_CPU_INT_MASK1_SPEC>> for W {
+    fn from(writer: crate::W<SEC_CPU_INT_MASK1_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Pin interrupt 4 or pattern match engine slice 4 interrupt.\n\nValue on reset: 1"]
@@ -24,9 +46,12 @@ impl From<GPIO_INT0_IRQ4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `GPIO_INT0_IRQ4`"]
-pub type GPIO_INT0_IRQ4_R = crate::R<bool, GPIO_INT0_IRQ4_A>;
+#[doc = "Field `GPIO_INT0_IRQ4` reader - Pin interrupt 4 or pattern match engine slice 4 interrupt."]
+pub struct GPIO_INT0_IRQ4_R(crate::FieldReader<bool, GPIO_INT0_IRQ4_A>);
 impl GPIO_INT0_IRQ4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPIO_INT0_IRQ4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GPIO_INT0_IRQ4_A {
@@ -38,15 +63,22 @@ impl GPIO_INT0_IRQ4_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == GPIO_INT0_IRQ4_A::INVISIBLE
+        **self == GPIO_INT0_IRQ4_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == GPIO_INT0_IRQ4_A::VISIBLE
+        **self == GPIO_INT0_IRQ4_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `GPIO_INT0_IRQ4`"]
+impl core::ops::Deref for GPIO_INT0_IRQ4_R {
+    type Target = crate::FieldReader<bool, GPIO_INT0_IRQ4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPIO_INT0_IRQ4` writer - Pin interrupt 4 or pattern match engine slice 4 interrupt."]
 pub struct GPIO_INT0_IRQ4_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> GPIO_INT0_IRQ4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: GPIO_INT0_IRQ4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> GPIO_INT0_IRQ4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<GPIO_INT0_IRQ5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `GPIO_INT0_IRQ5`"]
-pub type GPIO_INT0_IRQ5_R = crate::R<bool, GPIO_INT0_IRQ5_A>;
+#[doc = "Field `GPIO_INT0_IRQ5` reader - Pin interrupt 5 or pattern match engine slice 5 interrupt."]
+pub struct GPIO_INT0_IRQ5_R(crate::FieldReader<bool, GPIO_INT0_IRQ5_A>);
 impl GPIO_INT0_IRQ5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPIO_INT0_IRQ5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GPIO_INT0_IRQ5_A {
@@ -113,15 +146,22 @@ impl GPIO_INT0_IRQ5_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == GPIO_INT0_IRQ5_A::INVISIBLE
+        **self == GPIO_INT0_IRQ5_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == GPIO_INT0_IRQ5_A::VISIBLE
+        **self == GPIO_INT0_IRQ5_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `GPIO_INT0_IRQ5`"]
+impl core::ops::Deref for GPIO_INT0_IRQ5_R {
+    type Target = crate::FieldReader<bool, GPIO_INT0_IRQ5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPIO_INT0_IRQ5` writer - Pin interrupt 5 or pattern match engine slice 5 interrupt."]
 pub struct GPIO_INT0_IRQ5_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> GPIO_INT0_IRQ5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: GPIO_INT0_IRQ5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> GPIO_INT0_IRQ5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<GPIO_INT0_IRQ6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `GPIO_INT0_IRQ6`"]
-pub type GPIO_INT0_IRQ6_R = crate::R<bool, GPIO_INT0_IRQ6_A>;
+#[doc = "Field `GPIO_INT0_IRQ6` reader - Pin interrupt 6 or pattern match engine slice 6 interrupt."]
+pub struct GPIO_INT0_IRQ6_R(crate::FieldReader<bool, GPIO_INT0_IRQ6_A>);
 impl GPIO_INT0_IRQ6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPIO_INT0_IRQ6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GPIO_INT0_IRQ6_A {
@@ -188,15 +229,22 @@ impl GPIO_INT0_IRQ6_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == GPIO_INT0_IRQ6_A::INVISIBLE
+        **self == GPIO_INT0_IRQ6_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == GPIO_INT0_IRQ6_A::VISIBLE
+        **self == GPIO_INT0_IRQ6_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `GPIO_INT0_IRQ6`"]
+impl core::ops::Deref for GPIO_INT0_IRQ6_R {
+    type Target = crate::FieldReader<bool, GPIO_INT0_IRQ6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPIO_INT0_IRQ6` writer - Pin interrupt 6 or pattern match engine slice 6 interrupt."]
 pub struct GPIO_INT0_IRQ6_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> GPIO_INT0_IRQ6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: GPIO_INT0_IRQ6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> GPIO_INT0_IRQ6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<GPIO_INT0_IRQ7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `GPIO_INT0_IRQ7`"]
-pub type GPIO_INT0_IRQ7_R = crate::R<bool, GPIO_INT0_IRQ7_A>;
+#[doc = "Field `GPIO_INT0_IRQ7` reader - Pin interrupt 7 or pattern match engine slice 7 interrupt."]
+pub struct GPIO_INT0_IRQ7_R(crate::FieldReader<bool, GPIO_INT0_IRQ7_A>);
 impl GPIO_INT0_IRQ7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        GPIO_INT0_IRQ7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GPIO_INT0_IRQ7_A {
@@ -263,15 +312,22 @@ impl GPIO_INT0_IRQ7_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == GPIO_INT0_IRQ7_A::INVISIBLE
+        **self == GPIO_INT0_IRQ7_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == GPIO_INT0_IRQ7_A::VISIBLE
+        **self == GPIO_INT0_IRQ7_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `GPIO_INT0_IRQ7`"]
+impl core::ops::Deref for GPIO_INT0_IRQ7_R {
+    type Target = crate::FieldReader<bool, GPIO_INT0_IRQ7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GPIO_INT0_IRQ7` writer - Pin interrupt 7 or pattern match engine slice 7 interrupt."]
 pub struct GPIO_INT0_IRQ7_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> GPIO_INT0_IRQ7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: GPIO_INT0_IRQ7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> GPIO_INT0_IRQ7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<CTIMER2_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CTIMER2_IRQ`"]
-pub type CTIMER2_IRQ_R = crate::R<bool, CTIMER2_IRQ_A>;
+#[doc = "Field `CTIMER2_IRQ` reader - Standard counter/timer 2 interrupt."]
+pub struct CTIMER2_IRQ_R(crate::FieldReader<bool, CTIMER2_IRQ_A>);
 impl CTIMER2_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CTIMER2_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CTIMER2_IRQ_A {
@@ -338,15 +395,22 @@ impl CTIMER2_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == CTIMER2_IRQ_A::INVISIBLE
+        **self == CTIMER2_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == CTIMER2_IRQ_A::VISIBLE
+        **self == CTIMER2_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `CTIMER2_IRQ`"]
+impl core::ops::Deref for CTIMER2_IRQ_R {
+    type Target = crate::FieldReader<bool, CTIMER2_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CTIMER2_IRQ` writer - Standard counter/timer 2 interrupt."]
 pub struct CTIMER2_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> CTIMER2_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CTIMER2_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> CTIMER2_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<CTIMER4_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CTIMER4_IRQ`"]
-pub type CTIMER4_IRQ_R = crate::R<bool, CTIMER4_IRQ_A>;
+#[doc = "Field `CTIMER4_IRQ` reader - Standard counter/timer 4 interrupt."]
+pub struct CTIMER4_IRQ_R(crate::FieldReader<bool, CTIMER4_IRQ_A>);
 impl CTIMER4_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CTIMER4_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CTIMER4_IRQ_A {
@@ -413,15 +478,22 @@ impl CTIMER4_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == CTIMER4_IRQ_A::INVISIBLE
+        **self == CTIMER4_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == CTIMER4_IRQ_A::VISIBLE
+        **self == CTIMER4_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `CTIMER4_IRQ`"]
+impl core::ops::Deref for CTIMER4_IRQ_R {
+    type Target = crate::FieldReader<bool, CTIMER4_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CTIMER4_IRQ` writer - Standard counter/timer 4 interrupt."]
 pub struct CTIMER4_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> CTIMER4_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CTIMER4_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> CTIMER4_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<OS_EVENT_TIMER_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `OS_EVENT_TIMER_IRQ`"]
-pub type OS_EVENT_TIMER_IRQ_R = crate::R<bool, OS_EVENT_TIMER_IRQ_A>;
+#[doc = "Field `OS_EVENT_TIMER_IRQ` reader - OS Event Timer and OS Event Timer Wakeup interrupts"]
+pub struct OS_EVENT_TIMER_IRQ_R(crate::FieldReader<bool, OS_EVENT_TIMER_IRQ_A>);
 impl OS_EVENT_TIMER_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        OS_EVENT_TIMER_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OS_EVENT_TIMER_IRQ_A {
@@ -488,15 +561,22 @@ impl OS_EVENT_TIMER_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == OS_EVENT_TIMER_IRQ_A::INVISIBLE
+        **self == OS_EVENT_TIMER_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == OS_EVENT_TIMER_IRQ_A::VISIBLE
+        **self == OS_EVENT_TIMER_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `OS_EVENT_TIMER_IRQ`"]
+impl core::ops::Deref for OS_EVENT_TIMER_IRQ_R {
+    type Target = crate::FieldReader<bool, OS_EVENT_TIMER_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `OS_EVENT_TIMER_IRQ` writer - OS Event Timer and OS Event Timer Wakeup interrupts"]
 pub struct OS_EVENT_TIMER_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> OS_EVENT_TIMER_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: OS_EVENT_TIMER_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> OS_EVENT_TIMER_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<RESERVED0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RESERVED0`"]
-pub type RESERVED0_R = crate::R<bool, RESERVED0_A>;
+#[doc = "Field `RESERVED0` reader - Reserved. Read value is undefined, only zero should be written."]
+pub struct RESERVED0_R(crate::FieldReader<bool, RESERVED0_A>);
 impl RESERVED0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RESERVED0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RESERVED0_A {
@@ -563,15 +644,22 @@ impl RESERVED0_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == RESERVED0_A::INVISIBLE
+        **self == RESERVED0_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == RESERVED0_A::VISIBLE
+        **self == RESERVED0_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `RESERVED0`"]
+impl core::ops::Deref for RESERVED0_R {
+    type Target = crate::FieldReader<bool, RESERVED0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RESERVED0` writer - Reserved. Read value is undefined, only zero should be written."]
 pub struct RESERVED0_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +667,7 @@ impl<'a> RESERVED0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RESERVED0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -606,7 +692,7 @@ impl<'a> RESERVED0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -624,9 +710,12 @@ impl From<RESERVED1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RESERVED1`"]
-pub type RESERVED1_R = crate::R<bool, RESERVED1_A>;
+#[doc = "Field `RESERVED1` reader - Reserved. Read value is undefined, only zero should be written."]
+pub struct RESERVED1_R(crate::FieldReader<bool, RESERVED1_A>);
 impl RESERVED1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RESERVED1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RESERVED1_A {
@@ -638,15 +727,22 @@ impl RESERVED1_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == RESERVED1_A::INVISIBLE
+        **self == RESERVED1_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == RESERVED1_A::VISIBLE
+        **self == RESERVED1_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `RESERVED1`"]
+impl core::ops::Deref for RESERVED1_R {
+    type Target = crate::FieldReader<bool, RESERVED1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RESERVED1` writer - Reserved. Read value is undefined, only zero should be written."]
 pub struct RESERVED1_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +750,7 @@ impl<'a> RESERVED1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RESERVED1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -681,7 +775,7 @@ impl<'a> RESERVED1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -699,9 +793,12 @@ impl From<RESERVED2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RESERVED2`"]
-pub type RESERVED2_R = crate::R<bool, RESERVED2_A>;
+#[doc = "Field `RESERVED2` reader - Reserved. Read value is undefined, only zero should be written."]
+pub struct RESERVED2_R(crate::FieldReader<bool, RESERVED2_A>);
 impl RESERVED2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RESERVED2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RESERVED2_A {
@@ -713,15 +810,22 @@ impl RESERVED2_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == RESERVED2_A::INVISIBLE
+        **self == RESERVED2_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == RESERVED2_A::VISIBLE
+        **self == RESERVED2_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `RESERVED2`"]
+impl core::ops::Deref for RESERVED2_R {
+    type Target = crate::FieldReader<bool, RESERVED2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RESERVED2` writer - Reserved. Read value is undefined, only zero should be written."]
 pub struct RESERVED2_W<'a> {
     w: &'a mut W,
 }
@@ -729,9 +833,7 @@ impl<'a> RESERVED2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RESERVED2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -756,7 +858,7 @@ impl<'a> RESERVED2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -774,9 +876,12 @@ impl From<SDIO_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SDIO_IRQ`"]
-pub type SDIO_IRQ_R = crate::R<bool, SDIO_IRQ_A>;
+#[doc = "Field `SDIO_IRQ` reader - SDIO Controller interrupt."]
+pub struct SDIO_IRQ_R(crate::FieldReader<bool, SDIO_IRQ_A>);
 impl SDIO_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SDIO_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SDIO_IRQ_A {
@@ -788,15 +893,22 @@ impl SDIO_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == SDIO_IRQ_A::INVISIBLE
+        **self == SDIO_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == SDIO_IRQ_A::VISIBLE
+        **self == SDIO_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `SDIO_IRQ`"]
+impl core::ops::Deref for SDIO_IRQ_R {
+    type Target = crate::FieldReader<bool, SDIO_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SDIO_IRQ` writer - SDIO Controller interrupt."]
 pub struct SDIO_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -804,9 +916,7 @@ impl<'a> SDIO_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SDIO_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -831,7 +941,7 @@ impl<'a> SDIO_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -849,9 +959,12 @@ impl From<RESERVED3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RESERVED3`"]
-pub type RESERVED3_R = crate::R<bool, RESERVED3_A>;
+#[doc = "Field `RESERVED3` reader - Reserved. Read value is undefined, only zero should be written."]
+pub struct RESERVED3_R(crate::FieldReader<bool, RESERVED3_A>);
 impl RESERVED3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RESERVED3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RESERVED3_A {
@@ -863,15 +976,22 @@ impl RESERVED3_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == RESERVED3_A::INVISIBLE
+        **self == RESERVED3_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == RESERVED3_A::VISIBLE
+        **self == RESERVED3_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `RESERVED3`"]
+impl core::ops::Deref for RESERVED3_R {
+    type Target = crate::FieldReader<bool, RESERVED3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RESERVED3` writer - Reserved. Read value is undefined, only zero should be written."]
 pub struct RESERVED3_W<'a> {
     w: &'a mut W,
 }
@@ -879,9 +999,7 @@ impl<'a> RESERVED3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RESERVED3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -906,7 +1024,7 @@ impl<'a> RESERVED3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -924,9 +1042,12 @@ impl From<RESERVED4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RESERVED4`"]
-pub type RESERVED4_R = crate::R<bool, RESERVED4_A>;
+#[doc = "Field `RESERVED4` reader - Reserved. Read value is undefined, only zero should be written."]
+pub struct RESERVED4_R(crate::FieldReader<bool, RESERVED4_A>);
 impl RESERVED4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RESERVED4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RESERVED4_A {
@@ -938,15 +1059,22 @@ impl RESERVED4_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == RESERVED4_A::INVISIBLE
+        **self == RESERVED4_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == RESERVED4_A::VISIBLE
+        **self == RESERVED4_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `RESERVED4`"]
+impl core::ops::Deref for RESERVED4_R {
+    type Target = crate::FieldReader<bool, RESERVED4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RESERVED4` writer - Reserved. Read value is undefined, only zero should be written."]
 pub struct RESERVED4_W<'a> {
     w: &'a mut W,
 }
@@ -954,9 +1082,7 @@ impl<'a> RESERVED4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RESERVED4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -981,7 +1107,7 @@ impl<'a> RESERVED4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -999,9 +1125,12 @@ impl From<RESERVED5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RESERVED5`"]
-pub type RESERVED5_R = crate::R<bool, RESERVED5_A>;
+#[doc = "Field `RESERVED5` reader - Reserved. Read value is undefined, only zero should be written."]
+pub struct RESERVED5_R(crate::FieldReader<bool, RESERVED5_A>);
 impl RESERVED5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RESERVED5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RESERVED5_A {
@@ -1013,15 +1142,22 @@ impl RESERVED5_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == RESERVED5_A::INVISIBLE
+        **self == RESERVED5_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == RESERVED5_A::VISIBLE
+        **self == RESERVED5_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `RESERVED5`"]
+impl core::ops::Deref for RESERVED5_R {
+    type Target = crate::FieldReader<bool, RESERVED5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RESERVED5` writer - Reserved. Read value is undefined, only zero should be written."]
 pub struct RESERVED5_W<'a> {
     w: &'a mut W,
 }
@@ -1029,9 +1165,7 @@ impl<'a> RESERVED5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RESERVED5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -1056,7 +1190,7 @@ impl<'a> RESERVED5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -1074,9 +1208,12 @@ impl From<USB1_PHY_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `USB1_PHY_IRQ`"]
-pub type USB1_PHY_IRQ_R = crate::R<bool, USB1_PHY_IRQ_A>;
+#[doc = "Field `USB1_PHY_IRQ` reader - USB High Speed PHY Controller interrupt."]
+pub struct USB1_PHY_IRQ_R(crate::FieldReader<bool, USB1_PHY_IRQ_A>);
 impl USB1_PHY_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USB1_PHY_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USB1_PHY_IRQ_A {
@@ -1088,15 +1225,22 @@ impl USB1_PHY_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == USB1_PHY_IRQ_A::INVISIBLE
+        **self == USB1_PHY_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == USB1_PHY_IRQ_A::VISIBLE
+        **self == USB1_PHY_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `USB1_PHY_IRQ`"]
+impl core::ops::Deref for USB1_PHY_IRQ_R {
+    type Target = crate::FieldReader<bool, USB1_PHY_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USB1_PHY_IRQ` writer - USB High Speed PHY Controller interrupt."]
 pub struct USB1_PHY_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -1104,9 +1248,7 @@ impl<'a> USB1_PHY_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: USB1_PHY_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -1131,7 +1273,7 @@ impl<'a> USB1_PHY_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -1149,9 +1291,12 @@ impl From<USB1_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `USB1_IRQ`"]
-pub type USB1_IRQ_R = crate::R<bool, USB1_IRQ_A>;
+#[doc = "Field `USB1_IRQ` reader - USB High Speed Controller interrupt."]
+pub struct USB1_IRQ_R(crate::FieldReader<bool, USB1_IRQ_A>);
 impl USB1_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USB1_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USB1_IRQ_A {
@@ -1163,15 +1308,22 @@ impl USB1_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == USB1_IRQ_A::INVISIBLE
+        **self == USB1_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == USB1_IRQ_A::VISIBLE
+        **self == USB1_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `USB1_IRQ`"]
+impl core::ops::Deref for USB1_IRQ_R {
+    type Target = crate::FieldReader<bool, USB1_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USB1_IRQ` writer - USB High Speed Controller interrupt."]
 pub struct USB1_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -1179,9 +1331,7 @@ impl<'a> USB1_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: USB1_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -1206,7 +1356,7 @@ impl<'a> USB1_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -1224,9 +1374,12 @@ impl From<USB1_NEEDCLK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `USB1_NEEDCLK`"]
-pub type USB1_NEEDCLK_R = crate::R<bool, USB1_NEEDCLK_A>;
+#[doc = "Field `USB1_NEEDCLK` reader - USB High Speed Controller Clock request interrupt."]
+pub struct USB1_NEEDCLK_R(crate::FieldReader<bool, USB1_NEEDCLK_A>);
 impl USB1_NEEDCLK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        USB1_NEEDCLK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USB1_NEEDCLK_A {
@@ -1238,15 +1391,22 @@ impl USB1_NEEDCLK_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == USB1_NEEDCLK_A::INVISIBLE
+        **self == USB1_NEEDCLK_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == USB1_NEEDCLK_A::VISIBLE
+        **self == USB1_NEEDCLK_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `USB1_NEEDCLK`"]
+impl core::ops::Deref for USB1_NEEDCLK_R {
+    type Target = crate::FieldReader<bool, USB1_NEEDCLK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USB1_NEEDCLK` writer - USB High Speed Controller Clock request interrupt."]
 pub struct USB1_NEEDCLK_W<'a> {
     w: &'a mut W,
 }
@@ -1254,9 +1414,7 @@ impl<'a> USB1_NEEDCLK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: USB1_NEEDCLK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -1281,7 +1439,7 @@ impl<'a> USB1_NEEDCLK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -1299,9 +1457,12 @@ impl From<SEC_HYPERVISOR_CALL_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SEC_HYPERVISOR_CALL_IRQ`"]
-pub type SEC_HYPERVISOR_CALL_IRQ_R = crate::R<bool, SEC_HYPERVISOR_CALL_IRQ_A>;
+#[doc = "Field `SEC_HYPERVISOR_CALL_IRQ` reader - Secure fault Hyper Visor call interrupt."]
+pub struct SEC_HYPERVISOR_CALL_IRQ_R(crate::FieldReader<bool, SEC_HYPERVISOR_CALL_IRQ_A>);
 impl SEC_HYPERVISOR_CALL_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SEC_HYPERVISOR_CALL_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SEC_HYPERVISOR_CALL_IRQ_A {
@@ -1313,15 +1474,22 @@ impl SEC_HYPERVISOR_CALL_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == SEC_HYPERVISOR_CALL_IRQ_A::INVISIBLE
+        **self == SEC_HYPERVISOR_CALL_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == SEC_HYPERVISOR_CALL_IRQ_A::VISIBLE
+        **self == SEC_HYPERVISOR_CALL_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `SEC_HYPERVISOR_CALL_IRQ`"]
+impl core::ops::Deref for SEC_HYPERVISOR_CALL_IRQ_R {
+    type Target = crate::FieldReader<bool, SEC_HYPERVISOR_CALL_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SEC_HYPERVISOR_CALL_IRQ` writer - Secure fault Hyper Visor call interrupt."]
 pub struct SEC_HYPERVISOR_CALL_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -1329,9 +1497,7 @@ impl<'a> SEC_HYPERVISOR_CALL_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SEC_HYPERVISOR_CALL_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -1356,7 +1522,7 @@ impl<'a> SEC_HYPERVISOR_CALL_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
@@ -1374,9 +1540,12 @@ impl From<SEC_GPIO_INT0_IRQ0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SEC_GPIO_INT0_IRQ0`"]
-pub type SEC_GPIO_INT0_IRQ0_R = crate::R<bool, SEC_GPIO_INT0_IRQ0_A>;
+#[doc = "Field `SEC_GPIO_INT0_IRQ0` reader - Secure Pin interrupt 0 or pattern match engine slice 0 interrupt."]
+pub struct SEC_GPIO_INT0_IRQ0_R(crate::FieldReader<bool, SEC_GPIO_INT0_IRQ0_A>);
 impl SEC_GPIO_INT0_IRQ0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SEC_GPIO_INT0_IRQ0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SEC_GPIO_INT0_IRQ0_A {
@@ -1388,15 +1557,22 @@ impl SEC_GPIO_INT0_IRQ0_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == SEC_GPIO_INT0_IRQ0_A::INVISIBLE
+        **self == SEC_GPIO_INT0_IRQ0_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == SEC_GPIO_INT0_IRQ0_A::VISIBLE
+        **self == SEC_GPIO_INT0_IRQ0_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `SEC_GPIO_INT0_IRQ0`"]
+impl core::ops::Deref for SEC_GPIO_INT0_IRQ0_R {
+    type Target = crate::FieldReader<bool, SEC_GPIO_INT0_IRQ0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SEC_GPIO_INT0_IRQ0` writer - Secure Pin interrupt 0 or pattern match engine slice 0 interrupt."]
 pub struct SEC_GPIO_INT0_IRQ0_W<'a> {
     w: &'a mut W,
 }
@@ -1404,9 +1580,7 @@ impl<'a> SEC_GPIO_INT0_IRQ0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SEC_GPIO_INT0_IRQ0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -1431,7 +1605,7 @@ impl<'a> SEC_GPIO_INT0_IRQ0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
@@ -1449,9 +1623,12 @@ impl From<SEC_GPIO_INT0_IRQ1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SEC_GPIO_INT0_IRQ1`"]
-pub type SEC_GPIO_INT0_IRQ1_R = crate::R<bool, SEC_GPIO_INT0_IRQ1_A>;
+#[doc = "Field `SEC_GPIO_INT0_IRQ1` reader - Secure Pin interrupt 1 or pattern match engine slice 1 interrupt."]
+pub struct SEC_GPIO_INT0_IRQ1_R(crate::FieldReader<bool, SEC_GPIO_INT0_IRQ1_A>);
 impl SEC_GPIO_INT0_IRQ1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SEC_GPIO_INT0_IRQ1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SEC_GPIO_INT0_IRQ1_A {
@@ -1463,15 +1640,22 @@ impl SEC_GPIO_INT0_IRQ1_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == SEC_GPIO_INT0_IRQ1_A::INVISIBLE
+        **self == SEC_GPIO_INT0_IRQ1_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == SEC_GPIO_INT0_IRQ1_A::VISIBLE
+        **self == SEC_GPIO_INT0_IRQ1_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `SEC_GPIO_INT0_IRQ1`"]
+impl core::ops::Deref for SEC_GPIO_INT0_IRQ1_R {
+    type Target = crate::FieldReader<bool, SEC_GPIO_INT0_IRQ1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SEC_GPIO_INT0_IRQ1` writer - Secure Pin interrupt 1 or pattern match engine slice 1 interrupt."]
 pub struct SEC_GPIO_INT0_IRQ1_W<'a> {
     w: &'a mut W,
 }
@@ -1479,9 +1663,7 @@ impl<'a> SEC_GPIO_INT0_IRQ1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SEC_GPIO_INT0_IRQ1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -1506,7 +1688,7 @@ impl<'a> SEC_GPIO_INT0_IRQ1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -1524,9 +1706,12 @@ impl From<PLU_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PLU_IRQ`"]
-pub type PLU_IRQ_R = crate::R<bool, PLU_IRQ_A>;
+#[doc = "Field `PLU_IRQ` reader - Programmable Look-Up Controller interrupt."]
+pub struct PLU_IRQ_R(crate::FieldReader<bool, PLU_IRQ_A>);
 impl PLU_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLU_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLU_IRQ_A {
@@ -1538,15 +1723,22 @@ impl PLU_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == PLU_IRQ_A::INVISIBLE
+        **self == PLU_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == PLU_IRQ_A::VISIBLE
+        **self == PLU_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `PLU_IRQ`"]
+impl core::ops::Deref for PLU_IRQ_R {
+    type Target = crate::FieldReader<bool, PLU_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PLU_IRQ` writer - Programmable Look-Up Controller interrupt."]
 pub struct PLU_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -1554,9 +1746,7 @@ impl<'a> PLU_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PLU_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -1581,7 +1771,7 @@ impl<'a> PLU_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
@@ -1599,9 +1789,12 @@ impl From<SEC_VIO_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SEC_VIO_IRQ`"]
-pub type SEC_VIO_IRQ_R = crate::R<bool, SEC_VIO_IRQ_A>;
+#[doc = "Field `SEC_VIO_IRQ` reader - Security Violation interrupt."]
+pub struct SEC_VIO_IRQ_R(crate::FieldReader<bool, SEC_VIO_IRQ_A>);
 impl SEC_VIO_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SEC_VIO_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SEC_VIO_IRQ_A {
@@ -1613,15 +1806,22 @@ impl SEC_VIO_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == SEC_VIO_IRQ_A::INVISIBLE
+        **self == SEC_VIO_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == SEC_VIO_IRQ_A::VISIBLE
+        **self == SEC_VIO_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `SEC_VIO_IRQ`"]
+impl core::ops::Deref for SEC_VIO_IRQ_R {
+    type Target = crate::FieldReader<bool, SEC_VIO_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SEC_VIO_IRQ` writer - Security Violation interrupt."]
 pub struct SEC_VIO_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -1629,9 +1829,7 @@ impl<'a> SEC_VIO_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SEC_VIO_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -1656,7 +1854,7 @@ impl<'a> SEC_VIO_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
         self.w
     }
 }
@@ -1674,9 +1872,12 @@ impl From<SHA_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SHA_IRQ`"]
-pub type SHA_IRQ_R = crate::R<bool, SHA_IRQ_A>;
+#[doc = "Field `SHA_IRQ` reader - HASH-AES interrupt."]
+pub struct SHA_IRQ_R(crate::FieldReader<bool, SHA_IRQ_A>);
 impl SHA_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SHA_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SHA_IRQ_A {
@@ -1688,15 +1889,22 @@ impl SHA_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == SHA_IRQ_A::INVISIBLE
+        **self == SHA_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == SHA_IRQ_A::VISIBLE
+        **self == SHA_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `SHA_IRQ`"]
+impl core::ops::Deref for SHA_IRQ_R {
+    type Target = crate::FieldReader<bool, SHA_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SHA_IRQ` writer - HASH-AES interrupt."]
 pub struct SHA_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -1704,9 +1912,7 @@ impl<'a> SHA_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SHA_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -1731,7 +1937,7 @@ impl<'a> SHA_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
         self.w
     }
 }
@@ -1749,9 +1955,12 @@ impl From<CASPER_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CASPER_IRQ`"]
-pub type CASPER_IRQ_R = crate::R<bool, CASPER_IRQ_A>;
+#[doc = "Field `CASPER_IRQ` reader - CASPER interrupt."]
+pub struct CASPER_IRQ_R(crate::FieldReader<bool, CASPER_IRQ_A>);
 impl CASPER_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CASPER_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CASPER_IRQ_A {
@@ -1763,15 +1972,22 @@ impl CASPER_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == CASPER_IRQ_A::INVISIBLE
+        **self == CASPER_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == CASPER_IRQ_A::VISIBLE
+        **self == CASPER_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `CASPER_IRQ`"]
+impl core::ops::Deref for CASPER_IRQ_R {
+    type Target = crate::FieldReader<bool, CASPER_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CASPER_IRQ` writer - CASPER interrupt."]
 pub struct CASPER_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -1779,9 +1995,7 @@ impl<'a> CASPER_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CASPER_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -1806,7 +2020,7 @@ impl<'a> CASPER_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
         self.w
     }
 }
@@ -1824,9 +2038,12 @@ impl From<PUFKEY_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PUFKEY_IRQ`"]
-pub type PUFKEY_IRQ_R = crate::R<bool, PUFKEY_IRQ_A>;
+#[doc = "Field `PUFKEY_IRQ` reader - PUF interrupt."]
+pub struct PUFKEY_IRQ_R(crate::FieldReader<bool, PUFKEY_IRQ_A>);
 impl PUFKEY_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PUFKEY_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PUFKEY_IRQ_A {
@@ -1838,15 +2055,22 @@ impl PUFKEY_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == PUFKEY_IRQ_A::INVISIBLE
+        **self == PUFKEY_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == PUFKEY_IRQ_A::VISIBLE
+        **self == PUFKEY_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `PUFKEY_IRQ`"]
+impl core::ops::Deref for PUFKEY_IRQ_R {
+    type Target = crate::FieldReader<bool, PUFKEY_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PUFKEY_IRQ` writer - PUF interrupt."]
 pub struct PUFKEY_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -1854,9 +2078,7 @@ impl<'a> PUFKEY_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PUFKEY_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -1881,7 +2103,7 @@ impl<'a> PUFKEY_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
@@ -1899,9 +2121,12 @@ impl From<PQ_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PQ_IRQ`"]
-pub type PQ_IRQ_R = crate::R<bool, PQ_IRQ_A>;
+#[doc = "Field `PQ_IRQ` reader - Power Quad interrupt."]
+pub struct PQ_IRQ_R(crate::FieldReader<bool, PQ_IRQ_A>);
 impl PQ_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PQ_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PQ_IRQ_A {
@@ -1913,15 +2138,22 @@ impl PQ_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == PQ_IRQ_A::INVISIBLE
+        **self == PQ_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == PQ_IRQ_A::VISIBLE
+        **self == PQ_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `PQ_IRQ`"]
+impl core::ops::Deref for PQ_IRQ_R {
+    type Target = crate::FieldReader<bool, PQ_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PQ_IRQ` writer - Power Quad interrupt."]
 pub struct PQ_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -1929,9 +2161,7 @@ impl<'a> PQ_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PQ_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -1956,7 +2186,7 @@ impl<'a> PQ_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
         self.w
     }
 }
@@ -1974,9 +2204,12 @@ impl From<SDMA1_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SDMA1_IRQ`"]
-pub type SDMA1_IRQ_R = crate::R<bool, SDMA1_IRQ_A>;
+#[doc = "Field `SDMA1_IRQ` reader - System DMA 1 (Secure) interrupt"]
+pub struct SDMA1_IRQ_R(crate::FieldReader<bool, SDMA1_IRQ_A>);
 impl SDMA1_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SDMA1_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SDMA1_IRQ_A {
@@ -1988,15 +2221,22 @@ impl SDMA1_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == SDMA1_IRQ_A::INVISIBLE
+        **self == SDMA1_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == SDMA1_IRQ_A::VISIBLE
+        **self == SDMA1_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `SDMA1_IRQ`"]
+impl core::ops::Deref for SDMA1_IRQ_R {
+    type Target = crate::FieldReader<bool, SDMA1_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SDMA1_IRQ` writer - System DMA 1 (Secure) interrupt"]
 pub struct SDMA1_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -2004,9 +2244,7 @@ impl<'a> SDMA1_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SDMA1_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -2031,7 +2269,7 @@ impl<'a> SDMA1_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
         self.w
     }
 }
@@ -2049,9 +2287,12 @@ impl From<LSPI_HS_IRQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LSPI_HS_IRQ`"]
-pub type LSPI_HS_IRQ_R = crate::R<bool, LSPI_HS_IRQ_A>;
+#[doc = "Field `LSPI_HS_IRQ` reader - High Speed SPI interrupt"]
+pub struct LSPI_HS_IRQ_R(crate::FieldReader<bool, LSPI_HS_IRQ_A>);
 impl LSPI_HS_IRQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LSPI_HS_IRQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSPI_HS_IRQ_A {
@@ -2063,15 +2304,22 @@ impl LSPI_HS_IRQ_R {
     #[doc = "Checks if the value of the field is `INVISIBLE`"]
     #[inline(always)]
     pub fn is_invisible(&self) -> bool {
-        *self == LSPI_HS_IRQ_A::INVISIBLE
+        **self == LSPI_HS_IRQ_A::INVISIBLE
     }
     #[doc = "Checks if the value of the field is `VISIBLE`"]
     #[inline(always)]
     pub fn is_visible(&self) -> bool {
-        *self == LSPI_HS_IRQ_A::VISIBLE
+        **self == LSPI_HS_IRQ_A::VISIBLE
     }
 }
-#[doc = "Write proxy for field `LSPI_HS_IRQ`"]
+impl core::ops::Deref for LSPI_HS_IRQ_R {
+    type Target = crate::FieldReader<bool, LSPI_HS_IRQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LSPI_HS_IRQ` writer - High Speed SPI interrupt"]
 pub struct LSPI_HS_IRQ_W<'a> {
     w: &'a mut W,
 }
@@ -2079,9 +2327,7 @@ impl<'a> LSPI_HS_IRQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LSPI_HS_IRQ_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "no description available"]
     #[inline(always)]
@@ -2106,7 +2352,7 @@ impl<'a> LSPI_HS_IRQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
         self.w
     }
 }
@@ -2392,5 +2638,30 @@ impl W {
     #[inline(always)]
     pub fn lspi_hs_irq(&mut self) -> LSPI_HS_IRQ_W {
         LSPI_HS_IRQ_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Secure Interrupt mask for CPU1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_cpu_int_mask1](index.html) module"]
+pub struct SEC_CPU_INT_MASK1_SPEC;
+impl crate::RegisterSpec for SEC_CPU_INT_MASK1_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [sec_cpu_int_mask1::R](R) reader structure"]
+impl crate::Readable for SEC_CPU_INT_MASK1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sec_cpu_int_mask1::W](W) writer structure"]
+impl crate::Writable for SEC_CPU_INT_MASK1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SEC_CPU_INT_MASK1 to value 0xffff_ffff"]
+impl crate::Resettable for SEC_CPU_INT_MASK1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xffff_ffff
     }
 }

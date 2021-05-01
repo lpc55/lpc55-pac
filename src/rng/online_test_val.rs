@@ -1,21 +1,79 @@
-#[doc = "Reader of register ONLINE_TEST_VAL"]
-pub type R = crate::R<u32, super::ONLINE_TEST_VAL>;
-#[doc = "Writer for register ONLINE_TEST_VAL"]
-pub type W = crate::W<u32, super::ONLINE_TEST_VAL>;
-#[doc = "Register ONLINE_TEST_VAL `reset()`'s with value 0"]
-impl crate::ResetValue for super::ONLINE_TEST_VAL {
-    type Type = u32;
+#[doc = "Register `ONLINE_TEST_VAL` reader"]
+pub struct R(crate::R<ONLINE_TEST_VAL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ONLINE_TEST_VAL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `LIVE_CHI_SQUARED`"]
-pub type LIVE_CHI_SQUARED_R = crate::R<u8, u8>;
-#[doc = "Reader of field `MIN_CHI_SQUARED`"]
-pub type MIN_CHI_SQUARED_R = crate::R<u8, u8>;
-#[doc = "Reader of field `MAX_CHI_SQUARED`"]
-pub type MAX_CHI_SQUARED_R = crate::R<u8, u8>;
+impl core::convert::From<crate::R<ONLINE_TEST_VAL_SPEC>> for R {
+    fn from(reader: crate::R<ONLINE_TEST_VAL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ONLINE_TEST_VAL` writer"]
+pub struct W(crate::W<ONLINE_TEST_VAL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ONLINE_TEST_VAL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<ONLINE_TEST_VAL_SPEC>> for W {
+    fn from(writer: crate::W<ONLINE_TEST_VAL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `LIVE_CHI_SQUARED` reader - This value is updated as described in field 'activate'."]
+pub struct LIVE_CHI_SQUARED_R(crate::FieldReader<u8, u8>);
+impl LIVE_CHI_SQUARED_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LIVE_CHI_SQUARED_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LIVE_CHI_SQUARED_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MIN_CHI_SQUARED` reader - This field is reset when 'activate'==0."]
+pub struct MIN_CHI_SQUARED_R(crate::FieldReader<u8, u8>);
+impl MIN_CHI_SQUARED_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        MIN_CHI_SQUARED_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MIN_CHI_SQUARED_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MAX_CHI_SQUARED` reader - This field is reset when 'activate'==0."]
+pub struct MAX_CHI_SQUARED_R(crate::FieldReader<u8, u8>);
+impl MAX_CHI_SQUARED_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        MAX_CHI_SQUARED_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MAX_CHI_SQUARED_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bits 0:3 - This value is updated as described in field 'activate'."]
     #[inline(always)]
@@ -33,4 +91,30 @@ impl R {
         MAX_CHI_SQUARED_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
 }
-impl W {}
+impl W {
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "no description available\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [online_test_val](index.html) module"]
+pub struct ONLINE_TEST_VAL_SPEC;
+impl crate::RegisterSpec for ONLINE_TEST_VAL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [online_test_val::R](R) reader structure"]
+impl crate::Readable for ONLINE_TEST_VAL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [online_test_val::W](W) writer structure"]
+impl crate::Writable for ONLINE_TEST_VAL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ONLINE_TEST_VAL to value 0"]
+impl crate::Resettable for ONLINE_TEST_VAL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
+}

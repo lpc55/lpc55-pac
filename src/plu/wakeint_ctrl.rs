@@ -1,18 +1,52 @@
-#[doc = "Reader of register WAKEINT_CTRL"]
-pub type R = crate::R<u32, super::WAKEINT_CTRL>;
-#[doc = "Writer for register WAKEINT_CTRL"]
-pub type W = crate::W<u32, super::WAKEINT_CTRL>;
-#[doc = "Register WAKEINT_CTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::WAKEINT_CTRL {
-    type Type = u32;
+#[doc = "Register `WAKEINT_CTRL` reader"]
+pub struct R(crate::R<WAKEINT_CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<WAKEINT_CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `MASK`"]
-pub type MASK_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `MASK`"]
+impl core::convert::From<crate::R<WAKEINT_CTRL_SPEC>> for R {
+    fn from(reader: crate::R<WAKEINT_CTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `WAKEINT_CTRL` writer"]
+pub struct W(crate::W<WAKEINT_CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<WAKEINT_CTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<WAKEINT_CTRL_SPEC>> for W {
+    fn from(writer: crate::W<WAKEINT_CTRL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `MASK` reader - Interrupt mask (which of the 8 PLU Outputs contribute to interrupt)"]
+pub struct MASK_R(crate::FieldReader<u8, u8>);
+impl MASK_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        MASK_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MASK_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MASK` writer - Interrupt mask (which of the 8 PLU Outputs contribute to interrupt)"]
 pub struct MASK_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +54,7 @@ impl<'a> MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
         self.w
     }
 }
@@ -43,9 +77,12 @@ impl From<FILTER_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `FILTER_MODE`"]
-pub type FILTER_MODE_R = crate::R<u8, FILTER_MODE_A>;
+#[doc = "Field `FILTER_MODE` reader - control input of the PLU, add filtering for glitch."]
+pub struct FILTER_MODE_R(crate::FieldReader<u8, FILTER_MODE_A>);
 impl FILTER_MODE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FILTER_MODE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FILTER_MODE_A {
@@ -60,25 +97,32 @@ impl FILTER_MODE_R {
     #[doc = "Checks if the value of the field is `BYPASS`"]
     #[inline(always)]
     pub fn is_bypass(&self) -> bool {
-        *self == FILTER_MODE_A::BYPASS
+        **self == FILTER_MODE_A::BYPASS
     }
     #[doc = "Checks if the value of the field is `FILTER1CLK`"]
     #[inline(always)]
     pub fn is_filter1clk(&self) -> bool {
-        *self == FILTER_MODE_A::FILTER1CLK
+        **self == FILTER_MODE_A::FILTER1CLK
     }
     #[doc = "Checks if the value of the field is `FILTER2CLK`"]
     #[inline(always)]
     pub fn is_filter2clk(&self) -> bool {
-        *self == FILTER_MODE_A::FILTER2CLK
+        **self == FILTER_MODE_A::FILTER2CLK
     }
     #[doc = "Checks if the value of the field is `FILTER3CLK`"]
     #[inline(always)]
     pub fn is_filter3clk(&self) -> bool {
-        *self == FILTER_MODE_A::FILTER3CLK
+        **self == FILTER_MODE_A::FILTER3CLK
     }
 }
-#[doc = "Write proxy for field `FILTER_MODE`"]
+impl core::ops::Deref for FILTER_MODE_R {
+    type Target = crate::FieldReader<u8, FILTER_MODE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FILTER_MODE` writer - control input of the PLU, add filtering for glitch."]
 pub struct FILTER_MODE_W<'a> {
     w: &'a mut W,
 }
@@ -86,9 +130,7 @@ impl<'a> FILTER_MODE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: FILTER_MODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Bypass mode."]
     #[inline(always)]
@@ -113,7 +155,7 @@ impl<'a> FILTER_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
         self.w
     }
 }
@@ -134,37 +176,46 @@ impl From<FILTER_CLKSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `FILTER_CLKSEL`"]
-pub type FILTER_CLKSEL_R = crate::R<u8, FILTER_CLKSEL_A>;
+#[doc = "Field `FILTER_CLKSEL` reader - hclk is divided by 2**filter_clksel."]
+pub struct FILTER_CLKSEL_R(crate::FieldReader<u8, FILTER_CLKSEL_A>);
 impl FILTER_CLKSEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        FILTER_CLKSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, FILTER_CLKSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<FILTER_CLKSEL_A> {
         match self.bits {
-            0 => Val(FILTER_CLKSEL_A::FRO1MHZ),
-            1 => Val(FILTER_CLKSEL_A::FRO12MHZ),
-            2 => Val(FILTER_CLKSEL_A::OTHER_CLOCK),
-            i => Res(i),
+            0 => Some(FILTER_CLKSEL_A::FRO1MHZ),
+            1 => Some(FILTER_CLKSEL_A::FRO12MHZ),
+            2 => Some(FILTER_CLKSEL_A::OTHER_CLOCK),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `FRO1MHZ`"]
     #[inline(always)]
     pub fn is_fro1mhz(&self) -> bool {
-        *self == FILTER_CLKSEL_A::FRO1MHZ
+        **self == FILTER_CLKSEL_A::FRO1MHZ
     }
     #[doc = "Checks if the value of the field is `FRO12MHZ`"]
     #[inline(always)]
     pub fn is_fro12mhz(&self) -> bool {
-        *self == FILTER_CLKSEL_A::FRO12MHZ
+        **self == FILTER_CLKSEL_A::FRO12MHZ
     }
     #[doc = "Checks if the value of the field is `OTHER_CLOCK`"]
     #[inline(always)]
     pub fn is_other_clock(&self) -> bool {
-        *self == FILTER_CLKSEL_A::OTHER_CLOCK
+        **self == FILTER_CLKSEL_A::OTHER_CLOCK
     }
 }
-#[doc = "Write proxy for field `FILTER_CLKSEL`"]
+impl core::ops::Deref for FILTER_CLKSEL_R {
+    type Target = crate::FieldReader<u8, FILTER_CLKSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FILTER_CLKSEL` writer - hclk is divided by 2**filter_clksel."]
 pub struct FILTER_CLKSEL_W<'a> {
     w: &'a mut W,
 }
@@ -192,13 +243,25 @@ impl<'a> FILTER_CLKSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `LATCH_ENABLE`"]
-pub type LATCH_ENABLE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LATCH_ENABLE`"]
+#[doc = "Field `LATCH_ENABLE` reader - latch the interrupt , then can be cleared with next bit INTR_CLEAR"]
+pub struct LATCH_ENABLE_R(crate::FieldReader<bool, bool>);
+impl LATCH_ENABLE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LATCH_ENABLE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LATCH_ENABLE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LATCH_ENABLE` writer - latch the interrupt , then can be cleared with next bit INTR_CLEAR"]
 pub struct LATCH_ENABLE_W<'a> {
     w: &'a mut W,
 }
@@ -216,13 +279,25 @@ impl<'a> LATCH_ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `INTR_CLEAR`"]
-pub type INTR_CLEAR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `INTR_CLEAR`"]
+#[doc = "Field `INTR_CLEAR` reader - Write to clear wakeint_latched"]
+pub struct INTR_CLEAR_R(crate::FieldReader<bool, bool>);
+impl INTR_CLEAR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INTR_CLEAR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for INTR_CLEAR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INTR_CLEAR` writer - Write to clear wakeint_latched"]
 pub struct INTR_CLEAR_W<'a> {
     w: &'a mut W,
 }
@@ -240,7 +315,7 @@ impl<'a> INTR_CLEAR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -296,5 +371,30 @@ impl W {
     #[inline(always)]
     pub fn intr_clear(&mut self) -> INTR_CLEAR_W {
         INTR_CLEAR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Wakeup interrupt control for PLU\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wakeint_ctrl](index.html) module"]
+pub struct WAKEINT_CTRL_SPEC;
+impl crate::RegisterSpec for WAKEINT_CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [wakeint_ctrl::R](R) reader structure"]
+impl crate::Readable for WAKEINT_CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [wakeint_ctrl::W](W) writer structure"]
+impl crate::Writable for WAKEINT_CTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets WAKEINT_CTRL to value 0"]
+impl crate::Resettable for WAKEINT_CTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

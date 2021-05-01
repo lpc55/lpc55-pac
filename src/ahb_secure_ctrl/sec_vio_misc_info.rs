@@ -1,5 +1,17 @@
-#[doc = "Reader of register sec_vio_misc_info[%s]"]
-pub type R = crate::R<u32, super::SEC_VIO_MISC_INFO>;
+#[doc = "Register `sec_vio_misc_info[%s]` reader"]
+pub struct R(crate::R<SEC_VIO_MISC_INFO_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SEC_VIO_MISC_INFO_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<SEC_VIO_MISC_INFO_SPEC>> for R {
+    fn from(reader: crate::R<SEC_VIO_MISC_INFO_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "security violation access read/write indicator.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SEC_VIO_INFO_WRITE_A {
@@ -14,9 +26,12 @@ impl From<SEC_VIO_INFO_WRITE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SEC_VIO_INFO_WRITE`"]
-pub type SEC_VIO_INFO_WRITE_R = crate::R<bool, SEC_VIO_INFO_WRITE_A>;
+#[doc = "Field `SEC_VIO_INFO_WRITE` reader - security violation access read/write indicator."]
+pub struct SEC_VIO_INFO_WRITE_R(crate::FieldReader<bool, SEC_VIO_INFO_WRITE_A>);
 impl SEC_VIO_INFO_WRITE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SEC_VIO_INFO_WRITE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SEC_VIO_INFO_WRITE_A {
@@ -28,12 +43,19 @@ impl SEC_VIO_INFO_WRITE_R {
     #[doc = "Checks if the value of the field is `READ`"]
     #[inline(always)]
     pub fn is_read(&self) -> bool {
-        *self == SEC_VIO_INFO_WRITE_A::READ
+        **self == SEC_VIO_INFO_WRITE_A::READ
     }
     #[doc = "Checks if the value of the field is `WRITE`"]
     #[inline(always)]
     pub fn is_write(&self) -> bool {
-        *self == SEC_VIO_INFO_WRITE_A::WRITE
+        **self == SEC_VIO_INFO_WRITE_A::WRITE
+    }
+}
+impl core::ops::Deref for SEC_VIO_INFO_WRITE_R {
+    type Target = crate::FieldReader<bool, SEC_VIO_INFO_WRITE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "security violation access data/code indicator.\n\nValue on reset: 0"]
@@ -50,9 +72,12 @@ impl From<SEC_VIO_INFO_DATA_ACCESS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SEC_VIO_INFO_DATA_ACCESS`"]
-pub type SEC_VIO_INFO_DATA_ACCESS_R = crate::R<bool, SEC_VIO_INFO_DATA_ACCESS_A>;
+#[doc = "Field `SEC_VIO_INFO_DATA_ACCESS` reader - security violation access data/code indicator."]
+pub struct SEC_VIO_INFO_DATA_ACCESS_R(crate::FieldReader<bool, SEC_VIO_INFO_DATA_ACCESS_A>);
 impl SEC_VIO_INFO_DATA_ACCESS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SEC_VIO_INFO_DATA_ACCESS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SEC_VIO_INFO_DATA_ACCESS_A {
@@ -64,16 +89,35 @@ impl SEC_VIO_INFO_DATA_ACCESS_R {
     #[doc = "Checks if the value of the field is `CODE`"]
     #[inline(always)]
     pub fn is_code(&self) -> bool {
-        *self == SEC_VIO_INFO_DATA_ACCESS_A::CODE
+        **self == SEC_VIO_INFO_DATA_ACCESS_A::CODE
     }
     #[doc = "Checks if the value of the field is `DATA`"]
     #[inline(always)]
     pub fn is_data(&self) -> bool {
-        *self == SEC_VIO_INFO_DATA_ACCESS_A::DATA
+        **self == SEC_VIO_INFO_DATA_ACCESS_A::DATA
     }
 }
-#[doc = "Reader of field `SEC_VIO_INFO_MASTER_SEC_LEVEL`"]
-pub type SEC_VIO_INFO_MASTER_SEC_LEVEL_R = crate::R<u8, u8>;
+impl core::ops::Deref for SEC_VIO_INFO_DATA_ACCESS_R {
+    type Target = crate::FieldReader<bool, SEC_VIO_INFO_DATA_ACCESS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SEC_VIO_INFO_MASTER_SEC_LEVEL` reader - bit \\[5:4\\]: master sec level and privilege level bit \\[7:6\\]: anti-pol value for master sec level and privilege level"]
+pub struct SEC_VIO_INFO_MASTER_SEC_LEVEL_R(crate::FieldReader<u8, u8>);
+impl SEC_VIO_INFO_MASTER_SEC_LEVEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SEC_VIO_INFO_MASTER_SEC_LEVEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SEC_VIO_INFO_MASTER_SEC_LEVEL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "security violation master number\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -107,82 +151,91 @@ impl From<SEC_VIO_INFO_MASTER_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SEC_VIO_INFO_MASTER`"]
-pub type SEC_VIO_INFO_MASTER_R = crate::R<u8, SEC_VIO_INFO_MASTER_A>;
+#[doc = "Field `SEC_VIO_INFO_MASTER` reader - security violation master number"]
+pub struct SEC_VIO_INFO_MASTER_R(crate::FieldReader<u8, SEC_VIO_INFO_MASTER_A>);
 impl SEC_VIO_INFO_MASTER_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SEC_VIO_INFO_MASTER_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, SEC_VIO_INFO_MASTER_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SEC_VIO_INFO_MASTER_A> {
         match self.bits {
-            0 => Val(SEC_VIO_INFO_MASTER_A::VALUE_0),
-            1 => Val(SEC_VIO_INFO_MASTER_A::VALUE_1),
-            2 => Val(SEC_VIO_INFO_MASTER_A::VALUE_2),
-            3 => Val(SEC_VIO_INFO_MASTER_A::VALUE_3),
-            4 => Val(SEC_VIO_INFO_MASTER_A::VALUE_4),
-            5 => Val(SEC_VIO_INFO_MASTER_A::VALUE_5),
-            8 => Val(SEC_VIO_INFO_MASTER_A::VALUE_8),
-            9 => Val(SEC_VIO_INFO_MASTER_A::VALUE_9),
-            10 => Val(SEC_VIO_INFO_MASTER_A::VALUE_10),
-            11 => Val(SEC_VIO_INFO_MASTER_A::VALUE_11),
-            12 => Val(SEC_VIO_INFO_MASTER_A::VALUE_12),
-            i => Res(i),
+            0 => Some(SEC_VIO_INFO_MASTER_A::VALUE_0),
+            1 => Some(SEC_VIO_INFO_MASTER_A::VALUE_1),
+            2 => Some(SEC_VIO_INFO_MASTER_A::VALUE_2),
+            3 => Some(SEC_VIO_INFO_MASTER_A::VALUE_3),
+            4 => Some(SEC_VIO_INFO_MASTER_A::VALUE_4),
+            5 => Some(SEC_VIO_INFO_MASTER_A::VALUE_5),
+            8 => Some(SEC_VIO_INFO_MASTER_A::VALUE_8),
+            9 => Some(SEC_VIO_INFO_MASTER_A::VALUE_9),
+            10 => Some(SEC_VIO_INFO_MASTER_A::VALUE_10),
+            11 => Some(SEC_VIO_INFO_MASTER_A::VALUE_11),
+            12 => Some(SEC_VIO_INFO_MASTER_A::VALUE_12),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE_0`"]
     #[inline(always)]
     pub fn is_value_0(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTER_A::VALUE_0
+        **self == SEC_VIO_INFO_MASTER_A::VALUE_0
     }
     #[doc = "Checks if the value of the field is `VALUE_1`"]
     #[inline(always)]
     pub fn is_value_1(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTER_A::VALUE_1
+        **self == SEC_VIO_INFO_MASTER_A::VALUE_1
     }
     #[doc = "Checks if the value of the field is `VALUE_2`"]
     #[inline(always)]
     pub fn is_value_2(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTER_A::VALUE_2
+        **self == SEC_VIO_INFO_MASTER_A::VALUE_2
     }
     #[doc = "Checks if the value of the field is `VALUE_3`"]
     #[inline(always)]
     pub fn is_value_3(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTER_A::VALUE_3
+        **self == SEC_VIO_INFO_MASTER_A::VALUE_3
     }
     #[doc = "Checks if the value of the field is `VALUE_4`"]
     #[inline(always)]
     pub fn is_value_4(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTER_A::VALUE_4
+        **self == SEC_VIO_INFO_MASTER_A::VALUE_4
     }
     #[doc = "Checks if the value of the field is `VALUE_5`"]
     #[inline(always)]
     pub fn is_value_5(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTER_A::VALUE_5
+        **self == SEC_VIO_INFO_MASTER_A::VALUE_5
     }
     #[doc = "Checks if the value of the field is `VALUE_8`"]
     #[inline(always)]
     pub fn is_value_8(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTER_A::VALUE_8
+        **self == SEC_VIO_INFO_MASTER_A::VALUE_8
     }
     #[doc = "Checks if the value of the field is `VALUE_9`"]
     #[inline(always)]
     pub fn is_value_9(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTER_A::VALUE_9
+        **self == SEC_VIO_INFO_MASTER_A::VALUE_9
     }
     #[doc = "Checks if the value of the field is `VALUE_10`"]
     #[inline(always)]
     pub fn is_value_10(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTER_A::VALUE_10
+        **self == SEC_VIO_INFO_MASTER_A::VALUE_10
     }
     #[doc = "Checks if the value of the field is `VALUE_11`"]
     #[inline(always)]
     pub fn is_value_11(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTER_A::VALUE_11
+        **self == SEC_VIO_INFO_MASTER_A::VALUE_11
     }
     #[doc = "Checks if the value of the field is `VALUE_12`"]
     #[inline(always)]
     pub fn is_value_12(&self) -> bool {
-        *self == SEC_VIO_INFO_MASTER_A::VALUE_12
+        **self == SEC_VIO_INFO_MASTER_A::VALUE_12
+    }
+}
+impl core::ops::Deref for SEC_VIO_INFO_MASTER_R {
+    type Target = crate::FieldReader<u8, SEC_VIO_INFO_MASTER_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -205,5 +258,22 @@ impl R {
     #[inline(always)]
     pub fn sec_vio_info_master(&self) -> SEC_VIO_INFO_MASTER_R {
         SEC_VIO_INFO_MASTER_R::new(((self.bits >> 8) & 0x0f) as u8)
+    }
+}
+#[doc = "most recent security violation miscellaneous information for AHB port n\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_vio_misc_info](index.html) module"]
+pub struct SEC_VIO_MISC_INFO_SPEC;
+impl crate::RegisterSpec for SEC_VIO_MISC_INFO_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [sec_vio_misc_info::R](R) reader structure"]
+impl crate::Readable for SEC_VIO_MISC_INFO_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets sec_vio_misc_info[%s]
+to value 0"]
+impl crate::Resettable for SEC_VIO_MISC_INFO_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

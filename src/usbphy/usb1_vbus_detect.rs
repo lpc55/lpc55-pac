@@ -1,13 +1,35 @@
-#[doc = "Reader of register USB1_VBUS_DETECT"]
-pub type R = crate::R<u32, super::USB1_VBUS_DETECT>;
-#[doc = "Writer for register USB1_VBUS_DETECT"]
-pub type W = crate::W<u32, super::USB1_VBUS_DETECT>;
-#[doc = "Register USB1_VBUS_DETECT `reset()`'s with value 0x0070_0004"]
-impl crate::ResetValue for super::USB1_VBUS_DETECT {
-    type Type = u32;
+#[doc = "Register `USB1_VBUS_DETECT` reader"]
+pub struct R(crate::R<USB1_VBUS_DETECT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<USB1_VBUS_DETECT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0070_0004
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<USB1_VBUS_DETECT_SPEC>> for R {
+    fn from(reader: crate::R<USB1_VBUS_DETECT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `USB1_VBUS_DETECT` writer"]
+pub struct W(crate::W<USB1_VBUS_DETECT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<USB1_VBUS_DETECT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<USB1_VBUS_DETECT_SPEC>> for W {
+    fn from(writer: crate::W<USB1_VBUS_DETECT_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Sets the threshold for the VBUSVALID comparator\n\nValue on reset: 4"]
@@ -37,9 +59,12 @@ impl From<VBUSVALID_THRESH_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `VBUSVALID_THRESH`"]
-pub type VBUSVALID_THRESH_R = crate::R<u8, VBUSVALID_THRESH_A>;
+#[doc = "Field `VBUSVALID_THRESH` reader - Sets the threshold for the VBUSVALID comparator"]
+pub struct VBUSVALID_THRESH_R(crate::FieldReader<u8, VBUSVALID_THRESH_A>);
 impl VBUSVALID_THRESH_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        VBUSVALID_THRESH_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VBUSVALID_THRESH_A {
@@ -58,45 +83,52 @@ impl VBUSVALID_THRESH_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == VBUSVALID_THRESH_A::VALUE0
+        **self == VBUSVALID_THRESH_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VBUSVALID_THRESH_A::VALUE1
+        **self == VBUSVALID_THRESH_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VBUSVALID_THRESH_A::VALUE2
+        **self == VBUSVALID_THRESH_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == VBUSVALID_THRESH_A::VALUE3
+        **self == VBUSVALID_THRESH_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == VBUSVALID_THRESH_A::VALUE4
+        **self == VBUSVALID_THRESH_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == VBUSVALID_THRESH_A::VALUE5
+        **self == VBUSVALID_THRESH_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == VBUSVALID_THRESH_A::VALUE6
+        **self == VBUSVALID_THRESH_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == VBUSVALID_THRESH_A::VALUE7
+        **self == VBUSVALID_THRESH_A::VALUE7
     }
 }
-#[doc = "Write proxy for field `VBUSVALID_THRESH`"]
+impl core::ops::Deref for VBUSVALID_THRESH_R {
+    type Target = crate::FieldReader<u8, VBUSVALID_THRESH_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VBUSVALID_THRESH` writer - Sets the threshold for the VBUSVALID comparator"]
 pub struct VBUSVALID_THRESH_W<'a> {
     w: &'a mut W,
 }
@@ -104,9 +136,7 @@ impl<'a> VBUSVALID_THRESH_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VBUSVALID_THRESH_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "4.0V"]
     #[inline(always)]
@@ -151,7 +181,7 @@ impl<'a> VBUSVALID_THRESH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
         self.w
     }
 }
@@ -169,9 +199,12 @@ impl From<VBUS_OVERRIDE_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VBUS_OVERRIDE_EN`"]
-pub type VBUS_OVERRIDE_EN_R = crate::R<bool, VBUS_OVERRIDE_EN_A>;
+#[doc = "Field `VBUS_OVERRIDE_EN` reader - VBUS detect signal override enable"]
+pub struct VBUS_OVERRIDE_EN_R(crate::FieldReader<bool, VBUS_OVERRIDE_EN_A>);
 impl VBUS_OVERRIDE_EN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VBUS_OVERRIDE_EN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VBUS_OVERRIDE_EN_A {
@@ -183,15 +216,22 @@ impl VBUS_OVERRIDE_EN_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == VBUS_OVERRIDE_EN_A::VALUE0
+        **self == VBUS_OVERRIDE_EN_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VBUS_OVERRIDE_EN_A::VALUE1
+        **self == VBUS_OVERRIDE_EN_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `VBUS_OVERRIDE_EN`"]
+impl core::ops::Deref for VBUS_OVERRIDE_EN_R {
+    type Target = crate::FieldReader<bool, VBUS_OVERRIDE_EN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VBUS_OVERRIDE_EN` writer - VBUS detect signal override enable"]
 pub struct VBUS_OVERRIDE_EN_W<'a> {
     w: &'a mut W,
 }
@@ -199,9 +239,7 @@ impl<'a> VBUS_OVERRIDE_EN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VBUS_OVERRIDE_EN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Use the results of the internal VBUS_VALID and Session Valid comparators for VBUS_VALID, AVALID, BVALID, and SESSEND (Default)"]
     #[inline(always)]
@@ -226,13 +264,29 @@ impl<'a> VBUS_OVERRIDE_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Reader of field `SESSEND_OVERRIDE`"]
-pub type SESSEND_OVERRIDE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SESSEND_OVERRIDE`"]
+#[doc = "Field `SESSEND_OVERRIDE` reader - Override value for SESSEND The bit field provides the value for USB1_VBUS_DET_STAT\\[0\\]
+if USB_VBUS_DETECT\\[3\\]
+is set to value 1'b1"]
+pub struct SESSEND_OVERRIDE_R(crate::FieldReader<bool, bool>);
+impl SESSEND_OVERRIDE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SESSEND_OVERRIDE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SESSEND_OVERRIDE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SESSEND_OVERRIDE` writer - Override value for SESSEND The bit field provides the value for USB1_VBUS_DET_STAT\\[0\\]
+if USB_VBUS_DETECT\\[3\\]
+is set to value 1'b1"]
 pub struct SESSEND_OVERRIDE_W<'a> {
     w: &'a mut W,
 }
@@ -250,13 +304,29 @@ impl<'a> SESSEND_OVERRIDE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `BVALID_OVERRIDE`"]
-pub type BVALID_OVERRIDE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `BVALID_OVERRIDE`"]
+#[doc = "Field `BVALID_OVERRIDE` reader - Override value for B-Device Session Valid The bit field provides the value for USB1_VBUS_DET_STAT\\[1\\]
+if USB_VBUS_DETECT\\[3\\]
+is set to value 1'b1"]
+pub struct BVALID_OVERRIDE_R(crate::FieldReader<bool, bool>);
+impl BVALID_OVERRIDE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BVALID_OVERRIDE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BVALID_OVERRIDE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BVALID_OVERRIDE` writer - Override value for B-Device Session Valid The bit field provides the value for USB1_VBUS_DET_STAT\\[1\\]
+if USB_VBUS_DETECT\\[3\\]
+is set to value 1'b1"]
 pub struct BVALID_OVERRIDE_W<'a> {
     w: &'a mut W,
 }
@@ -274,13 +344,29 @@ impl<'a> BVALID_OVERRIDE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Reader of field `AVALID_OVERRIDE`"]
-pub type AVALID_OVERRIDE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AVALID_OVERRIDE`"]
+#[doc = "Field `AVALID_OVERRIDE` reader - Override value for A-Device Session Valid The bit field provides the value for USB1_VBUS_DET_STAT\\[2\\]
+if USB_VBUS_DETECT\\[3\\]
+is set to value 1'b1"]
+pub struct AVALID_OVERRIDE_R(crate::FieldReader<bool, bool>);
+impl AVALID_OVERRIDE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AVALID_OVERRIDE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AVALID_OVERRIDE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AVALID_OVERRIDE` writer - Override value for A-Device Session Valid The bit field provides the value for USB1_VBUS_DET_STAT\\[2\\]
+if USB_VBUS_DETECT\\[3\\]
+is set to value 1'b1"]
 pub struct AVALID_OVERRIDE_W<'a> {
     w: &'a mut W,
 }
@@ -298,13 +384,27 @@ impl<'a> AVALID_OVERRIDE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `VBUSVALID_OVERRIDE`"]
-pub type VBUSVALID_OVERRIDE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `VBUSVALID_OVERRIDE`"]
+#[doc = "Field `VBUSVALID_OVERRIDE` reader - Override value for VBUS_VALID signal sent to USB controller The bit field provides the value for VBUS_VALID reported to the USB controller if the value of USB1_VBUS_DETECT\\[3\\]
+is set to 1'b1"]
+pub struct VBUSVALID_OVERRIDE_R(crate::FieldReader<bool, bool>);
+impl VBUSVALID_OVERRIDE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VBUSVALID_OVERRIDE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for VBUSVALID_OVERRIDE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VBUSVALID_OVERRIDE` writer - Override value for VBUS_VALID signal sent to USB controller The bit field provides the value for VBUS_VALID reported to the USB controller if the value of USB1_VBUS_DETECT\\[3\\]
+is set to 1'b1"]
 pub struct VBUSVALID_OVERRIDE_W<'a> {
     w: &'a mut W,
 }
@@ -322,7 +422,7 @@ impl<'a> VBUSVALID_OVERRIDE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -340,9 +440,12 @@ impl From<VBUSVALID_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VBUSVALID_SEL`"]
-pub type VBUSVALID_SEL_R = crate::R<bool, VBUSVALID_SEL_A>;
+#[doc = "Field `VBUSVALID_SEL` reader - Selects the source of the VBUS_VALID signal reported to the USB controller This is one of the bit fields that selects the source of the VBUS_VALID signal reported to the USB controller"]
+pub struct VBUSVALID_SEL_R(crate::FieldReader<bool, VBUSVALID_SEL_A>);
 impl VBUSVALID_SEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VBUSVALID_SEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VBUSVALID_SEL_A {
@@ -354,15 +457,22 @@ impl VBUSVALID_SEL_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == VBUSVALID_SEL_A::VALUE0
+        **self == VBUSVALID_SEL_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VBUSVALID_SEL_A::VALUE1
+        **self == VBUSVALID_SEL_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `VBUSVALID_SEL`"]
+impl core::ops::Deref for VBUSVALID_SEL_R {
+    type Target = crate::FieldReader<bool, VBUSVALID_SEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VBUSVALID_SEL` writer - Selects the source of the VBUS_VALID signal reported to the USB controller This is one of the bit fields that selects the source of the VBUS_VALID signal reported to the USB controller"]
 pub struct VBUSVALID_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -370,9 +480,7 @@ impl<'a> VBUSVALID_SEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VBUSVALID_SEL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Use the VBUS_VALID comparator results for signal reported to the USB controller (Default)"]
     #[inline(always)]
@@ -397,7 +505,7 @@ impl<'a> VBUSVALID_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -418,37 +526,46 @@ impl From<VBUS_SOURCE_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `VBUS_SOURCE_SEL`"]
-pub type VBUS_SOURCE_SEL_R = crate::R<u8, VBUS_SOURCE_SEL_A>;
+#[doc = "Field `VBUS_SOURCE_SEL` reader - Selects the source of the VBUS_VALID signal reported to the USB controller This is one of the bit fields that selects the source of the VBUS_VALID signal reported to the USB controller"]
+pub struct VBUS_SOURCE_SEL_R(crate::FieldReader<u8, VBUS_SOURCE_SEL_A>);
 impl VBUS_SOURCE_SEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        VBUS_SOURCE_SEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, VBUS_SOURCE_SEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<VBUS_SOURCE_SEL_A> {
         match self.bits {
-            0 => Val(VBUS_SOURCE_SEL_A::VALUE0),
-            1 => Val(VBUS_SOURCE_SEL_A::VALUE1),
-            2 => Val(VBUS_SOURCE_SEL_A::VALUE2),
-            i => Res(i),
+            0 => Some(VBUS_SOURCE_SEL_A::VALUE0),
+            1 => Some(VBUS_SOURCE_SEL_A::VALUE1),
+            2 => Some(VBUS_SOURCE_SEL_A::VALUE2),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == VBUS_SOURCE_SEL_A::VALUE0
+        **self == VBUS_SOURCE_SEL_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VBUS_SOURCE_SEL_A::VALUE1
+        **self == VBUS_SOURCE_SEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == VBUS_SOURCE_SEL_A::VALUE2
+        **self == VBUS_SOURCE_SEL_A::VALUE2
     }
 }
-#[doc = "Write proxy for field `VBUS_SOURCE_SEL`"]
+impl core::ops::Deref for VBUS_SOURCE_SEL_R {
+    type Target = crate::FieldReader<u8, VBUS_SOURCE_SEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VBUS_SOURCE_SEL` writer - Selects the source of the VBUS_VALID signal reported to the USB controller This is one of the bit fields that selects the source of the VBUS_VALID signal reported to the USB controller"]
 pub struct VBUS_SOURCE_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -476,13 +593,25 @@ impl<'a> VBUS_SOURCE_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 9)) | (((value as u32) & 0x03) << 9);
+        self.w.bits = (self.w.bits & !(0x03 << 9)) | ((value as u32 & 0x03) << 9);
         self.w
     }
 }
-#[doc = "Reader of field `ID_OVERRIDE_EN`"]
-pub type ID_OVERRIDE_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ID_OVERRIDE_EN`"]
+#[doc = "Field `ID_OVERRIDE_EN` reader - Enable ID override using the register field. This bit is only used if EXT_ID_OVERRIDE_EN = 1'b0."]
+pub struct ID_OVERRIDE_EN_R(crate::FieldReader<bool, bool>);
+impl ID_OVERRIDE_EN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ID_OVERRIDE_EN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ID_OVERRIDE_EN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ID_OVERRIDE_EN` writer - Enable ID override using the register field. This bit is only used if EXT_ID_OVERRIDE_EN = 1'b0."]
 pub struct ID_OVERRIDE_EN_W<'a> {
     w: &'a mut W,
 }
@@ -500,13 +629,25 @@ impl<'a> ID_OVERRIDE_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
-#[doc = "Reader of field `ID_OVERRIDE`"]
-pub type ID_OVERRIDE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ID_OVERRIDE`"]
+#[doc = "Field `ID_OVERRIDE` reader - ID override value."]
+pub struct ID_OVERRIDE_R(crate::FieldReader<bool, bool>);
+impl ID_OVERRIDE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ID_OVERRIDE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ID_OVERRIDE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ID_OVERRIDE` writer - ID override value."]
 pub struct ID_OVERRIDE_W<'a> {
     w: &'a mut W,
 }
@@ -524,7 +665,7 @@ impl<'a> ID_OVERRIDE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -542,9 +683,12 @@ impl From<EXT_ID_OVERRIDE_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `EXT_ID_OVERRIDE_EN`"]
-pub type EXT_ID_OVERRIDE_EN_R = crate::R<bool, EXT_ID_OVERRIDE_EN_A>;
+#[doc = "Field `EXT_ID_OVERRIDE_EN` reader - Enable ID override using the pinmuxed value:"]
+pub struct EXT_ID_OVERRIDE_EN_R(crate::FieldReader<bool, EXT_ID_OVERRIDE_EN_A>);
 impl EXT_ID_OVERRIDE_EN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EXT_ID_OVERRIDE_EN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EXT_ID_OVERRIDE_EN_A {
@@ -556,15 +700,22 @@ impl EXT_ID_OVERRIDE_EN_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == EXT_ID_OVERRIDE_EN_A::VALUE0
+        **self == EXT_ID_OVERRIDE_EN_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EXT_ID_OVERRIDE_EN_A::VALUE1
+        **self == EXT_ID_OVERRIDE_EN_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `EXT_ID_OVERRIDE_EN`"]
+impl core::ops::Deref for EXT_ID_OVERRIDE_EN_R {
+    type Target = crate::FieldReader<bool, EXT_ID_OVERRIDE_EN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EXT_ID_OVERRIDE_EN` writer - Enable ID override using the pinmuxed value:"]
 pub struct EXT_ID_OVERRIDE_EN_W<'a> {
     w: &'a mut W,
 }
@@ -572,9 +723,7 @@ impl<'a> EXT_ID_OVERRIDE_EN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXT_ID_OVERRIDE_EN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Select the Muxed value chosen using ID_OVERRIDE_EN."]
     #[inline(always)]
@@ -599,7 +748,7 @@ impl<'a> EXT_ID_OVERRIDE_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -617,9 +766,12 @@ impl From<EXT_VBUS_OVERRIDE_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `EXT_VBUS_OVERRIDE_EN`"]
-pub type EXT_VBUS_OVERRIDE_EN_R = crate::R<bool, EXT_VBUS_OVERRIDE_EN_A>;
+#[doc = "Field `EXT_VBUS_OVERRIDE_EN` reader - Enable VBUS override using the pinmuxed value."]
+pub struct EXT_VBUS_OVERRIDE_EN_R(crate::FieldReader<bool, EXT_VBUS_OVERRIDE_EN_A>);
 impl EXT_VBUS_OVERRIDE_EN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        EXT_VBUS_OVERRIDE_EN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EXT_VBUS_OVERRIDE_EN_A {
@@ -631,15 +783,22 @@ impl EXT_VBUS_OVERRIDE_EN_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == EXT_VBUS_OVERRIDE_EN_A::VALUE0
+        **self == EXT_VBUS_OVERRIDE_EN_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == EXT_VBUS_OVERRIDE_EN_A::VALUE1
+        **self == EXT_VBUS_OVERRIDE_EN_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `EXT_VBUS_OVERRIDE_EN`"]
+impl core::ops::Deref for EXT_VBUS_OVERRIDE_EN_R {
+    type Target = crate::FieldReader<bool, EXT_VBUS_OVERRIDE_EN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `EXT_VBUS_OVERRIDE_EN` writer - Enable VBUS override using the pinmuxed value."]
 pub struct EXT_VBUS_OVERRIDE_EN_W<'a> {
     w: &'a mut W,
 }
@@ -647,9 +806,7 @@ impl<'a> EXT_VBUS_OVERRIDE_EN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EXT_VBUS_OVERRIDE_EN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Select the Muxed value chosen using VBUS_OVERRIDE_EN."]
     #[inline(always)]
@@ -674,7 +831,7 @@ impl<'a> EXT_VBUS_OVERRIDE_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -693,9 +850,13 @@ impl From<VBUSVALID_TO_SESSVALID_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VBUSVALID_TO_SESSVALID`"]
-pub type VBUSVALID_TO_SESSVALID_R = crate::R<bool, VBUSVALID_TO_SESSVALID_A>;
+#[doc = "Field `VBUSVALID_TO_SESSVALID` reader - Selects the comparator used for VBUS_VALID This bit field controls the comparator used to report the VBUS_VALID results in USB1_VBUS_DETECT\\[3\\]
+between the VBUS_VALID comparator and the Session Valid comparator"]
+pub struct VBUSVALID_TO_SESSVALID_R(crate::FieldReader<bool, VBUSVALID_TO_SESSVALID_A>);
 impl VBUSVALID_TO_SESSVALID_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VBUSVALID_TO_SESSVALID_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VBUSVALID_TO_SESSVALID_A {
@@ -707,15 +868,23 @@ impl VBUSVALID_TO_SESSVALID_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == VBUSVALID_TO_SESSVALID_A::VALUE0
+        **self == VBUSVALID_TO_SESSVALID_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == VBUSVALID_TO_SESSVALID_A::VALUE1
+        **self == VBUSVALID_TO_SESSVALID_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `VBUSVALID_TO_SESSVALID`"]
+impl core::ops::Deref for VBUSVALID_TO_SESSVALID_R {
+    type Target = crate::FieldReader<bool, VBUSVALID_TO_SESSVALID_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VBUSVALID_TO_SESSVALID` writer - Selects the comparator used for VBUS_VALID This bit field controls the comparator used to report the VBUS_VALID results in USB1_VBUS_DETECT\\[3\\]
+between the VBUS_VALID comparator and the Session Valid comparator"]
 pub struct VBUSVALID_TO_SESSVALID_W<'a> {
     w: &'a mut W,
 }
@@ -723,9 +892,7 @@ impl<'a> VBUSVALID_TO_SESSVALID_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VBUSVALID_TO_SESSVALID_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Use the VBUS_VALID comparator for VBUS_VALID results"]
     #[inline(always)]
@@ -750,13 +917,25 @@ impl<'a> VBUSVALID_TO_SESSVALID_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
-#[doc = "Reader of field `VBUSVALID_5VDETECT`"]
-pub type VBUSVALID_5VDETECT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `VBUSVALID_5VDETECT`"]
+#[doc = "Field `VBUSVALID_5VDETECT` reader - no description available"]
+pub struct VBUSVALID_5VDETECT_R(crate::FieldReader<bool, bool>);
+impl VBUSVALID_5VDETECT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VBUSVALID_5VDETECT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for VBUSVALID_5VDETECT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VBUSVALID_5VDETECT` writer - no description available"]
 pub struct VBUSVALID_5VDETECT_W<'a> {
     w: &'a mut W,
 }
@@ -774,7 +953,7 @@ impl<'a> VBUSVALID_5VDETECT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -793,31 +972,40 @@ impl From<PWRUP_CMPS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PWRUP_CMPS`"]
-pub type PWRUP_CMPS_R = crate::R<u8, PWRUP_CMPS_A>;
+#[doc = "Field `PWRUP_CMPS` reader - Enables the VBUS_VALID comparator: Powers up the comparator used for the VBUS_VALID detector"]
+pub struct PWRUP_CMPS_R(crate::FieldReader<u8, PWRUP_CMPS_A>);
 impl PWRUP_CMPS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PWRUP_CMPS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, PWRUP_CMPS_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<PWRUP_CMPS_A> {
         match self.bits {
-            0 => Val(PWRUP_CMPS_A::VALUE0),
-            7 => Val(PWRUP_CMPS_A::VALUE1),
-            i => Res(i),
+            0 => Some(PWRUP_CMPS_A::VALUE0),
+            7 => Some(PWRUP_CMPS_A::VALUE1),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == PWRUP_CMPS_A::VALUE0
+        **self == PWRUP_CMPS_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PWRUP_CMPS_A::VALUE1
+        **self == PWRUP_CMPS_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `PWRUP_CMPS`"]
+impl core::ops::Deref for PWRUP_CMPS_R {
+    type Target = crate::FieldReader<u8, PWRUP_CMPS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PWRUP_CMPS` writer - Enables the VBUS_VALID comparator: Powers up the comparator used for the VBUS_VALID detector"]
 pub struct PWRUP_CMPS_W<'a> {
     w: &'a mut W,
 }
@@ -840,7 +1028,7 @@ impl<'a> PWRUP_CMPS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
+        self.w.bits = (self.w.bits & !(0x07 << 20)) | ((value as u32 & 0x07) << 20);
         self.w
     }
 }
@@ -858,9 +1046,12 @@ impl From<DISCHARGE_VBUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DISCHARGE_VBUS`"]
-pub type DISCHARGE_VBUS_R = crate::R<bool, DISCHARGE_VBUS_A>;
+#[doc = "Field `DISCHARGE_VBUS` reader - Controls VBUS discharge resistor This bit field controls a nominal 22kohm resistor between the USB1_VBUS pin and ground"]
+pub struct DISCHARGE_VBUS_R(crate::FieldReader<bool, DISCHARGE_VBUS_A>);
 impl DISCHARGE_VBUS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DISCHARGE_VBUS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DISCHARGE_VBUS_A {
@@ -872,15 +1063,22 @@ impl DISCHARGE_VBUS_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == DISCHARGE_VBUS_A::VALUE0
+        **self == DISCHARGE_VBUS_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DISCHARGE_VBUS_A::VALUE1
+        **self == DISCHARGE_VBUS_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `DISCHARGE_VBUS`"]
+impl core::ops::Deref for DISCHARGE_VBUS_R {
+    type Target = crate::FieldReader<bool, DISCHARGE_VBUS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DISCHARGE_VBUS` writer - Controls VBUS discharge resistor This bit field controls a nominal 22kohm resistor between the USB1_VBUS pin and ground"]
 pub struct DISCHARGE_VBUS_W<'a> {
     w: &'a mut W,
 }
@@ -888,9 +1086,7 @@ impl<'a> DISCHARGE_VBUS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DISCHARGE_VBUS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "VBUS discharge resistor is disabled (Default)"]
     #[inline(always)]
@@ -915,7 +1111,7 @@ impl<'a> DISCHARGE_VBUS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
         self.w
     }
 }
@@ -1097,5 +1293,30 @@ between the VBUS_VALID comparator and the Session Valid comparator"]
     #[inline(always)]
     pub fn discharge_vbus(&mut self) -> DISCHARGE_VBUS_W {
         DISCHARGE_VBUS_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USB PHY VBUS Detect Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usb1_vbus_detect](index.html) module"]
+pub struct USB1_VBUS_DETECT_SPEC;
+impl crate::RegisterSpec for USB1_VBUS_DETECT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [usb1_vbus_detect::R](R) reader structure"]
+impl crate::Readable for USB1_VBUS_DETECT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [usb1_vbus_detect::W](W) writer structure"]
+impl crate::Writable for USB1_VBUS_DETECT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets USB1_VBUS_DETECT to value 0x0070_0004"]
+impl crate::Resettable for USB1_VBUS_DETECT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0070_0004
     }
 }

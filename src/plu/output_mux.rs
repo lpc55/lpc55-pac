@@ -1,14 +1,35 @@
-#[doc = "Reader of register OUTPUT_MUX[%s]"]
-pub type R = crate::R<u32, super::OUTPUT_MUX>;
-#[doc = "Writer for register OUTPUT_MUX[%s]"]
-pub type W = crate::W<u32, super::OUTPUT_MUX>;
-#[doc = "Register OUTPUT_MUX[%s]
-`reset()`'s with value 0"]
-impl crate::ResetValue for super::OUTPUT_MUX {
-    type Type = u32;
+#[doc = "Register `OUTPUT_MUX[%s]` reader"]
+pub struct R(crate::R<OUTPUT_MUX_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<OUTPUT_MUX_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<OUTPUT_MUX_SPEC>> for R {
+    fn from(reader: crate::R<OUTPUT_MUX_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `OUTPUT_MUX[%s]` writer"]
+pub struct W(crate::W<OUTPUT_MUX_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<OUTPUT_MUX_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<OUTPUT_MUX_SPEC>> for W {
+    fn from(writer: crate::W<OUTPUT_MUX_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Selects the source to be connected to PLU Output 0.\n\nValue on reset: 0"]
@@ -82,199 +103,208 @@ impl From<OUTPUTN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `OUTPUTn`"]
-pub type OUTPUTN_R = crate::R<u8, OUTPUTN_A>;
+#[doc = "Field `OUTPUTn` reader - Selects the source to be connected to PLU Output 0."]
+pub struct OUTPUTN_R(crate::FieldReader<u8, OUTPUTN_A>);
 impl OUTPUTN_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        OUTPUTN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, OUTPUTN_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<OUTPUTN_A> {
         match self.bits {
-            0 => Val(OUTPUTN_A::PLU_OUTPUT0),
-            1 => Val(OUTPUTN_A::PLU_OUTPUT1),
-            2 => Val(OUTPUTN_A::PLU_OUTPUT2),
-            3 => Val(OUTPUTN_A::PLU_OUTPUT3),
-            4 => Val(OUTPUTN_A::PLU_OUTPUT4),
-            5 => Val(OUTPUTN_A::PLU_OUTPUT5),
-            6 => Val(OUTPUTN_A::PLU_OUTPUT6),
-            7 => Val(OUTPUTN_A::PLU_OUTPUT7),
-            8 => Val(OUTPUTN_A::PLU_OUTPUT8),
-            9 => Val(OUTPUTN_A::PLU_OUTPUT9),
-            10 => Val(OUTPUTN_A::PLU_OUTPUT10),
-            11 => Val(OUTPUTN_A::PLU_OUTPUT11),
-            12 => Val(OUTPUTN_A::PLU_OUTPUT12),
-            13 => Val(OUTPUTN_A::PLU_OUTPUT13),
-            14 => Val(OUTPUTN_A::PLU_OUTPUT14),
-            15 => Val(OUTPUTN_A::PLU_OUTPUT15),
-            16 => Val(OUTPUTN_A::PLU_OUTPUT16),
-            17 => Val(OUTPUTN_A::PLU_OUTPUT17),
-            18 => Val(OUTPUTN_A::PLU_OUTPUT18),
-            19 => Val(OUTPUTN_A::PLU_OUTPUT19),
-            20 => Val(OUTPUTN_A::PLU_OUTPUT20),
-            21 => Val(OUTPUTN_A::PLU_OUTPUT21),
-            22 => Val(OUTPUTN_A::PLU_OUTPUT22),
-            23 => Val(OUTPUTN_A::PLU_OUTPUT23),
-            24 => Val(OUTPUTN_A::PLU_OUTPUT24),
-            25 => Val(OUTPUTN_A::PLU_OUTPUT25),
-            26 => Val(OUTPUTN_A::STATE0),
-            27 => Val(OUTPUTN_A::STATE1),
-            28 => Val(OUTPUTN_A::STATE2),
-            29 => Val(OUTPUTN_A::STATE3),
-            i => Res(i),
+            0 => Some(OUTPUTN_A::PLU_OUTPUT0),
+            1 => Some(OUTPUTN_A::PLU_OUTPUT1),
+            2 => Some(OUTPUTN_A::PLU_OUTPUT2),
+            3 => Some(OUTPUTN_A::PLU_OUTPUT3),
+            4 => Some(OUTPUTN_A::PLU_OUTPUT4),
+            5 => Some(OUTPUTN_A::PLU_OUTPUT5),
+            6 => Some(OUTPUTN_A::PLU_OUTPUT6),
+            7 => Some(OUTPUTN_A::PLU_OUTPUT7),
+            8 => Some(OUTPUTN_A::PLU_OUTPUT8),
+            9 => Some(OUTPUTN_A::PLU_OUTPUT9),
+            10 => Some(OUTPUTN_A::PLU_OUTPUT10),
+            11 => Some(OUTPUTN_A::PLU_OUTPUT11),
+            12 => Some(OUTPUTN_A::PLU_OUTPUT12),
+            13 => Some(OUTPUTN_A::PLU_OUTPUT13),
+            14 => Some(OUTPUTN_A::PLU_OUTPUT14),
+            15 => Some(OUTPUTN_A::PLU_OUTPUT15),
+            16 => Some(OUTPUTN_A::PLU_OUTPUT16),
+            17 => Some(OUTPUTN_A::PLU_OUTPUT17),
+            18 => Some(OUTPUTN_A::PLU_OUTPUT18),
+            19 => Some(OUTPUTN_A::PLU_OUTPUT19),
+            20 => Some(OUTPUTN_A::PLU_OUTPUT20),
+            21 => Some(OUTPUTN_A::PLU_OUTPUT21),
+            22 => Some(OUTPUTN_A::PLU_OUTPUT22),
+            23 => Some(OUTPUTN_A::PLU_OUTPUT23),
+            24 => Some(OUTPUTN_A::PLU_OUTPUT24),
+            25 => Some(OUTPUTN_A::PLU_OUTPUT25),
+            26 => Some(OUTPUTN_A::STATE0),
+            27 => Some(OUTPUTN_A::STATE1),
+            28 => Some(OUTPUTN_A::STATE2),
+            29 => Some(OUTPUTN_A::STATE3),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT0`"]
     #[inline(always)]
     pub fn is_plu_output0(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT0
+        **self == OUTPUTN_A::PLU_OUTPUT0
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT1`"]
     #[inline(always)]
     pub fn is_plu_output1(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT1
+        **self == OUTPUTN_A::PLU_OUTPUT1
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT2`"]
     #[inline(always)]
     pub fn is_plu_output2(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT2
+        **self == OUTPUTN_A::PLU_OUTPUT2
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT3`"]
     #[inline(always)]
     pub fn is_plu_output3(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT3
+        **self == OUTPUTN_A::PLU_OUTPUT3
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT4`"]
     #[inline(always)]
     pub fn is_plu_output4(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT4
+        **self == OUTPUTN_A::PLU_OUTPUT4
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT5`"]
     #[inline(always)]
     pub fn is_plu_output5(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT5
+        **self == OUTPUTN_A::PLU_OUTPUT5
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT6`"]
     #[inline(always)]
     pub fn is_plu_output6(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT6
+        **self == OUTPUTN_A::PLU_OUTPUT6
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT7`"]
     #[inline(always)]
     pub fn is_plu_output7(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT7
+        **self == OUTPUTN_A::PLU_OUTPUT7
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT8`"]
     #[inline(always)]
     pub fn is_plu_output8(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT8
+        **self == OUTPUTN_A::PLU_OUTPUT8
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT9`"]
     #[inline(always)]
     pub fn is_plu_output9(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT9
+        **self == OUTPUTN_A::PLU_OUTPUT9
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT10`"]
     #[inline(always)]
     pub fn is_plu_output10(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT10
+        **self == OUTPUTN_A::PLU_OUTPUT10
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT11`"]
     #[inline(always)]
     pub fn is_plu_output11(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT11
+        **self == OUTPUTN_A::PLU_OUTPUT11
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT12`"]
     #[inline(always)]
     pub fn is_plu_output12(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT12
+        **self == OUTPUTN_A::PLU_OUTPUT12
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT13`"]
     #[inline(always)]
     pub fn is_plu_output13(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT13
+        **self == OUTPUTN_A::PLU_OUTPUT13
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT14`"]
     #[inline(always)]
     pub fn is_plu_output14(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT14
+        **self == OUTPUTN_A::PLU_OUTPUT14
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT15`"]
     #[inline(always)]
     pub fn is_plu_output15(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT15
+        **self == OUTPUTN_A::PLU_OUTPUT15
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT16`"]
     #[inline(always)]
     pub fn is_plu_output16(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT16
+        **self == OUTPUTN_A::PLU_OUTPUT16
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT17`"]
     #[inline(always)]
     pub fn is_plu_output17(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT17
+        **self == OUTPUTN_A::PLU_OUTPUT17
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT18`"]
     #[inline(always)]
     pub fn is_plu_output18(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT18
+        **self == OUTPUTN_A::PLU_OUTPUT18
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT19`"]
     #[inline(always)]
     pub fn is_plu_output19(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT19
+        **self == OUTPUTN_A::PLU_OUTPUT19
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT20`"]
     #[inline(always)]
     pub fn is_plu_output20(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT20
+        **self == OUTPUTN_A::PLU_OUTPUT20
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT21`"]
     #[inline(always)]
     pub fn is_plu_output21(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT21
+        **self == OUTPUTN_A::PLU_OUTPUT21
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT22`"]
     #[inline(always)]
     pub fn is_plu_output22(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT22
+        **self == OUTPUTN_A::PLU_OUTPUT22
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT23`"]
     #[inline(always)]
     pub fn is_plu_output23(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT23
+        **self == OUTPUTN_A::PLU_OUTPUT23
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT24`"]
     #[inline(always)]
     pub fn is_plu_output24(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT24
+        **self == OUTPUTN_A::PLU_OUTPUT24
     }
     #[doc = "Checks if the value of the field is `PLU_OUTPUT25`"]
     #[inline(always)]
     pub fn is_plu_output25(&self) -> bool {
-        *self == OUTPUTN_A::PLU_OUTPUT25
+        **self == OUTPUTN_A::PLU_OUTPUT25
     }
     #[doc = "Checks if the value of the field is `STATE0`"]
     #[inline(always)]
     pub fn is_state0(&self) -> bool {
-        *self == OUTPUTN_A::STATE0
+        **self == OUTPUTN_A::STATE0
     }
     #[doc = "Checks if the value of the field is `STATE1`"]
     #[inline(always)]
     pub fn is_state1(&self) -> bool {
-        *self == OUTPUTN_A::STATE1
+        **self == OUTPUTN_A::STATE1
     }
     #[doc = "Checks if the value of the field is `STATE2`"]
     #[inline(always)]
     pub fn is_state2(&self) -> bool {
-        *self == OUTPUTN_A::STATE2
+        **self == OUTPUTN_A::STATE2
     }
     #[doc = "Checks if the value of the field is `STATE3`"]
     #[inline(always)]
     pub fn is_state3(&self) -> bool {
-        *self == OUTPUTN_A::STATE3
+        **self == OUTPUTN_A::STATE3
     }
 }
-#[doc = "Write proxy for field `OUTPUTn`"]
+impl core::ops::Deref for OUTPUTN_R {
+    type Target = crate::FieldReader<u8, OUTPUTN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `OUTPUTn` writer - Selects the source to be connected to PLU Output 0."]
 pub struct OUTPUTN_W<'a> {
     w: &'a mut W,
 }
@@ -437,7 +467,7 @@ impl<'a> OUTPUTN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
+        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
         self.w
     }
 }
@@ -453,5 +483,31 @@ impl W {
     #[inline(always)]
     pub fn outputn(&mut self) -> OUTPUTN_W {
         OUTPUTN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Selects the source to be connected to PLU Output OUTPUT_n\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [output_mux](index.html) module"]
+pub struct OUTPUT_MUX_SPEC;
+impl crate::RegisterSpec for OUTPUT_MUX_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [output_mux::R](R) reader structure"]
+impl crate::Readable for OUTPUT_MUX_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [output_mux::W](W) writer structure"]
+impl crate::Writable for OUTPUT_MUX_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets OUTPUT_MUX[%s]
+to value 0"]
+impl crate::Resettable for OUTPUT_MUX_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,13 +1,35 @@
-#[doc = "Reader of register SEC_GPIO_MASK1"]
-pub type R = crate::R<u32, super::SEC_GPIO_MASK1>;
-#[doc = "Writer for register SEC_GPIO_MASK1"]
-pub type W = crate::W<u32, super::SEC_GPIO_MASK1>;
-#[doc = "Register SEC_GPIO_MASK1 `reset()`'s with value 0xffff_ffff"]
-impl crate::ResetValue for super::SEC_GPIO_MASK1 {
-    type Type = u32;
+#[doc = "Register `SEC_GPIO_MASK1` reader"]
+pub struct R(crate::R<SEC_GPIO_MASK1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SEC_GPIO_MASK1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xffff_ffff
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<SEC_GPIO_MASK1_SPEC>> for R {
+    fn from(reader: crate::R<SEC_GPIO_MASK1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SEC_GPIO_MASK1` writer"]
+pub struct W(crate::W<SEC_GPIO_MASK1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SEC_GPIO_MASK1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<SEC_GPIO_MASK1_SPEC>> for W {
+    fn from(writer: crate::W<SEC_GPIO_MASK1_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Secure mask for pin P1_0\n\nValue on reset: 1"]
@@ -24,9 +46,12 @@ impl From<PIO1_PIN0_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN0_SEC_MASK`"]
-pub type PIO1_PIN0_SEC_MASK_R = crate::R<bool, PIO1_PIN0_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN0_SEC_MASK` reader - Secure mask for pin P1_0"]
+pub struct PIO1_PIN0_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN0_SEC_MASK_A>);
 impl PIO1_PIN0_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN0_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN0_SEC_MASK_A {
@@ -38,15 +63,22 @@ impl PIO1_PIN0_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN0_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN0_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN0_SEC_MASK_A::READABLE
+        **self == PIO1_PIN0_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN0_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN0_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN0_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN0_SEC_MASK` writer - Secure mask for pin P1_0"]
 pub struct PIO1_PIN0_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> PIO1_PIN0_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN0_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> PIO1_PIN0_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<PIO1_PIN1_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN1_SEC_MASK`"]
-pub type PIO1_PIN1_SEC_MASK_R = crate::R<bool, PIO1_PIN1_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN1_SEC_MASK` reader - Secure mask for pin P1_1"]
+pub struct PIO1_PIN1_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN1_SEC_MASK_A>);
 impl PIO1_PIN1_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN1_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN1_SEC_MASK_A {
@@ -113,15 +146,22 @@ impl PIO1_PIN1_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN1_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN1_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN1_SEC_MASK_A::READABLE
+        **self == PIO1_PIN1_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN1_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN1_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN1_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN1_SEC_MASK` writer - Secure mask for pin P1_1"]
 pub struct PIO1_PIN1_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> PIO1_PIN1_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN1_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> PIO1_PIN1_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<PIO1_PIN2_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN2_SEC_MASK`"]
-pub type PIO1_PIN2_SEC_MASK_R = crate::R<bool, PIO1_PIN2_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN2_SEC_MASK` reader - Secure mask for pin P1_2"]
+pub struct PIO1_PIN2_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN2_SEC_MASK_A>);
 impl PIO1_PIN2_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN2_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN2_SEC_MASK_A {
@@ -188,15 +229,22 @@ impl PIO1_PIN2_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN2_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN2_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN2_SEC_MASK_A::READABLE
+        **self == PIO1_PIN2_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN2_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN2_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN2_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN2_SEC_MASK` writer - Secure mask for pin P1_2"]
 pub struct PIO1_PIN2_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> PIO1_PIN2_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN2_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> PIO1_PIN2_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<PIO1_PIN3_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN3_SEC_MASK`"]
-pub type PIO1_PIN3_SEC_MASK_R = crate::R<bool, PIO1_PIN3_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN3_SEC_MASK` reader - Secure mask for pin P1_3"]
+pub struct PIO1_PIN3_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN3_SEC_MASK_A>);
 impl PIO1_PIN3_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN3_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN3_SEC_MASK_A {
@@ -263,15 +312,22 @@ impl PIO1_PIN3_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN3_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN3_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN3_SEC_MASK_A::READABLE
+        **self == PIO1_PIN3_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN3_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN3_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN3_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN3_SEC_MASK` writer - Secure mask for pin P1_3"]
 pub struct PIO1_PIN3_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> PIO1_PIN3_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN3_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> PIO1_PIN3_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<PIO1_PIN4_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN4_SEC_MASK`"]
-pub type PIO1_PIN4_SEC_MASK_R = crate::R<bool, PIO1_PIN4_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN4_SEC_MASK` reader - Secure mask for pin P1_4"]
+pub struct PIO1_PIN4_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN4_SEC_MASK_A>);
 impl PIO1_PIN4_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN4_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN4_SEC_MASK_A {
@@ -338,15 +395,22 @@ impl PIO1_PIN4_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN4_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN4_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN4_SEC_MASK_A::READABLE
+        **self == PIO1_PIN4_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN4_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN4_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN4_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN4_SEC_MASK` writer - Secure mask for pin P1_4"]
 pub struct PIO1_PIN4_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> PIO1_PIN4_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN4_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> PIO1_PIN4_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<PIO1_PIN5_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN5_SEC_MASK`"]
-pub type PIO1_PIN5_SEC_MASK_R = crate::R<bool, PIO1_PIN5_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN5_SEC_MASK` reader - Secure mask for pin P1_5"]
+pub struct PIO1_PIN5_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN5_SEC_MASK_A>);
 impl PIO1_PIN5_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN5_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN5_SEC_MASK_A {
@@ -413,15 +478,22 @@ impl PIO1_PIN5_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN5_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN5_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN5_SEC_MASK_A::READABLE
+        **self == PIO1_PIN5_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN5_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN5_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN5_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN5_SEC_MASK` writer - Secure mask for pin P1_5"]
 pub struct PIO1_PIN5_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> PIO1_PIN5_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN5_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> PIO1_PIN5_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<PIO1_PIN6_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN6_SEC_MASK`"]
-pub type PIO1_PIN6_SEC_MASK_R = crate::R<bool, PIO1_PIN6_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN6_SEC_MASK` reader - Secure mask for pin P1_6"]
+pub struct PIO1_PIN6_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN6_SEC_MASK_A>);
 impl PIO1_PIN6_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN6_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN6_SEC_MASK_A {
@@ -488,15 +561,22 @@ impl PIO1_PIN6_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN6_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN6_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN6_SEC_MASK_A::READABLE
+        **self == PIO1_PIN6_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN6_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN6_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN6_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN6_SEC_MASK` writer - Secure mask for pin P1_6"]
 pub struct PIO1_PIN6_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> PIO1_PIN6_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN6_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> PIO1_PIN6_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<PIO1_PIN7_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN7_SEC_MASK`"]
-pub type PIO1_PIN7_SEC_MASK_R = crate::R<bool, PIO1_PIN7_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN7_SEC_MASK` reader - Secure mask for pin P1_7"]
+pub struct PIO1_PIN7_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN7_SEC_MASK_A>);
 impl PIO1_PIN7_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN7_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN7_SEC_MASK_A {
@@ -563,15 +644,22 @@ impl PIO1_PIN7_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN7_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN7_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN7_SEC_MASK_A::READABLE
+        **self == PIO1_PIN7_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN7_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN7_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN7_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN7_SEC_MASK` writer - Secure mask for pin P1_7"]
 pub struct PIO1_PIN7_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +667,7 @@ impl<'a> PIO1_PIN7_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN7_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -606,7 +692,7 @@ impl<'a> PIO1_PIN7_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -624,9 +710,12 @@ impl From<PIO1_PIN8_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN8_SEC_MASK`"]
-pub type PIO1_PIN8_SEC_MASK_R = crate::R<bool, PIO1_PIN8_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN8_SEC_MASK` reader - Secure mask for pin P1_8"]
+pub struct PIO1_PIN8_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN8_SEC_MASK_A>);
 impl PIO1_PIN8_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN8_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN8_SEC_MASK_A {
@@ -638,15 +727,22 @@ impl PIO1_PIN8_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN8_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN8_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN8_SEC_MASK_A::READABLE
+        **self == PIO1_PIN8_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN8_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN8_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN8_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN8_SEC_MASK` writer - Secure mask for pin P1_8"]
 pub struct PIO1_PIN8_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +750,7 @@ impl<'a> PIO1_PIN8_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN8_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -681,7 +775,7 @@ impl<'a> PIO1_PIN8_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -699,9 +793,12 @@ impl From<PIO1_PIN9_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN9_SEC_MASK`"]
-pub type PIO1_PIN9_SEC_MASK_R = crate::R<bool, PIO1_PIN9_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN9_SEC_MASK` reader - Secure mask for pin P1_9"]
+pub struct PIO1_PIN9_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN9_SEC_MASK_A>);
 impl PIO1_PIN9_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN9_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN9_SEC_MASK_A {
@@ -713,15 +810,22 @@ impl PIO1_PIN9_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN9_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN9_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN9_SEC_MASK_A::READABLE
+        **self == PIO1_PIN9_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN9_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN9_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN9_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN9_SEC_MASK` writer - Secure mask for pin P1_9"]
 pub struct PIO1_PIN9_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -729,9 +833,7 @@ impl<'a> PIO1_PIN9_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN9_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -756,7 +858,7 @@ impl<'a> PIO1_PIN9_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -774,9 +876,12 @@ impl From<PIO1_PIN10_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN10_SEC_MASK`"]
-pub type PIO1_PIN10_SEC_MASK_R = crate::R<bool, PIO1_PIN10_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN10_SEC_MASK` reader - Secure mask for pin P1_10"]
+pub struct PIO1_PIN10_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN10_SEC_MASK_A>);
 impl PIO1_PIN10_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN10_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN10_SEC_MASK_A {
@@ -788,15 +893,22 @@ impl PIO1_PIN10_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN10_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN10_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN10_SEC_MASK_A::READABLE
+        **self == PIO1_PIN10_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN10_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN10_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN10_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN10_SEC_MASK` writer - Secure mask for pin P1_10"]
 pub struct PIO1_PIN10_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -804,9 +916,7 @@ impl<'a> PIO1_PIN10_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN10_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -831,7 +941,7 @@ impl<'a> PIO1_PIN10_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -849,9 +959,12 @@ impl From<PIO1_PIN11_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN11_SEC_MASK`"]
-pub type PIO1_PIN11_SEC_MASK_R = crate::R<bool, PIO1_PIN11_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN11_SEC_MASK` reader - Secure mask for pin P1_11"]
+pub struct PIO1_PIN11_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN11_SEC_MASK_A>);
 impl PIO1_PIN11_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN11_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN11_SEC_MASK_A {
@@ -863,15 +976,22 @@ impl PIO1_PIN11_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN11_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN11_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN11_SEC_MASK_A::READABLE
+        **self == PIO1_PIN11_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN11_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN11_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN11_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN11_SEC_MASK` writer - Secure mask for pin P1_11"]
 pub struct PIO1_PIN11_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -879,9 +999,7 @@ impl<'a> PIO1_PIN11_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN11_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -906,7 +1024,7 @@ impl<'a> PIO1_PIN11_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -924,9 +1042,12 @@ impl From<PIO1_PIN12_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN12_SEC_MASK`"]
-pub type PIO1_PIN12_SEC_MASK_R = crate::R<bool, PIO1_PIN12_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN12_SEC_MASK` reader - Secure mask for pin P1_12"]
+pub struct PIO1_PIN12_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN12_SEC_MASK_A>);
 impl PIO1_PIN12_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN12_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN12_SEC_MASK_A {
@@ -938,15 +1059,22 @@ impl PIO1_PIN12_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN12_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN12_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN12_SEC_MASK_A::READABLE
+        **self == PIO1_PIN12_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN12_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN12_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN12_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN12_SEC_MASK` writer - Secure mask for pin P1_12"]
 pub struct PIO1_PIN12_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -954,9 +1082,7 @@ impl<'a> PIO1_PIN12_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN12_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -981,7 +1107,7 @@ impl<'a> PIO1_PIN12_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -999,9 +1125,12 @@ impl From<PIO1_PIN13_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN13_SEC_MASK`"]
-pub type PIO1_PIN13_SEC_MASK_R = crate::R<bool, PIO1_PIN13_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN13_SEC_MASK` reader - Secure mask for pin P1_13"]
+pub struct PIO1_PIN13_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN13_SEC_MASK_A>);
 impl PIO1_PIN13_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN13_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN13_SEC_MASK_A {
@@ -1013,15 +1142,22 @@ impl PIO1_PIN13_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN13_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN13_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN13_SEC_MASK_A::READABLE
+        **self == PIO1_PIN13_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN13_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN13_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN13_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN13_SEC_MASK` writer - Secure mask for pin P1_13"]
 pub struct PIO1_PIN13_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -1029,9 +1165,7 @@ impl<'a> PIO1_PIN13_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN13_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -1056,7 +1190,7 @@ impl<'a> PIO1_PIN13_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -1074,9 +1208,12 @@ impl From<PIO1_PIN14_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN14_SEC_MASK`"]
-pub type PIO1_PIN14_SEC_MASK_R = crate::R<bool, PIO1_PIN14_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN14_SEC_MASK` reader - Secure mask for pin P1_14"]
+pub struct PIO1_PIN14_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN14_SEC_MASK_A>);
 impl PIO1_PIN14_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN14_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN14_SEC_MASK_A {
@@ -1088,15 +1225,22 @@ impl PIO1_PIN14_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN14_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN14_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN14_SEC_MASK_A::READABLE
+        **self == PIO1_PIN14_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN14_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN14_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN14_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN14_SEC_MASK` writer - Secure mask for pin P1_14"]
 pub struct PIO1_PIN14_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -1104,9 +1248,7 @@ impl<'a> PIO1_PIN14_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN14_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -1131,7 +1273,7 @@ impl<'a> PIO1_PIN14_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -1149,9 +1291,12 @@ impl From<PIO1_PIN15_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN15_SEC_MASK`"]
-pub type PIO1_PIN15_SEC_MASK_R = crate::R<bool, PIO1_PIN15_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN15_SEC_MASK` reader - Secure mask for pin P1_15"]
+pub struct PIO1_PIN15_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN15_SEC_MASK_A>);
 impl PIO1_PIN15_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN15_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN15_SEC_MASK_A {
@@ -1163,15 +1308,22 @@ impl PIO1_PIN15_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN15_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN15_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN15_SEC_MASK_A::READABLE
+        **self == PIO1_PIN15_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN15_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN15_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN15_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN15_SEC_MASK` writer - Secure mask for pin P1_15"]
 pub struct PIO1_PIN15_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -1179,9 +1331,7 @@ impl<'a> PIO1_PIN15_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN15_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -1206,7 +1356,7 @@ impl<'a> PIO1_PIN15_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -1224,9 +1374,12 @@ impl From<PIO1_PIN16_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN16_SEC_MASK`"]
-pub type PIO1_PIN16_SEC_MASK_R = crate::R<bool, PIO1_PIN16_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN16_SEC_MASK` reader - Secure mask for pin P1_16"]
+pub struct PIO1_PIN16_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN16_SEC_MASK_A>);
 impl PIO1_PIN16_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN16_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN16_SEC_MASK_A {
@@ -1238,15 +1391,22 @@ impl PIO1_PIN16_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN16_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN16_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN16_SEC_MASK_A::READABLE
+        **self == PIO1_PIN16_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN16_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN16_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN16_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN16_SEC_MASK` writer - Secure mask for pin P1_16"]
 pub struct PIO1_PIN16_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -1254,9 +1414,7 @@ impl<'a> PIO1_PIN16_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN16_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -1281,7 +1439,7 @@ impl<'a> PIO1_PIN16_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -1299,9 +1457,12 @@ impl From<PIO1_PIN17_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN17_SEC_MASK`"]
-pub type PIO1_PIN17_SEC_MASK_R = crate::R<bool, PIO1_PIN17_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN17_SEC_MASK` reader - Secure mask for pin P1_17"]
+pub struct PIO1_PIN17_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN17_SEC_MASK_A>);
 impl PIO1_PIN17_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN17_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN17_SEC_MASK_A {
@@ -1313,15 +1474,22 @@ impl PIO1_PIN17_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN17_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN17_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN17_SEC_MASK_A::READABLE
+        **self == PIO1_PIN17_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN17_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN17_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN17_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN17_SEC_MASK` writer - Secure mask for pin P1_17"]
 pub struct PIO1_PIN17_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -1329,9 +1497,7 @@ impl<'a> PIO1_PIN17_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN17_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -1356,7 +1522,7 @@ impl<'a> PIO1_PIN17_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
@@ -1374,9 +1540,12 @@ impl From<PIO1_PIN18_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN18_SEC_MASK`"]
-pub type PIO1_PIN18_SEC_MASK_R = crate::R<bool, PIO1_PIN18_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN18_SEC_MASK` reader - Secure mask for pin P1_18"]
+pub struct PIO1_PIN18_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN18_SEC_MASK_A>);
 impl PIO1_PIN18_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN18_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN18_SEC_MASK_A {
@@ -1388,15 +1557,22 @@ impl PIO1_PIN18_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN18_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN18_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN18_SEC_MASK_A::READABLE
+        **self == PIO1_PIN18_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN18_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN18_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN18_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN18_SEC_MASK` writer - Secure mask for pin P1_18"]
 pub struct PIO1_PIN18_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -1404,9 +1580,7 @@ impl<'a> PIO1_PIN18_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN18_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -1431,7 +1605,7 @@ impl<'a> PIO1_PIN18_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
@@ -1449,9 +1623,12 @@ impl From<PIO1_PIN19_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN19_SEC_MASK`"]
-pub type PIO1_PIN19_SEC_MASK_R = crate::R<bool, PIO1_PIN19_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN19_SEC_MASK` reader - Secure mask for pin P1_19"]
+pub struct PIO1_PIN19_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN19_SEC_MASK_A>);
 impl PIO1_PIN19_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN19_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN19_SEC_MASK_A {
@@ -1463,15 +1640,22 @@ impl PIO1_PIN19_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN19_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN19_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN19_SEC_MASK_A::READABLE
+        **self == PIO1_PIN19_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN19_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN19_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN19_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN19_SEC_MASK` writer - Secure mask for pin P1_19"]
 pub struct PIO1_PIN19_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -1479,9 +1663,7 @@ impl<'a> PIO1_PIN19_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN19_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -1506,7 +1688,7 @@ impl<'a> PIO1_PIN19_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -1524,9 +1706,12 @@ impl From<PIO1_PIN20_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN20_SEC_MASK`"]
-pub type PIO1_PIN20_SEC_MASK_R = crate::R<bool, PIO1_PIN20_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN20_SEC_MASK` reader - Secure mask for pin P1_20"]
+pub struct PIO1_PIN20_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN20_SEC_MASK_A>);
 impl PIO1_PIN20_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN20_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN20_SEC_MASK_A {
@@ -1538,15 +1723,22 @@ impl PIO1_PIN20_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN20_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN20_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN20_SEC_MASK_A::READABLE
+        **self == PIO1_PIN20_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN20_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN20_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN20_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN20_SEC_MASK` writer - Secure mask for pin P1_20"]
 pub struct PIO1_PIN20_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -1554,9 +1746,7 @@ impl<'a> PIO1_PIN20_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN20_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -1581,7 +1771,7 @@ impl<'a> PIO1_PIN20_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
@@ -1599,9 +1789,12 @@ impl From<PIO1_PIN21_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN21_SEC_MASK`"]
-pub type PIO1_PIN21_SEC_MASK_R = crate::R<bool, PIO1_PIN21_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN21_SEC_MASK` reader - Secure mask for pin P1_21"]
+pub struct PIO1_PIN21_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN21_SEC_MASK_A>);
 impl PIO1_PIN21_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN21_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN21_SEC_MASK_A {
@@ -1613,15 +1806,22 @@ impl PIO1_PIN21_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN21_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN21_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN21_SEC_MASK_A::READABLE
+        **self == PIO1_PIN21_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN21_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN21_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN21_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN21_SEC_MASK` writer - Secure mask for pin P1_21"]
 pub struct PIO1_PIN21_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -1629,9 +1829,7 @@ impl<'a> PIO1_PIN21_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN21_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -1656,7 +1854,7 @@ impl<'a> PIO1_PIN21_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
         self.w
     }
 }
@@ -1674,9 +1872,12 @@ impl From<PIO1_PIN22_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN22_SEC_MASK`"]
-pub type PIO1_PIN22_SEC_MASK_R = crate::R<bool, PIO1_PIN22_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN22_SEC_MASK` reader - Secure mask for pin P1_22"]
+pub struct PIO1_PIN22_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN22_SEC_MASK_A>);
 impl PIO1_PIN22_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN22_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN22_SEC_MASK_A {
@@ -1688,15 +1889,22 @@ impl PIO1_PIN22_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN22_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN22_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN22_SEC_MASK_A::READABLE
+        **self == PIO1_PIN22_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN22_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN22_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN22_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN22_SEC_MASK` writer - Secure mask for pin P1_22"]
 pub struct PIO1_PIN22_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -1704,9 +1912,7 @@ impl<'a> PIO1_PIN22_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN22_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -1731,7 +1937,7 @@ impl<'a> PIO1_PIN22_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
         self.w
     }
 }
@@ -1749,9 +1955,12 @@ impl From<PIO1_PIN23_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN23_SEC_MASK`"]
-pub type PIO1_PIN23_SEC_MASK_R = crate::R<bool, PIO1_PIN23_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN23_SEC_MASK` reader - Secure mask for pin P1_23"]
+pub struct PIO1_PIN23_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN23_SEC_MASK_A>);
 impl PIO1_PIN23_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN23_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN23_SEC_MASK_A {
@@ -1763,15 +1972,22 @@ impl PIO1_PIN23_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN23_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN23_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN23_SEC_MASK_A::READABLE
+        **self == PIO1_PIN23_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN23_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN23_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN23_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN23_SEC_MASK` writer - Secure mask for pin P1_23"]
 pub struct PIO1_PIN23_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -1779,9 +1995,7 @@ impl<'a> PIO1_PIN23_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN23_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -1806,7 +2020,7 @@ impl<'a> PIO1_PIN23_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
         self.w
     }
 }
@@ -1824,9 +2038,12 @@ impl From<PIO1_PIN24_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN24_SEC_MASK`"]
-pub type PIO1_PIN24_SEC_MASK_R = crate::R<bool, PIO1_PIN24_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN24_SEC_MASK` reader - Secure mask for pin P1_24"]
+pub struct PIO1_PIN24_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN24_SEC_MASK_A>);
 impl PIO1_PIN24_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN24_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN24_SEC_MASK_A {
@@ -1838,15 +2055,22 @@ impl PIO1_PIN24_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN24_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN24_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN24_SEC_MASK_A::READABLE
+        **self == PIO1_PIN24_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN24_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN24_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN24_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN24_SEC_MASK` writer - Secure mask for pin P1_24"]
 pub struct PIO1_PIN24_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -1854,9 +2078,7 @@ impl<'a> PIO1_PIN24_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN24_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -1881,7 +2103,7 @@ impl<'a> PIO1_PIN24_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
@@ -1899,9 +2121,12 @@ impl From<PIO1_PIN25_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN25_SEC_MASK`"]
-pub type PIO1_PIN25_SEC_MASK_R = crate::R<bool, PIO1_PIN25_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN25_SEC_MASK` reader - Secure mask for pin P1_25"]
+pub struct PIO1_PIN25_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN25_SEC_MASK_A>);
 impl PIO1_PIN25_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN25_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN25_SEC_MASK_A {
@@ -1913,15 +2138,22 @@ impl PIO1_PIN25_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN25_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN25_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN25_SEC_MASK_A::READABLE
+        **self == PIO1_PIN25_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN25_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN25_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN25_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN25_SEC_MASK` writer - Secure mask for pin P1_25"]
 pub struct PIO1_PIN25_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -1929,9 +2161,7 @@ impl<'a> PIO1_PIN25_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN25_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -1956,7 +2186,7 @@ impl<'a> PIO1_PIN25_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
         self.w
     }
 }
@@ -1974,9 +2204,12 @@ impl From<PIO1_PIN26_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN26_SEC_MASK`"]
-pub type PIO1_PIN26_SEC_MASK_R = crate::R<bool, PIO1_PIN26_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN26_SEC_MASK` reader - Secure mask for pin P1_26"]
+pub struct PIO1_PIN26_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN26_SEC_MASK_A>);
 impl PIO1_PIN26_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN26_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN26_SEC_MASK_A {
@@ -1988,15 +2221,22 @@ impl PIO1_PIN26_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN26_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN26_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN26_SEC_MASK_A::READABLE
+        **self == PIO1_PIN26_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN26_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN26_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN26_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN26_SEC_MASK` writer - Secure mask for pin P1_26"]
 pub struct PIO1_PIN26_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -2004,9 +2244,7 @@ impl<'a> PIO1_PIN26_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN26_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -2031,7 +2269,7 @@ impl<'a> PIO1_PIN26_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
+        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
         self.w
     }
 }
@@ -2049,9 +2287,12 @@ impl From<PIO1_PIN27_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN27_SEC_MASK`"]
-pub type PIO1_PIN27_SEC_MASK_R = crate::R<bool, PIO1_PIN27_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN27_SEC_MASK` reader - Secure mask for pin P1_27"]
+pub struct PIO1_PIN27_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN27_SEC_MASK_A>);
 impl PIO1_PIN27_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN27_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN27_SEC_MASK_A {
@@ -2063,15 +2304,22 @@ impl PIO1_PIN27_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN27_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN27_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN27_SEC_MASK_A::READABLE
+        **self == PIO1_PIN27_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN27_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN27_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN27_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN27_SEC_MASK` writer - Secure mask for pin P1_27"]
 pub struct PIO1_PIN27_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -2079,9 +2327,7 @@ impl<'a> PIO1_PIN27_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN27_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -2106,7 +2352,7 @@ impl<'a> PIO1_PIN27_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
         self.w
     }
 }
@@ -2124,9 +2370,12 @@ impl From<PIO1_PIN28_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN28_SEC_MASK`"]
-pub type PIO1_PIN28_SEC_MASK_R = crate::R<bool, PIO1_PIN28_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN28_SEC_MASK` reader - Secure mask for pin P1_28"]
+pub struct PIO1_PIN28_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN28_SEC_MASK_A>);
 impl PIO1_PIN28_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN28_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN28_SEC_MASK_A {
@@ -2138,15 +2387,22 @@ impl PIO1_PIN28_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN28_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN28_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN28_SEC_MASK_A::READABLE
+        **self == PIO1_PIN28_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN28_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN28_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN28_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN28_SEC_MASK` writer - Secure mask for pin P1_28"]
 pub struct PIO1_PIN28_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -2154,9 +2410,7 @@ impl<'a> PIO1_PIN28_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN28_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -2181,7 +2435,7 @@ impl<'a> PIO1_PIN28_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
+        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
         self.w
     }
 }
@@ -2199,9 +2453,12 @@ impl From<PIO1_PIN29_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN29_SEC_MASK`"]
-pub type PIO1_PIN29_SEC_MASK_R = crate::R<bool, PIO1_PIN29_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN29_SEC_MASK` reader - Secure mask for pin P1_29"]
+pub struct PIO1_PIN29_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN29_SEC_MASK_A>);
 impl PIO1_PIN29_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN29_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN29_SEC_MASK_A {
@@ -2213,15 +2470,22 @@ impl PIO1_PIN29_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN29_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN29_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN29_SEC_MASK_A::READABLE
+        **self == PIO1_PIN29_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN29_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN29_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN29_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN29_SEC_MASK` writer - Secure mask for pin P1_29"]
 pub struct PIO1_PIN29_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -2229,9 +2493,7 @@ impl<'a> PIO1_PIN29_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN29_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -2256,7 +2518,7 @@ impl<'a> PIO1_PIN29_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
         self.w
     }
 }
@@ -2274,9 +2536,12 @@ impl From<PIO1_PIN30_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN30_SEC_MASK`"]
-pub type PIO1_PIN30_SEC_MASK_R = crate::R<bool, PIO1_PIN30_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN30_SEC_MASK` reader - Secure mask for pin P1_30"]
+pub struct PIO1_PIN30_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN30_SEC_MASK_A>);
 impl PIO1_PIN30_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN30_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN30_SEC_MASK_A {
@@ -2288,15 +2553,22 @@ impl PIO1_PIN30_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN30_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN30_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN30_SEC_MASK_A::READABLE
+        **self == PIO1_PIN30_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN30_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN30_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN30_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN30_SEC_MASK` writer - Secure mask for pin P1_30"]
 pub struct PIO1_PIN30_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -2304,9 +2576,7 @@ impl<'a> PIO1_PIN30_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN30_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -2331,7 +2601,7 @@ impl<'a> PIO1_PIN30_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
         self.w
     }
 }
@@ -2349,9 +2619,12 @@ impl From<PIO1_PIN31_SEC_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PIO1_PIN31_SEC_MASK`"]
-pub type PIO1_PIN31_SEC_MASK_R = crate::R<bool, PIO1_PIN31_SEC_MASK_A>;
+#[doc = "Field `PIO1_PIN31_SEC_MASK` reader - Secure mask for pin P1_31"]
+pub struct PIO1_PIN31_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN31_SEC_MASK_A>);
 impl PIO1_PIN31_SEC_MASK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO1_PIN31_SEC_MASK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO1_PIN31_SEC_MASK_A {
@@ -2363,15 +2636,22 @@ impl PIO1_PIN31_SEC_MASK_R {
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == PIO1_PIN31_SEC_MASK_A::BLOCKED
+        **self == PIO1_PIN31_SEC_MASK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `READABLE`"]
     #[inline(always)]
     pub fn is_readable(&self) -> bool {
-        *self == PIO1_PIN31_SEC_MASK_A::READABLE
+        **self == PIO1_PIN31_SEC_MASK_A::READABLE
     }
 }
-#[doc = "Write proxy for field `PIO1_PIN31_SEC_MASK`"]
+impl core::ops::Deref for PIO1_PIN31_SEC_MASK_R {
+    type Target = crate::FieldReader<bool, PIO1_PIN31_SEC_MASK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO1_PIN31_SEC_MASK` writer - Secure mask for pin P1_31"]
 pub struct PIO1_PIN31_SEC_MASK_W<'a> {
     w: &'a mut W,
 }
@@ -2379,9 +2659,7 @@ impl<'a> PIO1_PIN31_SEC_MASK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PIO1_PIN31_SEC_MASK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Pin state is blocked to non-secure world."]
     #[inline(always)]
@@ -2406,7 +2684,7 @@ impl<'a> PIO1_PIN31_SEC_MASK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
         self.w
     }
 }
@@ -2732,5 +3010,30 @@ impl W {
     #[inline(always)]
     pub fn pio1_pin31_sec_mask(&mut self) -> PIO1_PIN31_SEC_MASK_W {
         PIO1_PIN31_SEC_MASK_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Secure GPIO mask for port 1 pins.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_gpio_mask1](index.html) module"]
+pub struct SEC_GPIO_MASK1_SPEC;
+impl crate::RegisterSpec for SEC_GPIO_MASK1_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [sec_gpio_mask1::R](R) reader structure"]
+impl crate::Readable for SEC_GPIO_MASK1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sec_gpio_mask1::W](W) writer structure"]
+impl crate::Writable for SEC_GPIO_MASK1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SEC_GPIO_MASK1 to value 0xffff_ffff"]
+impl crate::Resettable for SEC_GPIO_MASK1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xffff_ffff
     }
 }

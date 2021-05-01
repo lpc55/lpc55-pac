@@ -1,29 +1,135 @@
-#[doc = "Reader of register STAT"]
-pub type R = crate::R<u32, super::STAT>;
-#[doc = "Writer for register STAT"]
-pub type W = crate::W<u32, super::STAT>;
-#[doc = "Register STAT `reset()`'s with value 0x01"]
-impl crate::ResetValue for super::STAT {
-    type Type = u32;
+#[doc = "Register `STAT` reader"]
+pub struct R(crate::R<STAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<STAT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x01
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `busy`"]
-pub type BUSY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SUCCESS`"]
-pub type SUCCESS_R = crate::R<bool, bool>;
-#[doc = "Reader of field `error`"]
-pub type ERROR_R = crate::R<bool, bool>;
-#[doc = "Reader of field `KEYINREQ`"]
-pub type KEYINREQ_R = crate::R<bool, bool>;
-#[doc = "Reader of field `KEYOUTAVAIL`"]
-pub type KEYOUTAVAIL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CODEINREQ`"]
-pub type CODEINREQ_R = crate::R<bool, bool>;
-#[doc = "Reader of field `CODEOUTAVAIL`"]
-pub type CODEOUTAVAIL_R = crate::R<bool, bool>;
+impl core::convert::From<crate::R<STAT_SPEC>> for R {
+    fn from(reader: crate::R<STAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `STAT` writer"]
+pub struct W(crate::W<STAT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<STAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<STAT_SPEC>> for W {
+    fn from(writer: crate::W<STAT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `busy` reader - Indicates that operation is in progress"]
+pub struct BUSY_R(crate::FieldReader<bool, bool>);
+impl BUSY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BUSY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BUSY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SUCCESS` reader - Last operation was successful"]
+pub struct SUCCESS_R(crate::FieldReader<bool, bool>);
+impl SUCCESS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SUCCESS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SUCCESS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `error` reader - PUF is in the Error state and no operations can be performed"]
+pub struct ERROR_R(crate::FieldReader<bool, bool>);
+impl ERROR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ERROR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ERROR_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `KEYINREQ` reader - Request for next part of key"]
+pub struct KEYINREQ_R(crate::FieldReader<bool, bool>);
+impl KEYINREQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        KEYINREQ_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for KEYINREQ_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `KEYOUTAVAIL` reader - Next part of key is available"]
+pub struct KEYOUTAVAIL_R(crate::FieldReader<bool, bool>);
+impl KEYOUTAVAIL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        KEYOUTAVAIL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for KEYOUTAVAIL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CODEINREQ` reader - Request for next part of AC/KC"]
+pub struct CODEINREQ_R(crate::FieldReader<bool, bool>);
+impl CODEINREQ_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CODEINREQ_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CODEINREQ_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CODEOUTAVAIL` reader - Next part of AC/KC is available"]
+pub struct CODEOUTAVAIL_R(crate::FieldReader<bool, bool>);
+impl CODEOUTAVAIL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        CODEOUTAVAIL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CODEOUTAVAIL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - Indicates that operation is in progress"]
     #[inline(always)]
@@ -61,4 +167,30 @@ impl R {
         CODEOUTAVAIL_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
-impl W {}
+impl W {
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "PUF Status register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [stat](index.html) module"]
+pub struct STAT_SPEC;
+impl crate::RegisterSpec for STAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [stat::R](R) reader structure"]
+impl crate::Readable for STAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [stat::W](W) writer structure"]
+impl crate::Writable for STAT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets STAT to value 0x01"]
+impl crate::Resettable for STAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x01
+    }
+}

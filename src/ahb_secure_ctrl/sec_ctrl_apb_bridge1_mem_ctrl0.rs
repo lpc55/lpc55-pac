@@ -1,13 +1,35 @@
-#[doc = "Reader of register SEC_CTRL_APB_BRIDGE1_MEM_CTRL0"]
-pub type R = crate::R<u32, super::SEC_CTRL_APB_BRIDGE1_MEM_CTRL0>;
-#[doc = "Writer for register SEC_CTRL_APB_BRIDGE1_MEM_CTRL0"]
-pub type W = crate::W<u32, super::SEC_CTRL_APB_BRIDGE1_MEM_CTRL0>;
-#[doc = "Register SEC_CTRL_APB_BRIDGE1_MEM_CTRL0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::SEC_CTRL_APB_BRIDGE1_MEM_CTRL0 {
-    type Type = u32;
+#[doc = "Register `SEC_CTRL_APB_BRIDGE1_MEM_CTRL0` reader"]
+pub struct R(crate::R<SEC_CTRL_APB_BRIDGE1_MEM_CTRL0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SEC_CTRL_APB_BRIDGE1_MEM_CTRL0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<SEC_CTRL_APB_BRIDGE1_MEM_CTRL0_SPEC>> for R {
+    fn from(reader: crate::R<SEC_CTRL_APB_BRIDGE1_MEM_CTRL0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SEC_CTRL_APB_BRIDGE1_MEM_CTRL0` writer"]
+pub struct W(crate::W<SEC_CTRL_APB_BRIDGE1_MEM_CTRL0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SEC_CTRL_APB_BRIDGE1_MEM_CTRL0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<SEC_CTRL_APB_BRIDGE1_MEM_CTRL0_SPEC>> for W {
+    fn from(writer: crate::W<SEC_CTRL_APB_BRIDGE1_MEM_CTRL0_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Power Management Controller\n\nValue on reset: 0"]
@@ -29,9 +51,12 @@ impl From<PMC_RULE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PMC_RULE`"]
-pub type PMC_RULE_R = crate::R<u8, PMC_RULE_A>;
+#[doc = "Field `PMC_RULE` reader - Power Management Controller"]
+pub struct PMC_RULE_R(crate::FieldReader<u8, PMC_RULE_A>);
 impl PMC_RULE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PMC_RULE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PMC_RULE_A {
@@ -46,25 +71,32 @@ impl PMC_RULE_R {
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == PMC_RULE_A::ENUM_NS_NP
+        **self == PMC_RULE_A::ENUM_NS_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == PMC_RULE_A::ENUM_NS_P
+        **self == PMC_RULE_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == PMC_RULE_A::ENUM_S_NP
+        **self == PMC_RULE_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == PMC_RULE_A::ENUM_S_P
+        **self == PMC_RULE_A::ENUM_S_P
     }
 }
-#[doc = "Write proxy for field `PMC_RULE`"]
+impl core::ops::Deref for PMC_RULE_R {
+    type Target = crate::FieldReader<u8, PMC_RULE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PMC_RULE` writer - Power Management Controller"]
 pub struct PMC_RULE_W<'a> {
     w: &'a mut W,
 }
@@ -72,9 +104,7 @@ impl<'a> PMC_RULE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PMC_RULE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Non-secure and Non-priviledge user access allowed."]
     #[inline(always)]
@@ -99,7 +129,7 @@ impl<'a> PMC_RULE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
@@ -122,9 +152,12 @@ impl From<SYSCTRL_RULE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SYSCTRL_RULE`"]
-pub type SYSCTRL_RULE_R = crate::R<u8, SYSCTRL_RULE_A>;
+#[doc = "Field `SYSCTRL_RULE` reader - System Controller"]
+pub struct SYSCTRL_RULE_R(crate::FieldReader<u8, SYSCTRL_RULE_A>);
 impl SYSCTRL_RULE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SYSCTRL_RULE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SYSCTRL_RULE_A {
@@ -139,25 +172,32 @@ impl SYSCTRL_RULE_R {
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == SYSCTRL_RULE_A::ENUM_NS_NP
+        **self == SYSCTRL_RULE_A::ENUM_NS_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == SYSCTRL_RULE_A::ENUM_NS_P
+        **self == SYSCTRL_RULE_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == SYSCTRL_RULE_A::ENUM_S_NP
+        **self == SYSCTRL_RULE_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == SYSCTRL_RULE_A::ENUM_S_P
+        **self == SYSCTRL_RULE_A::ENUM_S_P
     }
 }
-#[doc = "Write proxy for field `SYSCTRL_RULE`"]
+impl core::ops::Deref for SYSCTRL_RULE_R {
+    type Target = crate::FieldReader<u8, SYSCTRL_RULE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SYSCTRL_RULE` writer - System Controller"]
 pub struct SYSCTRL_RULE_W<'a> {
     w: &'a mut W,
 }
@@ -165,9 +205,7 @@ impl<'a> SYSCTRL_RULE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SYSCTRL_RULE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Non-secure and Non-priviledge user access allowed."]
     #[inline(always)]
@@ -192,7 +230,7 @@ impl<'a> SYSCTRL_RULE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
         self.w
     }
 }
@@ -218,5 +256,30 @@ impl W {
     #[inline(always)]
     pub fn sysctrl_rule(&mut self) -> SYSCTRL_RULE_W {
         SYSCTRL_RULE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Security access rules for APB Bridge 1 peripherals. Each APB bridge sector is 4 Kbytes. There are 32 APB Bridge 1 sectors in total.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_ctrl_apb_bridge1_mem_ctrl0](index.html) module"]
+pub struct SEC_CTRL_APB_BRIDGE1_MEM_CTRL0_SPEC;
+impl crate::RegisterSpec for SEC_CTRL_APB_BRIDGE1_MEM_CTRL0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [sec_ctrl_apb_bridge1_mem_ctrl0::R](R) reader structure"]
+impl crate::Readable for SEC_CTRL_APB_BRIDGE1_MEM_CTRL0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sec_ctrl_apb_bridge1_mem_ctrl0::W](W) writer structure"]
+impl crate::Writable for SEC_CTRL_APB_BRIDGE1_MEM_CTRL0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SEC_CTRL_APB_BRIDGE1_MEM_CTRL0 to value 0"]
+impl crate::Resettable for SEC_CTRL_APB_BRIDGE1_MEM_CTRL0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,13 +1,35 @@
-#[doc = "Reader of register LUT_INP_MUX%s"]
-pub type R = crate::R<u32, super::LUT_INP_MUX>;
-#[doc = "Writer for register LUT_INP_MUX%s"]
-pub type W = crate::W<u32, super::LUT_INP_MUX>;
-#[doc = "Register LUT_INP_MUX%s `reset()`'s with value 0"]
-impl crate::ResetValue for super::LUT_INP_MUX {
-    type Type = u32;
+#[doc = "Register `LUT_INP_MUX%s` reader"]
+pub struct R(crate::R<LUT_INP_MUX_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<LUT_INP_MUX_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<LUT_INP_MUX_SPEC>> for R {
+    fn from(reader: crate::R<LUT_INP_MUX_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `LUT_INP_MUX%s` writer"]
+pub struct W(crate::W<LUT_INP_MUX_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<LUT_INP_MUX_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<LUT_INP_MUX_SPEC>> for W {
+    fn from(writer: crate::W<LUT_INP_MUX_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Selects the input source to be connected to LUT0 input0. For each LUT, the slot associated with the output from LUTn itself is tied low.\n\nValue on reset: 0"]
@@ -93,235 +115,244 @@ impl From<LUTN_INPX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `LUTn_INPx`"]
-pub type LUTN_INPX_R = crate::R<u8, LUTN_INPX_A>;
+#[doc = "Field `LUTn_INPx` reader - Selects the input source to be connected to LUT0 input0. For each LUT, the slot associated with the output from LUTn itself is tied low."]
+pub struct LUTN_INPX_R(crate::FieldReader<u8, LUTN_INPX_A>);
 impl LUTN_INPX_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LUTN_INPX_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, LUTN_INPX_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<LUTN_INPX_A> {
         match self.bits {
-            0 => Val(LUTN_INPX_A::PLU_INPUTS0),
-            1 => Val(LUTN_INPX_A::PLU_INPUTS1),
-            2 => Val(LUTN_INPX_A::PLU_INPUTS2),
-            3 => Val(LUTN_INPX_A::PLU_INPUTS3),
-            4 => Val(LUTN_INPX_A::PLU_INPUTS4),
-            5 => Val(LUTN_INPX_A::PLU_INPUTS5),
-            6 => Val(LUTN_INPX_A::LUT_OUTPUTS0),
-            7 => Val(LUTN_INPX_A::LUT_OUTPUTS1),
-            8 => Val(LUTN_INPX_A::LUT_OUTPUTS2),
-            9 => Val(LUTN_INPX_A::LUT_OUTPUTS3),
-            10 => Val(LUTN_INPX_A::LUT_OUTPUTS4),
-            11 => Val(LUTN_INPX_A::LUT_OUTPUTS5),
-            12 => Val(LUTN_INPX_A::LUT_OUTPUTS6),
-            13 => Val(LUTN_INPX_A::LUT_OUTPUTS7),
-            14 => Val(LUTN_INPX_A::LUT_OUTPUTS8),
-            15 => Val(LUTN_INPX_A::LUT_OUTPUTS9),
-            16 => Val(LUTN_INPX_A::LUT_OUTPUTS10),
-            17 => Val(LUTN_INPX_A::LUT_OUTPUTS11),
-            18 => Val(LUTN_INPX_A::LUT_OUTPUTS12),
-            19 => Val(LUTN_INPX_A::LUT_OUTPUTS13),
-            20 => Val(LUTN_INPX_A::LUT_OUTPUTS14),
-            21 => Val(LUTN_INPX_A::LUT_OUTPUTS15),
-            22 => Val(LUTN_INPX_A::LUT_OUTPUTS16),
-            23 => Val(LUTN_INPX_A::LUT_OUTPUTS17),
-            24 => Val(LUTN_INPX_A::LUT_OUTPUTS18),
-            25 => Val(LUTN_INPX_A::LUT_OUTPUTS19),
-            26 => Val(LUTN_INPX_A::LUT_OUTPUTS20),
-            27 => Val(LUTN_INPX_A::LUT_OUTPUTS21),
-            28 => Val(LUTN_INPX_A::LUT_OUTPUTS22),
-            29 => Val(LUTN_INPX_A::LUT_OUTPUTS23),
-            30 => Val(LUTN_INPX_A::LUT_OUTPUTS24),
-            31 => Val(LUTN_INPX_A::LUT_OUTPUTS25),
-            32 => Val(LUTN_INPX_A::STATE0),
-            33 => Val(LUTN_INPX_A::STATE1),
-            34 => Val(LUTN_INPX_A::STATE2),
-            35 => Val(LUTN_INPX_A::STATE3),
-            i => Res(i),
+            0 => Some(LUTN_INPX_A::PLU_INPUTS0),
+            1 => Some(LUTN_INPX_A::PLU_INPUTS1),
+            2 => Some(LUTN_INPX_A::PLU_INPUTS2),
+            3 => Some(LUTN_INPX_A::PLU_INPUTS3),
+            4 => Some(LUTN_INPX_A::PLU_INPUTS4),
+            5 => Some(LUTN_INPX_A::PLU_INPUTS5),
+            6 => Some(LUTN_INPX_A::LUT_OUTPUTS0),
+            7 => Some(LUTN_INPX_A::LUT_OUTPUTS1),
+            8 => Some(LUTN_INPX_A::LUT_OUTPUTS2),
+            9 => Some(LUTN_INPX_A::LUT_OUTPUTS3),
+            10 => Some(LUTN_INPX_A::LUT_OUTPUTS4),
+            11 => Some(LUTN_INPX_A::LUT_OUTPUTS5),
+            12 => Some(LUTN_INPX_A::LUT_OUTPUTS6),
+            13 => Some(LUTN_INPX_A::LUT_OUTPUTS7),
+            14 => Some(LUTN_INPX_A::LUT_OUTPUTS8),
+            15 => Some(LUTN_INPX_A::LUT_OUTPUTS9),
+            16 => Some(LUTN_INPX_A::LUT_OUTPUTS10),
+            17 => Some(LUTN_INPX_A::LUT_OUTPUTS11),
+            18 => Some(LUTN_INPX_A::LUT_OUTPUTS12),
+            19 => Some(LUTN_INPX_A::LUT_OUTPUTS13),
+            20 => Some(LUTN_INPX_A::LUT_OUTPUTS14),
+            21 => Some(LUTN_INPX_A::LUT_OUTPUTS15),
+            22 => Some(LUTN_INPX_A::LUT_OUTPUTS16),
+            23 => Some(LUTN_INPX_A::LUT_OUTPUTS17),
+            24 => Some(LUTN_INPX_A::LUT_OUTPUTS18),
+            25 => Some(LUTN_INPX_A::LUT_OUTPUTS19),
+            26 => Some(LUTN_INPX_A::LUT_OUTPUTS20),
+            27 => Some(LUTN_INPX_A::LUT_OUTPUTS21),
+            28 => Some(LUTN_INPX_A::LUT_OUTPUTS22),
+            29 => Some(LUTN_INPX_A::LUT_OUTPUTS23),
+            30 => Some(LUTN_INPX_A::LUT_OUTPUTS24),
+            31 => Some(LUTN_INPX_A::LUT_OUTPUTS25),
+            32 => Some(LUTN_INPX_A::STATE0),
+            33 => Some(LUTN_INPX_A::STATE1),
+            34 => Some(LUTN_INPX_A::STATE2),
+            35 => Some(LUTN_INPX_A::STATE3),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `PLU_INPUTS0`"]
     #[inline(always)]
     pub fn is_plu_inputs0(&self) -> bool {
-        *self == LUTN_INPX_A::PLU_INPUTS0
+        **self == LUTN_INPX_A::PLU_INPUTS0
     }
     #[doc = "Checks if the value of the field is `PLU_INPUTS1`"]
     #[inline(always)]
     pub fn is_plu_inputs1(&self) -> bool {
-        *self == LUTN_INPX_A::PLU_INPUTS1
+        **self == LUTN_INPX_A::PLU_INPUTS1
     }
     #[doc = "Checks if the value of the field is `PLU_INPUTS2`"]
     #[inline(always)]
     pub fn is_plu_inputs2(&self) -> bool {
-        *self == LUTN_INPX_A::PLU_INPUTS2
+        **self == LUTN_INPX_A::PLU_INPUTS2
     }
     #[doc = "Checks if the value of the field is `PLU_INPUTS3`"]
     #[inline(always)]
     pub fn is_plu_inputs3(&self) -> bool {
-        *self == LUTN_INPX_A::PLU_INPUTS3
+        **self == LUTN_INPX_A::PLU_INPUTS3
     }
     #[doc = "Checks if the value of the field is `PLU_INPUTS4`"]
     #[inline(always)]
     pub fn is_plu_inputs4(&self) -> bool {
-        *self == LUTN_INPX_A::PLU_INPUTS4
+        **self == LUTN_INPX_A::PLU_INPUTS4
     }
     #[doc = "Checks if the value of the field is `PLU_INPUTS5`"]
     #[inline(always)]
     pub fn is_plu_inputs5(&self) -> bool {
-        *self == LUTN_INPX_A::PLU_INPUTS5
+        **self == LUTN_INPX_A::PLU_INPUTS5
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS0`"]
     #[inline(always)]
     pub fn is_lut_outputs0(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS0
+        **self == LUTN_INPX_A::LUT_OUTPUTS0
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS1`"]
     #[inline(always)]
     pub fn is_lut_outputs1(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS1
+        **self == LUTN_INPX_A::LUT_OUTPUTS1
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS2`"]
     #[inline(always)]
     pub fn is_lut_outputs2(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS2
+        **self == LUTN_INPX_A::LUT_OUTPUTS2
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS3`"]
     #[inline(always)]
     pub fn is_lut_outputs3(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS3
+        **self == LUTN_INPX_A::LUT_OUTPUTS3
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS4`"]
     #[inline(always)]
     pub fn is_lut_outputs4(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS4
+        **self == LUTN_INPX_A::LUT_OUTPUTS4
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS5`"]
     #[inline(always)]
     pub fn is_lut_outputs5(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS5
+        **self == LUTN_INPX_A::LUT_OUTPUTS5
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS6`"]
     #[inline(always)]
     pub fn is_lut_outputs6(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS6
+        **self == LUTN_INPX_A::LUT_OUTPUTS6
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS7`"]
     #[inline(always)]
     pub fn is_lut_outputs7(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS7
+        **self == LUTN_INPX_A::LUT_OUTPUTS7
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS8`"]
     #[inline(always)]
     pub fn is_lut_outputs8(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS8
+        **self == LUTN_INPX_A::LUT_OUTPUTS8
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS9`"]
     #[inline(always)]
     pub fn is_lut_outputs9(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS9
+        **self == LUTN_INPX_A::LUT_OUTPUTS9
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS10`"]
     #[inline(always)]
     pub fn is_lut_outputs10(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS10
+        **self == LUTN_INPX_A::LUT_OUTPUTS10
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS11`"]
     #[inline(always)]
     pub fn is_lut_outputs11(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS11
+        **self == LUTN_INPX_A::LUT_OUTPUTS11
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS12`"]
     #[inline(always)]
     pub fn is_lut_outputs12(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS12
+        **self == LUTN_INPX_A::LUT_OUTPUTS12
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS13`"]
     #[inline(always)]
     pub fn is_lut_outputs13(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS13
+        **self == LUTN_INPX_A::LUT_OUTPUTS13
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS14`"]
     #[inline(always)]
     pub fn is_lut_outputs14(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS14
+        **self == LUTN_INPX_A::LUT_OUTPUTS14
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS15`"]
     #[inline(always)]
     pub fn is_lut_outputs15(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS15
+        **self == LUTN_INPX_A::LUT_OUTPUTS15
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS16`"]
     #[inline(always)]
     pub fn is_lut_outputs16(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS16
+        **self == LUTN_INPX_A::LUT_OUTPUTS16
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS17`"]
     #[inline(always)]
     pub fn is_lut_outputs17(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS17
+        **self == LUTN_INPX_A::LUT_OUTPUTS17
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS18`"]
     #[inline(always)]
     pub fn is_lut_outputs18(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS18
+        **self == LUTN_INPX_A::LUT_OUTPUTS18
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS19`"]
     #[inline(always)]
     pub fn is_lut_outputs19(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS19
+        **self == LUTN_INPX_A::LUT_OUTPUTS19
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS20`"]
     #[inline(always)]
     pub fn is_lut_outputs20(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS20
+        **self == LUTN_INPX_A::LUT_OUTPUTS20
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS21`"]
     #[inline(always)]
     pub fn is_lut_outputs21(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS21
+        **self == LUTN_INPX_A::LUT_OUTPUTS21
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS22`"]
     #[inline(always)]
     pub fn is_lut_outputs22(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS22
+        **self == LUTN_INPX_A::LUT_OUTPUTS22
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS23`"]
     #[inline(always)]
     pub fn is_lut_outputs23(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS23
+        **self == LUTN_INPX_A::LUT_OUTPUTS23
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS24`"]
     #[inline(always)]
     pub fn is_lut_outputs24(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS24
+        **self == LUTN_INPX_A::LUT_OUTPUTS24
     }
     #[doc = "Checks if the value of the field is `LUT_OUTPUTS25`"]
     #[inline(always)]
     pub fn is_lut_outputs25(&self) -> bool {
-        *self == LUTN_INPX_A::LUT_OUTPUTS25
+        **self == LUTN_INPX_A::LUT_OUTPUTS25
     }
     #[doc = "Checks if the value of the field is `STATE0`"]
     #[inline(always)]
     pub fn is_state0(&self) -> bool {
-        *self == LUTN_INPX_A::STATE0
+        **self == LUTN_INPX_A::STATE0
     }
     #[doc = "Checks if the value of the field is `STATE1`"]
     #[inline(always)]
     pub fn is_state1(&self) -> bool {
-        *self == LUTN_INPX_A::STATE1
+        **self == LUTN_INPX_A::STATE1
     }
     #[doc = "Checks if the value of the field is `STATE2`"]
     #[inline(always)]
     pub fn is_state2(&self) -> bool {
-        *self == LUTN_INPX_A::STATE2
+        **self == LUTN_INPX_A::STATE2
     }
     #[doc = "Checks if the value of the field is `STATE3`"]
     #[inline(always)]
     pub fn is_state3(&self) -> bool {
-        *self == LUTN_INPX_A::STATE3
+        **self == LUTN_INPX_A::STATE3
     }
 }
-#[doc = "Write proxy for field `LUTn_INPx`"]
+impl core::ops::Deref for LUTN_INPX_R {
+    type Target = crate::FieldReader<u8, LUTN_INPX_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LUTn_INPx` writer - Selects the input source to be connected to LUT0 input0. For each LUT, the slot associated with the output from LUTn itself is tied low."]
 pub struct LUTN_INPX_W<'a> {
     w: &'a mut W,
 }
@@ -514,7 +545,7 @@ impl<'a> LUTN_INPX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
+        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
         self.w
     }
 }
@@ -530,5 +561,30 @@ impl W {
     #[inline(always)]
     pub fn lutn_inpx(&mut self) -> LUTN_INPX_W {
         LUTN_INPX_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "LUTn input x MUX\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lut_inp_mux](index.html) module"]
+pub struct LUT_INP_MUX_SPEC;
+impl crate::RegisterSpec for LUT_INP_MUX_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [lut_inp_mux::R](R) reader structure"]
+impl crate::Readable for LUT_INP_MUX_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [lut_inp_mux::W](W) writer structure"]
+impl crate::Writable for LUT_INP_MUX_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets LUT_INP_MUX%s to value 0"]
+impl crate::Resettable for LUT_INP_MUX_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

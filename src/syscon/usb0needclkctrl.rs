@@ -1,13 +1,35 @@
-#[doc = "Reader of register USB0NEEDCLKCTRL"]
-pub type R = crate::R<u32, super::USB0NEEDCLKCTRL>;
-#[doc = "Writer for register USB0NEEDCLKCTRL"]
-pub type W = crate::W<u32, super::USB0NEEDCLKCTRL>;
-#[doc = "Register USB0NEEDCLKCTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::USB0NEEDCLKCTRL {
-    type Type = u32;
+#[doc = "Register `USB0NEEDCLKCTRL` reader"]
+pub struct R(crate::R<USB0NEEDCLKCTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<USB0NEEDCLKCTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<USB0NEEDCLKCTRL_SPEC>> for R {
+    fn from(reader: crate::R<USB0NEEDCLKCTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `USB0NEEDCLKCTRL` writer"]
+pub struct W(crate::W<USB0NEEDCLKCTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<USB0NEEDCLKCTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<USB0NEEDCLKCTRL_SPEC>> for W {
+    fn from(writer: crate::W<USB0NEEDCLKCTRL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "USB0 Device USB0_NEEDCLK signal control:.\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<AP_FS_DEV_NEEDCLK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `AP_FS_DEV_NEEDCLK`"]
-pub type AP_FS_DEV_NEEDCLK_R = crate::R<bool, AP_FS_DEV_NEEDCLK_A>;
+#[doc = "Field `AP_FS_DEV_NEEDCLK` reader - USB0 Device USB0_NEEDCLK signal control:."]
+pub struct AP_FS_DEV_NEEDCLK_R(crate::FieldReader<bool, AP_FS_DEV_NEEDCLK_A>);
 impl AP_FS_DEV_NEEDCLK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AP_FS_DEV_NEEDCLK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AP_FS_DEV_NEEDCLK_A {
@@ -38,15 +63,22 @@ impl AP_FS_DEV_NEEDCLK_R {
     #[doc = "Checks if the value of the field is `HW_CTRL`"]
     #[inline(always)]
     pub fn is_hw_ctrl(&self) -> bool {
-        *self == AP_FS_DEV_NEEDCLK_A::HW_CTRL
+        **self == AP_FS_DEV_NEEDCLK_A::HW_CTRL
     }
     #[doc = "Checks if the value of the field is `FORCED`"]
     #[inline(always)]
     pub fn is_forced(&self) -> bool {
-        *self == AP_FS_DEV_NEEDCLK_A::FORCED
+        **self == AP_FS_DEV_NEEDCLK_A::FORCED
     }
 }
-#[doc = "Write proxy for field `AP_FS_DEV_NEEDCLK`"]
+impl core::ops::Deref for AP_FS_DEV_NEEDCLK_R {
+    type Target = crate::FieldReader<bool, AP_FS_DEV_NEEDCLK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AP_FS_DEV_NEEDCLK` writer - USB0 Device USB0_NEEDCLK signal control:."]
 pub struct AP_FS_DEV_NEEDCLK_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> AP_FS_DEV_NEEDCLK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AP_FS_DEV_NEEDCLK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Under hardware control."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> AP_FS_DEV_NEEDCLK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<POL_FS_DEV_NEEDCLK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `POL_FS_DEV_NEEDCLK`"]
-pub type POL_FS_DEV_NEEDCLK_R = crate::R<bool, POL_FS_DEV_NEEDCLK_A>;
+#[doc = "Field `POL_FS_DEV_NEEDCLK` reader - USB0 Device USB0_NEEDCLK polarity for triggering the USB0 wake-up interrupt:."]
+pub struct POL_FS_DEV_NEEDCLK_R(crate::FieldReader<bool, POL_FS_DEV_NEEDCLK_A>);
 impl POL_FS_DEV_NEEDCLK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        POL_FS_DEV_NEEDCLK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> POL_FS_DEV_NEEDCLK_A {
@@ -113,15 +146,22 @@ impl POL_FS_DEV_NEEDCLK_R {
     #[doc = "Checks if the value of the field is `FALLING`"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
-        *self == POL_FS_DEV_NEEDCLK_A::FALLING
+        **self == POL_FS_DEV_NEEDCLK_A::FALLING
     }
     #[doc = "Checks if the value of the field is `RISING`"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
-        *self == POL_FS_DEV_NEEDCLK_A::RISING
+        **self == POL_FS_DEV_NEEDCLK_A::RISING
     }
 }
-#[doc = "Write proxy for field `POL_FS_DEV_NEEDCLK`"]
+impl core::ops::Deref for POL_FS_DEV_NEEDCLK_R {
+    type Target = crate::FieldReader<bool, POL_FS_DEV_NEEDCLK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `POL_FS_DEV_NEEDCLK` writer - USB0 Device USB0_NEEDCLK polarity for triggering the USB0 wake-up interrupt:."]
 pub struct POL_FS_DEV_NEEDCLK_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> POL_FS_DEV_NEEDCLK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: POL_FS_DEV_NEEDCLK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Falling edge of device USB0_NEEDCLK triggers wake-up."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> POL_FS_DEV_NEEDCLK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<AP_FS_HOST_NEEDCLK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `AP_FS_HOST_NEEDCLK`"]
-pub type AP_FS_HOST_NEEDCLK_R = crate::R<bool, AP_FS_HOST_NEEDCLK_A>;
+#[doc = "Field `AP_FS_HOST_NEEDCLK` reader - USB0 Host USB0_NEEDCLK signal control:."]
+pub struct AP_FS_HOST_NEEDCLK_R(crate::FieldReader<bool, AP_FS_HOST_NEEDCLK_A>);
 impl AP_FS_HOST_NEEDCLK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AP_FS_HOST_NEEDCLK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AP_FS_HOST_NEEDCLK_A {
@@ -188,15 +229,22 @@ impl AP_FS_HOST_NEEDCLK_R {
     #[doc = "Checks if the value of the field is `HW_CTRL`"]
     #[inline(always)]
     pub fn is_hw_ctrl(&self) -> bool {
-        *self == AP_FS_HOST_NEEDCLK_A::HW_CTRL
+        **self == AP_FS_HOST_NEEDCLK_A::HW_CTRL
     }
     #[doc = "Checks if the value of the field is `FORCED`"]
     #[inline(always)]
     pub fn is_forced(&self) -> bool {
-        *self == AP_FS_HOST_NEEDCLK_A::FORCED
+        **self == AP_FS_HOST_NEEDCLK_A::FORCED
     }
 }
-#[doc = "Write proxy for field `AP_FS_HOST_NEEDCLK`"]
+impl core::ops::Deref for AP_FS_HOST_NEEDCLK_R {
+    type Target = crate::FieldReader<bool, AP_FS_HOST_NEEDCLK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AP_FS_HOST_NEEDCLK` writer - USB0 Host USB0_NEEDCLK signal control:."]
 pub struct AP_FS_HOST_NEEDCLK_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> AP_FS_HOST_NEEDCLK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AP_FS_HOST_NEEDCLK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Under hardware control."]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> AP_FS_HOST_NEEDCLK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<POL_FS_HOST_NEEDCLK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `POL_FS_HOST_NEEDCLK`"]
-pub type POL_FS_HOST_NEEDCLK_R = crate::R<bool, POL_FS_HOST_NEEDCLK_A>;
+#[doc = "Field `POL_FS_HOST_NEEDCLK` reader - USB0 Host USB0_NEEDCLK polarity for triggering the USB0 wake-up interrupt:."]
+pub struct POL_FS_HOST_NEEDCLK_R(crate::FieldReader<bool, POL_FS_HOST_NEEDCLK_A>);
 impl POL_FS_HOST_NEEDCLK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        POL_FS_HOST_NEEDCLK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> POL_FS_HOST_NEEDCLK_A {
@@ -263,15 +312,22 @@ impl POL_FS_HOST_NEEDCLK_R {
     #[doc = "Checks if the value of the field is `FALLING`"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
-        *self == POL_FS_HOST_NEEDCLK_A::FALLING
+        **self == POL_FS_HOST_NEEDCLK_A::FALLING
     }
     #[doc = "Checks if the value of the field is `RISING`"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
-        *self == POL_FS_HOST_NEEDCLK_A::RISING
+        **self == POL_FS_HOST_NEEDCLK_A::RISING
     }
 }
-#[doc = "Write proxy for field `POL_FS_HOST_NEEDCLK`"]
+impl core::ops::Deref for POL_FS_HOST_NEEDCLK_R {
+    type Target = crate::FieldReader<bool, POL_FS_HOST_NEEDCLK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `POL_FS_HOST_NEEDCLK` writer - USB0 Host USB0_NEEDCLK polarity for triggering the USB0 wake-up interrupt:."]
 pub struct POL_FS_HOST_NEEDCLK_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> POL_FS_HOST_NEEDCLK_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: POL_FS_HOST_NEEDCLK_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Falling edge of device USB0_NEEDCLK triggers wake-up."]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> POL_FS_HOST_NEEDCLK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -352,5 +406,30 @@ impl W {
     #[inline(always)]
     pub fn pol_fs_host_needclk(&mut self) -> POL_FS_HOST_NEEDCLK_W {
         POL_FS_HOST_NEEDCLK_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USB0 need clock control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usb0needclkctrl](index.html) module"]
+pub struct USB0NEEDCLKCTRL_SPEC;
+impl crate::RegisterSpec for USB0NEEDCLKCTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [usb0needclkctrl::R](R) reader structure"]
+impl crate::Readable for USB0NEEDCLKCTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [usb0needclkctrl::W](W) writer structure"]
+impl crate::Writable for USB0NEEDCLKCTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets USB0NEEDCLKCTRL to value 0"]
+impl crate::Resettable for USB0NEEDCLKCTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

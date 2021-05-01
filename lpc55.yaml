@@ -119,3 +119,329 @@ _add:
         value: 27
       USB0:
         value: 28
+
+
+# experimental ROM Patcher definition
+
+AHB_SECURE_CTRL:
+  SEC_CTRL_APB_BRIDGE1_MEM_CTRL3:
+    _add:
+      RPU_RULE:
+        description: ROM patch unit access
+        access: read-write
+        bitOffset: 24
+        bitWidth: 2
+    RPU_RULE:
+      ENUM_NS_NP: [0, "Non-secure and Non-priviledge user access allowed."]
+      ENUM_NS_P: [1, "Non-secure and Priviledge user access allowed."]
+      ENUM_S_NP: [2, "Secure and Non-priviledge user access allowed."]
+      ENUM_S_P: [3, "Secure and Priviledge user access allowed."]
+
+_add:
+  RPU:
+    description: |
+      NXP ROM patch unit.
+
+      Undocumented by NXP, this peripheral is experimentally modeled following research by
+      Oxide Computer Company: <https://oxide.computer/blog/lpc55/>.
+    groupName: RPU
+    baseAddress: 0x4003e000
+    addressBlock:
+      offset: 0x0
+      size: 320
+      usage: "Known RPU registers"
+    registers:
+      VALUE7:
+        description: Value replacement 7
+        addressOffset: 0xd4
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      VALUE6:
+        description: Value replacement 6
+        addressOffset: 0xd8
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      VALUE5:
+        description: Value replacement 5
+        addressOffset: 0xdc
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      VALUE4:
+        description: Value replacement 4
+        addressOffset: 0xe0
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      VALUE3:
+        description: Value replacement 3
+        addressOffset: 0xe4
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      VALUE2:
+        description: Value replacement 2
+        addressOffset: 0xe8
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      VALUE1:
+        description: Value replacement 1
+        addressOffset: 0xec
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      VALUE0:
+        description: Value replacement 0
+        addressOffset: 0xf0
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+
+      CONTROL:
+        description: Control register
+        addressOffset: 0xf4
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+        fields:
+          PATCH0:
+            description: Patch 0 control bit
+            bitOffset: 0
+            bitWidth: 1
+          PATCH1:
+            description: Patch 1 control bit
+            bitOffset: 1
+            bitWidth: 1
+          PATCH2:
+            description: Patch 2 control bit
+            bitOffset: 2
+            bitWidth: 1
+          PATCH3:
+            description: Patch 3 control bit
+            bitOffset: 3
+            bitWidth: 1
+          PATCH4:
+            description: Patch 4 control bit
+            bitOffset: 4
+            bitWidth: 1
+          PATCH5:
+            description: Patch 5 control bit
+            bitOffset: 5
+            bitWidth: 1
+          PATCH6:
+            description: Patch 6 control bit
+            bitOffset: 6
+            bitWidth: 1
+          PATCH7:
+            description: Patch 7 control bit
+            bitOffset: 7
+            bitWidth: 1
+          PATCH8:
+            description: Patch 8 control bit
+            bitOffset: 8
+            bitWidth: 1
+          PATCH9:
+            description: Patch 9 control bit
+            bitOffset: 9
+            bitWidth: 1
+          PATCH10:
+            description: Patch 10 control bit
+            bitOffset: 10
+            bitWidth: 1
+          PATCH11:
+            description: Patch 11 control bit
+            bitOffset: 11
+            bitWidth: 1
+          PATCH12:
+            description: Patch 12 control bit
+            bitOffset: 12
+            bitWidth: 1
+          PATCH13:
+            description: Patch 13 control bit
+            bitOffset: 13
+            bitWidth: 1
+          PATCH14:
+            description: Patch 14 control bit
+            bitOffset: 14
+            bitWidth: 1
+          PATCH15:
+            description: Patch 15 control bit
+            bitOffset: 15
+            bitWidth: 1
+          DISABLE:
+            description: disable bit
+            bitOffset: 29
+            bitWidth: 1
+
+      ENABLE:
+        description: Enable register
+        addressOffset: 0xfc
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+        fields:
+          PATCH0:
+            description: Patch 0 control bit
+            bitOffset: 0
+            bitWidth: 1
+          PATCH1:
+            description: Patch 1 control bit
+            bitOffset: 1
+            bitWidth: 1
+          PATCH2:
+            description: Patch 2 control bit
+            bitOffset: 2
+            bitWidth: 1
+          PATCH3:
+            description: Patch 3 control bit
+            bitOffset: 3
+            bitWidth: 1
+          PATCH4:
+            description: Patch 4 control bit
+            bitOffset: 4
+            bitWidth: 1
+          PATCH5:
+            description: Patch 5 control bit
+            bitOffset: 5
+            bitWidth: 1
+          PATCH6:
+            description: Patch 6 control bit
+            bitOffset: 6
+            bitWidth: 1
+          PATCH7:
+            description: Patch 7 control bit
+            bitOffset: 7
+            bitWidth: 1
+          PATCH8:
+            description: Patch 8 control bit
+            bitOffset: 8
+            bitWidth: 1
+          PATCH9:
+            description: Patch 9 control bit
+            bitOffset: 9
+            bitWidth: 1
+          PATCH10:
+            description: Patch 10 control bit
+            bitOffset: 10
+            bitWidth: 1
+          PATCH11:
+            description: Patch 11 control bit
+            bitOffset: 11
+            bitWidth: 1
+          PATCH12:
+            description: Patch 12 control bit
+            bitOffset: 12
+            bitWidth: 1
+          PATCH13:
+            description: Patch 13 control bit
+            bitOffset: 13
+            bitWidth: 1
+          PATCH14:
+            description: Patch 14 control bit
+            bitOffset: 14
+            bitWidth: 1
+          PATCH15:
+            description: Patch 15 control bit
+            bitOffset: 15
+            bitWidth: 1
+
+      ADDRESS0:
+        description: Replacement address 0
+        addressOffset: 0x100
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      ADDRESS1:
+        description: Replacement address 2
+        addressOffset: 0x104
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      ADDRESS2:
+        description: Replacement address 2
+        addressOffset: 0x108
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      ADDRESS3:
+        description: Replacement address 3
+        addressOffset: 0x10c
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      ADDRESS4:
+        description: Replacement address 4
+        addressOffset: 0x110
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      ADDRESS5:
+        description: Replacement address 5
+        addressOffset: 0x114
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      ADDRESS6:
+        description: Replacement address 6
+        addressOffset: 0x118
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      ADDRESS7:
+        description: Replacement address 7
+        addressOffset: 0x11c
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+
+      ADDRESS8:
+        description: Replacement address 8
+        addressOffset: 0x120
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      ADDRESS9:
+        description: Replacement address 9
+        addressOffset: 0x124
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      ADDRESS10:
+        description: Replacement address 10
+        addressOffset: 0x128
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      ADDRESS11:
+        description: Replacement address 11
+        addressOffset: 0x12c
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      ADDRESS12:
+        description: Replacement address 12
+        addressOffset: 0x130
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      ADDRESS13:
+        description: Replacement address 13
+        addressOffset: 0x134
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      ADDRESS14:
+        description: Replacement address 14
+        addressOffset: 0x138
+        access: read-write
+        resetValue: 0x0
+        size: 0x20
+      ADDRESS15:
+        description: Replacement address 15
+        addressOffset: 0x13c
+        access: read-write
+        resetValue: 0x0
+        size: 0x20

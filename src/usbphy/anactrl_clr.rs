@@ -1,18 +1,52 @@
-#[doc = "Reader of register ANACTRL_CLR"]
-pub type R = crate::R<u32, super::ANACTRL_CLR>;
-#[doc = "Writer for register ANACTRL_CLR"]
-pub type W = crate::W<u32, super::ANACTRL_CLR>;
-#[doc = "Register ANACTRL_CLR `reset()`'s with value 0x0a00_0402"]
-impl crate::ResetValue for super::ANACTRL_CLR {
-    type Type = u32;
+#[doc = "Register `ANACTRL_CLR` reader"]
+pub struct R(crate::R<ANACTRL_CLR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ANACTRL_CLR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0a00_0402
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `LVI_EN`"]
-pub type LVI_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LVI_EN`"]
+impl core::convert::From<crate::R<ANACTRL_CLR_SPEC>> for R {
+    fn from(reader: crate::R<ANACTRL_CLR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `ANACTRL_CLR` writer"]
+pub struct W(crate::W<ANACTRL_CLR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ANACTRL_CLR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<ANACTRL_CLR_SPEC>> for W {
+    fn from(writer: crate::W<ANACTRL_CLR_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `LVI_EN` reader - Vow voltage detector enable bit."]
+pub struct LVI_EN_R(crate::FieldReader<bool, bool>);
+impl LVI_EN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LVI_EN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LVI_EN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LVI_EN` writer - Vow voltage detector enable bit."]
 pub struct LVI_EN_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> LVI_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `PFD_CLK_SEL`"]
-pub type PFD_CLK_SEL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PFD_CLK_SEL`"]
+#[doc = "Field `PFD_CLK_SEL` reader - For normal USB operation, this bit field must remain at value 2'b00."]
+pub struct PFD_CLK_SEL_R(crate::FieldReader<u8, u8>);
+impl PFD_CLK_SEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PFD_CLK_SEL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PFD_CLK_SEL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PFD_CLK_SEL` writer - For normal USB operation, this bit field must remain at value 2'b00."]
 pub struct PFD_CLK_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -44,7 +90,7 @@ impl<'a> PFD_CLK_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
         self.w
     }
 }
@@ -62,9 +108,12 @@ impl From<DEV_PULLDOWN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DEV_PULLDOWN`"]
-pub type DEV_PULLDOWN_R = crate::R<bool, DEV_PULLDOWN_A>;
+#[doc = "Field `DEV_PULLDOWN` reader - Setting this field to 1'b1 will enable the 15kohm pulldown resistors on both USB_DP and USB_DM pins"]
+pub struct DEV_PULLDOWN_R(crate::FieldReader<bool, DEV_PULLDOWN_A>);
 impl DEV_PULLDOWN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DEV_PULLDOWN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DEV_PULLDOWN_A {
@@ -76,15 +125,22 @@ impl DEV_PULLDOWN_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == DEV_PULLDOWN_A::VALUE0
+        **self == DEV_PULLDOWN_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == DEV_PULLDOWN_A::VALUE1
+        **self == DEV_PULLDOWN_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `DEV_PULLDOWN`"]
+impl core::ops::Deref for DEV_PULLDOWN_R {
+    type Target = crate::FieldReader<bool, DEV_PULLDOWN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DEV_PULLDOWN` writer - Setting this field to 1'b1 will enable the 15kohm pulldown resistors on both USB_DP and USB_DM pins"]
 pub struct DEV_PULLDOWN_W<'a> {
     w: &'a mut W,
 }
@@ -92,9 +148,7 @@ impl<'a> DEV_PULLDOWN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: DEV_PULLDOWN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The 15kohm nominal pulldowns on the USB_DP and USB_DM pinsare disabled in device mode."]
     #[inline(always)]
@@ -119,7 +173,7 @@ impl<'a> DEV_PULLDOWN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -155,5 +209,30 @@ impl W {
     #[inline(always)]
     pub fn dev_pulldown(&mut self) -> DEV_PULLDOWN_W {
         DEV_PULLDOWN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USB PHY Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [anactrl_clr](index.html) module"]
+pub struct ANACTRL_CLR_SPEC;
+impl crate::RegisterSpec for ANACTRL_CLR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [anactrl_clr::R](R) reader structure"]
+impl crate::Readable for ANACTRL_CLR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [anactrl_clr::W](W) writer structure"]
+impl crate::Writable for ANACTRL_CLR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ANACTRL_CLR to value 0x0a00_0402"]
+impl crate::Resettable for ANACTRL_CLR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0a00_0402
     }
 }

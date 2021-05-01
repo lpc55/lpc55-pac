@@ -1,18 +1,52 @@
-#[doc = "Reader of register PLL_SIC_TOG"]
-pub type R = crate::R<u32, super::PLL_SIC_TOG>;
-#[doc = "Writer for register PLL_SIC_TOG"]
-pub type W = crate::W<u32, super::PLL_SIC_TOG>;
-#[doc = "Register PLL_SIC_TOG `reset()`'s with value 0x00d1_2000"]
-impl crate::ResetValue for super::PLL_SIC_TOG {
-    type Type = u32;
+#[doc = "Register `PLL_SIC_TOG` reader"]
+pub struct R(crate::R<PLL_SIC_TOG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PLL_SIC_TOG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x00d1_2000
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PLL_EN_USB_CLKS`"]
-pub type PLL_EN_USB_CLKS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PLL_EN_USB_CLKS`"]
+impl core::convert::From<crate::R<PLL_SIC_TOG_SPEC>> for R {
+    fn from(reader: crate::R<PLL_SIC_TOG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PLL_SIC_TOG` writer"]
+pub struct W(crate::W<PLL_SIC_TOG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PLL_SIC_TOG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<PLL_SIC_TOG_SPEC>> for W {
+    fn from(writer: crate::W<PLL_SIC_TOG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PLL_EN_USB_CLKS` reader - Enables the USB clock from PLL to USB PHY"]
+pub struct PLL_EN_USB_CLKS_R(crate::FieldReader<bool, bool>);
+impl PLL_EN_USB_CLKS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLL_EN_USB_CLKS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PLL_EN_USB_CLKS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PLL_EN_USB_CLKS` writer - Enables the USB clock from PLL to USB PHY"]
 pub struct PLL_EN_USB_CLKS_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> PLL_EN_USB_CLKS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `PLL_POWER`"]
-pub type PLL_POWER_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PLL_POWER`"]
+#[doc = "Field `PLL_POWER` reader - Power up the USB PLL"]
+pub struct PLL_POWER_R(crate::FieldReader<bool, bool>);
+impl PLL_POWER_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLL_POWER_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PLL_POWER_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PLL_POWER` writer - Power up the USB PLL"]
 pub struct PLL_POWER_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> PLL_POWER_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `PLL_ENABLE`"]
-pub type PLL_ENABLE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PLL_ENABLE`"]
+#[doc = "Field `PLL_ENABLE` reader - Enables the clock output from the USB PLL"]
+pub struct PLL_ENABLE_R(crate::FieldReader<bool, bool>);
+impl PLL_ENABLE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLL_ENABLE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PLL_ENABLE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PLL_ENABLE` writer - Enables the clock output from the USB PLL"]
 pub struct PLL_ENABLE_W<'a> {
     w: &'a mut W,
 }
@@ -78,7 +136,7 @@ impl<'a> PLL_ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -96,9 +154,12 @@ impl From<REFBIAS_PWD_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REFBIAS_PWD_SEL`"]
-pub type REFBIAS_PWD_SEL_R = crate::R<bool, REFBIAS_PWD_SEL_A>;
+#[doc = "Field `REFBIAS_PWD_SEL` reader - Reference bias power down select."]
+pub struct REFBIAS_PWD_SEL_R(crate::FieldReader<bool, REFBIAS_PWD_SEL_A>);
 impl REFBIAS_PWD_SEL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFBIAS_PWD_SEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REFBIAS_PWD_SEL_A {
@@ -110,15 +171,22 @@ impl REFBIAS_PWD_SEL_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == REFBIAS_PWD_SEL_A::VALUE0
+        **self == REFBIAS_PWD_SEL_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == REFBIAS_PWD_SEL_A::VALUE1
+        **self == REFBIAS_PWD_SEL_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `REFBIAS_PWD_SEL`"]
+impl core::ops::Deref for REFBIAS_PWD_SEL_R {
+    type Target = crate::FieldReader<bool, REFBIAS_PWD_SEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REFBIAS_PWD_SEL` writer - Reference bias power down select."]
 pub struct REFBIAS_PWD_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -126,9 +194,7 @@ impl<'a> REFBIAS_PWD_SEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: REFBIAS_PWD_SEL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Selects PLL_POWER to control the reference bias"]
     #[inline(always)]
@@ -153,13 +219,25 @@ impl<'a> REFBIAS_PWD_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
-#[doc = "Reader of field `REFBIAS_PWD`"]
-pub type REFBIAS_PWD_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `REFBIAS_PWD`"]
+#[doc = "Field `REFBIAS_PWD` reader - Power down the reference bias This bit is only used when REFBIAS_PWD_SEL is set to 1."]
+pub struct REFBIAS_PWD_R(crate::FieldReader<bool, bool>);
+impl REFBIAS_PWD_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REFBIAS_PWD_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for REFBIAS_PWD_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `REFBIAS_PWD` writer - Power down the reference bias This bit is only used when REFBIAS_PWD_SEL is set to 1."]
 pub struct REFBIAS_PWD_W<'a> {
     w: &'a mut W,
 }
@@ -177,13 +255,25 @@ impl<'a> REFBIAS_PWD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
-#[doc = "Reader of field `PLL_REG_ENABLE`"]
-pub type PLL_REG_ENABLE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PLL_REG_ENABLE`"]
+#[doc = "Field `PLL_REG_ENABLE` reader - This field controls the USB PLL regulator, set to enable the regulator"]
+pub struct PLL_REG_ENABLE_R(crate::FieldReader<bool, bool>);
+impl PLL_REG_ENABLE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLL_REG_ENABLE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PLL_REG_ENABLE_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PLL_REG_ENABLE` writer - This field controls the USB PLL regulator, set to enable the regulator"]
 pub struct PLL_REG_ENABLE_W<'a> {
     w: &'a mut W,
 }
@@ -201,7 +291,7 @@ impl<'a> PLL_REG_ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
         self.w
     }
 }
@@ -232,9 +322,12 @@ impl From<PLL_DIV_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PLL_DIV_SEL`"]
-pub type PLL_DIV_SEL_R = crate::R<u8, PLL_DIV_SEL_A>;
+#[doc = "Field `PLL_DIV_SEL` reader - This field controls the USB PLL feedback loop divider"]
+pub struct PLL_DIV_SEL_R(crate::FieldReader<u8, PLL_DIV_SEL_A>);
 impl PLL_DIV_SEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PLL_DIV_SEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLL_DIV_SEL_A {
@@ -253,45 +346,52 @@ impl PLL_DIV_SEL_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == PLL_DIV_SEL_A::VALUE0
+        **self == PLL_DIV_SEL_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PLL_DIV_SEL_A::VALUE1
+        **self == PLL_DIV_SEL_A::VALUE1
     }
     #[doc = "Checks if the value of the field is `VALUE2`"]
     #[inline(always)]
     pub fn is_value2(&self) -> bool {
-        *self == PLL_DIV_SEL_A::VALUE2
+        **self == PLL_DIV_SEL_A::VALUE2
     }
     #[doc = "Checks if the value of the field is `VALUE3`"]
     #[inline(always)]
     pub fn is_value3(&self) -> bool {
-        *self == PLL_DIV_SEL_A::VALUE3
+        **self == PLL_DIV_SEL_A::VALUE3
     }
     #[doc = "Checks if the value of the field is `VALUE4`"]
     #[inline(always)]
     pub fn is_value4(&self) -> bool {
-        *self == PLL_DIV_SEL_A::VALUE4
+        **self == PLL_DIV_SEL_A::VALUE4
     }
     #[doc = "Checks if the value of the field is `VALUE5`"]
     #[inline(always)]
     pub fn is_value5(&self) -> bool {
-        *self == PLL_DIV_SEL_A::VALUE5
+        **self == PLL_DIV_SEL_A::VALUE5
     }
     #[doc = "Checks if the value of the field is `VALUE6`"]
     #[inline(always)]
     pub fn is_value6(&self) -> bool {
-        *self == PLL_DIV_SEL_A::VALUE6
+        **self == PLL_DIV_SEL_A::VALUE6
     }
     #[doc = "Checks if the value of the field is `VALUE7`"]
     #[inline(always)]
     pub fn is_value7(&self) -> bool {
-        *self == PLL_DIV_SEL_A::VALUE7
+        **self == PLL_DIV_SEL_A::VALUE7
     }
 }
-#[doc = "Write proxy for field `PLL_DIV_SEL`"]
+impl core::ops::Deref for PLL_DIV_SEL_R {
+    type Target = crate::FieldReader<u8, PLL_DIV_SEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PLL_DIV_SEL` writer - This field controls the USB PLL feedback loop divider"]
 pub struct PLL_DIV_SEL_W<'a> {
     w: &'a mut W,
 }
@@ -299,9 +399,7 @@ impl<'a> PLL_DIV_SEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PLL_DIV_SEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Divide by 13"]
     #[inline(always)]
@@ -346,13 +444,25 @@ impl<'a> PLL_DIV_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 22)) | (((value as u32) & 0x07) << 22);
+        self.w.bits = (self.w.bits & !(0x07 << 22)) | ((value as u32 & 0x07) << 22);
         self.w
     }
 }
-#[doc = "Reader of field `PLL_PREDIV`"]
-pub type PLL_PREDIV_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PLL_PREDIV`"]
+#[doc = "Field `PLL_PREDIV` reader - This is selection between /1 or /2 to expand the range of ref input clock."]
+pub struct PLL_PREDIV_R(crate::FieldReader<bool, bool>);
+impl PLL_PREDIV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLL_PREDIV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PLL_PREDIV_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PLL_PREDIV` writer - This is selection between /1 or /2 to expand the range of ref input clock."]
 pub struct PLL_PREDIV_W<'a> {
     w: &'a mut W,
 }
@@ -370,7 +480,7 @@ impl<'a> PLL_PREDIV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
         self.w
     }
 }
@@ -388,9 +498,12 @@ impl From<PLL_LOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `PLL_LOCK`"]
-pub type PLL_LOCK_R = crate::R<bool, PLL_LOCK_A>;
+#[doc = "Field `PLL_LOCK` reader - USB PLL lock status indicator"]
+pub struct PLL_LOCK_R(crate::FieldReader<bool, PLL_LOCK_A>);
 impl PLL_LOCK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        PLL_LOCK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLL_LOCK_A {
@@ -402,12 +515,19 @@ impl PLL_LOCK_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == PLL_LOCK_A::VALUE0
+        **self == PLL_LOCK_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == PLL_LOCK_A::VALUE1
+        **self == PLL_LOCK_A::VALUE1
+    }
+}
+impl core::ops::Deref for PLL_LOCK_R {
+    type Target = crate::FieldReader<bool, PLL_LOCK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -497,5 +617,30 @@ impl W {
     #[inline(always)]
     pub fn pll_prediv(&mut self) -> PLL_PREDIV_W {
         PLL_PREDIV_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USB PHY PLL Control/Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pll_sic_tog](index.html) module"]
+pub struct PLL_SIC_TOG_SPEC;
+impl crate::RegisterSpec for PLL_SIC_TOG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pll_sic_tog::R](R) reader structure"]
+impl crate::Readable for PLL_SIC_TOG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pll_sic_tog::W](W) writer structure"]
+impl crate::Writable for PLL_SIC_TOG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PLL_SIC_TOG to value 0x00d1_2000"]
+impl crate::Resettable for PLL_SIC_TOG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x00d1_2000
     }
 }

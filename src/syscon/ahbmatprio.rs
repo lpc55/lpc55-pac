@@ -1,18 +1,52 @@
-#[doc = "Reader of register AHBMATPRIO"]
-pub type R = crate::R<u32, super::AHBMATPRIO>;
-#[doc = "Writer for register AHBMATPRIO"]
-pub type W = crate::W<u32, super::AHBMATPRIO>;
-#[doc = "Register AHBMATPRIO `reset()`'s with value 0"]
-impl crate::ResetValue for super::AHBMATPRIO {
-    type Type = u32;
+#[doc = "Register `AHBMATPRIO` reader"]
+pub struct R(crate::R<AHBMATPRIO_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<AHBMATPRIO_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PRI_CPU0_CBUS`"]
-pub type PRI_CPU0_CBUS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_CPU0_CBUS`"]
+impl core::convert::From<crate::R<AHBMATPRIO_SPEC>> for R {
+    fn from(reader: crate::R<AHBMATPRIO_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `AHBMATPRIO` writer"]
+pub struct W(crate::W<AHBMATPRIO_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<AHBMATPRIO_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<AHBMATPRIO_SPEC>> for W {
+    fn from(writer: crate::W<AHBMATPRIO_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `PRI_CPU0_CBUS` reader - CPU0 C-AHB bus."]
+pub struct PRI_CPU0_CBUS_R(crate::FieldReader<u8, u8>);
+impl PRI_CPU0_CBUS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_CPU0_CBUS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_CPU0_CBUS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_CPU0_CBUS` writer - CPU0 C-AHB bus."]
 pub struct PRI_CPU0_CBUS_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +54,25 @@ impl<'a> PRI_CPU0_CBUS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
-#[doc = "Reader of field `PRI_CPU0_SBUS`"]
-pub type PRI_CPU0_SBUS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_CPU0_SBUS`"]
+#[doc = "Field `PRI_CPU0_SBUS` reader - CPU0 S-AHB bus."]
+pub struct PRI_CPU0_SBUS_R(crate::FieldReader<u8, u8>);
+impl PRI_CPU0_SBUS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_CPU0_SBUS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_CPU0_SBUS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_CPU0_SBUS` writer - CPU0 S-AHB bus."]
 pub struct PRI_CPU0_SBUS_W<'a> {
     w: &'a mut W,
 }
@@ -34,13 +80,25 @@ impl<'a> PRI_CPU0_SBUS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `PRI_CPU1_CBUS`"]
-pub type PRI_CPU1_CBUS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_CPU1_CBUS`"]
+#[doc = "Field `PRI_CPU1_CBUS` reader - CPU1 C-AHB bus."]
+pub struct PRI_CPU1_CBUS_R(crate::FieldReader<u8, u8>);
+impl PRI_CPU1_CBUS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_CPU1_CBUS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_CPU1_CBUS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_CPU1_CBUS` writer - CPU1 C-AHB bus."]
 pub struct PRI_CPU1_CBUS_W<'a> {
     w: &'a mut W,
 }
@@ -48,13 +106,25 @@ impl<'a> PRI_CPU1_CBUS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `PRI_CPU1_SBUS`"]
-pub type PRI_CPU1_SBUS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_CPU1_SBUS`"]
+#[doc = "Field `PRI_CPU1_SBUS` reader - CPU1 S-AHB bus."]
+pub struct PRI_CPU1_SBUS_R(crate::FieldReader<u8, u8>);
+impl PRI_CPU1_SBUS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_CPU1_SBUS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_CPU1_SBUS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_CPU1_SBUS` writer - CPU1 S-AHB bus."]
 pub struct PRI_CPU1_SBUS_W<'a> {
     w: &'a mut W,
 }
@@ -62,13 +132,25 @@ impl<'a> PRI_CPU1_SBUS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `PRI_USB_FS`"]
-pub type PRI_USB_FS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_USB_FS`"]
+#[doc = "Field `PRI_USB_FS` reader - USB-FS.(USB0)"]
+pub struct PRI_USB_FS_R(crate::FieldReader<u8, u8>);
+impl PRI_USB_FS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_USB_FS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_USB_FS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_USB_FS` writer - USB-FS.(USB0)"]
 pub struct PRI_USB_FS_W<'a> {
     w: &'a mut W,
 }
@@ -76,13 +158,25 @@ impl<'a> PRI_USB_FS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `PRI_SDMA0`"]
-pub type PRI_SDMA0_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_SDMA0`"]
+#[doc = "Field `PRI_SDMA0` reader - DMA0 controller priority."]
+pub struct PRI_SDMA0_R(crate::FieldReader<u8, u8>);
+impl PRI_SDMA0_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_SDMA0_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_SDMA0_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_SDMA0` writer - DMA0 controller priority."]
 pub struct PRI_SDMA0_W<'a> {
     w: &'a mut W,
 }
@@ -90,13 +184,25 @@ impl<'a> PRI_SDMA0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `PRI_SDIO`"]
-pub type PRI_SDIO_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_SDIO`"]
+#[doc = "Field `PRI_SDIO` reader - SDIO."]
+pub struct PRI_SDIO_R(crate::FieldReader<u8, u8>);
+impl PRI_SDIO_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_SDIO_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_SDIO_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_SDIO` writer - SDIO."]
 pub struct PRI_SDIO_W<'a> {
     w: &'a mut W,
 }
@@ -104,13 +210,25 @@ impl<'a> PRI_SDIO_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
         self.w
     }
 }
-#[doc = "Reader of field `PRI_PQ`"]
-pub type PRI_PQ_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_PQ`"]
+#[doc = "Field `PRI_PQ` reader - PQ (HW Accelerator)."]
+pub struct PRI_PQ_R(crate::FieldReader<u8, u8>);
+impl PRI_PQ_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_PQ_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_PQ_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_PQ` writer - PQ (HW Accelerator)."]
 pub struct PRI_PQ_W<'a> {
     w: &'a mut W,
 }
@@ -118,13 +236,25 @@ impl<'a> PRI_PQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 18)) | (((value as u32) & 0x03) << 18);
+        self.w.bits = (self.w.bits & !(0x03 << 18)) | ((value as u32 & 0x03) << 18);
         self.w
     }
 }
-#[doc = "Reader of field `PRI_HASH_AES`"]
-pub type PRI_HASH_AES_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_HASH_AES`"]
+#[doc = "Field `PRI_HASH_AES` reader - HASH_AES."]
+pub struct PRI_HASH_AES_R(crate::FieldReader<u8, u8>);
+impl PRI_HASH_AES_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_HASH_AES_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_HASH_AES_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_HASH_AES` writer - HASH_AES."]
 pub struct PRI_HASH_AES_W<'a> {
     w: &'a mut W,
 }
@@ -132,13 +262,25 @@ impl<'a> PRI_HASH_AES_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
+        self.w.bits = (self.w.bits & !(0x03 << 20)) | ((value as u32 & 0x03) << 20);
         self.w
     }
 }
-#[doc = "Reader of field `PRI_USB_HS`"]
-pub type PRI_USB_HS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_USB_HS`"]
+#[doc = "Field `PRI_USB_HS` reader - USB-HS.(USB1)"]
+pub struct PRI_USB_HS_R(crate::FieldReader<u8, u8>);
+impl PRI_USB_HS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_USB_HS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_USB_HS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_USB_HS` writer - USB-HS.(USB1)"]
 pub struct PRI_USB_HS_W<'a> {
     w: &'a mut W,
 }
@@ -146,13 +288,25 @@ impl<'a> PRI_USB_HS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | (((value as u32) & 0x03) << 22);
+        self.w.bits = (self.w.bits & !(0x03 << 22)) | ((value as u32 & 0x03) << 22);
         self.w
     }
 }
-#[doc = "Reader of field `PRI_SDMA1`"]
-pub type PRI_SDMA1_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `PRI_SDMA1`"]
+#[doc = "Field `PRI_SDMA1` reader - DMA1 controller priority."]
+pub struct PRI_SDMA1_R(crate::FieldReader<u8, u8>);
+impl PRI_SDMA1_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PRI_SDMA1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRI_SDMA1_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRI_SDMA1` writer - DMA1 controller priority."]
 pub struct PRI_SDMA1_W<'a> {
     w: &'a mut W,
 }
@@ -160,7 +314,7 @@ impl<'a> PRI_SDMA1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
         self.w
     }
 }
@@ -276,5 +430,30 @@ impl W {
     #[inline(always)]
     pub fn pri_sdma1(&mut self) -> PRI_SDMA1_W {
         PRI_SDMA1_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "AHB Matrix priority control register Priority values are 3 = highest, 0 = lowest\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ahbmatprio](index.html) module"]
+pub struct AHBMATPRIO_SPEC;
+impl crate::RegisterSpec for AHBMATPRIO_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ahbmatprio::R](R) reader structure"]
+impl crate::Readable for AHBMATPRIO_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ahbmatprio::W](W) writer structure"]
+impl crate::Writable for AHBMATPRIO_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets AHBMATPRIO to value 0"]
+impl crate::Resettable for AHBMATPRIO_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -79,67 +79,39 @@ pub struct RegisterBlock {
     #[doc = "0x320 - no description available"]
     pub lut25: LUT,
     _reserved26: [u8; 1228usize],
-    #[doc = "0x800 - Specifies the Truth Table contents for LUT0"]
-    pub lut_truth: [LUT_TRUTH; 26],
+    #[doc = "0x800 - Specifies the Truth Table contents for LUTLUTn"]
+    pub lut_truth: [crate::Reg<lut_truth::LUT_TRUTH_SPEC>; 26],
     _reserved27: [u8; 152usize],
     #[doc = "0x900 - Provides the current state of the 8 designated PLU Outputs."]
-    pub outputs: OUTPUTS,
+    pub outputs: crate::Reg<outputs::OUTPUTS_SPEC>,
     #[doc = "0x904 - Wakeup interrupt control for PLU"]
-    pub wakeint_ctrl: WAKEINT_CTRL,
+    pub wakeint_ctrl: crate::Reg<wakeint_ctrl::WAKEINT_CTRL_SPEC>,
     _reserved29: [u8; 760usize],
-    #[doc = "0xc00 - Selects the source to be connected to PLU Output 0"]
-    pub output_mux: [OUTPUT_MUX; 8],
+    #[doc = "0xc00 - Selects the source to be connected to PLU Output OUTPUT_n"]
+    pub output_mux: [crate::Reg<output_mux::OUTPUT_MUX_SPEC>; 8],
 }
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct LUT {
     #[doc = "0x00 - LUTn input x MUX"]
-    pub lut_inp_mux: [self::lut::LUT_INP_MUX; 5],
+    pub lut_inp_mux: [crate::Reg<self::lut::lut_inp_mux::LUT_INP_MUX_SPEC>; 5],
 }
 #[doc = r"Register block"]
 #[doc = "no description available"]
 pub mod lut;
-#[doc = "Specifies the Truth Table contents for LUT0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lut_truth](lut_truth) module"]
-pub type LUT_TRUTH = crate::Reg<u32, _LUT_TRUTH>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _LUT_TRUTH;
-#[doc = "`read()` method returns [lut_truth::R](lut_truth::R) reader structure"]
-impl crate::Readable for LUT_TRUTH {}
-#[doc = "`write(|w| ..)` method takes [lut_truth::W](lut_truth::W) writer structure"]
-impl crate::Writable for LUT_TRUTH {}
-#[doc = "Specifies the Truth Table contents for LUT0"]
+#[doc = "LUT_TRUTH register accessor: an alias for `Reg<LUT_TRUTH_SPEC>`"]
+pub type LUT_TRUTH = crate::Reg<lut_truth::LUT_TRUTH_SPEC>;
+#[doc = "Specifies the Truth Table contents for LUTLUTn"]
 pub mod lut_truth;
-#[doc = "Provides the current state of the 8 designated PLU Outputs.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [outputs](outputs) module"]
-pub type OUTPUTS = crate::Reg<u32, _OUTPUTS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _OUTPUTS;
-#[doc = "`read()` method returns [outputs::R](outputs::R) reader structure"]
-impl crate::Readable for OUTPUTS {}
-#[doc = "`write(|w| ..)` method takes [outputs::W](outputs::W) writer structure"]
-impl crate::Writable for OUTPUTS {}
+#[doc = "OUTPUTS register accessor: an alias for `Reg<OUTPUTS_SPEC>`"]
+pub type OUTPUTS = crate::Reg<outputs::OUTPUTS_SPEC>;
 #[doc = "Provides the current state of the 8 designated PLU Outputs."]
 pub mod outputs;
-#[doc = "Wakeup interrupt control for PLU\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wakeint_ctrl](wakeint_ctrl) module"]
-pub type WAKEINT_CTRL = crate::Reg<u32, _WAKEINT_CTRL>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _WAKEINT_CTRL;
-#[doc = "`read()` method returns [wakeint_ctrl::R](wakeint_ctrl::R) reader structure"]
-impl crate::Readable for WAKEINT_CTRL {}
-#[doc = "`write(|w| ..)` method takes [wakeint_ctrl::W](wakeint_ctrl::W) writer structure"]
-impl crate::Writable for WAKEINT_CTRL {}
+#[doc = "WAKEINT_CTRL register accessor: an alias for `Reg<WAKEINT_CTRL_SPEC>`"]
+pub type WAKEINT_CTRL = crate::Reg<wakeint_ctrl::WAKEINT_CTRL_SPEC>;
 #[doc = "Wakeup interrupt control for PLU"]
 pub mod wakeint_ctrl;
-#[doc = "Selects the source to be connected to PLU Output 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [output_mux](output_mux) module"]
-pub type OUTPUT_MUX = crate::Reg<u32, _OUTPUT_MUX>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _OUTPUT_MUX;
-#[doc = "`read()` method returns [output_mux::R](output_mux::R) reader structure"]
-impl crate::Readable for OUTPUT_MUX {}
-#[doc = "`write(|w| ..)` method takes [output_mux::W](output_mux::W) writer structure"]
-impl crate::Writable for OUTPUT_MUX {}
-#[doc = "Selects the source to be connected to PLU Output 0"]
+#[doc = "OUTPUT_MUX register accessor: an alias for `Reg<OUTPUT_MUX_SPEC>`"]
+pub type OUTPUT_MUX = crate::Reg<output_mux::OUTPUT_MUX_SPEC>;
+#[doc = "Selects the source to be connected to PLU Output OUTPUT_n"]
 pub mod output_mux;

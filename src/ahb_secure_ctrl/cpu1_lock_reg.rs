@@ -1,13 +1,35 @@
-#[doc = "Reader of register CPU1_LOCK_REG"]
-pub type R = crate::R<u32, super::CPU1_LOCK_REG>;
-#[doc = "Writer for register CPU1_LOCK_REG"]
-pub type W = crate::W<u32, super::CPU1_LOCK_REG>;
-#[doc = "Register CPU1_LOCK_REG `reset()`'s with value 0x8000_000a"]
-impl crate::ResetValue for super::CPU1_LOCK_REG {
-    type Type = u32;
+#[doc = "Register `CPU1_LOCK_REG` reader"]
+pub struct R(crate::R<CPU1_LOCK_REG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CPU1_LOCK_REG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x8000_000a
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<CPU1_LOCK_REG_SPEC>> for R {
+    fn from(reader: crate::R<CPU1_LOCK_REG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CPU1_LOCK_REG` writer"]
+pub struct W(crate::W<CPU1_LOCK_REG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CPU1_LOCK_REG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<CPU1_LOCK_REG_SPEC>> for W {
+    fn from(writer: crate::W<CPU1_LOCK_REG_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "micro-Cortex M33 (CPU1) VTOR_NS register write-lock.\n\nValue on reset: 2"]
@@ -25,31 +47,40 @@ impl From<LOCK_NS_VTOR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `LOCK_NS_VTOR`"]
-pub type LOCK_NS_VTOR_R = crate::R<u8, LOCK_NS_VTOR_A>;
+#[doc = "Field `LOCK_NS_VTOR` reader - micro-Cortex M33 (CPU1) VTOR_NS register write-lock."]
+pub struct LOCK_NS_VTOR_R(crate::FieldReader<u8, LOCK_NS_VTOR_A>);
 impl LOCK_NS_VTOR_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LOCK_NS_VTOR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, LOCK_NS_VTOR_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<LOCK_NS_VTOR_A> {
         match self.bits {
-            1 => Val(LOCK_NS_VTOR_A::BLOCKED),
-            2 => Val(LOCK_NS_VTOR_A::WRITABLE),
-            i => Res(i),
+            1 => Some(LOCK_NS_VTOR_A::BLOCKED),
+            2 => Some(LOCK_NS_VTOR_A::WRITABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == LOCK_NS_VTOR_A::BLOCKED
+        **self == LOCK_NS_VTOR_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `WRITABLE`"]
     #[inline(always)]
     pub fn is_writable(&self) -> bool {
-        *self == LOCK_NS_VTOR_A::WRITABLE
+        **self == LOCK_NS_VTOR_A::WRITABLE
     }
 }
-#[doc = "Write proxy for field `LOCK_NS_VTOR`"]
+impl core::ops::Deref for LOCK_NS_VTOR_R {
+    type Target = crate::FieldReader<u8, LOCK_NS_VTOR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK_NS_VTOR` writer - micro-Cortex M33 (CPU1) VTOR_NS register write-lock."]
 pub struct LOCK_NS_VTOR_W<'a> {
     w: &'a mut W,
 }
@@ -72,7 +103,7 @@ impl<'a> LOCK_NS_VTOR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
@@ -91,31 +122,40 @@ impl From<LOCK_NS_MPU_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `LOCK_NS_MPU`"]
-pub type LOCK_NS_MPU_R = crate::R<u8, LOCK_NS_MPU_A>;
+#[doc = "Field `LOCK_NS_MPU` reader - micro-Cortex M33 (CPU1) non-secure MPU register write-lock."]
+pub struct LOCK_NS_MPU_R(crate::FieldReader<u8, LOCK_NS_MPU_A>);
 impl LOCK_NS_MPU_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LOCK_NS_MPU_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, LOCK_NS_MPU_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<LOCK_NS_MPU_A> {
         match self.bits {
-            1 => Val(LOCK_NS_MPU_A::BLOCKED),
-            2 => Val(LOCK_NS_MPU_A::WRITABLE),
-            i => Res(i),
+            1 => Some(LOCK_NS_MPU_A::BLOCKED),
+            2 => Some(LOCK_NS_MPU_A::WRITABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == LOCK_NS_MPU_A::BLOCKED
+        **self == LOCK_NS_MPU_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `WRITABLE`"]
     #[inline(always)]
     pub fn is_writable(&self) -> bool {
-        *self == LOCK_NS_MPU_A::WRITABLE
+        **self == LOCK_NS_MPU_A::WRITABLE
     }
 }
-#[doc = "Write proxy for field `LOCK_NS_MPU`"]
+impl core::ops::Deref for LOCK_NS_MPU_R {
+    type Target = crate::FieldReader<u8, LOCK_NS_MPU_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LOCK_NS_MPU` writer - micro-Cortex M33 (CPU1) non-secure MPU register write-lock."]
 pub struct LOCK_NS_MPU_W<'a> {
     w: &'a mut W,
 }
@@ -138,7 +178,7 @@ impl<'a> LOCK_NS_MPU_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
         self.w
     }
 }
@@ -157,31 +197,40 @@ impl From<CPU1_LOCK_REG_LOCK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPU1_LOCK_REG_LOCK`"]
-pub type CPU1_LOCK_REG_LOCK_R = crate::R<u8, CPU1_LOCK_REG_LOCK_A>;
+#[doc = "Field `CPU1_LOCK_REG_LOCK` reader - CPU1_LOCK_REG write-lock."]
+pub struct CPU1_LOCK_REG_LOCK_R(crate::FieldReader<u8, CPU1_LOCK_REG_LOCK_A>);
 impl CPU1_LOCK_REG_LOCK_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CPU1_LOCK_REG_LOCK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CPU1_LOCK_REG_LOCK_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CPU1_LOCK_REG_LOCK_A> {
         match self.bits {
-            1 => Val(CPU1_LOCK_REG_LOCK_A::BLOCKED),
-            2 => Val(CPU1_LOCK_REG_LOCK_A::WRITABLE),
-            i => Res(i),
+            1 => Some(CPU1_LOCK_REG_LOCK_A::BLOCKED),
+            2 => Some(CPU1_LOCK_REG_LOCK_A::WRITABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == CPU1_LOCK_REG_LOCK_A::BLOCKED
+        **self == CPU1_LOCK_REG_LOCK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `WRITABLE`"]
     #[inline(always)]
     pub fn is_writable(&self) -> bool {
-        *self == CPU1_LOCK_REG_LOCK_A::WRITABLE
+        **self == CPU1_LOCK_REG_LOCK_A::WRITABLE
     }
 }
-#[doc = "Write proxy for field `CPU1_LOCK_REG_LOCK`"]
+impl core::ops::Deref for CPU1_LOCK_REG_LOCK_R {
+    type Target = crate::FieldReader<u8, CPU1_LOCK_REG_LOCK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPU1_LOCK_REG_LOCK` writer - CPU1_LOCK_REG write-lock."]
 pub struct CPU1_LOCK_REG_LOCK_W<'a> {
     w: &'a mut W,
 }
@@ -204,7 +253,7 @@ impl<'a> CPU1_LOCK_REG_LOCK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 30)) | (((value as u32) & 0x03) << 30);
+        self.w.bits = (self.w.bits & !(0x03 << 30)) | ((value as u32 & 0x03) << 30);
         self.w
     }
 }
@@ -240,5 +289,30 @@ impl W {
     #[inline(always)]
     pub fn cpu1_lock_reg_lock(&mut self) -> CPU1_LOCK_REG_LOCK_W {
         CPU1_LOCK_REG_LOCK_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Miscalleneous control signals for in micro-Cortex M33 (CPU1)\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cpu1_lock_reg](index.html) module"]
+pub struct CPU1_LOCK_REG_SPEC;
+impl crate::RegisterSpec for CPU1_LOCK_REG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [cpu1_lock_reg::R](R) reader structure"]
+impl crate::Readable for CPU1_LOCK_REG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cpu1_lock_reg::W](W) writer structure"]
+impl crate::Writable for CPU1_LOCK_REG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CPU1_LOCK_REG to value 0x8000_000a"]
+impl crate::Resettable for CPU1_LOCK_REG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x8000_000a
     }
 }
