@@ -1,13 +1,35 @@
-#[doc = "Reader of register USB0NEEDCLKSTAT"]
-pub type R = crate::R<u32, super::USB0NEEDCLKSTAT>;
-#[doc = "Writer for register USB0NEEDCLKSTAT"]
-pub type W = crate::W<u32, super::USB0NEEDCLKSTAT>;
-#[doc = "Register USB0NEEDCLKSTAT `reset()`'s with value 0"]
-impl crate::ResetValue for super::USB0NEEDCLKSTAT {
-    type Type = u32;
+#[doc = "Register `USB0NEEDCLKSTAT` reader"]
+pub struct R(crate::R<USB0NEEDCLKSTAT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<USB0NEEDCLKSTAT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<USB0NEEDCLKSTAT_SPEC>> for R {
+    fn from(reader: crate::R<USB0NEEDCLKSTAT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `USB0NEEDCLKSTAT` writer"]
+pub struct W(crate::W<USB0NEEDCLKSTAT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<USB0NEEDCLKSTAT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<USB0NEEDCLKSTAT_SPEC>> for W {
+    fn from(writer: crate::W<USB0NEEDCLKSTAT_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "USB0 Device USB0_NEEDCLK signal status:.\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<DEV_NEEDCLK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DEV_NEEDCLK`"]
-pub type DEV_NEEDCLK_R = crate::R<bool, DEV_NEEDCLK_A>;
+#[doc = "Field `DEV_NEEDCLK` reader - USB0 Device USB0_NEEDCLK signal status:."]
+pub struct DEV_NEEDCLK_R(crate::FieldReader<bool, DEV_NEEDCLK_A>);
 impl DEV_NEEDCLK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DEV_NEEDCLK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DEV_NEEDCLK_A {
@@ -38,12 +63,19 @@ impl DEV_NEEDCLK_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == DEV_NEEDCLK_A::LOW
+        **self == DEV_NEEDCLK_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == DEV_NEEDCLK_A::HIGH
+        **self == DEV_NEEDCLK_A::HIGH
+    }
+}
+impl core::ops::Deref for DEV_NEEDCLK_R {
+    type Target = crate::FieldReader<bool, DEV_NEEDCLK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "USB0 Host USB0_NEEDCLK signal status:.\n\nValue on reset: 0"]
@@ -60,9 +92,12 @@ impl From<HOST_NEEDCLK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `HOST_NEEDCLK`"]
-pub type HOST_NEEDCLK_R = crate::R<bool, HOST_NEEDCLK_A>;
+#[doc = "Field `HOST_NEEDCLK` reader - USB0 Host USB0_NEEDCLK signal status:."]
+pub struct HOST_NEEDCLK_R(crate::FieldReader<bool, HOST_NEEDCLK_A>);
 impl HOST_NEEDCLK_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HOST_NEEDCLK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HOST_NEEDCLK_A {
@@ -74,12 +109,19 @@ impl HOST_NEEDCLK_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == HOST_NEEDCLK_A::LOW
+        **self == HOST_NEEDCLK_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == HOST_NEEDCLK_A::HIGH
+        **self == HOST_NEEDCLK_A::HIGH
+    }
+}
+impl core::ops::Deref for HOST_NEEDCLK_R {
+    type Target = crate::FieldReader<bool, HOST_NEEDCLK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -94,4 +136,30 @@ impl R {
         HOST_NEEDCLK_R::new(((self.bits >> 1) & 0x01) != 0)
     }
 }
-impl W {}
+impl W {
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USB0 need clock status\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usb0needclkstat](index.html) module"]
+pub struct USB0NEEDCLKSTAT_SPEC;
+impl crate::RegisterSpec for USB0NEEDCLKSTAT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [usb0needclkstat::R](R) reader structure"]
+impl crate::Readable for USB0NEEDCLKSTAT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [usb0needclkstat::W](W) writer structure"]
+impl crate::Writable for USB0NEEDCLKSTAT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets USB0NEEDCLKSTAT to value 0"]
+impl crate::Resettable for USB0NEEDCLKSTAT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
+}

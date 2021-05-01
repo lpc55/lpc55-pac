@@ -1,5 +1,17 @@
-#[doc = "Reader of register BOD_DCDC_INT_STATUS"]
-pub type R = crate::R<u32, super::BOD_DCDC_INT_STATUS>;
+#[doc = "Register `BOD_DCDC_INT_STATUS` reader"]
+pub struct R(crate::R<BOD_DCDC_INT_STATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<BOD_DCDC_INT_STATUS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<BOD_DCDC_INT_STATUS_SPEC>> for R {
+    fn from(reader: crate::R<BOD_DCDC_INT_STATUS_SPEC>) -> Self {
+        R(reader)
+    }
+}
 #[doc = "BOD VBAT Interrupt status before Interrupt Enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BODVBAT_STATUS_A {
@@ -14,9 +26,12 @@ impl From<BODVBAT_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BODVBAT_STATUS`"]
-pub type BODVBAT_STATUS_R = crate::R<bool, BODVBAT_STATUS_A>;
+#[doc = "Field `BODVBAT_STATUS` reader - BOD VBAT Interrupt status before Interrupt Enable."]
+pub struct BODVBAT_STATUS_R(crate::FieldReader<bool, BODVBAT_STATUS_A>);
 impl BODVBAT_STATUS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BODVBAT_STATUS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BODVBAT_STATUS_A {
@@ -28,12 +43,19 @@ impl BODVBAT_STATUS_R {
     #[doc = "Checks if the value of the field is `NOT_PENDING`"]
     #[inline(always)]
     pub fn is_not_pending(&self) -> bool {
-        *self == BODVBAT_STATUS_A::NOT_PENDING
+        **self == BODVBAT_STATUS_A::NOT_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        *self == BODVBAT_STATUS_A::PENDING
+        **self == BODVBAT_STATUS_A::PENDING
+    }
+}
+impl core::ops::Deref for BODVBAT_STATUS_R {
+    type Target = crate::FieldReader<bool, BODVBAT_STATUS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "BOD VBAT Interrupt status after Interrupt Enable.\n\nValue on reset: 0"]
@@ -50,9 +72,12 @@ impl From<BODVBAT_INT_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BODVBAT_INT_STATUS`"]
-pub type BODVBAT_INT_STATUS_R = crate::R<bool, BODVBAT_INT_STATUS_A>;
+#[doc = "Field `BODVBAT_INT_STATUS` reader - BOD VBAT Interrupt status after Interrupt Enable."]
+pub struct BODVBAT_INT_STATUS_R(crate::FieldReader<bool, BODVBAT_INT_STATUS_A>);
 impl BODVBAT_INT_STATUS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BODVBAT_INT_STATUS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BODVBAT_INT_STATUS_A {
@@ -64,12 +89,19 @@ impl BODVBAT_INT_STATUS_R {
     #[doc = "Checks if the value of the field is `NOT_PENDING`"]
     #[inline(always)]
     pub fn is_not_pending(&self) -> bool {
-        *self == BODVBAT_INT_STATUS_A::NOT_PENDING
+        **self == BODVBAT_INT_STATUS_A::NOT_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        *self == BODVBAT_INT_STATUS_A::PENDING
+        **self == BODVBAT_INT_STATUS_A::PENDING
+    }
+}
+impl core::ops::Deref for BODVBAT_INT_STATUS_R {
+    type Target = crate::FieldReader<bool, BODVBAT_INT_STATUS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Current value of BOD VBAT power status output.\n\nValue on reset: 1"]
@@ -86,9 +118,12 @@ impl From<BODVBAT_VAL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BODVBAT_VAL`"]
-pub type BODVBAT_VAL_R = crate::R<bool, BODVBAT_VAL_A>;
+#[doc = "Field `BODVBAT_VAL` reader - Current value of BOD VBAT power status output."]
+pub struct BODVBAT_VAL_R(crate::FieldReader<bool, BODVBAT_VAL_A>);
 impl BODVBAT_VAL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BODVBAT_VAL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BODVBAT_VAL_A {
@@ -100,12 +135,19 @@ impl BODVBAT_VAL_R {
     #[doc = "Checks if the value of the field is `NOT_OK`"]
     #[inline(always)]
     pub fn is_not_ok(&self) -> bool {
-        *self == BODVBAT_VAL_A::NOT_OK
+        **self == BODVBAT_VAL_A::NOT_OK
     }
     #[doc = "Checks if the value of the field is `OK`"]
     #[inline(always)]
     pub fn is_ok(&self) -> bool {
-        *self == BODVBAT_VAL_A::OK
+        **self == BODVBAT_VAL_A::OK
+    }
+}
+impl core::ops::Deref for BODVBAT_VAL_R {
+    type Target = crate::FieldReader<bool, BODVBAT_VAL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "BOD CORE Interrupt status before Interrupt Enable.\n\nValue on reset: 0"]
@@ -122,9 +164,12 @@ impl From<BODCORE_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BODCORE_STATUS`"]
-pub type BODCORE_STATUS_R = crate::R<bool, BODCORE_STATUS_A>;
+#[doc = "Field `BODCORE_STATUS` reader - BOD CORE Interrupt status before Interrupt Enable."]
+pub struct BODCORE_STATUS_R(crate::FieldReader<bool, BODCORE_STATUS_A>);
 impl BODCORE_STATUS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BODCORE_STATUS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BODCORE_STATUS_A {
@@ -136,12 +181,19 @@ impl BODCORE_STATUS_R {
     #[doc = "Checks if the value of the field is `NOT_PENDING`"]
     #[inline(always)]
     pub fn is_not_pending(&self) -> bool {
-        *self == BODCORE_STATUS_A::NOT_PENDING
+        **self == BODCORE_STATUS_A::NOT_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        *self == BODCORE_STATUS_A::PENDING
+        **self == BODCORE_STATUS_A::PENDING
+    }
+}
+impl core::ops::Deref for BODCORE_STATUS_R {
+    type Target = crate::FieldReader<bool, BODCORE_STATUS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "BOD CORE Interrupt status after Interrupt Enable.\n\nValue on reset: 0"]
@@ -158,9 +210,12 @@ impl From<BODCORE_INT_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BODCORE_INT_STATUS`"]
-pub type BODCORE_INT_STATUS_R = crate::R<bool, BODCORE_INT_STATUS_A>;
+#[doc = "Field `BODCORE_INT_STATUS` reader - BOD CORE Interrupt status after Interrupt Enable."]
+pub struct BODCORE_INT_STATUS_R(crate::FieldReader<bool, BODCORE_INT_STATUS_A>);
 impl BODCORE_INT_STATUS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BODCORE_INT_STATUS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BODCORE_INT_STATUS_A {
@@ -172,12 +227,19 @@ impl BODCORE_INT_STATUS_R {
     #[doc = "Checks if the value of the field is `NOT_PENDING`"]
     #[inline(always)]
     pub fn is_not_pending(&self) -> bool {
-        *self == BODCORE_INT_STATUS_A::NOT_PENDING
+        **self == BODCORE_INT_STATUS_A::NOT_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        *self == BODCORE_INT_STATUS_A::PENDING
+        **self == BODCORE_INT_STATUS_A::PENDING
+    }
+}
+impl core::ops::Deref for BODCORE_INT_STATUS_R {
+    type Target = crate::FieldReader<bool, BODCORE_INT_STATUS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Current value of BOD CORE power status output.\n\nValue on reset: 0"]
@@ -194,9 +256,12 @@ impl From<BODCORE_VAL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `BODCORE_VAL`"]
-pub type BODCORE_VAL_R = crate::R<bool, BODCORE_VAL_A>;
+#[doc = "Field `BODCORE_VAL` reader - Current value of BOD CORE power status output."]
+pub struct BODCORE_VAL_R(crate::FieldReader<bool, BODCORE_VAL_A>);
 impl BODCORE_VAL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        BODCORE_VAL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BODCORE_VAL_A {
@@ -208,12 +273,19 @@ impl BODCORE_VAL_R {
     #[doc = "Checks if the value of the field is `NOT_OK`"]
     #[inline(always)]
     pub fn is_not_ok(&self) -> bool {
-        *self == BODCORE_VAL_A::NOT_OK
+        **self == BODCORE_VAL_A::NOT_OK
     }
     #[doc = "Checks if the value of the field is `OK`"]
     #[inline(always)]
     pub fn is_ok(&self) -> bool {
-        *self == BODCORE_VAL_A::OK
+        **self == BODCORE_VAL_A::OK
+    }
+}
+impl core::ops::Deref for BODCORE_VAL_R {
+    type Target = crate::FieldReader<bool, BODCORE_VAL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "DCDC Interrupt status before Interrupt Enable.\n\nValue on reset: 0"]
@@ -230,9 +302,12 @@ impl From<DCDC_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCDC_STATUS`"]
-pub type DCDC_STATUS_R = crate::R<bool, DCDC_STATUS_A>;
+#[doc = "Field `DCDC_STATUS` reader - DCDC Interrupt status before Interrupt Enable."]
+pub struct DCDC_STATUS_R(crate::FieldReader<bool, DCDC_STATUS_A>);
 impl DCDC_STATUS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DCDC_STATUS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCDC_STATUS_A {
@@ -244,12 +319,19 @@ impl DCDC_STATUS_R {
     #[doc = "Checks if the value of the field is `NOT_PENDING`"]
     #[inline(always)]
     pub fn is_not_pending(&self) -> bool {
-        *self == DCDC_STATUS_A::NOT_PENDING
+        **self == DCDC_STATUS_A::NOT_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        *self == DCDC_STATUS_A::PENDING
+        **self == DCDC_STATUS_A::PENDING
+    }
+}
+impl core::ops::Deref for DCDC_STATUS_R {
+    type Target = crate::FieldReader<bool, DCDC_STATUS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "DCDC Interrupt status after Interrupt Enable.\n\nValue on reset: 0"]
@@ -266,9 +348,12 @@ impl From<DCDC_INT_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCDC_INT_STATUS`"]
-pub type DCDC_INT_STATUS_R = crate::R<bool, DCDC_INT_STATUS_A>;
+#[doc = "Field `DCDC_INT_STATUS` reader - DCDC Interrupt status after Interrupt Enable."]
+pub struct DCDC_INT_STATUS_R(crate::FieldReader<bool, DCDC_INT_STATUS_A>);
 impl DCDC_INT_STATUS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DCDC_INT_STATUS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCDC_INT_STATUS_A {
@@ -280,12 +365,19 @@ impl DCDC_INT_STATUS_R {
     #[doc = "Checks if the value of the field is `NOT_PENDING`"]
     #[inline(always)]
     pub fn is_not_pending(&self) -> bool {
-        *self == DCDC_INT_STATUS_A::NOT_PENDING
+        **self == DCDC_INT_STATUS_A::NOT_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        *self == DCDC_INT_STATUS_A::PENDING
+        **self == DCDC_INT_STATUS_A::PENDING
+    }
+}
+impl core::ops::Deref for DCDC_INT_STATUS_R {
+    type Target = crate::FieldReader<bool, DCDC_INT_STATUS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Current value of DCDC power status output.\n\nValue on reset: 1"]
@@ -302,9 +394,12 @@ impl From<DCDC_VAL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DCDC_VAL`"]
-pub type DCDC_VAL_R = crate::R<bool, DCDC_VAL_A>;
+#[doc = "Field `DCDC_VAL` reader - Current value of DCDC power status output."]
+pub struct DCDC_VAL_R(crate::FieldReader<bool, DCDC_VAL_A>);
 impl DCDC_VAL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DCDC_VAL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCDC_VAL_A {
@@ -316,12 +411,19 @@ impl DCDC_VAL_R {
     #[doc = "Checks if the value of the field is `NOT_OK`"]
     #[inline(always)]
     pub fn is_not_ok(&self) -> bool {
-        *self == DCDC_VAL_A::NOT_OK
+        **self == DCDC_VAL_A::NOT_OK
     }
     #[doc = "Checks if the value of the field is `OK`"]
     #[inline(always)]
     pub fn is_ok(&self) -> bool {
-        *self == DCDC_VAL_A::OK
+        **self == DCDC_VAL_A::OK
+    }
+}
+impl core::ops::Deref for DCDC_VAL_R {
+    type Target = crate::FieldReader<bool, DCDC_VAL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -369,5 +471,21 @@ impl R {
     #[inline(always)]
     pub fn dcdc_val(&self) -> DCDC_VAL_R {
         DCDC_VAL_R::new(((self.bits >> 8) & 0x01) != 0)
+    }
+}
+#[doc = "BoDs & DCDC interrupts status register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bod_dcdc_int_status](index.html) module"]
+pub struct BOD_DCDC_INT_STATUS_SPEC;
+impl crate::RegisterSpec for BOD_DCDC_INT_STATUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [bod_dcdc_int_status::R](R) reader structure"]
+impl crate::Readable for BOD_DCDC_INT_STATUS_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets BOD_DCDC_INT_STATUS to value 0x0104"]
+impl crate::Resettable for BOD_DCDC_INT_STATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0104
     }
 }

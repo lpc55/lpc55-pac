@@ -1,20 +1,66 @@
-#[doc = "Reader of register BASE_ADDR2"]
-pub type R = crate::R<u32, super::BASE_ADDR2>;
-#[doc = "Writer for register BASE_ADDR2"]
-pub type W = crate::W<u32, super::BASE_ADDR2>;
-#[doc = "Register BASE_ADDR2 `reset()`'s with value 0x0008_0000"]
-impl crate::ResetValue for super::BASE_ADDR2 {
-    type Type = u32;
+#[doc = "Register `BASE_ADDR2` reader"]
+pub struct R(crate::R<BASE_ADDR2_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<BASE_ADDR2_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0008_0000
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ADDR_FIXED`"]
-pub type ADDR_FIXED_R = crate::R<u32, u32>;
-#[doc = "Reader of field `ADDR_PRG`"]
-pub type ADDR_PRG_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `ADDR_PRG`"]
+impl core::convert::From<crate::R<BASE_ADDR2_SPEC>> for R {
+    fn from(reader: crate::R<BASE_ADDR2_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `BASE_ADDR2` writer"]
+pub struct W(crate::W<BASE_ADDR2_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<BASE_ADDR2_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<BASE_ADDR2_SPEC>> for W {
+    fn from(writer: crate::W<BASE_ADDR2_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ADDR_FIXED` reader - Fixed portion of the base address of region 2."]
+pub struct ADDR_FIXED_R(crate::FieldReader<u32, u32>);
+impl ADDR_FIXED_R {
+    pub(crate) fn new(bits: u32) -> Self {
+        ADDR_FIXED_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADDR_FIXED_R {
+    type Target = crate::FieldReader<u32, u32>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADDR_PRG` reader - Programmable portion of the base address of region 2."]
+pub struct ADDR_PRG_R(crate::FieldReader<u8, u8>);
+impl ADDR_PRG_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ADDR_PRG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ADDR_PRG_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ADDR_PRG` writer - Programmable portion of the base address of region 2."]
 pub struct ADDR_PRG_W<'a> {
     w: &'a mut W,
 }
@@ -22,7 +68,7 @@ impl<'a> ADDR_PRG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 18)) | (((value as u32) & 0x03) << 18);
+        self.w.bits = (self.w.bits & !(0x03 << 18)) | ((value as u32 & 0x03) << 18);
         self.w
     }
 }
@@ -43,5 +89,30 @@ impl W {
     #[inline(always)]
     pub fn addr_prg(&mut self) -> ADDR_PRG_W {
         ADDR_PRG_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Base Address for region 2 register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [base_addr2](index.html) module"]
+pub struct BASE_ADDR2_SPEC;
+impl crate::RegisterSpec for BASE_ADDR2_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [base_addr2::R](R) reader structure"]
+impl crate::Readable for BASE_ADDR2_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [base_addr2::W](W) writer structure"]
+impl crate::Writable for BASE_ADDR2_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets BASE_ADDR2 to value 0x0008_0000"]
+impl crate::Resettable for BASE_ADDR2_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0008_0000
     }
 }

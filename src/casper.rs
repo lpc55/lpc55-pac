@@ -2,240 +2,114 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Contains the offsets of AB and CD in the RAM."]
-    pub ctrl0: CTRL0,
+    pub ctrl0: crate::Reg<ctrl0::CTRL0_SPEC>,
     #[doc = "0x04 - Contains the opcode mode, iteration count, and result offset (in RAM) and also launches the accelerator. Note: with CP version: CTRL0 and CRTL1 can be written in one go with MCRR."]
-    pub ctrl1: CTRL1,
+    pub ctrl1: crate::Reg<ctrl1::CTRL1_SPEC>,
     #[doc = "0x08 - Contains an optional loader to load into CTRL0/1 in steps to perform a set of operations."]
-    pub loader: LOADER,
+    pub loader: crate::Reg<loader::LOADER_SPEC>,
     #[doc = "0x0c - Indicates operational status and would contain the carry bit if used."]
-    pub status: STATUS,
+    pub status: crate::Reg<status::STATUS_SPEC>,
     #[doc = "0x10 - Sets interrupts"]
-    pub intenset: INTENSET,
+    pub intenset: crate::Reg<intenset::INTENSET_SPEC>,
     #[doc = "0x14 - Clears interrupts"]
-    pub intenclr: INTENCLR,
+    pub intenclr: crate::Reg<intenclr::INTENCLR_SPEC>,
     #[doc = "0x18 - Interrupt status bits (mask of INTENSET and STATUS)"]
-    pub intstat: INTSTAT,
+    pub intstat: crate::Reg<intstat::INTSTAT_SPEC>,
     _reserved7: [u8; 4usize],
     #[doc = "0x20 - A register"]
-    pub areg: AREG,
+    pub areg: crate::Reg<areg::AREG_SPEC>,
     #[doc = "0x24 - B register"]
-    pub breg: BREG,
+    pub breg: crate::Reg<breg::BREG_SPEC>,
     #[doc = "0x28 - C register"]
-    pub creg: CREG,
+    pub creg: crate::Reg<creg::CREG_SPEC>,
     #[doc = "0x2c - D register"]
-    pub dreg: DREG,
+    pub dreg: crate::Reg<dreg::DREG_SPEC>,
     #[doc = "0x30 - Result register 0"]
-    pub res0: RES0,
+    pub res0: crate::Reg<res0::RES0_SPEC>,
     #[doc = "0x34 - Result register 1"]
-    pub res1: RES1,
+    pub res1: crate::Reg<res1::RES1_SPEC>,
     #[doc = "0x38 - Result register 2"]
-    pub res2: RES2,
+    pub res2: crate::Reg<res2::RES2_SPEC>,
     #[doc = "0x3c - Result register 3"]
-    pub res3: RES3,
+    pub res3: crate::Reg<res3::RES3_SPEC>,
     _reserved15: [u8; 32usize],
     #[doc = "0x60 - Optional mask register"]
-    pub mask: MASK,
+    pub mask: crate::Reg<mask::MASK_SPEC>,
     #[doc = "0x64 - Optional re-mask register"]
-    pub remask: REMASK,
+    pub remask: crate::Reg<remask::REMASK_SPEC>,
     _reserved17: [u8; 24usize],
     #[doc = "0x80 - Security lock register"]
-    pub lock: LOCK,
+    pub lock: crate::Reg<lock::LOCK_SPEC>,
 }
-#[doc = "Contains the offsets of AB and CD in the RAM.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl0](ctrl0) module"]
-pub type CTRL0 = crate::Reg<u32, _CTRL0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CTRL0;
-#[doc = "`read()` method returns [ctrl0::R](ctrl0::R) reader structure"]
-impl crate::Readable for CTRL0 {}
-#[doc = "`write(|w| ..)` method takes [ctrl0::W](ctrl0::W) writer structure"]
-impl crate::Writable for CTRL0 {}
+#[doc = "CTRL0 register accessor: an alias for `Reg<CTRL0_SPEC>`"]
+pub type CTRL0 = crate::Reg<ctrl0::CTRL0_SPEC>;
 #[doc = "Contains the offsets of AB and CD in the RAM."]
 pub mod ctrl0;
-#[doc = "Contains the opcode mode, iteration count, and result offset (in RAM) and also launches the accelerator. Note: with CP version: CTRL0 and CRTL1 can be written in one go with MCRR.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl1](ctrl1) module"]
-pub type CTRL1 = crate::Reg<u32, _CTRL1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CTRL1;
-#[doc = "`read()` method returns [ctrl1::R](ctrl1::R) reader structure"]
-impl crate::Readable for CTRL1 {}
-#[doc = "`write(|w| ..)` method takes [ctrl1::W](ctrl1::W) writer structure"]
-impl crate::Writable for CTRL1 {}
+#[doc = "CTRL1 register accessor: an alias for `Reg<CTRL1_SPEC>`"]
+pub type CTRL1 = crate::Reg<ctrl1::CTRL1_SPEC>;
 #[doc = "Contains the opcode mode, iteration count, and result offset (in RAM) and also launches the accelerator. Note: with CP version: CTRL0 and CRTL1 can be written in one go with MCRR."]
 pub mod ctrl1;
-#[doc = "Contains an optional loader to load into CTRL0/1 in steps to perform a set of operations.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [loader](loader) module"]
-pub type LOADER = crate::Reg<u32, _LOADER>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _LOADER;
-#[doc = "`read()` method returns [loader::R](loader::R) reader structure"]
-impl crate::Readable for LOADER {}
-#[doc = "`write(|w| ..)` method takes [loader::W](loader::W) writer structure"]
-impl crate::Writable for LOADER {}
+#[doc = "LOADER register accessor: an alias for `Reg<LOADER_SPEC>`"]
+pub type LOADER = crate::Reg<loader::LOADER_SPEC>;
 #[doc = "Contains an optional loader to load into CTRL0/1 in steps to perform a set of operations."]
 pub mod loader;
-#[doc = "Indicates operational status and would contain the carry bit if used.\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](status) module"]
-pub type STATUS = crate::Reg<u32, _STATUS>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _STATUS;
-#[doc = "`read()` method returns [status::R](status::R) reader structure"]
-impl crate::Readable for STATUS {}
-#[doc = "`write(|w| ..)` method takes [status::W](status::W) writer structure"]
-impl crate::Writable for STATUS {}
+#[doc = "STATUS register accessor: an alias for `Reg<STATUS_SPEC>`"]
+pub type STATUS = crate::Reg<status::STATUS_SPEC>;
 #[doc = "Indicates operational status and would contain the carry bit if used."]
 pub mod status;
-#[doc = "Sets interrupts\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intenset](intenset) module"]
-pub type INTENSET = crate::Reg<u32, _INTENSET>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _INTENSET;
-#[doc = "`read()` method returns [intenset::R](intenset::R) reader structure"]
-impl crate::Readable for INTENSET {}
-#[doc = "`write(|w| ..)` method takes [intenset::W](intenset::W) writer structure"]
-impl crate::Writable for INTENSET {}
+#[doc = "INTENSET register accessor: an alias for `Reg<INTENSET_SPEC>`"]
+pub type INTENSET = crate::Reg<intenset::INTENSET_SPEC>;
 #[doc = "Sets interrupts"]
 pub mod intenset;
-#[doc = "Clears interrupts\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intenclr](intenclr) module"]
-pub type INTENCLR = crate::Reg<u32, _INTENCLR>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _INTENCLR;
-#[doc = "`read()` method returns [intenclr::R](intenclr::R) reader structure"]
-impl crate::Readable for INTENCLR {}
-#[doc = "`write(|w| ..)` method takes [intenclr::W](intenclr::W) writer structure"]
-impl crate::Writable for INTENCLR {}
+#[doc = "INTENCLR register accessor: an alias for `Reg<INTENCLR_SPEC>`"]
+pub type INTENCLR = crate::Reg<intenclr::INTENCLR_SPEC>;
 #[doc = "Clears interrupts"]
 pub mod intenclr;
-#[doc = "Interrupt status bits (mask of INTENSET and STATUS)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intstat](intstat) module"]
-pub type INTSTAT = crate::Reg<u32, _INTSTAT>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _INTSTAT;
-#[doc = "`read()` method returns [intstat::R](intstat::R) reader structure"]
-impl crate::Readable for INTSTAT {}
-#[doc = "`write(|w| ..)` method takes [intstat::W](intstat::W) writer structure"]
-impl crate::Writable for INTSTAT {}
+#[doc = "INTSTAT register accessor: an alias for `Reg<INTSTAT_SPEC>`"]
+pub type INTSTAT = crate::Reg<intstat::INTSTAT_SPEC>;
 #[doc = "Interrupt status bits (mask of INTENSET and STATUS)"]
 pub mod intstat;
-#[doc = "A register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [areg](areg) module"]
-pub type AREG = crate::Reg<u32, _AREG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _AREG;
-#[doc = "`read()` method returns [areg::R](areg::R) reader structure"]
-impl crate::Readable for AREG {}
-#[doc = "`write(|w| ..)` method takes [areg::W](areg::W) writer structure"]
-impl crate::Writable for AREG {}
+#[doc = "AREG register accessor: an alias for `Reg<AREG_SPEC>`"]
+pub type AREG = crate::Reg<areg::AREG_SPEC>;
 #[doc = "A register"]
 pub mod areg;
-#[doc = "B register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [breg](breg) module"]
-pub type BREG = crate::Reg<u32, _BREG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _BREG;
-#[doc = "`read()` method returns [breg::R](breg::R) reader structure"]
-impl crate::Readable for BREG {}
-#[doc = "`write(|w| ..)` method takes [breg::W](breg::W) writer structure"]
-impl crate::Writable for BREG {}
+#[doc = "BREG register accessor: an alias for `Reg<BREG_SPEC>`"]
+pub type BREG = crate::Reg<breg::BREG_SPEC>;
 #[doc = "B register"]
 pub mod breg;
-#[doc = "C register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [creg](creg) module"]
-pub type CREG = crate::Reg<u32, _CREG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _CREG;
-#[doc = "`read()` method returns [creg::R](creg::R) reader structure"]
-impl crate::Readable for CREG {}
-#[doc = "`write(|w| ..)` method takes [creg::W](creg::W) writer structure"]
-impl crate::Writable for CREG {}
+#[doc = "CREG register accessor: an alias for `Reg<CREG_SPEC>`"]
+pub type CREG = crate::Reg<creg::CREG_SPEC>;
 #[doc = "C register"]
 pub mod creg;
-#[doc = "D register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dreg](dreg) module"]
-pub type DREG = crate::Reg<u32, _DREG>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _DREG;
-#[doc = "`read()` method returns [dreg::R](dreg::R) reader structure"]
-impl crate::Readable for DREG {}
-#[doc = "`write(|w| ..)` method takes [dreg::W](dreg::W) writer structure"]
-impl crate::Writable for DREG {}
+#[doc = "DREG register accessor: an alias for `Reg<DREG_SPEC>`"]
+pub type DREG = crate::Reg<dreg::DREG_SPEC>;
 #[doc = "D register"]
 pub mod dreg;
-#[doc = "Result register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [res0](res0) module"]
-pub type RES0 = crate::Reg<u32, _RES0>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _RES0;
-#[doc = "`read()` method returns [res0::R](res0::R) reader structure"]
-impl crate::Readable for RES0 {}
-#[doc = "`write(|w| ..)` method takes [res0::W](res0::W) writer structure"]
-impl crate::Writable for RES0 {}
+#[doc = "RES0 register accessor: an alias for `Reg<RES0_SPEC>`"]
+pub type RES0 = crate::Reg<res0::RES0_SPEC>;
 #[doc = "Result register 0"]
 pub mod res0;
-#[doc = "Result register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [res1](res1) module"]
-pub type RES1 = crate::Reg<u32, _RES1>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _RES1;
-#[doc = "`read()` method returns [res1::R](res1::R) reader structure"]
-impl crate::Readable for RES1 {}
-#[doc = "`write(|w| ..)` method takes [res1::W](res1::W) writer structure"]
-impl crate::Writable for RES1 {}
+#[doc = "RES1 register accessor: an alias for `Reg<RES1_SPEC>`"]
+pub type RES1 = crate::Reg<res1::RES1_SPEC>;
 #[doc = "Result register 1"]
 pub mod res1;
-#[doc = "Result register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [res2](res2) module"]
-pub type RES2 = crate::Reg<u32, _RES2>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _RES2;
-#[doc = "`read()` method returns [res2::R](res2::R) reader structure"]
-impl crate::Readable for RES2 {}
-#[doc = "`write(|w| ..)` method takes [res2::W](res2::W) writer structure"]
-impl crate::Writable for RES2 {}
+#[doc = "RES2 register accessor: an alias for `Reg<RES2_SPEC>`"]
+pub type RES2 = crate::Reg<res2::RES2_SPEC>;
 #[doc = "Result register 2"]
 pub mod res2;
-#[doc = "Result register 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [res3](res3) module"]
-pub type RES3 = crate::Reg<u32, _RES3>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _RES3;
-#[doc = "`read()` method returns [res3::R](res3::R) reader structure"]
-impl crate::Readable for RES3 {}
-#[doc = "`write(|w| ..)` method takes [res3::W](res3::W) writer structure"]
-impl crate::Writable for RES3 {}
+#[doc = "RES3 register accessor: an alias for `Reg<RES3_SPEC>`"]
+pub type RES3 = crate::Reg<res3::RES3_SPEC>;
 #[doc = "Result register 3"]
 pub mod res3;
-#[doc = "Optional mask register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mask](mask) module"]
-pub type MASK = crate::Reg<u32, _MASK>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _MASK;
-#[doc = "`read()` method returns [mask::R](mask::R) reader structure"]
-impl crate::Readable for MASK {}
-#[doc = "`write(|w| ..)` method takes [mask::W](mask::W) writer structure"]
-impl crate::Writable for MASK {}
+#[doc = "MASK register accessor: an alias for `Reg<MASK_SPEC>`"]
+pub type MASK = crate::Reg<mask::MASK_SPEC>;
 #[doc = "Optional mask register"]
 pub mod mask;
-#[doc = "Optional re-mask register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [remask](remask) module"]
-pub type REMASK = crate::Reg<u32, _REMASK>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _REMASK;
-#[doc = "`read()` method returns [remask::R](remask::R) reader structure"]
-impl crate::Readable for REMASK {}
-#[doc = "`write(|w| ..)` method takes [remask::W](remask::W) writer structure"]
-impl crate::Writable for REMASK {}
+#[doc = "REMASK register accessor: an alias for `Reg<REMASK_SPEC>`"]
+pub type REMASK = crate::Reg<remask::REMASK_SPEC>;
 #[doc = "Optional re-mask register"]
 pub mod remask;
-#[doc = "Security lock register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lock](lock) module"]
-pub type LOCK = crate::Reg<u32, _LOCK>;
-#[allow(missing_docs)]
-#[doc(hidden)]
-pub struct _LOCK;
-#[doc = "`read()` method returns [lock::R](lock::R) reader structure"]
-impl crate::Readable for LOCK {}
-#[doc = "`write(|w| ..)` method takes [lock::W](lock::W) writer structure"]
-impl crate::Writable for LOCK {}
+#[doc = "LOCK register accessor: an alias for `Reg<LOCK_SPEC>`"]
+pub type LOCK = crate::Reg<lock::LOCK_SPEC>;
 #[doc = "Security lock register"]
 pub mod lock;

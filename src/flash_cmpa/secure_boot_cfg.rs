@@ -1,18 +1,52 @@
-#[doc = "Reader of register SECURE_BOOT_CFG"]
-pub type R = crate::R<u32, super::SECURE_BOOT_CFG>;
-#[doc = "Writer for register SECURE_BOOT_CFG"]
-pub type W = crate::W<u32, super::SECURE_BOOT_CFG>;
-#[doc = "Register SECURE_BOOT_CFG `reset()`'s with value 0"]
-impl crate::ResetValue for super::SECURE_BOOT_CFG {
-    type Type = u32;
+#[doc = "Register `SECURE_BOOT_CFG` reader"]
+pub struct R(crate::R<SECURE_BOOT_CFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SECURE_BOOT_CFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `RSA4K`"]
-pub type RSA4K_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `RSA4K`"]
+impl core::convert::From<crate::R<SECURE_BOOT_CFG_SPEC>> for R {
+    fn from(reader: crate::R<SECURE_BOOT_CFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SECURE_BOOT_CFG` writer"]
+pub struct W(crate::W<SECURE_BOOT_CFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SECURE_BOOT_CFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<SECURE_BOOT_CFG_SPEC>> for W {
+    fn from(writer: crate::W<SECURE_BOOT_CFG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `RSA4K` reader - Use RSA4096 keys only. 00- RSA2048 keys 01, 10, 11 - RSA4096 keys"]
+pub struct RSA4K_R(crate::FieldReader<u8, u8>);
+impl RSA4K_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        RSA4K_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for RSA4K_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RSA4K` writer - Use RSA4096 keys only. 00- RSA2048 keys 01, 10, 11 - RSA4096 keys"]
 pub struct RSA4K_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +54,25 @@ impl<'a> RSA4K_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
-#[doc = "Reader of field `DICE_ENC_NXP_CFG`"]
-pub type DICE_ENC_NXP_CFG_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DICE_ENC_NXP_CFG`"]
+#[doc = "Field `DICE_ENC_NXP_CFG` reader - Include NXP area in DICE computation. 00 - not included 01, 10, 11 - included"]
+pub struct DICE_ENC_NXP_CFG_R(crate::FieldReader<u8, u8>);
+impl DICE_ENC_NXP_CFG_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DICE_ENC_NXP_CFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DICE_ENC_NXP_CFG_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DICE_ENC_NXP_CFG` writer - Include NXP area in DICE computation. 00 - not included 01, 10, 11 - included"]
 pub struct DICE_ENC_NXP_CFG_W<'a> {
     w: &'a mut W,
 }
@@ -34,13 +80,25 @@ impl<'a> DICE_ENC_NXP_CFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `DICE_CUST_CFG`"]
-pub type DICE_CUST_CFG_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DICE_CUST_CFG`"]
+#[doc = "Field `DICE_CUST_CFG` reader - Include Customer factory area (including keys) in DICE computation. 00 - not included 01, 10, 11 - included"]
+pub struct DICE_CUST_CFG_R(crate::FieldReader<u8, u8>);
+impl DICE_CUST_CFG_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DICE_CUST_CFG_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DICE_CUST_CFG_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DICE_CUST_CFG` writer - Include Customer factory area (including keys) in DICE computation. 00 - not included 01, 10, 11 - included"]
 pub struct DICE_CUST_CFG_W<'a> {
     w: &'a mut W,
 }
@@ -48,13 +106,25 @@ impl<'a> DICE_CUST_CFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `SKIP_DICE`"]
-pub type SKIP_DICE_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SKIP_DICE`"]
+#[doc = "Field `SKIP_DICE` reader - Skip DICE computation. 00 - Enable DICE 01,10,11 - Disable DICE"]
+pub struct SKIP_DICE_R(crate::FieldReader<u8, u8>);
+impl SKIP_DICE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SKIP_DICE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SKIP_DICE_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SKIP_DICE` writer - Skip DICE computation. 00 - Enable DICE 01,10,11 - Disable DICE"]
 pub struct SKIP_DICE_W<'a> {
     w: &'a mut W,
 }
@@ -62,13 +132,25 @@ impl<'a> SKIP_DICE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `TZM_IMAGE_TYPE`"]
-pub type TZM_IMAGE_TYPE_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TZM_IMAGE_TYPE`"]
+#[doc = "Field `TZM_IMAGE_TYPE` reader - TrustZone-M mode. 00 - TZM mode in image header. 01 - Disable TZ-M. Boots to NonSecure. 10 - TZ-M enable boots to secure mode. 11 - Preset TZM checker from image header."]
+pub struct TZM_IMAGE_TYPE_R(crate::FieldReader<u8, u8>);
+impl TZM_IMAGE_TYPE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TZM_IMAGE_TYPE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TZM_IMAGE_TYPE_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TZM_IMAGE_TYPE` writer - TrustZone-M mode. 00 - TZM mode in image header. 01 - Disable TZ-M. Boots to NonSecure. 10 - TZ-M enable boots to secure mode. 11 - Preset TZM checker from image header."]
 pub struct TZM_IMAGE_TYPE_W<'a> {
     w: &'a mut W,
 }
@@ -76,13 +158,25 @@ impl<'a> TZM_IMAGE_TYPE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `BLOCK_SET_KEY`"]
-pub type BLOCK_SET_KEY_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `BLOCK_SET_KEY`"]
+#[doc = "Field `BLOCK_SET_KEY` reader - Block PUF key code generation. 00 - Enable Key code generation 01, 10, 11 - Disable key code generation"]
+pub struct BLOCK_SET_KEY_R(crate::FieldReader<u8, u8>);
+impl BLOCK_SET_KEY_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BLOCK_SET_KEY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BLOCK_SET_KEY_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BLOCK_SET_KEY` writer - Block PUF key code generation. 00 - Enable Key code generation 01, 10, 11 - Disable key code generation"]
 pub struct BLOCK_SET_KEY_W<'a> {
     w: &'a mut W,
 }
@@ -90,13 +184,25 @@ impl<'a> BLOCK_SET_KEY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `BLOCK_ENROLL`"]
-pub type BLOCK_ENROLL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `BLOCK_ENROLL`"]
+#[doc = "Field `BLOCK_ENROLL` reader - Block PUF enrollement. 00 - Enable enrollment mode 01, 10, 11 - Disable further enrollmnet"]
+pub struct BLOCK_ENROLL_R(crate::FieldReader<u8, u8>);
+impl BLOCK_ENROLL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        BLOCK_ENROLL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BLOCK_ENROLL_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BLOCK_ENROLL` writer - Block PUF enrollement. 00 - Enable enrollment mode 01, 10, 11 - Disable further enrollmnet"]
 pub struct BLOCK_ENROLL_W<'a> {
     w: &'a mut W,
 }
@@ -104,13 +210,25 @@ impl<'a> BLOCK_ENROLL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `DICE_INC_SEC_EPOCH`"]
-pub type DICE_INC_SEC_EPOCH_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DICE_INC_SEC_EPOCH`"]
+#[doc = "Field `DICE_INC_SEC_EPOCH` reader - Include security EPOCH in DICE"]
+pub struct DICE_INC_SEC_EPOCH_R(crate::FieldReader<u8, u8>);
+impl DICE_INC_SEC_EPOCH_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DICE_INC_SEC_EPOCH_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DICE_INC_SEC_EPOCH_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DICE_INC_SEC_EPOCH` writer - Include security EPOCH in DICE"]
 pub struct DICE_INC_SEC_EPOCH_W<'a> {
     w: &'a mut W,
 }
@@ -118,13 +236,25 @@ impl<'a> DICE_INC_SEC_EPOCH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | ((value as u32 & 0x03) << 14);
         self.w
     }
 }
-#[doc = "Reader of field `SEC_BOOT_EN`"]
-pub type SEC_BOOT_EN_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SEC_BOOT_EN`"]
+#[doc = "Field `SEC_BOOT_EN` reader - Secure boot enable. 00 - Plain image (internal flash with or without CRC) 01, 10, 11 - Boot signed images. (internal flash, RSA signed)"]
+pub struct SEC_BOOT_EN_R(crate::FieldReader<u8, u8>);
+impl SEC_BOOT_EN_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SEC_BOOT_EN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SEC_BOOT_EN_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SEC_BOOT_EN` writer - Secure boot enable. 00 - Plain image (internal flash with or without CRC) 01, 10, 11 - Boot signed images. (internal flash, RSA signed)"]
 pub struct SEC_BOOT_EN_W<'a> {
     w: &'a mut W,
 }
@@ -132,7 +262,7 @@ impl<'a> SEC_BOOT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 30)) | (((value as u32) & 0x03) << 30);
+        self.w.bits = (self.w.bits & !(0x03 << 30)) | ((value as u32 & 0x03) << 30);
         self.w
     }
 }
@@ -228,5 +358,30 @@ impl W {
     #[inline(always)]
     pub fn sec_boot_en(&mut self) -> SEC_BOOT_EN_W {
         SEC_BOOT_EN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = ".\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [secure_boot_cfg](index.html) module"]
+pub struct SECURE_BOOT_CFG_SPEC;
+impl crate::RegisterSpec for SECURE_BOOT_CFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [secure_boot_cfg::R](R) reader structure"]
+impl crate::Readable for SECURE_BOOT_CFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [secure_boot_cfg::W](W) writer structure"]
+impl crate::Writable for SECURE_BOOT_CFG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SECURE_BOOT_CFG to value 0"]
+impl crate::Resettable for SECURE_BOOT_CFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

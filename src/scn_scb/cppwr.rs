@@ -1,13 +1,35 @@
-#[doc = "Reader of register CPPWR"]
-pub type R = crate::R<u32, super::CPPWR>;
-#[doc = "Writer for register CPPWR"]
-pub type W = crate::W<u32, super::CPPWR>;
-#[doc = "Register CPPWR `reset()`'s with value 0"]
-impl crate::ResetValue for super::CPPWR {
-    type Type = u32;
+#[doc = "Register `CPPWR` reader"]
+pub struct R(crate::R<CPPWR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CPPWR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<CPPWR_SPEC>> for R {
+    fn from(reader: crate::R<CPPWR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CPPWR` writer"]
+pub struct W(crate::W<CPPWR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CPPWR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<CPPWR_SPEC>> for W {
+    fn from(writer: crate::W<CPPWR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "State UNKNOWN 0.\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<SU0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SU0`"]
-pub type SU0_R = crate::R<bool, SU0_A>;
+#[doc = "Field `SU0` reader - State UNKNOWN 0."]
+pub struct SU0_R(crate::FieldReader<bool, SU0_A>);
 impl SU0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SU0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SU0_A {
@@ -38,15 +63,22 @@ impl SU0_R {
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU0_A::UNKNOWN_NOT_PERMITTED
+        **self == SU0_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU0_A::UNKNOWN_PERMITTED
+        **self == SU0_A::UNKNOWN_PERMITTED
     }
 }
-#[doc = "Write proxy for field `SU0`"]
+impl core::ops::Deref for SU0_R {
+    type Target = crate::FieldReader<bool, SU0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SU0` writer - State UNKNOWN 0."]
 pub struct SU0_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> SU0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SU0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> SU0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<SUS0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SUS0`"]
-pub type SUS0_R = crate::R<bool, SUS0_A>;
+#[doc = "Field `SUS0` reader - State UNKNOWN Secure only 0."]
+pub struct SUS0_R(crate::FieldReader<bool, SUS0_A>);
 impl SUS0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SUS0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SUS0_A {
@@ -113,15 +146,22 @@ impl SUS0_R {
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
     #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS0_A::SECURE_AND_NON_SECURE
+        **self == SUS0_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
     #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS0_A::SECURE_ONLY
+        **self == SUS0_A::SECURE_ONLY
     }
 }
-#[doc = "Write proxy for field `SUS0`"]
+impl core::ops::Deref for SUS0_R {
+    type Target = crate::FieldReader<bool, SUS0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SUS0` writer - State UNKNOWN Secure only 0."]
 pub struct SUS0_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> SUS0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SUS0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The SU0 field is accessible from both Security states."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> SUS0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<SU1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SU1`"]
-pub type SU1_R = crate::R<bool, SU1_A>;
+#[doc = "Field `SU1` reader - State UNKNOWN 1."]
+pub struct SU1_R(crate::FieldReader<bool, SU1_A>);
 impl SU1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SU1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SU1_A {
@@ -188,15 +229,22 @@ impl SU1_R {
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU1_A::UNKNOWN_NOT_PERMITTED
+        **self == SU1_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU1_A::UNKNOWN_PERMITTED
+        **self == SU1_A::UNKNOWN_PERMITTED
     }
 }
-#[doc = "Write proxy for field `SU1`"]
+impl core::ops::Deref for SU1_R {
+    type Target = crate::FieldReader<bool, SU1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SU1` writer - State UNKNOWN 1."]
 pub struct SU1_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> SU1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SU1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> SU1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<SUS1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SUS1`"]
-pub type SUS1_R = crate::R<bool, SUS1_A>;
+#[doc = "Field `SUS1` reader - State UNKNOWN Secure only 1."]
+pub struct SUS1_R(crate::FieldReader<bool, SUS1_A>);
 impl SUS1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SUS1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SUS1_A {
@@ -263,15 +312,22 @@ impl SUS1_R {
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
     #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS1_A::SECURE_AND_NON_SECURE
+        **self == SUS1_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
     #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS1_A::SECURE_ONLY
+        **self == SUS1_A::SECURE_ONLY
     }
 }
-#[doc = "Write proxy for field `SUS1`"]
+impl core::ops::Deref for SUS1_R {
+    type Target = crate::FieldReader<bool, SUS1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SUS1` writer - State UNKNOWN Secure only 1."]
 pub struct SUS1_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> SUS1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SUS1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The SU7 field is accessible from both Security states."]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> SUS1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<SU2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SU2`"]
-pub type SU2_R = crate::R<bool, SU2_A>;
+#[doc = "Field `SU2` reader - State UNKNOWN 2."]
+pub struct SU2_R(crate::FieldReader<bool, SU2_A>);
 impl SU2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SU2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SU2_A {
@@ -338,15 +395,22 @@ impl SU2_R {
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU2_A::UNKNOWN_NOT_PERMITTED
+        **self == SU2_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU2_A::UNKNOWN_PERMITTED
+        **self == SU2_A::UNKNOWN_PERMITTED
     }
 }
-#[doc = "Write proxy for field `SU2`"]
+impl core::ops::Deref for SU2_R {
+    type Target = crate::FieldReader<bool, SU2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SU2` writer - State UNKNOWN 2."]
 pub struct SU2_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> SU2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SU2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> SU2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<SUS2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SUS2`"]
-pub type SUS2_R = crate::R<bool, SUS2_A>;
+#[doc = "Field `SUS2` reader - State UNKNOWN Secure only 2."]
+pub struct SUS2_R(crate::FieldReader<bool, SUS2_A>);
 impl SUS2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SUS2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SUS2_A {
@@ -413,15 +478,22 @@ impl SUS2_R {
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
     #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS2_A::SECURE_AND_NON_SECURE
+        **self == SUS2_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
     #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS2_A::SECURE_ONLY
+        **self == SUS2_A::SECURE_ONLY
     }
 }
-#[doc = "Write proxy for field `SUS2`"]
+impl core::ops::Deref for SUS2_R {
+    type Target = crate::FieldReader<bool, SUS2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SUS2` writer - State UNKNOWN Secure only 2."]
 pub struct SUS2_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> SUS2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SUS2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The SU2 field is accessible from both Security states."]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> SUS2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<SU3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SU3`"]
-pub type SU3_R = crate::R<bool, SU3_A>;
+#[doc = "Field `SU3` reader - State UNKNOWN 3."]
+pub struct SU3_R(crate::FieldReader<bool, SU3_A>);
 impl SU3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SU3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SU3_A {
@@ -488,15 +561,22 @@ impl SU3_R {
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU3_A::UNKNOWN_NOT_PERMITTED
+        **self == SU3_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU3_A::UNKNOWN_PERMITTED
+        **self == SU3_A::UNKNOWN_PERMITTED
     }
 }
-#[doc = "Write proxy for field `SU3`"]
+impl core::ops::Deref for SU3_R {
+    type Target = crate::FieldReader<bool, SU3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SU3` writer - State UNKNOWN 3."]
 pub struct SU3_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> SU3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SU3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> SU3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<SUS3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SUS3`"]
-pub type SUS3_R = crate::R<bool, SUS3_A>;
+#[doc = "Field `SUS3` reader - State UNKNOWN Secure only 3."]
+pub struct SUS3_R(crate::FieldReader<bool, SUS3_A>);
 impl SUS3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SUS3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SUS3_A {
@@ -563,15 +644,22 @@ impl SUS3_R {
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
     #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS3_A::SECURE_AND_NON_SECURE
+        **self == SUS3_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
     #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS3_A::SECURE_ONLY
+        **self == SUS3_A::SECURE_ONLY
     }
 }
-#[doc = "Write proxy for field `SUS3`"]
+impl core::ops::Deref for SUS3_R {
+    type Target = crate::FieldReader<bool, SUS3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SUS3` writer - State UNKNOWN Secure only 3."]
 pub struct SUS3_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +667,7 @@ impl<'a> SUS3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SUS3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The SU3 field is accessible from both Security states."]
     #[inline(always)]
@@ -606,7 +692,7 @@ impl<'a> SUS3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -624,9 +710,12 @@ impl From<SU4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SU4`"]
-pub type SU4_R = crate::R<bool, SU4_A>;
+#[doc = "Field `SU4` reader - State UNKNOWN 4."]
+pub struct SU4_R(crate::FieldReader<bool, SU4_A>);
 impl SU4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SU4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SU4_A {
@@ -638,15 +727,22 @@ impl SU4_R {
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU4_A::UNKNOWN_NOT_PERMITTED
+        **self == SU4_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU4_A::UNKNOWN_PERMITTED
+        **self == SU4_A::UNKNOWN_PERMITTED
     }
 }
-#[doc = "Write proxy for field `SU4`"]
+impl core::ops::Deref for SU4_R {
+    type Target = crate::FieldReader<bool, SU4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SU4` writer - State UNKNOWN 4."]
 pub struct SU4_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +750,7 @@ impl<'a> SU4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SU4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     #[inline(always)]
@@ -681,7 +775,7 @@ impl<'a> SU4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -699,9 +793,12 @@ impl From<SUS4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SUS4`"]
-pub type SUS4_R = crate::R<bool, SUS4_A>;
+#[doc = "Field `SUS4` reader - State UNKNOWN Secure only 4."]
+pub struct SUS4_R(crate::FieldReader<bool, SUS4_A>);
 impl SUS4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SUS4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SUS4_A {
@@ -713,15 +810,22 @@ impl SUS4_R {
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
     #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS4_A::SECURE_AND_NON_SECURE
+        **self == SUS4_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
     #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS4_A::SECURE_ONLY
+        **self == SUS4_A::SECURE_ONLY
     }
 }
-#[doc = "Write proxy for field `SUS4`"]
+impl core::ops::Deref for SUS4_R {
+    type Target = crate::FieldReader<bool, SUS4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SUS4` writer - State UNKNOWN Secure only 4."]
 pub struct SUS4_W<'a> {
     w: &'a mut W,
 }
@@ -729,9 +833,7 @@ impl<'a> SUS4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SUS4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The SU4 field is accessible from both Security states."]
     #[inline(always)]
@@ -756,7 +858,7 @@ impl<'a> SUS4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -774,9 +876,12 @@ impl From<SU5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SU5`"]
-pub type SU5_R = crate::R<bool, SU5_A>;
+#[doc = "Field `SU5` reader - State UNKNOWN 5."]
+pub struct SU5_R(crate::FieldReader<bool, SU5_A>);
 impl SU5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SU5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SU5_A {
@@ -788,15 +893,22 @@ impl SU5_R {
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU5_A::UNKNOWN_NOT_PERMITTED
+        **self == SU5_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU5_A::UNKNOWN_PERMITTED
+        **self == SU5_A::UNKNOWN_PERMITTED
     }
 }
-#[doc = "Write proxy for field `SU5`"]
+impl core::ops::Deref for SU5_R {
+    type Target = crate::FieldReader<bool, SU5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SU5` writer - State UNKNOWN 5."]
 pub struct SU5_W<'a> {
     w: &'a mut W,
 }
@@ -804,9 +916,7 @@ impl<'a> SU5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SU5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     #[inline(always)]
@@ -831,7 +941,7 @@ impl<'a> SU5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -849,9 +959,12 @@ impl From<SUS5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SUS5`"]
-pub type SUS5_R = crate::R<bool, SUS5_A>;
+#[doc = "Field `SUS5` reader - State UNKNOWN Secure only 5."]
+pub struct SUS5_R(crate::FieldReader<bool, SUS5_A>);
 impl SUS5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SUS5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SUS5_A {
@@ -863,15 +976,22 @@ impl SUS5_R {
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
     #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS5_A::SECURE_AND_NON_SECURE
+        **self == SUS5_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
     #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS5_A::SECURE_ONLY
+        **self == SUS5_A::SECURE_ONLY
     }
 }
-#[doc = "Write proxy for field `SUS5`"]
+impl core::ops::Deref for SUS5_R {
+    type Target = crate::FieldReader<bool, SUS5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SUS5` writer - State UNKNOWN Secure only 5."]
 pub struct SUS5_W<'a> {
     w: &'a mut W,
 }
@@ -879,9 +999,7 @@ impl<'a> SUS5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SUS5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The SU5 field is accessible from both Security states."]
     #[inline(always)]
@@ -906,7 +1024,7 @@ impl<'a> SUS5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -924,9 +1042,12 @@ impl From<SU6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SU6`"]
-pub type SU6_R = crate::R<bool, SU6_A>;
+#[doc = "Field `SU6` reader - State UNKNOWN 6."]
+pub struct SU6_R(crate::FieldReader<bool, SU6_A>);
 impl SU6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SU6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SU6_A {
@@ -938,15 +1059,22 @@ impl SU6_R {
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU6_A::UNKNOWN_NOT_PERMITTED
+        **self == SU6_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU6_A::UNKNOWN_PERMITTED
+        **self == SU6_A::UNKNOWN_PERMITTED
     }
 }
-#[doc = "Write proxy for field `SU6`"]
+impl core::ops::Deref for SU6_R {
+    type Target = crate::FieldReader<bool, SU6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SU6` writer - State UNKNOWN 6."]
 pub struct SU6_W<'a> {
     w: &'a mut W,
 }
@@ -954,9 +1082,7 @@ impl<'a> SU6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SU6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     #[inline(always)]
@@ -981,7 +1107,7 @@ impl<'a> SU6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -999,9 +1125,12 @@ impl From<SUS6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SUS6`"]
-pub type SUS6_R = crate::R<bool, SUS6_A>;
+#[doc = "Field `SUS6` reader - State UNKNOWN Secure only 6."]
+pub struct SUS6_R(crate::FieldReader<bool, SUS6_A>);
 impl SUS6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SUS6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SUS6_A {
@@ -1013,15 +1142,22 @@ impl SUS6_R {
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
     #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS6_A::SECURE_AND_NON_SECURE
+        **self == SUS6_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
     #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS6_A::SECURE_ONLY
+        **self == SUS6_A::SECURE_ONLY
     }
 }
-#[doc = "Write proxy for field `SUS6`"]
+impl core::ops::Deref for SUS6_R {
+    type Target = crate::FieldReader<bool, SUS6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SUS6` writer - State UNKNOWN Secure only 6."]
 pub struct SUS6_W<'a> {
     w: &'a mut W,
 }
@@ -1029,9 +1165,7 @@ impl<'a> SUS6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SUS6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The SU6 field is accessible from both Security states."]
     #[inline(always)]
@@ -1056,7 +1190,7 @@ impl<'a> SUS6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
         self.w
     }
 }
@@ -1074,9 +1208,12 @@ impl From<SU7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SU7`"]
-pub type SU7_R = crate::R<bool, SU7_A>;
+#[doc = "Field `SU7` reader - State UNKNOWN 7."]
+pub struct SU7_R(crate::FieldReader<bool, SU7_A>);
 impl SU7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SU7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SU7_A {
@@ -1088,15 +1225,22 @@ impl SU7_R {
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU7_A::UNKNOWN_NOT_PERMITTED
+        **self == SU7_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU7_A::UNKNOWN_PERMITTED
+        **self == SU7_A::UNKNOWN_PERMITTED
     }
 }
-#[doc = "Write proxy for field `SU7`"]
+impl core::ops::Deref for SU7_R {
+    type Target = crate::FieldReader<bool, SU7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SU7` writer - State UNKNOWN 7."]
 pub struct SU7_W<'a> {
     w: &'a mut W,
 }
@@ -1104,9 +1248,7 @@ impl<'a> SU7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SU7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The coprocessor state is not permitted to become UNKNOWN."]
     #[inline(always)]
@@ -1131,7 +1273,7 @@ impl<'a> SU7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
         self.w
     }
 }
@@ -1149,9 +1291,12 @@ impl From<SUS7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SUS7`"]
-pub type SUS7_R = crate::R<bool, SUS7_A>;
+#[doc = "Field `SUS7` reader - State UNKNOWN Secure only 7."]
+pub struct SUS7_R(crate::FieldReader<bool, SUS7_A>);
 impl SUS7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SUS7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SUS7_A {
@@ -1163,15 +1308,22 @@ impl SUS7_R {
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
     #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS7_A::SECURE_AND_NON_SECURE
+        **self == SUS7_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
     #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS7_A::SECURE_ONLY
+        **self == SUS7_A::SECURE_ONLY
     }
 }
-#[doc = "Write proxy for field `SUS7`"]
+impl core::ops::Deref for SUS7_R {
+    type Target = crate::FieldReader<bool, SUS7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SUS7` writer - State UNKNOWN Secure only 7."]
 pub struct SUS7_W<'a> {
     w: &'a mut W,
 }
@@ -1179,9 +1331,7 @@ impl<'a> SUS7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SUS7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The SU7 field is accessible from both Security states."]
     #[inline(always)]
@@ -1206,7 +1356,7 @@ impl<'a> SUS7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
         self.w
     }
 }
@@ -1224,9 +1374,12 @@ impl From<SU10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SU10`"]
-pub type SU10_R = crate::R<bool, SU10_A>;
+#[doc = "Field `SU10` reader - State UNKNOWN 10."]
+pub struct SU10_R(crate::FieldReader<bool, SU10_A>);
 impl SU10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SU10_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SU10_A {
@@ -1238,15 +1391,22 @@ impl SU10_R {
     #[doc = "Checks if the value of the field is `UNKNOWN_NOT_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_not_permitted(&self) -> bool {
-        *self == SU10_A::UNKNOWN_NOT_PERMITTED
+        **self == SU10_A::UNKNOWN_NOT_PERMITTED
     }
     #[doc = "Checks if the value of the field is `UNKNOWN_PERMITTED`"]
     #[inline(always)]
     pub fn is_unknown_permitted(&self) -> bool {
-        *self == SU10_A::UNKNOWN_PERMITTED
+        **self == SU10_A::UNKNOWN_PERMITTED
     }
 }
-#[doc = "Write proxy for field `SU10`"]
+impl core::ops::Deref for SU10_R {
+    type Target = crate::FieldReader<bool, SU10_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SU10` writer - State UNKNOWN 10."]
 pub struct SU10_W<'a> {
     w: &'a mut W,
 }
@@ -1254,9 +1414,7 @@ impl<'a> SU10_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SU10_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The floating-point state is not permitted to become UNKNOWN."]
     #[inline(always)]
@@ -1281,7 +1439,7 @@ impl<'a> SU10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
@@ -1299,9 +1457,12 @@ impl From<SUS10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SUS10`"]
-pub type SUS10_R = crate::R<bool, SUS10_A>;
+#[doc = "Field `SUS10` reader - State UNKNOWN Secure only 10."]
+pub struct SUS10_R(crate::FieldReader<bool, SUS10_A>);
 impl SUS10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SUS10_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SUS10_A {
@@ -1313,15 +1474,22 @@ impl SUS10_R {
     #[doc = "Checks if the value of the field is `SECURE_AND_NON_SECURE`"]
     #[inline(always)]
     pub fn is_secure_and_non_secure(&self) -> bool {
-        *self == SUS10_A::SECURE_AND_NON_SECURE
+        **self == SUS10_A::SECURE_AND_NON_SECURE
     }
     #[doc = "Checks if the value of the field is `SECURE_ONLY`"]
     #[inline(always)]
     pub fn is_secure_only(&self) -> bool {
-        *self == SUS10_A::SECURE_ONLY
+        **self == SUS10_A::SECURE_ONLY
     }
 }
-#[doc = "Write proxy for field `SUS10`"]
+impl core::ops::Deref for SUS10_R {
+    type Target = crate::FieldReader<bool, SUS10_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SUS10` writer - State UNKNOWN Secure only 10."]
 pub struct SUS10_W<'a> {
     w: &'a mut W,
 }
@@ -1329,9 +1497,7 @@ impl<'a> SUS10_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SUS10_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "The SU10 field is accessible from both Security states."]
     #[inline(always)]
@@ -1356,13 +1522,25 @@ impl<'a> SUS10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
         self.w
     }
 }
-#[doc = "Reader of field `SU11`"]
-pub type SU11_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SU11`"]
+#[doc = "Field `SU11` reader - State UNKNOWN 11."]
+pub struct SU11_R(crate::FieldReader<bool, bool>);
+impl SU11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SU11_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SU11_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SU11` writer - State UNKNOWN 11."]
 pub struct SU11_W<'a> {
     w: &'a mut W,
 }
@@ -1380,13 +1558,25 @@ impl<'a> SU11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
         self.w
     }
 }
-#[doc = "Reader of field `SUS11`"]
-pub type SUS11_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SUS11`"]
+#[doc = "Field `SUS11` reader - State UNKNOWN Secure only 11."]
+pub struct SUS11_R(crate::FieldReader<bool, bool>);
+impl SUS11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SUS11_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SUS11_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SUS11` writer - State UNKNOWN Secure only 11."]
 pub struct SUS11_W<'a> {
     w: &'a mut W,
 }
@@ -1404,7 +1594,7 @@ impl<'a> SUS11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
         self.w
     }
 }
@@ -1610,5 +1800,30 @@ impl W {
     #[inline(always)]
     pub fn sus11(&mut self) -> SUS11_W {
         SUS11_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Coprocessor Power Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cppwr](index.html) module"]
+pub struct CPPWR_SPEC;
+impl crate::RegisterSpec for CPPWR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [cppwr::R](R) reader structure"]
+impl crate::Readable for CPPWR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cppwr::W](W) writer structure"]
+impl crate::Writable for CPPWR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CPPWR to value 0"]
+impl crate::Resettable for CPPWR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

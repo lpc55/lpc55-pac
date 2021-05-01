@@ -1,18 +1,52 @@
-#[doc = "Reader of register IDXBLK_L"]
-pub type R = crate::R<u32, super::IDXBLK_L>;
-#[doc = "Writer for register IDXBLK_L"]
-pub type W = crate::W<u32, super::IDXBLK_L>;
-#[doc = "Register IDXBLK_L `reset()`'s with value 0x8000_aaaa"]
-impl crate::ResetValue for super::IDXBLK_L {
-    type Type = u32;
+#[doc = "Register `IDXBLK_L` reader"]
+pub struct R(crate::R<IDXBLK_L_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<IDXBLK_L_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x8000_aaaa
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `IDX1`"]
-pub type IDX1_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `IDX1`"]
+impl core::convert::From<crate::R<IDXBLK_L_SPEC>> for R {
+    fn from(reader: crate::R<IDXBLK_L_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `IDXBLK_L` writer"]
+pub struct W(crate::W<IDXBLK_L_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<IDXBLK_L_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<IDXBLK_L_SPEC>> for W {
+    fn from(writer: crate::W<IDXBLK_L_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `IDX1` reader - Use to block PUF index 1"]
+pub struct IDX1_R(crate::FieldReader<u8, u8>);
+impl IDX1_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        IDX1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for IDX1_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IDX1` writer - Use to block PUF index 1"]
 pub struct IDX1_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +54,25 @@ impl<'a> IDX1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `IDX2`"]
-pub type IDX2_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `IDX2`"]
+#[doc = "Field `IDX2` reader - Use to block PUF index 2"]
+pub struct IDX2_R(crate::FieldReader<u8, u8>);
+impl IDX2_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        IDX2_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for IDX2_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IDX2` writer - Use to block PUF index 2"]
 pub struct IDX2_W<'a> {
     w: &'a mut W,
 }
@@ -34,13 +80,25 @@ impl<'a> IDX2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
         self.w
     }
 }
-#[doc = "Reader of field `IDX3`"]
-pub type IDX3_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `IDX3`"]
+#[doc = "Field `IDX3` reader - Use to block PUF index 3"]
+pub struct IDX3_R(crate::FieldReader<u8, u8>);
+impl IDX3_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        IDX3_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for IDX3_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IDX3` writer - Use to block PUF index 3"]
 pub struct IDX3_W<'a> {
     w: &'a mut W,
 }
@@ -48,13 +106,25 @@ impl<'a> IDX3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
         self.w
     }
 }
-#[doc = "Reader of field `IDX4`"]
-pub type IDX4_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `IDX4`"]
+#[doc = "Field `IDX4` reader - Use to block PUF index 4"]
+pub struct IDX4_R(crate::FieldReader<u8, u8>);
+impl IDX4_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        IDX4_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for IDX4_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IDX4` writer - Use to block PUF index 4"]
 pub struct IDX4_W<'a> {
     w: &'a mut W,
 }
@@ -62,13 +132,25 @@ impl<'a> IDX4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `IDX5`"]
-pub type IDX5_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `IDX5`"]
+#[doc = "Field `IDX5` reader - Use to block PUF index 5"]
+pub struct IDX5_R(crate::FieldReader<u8, u8>);
+impl IDX5_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        IDX5_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for IDX5_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IDX5` writer - Use to block PUF index 5"]
 pub struct IDX5_W<'a> {
     w: &'a mut W,
 }
@@ -76,13 +158,25 @@ impl<'a> IDX5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `IDX6`"]
-pub type IDX6_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `IDX6`"]
+#[doc = "Field `IDX6` reader - Use to block PUF index 6"]
+pub struct IDX6_R(crate::FieldReader<u8, u8>);
+impl IDX6_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        IDX6_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for IDX6_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IDX6` writer - Use to block PUF index 6"]
 pub struct IDX6_W<'a> {
     w: &'a mut W,
 }
@@ -90,13 +184,25 @@ impl<'a> IDX6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
         self.w
     }
 }
-#[doc = "Reader of field `IDX7`"]
-pub type IDX7_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `IDX7`"]
+#[doc = "Field `IDX7` reader - Use to block PUF index 7"]
+pub struct IDX7_R(crate::FieldReader<u8, u8>);
+impl IDX7_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        IDX7_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for IDX7_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IDX7` writer - Use to block PUF index 7"]
 pub struct IDX7_W<'a> {
     w: &'a mut W,
 }
@@ -104,11 +210,11 @@ impl<'a> IDX7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | ((value as u32 & 0x03) << 14);
         self.w
     }
 }
-#[doc = "Write proxy for field `LOCK_IDX`"]
+#[doc = "Field `LOCK_IDX` writer - Lock 0 to 7 PUF key indexes"]
 pub struct LOCK_IDX_W<'a> {
     w: &'a mut W,
 }
@@ -116,7 +222,7 @@ impl<'a> LOCK_IDX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 30)) | (((value as u32) & 0x03) << 30);
+        self.w.bits = (self.w.bits & !(0x03 << 30)) | ((value as u32 & 0x03) << 30);
         self.w
     }
 }
@@ -197,5 +303,30 @@ impl W {
     #[inline(always)]
     pub fn lock_idx(&mut self) -> LOCK_IDX_W {
         LOCK_IDX_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "no description available\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [idxblk_l](index.html) module"]
+pub struct IDXBLK_L_SPEC;
+impl crate::RegisterSpec for IDXBLK_L_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [idxblk_l::R](R) reader structure"]
+impl crate::Readable for IDXBLK_L_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [idxblk_l::W](W) writer structure"]
+impl crate::Writable for IDXBLK_L_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets IDXBLK_L to value 0x8000_aaaa"]
+impl crate::Resettable for IDXBLK_L_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x8000_aaaa
     }
 }

@@ -1,13 +1,35 @@
-#[doc = "Reader of register MASTER_SEC_ANTI_POL_REG"]
-pub type R = crate::R<u32, super::MASTER_SEC_ANTI_POL_REG>;
-#[doc = "Writer for register MASTER_SEC_ANTI_POL_REG"]
-pub type W = crate::W<u32, super::MASTER_SEC_ANTI_POL_REG>;
-#[doc = "Register MASTER_SEC_ANTI_POL_REG `reset()`'s with value 0xbfff_ffff"]
-impl crate::ResetValue for super::MASTER_SEC_ANTI_POL_REG {
-    type Type = u32;
+#[doc = "Register `MASTER_SEC_ANTI_POL_REG` reader"]
+pub struct R(crate::R<MASTER_SEC_ANTI_POL_REG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MASTER_SEC_ANTI_POL_REG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xbfff_ffff
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<MASTER_SEC_ANTI_POL_REG_SPEC>> for R {
+    fn from(reader: crate::R<MASTER_SEC_ANTI_POL_REG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MASTER_SEC_ANTI_POL_REG` writer"]
+pub struct W(crate::W<MASTER_SEC_ANTI_POL_REG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MASTER_SEC_ANTI_POL_REG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<MASTER_SEC_ANTI_POL_REG_SPEC>> for W {
+    fn from(writer: crate::W<MASTER_SEC_ANTI_POL_REG_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Micro-Cortex M33 (CPU1) Code bus. Must be equal to NOT(MASTER_SEC_LEVEL.CPU1C)\n\nValue on reset: 3"]
@@ -29,9 +51,12 @@ impl From<CPU1C_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPU1C`"]
-pub type CPU1C_R = crate::R<u8, CPU1C_A>;
+#[doc = "Field `CPU1C` reader - Micro-Cortex M33 (CPU1) Code bus. Must be equal to NOT(MASTER_SEC_LEVEL.CPU1C)"]
+pub struct CPU1C_R(crate::FieldReader<u8, CPU1C_A>);
 impl CPU1C_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CPU1C_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPU1C_A {
@@ -46,25 +71,32 @@ impl CPU1C_R {
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == CPU1C_A::ENUM_S_P
+        **self == CPU1C_A::ENUM_S_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == CPU1C_A::ENUM_S_NP
+        **self == CPU1C_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == CPU1C_A::ENUM_NS_P
+        **self == CPU1C_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == CPU1C_A::ENUM_NS_NP
+        **self == CPU1C_A::ENUM_NS_NP
     }
 }
-#[doc = "Write proxy for field `CPU1C`"]
+impl core::ops::Deref for CPU1C_R {
+    type Target = crate::FieldReader<u8, CPU1C_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPU1C` writer - Micro-Cortex M33 (CPU1) Code bus. Must be equal to NOT(MASTER_SEC_LEVEL.CPU1C)"]
 pub struct CPU1C_W<'a> {
     w: &'a mut W,
 }
@@ -72,9 +104,7 @@ impl<'a> CPU1C_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CPU1C_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Secure and Priviledge user access allowed."]
     #[inline(always)]
@@ -99,7 +129,7 @@ impl<'a> CPU1C_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
         self.w
     }
 }
@@ -122,9 +152,12 @@ impl From<CPU1S_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPU1S`"]
-pub type CPU1S_R = crate::R<u8, CPU1S_A>;
+#[doc = "Field `CPU1S` reader - Micro-Cortex M33 (CPU1) System bus. Must be equal to NOT(MASTER_SEC_LEVEL.CPU1S)"]
+pub struct CPU1S_R(crate::FieldReader<u8, CPU1S_A>);
 impl CPU1S_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CPU1S_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPU1S_A {
@@ -139,25 +172,32 @@ impl CPU1S_R {
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == CPU1S_A::ENUM_S_P
+        **self == CPU1S_A::ENUM_S_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == CPU1S_A::ENUM_S_NP
+        **self == CPU1S_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == CPU1S_A::ENUM_NS_P
+        **self == CPU1S_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == CPU1S_A::ENUM_NS_NP
+        **self == CPU1S_A::ENUM_NS_NP
     }
 }
-#[doc = "Write proxy for field `CPU1S`"]
+impl core::ops::Deref for CPU1S_R {
+    type Target = crate::FieldReader<u8, CPU1S_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPU1S` writer - Micro-Cortex M33 (CPU1) System bus. Must be equal to NOT(MASTER_SEC_LEVEL.CPU1S)"]
 pub struct CPU1S_W<'a> {
     w: &'a mut W,
 }
@@ -165,9 +205,7 @@ impl<'a> CPU1S_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CPU1S_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Secure and Priviledge user access allowed."]
     #[inline(always)]
@@ -192,7 +230,7 @@ impl<'a> CPU1S_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
         self.w
     }
 }
@@ -215,9 +253,12 @@ impl From<USBFSD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `USBFSD`"]
-pub type USBFSD_R = crate::R<u8, USBFSD_A>;
+#[doc = "Field `USBFSD` reader - USB Full Speed Device. Must be equal to NOT(MASTER_SEC_LEVEL.USBFSD)"]
+pub struct USBFSD_R(crate::FieldReader<u8, USBFSD_A>);
 impl USBFSD_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        USBFSD_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USBFSD_A {
@@ -232,25 +273,32 @@ impl USBFSD_R {
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == USBFSD_A::ENUM_S_P
+        **self == USBFSD_A::ENUM_S_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == USBFSD_A::ENUM_S_NP
+        **self == USBFSD_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == USBFSD_A::ENUM_NS_P
+        **self == USBFSD_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == USBFSD_A::ENUM_NS_NP
+        **self == USBFSD_A::ENUM_NS_NP
     }
 }
-#[doc = "Write proxy for field `USBFSD`"]
+impl core::ops::Deref for USBFSD_R {
+    type Target = crate::FieldReader<u8, USBFSD_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USBFSD` writer - USB Full Speed Device. Must be equal to NOT(MASTER_SEC_LEVEL.USBFSD)"]
 pub struct USBFSD_W<'a> {
     w: &'a mut W,
 }
@@ -258,9 +306,7 @@ impl<'a> USBFSD_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: USBFSD_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Secure and Priviledge user access allowed."]
     #[inline(always)]
@@ -285,7 +331,7 @@ impl<'a> USBFSD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
         self.w
     }
 }
@@ -308,9 +354,12 @@ impl From<SDMA0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SDMA0`"]
-pub type SDMA0_R = crate::R<u8, SDMA0_A>;
+#[doc = "Field `SDMA0` reader - System DMA 0. Must be equal to NOT(MASTER_SEC_LEVEL.SDMA0)"]
+pub struct SDMA0_R(crate::FieldReader<u8, SDMA0_A>);
 impl SDMA0_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SDMA0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SDMA0_A {
@@ -325,25 +374,32 @@ impl SDMA0_R {
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == SDMA0_A::ENUM_S_P
+        **self == SDMA0_A::ENUM_S_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == SDMA0_A::ENUM_S_NP
+        **self == SDMA0_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == SDMA0_A::ENUM_NS_P
+        **self == SDMA0_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == SDMA0_A::ENUM_NS_NP
+        **self == SDMA0_A::ENUM_NS_NP
     }
 }
-#[doc = "Write proxy for field `SDMA0`"]
+impl core::ops::Deref for SDMA0_R {
+    type Target = crate::FieldReader<u8, SDMA0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SDMA0` writer - System DMA 0. Must be equal to NOT(MASTER_SEC_LEVEL.SDMA0)"]
 pub struct SDMA0_W<'a> {
     w: &'a mut W,
 }
@@ -351,9 +407,7 @@ impl<'a> SDMA0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SDMA0_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Secure and Priviledge user access allowed."]
     #[inline(always)]
@@ -378,7 +432,7 @@ impl<'a> SDMA0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
         self.w
     }
 }
@@ -401,9 +455,12 @@ impl From<SDIO_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SDIO`"]
-pub type SDIO_R = crate::R<u8, SDIO_A>;
+#[doc = "Field `SDIO` reader - SDIO. Must be equal to NOT(MASTER_SEC_LEVEL.SDIO)"]
+pub struct SDIO_R(crate::FieldReader<u8, SDIO_A>);
 impl SDIO_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SDIO_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SDIO_A {
@@ -418,25 +475,32 @@ impl SDIO_R {
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == SDIO_A::ENUM_S_P
+        **self == SDIO_A::ENUM_S_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == SDIO_A::ENUM_S_NP
+        **self == SDIO_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == SDIO_A::ENUM_NS_P
+        **self == SDIO_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == SDIO_A::ENUM_NS_NP
+        **self == SDIO_A::ENUM_NS_NP
     }
 }
-#[doc = "Write proxy for field `SDIO`"]
+impl core::ops::Deref for SDIO_R {
+    type Target = crate::FieldReader<u8, SDIO_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SDIO` writer - SDIO. Must be equal to NOT(MASTER_SEC_LEVEL.SDIO)"]
 pub struct SDIO_W<'a> {
     w: &'a mut W,
 }
@@ -444,9 +508,7 @@ impl<'a> SDIO_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SDIO_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Secure and Priviledge user access allowed."]
     #[inline(always)]
@@ -471,7 +533,7 @@ impl<'a> SDIO_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
         self.w
     }
 }
@@ -494,9 +556,12 @@ impl From<PQ_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PQ`"]
-pub type PQ_R = crate::R<u8, PQ_A>;
+#[doc = "Field `PQ` reader - Power Quad. Must be equal to NOT(MASTER_SEC_LEVEL.PQ)"]
+pub struct PQ_R(crate::FieldReader<u8, PQ_A>);
 impl PQ_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        PQ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PQ_A {
@@ -511,25 +576,32 @@ impl PQ_R {
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == PQ_A::ENUM_S_P
+        **self == PQ_A::ENUM_S_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == PQ_A::ENUM_S_NP
+        **self == PQ_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == PQ_A::ENUM_NS_P
+        **self == PQ_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == PQ_A::ENUM_NS_NP
+        **self == PQ_A::ENUM_NS_NP
     }
 }
-#[doc = "Write proxy for field `PQ`"]
+impl core::ops::Deref for PQ_R {
+    type Target = crate::FieldReader<u8, PQ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PQ` writer - Power Quad. Must be equal to NOT(MASTER_SEC_LEVEL.PQ)"]
 pub struct PQ_W<'a> {
     w: &'a mut W,
 }
@@ -537,9 +609,7 @@ impl<'a> PQ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PQ_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Secure and Priviledge user access allowed."]
     #[inline(always)]
@@ -564,7 +634,7 @@ impl<'a> PQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 18)) | (((value as u32) & 0x03) << 18);
+        self.w.bits = (self.w.bits & !(0x03 << 18)) | ((value as u32 & 0x03) << 18);
         self.w
     }
 }
@@ -587,9 +657,12 @@ impl From<HASH_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `HASH`"]
-pub type HASH_R = crate::R<u8, HASH_A>;
+#[doc = "Field `HASH` reader - Hash. Must be equal to NOT(MASTER_SEC_LEVEL.HASH)"]
+pub struct HASH_R(crate::FieldReader<u8, HASH_A>);
 impl HASH_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        HASH_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HASH_A {
@@ -604,25 +677,32 @@ impl HASH_R {
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == HASH_A::ENUM_S_P
+        **self == HASH_A::ENUM_S_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == HASH_A::ENUM_S_NP
+        **self == HASH_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == HASH_A::ENUM_NS_P
+        **self == HASH_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == HASH_A::ENUM_NS_NP
+        **self == HASH_A::ENUM_NS_NP
     }
 }
-#[doc = "Write proxy for field `HASH`"]
+impl core::ops::Deref for HASH_R {
+    type Target = crate::FieldReader<u8, HASH_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HASH` writer - Hash. Must be equal to NOT(MASTER_SEC_LEVEL.HASH)"]
 pub struct HASH_W<'a> {
     w: &'a mut W,
 }
@@ -630,9 +710,7 @@ impl<'a> HASH_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: HASH_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Secure and Priviledge user access allowed."]
     #[inline(always)]
@@ -657,7 +735,7 @@ impl<'a> HASH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
+        self.w.bits = (self.w.bits & !(0x03 << 20)) | ((value as u32 & 0x03) << 20);
         self.w
     }
 }
@@ -680,9 +758,12 @@ impl From<USBFSH_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `USBFSH`"]
-pub type USBFSH_R = crate::R<u8, USBFSH_A>;
+#[doc = "Field `USBFSH` reader - USB Full speed Host. Must be equal to NOT(MASTER_SEC_LEVEL.USBFSH)"]
+pub struct USBFSH_R(crate::FieldReader<u8, USBFSH_A>);
 impl USBFSH_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        USBFSH_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USBFSH_A {
@@ -697,25 +778,32 @@ impl USBFSH_R {
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == USBFSH_A::ENUM_S_P
+        **self == USBFSH_A::ENUM_S_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == USBFSH_A::ENUM_S_NP
+        **self == USBFSH_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == USBFSH_A::ENUM_NS_P
+        **self == USBFSH_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == USBFSH_A::ENUM_NS_NP
+        **self == USBFSH_A::ENUM_NS_NP
     }
 }
-#[doc = "Write proxy for field `USBFSH`"]
+impl core::ops::Deref for USBFSH_R {
+    type Target = crate::FieldReader<u8, USBFSH_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `USBFSH` writer - USB Full speed Host. Must be equal to NOT(MASTER_SEC_LEVEL.USBFSH)"]
 pub struct USBFSH_W<'a> {
     w: &'a mut W,
 }
@@ -723,9 +811,7 @@ impl<'a> USBFSH_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: USBFSH_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Secure and Priviledge user access allowed."]
     #[inline(always)]
@@ -750,7 +836,7 @@ impl<'a> USBFSH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | (((value as u32) & 0x03) << 22);
+        self.w.bits = (self.w.bits & !(0x03 << 22)) | ((value as u32 & 0x03) << 22);
         self.w
     }
 }
@@ -773,9 +859,12 @@ impl From<SDMA1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SDMA1`"]
-pub type SDMA1_R = crate::R<u8, SDMA1_A>;
+#[doc = "Field `SDMA1` reader - System DMA 1 security level. Must be equal to NOT(MASTER_SEC_LEVEL.SDMA1)"]
+pub struct SDMA1_R(crate::FieldReader<u8, SDMA1_A>);
 impl SDMA1_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SDMA1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SDMA1_A {
@@ -790,25 +879,32 @@ impl SDMA1_R {
     #[doc = "Checks if the value of the field is `ENUM_S_P`"]
     #[inline(always)]
     pub fn is_enum_s_p(&self) -> bool {
-        *self == SDMA1_A::ENUM_S_P
+        **self == SDMA1_A::ENUM_S_P
     }
     #[doc = "Checks if the value of the field is `ENUM_S_NP`"]
     #[inline(always)]
     pub fn is_enum_s_np(&self) -> bool {
-        *self == SDMA1_A::ENUM_S_NP
+        **self == SDMA1_A::ENUM_S_NP
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_P`"]
     #[inline(always)]
     pub fn is_enum_ns_p(&self) -> bool {
-        *self == SDMA1_A::ENUM_NS_P
+        **self == SDMA1_A::ENUM_NS_P
     }
     #[doc = "Checks if the value of the field is `ENUM_NS_NP`"]
     #[inline(always)]
     pub fn is_enum_ns_np(&self) -> bool {
-        *self == SDMA1_A::ENUM_NS_NP
+        **self == SDMA1_A::ENUM_NS_NP
     }
 }
-#[doc = "Write proxy for field `SDMA1`"]
+impl core::ops::Deref for SDMA1_R {
+    type Target = crate::FieldReader<u8, SDMA1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SDMA1` writer - System DMA 1 security level. Must be equal to NOT(MASTER_SEC_LEVEL.SDMA1)"]
 pub struct SDMA1_W<'a> {
     w: &'a mut W,
 }
@@ -816,9 +912,7 @@ impl<'a> SDMA1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SDMA1_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Secure and Priviledge user access allowed."]
     #[inline(always)]
@@ -843,7 +937,7 @@ impl<'a> SDMA1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
         self.w
     }
 }
@@ -862,31 +956,40 @@ impl From<MASTER_SEC_LEVEL_ANTIPOL_LOCK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MASTER_SEC_LEVEL_ANTIPOL_LOCK`"]
-pub type MASTER_SEC_LEVEL_ANTIPOL_LOCK_R = crate::R<u8, MASTER_SEC_LEVEL_ANTIPOL_LOCK_A>;
+#[doc = "Field `MASTER_SEC_LEVEL_ANTIPOL_LOCK` reader - MASTER_SEC_ANTI_POL_REG register write-lock."]
+pub struct MASTER_SEC_LEVEL_ANTIPOL_LOCK_R(crate::FieldReader<u8, MASTER_SEC_LEVEL_ANTIPOL_LOCK_A>);
 impl MASTER_SEC_LEVEL_ANTIPOL_LOCK_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        MASTER_SEC_LEVEL_ANTIPOL_LOCK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, MASTER_SEC_LEVEL_ANTIPOL_LOCK_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<MASTER_SEC_LEVEL_ANTIPOL_LOCK_A> {
         match self.bits {
-            1 => Val(MASTER_SEC_LEVEL_ANTIPOL_LOCK_A::BLOCKED),
-            2 => Val(MASTER_SEC_LEVEL_ANTIPOL_LOCK_A::WRITABLE),
-            i => Res(i),
+            1 => Some(MASTER_SEC_LEVEL_ANTIPOL_LOCK_A::BLOCKED),
+            2 => Some(MASTER_SEC_LEVEL_ANTIPOL_LOCK_A::WRITABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `BLOCKED`"]
     #[inline(always)]
     pub fn is_blocked(&self) -> bool {
-        *self == MASTER_SEC_LEVEL_ANTIPOL_LOCK_A::BLOCKED
+        **self == MASTER_SEC_LEVEL_ANTIPOL_LOCK_A::BLOCKED
     }
     #[doc = "Checks if the value of the field is `WRITABLE`"]
     #[inline(always)]
     pub fn is_writable(&self) -> bool {
-        *self == MASTER_SEC_LEVEL_ANTIPOL_LOCK_A::WRITABLE
+        **self == MASTER_SEC_LEVEL_ANTIPOL_LOCK_A::WRITABLE
     }
 }
-#[doc = "Write proxy for field `MASTER_SEC_LEVEL_ANTIPOL_LOCK`"]
+impl core::ops::Deref for MASTER_SEC_LEVEL_ANTIPOL_LOCK_R {
+    type Target = crate::FieldReader<u8, MASTER_SEC_LEVEL_ANTIPOL_LOCK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MASTER_SEC_LEVEL_ANTIPOL_LOCK` writer - MASTER_SEC_ANTI_POL_REG register write-lock."]
 pub struct MASTER_SEC_LEVEL_ANTIPOL_LOCK_W<'a> {
     w: &'a mut W,
 }
@@ -909,7 +1012,7 @@ impl<'a> MASTER_SEC_LEVEL_ANTIPOL_LOCK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 30)) | (((value as u32) & 0x03) << 30);
+        self.w.bits = (self.w.bits & !(0x03 << 30)) | ((value as u32 & 0x03) << 30);
         self.w
     }
 }
@@ -1015,5 +1118,30 @@ impl W {
     #[inline(always)]
     pub fn master_sec_level_antipol_lock(&mut self) -> MASTER_SEC_LEVEL_ANTIPOL_LOCK_W {
         MASTER_SEC_LEVEL_ANTIPOL_LOCK_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "master secure level anti-pole register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [master_sec_anti_pol_reg](index.html) module"]
+pub struct MASTER_SEC_ANTI_POL_REG_SPEC;
+impl crate::RegisterSpec for MASTER_SEC_ANTI_POL_REG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [master_sec_anti_pol_reg::R](R) reader structure"]
+impl crate::Readable for MASTER_SEC_ANTI_POL_REG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [master_sec_anti_pol_reg::W](W) writer structure"]
+impl crate::Writable for MASTER_SEC_ANTI_POL_REG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MASTER_SEC_ANTI_POL_REG to value 0xbfff_ffff"]
+impl crate::Resettable for MASTER_SEC_ANTI_POL_REG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xbfff_ffff
     }
 }

@@ -1,18 +1,52 @@
-#[doc = "Reader of register SYSTICKCLKDIV1"]
-pub type R = crate::R<u32, super::SYSTICKCLKDIV1>;
-#[doc = "Writer for register SYSTICKCLKDIV1"]
-pub type W = crate::W<u32, super::SYSTICKCLKDIV1>;
-#[doc = "Register SYSTICKCLKDIV1 `reset()`'s with value 0x4000_0000"]
-impl crate::ResetValue for super::SYSTICKCLKDIV1 {
-    type Type = u32;
+#[doc = "Register `SYSTICKCLKDIV1` reader"]
+pub struct R(crate::R<SYSTICKCLKDIV1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SYSTICKCLKDIV1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x4000_0000
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DIV`"]
-pub type DIV_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DIV`"]
+impl core::convert::From<crate::R<SYSTICKCLKDIV1_SPEC>> for R {
+    fn from(reader: crate::R<SYSTICKCLKDIV1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SYSTICKCLKDIV1` writer"]
+pub struct W(crate::W<SYSTICKCLKDIV1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SYSTICKCLKDIV1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<SYSTICKCLKDIV1_SPEC>> for W {
+    fn from(writer: crate::W<SYSTICKCLKDIV1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `DIV` reader - Clock divider value."]
+pub struct DIV_R(crate::FieldReader<u8, u8>);
+impl DIV_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DIV_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DIV_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DIV` writer - Clock divider value."]
 pub struct DIV_W<'a> {
     w: &'a mut W,
 }
@@ -20,7 +54,7 @@ impl<'a> DIV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
         self.w
     }
 }
@@ -38,7 +72,7 @@ impl From<RESET_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Write proxy for field `RESET`"]
+#[doc = "Field `RESET` writer - Resets the divider counter."]
 pub struct RESET_W<'a> {
     w: &'a mut W,
 }
@@ -46,9 +80,7 @@ impl<'a> RESET_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RESET_AW) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Divider is not reset."]
     #[inline(always)]
@@ -73,7 +105,7 @@ impl<'a> RESET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
+        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
         self.w
     }
 }
@@ -91,9 +123,12 @@ impl From<HALT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `HALT`"]
-pub type HALT_R = crate::R<bool, HALT_A>;
+#[doc = "Field `HALT` reader - Halts the divider counter."]
+pub struct HALT_R(crate::FieldReader<bool, HALT_A>);
 impl HALT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        HALT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HALT_A {
@@ -105,15 +140,22 @@ impl HALT_R {
     #[doc = "Checks if the value of the field is `RUN`"]
     #[inline(always)]
     pub fn is_run(&self) -> bool {
-        *self == HALT_A::RUN
+        **self == HALT_A::RUN
     }
     #[doc = "Checks if the value of the field is `HALT`"]
     #[inline(always)]
     pub fn is_halt(&self) -> bool {
-        *self == HALT_A::HALT
+        **self == HALT_A::HALT
     }
 }
-#[doc = "Write proxy for field `HALT`"]
+impl core::ops::Deref for HALT_R {
+    type Target = crate::FieldReader<bool, HALT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `HALT` writer - Halts the divider counter."]
 pub struct HALT_W<'a> {
     w: &'a mut W,
 }
@@ -121,9 +163,7 @@ impl<'a> HALT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: HALT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Divider clock is running."]
     #[inline(always)]
@@ -148,7 +188,7 @@ impl<'a> HALT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
         self.w
     }
 }
@@ -166,9 +206,12 @@ impl From<REQFLAG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `REQFLAG`"]
-pub type REQFLAG_R = crate::R<bool, REQFLAG_A>;
+#[doc = "Field `REQFLAG` reader - Divider status flag."]
+pub struct REQFLAG_R(crate::FieldReader<bool, REQFLAG_A>);
 impl REQFLAG_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        REQFLAG_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> REQFLAG_A {
@@ -180,12 +223,19 @@ impl REQFLAG_R {
     #[doc = "Checks if the value of the field is `STABLE`"]
     #[inline(always)]
     pub fn is_stable(&self) -> bool {
-        *self == REQFLAG_A::STABLE
+        **self == REQFLAG_A::STABLE
     }
     #[doc = "Checks if the value of the field is `ONGOING`"]
     #[inline(always)]
     pub fn is_ongoing(&self) -> bool {
-        *self == REQFLAG_A::ONGOING
+        **self == REQFLAG_A::ONGOING
+    }
+}
+impl core::ops::Deref for REQFLAG_R {
+    type Target = crate::FieldReader<bool, REQFLAG_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -220,5 +270,30 @@ impl W {
     #[inline(always)]
     pub fn halt(&mut self) -> HALT_W {
         HALT_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "System Tick Timer divider for CPU1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [systickclkdiv1](index.html) module"]
+pub struct SYSTICKCLKDIV1_SPEC;
+impl crate::RegisterSpec for SYSTICKCLKDIV1_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [systickclkdiv1::R](R) reader structure"]
+impl crate::Readable for SYSTICKCLKDIV1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [systickclkdiv1::W](W) writer structure"]
+impl crate::Writable for SYSTICKCLKDIV1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SYSTICKCLKDIV1 to value 0x4000_0000"]
+impl crate::Resettable for SYSTICKCLKDIV1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x4000_0000
     }
 }

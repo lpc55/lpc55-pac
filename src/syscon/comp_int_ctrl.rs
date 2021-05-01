@@ -1,13 +1,35 @@
-#[doc = "Reader of register COMP_INT_CTRL"]
-pub type R = crate::R<u32, super::COMP_INT_CTRL>;
-#[doc = "Writer for register COMP_INT_CTRL"]
-pub type W = crate::W<u32, super::COMP_INT_CTRL>;
-#[doc = "Register COMP_INT_CTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::COMP_INT_CTRL {
-    type Type = u32;
+#[doc = "Register `COMP_INT_CTRL` reader"]
+pub struct R(crate::R<COMP_INT_CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<COMP_INT_CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<COMP_INT_CTRL_SPEC>> for R {
+    fn from(reader: crate::R<COMP_INT_CTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `COMP_INT_CTRL` writer"]
+pub struct W(crate::W<COMP_INT_CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<COMP_INT_CTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<COMP_INT_CTRL_SPEC>> for W {
+    fn from(writer: crate::W<COMP_INT_CTRL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Analog Comparator interrupt enable control:.\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<INT_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `INT_ENABLE`"]
-pub type INT_ENABLE_R = crate::R<bool, INT_ENABLE_A>;
+#[doc = "Field `INT_ENABLE` reader - Analog Comparator interrupt enable control:."]
+pub struct INT_ENABLE_R(crate::FieldReader<bool, INT_ENABLE_A>);
 impl INT_ENABLE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT_ENABLE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INT_ENABLE_A {
@@ -38,15 +63,22 @@ impl INT_ENABLE_R {
     #[doc = "Checks if the value of the field is `INT_DISABLE`"]
     #[inline(always)]
     pub fn is_int_disable(&self) -> bool {
-        *self == INT_ENABLE_A::INT_DISABLE
+        **self == INT_ENABLE_A::INT_DISABLE
     }
     #[doc = "Checks if the value of the field is `INT_ENABLE`"]
     #[inline(always)]
     pub fn is_int_enable(&self) -> bool {
-        *self == INT_ENABLE_A::INT_ENABLE
+        **self == INT_ENABLE_A::INT_ENABLE
     }
 }
-#[doc = "Write proxy for field `INT_ENABLE`"]
+impl core::ops::Deref for INT_ENABLE_R {
+    type Target = crate::FieldReader<bool, INT_ENABLE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT_ENABLE` writer - Analog Comparator interrupt enable control:."]
 pub struct INT_ENABLE_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> INT_ENABLE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INT_ENABLE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "interrupt disable."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> INT_ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<INT_CLEAR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `INT_CLEAR`"]
-pub type INT_CLEAR_R = crate::R<bool, INT_CLEAR_A>;
+#[doc = "Field `INT_CLEAR` reader - Analog Comparator interrupt clear."]
+pub struct INT_CLEAR_R(crate::FieldReader<bool, INT_CLEAR_A>);
 impl INT_CLEAR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT_CLEAR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INT_CLEAR_A {
@@ -113,15 +146,22 @@ impl INT_CLEAR_R {
     #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
     pub fn is_none(&self) -> bool {
-        *self == INT_CLEAR_A::NONE
+        **self == INT_CLEAR_A::NONE
     }
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        *self == INT_CLEAR_A::CLEAR
+        **self == INT_CLEAR_A::CLEAR
     }
 }
-#[doc = "Write proxy for field `INT_CLEAR`"]
+impl core::ops::Deref for INT_CLEAR_R {
+    type Target = crate::FieldReader<bool, INT_CLEAR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT_CLEAR` writer - Analog Comparator interrupt clear."]
 pub struct INT_CLEAR_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> INT_CLEAR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INT_CLEAR_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "No effect."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> INT_CLEAR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -187,9 +225,12 @@ impl From<INT_CTRL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `INT_CTRL`"]
-pub type INT_CTRL_R = crate::R<u8, INT_CTRL_A>;
+#[doc = "Field `INT_CTRL` reader - Comparator interrupt type selector:."]
+pub struct INT_CTRL_R(crate::FieldReader<u8, INT_CTRL_A>);
 impl INT_CTRL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        INT_CTRL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INT_CTRL_A {
@@ -208,45 +249,52 @@ impl INT_CTRL_R {
     #[doc = "Checks if the value of the field is `EDGE_DISABLE`"]
     #[inline(always)]
     pub fn is_edge_disable(&self) -> bool {
-        *self == INT_CTRL_A::EDGE_DISABLE
+        **self == INT_CTRL_A::EDGE_DISABLE
     }
     #[doc = "Checks if the value of the field is `LVL_DISABLE`"]
     #[inline(always)]
     pub fn is_lvl_disable(&self) -> bool {
-        *self == INT_CTRL_A::LVL_DISABLE
+        **self == INT_CTRL_A::LVL_DISABLE
     }
     #[doc = "Checks if the value of the field is `EDGE_RISING`"]
     #[inline(always)]
     pub fn is_edge_rising(&self) -> bool {
-        *self == INT_CTRL_A::EDGE_RISING
+        **self == INT_CTRL_A::EDGE_RISING
     }
     #[doc = "Checks if the value of the field is `LVL_HIGH`"]
     #[inline(always)]
     pub fn is_lvl_high(&self) -> bool {
-        *self == INT_CTRL_A::LVL_HIGH
+        **self == INT_CTRL_A::LVL_HIGH
     }
     #[doc = "Checks if the value of the field is `EDGE_FALLING`"]
     #[inline(always)]
     pub fn is_edge_falling(&self) -> bool {
-        *self == INT_CTRL_A::EDGE_FALLING
+        **self == INT_CTRL_A::EDGE_FALLING
     }
     #[doc = "Checks if the value of the field is `LVL_LOW`"]
     #[inline(always)]
     pub fn is_lvl_low(&self) -> bool {
-        *self == INT_CTRL_A::LVL_LOW
+        **self == INT_CTRL_A::LVL_LOW
     }
     #[doc = "Checks if the value of the field is `EDGE_BOTH`"]
     #[inline(always)]
     pub fn is_edge_both(&self) -> bool {
-        *self == INT_CTRL_A::EDGE_BOTH
+        **self == INT_CTRL_A::EDGE_BOTH
     }
     #[doc = "Checks if the value of the field is `LVL_DIS2`"]
     #[inline(always)]
     pub fn is_lvl_dis2(&self) -> bool {
-        *self == INT_CTRL_A::LVL_DIS2
+        **self == INT_CTRL_A::LVL_DIS2
     }
 }
-#[doc = "Write proxy for field `INT_CTRL`"]
+impl core::ops::Deref for INT_CTRL_R {
+    type Target = crate::FieldReader<u8, INT_CTRL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT_CTRL` writer - Comparator interrupt type selector:."]
 pub struct INT_CTRL_W<'a> {
     w: &'a mut W,
 }
@@ -254,9 +302,7 @@ impl<'a> INT_CTRL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INT_CTRL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "The analog comparator interrupt edge sensitive is disabled."]
     #[inline(always)]
@@ -301,7 +347,7 @@ impl<'a> INT_CTRL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 2)) | (((value as u32) & 0x07) << 2);
+        self.w.bits = (self.w.bits & !(0x07 << 2)) | ((value as u32 & 0x07) << 2);
         self.w
     }
 }
@@ -319,9 +365,12 @@ impl From<INT_SOURCE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `INT_SOURCE`"]
-pub type INT_SOURCE_R = crate::R<bool, INT_SOURCE_A>;
+#[doc = "Field `INT_SOURCE` reader - Select which Analog comparator output (filtered our un-filtered) is used for interrupt detection."]
+pub struct INT_SOURCE_R(crate::FieldReader<bool, INT_SOURCE_A>);
 impl INT_SOURCE_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INT_SOURCE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INT_SOURCE_A {
@@ -333,15 +382,22 @@ impl INT_SOURCE_R {
     #[doc = "Checks if the value of the field is `FILTER_INT`"]
     #[inline(always)]
     pub fn is_filter_int(&self) -> bool {
-        *self == INT_SOURCE_A::FILTER_INT
+        **self == INT_SOURCE_A::FILTER_INT
     }
     #[doc = "Checks if the value of the field is `RAW_INT`"]
     #[inline(always)]
     pub fn is_raw_int(&self) -> bool {
-        *self == INT_SOURCE_A::RAW_INT
+        **self == INT_SOURCE_A::RAW_INT
     }
 }
-#[doc = "Write proxy for field `INT_SOURCE`"]
+impl core::ops::Deref for INT_SOURCE_R {
+    type Target = crate::FieldReader<bool, INT_SOURCE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INT_SOURCE` writer - Select which Analog comparator output (filtered our un-filtered) is used for interrupt detection."]
 pub struct INT_SOURCE_W<'a> {
     w: &'a mut W,
 }
@@ -349,9 +405,7 @@ impl<'a> INT_SOURCE_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INT_SOURCE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Select Analog Comparator filtered output as input for interrupt detection."]
     #[inline(always)]
@@ -376,7 +430,7 @@ impl<'a> INT_SOURCE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -422,5 +476,30 @@ impl W {
     #[inline(always)]
     pub fn int_source(&mut self) -> INT_SOURCE_W {
         INT_SOURCE_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Comparator Interrupt control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [comp_int_ctrl](index.html) module"]
+pub struct COMP_INT_CTRL_SPEC;
+impl crate::RegisterSpec for COMP_INT_CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [comp_int_ctrl::R](R) reader structure"]
+impl crate::Readable for COMP_INT_CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [comp_int_ctrl::W](W) writer structure"]
+impl crate::Writable for COMP_INT_CTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets COMP_INT_CTRL to value 0"]
+impl crate::Resettable for COMP_INT_CTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

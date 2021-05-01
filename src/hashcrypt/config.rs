@@ -1,29 +1,135 @@
-#[doc = "Reader of register CONFIG"]
-pub type R = crate::R<u32, super::CONFIG>;
-#[doc = "Writer for register CONFIG"]
-pub type W = crate::W<u32, super::CONFIG>;
-#[doc = "Register CONFIG `reset()`'s with value 0"]
-impl crate::ResetValue for super::CONFIG {
-    type Type = u32;
+#[doc = "Register `CONFIG` reader"]
+pub struct R(crate::R<CONFIG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CONFIG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DUAL`"]
-pub type DUAL_R = crate::R<bool, bool>;
-#[doc = "Reader of field `DMA`"]
-pub type DMA_R = crate::R<bool, bool>;
-#[doc = "Reader of field `AHB`"]
-pub type AHB_R = crate::R<bool, bool>;
-#[doc = "Reader of field `AES`"]
-pub type AES_R = crate::R<bool, bool>;
-#[doc = "Reader of field `AESKEY`"]
-pub type AESKEY_R = crate::R<bool, bool>;
-#[doc = "Reader of field `SECRET`"]
-pub type SECRET_R = crate::R<bool, bool>;
-#[doc = "Reader of field `ICB`"]
-pub type ICB_R = crate::R<bool, bool>;
+impl core::convert::From<crate::R<CONFIG_SPEC>> for R {
+    fn from(reader: crate::R<CONFIG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CONFIG` writer"]
+pub struct W(crate::W<CONFIG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CONFIG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<CONFIG_SPEC>> for W {
+    fn from(writer: crate::W<CONFIG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `DUAL` reader - 1 if 2 x 512 bit buffers, 0 if only 1 x 512 bit"]
+pub struct DUAL_R(crate::FieldReader<bool, bool>);
+impl DUAL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DUAL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DUAL_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DMA` reader - 1 if DMA is connected"]
+pub struct DMA_R(crate::FieldReader<bool, bool>);
+impl DMA_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        DMA_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DMA_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AHB` reader - 1 if AHB Master is enabled"]
+pub struct AHB_R(crate::FieldReader<bool, bool>);
+impl AHB_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AHB_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AHB_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AES` reader - 1 if AES 128 included"]
+pub struct AES_R(crate::FieldReader<bool, bool>);
+impl AES_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AES_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AES_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESKEY` reader - 1 if AES 192 and 256 also included"]
+pub struct AESKEY_R(crate::FieldReader<bool, bool>);
+impl AESKEY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESKEY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AESKEY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SECRET` reader - 1 if AES Secret key available"]
+pub struct SECRET_R(crate::FieldReader<bool, bool>);
+impl SECRET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SECRET_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SECRET_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ICB` reader - 1 if ICB over AES included"]
+pub struct ICB_R(crate::FieldReader<bool, bool>);
+impl ICB_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        ICB_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for ICB_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 impl R {
     #[doc = "Bit 0 - 1 if 2 x 512 bit buffers, 0 if only 1 x 512 bit"]
     #[inline(always)]
@@ -61,4 +167,30 @@ impl R {
         ICB_R::new(((self.bits >> 11) & 0x01) != 0)
     }
 }
-impl W {}
+impl W {
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Returns the configuration of this block in this chip - indicates what services are available.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [config](index.html) module"]
+pub struct CONFIG_SPEC;
+impl crate::RegisterSpec for CONFIG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [config::R](R) reader structure"]
+impl crate::Readable for CONFIG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [config::W](W) writer structure"]
+impl crate::Writable for CONFIG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CONFIG to value 0"]
+impl crate::Resettable for CONFIG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
+}

@@ -1,13 +1,35 @@
-#[doc = "Reader of register DEBUG_FEATURES"]
-pub type R = crate::R<u32, super::DEBUG_FEATURES>;
-#[doc = "Writer for register DEBUG_FEATURES"]
-pub type W = crate::W<u32, super::DEBUG_FEATURES>;
-#[doc = "Register DEBUG_FEATURES `reset()`'s with value 0"]
-impl crate::ResetValue for super::DEBUG_FEATURES {
-    type Type = u32;
+#[doc = "Register `DEBUG_FEATURES` reader"]
+pub struct R(crate::R<DEBUG_FEATURES_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DEBUG_FEATURES_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<DEBUG_FEATURES_SPEC>> for R {
+    fn from(reader: crate::R<DEBUG_FEATURES_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DEBUG_FEATURES` writer"]
+pub struct W(crate::W<DEBUG_FEATURES_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DEBUG_FEATURES_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<DEBUG_FEATURES_SPEC>> for W {
+    fn from(writer: crate::W<DEBUG_FEATURES_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "CPU0 Invasive debug control:.\n\nValue on reset: 0"]
@@ -25,31 +47,40 @@ impl From<CPU0_DBGEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPU0_DBGEN`"]
-pub type CPU0_DBGEN_R = crate::R<u8, CPU0_DBGEN_A>;
+#[doc = "Field `CPU0_DBGEN` reader - CPU0 Invasive debug control:."]
+pub struct CPU0_DBGEN_R(crate::FieldReader<u8, CPU0_DBGEN_A>);
 impl CPU0_DBGEN_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CPU0_DBGEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CPU0_DBGEN_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CPU0_DBGEN_A> {
         match self.bits {
-            1 => Val(CPU0_DBGEN_A::DISABLE),
-            2 => Val(CPU0_DBGEN_A::ENABLE),
-            i => Res(i),
+            1 => Some(CPU0_DBGEN_A::DISABLE),
+            2 => Some(CPU0_DBGEN_A::ENABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CPU0_DBGEN_A::DISABLE
+        **self == CPU0_DBGEN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == CPU0_DBGEN_A::ENABLE
+        **self == CPU0_DBGEN_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `CPU0_DBGEN`"]
+impl core::ops::Deref for CPU0_DBGEN_R {
+    type Target = crate::FieldReader<u8, CPU0_DBGEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPU0_DBGEN` writer - CPU0 Invasive debug control:."]
 pub struct CPU0_DBGEN_W<'a> {
     w: &'a mut W,
 }
@@ -72,7 +103,7 @@ impl<'a> CPU0_DBGEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
@@ -91,31 +122,40 @@ impl From<CPU0_NIDEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPU0_NIDEN`"]
-pub type CPU0_NIDEN_R = crate::R<u8, CPU0_NIDEN_A>;
+#[doc = "Field `CPU0_NIDEN` reader - CPU0 Non Invasive debug control:."]
+pub struct CPU0_NIDEN_R(crate::FieldReader<u8, CPU0_NIDEN_A>);
 impl CPU0_NIDEN_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CPU0_NIDEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CPU0_NIDEN_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CPU0_NIDEN_A> {
         match self.bits {
-            1 => Val(CPU0_NIDEN_A::DISABLE),
-            2 => Val(CPU0_NIDEN_A::ENABLE),
-            i => Res(i),
+            1 => Some(CPU0_NIDEN_A::DISABLE),
+            2 => Some(CPU0_NIDEN_A::ENABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CPU0_NIDEN_A::DISABLE
+        **self == CPU0_NIDEN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == CPU0_NIDEN_A::ENABLE
+        **self == CPU0_NIDEN_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `CPU0_NIDEN`"]
+impl core::ops::Deref for CPU0_NIDEN_R {
+    type Target = crate::FieldReader<u8, CPU0_NIDEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPU0_NIDEN` writer - CPU0 Non Invasive debug control:."]
 pub struct CPU0_NIDEN_W<'a> {
     w: &'a mut W,
 }
@@ -138,7 +178,7 @@ impl<'a> CPU0_NIDEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
         self.w
     }
 }
@@ -157,31 +197,40 @@ impl From<CPU0_SPIDEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPU0_SPIDEN`"]
-pub type CPU0_SPIDEN_R = crate::R<u8, CPU0_SPIDEN_A>;
+#[doc = "Field `CPU0_SPIDEN` reader - CPU0 Secure Invasive debug control:."]
+pub struct CPU0_SPIDEN_R(crate::FieldReader<u8, CPU0_SPIDEN_A>);
 impl CPU0_SPIDEN_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CPU0_SPIDEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CPU0_SPIDEN_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CPU0_SPIDEN_A> {
         match self.bits {
-            1 => Val(CPU0_SPIDEN_A::DISABLE),
-            2 => Val(CPU0_SPIDEN_A::ENABLE),
-            i => Res(i),
+            1 => Some(CPU0_SPIDEN_A::DISABLE),
+            2 => Some(CPU0_SPIDEN_A::ENABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CPU0_SPIDEN_A::DISABLE
+        **self == CPU0_SPIDEN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == CPU0_SPIDEN_A::ENABLE
+        **self == CPU0_SPIDEN_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `CPU0_SPIDEN`"]
+impl core::ops::Deref for CPU0_SPIDEN_R {
+    type Target = crate::FieldReader<u8, CPU0_SPIDEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPU0_SPIDEN` writer - CPU0 Secure Invasive debug control:."]
 pub struct CPU0_SPIDEN_W<'a> {
     w: &'a mut W,
 }
@@ -204,7 +253,7 @@ impl<'a> CPU0_SPIDEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
         self.w
     }
 }
@@ -223,31 +272,40 @@ impl From<CPU0_SPNIDEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPU0_SPNIDEN`"]
-pub type CPU0_SPNIDEN_R = crate::R<u8, CPU0_SPNIDEN_A>;
+#[doc = "Field `CPU0_SPNIDEN` reader - CPU0 Secure Non Invasive debug control:."]
+pub struct CPU0_SPNIDEN_R(crate::FieldReader<u8, CPU0_SPNIDEN_A>);
 impl CPU0_SPNIDEN_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CPU0_SPNIDEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CPU0_SPNIDEN_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CPU0_SPNIDEN_A> {
         match self.bits {
-            1 => Val(CPU0_SPNIDEN_A::DISABLE),
-            2 => Val(CPU0_SPNIDEN_A::ENABLE),
-            i => Res(i),
+            1 => Some(CPU0_SPNIDEN_A::DISABLE),
+            2 => Some(CPU0_SPNIDEN_A::ENABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CPU0_SPNIDEN_A::DISABLE
+        **self == CPU0_SPNIDEN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == CPU0_SPNIDEN_A::ENABLE
+        **self == CPU0_SPNIDEN_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `CPU0_SPNIDEN`"]
+impl core::ops::Deref for CPU0_SPNIDEN_R {
+    type Target = crate::FieldReader<u8, CPU0_SPNIDEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPU0_SPNIDEN` writer - CPU0 Secure Non Invasive debug control:."]
 pub struct CPU0_SPNIDEN_W<'a> {
     w: &'a mut W,
 }
@@ -270,7 +328,7 @@ impl<'a> CPU0_SPNIDEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
         self.w
     }
 }
@@ -289,31 +347,40 @@ impl From<CPU1_DBGEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPU1_DBGEN`"]
-pub type CPU1_DBGEN_R = crate::R<u8, CPU1_DBGEN_A>;
+#[doc = "Field `CPU1_DBGEN` reader - CPU1 Invasive debug control:."]
+pub struct CPU1_DBGEN_R(crate::FieldReader<u8, CPU1_DBGEN_A>);
 impl CPU1_DBGEN_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CPU1_DBGEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CPU1_DBGEN_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CPU1_DBGEN_A> {
         match self.bits {
-            1 => Val(CPU1_DBGEN_A::DISABLE),
-            2 => Val(CPU1_DBGEN_A::ENABLE),
-            i => Res(i),
+            1 => Some(CPU1_DBGEN_A::DISABLE),
+            2 => Some(CPU1_DBGEN_A::ENABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CPU1_DBGEN_A::DISABLE
+        **self == CPU1_DBGEN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == CPU1_DBGEN_A::ENABLE
+        **self == CPU1_DBGEN_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `CPU1_DBGEN`"]
+impl core::ops::Deref for CPU1_DBGEN_R {
+    type Target = crate::FieldReader<u8, CPU1_DBGEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPU1_DBGEN` writer - CPU1 Invasive debug control:."]
 pub struct CPU1_DBGEN_W<'a> {
     w: &'a mut W,
 }
@@ -336,7 +403,7 @@ impl<'a> CPU1_DBGEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
         self.w
     }
 }
@@ -355,31 +422,40 @@ impl From<CPU1_NIDEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CPU1_NIDEN`"]
-pub type CPU1_NIDEN_R = crate::R<u8, CPU1_NIDEN_A>;
+#[doc = "Field `CPU1_NIDEN` reader - CPU1 Non Invasive debug control:."]
+pub struct CPU1_NIDEN_R(crate::FieldReader<u8, CPU1_NIDEN_A>);
 impl CPU1_NIDEN_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CPU1_NIDEN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CPU1_NIDEN_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CPU1_NIDEN_A> {
         match self.bits {
-            1 => Val(CPU1_NIDEN_A::DISABLE),
-            2 => Val(CPU1_NIDEN_A::ENABLE),
-            i => Res(i),
+            1 => Some(CPU1_NIDEN_A::DISABLE),
+            2 => Some(CPU1_NIDEN_A::ENABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == CPU1_NIDEN_A::DISABLE
+        **self == CPU1_NIDEN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == CPU1_NIDEN_A::ENABLE
+        **self == CPU1_NIDEN_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `CPU1_NIDEN`"]
+impl core::ops::Deref for CPU1_NIDEN_R {
+    type Target = crate::FieldReader<u8, CPU1_NIDEN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CPU1_NIDEN` writer - CPU1 Non Invasive debug control:."]
 pub struct CPU1_NIDEN_W<'a> {
     w: &'a mut W,
 }
@@ -402,7 +478,7 @@ impl<'a> CPU1_NIDEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
         self.w
     }
 }
@@ -468,5 +544,30 @@ impl W {
     #[inline(always)]
     pub fn cpu1_niden(&mut self) -> CPU1_NIDEN_W {
         CPU1_NIDEN_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [debug_features](index.html) module"]
+pub struct DEBUG_FEATURES_SPEC;
+impl crate::RegisterSpec for DEBUG_FEATURES_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [debug_features::R](R) reader structure"]
+impl crate::Readable for DEBUG_FEATURES_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [debug_features::W](W) writer structure"]
+impl crate::Writable for DEBUG_FEATURES_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DEBUG_FEATURES to value 0"]
+impl crate::Resettable for DEBUG_FEATURES_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

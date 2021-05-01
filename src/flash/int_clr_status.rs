@@ -1,14 +1,24 @@
-#[doc = "Writer for register INT_CLR_STATUS"]
-pub type W = crate::W<u32, super::INT_CLR_STATUS>;
-#[doc = "Register INT_CLR_STATUS `reset()`'s with value 0"]
-impl crate::ResetValue for super::INT_CLR_STATUS {
-    type Type = u32;
+#[doc = "Register `INT_CLR_STATUS` writer"]
+pub struct W(crate::W<INT_CLR_STATUS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<INT_CLR_STATUS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Write proxy for field `FAIL`"]
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<INT_CLR_STATUS_SPEC>> for W {
+    fn from(writer: crate::W<INT_CLR_STATUS_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `FAIL` writer - When a CLR_STATUS bit is written to 1, the corresponding INT_STATUS bit is cleared."]
 pub struct FAIL_W<'a> {
     w: &'a mut W,
 }
@@ -26,11 +36,11 @@ impl<'a> FAIL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Write proxy for field `ERR`"]
+#[doc = "Field `ERR` writer - When a CLR_STATUS bit is written to 1, the corresponding INT_STATUS bit is cleared."]
 pub struct ERR_W<'a> {
     w: &'a mut W,
 }
@@ -48,11 +58,11 @@ impl<'a> ERR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Write proxy for field `DONE`"]
+#[doc = "Field `DONE` writer - When a CLR_STATUS bit is written to 1, the corresponding INT_STATUS bit is cleared."]
 pub struct DONE_W<'a> {
     w: &'a mut W,
 }
@@ -70,11 +80,11 @@ impl<'a> DONE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Write proxy for field `ECC_ERR`"]
+#[doc = "Field `ECC_ERR` writer - When a CLR_STATUS bit is written to 1, the corresponding INT_STATUS bit is cleared."]
 pub struct ECC_ERR_W<'a> {
     w: &'a mut W,
 }
@@ -92,7 +102,7 @@ impl<'a> ECC_ERR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -116,5 +126,26 @@ impl W {
     #[inline(always)]
     pub fn ecc_err(&mut self) -> ECC_ERR_W {
         ECC_ERR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Clear interrupt status bits\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [int_clr_status](index.html) module"]
+pub struct INT_CLR_STATUS_SPEC;
+impl crate::RegisterSpec for INT_CLR_STATUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`write(|w| ..)` method takes [int_clr_status::W](W) writer structure"]
+impl crate::Writable for INT_CLR_STATUS_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets INT_CLR_STATUS to value 0"]
+impl crate::Resettable for INT_CLR_STATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

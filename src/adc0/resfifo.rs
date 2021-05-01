@@ -1,7 +1,31 @@
-#[doc = "Reader of register RESFIFO[%s]"]
-pub type R = crate::R<u32, super::RESFIFO>;
-#[doc = "Reader of field `D`"]
-pub type D_R = crate::R<u16, u16>;
+#[doc = "Register `RESFIFO[%s]` reader"]
+pub struct R(crate::R<RESFIFO_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RESFIFO_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<RESFIFO_SPEC>> for R {
+    fn from(reader: crate::R<RESFIFO_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `D` reader - Data result"]
+pub struct D_R(crate::FieldReader<u16, u16>);
+impl D_R {
+    pub(crate) fn new(bits: u16) -> Self {
+        D_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for D_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
 #[doc = "Trigger Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -35,82 +59,91 @@ impl From<TSRC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TSRC`"]
-pub type TSRC_R = crate::R<u8, TSRC_A>;
+#[doc = "Field `TSRC` reader - Trigger Source"]
+pub struct TSRC_R(crate::FieldReader<u8, TSRC_A>);
 impl TSRC_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        TSRC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, TSRC_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<TSRC_A> {
         match self.bits {
-            0 => Val(TSRC_A::TSRC_0),
-            1 => Val(TSRC_A::TSRC_1),
-            2 => Val(TSRC_A::TSRC_2),
-            3 => Val(TSRC_A::TSRC_3),
-            4 => Val(TSRC_A::TSRC_4),
-            5 => Val(TSRC_A::TSRC_5),
-            6 => Val(TSRC_A::TSRC_6),
-            7 => Val(TSRC_A::TSRC_7),
-            8 => Val(TSRC_A::TSRC_8),
-            9 => Val(TSRC_A::TSRC_9),
-            15 => Val(TSRC_A::TSRC_15),
-            i => Res(i),
+            0 => Some(TSRC_A::TSRC_0),
+            1 => Some(TSRC_A::TSRC_1),
+            2 => Some(TSRC_A::TSRC_2),
+            3 => Some(TSRC_A::TSRC_3),
+            4 => Some(TSRC_A::TSRC_4),
+            5 => Some(TSRC_A::TSRC_5),
+            6 => Some(TSRC_A::TSRC_6),
+            7 => Some(TSRC_A::TSRC_7),
+            8 => Some(TSRC_A::TSRC_8),
+            9 => Some(TSRC_A::TSRC_9),
+            15 => Some(TSRC_A::TSRC_15),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `TSRC_0`"]
     #[inline(always)]
     pub fn is_tsrc_0(&self) -> bool {
-        *self == TSRC_A::TSRC_0
+        **self == TSRC_A::TSRC_0
     }
     #[doc = "Checks if the value of the field is `TSRC_1`"]
     #[inline(always)]
     pub fn is_tsrc_1(&self) -> bool {
-        *self == TSRC_A::TSRC_1
+        **self == TSRC_A::TSRC_1
     }
     #[doc = "Checks if the value of the field is `TSRC_2`"]
     #[inline(always)]
     pub fn is_tsrc_2(&self) -> bool {
-        *self == TSRC_A::TSRC_2
+        **self == TSRC_A::TSRC_2
     }
     #[doc = "Checks if the value of the field is `TSRC_3`"]
     #[inline(always)]
     pub fn is_tsrc_3(&self) -> bool {
-        *self == TSRC_A::TSRC_3
+        **self == TSRC_A::TSRC_3
     }
     #[doc = "Checks if the value of the field is `TSRC_4`"]
     #[inline(always)]
     pub fn is_tsrc_4(&self) -> bool {
-        *self == TSRC_A::TSRC_4
+        **self == TSRC_A::TSRC_4
     }
     #[doc = "Checks if the value of the field is `TSRC_5`"]
     #[inline(always)]
     pub fn is_tsrc_5(&self) -> bool {
-        *self == TSRC_A::TSRC_5
+        **self == TSRC_A::TSRC_5
     }
     #[doc = "Checks if the value of the field is `TSRC_6`"]
     #[inline(always)]
     pub fn is_tsrc_6(&self) -> bool {
-        *self == TSRC_A::TSRC_6
+        **self == TSRC_A::TSRC_6
     }
     #[doc = "Checks if the value of the field is `TSRC_7`"]
     #[inline(always)]
     pub fn is_tsrc_7(&self) -> bool {
-        *self == TSRC_A::TSRC_7
+        **self == TSRC_A::TSRC_7
     }
     #[doc = "Checks if the value of the field is `TSRC_8`"]
     #[inline(always)]
     pub fn is_tsrc_8(&self) -> bool {
-        *self == TSRC_A::TSRC_8
+        **self == TSRC_A::TSRC_8
     }
     #[doc = "Checks if the value of the field is `TSRC_9`"]
     #[inline(always)]
     pub fn is_tsrc_9(&self) -> bool {
-        *self == TSRC_A::TSRC_9
+        **self == TSRC_A::TSRC_9
     }
     #[doc = "Checks if the value of the field is `TSRC_15`"]
     #[inline(always)]
     pub fn is_tsrc_15(&self) -> bool {
-        *self == TSRC_A::TSRC_15
+        **self == TSRC_A::TSRC_15
+    }
+}
+impl core::ops::Deref for TSRC_R {
+    type Target = crate::FieldReader<u8, TSRC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Loop count value\n\nValue on reset: 0"]
@@ -146,82 +179,91 @@ impl From<LOOPCNT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `LOOPCNT`"]
-pub type LOOPCNT_R = crate::R<u8, LOOPCNT_A>;
+#[doc = "Field `LOOPCNT` reader - Loop count value"]
+pub struct LOOPCNT_R(crate::FieldReader<u8, LOOPCNT_A>);
 impl LOOPCNT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        LOOPCNT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, LOOPCNT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<LOOPCNT_A> {
         match self.bits {
-            0 => Val(LOOPCNT_A::LOOPCNT_0),
-            1 => Val(LOOPCNT_A::LOOPCNT_1),
-            2 => Val(LOOPCNT_A::LOOPCNT_2),
-            3 => Val(LOOPCNT_A::LOOPCNT_3),
-            4 => Val(LOOPCNT_A::LOOPCNT_4),
-            5 => Val(LOOPCNT_A::LOOPCNT_5),
-            6 => Val(LOOPCNT_A::LOOPCNT_6),
-            7 => Val(LOOPCNT_A::LOOPCNT_7),
-            8 => Val(LOOPCNT_A::LOOPCNT_8),
-            9 => Val(LOOPCNT_A::LOOPCNT_9),
-            15 => Val(LOOPCNT_A::LOOPCNT_15),
-            i => Res(i),
+            0 => Some(LOOPCNT_A::LOOPCNT_0),
+            1 => Some(LOOPCNT_A::LOOPCNT_1),
+            2 => Some(LOOPCNT_A::LOOPCNT_2),
+            3 => Some(LOOPCNT_A::LOOPCNT_3),
+            4 => Some(LOOPCNT_A::LOOPCNT_4),
+            5 => Some(LOOPCNT_A::LOOPCNT_5),
+            6 => Some(LOOPCNT_A::LOOPCNT_6),
+            7 => Some(LOOPCNT_A::LOOPCNT_7),
+            8 => Some(LOOPCNT_A::LOOPCNT_8),
+            9 => Some(LOOPCNT_A::LOOPCNT_9),
+            15 => Some(LOOPCNT_A::LOOPCNT_15),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_0`"]
     #[inline(always)]
     pub fn is_loopcnt_0(&self) -> bool {
-        *self == LOOPCNT_A::LOOPCNT_0
+        **self == LOOPCNT_A::LOOPCNT_0
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_1`"]
     #[inline(always)]
     pub fn is_loopcnt_1(&self) -> bool {
-        *self == LOOPCNT_A::LOOPCNT_1
+        **self == LOOPCNT_A::LOOPCNT_1
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_2`"]
     #[inline(always)]
     pub fn is_loopcnt_2(&self) -> bool {
-        *self == LOOPCNT_A::LOOPCNT_2
+        **self == LOOPCNT_A::LOOPCNT_2
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_3`"]
     #[inline(always)]
     pub fn is_loopcnt_3(&self) -> bool {
-        *self == LOOPCNT_A::LOOPCNT_3
+        **self == LOOPCNT_A::LOOPCNT_3
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_4`"]
     #[inline(always)]
     pub fn is_loopcnt_4(&self) -> bool {
-        *self == LOOPCNT_A::LOOPCNT_4
+        **self == LOOPCNT_A::LOOPCNT_4
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_5`"]
     #[inline(always)]
     pub fn is_loopcnt_5(&self) -> bool {
-        *self == LOOPCNT_A::LOOPCNT_5
+        **self == LOOPCNT_A::LOOPCNT_5
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_6`"]
     #[inline(always)]
     pub fn is_loopcnt_6(&self) -> bool {
-        *self == LOOPCNT_A::LOOPCNT_6
+        **self == LOOPCNT_A::LOOPCNT_6
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_7`"]
     #[inline(always)]
     pub fn is_loopcnt_7(&self) -> bool {
-        *self == LOOPCNT_A::LOOPCNT_7
+        **self == LOOPCNT_A::LOOPCNT_7
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_8`"]
     #[inline(always)]
     pub fn is_loopcnt_8(&self) -> bool {
-        *self == LOOPCNT_A::LOOPCNT_8
+        **self == LOOPCNT_A::LOOPCNT_8
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_9`"]
     #[inline(always)]
     pub fn is_loopcnt_9(&self) -> bool {
-        *self == LOOPCNT_A::LOOPCNT_9
+        **self == LOOPCNT_A::LOOPCNT_9
     }
     #[doc = "Checks if the value of the field is `LOOPCNT_15`"]
     #[inline(always)]
     pub fn is_loopcnt_15(&self) -> bool {
-        *self == LOOPCNT_A::LOOPCNT_15
+        **self == LOOPCNT_A::LOOPCNT_15
+    }
+}
+impl core::ops::Deref for LOOPCNT_R {
+    type Target = crate::FieldReader<u8, LOOPCNT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "Command Buffer Source\n\nValue on reset: 0"]
@@ -257,82 +299,91 @@ impl From<CMDSRC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CMDSRC`"]
-pub type CMDSRC_R = crate::R<u8, CMDSRC_A>;
+#[doc = "Field `CMDSRC` reader - Command Buffer Source"]
+pub struct CMDSRC_R(crate::FieldReader<u8, CMDSRC_A>);
 impl CMDSRC_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        CMDSRC_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CMDSRC_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CMDSRC_A> {
         match self.bits {
-            0 => Val(CMDSRC_A::CMDSRC_0),
-            1 => Val(CMDSRC_A::CMDSRC_1),
-            2 => Val(CMDSRC_A::CMDSRC_2),
-            3 => Val(CMDSRC_A::CMDSRC_3),
-            4 => Val(CMDSRC_A::CMDSRC_4),
-            5 => Val(CMDSRC_A::CMDSRC_5),
-            6 => Val(CMDSRC_A::CMDSRC_6),
-            7 => Val(CMDSRC_A::CMDSRC_7),
-            8 => Val(CMDSRC_A::CMDSRC_8),
-            9 => Val(CMDSRC_A::CMDSRC_9),
-            15 => Val(CMDSRC_A::CMDSRC_15),
-            i => Res(i),
+            0 => Some(CMDSRC_A::CMDSRC_0),
+            1 => Some(CMDSRC_A::CMDSRC_1),
+            2 => Some(CMDSRC_A::CMDSRC_2),
+            3 => Some(CMDSRC_A::CMDSRC_3),
+            4 => Some(CMDSRC_A::CMDSRC_4),
+            5 => Some(CMDSRC_A::CMDSRC_5),
+            6 => Some(CMDSRC_A::CMDSRC_6),
+            7 => Some(CMDSRC_A::CMDSRC_7),
+            8 => Some(CMDSRC_A::CMDSRC_8),
+            9 => Some(CMDSRC_A::CMDSRC_9),
+            15 => Some(CMDSRC_A::CMDSRC_15),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `CMDSRC_0`"]
     #[inline(always)]
     pub fn is_cmdsrc_0(&self) -> bool {
-        *self == CMDSRC_A::CMDSRC_0
+        **self == CMDSRC_A::CMDSRC_0
     }
     #[doc = "Checks if the value of the field is `CMDSRC_1`"]
     #[inline(always)]
     pub fn is_cmdsrc_1(&self) -> bool {
-        *self == CMDSRC_A::CMDSRC_1
+        **self == CMDSRC_A::CMDSRC_1
     }
     #[doc = "Checks if the value of the field is `CMDSRC_2`"]
     #[inline(always)]
     pub fn is_cmdsrc_2(&self) -> bool {
-        *self == CMDSRC_A::CMDSRC_2
+        **self == CMDSRC_A::CMDSRC_2
     }
     #[doc = "Checks if the value of the field is `CMDSRC_3`"]
     #[inline(always)]
     pub fn is_cmdsrc_3(&self) -> bool {
-        *self == CMDSRC_A::CMDSRC_3
+        **self == CMDSRC_A::CMDSRC_3
     }
     #[doc = "Checks if the value of the field is `CMDSRC_4`"]
     #[inline(always)]
     pub fn is_cmdsrc_4(&self) -> bool {
-        *self == CMDSRC_A::CMDSRC_4
+        **self == CMDSRC_A::CMDSRC_4
     }
     #[doc = "Checks if the value of the field is `CMDSRC_5`"]
     #[inline(always)]
     pub fn is_cmdsrc_5(&self) -> bool {
-        *self == CMDSRC_A::CMDSRC_5
+        **self == CMDSRC_A::CMDSRC_5
     }
     #[doc = "Checks if the value of the field is `CMDSRC_6`"]
     #[inline(always)]
     pub fn is_cmdsrc_6(&self) -> bool {
-        *self == CMDSRC_A::CMDSRC_6
+        **self == CMDSRC_A::CMDSRC_6
     }
     #[doc = "Checks if the value of the field is `CMDSRC_7`"]
     #[inline(always)]
     pub fn is_cmdsrc_7(&self) -> bool {
-        *self == CMDSRC_A::CMDSRC_7
+        **self == CMDSRC_A::CMDSRC_7
     }
     #[doc = "Checks if the value of the field is `CMDSRC_8`"]
     #[inline(always)]
     pub fn is_cmdsrc_8(&self) -> bool {
-        *self == CMDSRC_A::CMDSRC_8
+        **self == CMDSRC_A::CMDSRC_8
     }
     #[doc = "Checks if the value of the field is `CMDSRC_9`"]
     #[inline(always)]
     pub fn is_cmdsrc_9(&self) -> bool {
-        *self == CMDSRC_A::CMDSRC_9
+        **self == CMDSRC_A::CMDSRC_9
     }
     #[doc = "Checks if the value of the field is `CMDSRC_15`"]
     #[inline(always)]
     pub fn is_cmdsrc_15(&self) -> bool {
-        *self == CMDSRC_A::CMDSRC_15
+        **self == CMDSRC_A::CMDSRC_15
+    }
+}
+impl core::ops::Deref for CMDSRC_R {
+    type Target = crate::FieldReader<u8, CMDSRC_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 #[doc = "FIFO entry is valid\n\nValue on reset: 0"]
@@ -349,9 +400,12 @@ impl From<VALID_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VALID`"]
-pub type VALID_R = crate::R<bool, VALID_A>;
+#[doc = "Field `VALID` reader - FIFO entry is valid"]
+pub struct VALID_R(crate::FieldReader<bool, VALID_A>);
 impl VALID_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VALID_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VALID_A {
@@ -363,12 +417,19 @@ impl VALID_R {
     #[doc = "Checks if the value of the field is `VALID_0`"]
     #[inline(always)]
     pub fn is_valid_0(&self) -> bool {
-        *self == VALID_A::VALID_0
+        **self == VALID_A::VALID_0
     }
     #[doc = "Checks if the value of the field is `VALID_1`"]
     #[inline(always)]
     pub fn is_valid_1(&self) -> bool {
-        *self == VALID_A::VALID_1
+        **self == VALID_A::VALID_1
+    }
+}
+impl core::ops::Deref for VALID_R {
+    type Target = crate::FieldReader<bool, VALID_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
 impl R {
@@ -396,5 +457,22 @@ impl R {
     #[inline(always)]
     pub fn valid(&self) -> VALID_R {
         VALID_R::new(((self.bits >> 31) & 0x01) != 0)
+    }
+}
+#[doc = "ADC Data Result FIFO Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [resfifo](index.html) module"]
+pub struct RESFIFO_SPEC;
+impl crate::RegisterSpec for RESFIFO_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [resfifo::R](R) reader structure"]
+impl crate::Readable for RESFIFO_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets RESFIFO[%s]
+to value 0"]
+impl crate::Resettable for RESFIFO_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

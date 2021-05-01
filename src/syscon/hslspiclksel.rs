@@ -1,13 +1,35 @@
-#[doc = "Reader of register HSLSPICLKSEL"]
-pub type R = crate::R<u32, super::HSLSPICLKSEL>;
-#[doc = "Writer for register HSLSPICLKSEL"]
-pub type W = crate::W<u32, super::HSLSPICLKSEL>;
-#[doc = "Register HSLSPICLKSEL `reset()`'s with value 0x07"]
-impl crate::ResetValue for super::HSLSPICLKSEL {
-    type Type = u32;
+#[doc = "Register `HSLSPICLKSEL` reader"]
+pub struct R(crate::R<HSLSPICLKSEL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<HSLSPICLKSEL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x07
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<HSLSPICLKSEL_SPEC>> for R {
+    fn from(reader: crate::R<HSLSPICLKSEL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `HSLSPICLKSEL` writer"]
+pub struct W(crate::W<HSLSPICLKSEL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<HSLSPICLKSEL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<HSLSPICLKSEL_SPEC>> for W {
+    fn from(writer: crate::W<HSLSPICLKSEL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "HS LSPI clock source select.\n\nValue on reset: 7"]
@@ -37,9 +59,12 @@ impl From<SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SEL`"]
-pub type SEL_R = crate::R<u8, SEL_A>;
+#[doc = "Field `SEL` reader - HS LSPI clock source select."]
+pub struct SEL_R(crate::FieldReader<u8, SEL_A>);
 impl SEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SEL_A {
@@ -58,45 +83,52 @@ impl SEL_R {
     #[doc = "Checks if the value of the field is `ENUM_0X0`"]
     #[inline(always)]
     pub fn is_enum_0x0(&self) -> bool {
-        *self == SEL_A::ENUM_0X0
+        **self == SEL_A::ENUM_0X0
     }
     #[doc = "Checks if the value of the field is `ENUM_0X1`"]
     #[inline(always)]
     pub fn is_enum_0x1(&self) -> bool {
-        *self == SEL_A::ENUM_0X1
+        **self == SEL_A::ENUM_0X1
     }
     #[doc = "Checks if the value of the field is `ENUM_0X2`"]
     #[inline(always)]
     pub fn is_enum_0x2(&self) -> bool {
-        *self == SEL_A::ENUM_0X2
+        **self == SEL_A::ENUM_0X2
     }
     #[doc = "Checks if the value of the field is `ENUM_0X3`"]
     #[inline(always)]
     pub fn is_enum_0x3(&self) -> bool {
-        *self == SEL_A::ENUM_0X3
+        **self == SEL_A::ENUM_0X3
     }
     #[doc = "Checks if the value of the field is `ENUM_0X4`"]
     #[inline(always)]
     pub fn is_enum_0x4(&self) -> bool {
-        *self == SEL_A::ENUM_0X4
+        **self == SEL_A::ENUM_0X4
     }
     #[doc = "Checks if the value of the field is `ENUM_0X5`"]
     #[inline(always)]
     pub fn is_enum_0x5(&self) -> bool {
-        *self == SEL_A::ENUM_0X5
+        **self == SEL_A::ENUM_0X5
     }
     #[doc = "Checks if the value of the field is `ENUM_0X6`"]
     #[inline(always)]
     pub fn is_enum_0x6(&self) -> bool {
-        *self == SEL_A::ENUM_0X6
+        **self == SEL_A::ENUM_0X6
     }
     #[doc = "Checks if the value of the field is `ENUM_0X7`"]
     #[inline(always)]
     pub fn is_enum_0x7(&self) -> bool {
-        *self == SEL_A::ENUM_0X7
+        **self == SEL_A::ENUM_0X7
     }
 }
-#[doc = "Write proxy for field `SEL`"]
+impl core::ops::Deref for SEL_R {
+    type Target = crate::FieldReader<u8, SEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SEL` writer - HS LSPI clock source select."]
 pub struct SEL_W<'a> {
     w: &'a mut W,
 }
@@ -104,9 +136,7 @@ impl<'a> SEL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Main clock."]
     #[inline(always)]
@@ -151,7 +181,7 @@ impl<'a> SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
         self.w
     }
 }
@@ -167,5 +197,30 @@ impl W {
     #[inline(always)]
     pub fn sel(&mut self) -> SEL_W {
         SEL_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "HS LSPI clock source select\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hslspiclksel](index.html) module"]
+pub struct HSLSPICLKSEL_SPEC;
+impl crate::RegisterSpec for HSLSPICLKSEL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [hslspiclksel::R](R) reader structure"]
+impl crate::Readable for HSLSPICLKSEL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [hslspiclksel::W](W) writer structure"]
+impl crate::Writable for HSLSPICLKSEL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets HSLSPICLKSEL to value 0x07"]
+impl crate::Resettable for HSLSPICLKSEL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x07
     }
 }

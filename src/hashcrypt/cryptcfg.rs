@@ -1,18 +1,52 @@
-#[doc = "Reader of register CRYPTCFG"]
-pub type R = crate::R<u32, super::CRYPTCFG>;
-#[doc = "Writer for register CRYPTCFG"]
-pub type W = crate::W<u32, super::CRYPTCFG>;
-#[doc = "Register CRYPTCFG `reset()`'s with value 0"]
-impl crate::ResetValue for super::CRYPTCFG {
-    type Type = u32;
+#[doc = "Register `CRYPTCFG` reader"]
+pub struct R(crate::R<CRYPTCFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CRYPTCFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `MSW1ST_OUT`"]
-pub type MSW1ST_OUT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MSW1ST_OUT`"]
+impl core::convert::From<crate::R<CRYPTCFG_SPEC>> for R {
+    fn from(reader: crate::R<CRYPTCFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CRYPTCFG` writer"]
+pub struct W(crate::W<CRYPTCFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CRYPTCFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<CRYPTCFG_SPEC>> for W {
+    fn from(writer: crate::W<CRYPTCFG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `MSW1ST_OUT` reader - If 1, OUTDATA0 will be read Most significant word 1st for AES. Else it will be read in normal little endian - Least significant word 1st. Note: only if allowed by configuration."]
+pub struct MSW1ST_OUT_R(crate::FieldReader<bool, bool>);
+impl MSW1ST_OUT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MSW1ST_OUT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MSW1ST_OUT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MSW1ST_OUT` writer - If 1, OUTDATA0 will be read Most significant word 1st for AES. Else it will be read in normal little endian - Least significant word 1st. Note: only if allowed by configuration."]
 pub struct MSW1ST_OUT_W<'a> {
     w: &'a mut W,
 }
@@ -30,13 +64,25 @@ impl<'a> MSW1ST_OUT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
-#[doc = "Reader of field `SWAPKEY`"]
-pub type SWAPKEY_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SWAPKEY`"]
+#[doc = "Field `SWAPKEY` reader - If 1, will Swap the key input (bytes in each word)."]
+pub struct SWAPKEY_R(crate::FieldReader<bool, bool>);
+impl SWAPKEY_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SWAPKEY_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SWAPKEY_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SWAPKEY` writer - If 1, will Swap the key input (bytes in each word)."]
 pub struct SWAPKEY_W<'a> {
     w: &'a mut W,
 }
@@ -54,13 +100,25 @@ impl<'a> SWAPKEY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Reader of field `SWAPDAT`"]
-pub type SWAPDAT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SWAPDAT`"]
+#[doc = "Field `SWAPDAT` reader - If 1, will SWAP the data and IV inputs (bytes in each word)."]
+pub struct SWAPDAT_R(crate::FieldReader<bool, bool>);
+impl SWAPDAT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SWAPDAT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SWAPDAT_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SWAPDAT` writer - If 1, will SWAP the data and IV inputs (bytes in each word)."]
 pub struct SWAPDAT_W<'a> {
     w: &'a mut W,
 }
@@ -78,13 +136,25 @@ impl<'a> SWAPDAT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Reader of field `MSW1ST`"]
-pub type MSW1ST_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MSW1ST`"]
+#[doc = "Field `MSW1ST` reader - If 1, load of key, IV, and data is MSW 1st for AES. Else, the words are little endian. Note: only if allowed by configuration."]
+pub struct MSW1ST_R(crate::FieldReader<bool, bool>);
+impl MSW1ST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        MSW1ST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for MSW1ST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MSW1ST` writer - If 1, load of key, IV, and data is MSW 1st for AES. Else, the words are little endian. Note: only if allowed by configuration."]
 pub struct MSW1ST_W<'a> {
     w: &'a mut W,
 }
@@ -102,7 +172,7 @@ impl<'a> MSW1ST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -123,37 +193,46 @@ impl From<AESMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `AESMODE`"]
-pub type AESMODE_R = crate::R<u8, AESMODE_A>;
+#[doc = "Field `AESMODE` reader - AES Cipher mode to use if plain AES"]
+pub struct AESMODE_R(crate::FieldReader<u8, AESMODE_A>);
 impl AESMODE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        AESMODE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, AESMODE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<AESMODE_A> {
         match self.bits {
-            0 => Val(AESMODE_A::ECB),
-            1 => Val(AESMODE_A::CBC),
-            2 => Val(AESMODE_A::CTR),
-            i => Res(i),
+            0 => Some(AESMODE_A::ECB),
+            1 => Some(AESMODE_A::CBC),
+            2 => Some(AESMODE_A::CTR),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `ECB`"]
     #[inline(always)]
     pub fn is_ecb(&self) -> bool {
-        *self == AESMODE_A::ECB
+        **self == AESMODE_A::ECB
     }
     #[doc = "Checks if the value of the field is `CBC`"]
     #[inline(always)]
     pub fn is_cbc(&self) -> bool {
-        *self == AESMODE_A::CBC
+        **self == AESMODE_A::CBC
     }
     #[doc = "Checks if the value of the field is `CTR`"]
     #[inline(always)]
     pub fn is_ctr(&self) -> bool {
-        *self == AESMODE_A::CTR
+        **self == AESMODE_A::CTR
     }
 }
-#[doc = "Write proxy for field `AESMODE`"]
+impl core::ops::Deref for AESMODE_R {
+    type Target = crate::FieldReader<u8, AESMODE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESMODE` writer - AES Cipher mode to use if plain AES"]
 pub struct AESMODE_W<'a> {
     w: &'a mut W,
 }
@@ -181,7 +260,7 @@ impl<'a> AESMODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
         self.w
     }
 }
@@ -199,9 +278,12 @@ impl From<AESDECRYPT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `AESDECRYPT`"]
-pub type AESDECRYPT_R = crate::R<bool, AESDECRYPT_A>;
+#[doc = "Field `AESDECRYPT` reader - AES ECB direction. Only encryption used if CTR mode or manual modes such as CFB"]
+pub struct AESDECRYPT_R(crate::FieldReader<bool, AESDECRYPT_A>);
 impl AESDECRYPT_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESDECRYPT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AESDECRYPT_A {
@@ -213,15 +295,22 @@ impl AESDECRYPT_R {
     #[doc = "Checks if the value of the field is `ENCRYPT`"]
     #[inline(always)]
     pub fn is_encrypt(&self) -> bool {
-        *self == AESDECRYPT_A::ENCRYPT
+        **self == AESDECRYPT_A::ENCRYPT
     }
     #[doc = "Checks if the value of the field is `DECRYPT`"]
     #[inline(always)]
     pub fn is_decrypt(&self) -> bool {
-        *self == AESDECRYPT_A::DECRYPT
+        **self == AESDECRYPT_A::DECRYPT
     }
 }
-#[doc = "Write proxy for field `AESDECRYPT`"]
+impl core::ops::Deref for AESDECRYPT_R {
+    type Target = crate::FieldReader<bool, AESDECRYPT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESDECRYPT` writer - AES ECB direction. Only encryption used if CTR mode or manual modes such as CFB"]
 pub struct AESDECRYPT_W<'a> {
     w: &'a mut W,
 }
@@ -229,9 +318,7 @@ impl<'a> AESDECRYPT_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AESDECRYPT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Encrypt"]
     #[inline(always)]
@@ -256,7 +343,7 @@ impl<'a> AESDECRYPT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -274,9 +361,12 @@ impl From<AESSECRET_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `AESSECRET`"]
-pub type AESSECRET_R = crate::R<bool, AESSECRET_A>;
+#[doc = "Field `AESSECRET` reader - Selects the Hidden Secret key vs. User key, if provided. If security levels are used, only the highest level is permitted to select this."]
+pub struct AESSECRET_R(crate::FieldReader<bool, AESSECRET_A>);
 impl AESSECRET_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AESSECRET_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AESSECRET_A {
@@ -288,15 +378,22 @@ impl AESSECRET_R {
     #[doc = "Checks if the value of the field is `NORMAL_WAY`"]
     #[inline(always)]
     pub fn is_normal_way(&self) -> bool {
-        *self == AESSECRET_A::NORMAL_WAY
+        **self == AESSECRET_A::NORMAL_WAY
     }
     #[doc = "Checks if the value of the field is `HIDDEN_WAY`"]
     #[inline(always)]
     pub fn is_hidden_way(&self) -> bool {
-        *self == AESSECRET_A::HIDDEN_WAY
+        **self == AESSECRET_A::HIDDEN_WAY
     }
 }
-#[doc = "Write proxy for field `AESSECRET`"]
+impl core::ops::Deref for AESSECRET_R {
+    type Target = crate::FieldReader<bool, AESSECRET_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESSECRET` writer - Selects the Hidden Secret key vs. User key, if provided. If security levels are used, only the highest level is permitted to select this."]
 pub struct AESSECRET_W<'a> {
     w: &'a mut W,
 }
@@ -304,9 +401,7 @@ impl<'a> AESSECRET_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AESSECRET_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "User key provided in normal way"]
     #[inline(always)]
@@ -331,7 +426,7 @@ impl<'a> AESSECRET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -352,37 +447,46 @@ impl From<AESKEYSZ_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `AESKEYSZ`"]
-pub type AESKEYSZ_R = crate::R<u8, AESKEYSZ_A>;
+#[doc = "Field `AESKEYSZ` reader - Sets the AES key size"]
+pub struct AESKEYSZ_R(crate::FieldReader<u8, AESKEYSZ_A>);
 impl AESKEYSZ_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        AESKEYSZ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, AESKEYSZ_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<AESKEYSZ_A> {
         match self.bits {
-            0 => Val(AESKEYSZ_A::BITS_128),
-            1 => Val(AESKEYSZ_A::BITS_192),
-            2 => Val(AESKEYSZ_A::BITS_256),
-            i => Res(i),
+            0 => Some(AESKEYSZ_A::BITS_128),
+            1 => Some(AESKEYSZ_A::BITS_192),
+            2 => Some(AESKEYSZ_A::BITS_256),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `BITS_128`"]
     #[inline(always)]
     pub fn is_bits_128(&self) -> bool {
-        *self == AESKEYSZ_A::BITS_128
+        **self == AESKEYSZ_A::BITS_128
     }
     #[doc = "Checks if the value of the field is `BITS_192`"]
     #[inline(always)]
     pub fn is_bits_192(&self) -> bool {
-        *self == AESKEYSZ_A::BITS_192
+        **self == AESKEYSZ_A::BITS_192
     }
     #[doc = "Checks if the value of the field is `BITS_256`"]
     #[inline(always)]
     pub fn is_bits_256(&self) -> bool {
-        *self == AESKEYSZ_A::BITS_256
+        **self == AESKEYSZ_A::BITS_256
     }
 }
-#[doc = "Write proxy for field `AESKEYSZ`"]
+impl core::ops::Deref for AESKEYSZ_R {
+    type Target = crate::FieldReader<u8, AESKEYSZ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESKEYSZ` writer - Sets the AES key size"]
 pub struct AESKEYSZ_W<'a> {
     w: &'a mut W,
 }
@@ -410,13 +514,25 @@ impl<'a> AESKEYSZ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
         self.w
     }
 }
-#[doc = "Reader of field `AESCTRPOS`"]
-pub type AESCTRPOS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `AESCTRPOS`"]
+#[doc = "Field `AESCTRPOS` reader - Halfword position of 16b counter in IV if AESMODE is CTR (position is fixed for Salsa and ChaCha). Only supports 16b counter, so application must control any additional bytes if using more. The 16-bit counter is read from the IV and incremented by 1 each time. Any other use CTR should use ECB directly and do its own XOR and so on."]
+pub struct AESCTRPOS_R(crate::FieldReader<u8, u8>);
+impl AESCTRPOS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        AESCTRPOS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AESCTRPOS_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AESCTRPOS` writer - Halfword position of 16b counter in IV if AESMODE is CTR (position is fixed for Salsa and ChaCha). Only supports 16b counter, so application must control any additional bytes if using more. The 16-bit counter is read from the IV and incremented by 1 each time. Any other use CTR should use ECB directly and do its own XOR and so on."]
 pub struct AESCTRPOS_W<'a> {
     w: &'a mut W,
 }
@@ -424,13 +540,25 @@ impl<'a> AESCTRPOS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 10)) | (((value as u32) & 0x07) << 10);
+        self.w.bits = (self.w.bits & !(0x07 << 10)) | ((value as u32 & 0x07) << 10);
         self.w
     }
 }
-#[doc = "Reader of field `STREAMLAST`"]
-pub type STREAMLAST_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `STREAMLAST`"]
+#[doc = "Field `STREAMLAST` reader - Is 1 if last stream block. If not 1, then the engine will compute the next \"hash\"."]
+pub struct STREAMLAST_R(crate::FieldReader<bool, bool>);
+impl STREAMLAST_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        STREAMLAST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for STREAMLAST_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `STREAMLAST` writer - Is 1 if last stream block. If not 1, then the engine will compute the next \"hash\"."]
 pub struct STREAMLAST_W<'a> {
     w: &'a mut W,
 }
@@ -448,7 +576,7 @@ impl<'a> STREAMLAST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
         self.w
     }
 }
@@ -471,9 +599,12 @@ impl From<ICBSZ_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ICBSZ`"]
-pub type ICBSZ_R = crate::R<u8, ICBSZ_A>;
+#[doc = "Field `ICBSZ` reader - This sets the ICB size between 32 and 128 bits, using the following rules. Note that the counter is assumed to occupy the low order bits of the IV."]
+pub struct ICBSZ_R(crate::FieldReader<u8, ICBSZ_A>);
 impl ICBSZ_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ICBSZ_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ICBSZ_A {
@@ -488,25 +619,32 @@ impl ICBSZ_R {
     #[doc = "Checks if the value of the field is `BITS_32`"]
     #[inline(always)]
     pub fn is_bits_32(&self) -> bool {
-        *self == ICBSZ_A::BITS_32
+        **self == ICBSZ_A::BITS_32
     }
     #[doc = "Checks if the value of the field is `BITS_64`"]
     #[inline(always)]
     pub fn is_bits_64(&self) -> bool {
-        *self == ICBSZ_A::BITS_64
+        **self == ICBSZ_A::BITS_64
     }
     #[doc = "Checks if the value of the field is `BITS_96`"]
     #[inline(always)]
     pub fn is_bits_96(&self) -> bool {
-        *self == ICBSZ_A::BITS_96
+        **self == ICBSZ_A::BITS_96
     }
     #[doc = "Checks if the value of the field is `BIT_128`"]
     #[inline(always)]
     pub fn is_bit_128(&self) -> bool {
-        *self == ICBSZ_A::BIT_128
+        **self == ICBSZ_A::BIT_128
     }
 }
-#[doc = "Write proxy for field `ICBSZ`"]
+impl core::ops::Deref for ICBSZ_R {
+    type Target = crate::FieldReader<u8, ICBSZ_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ICBSZ` writer - This sets the ICB size between 32 and 128 bits, using the following rules. Note that the counter is assumed to occupy the low order bits of the IV."]
 pub struct ICBSZ_W<'a> {
     w: &'a mut W,
 }
@@ -514,9 +652,7 @@ impl<'a> ICBSZ_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ICBSZ_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "32 bits of the IV/ctr are used (from 127:96)"]
     #[inline(always)]
@@ -541,7 +677,7 @@ impl<'a> ICBSZ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 20)) | (((value as u32) & 0x03) << 20);
+        self.w.bits = (self.w.bits & !(0x03 << 20)) | ((value as u32 & 0x03) << 20);
         self.w
     }
 }
@@ -564,9 +700,12 @@ impl From<ICBSTRM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ICBSTRM`"]
-pub type ICBSTRM_R = crate::R<u8, ICBSTRM_A>;
+#[doc = "Field `ICBSTRM` reader - The size of the ICB-AES stream that can be pushed before needing to compute a new IV/ctr (counter start). This optimizes the performance of the stream of blocks after the 1st."]
+pub struct ICBSTRM_R(crate::FieldReader<u8, ICBSTRM_A>);
 impl ICBSTRM_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ICBSTRM_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ICBSTRM_A {
@@ -581,25 +720,32 @@ impl ICBSTRM_R {
     #[doc = "Checks if the value of the field is `BLOCKS_8`"]
     #[inline(always)]
     pub fn is_blocks_8(&self) -> bool {
-        *self == ICBSTRM_A::BLOCKS_8
+        **self == ICBSTRM_A::BLOCKS_8
     }
     #[doc = "Checks if the value of the field is `BLOCKS_16`"]
     #[inline(always)]
     pub fn is_blocks_16(&self) -> bool {
-        *self == ICBSTRM_A::BLOCKS_16
+        **self == ICBSTRM_A::BLOCKS_16
     }
     #[doc = "Checks if the value of the field is `BLOCKS_32`"]
     #[inline(always)]
     pub fn is_blocks_32(&self) -> bool {
-        *self == ICBSTRM_A::BLOCKS_32
+        **self == ICBSTRM_A::BLOCKS_32
     }
     #[doc = "Checks if the value of the field is `BLOCKS_64`"]
     #[inline(always)]
     pub fn is_blocks_64(&self) -> bool {
-        *self == ICBSTRM_A::BLOCKS_64
+        **self == ICBSTRM_A::BLOCKS_64
     }
 }
-#[doc = "Write proxy for field `ICBSTRM`"]
+impl core::ops::Deref for ICBSTRM_R {
+    type Target = crate::FieldReader<u8, ICBSTRM_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ICBSTRM` writer - The size of the ICB-AES stream that can be pushed before needing to compute a new IV/ctr (counter start). This optimizes the performance of the stream of blocks after the 1st."]
 pub struct ICBSTRM_W<'a> {
     w: &'a mut W,
 }
@@ -607,9 +753,7 @@ impl<'a> ICBSTRM_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: ICBSTRM_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "8 blocks"]
     #[inline(always)]
@@ -634,7 +778,7 @@ impl<'a> ICBSTRM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | (((value as u32) & 0x03) << 22);
+        self.w.bits = (self.w.bits & !(0x03 << 22)) | ((value as u32 & 0x03) << 22);
         self.w
     }
 }
@@ -760,5 +904,30 @@ impl W {
     #[inline(always)]
     pub fn icbstrm(&mut self) -> ICBSTRM_W {
         ICBSTRM_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Crypto settings for AES and Salsa and ChaCha\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cryptcfg](index.html) module"]
+pub struct CRYPTCFG_SPEC;
+impl crate::RegisterSpec for CRYPTCFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [cryptcfg::R](R) reader structure"]
+impl crate::Readable for CRYPTCFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cryptcfg::W](W) writer structure"]
+impl crate::Writable for CRYPTCFG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CRYPTCFG to value 0"]
+impl crate::Resettable for CRYPTCFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

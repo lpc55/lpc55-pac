@@ -1,13 +1,35 @@
-#[doc = "Reader of register SFSR"]
-pub type R = crate::R<u32, super::SFSR>;
-#[doc = "Writer for register SFSR"]
-pub type W = crate::W<u32, super::SFSR>;
-#[doc = "Register SFSR `reset()`'s with value 0"]
-impl crate::ResetValue for super::SFSR {
-    type Type = u32;
+#[doc = "Register `SFSR` reader"]
+pub struct R(crate::R<SFSR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SFSR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<SFSR_SPEC>> for R {
+    fn from(reader: crate::R<SFSR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SFSR` writer"]
+pub struct W(crate::W<SFSR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SFSR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<SFSR_SPEC>> for W {
+    fn from(writer: crate::W<SFSR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Invalid entry point.\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<INVEP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `INVEP`"]
-pub type INVEP_R = crate::R<bool, INVEP_A>;
+#[doc = "Field `INVEP` reader - Invalid entry point."]
+pub struct INVEP_R(crate::FieldReader<bool, INVEP_A>);
 impl INVEP_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INVEP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INVEP_A {
@@ -38,15 +63,22 @@ impl INVEP_R {
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == INVEP_A::NO_ERROR
+        **self == INVEP_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == INVEP_A::ERROR
+        **self == INVEP_A::ERROR
     }
 }
-#[doc = "Write proxy for field `INVEP`"]
+impl core::ops::Deref for INVEP_R {
+    type Target = crate::FieldReader<bool, INVEP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INVEP` writer - Invalid entry point."]
 pub struct INVEP_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> INVEP_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INVEP_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Error has not occurred."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> INVEP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<INVIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `INVIS`"]
-pub type INVIS_R = crate::R<bool, INVIS_A>;
+#[doc = "Field `INVIS` reader - Invalid integrity signature flag."]
+pub struct INVIS_R(crate::FieldReader<bool, INVIS_A>);
 impl INVIS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INVIS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INVIS_A {
@@ -113,15 +146,22 @@ impl INVIS_R {
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == INVIS_A::NO_ERROR
+        **self == INVIS_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == INVIS_A::ERROR
+        **self == INVIS_A::ERROR
     }
 }
-#[doc = "Write proxy for field `INVIS`"]
+impl core::ops::Deref for INVIS_R {
+    type Target = crate::FieldReader<bool, INVIS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INVIS` writer - Invalid integrity signature flag."]
 pub struct INVIS_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> INVIS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INVIS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Error has not occurred."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> INVIS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<INVER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `INVER`"]
-pub type INVER_R = crate::R<bool, INVER_A>;
+#[doc = "Field `INVER` reader - Invalid exception return flag."]
+pub struct INVER_R(crate::FieldReader<bool, INVER_A>);
 impl INVER_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INVER_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INVER_A {
@@ -188,15 +229,22 @@ impl INVER_R {
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == INVER_A::NO_ERROR
+        **self == INVER_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == INVER_A::ERROR
+        **self == INVER_A::ERROR
     }
 }
-#[doc = "Write proxy for field `INVER`"]
+impl core::ops::Deref for INVER_R {
+    type Target = crate::FieldReader<bool, INVER_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INVER` writer - Invalid exception return flag."]
 pub struct INVER_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> INVER_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INVER_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Error has not occurred."]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> INVER_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<AUVIOL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `AUVIOL`"]
-pub type AUVIOL_R = crate::R<bool, AUVIOL_A>;
+#[doc = "Field `AUVIOL` reader - Attribution unit violation flag."]
+pub struct AUVIOL_R(crate::FieldReader<bool, AUVIOL_A>);
 impl AUVIOL_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        AUVIOL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AUVIOL_A {
@@ -263,15 +312,22 @@ impl AUVIOL_R {
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == AUVIOL_A::NO_ERROR
+        **self == AUVIOL_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == AUVIOL_A::ERROR
+        **self == AUVIOL_A::ERROR
     }
 }
-#[doc = "Write proxy for field `AUVIOL`"]
+impl core::ops::Deref for AUVIOL_R {
+    type Target = crate::FieldReader<bool, AUVIOL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AUVIOL` writer - Attribution unit violation flag."]
 pub struct AUVIOL_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> AUVIOL_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: AUVIOL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Error has not occurred."]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> AUVIOL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<INVTRAN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `INVTRAN`"]
-pub type INVTRAN_R = crate::R<bool, INVTRAN_A>;
+#[doc = "Field `INVTRAN` reader - Invalid transition flag."]
+pub struct INVTRAN_R(crate::FieldReader<bool, INVTRAN_A>);
 impl INVTRAN_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        INVTRAN_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INVTRAN_A {
@@ -338,15 +395,22 @@ impl INVTRAN_R {
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == INVTRAN_A::NO_ERROR
+        **self == INVTRAN_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == INVTRAN_A::ERROR
+        **self == INVTRAN_A::ERROR
     }
 }
-#[doc = "Write proxy for field `INVTRAN`"]
+impl core::ops::Deref for INVTRAN_R {
+    type Target = crate::FieldReader<bool, INVTRAN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `INVTRAN` writer - Invalid transition flag."]
 pub struct INVTRAN_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> INVTRAN_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: INVTRAN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Error has not occurred."]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> INVTRAN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<LSPERR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LSPERR`"]
-pub type LSPERR_R = crate::R<bool, LSPERR_A>;
+#[doc = "Field `LSPERR` reader - Lazy state preservation error flag."]
+pub struct LSPERR_R(crate::FieldReader<bool, LSPERR_A>);
 impl LSPERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LSPERR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSPERR_A {
@@ -413,15 +478,22 @@ impl LSPERR_R {
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == LSPERR_A::NO_ERROR
+        **self == LSPERR_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == LSPERR_A::ERROR
+        **self == LSPERR_A::ERROR
     }
 }
-#[doc = "Write proxy for field `LSPERR`"]
+impl core::ops::Deref for LSPERR_R {
+    type Target = crate::FieldReader<bool, LSPERR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LSPERR` writer - Lazy state preservation error flag."]
 pub struct LSPERR_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> LSPERR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LSPERR_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Error has not occurred."]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> LSPERR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<SFARVALID_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `SFARVALID`"]
-pub type SFARVALID_R = crate::R<bool, SFARVALID_A>;
+#[doc = "Field `SFARVALID` reader - Secure fault address valid."]
+pub struct SFARVALID_R(crate::FieldReader<bool, SFARVALID_A>);
 impl SFARVALID_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SFARVALID_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SFARVALID_A {
@@ -488,15 +561,22 @@ impl SFARVALID_R {
     #[doc = "Checks if the value of the field is `NOT_VALID`"]
     #[inline(always)]
     pub fn is_not_valid(&self) -> bool {
-        *self == SFARVALID_A::NOT_VALID
+        **self == SFARVALID_A::NOT_VALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        *self == SFARVALID_A::VALID
+        **self == SFARVALID_A::VALID
     }
 }
-#[doc = "Write proxy for field `SFARVALID`"]
+impl core::ops::Deref for SFARVALID_R {
+    type Target = crate::FieldReader<bool, SFARVALID_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SFARVALID` writer - Secure fault address valid."]
 pub struct SFARVALID_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> SFARVALID_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SFARVALID_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "SFAR content not valid."]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> SFARVALID_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<LSERR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `LSERR`"]
-pub type LSERR_R = crate::R<bool, LSERR_A>;
+#[doc = "Field `LSERR` reader - Lazy state error flag."]
+pub struct LSERR_R(crate::FieldReader<bool, LSERR_A>);
 impl LSERR_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        LSERR_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LSERR_A {
@@ -563,15 +644,22 @@ impl LSERR_R {
     #[doc = "Checks if the value of the field is `NO_ERROR`"]
     #[inline(always)]
     pub fn is_no_error(&self) -> bool {
-        *self == LSERR_A::NO_ERROR
+        **self == LSERR_A::NO_ERROR
     }
     #[doc = "Checks if the value of the field is `ERROR`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        *self == LSERR_A::ERROR
+        **self == LSERR_A::ERROR
     }
 }
-#[doc = "Write proxy for field `LSERR`"]
+impl core::ops::Deref for LSERR_R {
+    type Target = crate::FieldReader<bool, LSERR_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LSERR` writer - Lazy state error flag."]
 pub struct LSERR_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +667,7 @@ impl<'a> LSERR_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LSERR_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Error has not occurred"]
     #[inline(always)]
@@ -606,7 +692,7 @@ impl<'a> LSERR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -692,5 +778,30 @@ impl W {
     #[inline(always)]
     pub fn lserr(&mut self) -> LSERR_W {
         LSERR_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Secure Fault Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sfsr](index.html) module"]
+pub struct SFSR_SPEC;
+impl crate::RegisterSpec for SFSR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [sfsr::R](R) reader structure"]
+impl crate::Readable for SFSR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sfsr::W](W) writer structure"]
+impl crate::Writable for SFSR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SFSR to value 0"]
+impl crate::Resettable for SFSR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

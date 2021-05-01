@@ -1,18 +1,52 @@
-#[doc = "Reader of register CPU1STCKCAL"]
-pub type R = crate::R<u32, super::CPU1STCKCAL>;
-#[doc = "Writer for register CPU1STCKCAL"]
-pub type W = crate::W<u32, super::CPU1STCKCAL>;
-#[doc = "Register CPU1STCKCAL `reset()`'s with value 0"]
-impl crate::ResetValue for super::CPU1STCKCAL {
-    type Type = u32;
+#[doc = "Register `CPU1STCKCAL` reader"]
+pub struct R(crate::R<CPU1STCKCAL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CPU1STCKCAL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TENMS`"]
-pub type TENMS_R = crate::R<u32, u32>;
-#[doc = "Write proxy for field `TENMS`"]
+impl core::convert::From<crate::R<CPU1STCKCAL_SPEC>> for R {
+    fn from(reader: crate::R<CPU1STCKCAL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CPU1STCKCAL` writer"]
+pub struct W(crate::W<CPU1STCKCAL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CPU1STCKCAL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<CPU1STCKCAL_SPEC>> for W {
+    fn from(writer: crate::W<CPU1STCKCAL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `TENMS` reader - Reload value for 10ms (100Hz) timing, subject to system clock skew errors. If the value reads as zero, the calibration value is not known."]
+pub struct TENMS_R(crate::FieldReader<u32, u32>);
+impl TENMS_R {
+    pub(crate) fn new(bits: u32) -> Self {
+        TENMS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TENMS_R {
+    type Target = crate::FieldReader<u32, u32>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TENMS` writer - Reload value for 10ms (100Hz) timing, subject to system clock skew errors. If the value reads as zero, the calibration value is not known."]
 pub struct TENMS_W<'a> {
     w: &'a mut W,
 }
@@ -20,13 +54,25 @@ impl<'a> TENMS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | ((value as u32) & 0x00ff_ffff);
+        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
         self.w
     }
 }
-#[doc = "Reader of field `SKEW`"]
-pub type SKEW_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SKEW`"]
+#[doc = "Field `SKEW` reader - Indicates whether the TENMS value is exact: 0 = TENMS value is exact; 1 = TENMS value is inexact, or not given."]
+pub struct SKEW_R(crate::FieldReader<bool, bool>);
+impl SKEW_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        SKEW_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SKEW_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SKEW` writer - Indicates whether the TENMS value is exact: 0 = TENMS value is exact; 1 = TENMS value is inexact, or not given."]
 pub struct SKEW_W<'a> {
     w: &'a mut W,
 }
@@ -44,13 +90,25 @@ impl<'a> SKEW_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
         self.w
     }
 }
-#[doc = "Reader of field `NOREF`"]
-pub type NOREF_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `NOREF`"]
+#[doc = "Field `NOREF` reader - Indicates whether the device provides a reference clock to the processor: 0 = reference clock provided; 1 = no reference clock provided."]
+pub struct NOREF_R(crate::FieldReader<bool, bool>);
+impl NOREF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        NOREF_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for NOREF_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `NOREF` writer - Indicates whether the device provides a reference clock to the processor: 0 = reference clock provided; 1 = no reference clock provided."]
 pub struct NOREF_W<'a> {
     w: &'a mut W,
 }
@@ -68,7 +126,7 @@ impl<'a> NOREF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
         self.w
     }
 }
@@ -104,5 +162,30 @@ impl W {
     #[inline(always)]
     pub fn noref(&mut self) -> NOREF_W {
         NOREF_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "System tick calibration for CPU1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cpu1stckcal](index.html) module"]
+pub struct CPU1STCKCAL_SPEC;
+impl crate::RegisterSpec for CPU1STCKCAL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [cpu1stckcal::R](R) reader structure"]
+impl crate::Readable for CPU1STCKCAL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cpu1stckcal::W](W) writer structure"]
+impl crate::Writable for CPU1STCKCAL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CPU1STCKCAL to value 0"]
+impl crate::Resettable for CPU1STCKCAL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

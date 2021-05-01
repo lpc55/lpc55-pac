@@ -1,13 +1,35 @@
-#[doc = "Reader of register MEMORYREMAP"]
-pub type R = crate::R<u32, super::MEMORYREMAP>;
-#[doc = "Writer for register MEMORYREMAP"]
-pub type W = crate::W<u32, super::MEMORYREMAP>;
-#[doc = "Register MEMORYREMAP `reset()`'s with value 0"]
-impl crate::ResetValue for super::MEMORYREMAP {
-    type Type = u32;
+#[doc = "Register `MEMORYREMAP` reader"]
+pub struct R(crate::R<MEMORYREMAP_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MEMORYREMAP_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<MEMORYREMAP_SPEC>> for R {
+    fn from(reader: crate::R<MEMORYREMAP_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MEMORYREMAP` writer"]
+pub struct W(crate::W<MEMORYREMAP_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MEMORYREMAP_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<MEMORYREMAP_SPEC>> for W {
+    fn from(writer: crate::W<MEMORYREMAP_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Select the location of the vector table :.\n\nValue on reset: 0"]
@@ -29,9 +51,12 @@ impl From<MAP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MAP`"]
-pub type MAP_R = crate::R<u8, MAP_A>;
+#[doc = "Field `MAP` reader - Select the location of the vector table :."]
+pub struct MAP_R(crate::FieldReader<u8, MAP_A>);
 impl MAP_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        MAP_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MAP_A {
@@ -46,25 +71,32 @@ impl MAP_R {
     #[doc = "Checks if the value of the field is `ROM0`"]
     #[inline(always)]
     pub fn is_rom0(&self) -> bool {
-        *self == MAP_A::ROM0
+        **self == MAP_A::ROM0
     }
     #[doc = "Checks if the value of the field is `RAM1`"]
     #[inline(always)]
     pub fn is_ram1(&self) -> bool {
-        *self == MAP_A::RAM1
+        **self == MAP_A::RAM1
     }
     #[doc = "Checks if the value of the field is `FLASH0`"]
     #[inline(always)]
     pub fn is_flash0(&self) -> bool {
-        *self == MAP_A::FLASH0
+        **self == MAP_A::FLASH0
     }
     #[doc = "Checks if the value of the field is `FLASH1`"]
     #[inline(always)]
     pub fn is_flash1(&self) -> bool {
-        *self == MAP_A::FLASH1
+        **self == MAP_A::FLASH1
     }
 }
-#[doc = "Write proxy for field `MAP`"]
+impl core::ops::Deref for MAP_R {
+    type Target = crate::FieldReader<u8, MAP_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `MAP` writer - Select the location of the vector table :."]
 pub struct MAP_W<'a> {
     w: &'a mut W,
 }
@@ -72,9 +104,7 @@ impl<'a> MAP_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MAP_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
+        self.bits(variant.into())
     }
     #[doc = "Vector Table in ROM."]
     #[inline(always)]
@@ -99,7 +129,7 @@ impl<'a> MAP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
@@ -115,5 +145,30 @@ impl W {
     #[inline(always)]
     pub fn map(&mut self) -> MAP_W {
         MAP_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Memory Remap control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [memoryremap](index.html) module"]
+pub struct MEMORYREMAP_SPEC;
+impl crate::RegisterSpec for MEMORYREMAP_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [memoryremap::R](R) reader structure"]
+impl crate::Readable for MEMORYREMAP_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [memoryremap::W](W) writer structure"]
+impl crate::Writable for MEMORYREMAP_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MEMORYREMAP to value 0"]
+impl crate::Resettable for MEMORYREMAP_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

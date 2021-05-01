@@ -1,13 +1,35 @@
-#[doc = "Reader of register FCCTRLSEL%s"]
-pub type R = crate::R<u32, super::FCCTRLSEL>;
-#[doc = "Writer for register FCCTRLSEL%s"]
-pub type W = crate::W<u32, super::FCCTRLSEL>;
-#[doc = "Register FCCTRLSEL%s `reset()`'s with value 0"]
-impl crate::ResetValue for super::FCCTRLSEL {
-    type Type = u32;
+#[doc = "Register `FCCTRLSEL%s` reader"]
+pub struct R(crate::R<FCCTRLSEL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<FCCTRLSEL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<FCCTRLSEL_SPEC>> for R {
+    fn from(reader: crate::R<FCCTRLSEL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `FCCTRLSEL%s` writer"]
+pub struct W(crate::W<FCCTRLSEL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<FCCTRLSEL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<FCCTRLSEL_SPEC>> for W {
+    fn from(writer: crate::W<FCCTRLSEL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Selects the source for SCK going into this Flexcomm.\n\nValue on reset: 0"]
@@ -27,37 +49,46 @@ impl From<SCKINSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SCKINSEL`"]
-pub type SCKINSEL_R = crate::R<u8, SCKINSEL_A>;
+#[doc = "Field `SCKINSEL` reader - Selects the source for SCK going into this Flexcomm."]
+pub struct SCKINSEL_R(crate::FieldReader<u8, SCKINSEL_A>);
 impl SCKINSEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        SCKINSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, SCKINSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<SCKINSEL_A> {
         match self.bits {
-            0 => Val(SCKINSEL_A::ORIG_FLEX_I2S_SIGNALS),
-            1 => Val(SCKINSEL_A::SHARED_SET0_I2S_SIGNALS),
-            2 => Val(SCKINSEL_A::SHARED_SET1_I2S_SIGNALS),
-            i => Res(i),
+            0 => Some(SCKINSEL_A::ORIG_FLEX_I2S_SIGNALS),
+            1 => Some(SCKINSEL_A::SHARED_SET0_I2S_SIGNALS),
+            2 => Some(SCKINSEL_A::SHARED_SET1_I2S_SIGNALS),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `ORIG_FLEX_I2S_SIGNALS`"]
     #[inline(always)]
     pub fn is_orig_flex_i2s_signals(&self) -> bool {
-        *self == SCKINSEL_A::ORIG_FLEX_I2S_SIGNALS
+        **self == SCKINSEL_A::ORIG_FLEX_I2S_SIGNALS
     }
     #[doc = "Checks if the value of the field is `SHARED_SET0_I2S_SIGNALS`"]
     #[inline(always)]
     pub fn is_shared_set0_i2s_signals(&self) -> bool {
-        *self == SCKINSEL_A::SHARED_SET0_I2S_SIGNALS
+        **self == SCKINSEL_A::SHARED_SET0_I2S_SIGNALS
     }
     #[doc = "Checks if the value of the field is `SHARED_SET1_I2S_SIGNALS`"]
     #[inline(always)]
     pub fn is_shared_set1_i2s_signals(&self) -> bool {
-        *self == SCKINSEL_A::SHARED_SET1_I2S_SIGNALS
+        **self == SCKINSEL_A::SHARED_SET1_I2S_SIGNALS
     }
 }
-#[doc = "Write proxy for field `SCKINSEL`"]
+impl core::ops::Deref for SCKINSEL_R {
+    type Target = crate::FieldReader<u8, SCKINSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SCKINSEL` writer - Selects the source for SCK going into this Flexcomm."]
 pub struct SCKINSEL_W<'a> {
     w: &'a mut W,
 }
@@ -85,7 +116,7 @@ impl<'a> SCKINSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
@@ -106,37 +137,46 @@ impl From<WSINSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `WSINSEL`"]
-pub type WSINSEL_R = crate::R<u8, WSINSEL_A>;
+#[doc = "Field `WSINSEL` reader - Selects the source for WS going into this Flexcomm."]
+pub struct WSINSEL_R(crate::FieldReader<u8, WSINSEL_A>);
 impl WSINSEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        WSINSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, WSINSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<WSINSEL_A> {
         match self.bits {
-            0 => Val(WSINSEL_A::ORIG_FLEX_I2S_SIGNALS),
-            1 => Val(WSINSEL_A::SHARED_SET0_I2S_SIGNALS),
-            2 => Val(WSINSEL_A::SHARED_SET1_I2S_SIGNALS),
-            i => Res(i),
+            0 => Some(WSINSEL_A::ORIG_FLEX_I2S_SIGNALS),
+            1 => Some(WSINSEL_A::SHARED_SET0_I2S_SIGNALS),
+            2 => Some(WSINSEL_A::SHARED_SET1_I2S_SIGNALS),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `ORIG_FLEX_I2S_SIGNALS`"]
     #[inline(always)]
     pub fn is_orig_flex_i2s_signals(&self) -> bool {
-        *self == WSINSEL_A::ORIG_FLEX_I2S_SIGNALS
+        **self == WSINSEL_A::ORIG_FLEX_I2S_SIGNALS
     }
     #[doc = "Checks if the value of the field is `SHARED_SET0_I2S_SIGNALS`"]
     #[inline(always)]
     pub fn is_shared_set0_i2s_signals(&self) -> bool {
-        *self == WSINSEL_A::SHARED_SET0_I2S_SIGNALS
+        **self == WSINSEL_A::SHARED_SET0_I2S_SIGNALS
     }
     #[doc = "Checks if the value of the field is `SHARED_SET1_I2S_SIGNALS`"]
     #[inline(always)]
     pub fn is_shared_set1_i2s_signals(&self) -> bool {
-        *self == WSINSEL_A::SHARED_SET1_I2S_SIGNALS
+        **self == WSINSEL_A::SHARED_SET1_I2S_SIGNALS
     }
 }
-#[doc = "Write proxy for field `WSINSEL`"]
+impl core::ops::Deref for WSINSEL_R {
+    type Target = crate::FieldReader<u8, WSINSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WSINSEL` writer - Selects the source for WS going into this Flexcomm."]
 pub struct WSINSEL_W<'a> {
     w: &'a mut W,
 }
@@ -164,7 +204,7 @@ impl<'a> WSINSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
         self.w
     }
 }
@@ -185,37 +225,46 @@ impl From<DATAINSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DATAINSEL`"]
-pub type DATAINSEL_R = crate::R<u8, DATAINSEL_A>;
+#[doc = "Field `DATAINSEL` reader - Selects the source for DATA input to this Flexcomm."]
+pub struct DATAINSEL_R(crate::FieldReader<u8, DATAINSEL_A>);
 impl DATAINSEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DATAINSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DATAINSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DATAINSEL_A> {
         match self.bits {
-            0 => Val(DATAINSEL_A::ORIG_FLEX_I2S_SIGNALS),
-            1 => Val(DATAINSEL_A::SHARED_SET0_I2S_SIGNALS),
-            2 => Val(DATAINSEL_A::SHARED_SET1_I2S_SIGNALS),
-            i => Res(i),
+            0 => Some(DATAINSEL_A::ORIG_FLEX_I2S_SIGNALS),
+            1 => Some(DATAINSEL_A::SHARED_SET0_I2S_SIGNALS),
+            2 => Some(DATAINSEL_A::SHARED_SET1_I2S_SIGNALS),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `ORIG_FLEX_I2S_SIGNALS`"]
     #[inline(always)]
     pub fn is_orig_flex_i2s_signals(&self) -> bool {
-        *self == DATAINSEL_A::ORIG_FLEX_I2S_SIGNALS
+        **self == DATAINSEL_A::ORIG_FLEX_I2S_SIGNALS
     }
     #[doc = "Checks if the value of the field is `SHARED_SET0_I2S_SIGNALS`"]
     #[inline(always)]
     pub fn is_shared_set0_i2s_signals(&self) -> bool {
-        *self == DATAINSEL_A::SHARED_SET0_I2S_SIGNALS
+        **self == DATAINSEL_A::SHARED_SET0_I2S_SIGNALS
     }
     #[doc = "Checks if the value of the field is `SHARED_SET1_I2S_SIGNALS`"]
     #[inline(always)]
     pub fn is_shared_set1_i2s_signals(&self) -> bool {
-        *self == DATAINSEL_A::SHARED_SET1_I2S_SIGNALS
+        **self == DATAINSEL_A::SHARED_SET1_I2S_SIGNALS
     }
 }
-#[doc = "Write proxy for field `DATAINSEL`"]
+impl core::ops::Deref for DATAINSEL_R {
+    type Target = crate::FieldReader<u8, DATAINSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DATAINSEL` writer - Selects the source for DATA input to this Flexcomm."]
 pub struct DATAINSEL_W<'a> {
     w: &'a mut W,
 }
@@ -243,7 +292,7 @@ impl<'a> DATAINSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
+        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
         self.w
     }
 }
@@ -264,37 +313,46 @@ impl From<DATAOUTSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DATAOUTSEL`"]
-pub type DATAOUTSEL_R = crate::R<u8, DATAOUTSEL_A>;
+#[doc = "Field `DATAOUTSEL` reader - Selects the source for DATA output from this Flexcomm."]
+pub struct DATAOUTSEL_R(crate::FieldReader<u8, DATAOUTSEL_A>);
 impl DATAOUTSEL_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DATAOUTSEL_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DATAOUTSEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DATAOUTSEL_A> {
         match self.bits {
-            0 => Val(DATAOUTSEL_A::ORIG_FLEX_I2S_SIGNALS),
-            1 => Val(DATAOUTSEL_A::SHARED_SET0_I2S_SIGNALS),
-            2 => Val(DATAOUTSEL_A::SHARED_SET1_I2S_SIGNALS),
-            i => Res(i),
+            0 => Some(DATAOUTSEL_A::ORIG_FLEX_I2S_SIGNALS),
+            1 => Some(DATAOUTSEL_A::SHARED_SET0_I2S_SIGNALS),
+            2 => Some(DATAOUTSEL_A::SHARED_SET1_I2S_SIGNALS),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `ORIG_FLEX_I2S_SIGNALS`"]
     #[inline(always)]
     pub fn is_orig_flex_i2s_signals(&self) -> bool {
-        *self == DATAOUTSEL_A::ORIG_FLEX_I2S_SIGNALS
+        **self == DATAOUTSEL_A::ORIG_FLEX_I2S_SIGNALS
     }
     #[doc = "Checks if the value of the field is `SHARED_SET0_I2S_SIGNALS`"]
     #[inline(always)]
     pub fn is_shared_set0_i2s_signals(&self) -> bool {
-        *self == DATAOUTSEL_A::SHARED_SET0_I2S_SIGNALS
+        **self == DATAOUTSEL_A::SHARED_SET0_I2S_SIGNALS
     }
     #[doc = "Checks if the value of the field is `SHARED_SET1_I2S_SIGNALS`"]
     #[inline(always)]
     pub fn is_shared_set1_i2s_signals(&self) -> bool {
-        *self == DATAOUTSEL_A::SHARED_SET1_I2S_SIGNALS
+        **self == DATAOUTSEL_A::SHARED_SET1_I2S_SIGNALS
     }
 }
-#[doc = "Write proxy for field `DATAOUTSEL`"]
+impl core::ops::Deref for DATAOUTSEL_R {
+    type Target = crate::FieldReader<u8, DATAOUTSEL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DATAOUTSEL` writer - Selects the source for DATA output from this Flexcomm."]
 pub struct DATAOUTSEL_W<'a> {
     w: &'a mut W,
 }
@@ -322,7 +380,7 @@ impl<'a> DATAOUTSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | (((value as u32) & 0x03) << 24);
+        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
         self.w
     }
 }
@@ -368,5 +426,30 @@ impl W {
     #[inline(always)]
     pub fn dataoutsel(&mut self) -> DATAOUTSEL_W {
         DATAOUTSEL_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Selects the source for SCK going into Flexcomm index\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fcctrlsel](index.html) module"]
+pub struct FCCTRLSEL_SPEC;
+impl crate::RegisterSpec for FCCTRLSEL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [fcctrlsel::R](R) reader structure"]
+impl crate::Readable for FCCTRLSEL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [fcctrlsel::W](W) writer structure"]
+impl crate::Writable for FCCTRLSEL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets FCCTRLSEL%s to value 0"]
+impl crate::Resettable for FCCTRLSEL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

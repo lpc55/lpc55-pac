@@ -1,13 +1,35 @@
-#[doc = "Reader of register MISC_CTRL_REG"]
-pub type R = crate::R<u32, super::MISC_CTRL_REG>;
-#[doc = "Writer for register MISC_CTRL_REG"]
-pub type W = crate::W<u32, super::MISC_CTRL_REG>;
-#[doc = "Register MISC_CTRL_REG `reset()`'s with value 0xaaaa"]
-impl crate::ResetValue for super::MISC_CTRL_REG {
-    type Type = u32;
+#[doc = "Register `MISC_CTRL_REG` reader"]
+pub struct R(crate::R<MISC_CTRL_REG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MISC_CTRL_REG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xaaaa
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<MISC_CTRL_REG_SPEC>> for R {
+    fn from(reader: crate::R<MISC_CTRL_REG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MISC_CTRL_REG` writer"]
+pub struct W(crate::W<MISC_CTRL_REG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MISC_CTRL_REG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<MISC_CTRL_REG_SPEC>> for W {
+    fn from(writer: crate::W<MISC_CTRL_REG_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Write lock.\n\nValue on reset: 2"]
@@ -25,31 +47,40 @@ impl From<WRITE_LOCK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `WRITE_LOCK`"]
-pub type WRITE_LOCK_R = crate::R<u8, WRITE_LOCK_A>;
+#[doc = "Field `WRITE_LOCK` reader - Write lock."]
+pub struct WRITE_LOCK_R(crate::FieldReader<u8, WRITE_LOCK_A>);
 impl WRITE_LOCK_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        WRITE_LOCK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, WRITE_LOCK_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<WRITE_LOCK_A> {
         match self.bits {
-            1 => Val(WRITE_LOCK_A::RESTRICTED),
-            2 => Val(WRITE_LOCK_A::ACCESSIBLE),
-            i => Res(i),
+            1 => Some(WRITE_LOCK_A::RESTRICTED),
+            2 => Some(WRITE_LOCK_A::ACCESSIBLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `RESTRICTED`"]
     #[inline(always)]
     pub fn is_restricted(&self) -> bool {
-        *self == WRITE_LOCK_A::RESTRICTED
+        **self == WRITE_LOCK_A::RESTRICTED
     }
     #[doc = "Checks if the value of the field is `ACCESSIBLE`"]
     #[inline(always)]
     pub fn is_accessible(&self) -> bool {
-        *self == WRITE_LOCK_A::ACCESSIBLE
+        **self == WRITE_LOCK_A::ACCESSIBLE
     }
 }
-#[doc = "Write proxy for field `WRITE_LOCK`"]
+impl core::ops::Deref for WRITE_LOCK_R {
+    type Target = crate::FieldReader<u8, WRITE_LOCK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WRITE_LOCK` writer - Write lock."]
 pub struct WRITE_LOCK_W<'a> {
     w: &'a mut W,
 }
@@ -72,7 +103,7 @@ impl<'a> WRITE_LOCK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
         self.w
     }
 }
@@ -91,31 +122,40 @@ impl From<ENABLE_SECURE_CHECKING_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ENABLE_SECURE_CHECKING`"]
-pub type ENABLE_SECURE_CHECKING_R = crate::R<u8, ENABLE_SECURE_CHECKING_A>;
+#[doc = "Field `ENABLE_SECURE_CHECKING` reader - Enable secure check for AHB matrix."]
+pub struct ENABLE_SECURE_CHECKING_R(crate::FieldReader<u8, ENABLE_SECURE_CHECKING_A>);
 impl ENABLE_SECURE_CHECKING_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ENABLE_SECURE_CHECKING_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ENABLE_SECURE_CHECKING_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<ENABLE_SECURE_CHECKING_A> {
         match self.bits {
-            1 => Val(ENABLE_SECURE_CHECKING_A::ENABLE),
-            2 => Val(ENABLE_SECURE_CHECKING_A::DISABLE),
-            i => Res(i),
+            1 => Some(ENABLE_SECURE_CHECKING_A::ENABLE),
+            2 => Some(ENABLE_SECURE_CHECKING_A::DISABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == ENABLE_SECURE_CHECKING_A::ENABLE
+        **self == ENABLE_SECURE_CHECKING_A::ENABLE
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == ENABLE_SECURE_CHECKING_A::DISABLE
+        **self == ENABLE_SECURE_CHECKING_A::DISABLE
     }
 }
-#[doc = "Write proxy for field `ENABLE_SECURE_CHECKING`"]
+impl core::ops::Deref for ENABLE_SECURE_CHECKING_R {
+    type Target = crate::FieldReader<u8, ENABLE_SECURE_CHECKING_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ENABLE_SECURE_CHECKING` writer - Enable secure check for AHB matrix."]
 pub struct ENABLE_SECURE_CHECKING_W<'a> {
     w: &'a mut W,
 }
@@ -138,7 +178,7 @@ impl<'a> ENABLE_SECURE_CHECKING_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
         self.w
     }
 }
@@ -157,31 +197,40 @@ impl From<ENABLE_S_PRIV_CHECK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ENABLE_S_PRIV_CHECK`"]
-pub type ENABLE_S_PRIV_CHECK_R = crate::R<u8, ENABLE_S_PRIV_CHECK_A>;
+#[doc = "Field `ENABLE_S_PRIV_CHECK` reader - Enable secure privilege check for AHB matrix."]
+pub struct ENABLE_S_PRIV_CHECK_R(crate::FieldReader<u8, ENABLE_S_PRIV_CHECK_A>);
 impl ENABLE_S_PRIV_CHECK_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ENABLE_S_PRIV_CHECK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ENABLE_S_PRIV_CHECK_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<ENABLE_S_PRIV_CHECK_A> {
         match self.bits {
-            1 => Val(ENABLE_S_PRIV_CHECK_A::ENABLE),
-            2 => Val(ENABLE_S_PRIV_CHECK_A::DISABLE),
-            i => Res(i),
+            1 => Some(ENABLE_S_PRIV_CHECK_A::ENABLE),
+            2 => Some(ENABLE_S_PRIV_CHECK_A::DISABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == ENABLE_S_PRIV_CHECK_A::ENABLE
+        **self == ENABLE_S_PRIV_CHECK_A::ENABLE
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == ENABLE_S_PRIV_CHECK_A::DISABLE
+        **self == ENABLE_S_PRIV_CHECK_A::DISABLE
     }
 }
-#[doc = "Write proxy for field `ENABLE_S_PRIV_CHECK`"]
+impl core::ops::Deref for ENABLE_S_PRIV_CHECK_R {
+    type Target = crate::FieldReader<u8, ENABLE_S_PRIV_CHECK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ENABLE_S_PRIV_CHECK` writer - Enable secure privilege check for AHB matrix."]
 pub struct ENABLE_S_PRIV_CHECK_W<'a> {
     w: &'a mut W,
 }
@@ -204,7 +253,7 @@ impl<'a> ENABLE_S_PRIV_CHECK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
         self.w
     }
 }
@@ -223,31 +272,40 @@ impl From<ENABLE_NS_PRIV_CHECK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ENABLE_NS_PRIV_CHECK`"]
-pub type ENABLE_NS_PRIV_CHECK_R = crate::R<u8, ENABLE_NS_PRIV_CHECK_A>;
+#[doc = "Field `ENABLE_NS_PRIV_CHECK` reader - Enable non-secure privilege check for AHB matrix."]
+pub struct ENABLE_NS_PRIV_CHECK_R(crate::FieldReader<u8, ENABLE_NS_PRIV_CHECK_A>);
 impl ENABLE_NS_PRIV_CHECK_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        ENABLE_NS_PRIV_CHECK_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, ENABLE_NS_PRIV_CHECK_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<ENABLE_NS_PRIV_CHECK_A> {
         match self.bits {
-            1 => Val(ENABLE_NS_PRIV_CHECK_A::ENABLE),
-            2 => Val(ENABLE_NS_PRIV_CHECK_A::DISABLE),
-            i => Res(i),
+            1 => Some(ENABLE_NS_PRIV_CHECK_A::ENABLE),
+            2 => Some(ENABLE_NS_PRIV_CHECK_A::DISABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == ENABLE_NS_PRIV_CHECK_A::ENABLE
+        **self == ENABLE_NS_PRIV_CHECK_A::ENABLE
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == ENABLE_NS_PRIV_CHECK_A::DISABLE
+        **self == ENABLE_NS_PRIV_CHECK_A::DISABLE
     }
 }
-#[doc = "Write proxy for field `ENABLE_NS_PRIV_CHECK`"]
+impl core::ops::Deref for ENABLE_NS_PRIV_CHECK_R {
+    type Target = crate::FieldReader<u8, ENABLE_NS_PRIV_CHECK_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `ENABLE_NS_PRIV_CHECK` writer - Enable non-secure privilege check for AHB matrix."]
 pub struct ENABLE_NS_PRIV_CHECK_W<'a> {
     w: &'a mut W,
 }
@@ -270,7 +328,7 @@ impl<'a> ENABLE_NS_PRIV_CHECK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
         self.w
     }
 }
@@ -289,31 +347,40 @@ impl From<DISABLE_VIOLATION_ABORT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DISABLE_VIOLATION_ABORT`"]
-pub type DISABLE_VIOLATION_ABORT_R = crate::R<u8, DISABLE_VIOLATION_ABORT_A>;
+#[doc = "Field `DISABLE_VIOLATION_ABORT` reader - Disable secure violation abort."]
+pub struct DISABLE_VIOLATION_ABORT_R(crate::FieldReader<u8, DISABLE_VIOLATION_ABORT_A>);
 impl DISABLE_VIOLATION_ABORT_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DISABLE_VIOLATION_ABORT_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DISABLE_VIOLATION_ABORT_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DISABLE_VIOLATION_ABORT_A> {
         match self.bits {
-            1 => Val(DISABLE_VIOLATION_ABORT_A::DISABLE),
-            2 => Val(DISABLE_VIOLATION_ABORT_A::ENABLE),
-            i => Res(i),
+            1 => Some(DISABLE_VIOLATION_ABORT_A::DISABLE),
+            2 => Some(DISABLE_VIOLATION_ABORT_A::ENABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == DISABLE_VIOLATION_ABORT_A::DISABLE
+        **self == DISABLE_VIOLATION_ABORT_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == DISABLE_VIOLATION_ABORT_A::ENABLE
+        **self == DISABLE_VIOLATION_ABORT_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `DISABLE_VIOLATION_ABORT`"]
+impl core::ops::Deref for DISABLE_VIOLATION_ABORT_R {
+    type Target = crate::FieldReader<u8, DISABLE_VIOLATION_ABORT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DISABLE_VIOLATION_ABORT` writer - Disable secure violation abort."]
 pub struct DISABLE_VIOLATION_ABORT_W<'a> {
     w: &'a mut W,
 }
@@ -336,7 +403,7 @@ impl<'a> DISABLE_VIOLATION_ABORT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
         self.w
     }
 }
@@ -355,31 +422,42 @@ impl From<DISABLE_SIMPLE_MASTER_STRICT_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DISABLE_SIMPLE_MASTER_STRICT_MODE`"]
-pub type DISABLE_SIMPLE_MASTER_STRICT_MODE_R = crate::R<u8, DISABLE_SIMPLE_MASTER_STRICT_MODE_A>;
+#[doc = "Field `DISABLE_SIMPLE_MASTER_STRICT_MODE` reader - Disable simple master strict mode."]
+pub struct DISABLE_SIMPLE_MASTER_STRICT_MODE_R(
+    crate::FieldReader<u8, DISABLE_SIMPLE_MASTER_STRICT_MODE_A>,
+);
 impl DISABLE_SIMPLE_MASTER_STRICT_MODE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DISABLE_SIMPLE_MASTER_STRICT_MODE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DISABLE_SIMPLE_MASTER_STRICT_MODE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DISABLE_SIMPLE_MASTER_STRICT_MODE_A> {
         match self.bits {
-            1 => Val(DISABLE_SIMPLE_MASTER_STRICT_MODE_A::TIER_MODE),
-            2 => Val(DISABLE_SIMPLE_MASTER_STRICT_MODE_A::STRICT_MODE),
-            i => Res(i),
+            1 => Some(DISABLE_SIMPLE_MASTER_STRICT_MODE_A::TIER_MODE),
+            2 => Some(DISABLE_SIMPLE_MASTER_STRICT_MODE_A::STRICT_MODE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `TIER_MODE`"]
     #[inline(always)]
     pub fn is_tier_mode(&self) -> bool {
-        *self == DISABLE_SIMPLE_MASTER_STRICT_MODE_A::TIER_MODE
+        **self == DISABLE_SIMPLE_MASTER_STRICT_MODE_A::TIER_MODE
     }
     #[doc = "Checks if the value of the field is `STRICT_MODE`"]
     #[inline(always)]
     pub fn is_strict_mode(&self) -> bool {
-        *self == DISABLE_SIMPLE_MASTER_STRICT_MODE_A::STRICT_MODE
+        **self == DISABLE_SIMPLE_MASTER_STRICT_MODE_A::STRICT_MODE
     }
 }
-#[doc = "Write proxy for field `DISABLE_SIMPLE_MASTER_STRICT_MODE`"]
+impl core::ops::Deref for DISABLE_SIMPLE_MASTER_STRICT_MODE_R {
+    type Target = crate::FieldReader<u8, DISABLE_SIMPLE_MASTER_STRICT_MODE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DISABLE_SIMPLE_MASTER_STRICT_MODE` writer - Disable simple master strict mode."]
 pub struct DISABLE_SIMPLE_MASTER_STRICT_MODE_W<'a> {
     w: &'a mut W,
 }
@@ -402,7 +480,7 @@ impl<'a> DISABLE_SIMPLE_MASTER_STRICT_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
+        self.w.bits = (self.w.bits & !(0x03 << 10)) | ((value as u32 & 0x03) << 10);
         self.w
     }
 }
@@ -421,31 +499,42 @@ impl From<DISABLE_SMART_MASTER_STRICT_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DISABLE_SMART_MASTER_STRICT_MODE`"]
-pub type DISABLE_SMART_MASTER_STRICT_MODE_R = crate::R<u8, DISABLE_SMART_MASTER_STRICT_MODE_A>;
+#[doc = "Field `DISABLE_SMART_MASTER_STRICT_MODE` reader - Disable smart master strict mode."]
+pub struct DISABLE_SMART_MASTER_STRICT_MODE_R(
+    crate::FieldReader<u8, DISABLE_SMART_MASTER_STRICT_MODE_A>,
+);
 impl DISABLE_SMART_MASTER_STRICT_MODE_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        DISABLE_SMART_MASTER_STRICT_MODE_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DISABLE_SMART_MASTER_STRICT_MODE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DISABLE_SMART_MASTER_STRICT_MODE_A> {
         match self.bits {
-            1 => Val(DISABLE_SMART_MASTER_STRICT_MODE_A::TIER_MODE),
-            2 => Val(DISABLE_SMART_MASTER_STRICT_MODE_A::STRICT_MODE),
-            i => Res(i),
+            1 => Some(DISABLE_SMART_MASTER_STRICT_MODE_A::TIER_MODE),
+            2 => Some(DISABLE_SMART_MASTER_STRICT_MODE_A::STRICT_MODE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `TIER_MODE`"]
     #[inline(always)]
     pub fn is_tier_mode(&self) -> bool {
-        *self == DISABLE_SMART_MASTER_STRICT_MODE_A::TIER_MODE
+        **self == DISABLE_SMART_MASTER_STRICT_MODE_A::TIER_MODE
     }
     #[doc = "Checks if the value of the field is `STRICT_MODE`"]
     #[inline(always)]
     pub fn is_strict_mode(&self) -> bool {
-        *self == DISABLE_SMART_MASTER_STRICT_MODE_A::STRICT_MODE
+        **self == DISABLE_SMART_MASTER_STRICT_MODE_A::STRICT_MODE
     }
 }
-#[doc = "Write proxy for field `DISABLE_SMART_MASTER_STRICT_MODE`"]
+impl core::ops::Deref for DISABLE_SMART_MASTER_STRICT_MODE_R {
+    type Target = crate::FieldReader<u8, DISABLE_SMART_MASTER_STRICT_MODE_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DISABLE_SMART_MASTER_STRICT_MODE` writer - Disable smart master strict mode."]
 pub struct DISABLE_SMART_MASTER_STRICT_MODE_W<'a> {
     w: &'a mut W,
 }
@@ -468,7 +557,7 @@ impl<'a> DISABLE_SMART_MASTER_STRICT_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
+        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
         self.w
     }
 }
@@ -487,31 +576,40 @@ impl From<IDAU_ALL_NS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `IDAU_ALL_NS`"]
-pub type IDAU_ALL_NS_R = crate::R<u8, IDAU_ALL_NS_A>;
+#[doc = "Field `IDAU_ALL_NS` reader - Disable IDAU."]
+pub struct IDAU_ALL_NS_R(crate::FieldReader<u8, IDAU_ALL_NS_A>);
 impl IDAU_ALL_NS_R {
+    pub(crate) fn new(bits: u8) -> Self {
+        IDAU_ALL_NS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, IDAU_ALL_NS_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<IDAU_ALL_NS_A> {
         match self.bits {
-            1 => Val(IDAU_ALL_NS_A::DISABLE),
-            2 => Val(IDAU_ALL_NS_A::ENABLE),
-            i => Res(i),
+            1 => Some(IDAU_ALL_NS_A::DISABLE),
+            2 => Some(IDAU_ALL_NS_A::ENABLE),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == IDAU_ALL_NS_A::DISABLE
+        **self == IDAU_ALL_NS_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == IDAU_ALL_NS_A::ENABLE
+        **self == IDAU_ALL_NS_A::ENABLE
     }
 }
-#[doc = "Write proxy for field `IDAU_ALL_NS`"]
+impl core::ops::Deref for IDAU_ALL_NS_R {
+    type Target = crate::FieldReader<u8, IDAU_ALL_NS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IDAU_ALL_NS` writer - Disable IDAU."]
 pub struct IDAU_ALL_NS_W<'a> {
     w: &'a mut W,
 }
@@ -534,7 +632,7 @@ impl<'a> IDAU_ALL_NS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 14)) | (((value as u32) & 0x03) << 14);
+        self.w.bits = (self.w.bits & !(0x03 << 14)) | ((value as u32 & 0x03) << 14);
         self.w
     }
 }
@@ -620,5 +718,30 @@ impl W {
     #[inline(always)]
     pub fn idau_all_ns(&mut self) -> IDAU_ALL_NS_W {
         IDAU_ALL_NS_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "secure control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [misc_ctrl_reg](index.html) module"]
+pub struct MISC_CTRL_REG_SPEC;
+impl crate::RegisterSpec for MISC_CTRL_REG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [misc_ctrl_reg::R](R) reader structure"]
+impl crate::Readable for MISC_CTRL_REG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [misc_ctrl_reg::W](W) writer structure"]
+impl crate::Writable for MISC_CTRL_REG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MISC_CTRL_REG to value 0xaaaa"]
+impl crate::Resettable for MISC_CTRL_REG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xaaaa
     }
 }

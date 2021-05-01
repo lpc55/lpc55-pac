@@ -1,13 +1,35 @@
-#[doc = "Reader of register SEC_VIO_INFO_VALID"]
-pub type R = crate::R<u32, super::SEC_VIO_INFO_VALID>;
-#[doc = "Writer for register SEC_VIO_INFO_VALID"]
-pub type W = crate::W<u32, super::SEC_VIO_INFO_VALID>;
-#[doc = "Register SEC_VIO_INFO_VALID `reset()`'s with value 0"]
-impl crate::ResetValue for super::SEC_VIO_INFO_VALID {
-    type Type = u32;
+#[doc = "Register `SEC_VIO_INFO_VALID` reader"]
+pub struct R(crate::R<SEC_VIO_INFO_VALID_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SEC_VIO_INFO_VALID_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<SEC_VIO_INFO_VALID_SPEC>> for R {
+    fn from(reader: crate::R<SEC_VIO_INFO_VALID_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SEC_VIO_INFO_VALID` writer"]
+pub struct W(crate::W<SEC_VIO_INFO_VALID_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SEC_VIO_INFO_VALID_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<SEC_VIO_INFO_VALID_SPEC>> for W {
+    fn from(writer: crate::W<SEC_VIO_INFO_VALID_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "violation information valid flag for AHB port 0. Write 1 to clear.\n\nValue on reset: 0"]
@@ -24,9 +46,12 @@ impl From<VIO_INFO_VALID0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VIO_INFO_VALID0`"]
-pub type VIO_INFO_VALID0_R = crate::R<bool, VIO_INFO_VALID0_A>;
+#[doc = "Field `VIO_INFO_VALID0` reader - violation information valid flag for AHB port 0. Write 1 to clear."]
+pub struct VIO_INFO_VALID0_R(crate::FieldReader<bool, VIO_INFO_VALID0_A>);
 impl VIO_INFO_VALID0_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VIO_INFO_VALID0_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VIO_INFO_VALID0_A {
@@ -38,15 +63,22 @@ impl VIO_INFO_VALID0_R {
     #[doc = "Checks if the value of the field is `NOT_VALID`"]
     #[inline(always)]
     pub fn is_not_valid(&self) -> bool {
-        *self == VIO_INFO_VALID0_A::NOT_VALID
+        **self == VIO_INFO_VALID0_A::NOT_VALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        *self == VIO_INFO_VALID0_A::VALID
+        **self == VIO_INFO_VALID0_A::VALID
     }
 }
-#[doc = "Write proxy for field `VIO_INFO_VALID0`"]
+impl core::ops::Deref for VIO_INFO_VALID0_R {
+    type Target = crate::FieldReader<bool, VIO_INFO_VALID0_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VIO_INFO_VALID0` writer - violation information valid flag for AHB port 0. Write 1 to clear."]
 pub struct VIO_INFO_VALID0_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> VIO_INFO_VALID0_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VIO_INFO_VALID0_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not valid."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> VIO_INFO_VALID0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<VIO_INFO_VALID1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VIO_INFO_VALID1`"]
-pub type VIO_INFO_VALID1_R = crate::R<bool, VIO_INFO_VALID1_A>;
+#[doc = "Field `VIO_INFO_VALID1` reader - violation information valid flag for AHB port 1. Write 1 to clear."]
+pub struct VIO_INFO_VALID1_R(crate::FieldReader<bool, VIO_INFO_VALID1_A>);
 impl VIO_INFO_VALID1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VIO_INFO_VALID1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VIO_INFO_VALID1_A {
@@ -113,15 +146,22 @@ impl VIO_INFO_VALID1_R {
     #[doc = "Checks if the value of the field is `NOT_VALID`"]
     #[inline(always)]
     pub fn is_not_valid(&self) -> bool {
-        *self == VIO_INFO_VALID1_A::NOT_VALID
+        **self == VIO_INFO_VALID1_A::NOT_VALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        *self == VIO_INFO_VALID1_A::VALID
+        **self == VIO_INFO_VALID1_A::VALID
     }
 }
-#[doc = "Write proxy for field `VIO_INFO_VALID1`"]
+impl core::ops::Deref for VIO_INFO_VALID1_R {
+    type Target = crate::FieldReader<bool, VIO_INFO_VALID1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VIO_INFO_VALID1` writer - violation information valid flag for AHB port 1. Write 1 to clear."]
 pub struct VIO_INFO_VALID1_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> VIO_INFO_VALID1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VIO_INFO_VALID1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not valid."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> VIO_INFO_VALID1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<VIO_INFO_VALID2_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VIO_INFO_VALID2`"]
-pub type VIO_INFO_VALID2_R = crate::R<bool, VIO_INFO_VALID2_A>;
+#[doc = "Field `VIO_INFO_VALID2` reader - violation information valid flag for AHB port 2. Write 1 to clear."]
+pub struct VIO_INFO_VALID2_R(crate::FieldReader<bool, VIO_INFO_VALID2_A>);
 impl VIO_INFO_VALID2_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VIO_INFO_VALID2_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VIO_INFO_VALID2_A {
@@ -188,15 +229,22 @@ impl VIO_INFO_VALID2_R {
     #[doc = "Checks if the value of the field is `NOT_VALID`"]
     #[inline(always)]
     pub fn is_not_valid(&self) -> bool {
-        *self == VIO_INFO_VALID2_A::NOT_VALID
+        **self == VIO_INFO_VALID2_A::NOT_VALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        *self == VIO_INFO_VALID2_A::VALID
+        **self == VIO_INFO_VALID2_A::VALID
     }
 }
-#[doc = "Write proxy for field `VIO_INFO_VALID2`"]
+impl core::ops::Deref for VIO_INFO_VALID2_R {
+    type Target = crate::FieldReader<bool, VIO_INFO_VALID2_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VIO_INFO_VALID2` writer - violation information valid flag for AHB port 2. Write 1 to clear."]
 pub struct VIO_INFO_VALID2_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> VIO_INFO_VALID2_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VIO_INFO_VALID2_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not valid."]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> VIO_INFO_VALID2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<VIO_INFO_VALID3_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VIO_INFO_VALID3`"]
-pub type VIO_INFO_VALID3_R = crate::R<bool, VIO_INFO_VALID3_A>;
+#[doc = "Field `VIO_INFO_VALID3` reader - violation information valid flag for AHB port 3. Write 1 to clear."]
+pub struct VIO_INFO_VALID3_R(crate::FieldReader<bool, VIO_INFO_VALID3_A>);
 impl VIO_INFO_VALID3_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VIO_INFO_VALID3_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VIO_INFO_VALID3_A {
@@ -263,15 +312,22 @@ impl VIO_INFO_VALID3_R {
     #[doc = "Checks if the value of the field is `NOT_VALID`"]
     #[inline(always)]
     pub fn is_not_valid(&self) -> bool {
-        *self == VIO_INFO_VALID3_A::NOT_VALID
+        **self == VIO_INFO_VALID3_A::NOT_VALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        *self == VIO_INFO_VALID3_A::VALID
+        **self == VIO_INFO_VALID3_A::VALID
     }
 }
-#[doc = "Write proxy for field `VIO_INFO_VALID3`"]
+impl core::ops::Deref for VIO_INFO_VALID3_R {
+    type Target = crate::FieldReader<bool, VIO_INFO_VALID3_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VIO_INFO_VALID3` writer - violation information valid flag for AHB port 3. Write 1 to clear."]
 pub struct VIO_INFO_VALID3_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> VIO_INFO_VALID3_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VIO_INFO_VALID3_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not valid."]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> VIO_INFO_VALID3_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<VIO_INFO_VALID4_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VIO_INFO_VALID4`"]
-pub type VIO_INFO_VALID4_R = crate::R<bool, VIO_INFO_VALID4_A>;
+#[doc = "Field `VIO_INFO_VALID4` reader - violation information valid flag for AHB port 4. Write 1 to clear."]
+pub struct VIO_INFO_VALID4_R(crate::FieldReader<bool, VIO_INFO_VALID4_A>);
 impl VIO_INFO_VALID4_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VIO_INFO_VALID4_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VIO_INFO_VALID4_A {
@@ -338,15 +395,22 @@ impl VIO_INFO_VALID4_R {
     #[doc = "Checks if the value of the field is `NOT_VALID`"]
     #[inline(always)]
     pub fn is_not_valid(&self) -> bool {
-        *self == VIO_INFO_VALID4_A::NOT_VALID
+        **self == VIO_INFO_VALID4_A::NOT_VALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        *self == VIO_INFO_VALID4_A::VALID
+        **self == VIO_INFO_VALID4_A::VALID
     }
 }
-#[doc = "Write proxy for field `VIO_INFO_VALID4`"]
+impl core::ops::Deref for VIO_INFO_VALID4_R {
+    type Target = crate::FieldReader<bool, VIO_INFO_VALID4_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VIO_INFO_VALID4` writer - violation information valid flag for AHB port 4. Write 1 to clear."]
 pub struct VIO_INFO_VALID4_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> VIO_INFO_VALID4_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VIO_INFO_VALID4_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not valid."]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> VIO_INFO_VALID4_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<VIO_INFO_VALID5_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VIO_INFO_VALID5`"]
-pub type VIO_INFO_VALID5_R = crate::R<bool, VIO_INFO_VALID5_A>;
+#[doc = "Field `VIO_INFO_VALID5` reader - violation information valid flag for AHB port 5. Write 1 to clear."]
+pub struct VIO_INFO_VALID5_R(crate::FieldReader<bool, VIO_INFO_VALID5_A>);
 impl VIO_INFO_VALID5_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VIO_INFO_VALID5_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VIO_INFO_VALID5_A {
@@ -413,15 +478,22 @@ impl VIO_INFO_VALID5_R {
     #[doc = "Checks if the value of the field is `NOT_VALID`"]
     #[inline(always)]
     pub fn is_not_valid(&self) -> bool {
-        *self == VIO_INFO_VALID5_A::NOT_VALID
+        **self == VIO_INFO_VALID5_A::NOT_VALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        *self == VIO_INFO_VALID5_A::VALID
+        **self == VIO_INFO_VALID5_A::VALID
     }
 }
-#[doc = "Write proxy for field `VIO_INFO_VALID5`"]
+impl core::ops::Deref for VIO_INFO_VALID5_R {
+    type Target = crate::FieldReader<bool, VIO_INFO_VALID5_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VIO_INFO_VALID5` writer - violation information valid flag for AHB port 5. Write 1 to clear."]
 pub struct VIO_INFO_VALID5_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> VIO_INFO_VALID5_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VIO_INFO_VALID5_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not valid."]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> VIO_INFO_VALID5_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<VIO_INFO_VALID6_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VIO_INFO_VALID6`"]
-pub type VIO_INFO_VALID6_R = crate::R<bool, VIO_INFO_VALID6_A>;
+#[doc = "Field `VIO_INFO_VALID6` reader - violation information valid flag for AHB port 6. Write 1 to clear."]
+pub struct VIO_INFO_VALID6_R(crate::FieldReader<bool, VIO_INFO_VALID6_A>);
 impl VIO_INFO_VALID6_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VIO_INFO_VALID6_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VIO_INFO_VALID6_A {
@@ -488,15 +561,22 @@ impl VIO_INFO_VALID6_R {
     #[doc = "Checks if the value of the field is `NOT_VALID`"]
     #[inline(always)]
     pub fn is_not_valid(&self) -> bool {
-        *self == VIO_INFO_VALID6_A::NOT_VALID
+        **self == VIO_INFO_VALID6_A::NOT_VALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        *self == VIO_INFO_VALID6_A::VALID
+        **self == VIO_INFO_VALID6_A::VALID
     }
 }
-#[doc = "Write proxy for field `VIO_INFO_VALID6`"]
+impl core::ops::Deref for VIO_INFO_VALID6_R {
+    type Target = crate::FieldReader<bool, VIO_INFO_VALID6_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VIO_INFO_VALID6` writer - violation information valid flag for AHB port 6. Write 1 to clear."]
 pub struct VIO_INFO_VALID6_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> VIO_INFO_VALID6_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VIO_INFO_VALID6_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not valid."]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> VIO_INFO_VALID6_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
         self.w
     }
 }
@@ -549,9 +627,12 @@ impl From<VIO_INFO_VALID7_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VIO_INFO_VALID7`"]
-pub type VIO_INFO_VALID7_R = crate::R<bool, VIO_INFO_VALID7_A>;
+#[doc = "Field `VIO_INFO_VALID7` reader - violation information valid flag for AHB port 7. Write 1 to clear."]
+pub struct VIO_INFO_VALID7_R(crate::FieldReader<bool, VIO_INFO_VALID7_A>);
 impl VIO_INFO_VALID7_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VIO_INFO_VALID7_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VIO_INFO_VALID7_A {
@@ -563,15 +644,22 @@ impl VIO_INFO_VALID7_R {
     #[doc = "Checks if the value of the field is `NOT_VALID`"]
     #[inline(always)]
     pub fn is_not_valid(&self) -> bool {
-        *self == VIO_INFO_VALID7_A::NOT_VALID
+        **self == VIO_INFO_VALID7_A::NOT_VALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        *self == VIO_INFO_VALID7_A::VALID
+        **self == VIO_INFO_VALID7_A::VALID
     }
 }
-#[doc = "Write proxy for field `VIO_INFO_VALID7`"]
+impl core::ops::Deref for VIO_INFO_VALID7_R {
+    type Target = crate::FieldReader<bool, VIO_INFO_VALID7_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VIO_INFO_VALID7` writer - violation information valid flag for AHB port 7. Write 1 to clear."]
 pub struct VIO_INFO_VALID7_W<'a> {
     w: &'a mut W,
 }
@@ -579,9 +667,7 @@ impl<'a> VIO_INFO_VALID7_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VIO_INFO_VALID7_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not valid."]
     #[inline(always)]
@@ -606,7 +692,7 @@ impl<'a> VIO_INFO_VALID7_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
         self.w
     }
 }
@@ -624,9 +710,12 @@ impl From<VIO_INFO_VALID8_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VIO_INFO_VALID8`"]
-pub type VIO_INFO_VALID8_R = crate::R<bool, VIO_INFO_VALID8_A>;
+#[doc = "Field `VIO_INFO_VALID8` reader - violation information valid flag for AHB port 8. Write 1 to clear."]
+pub struct VIO_INFO_VALID8_R(crate::FieldReader<bool, VIO_INFO_VALID8_A>);
 impl VIO_INFO_VALID8_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VIO_INFO_VALID8_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VIO_INFO_VALID8_A {
@@ -638,15 +727,22 @@ impl VIO_INFO_VALID8_R {
     #[doc = "Checks if the value of the field is `NOT_VALID`"]
     #[inline(always)]
     pub fn is_not_valid(&self) -> bool {
-        *self == VIO_INFO_VALID8_A::NOT_VALID
+        **self == VIO_INFO_VALID8_A::NOT_VALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        *self == VIO_INFO_VALID8_A::VALID
+        **self == VIO_INFO_VALID8_A::VALID
     }
 }
-#[doc = "Write proxy for field `VIO_INFO_VALID8`"]
+impl core::ops::Deref for VIO_INFO_VALID8_R {
+    type Target = crate::FieldReader<bool, VIO_INFO_VALID8_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VIO_INFO_VALID8` writer - violation information valid flag for AHB port 8. Write 1 to clear."]
 pub struct VIO_INFO_VALID8_W<'a> {
     w: &'a mut W,
 }
@@ -654,9 +750,7 @@ impl<'a> VIO_INFO_VALID8_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VIO_INFO_VALID8_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not valid."]
     #[inline(always)]
@@ -681,7 +775,7 @@ impl<'a> VIO_INFO_VALID8_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
         self.w
     }
 }
@@ -699,9 +793,12 @@ impl From<VIO_INFO_VALID9_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VIO_INFO_VALID9`"]
-pub type VIO_INFO_VALID9_R = crate::R<bool, VIO_INFO_VALID9_A>;
+#[doc = "Field `VIO_INFO_VALID9` reader - violation information valid flag for AHB port 9. Write 1 to clear."]
+pub struct VIO_INFO_VALID9_R(crate::FieldReader<bool, VIO_INFO_VALID9_A>);
 impl VIO_INFO_VALID9_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VIO_INFO_VALID9_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VIO_INFO_VALID9_A {
@@ -713,15 +810,22 @@ impl VIO_INFO_VALID9_R {
     #[doc = "Checks if the value of the field is `NOT_VALID`"]
     #[inline(always)]
     pub fn is_not_valid(&self) -> bool {
-        *self == VIO_INFO_VALID9_A::NOT_VALID
+        **self == VIO_INFO_VALID9_A::NOT_VALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        *self == VIO_INFO_VALID9_A::VALID
+        **self == VIO_INFO_VALID9_A::VALID
     }
 }
-#[doc = "Write proxy for field `VIO_INFO_VALID9`"]
+impl core::ops::Deref for VIO_INFO_VALID9_R {
+    type Target = crate::FieldReader<bool, VIO_INFO_VALID9_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VIO_INFO_VALID9` writer - violation information valid flag for AHB port 9. Write 1 to clear."]
 pub struct VIO_INFO_VALID9_W<'a> {
     w: &'a mut W,
 }
@@ -729,9 +833,7 @@ impl<'a> VIO_INFO_VALID9_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VIO_INFO_VALID9_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not valid."]
     #[inline(always)]
@@ -756,7 +858,7 @@ impl<'a> VIO_INFO_VALID9_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
         self.w
     }
 }
@@ -774,9 +876,12 @@ impl From<VIO_INFO_VALID10_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VIO_INFO_VALID10`"]
-pub type VIO_INFO_VALID10_R = crate::R<bool, VIO_INFO_VALID10_A>;
+#[doc = "Field `VIO_INFO_VALID10` reader - violation information valid flag for AHB port 10. Write 1 to clear."]
+pub struct VIO_INFO_VALID10_R(crate::FieldReader<bool, VIO_INFO_VALID10_A>);
 impl VIO_INFO_VALID10_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VIO_INFO_VALID10_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VIO_INFO_VALID10_A {
@@ -788,15 +893,22 @@ impl VIO_INFO_VALID10_R {
     #[doc = "Checks if the value of the field is `NOT_VALID`"]
     #[inline(always)]
     pub fn is_not_valid(&self) -> bool {
-        *self == VIO_INFO_VALID10_A::NOT_VALID
+        **self == VIO_INFO_VALID10_A::NOT_VALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        *self == VIO_INFO_VALID10_A::VALID
+        **self == VIO_INFO_VALID10_A::VALID
     }
 }
-#[doc = "Write proxy for field `VIO_INFO_VALID10`"]
+impl core::ops::Deref for VIO_INFO_VALID10_R {
+    type Target = crate::FieldReader<bool, VIO_INFO_VALID10_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VIO_INFO_VALID10` writer - violation information valid flag for AHB port 10. Write 1 to clear."]
 pub struct VIO_INFO_VALID10_W<'a> {
     w: &'a mut W,
 }
@@ -804,9 +916,7 @@ impl<'a> VIO_INFO_VALID10_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VIO_INFO_VALID10_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not valid."]
     #[inline(always)]
@@ -831,7 +941,7 @@ impl<'a> VIO_INFO_VALID10_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -849,9 +959,12 @@ impl From<VIO_INFO_VALID11_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `VIO_INFO_VALID11`"]
-pub type VIO_INFO_VALID11_R = crate::R<bool, VIO_INFO_VALID11_A>;
+#[doc = "Field `VIO_INFO_VALID11` reader - violation information valid flag for AHB port 11. Write 1 to clear."]
+pub struct VIO_INFO_VALID11_R(crate::FieldReader<bool, VIO_INFO_VALID11_A>);
 impl VIO_INFO_VALID11_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        VIO_INFO_VALID11_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VIO_INFO_VALID11_A {
@@ -863,15 +976,22 @@ impl VIO_INFO_VALID11_R {
     #[doc = "Checks if the value of the field is `NOT_VALID`"]
     #[inline(always)]
     pub fn is_not_valid(&self) -> bool {
-        *self == VIO_INFO_VALID11_A::NOT_VALID
+        **self == VIO_INFO_VALID11_A::NOT_VALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        *self == VIO_INFO_VALID11_A::VALID
+        **self == VIO_INFO_VALID11_A::VALID
     }
 }
-#[doc = "Write proxy for field `VIO_INFO_VALID11`"]
+impl core::ops::Deref for VIO_INFO_VALID11_R {
+    type Target = crate::FieldReader<bool, VIO_INFO_VALID11_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `VIO_INFO_VALID11` writer - violation information valid flag for AHB port 11. Write 1 to clear."]
 pub struct VIO_INFO_VALID11_W<'a> {
     w: &'a mut W,
 }
@@ -879,9 +999,7 @@ impl<'a> VIO_INFO_VALID11_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: VIO_INFO_VALID11_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Not valid."]
     #[inline(always)]
@@ -906,7 +1024,7 @@ impl<'a> VIO_INFO_VALID11_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -1032,5 +1150,30 @@ impl W {
     #[inline(always)]
     pub fn vio_info_valid11(&mut self) -> VIO_INFO_VALID11_W {
         VIO_INFO_VALID11_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "security violation address/information registers valid flags\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sec_vio_info_valid](index.html) module"]
+pub struct SEC_VIO_INFO_VALID_SPEC;
+impl crate::RegisterSpec for SEC_VIO_INFO_VALID_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [sec_vio_info_valid::R](R) reader structure"]
+impl crate::Readable for SEC_VIO_INFO_VALID_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sec_vio_info_valid::W](W) writer structure"]
+impl crate::Writable for SEC_VIO_INFO_VALID_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SEC_VIO_INFO_VALID to value 0"]
+impl crate::Resettable for SEC_VIO_INFO_VALID_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

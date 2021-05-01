@@ -1,13 +1,35 @@
-#[doc = "Reader of register PWD_CLR"]
-pub type R = crate::R<u32, super::PWD_CLR>;
-#[doc = "Writer for register PWD_CLR"]
-pub type W = crate::W<u32, super::PWD_CLR>;
-#[doc = "Register PWD_CLR `reset()`'s with value 0x001e_1c00"]
-impl crate::ResetValue for super::PWD_CLR {
-    type Type = u32;
+#[doc = "Register `PWD_CLR` reader"]
+pub struct R(crate::R<PWD_CLR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PWD_CLR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x001e_1c00
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::convert::From<crate::R<PWD_CLR_SPEC>> for R {
+    fn from(reader: crate::R<PWD_CLR_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PWD_CLR` writer"]
+pub struct W(crate::W<PWD_CLR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PWD_CLR_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl core::convert::From<crate::W<PWD_CLR_SPEC>> for W {
+    fn from(writer: crate::W<PWD_CLR_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled\n\nValue on reset: 1"]
@@ -24,9 +46,12 @@ impl From<TXPWDFS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TXPWDFS`"]
-pub type TXPWDFS_R = crate::R<bool, TXPWDFS_A>;
+#[doc = "Field `TXPWDFS` reader - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
+pub struct TXPWDFS_R(crate::FieldReader<bool, TXPWDFS_A>);
 impl TXPWDFS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXPWDFS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXPWDFS_A {
@@ -38,15 +63,22 @@ impl TXPWDFS_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == TXPWDFS_A::VALUE0
+        **self == TXPWDFS_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TXPWDFS_A::VALUE1
+        **self == TXPWDFS_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `TXPWDFS`"]
+impl core::ops::Deref for TXPWDFS_R {
+    type Target = crate::FieldReader<bool, TXPWDFS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXPWDFS` writer - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
 pub struct TXPWDFS_W<'a> {
     w: &'a mut W,
 }
@@ -54,9 +86,7 @@ impl<'a> TXPWDFS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TXPWDFS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Normal operation."]
     #[inline(always)]
@@ -81,7 +111,7 @@ impl<'a> TXPWDFS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
         self.w
     }
 }
@@ -99,9 +129,12 @@ impl From<TXPWDIBIAS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TXPWDIBIAS`"]
-pub type TXPWDIBIAS_R = crate::R<bool, TXPWDIBIAS_A>;
+#[doc = "Field `TXPWDIBIAS` reader - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
+pub struct TXPWDIBIAS_R(crate::FieldReader<bool, TXPWDIBIAS_A>);
 impl TXPWDIBIAS_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXPWDIBIAS_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXPWDIBIAS_A {
@@ -113,15 +146,22 @@ impl TXPWDIBIAS_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == TXPWDIBIAS_A::VALUE0
+        **self == TXPWDIBIAS_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TXPWDIBIAS_A::VALUE1
+        **self == TXPWDIBIAS_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `TXPWDIBIAS`"]
+impl core::ops::Deref for TXPWDIBIAS_R {
+    type Target = crate::FieldReader<bool, TXPWDIBIAS_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXPWDIBIAS` writer - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
 pub struct TXPWDIBIAS_W<'a> {
     w: &'a mut W,
 }
@@ -129,9 +169,7 @@ impl<'a> TXPWDIBIAS_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TXPWDIBIAS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Normal operation."]
     #[inline(always)]
@@ -156,7 +194,7 @@ impl<'a> TXPWDIBIAS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
         self.w
     }
 }
@@ -174,9 +212,12 @@ impl From<TXPWDV2I_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TXPWDV2I`"]
-pub type TXPWDV2I_R = crate::R<bool, TXPWDV2I_A>;
+#[doc = "Field `TXPWDV2I` reader - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
+pub struct TXPWDV2I_R(crate::FieldReader<bool, TXPWDV2I_A>);
 impl TXPWDV2I_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        TXPWDV2I_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXPWDV2I_A {
@@ -188,15 +229,22 @@ impl TXPWDV2I_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == TXPWDV2I_A::VALUE0
+        **self == TXPWDV2I_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == TXPWDV2I_A::VALUE1
+        **self == TXPWDV2I_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `TXPWDV2I`"]
+impl core::ops::Deref for TXPWDV2I_R {
+    type Target = crate::FieldReader<bool, TXPWDV2I_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TXPWDV2I` writer - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
 pub struct TXPWDV2I_W<'a> {
     w: &'a mut W,
 }
@@ -204,9 +252,7 @@ impl<'a> TXPWDV2I_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: TXPWDV2I_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Normal operation."]
     #[inline(always)]
@@ -231,7 +277,7 @@ impl<'a> TXPWDV2I_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
         self.w
     }
 }
@@ -249,9 +295,12 @@ impl From<RXPWDENV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RXPWDENV`"]
-pub type RXPWDENV_R = crate::R<bool, RXPWDENV_A>;
+#[doc = "Field `RXPWDENV` reader - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
+pub struct RXPWDENV_R(crate::FieldReader<bool, RXPWDENV_A>);
 impl RXPWDENV_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXPWDENV_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXPWDENV_A {
@@ -263,15 +312,22 @@ impl RXPWDENV_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == RXPWDENV_A::VALUE0
+        **self == RXPWDENV_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RXPWDENV_A::VALUE1
+        **self == RXPWDENV_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `RXPWDENV`"]
+impl core::ops::Deref for RXPWDENV_R {
+    type Target = crate::FieldReader<bool, RXPWDENV_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXPWDENV` writer - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
 pub struct RXPWDENV_W<'a> {
     w: &'a mut W,
 }
@@ -279,9 +335,7 @@ impl<'a> RXPWDENV_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RXPWDENV_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Normal operation."]
     #[inline(always)]
@@ -306,7 +360,7 @@ impl<'a> RXPWDENV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
         self.w
     }
 }
@@ -324,9 +378,12 @@ impl From<RXPWD1PT1_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RXPWD1PT1`"]
-pub type RXPWD1PT1_R = crate::R<bool, RXPWD1PT1_A>;
+#[doc = "Field `RXPWD1PT1` reader - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
+pub struct RXPWD1PT1_R(crate::FieldReader<bool, RXPWD1PT1_A>);
 impl RXPWD1PT1_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXPWD1PT1_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXPWD1PT1_A {
@@ -338,15 +395,22 @@ impl RXPWD1PT1_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == RXPWD1PT1_A::VALUE0
+        **self == RXPWD1PT1_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RXPWD1PT1_A::VALUE1
+        **self == RXPWD1PT1_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `RXPWD1PT1`"]
+impl core::ops::Deref for RXPWD1PT1_R {
+    type Target = crate::FieldReader<bool, RXPWD1PT1_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXPWD1PT1` writer - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
 pub struct RXPWD1PT1_W<'a> {
     w: &'a mut W,
 }
@@ -354,9 +418,7 @@ impl<'a> RXPWD1PT1_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RXPWD1PT1_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Normal operation."]
     #[inline(always)]
@@ -381,7 +443,7 @@ impl<'a> RXPWD1PT1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
         self.w
     }
 }
@@ -399,9 +461,12 @@ impl From<RXPWDDIFF_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RXPWDDIFF`"]
-pub type RXPWDDIFF_R = crate::R<bool, RXPWDDIFF_A>;
+#[doc = "Field `RXPWDDIFF` reader - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
+pub struct RXPWDDIFF_R(crate::FieldReader<bool, RXPWDDIFF_A>);
 impl RXPWDDIFF_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXPWDDIFF_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXPWDDIFF_A {
@@ -413,15 +478,22 @@ impl RXPWDDIFF_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == RXPWDDIFF_A::VALUE0
+        **self == RXPWDDIFF_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RXPWDDIFF_A::VALUE1
+        **self == RXPWDDIFF_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `RXPWDDIFF`"]
+impl core::ops::Deref for RXPWDDIFF_R {
+    type Target = crate::FieldReader<bool, RXPWDDIFF_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXPWDDIFF` writer - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
 pub struct RXPWDDIFF_W<'a> {
     w: &'a mut W,
 }
@@ -429,9 +501,7 @@ impl<'a> RXPWDDIFF_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RXPWDDIFF_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Normal operation."]
     #[inline(always)]
@@ -456,7 +526,7 @@ impl<'a> RXPWDDIFF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
         self.w
     }
 }
@@ -474,9 +544,12 @@ impl From<RXPWDRX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `RXPWDRX`"]
-pub type RXPWDRX_R = crate::R<bool, RXPWDRX_A>;
+#[doc = "Field `RXPWDRX` reader - This bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
+pub struct RXPWDRX_R(crate::FieldReader<bool, RXPWDRX_A>);
 impl RXPWDRX_R {
+    pub(crate) fn new(bits: bool) -> Self {
+        RXPWDRX_R(crate::FieldReader::new(bits))
+    }
     #[doc = r"Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RXPWDRX_A {
@@ -488,15 +561,22 @@ impl RXPWDRX_R {
     #[doc = "Checks if the value of the field is `VALUE0`"]
     #[inline(always)]
     pub fn is_value0(&self) -> bool {
-        *self == RXPWDRX_A::VALUE0
+        **self == RXPWDRX_A::VALUE0
     }
     #[doc = "Checks if the value of the field is `VALUE1`"]
     #[inline(always)]
     pub fn is_value1(&self) -> bool {
-        *self == RXPWDRX_A::VALUE1
+        **self == RXPWDRX_A::VALUE1
     }
 }
-#[doc = "Write proxy for field `RXPWDRX`"]
+impl core::ops::Deref for RXPWDRX_R {
+    type Target = crate::FieldReader<bool, RXPWDRX_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `RXPWDRX` writer - This bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
 pub struct RXPWDRX_W<'a> {
     w: &'a mut W,
 }
@@ -504,9 +584,7 @@ impl<'a> RXPWDRX_W<'a> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: RXPWDRX_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
+        self.bit(variant.into())
     }
     #[doc = "Normal operation."]
     #[inline(always)]
@@ -531,7 +609,7 @@ impl<'a> RXPWDRX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
         self.w
     }
 }
@@ -607,5 +685,30 @@ impl W {
     #[inline(always)]
     pub fn rxpwdrx(&mut self) -> RXPWDRX_W {
         RXPWDRX_W { w: self }
+    }
+    #[doc = "Writes raw bits to the register."]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USB PHY Power-Down Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwd_clr](index.html) module"]
+pub struct PWD_CLR_SPEC;
+impl crate::RegisterSpec for PWD_CLR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pwd_clr::R](R) reader structure"]
+impl crate::Readable for PWD_CLR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pwd_clr::W](W) writer structure"]
+impl crate::Writable for PWD_CLR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PWD_CLR to value 0x001e_1c00"]
+impl crate::Resettable for PWD_CLR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x001e_1c00
     }
 }
