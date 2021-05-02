@@ -26,8 +26,7 @@ targets = []
 maintenance = { status = "actively-developed" }
 
 [dependencies]
-# can't update: https://github.com/rust-embedded/svd2rust/issues/453
-cortex-m = "0.7.0"
+cortex-m = "0.7.2"
 cortex-m-rt = { version = "0.6.13", optional = true }
 vcell = "0.1.2"
 

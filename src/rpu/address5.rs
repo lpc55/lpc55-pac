@@ -39,7 +39,7 @@ impl W {
         self
     }
 }
-#[doc = "Replacement address 5\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [address5](index.html) module"]
+#[doc = "Replacement address 5\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [address5](index.html) module"]
 pub struct ADDRESS5_SPEC;
 impl crate::RegisterSpec for ADDRESS5_SPEC {
     type Ux = u32;
@@ -51,4 +51,11 @@ impl crate::Readable for ADDRESS5_SPEC {
 #[doc = "`write(|w| ..)` method takes [address5::W](W) writer structure"]
 impl crate::Writable for ADDRESS5_SPEC {
     type Writer = W;
+}
+#[doc = "`reset()` method sets ADDRESS5 to value 0"]
+impl crate::Resettable for ADDRESS5_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
+    }
 }

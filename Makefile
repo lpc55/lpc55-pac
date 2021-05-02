@@ -18,9 +18,11 @@ doc-open: setup patch generate
 
 setup: update-venv fetch-svd
 	cargo install svd2rust --version 0.18.0
+	# cargo install svd2rust --version 0.17.0
 
 patch:
 	svd patch $(YAML)
+	sed -i '/alternateGroup/d' $(SVD)
 
 # Generates PAC source code from (patched) SVD
 generate:
