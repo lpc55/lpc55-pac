@@ -7,7 +7,6 @@ PACK_VERSION = 13.0.0
 check: patch generate
 	cargo check
 
-
 build: setup patch generate
 	cargo build
 
@@ -18,7 +17,6 @@ doc-open: setup patch generate
 
 setup: update-venv fetch-svd
 	cargo install svd2rust --version 0.18.0
-	# cargo install svd2rust --version 0.17.0
 
 patch:
 	svd patch $(YAML)
@@ -32,6 +30,14 @@ generate:
 	form -i lib.rs -o src/ && rm lib.rs
 	cargo fmt
 
+show-latest-pack:
+	@echo $(shell wget -O - -qq https://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.pidx|grep LPC55S69|python -c'import sys; print(sys.stdin.read().rsplit("version=\"", 1)[1].split("\"", 1)[0])')
+
+PACK := NXP.LPC55S69_DFP.$(PACK_VERSION).pack
+fetch-svd:
+	wget -qqO- https://mcuxpresso.nxp.com/cmsis_pack/repo/$(PACK) | bsdtar -xf- LPC55S69_cm33_core0.xml
+	mv LPC55S69_cm33_core0.xml svd/pack-$(PACK_VERSION)-LPC55S69_cm33_core0.xml
+	ln -sf svd/pack-$(PACK_VERSION)-LPC55S69_cm33_core0.xml lpc55.svd
 
 # External documentation
 fetch-docs:
@@ -47,15 +53,6 @@ fetch-docs:
 	# 	-o ref/usermanual-lpc55s6x.pdf
 	# `pip install nxp-dlagent` for the following step
 	nxp-dl UM11126 && mv UM11126.pdf ref/
-
-show-latest-pack:
-	@echo $(shell wget -O - -qq https://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.pidx|grep LPC55S69|python -c'import sys; print(sys.stdin.read().rsplit("version=\"", 1)[1].split("\"", 1)[0])')
-
-PACK := NXP.LPC55S69_DFP.$(PACK_VERSION).pack
-fetch-svd:
-	wget -qqO- https://mcuxpresso.nxp.com/cmsis_pack/repo/$(PACK) | bsdtar -xf- LPC55S69_cm33_core0.xml
-	mv LPC55S69_cm33_core0.xml svd/pack-$(PACK_VERSION)-LPC55S69_cm33_core0.xml
-	ln -sf svd/pack-$(PACK_VERSION)-LPC55S69_cm33_core0.xml lpc55.svd
 
 # Maintenance
 VERSION := $(shell grep version Cargo.toml|head -1|cut -d' ' -f 3|tr -d '"')
