@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [v0.4.0] - 2021-05-02
+
+- update to svd2rust
+- use CMSIS PACK (directly downloadable) instead of SDK as SVD source
+- experimental support for the ROM Patch Unit
+
 ## [v0.3.0] - 2021-02-26
 
 - adds some patching to remove bare-metal, and implement
