@@ -291,6 +291,12 @@ pub enum Interrupt {
     #[doc = "59 - FLEXCOMM8"]
     FLEXCOMM8 = 59,
 }
+// unsafe impl cortex_m::interrupt::Nr for Interrupt {
+//     #[inline(always)]
+//     fn nr(&self) -> u8 {
+//         *self as u8
+//     }
+// }
 unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
     #[inline(always)]
     fn number(self) -> u16 {
@@ -2781,6 +2787,32 @@ impl core::fmt::Debug for SAU {
 }
 #[doc = "no description available"]
 pub mod sau;
+#[doc = "USB1 High-speed Device Controller"]
+pub struct USB0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for USB0 {}
+impl USB0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const usb1::RegisterBlock = 0x4008_4000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const usb1::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for USB0 {
+    type Target = usb1::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for USB0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USB0").finish()
+    }
+}
 #[doc = "NXP ROM patch unit. Undocumented by NXP, this peripheral is experimentally modeled following research by Oxide Computer Company: <https://oxide.computer/blog/lpc55/>."]
 pub struct RPU {
     _marker: PhantomData<*const ()>,
@@ -2998,6 +3030,8 @@ pub struct Peripherals {
     pub SCNSCB: SCNSCB,
     #[doc = "SAU"]
     pub SAU: SAU,
+    #[doc = "USB0"]
+    pub USB0: USB0,
     #[doc = "RPU"]
     pub RPU: RPU,
 }
@@ -3292,6 +3326,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             SAU: SAU {
+                _marker: PhantomData,
+            },
+            USB0: USB0 {
                 _marker: PhantomData,
             },
             RPU: RPU {

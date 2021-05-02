@@ -18,11 +18,11 @@ pub struct RegisterBlock {
     pub nmisrc: crate::Reg<nmisrc::NMISRC_SPEC>,
     _reserved6: [u8; 180usize],
     #[doc = "0x100 - Peripheral reset control 0"]
-    pub presetctrl_presetctrl0: crate::Reg<presetctrl_presetctrl0::PRESETCTRL_PRESETCTRL0_SPEC>,
+    pub presetctrl0: crate::Reg<presetctrl0::PRESETCTRL0_SPEC>,
     #[doc = "0x104 - Peripheral reset control 1"]
-    pub presetctrl_presetctrl1: crate::Reg<presetctrl_presetctrl1::PRESETCTRL_PRESETCTRL1_SPEC>,
+    pub presetctrl1: crate::Reg<presetctrl1::PRESETCTRL1_SPEC>,
     #[doc = "0x108 - Peripheral reset control 2"]
-    pub presetctrl_presetctrl2: crate::Reg<presetctrl_presetctrl2::PRESETCTRL_PRESETCTRL2_SPEC>,
+    pub presetctrl2: crate::Reg<presetctrl2::PRESETCTRL2_SPEC>,
     _reserved9: [u8; 20usize],
     #[doc = "0x120 - Peripheral reset control set register"]
     pub presetctrlset: [crate::Reg<presetctrlset::PRESETCTRLSET_SPEC>; 3],
@@ -34,11 +34,11 @@ pub struct RegisterBlock {
     pub swr_reset: crate::Reg<swr_reset::SWR_RESET_SPEC>,
     _reserved12: [u8; 156usize],
     #[doc = "0x200 - AHB Clock control 0"]
-    pub ahbclkctrl_ahbclkctrl0: crate::Reg<ahbclkctrl_ahbclkctrl0::AHBCLKCTRL_AHBCLKCTRL0_SPEC>,
+    pub ahbclkctrl0: crate::Reg<ahbclkctrl0::AHBCLKCTRL0_SPEC>,
     #[doc = "0x204 - AHB Clock control 1"]
-    pub ahbclkctrl_ahbclkctrl1: crate::Reg<ahbclkctrl_ahbclkctrl1::AHBCLKCTRL_AHBCLKCTRL1_SPEC>,
+    pub ahbclkctrl1: crate::Reg<ahbclkctrl1::AHBCLKCTRL1_SPEC>,
     #[doc = "0x208 - AHB Clock control 2"]
-    pub ahbclkctrl_ahbclkctrl2: crate::Reg<ahbclkctrl_ahbclkctrl2::AHBCLKCTRL_AHBCLKCTRL2_SPEC>,
+    pub ahbclkctrl2: crate::Reg<ahbclkctrl2::AHBCLKCTRL2_SPEC>,
     _reserved15: [u8; 20usize],
     #[doc = "0x220 - Peripheral reset control register"]
     pub ahbclkctrlset: [crate::Reg<ahbclkctrlset::AHBCLKCTRLSET_SPEC>; 3],
@@ -46,15 +46,15 @@ pub struct RegisterBlock {
     #[doc = "0x240 - Peripheral reset control register"]
     pub ahbclkctrlclr: [crate::Reg<ahbclkctrlclr::AHBCLKCTRLCLR_SPEC>; 3],
     _reserved17: [u8; 20usize],
-    _reserved_17_systickclksel: [u8; 4usize],
-    _reserved_18_systickclksel: [u8; 4usize],
+    _reserved_17_systickclksel0: [u8; 4usize],
+    _reserved_18_systickclksel1: [u8; 4usize],
     #[doc = "0x268 - Trace clock source select"]
     pub traceclksel: crate::Reg<traceclksel::TRACECLKSEL_SPEC>,
-    _reserved_20_ctimerclksel: [u8; 4usize],
-    _reserved_21_ctimerclksel: [u8; 4usize],
-    _reserved_22_ctimerclksel: [u8; 4usize],
-    _reserved_23_ctimerclksel: [u8; 4usize],
-    _reserved_24_ctimerclksel: [u8; 4usize],
+    _reserved_20_ctimerclksel0: [u8; 4usize],
+    _reserved_21_ctimerclksel1: [u8; 4usize],
+    _reserved_22_ctimerclksel2: [u8; 4usize],
+    _reserved_23_ctimerclksel3: [u8; 4usize],
+    _reserved_24_ctimerclksel4: [u8; 4usize],
     #[doc = "0x280 - Main clock A source select"]
     pub mainclksela: crate::Reg<mainclksela::MAINCLKSELA_SPEC>,
     #[doc = "0x284 - Main clock source select"]
@@ -72,14 +72,14 @@ pub struct RegisterBlock {
     #[doc = "0x2a8 - FS USB clock source select"]
     pub usb0clksel: crate::Reg<usb0clksel::USB0CLKSEL_SPEC>,
     _reserved32: [u8; 4usize],
-    _reserved_32_fcclksel: [u8; 4usize],
-    _reserved_33_fcclksel: [u8; 4usize],
-    _reserved_34_fcclksel: [u8; 4usize],
-    _reserved_35_fcclksel: [u8; 4usize],
-    _reserved_36_fcclksel: [u8; 4usize],
-    _reserved_37_fcclksel: [u8; 4usize],
-    _reserved_38_fcclksel: [u8; 4usize],
-    _reserved_39_fcclksel: [u8; 4usize],
+    _reserved_32_fcclksel0: [u8; 4usize],
+    _reserved_33_fcclksel1: [u8; 4usize],
+    _reserved_34_fcclksel2: [u8; 4usize],
+    _reserved_35_fcclksel3: [u8; 4usize],
+    _reserved_36_fcclksel4: [u8; 4usize],
+    _reserved_37_fcclksel5: [u8; 4usize],
+    _reserved_38_fcclksel6: [u8; 4usize],
+    _reserved_39_fcclksel7: [u8; 4usize],
     #[doc = "0x2d0 - HS LSPI clock source select"]
     pub hslspiclksel: crate::Reg<hslspiclksel::HSLSPICLKSEL_SPEC>,
     _reserved41: [u8; 12usize],
@@ -99,14 +99,14 @@ pub struct RegisterBlock {
     #[doc = "0x308 - TRACE clock divider"]
     pub traceclkdiv: crate::Reg<traceclkdiv::TRACECLKDIV_SPEC>,
     _reserved47: [u8; 20usize],
-    _reserved_47_flexfrgctrl: [u8; 4usize],
-    _reserved_48_flexfrgctrl: [u8; 4usize],
-    _reserved_49_flexfrgctrl: [u8; 4usize],
-    _reserved_50_flexfrgctrl: [u8; 4usize],
-    _reserved_51_flexfrgctrl: [u8; 4usize],
-    _reserved_52_flexfrgctrl: [u8; 4usize],
-    _reserved_53_flexfrgctrl: [u8; 4usize],
-    _reserved_54_flexfrgctrl: [u8; 4usize],
+    _reserved_47_flexfrg0ctrl: [u8; 4usize],
+    _reserved_48_flexfrg1ctrl: [u8; 4usize],
+    _reserved_49_flexfrg2ctrl: [u8; 4usize],
+    _reserved_50_flexfrg3ctrl: [u8; 4usize],
+    _reserved_51_flexfrg4ctrl: [u8; 4usize],
+    _reserved_52_flexfrg5ctrl: [u8; 4usize],
+    _reserved_53_flexfrg6ctrl: [u8; 4usize],
+    _reserved_54_flexfrg7ctrl: [u8; 4usize],
     _reserved55: [u8; 64usize],
     #[doc = "0x380 - System clock divider"]
     pub ahbclkdiv: crate::Reg<ahbclkdiv::AHBCLKDIV_SPEC>,
@@ -224,454 +224,370 @@ pub struct RegisterBlock {
 impl RegisterBlock {
     #[doc = "0x260 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn systickclksel_systickclkselx0(
-        &self,
-    ) -> &crate::Reg<systickclksel_systickclkselx0::SYSTICKCLKSEL_SYSTICKCLKSELX0_SPEC> {
+    pub fn systickclkselx0(&self) -> &crate::Reg<systickclkselx0::SYSTICKCLKSELX0_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(608usize)
-                as *const crate::Reg<
-                    systickclksel_systickclkselx0::SYSTICKCLKSEL_SYSTICKCLKSELX0_SPEC,
-                >)
+                as *const crate::Reg<systickclkselx0::SYSTICKCLKSELX0_SPEC>)
         }
     }
     #[doc = "0x260 - System Tick Timer for CPU0 source select"]
     #[inline(always)]
-    pub fn systickclksel_systickclksel0(
-        &self,
-    ) -> &crate::Reg<systickclksel_systickclksel0::SYSTICKCLKSEL_SYSTICKCLKSEL0_SPEC> {
+    pub fn systickclksel0(&self) -> &crate::Reg<systickclksel0::SYSTICKCLKSEL0_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(608usize)
-                as *const crate::Reg<
-                    systickclksel_systickclksel0::SYSTICKCLKSEL_SYSTICKCLKSEL0_SPEC,
-                >)
+                as *const crate::Reg<systickclksel0::SYSTICKCLKSEL0_SPEC>)
         }
     }
     #[doc = "0x264 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn systickclksel_systickclkselx1(
-        &self,
-    ) -> &crate::Reg<systickclksel_systickclkselx1::SYSTICKCLKSEL_SYSTICKCLKSELX1_SPEC> {
+    pub fn systickclkselx1(&self) -> &crate::Reg<systickclkselx1::SYSTICKCLKSELX1_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(612usize)
-                as *const crate::Reg<
-                    systickclksel_systickclkselx1::SYSTICKCLKSEL_SYSTICKCLKSELX1_SPEC,
-                >)
+                as *const crate::Reg<systickclkselx1::SYSTICKCLKSELX1_SPEC>)
         }
     }
     #[doc = "0x264 - System Tick Timer for CPU1 source select"]
     #[inline(always)]
-    pub fn systickclksel_systickclksel1(
-        &self,
-    ) -> &crate::Reg<systickclksel_systickclksel1::SYSTICKCLKSEL_SYSTICKCLKSEL1_SPEC> {
+    pub fn systickclksel1(&self) -> &crate::Reg<systickclksel1::SYSTICKCLKSEL1_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(612usize)
-                as *const crate::Reg<
-                    systickclksel_systickclksel1::SYSTICKCLKSEL_SYSTICKCLKSEL1_SPEC,
-                >)
+                as *const crate::Reg<systickclksel1::SYSTICKCLKSEL1_SPEC>)
         }
     }
     #[doc = "0x26c - Peripheral reset control register"]
     #[inline(always)]
-    pub fn ctimerclksel_ctimerclkselx0(
-        &self,
-    ) -> &crate::Reg<ctimerclksel_ctimerclkselx0::CTIMERCLKSEL_CTIMERCLKSELX0_SPEC> {
+    pub fn ctimerclkselx0(&self) -> &crate::Reg<ctimerclkselx0::CTIMERCLKSELX0_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(620usize)
-                as *const crate::Reg<ctimerclksel_ctimerclkselx0::CTIMERCLKSEL_CTIMERCLKSELX0_SPEC>)
+                as *const crate::Reg<ctimerclkselx0::CTIMERCLKSELX0_SPEC>)
         }
     }
     #[doc = "0x26c - CTimer 0 clock source select"]
     #[inline(always)]
-    pub fn ctimerclksel_ctimerclksel0(
-        &self,
-    ) -> &crate::Reg<ctimerclksel_ctimerclksel0::CTIMERCLKSEL_CTIMERCLKSEL0_SPEC> {
+    pub fn ctimerclksel0(&self) -> &crate::Reg<ctimerclksel0::CTIMERCLKSEL0_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(620usize)
-                as *const crate::Reg<ctimerclksel_ctimerclksel0::CTIMERCLKSEL_CTIMERCLKSEL0_SPEC>)
+                as *const crate::Reg<ctimerclksel0::CTIMERCLKSEL0_SPEC>)
         }
     }
     #[doc = "0x270 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn ctimerclksel_ctimerclkselx1(
-        &self,
-    ) -> &crate::Reg<ctimerclksel_ctimerclkselx1::CTIMERCLKSEL_CTIMERCLKSELX1_SPEC> {
+    pub fn ctimerclkselx1(&self) -> &crate::Reg<ctimerclkselx1::CTIMERCLKSELX1_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(624usize)
-                as *const crate::Reg<ctimerclksel_ctimerclkselx1::CTIMERCLKSEL_CTIMERCLKSELX1_SPEC>)
+                as *const crate::Reg<ctimerclkselx1::CTIMERCLKSELX1_SPEC>)
         }
     }
     #[doc = "0x270 - CTimer 1 clock source select"]
     #[inline(always)]
-    pub fn ctimerclksel_ctimerclksel1(
-        &self,
-    ) -> &crate::Reg<ctimerclksel_ctimerclksel1::CTIMERCLKSEL_CTIMERCLKSEL1_SPEC> {
+    pub fn ctimerclksel1(&self) -> &crate::Reg<ctimerclksel1::CTIMERCLKSEL1_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(624usize)
-                as *const crate::Reg<ctimerclksel_ctimerclksel1::CTIMERCLKSEL_CTIMERCLKSEL1_SPEC>)
+                as *const crate::Reg<ctimerclksel1::CTIMERCLKSEL1_SPEC>)
         }
     }
     #[doc = "0x274 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn ctimerclksel_ctimerclkselx2(
-        &self,
-    ) -> &crate::Reg<ctimerclksel_ctimerclkselx2::CTIMERCLKSEL_CTIMERCLKSELX2_SPEC> {
+    pub fn ctimerclkselx2(&self) -> &crate::Reg<ctimerclkselx2::CTIMERCLKSELX2_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(628usize)
-                as *const crate::Reg<ctimerclksel_ctimerclkselx2::CTIMERCLKSEL_CTIMERCLKSELX2_SPEC>)
+                as *const crate::Reg<ctimerclkselx2::CTIMERCLKSELX2_SPEC>)
         }
     }
     #[doc = "0x274 - CTimer 2 clock source select"]
     #[inline(always)]
-    pub fn ctimerclksel_ctimerclksel2(
-        &self,
-    ) -> &crate::Reg<ctimerclksel_ctimerclksel2::CTIMERCLKSEL_CTIMERCLKSEL2_SPEC> {
+    pub fn ctimerclksel2(&self) -> &crate::Reg<ctimerclksel2::CTIMERCLKSEL2_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(628usize)
-                as *const crate::Reg<ctimerclksel_ctimerclksel2::CTIMERCLKSEL_CTIMERCLKSEL2_SPEC>)
+                as *const crate::Reg<ctimerclksel2::CTIMERCLKSEL2_SPEC>)
         }
     }
     #[doc = "0x278 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn ctimerclksel_ctimerclkselx3(
-        &self,
-    ) -> &crate::Reg<ctimerclksel_ctimerclkselx3::CTIMERCLKSEL_CTIMERCLKSELX3_SPEC> {
+    pub fn ctimerclkselx3(&self) -> &crate::Reg<ctimerclkselx3::CTIMERCLKSELX3_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(632usize)
-                as *const crate::Reg<ctimerclksel_ctimerclkselx3::CTIMERCLKSEL_CTIMERCLKSELX3_SPEC>)
+                as *const crate::Reg<ctimerclkselx3::CTIMERCLKSELX3_SPEC>)
         }
     }
     #[doc = "0x278 - CTimer 3 clock source select"]
     #[inline(always)]
-    pub fn ctimerclksel_ctimerclksel3(
-        &self,
-    ) -> &crate::Reg<ctimerclksel_ctimerclksel3::CTIMERCLKSEL_CTIMERCLKSEL3_SPEC> {
+    pub fn ctimerclksel3(&self) -> &crate::Reg<ctimerclksel3::CTIMERCLKSEL3_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(632usize)
-                as *const crate::Reg<ctimerclksel_ctimerclksel3::CTIMERCLKSEL_CTIMERCLKSEL3_SPEC>)
+                as *const crate::Reg<ctimerclksel3::CTIMERCLKSEL3_SPEC>)
         }
     }
     #[doc = "0x27c - Peripheral reset control register"]
     #[inline(always)]
-    pub fn ctimerclksel_ctimerclkselx4(
-        &self,
-    ) -> &crate::Reg<ctimerclksel_ctimerclkselx4::CTIMERCLKSEL_CTIMERCLKSELX4_SPEC> {
+    pub fn ctimerclkselx4(&self) -> &crate::Reg<ctimerclkselx4::CTIMERCLKSELX4_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(636usize)
-                as *const crate::Reg<ctimerclksel_ctimerclkselx4::CTIMERCLKSEL_CTIMERCLKSELX4_SPEC>)
+                as *const crate::Reg<ctimerclkselx4::CTIMERCLKSELX4_SPEC>)
         }
     }
     #[doc = "0x27c - CTimer 4 clock source select"]
     #[inline(always)]
-    pub fn ctimerclksel_ctimerclksel4(
-        &self,
-    ) -> &crate::Reg<ctimerclksel_ctimerclksel4::CTIMERCLKSEL_CTIMERCLKSEL4_SPEC> {
+    pub fn ctimerclksel4(&self) -> &crate::Reg<ctimerclksel4::CTIMERCLKSEL4_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(636usize)
-                as *const crate::Reg<ctimerclksel_ctimerclksel4::CTIMERCLKSEL_CTIMERCLKSEL4_SPEC>)
+                as *const crate::Reg<ctimerclksel4::CTIMERCLKSEL4_SPEC>)
         }
     }
     #[doc = "0x2b0 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn fcclksel_fcclkselx0(
-        &self,
-    ) -> &crate::Reg<fcclksel_fcclkselx0::FCCLKSEL_FCCLKSELX0_SPEC> {
+    pub fn fcclkselx0(&self) -> &crate::Reg<fcclkselx0::FCCLKSELX0_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(688usize)
-                as *const crate::Reg<fcclksel_fcclkselx0::FCCLKSEL_FCCLKSELX0_SPEC>)
+                as *const crate::Reg<fcclkselx0::FCCLKSELX0_SPEC>)
         }
     }
     #[doc = "0x2b0 - Flexcomm Interface 0 clock source select for Fractional Rate Divider"]
     #[inline(always)]
-    pub fn fcclksel_fcclksel0(&self) -> &crate::Reg<fcclksel_fcclksel0::FCCLKSEL_FCCLKSEL0_SPEC> {
+    pub fn fcclksel0(&self) -> &crate::Reg<fcclksel0::FCCLKSEL0_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(688usize)
-                as *const crate::Reg<fcclksel_fcclksel0::FCCLKSEL_FCCLKSEL0_SPEC>)
+                as *const crate::Reg<fcclksel0::FCCLKSEL0_SPEC>)
         }
     }
     #[doc = "0x2b4 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn fcclksel_fcclkselx1(
-        &self,
-    ) -> &crate::Reg<fcclksel_fcclkselx1::FCCLKSEL_FCCLKSELX1_SPEC> {
+    pub fn fcclkselx1(&self) -> &crate::Reg<fcclkselx1::FCCLKSELX1_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(692usize)
-                as *const crate::Reg<fcclksel_fcclkselx1::FCCLKSEL_FCCLKSELX1_SPEC>)
+                as *const crate::Reg<fcclkselx1::FCCLKSELX1_SPEC>)
         }
     }
     #[doc = "0x2b4 - Flexcomm Interface 1 clock source select for Fractional Rate Divider"]
     #[inline(always)]
-    pub fn fcclksel_fcclksel1(&self) -> &crate::Reg<fcclksel_fcclksel1::FCCLKSEL_FCCLKSEL1_SPEC> {
+    pub fn fcclksel1(&self) -> &crate::Reg<fcclksel1::FCCLKSEL1_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(692usize)
-                as *const crate::Reg<fcclksel_fcclksel1::FCCLKSEL_FCCLKSEL1_SPEC>)
+                as *const crate::Reg<fcclksel1::FCCLKSEL1_SPEC>)
         }
     }
     #[doc = "0x2b8 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn fcclksel_fcclkselx2(
-        &self,
-    ) -> &crate::Reg<fcclksel_fcclkselx2::FCCLKSEL_FCCLKSELX2_SPEC> {
+    pub fn fcclkselx2(&self) -> &crate::Reg<fcclkselx2::FCCLKSELX2_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(696usize)
-                as *const crate::Reg<fcclksel_fcclkselx2::FCCLKSEL_FCCLKSELX2_SPEC>)
+                as *const crate::Reg<fcclkselx2::FCCLKSELX2_SPEC>)
         }
     }
     #[doc = "0x2b8 - Flexcomm Interface 2 clock source select for Fractional Rate Divider"]
     #[inline(always)]
-    pub fn fcclksel_fcclksel2(&self) -> &crate::Reg<fcclksel_fcclksel2::FCCLKSEL_FCCLKSEL2_SPEC> {
+    pub fn fcclksel2(&self) -> &crate::Reg<fcclksel2::FCCLKSEL2_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(696usize)
-                as *const crate::Reg<fcclksel_fcclksel2::FCCLKSEL_FCCLKSEL2_SPEC>)
+                as *const crate::Reg<fcclksel2::FCCLKSEL2_SPEC>)
         }
     }
     #[doc = "0x2bc - Peripheral reset control register"]
     #[inline(always)]
-    pub fn fcclksel_fcclkselx3(
-        &self,
-    ) -> &crate::Reg<fcclksel_fcclkselx3::FCCLKSEL_FCCLKSELX3_SPEC> {
+    pub fn fcclkselx3(&self) -> &crate::Reg<fcclkselx3::FCCLKSELX3_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(700usize)
-                as *const crate::Reg<fcclksel_fcclkselx3::FCCLKSEL_FCCLKSELX3_SPEC>)
+                as *const crate::Reg<fcclkselx3::FCCLKSELX3_SPEC>)
         }
     }
     #[doc = "0x2bc - Flexcomm Interface 3 clock source select for Fractional Rate Divider"]
     #[inline(always)]
-    pub fn fcclksel_fcclksel3(&self) -> &crate::Reg<fcclksel_fcclksel3::FCCLKSEL_FCCLKSEL3_SPEC> {
+    pub fn fcclksel3(&self) -> &crate::Reg<fcclksel3::FCCLKSEL3_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(700usize)
-                as *const crate::Reg<fcclksel_fcclksel3::FCCLKSEL_FCCLKSEL3_SPEC>)
+                as *const crate::Reg<fcclksel3::FCCLKSEL3_SPEC>)
         }
     }
     #[doc = "0x2c0 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn fcclksel_fcclkselx4(
-        &self,
-    ) -> &crate::Reg<fcclksel_fcclkselx4::FCCLKSEL_FCCLKSELX4_SPEC> {
+    pub fn fcclkselx4(&self) -> &crate::Reg<fcclkselx4::FCCLKSELX4_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(704usize)
-                as *const crate::Reg<fcclksel_fcclkselx4::FCCLKSEL_FCCLKSELX4_SPEC>)
+                as *const crate::Reg<fcclkselx4::FCCLKSELX4_SPEC>)
         }
     }
     #[doc = "0x2c0 - Flexcomm Interface 4 clock source select for Fractional Rate Divider"]
     #[inline(always)]
-    pub fn fcclksel_fcclksel4(&self) -> &crate::Reg<fcclksel_fcclksel4::FCCLKSEL_FCCLKSEL4_SPEC> {
+    pub fn fcclksel4(&self) -> &crate::Reg<fcclksel4::FCCLKSEL4_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(704usize)
-                as *const crate::Reg<fcclksel_fcclksel4::FCCLKSEL_FCCLKSEL4_SPEC>)
+                as *const crate::Reg<fcclksel4::FCCLKSEL4_SPEC>)
         }
     }
     #[doc = "0x2c4 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn fcclksel_fcclkselx5(
-        &self,
-    ) -> &crate::Reg<fcclksel_fcclkselx5::FCCLKSEL_FCCLKSELX5_SPEC> {
+    pub fn fcclkselx5(&self) -> &crate::Reg<fcclkselx5::FCCLKSELX5_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(708usize)
-                as *const crate::Reg<fcclksel_fcclkselx5::FCCLKSEL_FCCLKSELX5_SPEC>)
+                as *const crate::Reg<fcclkselx5::FCCLKSELX5_SPEC>)
         }
     }
     #[doc = "0x2c4 - Flexcomm Interface 5 clock source select for Fractional Rate Divider"]
     #[inline(always)]
-    pub fn fcclksel_fcclksel5(&self) -> &crate::Reg<fcclksel_fcclksel5::FCCLKSEL_FCCLKSEL5_SPEC> {
+    pub fn fcclksel5(&self) -> &crate::Reg<fcclksel5::FCCLKSEL5_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(708usize)
-                as *const crate::Reg<fcclksel_fcclksel5::FCCLKSEL_FCCLKSEL5_SPEC>)
+                as *const crate::Reg<fcclksel5::FCCLKSEL5_SPEC>)
         }
     }
     #[doc = "0x2c8 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn fcclksel_fcclkselx6(
-        &self,
-    ) -> &crate::Reg<fcclksel_fcclkselx6::FCCLKSEL_FCCLKSELX6_SPEC> {
+    pub fn fcclkselx6(&self) -> &crate::Reg<fcclkselx6::FCCLKSELX6_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(712usize)
-                as *const crate::Reg<fcclksel_fcclkselx6::FCCLKSEL_FCCLKSELX6_SPEC>)
+                as *const crate::Reg<fcclkselx6::FCCLKSELX6_SPEC>)
         }
     }
     #[doc = "0x2c8 - Flexcomm Interface 6 clock source select for Fractional Rate Divider"]
     #[inline(always)]
-    pub fn fcclksel_fcclksel6(&self) -> &crate::Reg<fcclksel_fcclksel6::FCCLKSEL_FCCLKSEL6_SPEC> {
+    pub fn fcclksel6(&self) -> &crate::Reg<fcclksel6::FCCLKSEL6_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(712usize)
-                as *const crate::Reg<fcclksel_fcclksel6::FCCLKSEL_FCCLKSEL6_SPEC>)
+                as *const crate::Reg<fcclksel6::FCCLKSEL6_SPEC>)
         }
     }
     #[doc = "0x2cc - Peripheral reset control register"]
     #[inline(always)]
-    pub fn fcclksel_fcclkselx7(
-        &self,
-    ) -> &crate::Reg<fcclksel_fcclkselx7::FCCLKSEL_FCCLKSELX7_SPEC> {
+    pub fn fcclkselx7(&self) -> &crate::Reg<fcclkselx7::FCCLKSELX7_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(716usize)
-                as *const crate::Reg<fcclksel_fcclkselx7::FCCLKSEL_FCCLKSELX7_SPEC>)
+                as *const crate::Reg<fcclkselx7::FCCLKSELX7_SPEC>)
         }
     }
     #[doc = "0x2cc - Flexcomm Interface 7 clock source select for Fractional Rate Divider"]
     #[inline(always)]
-    pub fn fcclksel_fcclksel7(&self) -> &crate::Reg<fcclksel_fcclksel7::FCCLKSEL_FCCLKSEL7_SPEC> {
+    pub fn fcclksel7(&self) -> &crate::Reg<fcclksel7::FCCLKSEL7_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(716usize)
-                as *const crate::Reg<fcclksel_fcclksel7::FCCLKSEL_FCCLKSEL7_SPEC>)
+                as *const crate::Reg<fcclksel7::FCCLKSEL7_SPEC>)
         }
     }
     #[doc = "0x320 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrgxctrl0(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrgxctrl0::FLEXFRGCTRL_FLEXFRGXCTRL0_SPEC> {
+    pub fn flexfrgxctrl0(&self) -> &crate::Reg<flexfrgxctrl0::FLEXFRGXCTRL0_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(800usize)
-                as *const crate::Reg<flexfrgctrl_flexfrgxctrl0::FLEXFRGCTRL_FLEXFRGXCTRL0_SPEC>)
+                as *const crate::Reg<flexfrgxctrl0::FLEXFRGXCTRL0_SPEC>)
         }
     }
     #[doc = "0x320 - Fractional rate divider for flexcomm 0"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrg0ctrl(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrg0ctrl::FLEXFRGCTRL_FLEXFRG0CTRL_SPEC> {
+    pub fn flexfrg0ctrl(&self) -> &crate::Reg<flexfrg0ctrl::FLEXFRG0CTRL_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(800usize)
-                as *const crate::Reg<flexfrgctrl_flexfrg0ctrl::FLEXFRGCTRL_FLEXFRG0CTRL_SPEC>)
+                as *const crate::Reg<flexfrg0ctrl::FLEXFRG0CTRL_SPEC>)
         }
     }
     #[doc = "0x324 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrgxctrl1(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrgxctrl1::FLEXFRGCTRL_FLEXFRGXCTRL1_SPEC> {
+    pub fn flexfrgxctrl1(&self) -> &crate::Reg<flexfrgxctrl1::FLEXFRGXCTRL1_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(804usize)
-                as *const crate::Reg<flexfrgctrl_flexfrgxctrl1::FLEXFRGCTRL_FLEXFRGXCTRL1_SPEC>)
+                as *const crate::Reg<flexfrgxctrl1::FLEXFRGXCTRL1_SPEC>)
         }
     }
     #[doc = "0x324 - Fractional rate divider for flexcomm 1"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrg1ctrl(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrg1ctrl::FLEXFRGCTRL_FLEXFRG1CTRL_SPEC> {
+    pub fn flexfrg1ctrl(&self) -> &crate::Reg<flexfrg1ctrl::FLEXFRG1CTRL_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(804usize)
-                as *const crate::Reg<flexfrgctrl_flexfrg1ctrl::FLEXFRGCTRL_FLEXFRG1CTRL_SPEC>)
+                as *const crate::Reg<flexfrg1ctrl::FLEXFRG1CTRL_SPEC>)
         }
     }
     #[doc = "0x328 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrgxctrl2(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrgxctrl2::FLEXFRGCTRL_FLEXFRGXCTRL2_SPEC> {
+    pub fn flexfrgxctrl2(&self) -> &crate::Reg<flexfrgxctrl2::FLEXFRGXCTRL2_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(808usize)
-                as *const crate::Reg<flexfrgctrl_flexfrgxctrl2::FLEXFRGCTRL_FLEXFRGXCTRL2_SPEC>)
+                as *const crate::Reg<flexfrgxctrl2::FLEXFRGXCTRL2_SPEC>)
         }
     }
     #[doc = "0x328 - Fractional rate divider for flexcomm 2"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrg2ctrl(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrg2ctrl::FLEXFRGCTRL_FLEXFRG2CTRL_SPEC> {
+    pub fn flexfrg2ctrl(&self) -> &crate::Reg<flexfrg2ctrl::FLEXFRG2CTRL_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(808usize)
-                as *const crate::Reg<flexfrgctrl_flexfrg2ctrl::FLEXFRGCTRL_FLEXFRG2CTRL_SPEC>)
+                as *const crate::Reg<flexfrg2ctrl::FLEXFRG2CTRL_SPEC>)
         }
     }
     #[doc = "0x32c - Peripheral reset control register"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrgxctrl3(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrgxctrl3::FLEXFRGCTRL_FLEXFRGXCTRL3_SPEC> {
+    pub fn flexfrgxctrl3(&self) -> &crate::Reg<flexfrgxctrl3::FLEXFRGXCTRL3_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(812usize)
-                as *const crate::Reg<flexfrgctrl_flexfrgxctrl3::FLEXFRGCTRL_FLEXFRGXCTRL3_SPEC>)
+                as *const crate::Reg<flexfrgxctrl3::FLEXFRGXCTRL3_SPEC>)
         }
     }
     #[doc = "0x32c - Fractional rate divider for flexcomm 3"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrg3ctrl(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrg3ctrl::FLEXFRGCTRL_FLEXFRG3CTRL_SPEC> {
+    pub fn flexfrg3ctrl(&self) -> &crate::Reg<flexfrg3ctrl::FLEXFRG3CTRL_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(812usize)
-                as *const crate::Reg<flexfrgctrl_flexfrg3ctrl::FLEXFRGCTRL_FLEXFRG3CTRL_SPEC>)
+                as *const crate::Reg<flexfrg3ctrl::FLEXFRG3CTRL_SPEC>)
         }
     }
     #[doc = "0x330 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrgxctrl4(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrgxctrl4::FLEXFRGCTRL_FLEXFRGXCTRL4_SPEC> {
+    pub fn flexfrgxctrl4(&self) -> &crate::Reg<flexfrgxctrl4::FLEXFRGXCTRL4_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(816usize)
-                as *const crate::Reg<flexfrgctrl_flexfrgxctrl4::FLEXFRGCTRL_FLEXFRGXCTRL4_SPEC>)
+                as *const crate::Reg<flexfrgxctrl4::FLEXFRGXCTRL4_SPEC>)
         }
     }
     #[doc = "0x330 - Fractional rate divider for flexcomm 4"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrg4ctrl(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrg4ctrl::FLEXFRGCTRL_FLEXFRG4CTRL_SPEC> {
+    pub fn flexfrg4ctrl(&self) -> &crate::Reg<flexfrg4ctrl::FLEXFRG4CTRL_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(816usize)
-                as *const crate::Reg<flexfrgctrl_flexfrg4ctrl::FLEXFRGCTRL_FLEXFRG4CTRL_SPEC>)
+                as *const crate::Reg<flexfrg4ctrl::FLEXFRG4CTRL_SPEC>)
         }
     }
     #[doc = "0x334 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrgxctrl5(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrgxctrl5::FLEXFRGCTRL_FLEXFRGXCTRL5_SPEC> {
+    pub fn flexfrgxctrl5(&self) -> &crate::Reg<flexfrgxctrl5::FLEXFRGXCTRL5_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(820usize)
-                as *const crate::Reg<flexfrgctrl_flexfrgxctrl5::FLEXFRGCTRL_FLEXFRGXCTRL5_SPEC>)
+                as *const crate::Reg<flexfrgxctrl5::FLEXFRGXCTRL5_SPEC>)
         }
     }
     #[doc = "0x334 - Fractional rate divider for flexcomm 5"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrg5ctrl(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrg5ctrl::FLEXFRGCTRL_FLEXFRG5CTRL_SPEC> {
+    pub fn flexfrg5ctrl(&self) -> &crate::Reg<flexfrg5ctrl::FLEXFRG5CTRL_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(820usize)
-                as *const crate::Reg<flexfrgctrl_flexfrg5ctrl::FLEXFRGCTRL_FLEXFRG5CTRL_SPEC>)
+                as *const crate::Reg<flexfrg5ctrl::FLEXFRG5CTRL_SPEC>)
         }
     }
     #[doc = "0x338 - Peripheral reset control register"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrgxctrl6(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrgxctrl6::FLEXFRGCTRL_FLEXFRGXCTRL6_SPEC> {
+    pub fn flexfrgxctrl6(&self) -> &crate::Reg<flexfrgxctrl6::FLEXFRGXCTRL6_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(824usize)
-                as *const crate::Reg<flexfrgctrl_flexfrgxctrl6::FLEXFRGCTRL_FLEXFRGXCTRL6_SPEC>)
+                as *const crate::Reg<flexfrgxctrl6::FLEXFRGXCTRL6_SPEC>)
         }
     }
     #[doc = "0x338 - Fractional rate divider for flexcomm 6"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrg6ctrl(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrg6ctrl::FLEXFRGCTRL_FLEXFRG6CTRL_SPEC> {
+    pub fn flexfrg6ctrl(&self) -> &crate::Reg<flexfrg6ctrl::FLEXFRG6CTRL_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(824usize)
-                as *const crate::Reg<flexfrgctrl_flexfrg6ctrl::FLEXFRGCTRL_FLEXFRG6CTRL_SPEC>)
+                as *const crate::Reg<flexfrg6ctrl::FLEXFRG6CTRL_SPEC>)
         }
     }
     #[doc = "0x33c - Peripheral reset control register"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrgxctrl7(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrgxctrl7::FLEXFRGCTRL_FLEXFRGXCTRL7_SPEC> {
+    pub fn flexfrgxctrl7(&self) -> &crate::Reg<flexfrgxctrl7::FLEXFRGXCTRL7_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(828usize)
-                as *const crate::Reg<flexfrgctrl_flexfrgxctrl7::FLEXFRGCTRL_FLEXFRGXCTRL7_SPEC>)
+                as *const crate::Reg<flexfrgxctrl7::FLEXFRGXCTRL7_SPEC>)
         }
     }
     #[doc = "0x33c - Fractional rate divider for flexcomm 7"]
     #[inline(always)]
-    pub fn flexfrgctrl_flexfrg7ctrl(
-        &self,
-    ) -> &crate::Reg<flexfrgctrl_flexfrg7ctrl::FLEXFRGCTRL_FLEXFRG7CTRL_SPEC> {
+    pub fn flexfrg7ctrl(&self) -> &crate::Reg<flexfrg7ctrl::FLEXFRG7CTRL_SPEC> {
         unsafe {
             &*(((self as *const Self) as *const u8).add(828usize)
-                as *const crate::Reg<flexfrgctrl_flexfrg7ctrl::FLEXFRGCTRL_FLEXFRG7CTRL_SPEC>)
+                as *const crate::Reg<flexfrg7ctrl::FLEXFRG7CTRL_SPEC>)
         }
     }
 }
@@ -699,18 +615,18 @@ pub mod cpu1stckcal;
 pub type NMISRC = crate::Reg<nmisrc::NMISRC_SPEC>;
 #[doc = "NMI Source Select"]
 pub mod nmisrc;
-#[doc = "PRESETCTRL_PRESETCTRL0 register accessor: an alias for `Reg<PRESETCTRL_PRESETCTRL0_SPEC>`"]
-pub type PRESETCTRL_PRESETCTRL0 = crate::Reg<presetctrl_presetctrl0::PRESETCTRL_PRESETCTRL0_SPEC>;
+#[doc = "PRESETCTRL0 register accessor: an alias for `Reg<PRESETCTRL0_SPEC>`"]
+pub type PRESETCTRL0 = crate::Reg<presetctrl0::PRESETCTRL0_SPEC>;
 #[doc = "Peripheral reset control 0"]
-pub mod presetctrl_presetctrl0;
-#[doc = "PRESETCTRL_PRESETCTRL1 register accessor: an alias for `Reg<PRESETCTRL_PRESETCTRL1_SPEC>`"]
-pub type PRESETCTRL_PRESETCTRL1 = crate::Reg<presetctrl_presetctrl1::PRESETCTRL_PRESETCTRL1_SPEC>;
+pub mod presetctrl0;
+#[doc = "PRESETCTRL1 register accessor: an alias for `Reg<PRESETCTRL1_SPEC>`"]
+pub type PRESETCTRL1 = crate::Reg<presetctrl1::PRESETCTRL1_SPEC>;
 #[doc = "Peripheral reset control 1"]
-pub mod presetctrl_presetctrl1;
-#[doc = "PRESETCTRL_PRESETCTRL2 register accessor: an alias for `Reg<PRESETCTRL_PRESETCTRL2_SPEC>`"]
-pub type PRESETCTRL_PRESETCTRL2 = crate::Reg<presetctrl_presetctrl2::PRESETCTRL_PRESETCTRL2_SPEC>;
+pub mod presetctrl1;
+#[doc = "PRESETCTRL2 register accessor: an alias for `Reg<PRESETCTRL2_SPEC>`"]
+pub type PRESETCTRL2 = crate::Reg<presetctrl2::PRESETCTRL2_SPEC>;
 #[doc = "Peripheral reset control 2"]
-pub mod presetctrl_presetctrl2;
+pub mod presetctrl2;
 #[doc = "PRESETCTRLSET register accessor: an alias for `Reg<PRESETCTRLSET_SPEC>`"]
 pub type PRESETCTRLSET = crate::Reg<presetctrlset::PRESETCTRLSET_SPEC>;
 #[doc = "Peripheral reset control set register"]
@@ -723,18 +639,18 @@ pub mod presetctrlclr;
 pub type SWR_RESET = crate::Reg<swr_reset::SWR_RESET_SPEC>;
 #[doc = "generate a software_reset"]
 pub mod swr_reset;
-#[doc = "AHBCLKCTRL_AHBCLKCTRL0 register accessor: an alias for `Reg<AHBCLKCTRL_AHBCLKCTRL0_SPEC>`"]
-pub type AHBCLKCTRL_AHBCLKCTRL0 = crate::Reg<ahbclkctrl_ahbclkctrl0::AHBCLKCTRL_AHBCLKCTRL0_SPEC>;
+#[doc = "AHBCLKCTRL0 register accessor: an alias for `Reg<AHBCLKCTRL0_SPEC>`"]
+pub type AHBCLKCTRL0 = crate::Reg<ahbclkctrl0::AHBCLKCTRL0_SPEC>;
 #[doc = "AHB Clock control 0"]
-pub mod ahbclkctrl_ahbclkctrl0;
-#[doc = "AHBCLKCTRL_AHBCLKCTRL1 register accessor: an alias for `Reg<AHBCLKCTRL_AHBCLKCTRL1_SPEC>`"]
-pub type AHBCLKCTRL_AHBCLKCTRL1 = crate::Reg<ahbclkctrl_ahbclkctrl1::AHBCLKCTRL_AHBCLKCTRL1_SPEC>;
+pub mod ahbclkctrl0;
+#[doc = "AHBCLKCTRL1 register accessor: an alias for `Reg<AHBCLKCTRL1_SPEC>`"]
+pub type AHBCLKCTRL1 = crate::Reg<ahbclkctrl1::AHBCLKCTRL1_SPEC>;
 #[doc = "AHB Clock control 1"]
-pub mod ahbclkctrl_ahbclkctrl1;
-#[doc = "AHBCLKCTRL_AHBCLKCTRL2 register accessor: an alias for `Reg<AHBCLKCTRL_AHBCLKCTRL2_SPEC>`"]
-pub type AHBCLKCTRL_AHBCLKCTRL2 = crate::Reg<ahbclkctrl_ahbclkctrl2::AHBCLKCTRL_AHBCLKCTRL2_SPEC>;
+pub mod ahbclkctrl1;
+#[doc = "AHBCLKCTRL2 register accessor: an alias for `Reg<AHBCLKCTRL2_SPEC>`"]
+pub type AHBCLKCTRL2 = crate::Reg<ahbclkctrl2::AHBCLKCTRL2_SPEC>;
 #[doc = "AHB Clock control 2"]
-pub mod ahbclkctrl_ahbclkctrl2;
+pub mod ahbclkctrl2;
 #[doc = "AHBCLKCTRLSET register accessor: an alias for `Reg<AHBCLKCTRLSET_SPEC>`"]
 pub type AHBCLKCTRLSET = crate::Reg<ahbclkctrlset::AHBCLKCTRLSET_SPEC>;
 #[doc = "Peripheral reset control register"]
@@ -743,80 +659,66 @@ pub mod ahbclkctrlset;
 pub type AHBCLKCTRLCLR = crate::Reg<ahbclkctrlclr::AHBCLKCTRLCLR_SPEC>;
 #[doc = "Peripheral reset control register"]
 pub mod ahbclkctrlclr;
-#[doc = "SYSTICKCLKSEL_SYSTICKCLKSEL0 register accessor: an alias for `Reg<SYSTICKCLKSEL_SYSTICKCLKSEL0_SPEC>`"]
-pub type SYSTICKCLKSEL_SYSTICKCLKSEL0 =
-    crate::Reg<systickclksel_systickclksel0::SYSTICKCLKSEL_SYSTICKCLKSEL0_SPEC>;
+#[doc = "SYSTICKCLKSEL0 register accessor: an alias for `Reg<SYSTICKCLKSEL0_SPEC>`"]
+pub type SYSTICKCLKSEL0 = crate::Reg<systickclksel0::SYSTICKCLKSEL0_SPEC>;
 #[doc = "System Tick Timer for CPU0 source select"]
-pub mod systickclksel_systickclksel0;
-#[doc = "SYSTICKCLKSEL_SYSTICKCLKSELX0 register accessor: an alias for `Reg<SYSTICKCLKSEL_SYSTICKCLKSELX0_SPEC>`"]
-pub type SYSTICKCLKSEL_SYSTICKCLKSELX0 =
-    crate::Reg<systickclksel_systickclkselx0::SYSTICKCLKSEL_SYSTICKCLKSELX0_SPEC>;
+pub mod systickclksel0;
+#[doc = "SYSTICKCLKSELX0 register accessor: an alias for `Reg<SYSTICKCLKSELX0_SPEC>`"]
+pub type SYSTICKCLKSELX0 = crate::Reg<systickclkselx0::SYSTICKCLKSELX0_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod systickclksel_systickclkselx0;
-#[doc = "SYSTICKCLKSEL_SYSTICKCLKSEL1 register accessor: an alias for `Reg<SYSTICKCLKSEL_SYSTICKCLKSEL1_SPEC>`"]
-pub type SYSTICKCLKSEL_SYSTICKCLKSEL1 =
-    crate::Reg<systickclksel_systickclksel1::SYSTICKCLKSEL_SYSTICKCLKSEL1_SPEC>;
+pub mod systickclkselx0;
+#[doc = "SYSTICKCLKSEL1 register accessor: an alias for `Reg<SYSTICKCLKSEL1_SPEC>`"]
+pub type SYSTICKCLKSEL1 = crate::Reg<systickclksel1::SYSTICKCLKSEL1_SPEC>;
 #[doc = "System Tick Timer for CPU1 source select"]
-pub mod systickclksel_systickclksel1;
-#[doc = "SYSTICKCLKSEL_SYSTICKCLKSELX1 register accessor: an alias for `Reg<SYSTICKCLKSEL_SYSTICKCLKSELX1_SPEC>`"]
-pub type SYSTICKCLKSEL_SYSTICKCLKSELX1 =
-    crate::Reg<systickclksel_systickclkselx1::SYSTICKCLKSEL_SYSTICKCLKSELX1_SPEC>;
+pub mod systickclksel1;
+#[doc = "SYSTICKCLKSELX1 register accessor: an alias for `Reg<SYSTICKCLKSELX1_SPEC>`"]
+pub type SYSTICKCLKSELX1 = crate::Reg<systickclkselx1::SYSTICKCLKSELX1_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod systickclksel_systickclkselx1;
+pub mod systickclkselx1;
 #[doc = "TRACECLKSEL register accessor: an alias for `Reg<TRACECLKSEL_SPEC>`"]
 pub type TRACECLKSEL = crate::Reg<traceclksel::TRACECLKSEL_SPEC>;
 #[doc = "Trace clock source select"]
 pub mod traceclksel;
-#[doc = "CTIMERCLKSEL_CTIMERCLKSEL0 register accessor: an alias for `Reg<CTIMERCLKSEL_CTIMERCLKSEL0_SPEC>`"]
-pub type CTIMERCLKSEL_CTIMERCLKSEL0 =
-    crate::Reg<ctimerclksel_ctimerclksel0::CTIMERCLKSEL_CTIMERCLKSEL0_SPEC>;
+#[doc = "CTIMERCLKSEL0 register accessor: an alias for `Reg<CTIMERCLKSEL0_SPEC>`"]
+pub type CTIMERCLKSEL0 = crate::Reg<ctimerclksel0::CTIMERCLKSEL0_SPEC>;
 #[doc = "CTimer 0 clock source select"]
-pub mod ctimerclksel_ctimerclksel0;
-#[doc = "CTIMERCLKSEL_CTIMERCLKSELX0 register accessor: an alias for `Reg<CTIMERCLKSEL_CTIMERCLKSELX0_SPEC>`"]
-pub type CTIMERCLKSEL_CTIMERCLKSELX0 =
-    crate::Reg<ctimerclksel_ctimerclkselx0::CTIMERCLKSEL_CTIMERCLKSELX0_SPEC>;
+pub mod ctimerclksel0;
+#[doc = "CTIMERCLKSELX0 register accessor: an alias for `Reg<CTIMERCLKSELX0_SPEC>`"]
+pub type CTIMERCLKSELX0 = crate::Reg<ctimerclkselx0::CTIMERCLKSELX0_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod ctimerclksel_ctimerclkselx0;
-#[doc = "CTIMERCLKSEL_CTIMERCLKSEL1 register accessor: an alias for `Reg<CTIMERCLKSEL_CTIMERCLKSEL1_SPEC>`"]
-pub type CTIMERCLKSEL_CTIMERCLKSEL1 =
-    crate::Reg<ctimerclksel_ctimerclksel1::CTIMERCLKSEL_CTIMERCLKSEL1_SPEC>;
+pub mod ctimerclkselx0;
+#[doc = "CTIMERCLKSEL1 register accessor: an alias for `Reg<CTIMERCLKSEL1_SPEC>`"]
+pub type CTIMERCLKSEL1 = crate::Reg<ctimerclksel1::CTIMERCLKSEL1_SPEC>;
 #[doc = "CTimer 1 clock source select"]
-pub mod ctimerclksel_ctimerclksel1;
-#[doc = "CTIMERCLKSEL_CTIMERCLKSELX1 register accessor: an alias for `Reg<CTIMERCLKSEL_CTIMERCLKSELX1_SPEC>`"]
-pub type CTIMERCLKSEL_CTIMERCLKSELX1 =
-    crate::Reg<ctimerclksel_ctimerclkselx1::CTIMERCLKSEL_CTIMERCLKSELX1_SPEC>;
+pub mod ctimerclksel1;
+#[doc = "CTIMERCLKSELX1 register accessor: an alias for `Reg<CTIMERCLKSELX1_SPEC>`"]
+pub type CTIMERCLKSELX1 = crate::Reg<ctimerclkselx1::CTIMERCLKSELX1_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod ctimerclksel_ctimerclkselx1;
-#[doc = "CTIMERCLKSEL_CTIMERCLKSEL2 register accessor: an alias for `Reg<CTIMERCLKSEL_CTIMERCLKSEL2_SPEC>`"]
-pub type CTIMERCLKSEL_CTIMERCLKSEL2 =
-    crate::Reg<ctimerclksel_ctimerclksel2::CTIMERCLKSEL_CTIMERCLKSEL2_SPEC>;
+pub mod ctimerclkselx1;
+#[doc = "CTIMERCLKSEL2 register accessor: an alias for `Reg<CTIMERCLKSEL2_SPEC>`"]
+pub type CTIMERCLKSEL2 = crate::Reg<ctimerclksel2::CTIMERCLKSEL2_SPEC>;
 #[doc = "CTimer 2 clock source select"]
-pub mod ctimerclksel_ctimerclksel2;
-#[doc = "CTIMERCLKSEL_CTIMERCLKSELX2 register accessor: an alias for `Reg<CTIMERCLKSEL_CTIMERCLKSELX2_SPEC>`"]
-pub type CTIMERCLKSEL_CTIMERCLKSELX2 =
-    crate::Reg<ctimerclksel_ctimerclkselx2::CTIMERCLKSEL_CTIMERCLKSELX2_SPEC>;
+pub mod ctimerclksel2;
+#[doc = "CTIMERCLKSELX2 register accessor: an alias for `Reg<CTIMERCLKSELX2_SPEC>`"]
+pub type CTIMERCLKSELX2 = crate::Reg<ctimerclkselx2::CTIMERCLKSELX2_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod ctimerclksel_ctimerclkselx2;
-#[doc = "CTIMERCLKSEL_CTIMERCLKSEL3 register accessor: an alias for `Reg<CTIMERCLKSEL_CTIMERCLKSEL3_SPEC>`"]
-pub type CTIMERCLKSEL_CTIMERCLKSEL3 =
-    crate::Reg<ctimerclksel_ctimerclksel3::CTIMERCLKSEL_CTIMERCLKSEL3_SPEC>;
+pub mod ctimerclkselx2;
+#[doc = "CTIMERCLKSEL3 register accessor: an alias for `Reg<CTIMERCLKSEL3_SPEC>`"]
+pub type CTIMERCLKSEL3 = crate::Reg<ctimerclksel3::CTIMERCLKSEL3_SPEC>;
 #[doc = "CTimer 3 clock source select"]
-pub mod ctimerclksel_ctimerclksel3;
-#[doc = "CTIMERCLKSEL_CTIMERCLKSELX3 register accessor: an alias for `Reg<CTIMERCLKSEL_CTIMERCLKSELX3_SPEC>`"]
-pub type CTIMERCLKSEL_CTIMERCLKSELX3 =
-    crate::Reg<ctimerclksel_ctimerclkselx3::CTIMERCLKSEL_CTIMERCLKSELX3_SPEC>;
+pub mod ctimerclksel3;
+#[doc = "CTIMERCLKSELX3 register accessor: an alias for `Reg<CTIMERCLKSELX3_SPEC>`"]
+pub type CTIMERCLKSELX3 = crate::Reg<ctimerclkselx3::CTIMERCLKSELX3_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod ctimerclksel_ctimerclkselx3;
-#[doc = "CTIMERCLKSEL_CTIMERCLKSEL4 register accessor: an alias for `Reg<CTIMERCLKSEL_CTIMERCLKSEL4_SPEC>`"]
-pub type CTIMERCLKSEL_CTIMERCLKSEL4 =
-    crate::Reg<ctimerclksel_ctimerclksel4::CTIMERCLKSEL_CTIMERCLKSEL4_SPEC>;
+pub mod ctimerclkselx3;
+#[doc = "CTIMERCLKSEL4 register accessor: an alias for `Reg<CTIMERCLKSEL4_SPEC>`"]
+pub type CTIMERCLKSEL4 = crate::Reg<ctimerclksel4::CTIMERCLKSEL4_SPEC>;
 #[doc = "CTimer 4 clock source select"]
-pub mod ctimerclksel_ctimerclksel4;
-#[doc = "CTIMERCLKSEL_CTIMERCLKSELX4 register accessor: an alias for `Reg<CTIMERCLKSEL_CTIMERCLKSELX4_SPEC>`"]
-pub type CTIMERCLKSEL_CTIMERCLKSELX4 =
-    crate::Reg<ctimerclksel_ctimerclkselx4::CTIMERCLKSEL_CTIMERCLKSELX4_SPEC>;
+pub mod ctimerclksel4;
+#[doc = "CTIMERCLKSELX4 register accessor: an alias for `Reg<CTIMERCLKSELX4_SPEC>`"]
+pub type CTIMERCLKSELX4 = crate::Reg<ctimerclkselx4::CTIMERCLKSELX4_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod ctimerclksel_ctimerclkselx4;
+pub mod ctimerclkselx4;
 #[doc = "MAINCLKSELA register accessor: an alias for `Reg<MAINCLKSELA_SPEC>`"]
 pub type MAINCLKSELA = crate::Reg<mainclksela::MAINCLKSELA_SPEC>;
 #[doc = "Main clock A source select"]
@@ -845,70 +747,70 @@ pub mod adcclksel;
 pub type USB0CLKSEL = crate::Reg<usb0clksel::USB0CLKSEL_SPEC>;
 #[doc = "FS USB clock source select"]
 pub mod usb0clksel;
-#[doc = "FCCLKSEL_FCCLKSEL0 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSEL0_SPEC>`"]
-pub type FCCLKSEL_FCCLKSEL0 = crate::Reg<fcclksel_fcclksel0::FCCLKSEL_FCCLKSEL0_SPEC>;
+#[doc = "FCCLKSEL0 register accessor: an alias for `Reg<FCCLKSEL0_SPEC>`"]
+pub type FCCLKSEL0 = crate::Reg<fcclksel0::FCCLKSEL0_SPEC>;
 #[doc = "Flexcomm Interface 0 clock source select for Fractional Rate Divider"]
-pub mod fcclksel_fcclksel0;
-#[doc = "FCCLKSEL_FCCLKSELX0 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSELX0_SPEC>`"]
-pub type FCCLKSEL_FCCLKSELX0 = crate::Reg<fcclksel_fcclkselx0::FCCLKSEL_FCCLKSELX0_SPEC>;
+pub mod fcclksel0;
+#[doc = "FCCLKSELX0 register accessor: an alias for `Reg<FCCLKSELX0_SPEC>`"]
+pub type FCCLKSELX0 = crate::Reg<fcclkselx0::FCCLKSELX0_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod fcclksel_fcclkselx0;
-#[doc = "FCCLKSEL_FCCLKSEL1 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSEL1_SPEC>`"]
-pub type FCCLKSEL_FCCLKSEL1 = crate::Reg<fcclksel_fcclksel1::FCCLKSEL_FCCLKSEL1_SPEC>;
+pub mod fcclkselx0;
+#[doc = "FCCLKSEL1 register accessor: an alias for `Reg<FCCLKSEL1_SPEC>`"]
+pub type FCCLKSEL1 = crate::Reg<fcclksel1::FCCLKSEL1_SPEC>;
 #[doc = "Flexcomm Interface 1 clock source select for Fractional Rate Divider"]
-pub mod fcclksel_fcclksel1;
-#[doc = "FCCLKSEL_FCCLKSELX1 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSELX1_SPEC>`"]
-pub type FCCLKSEL_FCCLKSELX1 = crate::Reg<fcclksel_fcclkselx1::FCCLKSEL_FCCLKSELX1_SPEC>;
+pub mod fcclksel1;
+#[doc = "FCCLKSELX1 register accessor: an alias for `Reg<FCCLKSELX1_SPEC>`"]
+pub type FCCLKSELX1 = crate::Reg<fcclkselx1::FCCLKSELX1_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod fcclksel_fcclkselx1;
-#[doc = "FCCLKSEL_FCCLKSEL2 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSEL2_SPEC>`"]
-pub type FCCLKSEL_FCCLKSEL2 = crate::Reg<fcclksel_fcclksel2::FCCLKSEL_FCCLKSEL2_SPEC>;
+pub mod fcclkselx1;
+#[doc = "FCCLKSEL2 register accessor: an alias for `Reg<FCCLKSEL2_SPEC>`"]
+pub type FCCLKSEL2 = crate::Reg<fcclksel2::FCCLKSEL2_SPEC>;
 #[doc = "Flexcomm Interface 2 clock source select for Fractional Rate Divider"]
-pub mod fcclksel_fcclksel2;
-#[doc = "FCCLKSEL_FCCLKSELX2 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSELX2_SPEC>`"]
-pub type FCCLKSEL_FCCLKSELX2 = crate::Reg<fcclksel_fcclkselx2::FCCLKSEL_FCCLKSELX2_SPEC>;
+pub mod fcclksel2;
+#[doc = "FCCLKSELX2 register accessor: an alias for `Reg<FCCLKSELX2_SPEC>`"]
+pub type FCCLKSELX2 = crate::Reg<fcclkselx2::FCCLKSELX2_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod fcclksel_fcclkselx2;
-#[doc = "FCCLKSEL_FCCLKSEL3 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSEL3_SPEC>`"]
-pub type FCCLKSEL_FCCLKSEL3 = crate::Reg<fcclksel_fcclksel3::FCCLKSEL_FCCLKSEL3_SPEC>;
+pub mod fcclkselx2;
+#[doc = "FCCLKSEL3 register accessor: an alias for `Reg<FCCLKSEL3_SPEC>`"]
+pub type FCCLKSEL3 = crate::Reg<fcclksel3::FCCLKSEL3_SPEC>;
 #[doc = "Flexcomm Interface 3 clock source select for Fractional Rate Divider"]
-pub mod fcclksel_fcclksel3;
-#[doc = "FCCLKSEL_FCCLKSELX3 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSELX3_SPEC>`"]
-pub type FCCLKSEL_FCCLKSELX3 = crate::Reg<fcclksel_fcclkselx3::FCCLKSEL_FCCLKSELX3_SPEC>;
+pub mod fcclksel3;
+#[doc = "FCCLKSELX3 register accessor: an alias for `Reg<FCCLKSELX3_SPEC>`"]
+pub type FCCLKSELX3 = crate::Reg<fcclkselx3::FCCLKSELX3_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod fcclksel_fcclkselx3;
-#[doc = "FCCLKSEL_FCCLKSEL4 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSEL4_SPEC>`"]
-pub type FCCLKSEL_FCCLKSEL4 = crate::Reg<fcclksel_fcclksel4::FCCLKSEL_FCCLKSEL4_SPEC>;
+pub mod fcclkselx3;
+#[doc = "FCCLKSEL4 register accessor: an alias for `Reg<FCCLKSEL4_SPEC>`"]
+pub type FCCLKSEL4 = crate::Reg<fcclksel4::FCCLKSEL4_SPEC>;
 #[doc = "Flexcomm Interface 4 clock source select for Fractional Rate Divider"]
-pub mod fcclksel_fcclksel4;
-#[doc = "FCCLKSEL_FCCLKSELX4 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSELX4_SPEC>`"]
-pub type FCCLKSEL_FCCLKSELX4 = crate::Reg<fcclksel_fcclkselx4::FCCLKSEL_FCCLKSELX4_SPEC>;
+pub mod fcclksel4;
+#[doc = "FCCLKSELX4 register accessor: an alias for `Reg<FCCLKSELX4_SPEC>`"]
+pub type FCCLKSELX4 = crate::Reg<fcclkselx4::FCCLKSELX4_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod fcclksel_fcclkselx4;
-#[doc = "FCCLKSEL_FCCLKSEL5 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSEL5_SPEC>`"]
-pub type FCCLKSEL_FCCLKSEL5 = crate::Reg<fcclksel_fcclksel5::FCCLKSEL_FCCLKSEL5_SPEC>;
+pub mod fcclkselx4;
+#[doc = "FCCLKSEL5 register accessor: an alias for `Reg<FCCLKSEL5_SPEC>`"]
+pub type FCCLKSEL5 = crate::Reg<fcclksel5::FCCLKSEL5_SPEC>;
 #[doc = "Flexcomm Interface 5 clock source select for Fractional Rate Divider"]
-pub mod fcclksel_fcclksel5;
-#[doc = "FCCLKSEL_FCCLKSELX5 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSELX5_SPEC>`"]
-pub type FCCLKSEL_FCCLKSELX5 = crate::Reg<fcclksel_fcclkselx5::FCCLKSEL_FCCLKSELX5_SPEC>;
+pub mod fcclksel5;
+#[doc = "FCCLKSELX5 register accessor: an alias for `Reg<FCCLKSELX5_SPEC>`"]
+pub type FCCLKSELX5 = crate::Reg<fcclkselx5::FCCLKSELX5_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod fcclksel_fcclkselx5;
-#[doc = "FCCLKSEL_FCCLKSEL6 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSEL6_SPEC>`"]
-pub type FCCLKSEL_FCCLKSEL6 = crate::Reg<fcclksel_fcclksel6::FCCLKSEL_FCCLKSEL6_SPEC>;
+pub mod fcclkselx5;
+#[doc = "FCCLKSEL6 register accessor: an alias for `Reg<FCCLKSEL6_SPEC>`"]
+pub type FCCLKSEL6 = crate::Reg<fcclksel6::FCCLKSEL6_SPEC>;
 #[doc = "Flexcomm Interface 6 clock source select for Fractional Rate Divider"]
-pub mod fcclksel_fcclksel6;
-#[doc = "FCCLKSEL_FCCLKSELX6 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSELX6_SPEC>`"]
-pub type FCCLKSEL_FCCLKSELX6 = crate::Reg<fcclksel_fcclkselx6::FCCLKSEL_FCCLKSELX6_SPEC>;
+pub mod fcclksel6;
+#[doc = "FCCLKSELX6 register accessor: an alias for `Reg<FCCLKSELX6_SPEC>`"]
+pub type FCCLKSELX6 = crate::Reg<fcclkselx6::FCCLKSELX6_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod fcclksel_fcclkselx6;
-#[doc = "FCCLKSEL_FCCLKSEL7 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSEL7_SPEC>`"]
-pub type FCCLKSEL_FCCLKSEL7 = crate::Reg<fcclksel_fcclksel7::FCCLKSEL_FCCLKSEL7_SPEC>;
+pub mod fcclkselx6;
+#[doc = "FCCLKSEL7 register accessor: an alias for `Reg<FCCLKSEL7_SPEC>`"]
+pub type FCCLKSEL7 = crate::Reg<fcclksel7::FCCLKSEL7_SPEC>;
 #[doc = "Flexcomm Interface 7 clock source select for Fractional Rate Divider"]
-pub mod fcclksel_fcclksel7;
-#[doc = "FCCLKSEL_FCCLKSELX7 register accessor: an alias for `Reg<FCCLKSEL_FCCLKSELX7_SPEC>`"]
-pub type FCCLKSEL_FCCLKSELX7 = crate::Reg<fcclksel_fcclkselx7::FCCLKSEL_FCCLKSELX7_SPEC>;
+pub mod fcclksel7;
+#[doc = "FCCLKSELX7 register accessor: an alias for `Reg<FCCLKSELX7_SPEC>`"]
+pub type FCCLKSELX7 = crate::Reg<fcclkselx7::FCCLKSELX7_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod fcclksel_fcclkselx7;
+pub mod fcclkselx7;
 #[doc = "HSLSPICLKSEL register accessor: an alias for `Reg<HSLSPICLKSEL_SPEC>`"]
 pub type HSLSPICLKSEL = crate::Reg<hslspiclksel::HSLSPICLKSEL_SPEC>;
 #[doc = "HS LSPI clock source select"]
@@ -937,86 +839,70 @@ pub mod systickclkdiv1;
 pub type TRACECLKDIV = crate::Reg<traceclkdiv::TRACECLKDIV_SPEC>;
 #[doc = "TRACE clock divider"]
 pub mod traceclkdiv;
-#[doc = "FLEXFRGCTRL_FLEXFRG0CTRL register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRG0CTRL_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRG0CTRL =
-    crate::Reg<flexfrgctrl_flexfrg0ctrl::FLEXFRGCTRL_FLEXFRG0CTRL_SPEC>;
+#[doc = "FLEXFRG0CTRL register accessor: an alias for `Reg<FLEXFRG0CTRL_SPEC>`"]
+pub type FLEXFRG0CTRL = crate::Reg<flexfrg0ctrl::FLEXFRG0CTRL_SPEC>;
 #[doc = "Fractional rate divider for flexcomm 0"]
-pub mod flexfrgctrl_flexfrg0ctrl;
-#[doc = "FLEXFRGCTRL_FLEXFRGXCTRL0 register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRGXCTRL0_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRGXCTRL0 =
-    crate::Reg<flexfrgctrl_flexfrgxctrl0::FLEXFRGCTRL_FLEXFRGXCTRL0_SPEC>;
+pub mod flexfrg0ctrl;
+#[doc = "FLEXFRGXCTRL0 register accessor: an alias for `Reg<FLEXFRGXCTRL0_SPEC>`"]
+pub type FLEXFRGXCTRL0 = crate::Reg<flexfrgxctrl0::FLEXFRGXCTRL0_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod flexfrgctrl_flexfrgxctrl0;
-#[doc = "FLEXFRGCTRL_FLEXFRG1CTRL register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRG1CTRL_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRG1CTRL =
-    crate::Reg<flexfrgctrl_flexfrg1ctrl::FLEXFRGCTRL_FLEXFRG1CTRL_SPEC>;
+pub mod flexfrgxctrl0;
+#[doc = "FLEXFRG1CTRL register accessor: an alias for `Reg<FLEXFRG1CTRL_SPEC>`"]
+pub type FLEXFRG1CTRL = crate::Reg<flexfrg1ctrl::FLEXFRG1CTRL_SPEC>;
 #[doc = "Fractional rate divider for flexcomm 1"]
-pub mod flexfrgctrl_flexfrg1ctrl;
-#[doc = "FLEXFRGCTRL_FLEXFRGXCTRL1 register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRGXCTRL1_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRGXCTRL1 =
-    crate::Reg<flexfrgctrl_flexfrgxctrl1::FLEXFRGCTRL_FLEXFRGXCTRL1_SPEC>;
+pub mod flexfrg1ctrl;
+#[doc = "FLEXFRGXCTRL1 register accessor: an alias for `Reg<FLEXFRGXCTRL1_SPEC>`"]
+pub type FLEXFRGXCTRL1 = crate::Reg<flexfrgxctrl1::FLEXFRGXCTRL1_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod flexfrgctrl_flexfrgxctrl1;
-#[doc = "FLEXFRGCTRL_FLEXFRG2CTRL register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRG2CTRL_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRG2CTRL =
-    crate::Reg<flexfrgctrl_flexfrg2ctrl::FLEXFRGCTRL_FLEXFRG2CTRL_SPEC>;
+pub mod flexfrgxctrl1;
+#[doc = "FLEXFRG2CTRL register accessor: an alias for `Reg<FLEXFRG2CTRL_SPEC>`"]
+pub type FLEXFRG2CTRL = crate::Reg<flexfrg2ctrl::FLEXFRG2CTRL_SPEC>;
 #[doc = "Fractional rate divider for flexcomm 2"]
-pub mod flexfrgctrl_flexfrg2ctrl;
-#[doc = "FLEXFRGCTRL_FLEXFRGXCTRL2 register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRGXCTRL2_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRGXCTRL2 =
-    crate::Reg<flexfrgctrl_flexfrgxctrl2::FLEXFRGCTRL_FLEXFRGXCTRL2_SPEC>;
+pub mod flexfrg2ctrl;
+#[doc = "FLEXFRGXCTRL2 register accessor: an alias for `Reg<FLEXFRGXCTRL2_SPEC>`"]
+pub type FLEXFRGXCTRL2 = crate::Reg<flexfrgxctrl2::FLEXFRGXCTRL2_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod flexfrgctrl_flexfrgxctrl2;
-#[doc = "FLEXFRGCTRL_FLEXFRG3CTRL register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRG3CTRL_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRG3CTRL =
-    crate::Reg<flexfrgctrl_flexfrg3ctrl::FLEXFRGCTRL_FLEXFRG3CTRL_SPEC>;
+pub mod flexfrgxctrl2;
+#[doc = "FLEXFRG3CTRL register accessor: an alias for `Reg<FLEXFRG3CTRL_SPEC>`"]
+pub type FLEXFRG3CTRL = crate::Reg<flexfrg3ctrl::FLEXFRG3CTRL_SPEC>;
 #[doc = "Fractional rate divider for flexcomm 3"]
-pub mod flexfrgctrl_flexfrg3ctrl;
-#[doc = "FLEXFRGCTRL_FLEXFRGXCTRL3 register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRGXCTRL3_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRGXCTRL3 =
-    crate::Reg<flexfrgctrl_flexfrgxctrl3::FLEXFRGCTRL_FLEXFRGXCTRL3_SPEC>;
+pub mod flexfrg3ctrl;
+#[doc = "FLEXFRGXCTRL3 register accessor: an alias for `Reg<FLEXFRGXCTRL3_SPEC>`"]
+pub type FLEXFRGXCTRL3 = crate::Reg<flexfrgxctrl3::FLEXFRGXCTRL3_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod flexfrgctrl_flexfrgxctrl3;
-#[doc = "FLEXFRGCTRL_FLEXFRG4CTRL register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRG4CTRL_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRG4CTRL =
-    crate::Reg<flexfrgctrl_flexfrg4ctrl::FLEXFRGCTRL_FLEXFRG4CTRL_SPEC>;
+pub mod flexfrgxctrl3;
+#[doc = "FLEXFRG4CTRL register accessor: an alias for `Reg<FLEXFRG4CTRL_SPEC>`"]
+pub type FLEXFRG4CTRL = crate::Reg<flexfrg4ctrl::FLEXFRG4CTRL_SPEC>;
 #[doc = "Fractional rate divider for flexcomm 4"]
-pub mod flexfrgctrl_flexfrg4ctrl;
-#[doc = "FLEXFRGCTRL_FLEXFRGXCTRL4 register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRGXCTRL4_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRGXCTRL4 =
-    crate::Reg<flexfrgctrl_flexfrgxctrl4::FLEXFRGCTRL_FLEXFRGXCTRL4_SPEC>;
+pub mod flexfrg4ctrl;
+#[doc = "FLEXFRGXCTRL4 register accessor: an alias for `Reg<FLEXFRGXCTRL4_SPEC>`"]
+pub type FLEXFRGXCTRL4 = crate::Reg<flexfrgxctrl4::FLEXFRGXCTRL4_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod flexfrgctrl_flexfrgxctrl4;
-#[doc = "FLEXFRGCTRL_FLEXFRG5CTRL register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRG5CTRL_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRG5CTRL =
-    crate::Reg<flexfrgctrl_flexfrg5ctrl::FLEXFRGCTRL_FLEXFRG5CTRL_SPEC>;
+pub mod flexfrgxctrl4;
+#[doc = "FLEXFRG5CTRL register accessor: an alias for `Reg<FLEXFRG5CTRL_SPEC>`"]
+pub type FLEXFRG5CTRL = crate::Reg<flexfrg5ctrl::FLEXFRG5CTRL_SPEC>;
 #[doc = "Fractional rate divider for flexcomm 5"]
-pub mod flexfrgctrl_flexfrg5ctrl;
-#[doc = "FLEXFRGCTRL_FLEXFRGXCTRL5 register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRGXCTRL5_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRGXCTRL5 =
-    crate::Reg<flexfrgctrl_flexfrgxctrl5::FLEXFRGCTRL_FLEXFRGXCTRL5_SPEC>;
+pub mod flexfrg5ctrl;
+#[doc = "FLEXFRGXCTRL5 register accessor: an alias for `Reg<FLEXFRGXCTRL5_SPEC>`"]
+pub type FLEXFRGXCTRL5 = crate::Reg<flexfrgxctrl5::FLEXFRGXCTRL5_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod flexfrgctrl_flexfrgxctrl5;
-#[doc = "FLEXFRGCTRL_FLEXFRG6CTRL register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRG6CTRL_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRG6CTRL =
-    crate::Reg<flexfrgctrl_flexfrg6ctrl::FLEXFRGCTRL_FLEXFRG6CTRL_SPEC>;
+pub mod flexfrgxctrl5;
+#[doc = "FLEXFRG6CTRL register accessor: an alias for `Reg<FLEXFRG6CTRL_SPEC>`"]
+pub type FLEXFRG6CTRL = crate::Reg<flexfrg6ctrl::FLEXFRG6CTRL_SPEC>;
 #[doc = "Fractional rate divider for flexcomm 6"]
-pub mod flexfrgctrl_flexfrg6ctrl;
-#[doc = "FLEXFRGCTRL_FLEXFRGXCTRL6 register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRGXCTRL6_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRGXCTRL6 =
-    crate::Reg<flexfrgctrl_flexfrgxctrl6::FLEXFRGCTRL_FLEXFRGXCTRL6_SPEC>;
+pub mod flexfrg6ctrl;
+#[doc = "FLEXFRGXCTRL6 register accessor: an alias for `Reg<FLEXFRGXCTRL6_SPEC>`"]
+pub type FLEXFRGXCTRL6 = crate::Reg<flexfrgxctrl6::FLEXFRGXCTRL6_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod flexfrgctrl_flexfrgxctrl6;
-#[doc = "FLEXFRGCTRL_FLEXFRG7CTRL register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRG7CTRL_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRG7CTRL =
-    crate::Reg<flexfrgctrl_flexfrg7ctrl::FLEXFRGCTRL_FLEXFRG7CTRL_SPEC>;
+pub mod flexfrgxctrl6;
+#[doc = "FLEXFRG7CTRL register accessor: an alias for `Reg<FLEXFRG7CTRL_SPEC>`"]
+pub type FLEXFRG7CTRL = crate::Reg<flexfrg7ctrl::FLEXFRG7CTRL_SPEC>;
 #[doc = "Fractional rate divider for flexcomm 7"]
-pub mod flexfrgctrl_flexfrg7ctrl;
-#[doc = "FLEXFRGCTRL_FLEXFRGXCTRL7 register accessor: an alias for `Reg<FLEXFRGCTRL_FLEXFRGXCTRL7_SPEC>`"]
-pub type FLEXFRGCTRL_FLEXFRGXCTRL7 =
-    crate::Reg<flexfrgctrl_flexfrgxctrl7::FLEXFRGCTRL_FLEXFRGXCTRL7_SPEC>;
+pub mod flexfrg7ctrl;
+#[doc = "FLEXFRGXCTRL7 register accessor: an alias for `Reg<FLEXFRGXCTRL7_SPEC>`"]
+pub type FLEXFRGXCTRL7 = crate::Reg<flexfrgxctrl7::FLEXFRGXCTRL7_SPEC>;
 #[doc = "Peripheral reset control register"]
-pub mod flexfrgctrl_flexfrgxctrl7;
+pub mod flexfrgxctrl7;
 #[doc = "AHBCLKDIV register accessor: an alias for `Reg<AHBCLKDIV_SPEC>`"]
 pub type AHBCLKDIV = crate::Reg<ahbclkdiv::AHBCLKDIV_SPEC>;
 #[doc = "System clock divider"]

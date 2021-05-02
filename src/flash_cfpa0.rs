@@ -24,48 +24,48 @@ pub struct RegisterBlock {
     pub enable_fa_mode: crate::Reg<enable_fa_mode::ENABLE_FA_MODE_SPEC>,
     #[doc = "0x2c - CMPA Page programming on going. This field shall be set to 0x5CC55AA5 in the active CFPA page each time CMPA page programming is going on. It shall always be set to 0x00000000 in the CFPA scratch area."]
     pub cmpa_prog_in_progress: crate::Reg<cmpa_prog_in_progress::CMPA_PROG_IN_PROGRESS_SPEC>,
-    _reserved_11_prince_region0_iv_code_prince_region0_iv: [u8; 4usize],
-    _reserved_12_prince_region0_iv_code_prince_region0_iv: [u8; 4usize],
-    _reserved_13_prince_region0_iv_code_prince_region0_iv: [u8; 4usize],
-    _reserved_14_prince_region0_iv_code_prince_region0_iv: [u8; 4usize],
-    _reserved_15_prince_region0_iv_code_prince_region0_iv: [u8; 4usize],
-    _reserved_16_prince_region0_iv_code_prince_region0_iv: [u8; 4usize],
-    _reserved_17_prince_region0_iv_code_prince_region0_iv: [u8; 4usize],
-    _reserved_18_prince_region0_iv_code_prince_region0_iv: [u8; 4usize],
-    _reserved_19_prince_region0_iv_code_prince_region0_iv: [u8; 4usize],
-    _reserved_20_prince_region0_iv_code_prince_region0_iv: [u8; 4usize],
-    _reserved_21_prince_region0_iv_code_prince_region0_iv: [u8; 4usize],
-    _reserved_22_prince_region0_iv_code_prince_region0_iv: [u8; 4usize],
-    _reserved_23_prince_region0_iv_code_prince_region0_iv: [u8; 4usize],
-    _reserved_24_prince_region0_iv_code_prince_region0_iv: [u8; 4usize],
-    _reserved_25_prince_region1_iv_code_prince_region1_iv: [u8; 4usize],
-    _reserved_26_prince_region1_iv_code_prince_region1_iv: [u8; 4usize],
-    _reserved_27_prince_region1_iv_code_prince_region1_iv: [u8; 4usize],
-    _reserved_28_prince_region1_iv_code_prince_region1_iv: [u8; 4usize],
-    _reserved_29_prince_region1_iv_code_prince_region1_iv: [u8; 4usize],
-    _reserved_30_prince_region1_iv_code_prince_region1_iv: [u8; 4usize],
-    _reserved_31_prince_region1_iv_code_prince_region1_iv: [u8; 4usize],
-    _reserved_32_prince_region1_iv_code_prince_region1_iv: [u8; 4usize],
-    _reserved_33_prince_region1_iv_code_prince_region1_iv: [u8; 4usize],
-    _reserved_34_prince_region1_iv_code_prince_region1_iv: [u8; 4usize],
-    _reserved_35_prince_region1_iv_code_prince_region1_iv: [u8; 4usize],
-    _reserved_36_prince_region1_iv_code_prince_region1_iv: [u8; 4usize],
-    _reserved_37_prince_region1_iv_code_prince_region1_iv: [u8; 4usize],
-    _reserved_38_prince_region1_iv_code_prince_region1_iv: [u8; 4usize],
-    _reserved_39_prince_region2_iv_code_prince_region2_iv: [u8; 4usize],
-    _reserved_40_prince_region2_iv_code_prince_region2_iv: [u8; 4usize],
-    _reserved_41_prince_region2_iv_code_prince_region2_iv: [u8; 4usize],
-    _reserved_42_prince_region2_iv_code_prince_region2_iv: [u8; 4usize],
-    _reserved_43_prince_region2_iv_code_prince_region2_iv: [u8; 4usize],
-    _reserved_44_prince_region2_iv_code_prince_region2_iv: [u8; 4usize],
-    _reserved_45_prince_region2_iv_code_prince_region2_iv: [u8; 4usize],
-    _reserved_46_prince_region2_iv_code_prince_region2_iv: [u8; 4usize],
-    _reserved_47_prince_region2_iv_code_prince_region2_iv: [u8; 4usize],
-    _reserved_48_prince_region2_iv_code_prince_region2_iv: [u8; 4usize],
-    _reserved_49_prince_region2_iv_code_prince_region2_iv: [u8; 4usize],
-    _reserved_50_prince_region2_iv_code_prince_region2_iv: [u8; 4usize],
-    _reserved_51_prince_region2_iv_code_prince_region2_iv: [u8; 4usize],
-    _reserved_52_prince_region2_iv_code_prince_region2_iv: [u8; 4usize],
+    _reserved_11_prince_region0_iv: [u8; 4usize],
+    _reserved_12_prince_region0_iv: [u8; 4usize],
+    _reserved_13_prince_region0_iv: [u8; 4usize],
+    _reserved_14_prince_region0_iv: [u8; 4usize],
+    _reserved_15_prince_region0_iv: [u8; 4usize],
+    _reserved_16_prince_region0_iv: [u8; 4usize],
+    _reserved_17_prince_region0_iv: [u8; 4usize],
+    _reserved_18_prince_region0_iv: [u8; 4usize],
+    _reserved_19_prince_region0_iv: [u8; 4usize],
+    _reserved_20_prince_region0_iv: [u8; 4usize],
+    _reserved_21_prince_region0_iv: [u8; 4usize],
+    _reserved_22_prince_region0_iv: [u8; 4usize],
+    _reserved_23_prince_region0_iv: [u8; 4usize],
+    _reserved_24_prince_region0_iv: [u8; 4usize],
+    _reserved_25_prince_region1_iv: [u8; 4usize],
+    _reserved_26_prince_region1_iv: [u8; 4usize],
+    _reserved_27_prince_region1_iv: [u8; 4usize],
+    _reserved_28_prince_region1_iv: [u8; 4usize],
+    _reserved_29_prince_region1_iv: [u8; 4usize],
+    _reserved_30_prince_region1_iv: [u8; 4usize],
+    _reserved_31_prince_region1_iv: [u8; 4usize],
+    _reserved_32_prince_region1_iv: [u8; 4usize],
+    _reserved_33_prince_region1_iv: [u8; 4usize],
+    _reserved_34_prince_region1_iv: [u8; 4usize],
+    _reserved_35_prince_region1_iv: [u8; 4usize],
+    _reserved_36_prince_region1_iv: [u8; 4usize],
+    _reserved_37_prince_region1_iv: [u8; 4usize],
+    _reserved_38_prince_region1_iv: [u8; 4usize],
+    _reserved_39_prince_region2_iv: [u8; 4usize],
+    _reserved_40_prince_region2_iv: [u8; 4usize],
+    _reserved_41_prince_region2_iv: [u8; 4usize],
+    _reserved_42_prince_region2_iv: [u8; 4usize],
+    _reserved_43_prince_region2_iv: [u8; 4usize],
+    _reserved_44_prince_region2_iv: [u8; 4usize],
+    _reserved_45_prince_region2_iv: [u8; 4usize],
+    _reserved_46_prince_region2_iv: [u8; 4usize],
+    _reserved_47_prince_region2_iv: [u8; 4usize],
+    _reserved_48_prince_region2_iv: [u8; 4usize],
+    _reserved_49_prince_region2_iv: [u8; 4usize],
+    _reserved_50_prince_region2_iv: [u8; 4usize],
+    _reserved_51_prince_region2_iv: [u8; 4usize],
+    _reserved_52_prince_region2_iv: [u8; 4usize],
     _reserved53: [u8; 40usize],
     #[doc = "0x100 - Customer Defined (Programable through ROM API)"]
     pub customer_defined: [crate::Reg<customer_defined::CUSTOMER_DEFINED_SPEC>; 56],
@@ -81,507 +81,843 @@ SHA256_DIGEST7 for DIGEST\\[255:224\\]"]
 }
 impl RegisterBlock {
     #[doc = "0x30 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_header0 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_header0 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_HEADER0_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_header0(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_header0::PRINCE_REGION0_IV_HEADER0_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 48usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_header0 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_HEADER0_SPEC > )
+            &*(((self as *const Self) as *const u8).add(48usize)
+                as *const crate::Reg<prince_region0_iv_header0::PRINCE_REGION0_IV_HEADER0_SPEC>)
         }
     }
     #[doc = "0x30 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_code0 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_code0 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE0_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_code0(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_code0::PRINCE_REGION0_IV_CODE0_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 48usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_code0 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE0_SPEC > )
+            &*(((self as *const Self) as *const u8).add(48usize)
+                as *const crate::Reg<prince_region0_iv_code0::PRINCE_REGION0_IV_CODE0_SPEC>)
         }
     }
     #[doc = "0x34 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_header1 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_header1 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_HEADER1_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_header1(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_header1::PRINCE_REGION0_IV_HEADER1_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 52usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_header1 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_HEADER1_SPEC > )
+            &*(((self as *const Self) as *const u8).add(52usize)
+                as *const crate::Reg<prince_region0_iv_header1::PRINCE_REGION0_IV_HEADER1_SPEC>)
         }
     }
     #[doc = "0x34 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_code1 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_code1 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE1_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_code1(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_code1::PRINCE_REGION0_IV_CODE1_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 52usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_code1 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE1_SPEC > )
+            &*(((self as *const Self) as *const u8).add(52usize)
+                as *const crate::Reg<prince_region0_iv_code1::PRINCE_REGION0_IV_CODE1_SPEC>)
         }
     }
     #[doc = "0x38 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_code2 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_code2 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE2_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_code2(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_code2::PRINCE_REGION0_IV_CODE2_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 56usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_code2 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE2_SPEC > )
+            &*(((self as *const Self) as *const u8).add(56usize)
+                as *const crate::Reg<prince_region0_iv_code2::PRINCE_REGION0_IV_CODE2_SPEC>)
         }
     }
     #[doc = "0x38 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_body0 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_body0 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY0_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_body0(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_body0::PRINCE_REGION0_IV_BODY0_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 56usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_body0 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY0_SPEC > )
+            &*(((self as *const Self) as *const u8).add(56usize)
+                as *const crate::Reg<prince_region0_iv_body0::PRINCE_REGION0_IV_BODY0_SPEC>)
         }
     }
     #[doc = "0x3c - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_code3 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_code3 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE3_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_code3(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_code3::PRINCE_REGION0_IV_CODE3_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 60usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_code3 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE3_SPEC > )
+            &*(((self as *const Self) as *const u8).add(60usize)
+                as *const crate::Reg<prince_region0_iv_code3::PRINCE_REGION0_IV_CODE3_SPEC>)
         }
     }
     #[doc = "0x3c - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_body1 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_body1 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY1_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_body1(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_body1::PRINCE_REGION0_IV_BODY1_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 60usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_body1 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY1_SPEC > )
+            &*(((self as *const Self) as *const u8).add(60usize)
+                as *const crate::Reg<prince_region0_iv_body1::PRINCE_REGION0_IV_BODY1_SPEC>)
         }
     }
     #[doc = "0x40 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_code4 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_code4 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE4_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_code4(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_code4::PRINCE_REGION0_IV_CODE4_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 64usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_code4 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE4_SPEC > )
+            &*(((self as *const Self) as *const u8).add(64usize)
+                as *const crate::Reg<prince_region0_iv_code4::PRINCE_REGION0_IV_CODE4_SPEC>)
         }
     }
     #[doc = "0x40 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_body2 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_body2 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY2_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_body2(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_body2::PRINCE_REGION0_IV_BODY2_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 64usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_body2 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY2_SPEC > )
+            &*(((self as *const Self) as *const u8).add(64usize)
+                as *const crate::Reg<prince_region0_iv_body2::PRINCE_REGION0_IV_BODY2_SPEC>)
         }
     }
     #[doc = "0x44 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_code5 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_code5 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE5_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_code5(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_code5::PRINCE_REGION0_IV_CODE5_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 68usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_code5 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE5_SPEC > )
+            &*(((self as *const Self) as *const u8).add(68usize)
+                as *const crate::Reg<prince_region0_iv_code5::PRINCE_REGION0_IV_CODE5_SPEC>)
         }
     }
     #[doc = "0x44 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_body3 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_body3 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY3_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_body3(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_body3::PRINCE_REGION0_IV_BODY3_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 68usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_body3 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY3_SPEC > )
+            &*(((self as *const Self) as *const u8).add(68usize)
+                as *const crate::Reg<prince_region0_iv_body3::PRINCE_REGION0_IV_BODY3_SPEC>)
         }
     }
     #[doc = "0x48 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_code6 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_code6 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE6_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_code6(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_code6::PRINCE_REGION0_IV_CODE6_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 72usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_code6 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE6_SPEC > )
+            &*(((self as *const Self) as *const u8).add(72usize)
+                as *const crate::Reg<prince_region0_iv_code6::PRINCE_REGION0_IV_CODE6_SPEC>)
         }
     }
     #[doc = "0x48 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_body4 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_body4 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY4_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_body4(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_body4::PRINCE_REGION0_IV_BODY4_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 72usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_body4 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY4_SPEC > )
+            &*(((self as *const Self) as *const u8).add(72usize)
+                as *const crate::Reg<prince_region0_iv_body4::PRINCE_REGION0_IV_BODY4_SPEC>)
         }
     }
     #[doc = "0x4c - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_code7 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_code7 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE7_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_code7(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_code7::PRINCE_REGION0_IV_CODE7_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 76usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_code7 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE7_SPEC > )
+            &*(((self as *const Self) as *const u8).add(76usize)
+                as *const crate::Reg<prince_region0_iv_code7::PRINCE_REGION0_IV_CODE7_SPEC>)
         }
     }
     #[doc = "0x4c - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_body5 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_body5 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY5_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_body5(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_body5::PRINCE_REGION0_IV_BODY5_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 76usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_body5 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY5_SPEC > )
+            &*(((self as *const Self) as *const u8).add(76usize)
+                as *const crate::Reg<prince_region0_iv_body5::PRINCE_REGION0_IV_BODY5_SPEC>)
         }
     }
     #[doc = "0x50 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_code8 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_code8 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE8_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_code8(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_code8::PRINCE_REGION0_IV_CODE8_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 80usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_code8 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE8_SPEC > )
+            &*(((self as *const Self) as *const u8).add(80usize)
+                as *const crate::Reg<prince_region0_iv_code8::PRINCE_REGION0_IV_CODE8_SPEC>)
         }
     }
     #[doc = "0x50 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_body6 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_body6 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY6_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_body6(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_body6::PRINCE_REGION0_IV_BODY6_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 80usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_body6 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY6_SPEC > )
+            &*(((self as *const Self) as *const u8).add(80usize)
+                as *const crate::Reg<prince_region0_iv_body6::PRINCE_REGION0_IV_BODY6_SPEC>)
         }
     }
     #[doc = "0x54 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_code9 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_code9 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE9_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_code9(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_code9::PRINCE_REGION0_IV_CODE9_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 84usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_code9 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE9_SPEC > )
+            &*(((self as *const Self) as *const u8).add(84usize)
+                as *const crate::Reg<prince_region0_iv_code9::PRINCE_REGION0_IV_CODE9_SPEC>)
         }
     }
     #[doc = "0x54 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_body7 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_body7 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY7_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_body7(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_body7::PRINCE_REGION0_IV_BODY7_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 84usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_body7 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY7_SPEC > )
+            &*(((self as *const Self) as *const u8).add(84usize)
+                as *const crate::Reg<prince_region0_iv_body7::PRINCE_REGION0_IV_BODY7_SPEC>)
         }
     }
     #[doc = "0x58 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_code10 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_code10 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE10_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_code10(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_code10::PRINCE_REGION0_IV_CODE10_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 88usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_code10 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE10_SPEC > )
+            &*(((self as *const Self) as *const u8).add(88usize)
+                as *const crate::Reg<prince_region0_iv_code10::PRINCE_REGION0_IV_CODE10_SPEC>)
         }
     }
     #[doc = "0x58 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_body8 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_body8 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY8_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_body8(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_body8::PRINCE_REGION0_IV_BODY8_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 88usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_body8 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY8_SPEC > )
+            &*(((self as *const Self) as *const u8).add(88usize)
+                as *const crate::Reg<prince_region0_iv_body8::PRINCE_REGION0_IV_BODY8_SPEC>)
         }
     }
     #[doc = "0x5c - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_code11 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_code11 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE11_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_code11(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_code11::PRINCE_REGION0_IV_CODE11_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 92usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_code11 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE11_SPEC > )
+            &*(((self as *const Self) as *const u8).add(92usize)
+                as *const crate::Reg<prince_region0_iv_code11::PRINCE_REGION0_IV_CODE11_SPEC>)
         }
     }
     #[doc = "0x5c - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_body9 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_body9 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY9_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_body9(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_body9::PRINCE_REGION0_IV_BODY9_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 92usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_body9 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY9_SPEC > )
+            &*(((self as *const Self) as *const u8).add(92usize)
+                as *const crate::Reg<prince_region0_iv_body9::PRINCE_REGION0_IV_BODY9_SPEC>)
         }
     }
     #[doc = "0x60 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_code12 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_code12 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE12_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_code12(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_code12::PRINCE_REGION0_IV_CODE12_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 96usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_code12 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE12_SPEC > )
+            &*(((self as *const Self) as *const u8).add(96usize)
+                as *const crate::Reg<prince_region0_iv_code12::PRINCE_REGION0_IV_CODE12_SPEC>)
         }
     }
     #[doc = "0x60 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_body10 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_body10 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY10_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_body10(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_body10::PRINCE_REGION0_IV_BODY10_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 96usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_body10 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY10_SPEC > )
+            &*(((self as *const Self) as *const u8).add(96usize)
+                as *const crate::Reg<prince_region0_iv_body10::PRINCE_REGION0_IV_BODY10_SPEC>)
         }
     }
     #[doc = "0x64 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_code13 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_code13 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE13_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_code13(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_code13::PRINCE_REGION0_IV_CODE13_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 100usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_code13 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE13_SPEC > )
+            &*(((self as *const Self) as *const u8).add(100usize)
+                as *const crate::Reg<prince_region0_iv_code13::PRINCE_REGION0_IV_CODE13_SPEC>)
         }
     }
     #[doc = "0x64 - ."]
-    #[inline(always)]    pub fn prince_region0_iv_code_prince_region0_iv_body11 ( & self ) -> & crate :: Reg < prince_region0_iv_code_prince_region0_iv_body11 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY11_SPEC >{
+    #[inline(always)]
+    pub fn prince_region0_iv_body11(
+        &self,
+    ) -> &crate::Reg<prince_region0_iv_body11::PRINCE_REGION0_IV_BODY11_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 100usize ) as * const crate :: Reg < prince_region0_iv_code_prince_region0_iv_body11 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY11_SPEC > )
+            &*(((self as *const Self) as *const u8).add(100usize)
+                as *const crate::Reg<prince_region0_iv_body11::PRINCE_REGION0_IV_BODY11_SPEC>)
         }
     }
     #[doc = "0x68 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_header0 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_header0 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_HEADER0_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_header0(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_header0::PRINCE_REGION1_IV_HEADER0_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 104usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_header0 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_HEADER0_SPEC > )
+            &*(((self as *const Self) as *const u8).add(104usize)
+                as *const crate::Reg<prince_region1_iv_header0::PRINCE_REGION1_IV_HEADER0_SPEC>)
         }
     }
     #[doc = "0x68 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_code0 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_code0 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE0_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_code0(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_code0::PRINCE_REGION1_IV_CODE0_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 104usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_code0 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE0_SPEC > )
+            &*(((self as *const Self) as *const u8).add(104usize)
+                as *const crate::Reg<prince_region1_iv_code0::PRINCE_REGION1_IV_CODE0_SPEC>)
         }
     }
     #[doc = "0x6c - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_header1 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_header1 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_HEADER1_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_header1(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_header1::PRINCE_REGION1_IV_HEADER1_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 108usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_header1 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_HEADER1_SPEC > )
+            &*(((self as *const Self) as *const u8).add(108usize)
+                as *const crate::Reg<prince_region1_iv_header1::PRINCE_REGION1_IV_HEADER1_SPEC>)
         }
     }
     #[doc = "0x6c - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_code1 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_code1 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE1_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_code1(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_code1::PRINCE_REGION1_IV_CODE1_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 108usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_code1 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE1_SPEC > )
+            &*(((self as *const Self) as *const u8).add(108usize)
+                as *const crate::Reg<prince_region1_iv_code1::PRINCE_REGION1_IV_CODE1_SPEC>)
         }
     }
     #[doc = "0x70 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_code2 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_code2 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE2_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_code2(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_code2::PRINCE_REGION1_IV_CODE2_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 112usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_code2 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE2_SPEC > )
+            &*(((self as *const Self) as *const u8).add(112usize)
+                as *const crate::Reg<prince_region1_iv_code2::PRINCE_REGION1_IV_CODE2_SPEC>)
         }
     }
     #[doc = "0x70 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_body0 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_body0 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY0_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_body0(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_body0::PRINCE_REGION1_IV_BODY0_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 112usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_body0 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY0_SPEC > )
+            &*(((self as *const Self) as *const u8).add(112usize)
+                as *const crate::Reg<prince_region1_iv_body0::PRINCE_REGION1_IV_BODY0_SPEC>)
         }
     }
     #[doc = "0x74 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_code3 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_code3 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE3_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_code3(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_code3::PRINCE_REGION1_IV_CODE3_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 116usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_code3 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE3_SPEC > )
+            &*(((self as *const Self) as *const u8).add(116usize)
+                as *const crate::Reg<prince_region1_iv_code3::PRINCE_REGION1_IV_CODE3_SPEC>)
         }
     }
     #[doc = "0x74 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_body1 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_body1 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY1_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_body1(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_body1::PRINCE_REGION1_IV_BODY1_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 116usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_body1 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY1_SPEC > )
+            &*(((self as *const Self) as *const u8).add(116usize)
+                as *const crate::Reg<prince_region1_iv_body1::PRINCE_REGION1_IV_BODY1_SPEC>)
         }
     }
     #[doc = "0x78 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_code4 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_code4 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE4_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_code4(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_code4::PRINCE_REGION1_IV_CODE4_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 120usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_code4 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE4_SPEC > )
+            &*(((self as *const Self) as *const u8).add(120usize)
+                as *const crate::Reg<prince_region1_iv_code4::PRINCE_REGION1_IV_CODE4_SPEC>)
         }
     }
     #[doc = "0x78 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_body2 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_body2 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY2_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_body2(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_body2::PRINCE_REGION1_IV_BODY2_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 120usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_body2 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY2_SPEC > )
+            &*(((self as *const Self) as *const u8).add(120usize)
+                as *const crate::Reg<prince_region1_iv_body2::PRINCE_REGION1_IV_BODY2_SPEC>)
         }
     }
     #[doc = "0x7c - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_code5 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_code5 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE5_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_code5(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_code5::PRINCE_REGION1_IV_CODE5_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 124usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_code5 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE5_SPEC > )
+            &*(((self as *const Self) as *const u8).add(124usize)
+                as *const crate::Reg<prince_region1_iv_code5::PRINCE_REGION1_IV_CODE5_SPEC>)
         }
     }
     #[doc = "0x7c - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_body3 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_body3 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY3_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_body3(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_body3::PRINCE_REGION1_IV_BODY3_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 124usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_body3 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY3_SPEC > )
+            &*(((self as *const Self) as *const u8).add(124usize)
+                as *const crate::Reg<prince_region1_iv_body3::PRINCE_REGION1_IV_BODY3_SPEC>)
         }
     }
     #[doc = "0x80 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_code6 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_code6 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE6_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_code6(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_code6::PRINCE_REGION1_IV_CODE6_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 128usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_code6 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE6_SPEC > )
+            &*(((self as *const Self) as *const u8).add(128usize)
+                as *const crate::Reg<prince_region1_iv_code6::PRINCE_REGION1_IV_CODE6_SPEC>)
         }
     }
     #[doc = "0x80 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_body4 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_body4 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY4_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_body4(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_body4::PRINCE_REGION1_IV_BODY4_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 128usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_body4 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY4_SPEC > )
+            &*(((self as *const Self) as *const u8).add(128usize)
+                as *const crate::Reg<prince_region1_iv_body4::PRINCE_REGION1_IV_BODY4_SPEC>)
         }
     }
     #[doc = "0x84 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_code7 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_code7 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE7_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_code7(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_code7::PRINCE_REGION1_IV_CODE7_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 132usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_code7 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE7_SPEC > )
+            &*(((self as *const Self) as *const u8).add(132usize)
+                as *const crate::Reg<prince_region1_iv_code7::PRINCE_REGION1_IV_CODE7_SPEC>)
         }
     }
     #[doc = "0x84 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_body5 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_body5 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY5_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_body5(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_body5::PRINCE_REGION1_IV_BODY5_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 132usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_body5 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY5_SPEC > )
+            &*(((self as *const Self) as *const u8).add(132usize)
+                as *const crate::Reg<prince_region1_iv_body5::PRINCE_REGION1_IV_BODY5_SPEC>)
         }
     }
     #[doc = "0x88 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_code8 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_code8 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE8_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_code8(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_code8::PRINCE_REGION1_IV_CODE8_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 136usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_code8 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE8_SPEC > )
+            &*(((self as *const Self) as *const u8).add(136usize)
+                as *const crate::Reg<prince_region1_iv_code8::PRINCE_REGION1_IV_CODE8_SPEC>)
         }
     }
     #[doc = "0x88 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_body6 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_body6 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY6_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_body6(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_body6::PRINCE_REGION1_IV_BODY6_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 136usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_body6 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY6_SPEC > )
+            &*(((self as *const Self) as *const u8).add(136usize)
+                as *const crate::Reg<prince_region1_iv_body6::PRINCE_REGION1_IV_BODY6_SPEC>)
         }
     }
     #[doc = "0x8c - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_code9 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_code9 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE9_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_code9(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_code9::PRINCE_REGION1_IV_CODE9_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 140usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_code9 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE9_SPEC > )
+            &*(((self as *const Self) as *const u8).add(140usize)
+                as *const crate::Reg<prince_region1_iv_code9::PRINCE_REGION1_IV_CODE9_SPEC>)
         }
     }
     #[doc = "0x8c - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_body7 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_body7 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY7_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_body7(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_body7::PRINCE_REGION1_IV_BODY7_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 140usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_body7 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY7_SPEC > )
+            &*(((self as *const Self) as *const u8).add(140usize)
+                as *const crate::Reg<prince_region1_iv_body7::PRINCE_REGION1_IV_BODY7_SPEC>)
         }
     }
     #[doc = "0x90 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_code10 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_code10 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE10_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_code10(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_code10::PRINCE_REGION1_IV_CODE10_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 144usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_code10 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE10_SPEC > )
+            &*(((self as *const Self) as *const u8).add(144usize)
+                as *const crate::Reg<prince_region1_iv_code10::PRINCE_REGION1_IV_CODE10_SPEC>)
         }
     }
     #[doc = "0x90 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_body8 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_body8 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY8_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_body8(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_body8::PRINCE_REGION1_IV_BODY8_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 144usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_body8 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY8_SPEC > )
+            &*(((self as *const Self) as *const u8).add(144usize)
+                as *const crate::Reg<prince_region1_iv_body8::PRINCE_REGION1_IV_BODY8_SPEC>)
         }
     }
     #[doc = "0x94 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_code11 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_code11 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE11_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_code11(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_code11::PRINCE_REGION1_IV_CODE11_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 148usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_code11 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE11_SPEC > )
+            &*(((self as *const Self) as *const u8).add(148usize)
+                as *const crate::Reg<prince_region1_iv_code11::PRINCE_REGION1_IV_CODE11_SPEC>)
         }
     }
     #[doc = "0x94 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_body9 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_body9 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY9_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_body9(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_body9::PRINCE_REGION1_IV_BODY9_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 148usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_body9 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY9_SPEC > )
+            &*(((self as *const Self) as *const u8).add(148usize)
+                as *const crate::Reg<prince_region1_iv_body9::PRINCE_REGION1_IV_BODY9_SPEC>)
         }
     }
     #[doc = "0x98 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_code12 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_code12 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE12_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_code12(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_code12::PRINCE_REGION1_IV_CODE12_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 152usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_code12 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE12_SPEC > )
+            &*(((self as *const Self) as *const u8).add(152usize)
+                as *const crate::Reg<prince_region1_iv_code12::PRINCE_REGION1_IV_CODE12_SPEC>)
         }
     }
     #[doc = "0x98 - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_body10 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_body10 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY10_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_body10(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_body10::PRINCE_REGION1_IV_BODY10_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 152usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_body10 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY10_SPEC > )
+            &*(((self as *const Self) as *const u8).add(152usize)
+                as *const crate::Reg<prince_region1_iv_body10::PRINCE_REGION1_IV_BODY10_SPEC>)
         }
     }
     #[doc = "0x9c - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_code13 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_code13 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE13_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_code13(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_code13::PRINCE_REGION1_IV_CODE13_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 156usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_code13 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE13_SPEC > )
+            &*(((self as *const Self) as *const u8).add(156usize)
+                as *const crate::Reg<prince_region1_iv_code13::PRINCE_REGION1_IV_CODE13_SPEC>)
         }
     }
     #[doc = "0x9c - ."]
-    #[inline(always)]    pub fn prince_region1_iv_code_prince_region1_iv_body11 ( & self ) -> & crate :: Reg < prince_region1_iv_code_prince_region1_iv_body11 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY11_SPEC >{
+    #[inline(always)]
+    pub fn prince_region1_iv_body11(
+        &self,
+    ) -> &crate::Reg<prince_region1_iv_body11::PRINCE_REGION1_IV_BODY11_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 156usize ) as * const crate :: Reg < prince_region1_iv_code_prince_region1_iv_body11 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY11_SPEC > )
+            &*(((self as *const Self) as *const u8).add(156usize)
+                as *const crate::Reg<prince_region1_iv_body11::PRINCE_REGION1_IV_BODY11_SPEC>)
         }
     }
     #[doc = "0xa0 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_header0 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_header0 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_HEADER0_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_header0(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_header0::PRINCE_REGION2_IV_HEADER0_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 160usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_header0 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_HEADER0_SPEC > )
+            &*(((self as *const Self) as *const u8).add(160usize)
+                as *const crate::Reg<prince_region2_iv_header0::PRINCE_REGION2_IV_HEADER0_SPEC>)
         }
     }
     #[doc = "0xa0 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_code0 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_code0 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE0_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_code0(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_code0::PRINCE_REGION2_IV_CODE0_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 160usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_code0 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE0_SPEC > )
+            &*(((self as *const Self) as *const u8).add(160usize)
+                as *const crate::Reg<prince_region2_iv_code0::PRINCE_REGION2_IV_CODE0_SPEC>)
         }
     }
     #[doc = "0xa4 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_header1 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_header1 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_HEADER1_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_header1(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_header1::PRINCE_REGION2_IV_HEADER1_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 164usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_header1 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_HEADER1_SPEC > )
+            &*(((self as *const Self) as *const u8).add(164usize)
+                as *const crate::Reg<prince_region2_iv_header1::PRINCE_REGION2_IV_HEADER1_SPEC>)
         }
     }
     #[doc = "0xa4 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_code1 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_code1 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE1_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_code1(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_code1::PRINCE_REGION2_IV_CODE1_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 164usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_code1 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE1_SPEC > )
+            &*(((self as *const Self) as *const u8).add(164usize)
+                as *const crate::Reg<prince_region2_iv_code1::PRINCE_REGION2_IV_CODE1_SPEC>)
         }
     }
     #[doc = "0xa8 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_code2 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_code2 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE2_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_code2(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_code2::PRINCE_REGION2_IV_CODE2_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 168usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_code2 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE2_SPEC > )
+            &*(((self as *const Self) as *const u8).add(168usize)
+                as *const crate::Reg<prince_region2_iv_code2::PRINCE_REGION2_IV_CODE2_SPEC>)
         }
     }
     #[doc = "0xa8 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_body0 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_body0 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY0_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_body0(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_body0::PRINCE_REGION2_IV_BODY0_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 168usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_body0 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY0_SPEC > )
+            &*(((self as *const Self) as *const u8).add(168usize)
+                as *const crate::Reg<prince_region2_iv_body0::PRINCE_REGION2_IV_BODY0_SPEC>)
         }
     }
     #[doc = "0xac - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_code3 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_code3 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE3_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_code3(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_code3::PRINCE_REGION2_IV_CODE3_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 172usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_code3 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE3_SPEC > )
+            &*(((self as *const Self) as *const u8).add(172usize)
+                as *const crate::Reg<prince_region2_iv_code3::PRINCE_REGION2_IV_CODE3_SPEC>)
         }
     }
     #[doc = "0xac - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_body1 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_body1 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY1_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_body1(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_body1::PRINCE_REGION2_IV_BODY1_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 172usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_body1 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY1_SPEC > )
+            &*(((self as *const Self) as *const u8).add(172usize)
+                as *const crate::Reg<prince_region2_iv_body1::PRINCE_REGION2_IV_BODY1_SPEC>)
         }
     }
     #[doc = "0xb0 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_code4 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_code4 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE4_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_code4(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_code4::PRINCE_REGION2_IV_CODE4_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 176usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_code4 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE4_SPEC > )
+            &*(((self as *const Self) as *const u8).add(176usize)
+                as *const crate::Reg<prince_region2_iv_code4::PRINCE_REGION2_IV_CODE4_SPEC>)
         }
     }
     #[doc = "0xb0 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_body2 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_body2 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY2_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_body2(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_body2::PRINCE_REGION2_IV_BODY2_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 176usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_body2 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY2_SPEC > )
+            &*(((self as *const Self) as *const u8).add(176usize)
+                as *const crate::Reg<prince_region2_iv_body2::PRINCE_REGION2_IV_BODY2_SPEC>)
         }
     }
     #[doc = "0xb4 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_code5 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_code5 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE5_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_code5(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_code5::PRINCE_REGION2_IV_CODE5_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 180usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_code5 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE5_SPEC > )
+            &*(((self as *const Self) as *const u8).add(180usize)
+                as *const crate::Reg<prince_region2_iv_code5::PRINCE_REGION2_IV_CODE5_SPEC>)
         }
     }
     #[doc = "0xb4 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_body3 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_body3 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY3_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_body3(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_body3::PRINCE_REGION2_IV_BODY3_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 180usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_body3 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY3_SPEC > )
+            &*(((self as *const Self) as *const u8).add(180usize)
+                as *const crate::Reg<prince_region2_iv_body3::PRINCE_REGION2_IV_BODY3_SPEC>)
         }
     }
     #[doc = "0xb8 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_code6 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_code6 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE6_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_code6(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_code6::PRINCE_REGION2_IV_CODE6_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 184usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_code6 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE6_SPEC > )
+            &*(((self as *const Self) as *const u8).add(184usize)
+                as *const crate::Reg<prince_region2_iv_code6::PRINCE_REGION2_IV_CODE6_SPEC>)
         }
     }
     #[doc = "0xb8 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_body4 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_body4 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY4_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_body4(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_body4::PRINCE_REGION2_IV_BODY4_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 184usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_body4 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY4_SPEC > )
+            &*(((self as *const Self) as *const u8).add(184usize)
+                as *const crate::Reg<prince_region2_iv_body4::PRINCE_REGION2_IV_BODY4_SPEC>)
         }
     }
     #[doc = "0xbc - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_code7 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_code7 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE7_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_code7(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_code7::PRINCE_REGION2_IV_CODE7_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 188usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_code7 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE7_SPEC > )
+            &*(((self as *const Self) as *const u8).add(188usize)
+                as *const crate::Reg<prince_region2_iv_code7::PRINCE_REGION2_IV_CODE7_SPEC>)
         }
     }
     #[doc = "0xbc - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_body5 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_body5 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY5_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_body5(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_body5::PRINCE_REGION2_IV_BODY5_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 188usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_body5 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY5_SPEC > )
+            &*(((self as *const Self) as *const u8).add(188usize)
+                as *const crate::Reg<prince_region2_iv_body5::PRINCE_REGION2_IV_BODY5_SPEC>)
         }
     }
     #[doc = "0xc0 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_code8 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_code8 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE8_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_code8(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_code8::PRINCE_REGION2_IV_CODE8_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 192usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_code8 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE8_SPEC > )
+            &*(((self as *const Self) as *const u8).add(192usize)
+                as *const crate::Reg<prince_region2_iv_code8::PRINCE_REGION2_IV_CODE8_SPEC>)
         }
     }
     #[doc = "0xc0 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_body6 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_body6 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY6_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_body6(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_body6::PRINCE_REGION2_IV_BODY6_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 192usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_body6 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY6_SPEC > )
+            &*(((self as *const Self) as *const u8).add(192usize)
+                as *const crate::Reg<prince_region2_iv_body6::PRINCE_REGION2_IV_BODY6_SPEC>)
         }
     }
     #[doc = "0xc4 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_code9 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_code9 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE9_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_code9(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_code9::PRINCE_REGION2_IV_CODE9_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 196usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_code9 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE9_SPEC > )
+            &*(((self as *const Self) as *const u8).add(196usize)
+                as *const crate::Reg<prince_region2_iv_code9::PRINCE_REGION2_IV_CODE9_SPEC>)
         }
     }
     #[doc = "0xc4 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_body7 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_body7 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY7_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_body7(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_body7::PRINCE_REGION2_IV_BODY7_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 196usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_body7 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY7_SPEC > )
+            &*(((self as *const Self) as *const u8).add(196usize)
+                as *const crate::Reg<prince_region2_iv_body7::PRINCE_REGION2_IV_BODY7_SPEC>)
         }
     }
     #[doc = "0xc8 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_code10 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_code10 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE10_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_code10(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_code10::PRINCE_REGION2_IV_CODE10_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 200usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_code10 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE10_SPEC > )
+            &*(((self as *const Self) as *const u8).add(200usize)
+                as *const crate::Reg<prince_region2_iv_code10::PRINCE_REGION2_IV_CODE10_SPEC>)
         }
     }
     #[doc = "0xc8 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_body8 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_body8 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY8_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_body8(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_body8::PRINCE_REGION2_IV_BODY8_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 200usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_body8 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY8_SPEC > )
+            &*(((self as *const Self) as *const u8).add(200usize)
+                as *const crate::Reg<prince_region2_iv_body8::PRINCE_REGION2_IV_BODY8_SPEC>)
         }
     }
     #[doc = "0xcc - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_code11 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_code11 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE11_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_code11(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_code11::PRINCE_REGION2_IV_CODE11_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 204usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_code11 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE11_SPEC > )
+            &*(((self as *const Self) as *const u8).add(204usize)
+                as *const crate::Reg<prince_region2_iv_code11::PRINCE_REGION2_IV_CODE11_SPEC>)
         }
     }
     #[doc = "0xcc - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_body9 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_body9 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY9_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_body9(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_body9::PRINCE_REGION2_IV_BODY9_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 204usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_body9 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY9_SPEC > )
+            &*(((self as *const Self) as *const u8).add(204usize)
+                as *const crate::Reg<prince_region2_iv_body9::PRINCE_REGION2_IV_BODY9_SPEC>)
         }
     }
     #[doc = "0xd0 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_code12 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_code12 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE12_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_code12(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_code12::PRINCE_REGION2_IV_CODE12_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 208usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_code12 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE12_SPEC > )
+            &*(((self as *const Self) as *const u8).add(208usize)
+                as *const crate::Reg<prince_region2_iv_code12::PRINCE_REGION2_IV_CODE12_SPEC>)
         }
     }
     #[doc = "0xd0 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_body10 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_body10 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY10_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_body10(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_body10::PRINCE_REGION2_IV_BODY10_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 208usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_body10 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY10_SPEC > )
+            &*(((self as *const Self) as *const u8).add(208usize)
+                as *const crate::Reg<prince_region2_iv_body10::PRINCE_REGION2_IV_BODY10_SPEC>)
         }
     }
     #[doc = "0xd4 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_code13 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_code13 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE13_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_code13(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_code13::PRINCE_REGION2_IV_CODE13_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 212usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_code13 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE13_SPEC > )
+            &*(((self as *const Self) as *const u8).add(212usize)
+                as *const crate::Reg<prince_region2_iv_code13::PRINCE_REGION2_IV_CODE13_SPEC>)
         }
     }
     #[doc = "0xd4 - ."]
-    #[inline(always)]    pub fn prince_region2_iv_code_prince_region2_iv_body11 ( & self ) -> & crate :: Reg < prince_region2_iv_code_prince_region2_iv_body11 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY11_SPEC >{
+    #[inline(always)]
+    pub fn prince_region2_iv_body11(
+        &self,
+    ) -> &crate::Reg<prince_region2_iv_body11::PRINCE_REGION2_IV_BODY11_SPEC> {
         unsafe {
-            & * ( ( ( self as * const Self ) as * const u8 ) . add ( 212usize ) as * const crate :: Reg < prince_region2_iv_code_prince_region2_iv_body11 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY11_SPEC > )
+            &*(((self as *const Self) as *const u8).add(212usize)
+                as *const crate::Reg<prince_region2_iv_body11::PRINCE_REGION2_IV_BODY11_SPEC>)
         }
     }
 }
@@ -629,342 +965,426 @@ pub mod enable_fa_mode;
 pub type CMPA_PROG_IN_PROGRESS = crate::Reg<cmpa_prog_in_progress::CMPA_PROG_IN_PROGRESS_SPEC>;
 #[doc = "CMPA Page programming on going. This field shall be set to 0x5CC55AA5 in the active CFPA page each time CMPA page programming is going on. It shall always be set to 0x00000000 in the CFPA scratch area."]
 pub mod cmpa_prog_in_progress;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE0 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE0_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE0 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_code0 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE0_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_code0;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_HEADER0 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_HEADER0_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_HEADER0 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_header0 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_HEADER0_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_header0;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE1 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE1_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE1 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_code1 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE1_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_code1;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_HEADER1 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_HEADER1_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_HEADER1 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_header1 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_HEADER1_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_header1;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY0 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY0_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY0 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_body0 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY0_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_body0;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE2 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE2_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE2 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_code2 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE2_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_code2;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY1 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY1_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY1 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_body1 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY1_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_body1;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE3 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE3_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE3 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_code3 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE3_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_code3;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY2 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY2_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY2 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_body2 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY2_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_body2;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE4 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE4_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE4 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_code4 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE4_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_code4;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY3 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY3_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY3 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_body3 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY3_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_body3;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE5 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE5_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE5 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_code5 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE5_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_code5;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY4 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY4_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY4 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_body4 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY4_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_body4;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE6 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE6_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE6 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_code6 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE6_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_code6;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY5 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY5_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY5 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_body5 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY5_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_body5;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE7 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE7_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE7 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_code7 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE7_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_code7;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY6 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY6_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY6 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_body6 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY6_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_body6;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE8 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE8_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE8 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_code8 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE8_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_code8;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY7 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY7_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY7 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_body7 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY7_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_body7;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE9 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE9_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE9 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_code9 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE9_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_code9;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY8 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY8_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY8 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_body8 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY8_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_body8;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE10 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE10_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE10 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_code10 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE10_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_code10;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY9 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY9_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY9 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_body9 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY9_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_body9;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE11 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE11_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE11 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_code11 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE11_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_code11;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY10 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY10_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY10 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_body10 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY10_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_body10;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE12 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE12_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE12 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_code12 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE12_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_code12;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY11 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY11_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY11 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_body11 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_BODY11_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_body11;
-#[doc = "PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE13 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE13_SPEC>`"]
-pub type PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE13 = crate :: Reg < prince_region0_iv_code_prince_region0_iv_code13 :: PRINCE_REGION0_IV_CODE_PRINCE_REGION0_IV_CODE13_SPEC > ;
-#[doc = "."]
-pub mod prince_region0_iv_code_prince_region0_iv_code13;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE0 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE0_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE0 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_code0 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE0_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_code0;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_HEADER0 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_HEADER0_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_HEADER0 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_header0 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_HEADER0_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_header0;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE1 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE1_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE1 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_code1 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE1_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_code1;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_HEADER1 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_HEADER1_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_HEADER1 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_header1 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_HEADER1_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_header1;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY0 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY0_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY0 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_body0 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY0_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_body0;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE2 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE2_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE2 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_code2 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE2_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_code2;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY1 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY1_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY1 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_body1 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY1_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_body1;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE3 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE3_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE3 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_code3 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE3_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_code3;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY2 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY2_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY2 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_body2 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY2_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_body2;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE4 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE4_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE4 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_code4 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE4_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_code4;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY3 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY3_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY3 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_body3 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY3_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_body3;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE5 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE5_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE5 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_code5 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE5_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_code5;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY4 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY4_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY4 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_body4 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY4_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_body4;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE6 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE6_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE6 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_code6 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE6_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_code6;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY5 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY5_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY5 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_body5 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY5_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_body5;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE7 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE7_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE7 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_code7 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE7_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_code7;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY6 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY6_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY6 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_body6 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY6_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_body6;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE8 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE8_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE8 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_code8 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE8_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_code8;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY7 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY7_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY7 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_body7 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY7_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_body7;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE9 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE9_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE9 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_code9 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE9_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_code9;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY8 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY8_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY8 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_body8 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY8_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_body8;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE10 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE10_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE10 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_code10 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE10_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_code10;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY9 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY9_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY9 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_body9 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY9_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_body9;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE11 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE11_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE11 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_code11 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE11_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_code11;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY10 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY10_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY10 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_body10 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY10_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_body10;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE12 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE12_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE12 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_code12 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE12_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_code12;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY11 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY11_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY11 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_body11 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_BODY11_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_body11;
-#[doc = "PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE13 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE13_SPEC>`"]
-pub type PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE13 = crate :: Reg < prince_region1_iv_code_prince_region1_iv_code13 :: PRINCE_REGION1_IV_CODE_PRINCE_REGION1_IV_CODE13_SPEC > ;
-#[doc = "."]
-pub mod prince_region1_iv_code_prince_region1_iv_code13;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE0 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE0_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE0 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_code0 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE0_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_code0;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_HEADER0 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_HEADER0_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_HEADER0 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_header0 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_HEADER0_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_header0;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE1 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE1_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE1 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_code1 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE1_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_code1;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_HEADER1 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_HEADER1_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_HEADER1 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_header1 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_HEADER1_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_header1;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY0 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY0_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY0 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_body0 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY0_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_body0;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE2 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE2_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE2 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_code2 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE2_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_code2;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY1 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY1_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY1 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_body1 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY1_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_body1;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE3 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE3_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE3 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_code3 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE3_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_code3;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY2 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY2_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY2 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_body2 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY2_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_body2;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE4 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE4_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE4 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_code4 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE4_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_code4;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY3 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY3_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY3 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_body3 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY3_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_body3;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE5 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE5_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE5 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_code5 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE5_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_code5;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY4 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY4_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY4 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_body4 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY4_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_body4;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE6 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE6_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE6 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_code6 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE6_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_code6;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY5 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY5_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY5 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_body5 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY5_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_body5;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE7 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE7_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE7 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_code7 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE7_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_code7;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY6 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY6_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY6 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_body6 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY6_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_body6;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE8 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE8_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE8 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_code8 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE8_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_code8;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY7 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY7_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY7 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_body7 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY7_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_body7;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE9 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE9_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE9 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_code9 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE9_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_code9;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY8 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY8_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY8 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_body8 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY8_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_body8;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE10 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE10_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE10 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_code10 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE10_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_code10;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY9 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY9_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY9 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_body9 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY9_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_body9;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE11 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE11_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE11 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_code11 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE11_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_code11;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY10 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY10_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY10 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_body10 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY10_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_body10;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE12 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE12_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE12 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_code12 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE12_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_code12;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY11 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY11_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY11 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_body11 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_BODY11_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_body11;
-#[doc = "PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE13 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE13_SPEC>`"]
-pub type PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE13 = crate :: Reg < prince_region2_iv_code_prince_region2_iv_code13 :: PRINCE_REGION2_IV_CODE_PRINCE_REGION2_IV_CODE13_SPEC > ;
-#[doc = "."]
-pub mod prince_region2_iv_code_prince_region2_iv_code13;
+#[doc = "PRINCE_REGION0_IV_CODE0 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE0_SPEC>`"]
+pub type PRINCE_REGION0_IV_CODE0 =
+    crate::Reg<prince_region0_iv_code0::PRINCE_REGION0_IV_CODE0_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_code0;
+#[doc = "PRINCE_REGION0_IV_HEADER0 register accessor: an alias for `Reg<PRINCE_REGION0_IV_HEADER0_SPEC>`"]
+pub type PRINCE_REGION0_IV_HEADER0 =
+    crate::Reg<prince_region0_iv_header0::PRINCE_REGION0_IV_HEADER0_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_header0;
+#[doc = "PRINCE_REGION0_IV_CODE1 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE1_SPEC>`"]
+pub type PRINCE_REGION0_IV_CODE1 =
+    crate::Reg<prince_region0_iv_code1::PRINCE_REGION0_IV_CODE1_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_code1;
+#[doc = "PRINCE_REGION0_IV_HEADER1 register accessor: an alias for `Reg<PRINCE_REGION0_IV_HEADER1_SPEC>`"]
+pub type PRINCE_REGION0_IV_HEADER1 =
+    crate::Reg<prince_region0_iv_header1::PRINCE_REGION0_IV_HEADER1_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_header1;
+#[doc = "PRINCE_REGION0_IV_BODY0 register accessor: an alias for `Reg<PRINCE_REGION0_IV_BODY0_SPEC>`"]
+pub type PRINCE_REGION0_IV_BODY0 =
+    crate::Reg<prince_region0_iv_body0::PRINCE_REGION0_IV_BODY0_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_body0;
+#[doc = "PRINCE_REGION0_IV_CODE2 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE2_SPEC>`"]
+pub type PRINCE_REGION0_IV_CODE2 =
+    crate::Reg<prince_region0_iv_code2::PRINCE_REGION0_IV_CODE2_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_code2;
+#[doc = "PRINCE_REGION0_IV_BODY1 register accessor: an alias for `Reg<PRINCE_REGION0_IV_BODY1_SPEC>`"]
+pub type PRINCE_REGION0_IV_BODY1 =
+    crate::Reg<prince_region0_iv_body1::PRINCE_REGION0_IV_BODY1_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_body1;
+#[doc = "PRINCE_REGION0_IV_CODE3 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE3_SPEC>`"]
+pub type PRINCE_REGION0_IV_CODE3 =
+    crate::Reg<prince_region0_iv_code3::PRINCE_REGION0_IV_CODE3_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_code3;
+#[doc = "PRINCE_REGION0_IV_BODY2 register accessor: an alias for `Reg<PRINCE_REGION0_IV_BODY2_SPEC>`"]
+pub type PRINCE_REGION0_IV_BODY2 =
+    crate::Reg<prince_region0_iv_body2::PRINCE_REGION0_IV_BODY2_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_body2;
+#[doc = "PRINCE_REGION0_IV_CODE4 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE4_SPEC>`"]
+pub type PRINCE_REGION0_IV_CODE4 =
+    crate::Reg<prince_region0_iv_code4::PRINCE_REGION0_IV_CODE4_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_code4;
+#[doc = "PRINCE_REGION0_IV_BODY3 register accessor: an alias for `Reg<PRINCE_REGION0_IV_BODY3_SPEC>`"]
+pub type PRINCE_REGION0_IV_BODY3 =
+    crate::Reg<prince_region0_iv_body3::PRINCE_REGION0_IV_BODY3_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_body3;
+#[doc = "PRINCE_REGION0_IV_CODE5 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE5_SPEC>`"]
+pub type PRINCE_REGION0_IV_CODE5 =
+    crate::Reg<prince_region0_iv_code5::PRINCE_REGION0_IV_CODE5_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_code5;
+#[doc = "PRINCE_REGION0_IV_BODY4 register accessor: an alias for `Reg<PRINCE_REGION0_IV_BODY4_SPEC>`"]
+pub type PRINCE_REGION0_IV_BODY4 =
+    crate::Reg<prince_region0_iv_body4::PRINCE_REGION0_IV_BODY4_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_body4;
+#[doc = "PRINCE_REGION0_IV_CODE6 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE6_SPEC>`"]
+pub type PRINCE_REGION0_IV_CODE6 =
+    crate::Reg<prince_region0_iv_code6::PRINCE_REGION0_IV_CODE6_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_code6;
+#[doc = "PRINCE_REGION0_IV_BODY5 register accessor: an alias for `Reg<PRINCE_REGION0_IV_BODY5_SPEC>`"]
+pub type PRINCE_REGION0_IV_BODY5 =
+    crate::Reg<prince_region0_iv_body5::PRINCE_REGION0_IV_BODY5_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_body5;
+#[doc = "PRINCE_REGION0_IV_CODE7 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE7_SPEC>`"]
+pub type PRINCE_REGION0_IV_CODE7 =
+    crate::Reg<prince_region0_iv_code7::PRINCE_REGION0_IV_CODE7_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_code7;
+#[doc = "PRINCE_REGION0_IV_BODY6 register accessor: an alias for `Reg<PRINCE_REGION0_IV_BODY6_SPEC>`"]
+pub type PRINCE_REGION0_IV_BODY6 =
+    crate::Reg<prince_region0_iv_body6::PRINCE_REGION0_IV_BODY6_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_body6;
+#[doc = "PRINCE_REGION0_IV_CODE8 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE8_SPEC>`"]
+pub type PRINCE_REGION0_IV_CODE8 =
+    crate::Reg<prince_region0_iv_code8::PRINCE_REGION0_IV_CODE8_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_code8;
+#[doc = "PRINCE_REGION0_IV_BODY7 register accessor: an alias for `Reg<PRINCE_REGION0_IV_BODY7_SPEC>`"]
+pub type PRINCE_REGION0_IV_BODY7 =
+    crate::Reg<prince_region0_iv_body7::PRINCE_REGION0_IV_BODY7_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_body7;
+#[doc = "PRINCE_REGION0_IV_CODE9 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE9_SPEC>`"]
+pub type PRINCE_REGION0_IV_CODE9 =
+    crate::Reg<prince_region0_iv_code9::PRINCE_REGION0_IV_CODE9_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_code9;
+#[doc = "PRINCE_REGION0_IV_BODY8 register accessor: an alias for `Reg<PRINCE_REGION0_IV_BODY8_SPEC>`"]
+pub type PRINCE_REGION0_IV_BODY8 =
+    crate::Reg<prince_region0_iv_body8::PRINCE_REGION0_IV_BODY8_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_body8;
+#[doc = "PRINCE_REGION0_IV_CODE10 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE10_SPEC>`"]
+pub type PRINCE_REGION0_IV_CODE10 =
+    crate::Reg<prince_region0_iv_code10::PRINCE_REGION0_IV_CODE10_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_code10;
+#[doc = "PRINCE_REGION0_IV_BODY9 register accessor: an alias for `Reg<PRINCE_REGION0_IV_BODY9_SPEC>`"]
+pub type PRINCE_REGION0_IV_BODY9 =
+    crate::Reg<prince_region0_iv_body9::PRINCE_REGION0_IV_BODY9_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_body9;
+#[doc = "PRINCE_REGION0_IV_CODE11 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE11_SPEC>`"]
+pub type PRINCE_REGION0_IV_CODE11 =
+    crate::Reg<prince_region0_iv_code11::PRINCE_REGION0_IV_CODE11_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_code11;
+#[doc = "PRINCE_REGION0_IV_BODY10 register accessor: an alias for `Reg<PRINCE_REGION0_IV_BODY10_SPEC>`"]
+pub type PRINCE_REGION0_IV_BODY10 =
+    crate::Reg<prince_region0_iv_body10::PRINCE_REGION0_IV_BODY10_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_body10;
+#[doc = "PRINCE_REGION0_IV_CODE12 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE12_SPEC>`"]
+pub type PRINCE_REGION0_IV_CODE12 =
+    crate::Reg<prince_region0_iv_code12::PRINCE_REGION0_IV_CODE12_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_code12;
+#[doc = "PRINCE_REGION0_IV_BODY11 register accessor: an alias for `Reg<PRINCE_REGION0_IV_BODY11_SPEC>`"]
+pub type PRINCE_REGION0_IV_BODY11 =
+    crate::Reg<prince_region0_iv_body11::PRINCE_REGION0_IV_BODY11_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_body11;
+#[doc = "PRINCE_REGION0_IV_CODE13 register accessor: an alias for `Reg<PRINCE_REGION0_IV_CODE13_SPEC>`"]
+pub type PRINCE_REGION0_IV_CODE13 =
+    crate::Reg<prince_region0_iv_code13::PRINCE_REGION0_IV_CODE13_SPEC>;
+#[doc = "."]
+pub mod prince_region0_iv_code13;
+#[doc = "PRINCE_REGION1_IV_CODE0 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE0_SPEC>`"]
+pub type PRINCE_REGION1_IV_CODE0 =
+    crate::Reg<prince_region1_iv_code0::PRINCE_REGION1_IV_CODE0_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_code0;
+#[doc = "PRINCE_REGION1_IV_HEADER0 register accessor: an alias for `Reg<PRINCE_REGION1_IV_HEADER0_SPEC>`"]
+pub type PRINCE_REGION1_IV_HEADER0 =
+    crate::Reg<prince_region1_iv_header0::PRINCE_REGION1_IV_HEADER0_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_header0;
+#[doc = "PRINCE_REGION1_IV_CODE1 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE1_SPEC>`"]
+pub type PRINCE_REGION1_IV_CODE1 =
+    crate::Reg<prince_region1_iv_code1::PRINCE_REGION1_IV_CODE1_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_code1;
+#[doc = "PRINCE_REGION1_IV_HEADER1 register accessor: an alias for `Reg<PRINCE_REGION1_IV_HEADER1_SPEC>`"]
+pub type PRINCE_REGION1_IV_HEADER1 =
+    crate::Reg<prince_region1_iv_header1::PRINCE_REGION1_IV_HEADER1_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_header1;
+#[doc = "PRINCE_REGION1_IV_BODY0 register accessor: an alias for `Reg<PRINCE_REGION1_IV_BODY0_SPEC>`"]
+pub type PRINCE_REGION1_IV_BODY0 =
+    crate::Reg<prince_region1_iv_body0::PRINCE_REGION1_IV_BODY0_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_body0;
+#[doc = "PRINCE_REGION1_IV_CODE2 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE2_SPEC>`"]
+pub type PRINCE_REGION1_IV_CODE2 =
+    crate::Reg<prince_region1_iv_code2::PRINCE_REGION1_IV_CODE2_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_code2;
+#[doc = "PRINCE_REGION1_IV_BODY1 register accessor: an alias for `Reg<PRINCE_REGION1_IV_BODY1_SPEC>`"]
+pub type PRINCE_REGION1_IV_BODY1 =
+    crate::Reg<prince_region1_iv_body1::PRINCE_REGION1_IV_BODY1_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_body1;
+#[doc = "PRINCE_REGION1_IV_CODE3 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE3_SPEC>`"]
+pub type PRINCE_REGION1_IV_CODE3 =
+    crate::Reg<prince_region1_iv_code3::PRINCE_REGION1_IV_CODE3_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_code3;
+#[doc = "PRINCE_REGION1_IV_BODY2 register accessor: an alias for `Reg<PRINCE_REGION1_IV_BODY2_SPEC>`"]
+pub type PRINCE_REGION1_IV_BODY2 =
+    crate::Reg<prince_region1_iv_body2::PRINCE_REGION1_IV_BODY2_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_body2;
+#[doc = "PRINCE_REGION1_IV_CODE4 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE4_SPEC>`"]
+pub type PRINCE_REGION1_IV_CODE4 =
+    crate::Reg<prince_region1_iv_code4::PRINCE_REGION1_IV_CODE4_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_code4;
+#[doc = "PRINCE_REGION1_IV_BODY3 register accessor: an alias for `Reg<PRINCE_REGION1_IV_BODY3_SPEC>`"]
+pub type PRINCE_REGION1_IV_BODY3 =
+    crate::Reg<prince_region1_iv_body3::PRINCE_REGION1_IV_BODY3_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_body3;
+#[doc = "PRINCE_REGION1_IV_CODE5 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE5_SPEC>`"]
+pub type PRINCE_REGION1_IV_CODE5 =
+    crate::Reg<prince_region1_iv_code5::PRINCE_REGION1_IV_CODE5_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_code5;
+#[doc = "PRINCE_REGION1_IV_BODY4 register accessor: an alias for `Reg<PRINCE_REGION1_IV_BODY4_SPEC>`"]
+pub type PRINCE_REGION1_IV_BODY4 =
+    crate::Reg<prince_region1_iv_body4::PRINCE_REGION1_IV_BODY4_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_body4;
+#[doc = "PRINCE_REGION1_IV_CODE6 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE6_SPEC>`"]
+pub type PRINCE_REGION1_IV_CODE6 =
+    crate::Reg<prince_region1_iv_code6::PRINCE_REGION1_IV_CODE6_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_code6;
+#[doc = "PRINCE_REGION1_IV_BODY5 register accessor: an alias for `Reg<PRINCE_REGION1_IV_BODY5_SPEC>`"]
+pub type PRINCE_REGION1_IV_BODY5 =
+    crate::Reg<prince_region1_iv_body5::PRINCE_REGION1_IV_BODY5_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_body5;
+#[doc = "PRINCE_REGION1_IV_CODE7 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE7_SPEC>`"]
+pub type PRINCE_REGION1_IV_CODE7 =
+    crate::Reg<prince_region1_iv_code7::PRINCE_REGION1_IV_CODE7_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_code7;
+#[doc = "PRINCE_REGION1_IV_BODY6 register accessor: an alias for `Reg<PRINCE_REGION1_IV_BODY6_SPEC>`"]
+pub type PRINCE_REGION1_IV_BODY6 =
+    crate::Reg<prince_region1_iv_body6::PRINCE_REGION1_IV_BODY6_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_body6;
+#[doc = "PRINCE_REGION1_IV_CODE8 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE8_SPEC>`"]
+pub type PRINCE_REGION1_IV_CODE8 =
+    crate::Reg<prince_region1_iv_code8::PRINCE_REGION1_IV_CODE8_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_code8;
+#[doc = "PRINCE_REGION1_IV_BODY7 register accessor: an alias for `Reg<PRINCE_REGION1_IV_BODY7_SPEC>`"]
+pub type PRINCE_REGION1_IV_BODY7 =
+    crate::Reg<prince_region1_iv_body7::PRINCE_REGION1_IV_BODY7_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_body7;
+#[doc = "PRINCE_REGION1_IV_CODE9 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE9_SPEC>`"]
+pub type PRINCE_REGION1_IV_CODE9 =
+    crate::Reg<prince_region1_iv_code9::PRINCE_REGION1_IV_CODE9_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_code9;
+#[doc = "PRINCE_REGION1_IV_BODY8 register accessor: an alias for `Reg<PRINCE_REGION1_IV_BODY8_SPEC>`"]
+pub type PRINCE_REGION1_IV_BODY8 =
+    crate::Reg<prince_region1_iv_body8::PRINCE_REGION1_IV_BODY8_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_body8;
+#[doc = "PRINCE_REGION1_IV_CODE10 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE10_SPEC>`"]
+pub type PRINCE_REGION1_IV_CODE10 =
+    crate::Reg<prince_region1_iv_code10::PRINCE_REGION1_IV_CODE10_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_code10;
+#[doc = "PRINCE_REGION1_IV_BODY9 register accessor: an alias for `Reg<PRINCE_REGION1_IV_BODY9_SPEC>`"]
+pub type PRINCE_REGION1_IV_BODY9 =
+    crate::Reg<prince_region1_iv_body9::PRINCE_REGION1_IV_BODY9_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_body9;
+#[doc = "PRINCE_REGION1_IV_CODE11 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE11_SPEC>`"]
+pub type PRINCE_REGION1_IV_CODE11 =
+    crate::Reg<prince_region1_iv_code11::PRINCE_REGION1_IV_CODE11_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_code11;
+#[doc = "PRINCE_REGION1_IV_BODY10 register accessor: an alias for `Reg<PRINCE_REGION1_IV_BODY10_SPEC>`"]
+pub type PRINCE_REGION1_IV_BODY10 =
+    crate::Reg<prince_region1_iv_body10::PRINCE_REGION1_IV_BODY10_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_body10;
+#[doc = "PRINCE_REGION1_IV_CODE12 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE12_SPEC>`"]
+pub type PRINCE_REGION1_IV_CODE12 =
+    crate::Reg<prince_region1_iv_code12::PRINCE_REGION1_IV_CODE12_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_code12;
+#[doc = "PRINCE_REGION1_IV_BODY11 register accessor: an alias for `Reg<PRINCE_REGION1_IV_BODY11_SPEC>`"]
+pub type PRINCE_REGION1_IV_BODY11 =
+    crate::Reg<prince_region1_iv_body11::PRINCE_REGION1_IV_BODY11_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_body11;
+#[doc = "PRINCE_REGION1_IV_CODE13 register accessor: an alias for `Reg<PRINCE_REGION1_IV_CODE13_SPEC>`"]
+pub type PRINCE_REGION1_IV_CODE13 =
+    crate::Reg<prince_region1_iv_code13::PRINCE_REGION1_IV_CODE13_SPEC>;
+#[doc = "."]
+pub mod prince_region1_iv_code13;
+#[doc = "PRINCE_REGION2_IV_CODE0 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE0_SPEC>`"]
+pub type PRINCE_REGION2_IV_CODE0 =
+    crate::Reg<prince_region2_iv_code0::PRINCE_REGION2_IV_CODE0_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_code0;
+#[doc = "PRINCE_REGION2_IV_HEADER0 register accessor: an alias for `Reg<PRINCE_REGION2_IV_HEADER0_SPEC>`"]
+pub type PRINCE_REGION2_IV_HEADER0 =
+    crate::Reg<prince_region2_iv_header0::PRINCE_REGION2_IV_HEADER0_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_header0;
+#[doc = "PRINCE_REGION2_IV_CODE1 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE1_SPEC>`"]
+pub type PRINCE_REGION2_IV_CODE1 =
+    crate::Reg<prince_region2_iv_code1::PRINCE_REGION2_IV_CODE1_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_code1;
+#[doc = "PRINCE_REGION2_IV_HEADER1 register accessor: an alias for `Reg<PRINCE_REGION2_IV_HEADER1_SPEC>`"]
+pub type PRINCE_REGION2_IV_HEADER1 =
+    crate::Reg<prince_region2_iv_header1::PRINCE_REGION2_IV_HEADER1_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_header1;
+#[doc = "PRINCE_REGION2_IV_BODY0 register accessor: an alias for `Reg<PRINCE_REGION2_IV_BODY0_SPEC>`"]
+pub type PRINCE_REGION2_IV_BODY0 =
+    crate::Reg<prince_region2_iv_body0::PRINCE_REGION2_IV_BODY0_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_body0;
+#[doc = "PRINCE_REGION2_IV_CODE2 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE2_SPEC>`"]
+pub type PRINCE_REGION2_IV_CODE2 =
+    crate::Reg<prince_region2_iv_code2::PRINCE_REGION2_IV_CODE2_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_code2;
+#[doc = "PRINCE_REGION2_IV_BODY1 register accessor: an alias for `Reg<PRINCE_REGION2_IV_BODY1_SPEC>`"]
+pub type PRINCE_REGION2_IV_BODY1 =
+    crate::Reg<prince_region2_iv_body1::PRINCE_REGION2_IV_BODY1_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_body1;
+#[doc = "PRINCE_REGION2_IV_CODE3 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE3_SPEC>`"]
+pub type PRINCE_REGION2_IV_CODE3 =
+    crate::Reg<prince_region2_iv_code3::PRINCE_REGION2_IV_CODE3_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_code3;
+#[doc = "PRINCE_REGION2_IV_BODY2 register accessor: an alias for `Reg<PRINCE_REGION2_IV_BODY2_SPEC>`"]
+pub type PRINCE_REGION2_IV_BODY2 =
+    crate::Reg<prince_region2_iv_body2::PRINCE_REGION2_IV_BODY2_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_body2;
+#[doc = "PRINCE_REGION2_IV_CODE4 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE4_SPEC>`"]
+pub type PRINCE_REGION2_IV_CODE4 =
+    crate::Reg<prince_region2_iv_code4::PRINCE_REGION2_IV_CODE4_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_code4;
+#[doc = "PRINCE_REGION2_IV_BODY3 register accessor: an alias for `Reg<PRINCE_REGION2_IV_BODY3_SPEC>`"]
+pub type PRINCE_REGION2_IV_BODY3 =
+    crate::Reg<prince_region2_iv_body3::PRINCE_REGION2_IV_BODY3_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_body3;
+#[doc = "PRINCE_REGION2_IV_CODE5 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE5_SPEC>`"]
+pub type PRINCE_REGION2_IV_CODE5 =
+    crate::Reg<prince_region2_iv_code5::PRINCE_REGION2_IV_CODE5_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_code5;
+#[doc = "PRINCE_REGION2_IV_BODY4 register accessor: an alias for `Reg<PRINCE_REGION2_IV_BODY4_SPEC>`"]
+pub type PRINCE_REGION2_IV_BODY4 =
+    crate::Reg<prince_region2_iv_body4::PRINCE_REGION2_IV_BODY4_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_body4;
+#[doc = "PRINCE_REGION2_IV_CODE6 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE6_SPEC>`"]
+pub type PRINCE_REGION2_IV_CODE6 =
+    crate::Reg<prince_region2_iv_code6::PRINCE_REGION2_IV_CODE6_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_code6;
+#[doc = "PRINCE_REGION2_IV_BODY5 register accessor: an alias for `Reg<PRINCE_REGION2_IV_BODY5_SPEC>`"]
+pub type PRINCE_REGION2_IV_BODY5 =
+    crate::Reg<prince_region2_iv_body5::PRINCE_REGION2_IV_BODY5_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_body5;
+#[doc = "PRINCE_REGION2_IV_CODE7 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE7_SPEC>`"]
+pub type PRINCE_REGION2_IV_CODE7 =
+    crate::Reg<prince_region2_iv_code7::PRINCE_REGION2_IV_CODE7_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_code7;
+#[doc = "PRINCE_REGION2_IV_BODY6 register accessor: an alias for `Reg<PRINCE_REGION2_IV_BODY6_SPEC>`"]
+pub type PRINCE_REGION2_IV_BODY6 =
+    crate::Reg<prince_region2_iv_body6::PRINCE_REGION2_IV_BODY6_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_body6;
+#[doc = "PRINCE_REGION2_IV_CODE8 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE8_SPEC>`"]
+pub type PRINCE_REGION2_IV_CODE8 =
+    crate::Reg<prince_region2_iv_code8::PRINCE_REGION2_IV_CODE8_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_code8;
+#[doc = "PRINCE_REGION2_IV_BODY7 register accessor: an alias for `Reg<PRINCE_REGION2_IV_BODY7_SPEC>`"]
+pub type PRINCE_REGION2_IV_BODY7 =
+    crate::Reg<prince_region2_iv_body7::PRINCE_REGION2_IV_BODY7_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_body7;
+#[doc = "PRINCE_REGION2_IV_CODE9 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE9_SPEC>`"]
+pub type PRINCE_REGION2_IV_CODE9 =
+    crate::Reg<prince_region2_iv_code9::PRINCE_REGION2_IV_CODE9_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_code9;
+#[doc = "PRINCE_REGION2_IV_BODY8 register accessor: an alias for `Reg<PRINCE_REGION2_IV_BODY8_SPEC>`"]
+pub type PRINCE_REGION2_IV_BODY8 =
+    crate::Reg<prince_region2_iv_body8::PRINCE_REGION2_IV_BODY8_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_body8;
+#[doc = "PRINCE_REGION2_IV_CODE10 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE10_SPEC>`"]
+pub type PRINCE_REGION2_IV_CODE10 =
+    crate::Reg<prince_region2_iv_code10::PRINCE_REGION2_IV_CODE10_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_code10;
+#[doc = "PRINCE_REGION2_IV_BODY9 register accessor: an alias for `Reg<PRINCE_REGION2_IV_BODY9_SPEC>`"]
+pub type PRINCE_REGION2_IV_BODY9 =
+    crate::Reg<prince_region2_iv_body9::PRINCE_REGION2_IV_BODY9_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_body9;
+#[doc = "PRINCE_REGION2_IV_CODE11 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE11_SPEC>`"]
+pub type PRINCE_REGION2_IV_CODE11 =
+    crate::Reg<prince_region2_iv_code11::PRINCE_REGION2_IV_CODE11_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_code11;
+#[doc = "PRINCE_REGION2_IV_BODY10 register accessor: an alias for `Reg<PRINCE_REGION2_IV_BODY10_SPEC>`"]
+pub type PRINCE_REGION2_IV_BODY10 =
+    crate::Reg<prince_region2_iv_body10::PRINCE_REGION2_IV_BODY10_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_body10;
+#[doc = "PRINCE_REGION2_IV_CODE12 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE12_SPEC>`"]
+pub type PRINCE_REGION2_IV_CODE12 =
+    crate::Reg<prince_region2_iv_code12::PRINCE_REGION2_IV_CODE12_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_code12;
+#[doc = "PRINCE_REGION2_IV_BODY11 register accessor: an alias for `Reg<PRINCE_REGION2_IV_BODY11_SPEC>`"]
+pub type PRINCE_REGION2_IV_BODY11 =
+    crate::Reg<prince_region2_iv_body11::PRINCE_REGION2_IV_BODY11_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_body11;
+#[doc = "PRINCE_REGION2_IV_CODE13 register accessor: an alias for `Reg<PRINCE_REGION2_IV_CODE13_SPEC>`"]
+pub type PRINCE_REGION2_IV_CODE13 =
+    crate::Reg<prince_region2_iv_code13::PRINCE_REGION2_IV_CODE13_SPEC>;
+#[doc = "."]
+pub mod prince_region2_iv_code13;
 #[doc = "CUSTOMER_DEFINED register accessor: an alias for `Reg<CUSTOMER_DEFINED_SPEC>`"]
 pub type CUSTOMER_DEFINED = crate::Reg<customer_defined::CUSTOMER_DEFINED_SPEC>;
 #[doc = "Customer Defined (Programable through ROM API)"]

@@ -110,17 +110,6 @@ USB1:
 _delete:
   - USB0
 
-_add:
-  USB0:
-    derivedFrom: USB1
-    baseAddress: "0x40084000"
-    interrupts:
-      USB0_NEEDCLK:
-        value: 27
-      USB0:
-        value: 28
-
-
 # experimental ROM Patcher definition
 
 AHB_SECURE_CTRL:
@@ -138,6 +127,14 @@ AHB_SECURE_CTRL:
       ENUM_S_P: [3, "Secure and Priviledge user access allowed."]
 
 _add:
+  USB0:
+    derivedFrom: USB1
+    baseAddress: "0x40084000"
+    interrupts:
+      USB0_NEEDCLK:
+        value: 27
+      USB0:
+        value: 28
   RPU:
     description: |
       NXP ROM patch unit.
@@ -445,3 +442,4 @@ _add:
         access: read-write
         resetValue: 0x0
         size: 0x20
+
