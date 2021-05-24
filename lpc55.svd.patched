@@ -49973,7 +49973,8 @@ SPDX-License-Identifier: BSD-3-Clause
               <bitWidth>3</bitWidth>
               <access>read-write</access>
             </field>
-          </fields>
+          <field><name>FORCE_FS</name><description>Force USB device to operate in full-speed mode.</description><bitOffset>21</bitOffset><bitWidth>1</bitWidth></field>
+            </fields>
         </register>
         <register>
           <name>INFO</name>

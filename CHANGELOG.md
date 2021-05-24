@@ -10,6 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - fix addressBlock usage
 - update svd2rust to 0.20
 - `SVDTOOLS` env value for specifying patching tool
+- `FORCE_FS` field
 
 ## [v0.4.0] - 2021-05-02
 

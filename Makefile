@@ -19,6 +19,7 @@ doc-open: setup patch generate
 
 setup: update-venv fetch-svd
 	cargo install svd2rust --version 0.20.0
+	cargo install form
 
 patch:
 	$(SVDTOOLS) patch $(YAML)

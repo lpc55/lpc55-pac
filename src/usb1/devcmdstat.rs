@@ -651,6 +651,43 @@ impl<'a> PHY_TEST_MODE_W<'a> {
         self.w
     }
 }
+#[doc = "Field `FORCE_FS` reader - Force USB device to operate in full-speed mode."]
+pub struct FORCE_FS_R(crate::FieldReader<bool, bool>);
+impl FORCE_FS_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        FORCE_FS_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for FORCE_FS_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FORCE_FS` writer - Force USB device to operate in full-speed mode."]
+pub struct FORCE_FS_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FORCE_FS_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
+        self.w
+    }
+}
 impl R {
     #[doc = "Bits 0:6 - USB device address."]
     #[inline(always)]
@@ -747,6 +784,11 @@ impl R {
     pub fn phy_test_mode(&self) -> PHY_TEST_MODE_R {
         PHY_TEST_MODE_R::new(((self.bits >> 29) & 0x07) as u8)
     }
+    #[doc = "Bit 21 - Force USB device to operate in full-speed mode."]
+    #[inline(always)]
+    pub fn force_fs(&self) -> FORCE_FS_R {
+        FORCE_FS_R::new(((self.bits >> 21) & 0x01) != 0)
+    }
 }
 impl W {
     #[doc = "Bits 0:6 - USB device address."]
@@ -828,6 +870,11 @@ impl W {
     #[inline(always)]
     pub fn phy_test_mode(&mut self) -> PHY_TEST_MODE_W {
         PHY_TEST_MODE_W { w: self }
+    }
+    #[doc = "Bit 21 - Force USB device to operate in full-speed mode."]
+    #[inline(always)]
+    pub fn force_fs(&mut self) -> FORCE_FS_W {
+        FORCE_FS_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
