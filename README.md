@@ -52,7 +52,7 @@ The SVD files are from <https://mcuxpresso.nxp.com> and licensed under the [BSD-
 [github-action-image]: https://github.com/lpc55/lpc55-pac/workflows/build/badge.svg?branch=main
 [github-action-link]: https://github.com/lpc55/lpc55-pac/actions
 [docs-image]: https://docs.rs/lpc55-pac/badge.svg
-[docs-link]: https://docs.rs/lpc55s-pac
+[docs-link]: https://docs.rs/lpc55-pac
 [lpc55-hal]: https://lib.rs/lpc55-hal
 [svd-docs-link]: https://docs.rs/svd2rust
 [license-image]: https://img.shields.io/badge/license-Apache2.0%2FMIT-blue.svg
