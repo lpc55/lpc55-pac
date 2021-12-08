@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PDRUNCFG0_SPEC>> for R {
+impl From<crate::R<PDRUNCFG0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PDRUNCFG0_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PDRUNCFG0_SPEC>> for W {
+impl From<crate::W<PDRUNCFG0_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PDRUNCFG0_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<PDEN_BODVBAT_A> for bool {
 #[doc = "Field `PDEN_BODVBAT` reader - Controls power to VBAT Brown Out Detector (BOD)."]
 pub struct PDEN_BODVBAT_R(crate::FieldReader<bool, PDEN_BODVBAT_A>);
 impl PDEN_BODVBAT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDEN_BODVBAT_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<PDEN_FRO32K_A> for bool {
 #[doc = "Field `PDEN_FRO32K` reader - Controls power to the Free Running Oscillator (FRO) 32 KHz."]
 pub struct PDEN_FRO32K_R(crate::FieldReader<bool, PDEN_FRO32K_A>);
 impl PDEN_FRO32K_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDEN_FRO32K_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<PDEN_XTAL32K_A> for bool {
 #[doc = "Field `PDEN_XTAL32K` reader - Controls power to crystal 32 KHz."]
 pub struct PDEN_XTAL32K_R(crate::FieldReader<bool, PDEN_XTAL32K_A>);
 impl PDEN_XTAL32K_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDEN_XTAL32K_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<PDEN_XTAL32M_A> for bool {
 #[doc = "Field `PDEN_XTAL32M` reader - Controls power to crystal 32 MHz."]
 pub struct PDEN_XTAL32M_R(crate::FieldReader<bool, PDEN_XTAL32M_A>);
 impl PDEN_XTAL32M_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDEN_XTAL32M_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<PDEN_PLL0_A> for bool {
 #[doc = "Field `PDEN_PLL0` reader - Controls power to System PLL (also refered as PLL0)."]
 pub struct PDEN_PLL0_R(crate::FieldReader<bool, PDEN_PLL0_A>);
 impl PDEN_PLL0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDEN_PLL0_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<PDEN_PLL1_A> for bool {
 #[doc = "Field `PDEN_PLL1` reader - Controls power to USB PLL (also refered as PLL1)."]
 pub struct PDEN_PLL1_R(crate::FieldReader<bool, PDEN_PLL1_A>);
 impl PDEN_PLL1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDEN_PLL1_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<PDEN_USBFSPHY_A> for bool {
 #[doc = "Field `PDEN_USBFSPHY` reader - Controls power to USB Full Speed phy."]
 pub struct PDEN_USBFSPHY_R(crate::FieldReader<bool, PDEN_USBFSPHY_A>);
 impl PDEN_USBFSPHY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDEN_USBFSPHY_R(crate::FieldReader::new(bits))
     }
@@ -630,6 +639,7 @@ impl From<PDEN_USBHSPHY_A> for bool {
 #[doc = "Field `PDEN_USBHSPHY` reader - Controls power to USB High Speed Phy."]
 pub struct PDEN_USBHSPHY_R(crate::FieldReader<bool, PDEN_USBHSPHY_A>);
 impl PDEN_USBHSPHY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDEN_USBHSPHY_R(crate::FieldReader::new(bits))
     }
@@ -713,6 +723,7 @@ impl From<PDEN_COMP_A> for bool {
 #[doc = "Field `PDEN_COMP` reader - Controls power to Analog Comparator."]
 pub struct PDEN_COMP_R(crate::FieldReader<bool, PDEN_COMP_A>);
 impl PDEN_COMP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDEN_COMP_R(crate::FieldReader::new(bits))
     }
@@ -796,6 +807,7 @@ impl From<PDEN_LDOUSBHS_A> for bool {
 #[doc = "Field `PDEN_LDOUSBHS` reader - Controls power to USB high speed LDO."]
 pub struct PDEN_LDOUSBHS_R(crate::FieldReader<bool, PDEN_LDOUSBHS_A>);
 impl PDEN_LDOUSBHS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDEN_LDOUSBHS_R(crate::FieldReader::new(bits))
     }
@@ -879,6 +891,7 @@ impl From<PDEN_AUXBIAS_A> for bool {
 #[doc = "Field `PDEN_AUXBIAS` reader - Controls power to auxiliary biasing (AUXBIAS)"]
 pub struct PDEN_AUXBIAS_R(crate::FieldReader<bool, PDEN_AUXBIAS_A>);
 impl PDEN_AUXBIAS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDEN_AUXBIAS_R(crate::FieldReader::new(bits))
     }
@@ -962,6 +975,7 @@ impl From<PDEN_LDOXO32M_A> for bool {
 #[doc = "Field `PDEN_LDOXO32M` reader - Controls power to crystal 32 MHz LDO."]
 pub struct PDEN_LDOXO32M_R(crate::FieldReader<bool, PDEN_LDOXO32M_A>);
 impl PDEN_LDOXO32M_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDEN_LDOXO32M_R(crate::FieldReader::new(bits))
     }
@@ -1045,6 +1059,7 @@ impl From<PDEN_RNG_A> for bool {
 #[doc = "Field `PDEN_RNG` reader - Controls power to all True Random Number Genetaor (TRNG) clock sources."]
 pub struct PDEN_RNG_R(crate::FieldReader<bool, PDEN_RNG_A>);
 impl PDEN_RNG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDEN_RNG_R(crate::FieldReader::new(bits))
     }
@@ -1128,6 +1143,7 @@ impl From<PDEN_PLL0_SSCG_A> for bool {
 #[doc = "Field `PDEN_PLL0_SSCG` reader - Controls power to System PLL (PLL0) Spread Spectrum module."]
 pub struct PDEN_PLL0_SSCG_R(crate::FieldReader<bool, PDEN_PLL0_SSCG_A>);
 impl PDEN_PLL0_SSCG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PDEN_PLL0_SSCG_R(crate::FieldReader::new(bits))
     }
@@ -1338,6 +1354,7 @@ impl W {
         PDEN_PLL0_SSCG_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

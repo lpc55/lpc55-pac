@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CLOCK_CTRL_SPEC>> for R {
+impl From<crate::R<CLOCK_CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CLOCK_CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CLOCK_CTRL_SPEC>> for W {
+impl From<crate::W<CLOCK_CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CLOCK_CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<XTAL32MHZ_FREQM_ENA_A> for bool {
 #[doc = "Field `XTAL32MHZ_FREQM_ENA` reader - Enable XTAL32MHz clock for Frequency Measure module."]
 pub struct XTAL32MHZ_FREQM_ENA_R(crate::FieldReader<bool, XTAL32MHZ_FREQM_ENA_A>);
 impl XTAL32MHZ_FREQM_ENA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         XTAL32MHZ_FREQM_ENA_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<FRO1MHZ_UTICK_ENA_A> for bool {
 #[doc = "Field `FRO1MHZ_UTICK_ENA` reader - Enable FRO 1MHz clock for Frequency Measure module and for UTICK."]
 pub struct FRO1MHZ_UTICK_ENA_R(crate::FieldReader<bool, FRO1MHZ_UTICK_ENA_A>);
 impl FRO1MHZ_UTICK_ENA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRO1MHZ_UTICK_ENA_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<FRO12MHZ_FREQM_ENA_A> for bool {
 #[doc = "Field `FRO12MHZ_FREQM_ENA` reader - Enable FRO 12MHz clock for Frequency Measure module."]
 pub struct FRO12MHZ_FREQM_ENA_R(crate::FieldReader<bool, FRO12MHZ_FREQM_ENA_A>);
 impl FRO12MHZ_FREQM_ENA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRO12MHZ_FREQM_ENA_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<FRO_HF_FREQM_ENA_A> for bool {
 #[doc = "Field `FRO_HF_FREQM_ENA` reader - Enable FRO 96MHz clock for Frequency Measure module."]
 pub struct FRO_HF_FREQM_ENA_R(crate::FieldReader<bool, FRO_HF_FREQM_ENA_A>);
 impl FRO_HF_FREQM_ENA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRO_HF_FREQM_ENA_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<CLKIN_ENA_A> for bool {
 #[doc = "Field `CLKIN_ENA` reader - Enable clock_in clock for clock module."]
 pub struct CLKIN_ENA_R(crate::FieldReader<bool, CLKIN_ENA_A>);
 impl CLKIN_ENA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CLKIN_ENA_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<FRO1MHZ_CLK_ENA_A> for bool {
 #[doc = "Field `FRO1MHZ_CLK_ENA` reader - Enable FRO 1MHz clock for clock muxing in clock gen."]
 pub struct FRO1MHZ_CLK_ENA_R(crate::FieldReader<bool, FRO1MHZ_CLK_ENA_A>);
 impl FRO1MHZ_CLK_ENA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRO1MHZ_CLK_ENA_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<ANA_FRO12M_CLK_ENA_A> for bool {
 #[doc = "Field `ANA_FRO12M_CLK_ENA` reader - Enable FRO 12MHz clock for analog control of the FRO 192MHz."]
 pub struct ANA_FRO12M_CLK_ENA_R(crate::FieldReader<bool, ANA_FRO12M_CLK_ENA_A>);
 impl ANA_FRO12M_CLK_ENA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ANA_FRO12M_CLK_ENA_R(crate::FieldReader::new(bits))
     }
@@ -630,6 +639,7 @@ impl From<XO_CAL_CLK_ENA_A> for bool {
 #[doc = "Field `XO_CAL_CLK_ENA` reader - Enable clock for cristal oscilator calibration."]
 pub struct XO_CAL_CLK_ENA_R(crate::FieldReader<bool, XO_CAL_CLK_ENA_A>);
 impl XO_CAL_CLK_ENA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         XO_CAL_CLK_ENA_R(crate::FieldReader::new(bits))
     }
@@ -713,6 +723,7 @@ impl From<PLU_DEGLITCH_CLK_ENA_A> for bool {
 #[doc = "Field `PLU_DEGLITCH_CLK_ENA` reader - Enable clocks FRO_1MHz and FRO_12MHz for PLU deglitching."]
 pub struct PLU_DEGLITCH_CLK_ENA_R(crate::FieldReader<bool, PLU_DEGLITCH_CLK_ENA_A>);
 impl PLU_DEGLITCH_CLK_ENA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PLU_DEGLITCH_CLK_ENA_R(crate::FieldReader::new(bits))
     }
@@ -873,6 +884,7 @@ impl W {
         PLU_DEGLITCH_CLK_ENA_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

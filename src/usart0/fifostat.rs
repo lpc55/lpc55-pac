@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FIFOSTAT_SPEC>> for R {
+impl From<crate::R<FIFOSTAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FIFOSTAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FIFOSTAT_SPEC>> for W {
+impl From<crate::W<FIFOSTAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FIFOSTAT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<FIFOSTAT_SPEC>> for W {
 #[doc = "Field `TXERR` reader - TX FIFO error. Will be set if a transmit FIFO error occurs. This could be an overflow caused by pushing data into a full FIFO, or by an underflow if the FIFO is empty when data is needed. Cleared by writing a 1 to this bit."]
 pub struct TXERR_R(crate::FieldReader<bool, bool>);
 impl TXERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXERR_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> TXERR_W<'a> {
 #[doc = "Field `RXERR` reader - RX FIFO error. Will be set if a receive FIFO overflow occurs, caused by software or DMA not emptying the FIFO fast enough. Cleared by writing a 1 to this bit."]
 pub struct RXERR_R(crate::FieldReader<bool, bool>);
 impl RXERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXERR_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> RXERR_W<'a> {
 #[doc = "Field `PERINT` reader - Peripheral interrupt. When 1, this indicates that the peripheral function has asserted an interrupt. The details can be found by reading the peripheral's STAT register."]
 pub struct PERINT_R(crate::FieldReader<bool, bool>);
 impl PERINT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PERINT_R(crate::FieldReader::new(bits))
     }
@@ -121,6 +126,7 @@ impl core::ops::Deref for PERINT_R {
 #[doc = "Field `TXEMPTY` reader - Transmit FIFO empty. When 1, the transmit FIFO is empty. The peripheral may still be processing the last piece of data."]
 pub struct TXEMPTY_R(crate::FieldReader<bool, bool>);
 impl TXEMPTY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXEMPTY_R(crate::FieldReader::new(bits))
     }
@@ -135,6 +141,7 @@ impl core::ops::Deref for TXEMPTY_R {
 #[doc = "Field `TXNOTFULL` reader - Transmit FIFO not full. When 1, the transmit FIFO is not full, so more data can be written. When 0, the transmit FIFO is full and another write would cause it to overflow."]
 pub struct TXNOTFULL_R(crate::FieldReader<bool, bool>);
 impl TXNOTFULL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXNOTFULL_R(crate::FieldReader::new(bits))
     }
@@ -149,6 +156,7 @@ impl core::ops::Deref for TXNOTFULL_R {
 #[doc = "Field `RXNOTEMPTY` reader - Receive FIFO not empty. When 1, the receive FIFO is not empty, so data can be read. When 0, the receive FIFO is empty."]
 pub struct RXNOTEMPTY_R(crate::FieldReader<bool, bool>);
 impl RXNOTEMPTY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXNOTEMPTY_R(crate::FieldReader::new(bits))
     }
@@ -163,6 +171,7 @@ impl core::ops::Deref for RXNOTEMPTY_R {
 #[doc = "Field `RXFULL` reader - Receive FIFO full. When 1, the receive FIFO is full. Data needs to be read out to prevent the peripheral from causing an overflow."]
 pub struct RXFULL_R(crate::FieldReader<bool, bool>);
 impl RXFULL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXFULL_R(crate::FieldReader::new(bits))
     }
@@ -177,6 +186,7 @@ impl core::ops::Deref for RXFULL_R {
 #[doc = "Field `TXLVL` reader - Transmit FIFO current level. A 0 means the TX FIFO is currently empty, and the TXEMPTY and TXNOTFULL flags will be 1. Other values tell how much data is actually in the TX FIFO at the point where the read occurs. If the TX FIFO is full, the TXEMPTY and TXNOTFULL flags will be 0."]
 pub struct TXLVL_R(crate::FieldReader<u8, u8>);
 impl TXLVL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TXLVL_R(crate::FieldReader::new(bits))
     }
@@ -191,6 +201,7 @@ impl core::ops::Deref for TXLVL_R {
 #[doc = "Field `RXLVL` reader - Receive FIFO current level. A 0 means the RX FIFO is currently empty, and the RXFULL and RXNOTEMPTY flags will be 0. Other values tell how much data is actually in the RX FIFO at the point where the read occurs. If the RX FIFO is full, the RXFULL and RXNOTEMPTY flags will be 1."]
 pub struct RXLVL_R(crate::FieldReader<u8, u8>);
 impl RXLVL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RXLVL_R(crate::FieldReader::new(bits))
     }
@@ -261,6 +272,7 @@ impl W {
         RXERR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

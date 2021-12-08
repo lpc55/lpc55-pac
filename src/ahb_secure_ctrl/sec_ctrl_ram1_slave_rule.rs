@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CTRL_RAM1_SLAVE_RULE_SPEC>> for R {
+impl From<crate::R<SEC_CTRL_RAM1_SLAVE_RULE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CTRL_RAM1_SLAVE_RULE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CTRL_RAM1_SLAVE_RULE_SPEC>> for W {
+impl From<crate::W<SEC_CTRL_RAM1_SLAVE_RULE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CTRL_RAM1_SLAVE_RULE_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<RAM1_RULE_A> for u8 {
 #[doc = "Field `RAM1_RULE` reader - Security access rules for the whole RAM1 : 0x2001_0000 - 0x2001_FFFF\" name=\"0"]
 pub struct RAM1_RULE_R(crate::FieldReader<u8, RAM1_RULE_A>);
 impl RAM1_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RAM1_RULE_R(crate::FieldReader::new(bits))
     }
@@ -147,6 +150,7 @@ impl W {
         RAM1_RULE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FIFORD48H_SPEC>> for R {
+impl From<crate::R<FIFORD48H_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FIFORD48H_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<FIFORD48H_SPEC>> for R {
 #[doc = "Field `RXDATA` reader - Received data from the FIFO. Whether this register is used and the number of bits used depends on configuration details."]
 pub struct RXDATA_R(crate::FieldReader<u32, u32>);
 impl RXDATA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         RXDATA_R(crate::FieldReader::new(bits))
     }

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CTRL_SPEC>> for R {
+impl From<crate::R<CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CTRL_SPEC>> for W {
+impl From<crate::W<CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<SWRESET_A> for bool {
 #[doc = "Field `SWRESET` reader - Software reset control"]
 pub struct SWRESET_R(crate::FieldReader<bool, SWRESET_A>);
 impl SWRESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWRESET_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<ALARM1HZ_A> for bool {
 #[doc = "Field `ALARM1HZ` reader - RTC 1 Hz timer alarm flag status."]
 pub struct ALARM1HZ_R(crate::FieldReader<bool, ALARM1HZ_A>);
 impl ALARM1HZ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ALARM1HZ_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<WAKE1KHZ_A> for bool {
 #[doc = "Field `WAKE1KHZ` reader - RTC 1 kHz timer wake-up flag status."]
 pub struct WAKE1KHZ_R(crate::FieldReader<bool, WAKE1KHZ_A>);
 impl WAKE1KHZ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAKE1KHZ_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<ALARMDPD_EN_A> for bool {
 #[doc = "Field `ALARMDPD_EN` reader - RTC 1 Hz timer alarm enable for Deep power-down."]
 pub struct ALARMDPD_EN_R(crate::FieldReader<bool, ALARMDPD_EN_A>);
 impl ALARMDPD_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ALARMDPD_EN_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<WAKEDPD_EN_A> for bool {
 #[doc = "Field `WAKEDPD_EN` reader - RTC 1 kHz timer wake-up enable for Deep power-down."]
 pub struct WAKEDPD_EN_R(crate::FieldReader<bool, WAKEDPD_EN_A>);
 impl WAKEDPD_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAKEDPD_EN_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<RTC1KHZ_EN_A> for bool {
 #[doc = "Field `RTC1KHZ_EN` reader - RTC 1 kHz clock enable. This bit can be set to 0 to conserve power if the 1 kHz timer is not used. This bit has no effect when the RTC is disabled (bit 7 of this register is 0)."]
 pub struct RTC1KHZ_EN_R(crate::FieldReader<bool, RTC1KHZ_EN_A>);
 impl RTC1KHZ_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RTC1KHZ_EN_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<RTC_EN_A> for bool {
 #[doc = "Field `RTC_EN` reader - RTC enable."]
 pub struct RTC_EN_R(crate::FieldReader<bool, RTC_EN_A>);
 impl RTC_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RTC_EN_R(crate::FieldReader::new(bits))
     }
@@ -630,6 +639,7 @@ impl From<RTC_OSC_PD_A> for bool {
 #[doc = "Field `RTC_OSC_PD` reader - RTC oscillator power-down control."]
 pub struct RTC_OSC_PD_R(crate::FieldReader<bool, RTC_OSC_PD_A>);
 impl RTC_OSC_PD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RTC_OSC_PD_R(crate::FieldReader::new(bits))
     }
@@ -713,6 +723,7 @@ impl From<RTC_OSC_BYPASS_A> for bool {
 #[doc = "Field `RTC_OSC_BYPASS` reader - RTC oscillator bypass control."]
 pub struct RTC_OSC_BYPASS_R(crate::FieldReader<bool, RTC_OSC_BYPASS_A>);
 impl RTC_OSC_BYPASS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RTC_OSC_BYPASS_R(crate::FieldReader::new(bits))
     }
@@ -796,6 +807,7 @@ impl From<RTC_SUBSEC_ENA_A> for bool {
 #[doc = "Field `RTC_SUBSEC_ENA` reader - RTC Sub-second counter control."]
 pub struct RTC_SUBSEC_ENA_R(crate::FieldReader<bool, RTC_SUBSEC_ENA_A>);
 impl RTC_SUBSEC_ENA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RTC_SUBSEC_ENA_R(crate::FieldReader::new(bits))
     }
@@ -966,6 +978,7 @@ impl W {
         RTC_SUBSEC_ENA_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<LOCK_SPEC>> for R {
+impl From<crate::R<LOCK_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<LOCK_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<LOCK_SPEC>> for W {
+impl From<crate::W<LOCK_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<LOCK_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<LOCK_A> for bool {
 #[doc = "Field `LOCK` reader - Reads back with security level locked to, or 0. Writes as 0 to unlock, 1 to lock."]
 pub struct LOCK_R(crate::FieldReader<bool, LOCK_A>);
 impl LOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCK_R(crate::FieldReader::new(bits))
     }
@@ -131,6 +134,7 @@ impl From<KEY_A> for u16 {
 #[doc = "Field `KEY` reader - Must be written as 0x73D to change the register."]
 pub struct KEY_R(crate::FieldReader<u16, KEY_A>);
 impl KEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         KEY_R(crate::FieldReader::new(bits))
     }
@@ -201,6 +205,7 @@ impl W {
         KEY_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

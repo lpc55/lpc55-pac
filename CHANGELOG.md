@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+
+- fix addressBlock usage
+- update svd2rust to 0.20
+- `SVDTOOLS` env value for specifying patching tool
+
 ## [v0.4.0] - 2021-05-02
 
 - update to svd2rust

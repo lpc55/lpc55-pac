@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PLL0SSCG1_SPEC>> for R {
+impl From<crate::R<PLL0SSCG1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PLL0SSCG1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PLL0SSCG1_SPEC>> for W {
+impl From<crate::W<PLL0SSCG1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PLL0SSCG1_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<PLL0SSCG1_SPEC>> for W {
 #[doc = "Field `MD_MBS` reader - input word of the wrapper bit 32."]
 pub struct MD_MBS_R(crate::FieldReader<bool, bool>);
 impl MD_MBS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MD_MBS_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> MD_MBS_W<'a> {
 #[doc = "Field `MD_REQ` reader - md change request."]
 pub struct MD_REQ_R(crate::FieldReader<bool, bool>);
 impl MD_REQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MD_REQ_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> MD_REQ_W<'a> {
 = 000 => Nss=512 (fm ~ 3."]
 pub struct MF_R(crate::FieldReader<u8, u8>);
 impl MF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MF_R(crate::FieldReader::new(bits))
     }
@@ -138,6 +143,7 @@ impl<'a> MF_W<'a> {
 = 010 => kss ~ 1."]
 pub struct MR_R(crate::FieldReader<u8, u8>);
 impl MR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MR_R(crate::FieldReader::new(bits))
     }
@@ -167,6 +173,7 @@ impl<'a> MR_W<'a> {
 #[doc = "Field `MC` reader - modulation waveform control Compensation for low pass filtering of the PLL to get a triangular modulation at the output of the PLL, giving a flat frequency spectrum."]
 pub struct MC_R(crate::FieldReader<u8, u8>);
 impl MC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MC_R(crate::FieldReader::new(bits))
     }
@@ -193,6 +200,7 @@ impl<'a> MC_W<'a> {
 #[doc = "Field `MDIV_EXT` reader - to select an external mdiv value."]
 pub struct MDIV_EXT_R(crate::FieldReader<u16, u16>);
 impl MDIV_EXT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         MDIV_EXT_R(crate::FieldReader::new(bits))
     }
@@ -219,6 +227,7 @@ impl<'a> MDIV_EXT_W<'a> {
 #[doc = "Field `MREQ` reader - to select an external mreq value."]
 pub struct MREQ_R(crate::FieldReader<bool, bool>);
 impl MREQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MREQ_R(crate::FieldReader::new(bits))
     }
@@ -255,6 +264,7 @@ impl<'a> MREQ_W<'a> {
 #[doc = "Field `DITHER` reader - dithering between two modulation frequencies in a random way or in a pseudo random way (white noise), in order to decrease the probability that the modulated waveform will occur with the same phase on a particular point on the screen."]
 pub struct DITHER_R(crate::FieldReader<bool, bool>);
 impl DITHER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DITHER_R(crate::FieldReader::new(bits))
     }
@@ -291,6 +301,7 @@ impl<'a> DITHER_W<'a> {
 #[doc = "Field `SEL_EXT` reader - to select mdiv_ext and mreq_ext sel_ext = 0: mdiv ~ md\\[32:0\\], mreq = 1 sel_ext = 1 : mdiv = mdiv_ext, mreq = mreq_ext."]
 pub struct SEL_EXT_R(crate::FieldReader<bool, bool>);
 impl SEL_EXT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEL_EXT_R(crate::FieldReader::new(bits))
     }
@@ -426,6 +437,7 @@ impl W {
         SEL_EXT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

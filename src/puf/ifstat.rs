@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<IFSTAT_SPEC>> for R {
+impl From<crate::R<IFSTAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<IFSTAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<IFSTAT_SPEC>> for W {
+impl From<crate::W<IFSTAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<IFSTAT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<IFSTAT_SPEC>> for W {
 #[doc = "Field `ERROR` reader - Indicates that an APB error has occurred,Writing logic1 clears the if_error bit"]
 pub struct ERROR_R(crate::FieldReader<bool, bool>);
 impl ERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERROR_R(crate::FieldReader::new(bits))
     }
@@ -82,6 +85,7 @@ impl W {
         ERROR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

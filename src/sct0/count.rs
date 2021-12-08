@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<COUNT_SPEC>> for R {
+impl From<crate::R<COUNT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<COUNT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<COUNT_SPEC>> for W {
+impl From<crate::W<COUNT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<COUNT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<COUNT_SPEC>> for W {
 #[doc = "Field `CTR_L` reader - When UNIFY = 0, read or write the 16-bit L counter value. When UNIFY = 1, read or write the lower 16 bits of the 32-bit unified counter."]
 pub struct CTR_L_R(crate::FieldReader<u16, u16>);
 impl CTR_L_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         CTR_L_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> CTR_L_W<'a> {
 #[doc = "Field `CTR_H` reader - When UNIFY = 0, read or write the 16-bit H counter value. When UNIFY = 1, read or write the upper 16 bits of the 32-bit unified counter."]
 pub struct CTR_H_R(crate::FieldReader<u16, u16>);
 impl CTR_H_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         CTR_H_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl W {
         CTR_H_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

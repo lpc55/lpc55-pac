@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SUBSEC_SPEC>> for R {
+impl From<crate::R<SUBSEC_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SUBSEC_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SUBSEC_SPEC>> for W {
+impl From<crate::W<SUBSEC_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SUBSEC_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<SUBSEC_SPEC>> for W {
 #[doc = "Field `SUBSEC` reader - A read reflects the current value of the 32KHz sub-second counter. This counter is cleared whenever the SUBSEC_ENA bit in the RTC_CONTROL register is low. Up-counting at a 32KHz rate commences at the start of the next one-second interval after the SUBSEC_ENA bit is set. This counter must be re-enabled after exiting deep power-down mode or after the main RTC module is disabled and re-enabled. On modules not equipped with a sub-second counter, this register will read-back as all zeroes."]
 pub struct SUBSEC_R(crate::FieldReader<u16, u16>);
 impl SUBSEC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         SUBSEC_R(crate::FieldReader::new(bits))
     }
@@ -55,6 +58,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

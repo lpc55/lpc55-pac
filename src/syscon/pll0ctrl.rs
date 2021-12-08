@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PLL0CTRL_SPEC>> for R {
+impl From<crate::R<PLL0CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PLL0CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PLL0CTRL_SPEC>> for W {
+impl From<crate::W<PLL0CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PLL0CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<PLL0CTRL_SPEC>> for W {
 #[doc = "Field `SELR` reader - Bandwidth select R value."]
 pub struct SELR_R(crate::FieldReader<u8, u8>);
 impl SELR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SELR_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> SELR_W<'a> {
 #[doc = "Field `SELI` reader - Bandwidth select I value."]
 pub struct SELI_R(crate::FieldReader<u8, u8>);
 impl SELI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SELI_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> SELI_W<'a> {
 #[doc = "Field `SELP` reader - Bandwidth select P value."]
 pub struct SELP_R(crate::FieldReader<u8, u8>);
 impl SELP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SELP_R(crate::FieldReader::new(bits))
     }
@@ -127,6 +132,7 @@ impl From<BYPASSPLL_A> for bool {
 #[doc = "Field `BYPASSPLL` reader - Bypass PLL input clock is sent directly to the PLL output (default)."]
 pub struct BYPASSPLL_R(crate::FieldReader<bool, BYPASSPLL_A>);
 impl BYPASSPLL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BYPASSPLL_R(crate::FieldReader::new(bits))
     }
@@ -210,6 +216,7 @@ impl From<BYPASSPOSTDIV2_A> for bool {
 #[doc = "Field `BYPASSPOSTDIV2` reader - bypass of the divide-by-2 divider in the post-divider."]
 pub struct BYPASSPOSTDIV2_R(crate::FieldReader<bool, BYPASSPOSTDIV2_A>);
 impl BYPASSPOSTDIV2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BYPASSPOSTDIV2_R(crate::FieldReader::new(bits))
     }
@@ -279,6 +286,7 @@ impl<'a> BYPASSPOSTDIV2_W<'a> {
 #[doc = "Field `LIMUPOFF` reader - limup_off = 1 in spread spectrum and fractional PLL applications."]
 pub struct LIMUPOFF_R(crate::FieldReader<bool, bool>);
 impl LIMUPOFF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LIMUPOFF_R(crate::FieldReader::new(bits))
     }
@@ -329,6 +337,7 @@ impl From<BWDIRECT_A> for bool {
 #[doc = "Field `BWDIRECT` reader - Control of the bandwidth of the PLL."]
 pub struct BWDIRECT_R(crate::FieldReader<bool, BWDIRECT_A>);
 impl BWDIRECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BWDIRECT_R(crate::FieldReader::new(bits))
     }
@@ -412,6 +421,7 @@ impl From<BYPASSPREDIV_A> for bool {
 #[doc = "Field `BYPASSPREDIV` reader - bypass of the pre-divider."]
 pub struct BYPASSPREDIV_R(crate::FieldReader<bool, BYPASSPREDIV_A>);
 impl BYPASSPREDIV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BYPASSPREDIV_R(crate::FieldReader::new(bits))
     }
@@ -495,6 +505,7 @@ impl From<BYPASSPOSTDIV_A> for bool {
 #[doc = "Field `BYPASSPOSTDIV` reader - bypass of the post-divider."]
 pub struct BYPASSPOSTDIV_R(crate::FieldReader<bool, BYPASSPOSTDIV_A>);
 impl BYPASSPOSTDIV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BYPASSPOSTDIV_R(crate::FieldReader::new(bits))
     }
@@ -578,6 +589,7 @@ impl From<CLKEN_A> for bool {
 #[doc = "Field `CLKEN` reader - enable the output clock."]
 pub struct CLKEN_R(crate::FieldReader<bool, CLKEN_A>);
 impl CLKEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CLKEN_R(crate::FieldReader::new(bits))
     }
@@ -661,6 +673,7 @@ impl From<FRMEN_A> for bool {
 #[doc = "Field `FRMEN` reader - free running mode."]
 pub struct FRMEN_R(crate::FieldReader<bool, FRMEN_A>);
 impl FRMEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRMEN_R(crate::FieldReader::new(bits))
     }
@@ -730,6 +743,7 @@ impl<'a> FRMEN_W<'a> {
 #[doc = "Field `FRMCLKSTABLE` reader - free running mode clockstable: Warning: Only make frm_clockstable =1 after the PLL output frequency is stable."]
 pub struct FRMCLKSTABLE_R(crate::FieldReader<bool, bool>);
 impl FRMCLKSTABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRMCLKSTABLE_R(crate::FieldReader::new(bits))
     }
@@ -780,6 +794,7 @@ impl From<SKEWEN_A> for bool {
 #[doc = "Field `SKEWEN` reader - skew mode."]
 pub struct SKEWEN_R(crate::FieldReader<bool, SKEWEN_A>);
 impl SKEWEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SKEWEN_R(crate::FieldReader::new(bits))
     }
@@ -980,6 +995,7 @@ impl W {
         SKEWEN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

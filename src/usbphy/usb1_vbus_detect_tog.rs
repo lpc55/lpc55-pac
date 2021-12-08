@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<USB1_VBUS_DETECT_TOG_SPEC>> for R {
+impl From<crate::R<USB1_VBUS_DETECT_TOG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<USB1_VBUS_DETECT_TOG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<USB1_VBUS_DETECT_TOG_SPEC>> for W {
+impl From<crate::W<USB1_VBUS_DETECT_TOG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<USB1_VBUS_DETECT_TOG_SPEC>) -> Self {
         W(writer)
     }
@@ -62,6 +64,7 @@ impl From<VBUSVALID_THRESH_A> for u8 {
 #[doc = "Field `VBUSVALID_THRESH` reader - Sets the threshold for the VBUSVALID comparator"]
 pub struct VBUSVALID_THRESH_R(crate::FieldReader<u8, VBUSVALID_THRESH_A>);
 impl VBUSVALID_THRESH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         VBUSVALID_THRESH_R(crate::FieldReader::new(bits))
     }
@@ -202,6 +205,7 @@ impl From<VBUS_OVERRIDE_EN_A> for bool {
 #[doc = "Field `VBUS_OVERRIDE_EN` reader - VBUS detect signal override enable"]
 pub struct VBUS_OVERRIDE_EN_R(crate::FieldReader<bool, VBUS_OVERRIDE_EN_A>);
 impl VBUS_OVERRIDE_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VBUS_OVERRIDE_EN_R(crate::FieldReader::new(bits))
     }
@@ -273,6 +277,7 @@ if USB_VBUS_DETECT\\[3\\]
 is set to value 1'b1"]
 pub struct SESSEND_OVERRIDE_R(crate::FieldReader<bool, bool>);
 impl SESSEND_OVERRIDE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SESSEND_OVERRIDE_R(crate::FieldReader::new(bits))
     }
@@ -313,6 +318,7 @@ if USB_VBUS_DETECT\\[3\\]
 is set to value 1'b1"]
 pub struct BVALID_OVERRIDE_R(crate::FieldReader<bool, bool>);
 impl BVALID_OVERRIDE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BVALID_OVERRIDE_R(crate::FieldReader::new(bits))
     }
@@ -353,6 +359,7 @@ if USB_VBUS_DETECT\\[3\\]
 is set to value 1'b1"]
 pub struct AVALID_OVERRIDE_R(crate::FieldReader<bool, bool>);
 impl AVALID_OVERRIDE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AVALID_OVERRIDE_R(crate::FieldReader::new(bits))
     }
@@ -392,6 +399,7 @@ impl<'a> AVALID_OVERRIDE_W<'a> {
 is set to 1'b1"]
 pub struct VBUSVALID_OVERRIDE_R(crate::FieldReader<bool, bool>);
 impl VBUSVALID_OVERRIDE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VBUSVALID_OVERRIDE_R(crate::FieldReader::new(bits))
     }
@@ -443,6 +451,7 @@ impl From<VBUSVALID_SEL_A> for bool {
 #[doc = "Field `VBUSVALID_SEL` reader - Selects the source of the VBUS_VALID signal reported to the USB controller This is one of the bit fields that selects the source of the VBUS_VALID signal reported to the USB controller"]
 pub struct VBUSVALID_SEL_R(crate::FieldReader<bool, VBUSVALID_SEL_A>);
 impl VBUSVALID_SEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VBUSVALID_SEL_R(crate::FieldReader::new(bits))
     }
@@ -529,6 +538,7 @@ impl From<VBUS_SOURCE_SEL_A> for u8 {
 #[doc = "Field `VBUS_SOURCE_SEL` reader - Selects the source of the VBUS_VALID signal reported to the USB controller This is one of the bit fields that selects the source of the VBUS_VALID signal reported to the USB controller"]
 pub struct VBUS_SOURCE_SEL_R(crate::FieldReader<u8, VBUS_SOURCE_SEL_A>);
 impl VBUS_SOURCE_SEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         VBUS_SOURCE_SEL_R(crate::FieldReader::new(bits))
     }
@@ -600,6 +610,7 @@ impl<'a> VBUS_SOURCE_SEL_W<'a> {
 #[doc = "Field `ID_OVERRIDE_EN` reader - Enable ID override using the register field. This bit is only used if EXT_ID_OVERRIDE_EN = 1'b0."]
 pub struct ID_OVERRIDE_EN_R(crate::FieldReader<bool, bool>);
 impl ID_OVERRIDE_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ID_OVERRIDE_EN_R(crate::FieldReader::new(bits))
     }
@@ -636,6 +647,7 @@ impl<'a> ID_OVERRIDE_EN_W<'a> {
 #[doc = "Field `ID_OVERRIDE` reader - ID override value."]
 pub struct ID_OVERRIDE_R(crate::FieldReader<bool, bool>);
 impl ID_OVERRIDE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ID_OVERRIDE_R(crate::FieldReader::new(bits))
     }
@@ -686,6 +698,7 @@ impl From<EXT_ID_OVERRIDE_EN_A> for bool {
 #[doc = "Field `EXT_ID_OVERRIDE_EN` reader - Enable ID override using the pin muxed value."]
 pub struct EXT_ID_OVERRIDE_EN_R(crate::FieldReader<bool, EXT_ID_OVERRIDE_EN_A>);
 impl EXT_ID_OVERRIDE_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EXT_ID_OVERRIDE_EN_R(crate::FieldReader::new(bits))
     }
@@ -769,6 +782,7 @@ impl From<EXT_VBUS_OVERRIDE_EN_A> for bool {
 #[doc = "Field `EXT_VBUS_OVERRIDE_EN` reader - Enable VBUS override using the pin muxed value."]
 pub struct EXT_VBUS_OVERRIDE_EN_R(crate::FieldReader<bool, EXT_VBUS_OVERRIDE_EN_A>);
 impl EXT_VBUS_OVERRIDE_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EXT_VBUS_OVERRIDE_EN_R(crate::FieldReader::new(bits))
     }
@@ -854,6 +868,7 @@ impl From<VBUSVALID_TO_SESSVALID_A> for bool {
 between the VBUS_VALID comparator and the Session Valid comparator"]
 pub struct VBUSVALID_TO_SESSVALID_R(crate::FieldReader<bool, VBUSVALID_TO_SESSVALID_A>);
 impl VBUSVALID_TO_SESSVALID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VBUSVALID_TO_SESSVALID_R(crate::FieldReader::new(bits))
     }
@@ -924,6 +939,7 @@ impl<'a> VBUSVALID_TO_SESSVALID_W<'a> {
 #[doc = "Field `VBUSVALID_5VDETECT` reader - no description available"]
 pub struct VBUSVALID_5VDETECT_R(crate::FieldReader<bool, bool>);
 impl VBUSVALID_5VDETECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VBUSVALID_5VDETECT_R(crate::FieldReader::new(bits))
     }
@@ -975,6 +991,7 @@ impl From<PWRUP_CMPS_A> for u8 {
 #[doc = "Field `PWRUP_CMPS` reader - Enables the VBUS_VALID comparator Powers up the comparator used for the VBUS_VALID detector"]
 pub struct PWRUP_CMPS_R(crate::FieldReader<u8, PWRUP_CMPS_A>);
 impl PWRUP_CMPS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PWRUP_CMPS_R(crate::FieldReader::new(bits))
     }
@@ -1049,6 +1066,7 @@ impl From<DISCHARGE_VBUS_A> for bool {
 #[doc = "Field `DISCHARGE_VBUS` reader - Controls VBUS discharge resistor This bit field controls a nominal 22kohm resistor between the USB1_VBUS pin and ground"]
 pub struct DISCHARGE_VBUS_R(crate::FieldReader<bool, DISCHARGE_VBUS_A>);
 impl DISCHARGE_VBUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DISCHARGE_VBUS_R(crate::FieldReader::new(bits))
     }
@@ -1295,6 +1313,7 @@ between the VBUS_VALID comparator and the Session Valid comparator"]
         DISCHARGE_VBUS_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

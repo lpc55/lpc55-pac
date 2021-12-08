@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CTRL_FLASH_ROM_SLAVE_RULE_SPEC>> for R {
+impl From<crate::R<SEC_CTRL_FLASH_ROM_SLAVE_RULE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CTRL_FLASH_ROM_SLAVE_RULE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CTRL_FLASH_ROM_SLAVE_RULE_SPEC>> for W {
+impl From<crate::W<SEC_CTRL_FLASH_ROM_SLAVE_RULE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CTRL_FLASH_ROM_SLAVE_RULE_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<FLASH_RULE_A> for u8 {
 #[doc = "Field `FLASH_RULE` reader - Security access rules for the whole FLASH : 0x0000_0000 - 0x0009_FFFF"]
 pub struct FLASH_RULE_R(crate::FieldReader<u8, FLASH_RULE_A>);
 impl FLASH_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FLASH_RULE_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<ROM_RULE_A> for u8 {
 #[doc = "Field `ROM_RULE` reader - Security access rules for the whole ROM : 0x0300_0000 - 0x0301_FFFF"]
 pub struct ROM_RULE_R(crate::FieldReader<u8, ROM_RULE_A>);
 impl ROM_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ROM_RULE_R(crate::FieldReader::new(bits))
     }
@@ -258,6 +262,7 @@ impl W {
         ROM_RULE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

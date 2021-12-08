@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CTRL_AHB_PORT9_SLAVE0_RULE_SPEC>> for R {
+impl From<crate::R<SEC_CTRL_AHB_PORT9_SLAVE0_RULE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CTRL_AHB_PORT9_SLAVE0_RULE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CTRL_AHB_PORT9_SLAVE0_RULE_SPEC>> for W {
+impl From<crate::W<SEC_CTRL_AHB_PORT9_SLAVE0_RULE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CTRL_AHB_PORT9_SLAVE0_RULE_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<USB_HS_DEV_RULE_A> for u8 {
 #[doc = "Field `USB_HS_DEV_RULE` reader - USB high Speed device registers"]
 pub struct USB_HS_DEV_RULE_R(crate::FieldReader<u8, USB_HS_DEV_RULE_A>);
 impl USB_HS_DEV_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         USB_HS_DEV_RULE_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<CRC_RULE_A> for u8 {
 #[doc = "Field `CRC_RULE` reader - CRC engine"]
 pub struct CRC_RULE_R(crate::FieldReader<u8, CRC_RULE_A>);
 impl CRC_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CRC_RULE_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +260,7 @@ impl From<FLEXCOMM5_RULE_A> for u8 {
 #[doc = "Field `FLEXCOMM5_RULE` reader - Flexcomm interface 5"]
 pub struct FLEXCOMM5_RULE_R(crate::FieldReader<u8, FLEXCOMM5_RULE_A>);
 impl FLEXCOMM5_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FLEXCOMM5_RULE_R(crate::FieldReader::new(bits))
     }
@@ -357,6 +362,7 @@ impl From<FLEXCOMM6_RULE_A> for u8 {
 #[doc = "Field `FLEXCOMM6_RULE` reader - Flexcomm interface 6"]
 pub struct FLEXCOMM6_RULE_R(crate::FieldReader<u8, FLEXCOMM6_RULE_A>);
 impl FLEXCOMM6_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FLEXCOMM6_RULE_R(crate::FieldReader::new(bits))
     }
@@ -480,6 +486,7 @@ impl W {
         FLEXCOMM6_RULE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

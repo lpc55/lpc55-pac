@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CTRL_AHB_PORT10_SLAVE1_RULE_SPEC>> for R {
+impl From<crate::R<SEC_CTRL_AHB_PORT10_SLAVE1_RULE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CTRL_AHB_PORT10_SLAVE1_RULE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CTRL_AHB_PORT10_SLAVE1_RULE_SPEC>> for W {
+impl From<crate::W<SEC_CTRL_AHB_PORT10_SLAVE1_RULE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CTRL_AHB_PORT10_SLAVE1_RULE_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<GPIO1_RULE_A> for u8 {
 #[doc = "Field `GPIO1_RULE` reader - Secure High Speed GPIO"]
 pub struct GPIO1_RULE_R(crate::FieldReader<u8, GPIO1_RULE_A>);
 impl GPIO1_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         GPIO1_RULE_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<AHB_SEC_CTRL_RULE_A> for u8 {
 #[doc = "Field `AHB_SEC_CTRL_RULE` reader - AHB Secure Controller"]
 pub struct AHB_SEC_CTRL_RULE_R(crate::FieldReader<u8, AHB_SEC_CTRL_RULE_A>);
 impl AHB_SEC_CTRL_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AHB_SEC_CTRL_RULE_R(crate::FieldReader::new(bits))
     }
@@ -258,6 +262,7 @@ impl W {
         AHB_SEC_CTRL_RULE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

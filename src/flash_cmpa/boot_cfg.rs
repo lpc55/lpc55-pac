@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<BOOT_CFG_SPEC>> for R {
+impl From<crate::R<BOOT_CFG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<BOOT_CFG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<BOOT_CFG_SPEC>> for W {
+impl From<crate::W<BOOT_CFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<BOOT_CFG_SPEC>) -> Self {
         W(writer)
     }
@@ -56,6 +58,7 @@ impl From<DEFAULT_ISP_MODE_A> for u8 {
 #[doc = "Field `DEFAULT_ISP_MODE` reader - Default ISP mode:"]
 pub struct DEFAULT_ISP_MODE_R(crate::FieldReader<u8, DEFAULT_ISP_MODE_A>);
 impl DEFAULT_ISP_MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DEFAULT_ISP_MODE_R(crate::FieldReader::new(bits))
     }
@@ -166,6 +169,7 @@ impl From<BOOT_SPEED_A> for u8 {
 #[doc = "Field `BOOT_SPEED` reader - Core clock:"]
 pub struct BOOT_SPEED_R(crate::FieldReader<u8, BOOT_SPEED_A>);
 impl BOOT_SPEED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BOOT_SPEED_R(crate::FieldReader::new(bits))
     }
@@ -239,6 +243,7 @@ impl<'a> BOOT_SPEED_W<'a> {
 - Defines GPIO pin"]
 pub struct BOOT_FAILURE_PIN_R(crate::FieldReader<u8, u8>);
 impl BOOT_FAILURE_PIN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BOOT_FAILURE_PIN_R(crate::FieldReader::new(bits))
     }
@@ -302,6 +307,7 @@ impl W {
         BOOT_FAILURE_PIN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

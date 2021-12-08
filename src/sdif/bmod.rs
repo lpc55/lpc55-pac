@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<BMOD_SPEC>> for R {
+impl From<crate::R<BMOD_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<BMOD_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<BMOD_SPEC>> for W {
+impl From<crate::W<BMOD_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<BMOD_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<BMOD_SPEC>> for W {
 #[doc = "Field `SWR` reader - Software Reset."]
 pub struct SWR_R(crate::FieldReader<bool, bool>);
 impl SWR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWR_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> SWR_W<'a> {
 #[doc = "Field `FB` reader - Fixed Burst."]
 pub struct FB_R(crate::FieldReader<bool, bool>);
 impl FB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FB_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> FB_W<'a> {
 #[doc = "Field `DSL` reader - Descriptor Skip Length."]
 pub struct DSL_R(crate::FieldReader<u8, u8>);
 impl DSL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DSL_R(crate::FieldReader::new(bits))
     }
@@ -133,6 +138,7 @@ impl<'a> DSL_W<'a> {
 #[doc = "Field `DE` reader - SD/MMC DMA Enable."]
 pub struct DE_R(crate::FieldReader<bool, bool>);
 impl DE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DE_R(crate::FieldReader::new(bits))
     }
@@ -169,6 +175,7 @@ impl<'a> DE_W<'a> {
 #[doc = "Field `PBL` reader - Programmable Burst Length."]
 pub struct PBL_R(crate::FieldReader<u8, u8>);
 impl PBL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PBL_R(crate::FieldReader::new(bits))
     }
@@ -246,6 +253,7 @@ impl W {
         PBL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

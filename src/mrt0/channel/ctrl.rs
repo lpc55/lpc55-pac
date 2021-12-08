@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CTRL_SPEC>> for R {
+impl From<crate::R<CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CTRL_SPEC>> for W {
+impl From<crate::W<CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<INTEN_A> for bool {
 #[doc = "Field `INTEN` reader - Enable the TIMERn interrupt."]
 pub struct INTEN_R(crate::FieldReader<bool, INTEN_A>);
 impl INTEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INTEN_R(crate::FieldReader::new(bits))
     }
@@ -135,6 +138,7 @@ impl From<MODE_A> for u8 {
 #[doc = "Field `MODE` reader - Selects timer mode."]
 pub struct MODE_R(crate::FieldReader<u8, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }
@@ -227,6 +231,7 @@ impl W {
         MODE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

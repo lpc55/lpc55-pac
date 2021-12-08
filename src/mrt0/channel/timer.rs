@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<TIMER_SPEC>> for R {
+impl From<crate::R<TIMER_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<TIMER_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<TIMER_SPEC>> for R {
 #[doc = "Field `VALUE` reader - Holds the current timer value of the down-counter. The initial value of the TIMERn register is loaded as IVALUE - 1 from the INTVALn register either at the end of the time interval or immediately in the following cases: INTVALn register is updated in the idle state. INTVALn register is updated with LOAD = 1. When the timer is in idle state, reading this bit fields returns -1 (0x00FF FFFF)."]
 pub struct VALUE_R(crate::FieldReader<u32, u32>);
 impl VALUE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         VALUE_R(crate::FieldReader::new(bits))
     }

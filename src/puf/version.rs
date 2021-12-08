@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<VERSION_SPEC>> for R {
+impl From<crate::R<VERSION_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<VERSION_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<VERSION_SPEC>> for R {
 #[doc = "Field `VERSION` reader - Version of the PUF module."]
 pub struct VERSION_R(crate::FieldReader<u32, u32>);
 impl VERSION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         VERSION_R(crate::FieldReader::new(bits))
     }
@@ -30,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Version of the PUF module."]
     #[inline(always)]
     pub fn version(&self) -> VERSION_R {
-        VERSION_R::new((self.bits & 0xffff_ffff) as u32)
+        VERSION_R::new(self.bits as u32)
     }
 }
 #[doc = "PUF version register.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [version](index.html) module"]

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INAFORMAT_SPEC>> for R {
+impl From<crate::R<INAFORMAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INAFORMAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<INAFORMAT_SPEC>> for W {
+impl From<crate::W<INAFORMAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<INAFORMAT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<INAFORMAT_SPEC>> for W {
 #[doc = "Field `ina_formatint` reader - Input A Internal format (00: q15; 01:q31; 10:float)"]
 pub struct INA_FORMATINT_R(crate::FieldReader<u8, u8>);
 impl INA_FORMATINT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         INA_FORMATINT_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> INA_FORMATINT_W<'a> {
 #[doc = "Field `ina_formatext` reader - Input A External format (00: q15; 01:q31; 10:float)"]
 pub struct INA_FORMATEXT_R(crate::FieldReader<u8, u8>);
 impl INA_FORMATEXT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         INA_FORMATEXT_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> INA_FORMATEXT_W<'a> {
 #[doc = "Field `ina_scaler` reader - Input A Scaler value (for scaled 'q31' formats)"]
 pub struct INA_SCALER_R(crate::FieldReader<u8, u8>);
 impl INA_SCALER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         INA_SCALER_R(crate::FieldReader::new(bits))
     }
@@ -144,6 +149,7 @@ impl W {
         INA_SCALER_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

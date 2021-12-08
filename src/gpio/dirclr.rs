@@ -13,7 +13,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<DIRCLR_SPEC>> for W {
+impl From<crate::W<DIRCLR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<DIRCLR_SPEC>) -> Self {
         W(writer)
     }
@@ -26,7 +27,7 @@ impl<'a> DIRCLRP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
+        self.w.bits = value as u32;
         self.w
     }
 }
@@ -37,6 +38,7 @@ impl W {
         DIRCLRP_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

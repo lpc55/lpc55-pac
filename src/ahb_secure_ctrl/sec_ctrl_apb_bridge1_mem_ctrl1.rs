@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CTRL_APB_BRIDGE1_MEM_CTRL1_SPEC>> for R {
+impl From<crate::R<SEC_CTRL_APB_BRIDGE1_MEM_CTRL1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CTRL_APB_BRIDGE1_MEM_CTRL1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CTRL_APB_BRIDGE1_MEM_CTRL1_SPEC>> for W {
+impl From<crate::W<SEC_CTRL_APB_BRIDGE1_MEM_CTRL1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CTRL_APB_BRIDGE1_MEM_CTRL1_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<CTIMER2_RULE_A> for u8 {
 #[doc = "Field `CTIMER2_RULE` reader - Standard counter/Timer 2"]
 pub struct CTIMER2_RULE_R(crate::FieldReader<u8, CTIMER2_RULE_A>);
 impl CTIMER2_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CTIMER2_RULE_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<CTIMER3_RULE_A> for u8 {
 #[doc = "Field `CTIMER3_RULE` reader - Standard counter/Timer 3"]
 pub struct CTIMER3_RULE_R(crate::FieldReader<u8, CTIMER3_RULE_A>);
 impl CTIMER3_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CTIMER3_RULE_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +260,7 @@ impl From<CTIMER4_RULE_A> for u8 {
 #[doc = "Field `CTIMER4_RULE` reader - Standard counter/Timer 4"]
 pub struct CTIMER4_RULE_R(crate::FieldReader<u8, CTIMER4_RULE_A>);
 impl CTIMER4_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CTIMER4_RULE_R(crate::FieldReader::new(bits))
     }
@@ -357,6 +362,7 @@ impl From<RTC_RULE_A> for u8 {
 #[doc = "Field `RTC_RULE` reader - Real Time Counter"]
 pub struct RTC_RULE_R(crate::FieldReader<u8, RTC_RULE_A>);
 impl RTC_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RTC_RULE_R(crate::FieldReader::new(bits))
     }
@@ -458,6 +464,7 @@ impl From<OSEVENT_RULE_A> for u8 {
 #[doc = "Field `OSEVENT_RULE` reader - OS Event Timer"]
 pub struct OSEVENT_RULE_R(crate::FieldReader<u8, OSEVENT_RULE_A>);
 impl OSEVENT_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         OSEVENT_RULE_R(crate::FieldReader::new(bits))
     }
@@ -591,6 +598,7 @@ impl W {
         OSEVENT_RULE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<OSEVENT_CTRL_SPEC>> for R {
+impl From<crate::R<OSEVENT_CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<OSEVENT_CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<OSEVENT_CTRL_SPEC>> for W {
+impl From<crate::W<OSEVENT_CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<OSEVENT_CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<OSEVENT_CTRL_SPEC>> for W {
 #[doc = "Field `OSTIMER_INTRFLAG` reader - This bit is set when a match occurs between the central 42-bits EVTIMER and the value programmed in the match-register pair. This bit is cleared by writing a '1'. Writes to clear this bit are asynchronous. It should be done before a new match value is written into the MATCH_L/H registers."]
 pub struct OSTIMER_INTRFLAG_R(crate::FieldReader<bool, bool>);
 impl OSTIMER_INTRFLAG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OSTIMER_INTRFLAG_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> OSTIMER_INTRFLAG_W<'a> {
 #[doc = "Field `OSTIMER_INTENA` reader - When this bit is '1' an interrupt/wakeup request to the domain processor will be asserted when the OSTIMER_INTR flag is set. When this bit is '0', interrupt/wakeup requests due to the OSTIMER_INTR flag are blocked."]
 pub struct OSTIMER_INTENA_R(crate::FieldReader<bool, bool>);
 impl OSTIMER_INTENA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OSTIMER_INTENA_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> OSTIMER_INTENA_W<'a> {
 #[doc = "Field `MATCH_WR_RDY` reader - This bit will be low when it is safe to write to reload the Match Registers. In typical applications it should not be necessary to test this bit. \\[1\\]"]
 pub struct MATCH_WR_RDY_R(crate::FieldReader<bool, bool>);
 impl MATCH_WR_RDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MATCH_WR_RDY_R(crate::FieldReader::new(bits))
     }
@@ -147,6 +152,7 @@ impl W {
         OSTIMER_INTENA_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

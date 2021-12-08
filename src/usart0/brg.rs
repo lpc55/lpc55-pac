@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<BRG_SPEC>> for R {
+impl From<crate::R<BRG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<BRG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<BRG_SPEC>> for W {
+impl From<crate::W<BRG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<BRG_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<BRG_SPEC>> for W {
 #[doc = "Field `BRGVAL` reader - This value is used to divide the USART input clock to determine the baud rate, based on the input clock from the FRG. 0 = FCLK is used directly by the USART function. 1 = FCLK is divided by 2 before use by the USART function. 2 = FCLK is divided by 3 before use by the USART function. 0xFFFF = FCLK is divided by 65,536 before use by the USART function."]
 pub struct BRGVAL_R(crate::FieldReader<u16, u16>);
 impl BRGVAL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         BRGVAL_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         BRGVAL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

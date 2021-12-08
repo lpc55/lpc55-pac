@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INTSTAT_SPEC>> for R {
+impl From<crate::R<INTSTAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INTSTAT_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<INTSTAT_SPEC>> for R {
 #[doc = "Field `TXIDLE` reader - Transmitter Idle status."]
 pub struct TXIDLE_R(crate::FieldReader<bool, bool>);
 impl TXIDLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXIDLE_R(crate::FieldReader::new(bits))
     }
@@ -29,6 +31,7 @@ impl core::ops::Deref for TXIDLE_R {
 #[doc = "Field `DELTACTS` reader - This bit is set when a change in the state of the CTS input is detected."]
 pub struct DELTACTS_R(crate::FieldReader<bool, bool>);
 impl DELTACTS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DELTACTS_R(crate::FieldReader::new(bits))
     }
@@ -43,6 +46,7 @@ impl core::ops::Deref for DELTACTS_R {
 #[doc = "Field `TXDISINT` reader - Transmitter Disabled Interrupt flag."]
 pub struct TXDISINT_R(crate::FieldReader<bool, bool>);
 impl TXDISINT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXDISINT_R(crate::FieldReader::new(bits))
     }
@@ -57,6 +61,7 @@ impl core::ops::Deref for TXDISINT_R {
 #[doc = "Field `DELTARXBRK` reader - This bit is set when a change in the state of receiver break detection occurs."]
 pub struct DELTARXBRK_R(crate::FieldReader<bool, bool>);
 impl DELTARXBRK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DELTARXBRK_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +76,7 @@ impl core::ops::Deref for DELTARXBRK_R {
 #[doc = "Field `START` reader - This bit is set when a start is detected on the receiver input."]
 pub struct START_R(crate::FieldReader<bool, bool>);
 impl START_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         START_R(crate::FieldReader::new(bits))
     }
@@ -85,6 +91,7 @@ impl core::ops::Deref for START_R {
 #[doc = "Field `FRAMERRINT` reader - Framing Error interrupt flag."]
 pub struct FRAMERRINT_R(crate::FieldReader<bool, bool>);
 impl FRAMERRINT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRAMERRINT_R(crate::FieldReader::new(bits))
     }
@@ -99,6 +106,7 @@ impl core::ops::Deref for FRAMERRINT_R {
 #[doc = "Field `PARITYERRINT` reader - Parity Error interrupt flag."]
 pub struct PARITYERRINT_R(crate::FieldReader<bool, bool>);
 impl PARITYERRINT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PARITYERRINT_R(crate::FieldReader::new(bits))
     }
@@ -113,6 +121,7 @@ impl core::ops::Deref for PARITYERRINT_R {
 #[doc = "Field `RXNOISEINT` reader - Received Noise interrupt flag."]
 pub struct RXNOISEINT_R(crate::FieldReader<bool, bool>);
 impl RXNOISEINT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXNOISEINT_R(crate::FieldReader::new(bits))
     }
@@ -127,6 +136,7 @@ impl core::ops::Deref for RXNOISEINT_R {
 #[doc = "Field `ABERRINT` reader - Auto baud Error Interrupt flag."]
 pub struct ABERRINT_R(crate::FieldReader<bool, bool>);
 impl ABERRINT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ABERRINT_R(crate::FieldReader::new(bits))
     }

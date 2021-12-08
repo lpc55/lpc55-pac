@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CTRL_SET_SPEC>> for R {
+impl From<crate::R<CTRL_SET_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CTRL_SET_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CTRL_SET_SPEC>> for W {
+impl From<crate::W<CTRL_SET_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CTRL_SET_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CTRL_SET_SPEC>> for W {
 #[doc = "Field `ENHOSTDISCONDETECT` reader - For host mode, enables high-speed disconnect detector"]
 pub struct ENHOSTDISCONDETECT_R(crate::FieldReader<bool, bool>);
 impl ENHOSTDISCONDETECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENHOSTDISCONDETECT_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> ENHOSTDISCONDETECT_W<'a> {
 #[doc = "Field `ENIRQHOSTDISCON` reader - Enable IRQ for Host disconnect: Enables interrupt for detection of disconnection to Device when in high-speed host mode"]
 pub struct ENIRQHOSTDISCON_R(crate::FieldReader<bool, bool>);
 impl ENIRQHOSTDISCON_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENIRQHOSTDISCON_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> ENIRQHOSTDISCON_W<'a> {
 #[doc = "Field `HOSTDISCONDETECT_IRQ` reader - Indicates that the device has disconnected in High-Speed mode"]
 pub struct HOSTDISCONDETECT_IRQ_R(crate::FieldReader<bool, bool>);
 impl HOSTDISCONDETECT_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HOSTDISCONDETECT_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -157,6 +162,7 @@ impl From<ENDEVPLUGINDET_A> for bool {
 #[doc = "Field `ENDEVPLUGINDET` reader - Enables non-standard resistive plugged-in detection This bit field controls connection of nominal 200kohm resistors to both the USB_DP and USB_DM pins as one method of detecting when a USB cable is attached in device mode"]
 pub struct ENDEVPLUGINDET_R(crate::FieldReader<bool, ENDEVPLUGINDET_A>);
 impl ENDEVPLUGINDET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDEVPLUGINDET_R(crate::FieldReader::new(bits))
     }
@@ -226,6 +232,7 @@ impl<'a> ENDEVPLUGINDET_W<'a> {
 #[doc = "Field `DEVPLUGIN_POLARITY` reader - Device plugin polarity: For device mode, if this bit is cleared to 0, then it trips the interrupt if the device is plugged in"]
 pub struct DEVPLUGIN_POLARITY_R(crate::FieldReader<bool, bool>);
 impl DEVPLUGIN_POLARITY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEVPLUGIN_POLARITY_R(crate::FieldReader::new(bits))
     }
@@ -262,6 +269,7 @@ impl<'a> DEVPLUGIN_POLARITY_W<'a> {
 #[doc = "Field `RESUMEIRQSTICKY` reader - Resume IRQ: Set to 1 will make RESUME_IRQ bit a sticky bit until software clear it"]
 pub struct RESUMEIRQSTICKY_R(crate::FieldReader<bool, bool>);
 impl RESUMEIRQSTICKY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESUMEIRQSTICKY_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +306,7 @@ impl<'a> RESUMEIRQSTICKY_W<'a> {
 #[doc = "Field `ENIRQRESUMEDETECT` reader - Enable IRQ Resume detect: Enables interrupt for detection of a non-J state on the USB line"]
 pub struct ENIRQRESUMEDETECT_R(crate::FieldReader<bool, bool>);
 impl ENIRQRESUMEDETECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENIRQRESUMEDETECT_R(crate::FieldReader::new(bits))
     }
@@ -334,6 +343,7 @@ impl<'a> ENIRQRESUMEDETECT_W<'a> {
 #[doc = "Field `RESUME_IRQ` reader - Resume IRQ: Indicates that the host is sending a wake-up after suspend"]
 pub struct RESUME_IRQ_R(crate::FieldReader<bool, bool>);
 impl RESUME_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESUME_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -370,6 +380,7 @@ impl<'a> RESUME_IRQ_W<'a> {
 #[doc = "Field `DEVPLUGIN_IRQ` reader - Indicates that the device is connected"]
 pub struct DEVPLUGIN_IRQ_R(crate::FieldReader<bool, bool>);
 impl DEVPLUGIN_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEVPLUGIN_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -406,6 +417,7 @@ impl<'a> DEVPLUGIN_IRQ_W<'a> {
 #[doc = "Field `ENUTMILEVEL2` reader - Enables UTMI+ Level 2 operation for the USB HS PHY"]
 pub struct ENUTMILEVEL2_R(crate::FieldReader<bool, bool>);
 impl ENUTMILEVEL2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENUTMILEVEL2_R(crate::FieldReader::new(bits))
     }
@@ -442,6 +454,7 @@ impl<'a> ENUTMILEVEL2_W<'a> {
 #[doc = "Field `ENUTMILEVEL3` reader - Enables UTMI+ Level 3 operation for the USB HS PHY"]
 pub struct ENUTMILEVEL3_R(crate::FieldReader<bool, bool>);
 impl ENUTMILEVEL3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENUTMILEVEL3_R(crate::FieldReader::new(bits))
     }
@@ -478,6 +491,7 @@ impl<'a> ENUTMILEVEL3_W<'a> {
 #[doc = "Field `ENIRQWAKEUP` reader - Enable wake-up IRQ: Enables interrupt for the wake-up events."]
 pub struct ENIRQWAKEUP_R(crate::FieldReader<bool, bool>);
 impl ENIRQWAKEUP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENIRQWAKEUP_R(crate::FieldReader::new(bits))
     }
@@ -514,6 +528,7 @@ impl<'a> ENIRQWAKEUP_W<'a> {
 #[doc = "Field `WAKEUP_IRQ` reader - Wake-up IRQ: Indicates that there is a wak-eup event"]
 pub struct WAKEUP_IRQ_R(crate::FieldReader<bool, bool>);
 impl WAKEUP_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAKEUP_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -550,6 +565,7 @@ impl<'a> WAKEUP_IRQ_W<'a> {
 #[doc = "Field `AUTORESUME_EN` reader - Enable the auto resume feature, when set, HW will use 32KHz clock to send Resume to respond to the device remote wakeup(for host mode only)"]
 pub struct AUTORESUME_EN_R(crate::FieldReader<bool, bool>);
 impl AUTORESUME_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AUTORESUME_EN_R(crate::FieldReader::new(bits))
     }
@@ -586,6 +602,7 @@ impl<'a> AUTORESUME_EN_W<'a> {
 #[doc = "Field `ENAUTOCLR_CLKGATE` reader - Enables the feature to auto-clear the CLKGATE bit if there is wakeup event while USB is suspended"]
 pub struct ENAUTOCLR_CLKGATE_R(crate::FieldReader<bool, bool>);
 impl ENAUTOCLR_CLKGATE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENAUTOCLR_CLKGATE_R(crate::FieldReader::new(bits))
     }
@@ -622,6 +639,7 @@ impl<'a> ENAUTOCLR_CLKGATE_W<'a> {
 #[doc = "Field `ENAUTOCLR_PHY_PWD` reader - Enables the feature to auto-clear the PWD register bits in PWD if there is wakeup event while USB is suspended"]
 pub struct ENAUTOCLR_PHY_PWD_R(crate::FieldReader<bool, bool>);
 impl ENAUTOCLR_PHY_PWD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENAUTOCLR_PHY_PWD_R(crate::FieldReader::new(bits))
     }
@@ -658,6 +676,7 @@ impl<'a> ENAUTOCLR_PHY_PWD_W<'a> {
 #[doc = "Field `ENDPDMCHG_WKUP` reader - Enable DP DM change wake-up: Not for customer use"]
 pub struct ENDPDMCHG_WKUP_R(crate::FieldReader<bool, bool>);
 impl ENDPDMCHG_WKUP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDPDMCHG_WKUP_R(crate::FieldReader::new(bits))
     }
@@ -694,6 +713,7 @@ impl<'a> ENDPDMCHG_WKUP_W<'a> {
 #[doc = "Field `ENVBUSCHG_WKUP` reader - Enable VBUS change wake-up: Enables the feature to wake-up USB if VBUS is toggled when USB is suspended"]
 pub struct ENVBUSCHG_WKUP_R(crate::FieldReader<bool, bool>);
 impl ENVBUSCHG_WKUP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENVBUSCHG_WKUP_R(crate::FieldReader::new(bits))
     }
@@ -730,6 +750,7 @@ impl<'a> ENVBUSCHG_WKUP_W<'a> {
 #[doc = "Field `ENAUTOCLR_USBCLKGATE` reader - Enable auto-clear USB Clock gate: Enables the feature to auto-clear the USB0_CLKGATE/USB1_CLKGATE register bit in HW_DIGCTL_CTRL if there is wake-up event on USB0/USB1 while USB0/USB1 is suspended"]
 pub struct ENAUTOCLR_USBCLKGATE_R(crate::FieldReader<bool, bool>);
 impl ENAUTOCLR_USBCLKGATE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENAUTOCLR_USBCLKGATE_R(crate::FieldReader::new(bits))
     }
@@ -766,6 +787,7 @@ impl<'a> ENAUTOCLR_USBCLKGATE_W<'a> {
 #[doc = "Field `ENAUTOSET_USBCLKS` reader - Enable auto-set of USB clocks: Enables the feature to auto-clear the EN_USB_CLKS register bits in HW_CLKCTRL_PLL1CTRL0/HW_CLKCTRL_P LL1CTRL1 if there is wake-up event on USB0/USB1 while USB0/USB1 is suspended"]
 pub struct ENAUTOSET_USBCLKS_R(crate::FieldReader<bool, bool>);
 impl ENAUTOSET_USBCLKS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENAUTOSET_USBCLKS_R(crate::FieldReader::new(bits))
     }
@@ -802,6 +824,7 @@ impl<'a> ENAUTOSET_USBCLKS_W<'a> {
 #[doc = "Field `HOST_FORCE_LS_SE0` reader - Forces the next FS packet that is transmitted to have a EOP with low-speed timing"]
 pub struct HOST_FORCE_LS_SE0_R(crate::FieldReader<bool, bool>);
 impl HOST_FORCE_LS_SE0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HOST_FORCE_LS_SE0_R(crate::FieldReader::new(bits))
     }
@@ -838,6 +861,7 @@ impl<'a> HOST_FORCE_LS_SE0_W<'a> {
 #[doc = "Field `UTMI_SUSPENDM` reader - Used by the PHY to indicate a powered-down state"]
 pub struct UTMI_SUSPENDM_R(crate::FieldReader<bool, bool>);
 impl UTMI_SUSPENDM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UTMI_SUSPENDM_R(crate::FieldReader::new(bits))
     }
@@ -852,6 +876,7 @@ impl core::ops::Deref for UTMI_SUSPENDM_R {
 #[doc = "Field `CLKGATE` reader - Gate UTMI Clocks"]
 pub struct CLKGATE_R(crate::FieldReader<bool, bool>);
 impl CLKGATE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CLKGATE_R(crate::FieldReader::new(bits))
     }
@@ -888,6 +913,7 @@ impl<'a> CLKGATE_W<'a> {
 #[doc = "Field `SFTRST` reader - Writing a 1 to this bit will soft-reset the PWD, TX, RX, and CTRL registers"]
 pub struct SFTRST_R(crate::FieldReader<bool, bool>);
 impl SFTRST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SFTRST_R(crate::FieldReader::new(bits))
     }
@@ -1160,6 +1186,7 @@ impl W {
         SFTRST_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<IENR_SPEC>> for R {
+impl From<crate::R<IENR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<IENR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<IENR_SPEC>> for W {
+impl From<crate::W<IENR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<IENR_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<IENR_SPEC>> for W {
 #[doc = "Field `ENRL` reader - Enables the rising edge or level interrupt for each pin interrupt. Bit n configures the pin interrupt selected in PINTSELn. 0 = Disable rising edge or level interrupt. 1 = Enable rising edge or level interrupt."]
 pub struct ENRL_R(crate::FieldReader<u8, u8>);
 impl ENRL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ENRL_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         ENRL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

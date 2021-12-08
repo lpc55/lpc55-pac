@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<DCFG_CC_SOCU_PIN_SPEC>> for R {
+impl From<crate::R<DCFG_CC_SOCU_PIN_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<DCFG_CC_SOCU_PIN_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<DCFG_CC_SOCU_PIN_SPEC>> for W {
+impl From<crate::W<DCFG_CC_SOCU_PIN_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<DCFG_CC_SOCU_PIN_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<NIDEN_A> for bool {
 #[doc = "Field `NIDEN` reader - Non Secure non-invasive debug enable"]
 pub struct NIDEN_R(crate::FieldReader<bool, NIDEN_A>);
 impl NIDEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NIDEN_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<DBGEN_A> for bool {
 #[doc = "Field `DBGEN` reader - Non Secure debug enable"]
 pub struct DBGEN_R(crate::FieldReader<bool, DBGEN_A>);
 impl DBGEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DBGEN_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<SPNIDEN_A> for bool {
 #[doc = "Field `SPNIDEN` reader - Secure non-invasive debug enable"]
 pub struct SPNIDEN_R(crate::FieldReader<bool, SPNIDEN_A>);
 impl SPNIDEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SPNIDEN_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<SPIDEN_A> for bool {
 #[doc = "Field `SPIDEN` reader - Secure invasive debug enable"]
 pub struct SPIDEN_R(crate::FieldReader<bool, SPIDEN_A>);
 impl SPIDEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SPIDEN_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<TAPEN_A> for bool {
 #[doc = "Field `TAPEN` reader - JTAG TAP enable"]
 pub struct TAPEN_R(crate::FieldReader<bool, TAPEN_A>);
 impl TAPEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TAPEN_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<CPU1_DBGEN_A> for bool {
 #[doc = "Field `CPU1_DBGEN` reader - CPU1 (Micro cortex M33) invasive debug enable"]
 pub struct CPU1_DBGEN_R(crate::FieldReader<bool, CPU1_DBGEN_A>);
 impl CPU1_DBGEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CPU1_DBGEN_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<ISP_CMD_EN_A> for bool {
 #[doc = "Field `ISP_CMD_EN` reader - ISP Boot Command enable"]
 pub struct ISP_CMD_EN_R(crate::FieldReader<bool, ISP_CMD_EN_A>);
 impl ISP_CMD_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ISP_CMD_EN_R(crate::FieldReader::new(bits))
     }
@@ -630,6 +639,7 @@ impl From<FA_CMD_EN_A> for bool {
 #[doc = "Field `FA_CMD_EN` reader - FA Command enable"]
 pub struct FA_CMD_EN_R(crate::FieldReader<bool, FA_CMD_EN_A>);
 impl FA_CMD_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FA_CMD_EN_R(crate::FieldReader::new(bits))
     }
@@ -713,6 +723,7 @@ impl From<ME_CMD_EN_A> for bool {
 #[doc = "Field `ME_CMD_EN` reader - Flash Mass Erase Command enable"]
 pub struct ME_CMD_EN_R(crate::FieldReader<bool, ME_CMD_EN_A>);
 impl ME_CMD_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ME_CMD_EN_R(crate::FieldReader::new(bits))
     }
@@ -796,6 +807,7 @@ impl From<CPU1_NIDEN_A> for bool {
 #[doc = "Field `CPU1_NIDEN` reader - CPU1 (Micro cortex M33) non-invasive debug enable"]
 pub struct CPU1_NIDEN_R(crate::FieldReader<bool, CPU1_NIDEN_A>);
 impl CPU1_NIDEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CPU1_NIDEN_R(crate::FieldReader::new(bits))
     }
@@ -865,6 +877,7 @@ impl<'a> CPU1_NIDEN_W<'a> {
 #[doc = "Field `UUID_CHECK` reader - Enforce UUID match during Debug authentication."]
 pub struct UUID_CHECK_R(crate::FieldReader<bool, bool>);
 impl UUID_CHECK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UUID_CHECK_R(crate::FieldReader::new(bits))
     }
@@ -901,6 +914,7 @@ impl<'a> UUID_CHECK_W<'a> {
 #[doc = "Field `INVERSE_VALUE` reader - inverse value of bits \\[15:0\\]"]
 pub struct INVERSE_VALUE_R(crate::FieldReader<u16, u16>);
 impl INVERSE_VALUE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         INVERSE_VALUE_R(crate::FieldReader::new(bits))
     }
@@ -1048,6 +1062,7 @@ impl W {
         INVERSE_VALUE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

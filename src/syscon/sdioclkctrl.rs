@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SDIOCLKCTRL_SPEC>> for R {
+impl From<crate::R<SDIOCLKCTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SDIOCLKCTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SDIOCLKCTRL_SPEC>> for W {
+impl From<crate::W<SDIOCLKCTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SDIOCLKCTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<CCLK_DRV_PHASE_A> for u8 {
 #[doc = "Field `CCLK_DRV_PHASE` reader - Programmable delay value by which cclk_in_drv is phase-shifted with regard to cclk_in."]
 pub struct CCLK_DRV_PHASE_R(crate::FieldReader<u8, CCLK_DRV_PHASE_A>);
 impl CCLK_DRV_PHASE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CCLK_DRV_PHASE_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<CCLK_SAMPLE_PHASE_A> for u8 {
 #[doc = "Field `CCLK_SAMPLE_PHASE` reader - Programmable delay value by which cclk_in_sample is delayed with regard to cclk_in."]
 pub struct CCLK_SAMPLE_PHASE_R(crate::FieldReader<u8, CCLK_SAMPLE_PHASE_A>);
 impl CCLK_SAMPLE_PHASE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CCLK_SAMPLE_PHASE_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +255,7 @@ impl From<PHASE_ACTIVE_A> for bool {
 #[doc = "Field `PHASE_ACTIVE` reader - Enables the delays CCLK_DRV_PHASE and CCLK_SAMPLE_PHASE."]
 pub struct PHASE_ACTIVE_R(crate::FieldReader<bool, PHASE_ACTIVE_A>);
 impl PHASE_ACTIVE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PHASE_ACTIVE_R(crate::FieldReader::new(bits))
     }
@@ -320,6 +325,7 @@ impl<'a> PHASE_ACTIVE_W<'a> {
 #[doc = "Field `CCLK_DRV_DELAY` reader - Programmable delay value by which cclk_in_drv is delayed with regard to cclk_in."]
 pub struct CCLK_DRV_DELAY_R(crate::FieldReader<u8, u8>);
 impl CCLK_DRV_DELAY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CCLK_DRV_DELAY_R(crate::FieldReader::new(bits))
     }
@@ -360,6 +366,7 @@ impl From<CCLK_DRV_DELAY_ACTIVE_A> for bool {
 #[doc = "Field `CCLK_DRV_DELAY_ACTIVE` reader - Enables drive delay, as controlled by the CCLK_DRV_DELAY field."]
 pub struct CCLK_DRV_DELAY_ACTIVE_R(crate::FieldReader<bool, CCLK_DRV_DELAY_ACTIVE_A>);
 impl CCLK_DRV_DELAY_ACTIVE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCLK_DRV_DELAY_ACTIVE_R(crate::FieldReader::new(bits))
     }
@@ -429,6 +436,7 @@ impl<'a> CCLK_DRV_DELAY_ACTIVE_W<'a> {
 #[doc = "Field `CCLK_SAMPLE_DELAY` reader - Programmable delay value by which cclk_in_sample is delayed with regard to cclk_in."]
 pub struct CCLK_SAMPLE_DELAY_R(crate::FieldReader<u8, u8>);
 impl CCLK_SAMPLE_DELAY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CCLK_SAMPLE_DELAY_R(crate::FieldReader::new(bits))
     }
@@ -469,6 +477,7 @@ impl From<CCLK_SAMPLE_DELAY_ACTIVE_A> for bool {
 #[doc = "Field `CCLK_SAMPLE_DELAY_ACTIVE` reader - Enables sample delay, as controlled by the CCLK_SAMPLE_DELAY field."]
 pub struct CCLK_SAMPLE_DELAY_ACTIVE_R(crate::FieldReader<bool, CCLK_SAMPLE_DELAY_ACTIVE_A>);
 impl CCLK_SAMPLE_DELAY_ACTIVE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCLK_SAMPLE_DELAY_ACTIVE_R(crate::FieldReader::new(bits))
     }
@@ -609,6 +618,7 @@ impl W {
         CCLK_SAMPLE_DELAY_ACTIVE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

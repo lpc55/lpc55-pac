@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FIFOINTENSET_SPEC>> for R {
+impl From<crate::R<FIFOINTENSET_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FIFOINTENSET_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FIFOINTENSET_SPEC>> for W {
+impl From<crate::W<FIFOINTENSET_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FIFOINTENSET_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<TXERR_A> for bool {
 #[doc = "Field `TXERR` reader - Determines whether an interrupt occurs when a transmit error occurs, based on the TXERR flag in the FIFOSTAT register."]
 pub struct TXERR_R(crate::FieldReader<bool, TXERR_A>);
 impl TXERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXERR_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<RXERR_A> for bool {
 #[doc = "Field `RXERR` reader - Determines whether an interrupt occurs when a receive error occurs, based on the RXERR flag in the FIFOSTAT register."]
 pub struct RXERR_R(crate::FieldReader<bool, RXERR_A>);
 impl RXERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXERR_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<TXLVL_A> for bool {
 #[doc = "Field `TXLVL` reader - Determines whether an interrupt occurs when a the transmit FIFO reaches the level specified by the TXLVL field in the FIFOTRIG register."]
 pub struct TXLVL_R(crate::FieldReader<bool, TXLVL_A>);
 impl TXLVL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXLVL_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<RXLVL_A> for bool {
 #[doc = "Field `RXLVL` reader - Determines whether an interrupt occurs when a the receive FIFO reaches the level specified by the TXLVL field in the FIFOTRIG register."]
 pub struct RXLVL_R(crate::FieldReader<bool, RXLVL_A>);
 impl RXLVL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXLVL_R(crate::FieldReader::new(bits))
     }
@@ -408,6 +414,7 @@ impl W {
         RXLVL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

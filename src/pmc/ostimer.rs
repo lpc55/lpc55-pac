@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<OSTIMER_SPEC>> for R {
+impl From<crate::R<OSTIMER_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<OSTIMER_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<OSTIMER_SPEC>> for W {
+impl From<crate::W<OSTIMER_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<OSTIMER_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<OSTIMER_SPEC>> for W {
 #[doc = "Field `SOFTRESET` reader - Active high reset."]
 pub struct SOFTRESET_R(crate::FieldReader<bool, bool>);
 impl SOFTRESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SOFTRESET_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> SOFTRESET_W<'a> {
 #[doc = "Field `CLOCKENABLE` reader - Enable OSTIMER 32 KHz clock."]
 pub struct CLOCKENABLE_R(crate::FieldReader<bool, bool>);
 impl CLOCKENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CLOCKENABLE_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> CLOCKENABLE_W<'a> {
 #[doc = "Field `DPDWAKEUPENABLE` reader - Wake up enable in Deep Power Down mode (To be used in Enable Deep Power Down mode)."]
 pub struct DPDWAKEUPENABLE_R(crate::FieldReader<bool, bool>);
 impl DPDWAKEUPENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DPDWAKEUPENABLE_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> DPDWAKEUPENABLE_W<'a> {
 #[doc = "Field `OSC32KPD` reader - Oscilator 32KHz (either FRO32KHz or XTAL32KHz according to RTCOSC32K."]
 pub struct OSC32KPD_R(crate::FieldReader<bool, bool>);
 impl OSC32KPD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OSC32KPD_R(crate::FieldReader::new(bits))
     }
@@ -220,6 +226,7 @@ impl W {
         OSC32KPD_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

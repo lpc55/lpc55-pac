@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FIFORD_SPEC>> for R {
+impl From<crate::R<FIFORD_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FIFORD_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<FIFORD_SPEC>> for R {
 #[doc = "Field `RXDATA` reader - Received data from the FIFO. The number of bits used depends on configuration details."]
 pub struct RXDATA_R(crate::FieldReader<u32, u32>);
 impl RXDATA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         RXDATA_R(crate::FieldReader::new(bits))
     }
@@ -30,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Received data from the FIFO. The number of bits used depends on configuration details."]
     #[inline(always)]
     pub fn rxdata(&self) -> RXDATA_R {
-        RXDATA_R::new((self.bits & 0xffff_ffff) as u32)
+        RXDATA_R::new(self.bits as u32)
     }
 }
 #[doc = "FIFO read data.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fiford](index.html) module"]

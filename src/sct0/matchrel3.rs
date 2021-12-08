@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<MATCHREL3_SPEC>> for R {
+impl From<crate::R<MATCHREL3_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<MATCHREL3_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<MATCHREL3_SPEC>> for W {
+impl From<crate::W<MATCHREL3_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<MATCHREL3_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<MATCHREL3_SPEC>> for W {
 #[doc = "Field `RELOADn_L` reader - When UNIFY = 0, specifies the 16-bit value to be loaded into the MATCHn_L register. When UNIFY = 1, specifies the lower 16 bits of the 32-bit value to be loaded into the MATCHn register."]
 pub struct RELOADN_L_R(crate::FieldReader<u16, u16>);
 impl RELOADN_L_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         RELOADN_L_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> RELOADN_L_W<'a> {
 #[doc = "Field `RELOADn_H` reader - When UNIFY = 0, specifies the 16-bit to be loaded into the MATCHn_H register. When UNIFY = 1, specifies the upper 16 bits of the 32-bit value to be loaded into the MATCHn register."]
 pub struct RELOADN_H_R(crate::FieldReader<u16, u16>);
 impl RELOADN_H_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         RELOADN_H_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl W {
         RELOADN_H_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

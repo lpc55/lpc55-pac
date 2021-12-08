@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RINGO1_CTRL_SPEC>> for R {
+impl From<crate::R<RINGO1_CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RINGO1_CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RINGO1_CTRL_SPEC>> for W {
+impl From<crate::W<RINGO1_CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RINGO1_CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<S_A> for bool {
 #[doc = "Field `S` reader - Select short or long ringo (for all ringos types)."]
 pub struct S_R(crate::FieldReader<bool, S_A>);
 impl S_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         S_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<FS_A> for bool {
 #[doc = "Field `FS` reader - Ringo frequency output divider."]
 pub struct FS_R(crate::FieldReader<bool, FS_A>);
 impl FS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FS_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<PD_A> for bool {
 #[doc = "Field `PD` reader - Ringo module Power control."]
 pub struct PD_R(crate::FieldReader<bool, PD_A>);
 impl PD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PD_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<E_R24_A> for bool {
 #[doc = "Field `E_R24` reader - ."]
 pub struct E_R24_R(crate::FieldReader<bool, E_R24_A>);
 impl E_R24_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         E_R24_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<E_R35_A> for bool {
 #[doc = "Field `E_R35` reader - ."]
 pub struct E_R35_R(crate::FieldReader<bool, E_R35_A>);
 impl E_R35_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         E_R35_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<E_M2_A> for bool {
 #[doc = "Field `E_M2` reader - Metal 2 (M2) monitor control."]
 pub struct E_M2_R(crate::FieldReader<bool, E_M2_A>);
 impl E_M2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         E_M2_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<E_M3_A> for bool {
 #[doc = "Field `E_M3` reader - Metal 3 (M3) monitor control."]
 pub struct E_M3_R(crate::FieldReader<bool, E_M3_A>);
 impl E_M3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         E_M3_R(crate::FieldReader::new(bits))
     }
@@ -630,6 +639,7 @@ impl From<E_M4_A> for bool {
 #[doc = "Field `E_M4` reader - Metal 4 (M4) monitor control."]
 pub struct E_M4_R(crate::FieldReader<bool, E_M4_A>);
 impl E_M4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         E_M4_R(crate::FieldReader::new(bits))
     }
@@ -713,6 +723,7 @@ impl From<E_M5_A> for bool {
 #[doc = "Field `E_M5` reader - Metal 5 (M5) monitor control."]
 pub struct E_M5_R(crate::FieldReader<bool, E_M5_A>);
 impl E_M5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         E_M5_R(crate::FieldReader::new(bits))
     }
@@ -782,6 +793,7 @@ impl<'a> E_M5_W<'a> {
 #[doc = "Field `DIVISOR` reader - Ringo out Clock divider value. Frequency Output = Frequency input / (DIViSOR+1). (minimum = Frequency input / 16)"]
 pub struct DIVISOR_R(crate::FieldReader<u8, u8>);
 impl DIVISOR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DIVISOR_R(crate::FieldReader::new(bits))
     }
@@ -808,6 +820,7 @@ impl<'a> DIVISOR_W<'a> {
 #[doc = "Field `DIV_UPDATE_REQ` reader - Ringo clock out Divider status flag. Set when a change is made to the divider value, cleared when the change is complete."]
 pub struct DIV_UPDATE_REQ_R(crate::FieldReader<bool, bool>);
 impl DIV_UPDATE_REQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DIV_UPDATE_REQ_R(crate::FieldReader::new(bits))
     }
@@ -928,6 +941,7 @@ impl W {
         DIVISOR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FRO192M_CTRL_SPEC>> for R {
+impl From<crate::R<FRO192M_CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FRO192M_CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FRO192M_CTRL_SPEC>> for W {
+impl From<crate::W<FRO192M_CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FRO192M_CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<ENA_12MHZCLK_A> for bool {
 #[doc = "Field `ENA_12MHZCLK` reader - 12 MHz clock control."]
 pub struct ENA_12MHZCLK_R(crate::FieldReader<bool, ENA_12MHZCLK_A>);
 impl ENA_12MHZCLK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENA_12MHZCLK_R(crate::FieldReader::new(bits))
     }
@@ -130,6 +133,7 @@ impl From<ENA_48MHZCLK_A> for bool {
 #[doc = "Field `ENA_48MHZCLK` reader - 48 MHz clock control."]
 pub struct ENA_48MHZCLK_R(crate::FieldReader<bool, ENA_48MHZCLK_A>);
 impl ENA_48MHZCLK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENA_48MHZCLK_R(crate::FieldReader::new(bits))
     }
@@ -189,6 +193,7 @@ impl<'a> ENA_48MHZCLK_W<'a> {
 #[doc = "Field `DAC_TRIM` reader - Frequency trim."]
 pub struct DAC_TRIM_R(crate::FieldReader<u8, u8>);
 impl DAC_TRIM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DAC_TRIM_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +220,7 @@ impl<'a> DAC_TRIM_W<'a> {
 #[doc = "Field `USBCLKADJ` reader - If this bit is set and the USB peripheral is enabled into full speed device mode, the USB block will provide FRO clock adjustments to lock it to the host clock using the SOF packets."]
 pub struct USBCLKADJ_R(crate::FieldReader<bool, bool>);
 impl USBCLKADJ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USBCLKADJ_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +257,7 @@ impl<'a> USBCLKADJ_W<'a> {
 #[doc = "Field `USBMODCHG` reader - If it reads as 1 when reading the DAC_TRIM field and USBCLKADJ=1, it should be re-read until it is 0."]
 pub struct USBMODCHG_R(crate::FieldReader<bool, bool>);
 impl USBMODCHG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USBMODCHG_R(crate::FieldReader::new(bits))
     }
@@ -279,6 +286,7 @@ impl From<ENA_96MHZCLK_A> for bool {
 #[doc = "Field `ENA_96MHZCLK` reader - 96 MHz clock control."]
 pub struct ENA_96MHZCLK_R(crate::FieldReader<bool, ENA_96MHZCLK_A>);
 impl ENA_96MHZCLK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENA_96MHZCLK_R(crate::FieldReader::new(bits))
     }
@@ -404,6 +412,7 @@ impl W {
         ENA_96MHZCLK_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<HCRHDESCRIPTORB_SPEC>> for R {
+impl From<crate::R<HCRHDESCRIPTORB_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<HCRHDESCRIPTORB_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<HCRHDESCRIPTORB_SPEC>> for W {
+impl From<crate::W<HCRHDESCRIPTORB_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<HCRHDESCRIPTORB_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<HCRHDESCRIPTORB_SPEC>> for W {
 #[doc = "Field `DR` reader - DeviceRemovable Each bit is dedicated to a port of the Root Hub."]
 pub struct DR_R(crate::FieldReader<u16, u16>);
 impl DR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         DR_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> DR_W<'a> {
 #[doc = "Field `PPCM` reader - PortPowerControlMask Each bit indicates if a port is affected by a global power control command when PowerSwitchingMode is set."]
 pub struct PPCM_R(crate::FieldReader<u16, u16>);
 impl PPCM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         PPCM_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl W {
         PPCM_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

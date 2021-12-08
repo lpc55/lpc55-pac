@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_GPIO_MASK1_SPEC>> for R {
+impl From<crate::R<SEC_GPIO_MASK1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_GPIO_MASK1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_GPIO_MASK1_SPEC>> for W {
+impl From<crate::W<SEC_GPIO_MASK1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_GPIO_MASK1_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<PIO1_PIN0_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN0_SEC_MASK` reader - Secure mask for pin P1_0"]
 pub struct PIO1_PIN0_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN0_SEC_MASK_A>);
 impl PIO1_PIN0_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN0_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<PIO1_PIN1_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN1_SEC_MASK` reader - Secure mask for pin P1_1"]
 pub struct PIO1_PIN1_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN1_SEC_MASK_A>);
 impl PIO1_PIN1_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN1_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<PIO1_PIN2_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN2_SEC_MASK` reader - Secure mask for pin P1_2"]
 pub struct PIO1_PIN2_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN2_SEC_MASK_A>);
 impl PIO1_PIN2_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN2_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<PIO1_PIN3_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN3_SEC_MASK` reader - Secure mask for pin P1_3"]
 pub struct PIO1_PIN3_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN3_SEC_MASK_A>);
 impl PIO1_PIN3_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN3_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<PIO1_PIN4_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN4_SEC_MASK` reader - Secure mask for pin P1_4"]
 pub struct PIO1_PIN4_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN4_SEC_MASK_A>);
 impl PIO1_PIN4_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN4_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<PIO1_PIN5_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN5_SEC_MASK` reader - Secure mask for pin P1_5"]
 pub struct PIO1_PIN5_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN5_SEC_MASK_A>);
 impl PIO1_PIN5_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN5_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<PIO1_PIN6_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN6_SEC_MASK` reader - Secure mask for pin P1_6"]
 pub struct PIO1_PIN6_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN6_SEC_MASK_A>);
 impl PIO1_PIN6_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN6_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -630,6 +639,7 @@ impl From<PIO1_PIN7_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN7_SEC_MASK` reader - Secure mask for pin P1_7"]
 pub struct PIO1_PIN7_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN7_SEC_MASK_A>);
 impl PIO1_PIN7_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN7_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -713,6 +723,7 @@ impl From<PIO1_PIN8_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN8_SEC_MASK` reader - Secure mask for pin P1_8"]
 pub struct PIO1_PIN8_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN8_SEC_MASK_A>);
 impl PIO1_PIN8_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN8_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -796,6 +807,7 @@ impl From<PIO1_PIN9_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN9_SEC_MASK` reader - Secure mask for pin P1_9"]
 pub struct PIO1_PIN9_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN9_SEC_MASK_A>);
 impl PIO1_PIN9_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN9_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -879,6 +891,7 @@ impl From<PIO1_PIN10_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN10_SEC_MASK` reader - Secure mask for pin P1_10"]
 pub struct PIO1_PIN10_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN10_SEC_MASK_A>);
 impl PIO1_PIN10_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN10_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -962,6 +975,7 @@ impl From<PIO1_PIN11_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN11_SEC_MASK` reader - Secure mask for pin P1_11"]
 pub struct PIO1_PIN11_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN11_SEC_MASK_A>);
 impl PIO1_PIN11_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN11_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -1045,6 +1059,7 @@ impl From<PIO1_PIN12_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN12_SEC_MASK` reader - Secure mask for pin P1_12"]
 pub struct PIO1_PIN12_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN12_SEC_MASK_A>);
 impl PIO1_PIN12_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN12_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -1128,6 +1143,7 @@ impl From<PIO1_PIN13_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN13_SEC_MASK` reader - Secure mask for pin P1_13"]
 pub struct PIO1_PIN13_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN13_SEC_MASK_A>);
 impl PIO1_PIN13_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN13_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -1211,6 +1227,7 @@ impl From<PIO1_PIN14_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN14_SEC_MASK` reader - Secure mask for pin P1_14"]
 pub struct PIO1_PIN14_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN14_SEC_MASK_A>);
 impl PIO1_PIN14_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN14_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -1294,6 +1311,7 @@ impl From<PIO1_PIN15_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN15_SEC_MASK` reader - Secure mask for pin P1_15"]
 pub struct PIO1_PIN15_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN15_SEC_MASK_A>);
 impl PIO1_PIN15_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN15_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -1377,6 +1395,7 @@ impl From<PIO1_PIN16_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN16_SEC_MASK` reader - Secure mask for pin P1_16"]
 pub struct PIO1_PIN16_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN16_SEC_MASK_A>);
 impl PIO1_PIN16_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN16_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -1460,6 +1479,7 @@ impl From<PIO1_PIN17_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN17_SEC_MASK` reader - Secure mask for pin P1_17"]
 pub struct PIO1_PIN17_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN17_SEC_MASK_A>);
 impl PIO1_PIN17_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN17_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -1543,6 +1563,7 @@ impl From<PIO1_PIN18_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN18_SEC_MASK` reader - Secure mask for pin P1_18"]
 pub struct PIO1_PIN18_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN18_SEC_MASK_A>);
 impl PIO1_PIN18_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN18_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -1626,6 +1647,7 @@ impl From<PIO1_PIN19_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN19_SEC_MASK` reader - Secure mask for pin P1_19"]
 pub struct PIO1_PIN19_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN19_SEC_MASK_A>);
 impl PIO1_PIN19_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN19_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -1709,6 +1731,7 @@ impl From<PIO1_PIN20_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN20_SEC_MASK` reader - Secure mask for pin P1_20"]
 pub struct PIO1_PIN20_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN20_SEC_MASK_A>);
 impl PIO1_PIN20_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN20_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -1792,6 +1815,7 @@ impl From<PIO1_PIN21_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN21_SEC_MASK` reader - Secure mask for pin P1_21"]
 pub struct PIO1_PIN21_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN21_SEC_MASK_A>);
 impl PIO1_PIN21_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN21_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -1875,6 +1899,7 @@ impl From<PIO1_PIN22_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN22_SEC_MASK` reader - Secure mask for pin P1_22"]
 pub struct PIO1_PIN22_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN22_SEC_MASK_A>);
 impl PIO1_PIN22_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN22_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -1958,6 +1983,7 @@ impl From<PIO1_PIN23_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN23_SEC_MASK` reader - Secure mask for pin P1_23"]
 pub struct PIO1_PIN23_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN23_SEC_MASK_A>);
 impl PIO1_PIN23_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN23_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -2041,6 +2067,7 @@ impl From<PIO1_PIN24_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN24_SEC_MASK` reader - Secure mask for pin P1_24"]
 pub struct PIO1_PIN24_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN24_SEC_MASK_A>);
 impl PIO1_PIN24_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN24_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -2124,6 +2151,7 @@ impl From<PIO1_PIN25_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN25_SEC_MASK` reader - Secure mask for pin P1_25"]
 pub struct PIO1_PIN25_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN25_SEC_MASK_A>);
 impl PIO1_PIN25_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN25_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -2207,6 +2235,7 @@ impl From<PIO1_PIN26_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN26_SEC_MASK` reader - Secure mask for pin P1_26"]
 pub struct PIO1_PIN26_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN26_SEC_MASK_A>);
 impl PIO1_PIN26_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN26_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -2290,6 +2319,7 @@ impl From<PIO1_PIN27_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN27_SEC_MASK` reader - Secure mask for pin P1_27"]
 pub struct PIO1_PIN27_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN27_SEC_MASK_A>);
 impl PIO1_PIN27_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN27_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -2373,6 +2403,7 @@ impl From<PIO1_PIN28_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN28_SEC_MASK` reader - Secure mask for pin P1_28"]
 pub struct PIO1_PIN28_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN28_SEC_MASK_A>);
 impl PIO1_PIN28_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN28_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -2456,6 +2487,7 @@ impl From<PIO1_PIN29_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN29_SEC_MASK` reader - Secure mask for pin P1_29"]
 pub struct PIO1_PIN29_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN29_SEC_MASK_A>);
 impl PIO1_PIN29_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN29_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -2539,6 +2571,7 @@ impl From<PIO1_PIN30_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN30_SEC_MASK` reader - Secure mask for pin P1_30"]
 pub struct PIO1_PIN30_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN30_SEC_MASK_A>);
 impl PIO1_PIN30_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN30_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -2622,6 +2655,7 @@ impl From<PIO1_PIN31_SEC_MASK_A> for bool {
 #[doc = "Field `PIO1_PIN31_SEC_MASK` reader - Secure mask for pin P1_31"]
 pub struct PIO1_PIN31_SEC_MASK_R(crate::FieldReader<bool, PIO1_PIN31_SEC_MASK_A>);
 impl PIO1_PIN31_SEC_MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PIO1_PIN31_SEC_MASK_R(crate::FieldReader::new(bits))
     }
@@ -3012,6 +3046,7 @@ impl W {
         PIO1_PIN31_SEC_MASK_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

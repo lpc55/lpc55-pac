@@ -3,7 +3,7 @@
 pub struct RegisterBlock {
     #[doc = "0x00 - This register contains a random 32 bit number which is computed on demand, at each time it is read"]
     pub random_number: crate::Reg<random_number::RANDOM_NUMBER_SPEC>,
-    _reserved1: [u8; 4usize],
+    _reserved1: [u8; 0x04],
     #[doc = "0x08 - no description available"]
     pub counter_val: crate::Reg<counter_val::COUNTER_VAL_SPEC>,
     #[doc = "0x0c - no description available"]
@@ -12,7 +12,7 @@ pub struct RegisterBlock {
     pub online_test_cfg: crate::Reg<online_test_cfg::ONLINE_TEST_CFG_SPEC>,
     #[doc = "0x14 - no description available"]
     pub online_test_val: crate::Reg<online_test_val::ONLINE_TEST_VAL_SPEC>,
-    _reserved5: [u8; 4068usize],
+    _reserved5: [u8; 0x0fe4],
     #[doc = "0xffc - IP identifier"]
     pub moduleid: crate::Reg<moduleid::MODULEID_SPEC>,
 }

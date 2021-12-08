@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SLVADR1_SPEC>> for R {
+impl From<crate::R<SLVADR1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SLVADR1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SLVADR1_SPEC>> for W {
+impl From<crate::W<SLVADR1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SLVADR1_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<SADISABLE_A> for bool {
 #[doc = "Field `SADISABLE` reader - Slave Address n Disable."]
 pub struct SADISABLE_R(crate::FieldReader<bool, SADISABLE_A>);
 impl SADISABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SADISABLE_R(crate::FieldReader::new(bits))
     }
@@ -118,6 +121,7 @@ impl<'a> SADISABLE_W<'a> {
 #[doc = "Field `SLVADR` reader - Slave Address. Seven bit slave address that is compared to received addresses if enabled."]
 pub struct SLVADR_R(crate::FieldReader<u8, u8>);
 impl SLVADR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SLVADR_R(crate::FieldReader::new(bits))
     }
@@ -165,6 +169,7 @@ impl W {
         SLVADR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

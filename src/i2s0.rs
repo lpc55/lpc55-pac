@@ -1,46 +1,46 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    _reserved0: [u8; 3072usize],
+    _reserved0: [u8; 0x0c00],
     #[doc = "0xc00 - Configuration register 1 for the primary channel pair."]
     pub cfg1: crate::Reg<cfg1::CFG1_SPEC>,
     #[doc = "0xc04 - Configuration register 2 for the primary channel pair."]
     pub cfg2: crate::Reg<cfg2::CFG2_SPEC>,
     #[doc = "0xc08 - Status register for the primary channel pair."]
     pub stat: crate::Reg<stat::STAT_SPEC>,
-    _reserved3: [u8; 16usize],
+    _reserved3: [u8; 0x10],
     #[doc = "0xc1c - Clock divider, used by all channel pairs."]
     pub div: crate::Reg<div::DIV_SPEC>,
-    _reserved4: [u8; 480usize],
+    _reserved4: [u8; 0x01e0],
     #[doc = "0xe00 - FIFO configuration and enable register."]
     pub fifocfg: crate::Reg<fifocfg::FIFOCFG_SPEC>,
     #[doc = "0xe04 - FIFO status register."]
     pub fifostat: crate::Reg<fifostat::FIFOSTAT_SPEC>,
     #[doc = "0xe08 - FIFO trigger settings for interrupt and DMA request."]
     pub fifotrig: crate::Reg<fifotrig::FIFOTRIG_SPEC>,
-    _reserved7: [u8; 4usize],
+    _reserved7: [u8; 0x04],
     #[doc = "0xe10 - FIFO interrupt enable set (enable) and read register."]
     pub fifointenset: crate::Reg<fifointenset::FIFOINTENSET_SPEC>,
     #[doc = "0xe14 - FIFO interrupt enable clear (disable) and read register."]
     pub fifointenclr: crate::Reg<fifointenclr::FIFOINTENCLR_SPEC>,
     #[doc = "0xe18 - FIFO interrupt status register."]
     pub fifointstat: crate::Reg<fifointstat::FIFOINTSTAT_SPEC>,
-    _reserved10: [u8; 4usize],
+    _reserved10: [u8; 0x04],
     #[doc = "0xe20 - FIFO write data."]
     pub fifowr: crate::Reg<fifowr::FIFOWR_SPEC>,
     #[doc = "0xe24 - FIFO write data for upper data bits. May only be used if the I2S is configured for 2x 24-bit data and not using DMA."]
     pub fifowr48h: crate::Reg<fifowr48h::FIFOWR48H_SPEC>,
-    _reserved12: [u8; 8usize],
+    _reserved12: [u8; 0x08],
     #[doc = "0xe30 - FIFO read data."]
     pub fiford: crate::Reg<fiford::FIFORD_SPEC>,
     #[doc = "0xe34 - FIFO read data for upper data bits. May only be used if the I2S is configured for 2x 24-bit data and not using DMA."]
     pub fiford48h: crate::Reg<fiford48h::FIFORD48H_SPEC>,
-    _reserved14: [u8; 8usize],
+    _reserved14: [u8; 0x08],
     #[doc = "0xe40 - FIFO data read with no FIFO pop."]
     pub fifordnopop: crate::Reg<fifordnopop::FIFORDNOPOP_SPEC>,
     #[doc = "0xe44 - FIFO data read for upper data bits with no FIFO pop. May only be used if the I2S is configured for 2x 24-bit data and not using DMA."]
     pub fiford48hnopop: crate::Reg<fiford48hnopop::FIFORD48HNOPOP_SPEC>,
-    _reserved16: [u8; 436usize],
+    _reserved16: [u8; 0x01b4],
     #[doc = "0xffc - I2S Module identification"]
     pub id: crate::Reg<id::ID_SPEC>,
 }

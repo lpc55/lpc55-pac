@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<TCTRL_SPEC>> for R {
+impl From<crate::R<TCTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<TCTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<TCTRL_SPEC>> for W {
+impl From<crate::W<TCTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<TCTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<HTEN_A> for bool {
 #[doc = "Field `HTEN` reader - Trigger enable"]
 pub struct HTEN_R(crate::FieldReader<bool, HTEN_A>);
 impl HTEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HTEN_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<FIFO_SEL_A_A> for bool {
 #[doc = "Field `FIFO_SEL_A` reader - SAR Result Destination For Channel A"]
 pub struct FIFO_SEL_A_R(crate::FieldReader<bool, FIFO_SEL_A_A>);
 impl FIFO_SEL_A_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FIFO_SEL_A_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<FIFO_SEL_B_A> for bool {
 #[doc = "Field `FIFO_SEL_B` reader - SAR Result Destination For Channel B"]
 pub struct FIFO_SEL_B_R(crate::FieldReader<bool, FIFO_SEL_B_A>);
 impl FIFO_SEL_B_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FIFO_SEL_B_R(crate::FieldReader::new(bits))
     }
@@ -317,6 +322,7 @@ impl From<TPRI_A> for u8 {
 #[doc = "Field `TPRI` reader - Trigger priority setting"]
 pub struct TPRI_R(crate::FieldReader<u8, TPRI_A>);
 impl TPRI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TPRI_R(crate::FieldReader::new(bits))
     }
@@ -476,6 +482,7 @@ impl<'a> TPRI_W<'a> {
 #[doc = "Field `RSYNC` reader - Trigger Resync"]
 pub struct RSYNC_R(crate::FieldReader<bool, bool>);
 impl RSYNC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RSYNC_R(crate::FieldReader::new(bits))
     }
@@ -512,6 +519,7 @@ impl<'a> RSYNC_W<'a> {
 #[doc = "Field `TDLY` reader - Trigger delay select"]
 pub struct TDLY_R(crate::FieldReader<u8, u8>);
 impl TDLY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TDLY_R(crate::FieldReader::new(bits))
     }
@@ -571,6 +579,7 @@ impl From<TCMD_A> for u8 {
 #[doc = "Field `TCMD` reader - Trigger command select"]
 pub struct TCMD_R(crate::FieldReader<u8, TCMD_A>);
 impl TCMD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TCMD_R(crate::FieldReader::new(bits))
     }
@@ -801,6 +810,7 @@ impl W {
         TCMD_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<IENF_SPEC>> for R {
+impl From<crate::R<IENF_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<IENF_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<IENF_SPEC>> for W {
+impl From<crate::W<IENF_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<IENF_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<IENF_SPEC>> for W {
 #[doc = "Field `ENAF` reader - Enables the falling edge or configures the active level interrupt for each pin interrupt. Bit n configures the pin interrupt selected in PINTSELn. 0 = Disable falling edge interrupt or set active interrupt level LOW. 1 = Enable falling edge interrupt enabled or set active interrupt level HIGH."]
 pub struct ENAF_R(crate::FieldReader<u8, u8>);
 impl ENAF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ENAF_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         ENAF_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

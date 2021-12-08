@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FIFOTRIG_SPEC>> for R {
+impl From<crate::R<FIFOTRIG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FIFOTRIG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FIFOTRIG_SPEC>> for W {
+impl From<crate::W<FIFOTRIG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FIFOTRIG_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<TXLVLENA_A> for bool {
 #[doc = "Field `TXLVLENA` reader - Transmit FIFO level trigger enable. This trigger will become an interrupt if enabled in FIFOINTENSET, or a DMA trigger if DMATX in FIFOCFG is set."]
 pub struct TXLVLENA_R(crate::FieldReader<bool, TXLVLENA_A>);
 impl TXLVLENA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXLVLENA_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<RXLVLENA_A> for bool {
 #[doc = "Field `RXLVLENA` reader - Receive FIFO level trigger enable. This trigger will become an interrupt if enabled in FIFOINTENSET, or a DMA trigger if DMARX in FIFOCFG is set."]
 pub struct RXLVLENA_R(crate::FieldReader<bool, RXLVLENA_A>);
 impl RXLVLENA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXLVLENA_R(crate::FieldReader::new(bits))
     }
@@ -201,6 +205,7 @@ impl<'a> RXLVLENA_W<'a> {
 #[doc = "Field `TXLVL` reader - Transmit FIFO level trigger point. This field is used only when TXLVLENA = 1. If enabled to do so, the FIFO level can wake up the device just enough to perform DMA, then return to the reduced power mode. See Hardware Wake-up control register. 0 = trigger when the TX FIFO becomes empty. 1 = trigger when the TX FIFO level decreases to one entry. 15 = trigger when the TX FIFO level decreases to 15 entries (is no longer full)."]
 pub struct TXLVL_R(crate::FieldReader<u8, u8>);
 impl TXLVL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TXLVL_R(crate::FieldReader::new(bits))
     }
@@ -227,6 +232,7 @@ impl<'a> TXLVL_W<'a> {
 #[doc = "Field `RXLVL` reader - Receive FIFO level trigger point. The RX FIFO level is checked when a new piece of data is received. This field is used only when RXLVLENA = 1. If enabled to do so, the FIFO level can wake up the device just enough to perform DMA, then return to the reduced power mode. See Hardware Wake-up control register. 0 = trigger when the RX FIFO has received one entry (is no longer empty). 1 = trigger when the RX FIFO has received two entries. 15 = trigger when the RX FIFO has received 16 entries (has become full)."]
 pub struct RXLVL_R(crate::FieldReader<u8, u8>);
 impl RXLVL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RXLVL_R(crate::FieldReader::new(bits))
     }
@@ -294,6 +300,7 @@ impl W {
         RXLVL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

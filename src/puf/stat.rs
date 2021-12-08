@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<STAT_SPEC>> for R {
+impl From<crate::R<STAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<STAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<STAT_SPEC>> for W {
+impl From<crate::W<STAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<STAT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<STAT_SPEC>> for W {
 #[doc = "Field `busy` reader - Indicates that operation is in progress"]
 pub struct BUSY_R(crate::FieldReader<bool, bool>);
 impl BUSY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BUSY_R(crate::FieldReader::new(bits))
     }
@@ -49,6 +52,7 @@ impl core::ops::Deref for BUSY_R {
 #[doc = "Field `SUCCESS` reader - Last operation was successful"]
 pub struct SUCCESS_R(crate::FieldReader<bool, bool>);
 impl SUCCESS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUCCESS_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +67,7 @@ impl core::ops::Deref for SUCCESS_R {
 #[doc = "Field `error` reader - PUF is in the Error state and no operations can be performed"]
 pub struct ERROR_R(crate::FieldReader<bool, bool>);
 impl ERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERROR_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +82,7 @@ impl core::ops::Deref for ERROR_R {
 #[doc = "Field `KEYINREQ` reader - Request for next part of key"]
 pub struct KEYINREQ_R(crate::FieldReader<bool, bool>);
 impl KEYINREQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         KEYINREQ_R(crate::FieldReader::new(bits))
     }
@@ -91,6 +97,7 @@ impl core::ops::Deref for KEYINREQ_R {
 #[doc = "Field `KEYOUTAVAIL` reader - Next part of key is available"]
 pub struct KEYOUTAVAIL_R(crate::FieldReader<bool, bool>);
 impl KEYOUTAVAIL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         KEYOUTAVAIL_R(crate::FieldReader::new(bits))
     }
@@ -105,6 +112,7 @@ impl core::ops::Deref for KEYOUTAVAIL_R {
 #[doc = "Field `CODEINREQ` reader - Request for next part of AC/KC"]
 pub struct CODEINREQ_R(crate::FieldReader<bool, bool>);
 impl CODEINREQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CODEINREQ_R(crate::FieldReader::new(bits))
     }
@@ -119,6 +127,7 @@ impl core::ops::Deref for CODEINREQ_R {
 #[doc = "Field `CODEOUTAVAIL` reader - Next part of AC/KC is available"]
 pub struct CODEOUTAVAIL_R(crate::FieldReader<bool, bool>);
 impl CODEOUTAVAIL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CODEOUTAVAIL_R(crate::FieldReader::new(bits))
     }
@@ -169,6 +178,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

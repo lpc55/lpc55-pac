@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CTRL_RAM2_MEM_RULE0_SPEC>> for R {
+impl From<crate::R<SEC_CTRL_RAM2_MEM_RULE0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CTRL_RAM2_MEM_RULE0_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CTRL_RAM2_MEM_RULE0_SPEC>> for W {
+impl From<crate::W<SEC_CTRL_RAM2_MEM_RULE0_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CTRL_RAM2_MEM_RULE0_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<RULE0_A> for u8 {
 #[doc = "Field `RULE0` reader - secure control rule0. it can be set when check_reg's write_lock is '0'"]
 pub struct RULE0_R(crate::FieldReader<u8, RULE0_A>);
 impl RULE0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RULE0_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<RULE1_A> for u8 {
 #[doc = "Field `RULE1` reader - secure control rule1. it can be set when check_reg's write_lock is '0'"]
 pub struct RULE1_R(crate::FieldReader<u8, RULE1_A>);
 impl RULE1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RULE1_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +260,7 @@ impl From<RULE2_A> for u8 {
 #[doc = "Field `RULE2` reader - secure control rule2. it can be set when check_reg's write_lock is '0'"]
 pub struct RULE2_R(crate::FieldReader<u8, RULE2_A>);
 impl RULE2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RULE2_R(crate::FieldReader::new(bits))
     }
@@ -357,6 +362,7 @@ impl From<RULE3_A> for u8 {
 #[doc = "Field `RULE3` reader - secure control rule3. it can be set when check_reg's write_lock is '0'"]
 pub struct RULE3_R(crate::FieldReader<u8, RULE3_A>);
 impl RULE3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RULE3_R(crate::FieldReader::new(bits))
     }
@@ -458,6 +464,7 @@ impl From<RULE4_A> for u8 {
 #[doc = "Field `RULE4` reader - secure control rule4. it can be set when check_reg's write_lock is '0'"]
 pub struct RULE4_R(crate::FieldReader<u8, RULE4_A>);
 impl RULE4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RULE4_R(crate::FieldReader::new(bits))
     }
@@ -559,6 +566,7 @@ impl From<RULE5_A> for u8 {
 #[doc = "Field `RULE5` reader - secure control rule5. it can be set when check_reg's write_lock is '0'"]
 pub struct RULE5_R(crate::FieldReader<u8, RULE5_A>);
 impl RULE5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RULE5_R(crate::FieldReader::new(bits))
     }
@@ -660,6 +668,7 @@ impl From<RULE6_A> for u8 {
 #[doc = "Field `RULE6` reader - secure control rule6. it can be set when check_reg's write_lock is '0'"]
 pub struct RULE6_R(crate::FieldReader<u8, RULE6_A>);
 impl RULE6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RULE6_R(crate::FieldReader::new(bits))
     }
@@ -761,6 +770,7 @@ impl From<RULE7_A> for u8 {
 #[doc = "Field `RULE7` reader - secure control rule7. it can be set when check_reg's write_lock is '0'"]
 pub struct RULE7_R(crate::FieldReader<u8, RULE7_A>);
 impl RULE7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RULE7_R(crate::FieldReader::new(bits))
     }
@@ -924,6 +934,7 @@ impl W {
         RULE7_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

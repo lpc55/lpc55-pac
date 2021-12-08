@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<STAT_SPEC>> for R {
+impl From<crate::R<STAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<STAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<STAT_SPEC>> for W {
+impl From<crate::W<STAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<STAT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<STAT_SPEC>> for W {
 #[doc = "Field `INTR` reader - Interrupt flag. 0 = No interrupt is pending. 1 = An interrupt is pending. A write of any value to this register clears this flag."]
 pub struct INTR_R(crate::FieldReader<bool, bool>);
 impl INTR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INTR_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> INTR_W<'a> {
 #[doc = "Field `ACTIVE` reader - Active flag. 0 = The Micro-Tick Timer is stopped. 1 = The Micro-Tick Timer is currently active."]
 pub struct ACTIVE_R(crate::FieldReader<bool, bool>);
 impl ACTIVE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ACTIVE_R(crate::FieldReader::new(bits))
     }
@@ -128,6 +132,7 @@ impl W {
         ACTIVE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

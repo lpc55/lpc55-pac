@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CPSTAT_SPEC>> for R {
+impl From<crate::R<CPSTAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CPSTAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CPSTAT_SPEC>> for W {
+impl From<crate::W<CPSTAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CPSTAT_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<CPU0SLEEPING_A> for bool {
 #[doc = "Field `CPU0SLEEPING` reader - The CPU0 sleeping state."]
 pub struct CPU0SLEEPING_R(crate::FieldReader<bool, CPU0SLEEPING_A>);
 impl CPU0SLEEPING_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CPU0SLEEPING_R(crate::FieldReader::new(bits))
     }
@@ -95,6 +98,7 @@ impl From<CPU1SLEEPING_A> for bool {
 #[doc = "Field `CPU1SLEEPING` reader - The CPU1 sleeping state."]
 pub struct CPU1SLEEPING_R(crate::FieldReader<bool, CPU1SLEEPING_A>);
 impl CPU1SLEEPING_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CPU1SLEEPING_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +145,7 @@ impl From<CPU0LOCKUP_A> for bool {
 #[doc = "Field `CPU0LOCKUP` reader - The CPU0 lockup state."]
 pub struct CPU0LOCKUP_R(crate::FieldReader<bool, CPU0LOCKUP_A>);
 impl CPU0LOCKUP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CPU0LOCKUP_R(crate::FieldReader::new(bits))
     }
@@ -187,6 +192,7 @@ impl From<CPU1LOCKUP_A> for bool {
 #[doc = "Field `CPU1LOCKUP` reader - The CPU1 lockup state."]
 pub struct CPU1LOCKUP_R(crate::FieldReader<bool, CPU1LOCKUP_A>);
 impl CPU1LOCKUP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CPU1LOCKUP_R(crate::FieldReader::new(bits))
     }
@@ -240,6 +246,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

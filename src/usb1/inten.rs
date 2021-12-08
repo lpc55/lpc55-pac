@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INTEN_SPEC>> for R {
+impl From<crate::R<INTEN_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INTEN_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<INTEN_SPEC>> for W {
+impl From<crate::W<INTEN_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<INTEN_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<INTEN_SPEC>> for W {
 #[doc = "Field `EP_INT_EN` reader - If this bit is set and the corresponding USB interrupt status bit is set, a HW interrupt is generated on the interrupt line."]
 pub struct EP_INT_EN_R(crate::FieldReader<u16, u16>);
 impl EP_INT_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         EP_INT_EN_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> EP_INT_EN_W<'a> {
 #[doc = "Field `FRAME_INT_EN` reader - If this bit is set and the corresponding USB interrupt status bit is set, a HW interrupt is generated on the interrupt line."]
 pub struct FRAME_INT_EN_R(crate::FieldReader<bool, bool>);
 impl FRAME_INT_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRAME_INT_EN_R(crate::FieldReader::new(bits))
     }
@@ -97,6 +101,7 @@ impl<'a> FRAME_INT_EN_W<'a> {
 #[doc = "Field `DEV_INT_EN` reader - If this bit is set and the corresponding USB interrupt status bit is set, a HW interrupt is generated on the interrupt line."]
 pub struct DEV_INT_EN_R(crate::FieldReader<bool, bool>);
 impl DEV_INT_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEV_INT_EN_R(crate::FieldReader::new(bits))
     }
@@ -164,6 +169,7 @@ impl W {
         DEV_INT_EN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

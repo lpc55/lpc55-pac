@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RTCOSC32K_SPEC>> for R {
+impl From<crate::R<RTCOSC32K_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RTCOSC32K_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RTCOSC32K_SPEC>> for W {
+impl From<crate::W<RTCOSC32K_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RTCOSC32K_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<SEL_A> for bool {
 #[doc = "Field `SEL` reader - Select the 32K oscillator to be used in Deep Power Down Mode for the RTC (either XTAL32KHz or FRO32KHz) ."]
 pub struct SEL_R(crate::FieldReader<bool, SEL_A>);
 impl SEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEL_R(crate::FieldReader::new(bits))
     }
@@ -118,6 +121,7 @@ impl<'a> SEL_W<'a> {
 #[doc = "Field `CLK1KHZDIV` reader - Actual division ratio is : 28 + CLK1KHZDIV."]
 pub struct CLK1KHZDIV_R(crate::FieldReader<u8, u8>);
 impl CLK1KHZDIV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CLK1KHZDIV_R(crate::FieldReader::new(bits))
     }
@@ -144,6 +148,7 @@ impl<'a> CLK1KHZDIV_W<'a> {
 #[doc = "Field `CLK1KHZDIVUPDATEREQ` reader - RTC 1KHz clock Divider status flag."]
 pub struct CLK1KHZDIVUPDATEREQ_R(crate::FieldReader<bool, bool>);
 impl CLK1KHZDIVUPDATEREQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CLK1KHZDIVUPDATEREQ_R(crate::FieldReader::new(bits))
     }
@@ -180,6 +185,7 @@ impl<'a> CLK1KHZDIVUPDATEREQ_W<'a> {
 #[doc = "Field `CLK1HZDIV` reader - Actual division ratio is : 31744 + CLK1HZDIV."]
 pub struct CLK1HZDIV_R(crate::FieldReader<u16, u16>);
 impl CLK1HZDIV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         CLK1HZDIV_R(crate::FieldReader::new(bits))
     }
@@ -206,6 +212,7 @@ impl<'a> CLK1HZDIV_W<'a> {
 #[doc = "Field `CLK1HZDIVHALT` reader - Halts the divider counter."]
 pub struct CLK1HZDIVHALT_R(crate::FieldReader<bool, bool>);
 impl CLK1HZDIVHALT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CLK1HZDIVHALT_R(crate::FieldReader::new(bits))
     }
@@ -242,6 +249,7 @@ impl<'a> CLK1HZDIVHALT_W<'a> {
 #[doc = "Field `CLK1HZDIVUPDATEREQ` reader - RTC 1Hz Divider status flag."]
 pub struct CLK1HZDIVUPDATEREQ_R(crate::FieldReader<bool, bool>);
 impl CLK1HZDIVUPDATEREQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CLK1HZDIVUPDATEREQ_R(crate::FieldReader::new(bits))
     }
@@ -339,6 +347,7 @@ impl W {
         CLK1HZDIVUPDATEREQ_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

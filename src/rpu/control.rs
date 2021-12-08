@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CONTROL_SPEC>> for R {
+impl From<crate::R<CONTROL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CONTROL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CONTROL_SPEC>> for W {
+impl From<crate::W<CONTROL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CONTROL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CONTROL_SPEC>> for W {
 #[doc = "Field `PATCH0` reader - Patch 0 control bit"]
 pub struct PATCH0_R(crate::FieldReader<bool, bool>);
 impl PATCH0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH0_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> PATCH0_W<'a> {
 #[doc = "Field `PATCH1` reader - Patch 1 control bit"]
 pub struct PATCH1_R(crate::FieldReader<bool, bool>);
 impl PATCH1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH1_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> PATCH1_W<'a> {
 #[doc = "Field `PATCH2` reader - Patch 2 control bit"]
 pub struct PATCH2_R(crate::FieldReader<bool, bool>);
 impl PATCH2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH2_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> PATCH2_W<'a> {
 #[doc = "Field `PATCH3` reader - Patch 3 control bit"]
 pub struct PATCH3_R(crate::FieldReader<bool, bool>);
 impl PATCH3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH3_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> PATCH3_W<'a> {
 #[doc = "Field `PATCH4` reader - Patch 4 control bit"]
 pub struct PATCH4_R(crate::FieldReader<bool, bool>);
 impl PATCH4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH4_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> PATCH4_W<'a> {
 #[doc = "Field `PATCH5` reader - Patch 5 control bit"]
 pub struct PATCH5_R(crate::FieldReader<bool, bool>);
 impl PATCH5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH5_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +259,7 @@ impl<'a> PATCH5_W<'a> {
 #[doc = "Field `PATCH6` reader - Patch 6 control bit"]
 pub struct PATCH6_R(crate::FieldReader<bool, bool>);
 impl PATCH6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH6_R(crate::FieldReader::new(bits))
     }
@@ -287,6 +296,7 @@ impl<'a> PATCH6_W<'a> {
 #[doc = "Field `PATCH7` reader - Patch 7 control bit"]
 pub struct PATCH7_R(crate::FieldReader<bool, bool>);
 impl PATCH7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH7_R(crate::FieldReader::new(bits))
     }
@@ -323,6 +333,7 @@ impl<'a> PATCH7_W<'a> {
 #[doc = "Field `PATCH8` reader - Patch 8 control bit"]
 pub struct PATCH8_R(crate::FieldReader<bool, bool>);
 impl PATCH8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH8_R(crate::FieldReader::new(bits))
     }
@@ -359,6 +370,7 @@ impl<'a> PATCH8_W<'a> {
 #[doc = "Field `PATCH9` reader - Patch 9 control bit"]
 pub struct PATCH9_R(crate::FieldReader<bool, bool>);
 impl PATCH9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH9_R(crate::FieldReader::new(bits))
     }
@@ -395,6 +407,7 @@ impl<'a> PATCH9_W<'a> {
 #[doc = "Field `PATCH10` reader - Patch 10 control bit"]
 pub struct PATCH10_R(crate::FieldReader<bool, bool>);
 impl PATCH10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH10_R(crate::FieldReader::new(bits))
     }
@@ -431,6 +444,7 @@ impl<'a> PATCH10_W<'a> {
 #[doc = "Field `PATCH11` reader - Patch 11 control bit"]
 pub struct PATCH11_R(crate::FieldReader<bool, bool>);
 impl PATCH11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH11_R(crate::FieldReader::new(bits))
     }
@@ -467,6 +481,7 @@ impl<'a> PATCH11_W<'a> {
 #[doc = "Field `PATCH12` reader - Patch 12 control bit"]
 pub struct PATCH12_R(crate::FieldReader<bool, bool>);
 impl PATCH12_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH12_R(crate::FieldReader::new(bits))
     }
@@ -503,6 +518,7 @@ impl<'a> PATCH12_W<'a> {
 #[doc = "Field `PATCH13` reader - Patch 13 control bit"]
 pub struct PATCH13_R(crate::FieldReader<bool, bool>);
 impl PATCH13_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH13_R(crate::FieldReader::new(bits))
     }
@@ -539,6 +555,7 @@ impl<'a> PATCH13_W<'a> {
 #[doc = "Field `PATCH14` reader - Patch 14 control bit"]
 pub struct PATCH14_R(crate::FieldReader<bool, bool>);
 impl PATCH14_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH14_R(crate::FieldReader::new(bits))
     }
@@ -575,6 +592,7 @@ impl<'a> PATCH14_W<'a> {
 #[doc = "Field `PATCH15` reader - Patch 15 control bit"]
 pub struct PATCH15_R(crate::FieldReader<bool, bool>);
 impl PATCH15_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PATCH15_R(crate::FieldReader::new(bits))
     }
@@ -611,6 +629,7 @@ impl<'a> PATCH15_W<'a> {
 #[doc = "Field `DISABLE` reader - disable bit"]
 pub struct DISABLE_R(crate::FieldReader<bool, bool>);
 impl DISABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DISABLE_R(crate::FieldReader::new(bits))
     }
@@ -818,6 +837,7 @@ impl W {
         DISABLE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

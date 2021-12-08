@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INTENSET_SPEC>> for R {
+impl From<crate::R<INTENSET_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INTENSET_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<INTENSET_SPEC>> for W {
+impl From<crate::W<INTENSET_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<INTENSET_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<SSAEN_A> for bool {
 #[doc = "Field `SSAEN` reader - Slave select assert interrupt enable. Determines whether an interrupt occurs when the Slave Select is asserted."]
 pub struct SSAEN_R(crate::FieldReader<bool, SSAEN_A>);
 impl SSAEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SSAEN_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<SSDEN_A> for bool {
 #[doc = "Field `SSDEN` reader - Slave select deassert interrupt enable. Determines whether an interrupt occurs when the Slave Select is deasserted."]
 pub struct SSDEN_R(crate::FieldReader<bool, SSDEN_A>);
 impl SSDEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SSDEN_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<MSTIDLEEN_A> for bool {
 #[doc = "Field `MSTIDLEEN` reader - Master idle interrupt enable."]
 pub struct MSTIDLEEN_R(crate::FieldReader<bool, MSTIDLEEN_A>);
 impl MSTIDLEEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MSTIDLEEN_R(crate::FieldReader::new(bits))
     }
@@ -315,6 +320,7 @@ impl W {
         MSTIDLEEN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

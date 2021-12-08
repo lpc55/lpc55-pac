@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<USB1NEEDCLKCTRL_SPEC>> for R {
+impl From<crate::R<USB1NEEDCLKCTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<USB1NEEDCLKCTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<USB1NEEDCLKCTRL_SPEC>> for W {
+impl From<crate::W<USB1NEEDCLKCTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<USB1NEEDCLKCTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<AP_HS_DEV_NEEDCLK_A> for bool {
 #[doc = "Field `AP_HS_DEV_NEEDCLK` reader - USB1 Device need_clock signal control:"]
 pub struct AP_HS_DEV_NEEDCLK_R(crate::FieldReader<bool, AP_HS_DEV_NEEDCLK_A>);
 impl AP_HS_DEV_NEEDCLK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AP_HS_DEV_NEEDCLK_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<POL_HS_DEV_NEEDCLK_A> for bool {
 #[doc = "Field `POL_HS_DEV_NEEDCLK` reader - USB1 device need clock polarity for triggering the USB1_NEEDCLK wake-up interrupt:"]
 pub struct POL_HS_DEV_NEEDCLK_R(crate::FieldReader<bool, POL_HS_DEV_NEEDCLK_A>);
 impl POL_HS_DEV_NEEDCLK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         POL_HS_DEV_NEEDCLK_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<AP_HS_HOST_NEEDCLK_A> for bool {
 #[doc = "Field `AP_HS_HOST_NEEDCLK` reader - USB1 Host need clock signal control:"]
 pub struct AP_HS_HOST_NEEDCLK_R(crate::FieldReader<bool, AP_HS_HOST_NEEDCLK_A>);
 impl AP_HS_HOST_NEEDCLK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AP_HS_HOST_NEEDCLK_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<POL_HS_HOST_NEEDCLK_A> for bool {
 #[doc = "Field `POL_HS_HOST_NEEDCLK` reader - USB1 host need clock polarity for triggering the USB1_NEEDCLK wake-up interrupt."]
 pub struct POL_HS_HOST_NEEDCLK_R(crate::FieldReader<bool, POL_HS_HOST_NEEDCLK_A>);
 impl POL_HS_HOST_NEEDCLK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         POL_HS_HOST_NEEDCLK_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<HS_DEV_WAKEUP_N_A> for bool {
 #[doc = "Field `HS_DEV_WAKEUP_N` reader - Software override of device controller PHY wake up logic."]
 pub struct HS_DEV_WAKEUP_N_R(crate::FieldReader<bool, HS_DEV_WAKEUP_N_A>);
 impl HS_DEV_WAKEUP_N_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HS_DEV_WAKEUP_N_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +508,7 @@ impl W {
         HS_DEV_WAKEUP_N_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

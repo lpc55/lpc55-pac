@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PWD_TOG_SPEC>> for R {
+impl From<crate::R<PWD_TOG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PWD_TOG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PWD_TOG_SPEC>> for W {
+impl From<crate::W<PWD_TOG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PWD_TOG_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<TXPWDFS_A> for bool {
 #[doc = "Field `TXPWDFS` reader - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
 pub struct TXPWDFS_R(crate::FieldReader<bool, TXPWDFS_A>);
 impl TXPWDFS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXPWDFS_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<TXPWDIBIAS_A> for bool {
 #[doc = "Field `TXPWDIBIAS` reader - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
 pub struct TXPWDIBIAS_R(crate::FieldReader<bool, TXPWDIBIAS_A>);
 impl TXPWDIBIAS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXPWDIBIAS_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<TXPWDV2I_A> for bool {
 #[doc = "Field `TXPWDV2I` reader - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
 pub struct TXPWDV2I_R(crate::FieldReader<bool, TXPWDV2I_A>);
 impl TXPWDV2I_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXPWDV2I_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<RXPWDENV_A> for bool {
 #[doc = "Field `RXPWDENV` reader - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
 pub struct RXPWDENV_R(crate::FieldReader<bool, RXPWDENV_A>);
 impl RXPWDENV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXPWDENV_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<RXPWD1PT1_A> for bool {
 #[doc = "Field `RXPWD1PT1` reader - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
 pub struct RXPWD1PT1_R(crate::FieldReader<bool, RXPWD1PT1_A>);
 impl RXPWD1PT1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXPWD1PT1_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<RXPWDDIFF_A> for bool {
 #[doc = "Field `RXPWDDIFF` reader - Note that this bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
 pub struct RXPWDDIFF_R(crate::FieldReader<bool, RXPWDDIFF_A>);
 impl RXPWDDIFF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXPWDDIFF_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<RXPWDRX_A> for bool {
 #[doc = "Field `RXPWDRX` reader - This bit will be auto cleared if there is USB wakeup event while ENAUTOCLR_PHY_PWD bit of CTRL is enabled"]
 pub struct RXPWDRX_R(crate::FieldReader<bool, RXPWDRX_A>);
 impl RXPWDRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXPWDRX_R(crate::FieldReader::new(bits))
     }
@@ -687,6 +696,7 @@ impl W {
         RXPWDRX_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

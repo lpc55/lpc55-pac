@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PWRCTRL_SPEC>> for R {
+impl From<crate::R<PWRCTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PWRCTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PWRCTRL_SPEC>> for W {
+impl From<crate::W<PWRCTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PWRCTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<PWRCTRL_SPEC>> for W {
 #[doc = "Field `RAMON` reader - Power on the PUF RAM."]
 pub struct RAMON_R(crate::FieldReader<bool, bool>);
 impl RAMON_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RAMON_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> RAMON_W<'a> {
 #[doc = "Field `RAMSTAT` reader - PUF RAM status."]
 pub struct RAMSTAT_R(crate::FieldReader<bool, bool>);
 impl RAMSTAT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RAMSTAT_R(crate::FieldReader::new(bits))
     }
@@ -128,6 +132,7 @@ impl W {
         RAMSTAT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

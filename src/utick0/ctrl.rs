@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CTRL_SPEC>> for R {
+impl From<crate::R<CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CTRL_SPEC>> for W {
+impl From<crate::W<CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `DELAYVAL` reader - Tick interval value. The delay will be equal to DELAYVAL + 1 periods of the timer clock. The minimum usable value is 1, for a delay of 2 timer clocks. A value of 0 stops the timer."]
 pub struct DELAYVAL_R(crate::FieldReader<u32, u32>);
 impl DELAYVAL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         DELAYVAL_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> DELAYVAL_W<'a> {
 #[doc = "Field `REPEAT` reader - Repeat delay. 0 = One-time delay. 1 = Delay repeats continuously."]
 pub struct REPEAT_R(crate::FieldReader<bool, bool>);
 impl REPEAT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REPEAT_R(crate::FieldReader::new(bits))
     }
@@ -118,6 +122,7 @@ impl W {
         REPEAT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

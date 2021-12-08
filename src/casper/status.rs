@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<STATUS_SPEC>> for R {
+impl From<crate::R<STATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<STATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<STATUS_SPEC>> for W {
+impl From<crate::W<STATUS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<STATUS_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<DONE_A> for bool {
 #[doc = "Field `DONE` reader - Indicates if the accelerator has finished an operation. Write 1 to clear, or write CTRL1 to clear."]
 pub struct DONE_R(crate::FieldReader<bool, DONE_A>);
 impl DONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DONE_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<CARRY_A> for bool {
 #[doc = "Field `CARRY` reader - Last carry value if operation produced a carry bit"]
 pub struct CARRY_R(crate::FieldReader<bool, CARRY_A>);
 impl CARRY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CARRY_R(crate::FieldReader::new(bits))
     }
@@ -178,6 +182,7 @@ impl From<BUSY_A> for bool {
 #[doc = "Field `BUSY` reader - Indicates if the accelerator is busy performing an operation"]
 pub struct BUSY_R(crate::FieldReader<bool, BUSY_A>);
 impl BUSY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BUSY_R(crate::FieldReader::new(bits))
     }
@@ -231,6 +236,7 @@ impl W {
         DONE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

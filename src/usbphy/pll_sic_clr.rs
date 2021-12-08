@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PLL_SIC_CLR_SPEC>> for R {
+impl From<crate::R<PLL_SIC_CLR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PLL_SIC_CLR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PLL_SIC_CLR_SPEC>> for W {
+impl From<crate::W<PLL_SIC_CLR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PLL_SIC_CLR_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<PLL_SIC_CLR_SPEC>> for W {
 #[doc = "Field `PLL_EN_USB_CLKS` reader - Enables the USB clock from PLL to USB PHY"]
 pub struct PLL_EN_USB_CLKS_R(crate::FieldReader<bool, bool>);
 impl PLL_EN_USB_CLKS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PLL_EN_USB_CLKS_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> PLL_EN_USB_CLKS_W<'a> {
 #[doc = "Field `PLL_POWER` reader - Power up the USB PLL"]
 pub struct PLL_POWER_R(crate::FieldReader<bool, bool>);
 impl PLL_POWER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PLL_POWER_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> PLL_POWER_W<'a> {
 #[doc = "Field `PLL_ENABLE` reader - Enables the clock output from the USB PLL"]
 pub struct PLL_ENABLE_R(crate::FieldReader<bool, bool>);
 impl PLL_ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PLL_ENABLE_R(crate::FieldReader::new(bits))
     }
@@ -157,6 +162,7 @@ impl From<REFBIAS_PWD_SEL_A> for bool {
 #[doc = "Field `REFBIAS_PWD_SEL` reader - Reference bias power down select."]
 pub struct REFBIAS_PWD_SEL_R(crate::FieldReader<bool, REFBIAS_PWD_SEL_A>);
 impl REFBIAS_PWD_SEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REFBIAS_PWD_SEL_R(crate::FieldReader::new(bits))
     }
@@ -226,6 +232,7 @@ impl<'a> REFBIAS_PWD_SEL_W<'a> {
 #[doc = "Field `REFBIAS_PWD` reader - Power down the reference bias This bit is only used when REFBIAS_PWD_SEL is set to 1."]
 pub struct REFBIAS_PWD_R(crate::FieldReader<bool, bool>);
 impl REFBIAS_PWD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REFBIAS_PWD_R(crate::FieldReader::new(bits))
     }
@@ -262,6 +269,7 @@ impl<'a> REFBIAS_PWD_W<'a> {
 #[doc = "Field `PLL_REG_ENABLE` reader - This field controls the USB PLL regulator, set to enable the regulator"]
 pub struct PLL_REG_ENABLE_R(crate::FieldReader<bool, bool>);
 impl PLL_REG_ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PLL_REG_ENABLE_R(crate::FieldReader::new(bits))
     }
@@ -325,6 +333,7 @@ impl From<PLL_DIV_SEL_A> for u8 {
 #[doc = "Field `PLL_DIV_SEL` reader - This field controls the USB PLL feedback loop divider"]
 pub struct PLL_DIV_SEL_R(crate::FieldReader<u8, PLL_DIV_SEL_A>);
 impl PLL_DIV_SEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PLL_DIV_SEL_R(crate::FieldReader::new(bits))
     }
@@ -451,6 +460,7 @@ impl<'a> PLL_DIV_SEL_W<'a> {
 #[doc = "Field `PLL_PREDIV` reader - This is selection between /1 or /2 to expand the range of ref input clock."]
 pub struct PLL_PREDIV_R(crate::FieldReader<bool, bool>);
 impl PLL_PREDIV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PLL_PREDIV_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +511,7 @@ impl From<PLL_LOCK_A> for bool {
 #[doc = "Field `PLL_LOCK` reader - USB PLL lock status indicator"]
 pub struct PLL_LOCK_R(crate::FieldReader<bool, PLL_LOCK_A>);
 impl PLL_LOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PLL_LOCK_R(crate::FieldReader::new(bits))
     }
@@ -619,6 +630,7 @@ impl W {
         PLL_PREDIV_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

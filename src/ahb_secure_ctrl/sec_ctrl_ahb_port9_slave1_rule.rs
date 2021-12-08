@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CTRL_AHB_PORT9_SLAVE1_RULE_SPEC>> for R {
+impl From<crate::R<SEC_CTRL_AHB_PORT9_SLAVE1_RULE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CTRL_AHB_PORT9_SLAVE1_RULE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CTRL_AHB_PORT9_SLAVE1_RULE_SPEC>> for W {
+impl From<crate::W<SEC_CTRL_AHB_PORT9_SLAVE1_RULE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CTRL_AHB_PORT9_SLAVE1_RULE_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<FLEXCOMM7_RULE_A> for u8 {
 #[doc = "Field `FLEXCOMM7_RULE` reader - Flexcomm interface 7"]
 pub struct FLEXCOMM7_RULE_R(crate::FieldReader<u8, FLEXCOMM7_RULE_A>);
 impl FLEXCOMM7_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FLEXCOMM7_RULE_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<SDIO_RULE_A> for u8 {
 #[doc = "Field `SDIO_RULE` reader - SDMMC card interface"]
 pub struct SDIO_RULE_R(crate::FieldReader<u8, SDIO_RULE_A>);
 impl SDIO_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SDIO_RULE_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +260,7 @@ impl From<DBG_MAILBOX_RULE_A> for u8 {
 #[doc = "Field `DBG_MAILBOX_RULE` reader - Debug mailbox (aka ISP-AP)"]
 pub struct DBG_MAILBOX_RULE_R(crate::FieldReader<u8, DBG_MAILBOX_RULE_A>);
 impl DBG_MAILBOX_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DBG_MAILBOX_RULE_R(crate::FieldReader::new(bits))
     }
@@ -357,6 +362,7 @@ impl From<HS_LSPI_RULE_A> for u8 {
 #[doc = "Field `HS_LSPI_RULE` reader - High Speed SPI"]
 pub struct HS_LSPI_RULE_R(crate::FieldReader<u8, HS_LSPI_RULE_A>);
 impl HS_LSPI_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         HS_LSPI_RULE_R(crate::FieldReader::new(bits))
     }
@@ -480,6 +486,7 @@ impl W {
         HS_LSPI_RULE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

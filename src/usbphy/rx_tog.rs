@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RX_TOG_SPEC>> for R {
+impl From<crate::R<RX_TOG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RX_TOG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RX_TOG_SPEC>> for W {
+impl From<crate::W<RX_TOG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RX_TOG_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<ENVADJ_A> for u8 {
 #[doc = "Field `ENVADJ` reader - The ENVADJ field adjusts the trip point for the envelope detector"]
 pub struct ENVADJ_R(crate::FieldReader<u8, ENVADJ_A>);
 impl ENVADJ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ENVADJ_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<DISCONADJ_A> for u8 {
 #[doc = "Field `DISCONADJ` reader - The DISCONADJ field adjusts the trip point for the disconnect detector."]
 pub struct DISCONADJ_R(crate::FieldReader<u8, DISCONADJ_A>);
 impl DISCONADJ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DISCONADJ_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +255,7 @@ impl From<RXDBYPASS_A> for bool {
 #[doc = "Field `RXDBYPASS` reader - This test mode is intended for lab use only, replace FS differential receiver with DP single ended receiver"]
 pub struct RXDBYPASS_R(crate::FieldReader<bool, RXDBYPASS_A>);
 impl RXDBYPASS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXDBYPASS_R(crate::FieldReader::new(bits))
     }
@@ -351,6 +356,7 @@ impl W {
         RXDBYPASS_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

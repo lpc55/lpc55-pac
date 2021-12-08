@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PMCFG_SPEC>> for R {
+impl From<crate::R<PMCFG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PMCFG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PMCFG_SPEC>> for W {
+impl From<crate::W<PMCFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PMCFG_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<PROD_ENDPTS0_A> for bool {
 #[doc = "Field `PROD_ENDPTS0` reader - Determines whether slice 0 is an endpoint."]
 pub struct PROD_ENDPTS0_R(crate::FieldReader<bool, PROD_ENDPTS0_A>);
 impl PROD_ENDPTS0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PROD_ENDPTS0_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<PROD_ENDPTS1_A> for bool {
 #[doc = "Field `PROD_ENDPTS1` reader - Determines whether slice 1 is an endpoint."]
 pub struct PROD_ENDPTS1_R(crate::FieldReader<bool, PROD_ENDPTS1_A>);
 impl PROD_ENDPTS1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PROD_ENDPTS1_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<PROD_ENDPTS2_A> for bool {
 #[doc = "Field `PROD_ENDPTS2` reader - Determines whether slice 2 is an endpoint."]
 pub struct PROD_ENDPTS2_R(crate::FieldReader<bool, PROD_ENDPTS2_A>);
 impl PROD_ENDPTS2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PROD_ENDPTS2_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<PROD_ENDPTS3_A> for bool {
 #[doc = "Field `PROD_ENDPTS3` reader - Determines whether slice 3 is an endpoint."]
 pub struct PROD_ENDPTS3_R(crate::FieldReader<bool, PROD_ENDPTS3_A>);
 impl PROD_ENDPTS3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PROD_ENDPTS3_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<PROD_ENDPTS4_A> for bool {
 #[doc = "Field `PROD_ENDPTS4` reader - Determines whether slice 4 is an endpoint."]
 pub struct PROD_ENDPTS4_R(crate::FieldReader<bool, PROD_ENDPTS4_A>);
 impl PROD_ENDPTS4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PROD_ENDPTS4_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<PROD_ENDPTS5_A> for bool {
 #[doc = "Field `PROD_ENDPTS5` reader - Determines whether slice 5 is an endpoint."]
 pub struct PROD_ENDPTS5_R(crate::FieldReader<bool, PROD_ENDPTS5_A>);
 impl PROD_ENDPTS5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PROD_ENDPTS5_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<PROD_ENDPTS6_A> for bool {
 #[doc = "Field `PROD_ENDPTS6` reader - Determines whether slice 6 is an endpoint."]
 pub struct PROD_ENDPTS6_R(crate::FieldReader<bool, PROD_ENDPTS6_A>);
 impl PROD_ENDPTS6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PROD_ENDPTS6_R(crate::FieldReader::new(bits))
     }
@@ -643,6 +652,7 @@ impl From<CFG0_A> for u8 {
 #[doc = "Field `CFG0` reader - Specifies the match contribution condition for bit slice 0."]
 pub struct CFG0_R(crate::FieldReader<u8, CFG0_A>);
 impl CFG0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CFG0_R(crate::FieldReader::new(bits))
     }
@@ -796,6 +806,7 @@ impl From<CFG1_A> for u8 {
 #[doc = "Field `CFG1` reader - Specifies the match contribution condition for bit slice 1."]
 pub struct CFG1_R(crate::FieldReader<u8, CFG1_A>);
 impl CFG1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CFG1_R(crate::FieldReader::new(bits))
     }
@@ -949,6 +960,7 @@ impl From<CFG2_A> for u8 {
 #[doc = "Field `CFG2` reader - Specifies the match contribution condition for bit slice 2."]
 pub struct CFG2_R(crate::FieldReader<u8, CFG2_A>);
 impl CFG2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CFG2_R(crate::FieldReader::new(bits))
     }
@@ -1102,6 +1114,7 @@ impl From<CFG3_A> for u8 {
 #[doc = "Field `CFG3` reader - Specifies the match contribution condition for bit slice 3."]
 pub struct CFG3_R(crate::FieldReader<u8, CFG3_A>);
 impl CFG3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CFG3_R(crate::FieldReader::new(bits))
     }
@@ -1255,6 +1268,7 @@ impl From<CFG4_A> for u8 {
 #[doc = "Field `CFG4` reader - Specifies the match contribution condition for bit slice 4."]
 pub struct CFG4_R(crate::FieldReader<u8, CFG4_A>);
 impl CFG4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CFG4_R(crate::FieldReader::new(bits))
     }
@@ -1408,6 +1422,7 @@ impl From<CFG5_A> for u8 {
 #[doc = "Field `CFG5` reader - Specifies the match contribution condition for bit slice 5."]
 pub struct CFG5_R(crate::FieldReader<u8, CFG5_A>);
 impl CFG5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CFG5_R(crate::FieldReader::new(bits))
     }
@@ -1561,6 +1576,7 @@ impl From<CFG6_A> for u8 {
 #[doc = "Field `CFG6` reader - Specifies the match contribution condition for bit slice 6."]
 pub struct CFG6_R(crate::FieldReader<u8, CFG6_A>);
 impl CFG6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CFG6_R(crate::FieldReader::new(bits))
     }
@@ -1714,6 +1730,7 @@ impl From<CFG7_A> for u8 {
 #[doc = "Field `CFG7` reader - Specifies the match contribution condition for bit slice 7."]
 pub struct CFG7_R(crate::FieldReader<u8, CFG7_A>);
 impl CFG7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CFG7_R(crate::FieldReader::new(bits))
     }
@@ -1991,6 +2008,7 @@ impl W {
         CFG7_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

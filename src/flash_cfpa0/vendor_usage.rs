@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<VENDOR_USAGE_SPEC>> for R {
+impl From<crate::R<VENDOR_USAGE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<VENDOR_USAGE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<VENDOR_USAGE_SPEC>> for W {
+impl From<crate::W<VENDOR_USAGE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<VENDOR_USAGE_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<VENDOR_USAGE_SPEC>> for W {
 #[doc = "Field `DBG_VENDOR_USAGE` reader - DBG_VENDOR_USAGE."]
 pub struct DBG_VENDOR_USAGE_R(crate::FieldReader<u16, u16>);
 impl DBG_VENDOR_USAGE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         DBG_VENDOR_USAGE_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> DBG_VENDOR_USAGE_W<'a> {
 #[doc = "Field `INVERSE_VALUE` reader - inverse value of bits \\[15:0\\]"]
 pub struct INVERSE_VALUE_R(crate::FieldReader<u16, u16>);
 impl INVERSE_VALUE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         INVERSE_VALUE_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl W {
         INVERSE_VALUE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

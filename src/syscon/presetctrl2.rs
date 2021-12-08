@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PRESETCTRL2_SPEC>> for R {
+impl From<crate::R<PRESETCTRL2_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PRESETCTRL2_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PRESETCTRL2_SPEC>> for W {
+impl From<crate::W<PRESETCTRL2_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PRESETCTRL2_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<DMA1_RST_A> for bool {
 #[doc = "Field `DMA1_RST` reader - DMA1 reset control."]
 pub struct DMA1_RST_R(crate::FieldReader<bool, DMA1_RST_A>);
 impl DMA1_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DMA1_RST_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<COMP_RST_A> for bool {
 #[doc = "Field `COMP_RST` reader - Comparator reset control."]
 pub struct COMP_RST_R(crate::FieldReader<bool, COMP_RST_A>);
 impl COMP_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         COMP_RST_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<SDIO_RST_A> for bool {
 #[doc = "Field `SDIO_RST` reader - SDIO reset control."]
 pub struct SDIO_RST_R(crate::FieldReader<bool, SDIO_RST_A>);
 impl SDIO_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SDIO_RST_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<USB1_HOST_RST_A> for bool {
 #[doc = "Field `USB1_HOST_RST` reader - USB1 Host reset control."]
 pub struct USB1_HOST_RST_R(crate::FieldReader<bool, USB1_HOST_RST_A>);
 impl USB1_HOST_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USB1_HOST_RST_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<USB1_DEV_RST_A> for bool {
 #[doc = "Field `USB1_DEV_RST` reader - USB1 dev reset control."]
 pub struct USB1_DEV_RST_R(crate::FieldReader<bool, USB1_DEV_RST_A>);
 impl USB1_DEV_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USB1_DEV_RST_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<USB1_RAM_RST_A> for bool {
 #[doc = "Field `USB1_RAM_RST` reader - USB1 RAM reset control."]
 pub struct USB1_RAM_RST_R(crate::FieldReader<bool, USB1_RAM_RST_A>);
 impl USB1_RAM_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USB1_RAM_RST_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<USB1_PHY_RST_A> for bool {
 #[doc = "Field `USB1_PHY_RST` reader - USB1 PHY reset control."]
 pub struct USB1_PHY_RST_R(crate::FieldReader<bool, USB1_PHY_RST_A>);
 impl USB1_PHY_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USB1_PHY_RST_R(crate::FieldReader::new(bits))
     }
@@ -630,6 +639,7 @@ impl From<FREQME_RST_A> for bool {
 #[doc = "Field `FREQME_RST` reader - Frequency meter reset control."]
 pub struct FREQME_RST_R(crate::FieldReader<bool, FREQME_RST_A>);
 impl FREQME_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FREQME_RST_R(crate::FieldReader::new(bits))
     }
@@ -713,6 +723,7 @@ impl From<RNG_RST_A> for bool {
 #[doc = "Field `RNG_RST` reader - RNG reset control."]
 pub struct RNG_RST_R(crate::FieldReader<bool, RNG_RST_A>);
 impl RNG_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RNG_RST_R(crate::FieldReader::new(bits))
     }
@@ -796,6 +807,7 @@ impl From<SYSCTL_RST_A> for bool {
 #[doc = "Field `SYSCTL_RST` reader - SYSCTL Block reset."]
 pub struct SYSCTL_RST_R(crate::FieldReader<bool, SYSCTL_RST_A>);
 impl SYSCTL_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SYSCTL_RST_R(crate::FieldReader::new(bits))
     }
@@ -879,6 +891,7 @@ impl From<USB0_HOSTM_RST_A> for bool {
 #[doc = "Field `USB0_HOSTM_RST` reader - USB0 Host Master reset control."]
 pub struct USB0_HOSTM_RST_R(crate::FieldReader<bool, USB0_HOSTM_RST_A>);
 impl USB0_HOSTM_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USB0_HOSTM_RST_R(crate::FieldReader::new(bits))
     }
@@ -962,6 +975,7 @@ impl From<USB0_HOSTS_RST_A> for bool {
 #[doc = "Field `USB0_HOSTS_RST` reader - USB0 Host Slave reset control."]
 pub struct USB0_HOSTS_RST_R(crate::FieldReader<bool, USB0_HOSTS_RST_A>);
 impl USB0_HOSTS_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USB0_HOSTS_RST_R(crate::FieldReader::new(bits))
     }
@@ -1045,6 +1059,7 @@ impl From<HASH_AES_RST_A> for bool {
 #[doc = "Field `HASH_AES_RST` reader - HASH_AES reset control."]
 pub struct HASH_AES_RST_R(crate::FieldReader<bool, HASH_AES_RST_A>);
 impl HASH_AES_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HASH_AES_RST_R(crate::FieldReader::new(bits))
     }
@@ -1128,6 +1143,7 @@ impl From<PQ_RST_A> for bool {
 #[doc = "Field `PQ_RST` reader - Power Quad reset control."]
 pub struct PQ_RST_R(crate::FieldReader<bool, PQ_RST_A>);
 impl PQ_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PQ_RST_R(crate::FieldReader::new(bits))
     }
@@ -1211,6 +1227,7 @@ impl From<PLULUT_RST_A> for bool {
 #[doc = "Field `PLULUT_RST` reader - PLU LUT reset control."]
 pub struct PLULUT_RST_R(crate::FieldReader<bool, PLULUT_RST_A>);
 impl PLULUT_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PLULUT_RST_R(crate::FieldReader::new(bits))
     }
@@ -1294,6 +1311,7 @@ impl From<TIMER3_RST_A> for bool {
 #[doc = "Field `TIMER3_RST` reader - Timer 3 reset control."]
 pub struct TIMER3_RST_R(crate::FieldReader<bool, TIMER3_RST_A>);
 impl TIMER3_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TIMER3_RST_R(crate::FieldReader::new(bits))
     }
@@ -1377,6 +1395,7 @@ impl From<TIMER4_RST_A> for bool {
 #[doc = "Field `TIMER4_RST` reader - Timer 4 reset control."]
 pub struct TIMER4_RST_R(crate::FieldReader<bool, TIMER4_RST_A>);
 impl TIMER4_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TIMER4_RST_R(crate::FieldReader::new(bits))
     }
@@ -1460,6 +1479,7 @@ impl From<PUF_RST_A> for bool {
 #[doc = "Field `PUF_RST` reader - PUF reset control reset control."]
 pub struct PUF_RST_R(crate::FieldReader<bool, PUF_RST_A>);
 impl PUF_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PUF_RST_R(crate::FieldReader::new(bits))
     }
@@ -1543,6 +1563,7 @@ impl From<CASPER_RST_A> for bool {
 #[doc = "Field `CASPER_RST` reader - Casper reset control."]
 pub struct CASPER_RST_R(crate::FieldReader<bool, CASPER_RST_A>);
 impl CASPER_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CASPER_RST_R(crate::FieldReader::new(bits))
     }
@@ -1626,6 +1647,7 @@ impl From<ANALOG_CTRL_RST_A> for bool {
 #[doc = "Field `ANALOG_CTRL_RST` reader - analog control reset control."]
 pub struct ANALOG_CTRL_RST_R(crate::FieldReader<bool, ANALOG_CTRL_RST_A>);
 impl ANALOG_CTRL_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ANALOG_CTRL_RST_R(crate::FieldReader::new(bits))
     }
@@ -1709,6 +1731,7 @@ impl From<HS_LSPI_RST_A> for bool {
 #[doc = "Field `HS_LSPI_RST` reader - HS LSPI reset control."]
 pub struct HS_LSPI_RST_R(crate::FieldReader<bool, HS_LSPI_RST_A>);
 impl HS_LSPI_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HS_LSPI_RST_R(crate::FieldReader::new(bits))
     }
@@ -1792,6 +1815,7 @@ impl From<GPIO_SEC_RST_A> for bool {
 #[doc = "Field `GPIO_SEC_RST` reader - GPIO secure reset control."]
 pub struct GPIO_SEC_RST_R(crate::FieldReader<bool, GPIO_SEC_RST_A>);
 impl GPIO_SEC_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         GPIO_SEC_RST_R(crate::FieldReader::new(bits))
     }
@@ -1875,6 +1899,7 @@ impl From<GPIO_SEC_INT_RST_A> for bool {
 #[doc = "Field `GPIO_SEC_INT_RST` reader - GPIO secure int reset control."]
 pub struct GPIO_SEC_INT_RST_R(crate::FieldReader<bool, GPIO_SEC_INT_RST_A>);
 impl GPIO_SEC_INT_RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         GPIO_SEC_INT_RST_R(crate::FieldReader::new(bits))
     }
@@ -2175,6 +2200,7 @@ impl W {
         GPIO_SEC_INT_RST_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

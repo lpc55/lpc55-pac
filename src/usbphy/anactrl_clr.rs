@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ANACTRL_CLR_SPEC>> for R {
+impl From<crate::R<ANACTRL_CLR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ANACTRL_CLR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ANACTRL_CLR_SPEC>> for W {
+impl From<crate::W<ANACTRL_CLR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ANACTRL_CLR_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<ANACTRL_CLR_SPEC>> for W {
 #[doc = "Field `LVI_EN` reader - Vow voltage detector enable bit."]
 pub struct LVI_EN_R(crate::FieldReader<bool, bool>);
 impl LVI_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LVI_EN_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> LVI_EN_W<'a> {
 #[doc = "Field `PFD_CLK_SEL` reader - For normal USB operation, this bit field must remain at value 2'b00."]
 pub struct PFD_CLK_SEL_R(crate::FieldReader<u8, u8>);
 impl PFD_CLK_SEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PFD_CLK_SEL_R(crate::FieldReader::new(bits))
     }
@@ -111,6 +115,7 @@ impl From<DEV_PULLDOWN_A> for bool {
 #[doc = "Field `DEV_PULLDOWN` reader - Setting this field to 1'b1 will enable the 15kohm pulldown resistors on both USB_DP and USB_DM pins"]
 pub struct DEV_PULLDOWN_R(crate::FieldReader<bool, DEV_PULLDOWN_A>);
 impl DEV_PULLDOWN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEV_PULLDOWN_R(crate::FieldReader::new(bits))
     }
@@ -211,6 +216,7 @@ impl W {
         DEV_PULLDOWN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

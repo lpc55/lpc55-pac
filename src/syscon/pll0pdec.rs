@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PLL0PDEC_SPEC>> for R {
+impl From<crate::R<PLL0PDEC_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PLL0PDEC_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PLL0PDEC_SPEC>> for W {
+impl From<crate::W<PLL0PDEC_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PLL0PDEC_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<PLL0PDEC_SPEC>> for W {
 #[doc = "Field `PDIV` reader - post-divider divider ratio (P-divider)"]
 pub struct PDIV_R(crate::FieldReader<u8, u8>);
 impl PDIV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PDIV_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> PDIV_W<'a> {
 #[doc = "Field `PREQ` reader - feedback ratio change request."]
 pub struct PREQ_R(crate::FieldReader<bool, bool>);
 impl PREQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PREQ_R(crate::FieldReader::new(bits))
     }
@@ -118,6 +122,7 @@ impl W {
         PREQ_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

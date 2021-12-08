@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CTRL_AHB_PORT8_SLAVE0_RULE_SPEC>> for R {
+impl From<crate::R<SEC_CTRL_AHB_PORT8_SLAVE0_RULE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CTRL_AHB_PORT8_SLAVE0_RULE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CTRL_AHB_PORT8_SLAVE0_RULE_SPEC>> for W {
+impl From<crate::W<SEC_CTRL_AHB_PORT8_SLAVE0_RULE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CTRL_AHB_PORT8_SLAVE0_RULE_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<DMA0_RULE_A> for u8 {
 #[doc = "Field `DMA0_RULE` reader - DMA Controller"]
 pub struct DMA0_RULE_R(crate::FieldReader<u8, DMA0_RULE_A>);
 impl DMA0_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DMA0_RULE_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<FS_USB_DEV_RULE_A> for u8 {
 #[doc = "Field `FS_USB_DEV_RULE` reader - USB Full-speed device"]
 pub struct FS_USB_DEV_RULE_R(crate::FieldReader<u8, FS_USB_DEV_RULE_A>);
 impl FS_USB_DEV_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FS_USB_DEV_RULE_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +260,7 @@ impl From<SCT_RULE_A> for u8 {
 #[doc = "Field `SCT_RULE` reader - SCTimer"]
 pub struct SCT_RULE_R(crate::FieldReader<u8, SCT_RULE_A>);
 impl SCT_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SCT_RULE_R(crate::FieldReader::new(bits))
     }
@@ -357,6 +362,7 @@ impl From<FLEXCOMM0_RULE_A> for u8 {
 #[doc = "Field `FLEXCOMM0_RULE` reader - Flexcomm interface 0"]
 pub struct FLEXCOMM0_RULE_R(crate::FieldReader<u8, FLEXCOMM0_RULE_A>);
 impl FLEXCOMM0_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FLEXCOMM0_RULE_R(crate::FieldReader::new(bits))
     }
@@ -458,6 +464,7 @@ impl From<FLEXCOMM1_RULE_A> for u8 {
 #[doc = "Field `FLEXCOMM1_RULE` reader - Flexcomm interface 1"]
 pub struct FLEXCOMM1_RULE_R(crate::FieldReader<u8, FLEXCOMM1_RULE_A>);
 impl FLEXCOMM1_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FLEXCOMM1_RULE_R(crate::FieldReader::new(bits))
     }
@@ -591,6 +598,7 @@ impl W {
         FLEXCOMM1_RULE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

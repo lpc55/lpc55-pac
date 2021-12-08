@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INTSTAT_SPEC>> for R {
+impl From<crate::R<INTSTAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INTSTAT_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<INTSTAT_SPEC>> for R {
 #[doc = "Field `SSA` reader - Slave Select Assert."]
 pub struct SSA_R(crate::FieldReader<bool, bool>);
 impl SSA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SSA_R(crate::FieldReader::new(bits))
     }
@@ -29,6 +31,7 @@ impl core::ops::Deref for SSA_R {
 #[doc = "Field `SSD` reader - Slave Select Deassert."]
 pub struct SSD_R(crate::FieldReader<bool, bool>);
 impl SSD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SSD_R(crate::FieldReader::new(bits))
     }
@@ -43,6 +46,7 @@ impl core::ops::Deref for SSD_R {
 #[doc = "Field `MSTIDLE` reader - Master Idle status flag."]
 pub struct MSTIDLE_R(crate::FieldReader<bool, bool>);
 impl MSTIDLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MSTIDLE_R(crate::FieldReader::new(bits))
     }

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RESFIFO_SPEC>> for R {
+impl From<crate::R<RESFIFO_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RESFIFO_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<RESFIFO_SPEC>> for R {
 #[doc = "Field `D` reader - Data result"]
 pub struct D_R(crate::FieldReader<u16, u16>);
 impl D_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         D_R(crate::FieldReader::new(bits))
     }
@@ -62,6 +64,7 @@ impl From<TSRC_A> for u8 {
 #[doc = "Field `TSRC` reader - Trigger Source"]
 pub struct TSRC_R(crate::FieldReader<u8, TSRC_A>);
 impl TSRC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TSRC_R(crate::FieldReader::new(bits))
     }
@@ -182,6 +185,7 @@ impl From<LOOPCNT_A> for u8 {
 #[doc = "Field `LOOPCNT` reader - Loop count value"]
 pub struct LOOPCNT_R(crate::FieldReader<u8, LOOPCNT_A>);
 impl LOOPCNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LOOPCNT_R(crate::FieldReader::new(bits))
     }
@@ -302,6 +306,7 @@ impl From<CMDSRC_A> for u8 {
 #[doc = "Field `CMDSRC` reader - Command Buffer Source"]
 pub struct CMDSRC_R(crate::FieldReader<u8, CMDSRC_A>);
 impl CMDSRC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CMDSRC_R(crate::FieldReader::new(bits))
     }
@@ -403,6 +408,7 @@ impl From<VALID_A> for bool {
 #[doc = "Field `VALID` reader - FIFO entry is valid"]
 pub struct VALID_R(crate::FieldReader<bool, VALID_A>);
 impl VALID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VALID_R(crate::FieldReader::new(bits))
     }

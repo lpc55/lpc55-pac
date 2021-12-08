@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<STATUS_SPEC>> for R {
+impl From<crate::R<STATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<STATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<STATUS_SPEC>> for W {
+impl From<crate::W<STATUS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<STATUS_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<STATUS_SPEC>> for W {
 #[doc = "Field `OK_STATUS_3V` reader - Indicates the USB 3v power rails are in range."]
 pub struct OK_STATUS_3V_R(crate::FieldReader<bool, bool>);
 impl OK_STATUS_3V_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OK_STATUS_3V_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +66,7 @@ impl From<HOSTDISCONDETECT_STATUS_A> for bool {
 #[doc = "Field `HOSTDISCONDETECT_STATUS` reader - Indicates at the local host (downstream) port that the remote device has disconnected while in High-Speed mode"]
 pub struct HOSTDISCONDETECT_STATUS_R(crate::FieldReader<bool, HOSTDISCONDETECT_STATUS_A>);
 impl HOSTDISCONDETECT_STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HOSTDISCONDETECT_STATUS_R(crate::FieldReader::new(bits))
     }
@@ -109,6 +113,7 @@ impl From<DEVPLUGIN_STATUS_A> for bool {
 #[doc = "Field `DEVPLUGIN_STATUS` reader - Status indicator for non-standard resistive plugged-in detection Indicates that the device has been connected on the USB_DP and USB_DM lines using the nonstandard resistive plugged-in detection method controlled by CTRL\\[4\\]"]
 pub struct DEVPLUGIN_STATUS_R(crate::FieldReader<bool, DEVPLUGIN_STATUS_A>);
 impl DEVPLUGIN_STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEVPLUGIN_STATUS_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +146,7 @@ impl core::ops::Deref for DEVPLUGIN_STATUS_R {
 #[doc = "Field `RESUME_STATUS` reader - Indicates that the host is sending a wake-up after Suspend and has triggered an interrupt."]
 pub struct RESUME_STATUS_R(crate::FieldReader<bool, bool>);
 impl RESUME_STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESUME_STATUS_R(crate::FieldReader::new(bits))
     }
@@ -176,6 +182,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

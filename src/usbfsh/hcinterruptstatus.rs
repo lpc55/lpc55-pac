@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<HCINTERRUPTSTATUS_SPEC>> for R {
+impl From<crate::R<HCINTERRUPTSTATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<HCINTERRUPTSTATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<HCINTERRUPTSTATUS_SPEC>> for W {
+impl From<crate::W<HCINTERRUPTSTATUS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<HCINTERRUPTSTATUS_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<HCINTERRUPTSTATUS_SPEC>> for W {
 #[doc = "Field `SO` reader - SchedulingOverrun This bit is set when the USB schedule for the current Frame overruns and after the update of HccaFrameNumber."]
 pub struct SO_R(crate::FieldReader<bool, bool>);
 impl SO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SO_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> SO_W<'a> {
 #[doc = "Field `WDH` reader - WritebackDoneHead This bit is set immediately after HC has written HcDoneHead to HccaDoneHead."]
 pub struct WDH_R(crate::FieldReader<bool, bool>);
 impl WDH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WDH_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> WDH_W<'a> {
 #[doc = "Field `SF` reader - StartofFrame This bit is set by HC at each start of a frame and after the update of HccaFrameNumber."]
 pub struct SF_R(crate::FieldReader<bool, bool>);
 impl SF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SF_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> SF_W<'a> {
 #[doc = "Field `RD` reader - ResumeDetected This bit is set when HC detects that a device on the USB is asserting resume signaling."]
 pub struct RD_R(crate::FieldReader<bool, bool>);
 impl RD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RD_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> RD_W<'a> {
 #[doc = "Field `UE` reader - UnrecoverableError This bit is set when HC detects a system error not related to USB."]
 pub struct UE_R(crate::FieldReader<bool, bool>);
 impl UE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UE_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> UE_W<'a> {
 #[doc = "Field `FNO` reader - FrameNumberOverflow This bit is set when the MSb of HcFmNumber (bit 15) changes value, from 0 to 1 or from 1 to 0, and after HccaFrameNumber has been updated."]
 pub struct FNO_R(crate::FieldReader<bool, bool>);
 impl FNO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FNO_R(crate::FieldReader::new(bits))
     }
@@ -252,6 +260,7 @@ impl<'a> FNO_W<'a> {
 has changed."]
 pub struct RHSC_R(crate::FieldReader<bool, bool>);
 impl RHSC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RHSC_R(crate::FieldReader::new(bits))
     }
@@ -289,6 +298,7 @@ impl<'a> RHSC_W<'a> {
 #[doc = "Field `OC` reader - OwnershipChange This bit is set by HC when HCD sets the OwnershipChangeRequest field in HcCommandStatus."]
 pub struct OC_R(crate::FieldReader<u32, u32>);
 impl OC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         OC_R(crate::FieldReader::new(bits))
     }
@@ -398,6 +408,7 @@ has changed."]
         OC_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<BODVBAT_SPEC>> for R {
+impl From<crate::R<BODVBAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<BODVBAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<BODVBAT_SPEC>> for W {
+impl From<crate::W<BODVBAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<BODVBAT_SPEC>) -> Self {
         W(writer)
     }
@@ -110,6 +112,7 @@ impl From<TRIGLVL_A> for u8 {
 #[doc = "Field `TRIGLVL` reader - BoD trigger level."]
 pub struct TRIGLVL_R(crate::FieldReader<u8, TRIGLVL_A>);
 impl TRIGLVL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TRIGLVL_R(crate::FieldReader::new(bits))
     }
@@ -519,6 +522,7 @@ impl From<HYST_A> for u8 {
 #[doc = "Field `HYST` reader - BoD Hysteresis control."]
 pub struct HYST_R(crate::FieldReader<u8, HYST_A>);
 impl HYST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         HYST_R(crate::FieldReader::new(bits))
     }
@@ -622,6 +626,7 @@ impl W {
         HYST_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

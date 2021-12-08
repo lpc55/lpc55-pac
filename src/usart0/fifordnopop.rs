@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FIFORDNOPOP_SPEC>> for R {
+impl From<crate::R<FIFORDNOPOP_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FIFORDNOPOP_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<FIFORDNOPOP_SPEC>> for R {
 #[doc = "Field `RXDATA` reader - Received data from the FIFO. The number of bits used depends on the DATALEN and PARITYSEL settings."]
 pub struct RXDATA_R(crate::FieldReader<u16, u16>);
 impl RXDATA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         RXDATA_R(crate::FieldReader::new(bits))
     }
@@ -29,6 +31,7 @@ impl core::ops::Deref for RXDATA_R {
 #[doc = "Field `FRAMERR` reader - Framing Error status flag. This bit reflects the status for the data it is read along with from the FIFO, and indicates that the character was received with a missing stop bit at the expected location. This could be an indication of a baud rate or configuration mismatch with the transmitting source."]
 pub struct FRAMERR_R(crate::FieldReader<bool, bool>);
 impl FRAMERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRAMERR_R(crate::FieldReader::new(bits))
     }
@@ -43,6 +46,7 @@ impl core::ops::Deref for FRAMERR_R {
 #[doc = "Field `PARITYERR` reader - Parity Error status flag. This bit reflects the status for the data it is read along with from the FIFO. This bit will be set when a parity error is detected in a received character."]
 pub struct PARITYERR_R(crate::FieldReader<bool, bool>);
 impl PARITYERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PARITYERR_R(crate::FieldReader::new(bits))
     }
@@ -57,6 +61,7 @@ impl core::ops::Deref for PARITYERR_R {
 #[doc = "Field `RXNOISE` reader - Received Noise flag. See description of the RxNoiseInt bit in Table 354."]
 pub struct RXNOISE_R(crate::FieldReader<bool, bool>);
 impl RXNOISE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXNOISE_R(crate::FieldReader::new(bits))
     }

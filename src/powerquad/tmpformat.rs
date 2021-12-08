@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<TMPFORMAT_SPEC>> for R {
+impl From<crate::R<TMPFORMAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<TMPFORMAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<TMPFORMAT_SPEC>> for W {
+impl From<crate::W<TMPFORMAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<TMPFORMAT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<TMPFORMAT_SPEC>> for W {
 #[doc = "Field `tmp_formatint` reader - Temp Internal format (00: q15; 01:q31; 10:float)"]
 pub struct TMP_FORMATINT_R(crate::FieldReader<u8, u8>);
 impl TMP_FORMATINT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TMP_FORMATINT_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> TMP_FORMATINT_W<'a> {
 #[doc = "Field `tmp_formatext` reader - Temp External format (00: q15; 01:q31; 10:float)"]
 pub struct TMP_FORMATEXT_R(crate::FieldReader<u8, u8>);
 impl TMP_FORMATEXT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TMP_FORMATEXT_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> TMP_FORMATEXT_W<'a> {
 #[doc = "Field `tmp_scaler` reader - Temp Scaler value (for scaled 'q31' formats)"]
 pub struct TMP_SCALER_R(crate::FieldReader<u8, u8>);
 impl TMP_SCALER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TMP_SCALER_R(crate::FieldReader::new(bits))
     }
@@ -144,6 +149,7 @@ impl W {
         TMP_SCALER_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

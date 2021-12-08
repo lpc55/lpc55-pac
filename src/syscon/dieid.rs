@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<DIEID_SPEC>> for R {
+impl From<crate::R<DIEID_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<DIEID_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<DIEID_SPEC>> for R {
 #[doc = "Field `REV_ID` reader - Chip Metal Revision ID."]
 pub struct REV_ID_R(crate::FieldReader<u8, u8>);
 impl REV_ID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         REV_ID_R(crate::FieldReader::new(bits))
     }
@@ -29,6 +31,7 @@ impl core::ops::Deref for REV_ID_R {
 #[doc = "Field `MCO_NUM_IN_DIE_ID` reader - Chip Number 0x426B."]
 pub struct MCO_NUM_IN_DIE_ID_R(crate::FieldReader<u32, u32>);
 impl MCO_NUM_IN_DIE_ID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         MCO_NUM_IN_DIE_ID_R(crate::FieldReader::new(bits))
     }

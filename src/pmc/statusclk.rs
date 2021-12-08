@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<STATUSCLK_SPEC>> for R {
+impl From<crate::R<STATUSCLK_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<STATUSCLK_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<STATUSCLK_SPEC>> for W {
+impl From<crate::W<STATUSCLK_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<STATUSCLK_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<STATUSCLK_SPEC>> for W {
 #[doc = "Field `XTAL32KOK` reader - XTAL oscillator 32 K OK signal."]
 pub struct XTAL32KOK_R(crate::FieldReader<bool, bool>);
 impl XTAL32KOK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         XTAL32KOK_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +66,7 @@ impl From<XTAL32KOSCFAILURE_A> for bool {
 #[doc = "Field `XTAL32KOSCFAILURE` reader - XTAL32 KHZ oscillator oscillation failure detection indicator."]
 pub struct XTAL32KOSCFAILURE_R(crate::FieldReader<bool, XTAL32KOSCFAILURE_A>);
 impl XTAL32KOSCFAILURE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         XTAL32KOSCFAILURE_R(crate::FieldReader::new(bits))
     }
@@ -148,6 +152,7 @@ impl W {
         XTAL32KOSCFAILURE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

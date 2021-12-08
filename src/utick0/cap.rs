@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CAP_SPEC>> for R {
+impl From<crate::R<CAP_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CAP_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<CAP_SPEC>> for R {
 #[doc = "Field `CAP_VALUE` reader - Capture value for the related capture event (UTICK_CAPn. Note: the value is 1 lower than the actual value of the Micro-tick Timer at the moment of the capture event."]
 pub struct CAP_VALUE_R(crate::FieldReader<u32, u32>);
 impl CAP_VALUE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         CAP_VALUE_R(crate::FieldReader::new(bits))
     }
@@ -29,6 +31,7 @@ impl core::ops::Deref for CAP_VALUE_R {
 #[doc = "Field `VALID` reader - Capture Valid. When 1, a value has been captured based on a transition of the related UTICK_CAPn pin. Cleared by writing to the related bit in the CAPCLR register."]
 pub struct VALID_R(crate::FieldReader<bool, bool>);
 impl VALID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VALID_R(crate::FieldReader::new(bits))
     }

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FREQMEAS_TARGET_SPEC>> for R {
+impl From<crate::R<FREQMEAS_TARGET_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FREQMEAS_TARGET_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FREQMEAS_TARGET_SPEC>> for W {
+impl From<crate::W<FREQMEAS_TARGET_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FREQMEAS_TARGET_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<FREQMEAS_TARGET_SPEC>> for W {
 #[doc = "Field `CLKIN` reader - Clock source number (decimal value) for frequency measure function target clock: 0 = CLK_IN 1 = FRO 12 MHz oscillator 2 = Watchdog oscillator 3 = 32 kHz RTC oscillator 4 = Main clock (see Section 4.5.23) 5 = PIO0_4 6 = PIO0_20 7 = PIO0_24 8 = PIO1_4"]
 pub struct CLKIN_R(crate::FieldReader<u8, u8>);
 impl CLKIN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CLKIN_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         CLKIN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

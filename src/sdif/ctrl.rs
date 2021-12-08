@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CTRL_SPEC>> for R {
+impl From<crate::R<CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CTRL_SPEC>> for W {
+impl From<crate::W<CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `CONTROLLER_RESET` reader - Controller reset."]
 pub struct CONTROLLER_RESET_R(crate::FieldReader<bool, bool>);
 impl CONTROLLER_RESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CONTROLLER_RESET_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> CONTROLLER_RESET_W<'a> {
 #[doc = "Field `FIFO_RESET` reader - Fifo reset."]
 pub struct FIFO_RESET_R(crate::FieldReader<bool, bool>);
 impl FIFO_RESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FIFO_RESET_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> FIFO_RESET_W<'a> {
 #[doc = "Field `DMA_RESET` reader - DMA reset."]
 pub struct DMA_RESET_R(crate::FieldReader<bool, bool>);
 impl DMA_RESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DMA_RESET_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> DMA_RESET_W<'a> {
 #[doc = "Field `INT_ENABLE` reader - Global interrupt enable/disable bit."]
 pub struct INT_ENABLE_R(crate::FieldReader<bool, bool>);
 impl INT_ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INT_ENABLE_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> INT_ENABLE_W<'a> {
 #[doc = "Field `READ_WAIT` reader - Read/wait."]
 pub struct READ_WAIT_R(crate::FieldReader<bool, bool>);
 impl READ_WAIT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READ_WAIT_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> READ_WAIT_W<'a> {
 #[doc = "Field `SEND_IRQ_RESPONSE` reader - Send irq response."]
 pub struct SEND_IRQ_RESPONSE_R(crate::FieldReader<bool, bool>);
 impl SEND_IRQ_RESPONSE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEND_IRQ_RESPONSE_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +259,7 @@ impl<'a> SEND_IRQ_RESPONSE_W<'a> {
 #[doc = "Field `ABORT_READ_DATA` reader - Abort read data."]
 pub struct ABORT_READ_DATA_R(crate::FieldReader<bool, bool>);
 impl ABORT_READ_DATA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ABORT_READ_DATA_R(crate::FieldReader::new(bits))
     }
@@ -287,6 +296,7 @@ impl<'a> ABORT_READ_DATA_W<'a> {
 #[doc = "Field `SEND_CCSD` reader - Send ccsd."]
 pub struct SEND_CCSD_R(crate::FieldReader<bool, bool>);
 impl SEND_CCSD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEND_CCSD_R(crate::FieldReader::new(bits))
     }
@@ -323,6 +333,7 @@ impl<'a> SEND_CCSD_W<'a> {
 #[doc = "Field `SEND_AUTO_STOP_CCSD` reader - Send auto stop ccsd."]
 pub struct SEND_AUTO_STOP_CCSD_R(crate::FieldReader<bool, bool>);
 impl SEND_AUTO_STOP_CCSD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEND_AUTO_STOP_CCSD_R(crate::FieldReader::new(bits))
     }
@@ -359,6 +370,7 @@ impl<'a> SEND_AUTO_STOP_CCSD_W<'a> {
 #[doc = "Field `CEATA_DEVICE_INTERRUPT_STATUS` reader - CEATA device interrupt status."]
 pub struct CEATA_DEVICE_INTERRUPT_STATUS_R(crate::FieldReader<bool, bool>);
 impl CEATA_DEVICE_INTERRUPT_STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CEATA_DEVICE_INTERRUPT_STATUS_R(crate::FieldReader::new(bits))
     }
@@ -395,6 +407,7 @@ impl<'a> CEATA_DEVICE_INTERRUPT_STATUS_W<'a> {
 #[doc = "Field `CARD_VOLTAGE_A0` reader - Controls the state of the SD_VOLT0 pin."]
 pub struct CARD_VOLTAGE_A0_R(crate::FieldReader<bool, bool>);
 impl CARD_VOLTAGE_A0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CARD_VOLTAGE_A0_R(crate::FieldReader::new(bits))
     }
@@ -431,6 +444,7 @@ impl<'a> CARD_VOLTAGE_A0_W<'a> {
 #[doc = "Field `CARD_VOLTAGE_A1` reader - Controls the state of the SD_VOLT1 pin."]
 pub struct CARD_VOLTAGE_A1_R(crate::FieldReader<bool, bool>);
 impl CARD_VOLTAGE_A1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CARD_VOLTAGE_A1_R(crate::FieldReader::new(bits))
     }
@@ -467,6 +481,7 @@ impl<'a> CARD_VOLTAGE_A1_W<'a> {
 #[doc = "Field `CARD_VOLTAGE_A2` reader - Controls the state of the SD_VOLT2 pin."]
 pub struct CARD_VOLTAGE_A2_R(crate::FieldReader<bool, bool>);
 impl CARD_VOLTAGE_A2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CARD_VOLTAGE_A2_R(crate::FieldReader::new(bits))
     }
@@ -503,6 +518,7 @@ impl<'a> CARD_VOLTAGE_A2_W<'a> {
 #[doc = "Field `USE_INTERNAL_DMAC` reader - SD/MMC DMA use."]
 pub struct USE_INTERNAL_DMAC_R(crate::FieldReader<bool, bool>);
 impl USE_INTERNAL_DMAC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USE_INTERNAL_DMAC_R(crate::FieldReader::new(bits))
     }
@@ -680,6 +696,7 @@ impl W {
         USE_INTERNAL_DMAC_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

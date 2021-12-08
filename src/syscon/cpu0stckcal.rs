@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CPU0STCKCAL_SPEC>> for R {
+impl From<crate::R<CPU0STCKCAL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CPU0STCKCAL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CPU0STCKCAL_SPEC>> for W {
+impl From<crate::W<CPU0STCKCAL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CPU0STCKCAL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CPU0STCKCAL_SPEC>> for W {
 #[doc = "Field `TENMS` reader - Reload value for 10ms (100Hz) timing, subject to system clock skew errors. If the value reads as zero, the calibration value is not known."]
 pub struct TENMS_R(crate::FieldReader<u32, u32>);
 impl TENMS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         TENMS_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> TENMS_W<'a> {
 #[doc = "Field `SKEW` reader - Initial value for the Systick timer."]
 pub struct SKEW_R(crate::FieldReader<bool, bool>);
 impl SKEW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SKEW_R(crate::FieldReader::new(bits))
     }
@@ -97,6 +101,7 @@ impl<'a> SKEW_W<'a> {
 #[doc = "Field `NOREF` reader - Indicates whether the device provides a reference clock to the processor: 0 = reference clock provided; 1 = no reference clock provided."]
 pub struct NOREF_R(crate::FieldReader<bool, bool>);
 impl NOREF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NOREF_R(crate::FieldReader::new(bits))
     }
@@ -164,6 +169,7 @@ impl W {
         NOREF_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

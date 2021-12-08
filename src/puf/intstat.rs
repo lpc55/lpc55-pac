@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INTSTAT_SPEC>> for R {
+impl From<crate::R<INTSTAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INTSTAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<INTSTAT_SPEC>> for W {
+impl From<crate::W<INTSTAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<INTSTAT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<INTSTAT_SPEC>> for W {
 #[doc = "Field `READY` reader - Triggers on falling edge of busy, write 1 to clear"]
 pub struct READY_R(crate::FieldReader<bool, bool>);
 impl READY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READY_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> READY_W<'a> {
 #[doc = "Field `SUCCESS` reader - Level sensitive interrupt, cleared when interrupt source clears"]
 pub struct SUCCESS_R(crate::FieldReader<bool, bool>);
 impl SUCCESS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUCCESS_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> SUCCESS_W<'a> {
 #[doc = "Field `ERROR` reader - Level sensitive interrupt, cleared when interrupt source clears"]
 pub struct ERROR_R(crate::FieldReader<bool, bool>);
 impl ERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERROR_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> ERROR_W<'a> {
 #[doc = "Field `KEYINREQ` reader - Level sensitive interrupt, cleared when interrupt source clears"]
 pub struct KEYINREQ_R(crate::FieldReader<bool, bool>);
 impl KEYINREQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         KEYINREQ_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> KEYINREQ_W<'a> {
 #[doc = "Field `KEYOUTAVAIL` reader - Level sensitive interrupt, cleared when interrupt source clears"]
 pub struct KEYOUTAVAIL_R(crate::FieldReader<bool, bool>);
 impl KEYOUTAVAIL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         KEYOUTAVAIL_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> KEYOUTAVAIL_W<'a> {
 #[doc = "Field `CODEINREQ` reader - Level sensitive interrupt, cleared when interrupt source clears"]
 pub struct CODEINREQ_R(crate::FieldReader<bool, bool>);
 impl CODEINREQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CODEINREQ_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +259,7 @@ impl<'a> CODEINREQ_W<'a> {
 #[doc = "Field `CODEOUTAVAIL` reader - Level sensitive interrupt, cleared when interrupt source clears"]
 pub struct CODEOUTAVAIL_R(crate::FieldReader<bool, bool>);
 impl CODEOUTAVAIL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CODEOUTAVAIL_R(crate::FieldReader::new(bits))
     }
@@ -358,6 +367,7 @@ impl W {
         CODEOUTAVAIL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

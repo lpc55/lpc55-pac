@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INTENCLR_SPEC>> for R {
+impl From<crate::R<INTENCLR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INTENCLR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<INTENCLR_SPEC>> for W {
+impl From<crate::W<INTENCLR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<INTENCLR_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<INTENCLR_SPEC>> for W {
 #[doc = "Field `WAITING` reader - Write 1 to clear mask."]
 pub struct WAITING_R(crate::FieldReader<bool, bool>);
 impl WAITING_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAITING_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> WAITING_W<'a> {
 #[doc = "Field `DIGEST` reader - Write 1 to clear mask."]
 pub struct DIGEST_R(crate::FieldReader<bool, bool>);
 impl DIGEST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DIGEST_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> DIGEST_W<'a> {
 #[doc = "Field `ERROR` reader - Write 1 to clear mask."]
 pub struct ERROR_R(crate::FieldReader<bool, bool>);
 impl ERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERROR_R(crate::FieldReader::new(bits))
     }
@@ -174,6 +179,7 @@ impl W {
         ERROR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

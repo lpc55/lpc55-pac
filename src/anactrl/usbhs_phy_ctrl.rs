@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<USBHS_PHY_CTRL_SPEC>> for R {
+impl From<crate::R<USBHS_PHY_CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<USBHS_PHY_CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<USBHS_PHY_CTRL_SPEC>> for W {
+impl From<crate::W<USBHS_PHY_CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<USBHS_PHY_CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<USBHS_PHY_CTRL_SPEC>> for W {
 #[doc = "Field `usb_vbusvalid_ext` reader - Override value for Vbus if using external detectors."]
 pub struct USB_VBUSVALID_EXT_R(crate::FieldReader<bool, bool>);
 impl USB_VBUSVALID_EXT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USB_VBUSVALID_EXT_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> USB_VBUSVALID_EXT_W<'a> {
 #[doc = "Field `usb_id_ext` reader - Override value for ID if using external detectors."]
 pub struct USB_ID_EXT_R(crate::FieldReader<bool, bool>);
 impl USB_ID_EXT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USB_ID_EXT_R(crate::FieldReader::new(bits))
     }
@@ -128,6 +132,7 @@ impl W {
         USB_ID_EXT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

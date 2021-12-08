@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INTSTAT_SPEC>> for R {
+impl From<crate::R<INTSTAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INTSTAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<INTSTAT_SPEC>> for W {
+impl From<crate::W<INTSTAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<INTSTAT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<INTSTAT_SPEC>> for W {
 #[doc = "Field `EP0OUT` reader - Interrupt status register bit for the Control EP0 OUT direction."]
 pub struct EP0OUT_R(crate::FieldReader<bool, bool>);
 impl EP0OUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP0OUT_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> EP0OUT_W<'a> {
 #[doc = "Field `EP0IN` reader - Interrupt status register bit for the Control EP0 IN direction."]
 pub struct EP0IN_R(crate::FieldReader<bool, bool>);
 impl EP0IN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP0IN_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> EP0IN_W<'a> {
 #[doc = "Field `EP1OUT` reader - Interrupt status register bit for the EP1 OUT direction."]
 pub struct EP1OUT_R(crate::FieldReader<bool, bool>);
 impl EP1OUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP1OUT_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> EP1OUT_W<'a> {
 #[doc = "Field `EP1IN` reader - Interrupt status register bit for the EP1 IN direction."]
 pub struct EP1IN_R(crate::FieldReader<bool, bool>);
 impl EP1IN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP1IN_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> EP1IN_W<'a> {
 #[doc = "Field `EP2OUT` reader - Interrupt status register bit for the EP2 OUT direction."]
 pub struct EP2OUT_R(crate::FieldReader<bool, bool>);
 impl EP2OUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP2OUT_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> EP2OUT_W<'a> {
 #[doc = "Field `EP2IN` reader - Interrupt status register bit for the EP2 IN direction."]
 pub struct EP2IN_R(crate::FieldReader<bool, bool>);
 impl EP2IN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP2IN_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +259,7 @@ impl<'a> EP2IN_W<'a> {
 #[doc = "Field `EP3OUT` reader - Interrupt status register bit for the EP3 OUT direction."]
 pub struct EP3OUT_R(crate::FieldReader<bool, bool>);
 impl EP3OUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP3OUT_R(crate::FieldReader::new(bits))
     }
@@ -287,6 +296,7 @@ impl<'a> EP3OUT_W<'a> {
 #[doc = "Field `EP3IN` reader - Interrupt status register bit for the EP3 IN direction."]
 pub struct EP3IN_R(crate::FieldReader<bool, bool>);
 impl EP3IN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP3IN_R(crate::FieldReader::new(bits))
     }
@@ -323,6 +333,7 @@ impl<'a> EP3IN_W<'a> {
 #[doc = "Field `EP4OUT` reader - Interrupt status register bit for the EP4 OUT direction."]
 pub struct EP4OUT_R(crate::FieldReader<bool, bool>);
 impl EP4OUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP4OUT_R(crate::FieldReader::new(bits))
     }
@@ -359,6 +370,7 @@ impl<'a> EP4OUT_W<'a> {
 #[doc = "Field `EP4IN` reader - Interrupt status register bit for the EP4 IN direction."]
 pub struct EP4IN_R(crate::FieldReader<bool, bool>);
 impl EP4IN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP4IN_R(crate::FieldReader::new(bits))
     }
@@ -395,6 +407,7 @@ impl<'a> EP4IN_W<'a> {
 #[doc = "Field `EP5OUT` reader - Interrupt status register bit for the EP5 OUT direction."]
 pub struct EP5OUT_R(crate::FieldReader<bool, bool>);
 impl EP5OUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP5OUT_R(crate::FieldReader::new(bits))
     }
@@ -431,6 +444,7 @@ impl<'a> EP5OUT_W<'a> {
 #[doc = "Field `EP5IN` reader - Interrupt status register bit for the EP5 IN direction."]
 pub struct EP5IN_R(crate::FieldReader<bool, bool>);
 impl EP5IN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EP5IN_R(crate::FieldReader::new(bits))
     }
@@ -467,6 +481,7 @@ impl<'a> EP5IN_W<'a> {
 #[doc = "Field `FRAME_INT` reader - Frame interrupt."]
 pub struct FRAME_INT_R(crate::FieldReader<bool, bool>);
 impl FRAME_INT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRAME_INT_R(crate::FieldReader::new(bits))
     }
@@ -503,6 +518,7 @@ impl<'a> FRAME_INT_W<'a> {
 #[doc = "Field `DEV_INT` reader - Device status interrupt."]
 pub struct DEV_INT_R(crate::FieldReader<bool, bool>);
 impl DEV_INT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEV_INT_R(crate::FieldReader::new(bits))
     }
@@ -680,6 +696,7 @@ impl W {
         DEV_INT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

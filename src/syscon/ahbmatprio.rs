@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<AHBMATPRIO_SPEC>> for R {
+impl From<crate::R<AHBMATPRIO_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<AHBMATPRIO_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<AHBMATPRIO_SPEC>> for W {
+impl From<crate::W<AHBMATPRIO_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<AHBMATPRIO_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<AHBMATPRIO_SPEC>> for W {
 #[doc = "Field `PRI_CPU0_CBUS` reader - CPU0 C-AHB bus."]
 pub struct PRI_CPU0_CBUS_R(crate::FieldReader<u8, u8>);
 impl PRI_CPU0_CBUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PRI_CPU0_CBUS_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> PRI_CPU0_CBUS_W<'a> {
 #[doc = "Field `PRI_CPU0_SBUS` reader - CPU0 S-AHB bus."]
 pub struct PRI_CPU0_SBUS_R(crate::FieldReader<u8, u8>);
 impl PRI_CPU0_SBUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PRI_CPU0_SBUS_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> PRI_CPU0_SBUS_W<'a> {
 #[doc = "Field `PRI_CPU1_CBUS` reader - CPU1 C-AHB bus."]
 pub struct PRI_CPU1_CBUS_R(crate::FieldReader<u8, u8>);
 impl PRI_CPU1_CBUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PRI_CPU1_CBUS_R(crate::FieldReader::new(bits))
     }
@@ -113,6 +118,7 @@ impl<'a> PRI_CPU1_CBUS_W<'a> {
 #[doc = "Field `PRI_CPU1_SBUS` reader - CPU1 S-AHB bus."]
 pub struct PRI_CPU1_SBUS_R(crate::FieldReader<u8, u8>);
 impl PRI_CPU1_SBUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PRI_CPU1_SBUS_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +145,7 @@ impl<'a> PRI_CPU1_SBUS_W<'a> {
 #[doc = "Field `PRI_USB_FS` reader - USB-FS.(USB0)"]
 pub struct PRI_USB_FS_R(crate::FieldReader<u8, u8>);
 impl PRI_USB_FS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PRI_USB_FS_R(crate::FieldReader::new(bits))
     }
@@ -165,6 +172,7 @@ impl<'a> PRI_USB_FS_W<'a> {
 #[doc = "Field `PRI_SDMA0` reader - DMA0 controller priority."]
 pub struct PRI_SDMA0_R(crate::FieldReader<u8, u8>);
 impl PRI_SDMA0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PRI_SDMA0_R(crate::FieldReader::new(bits))
     }
@@ -191,6 +199,7 @@ impl<'a> PRI_SDMA0_W<'a> {
 #[doc = "Field `PRI_SDIO` reader - SDIO."]
 pub struct PRI_SDIO_R(crate::FieldReader<u8, u8>);
 impl PRI_SDIO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PRI_SDIO_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +226,7 @@ impl<'a> PRI_SDIO_W<'a> {
 #[doc = "Field `PRI_PQ` reader - PQ (HW Accelerator)."]
 pub struct PRI_PQ_R(crate::FieldReader<u8, u8>);
 impl PRI_PQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PRI_PQ_R(crate::FieldReader::new(bits))
     }
@@ -243,6 +253,7 @@ impl<'a> PRI_PQ_W<'a> {
 #[doc = "Field `PRI_HASH_AES` reader - HASH_AES."]
 pub struct PRI_HASH_AES_R(crate::FieldReader<u8, u8>);
 impl PRI_HASH_AES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PRI_HASH_AES_R(crate::FieldReader::new(bits))
     }
@@ -269,6 +280,7 @@ impl<'a> PRI_HASH_AES_W<'a> {
 #[doc = "Field `PRI_USB_HS` reader - USB-HS.(USB1)"]
 pub struct PRI_USB_HS_R(crate::FieldReader<u8, u8>);
 impl PRI_USB_HS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PRI_USB_HS_R(crate::FieldReader::new(bits))
     }
@@ -295,6 +307,7 @@ impl<'a> PRI_USB_HS_W<'a> {
 #[doc = "Field `PRI_SDMA1` reader - DMA1 controller priority."]
 pub struct PRI_SDMA1_R(crate::FieldReader<u8, u8>);
 impl PRI_SDMA1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PRI_SDMA1_R(crate::FieldReader::new(bits))
     }
@@ -432,6 +445,7 @@ impl W {
         PRI_SDMA1_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

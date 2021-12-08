@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<WAKE_SPEC>> for R {
+impl From<crate::R<WAKE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<WAKE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<WAKE_SPEC>> for W {
+impl From<crate::W<WAKE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<WAKE_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<WAKE_SPEC>> for W {
 #[doc = "Field `VAL` reader - A read reflects the current value of the high-resolution/wake-up timer. A write pre-loads a start count value into the wake-up timer and initializes a count-down sequence. Do not write to this register while counting is in progress."]
 pub struct VAL_R(crate::FieldReader<u16, u16>);
 impl VAL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         VAL_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         VAL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

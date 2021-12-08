@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CMDL5_SPEC>> for R {
+impl From<crate::R<CMDL5_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CMDL5_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CMDL5_SPEC>> for W {
+impl From<crate::W<CMDL5_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CMDL5_SPEC>) -> Self {
         W(writer)
     }
@@ -70,6 +72,7 @@ impl From<ADCH_A> for u8 {
 #[doc = "Field `ADCH` reader - Input channel select"]
 pub struct ADCH_R(crate::FieldReader<u8, ADCH_A>);
 impl ADCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ADCH_R(crate::FieldReader::new(bits))
     }
@@ -259,6 +262,7 @@ impl From<CTYPE_A> for u8 {
 #[doc = "Field `CTYPE` reader - Conversion Type"]
 pub struct CTYPE_R(crate::FieldReader<u8, CTYPE_A>);
 impl CTYPE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CTYPE_R(crate::FieldReader::new(bits))
     }
@@ -355,6 +359,7 @@ impl From<MODE_A> for bool {
 #[doc = "Field `MODE` reader - Select resolution of conversions"]
 pub struct MODE_R(crate::FieldReader<bool, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }
@@ -455,6 +460,7 @@ impl W {
         MODE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

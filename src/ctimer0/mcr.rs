@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<MCR_SPEC>> for R {
+impl From<crate::R<MCR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<MCR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<MCR_SPEC>> for W {
+impl From<crate::W<MCR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<MCR_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<MCR_SPEC>> for W {
 #[doc = "Field `MR0I` reader - Interrupt on MR0: an interrupt is generated when MR0 matches the value in the TC."]
 pub struct MR0I_R(crate::FieldReader<bool, bool>);
 impl MR0I_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR0I_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> MR0I_W<'a> {
 #[doc = "Field `MR0R` reader - Reset on MR0: the TC will be reset if MR0 matches it."]
 pub struct MR0R_R(crate::FieldReader<bool, bool>);
 impl MR0R_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR0R_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl<'a> MR0R_W<'a> {
 will be set to 0 if MR0 matches the TC."]
 pub struct MR0S_R(crate::FieldReader<bool, bool>);
 impl MR0S_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR0S_R(crate::FieldReader::new(bits))
     }
@@ -145,6 +150,7 @@ impl<'a> MR0S_W<'a> {
 #[doc = "Field `MR1I` reader - Interrupt on MR1: an interrupt is generated when MR1 matches the value in the TC."]
 pub struct MR1I_R(crate::FieldReader<bool, bool>);
 impl MR1I_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR1I_R(crate::FieldReader::new(bits))
     }
@@ -181,6 +187,7 @@ impl<'a> MR1I_W<'a> {
 #[doc = "Field `MR1R` reader - Reset on MR1: the TC will be reset if MR1 matches it."]
 pub struct MR1R_R(crate::FieldReader<bool, bool>);
 impl MR1R_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR1R_R(crate::FieldReader::new(bits))
     }
@@ -218,6 +225,7 @@ impl<'a> MR1R_W<'a> {
 will be set to 0 if MR1 matches the TC."]
 pub struct MR1S_R(crate::FieldReader<bool, bool>);
 impl MR1S_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR1S_R(crate::FieldReader::new(bits))
     }
@@ -255,6 +263,7 @@ impl<'a> MR1S_W<'a> {
 #[doc = "Field `MR2I` reader - Interrupt on MR2: an interrupt is generated when MR2 matches the value in the TC."]
 pub struct MR2I_R(crate::FieldReader<bool, bool>);
 impl MR2I_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR2I_R(crate::FieldReader::new(bits))
     }
@@ -291,6 +300,7 @@ impl<'a> MR2I_W<'a> {
 #[doc = "Field `MR2R` reader - Reset on MR2: the TC will be reset if MR2 matches it."]
 pub struct MR2R_R(crate::FieldReader<bool, bool>);
 impl MR2R_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR2R_R(crate::FieldReader::new(bits))
     }
@@ -328,6 +338,7 @@ impl<'a> MR2R_W<'a> {
 will be set to 0 if MR2 matches the TC."]
 pub struct MR2S_R(crate::FieldReader<bool, bool>);
 impl MR2S_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR2S_R(crate::FieldReader::new(bits))
     }
@@ -365,6 +376,7 @@ impl<'a> MR2S_W<'a> {
 #[doc = "Field `MR3I` reader - Interrupt on MR3: an interrupt is generated when MR3 matches the value in the TC."]
 pub struct MR3I_R(crate::FieldReader<bool, bool>);
 impl MR3I_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR3I_R(crate::FieldReader::new(bits))
     }
@@ -401,6 +413,7 @@ impl<'a> MR3I_W<'a> {
 #[doc = "Field `MR3R` reader - Reset on MR3: the TC will be reset if MR3 matches it."]
 pub struct MR3R_R(crate::FieldReader<bool, bool>);
 impl MR3R_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR3R_R(crate::FieldReader::new(bits))
     }
@@ -438,6 +451,7 @@ impl<'a> MR3R_W<'a> {
 will be set to 0 if MR3 matches the TC."]
 pub struct MR3S_R(crate::FieldReader<bool, bool>);
 impl MR3S_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR3S_R(crate::FieldReader::new(bits))
     }
@@ -475,6 +489,7 @@ impl<'a> MR3S_W<'a> {
 #[doc = "Field `MR0RL` reader - Reload MR0 with the contents of the Match 0 Shadow Register when the TC is reset to zero (either via a match event or a write to bit 1 of the TCR)."]
 pub struct MR0RL_R(crate::FieldReader<bool, bool>);
 impl MR0RL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR0RL_R(crate::FieldReader::new(bits))
     }
@@ -511,6 +526,7 @@ impl<'a> MR0RL_W<'a> {
 #[doc = "Field `MR1RL` reader - Reload MR1 with the contents of the Match 1 Shadow Register when the TC is reset to zero (either via a match event or a write to bit 1 of the TCR)."]
 pub struct MR1RL_R(crate::FieldReader<bool, bool>);
 impl MR1RL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR1RL_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +563,7 @@ impl<'a> MR1RL_W<'a> {
 #[doc = "Field `MR2RL` reader - Reload MR2 with the contents of the Match 2 Shadow Register when the TC is reset to zero (either via a match event or a write to bit 1 of the TCR)."]
 pub struct MR2RL_R(crate::FieldReader<bool, bool>);
 impl MR2RL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR2RL_R(crate::FieldReader::new(bits))
     }
@@ -583,6 +600,7 @@ impl<'a> MR2RL_W<'a> {
 #[doc = "Field `MR3RL` reader - Reload MR3 with the contents of the Match 3 Shadow Register when the TC is reset to zero (either via a match event or a write to bit 1 of the TCR)."]
 pub struct MR3RL_R(crate::FieldReader<bool, bool>);
 impl MR3RL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR3RL_R(crate::FieldReader::new(bits))
     }
@@ -788,6 +806,7 @@ will be set to 0 if MR3 matches the TC."]
         MR3RL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

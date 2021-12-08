@@ -13,22 +13,22 @@ pub struct RegisterBlock {
     pub memctrl: crate::Reg<memctrl::MEMCTRL_SPEC>,
     #[doc = "0x14 - Address to start memory access from (if available)."]
     pub memaddr: crate::Reg<memaddr::MEMADDR_SPEC>,
-    _reserved6: [u8; 8usize],
+    _reserved6: [u8; 0x08],
     #[doc = "0x20 - Input of 16 words at a time to load up buffer."]
     pub indata: crate::Reg<indata::INDATA_SPEC>,
-    #[doc = "0x24 - no description available"]
+    #[doc = "0x24..0x40 - no description available"]
     pub alias: [crate::Reg<alias::ALIAS_SPEC>; 7],
-    #[doc = "0x40 - no description available"]
+    #[doc = "0x40..0x60 - no description available"]
     pub digest0: [crate::Reg<digest0::DIGEST0_SPEC>; 8],
-    _reserved9: [u8; 32usize],
+    _reserved9: [u8; 0x20],
     #[doc = "0x80 - Crypto settings for AES and Salsa and ChaCha"]
     pub cryptcfg: crate::Reg<cryptcfg::CRYPTCFG_SPEC>,
     #[doc = "0x84 - Returns the configuration of this block in this chip - indicates what services are available."]
     pub config: crate::Reg<config::CONFIG_SPEC>,
-    _reserved11: [u8; 4usize],
+    _reserved11: [u8; 0x04],
     #[doc = "0x8c - Lock register allows locking to the current security level or unlocking by the lock holding level."]
     pub lock: crate::Reg<lock::LOCK_SPEC>,
-    #[doc = "0x90 - no description available"]
+    #[doc = "0x90..0xa0 - no description available"]
     pub mask: [crate::Reg<mask::MASK_SPEC>; 4],
 }
 #[doc = "CTRL register accessor: an alias for `Reg<CTRL_SPEC>`"]

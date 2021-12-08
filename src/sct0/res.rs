@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RES_SPEC>> for R {
+impl From<crate::R<RES_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RES_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RES_SPEC>> for W {
+impl From<crate::W<RES_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RES_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<O0RES_A> for u8 {
 #[doc = "Field `O0RES` reader - Effect of simultaneous set and clear on output 0."]
 pub struct O0RES_R(crate::FieldReader<u8, O0RES_A>);
 impl O0RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O0RES_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<O1RES_A> for u8 {
 #[doc = "Field `O1RES` reader - Effect of simultaneous set and clear on output 1."]
 pub struct O1RES_R(crate::FieldReader<u8, O1RES_A>);
 impl O1RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O1RES_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +260,7 @@ impl From<O2RES_A> for u8 {
 #[doc = "Field `O2RES` reader - Effect of simultaneous set and clear on output 2."]
 pub struct O2RES_R(crate::FieldReader<u8, O2RES_A>);
 impl O2RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O2RES_R(crate::FieldReader::new(bits))
     }
@@ -357,6 +362,7 @@ impl From<O3RES_A> for u8 {
 #[doc = "Field `O3RES` reader - Effect of simultaneous set and clear on output 3."]
 pub struct O3RES_R(crate::FieldReader<u8, O3RES_A>);
 impl O3RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O3RES_R(crate::FieldReader::new(bits))
     }
@@ -458,6 +464,7 @@ impl From<O4RES_A> for u8 {
 #[doc = "Field `O4RES` reader - Effect of simultaneous set and clear on output 4."]
 pub struct O4RES_R(crate::FieldReader<u8, O4RES_A>);
 impl O4RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O4RES_R(crate::FieldReader::new(bits))
     }
@@ -559,6 +566,7 @@ impl From<O5RES_A> for u8 {
 #[doc = "Field `O5RES` reader - Effect of simultaneous set and clear on output 5."]
 pub struct O5RES_R(crate::FieldReader<u8, O5RES_A>);
 impl O5RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O5RES_R(crate::FieldReader::new(bits))
     }
@@ -660,6 +668,7 @@ impl From<O6RES_A> for u8 {
 #[doc = "Field `O6RES` reader - Effect of simultaneous set and clear on output 6."]
 pub struct O6RES_R(crate::FieldReader<u8, O6RES_A>);
 impl O6RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O6RES_R(crate::FieldReader::new(bits))
     }
@@ -761,6 +770,7 @@ impl From<O7RES_A> for u8 {
 #[doc = "Field `O7RES` reader - Effect of simultaneous set and clear on output 7."]
 pub struct O7RES_R(crate::FieldReader<u8, O7RES_A>);
 impl O7RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O7RES_R(crate::FieldReader::new(bits))
     }
@@ -862,6 +872,7 @@ impl From<O8RES_A> for u8 {
 #[doc = "Field `O8RES` reader - Effect of simultaneous set and clear on output 8."]
 pub struct O8RES_R(crate::FieldReader<u8, O8RES_A>);
 impl O8RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O8RES_R(crate::FieldReader::new(bits))
     }
@@ -963,6 +974,7 @@ impl From<O9RES_A> for u8 {
 #[doc = "Field `O9RES` reader - Effect of simultaneous set and clear on output 9."]
 pub struct O9RES_R(crate::FieldReader<u8, O9RES_A>);
 impl O9RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O9RES_R(crate::FieldReader::new(bits))
     }
@@ -1064,6 +1076,7 @@ impl From<O10RES_A> for u8 {
 #[doc = "Field `O10RES` reader - Effect of simultaneous set and clear on output 10."]
 pub struct O10RES_R(crate::FieldReader<u8, O10RES_A>);
 impl O10RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O10RES_R(crate::FieldReader::new(bits))
     }
@@ -1165,6 +1178,7 @@ impl From<O11RES_A> for u8 {
 #[doc = "Field `O11RES` reader - Effect of simultaneous set and clear on output 11."]
 pub struct O11RES_R(crate::FieldReader<u8, O11RES_A>);
 impl O11RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O11RES_R(crate::FieldReader::new(bits))
     }
@@ -1266,6 +1280,7 @@ impl From<O12RES_A> for u8 {
 #[doc = "Field `O12RES` reader - Effect of simultaneous set and clear on output 12."]
 pub struct O12RES_R(crate::FieldReader<u8, O12RES_A>);
 impl O12RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O12RES_R(crate::FieldReader::new(bits))
     }
@@ -1367,6 +1382,7 @@ impl From<O13RES_A> for u8 {
 #[doc = "Field `O13RES` reader - Effect of simultaneous set and clear on output 13."]
 pub struct O13RES_R(crate::FieldReader<u8, O13RES_A>);
 impl O13RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O13RES_R(crate::FieldReader::new(bits))
     }
@@ -1468,6 +1484,7 @@ impl From<O14RES_A> for u8 {
 #[doc = "Field `O14RES` reader - Effect of simultaneous set and clear on output 14."]
 pub struct O14RES_R(crate::FieldReader<u8, O14RES_A>);
 impl O14RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O14RES_R(crate::FieldReader::new(bits))
     }
@@ -1569,6 +1586,7 @@ impl From<O15RES_A> for u8 {
 #[doc = "Field `O15RES` reader - Effect of simultaneous set and clear on output 15."]
 pub struct O15RES_R(crate::FieldReader<u8, O15RES_A>);
 impl O15RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         O15RES_R(crate::FieldReader::new(bits))
     }
@@ -1812,6 +1830,7 @@ impl W {
         O15RES_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

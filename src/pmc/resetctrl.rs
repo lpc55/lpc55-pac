@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RESETCTRL_SPEC>> for R {
+impl From<crate::R<RESETCTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RESETCTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RESETCTRL_SPEC>> for W {
+impl From<crate::W<RESETCTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RESETCTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<DPDWAKEUPRESETENABLE_A> for bool {
 #[doc = "Field `DPDWAKEUPRESETENABLE` reader - Wake-up from DEEP POWER DOWN reset event (either from wake up I/O or RTC or OS Event Timer)."]
 pub struct DPDWAKEUPRESETENABLE_R(crate::FieldReader<bool, DPDWAKEUPRESETENABLE_A>);
 impl DPDWAKEUPRESETENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DPDWAKEUPRESETENABLE_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<BODVBATRESETENABLE_A> for bool {
 #[doc = "Field `BODVBATRESETENABLE` reader - BOD VBAT reset enable."]
 pub struct BODVBATRESETENABLE_R(crate::FieldReader<bool, BODVBATRESETENABLE_A>);
 impl BODVBATRESETENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BODVBATRESETENABLE_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<SWRRESETENABLE_A> for bool {
 #[doc = "Field `SWRRESETENABLE` reader - Software reset enable."]
 pub struct SWRRESETENABLE_R(crate::FieldReader<bool, SWRRESETENABLE_A>);
 impl SWRRESETENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWRRESETENABLE_R(crate::FieldReader::new(bits))
     }
@@ -315,6 +320,7 @@ impl W {
         SWRRESETENABLE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

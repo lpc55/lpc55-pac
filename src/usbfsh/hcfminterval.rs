@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<HCFMINTERVAL_SPEC>> for R {
+impl From<crate::R<HCFMINTERVAL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<HCFMINTERVAL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<HCFMINTERVAL_SPEC>> for W {
+impl From<crate::W<HCFMINTERVAL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<HCFMINTERVAL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<HCFMINTERVAL_SPEC>> for W {
 #[doc = "Field `FI` reader - FrameInterval This specifies the interval between two consecutive SOFs in bit times."]
 pub struct FI_R(crate::FieldReader<u16, u16>);
 impl FI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         FI_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> FI_W<'a> {
 #[doc = "Field `FSMPS` reader - FSLargestDataPacket This field specifies a value which is loaded into the Largest Data Packet Counter at the beginning of each frame."]
 pub struct FSMPS_R(crate::FieldReader<u16, u16>);
 impl FSMPS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         FSMPS_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> FSMPS_W<'a> {
 #[doc = "Field `FIT` reader - FrameIntervalToggle HCD toggles this bit whenever it loads a new value to FrameInterval."]
 pub struct FIT_R(crate::FieldReader<bool, bool>);
 impl FIT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FIT_R(crate::FieldReader::new(bits))
     }
@@ -154,6 +159,7 @@ impl W {
         FIT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

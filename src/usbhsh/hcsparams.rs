@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<HCSPARAMS_SPEC>> for R {
+impl From<crate::R<HCSPARAMS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<HCSPARAMS_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<HCSPARAMS_SPEC>> for R {
 #[doc = "Field `N_PORTS` reader - This register specifies the number of physical downstream ports implemented on this host controller."]
 pub struct N_PORTS_R(crate::FieldReader<u8, u8>);
 impl N_PORTS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         N_PORTS_R(crate::FieldReader::new(bits))
     }
@@ -29,6 +31,7 @@ impl core::ops::Deref for N_PORTS_R {
 #[doc = "Field `PPC` reader - This field indicates whether the host controller implementation includes port power control."]
 pub struct PPC_R(crate::FieldReader<bool, bool>);
 impl PPC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PPC_R(crate::FieldReader::new(bits))
     }
@@ -43,6 +46,7 @@ impl core::ops::Deref for PPC_R {
 #[doc = "Field `P_INDICATOR` reader - This bit indicates whether the ports support port indicator control."]
 pub struct P_INDICATOR_R(crate::FieldReader<bool, bool>);
 impl P_INDICATOR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         P_INDICATOR_R(crate::FieldReader::new(bits))
     }

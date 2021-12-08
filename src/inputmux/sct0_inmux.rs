@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SCT0_INMUX_SPEC>> for R {
+impl From<crate::R<SCT0_INMUX_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SCT0_INMUX_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SCT0_INMUX_SPEC>> for W {
+impl From<crate::W<SCT0_INMUX_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SCT0_INMUX_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<SCT0_INMUX_SPEC>> for W {
 #[doc = "Field `INP_N` reader - Input number to SCT0 inputs 0 to 6."]
 pub struct INP_N_R(crate::FieldReader<u8, u8>);
 impl INP_N_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         INP_N_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         INP_N_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

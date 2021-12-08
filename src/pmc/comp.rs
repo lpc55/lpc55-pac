@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<COMP_SPEC>> for R {
+impl From<crate::R<COMP_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<COMP_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<COMP_SPEC>> for W {
+impl From<crate::W<COMP_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<COMP_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<HYST_A> for bool {
 #[doc = "Field `HYST` reader - Hysteris when hyst = '1'."]
 pub struct HYST_R(crate::FieldReader<bool, HYST_A>);
 impl HYST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HYST_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<VREFINPUT_A> for bool {
 #[doc = "Field `VREFINPUT` reader - Dedicated control bit to select between internal VREF and VDDA (for the resistive ladder)."]
 pub struct VREFINPUT_R(crate::FieldReader<bool, VREFINPUT_A>);
 impl VREFINPUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VREFINPUT_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<LOWPOWER_A> for bool {
 #[doc = "Field `LOWPOWER` reader - Low power mode."]
 pub struct LOWPOWER_R(crate::FieldReader<bool, LOWPOWER_A>);
 impl LOWPOWER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOWPOWER_R(crate::FieldReader::new(bits))
     }
@@ -307,6 +312,7 @@ impl From<PMUX_A> for u8 {
 #[doc = "Field `PMUX` reader - Control word for P multiplexer:."]
 pub struct PMUX_R(crate::FieldReader<u8, PMUX_A>);
 impl PMUX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PMUX_R(crate::FieldReader::new(bits))
     }
@@ -434,6 +440,7 @@ impl From<NMUX_A> for u8 {
 #[doc = "Field `NMUX` reader - Control word for N multiplexer:."]
 pub struct NMUX_R(crate::FieldReader<u8, NMUX_A>);
 impl NMUX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NMUX_R(crate::FieldReader::new(bits))
     }
@@ -538,6 +545,7 @@ impl<'a> NMUX_W<'a> {
 #[doc = "Field `VREF` reader - Control reference voltage step, per steps of (VREFINPUT/31)."]
 pub struct VREF_R(crate::FieldReader<u8, u8>);
 impl VREF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         VREF_R(crate::FieldReader::new(bits))
     }
@@ -564,6 +572,7 @@ impl<'a> VREF_W<'a> {
 #[doc = "Field `FILTERCGF_SAMPLEMODE` reader - Filter Sample mode."]
 pub struct FILTERCGF_SAMPLEMODE_R(crate::FieldReader<u8, u8>);
 impl FILTERCGF_SAMPLEMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FILTERCGF_SAMPLEMODE_R(crate::FieldReader::new(bits))
     }
@@ -590,6 +599,7 @@ impl<'a> FILTERCGF_SAMPLEMODE_W<'a> {
 #[doc = "Field `FILTERCGF_CLKDIV` reader - Filter Clock div ."]
 pub struct FILTERCGF_CLKDIV_R(crate::FieldReader<u8, u8>);
 impl FILTERCGF_CLKDIV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FILTERCGF_CLKDIV_R(crate::FieldReader::new(bits))
     }
@@ -697,6 +707,7 @@ impl W {
         FILTERCGF_CLKDIV_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

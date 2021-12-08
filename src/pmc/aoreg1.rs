@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<AOREG1_SPEC>> for R {
+impl From<crate::R<AOREG1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<AOREG1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<AOREG1_SPEC>> for W {
+impl From<crate::W<AOREG1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<AOREG1_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<AOREG1_SPEC>> for W {
 #[doc = "Field `POR` reader - The last chip reset was caused by a Power On Reset."]
 pub struct POR_R(crate::FieldReader<bool, bool>);
 impl POR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         POR_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> POR_W<'a> {
 #[doc = "Field `PADRESET` reader - The last chip reset was caused by a Pin Reset."]
 pub struct PADRESET_R(crate::FieldReader<bool, bool>);
 impl PADRESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PADRESET_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> PADRESET_W<'a> {
 #[doc = "Field `BODRESET` reader - The last chip reset was caused by a Brown Out Detector (BoD), either VBAT BoD or Core Logic BoD."]
 pub struct BODRESET_R(crate::FieldReader<bool, bool>);
 impl BODRESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BODRESET_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> BODRESET_W<'a> {
 #[doc = "Field `SYSTEMRESET` reader - The last chip reset was caused by a System Reset requested by the ARM CPU."]
 pub struct SYSTEMRESET_R(crate::FieldReader<bool, bool>);
 impl SYSTEMRESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SYSTEMRESET_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> SYSTEMRESET_W<'a> {
 #[doc = "Field `WDTRESET` reader - The last chip reset was caused by the Watchdog Timer."]
 pub struct WDTRESET_R(crate::FieldReader<bool, bool>);
 impl WDTRESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WDTRESET_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> WDTRESET_W<'a> {
 #[doc = "Field `SWRRESET` reader - The last chip reset was caused by a Software event."]
 pub struct SWRRESET_R(crate::FieldReader<bool, bool>);
 impl SWRRESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWRRESET_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +259,7 @@ impl<'a> SWRRESET_W<'a> {
 #[doc = "Field `DPDRESET_WAKEUPIO` reader - The last chip reset was caused by a Wake-up I/O reset event during a Deep Power-Down mode."]
 pub struct DPDRESET_WAKEUPIO_R(crate::FieldReader<bool, bool>);
 impl DPDRESET_WAKEUPIO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DPDRESET_WAKEUPIO_R(crate::FieldReader::new(bits))
     }
@@ -287,6 +296,7 @@ impl<'a> DPDRESET_WAKEUPIO_W<'a> {
 #[doc = "Field `DPDRESET_RTC` reader - The last chip reset was caused by an RTC (either RTC Alarm or RTC wake up) reset event during a Deep Power-Down mode."]
 pub struct DPDRESET_RTC_R(crate::FieldReader<bool, bool>);
 impl DPDRESET_RTC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DPDRESET_RTC_R(crate::FieldReader::new(bits))
     }
@@ -323,6 +333,7 @@ impl<'a> DPDRESET_RTC_W<'a> {
 #[doc = "Field `DPDRESET_OSTIMER` reader - The last chip reset was caused by an OS Event Timer reset event during a Deep Power-Down mode."]
 pub struct DPDRESET_OSTIMER_R(crate::FieldReader<bool, bool>);
 impl DPDRESET_OSTIMER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DPDRESET_OSTIMER_R(crate::FieldReader::new(bits))
     }
@@ -359,6 +370,7 @@ impl<'a> DPDRESET_OSTIMER_W<'a> {
 #[doc = "Field `BOOTERRORCOUNTER` reader - ROM Boot Fatal Error Counter."]
 pub struct BOOTERRORCOUNTER_R(crate::FieldReader<u8, u8>);
 impl BOOTERRORCOUNTER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BOOTERRORCOUNTER_R(crate::FieldReader::new(bits))
     }
@@ -486,6 +498,7 @@ impl W {
         BOOTERRORCOUNTER_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

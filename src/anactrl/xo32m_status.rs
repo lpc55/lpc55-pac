@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<XO32M_STATUS_SPEC>> for R {
+impl From<crate::R<XO32M_STATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<XO32M_STATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -29,6 +30,7 @@ impl From<XO_READY_A> for bool {
 #[doc = "Field `XO_READY` reader - Indicates XO out frequency statibilty."]
 pub struct XO_READY_R(crate::FieldReader<bool, XO_READY_A>);
 impl XO_READY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         XO_READY_R(crate::FieldReader::new(bits))
     }

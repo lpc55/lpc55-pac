@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CTRL_AHB_SEC_CTRL_MEM_RULE_SPEC>> for R {
+impl From<crate::R<SEC_CTRL_AHB_SEC_CTRL_MEM_RULE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CTRL_AHB_SEC_CTRL_MEM_RULE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CTRL_AHB_SEC_CTRL_MEM_RULE_SPEC>> for W {
+impl From<crate::W<SEC_CTRL_AHB_SEC_CTRL_MEM_RULE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CTRL_AHB_SEC_CTRL_MEM_RULE_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<AHB_SEC_CTRL_SECT_0_RULE_A> for u8 {
 #[doc = "Field `AHB_SEC_CTRL_SECT_0_RULE` reader - Address space: 0x400A_0000 - 0x400A_CFFF"]
 pub struct AHB_SEC_CTRL_SECT_0_RULE_R(crate::FieldReader<u8, AHB_SEC_CTRL_SECT_0_RULE_A>);
 impl AHB_SEC_CTRL_SECT_0_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AHB_SEC_CTRL_SECT_0_RULE_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<AHB_SEC_CTRL_SECT_1_RULE_A> for u8 {
 #[doc = "Field `AHB_SEC_CTRL_SECT_1_RULE` reader - Address space: 0x400A_D000 - 0x400A_DFFF"]
 pub struct AHB_SEC_CTRL_SECT_1_RULE_R(crate::FieldReader<u8, AHB_SEC_CTRL_SECT_1_RULE_A>);
 impl AHB_SEC_CTRL_SECT_1_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AHB_SEC_CTRL_SECT_1_RULE_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +260,7 @@ impl From<AHB_SEC_CTRL_SECT_2_RULE_A> for u8 {
 #[doc = "Field `AHB_SEC_CTRL_SECT_2_RULE` reader - Address space: 0x400A_E000 - 0x400A_EFFF"]
 pub struct AHB_SEC_CTRL_SECT_2_RULE_R(crate::FieldReader<u8, AHB_SEC_CTRL_SECT_2_RULE_A>);
 impl AHB_SEC_CTRL_SECT_2_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AHB_SEC_CTRL_SECT_2_RULE_R(crate::FieldReader::new(bits))
     }
@@ -357,6 +362,7 @@ impl From<AHB_SEC_CTRL_SECT_3_RULE_A> for u8 {
 #[doc = "Field `AHB_SEC_CTRL_SECT_3_RULE` reader - Address space: 0x400A_F000 - 0x400A_FFFF"]
 pub struct AHB_SEC_CTRL_SECT_3_RULE_R(crate::FieldReader<u8, AHB_SEC_CTRL_SECT_3_RULE_A>);
 impl AHB_SEC_CTRL_SECT_3_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AHB_SEC_CTRL_SECT_3_RULE_R(crate::FieldReader::new(bits))
     }
@@ -480,6 +486,7 @@ impl W {
         AHB_SEC_CTRL_SECT_3_RULE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

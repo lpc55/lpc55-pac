@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<USBINTR_SPEC>> for R {
+impl From<crate::R<USBINTR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<USBINTR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<USBINTR_SPEC>> for W {
+impl From<crate::W<USBINTR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<USBINTR_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<USBINTR_SPEC>> for W {
 #[doc = "Field `PCDE` reader - Port Change Detect Interrupt Enable: 1: enable 0: disable."]
 pub struct PCDE_R(crate::FieldReader<bool, bool>);
 impl PCDE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PCDE_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> PCDE_W<'a> {
 #[doc = "Field `FLRE` reader - Frame List Rollover Interrupt Enable: 1: enable 0: disable."]
 pub struct FLRE_R(crate::FieldReader<bool, bool>);
 impl FLRE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FLRE_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> FLRE_W<'a> {
 #[doc = "Field `ATL_IRQ_E` reader - ATL IRQ Enable bit: 1: enable 0: disable."]
 pub struct ATL_IRQ_E_R(crate::FieldReader<bool, bool>);
 impl ATL_IRQ_E_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ATL_IRQ_E_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> ATL_IRQ_E_W<'a> {
 #[doc = "Field `ISO_IRQ_E` reader - ISO IRQ Enable bit: 1: enable 0: disable."]
 pub struct ISO_IRQ_E_R(crate::FieldReader<bool, bool>);
 impl ISO_IRQ_E_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ISO_IRQ_E_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> ISO_IRQ_E_W<'a> {
 #[doc = "Field `INT_IRQ_E` reader - INT IRQ Enable bit: 1: enable 0: disable."]
 pub struct INT_IRQ_E_R(crate::FieldReader<bool, bool>);
 impl INT_IRQ_E_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INT_IRQ_E_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> INT_IRQ_E_W<'a> {
 #[doc = "Field `SOF_E` reader - SOF Interrupt Enable bit: 1: enable 0: disable."]
 pub struct SOF_E_R(crate::FieldReader<bool, bool>);
 impl SOF_E_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SOF_E_R(crate::FieldReader::new(bits))
     }
@@ -312,6 +320,7 @@ impl W {
         SOF_E_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

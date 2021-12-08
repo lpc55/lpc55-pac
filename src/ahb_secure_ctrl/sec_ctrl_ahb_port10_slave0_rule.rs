@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CTRL_AHB_PORT10_SLAVE0_RULE_SPEC>> for R {
+impl From<crate::R<SEC_CTRL_AHB_PORT10_SLAVE0_RULE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CTRL_AHB_PORT10_SLAVE0_RULE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CTRL_AHB_PORT10_SLAVE0_RULE_SPEC>> for W {
+impl From<crate::W<SEC_CTRL_AHB_PORT10_SLAVE0_RULE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CTRL_AHB_PORT10_SLAVE0_RULE_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<ADC_RULE_A> for u8 {
 #[doc = "Field `ADC_RULE` reader - ADC"]
 pub struct ADC_RULE_R(crate::FieldReader<u8, ADC_RULE_A>);
 impl ADC_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ADC_RULE_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<USB_FS_HOST_RULE_A> for u8 {
 #[doc = "Field `USB_FS_HOST_RULE` reader - USB Full Speed Host registers."]
 pub struct USB_FS_HOST_RULE_R(crate::FieldReader<u8, USB_FS_HOST_RULE_A>);
 impl USB_FS_HOST_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         USB_FS_HOST_RULE_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +260,7 @@ impl From<USB_HS_HOST_RULE_A> for u8 {
 #[doc = "Field `USB_HS_HOST_RULE` reader - USB High speed host registers"]
 pub struct USB_HS_HOST_RULE_R(crate::FieldReader<u8, USB_HS_HOST_RULE_A>);
 impl USB_HS_HOST_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         USB_HS_HOST_RULE_R(crate::FieldReader::new(bits))
     }
@@ -357,6 +362,7 @@ impl From<HASH_RULE_A> for u8 {
 #[doc = "Field `HASH_RULE` reader - SHA-2 crypto registers"]
 pub struct HASH_RULE_R(crate::FieldReader<u8, HASH_RULE_A>);
 impl HASH_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         HASH_RULE_R(crate::FieldReader::new(bits))
     }
@@ -458,6 +464,7 @@ impl From<CASPER_RULE_A> for u8 {
 #[doc = "Field `CASPER_RULE` reader - RSA/ECC crypto accelerator"]
 pub struct CASPER_RULE_R(crate::FieldReader<u8, CASPER_RULE_A>);
 impl CASPER_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CASPER_RULE_R(crate::FieldReader::new(bits))
     }
@@ -559,6 +566,7 @@ impl From<PQ_RULE_A> for u8 {
 #[doc = "Field `PQ_RULE` reader - Power Quad (CPU0 processor hardware accelerator)"]
 pub struct PQ_RULE_R(crate::FieldReader<u8, PQ_RULE_A>);
 impl PQ_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PQ_RULE_R(crate::FieldReader::new(bits))
     }
@@ -660,6 +668,7 @@ impl From<DMA1_RULE_A> for u8 {
 #[doc = "Field `DMA1_RULE` reader - DMA Controller (Secure)"]
 pub struct DMA1_RULE_R(crate::FieldReader<u8, DMA1_RULE_A>);
 impl DMA1_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DMA1_RULE_R(crate::FieldReader::new(bits))
     }
@@ -813,6 +822,7 @@ impl W {
         DMA1_RULE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<MODCFG_SPEC>> for R {
+impl From<crate::R<MODCFG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<MODCFG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<MODCFG_SPEC>> for W {
+impl From<crate::W<MODCFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<MODCFG_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<MODCFG_SPEC>> for W {
 #[doc = "Field `NOC` reader - Identifies the number of channels in this MRT.(4 channels on this device.)"]
 pub struct NOC_R(crate::FieldReader<u8, u8>);
 impl NOC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NOC_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> NOC_W<'a> {
 #[doc = "Field `NOB` reader - Identifies the number of timer bits in this MRT. (24 bits wide on this device.)"]
 pub struct NOB_R(crate::FieldReader<u8, u8>);
 impl NOB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NOB_R(crate::FieldReader::new(bits))
     }
@@ -101,6 +105,7 @@ impl From<MULTITASK_A> for bool {
 #[doc = "Field `MULTITASK` reader - Selects the operating mode for the INUSE flags and the IDLE_CH register."]
 pub struct MULTITASK_R(crate::FieldReader<bool, MULTITASK_A>);
 impl MULTITASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MULTITASK_R(crate::FieldReader::new(bits))
     }
@@ -201,6 +206,7 @@ impl W {
         MULTITASK_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

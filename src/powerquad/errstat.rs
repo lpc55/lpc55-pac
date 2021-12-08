@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ERRSTAT_SPEC>> for R {
+impl From<crate::R<ERRSTAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ERRSTAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ERRSTAT_SPEC>> for W {
+impl From<crate::W<ERRSTAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ERRSTAT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<ERRSTAT_SPEC>> for W {
 #[doc = "Field `OVERFLOW` reader - overflow"]
 pub struct OVERFLOW_R(crate::FieldReader<bool, bool>);
 impl OVERFLOW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OVERFLOW_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> OVERFLOW_W<'a> {
 #[doc = "Field `NAN` reader - nan"]
 pub struct NAN_R(crate::FieldReader<bool, bool>);
 impl NAN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NAN_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> NAN_W<'a> {
 #[doc = "Field `FIXEDOVERFLOW` reader - fixed_pt_overflow"]
 pub struct FIXEDOVERFLOW_R(crate::FieldReader<bool, bool>);
 impl FIXEDOVERFLOW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FIXEDOVERFLOW_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> FIXEDOVERFLOW_W<'a> {
 #[doc = "Field `UNDERFLOW` reader - underflow"]
 pub struct UNDERFLOW_R(crate::FieldReader<bool, bool>);
 impl UNDERFLOW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UNDERFLOW_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> UNDERFLOW_W<'a> {
 #[doc = "Field `BUSERROR` reader - bus_error"]
 pub struct BUSERROR_R(crate::FieldReader<bool, bool>);
 impl BUSERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BUSERROR_R(crate::FieldReader::new(bits))
     }
@@ -266,6 +273,7 @@ impl W {
         BUSERROR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

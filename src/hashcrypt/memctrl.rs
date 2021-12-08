@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<MEMCTRL_SPEC>> for R {
+impl From<crate::R<MEMCTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<MEMCTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<MEMCTRL_SPEC>> for W {
+impl From<crate::W<MEMCTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<MEMCTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<MASTER_A> for bool {
 #[doc = "Field `MASTER` reader - Enables mastering."]
 pub struct MASTER_R(crate::FieldReader<bool, MASTER_A>);
 impl MASTER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MASTER_R(crate::FieldReader::new(bits))
     }
@@ -118,6 +121,7 @@ impl<'a> MASTER_W<'a> {
 #[doc = "Field `COUNT` reader - Number of 512-bit (128-bit if AES, except 1st block which may include key and IV) blocks to copy starting at MEMADDR. This register will decrement after each block is copied, ending in 0. For Hash, the DIGEST interrupt will occur when it reaches 0. Fro AES, the DIGEST/OUTDATA interrupt will occur on ever block. If a bus error occurs, it will stop with this field set to the block that failed. 0:Done - nothing to process. 1 to 2K: Number of 512-bit (or 128bit) blocks to hash."]
 pub struct COUNT_R(crate::FieldReader<u16, u16>);
 impl COUNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         COUNT_R(crate::FieldReader::new(bits))
     }
@@ -165,6 +169,7 @@ impl W {
         COUNT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

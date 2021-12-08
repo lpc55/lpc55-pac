@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<DEBUG_FEATURES_DP_SPEC>> for R {
+impl From<crate::R<DEBUG_FEATURES_DP_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<DEBUG_FEATURES_DP_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<DEBUG_FEATURES_DP_SPEC>> for W {
+impl From<crate::W<DEBUG_FEATURES_DP_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<DEBUG_FEATURES_DP_SPEC>) -> Self {
         W(writer)
     }
@@ -50,6 +52,7 @@ impl From<CPU0_DBGEN_A> for u8 {
 #[doc = "Field `CPU0_DBGEN` reader - CPU0 (CPU0) Invasive debug control:."]
 pub struct CPU0_DBGEN_R(crate::FieldReader<u8, CPU0_DBGEN_A>);
 impl CPU0_DBGEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CPU0_DBGEN_R(crate::FieldReader::new(bits))
     }
@@ -125,6 +128,7 @@ impl From<CPU0_NIDEN_A> for u8 {
 #[doc = "Field `CPU0_NIDEN` reader - CPU0 Non Invasive debug control:."]
 pub struct CPU0_NIDEN_R(crate::FieldReader<u8, CPU0_NIDEN_A>);
 impl CPU0_NIDEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CPU0_NIDEN_R(crate::FieldReader::new(bits))
     }
@@ -200,6 +204,7 @@ impl From<CPU0_SPIDEN_A> for u8 {
 #[doc = "Field `CPU0_SPIDEN` reader - CPU0 Secure Invasive debug control:."]
 pub struct CPU0_SPIDEN_R(crate::FieldReader<u8, CPU0_SPIDEN_A>);
 impl CPU0_SPIDEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CPU0_SPIDEN_R(crate::FieldReader::new(bits))
     }
@@ -275,6 +280,7 @@ impl From<CPU0_SPNIDEN_A> for u8 {
 #[doc = "Field `CPU0_SPNIDEN` reader - CPU0 Secure Non Invasive debug control:."]
 pub struct CPU0_SPNIDEN_R(crate::FieldReader<u8, CPU0_SPNIDEN_A>);
 impl CPU0_SPNIDEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CPU0_SPNIDEN_R(crate::FieldReader::new(bits))
     }
@@ -350,6 +356,7 @@ impl From<CPU1_DBGEN_A> for u8 {
 #[doc = "Field `CPU1_DBGEN` reader - CPU1 Invasive debug control:."]
 pub struct CPU1_DBGEN_R(crate::FieldReader<u8, CPU1_DBGEN_A>);
 impl CPU1_DBGEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CPU1_DBGEN_R(crate::FieldReader::new(bits))
     }
@@ -425,6 +432,7 @@ impl From<CPU1_NIDEN_A> for u8 {
 #[doc = "Field `CPU1_NIDEN` reader - CPU1 Non Invasive debug control:."]
 pub struct CPU1_NIDEN_R(crate::FieldReader<u8, CPU1_NIDEN_A>);
 impl CPU1_NIDEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CPU1_NIDEN_R(crate::FieldReader::new(bits))
     }
@@ -546,6 +554,7 @@ impl W {
         CPU1_NIDEN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

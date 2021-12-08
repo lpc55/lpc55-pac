@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CTRL_SPEC>> for R {
+impl From<crate::R<CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CTRL_SPEC>> for W {
+impl From<crate::W<CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -56,6 +58,7 @@ impl From<MODE_A> for u8 {
 #[doc = "Field `Mode` reader - The operational mode to use, or 0 if none. Note that the CONFIG register will indicate if specific modes beyond SHA1 and SHA2-256 are available."]
 pub struct MODE_R(crate::FieldReader<u8, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }
@@ -207,6 +210,7 @@ impl From<DMA_I_A> for bool {
 #[doc = "Field `DMA_I` reader - Written with 1 to use DMA to fill INDATA. If Hash, will request from DMA for 16 words and then will process the Hash. If Cryptographic, it will load as many words as needed, including key if not already loaded. It will then request again. Normal model is that the DMA interrupts the processor when its length expires. Note that if the processor will write the key and optionally IV, it should not enable this until it has done so. Otherwise, the DMA will be expected to load those for the 1st block (when needed)."]
 pub struct DMA_I_R(crate::FieldReader<bool, DMA_I_A>);
 impl DMA_I_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DMA_I_R(crate::FieldReader::new(bits))
     }
@@ -288,6 +292,7 @@ impl From<DMA_O_A> for bool {
 #[doc = "Field `DMA_O` reader - Written to 1 to use DMA to drain the digest/output. If both DMA_I and DMA_O are set, the DMA has to know to switch direction and the locations. This can be used for crypto uses."]
 pub struct DMA_O_R(crate::FieldReader<bool, DMA_O_A>);
 impl DMA_O_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DMA_O_R(crate::FieldReader::new(bits))
     }
@@ -347,6 +352,7 @@ impl<'a> DMA_O_W<'a> {
 #[doc = "Field `HASHSWPB` reader - If 1, will swap bytes in the word for SHA hashing. The default is byte order (so LSB is 1st byte) but this allows swapping to MSB is 1st such as is shown in SHS spec. For cryptographic swapping, see the CRYPTCFG register."]
 pub struct HASHSWPB_R(crate::FieldReader<bool, bool>);
 impl HASHSWPB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HASHSWPB_R(crate::FieldReader::new(bits))
     }
@@ -429,6 +435,7 @@ impl W {
         HASHSWPB_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

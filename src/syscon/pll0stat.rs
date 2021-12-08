@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PLL0STAT_SPEC>> for R {
+impl From<crate::R<PLL0STAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PLL0STAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PLL0STAT_SPEC>> for W {
+impl From<crate::W<PLL0STAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PLL0STAT_SPEC>) -> Self {
         W(writer)
     }
@@ -36,6 +38,7 @@ impl core::convert::From<crate::W<PLL0STAT_SPEC>> for W {
 :100 kHz to 20 MHz."]
 pub struct LOCK_R(crate::FieldReader<bool, bool>);
 impl LOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCK_R(crate::FieldReader::new(bits))
     }
@@ -50,6 +53,7 @@ impl core::ops::Deref for LOCK_R {
 #[doc = "Field `PREDIVACK` reader - pre-divider ratio change acknowledge."]
 pub struct PREDIVACK_R(crate::FieldReader<bool, bool>);
 impl PREDIVACK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PREDIVACK_R(crate::FieldReader::new(bits))
     }
@@ -64,6 +68,7 @@ impl core::ops::Deref for PREDIVACK_R {
 #[doc = "Field `FEEDDIVACK` reader - feedback divider ratio change acknowledge."]
 pub struct FEEDDIVACK_R(crate::FieldReader<bool, bool>);
 impl FEEDDIVACK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FEEDDIVACK_R(crate::FieldReader::new(bits))
     }
@@ -78,6 +83,7 @@ impl core::ops::Deref for FEEDDIVACK_R {
 #[doc = "Field `POSTDIVACK` reader - post-divider ratio change acknowledge."]
 pub struct POSTDIVACK_R(crate::FieldReader<bool, bool>);
 impl POSTDIVACK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         POSTDIVACK_R(crate::FieldReader::new(bits))
     }
@@ -92,6 +98,7 @@ impl core::ops::Deref for POSTDIVACK_R {
 #[doc = "Field `FRMDET` reader - free running detector output (active high)."]
 pub struct FRMDET_R(crate::FieldReader<bool, bool>);
 impl FRMDET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRMDET_R(crate::FieldReader::new(bits))
     }
@@ -133,6 +140,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

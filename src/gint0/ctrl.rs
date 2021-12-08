@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CTRL_SPEC>> for R {
+impl From<crate::R<CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CTRL_SPEC>> for W {
+impl From<crate::W<CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<INT_A> for bool {
 #[doc = "Field `INT` reader - Group interrupt status. This bit is cleared by writing a one to it. Writing zero has no effect."]
 pub struct INT_R(crate::FieldReader<bool, INT_A>);
 impl INT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INT_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<COMB_A> for bool {
 #[doc = "Field `COMB` reader - Combine enabled inputs for group interrupt"]
 pub struct COMB_R(crate::FieldReader<bool, COMB_A>);
 impl COMB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         COMB_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<TRIG_A> for bool {
 #[doc = "Field `TRIG` reader - Group interrupt trigger"]
 pub struct TRIG_R(crate::FieldReader<bool, TRIG_A>);
 impl TRIG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIG_R(crate::FieldReader::new(bits))
     }
@@ -315,6 +320,7 @@ impl W {
         TRIG_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

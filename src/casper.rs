@@ -15,7 +15,7 @@ pub struct RegisterBlock {
     pub intenclr: crate::Reg<intenclr::INTENCLR_SPEC>,
     #[doc = "0x18 - Interrupt status bits (mask of INTENSET and STATUS)"]
     pub intstat: crate::Reg<intstat::INTSTAT_SPEC>,
-    _reserved7: [u8; 4usize],
+    _reserved7: [u8; 0x04],
     #[doc = "0x20 - A register"]
     pub areg: crate::Reg<areg::AREG_SPEC>,
     #[doc = "0x24 - B register"]
@@ -32,12 +32,12 @@ pub struct RegisterBlock {
     pub res2: crate::Reg<res2::RES2_SPEC>,
     #[doc = "0x3c - Result register 3"]
     pub res3: crate::Reg<res3::RES3_SPEC>,
-    _reserved15: [u8; 32usize],
+    _reserved15: [u8; 0x20],
     #[doc = "0x60 - Optional mask register"]
     pub mask: crate::Reg<mask::MASK_SPEC>,
     #[doc = "0x64 - Optional re-mask register"]
     pub remask: crate::Reg<remask::REMASK_SPEC>,
-    _reserved17: [u8; 24usize],
+    _reserved17: [u8; 0x18],
     #[doc = "0x80 - Security lock register"]
     pub lock: crate::Reg<lock::LOCK_SPEC>,
 }

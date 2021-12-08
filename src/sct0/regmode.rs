@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<REGMODE_SPEC>> for R {
+impl From<crate::R<REGMODE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<REGMODE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<REGMODE_SPEC>> for W {
+impl From<crate::W<REGMODE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<REGMODE_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<REGMODE_SPEC>> for W {
 #[doc = "Field `REGMOD_L` reader - Each bit controls one match/capture register (register 0 = bit 0, register 1 = bit 1, etc.). The number of bits = number of match/captures in this SCT. 0 = register operates as match register. 1 = register operates as capture register."]
 pub struct REGMOD_L_R(crate::FieldReader<u16, u16>);
 impl REGMOD_L_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         REGMOD_L_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> REGMOD_L_W<'a> {
 #[doc = "Field `REGMOD_H` reader - Each bit controls one match/capture register (register 0 = bit 16, register 1 = bit 17, etc.). The number of bits = number of match/captures in this SCT. 0 = register operates as match registers. 1 = register operates as capture registers."]
 pub struct REGMOD_H_R(crate::FieldReader<u16, u16>);
 impl REGMOD_H_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         REGMOD_H_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl W {
         REGMOD_H_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<EPTOGGLE_SPEC>> for R {
+impl From<crate::R<EPTOGGLE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<EPTOGGLE_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<EPTOGGLE_SPEC>> for R {
 #[doc = "Field `TOGGLE` reader - Endpoint data toggle: This field indicates the current value of the data toggle for the corresponding endpoint."]
 pub struct TOGGLE_R(crate::FieldReader<u32, u32>);
 impl TOGGLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         TOGGLE_R(crate::FieldReader::new(bits))
     }

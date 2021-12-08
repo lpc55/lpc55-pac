@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INTENCLR_SPEC>> for R {
+impl From<crate::R<INTENCLR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INTENCLR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<INTENCLR_SPEC>> for W {
+impl From<crate::W<INTENCLR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<INTENCLR_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<DONE_A> for bool {
 #[doc = "Field `DONE` reader - Written to clear an interrupt set with INTENSET."]
 pub struct DONE_R(crate::FieldReader<bool, DONE_A>);
 impl DONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DONE_R(crate::FieldReader::new(bits))
     }
@@ -129,6 +132,7 @@ impl W {
         DONE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

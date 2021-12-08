@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<B0_29_SPEC>> for R {
+impl From<crate::R<B0_29_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<B0_29_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<B0_29_SPEC>> for W {
+impl From<crate::W<B0_29_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<B0_29_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<B0_29_SPEC>> for W {
 #[doc = "Field `PBYTE` reader - Read: state of the pin PIOm_n, regardless of direction, masking, or alternate function, except that pins configured as analog I/O always read as 0. One register for each port pin. Supported pins depends on the specific device and package. Write: loads the pin's output bit. One register for each port pin. Supported pins depends on the specific device and package."]
 pub struct PBYTE_R(crate::FieldReader<bool, bool>);
 impl PBYTE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PBYTE_R(crate::FieldReader::new(bits))
     }
@@ -82,6 +85,7 @@ impl W {
         PBYTE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u8) -> &mut Self {
         self.0.bits(bits);
         self

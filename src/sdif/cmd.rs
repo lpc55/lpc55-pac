@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CMD_SPEC>> for R {
+impl From<crate::R<CMD_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CMD_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CMD_SPEC>> for W {
+impl From<crate::W<CMD_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CMD_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CMD_SPEC>> for W {
 #[doc = "Field `CMD_INDEX` reader - Command index."]
 pub struct CMD_INDEX_R(crate::FieldReader<u8, u8>);
 impl CMD_INDEX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CMD_INDEX_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> CMD_INDEX_W<'a> {
 #[doc = "Field `RESPONSE_EXPECT` reader - Response expect."]
 pub struct RESPONSE_EXPECT_R(crate::FieldReader<bool, bool>);
 impl RESPONSE_EXPECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESPONSE_EXPECT_R(crate::FieldReader::new(bits))
     }
@@ -97,6 +101,7 @@ impl<'a> RESPONSE_EXPECT_W<'a> {
 #[doc = "Field `RESPONSE_LENGTH` reader - Response length."]
 pub struct RESPONSE_LENGTH_R(crate::FieldReader<bool, bool>);
 impl RESPONSE_LENGTH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESPONSE_LENGTH_R(crate::FieldReader::new(bits))
     }
@@ -133,6 +138,7 @@ impl<'a> RESPONSE_LENGTH_W<'a> {
 #[doc = "Field `CHECK_RESPONSE_CRC` reader - Check response CRC."]
 pub struct CHECK_RESPONSE_CRC_R(crate::FieldReader<bool, bool>);
 impl CHECK_RESPONSE_CRC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CHECK_RESPONSE_CRC_R(crate::FieldReader::new(bits))
     }
@@ -169,6 +175,7 @@ impl<'a> CHECK_RESPONSE_CRC_W<'a> {
 #[doc = "Field `DATA_EXPECTED` reader - Data expected."]
 pub struct DATA_EXPECTED_R(crate::FieldReader<bool, bool>);
 impl DATA_EXPECTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DATA_EXPECTED_R(crate::FieldReader::new(bits))
     }
@@ -205,6 +212,7 @@ impl<'a> DATA_EXPECTED_W<'a> {
 #[doc = "Field `READ_WRITE` reader - read/write."]
 pub struct READ_WRITE_R(crate::FieldReader<bool, bool>);
 impl READ_WRITE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READ_WRITE_R(crate::FieldReader::new(bits))
     }
@@ -241,6 +249,7 @@ impl<'a> READ_WRITE_W<'a> {
 #[doc = "Field `TRANSFER_MODE` reader - Transfer mode."]
 pub struct TRANSFER_MODE_R(crate::FieldReader<bool, bool>);
 impl TRANSFER_MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRANSFER_MODE_R(crate::FieldReader::new(bits))
     }
@@ -277,6 +286,7 @@ impl<'a> TRANSFER_MODE_W<'a> {
 #[doc = "Field `SEND_AUTO_STOP` reader - Send auto stop."]
 pub struct SEND_AUTO_STOP_R(crate::FieldReader<bool, bool>);
 impl SEND_AUTO_STOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEND_AUTO_STOP_R(crate::FieldReader::new(bits))
     }
@@ -313,6 +323,7 @@ impl<'a> SEND_AUTO_STOP_W<'a> {
 #[doc = "Field `WAIT_PRVDATA_COMPLETE` reader - Wait prvdata complete."]
 pub struct WAIT_PRVDATA_COMPLETE_R(crate::FieldReader<bool, bool>);
 impl WAIT_PRVDATA_COMPLETE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAIT_PRVDATA_COMPLETE_R(crate::FieldReader::new(bits))
     }
@@ -349,6 +360,7 @@ impl<'a> WAIT_PRVDATA_COMPLETE_W<'a> {
 #[doc = "Field `STOP_ABORT_CMD` reader - Stop abort command."]
 pub struct STOP_ABORT_CMD_R(crate::FieldReader<bool, bool>);
 impl STOP_ABORT_CMD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STOP_ABORT_CMD_R(crate::FieldReader::new(bits))
     }
@@ -385,6 +397,7 @@ impl<'a> STOP_ABORT_CMD_W<'a> {
 #[doc = "Field `SEND_INITIALIZATION` reader - Send initialization."]
 pub struct SEND_INITIALIZATION_R(crate::FieldReader<bool, bool>);
 impl SEND_INITIALIZATION_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEND_INITIALIZATION_R(crate::FieldReader::new(bits))
     }
@@ -436,6 +449,7 @@ impl From<CARD_NUMBER_A> for u8 {
 #[doc = "Field `CARD_NUMBER` reader - Specifies the card number of SDCARD for which the current Command is being executed"]
 pub struct CARD_NUMBER_R(crate::FieldReader<u8, CARD_NUMBER_A>);
 impl CARD_NUMBER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CARD_NUMBER_R(crate::FieldReader::new(bits))
     }
@@ -496,6 +510,7 @@ impl<'a> CARD_NUMBER_W<'a> {
 #[doc = "Field `UPDATE_CLOCK_REGISTERS_ONLY` reader - Update clock registers only."]
 pub struct UPDATE_CLOCK_REGISTERS_ONLY_R(crate::FieldReader<bool, bool>);
 impl UPDATE_CLOCK_REGISTERS_ONLY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UPDATE_CLOCK_REGISTERS_ONLY_R(crate::FieldReader::new(bits))
     }
@@ -532,6 +547,7 @@ impl<'a> UPDATE_CLOCK_REGISTERS_ONLY_W<'a> {
 #[doc = "Field `READ_CEATA_DEVICE` reader - Read ceata device."]
 pub struct READ_CEATA_DEVICE_R(crate::FieldReader<bool, bool>);
 impl READ_CEATA_DEVICE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READ_CEATA_DEVICE_R(crate::FieldReader::new(bits))
     }
@@ -568,6 +584,7 @@ impl<'a> READ_CEATA_DEVICE_W<'a> {
 #[doc = "Field `CCS_EXPECTED` reader - CCS expected."]
 pub struct CCS_EXPECTED_R(crate::FieldReader<bool, bool>);
 impl CCS_EXPECTED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCS_EXPECTED_R(crate::FieldReader::new(bits))
     }
@@ -604,6 +621,7 @@ impl<'a> CCS_EXPECTED_W<'a> {
 #[doc = "Field `ENABLE_BOOT` reader - Enable Boot - this bit should be set only for mandatory boot mode."]
 pub struct ENABLE_BOOT_R(crate::FieldReader<bool, bool>);
 impl ENABLE_BOOT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENABLE_BOOT_R(crate::FieldReader::new(bits))
     }
@@ -640,6 +658,7 @@ impl<'a> ENABLE_BOOT_W<'a> {
 #[doc = "Field `EXPECT_BOOT_ACK` reader - Expect Boot Acknowledge."]
 pub struct EXPECT_BOOT_ACK_R(crate::FieldReader<bool, bool>);
 impl EXPECT_BOOT_ACK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EXPECT_BOOT_ACK_R(crate::FieldReader::new(bits))
     }
@@ -676,6 +695,7 @@ impl<'a> EXPECT_BOOT_ACK_W<'a> {
 #[doc = "Field `DISABLE_BOOT` reader - Disable Boot."]
 pub struct DISABLE_BOOT_R(crate::FieldReader<bool, bool>);
 impl DISABLE_BOOT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DISABLE_BOOT_R(crate::FieldReader::new(bits))
     }
@@ -712,6 +732,7 @@ impl<'a> DISABLE_BOOT_W<'a> {
 #[doc = "Field `BOOT_MODE` reader - Boot Mode."]
 pub struct BOOT_MODE_R(crate::FieldReader<bool, bool>);
 impl BOOT_MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BOOT_MODE_R(crate::FieldReader::new(bits))
     }
@@ -748,6 +769,7 @@ impl<'a> BOOT_MODE_W<'a> {
 #[doc = "Field `VOLT_SWITCH` reader - Voltage switch bit."]
 pub struct VOLT_SWITCH_R(crate::FieldReader<bool, bool>);
 impl VOLT_SWITCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VOLT_SWITCH_R(crate::FieldReader::new(bits))
     }
@@ -784,6 +806,7 @@ impl<'a> VOLT_SWITCH_W<'a> {
 #[doc = "Field `USE_HOLD_REG` reader - Use Hold Register."]
 pub struct USE_HOLD_REG_R(crate::FieldReader<bool, bool>);
 impl USE_HOLD_REG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USE_HOLD_REG_R(crate::FieldReader::new(bits))
     }
@@ -820,6 +843,7 @@ impl<'a> USE_HOLD_REG_W<'a> {
 #[doc = "Field `START_CMD` reader - Start command."]
 pub struct START_CMD_R(crate::FieldReader<bool, bool>);
 impl START_CMD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         START_CMD_R(crate::FieldReader::new(bits))
     }
@@ -1077,6 +1101,7 @@ impl W {
         START_CMD_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

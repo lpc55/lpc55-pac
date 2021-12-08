@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CTRL0_SPEC>> for R {
+impl From<crate::R<CTRL0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CTRL0_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CTRL0_SPEC>> for W {
+impl From<crate::W<CTRL0_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CTRL0_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<ABBPAIR_A> for bool {
 #[doc = "Field `ABBPAIR` reader - Which bank-pair the offset ABOFF is within. This must be 0 if only 2-up"]
 pub struct ABBPAIR_R(crate::FieldReader<bool, ABBPAIR_A>);
 impl ABBPAIR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ABBPAIR_R(crate::FieldReader::new(bits))
     }
@@ -118,6 +121,7 @@ impl<'a> ABBPAIR_W<'a> {
 #[doc = "Field `ABOFF` reader - Word or DWord Offset of AB values, with B at \\[2\\]=0 and A at \\[2\\]=1 as far as the code sees (normally will be an interleaved bank so only sequential to AHB). Word offset only allowed if 32 bit operation. Ideally not in the same RAM as the CD values if 4-up"]
 pub struct ABOFF_R(crate::FieldReader<bool, bool>);
 impl ABOFF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ABOFF_R(crate::FieldReader::new(bits))
     }
@@ -168,6 +172,7 @@ impl From<CDBPAIR_A> for bool {
 #[doc = "Field `CDBPAIR` reader - Which bank-pair the offset CDOFF is within. This must be 0 if only 2-up"]
 pub struct CDBPAIR_R(crate::FieldReader<bool, CDBPAIR_A>);
 impl CDBPAIR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CDBPAIR_R(crate::FieldReader::new(bits))
     }
@@ -237,6 +242,7 @@ impl<'a> CDBPAIR_W<'a> {
 #[doc = "Field `CDOFF` reader - Word or DWord Offset of CD, with D at \\[2\\]=0 and C at \\[2\\]=1 as far as the code sees (normally will be an interleaved bank so only sequential to AHB). Word offset only allowed if 32 bit operation. Ideally not in the same RAM as the AB values"]
 pub struct CDOFF_R(crate::FieldReader<u16, u16>);
 impl CDOFF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         CDOFF_R(crate::FieldReader::new(bits))
     }
@@ -304,6 +310,7 @@ impl W {
         CDOFF_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

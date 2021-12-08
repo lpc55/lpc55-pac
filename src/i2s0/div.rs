@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<DIV_SPEC>> for R {
+impl From<crate::R<DIV_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<DIV_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<DIV_SPEC>> for W {
+impl From<crate::W<DIV_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<DIV_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<DIV_SPEC>> for W {
 #[doc = "Field `DIV` reader - This field controls how this I2S block uses the Flexcomm function clock. 0x000 = The Flexcomm function clock is used directly. 0x001 = The Flexcomm function clock is divided by 2. 0x002 = The Flexcomm function clock is divided by 3. 0xFFF = The Flexcomm function clock is divided by 4,096."]
 pub struct DIV_R(crate::FieldReader<u16, u16>);
 impl DIV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         DIV_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         DIV_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

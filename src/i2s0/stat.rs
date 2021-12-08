@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<STAT_SPEC>> for R {
+impl From<crate::R<STAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<STAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<STAT_SPEC>> for W {
+impl From<crate::W<STAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<STAT_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<BUSY_A> for bool {
 #[doc = "Field `BUSY` reader - Busy status for the primary channel pair. Other BUSY flags may be found in the STAT register for each channel pair."]
 pub struct BUSY_R(crate::FieldReader<bool, BUSY_A>);
 impl BUSY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BUSY_R(crate::FieldReader::new(bits))
     }
@@ -146,6 +149,7 @@ impl From<LR_A> for bool {
 #[doc = "Field `LR` reader - Left/Right indication. This flag is considered to be a debugging aid and is not expected to be used by an I2S driver. Valid when one channel pair is busy. Indicates left or right data being processed for the currently busy channel pair."]
 pub struct LR_R(crate::FieldReader<bool, LR_A>);
 impl LR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LR_R(crate::FieldReader::new(bits))
     }
@@ -192,6 +196,7 @@ impl From<DATAPAUSED_A> for bool {
 #[doc = "Field `DATAPAUSED` reader - Data Paused status flag. Applies to all I2S channels"]
 pub struct DATAPAUSED_R(crate::FieldReader<bool, DATAPAUSED_A>);
 impl DATAPAUSED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DATAPAUSED_R(crate::FieldReader::new(bits))
     }
@@ -245,6 +250,7 @@ impl W {
         SLVFRMERR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

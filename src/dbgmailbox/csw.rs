@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CSW_SPEC>> for R {
+impl From<crate::R<CSW_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CSW_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CSW_SPEC>> for W {
+impl From<crate::W<CSW_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CSW_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CSW_SPEC>> for W {
 #[doc = "Field `RESYNCH_REQ` reader - Debugger will set this bit to 1 to request a resynchronrisation"]
 pub struct RESYNCH_REQ_R(crate::FieldReader<bool, bool>);
 impl RESYNCH_REQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESYNCH_REQ_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> RESYNCH_REQ_W<'a> {
 #[doc = "Field `REQ_PENDING` reader - Request is pending from debugger (i.e unread value in REQUEST)"]
 pub struct REQ_PENDING_R(crate::FieldReader<bool, bool>);
 impl REQ_PENDING_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         REQ_PENDING_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> REQ_PENDING_W<'a> {
 #[doc = "Field `DBG_OR_ERR` reader - Debugger overrun error (previous REQUEST overwritten before being picked up by ROM)"]
 pub struct DBG_OR_ERR_R(crate::FieldReader<bool, bool>);
 impl DBG_OR_ERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DBG_OR_ERR_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> DBG_OR_ERR_W<'a> {
 #[doc = "Field `AHB_OR_ERR` reader - AHB overrun Error (Return value overwritten by ROM)"]
 pub struct AHB_OR_ERR_R(crate::FieldReader<bool, bool>);
 impl AHB_OR_ERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AHB_OR_ERR_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> AHB_OR_ERR_W<'a> {
 #[doc = "Field `SOFT_RESET` reader - Soft Reset for DM (write-only from AHB, not readable and selfclearing). A write to this bit will cause a soft reset for DM."]
 pub struct SOFT_RESET_R(crate::FieldReader<bool, bool>);
 impl SOFT_RESET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SOFT_RESET_R(crate::FieldReader::new(bits))
     }
@@ -293,6 +300,7 @@ impl W {
         CHIP_RESET_REQ_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

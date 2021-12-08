@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<COUNTER_VAL_SPEC>> for R {
+impl From<crate::R<COUNTER_VAL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<COUNTER_VAL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<COUNTER_VAL_SPEC>> for W {
+impl From<crate::W<COUNTER_VAL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<COUNTER_VAL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<COUNTER_VAL_SPEC>> for W {
 #[doc = "Field `CLK_RATIO` reader - Gives the ratio between the internal clocks frequencies and the register clock frequency for evaluation and certification purposes."]
 pub struct CLK_RATIO_R(crate::FieldReader<u8, u8>);
 impl CLK_RATIO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CLK_RATIO_R(crate::FieldReader::new(bits))
     }
@@ -49,6 +52,7 @@ impl core::ops::Deref for CLK_RATIO_R {
 #[doc = "Field `REFRESH_CNT` reader - Incremented (till max possible value) each time COUNTER was updated since last reading to any *_NUMBER."]
 pub struct REFRESH_CNT_R(crate::FieldReader<u8, u8>);
 impl REFRESH_CNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         REFRESH_CNT_R(crate::FieldReader::new(bits))
     }
@@ -74,6 +78,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

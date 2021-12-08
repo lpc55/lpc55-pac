@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CTRL_APB_BRIDGE0_MEM_CTRL0_SPEC>> for R {
+impl From<crate::R<SEC_CTRL_APB_BRIDGE0_MEM_CTRL0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CTRL_APB_BRIDGE0_MEM_CTRL0_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CTRL_APB_BRIDGE0_MEM_CTRL0_SPEC>> for W {
+impl From<crate::W<SEC_CTRL_APB_BRIDGE0_MEM_CTRL0_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CTRL_APB_BRIDGE0_MEM_CTRL0_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<SYSCON_RULE_A> for u8 {
 #[doc = "Field `SYSCON_RULE` reader - System Configuration"]
 pub struct SYSCON_RULE_R(crate::FieldReader<u8, SYSCON_RULE_A>);
 impl SYSCON_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SYSCON_RULE_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<IOCON_RULE_A> for u8 {
 #[doc = "Field `IOCON_RULE` reader - I/O Configuration"]
 pub struct IOCON_RULE_R(crate::FieldReader<u8, IOCON_RULE_A>);
 impl IOCON_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IOCON_RULE_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +260,7 @@ impl From<GINT0_RULE_A> for u8 {
 #[doc = "Field `GINT0_RULE` reader - GPIO input Interrupt 0"]
 pub struct GINT0_RULE_R(crate::FieldReader<u8, GINT0_RULE_A>);
 impl GINT0_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         GINT0_RULE_R(crate::FieldReader::new(bits))
     }
@@ -357,6 +362,7 @@ impl From<GINT1_RULE_A> for u8 {
 #[doc = "Field `GINT1_RULE` reader - GPIO input Interrupt 1"]
 pub struct GINT1_RULE_R(crate::FieldReader<u8, GINT1_RULE_A>);
 impl GINT1_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         GINT1_RULE_R(crate::FieldReader::new(bits))
     }
@@ -458,6 +464,7 @@ impl From<PINT_RULE_A> for u8 {
 #[doc = "Field `PINT_RULE` reader - Pin Interrupt and Pattern match"]
 pub struct PINT_RULE_R(crate::FieldReader<u8, PINT_RULE_A>);
 impl PINT_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PINT_RULE_R(crate::FieldReader::new(bits))
     }
@@ -559,6 +566,7 @@ impl From<SEC_PINT_RULE_A> for u8 {
 #[doc = "Field `SEC_PINT_RULE` reader - Secure Pin Interrupt and Pattern match"]
 pub struct SEC_PINT_RULE_R(crate::FieldReader<u8, SEC_PINT_RULE_A>);
 impl SEC_PINT_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SEC_PINT_RULE_R(crate::FieldReader::new(bits))
     }
@@ -660,6 +668,7 @@ impl From<INPUTMUX_RULE_A> for u8 {
 #[doc = "Field `INPUTMUX_RULE` reader - Peripheral input multiplexing"]
 pub struct INPUTMUX_RULE_R(crate::FieldReader<u8, INPUTMUX_RULE_A>);
 impl INPUTMUX_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         INPUTMUX_RULE_R(crate::FieldReader::new(bits))
     }
@@ -813,6 +822,7 @@ impl W {
         INPUTMUX_RULE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

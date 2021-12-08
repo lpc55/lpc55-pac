@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PRINCE_BASE_ADDR_SPEC>> for R {
+impl From<crate::R<PRINCE_BASE_ADDR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PRINCE_BASE_ADDR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PRINCE_BASE_ADDR_SPEC>> for W {
+impl From<crate::W<PRINCE_BASE_ADDR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PRINCE_BASE_ADDR_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<PRINCE_BASE_ADDR_SPEC>> for W {
 #[doc = "Field `ADDR0_PRG` reader - Programmable portion of the base address of region 0."]
 pub struct ADDR0_PRG_R(crate::FieldReader<u8, u8>);
 impl ADDR0_PRG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ADDR0_PRG_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> ADDR0_PRG_W<'a> {
 #[doc = "Field `ADDR1_PRG` reader - Programmable portion of the base address of region 1."]
 pub struct ADDR1_PRG_R(crate::FieldReader<u8, u8>);
 impl ADDR1_PRG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ADDR1_PRG_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> ADDR1_PRG_W<'a> {
 #[doc = "Field `ADDR2_PRG` reader - Programmable portion of the base address of region 2."]
 pub struct ADDR2_PRG_R(crate::FieldReader<u8, u8>);
 impl ADDR2_PRG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ADDR2_PRG_R(crate::FieldReader::new(bits))
     }
@@ -113,6 +118,7 @@ impl<'a> ADDR2_PRG_W<'a> {
 #[doc = "Field `LOCK_REG0` reader - Lock PRINCE region0 settings. 00 - Region is not locked. 01, 10, 11 - Region is locked."]
 pub struct LOCK_REG0_R(crate::FieldReader<u8, u8>);
 impl LOCK_REG0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LOCK_REG0_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +145,7 @@ impl<'a> LOCK_REG0_W<'a> {
 #[doc = "Field `LOCK_REG1` reader - Lock PRINCE region1 settings. 00 - Region is not locked. 01, 10, 11 - Region is locked."]
 pub struct LOCK_REG1_R(crate::FieldReader<u8, u8>);
 impl LOCK_REG1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LOCK_REG1_R(crate::FieldReader::new(bits))
     }
@@ -165,6 +172,7 @@ impl<'a> LOCK_REG1_W<'a> {
 #[doc = "Field `LOCK_REG2` reader - Lock PRINCE region2 settings. 00 - Region is not locked. 01, 10, 11 - Region is locked."]
 pub struct LOCK_REG2_R(crate::FieldReader<u8, u8>);
 impl LOCK_REG2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LOCK_REG2_R(crate::FieldReader::new(bits))
     }
@@ -191,6 +199,7 @@ impl<'a> LOCK_REG2_W<'a> {
 #[doc = "Field `REG0_ERASE_CHECK_EN` reader - For PRINCE region0 enable checking whether all encrypted pages are erased together. 00 - Check is disabled. 01, 10, 11 - Check is enabled."]
 pub struct REG0_ERASE_CHECK_EN_R(crate::FieldReader<u8, u8>);
 impl REG0_ERASE_CHECK_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         REG0_ERASE_CHECK_EN_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +226,7 @@ impl<'a> REG0_ERASE_CHECK_EN_W<'a> {
 #[doc = "Field `REG1_ERASE_CHECK_EN` reader - For PRINCE region1 enable checking whether all encrypted pages are erased together. 00 - Check is disabled. 01, 10, 11 - Check is enabled."]
 pub struct REG1_ERASE_CHECK_EN_R(crate::FieldReader<u8, u8>);
 impl REG1_ERASE_CHECK_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         REG1_ERASE_CHECK_EN_R(crate::FieldReader::new(bits))
     }
@@ -243,6 +253,7 @@ impl<'a> REG1_ERASE_CHECK_EN_W<'a> {
 #[doc = "Field `REG2_ERASE_CHECK_EN` reader - For PRINCE region2 enable checking whether all encrypted pages are erased together. 00 - Check is disabled. 01, 10, 11 - Check is enabled."]
 pub struct REG2_ERASE_CHECK_EN_R(crate::FieldReader<u8, u8>);
 impl REG2_ERASE_CHECK_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         REG2_ERASE_CHECK_EN_R(crate::FieldReader::new(bits))
     }
@@ -360,6 +371,7 @@ impl W {
         REG2_ERASE_CHECK_EN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

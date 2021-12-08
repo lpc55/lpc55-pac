@@ -31,8 +31,8 @@ pub struct RegisterBlock {
     #[doc = "0x34 - Xtal 16MHz capabank triming."]
     pub xtal_16mhz_capabank_trim:
         crate::Reg<xtal_16mhz_capabank_trim::XTAL_16MHZ_CAPABANK_TRIM_SPEC>,
-    _reserved14: [u8; 24usize],
-    #[doc = "0x50 - ROTKH0 for Root of Trust Keys Table hash\\[255:224\\]
+    _reserved14: [u8; 0x18],
+    #[doc = "0x50..0x70 - ROTKH0 for Root of Trust Keys Table hash\\[255:224\\]
 ROTKH1 for Root of Trust Keys Table hash\\[223:192\\]
 ROTKH2 for Root of Trust Keys Table hash\\[191:160\\]
 ROTKH3 for Root of Trust Keys Table hash\\[159:128\\]
@@ -41,10 +41,10 @@ ROTKH5 for Root of Trust Keys Table hash\\[95:64\\]
 ROTKH6 for Root of Trust Keys Table hash\\[63:32\\]
 ROTKH7 for Root of Trust Keys Table hash\\[31:0\\]"]
     pub rotkh: [crate::Reg<rotkh::ROTKH_SPEC>; 8],
-    _reserved15: [u8; 144usize],
-    #[doc = "0x100 - Customer Defined (Programable through ROM API)"]
+    _reserved15: [u8; 0x90],
+    #[doc = "0x100..0x1e0 - Customer Defined (Programable through ROM API)"]
     pub customer_defined: [crate::Reg<customer_defined::CUSTOMER_DEFINED_SPEC>; 56],
-    #[doc = "0x1e0 - SHA256_DIGEST0 for DIGEST\\[31:0\\]
+    #[doc = "0x1e0..0x200 - SHA256_DIGEST0 for DIGEST\\[31:0\\]
 SHA256_DIGEST1 for DIGEST\\[63:32\\]
 SHA256_DIGEST2 for DIGEST\\[95:64\\]
 SHA256_DIGEST3 for DIGEST\\[127:96\\]

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<BOD_DCDC_INT_STATUS_SPEC>> for R {
+impl From<crate::R<BOD_DCDC_INT_STATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<BOD_DCDC_INT_STATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -29,6 +30,7 @@ impl From<BODVBAT_STATUS_A> for bool {
 #[doc = "Field `BODVBAT_STATUS` reader - BOD VBAT Interrupt status before Interrupt Enable."]
 pub struct BODVBAT_STATUS_R(crate::FieldReader<bool, BODVBAT_STATUS_A>);
 impl BODVBAT_STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BODVBAT_STATUS_R(crate::FieldReader::new(bits))
     }
@@ -75,6 +77,7 @@ impl From<BODVBAT_INT_STATUS_A> for bool {
 #[doc = "Field `BODVBAT_INT_STATUS` reader - BOD VBAT Interrupt status after Interrupt Enable."]
 pub struct BODVBAT_INT_STATUS_R(crate::FieldReader<bool, BODVBAT_INT_STATUS_A>);
 impl BODVBAT_INT_STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BODVBAT_INT_STATUS_R(crate::FieldReader::new(bits))
     }
@@ -121,6 +124,7 @@ impl From<BODVBAT_VAL_A> for bool {
 #[doc = "Field `BODVBAT_VAL` reader - Current value of BOD VBAT power status output."]
 pub struct BODVBAT_VAL_R(crate::FieldReader<bool, BODVBAT_VAL_A>);
 impl BODVBAT_VAL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BODVBAT_VAL_R(crate::FieldReader::new(bits))
     }
@@ -167,6 +171,7 @@ impl From<BODCORE_STATUS_A> for bool {
 #[doc = "Field `BODCORE_STATUS` reader - BOD CORE Interrupt status before Interrupt Enable."]
 pub struct BODCORE_STATUS_R(crate::FieldReader<bool, BODCORE_STATUS_A>);
 impl BODCORE_STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BODCORE_STATUS_R(crate::FieldReader::new(bits))
     }
@@ -213,6 +218,7 @@ impl From<BODCORE_INT_STATUS_A> for bool {
 #[doc = "Field `BODCORE_INT_STATUS` reader - BOD CORE Interrupt status after Interrupt Enable."]
 pub struct BODCORE_INT_STATUS_R(crate::FieldReader<bool, BODCORE_INT_STATUS_A>);
 impl BODCORE_INT_STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BODCORE_INT_STATUS_R(crate::FieldReader::new(bits))
     }
@@ -259,6 +265,7 @@ impl From<BODCORE_VAL_A> for bool {
 #[doc = "Field `BODCORE_VAL` reader - Current value of BOD CORE power status output."]
 pub struct BODCORE_VAL_R(crate::FieldReader<bool, BODCORE_VAL_A>);
 impl BODCORE_VAL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BODCORE_VAL_R(crate::FieldReader::new(bits))
     }
@@ -305,6 +312,7 @@ impl From<DCDC_STATUS_A> for bool {
 #[doc = "Field `DCDC_STATUS` reader - DCDC Interrupt status before Interrupt Enable."]
 pub struct DCDC_STATUS_R(crate::FieldReader<bool, DCDC_STATUS_A>);
 impl DCDC_STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DCDC_STATUS_R(crate::FieldReader::new(bits))
     }
@@ -351,6 +359,7 @@ impl From<DCDC_INT_STATUS_A> for bool {
 #[doc = "Field `DCDC_INT_STATUS` reader - DCDC Interrupt status after Interrupt Enable."]
 pub struct DCDC_INT_STATUS_R(crate::FieldReader<bool, DCDC_INT_STATUS_A>);
 impl DCDC_INT_STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DCDC_INT_STATUS_R(crate::FieldReader::new(bits))
     }
@@ -397,6 +406,7 @@ impl From<DCDC_VAL_A> for bool {
 #[doc = "Field `DCDC_VAL` reader - Current value of DCDC power status output."]
 pub struct DCDC_VAL_R(crate::FieldReader<bool, DCDC_VAL_A>);
 impl DCDC_VAL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DCDC_VAL_R(crate::FieldReader::new(bits))
     }

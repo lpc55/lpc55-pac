@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SFSR_SPEC>> for R {
+impl From<crate::R<SFSR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SFSR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SFSR_SPEC>> for W {
+impl From<crate::W<SFSR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SFSR_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<INVEP_A> for bool {
 #[doc = "Field `INVEP` reader - Invalid entry point."]
 pub struct INVEP_R(crate::FieldReader<bool, INVEP_A>);
 impl INVEP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INVEP_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<INVIS_A> for bool {
 #[doc = "Field `INVIS` reader - Invalid integrity signature flag."]
 pub struct INVIS_R(crate::FieldReader<bool, INVIS_A>);
 impl INVIS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INVIS_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<INVER_A> for bool {
 #[doc = "Field `INVER` reader - Invalid exception return flag."]
 pub struct INVER_R(crate::FieldReader<bool, INVER_A>);
 impl INVER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INVER_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<AUVIOL_A> for bool {
 #[doc = "Field `AUVIOL` reader - Attribution unit violation flag."]
 pub struct AUVIOL_R(crate::FieldReader<bool, AUVIOL_A>);
 impl AUVIOL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AUVIOL_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<INVTRAN_A> for bool {
 #[doc = "Field `INVTRAN` reader - Invalid transition flag."]
 pub struct INVTRAN_R(crate::FieldReader<bool, INVTRAN_A>);
 impl INVTRAN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INVTRAN_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<LSPERR_A> for bool {
 #[doc = "Field `LSPERR` reader - Lazy state preservation error flag."]
 pub struct LSPERR_R(crate::FieldReader<bool, LSPERR_A>);
 impl LSPERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LSPERR_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<SFARVALID_A> for bool {
 #[doc = "Field `SFARVALID` reader - Secure fault address valid."]
 pub struct SFARVALID_R(crate::FieldReader<bool, SFARVALID_A>);
 impl SFARVALID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SFARVALID_R(crate::FieldReader::new(bits))
     }
@@ -630,6 +639,7 @@ impl From<LSERR_A> for bool {
 #[doc = "Field `LSERR` reader - Lazy state error flag."]
 pub struct LSERR_R(crate::FieldReader<bool, LSERR_A>);
 impl LSERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LSERR_R(crate::FieldReader::new(bits))
     }
@@ -780,6 +790,7 @@ impl W {
         LSERR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

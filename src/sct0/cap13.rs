@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CAP13_SPEC>> for R {
+impl From<crate::R<CAP13_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CAP13_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CAP13_SPEC>> for W {
+impl From<crate::W<CAP13_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CAP13_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CAP13_SPEC>> for W {
 #[doc = "Field `CAPn_L` reader - When UNIFY = 0, read the 16-bit counter value at which this register was last captured. When UNIFY = 1, read the lower 16 bits of the 32-bit value at which this register was last captured."]
 pub struct CAPN_L_R(crate::FieldReader<u16, u16>);
 impl CAPN_L_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         CAPN_L_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> CAPN_L_W<'a> {
 #[doc = "Field `CAPn_H` reader - When UNIFY = 0, read the 16-bit counter value at which this register was last captured. When UNIFY = 1, read the upper 16 bits of the 32-bit value at which this register was last captured."]
 pub struct CAPN_H_R(crate::FieldReader<u16, u16>);
 impl CAPN_H_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         CAPN_H_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl W {
         CAPN_H_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

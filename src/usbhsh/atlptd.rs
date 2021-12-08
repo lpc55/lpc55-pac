@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ATLPTD_SPEC>> for R {
+impl From<crate::R<ATLPTD_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ATLPTD_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ATLPTD_SPEC>> for W {
+impl From<crate::W<ATLPTD_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ATLPTD_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<ATLPTD_SPEC>> for W {
 #[doc = "Field `ATL_CUR` reader - This indicates the current PTD that is used by the hardware when it is processing the ATL list."]
 pub struct ATL_CUR_R(crate::FieldReader<u8, u8>);
 impl ATL_CUR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ATL_CUR_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> ATL_CUR_W<'a> {
 #[doc = "Field `ATL_BASE` reader - Base address to be used by the hardware to find the start of the ATL list."]
 pub struct ATL_BASE_R(crate::FieldReader<u32, u32>);
 impl ATL_BASE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         ATL_BASE_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl W {
         ATL_BASE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

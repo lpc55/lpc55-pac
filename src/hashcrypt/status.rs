@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<STATUS_SPEC>> for R {
+impl From<crate::R<STATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<STATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<STATUS_SPEC>> for W {
+impl From<crate::W<STATUS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<STATUS_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<WAITING_A> for bool {
 #[doc = "Field `WAITING` reader - If 1, the block is waiting for more data to process."]
 pub struct WAITING_R(crate::FieldReader<bool, WAITING_A>);
 impl WAITING_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAITING_R(crate::FieldReader::new(bits))
     }
@@ -95,6 +98,7 @@ impl From<DIGEST_A> for bool {
 #[doc = "Field `DIGEST` reader - For Hash, if 1 then a DIGEST is ready and waiting and there is no active next block already started. For Cryptographic uses, this will be set for each block processed, indicating OUTDATA (and OUTDATA2 if larger output) contains the next value to read out. This is cleared when any data is written, when New is written, for Cryptographic uses when the last word is read out, or when the block is disabled."]
 pub struct DIGEST_R(crate::FieldReader<bool, DIGEST_A>);
 impl DIGEST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DIGEST_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +145,7 @@ impl From<ERROR_A> for bool {
 #[doc = "Field `ERROR` reader - If 1, an error occurred. For normal uses, this is due to an attempted overrun: INDATA was written when it was not appropriate. For Master cases, this is an AHB bus error; the COUNT field will indicate which block it was on."]
 pub struct ERROR_R(crate::FieldReader<bool, ERROR_A>);
 impl ERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERROR_R(crate::FieldReader::new(bits))
     }
@@ -224,6 +229,7 @@ impl From<NEEDKEY_A> for bool {
 #[doc = "Field `NEEDKEY` reader - Indicates the block wants the key to be written in (set along with WAITING)"]
 pub struct NEEDKEY_R(crate::FieldReader<bool, NEEDKEY_A>);
 impl NEEDKEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NEEDKEY_R(crate::FieldReader::new(bits))
     }
@@ -270,6 +276,7 @@ impl From<NEEDIV_A> for bool {
 #[doc = "Field `NEEDIV` reader - Indicates the block wants an IV/NONE to be written in (set along with WAITING)"]
 pub struct NEEDIV_R(crate::FieldReader<bool, NEEDIV_A>);
 impl NEEDIV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NEEDIV_R(crate::FieldReader::new(bits))
     }
@@ -302,6 +309,7 @@ impl core::ops::Deref for NEEDIV_R {
 #[doc = "Field `ICBIDX` reader - If ICB-AES is selected, then reads as the ICB index count based on ICBSTRM (from CRYPTCFG). That is, if 3 bits of ICBSTRM, then this will count from 0 to 7 and then back to 0. On 0, it has to compute the full ICB, quicker when not 0."]
 pub struct ICBIDX_R(crate::FieldReader<u8, u8>);
 impl ICBIDX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ICBIDX_R(crate::FieldReader::new(bits))
     }
@@ -352,6 +360,7 @@ impl W {
         ERROR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

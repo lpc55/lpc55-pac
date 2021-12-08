@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CMDH6_SPEC>> for R {
+impl From<crate::R<CMDH6_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CMDH6_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CMDH6_SPEC>> for W {
+impl From<crate::W<CMDH6_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CMDH6_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<WAIT_TRIG_A> for bool {
 #[doc = "Field `WAIT_TRIG` reader - Wait for trigger assertion before execution."]
 pub struct WAIT_TRIG_R(crate::FieldReader<bool, WAIT_TRIG_A>);
 impl WAIT_TRIG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAIT_TRIG_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<LWI_A> for bool {
 #[doc = "Field `LWI` reader - Loop with Increment"]
 pub struct LWI_R(crate::FieldReader<bool, LWI_A>);
 impl LWI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LWI_R(crate::FieldReader::new(bits))
     }
@@ -228,6 +232,7 @@ impl From<STS_A> for u8 {
 #[doc = "Field `STS` reader - Sample Time Select"]
 pub struct STS_R(crate::FieldReader<u8, STS_A>);
 impl STS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         STS_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +386,7 @@ impl From<AVGS_A> for u8 {
 #[doc = "Field `AVGS` reader - Hardware Average Select"]
 pub struct AVGS_R(crate::FieldReader<u8, AVGS_A>);
 impl AVGS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AVGS_R(crate::FieldReader::new(bits))
     }
@@ -540,6 +546,7 @@ impl From<LOOP_A> for u8 {
 #[doc = "Field `LOOP` reader - Loop Count Select"]
 pub struct LOOP_R(crate::FieldReader<u8, LOOP_A>);
 impl LOOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LOOP_R(crate::FieldReader::new(bits))
     }
@@ -732,6 +739,7 @@ impl From<NEXT_A> for u8 {
 #[doc = "Field `NEXT` reader - Next Command Select"]
 pub struct NEXT_R(crate::FieldReader<u8, NEXT_A>);
 impl NEXT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NEXT_R(crate::FieldReader::new(bits))
     }
@@ -952,6 +960,7 @@ impl W {
         NEXT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

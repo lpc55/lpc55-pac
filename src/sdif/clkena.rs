@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CLKENA_SPEC>> for R {
+impl From<crate::R<CLKENA_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CLKENA_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CLKENA_SPEC>> for W {
+impl From<crate::W<CLKENA_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CLKENA_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CLKENA_SPEC>> for W {
 #[doc = "Field `CCLK0_ENABLE` reader - Clock-enable control for SD card 0 clock."]
 pub struct CCLK0_ENABLE_R(crate::FieldReader<bool, bool>);
 impl CCLK0_ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCLK0_ENABLE_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> CCLK0_ENABLE_W<'a> {
 #[doc = "Field `CCLK1_ENABLE` reader - Clock-enable control for SD card 1 clock."]
 pub struct CCLK1_ENABLE_R(crate::FieldReader<bool, bool>);
 impl CCLK1_ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCLK1_ENABLE_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> CCLK1_ENABLE_W<'a> {
 #[doc = "Field `CCLK0_LOW_POWER` reader - Low-power control for SD card 0 clock."]
 pub struct CCLK0_LOW_POWER_R(crate::FieldReader<bool, bool>);
 impl CCLK0_LOW_POWER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCLK0_LOW_POWER_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> CCLK0_LOW_POWER_W<'a> {
 #[doc = "Field `CCLK1_LOW_POWER` reader - Low-power control for SD card 1 clock."]
 pub struct CCLK1_LOW_POWER_R(crate::FieldReader<bool, bool>);
 impl CCLK1_LOW_POWER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCLK1_LOW_POWER_R(crate::FieldReader::new(bits))
     }
@@ -220,6 +226,7 @@ impl W {
         CCLK1_LOW_POWER_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<COUNTER_CFG_SPEC>> for R {
+impl From<crate::R<COUNTER_CFG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<COUNTER_CFG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<COUNTER_CFG_SPEC>> for W {
+impl From<crate::W<COUNTER_CFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<COUNTER_CFG_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<COUNTER_CFG_SPEC>> for W {
 #[doc = "Field `MODE` reader - 00: disabled 01: update once."]
 pub struct MODE_R(crate::FieldReader<u8, u8>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> MODE_W<'a> {
 #[doc = "Field `CLOCK_SEL` reader - Selects the internal clock on which to compute statistics."]
 pub struct CLOCK_SEL_R(crate::FieldReader<u8, u8>);
 impl CLOCK_SEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CLOCK_SEL_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> CLOCK_SEL_W<'a> {
 #[doc = "Field `SHIFT4X` reader - To be used to add precision to clock_ratio and determine 'entropy refill'."]
 pub struct SHIFT4X_R(crate::FieldReader<u8, u8>);
 impl SHIFT4X_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SHIFT4X_R(crate::FieldReader::new(bits))
     }
@@ -144,6 +149,7 @@ impl W {
         SHIFT4X_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

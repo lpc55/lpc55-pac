@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ISEL_SPEC>> for R {
+impl From<crate::R<ISEL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ISEL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ISEL_SPEC>> for W {
+impl From<crate::W<ISEL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ISEL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<ISEL_SPEC>> for W {
 #[doc = "Field `PMODE` reader - Selects the interrupt mode for each pin interrupt. Bit n configures the pin interrupt selected in PINTSELn. 0 = Edge sensitive 1 = Level sensitive"]
 pub struct PMODE_R(crate::FieldReader<u8, u8>);
 impl PMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PMODE_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         PMODE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

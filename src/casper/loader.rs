@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<LOADER_SPEC>> for R {
+impl From<crate::R<LOADER_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<LOADER_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<LOADER_SPEC>> for W {
+impl From<crate::W<LOADER_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<LOADER_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<LOADER_SPEC>> for W {
 #[doc = "Field `COUNT` reader - Number of control pairs to load 0 relative (so 1 means load 1). write 1 means Does one op - does not iterate, write N means N control pairs to load"]
 pub struct COUNT_R(crate::FieldReader<u8, u8>);
 impl COUNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         COUNT_R(crate::FieldReader::new(bits))
     }
@@ -75,6 +78,7 @@ impl From<CTRLBPAIR_A> for bool {
 #[doc = "Field `CTRLBPAIR` reader - Which bank-pair the offset CTRLOFF is within. This must be 0 if only 2-up. Does not matter which bank is used as this is loaded when not performing an operation."]
 pub struct CTRLBPAIR_R(crate::FieldReader<bool, CTRLBPAIR_A>);
 impl CTRLBPAIR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTRLBPAIR_R(crate::FieldReader::new(bits))
     }
@@ -144,6 +148,7 @@ impl<'a> CTRLBPAIR_W<'a> {
 #[doc = "Field `CTRLOFF` reader - DWord Offset of CTRL pair to load next."]
 pub struct CTRLOFF_R(crate::FieldReader<u16, u16>);
 impl CTRLOFF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         CTRLOFF_R(crate::FieldReader::new(bits))
     }
@@ -201,6 +206,7 @@ impl W {
         CTRLOFF_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

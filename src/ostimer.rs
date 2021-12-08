@@ -13,7 +13,7 @@ pub struct RegisterBlock {
     pub match_l: crate::Reg<match_l::MATCH_L_SPEC>,
     #[doc = "0x14 - Match High Register"]
     pub match_h: crate::Reg<match_h::MATCH_H_SPEC>,
-    _reserved6: [u8; 4usize],
+    _reserved6: [u8; 0x04],
     #[doc = "0x1c - OS_EVENT TIMER Control Register"]
     pub osevent_ctrl: crate::Reg<osevent_ctrl::OSEVENT_CTRL_SPEC>,
 }

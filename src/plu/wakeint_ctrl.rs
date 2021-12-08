@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<WAKEINT_CTRL_SPEC>> for R {
+impl From<crate::R<WAKEINT_CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<WAKEINT_CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<WAKEINT_CTRL_SPEC>> for W {
+impl From<crate::W<WAKEINT_CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<WAKEINT_CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<WAKEINT_CTRL_SPEC>> for W {
 #[doc = "Field `MASK` reader - Interrupt mask (which of the 8 PLU Outputs contribute to interrupt)"]
 pub struct MASK_R(crate::FieldReader<u8, u8>);
 impl MASK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MASK_R(crate::FieldReader::new(bits))
     }
@@ -80,6 +83,7 @@ impl From<FILTER_MODE_A> for u8 {
 #[doc = "Field `FILTER_MODE` reader - control input of the PLU, add filtering for glitch."]
 pub struct FILTER_MODE_R(crate::FieldReader<u8, FILTER_MODE_A>);
 impl FILTER_MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FILTER_MODE_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +183,7 @@ impl From<FILTER_CLKSEL_A> for u8 {
 #[doc = "Field `FILTER_CLKSEL` reader - hclk is divided by 2**filter_clksel."]
 pub struct FILTER_CLKSEL_R(crate::FieldReader<u8, FILTER_CLKSEL_A>);
 impl FILTER_CLKSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FILTER_CLKSEL_R(crate::FieldReader::new(bits))
     }
@@ -250,6 +255,7 @@ impl<'a> FILTER_CLKSEL_W<'a> {
 #[doc = "Field `LATCH_ENABLE` reader - latch the interrupt , then can be cleared with next bit INTR_CLEAR"]
 pub struct LATCH_ENABLE_R(crate::FieldReader<bool, bool>);
 impl LATCH_ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LATCH_ENABLE_R(crate::FieldReader::new(bits))
     }
@@ -286,6 +292,7 @@ impl<'a> LATCH_ENABLE_W<'a> {
 #[doc = "Field `INTR_CLEAR` reader - Write to clear wakeint_latched"]
 pub struct INTR_CLEAR_R(crate::FieldReader<bool, bool>);
 impl INTR_CLEAR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INTR_CLEAR_R(crate::FieldReader::new(bits))
     }
@@ -373,6 +380,7 @@ impl W {
         INTR_CLEAR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

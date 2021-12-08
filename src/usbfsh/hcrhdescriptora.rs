@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<HCRHDESCRIPTORA_SPEC>> for R {
+impl From<crate::R<HCRHDESCRIPTORA_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<HCRHDESCRIPTORA_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<HCRHDESCRIPTORA_SPEC>> for W {
+impl From<crate::W<HCRHDESCRIPTORA_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<HCRHDESCRIPTORA_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<HCRHDESCRIPTORA_SPEC>> for W {
 #[doc = "Field `NDP` reader - NumberDownstreamPorts These bits specify the number of downstream ports supported by the root hub."]
 pub struct NDP_R(crate::FieldReader<u8, u8>);
 impl NDP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NDP_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> NDP_W<'a> {
 #[doc = "Field `PSM` reader - PowerSwitchingMode This bit is used to specify how the power switching of the root hub ports is controlled."]
 pub struct PSM_R(crate::FieldReader<bool, bool>);
 impl PSM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PSM_R(crate::FieldReader::new(bits))
     }
@@ -97,6 +101,7 @@ impl<'a> PSM_W<'a> {
 #[doc = "Field `NPS` reader - NoPowerSwitching These bits are used to specify whether power switching is supported or port are always powered."]
 pub struct NPS_R(crate::FieldReader<bool, bool>);
 impl NPS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NPS_R(crate::FieldReader::new(bits))
     }
@@ -133,6 +138,7 @@ impl<'a> NPS_W<'a> {
 #[doc = "Field `DT` reader - DeviceType This bit specifies that the root hub is not a compound device."]
 pub struct DT_R(crate::FieldReader<bool, bool>);
 impl DT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DT_R(crate::FieldReader::new(bits))
     }
@@ -169,6 +175,7 @@ impl<'a> DT_W<'a> {
 #[doc = "Field `OCPM` reader - OverCurrentProtectionMode This bit describes how the overcurrent status for the root hub ports are reported."]
 pub struct OCPM_R(crate::FieldReader<bool, bool>);
 impl OCPM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OCPM_R(crate::FieldReader::new(bits))
     }
@@ -205,6 +212,7 @@ impl<'a> OCPM_W<'a> {
 #[doc = "Field `NOCP` reader - NoOverCurrentProtection This bit describes how the overcurrent status for the root hub ports are reported."]
 pub struct NOCP_R(crate::FieldReader<bool, bool>);
 impl NOCP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NOCP_R(crate::FieldReader::new(bits))
     }
@@ -241,6 +249,7 @@ impl<'a> NOCP_W<'a> {
 #[doc = "Field `POTPGT` reader - PowerOnToPowerGoodTime This byte specifies the duration the HCD has to wait before accessing a powered-on port of the root hub."]
 pub struct POTPGT_R(crate::FieldReader<u8, u8>);
 impl POTPGT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         POTPGT_R(crate::FieldReader::new(bits))
     }
@@ -338,6 +347,7 @@ impl W {
         POTPGT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

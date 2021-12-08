@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INFO_SPEC>> for R {
+impl From<crate::R<INFO_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INFO_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<INFO_SPEC>> for R {
 #[doc = "Field `FRAME_NR` reader - Frame number."]
 pub struct FRAME_NR_R(crate::FieldReader<u16, u16>);
 impl FRAME_NR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         FRAME_NR_R(crate::FieldReader::new(bits))
     }
@@ -29,6 +31,7 @@ impl core::ops::Deref for FRAME_NR_R {
 #[doc = "Field `ERR_CODE` reader - The error code which last occurred:."]
 pub struct ERR_CODE_R(crate::FieldReader<u8, u8>);
 impl ERR_CODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ERR_CODE_R(crate::FieldReader::new(bits))
     }
@@ -43,6 +46,7 @@ impl core::ops::Deref for ERR_CODE_R {
 #[doc = "Field `MINREV` reader - Minor revision."]
 pub struct MINREV_R(crate::FieldReader<u8, u8>);
 impl MINREV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MINREV_R(crate::FieldReader::new(bits))
     }
@@ -57,6 +61,7 @@ impl core::ops::Deref for MINREV_R {
 #[doc = "Field `MAJREV` reader - Major revision."]
 pub struct MAJREV_R(crate::FieldReader<u8, u8>);
 impl MAJREV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MAJREV_R(crate::FieldReader::new(bits))
     }

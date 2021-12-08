@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<DATABUFSTART_SPEC>> for R {
+impl From<crate::R<DATABUFSTART_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<DATABUFSTART_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<DATABUFSTART_SPEC>> for W {
+impl From<crate::W<DATABUFSTART_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<DATABUFSTART_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<DATABUFSTART_SPEC>> for W {
 #[doc = "Field `DA_BUF` reader - Start address of the memory page where all endpoint data buffers are located."]
 pub struct DA_BUF_R(crate::FieldReader<u32, u32>);
 impl DA_BUF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         DA_BUF_R(crate::FieldReader::new(bits))
     }
@@ -54,7 +57,7 @@ impl<'a> DA_BUF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
+        self.w.bits = value as u32;
         self.w
     }
 }
@@ -62,7 +65,7 @@ impl R {
     #[doc = "Bits 0:31 - Start address of the memory page where all endpoint data buffers are located."]
     #[inline(always)]
     pub fn da_buf(&self) -> DA_BUF_R {
-        DA_BUF_R::new((self.bits & 0xffff_ffff) as u32)
+        DA_BUF_R::new(self.bits as u32)
     }
 }
 impl W {
@@ -72,6 +75,7 @@ impl W {
         DA_BUF_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

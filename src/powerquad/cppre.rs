@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CPPRE_SPEC>> for R {
+impl From<crate::R<CPPRE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CPPRE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CPPRE_SPEC>> for W {
+impl From<crate::W<CPPRE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CPPRE_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CPPRE_SPEC>> for W {
 #[doc = "Field `cppre_in` reader - co-processor scaling of input"]
 pub struct CPPRE_IN_R(crate::FieldReader<u8, u8>);
 impl CPPRE_IN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CPPRE_IN_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> CPPRE_IN_W<'a> {
 #[doc = "Field `cppre_out` reader - co-processor fixed point output"]
 pub struct CPPRE_OUT_R(crate::FieldReader<u8, u8>);
 impl CPPRE_OUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CPPRE_OUT_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> CPPRE_OUT_W<'a> {
 #[doc = "Field `cppre_sat` reader - 1 : forces sub-32 bit saturation"]
 pub struct CPPRE_SAT_R(crate::FieldReader<bool, bool>);
 impl CPPRE_SAT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CPPRE_SAT_R(crate::FieldReader::new(bits))
     }
@@ -123,6 +128,7 @@ impl<'a> CPPRE_SAT_W<'a> {
 #[doc = "Field `cppre_sat8` reader - 0 = 8bits, 1 = 16bits"]
 pub struct CPPRE_SAT8_R(crate::FieldReader<bool, bool>);
 impl CPPRE_SAT8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CPPRE_SAT8_R(crate::FieldReader::new(bits))
     }
@@ -200,6 +206,7 @@ impl W {
         CPPRE_SAT8_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

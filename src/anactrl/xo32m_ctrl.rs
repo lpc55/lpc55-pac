@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<XO32M_CTRL_SPEC>> for R {
+impl From<crate::R<XO32M_CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<XO32M_CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<XO32M_CTRL_SPEC>> for W {
+impl From<crate::W<XO32M_CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<XO32M_CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<ACBUF_PASS_ENABLE_A> for bool {
 #[doc = "Field `ACBUF_PASS_ENABLE` reader - Bypass enable of XO AC buffer enable in pll and top level."]
 pub struct ACBUF_PASS_ENABLE_R(crate::FieldReader<bool, ACBUF_PASS_ENABLE_A>);
 impl ACBUF_PASS_ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ACBUF_PASS_ENABLE_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<ENABLE_PLL_USB_OUT_A> for bool {
 #[doc = "Field `ENABLE_PLL_USB_OUT` reader - Enable High speed Crystal oscillator output to USB HS PLL."]
 pub struct ENABLE_PLL_USB_OUT_R(crate::FieldReader<bool, ENABLE_PLL_USB_OUT_A>);
 impl ENABLE_PLL_USB_OUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENABLE_PLL_USB_OUT_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<ENABLE_SYSTEM_CLK_OUT_A> for bool {
 #[doc = "Field `ENABLE_SYSTEM_CLK_OUT` reader - Enable XO 32 MHz output to CPU system."]
 pub struct ENABLE_SYSTEM_CLK_OUT_R(crate::FieldReader<bool, ENABLE_SYSTEM_CLK_OUT_A>);
 impl ENABLE_SYSTEM_CLK_OUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENABLE_SYSTEM_CLK_OUT_R(crate::FieldReader::new(bits))
     }
@@ -315,6 +320,7 @@ impl W {
         ENABLE_SYSTEM_CLK_OUT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

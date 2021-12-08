@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<HCRHSTATUS_SPEC>> for R {
+impl From<crate::R<HCRHSTATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<HCRHSTATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<HCRHSTATUS_SPEC>> for W {
+impl From<crate::W<HCRHSTATUS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<HCRHSTATUS_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<HCRHSTATUS_SPEC>> for W {
 #[doc = "Field `LPS` reader - (read) LocalPowerStatus The Root Hub does not support the local power status feature; thus, this bit is always read as 0."]
 pub struct LPS_R(crate::FieldReader<bool, bool>);
 impl LPS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LPS_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> LPS_W<'a> {
 #[doc = "Field `OCI` reader - OverCurrentIndicator This bit reports overcurrent conditions when the global reporting is implemented."]
 pub struct OCI_R(crate::FieldReader<bool, bool>);
 impl OCI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OCI_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> OCI_W<'a> {
 #[doc = "Field `DRWE` reader - (read) DeviceRemoteWakeupEnable This bit enables a ConnectStatusChange bit as a resume event, causing a USBSUSPEND to USBRESUME state transition and setting the ResumeDetected interrupt."]
 pub struct DRWE_R(crate::FieldReader<bool, bool>);
 impl DRWE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DRWE_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> DRWE_W<'a> {
 #[doc = "Field `LPSC` reader - (read) LocalPowerStatusChange The root hub does not support the local power status feature."]
 pub struct LPSC_R(crate::FieldReader<bool, bool>);
 impl LPSC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LPSC_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> LPSC_W<'a> {
 #[doc = "Field `OCIC` reader - OverCurrentIndicatorChange This bit is set by hardware when a change has occurred to the OCI field of this register."]
 pub struct OCIC_R(crate::FieldReader<bool, bool>);
 impl OCIC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OCIC_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> OCIC_W<'a> {
 #[doc = "Field `CRWE` reader - (write) ClearRemoteWakeupEnable Writing a 1 clears DeviceRemoveWakeupEnable."]
 pub struct CRWE_R(crate::FieldReader<bool, bool>);
 impl CRWE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CRWE_R(crate::FieldReader::new(bits))
     }
@@ -312,6 +320,7 @@ impl W {
         CRWE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

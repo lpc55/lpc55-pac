@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RLAR_SPEC>> for R {
+impl From<crate::R<RLAR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RLAR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RLAR_SPEC>> for W {
+impl From<crate::W<RLAR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RLAR_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<ENABLE_A> for bool {
 #[doc = "Field `ENABLE` reader - Enable. SAU region enable."]
 pub struct ENABLE_R(crate::FieldReader<bool, ENABLE_A>);
 impl ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENABLE_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<NSC_A> for bool {
 #[doc = "Field `NSC` reader - Non-secure callable. Controls whether Non-secure state is permitted to execute an SG instruction from this region."]
 pub struct NSC_R(crate::FieldReader<bool, NSC_A>);
 impl NSC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NSC_R(crate::FieldReader::new(bits))
     }
@@ -203,6 +207,7 @@ of the limit address for the selected SAU region. Bits\\[4:0\\]
 of the limit address are defined as 0x1F."]
 pub struct LADDR_R(crate::FieldReader<u32, u32>);
 impl LADDR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         LADDR_R(crate::FieldReader::new(bits))
     }
@@ -266,6 +271,7 @@ of the limit address are defined as 0x1F."]
         LADDR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

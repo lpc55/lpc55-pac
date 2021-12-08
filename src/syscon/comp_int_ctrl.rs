@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<COMP_INT_CTRL_SPEC>> for R {
+impl From<crate::R<COMP_INT_CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<COMP_INT_CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<COMP_INT_CTRL_SPEC>> for W {
+impl From<crate::W<COMP_INT_CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<COMP_INT_CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<INT_ENABLE_A> for bool {
 #[doc = "Field `INT_ENABLE` reader - Analog Comparator interrupt enable control:."]
 pub struct INT_ENABLE_R(crate::FieldReader<bool, INT_ENABLE_A>);
 impl INT_ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INT_ENABLE_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<INT_CLEAR_A> for bool {
 #[doc = "Field `INT_CLEAR` reader - Analog Comparator interrupt clear."]
 pub struct INT_CLEAR_R(crate::FieldReader<bool, INT_CLEAR_A>);
 impl INT_CLEAR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INT_CLEAR_R(crate::FieldReader::new(bits))
     }
@@ -228,6 +232,7 @@ impl From<INT_CTRL_A> for u8 {
 #[doc = "Field `INT_CTRL` reader - Comparator interrupt type selector:."]
 pub struct INT_CTRL_R(crate::FieldReader<u8, INT_CTRL_A>);
 impl INT_CTRL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         INT_CTRL_R(crate::FieldReader::new(bits))
     }
@@ -368,6 +373,7 @@ impl From<INT_SOURCE_A> for bool {
 #[doc = "Field `INT_SOURCE` reader - Select which Analog comparator output (filtered our un-filtered) is used for interrupt detection."]
 pub struct INT_SOURCE_R(crate::FieldReader<bool, INT_SOURCE_A>);
 impl INT_SOURCE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INT_SOURCE_R(crate::FieldReader::new(bits))
     }
@@ -478,6 +484,7 @@ impl W {
         INT_SOURCE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
