@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ID_SPEC>> for R {
+impl From<crate::R<ID_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ID_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<ID_SPEC>> for R {
 #[doc = "Field `ID` reader - Identification value."]
 pub struct ID_R(crate::FieldReader<u32, u32>);
 impl ID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         ID_R(crate::FieldReader::new(bits))
     }
@@ -30,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Identification value."]
     #[inline(always)]
     pub fn id(&self) -> ID_R {
-        ID_R::new((self.bits & 0xffff_ffff) as u32)
+        ID_R::new(self.bits as u32)
     }
 }
 #[doc = "Identification register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [id](index.html) module"]

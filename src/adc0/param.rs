@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PARAM_SPEC>> for R {
+impl From<crate::R<PARAM_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PARAM_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<PARAM_SPEC>> for R {
 #[doc = "Field `TRIG_NUM` reader - Trigger Number"]
 pub struct TRIG_NUM_R(crate::FieldReader<u8, u8>);
 impl TRIG_NUM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TRIG_NUM_R(crate::FieldReader::new(bits))
     }
@@ -52,6 +54,7 @@ impl From<FIFOSIZE_A> for u8 {
 #[doc = "Field `FIFOSIZE` reader - Result FIFO Depth"]
 pub struct FIFOSIZE_R(crate::FieldReader<u8, FIFOSIZE_A>);
 impl FIFOSIZE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FIFOSIZE_R(crate::FieldReader::new(bits))
     }
@@ -109,6 +112,7 @@ impl core::ops::Deref for FIFOSIZE_R {
 #[doc = "Field `CV_NUM` reader - Compare Value Number"]
 pub struct CV_NUM_R(crate::FieldReader<u8, u8>);
 impl CV_NUM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CV_NUM_R(crate::FieldReader::new(bits))
     }
@@ -123,6 +127,7 @@ impl core::ops::Deref for CV_NUM_R {
 #[doc = "Field `CMD_NUM` reader - Command Buffer Number"]
 pub struct CMD_NUM_R(crate::FieldReader<u8, u8>);
 impl CMD_NUM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CMD_NUM_R(crate::FieldReader::new(bits))
     }

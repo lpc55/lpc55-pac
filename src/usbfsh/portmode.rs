@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PORTMODE_SPEC>> for R {
+impl From<crate::R<PORTMODE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PORTMODE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PORTMODE_SPEC>> for W {
+impl From<crate::W<PORTMODE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PORTMODE_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<PORTMODE_SPEC>> for W {
 #[doc = "Field `ID` reader - Port ID pin value."]
 pub struct ID_R(crate::FieldReader<bool, bool>);
 impl ID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ID_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> ID_W<'a> {
 #[doc = "Field `ID_EN` reader - Port ID pin pull-up enable."]
 pub struct ID_EN_R(crate::FieldReader<bool, bool>);
 impl ID_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ID_EN_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> ID_EN_W<'a> {
 #[doc = "Field `DEV_ENABLE` reader - 1: device 0: host."]
 pub struct DEV_ENABLE_R(crate::FieldReader<bool, bool>);
 impl DEV_ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEV_ENABLE_R(crate::FieldReader::new(bits))
     }
@@ -174,6 +179,7 @@ impl W {
         DEV_ENABLE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

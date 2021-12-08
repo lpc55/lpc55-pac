@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PIO0_14_SPEC>> for R {
+impl From<crate::R<PIO0_14_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PIO0_14_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PIO0_14_SPEC>> for W {
+impl From<crate::W<PIO0_14_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PIO0_14_SPEC>) -> Self {
         W(writer)
     }
@@ -62,6 +64,7 @@ impl From<FUNC_A> for u8 {
 #[doc = "Field `FUNC` reader - Selects pin function."]
 pub struct FUNC_R(crate::FieldReader<u8, FUNC_A>);
 impl FUNC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FUNC_R(crate::FieldReader::new(bits))
     }
@@ -207,6 +210,7 @@ impl From<MODE_A> for u8 {
 #[doc = "Field `MODE` reader - Selects function mode (on-chip pull-up/pull-down resistor control)."]
 pub struct MODE_R(crate::FieldReader<u8, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }
@@ -303,6 +307,7 @@ impl From<SLEW_A> for bool {
 #[doc = "Field `SLEW` reader - Driver slew rate."]
 pub struct SLEW_R(crate::FieldReader<bool, SLEW_A>);
 impl SLEW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLEW_R(crate::FieldReader::new(bits))
     }
@@ -386,6 +391,7 @@ impl From<INVERT_A> for bool {
 #[doc = "Field `INVERT` reader - Input polarity."]
 pub struct INVERT_R(crate::FieldReader<bool, INVERT_A>);
 impl INVERT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INVERT_R(crate::FieldReader::new(bits))
     }
@@ -469,6 +475,7 @@ impl From<DIGIMODE_A> for bool {
 #[doc = "Field `DIGIMODE` reader - Select Digital mode."]
 pub struct DIGIMODE_R(crate::FieldReader<bool, DIGIMODE_A>);
 impl DIGIMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DIGIMODE_R(crate::FieldReader::new(bits))
     }
@@ -552,6 +559,7 @@ impl From<OD_A> for bool {
 #[doc = "Field `OD` reader - Controls open-drain mode in standard GPIO mode (EGP = 1). This bit has no effect in I2C mode (EGP=0)."]
 pub struct OD_R(crate::FieldReader<bool, OD_A>);
 impl OD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OD_R(crate::FieldReader::new(bits))
     }
@@ -635,6 +643,7 @@ impl From<SSEL_A> for bool {
 #[doc = "Field `SSEL` reader - Supply Selection bit."]
 pub struct SSEL_R(crate::FieldReader<bool, SSEL_A>);
 impl SSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SSEL_R(crate::FieldReader::new(bits))
     }
@@ -718,6 +727,7 @@ impl From<FILTEROFF_A> for bool {
 #[doc = "Field `FILTEROFF` reader - Controls input glitch filter."]
 pub struct FILTEROFF_R(crate::FieldReader<bool, FILTEROFF_A>);
 impl FILTEROFF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FILTEROFF_R(crate::FieldReader::new(bits))
     }
@@ -801,6 +811,7 @@ impl From<ECS_A> for bool {
 #[doc = "Field `ECS` reader - Pull-up current source enable in I2C mode."]
 pub struct ECS_R(crate::FieldReader<bool, ECS_A>);
 impl ECS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ECS_R(crate::FieldReader::new(bits))
     }
@@ -884,6 +895,7 @@ impl From<EGP_A> for bool {
 #[doc = "Field `EGP` reader - Switch between GPIO mode and I2C mode."]
 pub struct EGP_R(crate::FieldReader<bool, EGP_A>);
 impl EGP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EGP_R(crate::FieldReader::new(bits))
     }
@@ -967,6 +979,7 @@ impl From<I2CFILTER_A> for bool {
 #[doc = "Field `I2CFILTER` reader - Configures I2C features for standard mode, fast mode, and Fast Mode Plus operation and High-Speed mode operation."]
 pub struct I2CFILTER_R(crate::FieldReader<bool, I2CFILTER_A>);
 impl I2CFILTER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         I2CFILTER_R(crate::FieldReader::new(bits))
     }
@@ -1147,6 +1160,7 @@ impl W {
         I2CFILTER_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

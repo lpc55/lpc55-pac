@@ -5,7 +5,7 @@ pub struct RegisterBlock {
     pub verid: crate::Reg<verid::VERID_SPEC>,
     #[doc = "0x04 - Parameter Register"]
     pub param: crate::Reg<param::PARAM_SPEC>,
-    _reserved2: [u8; 8usize],
+    _reserved2: [u8; 0x08],
     #[doc = "0x10 - ADC Control Register"]
     pub ctrl: crate::Reg<ctrl::CTRL_SPEC>,
     #[doc = "0x14 - ADC Status Register"]
@@ -18,23 +18,23 @@ pub struct RegisterBlock {
     pub cfg: crate::Reg<cfg::CFG_SPEC>,
     #[doc = "0x24 - ADC Pause Register"]
     pub pause: crate::Reg<pause::PAUSE_SPEC>,
-    _reserved8: [u8; 12usize],
+    _reserved8: [u8; 0x0c],
     #[doc = "0x34 - Software Trigger Register"]
     pub swtrig: crate::Reg<swtrig::SWTRIG_SPEC>,
     #[doc = "0x38 - Trigger Status Register"]
     pub tstat: crate::Reg<tstat::TSTAT_SPEC>,
-    _reserved10: [u8; 4usize],
+    _reserved10: [u8; 0x04],
     #[doc = "0x40 - ADC Offset Trim Register"]
     pub ofstrim: crate::Reg<ofstrim::OFSTRIM_SPEC>,
-    _reserved11: [u8; 92usize],
-    #[doc = "0xa0 - Trigger Control Register"]
+    _reserved11: [u8; 0x5c],
+    #[doc = "0xa0..0xe0 - Trigger Control Register"]
     pub tctrl: [crate::Reg<tctrl::TCTRL_SPEC>; 16],
-    #[doc = "0xe0 - FIFO Control Register"]
+    #[doc = "0xe0..0xe8 - FIFO Control Register"]
     pub fctrl: [crate::Reg<fctrl::FCTRL_SPEC>; 2],
-    _reserved13: [u8; 8usize],
-    #[doc = "0xf0 - Gain Calibration Control"]
+    _reserved13: [u8; 0x08],
+    #[doc = "0xf0..0xf8 - Gain Calibration Control"]
     pub gcc: [crate::Reg<gcc::GCC_SPEC>; 2],
-    #[doc = "0xf8 - Gain Calculation Result"]
+    #[doc = "0xf8..0x100 - Gain Calculation Result"]
     pub gcr: [crate::Reg<gcr::GCR_SPEC>; 2],
     #[doc = "0x100 - ADC Command Low Buffer Register"]
     pub cmdl1: crate::Reg<cmdl1::CMDL1_SPEC>,
@@ -96,7 +96,7 @@ pub struct RegisterBlock {
     pub cmdl15: crate::Reg<cmdl15::CMDL15_SPEC>,
     #[doc = "0x174 - ADC Command High Buffer Register"]
     pub cmdh15: crate::Reg<cmdh15::CMDH15_SPEC>,
-    _reserved45: [u8; 136usize],
+    _reserved45: [u8; 0x88],
     #[doc = "0x200 - Compare Value Register"]
     pub cv1: crate::Reg<cv::CV_SPEC>,
     #[doc = "0x204 - Compare Value Register"]
@@ -105,16 +105,16 @@ pub struct RegisterBlock {
     pub cv3: crate::Reg<cv::CV_SPEC>,
     #[doc = "0x20c - Compare Value Register"]
     pub cv4: crate::Reg<cv::CV_SPEC>,
-    _reserved49: [u8; 240usize],
-    #[doc = "0x300 - ADC Data Result FIFO Register"]
+    _reserved49: [u8; 0xf0],
+    #[doc = "0x300..0x308 - ADC Data Result FIFO Register"]
     pub resfifo: [crate::Reg<resfifo::RESFIFO_SPEC>; 2],
-    _reserved50: [u8; 248usize],
-    #[doc = "0x400 - Calibration General A-Side Registers"]
+    _reserved50: [u8; 0xf8],
+    #[doc = "0x400..0x484 - Calibration General A-Side Registers"]
     pub cal_gar: [crate::Reg<cal_gar::CAL_GAR_SPEC>; 33],
-    _reserved51: [u8; 124usize],
-    #[doc = "0x500 - Calibration General B-Side Registers"]
+    _reserved51: [u8; 0x7c],
+    #[doc = "0x500..0x584 - Calibration General B-Side Registers"]
     pub cal_gbr: [crate::Reg<cal_gbr::CAL_GBR_SPEC>; 33],
-    _reserved52: [u8; 2680usize],
+    _reserved52: [u8; 0x0a78],
     #[doc = "0xffc - ADC Test Register"]
     pub tst: crate::Reg<tst::TST_SPEC>,
 }

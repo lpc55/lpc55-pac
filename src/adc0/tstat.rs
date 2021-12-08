@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<TSTAT_SPEC>> for R {
+impl From<crate::R<TSTAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<TSTAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<TSTAT_SPEC>> for W {
+impl From<crate::W<TSTAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<TSTAT_SPEC>) -> Self {
         W(writer)
     }
@@ -69,6 +71,7 @@ impl From<TEXC_NUM_A> for u16 {
 #[doc = "Field `TEXC_NUM` reader - Trigger Exception Number"]
 pub struct TEXC_NUM_R(crate::FieldReader<u16, TEXC_NUM_A>);
 impl TEXC_NUM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         TEXC_NUM_R(crate::FieldReader::new(bits))
     }
@@ -262,6 +265,7 @@ impl From<TCOMP_FLAG_A> for u16 {
 #[doc = "Field `TCOMP_FLAG` reader - Trigger Completion Flag"]
 pub struct TCOMP_FLAG_R(crate::FieldReader<u16, TCOMP_FLAG_A>);
 impl TCOMP_FLAG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         TCOMP_FLAG_R(crate::FieldReader::new(bits))
     }
@@ -442,6 +446,7 @@ impl W {
         TCOMP_FLAG_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

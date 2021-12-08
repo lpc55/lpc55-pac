@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CTRL_APB_BRIDGE1_MEM_CTRL3_SPEC>> for R {
+impl From<crate::R<SEC_CTRL_APB_BRIDGE1_MEM_CTRL3_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CTRL_APB_BRIDGE1_MEM_CTRL3_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CTRL_APB_BRIDGE1_MEM_CTRL3_SPEC>> for W {
+impl From<crate::W<SEC_CTRL_APB_BRIDGE1_MEM_CTRL3_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CTRL_APB_BRIDGE1_MEM_CTRL3_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<USBHPHY_RULE_A> for u8 {
 #[doc = "Field `USBHPHY_RULE` reader - USB High Speed Phy controller"]
 pub struct USBHPHY_RULE_R(crate::FieldReader<u8, USBHPHY_RULE_A>);
 impl USBHPHY_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         USBHPHY_RULE_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<RNG_RULE_A> for u8 {
 #[doc = "Field `RNG_RULE` reader - True Random Number Generator"]
 pub struct RNG_RULE_R(crate::FieldReader<u8, RNG_RULE_A>);
 impl RNG_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RNG_RULE_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +260,7 @@ impl From<PUF_RULE_A> for u8 {
 #[doc = "Field `PUF_RULE` reader - PUF"]
 pub struct PUF_RULE_R(crate::FieldReader<u8, PUF_RULE_A>);
 impl PUF_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PUF_RULE_R(crate::FieldReader::new(bits))
     }
@@ -357,6 +362,7 @@ impl From<PLU_RULE_A> for u8 {
 #[doc = "Field `PLU_RULE` reader - Programmable Look-Up logic"]
 pub struct PLU_RULE_R(crate::FieldReader<u8, PLU_RULE_A>);
 impl PLU_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PLU_RULE_R(crate::FieldReader::new(bits))
     }
@@ -458,6 +464,7 @@ impl From<RPU_RULE_A> for u8 {
 #[doc = "Field `RPU_RULE` reader - ROM patch unit access"]
 pub struct RPU_RULE_R(crate::FieldReader<u8, RPU_RULE_A>);
 impl RPU_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RPU_RULE_R(crate::FieldReader::new(bits))
     }
@@ -591,6 +598,7 @@ impl W {
         RPU_RULE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

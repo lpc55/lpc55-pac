@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INT_ENABLE_SPEC>> for R {
+impl From<crate::R<INT_ENABLE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INT_ENABLE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<INT_ENABLE_SPEC>> for W {
+impl From<crate::W<INT_ENABLE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<INT_ENABLE_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<INT_ENABLE_SPEC>> for W {
 #[doc = "Field `FAIL` reader - If an INT_ENABLE bit is set, an interrupt request will be generated if the corresponding INT_STATUS bit is high."]
 pub struct FAIL_R(crate::FieldReader<bool, bool>);
 impl FAIL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FAIL_R(crate::FieldReader::new(bits))
     }
@@ -49,6 +52,7 @@ impl core::ops::Deref for FAIL_R {
 #[doc = "Field `ERR` reader - If an INT_ENABLE bit is set, an interrupt request will be generated if the corresponding INT_STATUS bit is high."]
 pub struct ERR_R(crate::FieldReader<bool, bool>);
 impl ERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERR_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +67,7 @@ impl core::ops::Deref for ERR_R {
 #[doc = "Field `DONE` reader - If an INT_ENABLE bit is set, an interrupt request will be generated if the corresponding INT_STATUS bit is high."]
 pub struct DONE_R(crate::FieldReader<bool, bool>);
 impl DONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DONE_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +82,7 @@ impl core::ops::Deref for DONE_R {
 #[doc = "Field `ECC_ERR` reader - If an INT_ENABLE bit is set, an interrupt request will be generated if the corresponding INT_STATUS bit is high."]
 pub struct ECC_ERR_R(crate::FieldReader<bool, bool>);
 impl ECC_ERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ECC_ERR_R(crate::FieldReader::new(bits))
     }
@@ -112,6 +118,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

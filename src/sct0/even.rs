@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<EVEN_SPEC>> for R {
+impl From<crate::R<EVEN_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<EVEN_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<EVEN_SPEC>> for W {
+impl From<crate::W<EVEN_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<EVEN_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<EVEN_SPEC>> for W {
 #[doc = "Field `IEN` reader - The SCT requests an interrupt when bit n of this register and the event flag register are both one (event 0 = bit 0, event 1 = bit 1, etc.). The number of bits = number of events in this SCT."]
 pub struct IEN_R(crate::FieldReader<u16, u16>);
 impl IEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         IEN_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         IEN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

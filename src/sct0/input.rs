@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INPUT_SPEC>> for R {
+impl From<crate::R<INPUT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INPUT_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<INPUT_SPEC>> for R {
 #[doc = "Field `AIN0` reader - Input 0 state. Input 0 state on the last SCT clock edge."]
 pub struct AIN0_R(crate::FieldReader<bool, bool>);
 impl AIN0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN0_R(crate::FieldReader::new(bits))
     }
@@ -29,6 +31,7 @@ impl core::ops::Deref for AIN0_R {
 #[doc = "Field `AIN1` reader - Input 1 state. Input 1 state on the last SCT clock edge."]
 pub struct AIN1_R(crate::FieldReader<bool, bool>);
 impl AIN1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN1_R(crate::FieldReader::new(bits))
     }
@@ -43,6 +46,7 @@ impl core::ops::Deref for AIN1_R {
 #[doc = "Field `AIN2` reader - Input 2 state. Input 2 state on the last SCT clock edge."]
 pub struct AIN2_R(crate::FieldReader<bool, bool>);
 impl AIN2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN2_R(crate::FieldReader::new(bits))
     }
@@ -57,6 +61,7 @@ impl core::ops::Deref for AIN2_R {
 #[doc = "Field `AIN3` reader - Input 3 state. Input 3 state on the last SCT clock edge."]
 pub struct AIN3_R(crate::FieldReader<bool, bool>);
 impl AIN3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN3_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +76,7 @@ impl core::ops::Deref for AIN3_R {
 #[doc = "Field `AIN4` reader - Input 4 state. Input 4 state on the last SCT clock edge."]
 pub struct AIN4_R(crate::FieldReader<bool, bool>);
 impl AIN4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN4_R(crate::FieldReader::new(bits))
     }
@@ -85,6 +91,7 @@ impl core::ops::Deref for AIN4_R {
 #[doc = "Field `AIN5` reader - Input 5 state. Input 5 state on the last SCT clock edge."]
 pub struct AIN5_R(crate::FieldReader<bool, bool>);
 impl AIN5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN5_R(crate::FieldReader::new(bits))
     }
@@ -99,6 +106,7 @@ impl core::ops::Deref for AIN5_R {
 #[doc = "Field `AIN6` reader - Input 6 state. Input 6 state on the last SCT clock edge."]
 pub struct AIN6_R(crate::FieldReader<bool, bool>);
 impl AIN6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN6_R(crate::FieldReader::new(bits))
     }
@@ -113,6 +121,7 @@ impl core::ops::Deref for AIN6_R {
 #[doc = "Field `AIN7` reader - Input 7 state. Input 7 state on the last SCT clock edge."]
 pub struct AIN7_R(crate::FieldReader<bool, bool>);
 impl AIN7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN7_R(crate::FieldReader::new(bits))
     }
@@ -127,6 +136,7 @@ impl core::ops::Deref for AIN7_R {
 #[doc = "Field `AIN8` reader - Input 8 state. Input 8 state on the last SCT clock edge."]
 pub struct AIN8_R(crate::FieldReader<bool, bool>);
 impl AIN8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN8_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +151,7 @@ impl core::ops::Deref for AIN8_R {
 #[doc = "Field `AIN9` reader - Input 9 state. Input 9 state on the last SCT clock edge."]
 pub struct AIN9_R(crate::FieldReader<bool, bool>);
 impl AIN9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN9_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +166,7 @@ impl core::ops::Deref for AIN9_R {
 #[doc = "Field `AIN10` reader - Input 10 state. Input 10 state on the last SCT clock edge."]
 pub struct AIN10_R(crate::FieldReader<bool, bool>);
 impl AIN10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN10_R(crate::FieldReader::new(bits))
     }
@@ -169,6 +181,7 @@ impl core::ops::Deref for AIN10_R {
 #[doc = "Field `AIN11` reader - Input 11 state. Input 11 state on the last SCT clock edge."]
 pub struct AIN11_R(crate::FieldReader<bool, bool>);
 impl AIN11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN11_R(crate::FieldReader::new(bits))
     }
@@ -183,6 +196,7 @@ impl core::ops::Deref for AIN11_R {
 #[doc = "Field `AIN12` reader - Input 12 state. Input 12 state on the last SCT clock edge."]
 pub struct AIN12_R(crate::FieldReader<bool, bool>);
 impl AIN12_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN12_R(crate::FieldReader::new(bits))
     }
@@ -197,6 +211,7 @@ impl core::ops::Deref for AIN12_R {
 #[doc = "Field `AIN13` reader - Input 13 state. Input 13 state on the last SCT clock edge."]
 pub struct AIN13_R(crate::FieldReader<bool, bool>);
 impl AIN13_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN13_R(crate::FieldReader::new(bits))
     }
@@ -211,6 +226,7 @@ impl core::ops::Deref for AIN13_R {
 #[doc = "Field `AIN14` reader - Input 14 state. Input 14 state on the last SCT clock edge."]
 pub struct AIN14_R(crate::FieldReader<bool, bool>);
 impl AIN14_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN14_R(crate::FieldReader::new(bits))
     }
@@ -225,6 +241,7 @@ impl core::ops::Deref for AIN14_R {
 #[doc = "Field `AIN15` reader - Input 15 state. Input 15 state on the last SCT clock edge."]
 pub struct AIN15_R(crate::FieldReader<bool, bool>);
 impl AIN15_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIN15_R(crate::FieldReader::new(bits))
     }
@@ -239,6 +256,7 @@ impl core::ops::Deref for AIN15_R {
 #[doc = "Field `SIN0` reader - Input 0 state. Input 0 state following the synchronization specified by INSYNC."]
 pub struct SIN0_R(crate::FieldReader<bool, bool>);
 impl SIN0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN0_R(crate::FieldReader::new(bits))
     }
@@ -253,6 +271,7 @@ impl core::ops::Deref for SIN0_R {
 #[doc = "Field `SIN1` reader - Input 1 state. Input 1 state following the synchronization specified by INSYNC."]
 pub struct SIN1_R(crate::FieldReader<bool, bool>);
 impl SIN1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN1_R(crate::FieldReader::new(bits))
     }
@@ -267,6 +286,7 @@ impl core::ops::Deref for SIN1_R {
 #[doc = "Field `SIN2` reader - Input 2 state. Input 2 state following the synchronization specified by INSYNC."]
 pub struct SIN2_R(crate::FieldReader<bool, bool>);
 impl SIN2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN2_R(crate::FieldReader::new(bits))
     }
@@ -281,6 +301,7 @@ impl core::ops::Deref for SIN2_R {
 #[doc = "Field `SIN3` reader - Input 3 state. Input 3 state following the synchronization specified by INSYNC."]
 pub struct SIN3_R(crate::FieldReader<bool, bool>);
 impl SIN3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN3_R(crate::FieldReader::new(bits))
     }
@@ -295,6 +316,7 @@ impl core::ops::Deref for SIN3_R {
 #[doc = "Field `SIN4` reader - Input 4 state. Input 4 state following the synchronization specified by INSYNC."]
 pub struct SIN4_R(crate::FieldReader<bool, bool>);
 impl SIN4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN4_R(crate::FieldReader::new(bits))
     }
@@ -309,6 +331,7 @@ impl core::ops::Deref for SIN4_R {
 #[doc = "Field `SIN5` reader - Input 5 state. Input 5 state following the synchronization specified by INSYNC."]
 pub struct SIN5_R(crate::FieldReader<bool, bool>);
 impl SIN5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN5_R(crate::FieldReader::new(bits))
     }
@@ -323,6 +346,7 @@ impl core::ops::Deref for SIN5_R {
 #[doc = "Field `SIN6` reader - Input 6 state. Input 6 state following the synchronization specified by INSYNC."]
 pub struct SIN6_R(crate::FieldReader<bool, bool>);
 impl SIN6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN6_R(crate::FieldReader::new(bits))
     }
@@ -337,6 +361,7 @@ impl core::ops::Deref for SIN6_R {
 #[doc = "Field `SIN7` reader - Input 7 state. Input 7 state following the synchronization specified by INSYNC."]
 pub struct SIN7_R(crate::FieldReader<bool, bool>);
 impl SIN7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN7_R(crate::FieldReader::new(bits))
     }
@@ -351,6 +376,7 @@ impl core::ops::Deref for SIN7_R {
 #[doc = "Field `SIN8` reader - Input 8 state. Input 8 state following the synchronization specified by INSYNC."]
 pub struct SIN8_R(crate::FieldReader<bool, bool>);
 impl SIN8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN8_R(crate::FieldReader::new(bits))
     }
@@ -365,6 +391,7 @@ impl core::ops::Deref for SIN8_R {
 #[doc = "Field `SIN9` reader - Input 9 state. Input 9 state following the synchronization specified by INSYNC."]
 pub struct SIN9_R(crate::FieldReader<bool, bool>);
 impl SIN9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN9_R(crate::FieldReader::new(bits))
     }
@@ -379,6 +406,7 @@ impl core::ops::Deref for SIN9_R {
 #[doc = "Field `SIN10` reader - Input 10 state. Input 10 state following the synchronization specified by INSYNC."]
 pub struct SIN10_R(crate::FieldReader<bool, bool>);
 impl SIN10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN10_R(crate::FieldReader::new(bits))
     }
@@ -393,6 +421,7 @@ impl core::ops::Deref for SIN10_R {
 #[doc = "Field `SIN11` reader - Input 11 state. Input 11 state following the synchronization specified by INSYNC."]
 pub struct SIN11_R(crate::FieldReader<bool, bool>);
 impl SIN11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN11_R(crate::FieldReader::new(bits))
     }
@@ -407,6 +436,7 @@ impl core::ops::Deref for SIN11_R {
 #[doc = "Field `SIN12` reader - Input 12 state. Input 12 state following the synchronization specified by INSYNC."]
 pub struct SIN12_R(crate::FieldReader<bool, bool>);
 impl SIN12_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN12_R(crate::FieldReader::new(bits))
     }
@@ -421,6 +451,7 @@ impl core::ops::Deref for SIN12_R {
 #[doc = "Field `SIN13` reader - Input 13 state. Input 13 state following the synchronization specified by INSYNC."]
 pub struct SIN13_R(crate::FieldReader<bool, bool>);
 impl SIN13_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN13_R(crate::FieldReader::new(bits))
     }
@@ -435,6 +466,7 @@ impl core::ops::Deref for SIN13_R {
 #[doc = "Field `SIN14` reader - Input 14 state. Input 14 state following the synchronization specified by INSYNC."]
 pub struct SIN14_R(crate::FieldReader<bool, bool>);
 impl SIN14_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN14_R(crate::FieldReader::new(bits))
     }
@@ -449,6 +481,7 @@ impl core::ops::Deref for SIN14_R {
 #[doc = "Field `SIN15` reader - Input 15 state. Input 15 state following the synchronization specified by INSYNC."]
 pub struct SIN15_R(crate::FieldReader<bool, bool>);
 impl SIN15_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SIN15_R(crate::FieldReader::new(bits))
     }

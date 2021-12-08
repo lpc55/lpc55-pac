@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<NMISRC_SPEC>> for R {
+impl From<crate::R<NMISRC_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<NMISRC_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<NMISRC_SPEC>> for W {
+impl From<crate::W<NMISRC_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<NMISRC_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<NMISRC_SPEC>> for W {
 #[doc = "Field `IRQCPU0` reader - The IRQ number of the interrupt that acts as the Non-Maskable Interrupt (NMI) for the CPU0, if enabled by NMIENCPU0."]
 pub struct IRQCPU0_R(crate::FieldReader<u8, u8>);
 impl IRQCPU0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IRQCPU0_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> IRQCPU0_W<'a> {
 #[doc = "Field `IRQCPU1` reader - The IRQ number of the interrupt that acts as the Non-Maskable Interrupt (NMI) for the CPU1, if enabled by NMIENCPU1."]
 pub struct IRQCPU1_R(crate::FieldReader<u8, u8>);
 impl IRQCPU1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IRQCPU1_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> IRQCPU1_W<'a> {
 #[doc = "Field `NMIENCPU1` reader - Write a 1 to this bit to enable the Non-Maskable Interrupt (NMI) source selected by IRQCPU1."]
 pub struct NMIENCPU1_R(crate::FieldReader<bool, bool>);
 impl NMIENCPU1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NMIENCPU1_R(crate::FieldReader::new(bits))
     }
@@ -123,6 +128,7 @@ impl<'a> NMIENCPU1_W<'a> {
 #[doc = "Field `NMIENCPU0` reader - Write a 1 to this bit to enable the Non-Maskable Interrupt (NMI) source selected by IRQCPU0."]
 pub struct NMIENCPU0_R(crate::FieldReader<bool, bool>);
 impl NMIENCPU0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NMIENCPU0_R(crate::FieldReader::new(bits))
     }
@@ -200,6 +206,7 @@ impl W {
         NMIENCPU0_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

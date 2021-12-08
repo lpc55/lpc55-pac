@@ -3,111 +3,111 @@
 pub struct RegisterBlock {
     #[doc = "0x00 - Memory Remap control register"]
     pub memoryremap: crate::Reg<memoryremap::MEMORYREMAP_SPEC>,
-    _reserved1: [u8; 12usize],
+    _reserved1: [u8; 0x0c],
     #[doc = "0x10 - AHB Matrix priority control register Priority values are 3 = highest, 0 = lowest"]
     pub ahbmatprio: crate::Reg<ahbmatprio::AHBMATPRIO_SPEC>,
-    _reserved2: [u8; 36usize],
+    _reserved2: [u8; 0x24],
     #[doc = "0x38 - System tick calibration for secure part of CPU0"]
     pub cpu0stckcal: crate::Reg<cpu0stckcal::CPU0STCKCAL_SPEC>,
     #[doc = "0x3c - System tick calibration for non-secure part of CPU0"]
     pub cpu0nstckcal: crate::Reg<cpu0nstckcal::CPU0NSTCKCAL_SPEC>,
     #[doc = "0x40 - System tick calibration for CPU1"]
     pub cpu1stckcal: crate::Reg<cpu1stckcal::CPU1STCKCAL_SPEC>,
-    _reserved5: [u8; 4usize],
+    _reserved5: [u8; 0x04],
     #[doc = "0x48 - NMI Source Select"]
     pub nmisrc: crate::Reg<nmisrc::NMISRC_SPEC>,
-    _reserved6: [u8; 180usize],
+    _reserved6: [u8; 0xb4],
     #[doc = "0x100 - Peripheral reset control 0"]
     pub presetctrl0: crate::Reg<presetctrl0::PRESETCTRL0_SPEC>,
     #[doc = "0x104 - Peripheral reset control 1"]
     pub presetctrl1: crate::Reg<presetctrl1::PRESETCTRL1_SPEC>,
     #[doc = "0x108 - Peripheral reset control 2"]
     pub presetctrl2: crate::Reg<presetctrl2::PRESETCTRL2_SPEC>,
-    _reserved9: [u8; 20usize],
-    #[doc = "0x120 - Peripheral reset control set register"]
+    _reserved9: [u8; 0x14],
+    #[doc = "0x120..0x12c - Peripheral reset control set register"]
     pub presetctrlset: [crate::Reg<presetctrlset::PRESETCTRLSET_SPEC>; 3],
-    _reserved10: [u8; 20usize],
-    #[doc = "0x140 - Peripheral reset control clear register"]
+    _reserved10: [u8; 0x14],
+    #[doc = "0x140..0x14c - Peripheral reset control clear register"]
     pub presetctrlclr: [crate::Reg<presetctrlclr::PRESETCTRLCLR_SPEC>; 3],
-    _reserved11: [u8; 20usize],
+    _reserved11: [u8; 0x14],
     #[doc = "0x160 - generate a software_reset"]
     pub swr_reset: crate::Reg<swr_reset::SWR_RESET_SPEC>,
-    _reserved12: [u8; 156usize],
+    _reserved12: [u8; 0x9c],
     #[doc = "0x200 - AHB Clock control 0"]
     pub ahbclkctrl0: crate::Reg<ahbclkctrl0::AHBCLKCTRL0_SPEC>,
     #[doc = "0x204 - AHB Clock control 1"]
     pub ahbclkctrl1: crate::Reg<ahbclkctrl1::AHBCLKCTRL1_SPEC>,
     #[doc = "0x208 - AHB Clock control 2"]
     pub ahbclkctrl2: crate::Reg<ahbclkctrl2::AHBCLKCTRL2_SPEC>,
-    _reserved15: [u8; 20usize],
-    #[doc = "0x220 - Peripheral reset control register"]
+    _reserved15: [u8; 0x14],
+    #[doc = "0x220..0x22c - Peripheral reset control register"]
     pub ahbclkctrlset: [crate::Reg<ahbclkctrlset::AHBCLKCTRLSET_SPEC>; 3],
-    _reserved16: [u8; 20usize],
-    #[doc = "0x240 - Peripheral reset control register"]
+    _reserved16: [u8; 0x14],
+    #[doc = "0x240..0x24c - Peripheral reset control register"]
     pub ahbclkctrlclr: [crate::Reg<ahbclkctrlclr::AHBCLKCTRLCLR_SPEC>; 3],
-    _reserved17: [u8; 20usize],
-    _reserved_17_systickclksel0: [u8; 4usize],
-    _reserved_18_systickclksel1: [u8; 4usize],
+    _reserved17: [u8; 0x14],
+    _reserved_17_systickclksel0: [u8; 0x04],
+    _reserved_18_systickclksel1: [u8; 0x04],
     #[doc = "0x268 - Trace clock source select"]
     pub traceclksel: crate::Reg<traceclksel::TRACECLKSEL_SPEC>,
-    _reserved_20_ctimerclksel0: [u8; 4usize],
-    _reserved_21_ctimerclksel1: [u8; 4usize],
-    _reserved_22_ctimerclksel2: [u8; 4usize],
-    _reserved_23_ctimerclksel3: [u8; 4usize],
-    _reserved_24_ctimerclksel4: [u8; 4usize],
+    _reserved_20_ctimerclksel0: [u8; 0x04],
+    _reserved_21_ctimerclksel1: [u8; 0x04],
+    _reserved_22_ctimerclksel2: [u8; 0x04],
+    _reserved_23_ctimerclksel3: [u8; 0x04],
+    _reserved_24_ctimerclksel4: [u8; 0x04],
     #[doc = "0x280 - Main clock A source select"]
     pub mainclksela: crate::Reg<mainclksela::MAINCLKSELA_SPEC>,
     #[doc = "0x284 - Main clock source select"]
     pub mainclkselb: crate::Reg<mainclkselb::MAINCLKSELB_SPEC>,
     #[doc = "0x288 - CLKOUT clock source select"]
     pub clkoutsel: crate::Reg<clkoutsel::CLKOUTSEL_SPEC>,
-    _reserved28: [u8; 4usize],
+    _reserved28: [u8; 0x04],
     #[doc = "0x290 - PLL0 clock source select"]
     pub pll0clksel: crate::Reg<pll0clksel::PLL0CLKSEL_SPEC>,
     #[doc = "0x294 - PLL1 clock source select"]
     pub pll1clksel: crate::Reg<pll1clksel::PLL1CLKSEL_SPEC>,
-    _reserved30: [u8; 12usize],
+    _reserved30: [u8; 0x0c],
     #[doc = "0x2a4 - ADC clock source select"]
     pub adcclksel: crate::Reg<adcclksel::ADCCLKSEL_SPEC>,
     #[doc = "0x2a8 - FS USB clock source select"]
     pub usb0clksel: crate::Reg<usb0clksel::USB0CLKSEL_SPEC>,
-    _reserved32: [u8; 4usize],
-    _reserved_32_fcclksel0: [u8; 4usize],
-    _reserved_33_fcclksel1: [u8; 4usize],
-    _reserved_34_fcclksel2: [u8; 4usize],
-    _reserved_35_fcclksel3: [u8; 4usize],
-    _reserved_36_fcclksel4: [u8; 4usize],
-    _reserved_37_fcclksel5: [u8; 4usize],
-    _reserved_38_fcclksel6: [u8; 4usize],
-    _reserved_39_fcclksel7: [u8; 4usize],
+    _reserved32: [u8; 0x04],
+    _reserved_32_fcclksel0: [u8; 0x04],
+    _reserved_33_fcclksel1: [u8; 0x04],
+    _reserved_34_fcclksel2: [u8; 0x04],
+    _reserved_35_fcclksel3: [u8; 0x04],
+    _reserved_36_fcclksel4: [u8; 0x04],
+    _reserved_37_fcclksel5: [u8; 0x04],
+    _reserved_38_fcclksel6: [u8; 0x04],
+    _reserved_39_fcclksel7: [u8; 0x04],
     #[doc = "0x2d0 - HS LSPI clock source select"]
     pub hslspiclksel: crate::Reg<hslspiclksel::HSLSPICLKSEL_SPEC>,
-    _reserved41: [u8; 12usize],
+    _reserved41: [u8; 0x0c],
     #[doc = "0x2e0 - MCLK clock source select"]
     pub mclkclksel: crate::Reg<mclkclksel::MCLKCLKSEL_SPEC>,
-    _reserved42: [u8; 12usize],
+    _reserved42: [u8; 0x0c],
     #[doc = "0x2f0 - SCTimer/PWM clock source select"]
     pub sctclksel: crate::Reg<sctclksel::SCTCLKSEL_SPEC>,
-    _reserved43: [u8; 4usize],
+    _reserved43: [u8; 0x04],
     #[doc = "0x2f8 - SDIO clock source select"]
     pub sdioclksel: crate::Reg<sdioclksel::SDIOCLKSEL_SPEC>,
-    _reserved44: [u8; 4usize],
+    _reserved44: [u8; 0x04],
     #[doc = "0x300 - System Tick Timer divider for CPU0"]
     pub systickclkdiv0: crate::Reg<systickclkdiv0::SYSTICKCLKDIV0_SPEC>,
     #[doc = "0x304 - System Tick Timer divider for CPU1"]
     pub systickclkdiv1: crate::Reg<systickclkdiv1::SYSTICKCLKDIV1_SPEC>,
     #[doc = "0x308 - TRACE clock divider"]
     pub traceclkdiv: crate::Reg<traceclkdiv::TRACECLKDIV_SPEC>,
-    _reserved47: [u8; 20usize],
-    _reserved_47_flexfrg0ctrl: [u8; 4usize],
-    _reserved_48_flexfrg1ctrl: [u8; 4usize],
-    _reserved_49_flexfrg2ctrl: [u8; 4usize],
-    _reserved_50_flexfrg3ctrl: [u8; 4usize],
-    _reserved_51_flexfrg4ctrl: [u8; 4usize],
-    _reserved_52_flexfrg5ctrl: [u8; 4usize],
-    _reserved_53_flexfrg6ctrl: [u8; 4usize],
-    _reserved_54_flexfrg7ctrl: [u8; 4usize],
-    _reserved55: [u8; 64usize],
+    _reserved47: [u8; 0x14],
+    _reserved_47_flexfrg0ctrl: [u8; 0x04],
+    _reserved_48_flexfrg1ctrl: [u8; 0x04],
+    _reserved_49_flexfrg2ctrl: [u8; 0x04],
+    _reserved_50_flexfrg3ctrl: [u8; 0x04],
+    _reserved_51_flexfrg4ctrl: [u8; 0x04],
+    _reserved_52_flexfrg5ctrl: [u8; 0x04],
+    _reserved_53_flexfrg6ctrl: [u8; 0x04],
+    _reserved_54_flexfrg7ctrl: [u8; 0x04],
+    _reserved55: [u8; 0x40],
     #[doc = "0x380 - System clock divider"]
     pub ahbclkdiv: crate::Reg<ahbclkdiv::AHBCLKDIV_SPEC>,
     #[doc = "0x384 - CLKOUT clock divider"]
@@ -116,34 +116,34 @@ pub struct RegisterBlock {
     pub frohfdiv: crate::Reg<frohfdiv::FROHFDIV_SPEC>,
     #[doc = "0x38c - WDT clock divider"]
     pub wdtclkdiv: crate::Reg<wdtclkdiv::WDTCLKDIV_SPEC>,
-    _reserved59: [u8; 4usize],
+    _reserved59: [u8; 0x04],
     #[doc = "0x394 - ADC clock divider"]
     pub adcclkdiv: crate::Reg<adcclkdiv::ADCCLKDIV_SPEC>,
     #[doc = "0x398 - USB0 Clock divider"]
     pub usb0clkdiv: crate::Reg<usb0clkdiv::USB0CLKDIV_SPEC>,
-    _reserved61: [u8; 16usize],
+    _reserved61: [u8; 0x10],
     #[doc = "0x3ac - I2S MCLK clock divider"]
     pub mclkdiv: crate::Reg<mclkdiv::MCLKDIV_SPEC>,
-    _reserved62: [u8; 4usize],
+    _reserved62: [u8; 0x04],
     #[doc = "0x3b4 - SCT/PWM clock divider"]
     pub sctclkdiv: crate::Reg<sctclkdiv::SCTCLKDIV_SPEC>,
-    _reserved63: [u8; 4usize],
+    _reserved63: [u8; 0x04],
     #[doc = "0x3bc - SDIO clock divider"]
     pub sdioclkdiv: crate::Reg<sdioclkdiv::SDIOCLKDIV_SPEC>,
-    _reserved64: [u8; 4usize],
+    _reserved64: [u8; 0x04],
     #[doc = "0x3c4 - PLL0 clock divider"]
     pub pll0clkdiv: crate::Reg<pll0clkdiv::PLL0CLKDIV_SPEC>,
-    _reserved65: [u8; 52usize],
+    _reserved65: [u8; 0x34],
     #[doc = "0x3fc - Control clock configuration registers access (like xxxDIV, xxxSEL)"]
     pub clockgenupdatelockout: crate::Reg<clockgenupdatelockout::CLOCKGENUPDATELOCKOUT_SPEC>,
     #[doc = "0x400 - FMC configuration register"]
     pub fmccr: crate::Reg<fmccr::FMCCR_SPEC>,
-    _reserved67: [u8; 8usize],
+    _reserved67: [u8; 0x08],
     #[doc = "0x40c - USB0 need clock control"]
     pub usb0needclkctrl: crate::Reg<usb0needclkctrl::USB0NEEDCLKCTRL_SPEC>,
     #[doc = "0x410 - USB0 need clock status"]
     pub usb0needclkstat: crate::Reg<usb0needclkstat::USB0NEEDCLKSTAT_SPEC>,
-    _reserved69: [u8; 8usize],
+    _reserved69: [u8; 0x08],
     #[doc = "0x41c - FMCflush control"]
     pub fmcflush: crate::Reg<fmcflush::FMCFLUSH_SPEC>,
     #[doc = "0x420 - MCLK control"]
@@ -152,10 +152,10 @@ pub struct RegisterBlock {
     pub usb1needclkctrl: crate::Reg<usb1needclkctrl::USB1NEEDCLKCTRL_SPEC>,
     #[doc = "0x428 - USB1 need clock status"]
     pub usb1needclkstat: crate::Reg<usb1needclkstat::USB1NEEDCLKSTAT_SPEC>,
-    _reserved73: [u8; 52usize],
+    _reserved73: [u8; 0x34],
     #[doc = "0x460 - SDIO CCLKIN phase and delay control"]
     pub sdioclkctrl: crate::Reg<sdioclkctrl::SDIOCLKCTRL_SPEC>,
-    _reserved74: [u8; 252usize],
+    _reserved74: [u8; 0xfc],
     #[doc = "0x560 - PLL1 550m control"]
     pub pll1ctrl: crate::Reg<pll1ctrl::PLL1CTRL_SPEC>,
     #[doc = "0x564 - PLL1 550m status"]
@@ -166,7 +166,7 @@ pub struct RegisterBlock {
     pub pll1mdec: crate::Reg<pll1mdec::PLL1MDEC_SPEC>,
     #[doc = "0x570 - PLL1 550m P divider"]
     pub pll1pdec: crate::Reg<pll1pdec::PLL1PDEC_SPEC>,
-    _reserved79: [u8; 12usize],
+    _reserved79: [u8; 0x0c],
     #[doc = "0x580 - PLL0 550m control"]
     pub pll0ctrl: crate::Reg<pll0ctrl::PLL0CTRL_SPEC>,
     #[doc = "0x584 - PLL0 550m status"]
@@ -179,43 +179,43 @@ pub struct RegisterBlock {
     pub pll0sscg0: crate::Reg<pll0sscg0::PLL0SSCG0_SPEC>,
     #[doc = "0x594 - PLL0 Spread Spectrum Wrapper control register 1"]
     pub pll0sscg1: crate::Reg<pll0sscg1::PLL0SSCG1_SPEC>,
-    _reserved85: [u8; 616usize],
+    _reserved85: [u8; 0x0268],
     #[doc = "0x800 - CPU Control for multiple processors"]
     pub cpuctrl: crate::Reg<cpuctrl::CPUCTRL_SPEC>,
     #[doc = "0x804 - Coprocessor Boot Address"]
     pub cpboot: crate::Reg<cpboot::CPBOOT_SPEC>,
-    _reserved87: [u8; 4usize],
+    _reserved87: [u8; 0x04],
     #[doc = "0x80c - CPU Status"]
     pub cpstat: crate::Reg<cpstat::CPSTAT_SPEC>,
-    _reserved88: [u8; 520usize],
+    _reserved88: [u8; 0x0208],
     #[doc = "0xa18 - Various system clock controls : Flash clock (48 MHz) control, clocks to Frequency Measures"]
     pub clock_ctrl: crate::Reg<clock_ctrl::CLOCK_CTRL_SPEC>,
-    _reserved89: [u8; 244usize],
+    _reserved89: [u8; 0xf4],
     #[doc = "0xb10 - Comparator Interrupt control"]
     pub comp_int_ctrl: crate::Reg<comp_int_ctrl::COMP_INT_CTRL_SPEC>,
     #[doc = "0xb14 - Comparator Interrupt status"]
     pub comp_int_status: crate::Reg<comp_int_status::COMP_INT_STATUS_SPEC>,
-    _reserved91: [u8; 748usize],
+    _reserved91: [u8; 0x02ec],
     #[doc = "0xe04 - Control automatic clock gating"]
     pub autoclkgateoverride: crate::Reg<autoclkgateoverride::AUTOCLKGATEOVERRIDE_SPEC>,
     #[doc = "0xe08 - Enable bypass of the first stage of synchonization inside GPIO_INT module"]
     pub gpiopsync: crate::Reg<gpiopsync::GPIOPSYNC_SPEC>,
-    _reserved93: [u8; 404usize],
+    _reserved93: [u8; 0x0194],
     #[doc = "0xfa0 - Control write access to security registers."]
     pub debug_lock_en: crate::Reg<debug_lock_en::DEBUG_LOCK_EN_SPEC>,
     #[doc = "0xfa4 - Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control."]
     pub debug_features: crate::Reg<debug_features::DEBUG_FEATURES_SPEC>,
     #[doc = "0xfa8 - Cortex M33 (CPU0) and micro Cortex M33 (CPU1) debug features control DUPLICATE register."]
     pub debug_features_dp: crate::Reg<debug_features_dp::DEBUG_FEATURES_DP_SPEC>,
-    _reserved96: [u8; 16usize],
+    _reserved96: [u8; 0x10],
     #[doc = "0xfbc - block quiddikey/PUF all index."]
     pub key_block: crate::Reg<key_block::KEY_BLOCK_SPEC>,
     #[doc = "0xfc0 - Debug authentication BEACON register"]
     pub debug_auth_beacon: crate::Reg<debug_auth_beacon::DEBUG_AUTH_BEACON_SPEC>,
-    _reserved98: [u8; 16usize],
+    _reserved98: [u8; 0x10],
     #[doc = "0xfd4 - CPUs configuration register"]
     pub cpucfg: crate::Reg<cpucfg::CPUCFG_SPEC>,
-    _reserved99: [u8; 32usize],
+    _reserved99: [u8; 0x20],
     #[doc = "0xff8 - Device ID"]
     pub device_id0: crate::Reg<device_id0::DEVICE_ID0_SPEC>,
     #[doc = "0xffc - Chip revision ID and Number"]

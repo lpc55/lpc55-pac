@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CTRL_SPEC>> for R {
+impl From<crate::R<CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CTRL_SPEC>> for W {
+impl From<crate::W<CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `zeroize` reader - Begin Zeroize operation for PUF and go to Error state"]
 pub struct ZEROIZE_R(crate::FieldReader<bool, bool>);
 impl ZEROIZE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ZEROIZE_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> ZEROIZE_W<'a> {
 #[doc = "Field `enroll` reader - Begin Enroll operation"]
 pub struct ENROLL_R(crate::FieldReader<bool, bool>);
 impl ENROLL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENROLL_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> ENROLL_W<'a> {
 #[doc = "Field `start` reader - Begin Start operation"]
 pub struct START_R(crate::FieldReader<bool, bool>);
 impl START_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         START_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> START_W<'a> {
 #[doc = "Field `GENERATEKEY` reader - Begin Set Intrinsic Key operation"]
 pub struct GENERATEKEY_R(crate::FieldReader<bool, bool>);
 impl GENERATEKEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         GENERATEKEY_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> GENERATEKEY_W<'a> {
 #[doc = "Field `SETKEY` reader - Begin Set User Key operation"]
 pub struct SETKEY_R(crate::FieldReader<bool, bool>);
 impl SETKEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SETKEY_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> SETKEY_W<'a> {
 #[doc = "Field `GETKEY` reader - Begin Get Key operation"]
 pub struct GETKEY_R(crate::FieldReader<bool, bool>);
 impl GETKEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         GETKEY_R(crate::FieldReader::new(bits))
     }
@@ -312,6 +320,7 @@ impl W {
         GETKEY_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<IST_SPEC>> for R {
+impl From<crate::R<IST_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<IST_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<IST_SPEC>> for W {
+impl From<crate::W<IST_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<IST_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<IST_SPEC>> for W {
 #[doc = "Field `PSTAT` reader - Pin interrupt status. Bit n returns the status, clears the edge interrupt, or inverts the active level of the pin selected in PINTSELn. Read 0: interrupt is not being requested for this interrupt pin. Write 0: no operation. Read 1: interrupt is being requested for this interrupt pin. Write 1 (edge-sensitive): clear rising- and falling-edge detection for this pin. Write 1 (level-sensitive): switch the active level for this pin (in the IENF register)."]
 pub struct PSTAT_R(crate::FieldReader<u8, u8>);
 impl PSTAT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PSTAT_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         PSTAT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

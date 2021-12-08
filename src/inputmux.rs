@@ -1,79 +1,79 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Input mux register for SCT0 input"]
+    #[doc = "0x00..0x1c - Input mux register for SCT0 input"]
     pub sct0_inmux: [crate::Reg<sct0_inmux::SCT0_INMUX_SPEC>; 7],
-    _reserved1: [u8; 4usize],
-    #[doc = "0x20 - Capture select registers for TIMER0 inputs"]
+    _reserved1: [u8; 0x04],
+    #[doc = "0x20..0x30 - Capture select registers for TIMER0 inputs"]
     pub timer0captsel: [crate::Reg<timer0captsel::TIMER0CAPTSEL_SPEC>; 4],
-    _reserved2: [u8; 16usize],
-    #[doc = "0x40 - Capture select registers for TIMER1 inputs"]
+    _reserved2: [u8; 0x10],
+    #[doc = "0x40..0x50 - Capture select registers for TIMER1 inputs"]
     pub timer1captsel: [crate::Reg<timer1captsel::TIMER1CAPTSEL_SPEC>; 4],
-    _reserved3: [u8; 16usize],
-    #[doc = "0x60 - Capture select registers for TIMER2 inputs"]
+    _reserved3: [u8; 0x10],
+    #[doc = "0x60..0x70 - Capture select registers for TIMER2 inputs"]
     pub timer2captsel: [crate::Reg<timer2captsel::TIMER2CAPTSEL_SPEC>; 4],
-    _reserved4: [u8; 80usize],
-    #[doc = "0xc0 - Pin interrupt select register"]
+    _reserved4: [u8; 0x50],
+    #[doc = "0xc0..0xe0 - Pin interrupt select register"]
     pub pintsel: [crate::Reg<pintsel::PINTSEL_SPEC>; 8],
-    #[doc = "0xe0 - Trigger select register for DMA0 channel"]
+    #[doc = "0xe0..0x13c - Trigger select register for DMA0 channel"]
     pub dma0_itrig_inmux: [crate::Reg<dma0_itrig_inmux::DMA0_ITRIG_INMUX_SPEC>; 23],
-    _reserved6: [u8; 36usize],
-    #[doc = "0x160 - DMA0 output trigger selection to become DMA0 trigger"]
+    _reserved6: [u8; 0x24],
+    #[doc = "0x160..0x170 - DMA0 output trigger selection to become DMA0 trigger"]
     pub dma0_otrig_inmux: [crate::Reg<dma0_otrig_inmux::DMA0_OTRIG_INMUX_SPEC>; 4],
-    _reserved7: [u8; 16usize],
+    _reserved7: [u8; 0x10],
     #[doc = "0x180 - Selection for frequency measurement reference clock"]
     pub freqmeas_ref: crate::Reg<freqmeas_ref::FREQMEAS_REF_SPEC>,
     #[doc = "0x184 - Selection for frequency measurement target clock"]
     pub freqmeas_target: crate::Reg<freqmeas_target::FREQMEAS_TARGET_SPEC>,
-    _reserved9: [u8; 24usize],
-    #[doc = "0x1a0 - Capture select registers for TIMER3 inputs"]
+    _reserved9: [u8; 0x18],
+    #[doc = "0x1a0..0x1b0 - Capture select registers for TIMER3 inputs"]
     pub timer3captsel: [crate::Reg<timer3captsel::TIMER3CAPTSEL_SPEC>; 4],
-    _reserved10: [u8; 16usize],
-    #[doc = "0x1c0 - Capture select registers for TIMER4 inputs"]
+    _reserved10: [u8; 0x10],
+    #[doc = "0x1c0..0x1d0 - Capture select registers for TIMER4 inputs"]
     pub timer4captsel: [crate::Reg<timer4captsel::TIMER4CAPTSEL_SPEC>; 4],
-    _reserved11: [u8; 16usize],
-    #[doc = "0x1e0 - Pin interrupt secure select register"]
+    _reserved11: [u8; 0x10],
+    #[doc = "0x1e0..0x1e8 - Pin interrupt secure select register"]
     pub pintsecsel: [crate::Reg<pintsecsel::PINTSECSEL_SPEC>; 2],
-    _reserved12: [u8; 24usize],
-    #[doc = "0x200 - Trigger select register for DMA1 channel"]
+    _reserved12: [u8; 0x18],
+    #[doc = "0x200..0x228 - Trigger select register for DMA1 channel"]
     pub dma1_itrig_inmux: [crate::Reg<dma1_itrig_inmux::DMA1_ITRIG_INMUX_SPEC>; 10],
-    _reserved13: [u8; 24usize],
-    #[doc = "0x240 - DMA1 output trigger selection to become DMA1 trigger"]
+    _reserved13: [u8; 0x18],
+    #[doc = "0x240..0x250 - DMA1 output trigger selection to become DMA1 trigger"]
     pub dma1_otrig_inmux: [crate::Reg<dma1_otrig_inmux::DMA1_OTRIG_INMUX_SPEC>; 4],
-    _reserved14: [u8; 1264usize],
+    _reserved14: [u8; 0x04f0],
     #[doc = "0x740 - Enable DMA0 requests"]
     pub dma0_req_ena: crate::Reg<dma0_req_ena::DMA0_REQ_ENA_SPEC>,
-    _reserved15: [u8; 4usize],
+    _reserved15: [u8; 0x04],
     #[doc = "0x748 - Set one or several bits in DMA0_REQ_ENA register"]
     pub dma0_req_ena_set: crate::Reg<dma0_req_ena_set::DMA0_REQ_ENA_SET_SPEC>,
-    _reserved16: [u8; 4usize],
+    _reserved16: [u8; 0x04],
     #[doc = "0x750 - Clear one or several bits in DMA0_REQ_ENA register"]
     pub dma0_req_ena_clr: crate::Reg<dma0_req_ena_clr::DMA0_REQ_ENA_CLR_SPEC>,
-    _reserved17: [u8; 12usize],
+    _reserved17: [u8; 0x0c],
     #[doc = "0x760 - Enable DMA1 requests"]
     pub dma1_req_ena: crate::Reg<dma1_req_ena::DMA1_REQ_ENA_SPEC>,
-    _reserved18: [u8; 4usize],
+    _reserved18: [u8; 0x04],
     #[doc = "0x768 - Set one or several bits in DMA1_REQ_ENA register"]
     pub dma1_req_ena_set: crate::Reg<dma1_req_ena_set::DMA1_REQ_ENA_SET_SPEC>,
-    _reserved19: [u8; 4usize],
+    _reserved19: [u8; 0x04],
     #[doc = "0x770 - Clear one or several bits in DMA1_REQ_ENA register"]
     pub dma1_req_ena_clr: crate::Reg<dma1_req_ena_clr::DMA1_REQ_ENA_CLR_SPEC>,
-    _reserved20: [u8; 12usize],
+    _reserved20: [u8; 0x0c],
     #[doc = "0x780 - Enable DMA0 triggers"]
     pub dma0_itrig_ena: crate::Reg<dma0_itrig_ena::DMA0_ITRIG_ENA_SPEC>,
-    _reserved21: [u8; 4usize],
+    _reserved21: [u8; 0x04],
     #[doc = "0x788 - Set one or several bits in DMA0_ITRIG_ENA register"]
     pub dma0_itrig_ena_set: crate::Reg<dma0_itrig_ena_set::DMA0_ITRIG_ENA_SET_SPEC>,
-    _reserved22: [u8; 4usize],
+    _reserved22: [u8; 0x04],
     #[doc = "0x790 - Clear one or several bits in DMA0_ITRIG_ENA register"]
     pub dma0_itrig_ena_clr: crate::Reg<dma0_itrig_ena_clr::DMA0_ITRIG_ENA_CLR_SPEC>,
-    _reserved23: [u8; 12usize],
+    _reserved23: [u8; 0x0c],
     #[doc = "0x7a0 - Enable DMA1 triggers"]
     pub dma1_itrig_ena: crate::Reg<dma1_itrig_ena::DMA1_ITRIG_ENA_SPEC>,
-    _reserved24: [u8; 4usize],
+    _reserved24: [u8; 0x04],
     #[doc = "0x7a8 - Set one or several bits in DMA1_ITRIG_ENA register"]
     pub dma1_itrig_ena_set: crate::Reg<dma1_itrig_ena_set::DMA1_ITRIG_ENA_SET_SPEC>,
-    _reserved25: [u8; 4usize],
+    _reserved25: [u8; 0x04],
     #[doc = "0x7b0 - Clear one or several bits in DMA1_ITRIG_ENA register"]
     pub dma1_itrig_ena_clr: crate::Reg<dma1_itrig_ena_clr::DMA1_ITRIG_ENA_CLR_SPEC>,
 }

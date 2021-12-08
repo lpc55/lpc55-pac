@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<HCCOMMANDSTATUS_SPEC>> for R {
+impl From<crate::R<HCCOMMANDSTATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<HCCOMMANDSTATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<HCCOMMANDSTATUS_SPEC>> for W {
+impl From<crate::W<HCCOMMANDSTATUS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<HCCOMMANDSTATUS_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<HCCOMMANDSTATUS_SPEC>> for W {
 #[doc = "Field `HCR` reader - HostControllerReset This bit is set by HCD to initiate a software reset of HC."]
 pub struct HCR_R(crate::FieldReader<bool, bool>);
 impl HCR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HCR_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> HCR_W<'a> {
 #[doc = "Field `CLF` reader - ControlListFilled This bit is used to indicate whether there are any TDs on the Control list."]
 pub struct CLF_R(crate::FieldReader<bool, bool>);
 impl CLF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CLF_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> CLF_W<'a> {
 #[doc = "Field `BLF` reader - BulkListFilled This bit is used to indicate whether there are any TDs on the Bulk list."]
 pub struct BLF_R(crate::FieldReader<bool, bool>);
 impl BLF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BLF_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> BLF_W<'a> {
 #[doc = "Field `OCR` reader - OwnershipChangeRequest This bit is set by an OS HCD to request a change of control of the HC."]
 pub struct OCR_R(crate::FieldReader<bool, bool>);
 impl OCR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OCR_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> OCR_W<'a> {
 #[doc = "Field `SOC` reader - SchedulingOverrunCount These bits are incremented on each scheduling overrun error."]
 pub struct SOC_R(crate::FieldReader<u8, u8>);
 impl SOC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SOC_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +263,7 @@ impl W {
         SOC_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

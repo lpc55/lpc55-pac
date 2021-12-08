@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<STOPA_SPEC>> for R {
+impl From<crate::R<STOPA_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<STOPA_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<STOPA_SPEC>> for W {
+impl From<crate::W<STOPA_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<STOPA_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<STOPA_SPEC>> for W {
 #[doc = "Field `STOPA` reader - Stop address for commands that take an address range as a parameter (the word specified by STOPA is included in the address range)."]
 pub struct STOPA_R(crate::FieldReader<u32, u32>);
 impl STOPA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         STOPA_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         STOPA_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

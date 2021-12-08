@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FREQ_ME_CTRL_SPEC>> for R {
+impl From<crate::R<FREQ_ME_CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FREQ_ME_CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FREQ_ME_CTRL_SPEC>> for W {
+impl From<crate::W<FREQ_ME_CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FREQ_ME_CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<FREQ_ME_CTRL_SPEC>> for W {
 #[doc = "Field `CAPVAL_SCALE` reader - Frequency measure result /Frequency measur scale"]
 pub struct CAPVAL_SCALE_R(crate::FieldReader<u32, u32>);
 impl CAPVAL_SCALE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         CAPVAL_SCALE_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> CAPVAL_SCALE_W<'a> {
 #[doc = "Field `PROG` reader - Set this bit to one to initiate a frequency measurement cycle. Hardware clears this bit when the measurement cycle has completed and there is valid capture data in the CAPVAL field (bits 30:0)."]
 pub struct PROG_R(crate::FieldReader<bool, bool>);
 impl PROG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PROG_R(crate::FieldReader::new(bits))
     }
@@ -118,6 +122,7 @@ impl W {
         PROG_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

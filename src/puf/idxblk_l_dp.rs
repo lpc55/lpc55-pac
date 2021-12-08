@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<IDXBLK_L_DP_SPEC>> for R {
+impl From<crate::R<IDXBLK_L_DP_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<IDXBLK_L_DP_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<IDXBLK_L_DP_SPEC>> for W {
+impl From<crate::W<IDXBLK_L_DP_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<IDXBLK_L_DP_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<IDXBLK_L_DP_SPEC>> for W {
 #[doc = "Field `IDX1` reader - Use to block PUF index 1"]
 pub struct IDX1_R(crate::FieldReader<u8, u8>);
 impl IDX1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX1_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> IDX1_W<'a> {
 #[doc = "Field `IDX2` reader - Use to block PUF index 2"]
 pub struct IDX2_R(crate::FieldReader<u8, u8>);
 impl IDX2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX2_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> IDX2_W<'a> {
 #[doc = "Field `IDX3` reader - Use to block PUF index 3"]
 pub struct IDX3_R(crate::FieldReader<u8, u8>);
 impl IDX3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX3_R(crate::FieldReader::new(bits))
     }
@@ -113,6 +118,7 @@ impl<'a> IDX3_W<'a> {
 #[doc = "Field `IDX4` reader - Use to block PUF index 4"]
 pub struct IDX4_R(crate::FieldReader<u8, u8>);
 impl IDX4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX4_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +145,7 @@ impl<'a> IDX4_W<'a> {
 #[doc = "Field `IDX5` reader - Use to block PUF index 5"]
 pub struct IDX5_R(crate::FieldReader<u8, u8>);
 impl IDX5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX5_R(crate::FieldReader::new(bits))
     }
@@ -165,6 +172,7 @@ impl<'a> IDX5_W<'a> {
 #[doc = "Field `IDX6` reader - Use to block PUF index 6"]
 pub struct IDX6_R(crate::FieldReader<u8, u8>);
 impl IDX6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX6_R(crate::FieldReader::new(bits))
     }
@@ -191,6 +199,7 @@ impl<'a> IDX6_W<'a> {
 #[doc = "Field `IDX7` reader - Use to block PUF index 7"]
 pub struct IDX7_R(crate::FieldReader<u8, u8>);
 impl IDX7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX7_R(crate::FieldReader::new(bits))
     }
@@ -288,6 +297,7 @@ impl W {
         IDX7_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

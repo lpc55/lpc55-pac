@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INTENSET_SPEC>> for R {
+impl From<crate::R<INTENSET_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INTENSET_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<INTENSET_SPEC>> for W {
+impl From<crate::W<INTENSET_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<INTENSET_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<INTENSET_SPEC>> for W {
 #[doc = "Field `TXIDLEEN` reader - When 1, enables an interrupt when the transmitter becomes idle (TXIDLE = 1)."]
 pub struct TXIDLEEN_R(crate::FieldReader<bool, bool>);
 impl TXIDLEEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXIDLEEN_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> TXIDLEEN_W<'a> {
 #[doc = "Field `DELTACTSEN` reader - When 1, enables an interrupt when there is a change in the state of the CTS input."]
 pub struct DELTACTSEN_R(crate::FieldReader<bool, bool>);
 impl DELTACTSEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DELTACTSEN_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> DELTACTSEN_W<'a> {
 #[doc = "Field `TXDISEN` reader - When 1, enables an interrupt when the transmitter is fully disabled as indicated by the TXDISINT flag in STAT. See description of the TXDISINT bit for details."]
 pub struct TXDISEN_R(crate::FieldReader<bool, bool>);
 impl TXDISEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXDISEN_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> TXDISEN_W<'a> {
 #[doc = "Field `DELTARXBRKEN` reader - When 1, enables an interrupt when a change of state has occurred in the detection of a received break condition (break condition asserted or deasserted)."]
 pub struct DELTARXBRKEN_R(crate::FieldReader<bool, bool>);
 impl DELTARXBRKEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DELTARXBRKEN_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> DELTARXBRKEN_W<'a> {
 #[doc = "Field `STARTEN` reader - When 1, enables an interrupt when a received start bit has been detected."]
 pub struct STARTEN_R(crate::FieldReader<bool, bool>);
 impl STARTEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STARTEN_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> STARTEN_W<'a> {
 #[doc = "Field `FRAMERREN` reader - When 1, enables an interrupt when a framing error has been detected."]
 pub struct FRAMERREN_R(crate::FieldReader<bool, bool>);
 impl FRAMERREN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRAMERREN_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +259,7 @@ impl<'a> FRAMERREN_W<'a> {
 #[doc = "Field `PARITYERREN` reader - When 1, enables an interrupt when a parity error has been detected."]
 pub struct PARITYERREN_R(crate::FieldReader<bool, bool>);
 impl PARITYERREN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PARITYERREN_R(crate::FieldReader::new(bits))
     }
@@ -287,6 +296,7 @@ impl<'a> PARITYERREN_W<'a> {
 #[doc = "Field `RXNOISEEN` reader - When 1, enables an interrupt when noise is detected. See description of the RXNOISEINT bit in Table 354."]
 pub struct RXNOISEEN_R(crate::FieldReader<bool, bool>);
 impl RXNOISEEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXNOISEEN_R(crate::FieldReader::new(bits))
     }
@@ -323,6 +333,7 @@ impl<'a> RXNOISEEN_W<'a> {
 #[doc = "Field `ABERREN` reader - When 1, enables an interrupt when an auto baud error occurs."]
 pub struct ABERREN_R(crate::FieldReader<bool, bool>);
 impl ABERREN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ABERREN_R(crate::FieldReader::new(bits))
     }
@@ -450,6 +461,7 @@ impl W {
         ABERREN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

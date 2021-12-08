@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CAL_GAR_SPEC>> for R {
+impl From<crate::R<CAL_GAR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CAL_GAR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CAL_GAR_SPEC>> for W {
+impl From<crate::W<CAL_GAR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CAL_GAR_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CAL_GAR_SPEC>> for W {
 #[doc = "Field `CAL_GAR_VAL` reader - Calibration General A Side Register Element"]
 pub struct CAL_GAR_VAL_R(crate::FieldReader<u16, u16>);
 impl CAL_GAR_VAL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         CAL_GAR_VAL_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         CAL_GAR_VAL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

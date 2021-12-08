@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INTENSET_SPEC>> for R {
+impl From<crate::R<INTENSET_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INTENSET_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<INTENSET_SPEC>> for W {
+impl From<crate::W<INTENSET_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<INTENSET_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<WAITING_A> for bool {
 #[doc = "Field `WAITING` reader - Indicates if should interrupt when waiting for data input."]
 pub struct WAITING_R(crate::FieldReader<bool, WAITING_A>);
 impl WAITING_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAITING_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<DIGEST_A> for bool {
 #[doc = "Field `DIGEST` reader - Indicates if should interrupt when Digest (or Outdata) is ready (completed a hash/crypto or completed a full sequence)."]
 pub struct DIGEST_R(crate::FieldReader<bool, DIGEST_A>);
 impl DIGEST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DIGEST_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<ERROR_A> for bool {
 #[doc = "Field `ERROR` reader - Indicates if should interrupt on an ERROR (as defined in Status)"]
 pub struct ERROR_R(crate::FieldReader<bool, ERROR_A>);
 impl ERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERROR_R(crate::FieldReader::new(bits))
     }
@@ -315,6 +320,7 @@ impl W {
         ERROR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

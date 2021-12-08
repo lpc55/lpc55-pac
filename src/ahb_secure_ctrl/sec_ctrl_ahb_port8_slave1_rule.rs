@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CTRL_AHB_PORT8_SLAVE1_RULE_SPEC>> for R {
+impl From<crate::R<SEC_CTRL_AHB_PORT8_SLAVE1_RULE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CTRL_AHB_PORT8_SLAVE1_RULE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CTRL_AHB_PORT8_SLAVE1_RULE_SPEC>> for W {
+impl From<crate::W<SEC_CTRL_AHB_PORT8_SLAVE1_RULE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CTRL_AHB_PORT8_SLAVE1_RULE_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<FLEXCOMM2_RULE_A> for u8 {
 #[doc = "Field `FLEXCOMM2_RULE` reader - Flexcomm interface 2"]
 pub struct FLEXCOMM2_RULE_R(crate::FieldReader<u8, FLEXCOMM2_RULE_A>);
 impl FLEXCOMM2_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FLEXCOMM2_RULE_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<FLEXCOMM3_RULE_A> for u8 {
 #[doc = "Field `FLEXCOMM3_RULE` reader - Flexcomm interface 3"]
 pub struct FLEXCOMM3_RULE_R(crate::FieldReader<u8, FLEXCOMM3_RULE_A>);
 impl FLEXCOMM3_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FLEXCOMM3_RULE_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +260,7 @@ impl From<FLEXCOMM4_RULE_A> for u8 {
 #[doc = "Field `FLEXCOMM4_RULE` reader - Flexcomm interface 4"]
 pub struct FLEXCOMM4_RULE_R(crate::FieldReader<u8, FLEXCOMM4_RULE_A>);
 impl FLEXCOMM4_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FLEXCOMM4_RULE_R(crate::FieldReader::new(bits))
     }
@@ -357,6 +362,7 @@ impl From<MAILBOX_RULE_A> for u8 {
 #[doc = "Field `MAILBOX_RULE` reader - Inter CPU communication Mailbox"]
 pub struct MAILBOX_RULE_R(crate::FieldReader<u8, MAILBOX_RULE_A>);
 impl MAILBOX_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MAILBOX_RULE_R(crate::FieldReader::new(bits))
     }
@@ -458,6 +464,7 @@ impl From<GPIO0_RULE_A> for u8 {
 #[doc = "Field `GPIO0_RULE` reader - High Speed GPIO"]
 pub struct GPIO0_RULE_R(crate::FieldReader<u8, GPIO0_RULE_A>);
 impl GPIO0_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         GPIO0_RULE_R(crate::FieldReader::new(bits))
     }
@@ -591,6 +598,7 @@ impl W {
         GPIO0_RULE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

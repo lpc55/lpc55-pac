@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ANALOG_CTRL_STATUS_SPEC>> for R {
+impl From<crate::R<ANALOG_CTRL_STATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ANALOG_CTRL_STATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -29,6 +30,7 @@ impl From<FLASH_PWRDWN_A> for bool {
 #[doc = "Field `FLASH_PWRDWN` reader - Flash Power Down status."]
 pub struct FLASH_PWRDWN_R(crate::FieldReader<bool, FLASH_PWRDWN_A>);
 impl FLASH_PWRDWN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FLASH_PWRDWN_R(crate::FieldReader::new(bits))
     }
@@ -75,6 +77,7 @@ impl From<FLASH_INIT_ERROR_A> for bool {
 #[doc = "Field `FLASH_INIT_ERROR` reader - Flash initialization error status."]
 pub struct FLASH_INIT_ERROR_R(crate::FieldReader<bool, FLASH_INIT_ERROR_A>);
 impl FLASH_INIT_ERROR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FLASH_INIT_ERROR_R(crate::FieldReader::new(bits))
     }

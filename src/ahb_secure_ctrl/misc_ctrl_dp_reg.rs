@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<MISC_CTRL_DP_REG_SPEC>> for R {
+impl From<crate::R<MISC_CTRL_DP_REG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<MISC_CTRL_DP_REG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<MISC_CTRL_DP_REG_SPEC>> for W {
+impl From<crate::W<MISC_CTRL_DP_REG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<MISC_CTRL_DP_REG_SPEC>) -> Self {
         W(writer)
     }
@@ -50,6 +52,7 @@ impl From<WRITE_LOCK_A> for u8 {
 #[doc = "Field `WRITE_LOCK` reader - Write lock."]
 pub struct WRITE_LOCK_R(crate::FieldReader<u8, WRITE_LOCK_A>);
 impl WRITE_LOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         WRITE_LOCK_R(crate::FieldReader::new(bits))
     }
@@ -125,6 +128,7 @@ impl From<ENABLE_SECURE_CHECKING_A> for u8 {
 #[doc = "Field `ENABLE_SECURE_CHECKING` reader - Enable secure check for AHB matrix."]
 pub struct ENABLE_SECURE_CHECKING_R(crate::FieldReader<u8, ENABLE_SECURE_CHECKING_A>);
 impl ENABLE_SECURE_CHECKING_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ENABLE_SECURE_CHECKING_R(crate::FieldReader::new(bits))
     }
@@ -200,6 +204,7 @@ impl From<ENABLE_S_PRIV_CHECK_A> for u8 {
 #[doc = "Field `ENABLE_S_PRIV_CHECK` reader - Enable secure privilege check for AHB matrix."]
 pub struct ENABLE_S_PRIV_CHECK_R(crate::FieldReader<u8, ENABLE_S_PRIV_CHECK_A>);
 impl ENABLE_S_PRIV_CHECK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ENABLE_S_PRIV_CHECK_R(crate::FieldReader::new(bits))
     }
@@ -275,6 +280,7 @@ impl From<ENABLE_NS_PRIV_CHECK_A> for u8 {
 #[doc = "Field `ENABLE_NS_PRIV_CHECK` reader - Enable non-secure privilege check for AHB matrix."]
 pub struct ENABLE_NS_PRIV_CHECK_R(crate::FieldReader<u8, ENABLE_NS_PRIV_CHECK_A>);
 impl ENABLE_NS_PRIV_CHECK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ENABLE_NS_PRIV_CHECK_R(crate::FieldReader::new(bits))
     }
@@ -350,6 +356,7 @@ impl From<DISABLE_VIOLATION_ABORT_A> for u8 {
 #[doc = "Field `DISABLE_VIOLATION_ABORT` reader - Disable secure violation abort."]
 pub struct DISABLE_VIOLATION_ABORT_R(crate::FieldReader<u8, DISABLE_VIOLATION_ABORT_A>);
 impl DISABLE_VIOLATION_ABORT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DISABLE_VIOLATION_ABORT_R(crate::FieldReader::new(bits))
     }
@@ -427,6 +434,7 @@ pub struct DISABLE_SIMPLE_MASTER_STRICT_MODE_R(
     crate::FieldReader<u8, DISABLE_SIMPLE_MASTER_STRICT_MODE_A>,
 );
 impl DISABLE_SIMPLE_MASTER_STRICT_MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DISABLE_SIMPLE_MASTER_STRICT_MODE_R(crate::FieldReader::new(bits))
     }
@@ -504,6 +512,7 @@ pub struct DISABLE_SMART_MASTER_STRICT_MODE_R(
     crate::FieldReader<u8, DISABLE_SMART_MASTER_STRICT_MODE_A>,
 );
 impl DISABLE_SMART_MASTER_STRICT_MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DISABLE_SMART_MASTER_STRICT_MODE_R(crate::FieldReader::new(bits))
     }
@@ -579,6 +588,7 @@ impl From<IDAU_ALL_NS_A> for u8 {
 #[doc = "Field `IDAU_ALL_NS` reader - Disable IDAU."]
 pub struct IDAU_ALL_NS_R(crate::FieldReader<u8, IDAU_ALL_NS_A>);
 impl IDAU_ALL_NS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDAU_ALL_NS_R(crate::FieldReader::new(bits))
     }
@@ -720,6 +730,7 @@ impl W {
         IDAU_ALL_NS_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

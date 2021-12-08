@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<HCREVISION_SPEC>> for R {
+impl From<crate::R<HCREVISION_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<HCREVISION_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<HCREVISION_SPEC>> for R {
 #[doc = "Field `REV` reader - Revision."]
 pub struct REV_R(crate::FieldReader<u8, u8>);
 impl REV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         REV_R(crate::FieldReader::new(bits))
     }

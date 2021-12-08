@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CODEOUTPUT_SPEC>> for R {
+impl From<crate::R<CODEOUTPUT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CODEOUTPUT_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<CODEOUTPUT_SPEC>> for R {
 #[doc = "Field `CODEOUT` reader - AC/KC output data"]
 pub struct CODEOUT_R(crate::FieldReader<u32, u32>);
 impl CODEOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         CODEOUT_R(crate::FieldReader::new(bits))
     }
@@ -30,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - AC/KC output data"]
     #[inline(always)]
     pub fn codeout(&self) -> CODEOUT_R {
-        CODEOUT_R::new((self.bits & 0xffff_ffff) as u32)
+        CODEOUT_R::new(self.bits as u32)
     }
 }
 #[doc = "PUF Code Output register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [codeoutput](index.html) module"]

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<KEYENABLE_SPEC>> for R {
+impl From<crate::R<KEYENABLE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<KEYENABLE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<KEYENABLE_SPEC>> for W {
+impl From<crate::W<KEYENABLE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<KEYENABLE_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<KEYENABLE_SPEC>> for W {
 #[doc = "Field `KEY0` reader - \"10: Data coming out from PUF Index 0 interface are shifted in KEY0 register. 00, 01, 11 : Data coming out from PUF Index 0 interface are NOT shifted in KEY0 register.\""]
 pub struct KEY0_R(crate::FieldReader<u8, u8>);
 impl KEY0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         KEY0_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> KEY0_W<'a> {
 #[doc = "Field `KEY1` reader - \"10: Data coming out from PUF Index 0 interface are shifted in KEY1 register. 00, 01, 11 : Data coming out from PUF Index 0 interface are NOT shifted in KEY1 register.\""]
 pub struct KEY1_R(crate::FieldReader<u8, u8>);
 impl KEY1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         KEY1_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> KEY1_W<'a> {
 #[doc = "Field `KEY2` reader - \"10: Data coming out from PUF Index 0 interface are shifted in KEY2 register. 00, 01, 11 : Data coming out from PUF Index 0 interface are NOT shifted in KEY2 register.\""]
 pub struct KEY2_R(crate::FieldReader<u8, u8>);
 impl KEY2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         KEY2_R(crate::FieldReader::new(bits))
     }
@@ -113,6 +118,7 @@ impl<'a> KEY2_W<'a> {
 #[doc = "Field `KEY3` reader - \"10: Data coming out from PUF Index 0 interface are shifted in KEY3 register. 00, 01, 11 : Data coming out from PUF Index 0 interface are NOT shifted in KEY3 register.\""]
 pub struct KEY3_R(crate::FieldReader<u8, u8>);
 impl KEY3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         KEY3_R(crate::FieldReader::new(bits))
     }
@@ -160,6 +166,7 @@ impl From<KEY_A> for u8 {
 #[doc = "Field `KEY` reader - Key destination for PUF key."]
 pub struct KEY_R(crate::FieldReader<u8, KEY_A>);
 impl KEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         KEY_R(crate::FieldReader::new(bits))
     }
@@ -304,6 +311,7 @@ impl W {
         KEY_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

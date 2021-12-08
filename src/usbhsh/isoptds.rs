@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ISOPTDS_SPEC>> for R {
+impl From<crate::R<ISOPTDS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ISOPTDS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ISOPTDS_SPEC>> for W {
+impl From<crate::W<ISOPTDS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ISOPTDS_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<ISOPTDS_SPEC>> for W {
 #[doc = "Field `ISO_SKIP` reader - The bit corresponding to a certain PTD will be set to logic 1 as soon as that PTD execution is completed."]
 pub struct ISO_SKIP_R(crate::FieldReader<u32, u32>);
 impl ISO_SKIP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         ISO_SKIP_R(crate::FieldReader::new(bits))
     }
@@ -54,7 +57,7 @@ impl<'a> ISO_SKIP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
+        self.w.bits = value as u32;
         self.w
     }
 }
@@ -62,7 +65,7 @@ impl R {
     #[doc = "Bits 0:31 - The bit corresponding to a certain PTD will be set to logic 1 as soon as that PTD execution is completed."]
     #[inline(always)]
     pub fn iso_skip(&self) -> ISO_SKIP_R {
-        ISO_SKIP_R::new((self.bits & 0xffff_ffff) as u32)
+        ISO_SKIP_R::new(self.bits as u32)
     }
 }
 impl W {
@@ -72,6 +75,7 @@ impl W {
         ISO_SKIP_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

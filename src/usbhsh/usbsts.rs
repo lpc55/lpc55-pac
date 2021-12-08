@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<USBSTS_SPEC>> for R {
+impl From<crate::R<USBSTS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<USBSTS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<USBSTS_SPEC>> for W {
+impl From<crate::W<USBSTS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<USBSTS_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<USBSTS_SPEC>> for W {
 #[doc = "Field `PCD` reader - Port Change Detect: The host controller sets this bit to logic 1 when any port has a change bit transition from a 0 to a one or a Force Port Resume bit transition from a 0 to a 1 as a result of a J-K transition detected on a suspended port."]
 pub struct PCD_R(crate::FieldReader<bool, bool>);
 impl PCD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PCD_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> PCD_W<'a> {
 #[doc = "Field `FLR` reader - Frame List Rollover: The host controller sets this bit to logic 1 when the frame list index rolls over its maximum value to 0."]
 pub struct FLR_R(crate::FieldReader<bool, bool>);
 impl FLR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FLR_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> FLR_W<'a> {
 #[doc = "Field `ATL_IRQ` reader - ATL IRQ: Indicates that an ATL PTD (with I-bit set) was completed."]
 pub struct ATL_IRQ_R(crate::FieldReader<bool, bool>);
 impl ATL_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ATL_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> ATL_IRQ_W<'a> {
 #[doc = "Field `ISO_IRQ` reader - ISO IRQ: Indicates that an ISO PTD (with I-bit set) was completed."]
 pub struct ISO_IRQ_R(crate::FieldReader<bool, bool>);
 impl ISO_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ISO_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> ISO_IRQ_W<'a> {
 #[doc = "Field `INT_IRQ` reader - INT IRQ: Indicates that an INT PTD (with I-bit set) was completed."]
 pub struct INT_IRQ_R(crate::FieldReader<bool, bool>);
 impl INT_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INT_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> INT_IRQ_W<'a> {
 #[doc = "Field `SOF_IRQ` reader - SOF interrupt: Every time when the host sends a Start of Frame token on the USB bus, this bit is set."]
 pub struct SOF_IRQ_R(crate::FieldReader<bool, bool>);
 impl SOF_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SOF_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -312,6 +320,7 @@ impl W {
         SOF_IRQ_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

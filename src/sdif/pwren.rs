@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PWREN_SPEC>> for R {
+impl From<crate::R<PWREN_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PWREN_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PWREN_SPEC>> for W {
+impl From<crate::W<PWREN_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PWREN_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<PWREN_SPEC>> for W {
 #[doc = "Field `POWER_ENABLE0` reader - Power on/off switch for card 0; once power is turned on, software should wait for regulator/switch ramp-up time before trying to initialize card 0."]
 pub struct POWER_ENABLE0_R(crate::FieldReader<bool, bool>);
 impl POWER_ENABLE0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         POWER_ENABLE0_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> POWER_ENABLE0_W<'a> {
 #[doc = "Field `POWER_ENABLE1` reader - Power on/off switch for card 1; once power is turned on, software should wait for regulator/switch ramp-up time before trying to initialize card 1."]
 pub struct POWER_ENABLE1_R(crate::FieldReader<bool, bool>);
 impl POWER_ENABLE1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         POWER_ENABLE1_R(crate::FieldReader::new(bits))
     }
@@ -128,6 +132,7 @@ impl W {
         POWER_ENABLE1_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

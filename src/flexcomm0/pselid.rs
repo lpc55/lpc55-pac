@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PSELID_SPEC>> for R {
+impl From<crate::R<PSELID_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PSELID_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PSELID_SPEC>> for W {
+impl From<crate::W<PSELID_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PSELID_SPEC>) -> Self {
         W(writer)
     }
@@ -58,6 +60,7 @@ impl From<PERSEL_A> for u8 {
 #[doc = "Field `PERSEL` reader - Peripheral Select. This field is writable by software."]
 pub struct PERSEL_R(crate::FieldReader<u8, PERSEL_A>);
 impl PERSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PERSEL_R(crate::FieldReader::new(bits))
     }
@@ -176,6 +179,7 @@ impl From<LOCK_A> for bool {
 #[doc = "Field `LOCK` reader - Lock the peripheral select. This field is writable by software."]
 pub struct LOCK_R(crate::FieldReader<bool, LOCK_A>);
 impl LOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LOCK_R(crate::FieldReader::new(bits))
     }
@@ -259,6 +263,7 @@ impl From<USARTPRESENT_A> for bool {
 #[doc = "Field `USARTPRESENT` reader - USART present indicator. This field is Read-only."]
 pub struct USARTPRESENT_R(crate::FieldReader<bool, USARTPRESENT_A>);
 impl USARTPRESENT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USARTPRESENT_R(crate::FieldReader::new(bits))
     }
@@ -305,6 +310,7 @@ impl From<SPIPRESENT_A> for bool {
 #[doc = "Field `SPIPRESENT` reader - SPI present indicator. This field is Read-only."]
 pub struct SPIPRESENT_R(crate::FieldReader<bool, SPIPRESENT_A>);
 impl SPIPRESENT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SPIPRESENT_R(crate::FieldReader::new(bits))
     }
@@ -351,6 +357,7 @@ impl From<I2CPRESENT_A> for bool {
 #[doc = "Field `I2CPRESENT` reader - I2C present indicator. This field is Read-only."]
 pub struct I2CPRESENT_R(crate::FieldReader<bool, I2CPRESENT_A>);
 impl I2CPRESENT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         I2CPRESENT_R(crate::FieldReader::new(bits))
     }
@@ -397,6 +404,7 @@ impl From<I2SPRESENT_A> for bool {
 #[doc = "Field `I2SPRESENT` reader - I 2S present indicator. This field is Read-only."]
 pub struct I2SPRESENT_R(crate::FieldReader<bool, I2SPRESENT_A>);
 impl I2SPRESENT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         I2SPRESENT_R(crate::FieldReader::new(bits))
     }
@@ -429,6 +437,7 @@ impl core::ops::Deref for I2SPRESENT_R {
 #[doc = "Field `ID` reader - Flexcomm ID."]
 pub struct ID_R(crate::FieldReader<u32, u32>);
 impl ID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         ID_R(crate::FieldReader::new(bits))
     }
@@ -489,6 +498,7 @@ impl W {
         LOCK_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CPU_INT_MASK1_SPEC>> for R {
+impl From<crate::R<SEC_CPU_INT_MASK1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CPU_INT_MASK1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CPU_INT_MASK1_SPEC>> for W {
+impl From<crate::W<SEC_CPU_INT_MASK1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CPU_INT_MASK1_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<GPIO_INT0_IRQ4_A> for bool {
 #[doc = "Field `GPIO_INT0_IRQ4` reader - Pin interrupt 4 or pattern match engine slice 4 interrupt."]
 pub struct GPIO_INT0_IRQ4_R(crate::FieldReader<bool, GPIO_INT0_IRQ4_A>);
 impl GPIO_INT0_IRQ4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         GPIO_INT0_IRQ4_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<GPIO_INT0_IRQ5_A> for bool {
 #[doc = "Field `GPIO_INT0_IRQ5` reader - Pin interrupt 5 or pattern match engine slice 5 interrupt."]
 pub struct GPIO_INT0_IRQ5_R(crate::FieldReader<bool, GPIO_INT0_IRQ5_A>);
 impl GPIO_INT0_IRQ5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         GPIO_INT0_IRQ5_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<GPIO_INT0_IRQ6_A> for bool {
 #[doc = "Field `GPIO_INT0_IRQ6` reader - Pin interrupt 6 or pattern match engine slice 6 interrupt."]
 pub struct GPIO_INT0_IRQ6_R(crate::FieldReader<bool, GPIO_INT0_IRQ6_A>);
 impl GPIO_INT0_IRQ6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         GPIO_INT0_IRQ6_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<GPIO_INT0_IRQ7_A> for bool {
 #[doc = "Field `GPIO_INT0_IRQ7` reader - Pin interrupt 7 or pattern match engine slice 7 interrupt."]
 pub struct GPIO_INT0_IRQ7_R(crate::FieldReader<bool, GPIO_INT0_IRQ7_A>);
 impl GPIO_INT0_IRQ7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         GPIO_INT0_IRQ7_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<CTIMER2_IRQ_A> for bool {
 #[doc = "Field `CTIMER2_IRQ` reader - Standard counter/timer 2 interrupt."]
 pub struct CTIMER2_IRQ_R(crate::FieldReader<bool, CTIMER2_IRQ_A>);
 impl CTIMER2_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTIMER2_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<CTIMER4_IRQ_A> for bool {
 #[doc = "Field `CTIMER4_IRQ` reader - Standard counter/timer 4 interrupt."]
 pub struct CTIMER4_IRQ_R(crate::FieldReader<bool, CTIMER4_IRQ_A>);
 impl CTIMER4_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTIMER4_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<OS_EVENT_TIMER_IRQ_A> for bool {
 #[doc = "Field `OS_EVENT_TIMER_IRQ` reader - OS Event Timer and OS Event Timer Wakeup interrupts"]
 pub struct OS_EVENT_TIMER_IRQ_R(crate::FieldReader<bool, OS_EVENT_TIMER_IRQ_A>);
 impl OS_EVENT_TIMER_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OS_EVENT_TIMER_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -630,6 +639,7 @@ impl From<RESERVED0_A> for bool {
 #[doc = "Field `RESERVED0` reader - Reserved. Read value is undefined, only zero should be written."]
 pub struct RESERVED0_R(crate::FieldReader<bool, RESERVED0_A>);
 impl RESERVED0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESERVED0_R(crate::FieldReader::new(bits))
     }
@@ -713,6 +723,7 @@ impl From<RESERVED1_A> for bool {
 #[doc = "Field `RESERVED1` reader - Reserved. Read value is undefined, only zero should be written."]
 pub struct RESERVED1_R(crate::FieldReader<bool, RESERVED1_A>);
 impl RESERVED1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESERVED1_R(crate::FieldReader::new(bits))
     }
@@ -796,6 +807,7 @@ impl From<RESERVED2_A> for bool {
 #[doc = "Field `RESERVED2` reader - Reserved. Read value is undefined, only zero should be written."]
 pub struct RESERVED2_R(crate::FieldReader<bool, RESERVED2_A>);
 impl RESERVED2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESERVED2_R(crate::FieldReader::new(bits))
     }
@@ -879,6 +891,7 @@ impl From<SDIO_IRQ_A> for bool {
 #[doc = "Field `SDIO_IRQ` reader - SDIO Controller interrupt."]
 pub struct SDIO_IRQ_R(crate::FieldReader<bool, SDIO_IRQ_A>);
 impl SDIO_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SDIO_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -962,6 +975,7 @@ impl From<RESERVED3_A> for bool {
 #[doc = "Field `RESERVED3` reader - Reserved. Read value is undefined, only zero should be written."]
 pub struct RESERVED3_R(crate::FieldReader<bool, RESERVED3_A>);
 impl RESERVED3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESERVED3_R(crate::FieldReader::new(bits))
     }
@@ -1045,6 +1059,7 @@ impl From<RESERVED4_A> for bool {
 #[doc = "Field `RESERVED4` reader - Reserved. Read value is undefined, only zero should be written."]
 pub struct RESERVED4_R(crate::FieldReader<bool, RESERVED4_A>);
 impl RESERVED4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESERVED4_R(crate::FieldReader::new(bits))
     }
@@ -1128,6 +1143,7 @@ impl From<RESERVED5_A> for bool {
 #[doc = "Field `RESERVED5` reader - Reserved. Read value is undefined, only zero should be written."]
 pub struct RESERVED5_R(crate::FieldReader<bool, RESERVED5_A>);
 impl RESERVED5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESERVED5_R(crate::FieldReader::new(bits))
     }
@@ -1211,6 +1227,7 @@ impl From<USB1_PHY_IRQ_A> for bool {
 #[doc = "Field `USB1_PHY_IRQ` reader - USB High Speed PHY Controller interrupt."]
 pub struct USB1_PHY_IRQ_R(crate::FieldReader<bool, USB1_PHY_IRQ_A>);
 impl USB1_PHY_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USB1_PHY_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -1294,6 +1311,7 @@ impl From<USB1_IRQ_A> for bool {
 #[doc = "Field `USB1_IRQ` reader - USB High Speed Controller interrupt."]
 pub struct USB1_IRQ_R(crate::FieldReader<bool, USB1_IRQ_A>);
 impl USB1_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USB1_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -1377,6 +1395,7 @@ impl From<USB1_NEEDCLK_A> for bool {
 #[doc = "Field `USB1_NEEDCLK` reader - USB High Speed Controller Clock request interrupt."]
 pub struct USB1_NEEDCLK_R(crate::FieldReader<bool, USB1_NEEDCLK_A>);
 impl USB1_NEEDCLK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USB1_NEEDCLK_R(crate::FieldReader::new(bits))
     }
@@ -1460,6 +1479,7 @@ impl From<SEC_HYPERVISOR_CALL_IRQ_A> for bool {
 #[doc = "Field `SEC_HYPERVISOR_CALL_IRQ` reader - Secure fault Hyper Visor call interrupt."]
 pub struct SEC_HYPERVISOR_CALL_IRQ_R(crate::FieldReader<bool, SEC_HYPERVISOR_CALL_IRQ_A>);
 impl SEC_HYPERVISOR_CALL_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEC_HYPERVISOR_CALL_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -1543,6 +1563,7 @@ impl From<SEC_GPIO_INT0_IRQ0_A> for bool {
 #[doc = "Field `SEC_GPIO_INT0_IRQ0` reader - Secure Pin interrupt 0 or pattern match engine slice 0 interrupt."]
 pub struct SEC_GPIO_INT0_IRQ0_R(crate::FieldReader<bool, SEC_GPIO_INT0_IRQ0_A>);
 impl SEC_GPIO_INT0_IRQ0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEC_GPIO_INT0_IRQ0_R(crate::FieldReader::new(bits))
     }
@@ -1626,6 +1647,7 @@ impl From<SEC_GPIO_INT0_IRQ1_A> for bool {
 #[doc = "Field `SEC_GPIO_INT0_IRQ1` reader - Secure Pin interrupt 1 or pattern match engine slice 1 interrupt."]
 pub struct SEC_GPIO_INT0_IRQ1_R(crate::FieldReader<bool, SEC_GPIO_INT0_IRQ1_A>);
 impl SEC_GPIO_INT0_IRQ1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEC_GPIO_INT0_IRQ1_R(crate::FieldReader::new(bits))
     }
@@ -1709,6 +1731,7 @@ impl From<PLU_IRQ_A> for bool {
 #[doc = "Field `PLU_IRQ` reader - Programmable Look-Up Controller interrupt."]
 pub struct PLU_IRQ_R(crate::FieldReader<bool, PLU_IRQ_A>);
 impl PLU_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PLU_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -1792,6 +1815,7 @@ impl From<SEC_VIO_IRQ_A> for bool {
 #[doc = "Field `SEC_VIO_IRQ` reader - Security Violation interrupt."]
 pub struct SEC_VIO_IRQ_R(crate::FieldReader<bool, SEC_VIO_IRQ_A>);
 impl SEC_VIO_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEC_VIO_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -1875,6 +1899,7 @@ impl From<SHA_IRQ_A> for bool {
 #[doc = "Field `SHA_IRQ` reader - HASH-AES interrupt."]
 pub struct SHA_IRQ_R(crate::FieldReader<bool, SHA_IRQ_A>);
 impl SHA_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SHA_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -1958,6 +1983,7 @@ impl From<CASPER_IRQ_A> for bool {
 #[doc = "Field `CASPER_IRQ` reader - CASPER interrupt."]
 pub struct CASPER_IRQ_R(crate::FieldReader<bool, CASPER_IRQ_A>);
 impl CASPER_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CASPER_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -2041,6 +2067,7 @@ impl From<PUFKEY_IRQ_A> for bool {
 #[doc = "Field `PUFKEY_IRQ` reader - PUF interrupt."]
 pub struct PUFKEY_IRQ_R(crate::FieldReader<bool, PUFKEY_IRQ_A>);
 impl PUFKEY_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PUFKEY_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -2124,6 +2151,7 @@ impl From<PQ_IRQ_A> for bool {
 #[doc = "Field `PQ_IRQ` reader - Power Quad interrupt."]
 pub struct PQ_IRQ_R(crate::FieldReader<bool, PQ_IRQ_A>);
 impl PQ_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PQ_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -2207,6 +2235,7 @@ impl From<SDMA1_IRQ_A> for bool {
 #[doc = "Field `SDMA1_IRQ` reader - System DMA 1 (Secure) interrupt"]
 pub struct SDMA1_IRQ_R(crate::FieldReader<bool, SDMA1_IRQ_A>);
 impl SDMA1_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SDMA1_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -2290,6 +2319,7 @@ impl From<LSPI_HS_IRQ_A> for bool {
 #[doc = "Field `LSPI_HS_IRQ` reader - High Speed SPI interrupt"]
 pub struct LSPI_HS_IRQ_R(crate::FieldReader<bool, LSPI_HS_IRQ_A>);
 impl LSPI_HS_IRQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LSPI_HS_IRQ_R(crate::FieldReader::new(bits))
     }
@@ -2640,6 +2670,7 @@ impl W {
         LSPI_HS_IRQ_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

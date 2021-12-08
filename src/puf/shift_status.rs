@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SHIFT_STATUS_SPEC>> for R {
+impl From<crate::R<SHIFT_STATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SHIFT_STATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SHIFT_STATUS_SPEC>> for W {
+impl From<crate::W<SHIFT_STATUS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SHIFT_STATUS_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<SHIFT_STATUS_SPEC>> for W {
 #[doc = "Field `KEY0` reader - Index counter from key 0 shift register"]
 pub struct KEY0_R(crate::FieldReader<u8, u8>);
 impl KEY0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         KEY0_R(crate::FieldReader::new(bits))
     }
@@ -49,6 +52,7 @@ impl core::ops::Deref for KEY0_R {
 #[doc = "Field `KEY1` reader - Index counter from key 1 shift register"]
 pub struct KEY1_R(crate::FieldReader<u8, u8>);
 impl KEY1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         KEY1_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +67,7 @@ impl core::ops::Deref for KEY1_R {
 #[doc = "Field `KEY2` reader - Index counter from key 2 shift register"]
 pub struct KEY2_R(crate::FieldReader<u8, u8>);
 impl KEY2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         KEY2_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +82,7 @@ impl core::ops::Deref for KEY2_R {
 #[doc = "Field `KEY3` reader - Index counter from key 3 shift register"]
 pub struct KEY3_R(crate::FieldReader<u8, u8>);
 impl KEY3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         KEY3_R(crate::FieldReader::new(bits))
     }
@@ -112,6 +118,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

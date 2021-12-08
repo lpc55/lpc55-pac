@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<STAT_SPEC>> for R {
+impl From<crate::R<STAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<STAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<STAT_SPEC>> for W {
+impl From<crate::W<STAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<STAT_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<RDY0_A> for bool {
 #[doc = "Field `RDY0` reader - Result FIFO 0 Ready Flag"]
 pub struct RDY0_R(crate::FieldReader<bool, RDY0_A>);
 impl RDY0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RDY0_R(crate::FieldReader::new(bits))
     }
@@ -95,6 +98,7 @@ impl From<FOF0_A> for bool {
 #[doc = "Field `FOF0` reader - Result FIFO 0 Overflow Flag"]
 pub struct FOF0_R(crate::FieldReader<bool, FOF0_A>);
 impl FOF0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FOF0_R(crate::FieldReader::new(bits))
     }
@@ -178,6 +182,7 @@ impl From<RDY1_A> for bool {
 #[doc = "Field `RDY1` reader - Result FIFO1 Ready Flag"]
 pub struct RDY1_R(crate::FieldReader<bool, RDY1_A>);
 impl RDY1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RDY1_R(crate::FieldReader::new(bits))
     }
@@ -224,6 +229,7 @@ impl From<FOF1_A> for bool {
 #[doc = "Field `FOF1` reader - Result FIFO1 Overflow Flag"]
 pub struct FOF1_R(crate::FieldReader<bool, FOF1_A>);
 impl FOF1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FOF1_R(crate::FieldReader::new(bits))
     }
@@ -307,6 +313,7 @@ impl From<TEXC_INT_A> for bool {
 #[doc = "Field `TEXC_INT` reader - Interrupt Flag For High Priority Trigger Exception"]
 pub struct TEXC_INT_R(crate::FieldReader<bool, TEXC_INT_A>);
 impl TEXC_INT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TEXC_INT_R(crate::FieldReader::new(bits))
     }
@@ -391,6 +398,7 @@ impl From<TCOMP_INT_A> for bool {
 #[doc = "Field `TCOMP_INT` reader - Interrupt Flag For Trigger Completion"]
 pub struct TCOMP_INT_R(crate::FieldReader<bool, TCOMP_INT_A>);
 impl TCOMP_INT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TCOMP_INT_R(crate::FieldReader::new(bits))
     }
@@ -475,6 +483,7 @@ impl From<CAL_RDY_A> for bool {
 #[doc = "Field `CAL_RDY` reader - Calibration Ready"]
 pub struct CAL_RDY_R(crate::FieldReader<bool, CAL_RDY_A>);
 impl CAL_RDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAL_RDY_R(crate::FieldReader::new(bits))
     }
@@ -521,6 +530,7 @@ impl From<ADC_ACTIVE_A> for bool {
 #[doc = "Field `ADC_ACTIVE` reader - ADC Active"]
 pub struct ADC_ACTIVE_R(crate::FieldReader<bool, ADC_ACTIVE_A>);
 impl ADC_ACTIVE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADC_ACTIVE_R(crate::FieldReader::new(bits))
     }
@@ -584,6 +594,7 @@ impl From<TRGACT_A> for u8 {
 #[doc = "Field `TRGACT` reader - Trigger Active"]
 pub struct TRGACT_R(crate::FieldReader<u8, TRGACT_A>);
 impl TRGACT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TRGACT_R(crate::FieldReader::new(bits))
     }
@@ -696,6 +707,7 @@ impl From<CMDACT_A> for u8 {
 #[doc = "Field `CMDACT` reader - Command Active"]
 pub struct CMDACT_R(crate::FieldReader<u8, CMDACT_A>);
 impl CMDACT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CMDACT_R(crate::FieldReader::new(bits))
     }
@@ -848,6 +860,7 @@ impl W {
         TCOMP_INT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

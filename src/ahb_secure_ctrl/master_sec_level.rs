@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<MASTER_SEC_LEVEL_SPEC>> for R {
+impl From<crate::R<MASTER_SEC_LEVEL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<MASTER_SEC_LEVEL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<MASTER_SEC_LEVEL_SPEC>> for W {
+impl From<crate::W<MASTER_SEC_LEVEL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<MASTER_SEC_LEVEL_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<CPU1C_A> for u8 {
 #[doc = "Field `CPU1C` reader - Micro-Cortex M33 (CPU1) Code bus."]
 pub struct CPU1C_R(crate::FieldReader<u8, CPU1C_A>);
 impl CPU1C_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CPU1C_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<CPU1S_A> for u8 {
 #[doc = "Field `CPU1S` reader - Micro-Cortex M33 (CPU1) System bus."]
 pub struct CPU1S_R(crate::FieldReader<u8, CPU1S_A>);
 impl CPU1S_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CPU1S_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +260,7 @@ impl From<USBFSD_A> for u8 {
 #[doc = "Field `USBFSD` reader - USB Full Speed Device."]
 pub struct USBFSD_R(crate::FieldReader<u8, USBFSD_A>);
 impl USBFSD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         USBFSD_R(crate::FieldReader::new(bits))
     }
@@ -357,6 +362,7 @@ impl From<SDMA0_A> for u8 {
 #[doc = "Field `SDMA0` reader - System DMA 0."]
 pub struct SDMA0_R(crate::FieldReader<u8, SDMA0_A>);
 impl SDMA0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SDMA0_R(crate::FieldReader::new(bits))
     }
@@ -458,6 +464,7 @@ impl From<SDIO_A> for u8 {
 #[doc = "Field `SDIO` reader - SDIO."]
 pub struct SDIO_R(crate::FieldReader<u8, SDIO_A>);
 impl SDIO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SDIO_R(crate::FieldReader::new(bits))
     }
@@ -559,6 +566,7 @@ impl From<PQ_A> for u8 {
 #[doc = "Field `PQ` reader - Power Quad."]
 pub struct PQ_R(crate::FieldReader<u8, PQ_A>);
 impl PQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PQ_R(crate::FieldReader::new(bits))
     }
@@ -660,6 +668,7 @@ impl From<HASH_A> for u8 {
 #[doc = "Field `HASH` reader - Hash."]
 pub struct HASH_R(crate::FieldReader<u8, HASH_A>);
 impl HASH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         HASH_R(crate::FieldReader::new(bits))
     }
@@ -761,6 +770,7 @@ impl From<USBFSH_A> for u8 {
 #[doc = "Field `USBFSH` reader - USB Full speed Host."]
 pub struct USBFSH_R(crate::FieldReader<u8, USBFSH_A>);
 impl USBFSH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         USBFSH_R(crate::FieldReader::new(bits))
     }
@@ -862,6 +872,7 @@ impl From<SDMA1_A> for u8 {
 #[doc = "Field `SDMA1` reader - System DMA 1 security level."]
 pub struct SDMA1_R(crate::FieldReader<u8, SDMA1_A>);
 impl SDMA1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SDMA1_R(crate::FieldReader::new(bits))
     }
@@ -959,6 +970,7 @@ impl From<MASTER_SEC_LEVEL_LOCK_A> for u8 {
 #[doc = "Field `MASTER_SEC_LEVEL_LOCK` reader - MASTER_SEC_LEVEL write-lock."]
 pub struct MASTER_SEC_LEVEL_LOCK_R(crate::FieldReader<u8, MASTER_SEC_LEVEL_LOCK_A>);
 impl MASTER_SEC_LEVEL_LOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MASTER_SEC_LEVEL_LOCK_R(crate::FieldReader::new(bits))
     }
@@ -1120,6 +1132,7 @@ impl W {
         MASTER_SEC_LEVEL_LOCK_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

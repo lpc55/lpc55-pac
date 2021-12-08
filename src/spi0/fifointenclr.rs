@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FIFOINTENCLR_SPEC>> for R {
+impl From<crate::R<FIFOINTENCLR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FIFOINTENCLR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FIFOINTENCLR_SPEC>> for W {
+impl From<crate::W<FIFOINTENCLR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FIFOINTENCLR_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<FIFOINTENCLR_SPEC>> for W {
 #[doc = "Field `TXERR` reader - Writing one clears the corresponding bits in the FIFOINTENSET register."]
 pub struct TXERR_R(crate::FieldReader<bool, bool>);
 impl TXERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXERR_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> TXERR_W<'a> {
 #[doc = "Field `RXERR` reader - Writing one clears the corresponding bits in the FIFOINTENSET register."]
 pub struct RXERR_R(crate::FieldReader<bool, bool>);
 impl RXERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXERR_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> RXERR_W<'a> {
 #[doc = "Field `TXLVL` reader - Writing one clears the corresponding bits in the FIFOINTENSET register."]
 pub struct TXLVL_R(crate::FieldReader<bool, bool>);
 impl TXLVL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXLVL_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> TXLVL_W<'a> {
 #[doc = "Field `RXLVL` reader - Writing one clears the corresponding bits in the FIFOINTENSET register."]
 pub struct RXLVL_R(crate::FieldReader<bool, bool>);
 impl RXLVL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXLVL_R(crate::FieldReader::new(bits))
     }
@@ -220,6 +226,7 @@ impl W {
         RXLVL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

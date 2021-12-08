@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_CTRL_APB_BRIDGE0_MEM_CTRL1_SPEC>> for R {
+impl From<crate::R<SEC_CTRL_APB_BRIDGE0_MEM_CTRL1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_CTRL_APB_BRIDGE0_MEM_CTRL1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_CTRL_APB_BRIDGE0_MEM_CTRL1_SPEC>> for W {
+impl From<crate::W<SEC_CTRL_APB_BRIDGE0_MEM_CTRL1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_CTRL_APB_BRIDGE0_MEM_CTRL1_SPEC>) -> Self {
         W(writer)
     }
@@ -54,6 +56,7 @@ impl From<CTIMER0_RULE_A> for u8 {
 #[doc = "Field `CTIMER0_RULE` reader - Standard counter/Timer 0"]
 pub struct CTIMER0_RULE_R(crate::FieldReader<u8, CTIMER0_RULE_A>);
 impl CTIMER0_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CTIMER0_RULE_R(crate::FieldReader::new(bits))
     }
@@ -155,6 +158,7 @@ impl From<CTIMER1_RULE_A> for u8 {
 #[doc = "Field `CTIMER1_RULE` reader - Standard counter/Timer 1"]
 pub struct CTIMER1_RULE_R(crate::FieldReader<u8, CTIMER1_RULE_A>);
 impl CTIMER1_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CTIMER1_RULE_R(crate::FieldReader::new(bits))
     }
@@ -256,6 +260,7 @@ impl From<WWDT_RULE_A> for u8 {
 #[doc = "Field `WWDT_RULE` reader - Windiwed wtachdog Timer"]
 pub struct WWDT_RULE_R(crate::FieldReader<u8, WWDT_RULE_A>);
 impl WWDT_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         WWDT_RULE_R(crate::FieldReader::new(bits))
     }
@@ -357,6 +362,7 @@ impl From<MRT_RULE_A> for u8 {
 #[doc = "Field `MRT_RULE` reader - Multi-rate Timer"]
 pub struct MRT_RULE_R(crate::FieldReader<u8, MRT_RULE_A>);
 impl MRT_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MRT_RULE_R(crate::FieldReader::new(bits))
     }
@@ -458,6 +464,7 @@ impl From<UTICK_RULE_A> for u8 {
 #[doc = "Field `UTICK_RULE` reader - Micro-Timer"]
 pub struct UTICK_RULE_R(crate::FieldReader<u8, UTICK_RULE_A>);
 impl UTICK_RULE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         UTICK_RULE_R(crate::FieldReader::new(bits))
     }
@@ -591,6 +598,7 @@ impl W {
         UTICK_RULE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CDETECT_SPEC>> for R {
+impl From<crate::R<CDETECT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CDETECT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CDETECT_SPEC>> for W {
+impl From<crate::W<CDETECT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CDETECT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CDETECT_SPEC>> for W {
 #[doc = "Field `CARD0_DETECT` reader - Card 0 detect"]
 pub struct CARD0_DETECT_R(crate::FieldReader<bool, bool>);
 impl CARD0_DETECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CARD0_DETECT_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> CARD0_DETECT_W<'a> {
 #[doc = "Field `CARD1_DETECT` reader - Card 1 detect"]
 pub struct CARD1_DETECT_R(crate::FieldReader<bool, bool>);
 impl CARD1_DETECT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CARD1_DETECT_R(crate::FieldReader::new(bits))
     }
@@ -128,6 +132,7 @@ impl W {
         CARD1_DETECT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

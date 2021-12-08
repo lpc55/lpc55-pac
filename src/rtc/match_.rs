@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<MATCH_SPEC>> for R {
+impl From<crate::R<MATCH_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<MATCH_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<MATCH_SPEC>> for W {
+impl From<crate::W<MATCH_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<MATCH_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<MATCH_SPEC>> for W {
 #[doc = "Field `MATVAL` reader - Contains the match value against which the 1 Hz RTC timer will be compared to set the alarm flag RTC_ALARM and generate an alarm interrupt/wake-up if enabled."]
 pub struct MATVAL_R(crate::FieldReader<u32, u32>);
 impl MATVAL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         MATVAL_R(crate::FieldReader::new(bits))
     }
@@ -54,7 +57,7 @@ impl<'a> MATVAL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
+        self.w.bits = value as u32;
         self.w
     }
 }
@@ -62,7 +65,7 @@ impl R {
     #[doc = "Bits 0:31 - Contains the match value against which the 1 Hz RTC timer will be compared to set the alarm flag RTC_ALARM and generate an alarm interrupt/wake-up if enabled."]
     #[inline(always)]
     pub fn matval(&self) -> MATVAL_R {
-        MATVAL_R::new((self.bits & 0xffff_ffff) as u32)
+        MATVAL_R::new(self.bits as u32)
     }
 }
 impl W {
@@ -72,6 +75,7 @@ impl W {
         MATVAL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

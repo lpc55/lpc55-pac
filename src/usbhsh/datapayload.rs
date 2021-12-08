@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<DATAPAYLOAD_SPEC>> for R {
+impl From<crate::R<DATAPAYLOAD_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<DATAPAYLOAD_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<DATAPAYLOAD_SPEC>> for W {
+impl From<crate::W<DATAPAYLOAD_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<DATAPAYLOAD_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<DATAPAYLOAD_SPEC>> for W {
 #[doc = "Field `DAT_BASE` reader - Base address to be used by the hardware to find the start of the data payload section."]
 pub struct DAT_BASE_R(crate::FieldReader<u16, u16>);
 impl DAT_BASE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         DAT_BASE_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         DAT_BASE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

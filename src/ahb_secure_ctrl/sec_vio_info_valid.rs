@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_VIO_INFO_VALID_SPEC>> for R {
+impl From<crate::R<SEC_VIO_INFO_VALID_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_VIO_INFO_VALID_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SEC_VIO_INFO_VALID_SPEC>> for W {
+impl From<crate::W<SEC_VIO_INFO_VALID_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SEC_VIO_INFO_VALID_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<VIO_INFO_VALID0_A> for bool {
 #[doc = "Field `VIO_INFO_VALID0` reader - violation information valid flag for AHB port 0. Write 1 to clear."]
 pub struct VIO_INFO_VALID0_R(crate::FieldReader<bool, VIO_INFO_VALID0_A>);
 impl VIO_INFO_VALID0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VIO_INFO_VALID0_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<VIO_INFO_VALID1_A> for bool {
 #[doc = "Field `VIO_INFO_VALID1` reader - violation information valid flag for AHB port 1. Write 1 to clear."]
 pub struct VIO_INFO_VALID1_R(crate::FieldReader<bool, VIO_INFO_VALID1_A>);
 impl VIO_INFO_VALID1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VIO_INFO_VALID1_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<VIO_INFO_VALID2_A> for bool {
 #[doc = "Field `VIO_INFO_VALID2` reader - violation information valid flag for AHB port 2. Write 1 to clear."]
 pub struct VIO_INFO_VALID2_R(crate::FieldReader<bool, VIO_INFO_VALID2_A>);
 impl VIO_INFO_VALID2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VIO_INFO_VALID2_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<VIO_INFO_VALID3_A> for bool {
 #[doc = "Field `VIO_INFO_VALID3` reader - violation information valid flag for AHB port 3. Write 1 to clear."]
 pub struct VIO_INFO_VALID3_R(crate::FieldReader<bool, VIO_INFO_VALID3_A>);
 impl VIO_INFO_VALID3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VIO_INFO_VALID3_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<VIO_INFO_VALID4_A> for bool {
 #[doc = "Field `VIO_INFO_VALID4` reader - violation information valid flag for AHB port 4. Write 1 to clear."]
 pub struct VIO_INFO_VALID4_R(crate::FieldReader<bool, VIO_INFO_VALID4_A>);
 impl VIO_INFO_VALID4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VIO_INFO_VALID4_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<VIO_INFO_VALID5_A> for bool {
 #[doc = "Field `VIO_INFO_VALID5` reader - violation information valid flag for AHB port 5. Write 1 to clear."]
 pub struct VIO_INFO_VALID5_R(crate::FieldReader<bool, VIO_INFO_VALID5_A>);
 impl VIO_INFO_VALID5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VIO_INFO_VALID5_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<VIO_INFO_VALID6_A> for bool {
 #[doc = "Field `VIO_INFO_VALID6` reader - violation information valid flag for AHB port 6. Write 1 to clear."]
 pub struct VIO_INFO_VALID6_R(crate::FieldReader<bool, VIO_INFO_VALID6_A>);
 impl VIO_INFO_VALID6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VIO_INFO_VALID6_R(crate::FieldReader::new(bits))
     }
@@ -630,6 +639,7 @@ impl From<VIO_INFO_VALID7_A> for bool {
 #[doc = "Field `VIO_INFO_VALID7` reader - violation information valid flag for AHB port 7. Write 1 to clear."]
 pub struct VIO_INFO_VALID7_R(crate::FieldReader<bool, VIO_INFO_VALID7_A>);
 impl VIO_INFO_VALID7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VIO_INFO_VALID7_R(crate::FieldReader::new(bits))
     }
@@ -713,6 +723,7 @@ impl From<VIO_INFO_VALID8_A> for bool {
 #[doc = "Field `VIO_INFO_VALID8` reader - violation information valid flag for AHB port 8. Write 1 to clear."]
 pub struct VIO_INFO_VALID8_R(crate::FieldReader<bool, VIO_INFO_VALID8_A>);
 impl VIO_INFO_VALID8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VIO_INFO_VALID8_R(crate::FieldReader::new(bits))
     }
@@ -796,6 +807,7 @@ impl From<VIO_INFO_VALID9_A> for bool {
 #[doc = "Field `VIO_INFO_VALID9` reader - violation information valid flag for AHB port 9. Write 1 to clear."]
 pub struct VIO_INFO_VALID9_R(crate::FieldReader<bool, VIO_INFO_VALID9_A>);
 impl VIO_INFO_VALID9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VIO_INFO_VALID9_R(crate::FieldReader::new(bits))
     }
@@ -879,6 +891,7 @@ impl From<VIO_INFO_VALID10_A> for bool {
 #[doc = "Field `VIO_INFO_VALID10` reader - violation information valid flag for AHB port 10. Write 1 to clear."]
 pub struct VIO_INFO_VALID10_R(crate::FieldReader<bool, VIO_INFO_VALID10_A>);
 impl VIO_INFO_VALID10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VIO_INFO_VALID10_R(crate::FieldReader::new(bits))
     }
@@ -962,6 +975,7 @@ impl From<VIO_INFO_VALID11_A> for bool {
 #[doc = "Field `VIO_INFO_VALID11` reader - violation information valid flag for AHB port 11. Write 1 to clear."]
 pub struct VIO_INFO_VALID11_R(crate::FieldReader<bool, VIO_INFO_VALID11_A>);
 impl VIO_INFO_VALID11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VIO_INFO_VALID11_R(crate::FieldReader::new(bits))
     }
@@ -1152,6 +1166,7 @@ impl W {
         VIO_INFO_VALID11_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

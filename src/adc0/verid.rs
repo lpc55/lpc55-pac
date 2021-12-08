@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<VERID_SPEC>> for R {
+impl From<crate::R<VERID_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<VERID_SPEC>) -> Self {
         R(reader)
     }
@@ -29,6 +30,7 @@ impl From<RES_A> for bool {
 #[doc = "Field `RES` reader - Resolution"]
 pub struct RES_R(crate::FieldReader<bool, RES_A>);
 impl RES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RES_R(crate::FieldReader::new(bits))
     }
@@ -76,6 +78,7 @@ impl From<DIFFEN_A> for bool {
 #[doc = "Field `DIFFEN` reader - Differential Supported"]
 pub struct DIFFEN_R(crate::FieldReader<bool, DIFFEN_A>);
 impl DIFFEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DIFFEN_R(crate::FieldReader::new(bits))
     }
@@ -122,6 +125,7 @@ impl From<MVI_A> for bool {
 #[doc = "Field `MVI` reader - Multi Vref Implemented"]
 pub struct MVI_R(crate::FieldReader<bool, MVI_A>);
 impl MVI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MVI_R(crate::FieldReader::new(bits))
     }
@@ -171,6 +175,7 @@ impl From<CSW_A> for u8 {
 #[doc = "Field `CSW` reader - Channel Scale Width"]
 pub struct CSW_R(crate::FieldReader<u8, CSW_A>);
 impl CSW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CSW_R(crate::FieldReader::new(bits))
     }
@@ -226,6 +231,7 @@ impl From<VR1RNGI_A> for bool {
 #[doc = "Field `VR1RNGI` reader - Voltage Reference 1 Range Control Bit Implemented"]
 pub struct VR1RNGI_R(crate::FieldReader<bool, VR1RNGI_A>);
 impl VR1RNGI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VR1RNGI_R(crate::FieldReader::new(bits))
     }
@@ -272,6 +278,7 @@ impl From<IADCKI_A> for bool {
 #[doc = "Field `IADCKI` reader - Internal ADC Clock implemented"]
 pub struct IADCKI_R(crate::FieldReader<bool, IADCKI_A>);
 impl IADCKI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         IADCKI_R(crate::FieldReader::new(bits))
     }
@@ -318,6 +325,7 @@ impl From<CALOFSI_A> for bool {
 #[doc = "Field `CALOFSI` reader - Calibration Function Implemented"]
 pub struct CALOFSI_R(crate::FieldReader<bool, CALOFSI_A>);
 impl CALOFSI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CALOFSI_R(crate::FieldReader::new(bits))
     }
@@ -364,6 +372,7 @@ impl From<NUM_SEC_A> for bool {
 #[doc = "Field `NUM_SEC` reader - Number of Single Ended Outputs Supported"]
 pub struct NUM_SEC_R(crate::FieldReader<bool, NUM_SEC_A>);
 impl NUM_SEC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NUM_SEC_R(crate::FieldReader::new(bits))
     }
@@ -417,6 +426,7 @@ impl From<NUM_FIFO_A> for u8 {
 #[doc = "Field `NUM_FIFO` reader - Number of FIFOs"]
 pub struct NUM_FIFO_R(crate::FieldReader<u8, NUM_FIFO_A>);
 impl NUM_FIFO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         NUM_FIFO_R(crate::FieldReader::new(bits))
     }
@@ -468,6 +478,7 @@ impl core::ops::Deref for NUM_FIFO_R {
 #[doc = "Field `MINOR` reader - Minor Version Number"]
 pub struct MINOR_R(crate::FieldReader<u8, u8>);
 impl MINOR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MINOR_R(crate::FieldReader::new(bits))
     }
@@ -482,6 +493,7 @@ impl core::ops::Deref for MINOR_R {
 #[doc = "Field `MAJOR` reader - Major Version Number"]
 pub struct MAJOR_R(crate::FieldReader<u8, u8>);
 impl MAJOR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MAJOR_R(crate::FieldReader::new(bits))
     }

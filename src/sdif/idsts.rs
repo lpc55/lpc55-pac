@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<IDSTS_SPEC>> for R {
+impl From<crate::R<IDSTS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<IDSTS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<IDSTS_SPEC>> for W {
+impl From<crate::W<IDSTS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<IDSTS_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<IDSTS_SPEC>> for W {
 #[doc = "Field `TI` reader - Transmit Interrupt."]
 pub struct TI_R(crate::FieldReader<bool, bool>);
 impl TI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TI_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> TI_W<'a> {
 #[doc = "Field `RI` reader - Receive Interrupt."]
 pub struct RI_R(crate::FieldReader<bool, bool>);
 impl RI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RI_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> RI_W<'a> {
 #[doc = "Field `FBE` reader - Fatal Bus Error Interrupt."]
 pub struct FBE_R(crate::FieldReader<bool, bool>);
 impl FBE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FBE_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> FBE_W<'a> {
 #[doc = "Field `DU` reader - Descriptor Unavailable Interrupt."]
 pub struct DU_R(crate::FieldReader<bool, bool>);
 impl DU_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DU_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> DU_W<'a> {
 #[doc = "Field `CES` reader - Card Error Summary."]
 pub struct CES_R(crate::FieldReader<bool, bool>);
 impl CES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CES_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> CES_W<'a> {
 #[doc = "Field `NIS` reader - Normal Interrupt Summary."]
 pub struct NIS_R(crate::FieldReader<bool, bool>);
 impl NIS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         NIS_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +259,7 @@ impl<'a> NIS_W<'a> {
 #[doc = "Field `AIS` reader - Abnormal Interrupt Summary."]
 pub struct AIS_R(crate::FieldReader<bool, bool>);
 impl AIS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AIS_R(crate::FieldReader::new(bits))
     }
@@ -287,6 +296,7 @@ impl<'a> AIS_W<'a> {
 #[doc = "Field `EB` reader - Error Bits."]
 pub struct EB_R(crate::FieldReader<u8, u8>);
 impl EB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         EB_R(crate::FieldReader::new(bits))
     }
@@ -313,6 +323,7 @@ impl<'a> EB_W<'a> {
 #[doc = "Field `FSM` reader - DMAC state machine present state."]
 pub struct FSM_R(crate::FieldReader<u8, u8>);
 impl FSM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FSM_R(crate::FieldReader::new(bits))
     }
@@ -430,6 +441,7 @@ impl W {
         FSM_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

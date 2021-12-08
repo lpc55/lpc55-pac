@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<HCFMREMAINING_SPEC>> for R {
+impl From<crate::R<HCFMREMAINING_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<HCFMREMAINING_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<HCFMREMAINING_SPEC>> for W {
+impl From<crate::W<HCFMREMAINING_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<HCFMREMAINING_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<HCFMREMAINING_SPEC>> for W {
 #[doc = "Field `FR` reader - FrameRemaining This counter is decremented at each bit time."]
 pub struct FR_R(crate::FieldReader<u16, u16>);
 impl FR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         FR_R(crate::FieldReader::new(bits))
     }
@@ -49,6 +52,7 @@ impl core::ops::Deref for FR_R {
 #[doc = "Field `FRT` reader - FrameRemainingToggle This bit is loaded from the FrameIntervalToggle field of HcFmInterval whenever FrameRemaining reaches 0."]
 pub struct FRT_R(crate::FieldReader<bool, bool>);
 impl FRT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRT_R(crate::FieldReader::new(bits))
     }
@@ -74,6 +78,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

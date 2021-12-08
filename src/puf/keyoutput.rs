@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<KEYOUTPUT_SPEC>> for R {
+impl From<crate::R<KEYOUTPUT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<KEYOUTPUT_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<KEYOUTPUT_SPEC>> for R {
 #[doc = "Field `KEYOUT` reader - Key output data"]
 pub struct KEYOUT_R(crate::FieldReader<u32, u32>);
 impl KEYOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         KEYOUT_R(crate::FieldReader::new(bits))
     }
@@ -30,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Key output data"]
     #[inline(always)]
     pub fn keyout(&self) -> KEYOUT_R {
-        KEYOUT_R::new((self.bits & 0xffff_ffff) as u32)
+        KEYOUT_R::new(self.bits as u32)
     }
 }
 #[doc = "PUF Key Output register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [keyoutput](index.html) module"]

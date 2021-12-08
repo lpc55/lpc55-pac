@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FIFOCFG_SPEC>> for R {
+impl From<crate::R<FIFOCFG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FIFOCFG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FIFOCFG_SPEC>> for W {
+impl From<crate::W<FIFOCFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FIFOCFG_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<ENABLETX_A> for bool {
 #[doc = "Field `ENABLETX` reader - Enable the transmit FIFO."]
 pub struct ENABLETX_R(crate::FieldReader<bool, ENABLETX_A>);
 impl ENABLETX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENABLETX_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<ENABLERX_A> for bool {
 #[doc = "Field `ENABLERX` reader - Enable the receive FIFO."]
 pub struct ENABLERX_R(crate::FieldReader<bool, ENABLERX_A>);
 impl ENABLERX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENABLERX_R(crate::FieldReader::new(bits))
     }
@@ -201,6 +205,7 @@ impl<'a> ENABLERX_W<'a> {
 #[doc = "Field `SIZE` reader - FIFO size configuration. This is a read-only field. 0x0 = FIFO is configured as 16 entries of 8 bits. 0x1, 0x2, 0x3 = not applicable to USART."]
 pub struct SIZE_R(crate::FieldReader<u8, u8>);
 impl SIZE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SIZE_R(crate::FieldReader::new(bits))
     }
@@ -229,6 +234,7 @@ impl From<DMATX_A> for bool {
 #[doc = "Field `DMATX` reader - DMA configuration for transmit."]
 pub struct DMATX_R(crate::FieldReader<bool, DMATX_A>);
 impl DMATX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DMATX_R(crate::FieldReader::new(bits))
     }
@@ -312,6 +318,7 @@ impl From<DMARX_A> for bool {
 #[doc = "Field `DMARX` reader - DMA configuration for receive."]
 pub struct DMARX_R(crate::FieldReader<bool, DMARX_A>);
 impl DMARX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DMARX_R(crate::FieldReader::new(bits))
     }
@@ -395,6 +402,7 @@ impl From<WAKETX_A> for bool {
 #[doc = "Field `WAKETX` reader - Wake-up for transmit FIFO level. This allows the device to be woken from reduced power modes (up to power-down, as long as the peripheral function works in that power mode) without enabling the TXLVL interrupt. Only DMA wakes up, processes data, and goes back to sleep. The CPU will remain stopped until woken by another cause, such as DMA completion. See Hardware Wake-up control register."]
 pub struct WAKETX_R(crate::FieldReader<bool, WAKETX_A>);
 impl WAKETX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAKETX_R(crate::FieldReader::new(bits))
     }
@@ -478,6 +486,7 @@ impl From<WAKERX_A> for bool {
 #[doc = "Field `WAKERX` reader - Wake-up for receive FIFO level. This allows the device to be woken from reduced power modes (up to power-down, as long as the peripheral function works in that power mode) without enabling the TXLVL interrupt. Only DMA wakes up, processes data, and goes back to sleep. The CPU will remain stopped until woken by another cause, such as DMA completion. See Hardware Wake-up control register."]
 pub struct WAKERX_R(crate::FieldReader<bool, WAKERX_A>);
 impl WAKERX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAKERX_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +556,7 @@ impl<'a> WAKERX_W<'a> {
 #[doc = "Field `EMPTYTX` reader - Empty command for the transmit FIFO. When a 1 is written to this bit, the TX FIFO is emptied."]
 pub struct EMPTYTX_R(crate::FieldReader<bool, bool>);
 impl EMPTYTX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EMPTYTX_R(crate::FieldReader::new(bits))
     }
@@ -583,6 +593,7 @@ impl<'a> EMPTYTX_W<'a> {
 #[doc = "Field `EMPTYRX` reader - Empty command for the receive FIFO. When a 1 is written to this bit, the RX FIFO is emptied."]
 pub struct EMPTYRX_R(crate::FieldReader<bool, bool>);
 impl EMPTYRX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EMPTYRX_R(crate::FieldReader::new(bits))
     }
@@ -705,6 +716,7 @@ impl W {
         EMPTYRX_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

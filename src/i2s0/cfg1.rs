@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CFG1_SPEC>> for R {
+impl From<crate::R<CFG1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CFG1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CFG1_SPEC>> for W {
+impl From<crate::W<CFG1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CFG1_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<MAINENABLE_A> for bool {
 #[doc = "Field `MAINENABLE` reader - Main enable for I 2S function in this Flexcomm"]
 pub struct MAINENABLE_R(crate::FieldReader<bool, MAINENABLE_A>);
 impl MAINENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MAINENABLE_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<DATAPAUSE_A> for bool {
 #[doc = "Field `DATAPAUSE` reader - Data flow Pause. Allows pausing data flow between the I2S serializer/deserializer and the FIFO. This could be done in order to change streams, or while restarting after a data underflow or overflow. When paused, FIFO operations can be done without corrupting data that is in the process of being sent or received. Once a data pause has been requested, the interface may need to complete sending data that was in progress before interrupting the flow of data. Software must check that the pause is actually in effect before taking action. This is done by monitoring the DATAPAUSED flag in the STAT register. When DATAPAUSE is cleared, data transfer will resume at the beginning of the next frame."]
 pub struct DATAPAUSE_R(crate::FieldReader<bool, DATAPAUSE_A>);
 impl DATAPAUSE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DATAPAUSE_R(crate::FieldReader::new(bits))
     }
@@ -220,6 +224,7 @@ impl From<PAIRCOUNT_A> for u8 {
 #[doc = "Field `PAIRCOUNT` reader - Provides the number of I2S channel pairs in this Flexcomm This is a read-only field whose value may be different in other Flexcomms. 00 = there is 1 I2S channel pair in this Flexcomm. 01 = there are 2 I2S channel pairs in this Flexcomm. 10 = there are 3 I2S channel pairs in this Flexcomm. 11 = there are 4 I2S channel pairs in this Flexcomm."]
 pub struct PAIRCOUNT_R(crate::FieldReader<u8, PAIRCOUNT_A>);
 impl PAIRCOUNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PAIRCOUNT_R(crate::FieldReader::new(bits))
     }
@@ -321,6 +326,7 @@ impl From<MSTSLVCFG_A> for u8 {
 #[doc = "Field `MSTSLVCFG` reader - Master / slave configuration selection, determining how SCK and WS are used by all channel pairs in this Flexcomm."]
 pub struct MSTSLVCFG_R(crate::FieldReader<u8, MSTSLVCFG_A>);
 impl MSTSLVCFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MSTSLVCFG_R(crate::FieldReader::new(bits))
     }
@@ -422,6 +428,7 @@ impl From<MODE_A> for u8 {
 #[doc = "Field `MODE` reader - Selects the basic I2S operating mode. Other configurations modify this to obtain all supported cases. See Formats and modes for examples."]
 pub struct MODE_R(crate::FieldReader<u8, MODE_A>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }
@@ -518,6 +525,7 @@ impl From<RIGHTLOW_A> for bool {
 #[doc = "Field `RIGHTLOW` reader - Right channel data is in the Low portion of FIFO data. Essentially, this swaps left and right channel data as it is transferred to or from the FIFO. This bit is not used if the data width is greater than 24 bits or if PDMDATA = 1. Note that if the ONECHANNEL field (bit 10 of this register) = 1, the one channel to be used is the nominally the left channel. POSITION can still place that data in the frame where right channel data is normally located. if all enabled channel pairs have ONECHANNEL = 1, then RIGHTLOW = 1 is not allowed."]
 pub struct RIGHTLOW_R(crate::FieldReader<bool, RIGHTLOW_A>);
 impl RIGHTLOW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RIGHTLOW_R(crate::FieldReader::new(bits))
     }
@@ -601,6 +609,7 @@ impl From<LEFTJUST_A> for bool {
 #[doc = "Field `LEFTJUST` reader - Left Justify data."]
 pub struct LEFTJUST_R(crate::FieldReader<bool, LEFTJUST_A>);
 impl LEFTJUST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LEFTJUST_R(crate::FieldReader::new(bits))
     }
@@ -684,6 +693,7 @@ impl From<ONECHANNEL_A> for bool {
 #[doc = "Field `ONECHANNEL` reader - Single channel mode. Applies to both transmit and receive. This configuration bit applies only to the first I2S channel pair. Other channel pairs may select this mode independently in their separate CFG1 registers."]
 pub struct ONECHANNEL_R(crate::FieldReader<bool, ONECHANNEL_A>);
 impl ONECHANNEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ONECHANNEL_R(crate::FieldReader::new(bits))
     }
@@ -767,6 +777,7 @@ impl From<SCK_POL_A> for bool {
 #[doc = "Field `SCK_POL` reader - SCK polarity."]
 pub struct SCK_POL_R(crate::FieldReader<bool, SCK_POL_A>);
 impl SCK_POL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SCK_POL_R(crate::FieldReader::new(bits))
     }
@@ -850,6 +861,7 @@ impl From<WS_POL_A> for bool {
 #[doc = "Field `WS_POL` reader - WS polarity."]
 pub struct WS_POL_R(crate::FieldReader<bool, WS_POL_A>);
 impl WS_POL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WS_POL_R(crate::FieldReader::new(bits))
     }
@@ -919,6 +931,7 @@ impl<'a> WS_POL_W<'a> {
 #[doc = "Field `DATALEN` reader - Data Length, minus 1 encoded, defines the number of data bits to be transmitted or received for all I2S channel pairs in this Flexcomm. Note that data is only driven to or received from SDA for the number of bits defined by DATALEN. DATALEN is also used in these ways by the I2S: Determines the size of data transfers between the FIFO and the I2S serializer/deserializer. See FIFO buffer configurations and usage In mode 1, 2, and 3, determines the location of right data following left data in the frame. In mode 3 (where WS has a one data slot long pulse at the beginning of each data frame) determines the duration of the WS pulse. Values: 0x00 to 0x02 = not supported 0x03 = data is 4 bits in length 0x04 = data is 5 bits in length 0x1F = data is 32 bits in length"]
 pub struct DATALEN_R(crate::FieldReader<u8, u8>);
 impl DATALEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DATALEN_R(crate::FieldReader::new(bits))
     }
@@ -1056,6 +1069,7 @@ impl W {
         DATALEN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

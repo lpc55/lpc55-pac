@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SHAREDCTRLSET_SPEC>> for R {
+impl From<crate::R<SHAREDCTRLSET_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SHAREDCTRLSET_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SHAREDCTRLSET_SPEC>> for W {
+impl From<crate::W<SHAREDCTRLSET_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SHAREDCTRLSET_SPEC>) -> Self {
         W(writer)
     }
@@ -62,6 +64,7 @@ impl From<SHAREDSCKSEL_A> for u8 {
 #[doc = "Field `SHAREDSCKSEL` reader - Selects the source for SCK of this shared signal set."]
 pub struct SHAREDSCKSEL_R(crate::FieldReader<u8, SHAREDSCKSEL_A>);
 impl SHAREDSCKSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SHAREDSCKSEL_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +218,7 @@ impl From<SHAREDWSSEL_A> for u8 {
 #[doc = "Field `SHAREDWSSEL` reader - Selects the source for WS of this shared signal set."]
 pub struct SHAREDWSSEL_R(crate::FieldReader<u8, SHAREDWSSEL_A>);
 impl SHAREDWSSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SHAREDWSSEL_R(crate::FieldReader::new(bits))
     }
@@ -368,6 +372,7 @@ impl From<SHAREDDATASEL_A> for u8 {
 #[doc = "Field `SHAREDDATASEL` reader - Selects the source for DATA input for this shared signal set."]
 pub struct SHAREDDATASEL_R(crate::FieldReader<u8, SHAREDDATASEL_A>);
 impl SHAREDDATASEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SHAREDDATASEL_R(crate::FieldReader::new(bits))
     }
@@ -508,6 +513,7 @@ impl From<FC0DATAOUTEN_A> for bool {
 #[doc = "Field `FC0DATAOUTEN` reader - Controls FC0 contribution to SHAREDDATAOUT for this shared set."]
 pub struct FC0DATAOUTEN_R(crate::FieldReader<bool, FC0DATAOUTEN_A>);
 impl FC0DATAOUTEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC0DATAOUTEN_R(crate::FieldReader::new(bits))
     }
@@ -591,6 +597,7 @@ impl From<FC1DATAOUTEN_A> for bool {
 #[doc = "Field `FC1DATAOUTEN` reader - Controls FC1 contribution to SHAREDDATAOUT for this shared set."]
 pub struct FC1DATAOUTEN_R(crate::FieldReader<bool, FC1DATAOUTEN_A>);
 impl FC1DATAOUTEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC1DATAOUTEN_R(crate::FieldReader::new(bits))
     }
@@ -674,6 +681,7 @@ impl From<FC2DATAOUTEN_A> for bool {
 #[doc = "Field `FC2DATAOUTEN` reader - Controls FC2 contribution to SHAREDDATAOUT for this shared set."]
 pub struct FC2DATAOUTEN_R(crate::FieldReader<bool, FC2DATAOUTEN_A>);
 impl FC2DATAOUTEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC2DATAOUTEN_R(crate::FieldReader::new(bits))
     }
@@ -757,6 +765,7 @@ impl From<FC4DATAOUTEN_A> for bool {
 #[doc = "Field `FC4DATAOUTEN` reader - Controls FC4 contribution to SHAREDDATAOUT for this shared set."]
 pub struct FC4DATAOUTEN_R(crate::FieldReader<bool, FC4DATAOUTEN_A>);
 impl FC4DATAOUTEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC4DATAOUTEN_R(crate::FieldReader::new(bits))
     }
@@ -840,6 +849,7 @@ impl From<FC5DATAOUTEN_A> for bool {
 #[doc = "Field `FC5DATAOUTEN` reader - Controls FC5 contribution to SHAREDDATAOUT for this shared set."]
 pub struct FC5DATAOUTEN_R(crate::FieldReader<bool, FC5DATAOUTEN_A>);
 impl FC5DATAOUTEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC5DATAOUTEN_R(crate::FieldReader::new(bits))
     }
@@ -923,6 +933,7 @@ impl From<FC6DATAOUTEN_A> for bool {
 #[doc = "Field `FC6DATAOUTEN` reader - Controls FC6 contribution to SHAREDDATAOUT for this shared set."]
 pub struct FC6DATAOUTEN_R(crate::FieldReader<bool, FC6DATAOUTEN_A>);
 impl FC6DATAOUTEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC6DATAOUTEN_R(crate::FieldReader::new(bits))
     }
@@ -1006,6 +1017,7 @@ impl From<FC7DATAOUTEN_A> for bool {
 #[doc = "Field `FC7DATAOUTEN` reader - Controls FC7 contribution to SHAREDDATAOUT for this shared set."]
 pub struct FC7DATAOUTEN_R(crate::FieldReader<bool, FC7DATAOUTEN_A>);
 impl FC7DATAOUTEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC7DATAOUTEN_R(crate::FieldReader::new(bits))
     }
@@ -1176,6 +1188,7 @@ impl W {
         FC7DATAOUTEN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

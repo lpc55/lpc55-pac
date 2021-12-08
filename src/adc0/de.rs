@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<DE_SPEC>> for R {
+impl From<crate::R<DE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<DE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<DE_SPEC>> for W {
+impl From<crate::W<DE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<DE_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<FWMDE0_A> for bool {
 #[doc = "Field `FWMDE0` reader - FIFO 0 Watermark DMA Enable"]
 pub struct FWMDE0_R(crate::FieldReader<bool, FWMDE0_A>);
 impl FWMDE0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FWMDE0_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<FWMDE1_A> for bool {
 #[doc = "Field `FWMDE1` reader - FIFO1 Watermark DMA Enable"]
 pub struct FWMDE1_R(crate::FieldReader<bool, FWMDE1_A>);
 impl FWMDE1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FWMDE1_R(crate::FieldReader::new(bits))
     }
@@ -222,6 +226,7 @@ impl W {
         FWMDE1_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

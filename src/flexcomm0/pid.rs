@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PID_SPEC>> for R {
+impl From<crate::R<PID_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PID_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<PID_SPEC>> for R {
 #[doc = "Field `APERTURE` reader - size aperture for the register port on the bus (APB or AHB)."]
 pub struct APERTURE_R(crate::FieldReader<u8, u8>);
 impl APERTURE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         APERTURE_R(crate::FieldReader::new(bits))
     }
@@ -29,6 +31,7 @@ impl core::ops::Deref for APERTURE_R {
 #[doc = "Field `MINOR_REV` reader - Minor revision of module implementation."]
 pub struct MINOR_REV_R(crate::FieldReader<u8, u8>);
 impl MINOR_REV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MINOR_REV_R(crate::FieldReader::new(bits))
     }
@@ -43,6 +46,7 @@ impl core::ops::Deref for MINOR_REV_R {
 #[doc = "Field `MAJOR_REV` reader - Major revision of module implementation."]
 pub struct MAJOR_REV_R(crate::FieldReader<u8, u8>);
 impl MAJOR_REV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MAJOR_REV_R(crate::FieldReader::new(bits))
     }
@@ -57,6 +61,7 @@ impl core::ops::Deref for MAJOR_REV_R {
 #[doc = "Field `ID` reader - Module identifier for the selected function."]
 pub struct ID_R(crate::FieldReader<u16, u16>);
 impl ID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         ID_R(crate::FieldReader::new(bits))
     }

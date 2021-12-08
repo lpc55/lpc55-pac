@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PINTSEL_SPEC>> for R {
+impl From<crate::R<PINTSEL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PINTSEL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PINTSEL_SPEC>> for W {
+impl From<crate::W<PINTSEL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PINTSEL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<PINTSEL_SPEC>> for W {
 #[doc = "Field `INTPIN` reader - Pin number select for pin interrupt or pattern match engine input. For PIOx_y: INTPIN = (x * 32) + y. PIO0_0 to PIO1_31 correspond to numbers 0 to 63."]
 pub struct INTPIN_R(crate::FieldReader<u8, u8>);
 impl INTPIN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         INTPIN_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         INTPIN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

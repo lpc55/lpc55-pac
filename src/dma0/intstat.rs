@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INTSTAT_SPEC>> for R {
+impl From<crate::R<INTSTAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INTSTAT_SPEC>) -> Self {
         R(reader)
     }
@@ -29,6 +30,7 @@ impl From<ACTIVEINT_A> for bool {
 #[doc = "Field `ACTIVEINT` reader - Summarizes whether any enabled interrupts (other than error interrupts) are pending."]
 pub struct ACTIVEINT_R(crate::FieldReader<bool, ACTIVEINT_A>);
 impl ACTIVEINT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ACTIVEINT_R(crate::FieldReader::new(bits))
     }
@@ -75,6 +77,7 @@ impl From<ACTIVEERRINT_A> for bool {
 #[doc = "Field `ACTIVEERRINT` reader - Summarizes whether any error interrupts are pending."]
 pub struct ACTIVEERRINT_R(crate::FieldReader<bool, ACTIVEERRINT_A>);
 impl ACTIVEERRINT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ACTIVEERRINT_R(crate::FieldReader::new(bits))
     }

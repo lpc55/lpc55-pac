@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CTYPE_SPEC>> for R {
+impl From<crate::R<CTYPE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CTYPE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CTYPE_SPEC>> for W {
+impl From<crate::W<CTYPE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CTYPE_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CTYPE_SPEC>> for W {
 #[doc = "Field `CARD0_WIDTH0` reader - Indicates if card 0 is 1-bit or 4-bit: 0 - 1-bit mode 1 - 4-bit mode 1 and 4-bit modes only work when 8-bit mode in CARD0_WIDTH1 is not enabled (bit 16 in this register is set to 0)."]
 pub struct CARD0_WIDTH0_R(crate::FieldReader<bool, bool>);
 impl CARD0_WIDTH0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CARD0_WIDTH0_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> CARD0_WIDTH0_W<'a> {
 #[doc = "Field `CARD1_WIDTH0` reader - Indicates if card 1 is 1-bit or 4-bit: 0 - 1-bit mode 1 - 4-bit mode 1 and 4-bit modes only work when 8-bit mode in CARD1_WIDTH1 is not enabled (bit 16 in this register is set to 0)."]
 pub struct CARD1_WIDTH0_R(crate::FieldReader<bool, bool>);
 impl CARD1_WIDTH0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CARD1_WIDTH0_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> CARD1_WIDTH0_W<'a> {
 #[doc = "Field `CARD0_WIDTH1` reader - Indicates if card 0 is 8-bit: 0 - Non 8-bit mode 1 - 8-bit mode."]
 pub struct CARD0_WIDTH1_R(crate::FieldReader<bool, bool>);
 impl CARD0_WIDTH1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CARD0_WIDTH1_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> CARD0_WIDTH1_W<'a> {
 #[doc = "Field `CARD1_WIDTH1` reader - Indicates if card 1 is 8-bit: 0 - Non 8-bit mode 1 - 8-bit mode."]
 pub struct CARD1_WIDTH1_R(crate::FieldReader<bool, bool>);
 impl CARD1_WIDTH1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CARD1_WIDTH1_R(crate::FieldReader::new(bits))
     }
@@ -220,6 +226,7 @@ impl W {
         CARD1_WIDTH1_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

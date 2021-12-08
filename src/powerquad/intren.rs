@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INTREN_SPEC>> for R {
+impl From<crate::R<INTREN_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INTREN_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<INTREN_SPEC>> for W {
+impl From<crate::W<INTREN_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<INTREN_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<INTREN_SPEC>> for W {
 #[doc = "Field `intr_oflow` reader - 1 : Enable interrupt on Floating point overflow"]
 pub struct INTR_OFLOW_R(crate::FieldReader<bool, bool>);
 impl INTR_OFLOW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INTR_OFLOW_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> INTR_OFLOW_W<'a> {
 #[doc = "Field `intr_nan` reader - 1 : Enable interrupt on Floating point NaN"]
 pub struct INTR_NAN_R(crate::FieldReader<bool, bool>);
 impl INTR_NAN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INTR_NAN_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> INTR_NAN_W<'a> {
 #[doc = "Field `intr_fixed` reader - 1: Enable interrupt on Fixed point Overflow"]
 pub struct INTR_FIXED_R(crate::FieldReader<bool, bool>);
 impl INTR_FIXED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INTR_FIXED_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> INTR_FIXED_W<'a> {
 #[doc = "Field `intr_uflow` reader - 1 : Enable interrupt on Subnormal truncation"]
 pub struct INTR_UFLOW_R(crate::FieldReader<bool, bool>);
 impl INTR_UFLOW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INTR_UFLOW_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> INTR_UFLOW_W<'a> {
 #[doc = "Field `intr_berr` reader - 1: Enable interrupt on AHBM Buss Error"]
 pub struct INTR_BERR_R(crate::FieldReader<bool, bool>);
 impl INTR_BERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INTR_BERR_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> INTR_BERR_W<'a> {
 #[doc = "Field `intr_comp` reader - 1: Enable interrupt on instruction completion"]
 pub struct INTR_COMP_R(crate::FieldReader<bool, bool>);
 impl INTR_COMP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INTR_COMP_R(crate::FieldReader::new(bits))
     }
@@ -312,6 +320,7 @@ impl W {
         INTR_COMP_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

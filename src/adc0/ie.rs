@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<IE_SPEC>> for R {
+impl From<crate::R<IE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<IE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<IE_SPEC>> for W {
+impl From<crate::W<IE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<IE_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<FWMIE0_A> for bool {
 #[doc = "Field `FWMIE0` reader - FIFO 0 Watermark Interrupt Enable"]
 pub struct FWMIE0_R(crate::FieldReader<bool, FWMIE0_A>);
 impl FWMIE0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FWMIE0_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<FOFIE0_A> for bool {
 #[doc = "Field `FOFIE0` reader - Result FIFO 0 Overflow Interrupt Enable"]
 pub struct FOFIE0_R(crate::FieldReader<bool, FOFIE0_A>);
 impl FOFIE0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FOFIE0_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<FWMIE1_A> for bool {
 #[doc = "Field `FWMIE1` reader - FIFO1 Watermark Interrupt Enable"]
 pub struct FWMIE1_R(crate::FieldReader<bool, FWMIE1_A>);
 impl FWMIE1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FWMIE1_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<FOFIE1_A> for bool {
 #[doc = "Field `FOFIE1` reader - Result FIFO1 Overflow Interrupt Enable"]
 pub struct FOFIE1_R(crate::FieldReader<bool, FOFIE1_A>);
 impl FOFIE1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FOFIE1_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<TEXC_IE_A> for bool {
 #[doc = "Field `TEXC_IE` reader - Trigger Exception Interrupt Enable"]
 pub struct TEXC_IE_R(crate::FieldReader<bool, TEXC_IE_A>);
 impl TEXC_IE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TEXC_IE_R(crate::FieldReader::new(bits))
     }
@@ -483,6 +490,7 @@ impl From<TCOMP_IE_A> for u16 {
 #[doc = "Field `TCOMP_IE` reader - Trigger Completion Interrupt Enable"]
 pub struct TCOMP_IE_R(crate::FieldReader<u16, TCOMP_IE_A>);
 impl TCOMP_IE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         TCOMP_IE_R(crate::FieldReader::new(bits))
     }
@@ -703,6 +711,7 @@ impl W {
         TCOMP_IE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

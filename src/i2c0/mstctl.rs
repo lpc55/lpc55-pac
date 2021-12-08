@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<MSTCTL_SPEC>> for R {
+impl From<crate::R<MSTCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<MSTCTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<MSTCTL_SPEC>> for W {
+impl From<crate::W<MSTCTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<MSTCTL_SPEC>) -> Self {
         W(writer)
     }
@@ -100,6 +102,7 @@ impl From<MSTSTART_A> for bool {
 #[doc = "Field `MSTSTART` reader - Master Start control. This bit is write-only."]
 pub struct MSTSTART_R(crate::FieldReader<bool, MSTSTART_A>);
 impl MSTSTART_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MSTSTART_R(crate::FieldReader::new(bits))
     }
@@ -183,6 +186,7 @@ impl From<MSTSTOP_A> for bool {
 #[doc = "Field `MSTSTOP` reader - Master Stop control. This bit is write-only."]
 pub struct MSTSTOP_R(crate::FieldReader<bool, MSTSTOP_A>);
 impl MSTSTOP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MSTSTOP_R(crate::FieldReader::new(bits))
     }
@@ -266,6 +270,7 @@ impl From<MSTDMA_A> for bool {
 #[doc = "Field `MSTDMA` reader - Master DMA enable. Data operations of the I2C can be performed with DMA. Protocol type operations such as Start, address, Stop, and address match must always be done with software, typically via an interrupt. Address acknowledgement must also be done by software except when the I2C is configured to be HSCAPABLE (and address acknowledgement is handled entirely by hardware) or when Automatic Operation is enabled. When a DMA data transfer is complete, MSTDMA must be cleared prior to beginning the next operation, typically a Start or Stop.This bit is read/write."]
 pub struct MSTDMA_R(crate::FieldReader<bool, MSTDMA_A>);
 impl MSTDMA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MSTDMA_R(crate::FieldReader::new(bits))
     }
@@ -371,6 +376,7 @@ impl W {
         MSTDMA_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

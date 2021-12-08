@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FMCCR_SPEC>> for R {
+impl From<crate::R<FMCCR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FMCCR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FMCCR_SPEC>> for W {
+impl From<crate::W<FMCCR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FMCCR_SPEC>) -> Self {
         W(writer)
     }
@@ -52,6 +54,7 @@ impl From<FETCHCFG_A> for u8 {
 #[doc = "Field `FETCHCFG` reader - Instruction fetch configuration."]
 pub struct FETCHCFG_R(crate::FieldReader<u8, FETCHCFG_A>);
 impl FETCHCFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FETCHCFG_R(crate::FieldReader::new(bits))
     }
@@ -140,6 +143,7 @@ impl From<DATACFG_A> for u8 {
 #[doc = "Field `DATACFG` reader - Data read configuration."]
 pub struct DATACFG_R(crate::FieldReader<u8, DATACFG_A>);
 impl DATACFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DATACFG_R(crate::FieldReader::new(bits))
     }
@@ -225,6 +229,7 @@ impl From<ACCEL_A> for bool {
 #[doc = "Field `ACCEL` reader - Acceleration enable."]
 pub struct ACCEL_R(crate::FieldReader<bool, ACCEL_A>);
 impl ACCEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ACCEL_R(crate::FieldReader::new(bits))
     }
@@ -308,6 +313,7 @@ impl From<PREFEN_A> for bool {
 #[doc = "Field `PREFEN` reader - Prefetch enable."]
 pub struct PREFEN_R(crate::FieldReader<bool, PREFEN_A>);
 impl PREFEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PREFEN_R(crate::FieldReader::new(bits))
     }
@@ -391,6 +397,7 @@ impl From<PREFOVR_A> for bool {
 #[doc = "Field `PREFOVR` reader - Prefetch override."]
 pub struct PREFOVR_R(crate::FieldReader<bool, PREFOVR_A>);
 impl PREFOVR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PREFOVR_R(crate::FieldReader::new(bits))
     }
@@ -495,6 +502,7 @@ impl From<FLASHTIM_A> for u8 {
 #[doc = "Field `FLASHTIM` reader - Flash memory access time."]
 pub struct FLASHTIM_R(crate::FieldReader<u8, FLASHTIM_A>);
 impl FLASHTIM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FLASHTIM_R(crate::FieldReader::new(bits))
     }
@@ -726,6 +734,7 @@ impl W {
         FLASHTIM_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

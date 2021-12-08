@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FCCTRLSEL_SPEC>> for R {
+impl From<crate::R<FCCTRLSEL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FCCTRLSEL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FCCTRLSEL_SPEC>> for W {
+impl From<crate::W<FCCTRLSEL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FCCTRLSEL_SPEC>) -> Self {
         W(writer)
     }
@@ -52,6 +54,7 @@ impl From<SCKINSEL_A> for u8 {
 #[doc = "Field `SCKINSEL` reader - Selects the source for SCK going into this Flexcomm."]
 pub struct SCKINSEL_R(crate::FieldReader<u8, SCKINSEL_A>);
 impl SCKINSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SCKINSEL_R(crate::FieldReader::new(bits))
     }
@@ -140,6 +143,7 @@ impl From<WSINSEL_A> for u8 {
 #[doc = "Field `WSINSEL` reader - Selects the source for WS going into this Flexcomm."]
 pub struct WSINSEL_R(crate::FieldReader<u8, WSINSEL_A>);
 impl WSINSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         WSINSEL_R(crate::FieldReader::new(bits))
     }
@@ -228,6 +232,7 @@ impl From<DATAINSEL_A> for u8 {
 #[doc = "Field `DATAINSEL` reader - Selects the source for DATA input to this Flexcomm."]
 pub struct DATAINSEL_R(crate::FieldReader<u8, DATAINSEL_A>);
 impl DATAINSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DATAINSEL_R(crate::FieldReader::new(bits))
     }
@@ -316,6 +321,7 @@ impl From<DATAOUTSEL_A> for u8 {
 #[doc = "Field `DATAOUTSEL` reader - Selects the source for DATA output from this Flexcomm."]
 pub struct DATAOUTSEL_R(crate::FieldReader<u8, DATAOUTSEL_A>);
 impl DATAOUTSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DATAOUTSEL_R(crate::FieldReader::new(bits))
     }
@@ -428,6 +434,7 @@ impl W {
         DATAOUTSEL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

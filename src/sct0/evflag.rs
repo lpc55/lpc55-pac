@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<EVFLAG_SPEC>> for R {
+impl From<crate::R<EVFLAG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<EVFLAG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<EVFLAG_SPEC>> for W {
+impl From<crate::W<EVFLAG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<EVFLAG_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<EVFLAG_SPEC>> for W {
 #[doc = "Field `FLAG` reader - Bit n is one if event n has occurred since reset or a 1 was last written to this bit (event 0 = bit 0, event 1 = bit 1, etc.). The number of bits = number of events in this SCT."]
 pub struct FLAG_R(crate::FieldReader<u16, u16>);
 impl FLAG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         FLAG_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         FLAG_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

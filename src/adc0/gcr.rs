@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<GCR_SPEC>> for R {
+impl From<crate::R<GCR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<GCR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<GCR_SPEC>> for W {
+impl From<crate::W<GCR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<GCR_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<GCR_SPEC>> for W {
 #[doc = "Field `GCALR` reader - Gain Calculation Result"]
 pub struct GCALR_R(crate::FieldReader<u16, u16>);
 impl GCALR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         GCALR_R(crate::FieldReader::new(bits))
     }
@@ -75,6 +78,7 @@ impl From<RDY_A> for bool {
 #[doc = "Field `RDY` reader - Gain Calculation Ready"]
 pub struct RDY_R(crate::FieldReader<bool, RDY_A>);
 impl RDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RDY_R(crate::FieldReader::new(bits))
     }
@@ -165,6 +169,7 @@ impl W {
         RDY_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

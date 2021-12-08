@@ -7,28 +7,28 @@ pub struct RegisterBlock {
     pub keyindex: crate::Reg<keyindex::KEYINDEX_SPEC>,
     #[doc = "0x08 - PUF Key Size register"]
     pub keysize: crate::Reg<keysize::KEYSIZE_SPEC>,
-    _reserved3: [u8; 20usize],
+    _reserved3: [u8; 0x14],
     #[doc = "0x20 - PUF Status register"]
     pub stat: crate::Reg<stat::STAT_SPEC>,
-    _reserved4: [u8; 4usize],
+    _reserved4: [u8; 0x04],
     #[doc = "0x28 - PUF Allow register"]
     pub allow: crate::Reg<allow::ALLOW_SPEC>,
-    _reserved5: [u8; 20usize],
+    _reserved5: [u8; 0x14],
     #[doc = "0x40 - PUF Key Input register"]
     pub keyinput: crate::Reg<keyinput::KEYINPUT_SPEC>,
     #[doc = "0x44 - PUF Code Input register"]
     pub codeinput: crate::Reg<codeinput::CODEINPUT_SPEC>,
     #[doc = "0x48 - PUF Code Output register"]
     pub codeoutput: crate::Reg<codeoutput::CODEOUTPUT_SPEC>,
-    _reserved8: [u8; 20usize],
+    _reserved8: [u8; 0x14],
     #[doc = "0x60 - PUF Key Output Index register"]
     pub keyoutindex: crate::Reg<keyoutindex::KEYOUTINDEX_SPEC>,
     #[doc = "0x64 - PUF Key Output register"]
     pub keyoutput: crate::Reg<keyoutput::KEYOUTPUT_SPEC>,
-    _reserved10: [u8; 116usize],
+    _reserved10: [u8; 0x74],
     #[doc = "0xdc - PUF Interface Status and clear register"]
     pub ifstat: crate::Reg<ifstat::IFSTAT_SPEC>,
-    _reserved11: [u8; 28usize],
+    _reserved11: [u8; 0x1c],
     #[doc = "0xfc - PUF version register."]
     pub version: crate::Reg<version::VERSION_SPEC>,
     #[doc = "0x100 - PUF Interrupt Enable"]
@@ -39,7 +39,7 @@ pub struct RegisterBlock {
     pub pwrctrl: crate::Reg<pwrctrl::PWRCTRL_SPEC>,
     #[doc = "0x10c - PUF config register for block bits"]
     pub cfg: crate::Reg<cfg::CFG_SPEC>,
-    _reserved16: [u8; 240usize],
+    _reserved16: [u8; 0xf0],
     #[doc = "0x200 - Only reset in case of full IC reset"]
     pub keylock: crate::Reg<keylock::KEYLOCK_SPEC>,
     #[doc = "0x204 - no description available"]
@@ -50,9 +50,9 @@ pub struct RegisterBlock {
     pub idxblk_l: crate::Reg<idxblk_l::IDXBLK_L_SPEC>,
     #[doc = "0x210 - no description available"]
     pub idxblk_h_dp: crate::Reg<idxblk_h_dp::IDXBLK_H_DP_SPEC>,
-    #[doc = "0x214 - Only reset in case of full IC reset"]
+    #[doc = "0x214..0x224 - Only reset in case of full IC reset"]
     pub keymask: [crate::Reg<keymask::KEYMASK_SPEC>; 4],
-    _reserved22: [u8; 48usize],
+    _reserved22: [u8; 0x30],
     #[doc = "0x254 - no description available"]
     pub idxblk_h: crate::Reg<idxblk_h::IDXBLK_H_SPEC>,
     #[doc = "0x258 - no description available"]

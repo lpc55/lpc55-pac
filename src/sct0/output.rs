@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<OUTPUT_SPEC>> for R {
+impl From<crate::R<OUTPUT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<OUTPUT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<OUTPUT_SPEC>> for W {
+impl From<crate::W<OUTPUT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<OUTPUT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<OUTPUT_SPEC>> for W {
 #[doc = "Field `OUT` reader - Writing a 1 to bit n forces the corresponding output HIGH. Writing a 0 forces the corresponding output LOW (output 0 = bit 0, output 1 = bit 1, etc.). The number of bits = number of outputs in this SCT."]
 pub struct OUT_R(crate::FieldReader<u16, u16>);
 impl OUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         OUT_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         OUT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

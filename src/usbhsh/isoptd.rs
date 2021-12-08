@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ISOPTD_SPEC>> for R {
+impl From<crate::R<ISOPTD_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ISOPTD_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ISOPTD_SPEC>> for W {
+impl From<crate::W<ISOPTD_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ISOPTD_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<ISOPTD_SPEC>> for W {
 #[doc = "Field `ISO_FIRST` reader - This indicates the first PTD that is used by the hardware when it is processing the ISO list."]
 pub struct ISO_FIRST_R(crate::FieldReader<u8, u8>);
 impl ISO_FIRST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ISO_FIRST_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> ISO_FIRST_W<'a> {
 #[doc = "Field `ISO_BASE` reader - Base address to be used by the hardware to find the start of the ISO list."]
 pub struct ISO_BASE_R(crate::FieldReader<u32, u32>);
 impl ISO_BASE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         ISO_BASE_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl W {
         ISO_BASE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

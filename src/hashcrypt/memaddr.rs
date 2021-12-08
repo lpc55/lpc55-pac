@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<MEMADDR_SPEC>> for R {
+impl From<crate::R<MEMADDR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<MEMADDR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<MEMADDR_SPEC>> for W {
+impl From<crate::W<MEMADDR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<MEMADDR_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<MEMADDR_SPEC>> for W {
 #[doc = "Field `BASE` reader - Address base to start copying from, word aligned (so bits 1:0 must be 0). This field will advance as it processes the words. If it fails with a bus error, the register will contain the failing word. N:Address in Flash or RAM space; RAM only as mapped in this part. May also be able to address SPIFI."]
 pub struct BASE_R(crate::FieldReader<u32, u32>);
 impl BASE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         BASE_R(crate::FieldReader::new(bits))
     }
@@ -54,7 +57,7 @@ impl<'a> BASE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
+        self.w.bits = value as u32;
         self.w
     }
 }
@@ -62,7 +65,7 @@ impl R {
     #[doc = "Bits 0:31 - Address base to start copying from, word aligned (so bits 1:0 must be 0). This field will advance as it processes the words. If it fails with a bus error, the register will contain the failing word. N:Address in Flash or RAM space; RAM only as mapped in this part. May also be able to address SPIFI."]
     #[inline(always)]
     pub fn base(&self) -> BASE_R {
-        BASE_R::new((self.bits & 0xffff_ffff) as u32)
+        BASE_R::new(self.bits as u32)
     }
 }
 impl W {
@@ -72,6 +75,7 @@ impl W {
         BASE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ONLINE_TEST_CFG_SPEC>> for R {
+impl From<crate::R<ONLINE_TEST_CFG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ONLINE_TEST_CFG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ONLINE_TEST_CFG_SPEC>> for W {
+impl From<crate::W<ONLINE_TEST_CFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ONLINE_TEST_CFG_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<ONLINE_TEST_CFG_SPEC>> for W {
 #[doc = "Field `ACTIVATE` reader - 0: disabled 1: activated Update rythm for VAL depends on COUNTER_CFG if data_sel is set to COUNTER."]
 pub struct ACTIVATE_R(crate::FieldReader<bool, bool>);
 impl ACTIVATE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ACTIVATE_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> ACTIVATE_W<'a> {
 #[doc = "Field `DATA_SEL` reader - Selects source on which to apply online test: 00: LSB of COUNTER: raw data from one or all sources of entropy 01: MSB of COUNTER: raw data from one or all sources of entropy 10: RANDOM_NUMBER 11: ENCRYPTED_NUMBER 'activate' should be set to 'disabled' before changing this field."]
 pub struct DATA_SEL_R(crate::FieldReader<u8, u8>);
 impl DATA_SEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DATA_SEL_R(crate::FieldReader::new(bits))
     }
@@ -118,6 +122,7 @@ impl W {
         DATA_SEL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

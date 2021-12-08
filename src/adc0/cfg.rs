@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CFG_SPEC>> for R {
+impl From<crate::R<CFG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CFG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CFG_SPEC>> for W {
+impl From<crate::W<CFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CFG_SPEC>) -> Self {
         W(writer)
     }
@@ -53,6 +55,7 @@ impl From<TPRICTRL_A> for u8 {
 #[doc = "Field `TPRICTRL` reader - ADC trigger priority control"]
 pub struct TPRICTRL_R(crate::FieldReader<u8, TPRICTRL_A>);
 impl TPRICTRL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TPRICTRL_R(crate::FieldReader::new(bits))
     }
@@ -144,6 +147,7 @@ impl From<PWRSEL_A> for u8 {
 #[doc = "Field `PWRSEL` reader - Power Configuration Select"]
 pub struct PWRSEL_R(crate::FieldReader<u8, PWRSEL_A>);
 impl PWRSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PWRSEL_R(crate::FieldReader::new(bits))
     }
@@ -243,6 +247,7 @@ impl From<REFSEL_A> for u8 {
 #[doc = "Field `REFSEL` reader - Voltage Reference Selection"]
 pub struct REFSEL_R(crate::FieldReader<u8, REFSEL_A>);
 impl REFSEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         REFSEL_R(crate::FieldReader::new(bits))
     }
@@ -328,6 +333,7 @@ impl From<TRES_A> for bool {
 #[doc = "Field `TRES` reader - Trigger Resume Enable"]
 pub struct TRES_R(crate::FieldReader<bool, TRES_A>);
 impl TRES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRES_R(crate::FieldReader::new(bits))
     }
@@ -411,6 +417,7 @@ impl From<TCMDRES_A> for bool {
 #[doc = "Field `TCMDRES` reader - Trigger Command Resume"]
 pub struct TCMDRES_R(crate::FieldReader<bool, TCMDRES_A>);
 impl TCMDRES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TCMDRES_R(crate::FieldReader::new(bits))
     }
@@ -494,6 +501,7 @@ impl From<HPT_EXDI_A> for bool {
 #[doc = "Field `HPT_EXDI` reader - High Priority Trigger Exception Disable"]
 pub struct HPT_EXDI_R(crate::FieldReader<bool, HPT_EXDI_A>);
 impl HPT_EXDI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HPT_EXDI_R(crate::FieldReader::new(bits))
     }
@@ -563,6 +571,7 @@ impl<'a> HPT_EXDI_W<'a> {
 #[doc = "Field `PUDLY` reader - Power Up Delay"]
 pub struct PUDLY_R(crate::FieldReader<u8, u8>);
 impl PUDLY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PUDLY_R(crate::FieldReader::new(bits))
     }
@@ -603,6 +612,7 @@ impl From<PWREN_A> for bool {
 #[doc = "Field `PWREN` reader - ADC Analog Pre-Enable"]
 pub struct PWREN_R(crate::FieldReader<bool, PWREN_A>);
 impl PWREN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PWREN_R(crate::FieldReader::new(bits))
     }
@@ -753,6 +763,7 @@ impl W {
         PWREN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

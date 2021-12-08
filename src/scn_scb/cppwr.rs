@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CPPWR_SPEC>> for R {
+impl From<crate::R<CPPWR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CPPWR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CPPWR_SPEC>> for W {
+impl From<crate::W<CPPWR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CPPWR_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<SU0_A> for bool {
 #[doc = "Field `SU0` reader - State UNKNOWN 0."]
 pub struct SU0_R(crate::FieldReader<bool, SU0_A>);
 impl SU0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SU0_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<SUS0_A> for bool {
 #[doc = "Field `SUS0` reader - State UNKNOWN Secure only 0."]
 pub struct SUS0_R(crate::FieldReader<bool, SUS0_A>);
 impl SUS0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUS0_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<SU1_A> for bool {
 #[doc = "Field `SU1` reader - State UNKNOWN 1."]
 pub struct SU1_R(crate::FieldReader<bool, SU1_A>);
 impl SU1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SU1_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<SUS1_A> for bool {
 #[doc = "Field `SUS1` reader - State UNKNOWN Secure only 1."]
 pub struct SUS1_R(crate::FieldReader<bool, SUS1_A>);
 impl SUS1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUS1_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<SU2_A> for bool {
 #[doc = "Field `SU2` reader - State UNKNOWN 2."]
 pub struct SU2_R(crate::FieldReader<bool, SU2_A>);
 impl SU2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SU2_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<SUS2_A> for bool {
 #[doc = "Field `SUS2` reader - State UNKNOWN Secure only 2."]
 pub struct SUS2_R(crate::FieldReader<bool, SUS2_A>);
 impl SUS2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUS2_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<SU3_A> for bool {
 #[doc = "Field `SU3` reader - State UNKNOWN 3."]
 pub struct SU3_R(crate::FieldReader<bool, SU3_A>);
 impl SU3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SU3_R(crate::FieldReader::new(bits))
     }
@@ -630,6 +639,7 @@ impl From<SUS3_A> for bool {
 #[doc = "Field `SUS3` reader - State UNKNOWN Secure only 3."]
 pub struct SUS3_R(crate::FieldReader<bool, SUS3_A>);
 impl SUS3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUS3_R(crate::FieldReader::new(bits))
     }
@@ -713,6 +723,7 @@ impl From<SU4_A> for bool {
 #[doc = "Field `SU4` reader - State UNKNOWN 4."]
 pub struct SU4_R(crate::FieldReader<bool, SU4_A>);
 impl SU4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SU4_R(crate::FieldReader::new(bits))
     }
@@ -796,6 +807,7 @@ impl From<SUS4_A> for bool {
 #[doc = "Field `SUS4` reader - State UNKNOWN Secure only 4."]
 pub struct SUS4_R(crate::FieldReader<bool, SUS4_A>);
 impl SUS4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUS4_R(crate::FieldReader::new(bits))
     }
@@ -879,6 +891,7 @@ impl From<SU5_A> for bool {
 #[doc = "Field `SU5` reader - State UNKNOWN 5."]
 pub struct SU5_R(crate::FieldReader<bool, SU5_A>);
 impl SU5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SU5_R(crate::FieldReader::new(bits))
     }
@@ -962,6 +975,7 @@ impl From<SUS5_A> for bool {
 #[doc = "Field `SUS5` reader - State UNKNOWN Secure only 5."]
 pub struct SUS5_R(crate::FieldReader<bool, SUS5_A>);
 impl SUS5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUS5_R(crate::FieldReader::new(bits))
     }
@@ -1045,6 +1059,7 @@ impl From<SU6_A> for bool {
 #[doc = "Field `SU6` reader - State UNKNOWN 6."]
 pub struct SU6_R(crate::FieldReader<bool, SU6_A>);
 impl SU6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SU6_R(crate::FieldReader::new(bits))
     }
@@ -1128,6 +1143,7 @@ impl From<SUS6_A> for bool {
 #[doc = "Field `SUS6` reader - State UNKNOWN Secure only 6."]
 pub struct SUS6_R(crate::FieldReader<bool, SUS6_A>);
 impl SUS6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUS6_R(crate::FieldReader::new(bits))
     }
@@ -1211,6 +1227,7 @@ impl From<SU7_A> for bool {
 #[doc = "Field `SU7` reader - State UNKNOWN 7."]
 pub struct SU7_R(crate::FieldReader<bool, SU7_A>);
 impl SU7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SU7_R(crate::FieldReader::new(bits))
     }
@@ -1294,6 +1311,7 @@ impl From<SUS7_A> for bool {
 #[doc = "Field `SUS7` reader - State UNKNOWN Secure only 7."]
 pub struct SUS7_R(crate::FieldReader<bool, SUS7_A>);
 impl SUS7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUS7_R(crate::FieldReader::new(bits))
     }
@@ -1377,6 +1395,7 @@ impl From<SU10_A> for bool {
 #[doc = "Field `SU10` reader - State UNKNOWN 10."]
 pub struct SU10_R(crate::FieldReader<bool, SU10_A>);
 impl SU10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SU10_R(crate::FieldReader::new(bits))
     }
@@ -1460,6 +1479,7 @@ impl From<SUS10_A> for bool {
 #[doc = "Field `SUS10` reader - State UNKNOWN Secure only 10."]
 pub struct SUS10_R(crate::FieldReader<bool, SUS10_A>);
 impl SUS10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUS10_R(crate::FieldReader::new(bits))
     }
@@ -1529,6 +1549,7 @@ impl<'a> SUS10_W<'a> {
 #[doc = "Field `SU11` reader - State UNKNOWN 11."]
 pub struct SU11_R(crate::FieldReader<bool, bool>);
 impl SU11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SU11_R(crate::FieldReader::new(bits))
     }
@@ -1565,6 +1586,7 @@ impl<'a> SU11_W<'a> {
 #[doc = "Field `SUS11` reader - State UNKNOWN Secure only 11."]
 pub struct SUS11_R(crate::FieldReader<bool, bool>);
 impl SUS11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUS11_R(crate::FieldReader::new(bits))
     }
@@ -1802,6 +1824,7 @@ impl W {
         SUS11_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<AHBCLKCTRL1_SPEC>> for R {
+impl From<crate::R<AHBCLKCTRL1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<AHBCLKCTRL1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<AHBCLKCTRL1_SPEC>> for W {
+impl From<crate::W<AHBCLKCTRL1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<AHBCLKCTRL1_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<MRT_A> for bool {
 #[doc = "Field `MRT` reader - Enables the clock for the MRT."]
 pub struct MRT_R(crate::FieldReader<bool, MRT_A>);
 impl MRT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MRT_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<OSTIMER_A> for bool {
 #[doc = "Field `OSTIMER` reader - Enables the clock for the OS Event Timer."]
 pub struct OSTIMER_R(crate::FieldReader<bool, OSTIMER_A>);
 impl OSTIMER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OSTIMER_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<SCT_A> for bool {
 #[doc = "Field `SCT` reader - Enables the clock for the SCT."]
 pub struct SCT_R(crate::FieldReader<bool, SCT_A>);
 impl SCT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SCT_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<UTICK_A> for bool {
 #[doc = "Field `UTICK` reader - Enables the clock for the UTICK."]
 pub struct UTICK_R(crate::FieldReader<bool, UTICK_A>);
 impl UTICK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UTICK_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<FC0_A> for bool {
 #[doc = "Field `FC0` reader - Enables the clock for the FC0."]
 pub struct FC0_R(crate::FieldReader<bool, FC0_A>);
 impl FC0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC0_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<FC1_A> for bool {
 #[doc = "Field `FC1` reader - Enables the clock for the FC1."]
 pub struct FC1_R(crate::FieldReader<bool, FC1_A>);
 impl FC1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC1_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<FC2_A> for bool {
 #[doc = "Field `FC2` reader - Enables the clock for the FC2."]
 pub struct FC2_R(crate::FieldReader<bool, FC2_A>);
 impl FC2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC2_R(crate::FieldReader::new(bits))
     }
@@ -630,6 +639,7 @@ impl From<FC3_A> for bool {
 #[doc = "Field `FC3` reader - Enables the clock for the FC3."]
 pub struct FC3_R(crate::FieldReader<bool, FC3_A>);
 impl FC3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC3_R(crate::FieldReader::new(bits))
     }
@@ -713,6 +723,7 @@ impl From<FC4_A> for bool {
 #[doc = "Field `FC4` reader - Enables the clock for the FC4."]
 pub struct FC4_R(crate::FieldReader<bool, FC4_A>);
 impl FC4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC4_R(crate::FieldReader::new(bits))
     }
@@ -796,6 +807,7 @@ impl From<FC5_A> for bool {
 #[doc = "Field `FC5` reader - Enables the clock for the FC5."]
 pub struct FC5_R(crate::FieldReader<bool, FC5_A>);
 impl FC5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC5_R(crate::FieldReader::new(bits))
     }
@@ -879,6 +891,7 @@ impl From<FC6_A> for bool {
 #[doc = "Field `FC6` reader - Enables the clock for the FC6."]
 pub struct FC6_R(crate::FieldReader<bool, FC6_A>);
 impl FC6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC6_R(crate::FieldReader::new(bits))
     }
@@ -962,6 +975,7 @@ impl From<FC7_A> for bool {
 #[doc = "Field `FC7` reader - Enables the clock for the FC7."]
 pub struct FC7_R(crate::FieldReader<bool, FC7_A>);
 impl FC7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FC7_R(crate::FieldReader::new(bits))
     }
@@ -1045,6 +1059,7 @@ impl From<TIMER2_A> for bool {
 #[doc = "Field `TIMER2` reader - Enables the clock for the Timer 2."]
 pub struct TIMER2_R(crate::FieldReader<bool, TIMER2_A>);
 impl TIMER2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TIMER2_R(crate::FieldReader::new(bits))
     }
@@ -1128,6 +1143,7 @@ impl From<USB0_DEV_A> for bool {
 #[doc = "Field `USB0_DEV` reader - Enables the clock for the USB0 DEV."]
 pub struct USB0_DEV_R(crate::FieldReader<bool, USB0_DEV_A>);
 impl USB0_DEV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USB0_DEV_R(crate::FieldReader::new(bits))
     }
@@ -1211,6 +1227,7 @@ impl From<TIMER0_A> for bool {
 #[doc = "Field `TIMER0` reader - Enables the clock for the Timer 0."]
 pub struct TIMER0_R(crate::FieldReader<bool, TIMER0_A>);
 impl TIMER0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TIMER0_R(crate::FieldReader::new(bits))
     }
@@ -1294,6 +1311,7 @@ impl From<TIMER1_A> for bool {
 #[doc = "Field `TIMER1` reader - Enables the clock for the Timer 1."]
 pub struct TIMER1_R(crate::FieldReader<bool, TIMER1_A>);
 impl TIMER1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TIMER1_R(crate::FieldReader::new(bits))
     }
@@ -1524,6 +1542,7 @@ impl W {
         TIMER1_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

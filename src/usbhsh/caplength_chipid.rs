@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CAPLENGTH_CHIPID_SPEC>> for R {
+impl From<crate::R<CAPLENGTH_CHIPID_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CAPLENGTH_CHIPID_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<CAPLENGTH_CHIPID_SPEC>> for R {
 #[doc = "Field `CAPLENGTH` reader - Capability Length: This is used as an offset."]
 pub struct CAPLENGTH_R(crate::FieldReader<u8, u8>);
 impl CAPLENGTH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CAPLENGTH_R(crate::FieldReader::new(bits))
     }
@@ -31,6 +33,7 @@ impl core::ops::Deref for CAPLENGTH_R {
 = Minor revision Major revisions used: 0x01: USB2."]
 pub struct CHIPID_R(crate::FieldReader<u16, u16>);
 impl CHIPID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         CHIPID_R(crate::FieldReader::new(bits))
     }

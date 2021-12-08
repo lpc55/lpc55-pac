@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PORTMODE_SPEC>> for R {
+impl From<crate::R<PORTMODE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PORTMODE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PORTMODE_SPEC>> for W {
+impl From<crate::W<PORTMODE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PORTMODE_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<PORTMODE_SPEC>> for W {
 #[doc = "Field `DEV_ENABLE` reader - If this bit is set to one, one of the ports will behave as a USB device."]
 pub struct DEV_ENABLE_R(crate::FieldReader<bool, bool>);
 impl DEV_ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEV_ENABLE_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> DEV_ENABLE_W<'a> {
 #[doc = "Field `SW_CTRL_PDCOM` reader - This bit indicates if the PHY power-down input is controlled by software or by hardware."]
 pub struct SW_CTRL_PDCOM_R(crate::FieldReader<bool, bool>);
 impl SW_CTRL_PDCOM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SW_CTRL_PDCOM_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> SW_CTRL_PDCOM_W<'a> {
 #[doc = "Field `SW_PDCOM` reader - This bit is only used when SW_CTRL_PDCOM is set to 1b."]
 pub struct SW_PDCOM_R(crate::FieldReader<bool, bool>);
 impl SW_PDCOM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SW_PDCOM_R(crate::FieldReader::new(bits))
     }
@@ -174,6 +179,7 @@ impl W {
         SW_PDCOM_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

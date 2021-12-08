@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CPUCTRL_SPEC>> for R {
+impl From<crate::R<CPUCTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CPUCTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CPUCTRL_SPEC>> for W {
+impl From<crate::W<CPUCTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CPUCTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<CPU1CLKEN_A> for bool {
 #[doc = "Field `CPU1CLKEN` reader - CPU1 clock enable."]
 pub struct CPU1CLKEN_R(crate::FieldReader<bool, CPU1CLKEN_A>);
 impl CPU1CLKEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CPU1CLKEN_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<CPU1RSTEN_A> for bool {
 #[doc = "Field `CPU1RSTEN` reader - CPU1 reset."]
 pub struct CPU1RSTEN_R(crate::FieldReader<bool, CPU1RSTEN_A>);
 impl CPU1RSTEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CPU1RSTEN_R(crate::FieldReader::new(bits))
     }
@@ -222,6 +226,7 @@ impl W {
         CPU1RSTEN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

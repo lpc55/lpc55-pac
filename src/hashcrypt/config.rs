@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CONFIG_SPEC>> for R {
+impl From<crate::R<CONFIG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CONFIG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CONFIG_SPEC>> for W {
+impl From<crate::W<CONFIG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CONFIG_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CONFIG_SPEC>> for W {
 #[doc = "Field `DUAL` reader - 1 if 2 x 512 bit buffers, 0 if only 1 x 512 bit"]
 pub struct DUAL_R(crate::FieldReader<bool, bool>);
 impl DUAL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DUAL_R(crate::FieldReader::new(bits))
     }
@@ -49,6 +52,7 @@ impl core::ops::Deref for DUAL_R {
 #[doc = "Field `DMA` reader - 1 if DMA is connected"]
 pub struct DMA_R(crate::FieldReader<bool, bool>);
 impl DMA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DMA_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +67,7 @@ impl core::ops::Deref for DMA_R {
 #[doc = "Field `AHB` reader - 1 if AHB Master is enabled"]
 pub struct AHB_R(crate::FieldReader<bool, bool>);
 impl AHB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AHB_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +82,7 @@ impl core::ops::Deref for AHB_R {
 #[doc = "Field `AES` reader - 1 if AES 128 included"]
 pub struct AES_R(crate::FieldReader<bool, bool>);
 impl AES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AES_R(crate::FieldReader::new(bits))
     }
@@ -91,6 +97,7 @@ impl core::ops::Deref for AES_R {
 #[doc = "Field `AESKEY` reader - 1 if AES 192 and 256 also included"]
 pub struct AESKEY_R(crate::FieldReader<bool, bool>);
 impl AESKEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AESKEY_R(crate::FieldReader::new(bits))
     }
@@ -105,6 +112,7 @@ impl core::ops::Deref for AESKEY_R {
 #[doc = "Field `SECRET` reader - 1 if AES Secret key available"]
 pub struct SECRET_R(crate::FieldReader<bool, bool>);
 impl SECRET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SECRET_R(crate::FieldReader::new(bits))
     }
@@ -119,6 +127,7 @@ impl core::ops::Deref for SECRET_R {
 #[doc = "Field `ICB` reader - 1 if ICB over AES included"]
 pub struct ICB_R(crate::FieldReader<bool, bool>);
 impl ICB_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ICB_R(crate::FieldReader::new(bits))
     }
@@ -169,6 +178,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

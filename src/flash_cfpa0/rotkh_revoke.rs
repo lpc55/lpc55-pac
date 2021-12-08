@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ROTKH_REVOKE_SPEC>> for R {
+impl From<crate::R<ROTKH_REVOKE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ROTKH_REVOKE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ROTKH_REVOKE_SPEC>> for W {
+impl From<crate::W<ROTKH_REVOKE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ROTKH_REVOKE_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<ROTKH_REVOKE_SPEC>> for W {
 #[doc = "Field `RoTK0_EN` reader - RoT Key 0 enable. 00 - Invalid 01 - Enabled 10, 11 - Key revoked"]
 pub struct ROTK0_EN_R(crate::FieldReader<u8, u8>);
 impl ROTK0_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ROTK0_EN_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> ROTK0_EN_W<'a> {
 #[doc = "Field `RoTK1_EN` reader - RoT Key 1 enable. 00 - Invalid 01 - Enabled 10, 11 - Key revoked"]
 pub struct ROTK1_EN_R(crate::FieldReader<u8, u8>);
 impl ROTK1_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ROTK1_EN_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> ROTK1_EN_W<'a> {
 #[doc = "Field `RoTK2_EN` reader - RoT Key 2 enable. 00 - Invalid 01 - Enabled 10, 11 - Key revoked"]
 pub struct ROTK2_EN_R(crate::FieldReader<u8, u8>);
 impl ROTK2_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ROTK2_EN_R(crate::FieldReader::new(bits))
     }
@@ -113,6 +118,7 @@ impl<'a> ROTK2_EN_W<'a> {
 #[doc = "Field `RoTK3_EN` reader - RoT Key 3 enable. 00 - Invalid 01 - Enabled 10, 11 - Key revoked"]
 pub struct ROTK3_EN_R(crate::FieldReader<u8, u8>);
 impl ROTK3_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ROTK3_EN_R(crate::FieldReader::new(bits))
     }
@@ -180,6 +186,7 @@ impl W {
         ROTK3_EN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

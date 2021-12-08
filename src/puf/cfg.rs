@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CFG_SPEC>> for R {
+impl From<crate::R<CFG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CFG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CFG_SPEC>> for W {
+impl From<crate::W<CFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CFG_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CFG_SPEC>> for W {
 #[doc = "Field `BLOCKENROLL_SETKEY` reader - Block enroll operation. Write 1 to set, cleared on reset."]
 pub struct BLOCKENROLL_SETKEY_R(crate::FieldReader<bool, bool>);
 impl BLOCKENROLL_SETKEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BLOCKENROLL_SETKEY_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> BLOCKENROLL_SETKEY_W<'a> {
 #[doc = "Field `BLOCKKEYOUTPUT` reader - Block set key operation. Write 1 to set, cleared on reset."]
 pub struct BLOCKKEYOUTPUT_R(crate::FieldReader<bool, bool>);
 impl BLOCKKEYOUTPUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BLOCKKEYOUTPUT_R(crate::FieldReader::new(bits))
     }
@@ -128,6 +132,7 @@ impl W {
         BLOCKKEYOUTPUT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

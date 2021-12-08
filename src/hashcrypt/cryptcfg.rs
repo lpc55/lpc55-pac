@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CRYPTCFG_SPEC>> for R {
+impl From<crate::R<CRYPTCFG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CRYPTCFG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CRYPTCFG_SPEC>> for W {
+impl From<crate::W<CRYPTCFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CRYPTCFG_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CRYPTCFG_SPEC>> for W {
 #[doc = "Field `MSW1ST_OUT` reader - If 1, OUTDATA0 will be read Most significant word 1st for AES. Else it will be read in normal little endian - Least significant word 1st. Note: only if allowed by configuration."]
 pub struct MSW1ST_OUT_R(crate::FieldReader<bool, bool>);
 impl MSW1ST_OUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MSW1ST_OUT_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> MSW1ST_OUT_W<'a> {
 #[doc = "Field `SWAPKEY` reader - If 1, will Swap the key input (bytes in each word)."]
 pub struct SWAPKEY_R(crate::FieldReader<bool, bool>);
 impl SWAPKEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWAPKEY_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> SWAPKEY_W<'a> {
 #[doc = "Field `SWAPDAT` reader - If 1, will SWAP the data and IV inputs (bytes in each word)."]
 pub struct SWAPDAT_R(crate::FieldReader<bool, bool>);
 impl SWAPDAT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWAPDAT_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> SWAPDAT_W<'a> {
 #[doc = "Field `MSW1ST` reader - If 1, load of key, IV, and data is MSW 1st for AES. Else, the words are little endian. Note: only if allowed by configuration."]
 pub struct MSW1ST_R(crate::FieldReader<bool, bool>);
 impl MSW1ST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MSW1ST_R(crate::FieldReader::new(bits))
     }
@@ -196,6 +202,7 @@ impl From<AESMODE_A> for u8 {
 #[doc = "Field `AESMODE` reader - AES Cipher mode to use if plain AES"]
 pub struct AESMODE_R(crate::FieldReader<u8, AESMODE_A>);
 impl AESMODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AESMODE_R(crate::FieldReader::new(bits))
     }
@@ -281,6 +288,7 @@ impl From<AESDECRYPT_A> for bool {
 #[doc = "Field `AESDECRYPT` reader - AES ECB direction. Only encryption used if CTR mode or manual modes such as CFB"]
 pub struct AESDECRYPT_R(crate::FieldReader<bool, AESDECRYPT_A>);
 impl AESDECRYPT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AESDECRYPT_R(crate::FieldReader::new(bits))
     }
@@ -364,6 +372,7 @@ impl From<AESSECRET_A> for bool {
 #[doc = "Field `AESSECRET` reader - Selects the Hidden Secret key vs. User key, if provided. If security levels are used, only the highest level is permitted to select this."]
 pub struct AESSECRET_R(crate::FieldReader<bool, AESSECRET_A>);
 impl AESSECRET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AESSECRET_R(crate::FieldReader::new(bits))
     }
@@ -450,6 +459,7 @@ impl From<AESKEYSZ_A> for u8 {
 #[doc = "Field `AESKEYSZ` reader - Sets the AES key size"]
 pub struct AESKEYSZ_R(crate::FieldReader<u8, AESKEYSZ_A>);
 impl AESKEYSZ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AESKEYSZ_R(crate::FieldReader::new(bits))
     }
@@ -521,6 +531,7 @@ impl<'a> AESKEYSZ_W<'a> {
 #[doc = "Field `AESCTRPOS` reader - Halfword position of 16b counter in IV if AESMODE is CTR (position is fixed for Salsa and ChaCha). Only supports 16b counter, so application must control any additional bytes if using more. The 16-bit counter is read from the IV and incremented by 1 each time. Any other use CTR should use ECB directly and do its own XOR and so on."]
 pub struct AESCTRPOS_R(crate::FieldReader<u8, u8>);
 impl AESCTRPOS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         AESCTRPOS_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +558,7 @@ impl<'a> AESCTRPOS_W<'a> {
 #[doc = "Field `STREAMLAST` reader - Is 1 if last stream block. If not 1, then the engine will compute the next \"hash\"."]
 pub struct STREAMLAST_R(crate::FieldReader<bool, bool>);
 impl STREAMLAST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STREAMLAST_R(crate::FieldReader::new(bits))
     }
@@ -602,6 +614,7 @@ impl From<ICBSZ_A> for u8 {
 #[doc = "Field `ICBSZ` reader - This sets the ICB size between 32 and 128 bits, using the following rules. Note that the counter is assumed to occupy the low order bits of the IV."]
 pub struct ICBSZ_R(crate::FieldReader<u8, ICBSZ_A>);
 impl ICBSZ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ICBSZ_R(crate::FieldReader::new(bits))
     }
@@ -703,6 +716,7 @@ impl From<ICBSTRM_A> for u8 {
 #[doc = "Field `ICBSTRM` reader - The size of the ICB-AES stream that can be pushed before needing to compute a new IV/ctr (counter start). This optimizes the performance of the stream of blocks after the 1st."]
 pub struct ICBSTRM_R(crate::FieldReader<u8, ICBSTRM_A>);
 impl ICBSTRM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ICBSTRM_R(crate::FieldReader::new(bits))
     }
@@ -906,6 +920,7 @@ impl W {
         ICBSTRM_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

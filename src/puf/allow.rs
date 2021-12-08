@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<ALLOW_SPEC>> for R {
+impl From<crate::R<ALLOW_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<ALLOW_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<ALLOW_SPEC>> for W {
+impl From<crate::W<ALLOW_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<ALLOW_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<ALLOW_SPEC>> for W {
 #[doc = "Field `ALLOWENROLL` reader - Enroll operation is allowed"]
 pub struct ALLOWENROLL_R(crate::FieldReader<bool, bool>);
 impl ALLOWENROLL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ALLOWENROLL_R(crate::FieldReader::new(bits))
     }
@@ -49,6 +52,7 @@ impl core::ops::Deref for ALLOWENROLL_R {
 #[doc = "Field `ALLOWSTART` reader - Start operation is allowed"]
 pub struct ALLOWSTART_R(crate::FieldReader<bool, bool>);
 impl ALLOWSTART_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ALLOWSTART_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +67,7 @@ impl core::ops::Deref for ALLOWSTART_R {
 #[doc = "Field `ALLOWSETKEY` reader - Set Key operations are allowed"]
 pub struct ALLOWSETKEY_R(crate::FieldReader<bool, bool>);
 impl ALLOWSETKEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ALLOWSETKEY_R(crate::FieldReader::new(bits))
     }
@@ -77,6 +82,7 @@ impl core::ops::Deref for ALLOWSETKEY_R {
 #[doc = "Field `ALLOWGETKEY` reader - Get Key operation is allowed"]
 pub struct ALLOWGETKEY_R(crate::FieldReader<bool, bool>);
 impl ALLOWGETKEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ALLOWGETKEY_R(crate::FieldReader::new(bits))
     }
@@ -112,6 +118,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

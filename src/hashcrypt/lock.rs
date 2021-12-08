@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<LOCK_SPEC>> for R {
+impl From<crate::R<LOCK_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<LOCK_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<LOCK_SPEC>> for W {
+impl From<crate::W<LOCK_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<LOCK_SPEC>) -> Self {
         W(writer)
     }
@@ -50,6 +52,7 @@ impl From<SECLOCK_A> for u8 {
 #[doc = "Field `SECLOCK` reader - Write 1 to secure-lock this block (if running in a security state). Write 0 to unlock. If locked already, may only write if at same or higher security level as lock. Reads as: 0 if unlocked, else 1, 2, 3 to indicate security level it is locked at. NOTE: this and ID are the only readable registers if locked and current state is lower than lock level."]
 pub struct SECLOCK_R(crate::FieldReader<u8, SECLOCK_A>);
 impl SECLOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SECLOCK_R(crate::FieldReader::new(bits))
     }
@@ -110,6 +113,7 @@ impl<'a> SECLOCK_W<'a> {
 #[doc = "Field `PATTERN` reader - Must write 0xA75 to change lock state. A75:Pattern needed to change bits 1:0"]
 pub struct PATTERN_R(crate::FieldReader<u16, u16>);
 impl PATTERN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         PATTERN_R(crate::FieldReader::new(bits))
     }
@@ -157,6 +161,7 @@ impl W {
         PATTERN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

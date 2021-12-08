@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RINGO0_CTRL_SPEC>> for R {
+impl From<crate::R<RINGO0_CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RINGO0_CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RINGO0_CTRL_SPEC>> for W {
+impl From<crate::W<RINGO0_CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RINGO0_CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<SL_A> for bool {
 #[doc = "Field `SL` reader - Select short or long ringo (for all ringos types)."]
 pub struct SL_R(crate::FieldReader<bool, SL_A>);
 impl SL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SL_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<FS_A> for bool {
 #[doc = "Field `FS` reader - Ringo frequency output divider."]
 pub struct FS_R(crate::FieldReader<bool, FS_A>);
 impl FS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FS_R(crate::FieldReader::new(bits))
     }
@@ -220,6 +224,7 @@ impl From<SWN_SWP_A> for u8 {
 #[doc = "Field `SWN_SWP` reader - PN-Ringos (P-Transistor and N-Transistor processing) control."]
 pub struct SWN_SWP_R(crate::FieldReader<u8, SWN_SWP_A>);
 impl SWN_SWP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SWN_SWP_R(crate::FieldReader::new(bits))
     }
@@ -316,6 +321,7 @@ impl From<PD_A> for bool {
 #[doc = "Field `PD` reader - Ringo module Power control."]
 pub struct PD_R(crate::FieldReader<bool, PD_A>);
 impl PD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PD_R(crate::FieldReader::new(bits))
     }
@@ -399,6 +405,7 @@ impl From<E_ND0_A> for bool {
 #[doc = "Field `E_ND0` reader - First NAND2-based ringo control."]
 pub struct E_ND0_R(crate::FieldReader<bool, E_ND0_A>);
 impl E_ND0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         E_ND0_R(crate::FieldReader::new(bits))
     }
@@ -482,6 +489,7 @@ impl From<E_ND1_A> for bool {
 #[doc = "Field `E_ND1` reader - Second NAND2-based ringo control."]
 pub struct E_ND1_R(crate::FieldReader<bool, E_ND1_A>);
 impl E_ND1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         E_ND1_R(crate::FieldReader::new(bits))
     }
@@ -565,6 +573,7 @@ impl From<E_NR0_A> for bool {
 #[doc = "Field `E_NR0` reader - First NOR2-based ringo control."]
 pub struct E_NR0_R(crate::FieldReader<bool, E_NR0_A>);
 impl E_NR0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         E_NR0_R(crate::FieldReader::new(bits))
     }
@@ -648,6 +657,7 @@ impl From<E_NR1_A> for bool {
 #[doc = "Field `E_NR1` reader - Second NOR2-based ringo control."]
 pub struct E_NR1_R(crate::FieldReader<bool, E_NR1_A>);
 impl E_NR1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         E_NR1_R(crate::FieldReader::new(bits))
     }
@@ -731,6 +741,7 @@ impl From<E_IV0_A> for bool {
 #[doc = "Field `E_IV0` reader - First Inverter-based ringo control."]
 pub struct E_IV0_R(crate::FieldReader<bool, E_IV0_A>);
 impl E_IV0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         E_IV0_R(crate::FieldReader::new(bits))
     }
@@ -814,6 +825,7 @@ impl From<E_IV1_A> for bool {
 #[doc = "Field `E_IV1` reader - Second Inverter-based ringo control."]
 pub struct E_IV1_R(crate::FieldReader<bool, E_IV1_A>);
 impl E_IV1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         E_IV1_R(crate::FieldReader::new(bits))
     }
@@ -897,6 +909,7 @@ impl From<E_PN0_A> for bool {
 #[doc = "Field `E_PN0` reader - First PN (P-Transistor and N-Transistor processing) monitor control."]
 pub struct E_PN0_R(crate::FieldReader<bool, E_PN0_A>);
 impl E_PN0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         E_PN0_R(crate::FieldReader::new(bits))
     }
@@ -980,6 +993,7 @@ impl From<E_PN1_A> for bool {
 #[doc = "Field `E_PN1` reader - Second PN (P-Transistor and N-Transistor processing) monitor control."]
 pub struct E_PN1_R(crate::FieldReader<bool, E_PN1_A>);
 impl E_PN1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         E_PN1_R(crate::FieldReader::new(bits))
     }
@@ -1049,6 +1063,7 @@ impl<'a> E_PN1_W<'a> {
 #[doc = "Field `DIVISOR` reader - Ringo out Clock divider value. Frequency Output = Frequency input / (DIViSOR+1). (minimum = Frequency input / 16)"]
 pub struct DIVISOR_R(crate::FieldReader<u8, u8>);
 impl DIVISOR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DIVISOR_R(crate::FieldReader::new(bits))
     }
@@ -1075,6 +1090,7 @@ impl<'a> DIVISOR_W<'a> {
 #[doc = "Field `DIV_UPDATE_REQ` reader - Ringo clock out Divider status flag. Set when a change is made to the divider value, cleared when the change is complete."]
 pub struct DIV_UPDATE_REQ_R(crate::FieldReader<bool, bool>);
 impl DIV_UPDATE_REQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DIV_UPDATE_REQ_R(crate::FieldReader::new(bits))
     }
@@ -1225,6 +1241,7 @@ impl W {
         DIVISOR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

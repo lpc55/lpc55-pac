@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<STAT_SPEC>> for R {
+impl From<crate::R<STAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<STAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<STAT_SPEC>> for W {
+impl From<crate::W<STAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<STAT_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<INTFLAG_A> for bool {
 #[doc = "Field `INTFLAG` reader - Monitors the interrupt flag."]
 pub struct INTFLAG_R(crate::FieldReader<bool, INTFLAG_A>);
 impl INTFLAG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INTFLAG_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<RUN_A> for bool {
 #[doc = "Field `RUN` reader - Indicates the state of TIMERn. This bit is read-only."]
 pub struct RUN_R(crate::FieldReader<bool, RUN_A>);
 impl RUN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RUN_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<INUSE_A> for bool {
 #[doc = "Field `INUSE` reader - Channel In Use flag. Operating details depend on the MULTITASK bit in the MODCFG register, and affects the use of IDLE_CH. See Idle channel register for details of the two operating modes."]
 pub struct INUSE_R(crate::FieldReader<bool, INUSE_A>);
 impl INUSE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INUSE_R(crate::FieldReader::new(bits))
     }
@@ -315,6 +320,7 @@ impl W {
         INUSE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

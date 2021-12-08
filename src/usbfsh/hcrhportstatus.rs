@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<HCRHPORTSTATUS_SPEC>> for R {
+impl From<crate::R<HCRHPORTSTATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<HCRHPORTSTATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<HCRHPORTSTATUS_SPEC>> for W {
+impl From<crate::W<HCRHPORTSTATUS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<HCRHPORTSTATUS_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<HCRHPORTSTATUS_SPEC>> for W {
 #[doc = "Field `CCS` reader - (read) CurrentConnectStatus This bit reflects the current state of the downstream port."]
 pub struct CCS_R(crate::FieldReader<bool, bool>);
 impl CCS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCS_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> CCS_W<'a> {
 #[doc = "Field `PES` reader - (read) PortEnableStatus This bit indicates whether the port is enabled or disabled."]
 pub struct PES_R(crate::FieldReader<bool, bool>);
 impl PES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PES_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> PES_W<'a> {
 #[doc = "Field `PSS` reader - (read) PortSuspendStatus This bit indicates the port is suspended or in the resume sequence."]
 pub struct PSS_R(crate::FieldReader<bool, bool>);
 impl PSS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PSS_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> PSS_W<'a> {
 #[doc = "Field `POCI` reader - (read) PortOverCurrentIndicator This bit is only valid when the Root Hub is configured in such a way that overcurrent conditions are reported on a per-port basis."]
 pub struct POCI_R(crate::FieldReader<bool, bool>);
 impl POCI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         POCI_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> POCI_W<'a> {
 #[doc = "Field `PRS` reader - (read) PortResetStatus When this bit is set by a write to SetPortReset, port reset signaling is asserted."]
 pub struct PRS_R(crate::FieldReader<bool, bool>);
 impl PRS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PRS_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> PRS_W<'a> {
 #[doc = "Field `PPS` reader - (read) PortPowerStatus This bit reflects the porta's power status, regardless of the type of power switching implemented."]
 pub struct PPS_R(crate::FieldReader<bool, bool>);
 impl PPS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PPS_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +259,7 @@ impl<'a> PPS_W<'a> {
 #[doc = "Field `LSDA` reader - (read) LowSpeedDeviceAttached This bit indicates the speed of the device attached to this port."]
 pub struct LSDA_R(crate::FieldReader<bool, bool>);
 impl LSDA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LSDA_R(crate::FieldReader::new(bits))
     }
@@ -287,6 +296,7 @@ impl<'a> LSDA_W<'a> {
 #[doc = "Field `CSC` reader - ConnectStatusChange This bit is set whenever a connect or disconnect event occurs."]
 pub struct CSC_R(crate::FieldReader<bool, bool>);
 impl CSC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CSC_R(crate::FieldReader::new(bits))
     }
@@ -323,6 +333,7 @@ impl<'a> CSC_W<'a> {
 #[doc = "Field `PESC` reader - PortEnableStatusChange This bit is set when hardware events cause the PortEnableStatus bit to be cleared."]
 pub struct PESC_R(crate::FieldReader<bool, bool>);
 impl PESC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PESC_R(crate::FieldReader::new(bits))
     }
@@ -359,6 +370,7 @@ impl<'a> PESC_W<'a> {
 #[doc = "Field `PSSC` reader - PortSuspendStatusChange This bit is set when the full resume sequence is completed."]
 pub struct PSSC_R(crate::FieldReader<bool, bool>);
 impl PSSC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PSSC_R(crate::FieldReader::new(bits))
     }
@@ -395,6 +407,7 @@ impl<'a> PSSC_W<'a> {
 #[doc = "Field `OCIC` reader - PortOverCurrentIndicatorChange This bit is valid only if overcurrent conditions are reported on a per-port basis."]
 pub struct OCIC_R(crate::FieldReader<bool, bool>);
 impl OCIC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OCIC_R(crate::FieldReader::new(bits))
     }
@@ -431,6 +444,7 @@ impl<'a> OCIC_W<'a> {
 #[doc = "Field `PRSC` reader - PortResetStatusChange This bit is set at the end of the 10 ms port reset signal."]
 pub struct PRSC_R(crate::FieldReader<bool, bool>);
 impl PRSC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PRSC_R(crate::FieldReader::new(bits))
     }
@@ -588,6 +602,7 @@ impl W {
         PRSC_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

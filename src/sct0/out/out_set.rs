@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<OUT_SET_SPEC>> for R {
+impl From<crate::R<OUT_SET_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<OUT_SET_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<OUT_SET_SPEC>> for W {
+impl From<crate::W<OUT_SET_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<OUT_SET_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<OUT_SET_SPEC>> for W {
 #[doc = "Field `SET` reader - A 1 in bit m selects event m to set output n (or clear it if SETCLRn = 0x1 or 0x2) output 0 = bit 0, output 1 = bit 1, etc. The number of bits = number of events in this SCT. When the counter is used in bi-directional mode, it is possible to reverse the action specified by the output set and clear registers when counting down, See the OUTPUTCTRL register."]
 pub struct SET_R(crate::FieldReader<u16, u16>);
 impl SET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         SET_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         SET_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

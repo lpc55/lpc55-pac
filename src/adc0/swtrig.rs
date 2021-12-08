@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SWTRIG_SPEC>> for R {
+impl From<crate::R<SWTRIG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SWTRIG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SWTRIG_SPEC>> for W {
+impl From<crate::W<SWTRIG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SWTRIG_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<SWT0_A> for bool {
 #[doc = "Field `SWT0` reader - Software trigger 0 event"]
 pub struct SWT0_R(crate::FieldReader<bool, SWT0_A>);
 impl SWT0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT0_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<SWT1_A> for bool {
 #[doc = "Field `SWT1` reader - Software trigger 1 event"]
 pub struct SWT1_R(crate::FieldReader<bool, SWT1_A>);
 impl SWT1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT1_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<SWT2_A> for bool {
 #[doc = "Field `SWT2` reader - Software trigger 2 event"]
 pub struct SWT2_R(crate::FieldReader<bool, SWT2_A>);
 impl SWT2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT2_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<SWT3_A> for bool {
 #[doc = "Field `SWT3` reader - Software trigger 3 event"]
 pub struct SWT3_R(crate::FieldReader<bool, SWT3_A>);
 impl SWT3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT3_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<SWT4_A> for bool {
 #[doc = "Field `SWT4` reader - Software trigger 4 event"]
 pub struct SWT4_R(crate::FieldReader<bool, SWT4_A>);
 impl SWT4_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT4_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<SWT5_A> for bool {
 #[doc = "Field `SWT5` reader - Software trigger 5 event"]
 pub struct SWT5_R(crate::FieldReader<bool, SWT5_A>);
 impl SWT5_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT5_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<SWT6_A> for bool {
 #[doc = "Field `SWT6` reader - Software trigger 6 event"]
 pub struct SWT6_R(crate::FieldReader<bool, SWT6_A>);
 impl SWT6_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT6_R(crate::FieldReader::new(bits))
     }
@@ -630,6 +639,7 @@ impl From<SWT7_A> for bool {
 #[doc = "Field `SWT7` reader - Software trigger 7 event"]
 pub struct SWT7_R(crate::FieldReader<bool, SWT7_A>);
 impl SWT7_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT7_R(crate::FieldReader::new(bits))
     }
@@ -713,6 +723,7 @@ impl From<SWT8_A> for bool {
 #[doc = "Field `SWT8` reader - Software trigger 8 event"]
 pub struct SWT8_R(crate::FieldReader<bool, SWT8_A>);
 impl SWT8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT8_R(crate::FieldReader::new(bits))
     }
@@ -796,6 +807,7 @@ impl From<SWT9_A> for bool {
 #[doc = "Field `SWT9` reader - Software trigger 9 event"]
 pub struct SWT9_R(crate::FieldReader<bool, SWT9_A>);
 impl SWT9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT9_R(crate::FieldReader::new(bits))
     }
@@ -879,6 +891,7 @@ impl From<SWT10_A> for bool {
 #[doc = "Field `SWT10` reader - Software trigger 10 event"]
 pub struct SWT10_R(crate::FieldReader<bool, SWT10_A>);
 impl SWT10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT10_R(crate::FieldReader::new(bits))
     }
@@ -962,6 +975,7 @@ impl From<SWT11_A> for bool {
 #[doc = "Field `SWT11` reader - Software trigger 11 event"]
 pub struct SWT11_R(crate::FieldReader<bool, SWT11_A>);
 impl SWT11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT11_R(crate::FieldReader::new(bits))
     }
@@ -1045,6 +1059,7 @@ impl From<SWT12_A> for bool {
 #[doc = "Field `SWT12` reader - Software trigger 12 event"]
 pub struct SWT12_R(crate::FieldReader<bool, SWT12_A>);
 impl SWT12_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT12_R(crate::FieldReader::new(bits))
     }
@@ -1128,6 +1143,7 @@ impl From<SWT13_A> for bool {
 #[doc = "Field `SWT13` reader - Software trigger 13 event"]
 pub struct SWT13_R(crate::FieldReader<bool, SWT13_A>);
 impl SWT13_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT13_R(crate::FieldReader::new(bits))
     }
@@ -1211,6 +1227,7 @@ impl From<SWT14_A> for bool {
 #[doc = "Field `SWT14` reader - Software trigger 14 event"]
 pub struct SWT14_R(crate::FieldReader<bool, SWT14_A>);
 impl SWT14_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT14_R(crate::FieldReader::new(bits))
     }
@@ -1294,6 +1311,7 @@ impl From<SWT15_A> for bool {
 #[doc = "Field `SWT15` reader - Software trigger 15 event"]
 pub struct SWT15_R(crate::FieldReader<bool, SWT15_A>);
 impl SWT15_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SWT15_R(crate::FieldReader::new(bits))
     }
@@ -1524,6 +1542,7 @@ impl W {
         SWT15_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

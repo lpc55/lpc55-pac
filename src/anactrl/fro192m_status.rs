@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FRO192M_STATUS_SPEC>> for R {
+impl From<crate::R<FRO192M_STATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FRO192M_STATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FRO192M_STATUS_SPEC>> for W {
+impl From<crate::W<FRO192M_STATUS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FRO192M_STATUS_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<CLK_VALID_A> for bool {
 #[doc = "Field `CLK_VALID` reader - Output clock valid signal. Indicates that CCO clock has settled."]
 pub struct CLK_VALID_R(crate::FieldReader<bool, CLK_VALID_A>);
 impl CLK_VALID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CLK_VALID_R(crate::FieldReader::new(bits))
     }
@@ -81,6 +84,7 @@ impl core::ops::Deref for CLK_VALID_R {
 #[doc = "Field `ATB_VCTRL` reader - CCO threshold voltage detector output (signal vcco_ok). Once the CCO voltage crosses the threshold voltage of a SLVT transistor, this output signal will go high. It is also possible to observe the clk_valid signal."]
 pub struct ATB_VCTRL_R(crate::FieldReader<bool, bool>);
 impl ATB_VCTRL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ATB_VCTRL_R(crate::FieldReader::new(bits))
     }
@@ -106,6 +110,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

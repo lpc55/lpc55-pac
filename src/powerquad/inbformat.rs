@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INBFORMAT_SPEC>> for R {
+impl From<crate::R<INBFORMAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INBFORMAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<INBFORMAT_SPEC>> for W {
+impl From<crate::W<INBFORMAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<INBFORMAT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<INBFORMAT_SPEC>> for W {
 #[doc = "Field `inb_formatint` reader - Input B Internal format (00: q15; 01:q31; 10:float)"]
 pub struct INB_FORMATINT_R(crate::FieldReader<u8, u8>);
 impl INB_FORMATINT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         INB_FORMATINT_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> INB_FORMATINT_W<'a> {
 #[doc = "Field `inb_formatext` reader - Input B External format (00: q15; 01:q31; 10:float)"]
 pub struct INB_FORMATEXT_R(crate::FieldReader<u8, u8>);
 impl INB_FORMATEXT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         INB_FORMATEXT_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> INB_FORMATEXT_W<'a> {
 #[doc = "Field `inb_scaler` reader - Input B Scaler value (for scaled 'q31' formats)"]
 pub struct INB_SCALER_R(crate::FieldReader<u8, u8>);
 impl INB_SCALER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         INB_SCALER_R(crate::FieldReader::new(bits))
     }
@@ -144,6 +149,7 @@ impl W {
         INB_SCALER_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

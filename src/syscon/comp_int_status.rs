@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<COMP_INT_STATUS_SPEC>> for R {
+impl From<crate::R<COMP_INT_STATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<COMP_INT_STATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<COMP_INT_STATUS_SPEC>> for W {
+impl From<crate::W<COMP_INT_STATUS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<COMP_INT_STATUS_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<STATUS_A> for bool {
 #[doc = "Field `STATUS` reader - Interrupt status BEFORE Interrupt Enable."]
 pub struct STATUS_R(crate::FieldReader<bool, STATUS_A>);
 impl STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STATUS_R(crate::FieldReader::new(bits))
     }
@@ -95,6 +98,7 @@ impl From<INT_STATUS_A> for bool {
 #[doc = "Field `INT_STATUS` reader - Interrupt status AFTER Interrupt Enable."]
 pub struct INT_STATUS_R(crate::FieldReader<bool, INT_STATUS_A>);
 impl INT_STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INT_STATUS_R(crate::FieldReader::new(bits))
     }
@@ -141,6 +145,7 @@ impl From<VAL_A> for bool {
 #[doc = "Field `VAL` reader - comparator analog output."]
 pub struct VAL_R(crate::FieldReader<bool, VAL_A>);
 impl VAL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VAL_R(crate::FieldReader::new(bits))
     }
@@ -189,6 +194,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

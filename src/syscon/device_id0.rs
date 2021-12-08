@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<DEVICE_ID0_SPEC>> for R {
+impl From<crate::R<DEVICE_ID0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<DEVICE_ID0_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<DEVICE_ID0_SPEC>> for R {
 #[doc = "Field `ROM_REV_MINOR` reader - ROM revision."]
 pub struct ROM_REV_MINOR_R(crate::FieldReader<u8, u8>);
 impl ROM_REV_MINOR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ROM_REV_MINOR_R(crate::FieldReader::new(bits))
     }

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CAPCTRL7_SPEC>> for R {
+impl From<crate::R<CAPCTRL7_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CAPCTRL7_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CAPCTRL7_SPEC>> for W {
+impl From<crate::W<CAPCTRL7_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CAPCTRL7_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CAPCTRL7_SPEC>> for W {
 #[doc = "Field `CAPCONn_L` reader - If bit m is one, event m causes the CAPn_L (UNIFY = 0) or the CAPn (UNIFY = 1) register to be loaded (event 0 = bit 0, event 1 = bit 1, etc.). The number of bits = number of match/captures in this SCT."]
 pub struct CAPCONN_L_R(crate::FieldReader<u16, u16>);
 impl CAPCONN_L_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         CAPCONN_L_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> CAPCONN_L_W<'a> {
 #[doc = "Field `CAPCONn_H` reader - If bit m is one, event m causes the CAPn_H (UNIFY = 0) register to be loaded (event 0 = bit 16, event 1 = bit 17, etc.). The number of bits = number of match/captures in this SCT."]
 pub struct CAPCONN_H_R(crate::FieldReader<u16, u16>);
 impl CAPCONN_H_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         CAPCONN_H_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl W {
         CAPCONN_H_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

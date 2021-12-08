@@ -5,15 +5,15 @@ pub struct RegisterBlock {
     pub cmd: crate::Reg<cmd::CMD_SPEC>,
     #[doc = "0x04 - event register"]
     pub event: crate::Reg<event::EVENT_SPEC>,
-    _reserved2: [u8; 8usize],
+    _reserved2: [u8; 0x08],
     #[doc = "0x10 - start (or only) address for next flash command"]
     pub starta: crate::Reg<starta::STARTA_SPEC>,
     #[doc = "0x14 - end address for next flash command, if command operates on address ranges"]
     pub stopa: crate::Reg<stopa::STOPA_SPEC>,
-    _reserved4: [u8; 104usize],
-    #[doc = "0x80 - data register, word 0-7; Memory data, or command parameter, or command result."]
+    _reserved4: [u8; 0x68],
+    #[doc = "0x80..0x90 - data register, word 0-7; Memory data, or command parameter, or command result."]
     pub dataw: [crate::Reg<dataw::DATAW_SPEC>; 4],
-    _reserved5: [u8; 3912usize],
+    _reserved5: [u8; 0x0f48],
     #[doc = "0xfd8 - Clear interrupt enable bits"]
     pub int_clr_enable: crate::Reg<int_clr_enable::INT_CLR_ENABLE_SPEC>,
     #[doc = "0xfdc - Set interrupt enable bits"]
@@ -26,7 +26,7 @@ pub struct RegisterBlock {
     pub int_clr_status: crate::Reg<int_clr_status::INT_CLR_STATUS_SPEC>,
     #[doc = "0xfec - Set interrupt status bits"]
     pub int_set_status: crate::Reg<int_set_status::INT_SET_STATUS_SPEC>,
-    _reserved11: [u8; 12usize],
+    _reserved11: [u8; 0x0c],
     #[doc = "0xffc - Controller+Memory module identification"]
     pub module_id: crate::Reg<module_id::MODULE_ID_SPEC>,
 }

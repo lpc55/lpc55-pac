@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<OFSTRIM_SPEC>> for R {
+impl From<crate::R<OFSTRIM_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<OFSTRIM_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<OFSTRIM_SPEC>> for W {
+impl From<crate::W<OFSTRIM_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<OFSTRIM_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<OFSTRIM_SPEC>> for W {
 #[doc = "Field `OFSTRIM_A` reader - Trim for offset"]
 pub struct OFSTRIM_A_R(crate::FieldReader<u8, u8>);
 impl OFSTRIM_A_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         OFSTRIM_A_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> OFSTRIM_A_W<'a> {
 #[doc = "Field `OFSTRIM_B` reader - Trim for offset"]
 pub struct OFSTRIM_B_R(crate::FieldReader<u8, u8>);
 impl OFSTRIM_B_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         OFSTRIM_B_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl W {
         OFSTRIM_B_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

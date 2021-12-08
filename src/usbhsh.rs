@@ -5,7 +5,7 @@ pub struct RegisterBlock {
     pub caplength_chipid: crate::Reg<caplength_chipid::CAPLENGTH_CHIPID_SPEC>,
     #[doc = "0x04 - Host Controller Structural Parameters"]
     pub hcsparams: crate::Reg<hcsparams::HCSPARAMS_SPEC>,
-    _reserved2: [u8; 4usize],
+    _reserved2: [u8; 0x04],
     #[doc = "0x0c - Frame Length Adjustment"]
     pub fladj_frindex: crate::Reg<fladj_frindex::FLADJ_FRINDEX_SPEC>,
     #[doc = "0x10 - Memory base address where ATL PTD0 is stored"]
@@ -38,7 +38,7 @@ pub struct RegisterBlock {
     pub intptds: crate::Reg<intptds::INTPTDS_SPEC>,
     #[doc = "0x48 - Marks the last PTD in the list for ISO, INT and ATL"]
     pub lastptd: crate::Reg<lastptd::LASTPTD_SPEC>,
-    _reserved18: [u8; 4usize],
+    _reserved18: [u8; 0x04],
     #[doc = "0x50 - Controls the port if it is attached to the host block or the device block"]
     pub portmode: crate::Reg<portmode::PORTMODE_SPEC>,
 }

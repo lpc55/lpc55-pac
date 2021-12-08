@@ -2,6 +2,8 @@ YAML = lpc55.yaml
 SVD = lpc55.svd.patched
 PACK_VERSION = 13.0.0
 
+# Path to `svd`/`svdtools`
+SVDTOOLS ?= svd
 
 # this make target runs under svdtools, ensure it works at all times.
 check: patch generate
@@ -16,10 +18,10 @@ doc-open: setup patch generate
 	cargo doc --open
 
 setup: update-venv fetch-svd
-	cargo install svd2rust --version 0.18.0
+	cargo install svd2rust --version 0.20.0
 
 patch:
-	svd patch $(YAML)
+	$(SVDTOOLS) patch $(YAML)
 	sed -i '/alternateGroup/d' $(SVD)
 
 # Generates PAC source code from (patched) SVD

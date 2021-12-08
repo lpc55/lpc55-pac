@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<EVTIMERL_SPEC>> for R {
+impl From<crate::R<EVTIMERL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<EVTIMERL_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<EVTIMERL_SPEC>> for R {
 #[doc = "Field `EVTIMER_COUNT_VALUE` reader - A read reflects the current value of the lower 32 bits of the 42-bits EVTIMER. Note: There is only one EVTIMER, readable from all domains."]
 pub struct EVTIMER_COUNT_VALUE_R(crate::FieldReader<u32, u32>);
 impl EVTIMER_COUNT_VALUE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         EVTIMER_COUNT_VALUE_R(crate::FieldReader::new(bits))
     }
@@ -30,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - A read reflects the current value of the lower 32 bits of the 42-bits EVTIMER. Note: There is only one EVTIMER, readable from all domains."]
     #[inline(always)]
     pub fn evtimer_count_value(&self) -> EVTIMER_COUNT_VALUE_R {
-        EVTIMER_COUNT_VALUE_R::new((self.bits & 0xffff_ffff) as u32)
+        EVTIMER_COUNT_VALUE_R::new(self.bits as u32)
     }
 }
 #[doc = "EVTIMER Low Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [evtimerl](index.html) module"]

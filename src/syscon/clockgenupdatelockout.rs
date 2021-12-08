@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CLOCKGENUPDATELOCKOUT_SPEC>> for R {
+impl From<crate::R<CLOCKGENUPDATELOCKOUT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CLOCKGENUPDATELOCKOUT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CLOCKGENUPDATELOCKOUT_SPEC>> for W {
+impl From<crate::W<CLOCKGENUPDATELOCKOUT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CLOCKGENUPDATELOCKOUT_SPEC>) -> Self {
         W(writer)
     }
@@ -50,6 +52,7 @@ impl From<CLOCKGENUPDATELOCKOUT_A> for u32 {
 #[doc = "Field `CLOCKGENUPDATELOCKOUT` reader - Control clock configuration registers access (like xxxDIV, xxxSEL)."]
 pub struct CLOCKGENUPDATELOCKOUT_R(crate::FieldReader<u32, CLOCKGENUPDATELOCKOUT_A>);
 impl CLOCKGENUPDATELOCKOUT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         CLOCKGENUPDATELOCKOUT_R(crate::FieldReader::new(bits))
     }
@@ -103,7 +106,7 @@ impl<'a> CLOCKGENUPDATELOCKOUT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
+        self.w.bits = value as u32;
         self.w
     }
 }
@@ -111,7 +114,7 @@ impl R {
     #[doc = "Bits 0:31 - Control clock configuration registers access (like xxxDIV, xxxSEL)."]
     #[inline(always)]
     pub fn clockgenupdatelockout(&self) -> CLOCKGENUPDATELOCKOUT_R {
-        CLOCKGENUPDATELOCKOUT_R::new((self.bits & 0xffff_ffff) as u32)
+        CLOCKGENUPDATELOCKOUT_R::new(self.bits as u32)
     }
 }
 impl W {
@@ -121,6 +124,7 @@ impl W {
         CLOCKGENUPDATELOCKOUT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

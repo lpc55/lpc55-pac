@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<STATUS_SPEC>> for R {
+impl From<crate::R<STATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<STATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<STATUS_SPEC>> for W {
+impl From<crate::W<STATUS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<STATUS_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<STATUS_SPEC>> for W {
 #[doc = "Field `FIFO_RX_WATERMARK` reader - FIFO reached Receive watermark level; not qualified with data transfer."]
 pub struct FIFO_RX_WATERMARK_R(crate::FieldReader<bool, bool>);
 impl FIFO_RX_WATERMARK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FIFO_RX_WATERMARK_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> FIFO_RX_WATERMARK_W<'a> {
 #[doc = "Field `FIFO_TX_WATERMARK` reader - FIFO reached Transmit watermark level; not qualified with data transfer."]
 pub struct FIFO_TX_WATERMARK_R(crate::FieldReader<bool, bool>);
 impl FIFO_TX_WATERMARK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FIFO_TX_WATERMARK_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> FIFO_TX_WATERMARK_W<'a> {
 #[doc = "Field `FIFO_EMPTY` reader - FIFO is empty status."]
 pub struct FIFO_EMPTY_R(crate::FieldReader<bool, bool>);
 impl FIFO_EMPTY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FIFO_EMPTY_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> FIFO_EMPTY_W<'a> {
 #[doc = "Field `FIFO_FULL` reader - FIFO is full status."]
 pub struct FIFO_FULL_R(crate::FieldReader<bool, bool>);
 impl FIFO_FULL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FIFO_FULL_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> FIFO_FULL_W<'a> {
 #[doc = "Field `CMDFSMSTATES` reader - Command FSM states: 0 - Idle 1 - Send init sequence 2 - Tx cmd start bit 3 - Tx cmd tx bit 4 - Tx cmd index + arg 5 - Tx cmd crc7 6 - Tx cmd end bit 7 - Rx resp start bit 8 - Rx resp IRQ response 9 - Rx resp tx bit 10 - Rx resp cmd idx 11 - Rx resp data 12 - Rx resp crc7 13 - Rx resp end bit 14 - Cmd path wait NCC 15 - Wait; CMD-to-response turnaround NOTE: The command FSM state is represented using 19 bits."]
 pub struct CMDFSMSTATES_R(crate::FieldReader<u8, u8>);
 impl CMDFSMSTATES_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CMDFSMSTATES_R(crate::FieldReader::new(bits))
     }
@@ -205,6 +212,7 @@ impl<'a> CMDFSMSTATES_W<'a> {
 #[doc = "Field `DATA_3_STATUS` reader - Raw selected card_data\\[3\\]; checks whether card is present 0 - card not present 1 - card present."]
 pub struct DATA_3_STATUS_R(crate::FieldReader<bool, bool>);
 impl DATA_3_STATUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DATA_3_STATUS_R(crate::FieldReader::new(bits))
     }
@@ -242,6 +250,7 @@ impl<'a> DATA_3_STATUS_W<'a> {
 0 - card data not busy 1 - card data busy."]
 pub struct DATA_BUSY_R(crate::FieldReader<bool, bool>);
 impl DATA_BUSY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DATA_BUSY_R(crate::FieldReader::new(bits))
     }
@@ -279,6 +288,7 @@ impl<'a> DATA_BUSY_W<'a> {
 #[doc = "Field `DATA_STATE_MC_BUSY` reader - Data transmit or receive state-machine is busy."]
 pub struct DATA_STATE_MC_BUSY_R(crate::FieldReader<bool, bool>);
 impl DATA_STATE_MC_BUSY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DATA_STATE_MC_BUSY_R(crate::FieldReader::new(bits))
     }
@@ -315,6 +325,7 @@ impl<'a> DATA_STATE_MC_BUSY_W<'a> {
 #[doc = "Field `RESPONSE_INDEX` reader - Index of previous response, including any auto-stop sent by core."]
 pub struct RESPONSE_INDEX_R(crate::FieldReader<u8, u8>);
 impl RESPONSE_INDEX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RESPONSE_INDEX_R(crate::FieldReader::new(bits))
     }
@@ -341,6 +352,7 @@ impl<'a> RESPONSE_INDEX_W<'a> {
 #[doc = "Field `FIFO_COUNT` reader - FIFO count - Number of filled locations in FIFO."]
 pub struct FIFO_COUNT_R(crate::FieldReader<u16, u16>);
 impl FIFO_COUNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         FIFO_COUNT_R(crate::FieldReader::new(bits))
     }
@@ -367,6 +379,7 @@ impl<'a> FIFO_COUNT_W<'a> {
 #[doc = "Field `DMA_ACK` reader - DMA acknowledge signal state."]
 pub struct DMA_ACK_R(crate::FieldReader<bool, bool>);
 impl DMA_ACK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DMA_ACK_R(crate::FieldReader::new(bits))
     }
@@ -403,6 +416,7 @@ impl<'a> DMA_ACK_W<'a> {
 #[doc = "Field `DMA_REQ` reader - DMA request signal state."]
 pub struct DMA_REQ_R(crate::FieldReader<bool, bool>);
 impl DMA_REQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DMA_REQ_R(crate::FieldReader::new(bits))
     }
@@ -562,6 +576,7 @@ impl W {
         DMA_REQ_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

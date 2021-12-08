@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<XTAL_16MHZ_CAPABANK_TRIM_SPEC>> for R {
+impl From<crate::R<XTAL_16MHZ_CAPABANK_TRIM_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<XTAL_16MHZ_CAPABANK_TRIM_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<XTAL_16MHZ_CAPABANK_TRIM_SPEC>> for W {
+impl From<crate::W<XTAL_16MHZ_CAPABANK_TRIM_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<XTAL_16MHZ_CAPABANK_TRIM_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<XTAL_16MHZ_CAPABANK_TRIM_SPEC>> for W {
 #[doc = "Field `TRIM_VALID` reader - 0 : Capa Bank trimmings not valid. Default trimmings value are used. 1 : Capa Bank trimmings valid."]
 pub struct TRIM_VALID_R(crate::FieldReader<bool, bool>);
 impl TRIM_VALID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TRIM_VALID_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> TRIM_VALID_W<'a> {
 #[doc = "Field `XTAL_LOAD_CAP_IEC_PF_X100` reader - Load capacitance, pF x 100. For example, 6pF becomes 600."]
 pub struct XTAL_LOAD_CAP_IEC_PF_X100_R(crate::FieldReader<u16, u16>);
 impl XTAL_LOAD_CAP_IEC_PF_X100_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         XTAL_LOAD_CAP_IEC_PF_X100_R(crate::FieldReader::new(bits))
     }
@@ -97,6 +101,7 @@ impl<'a> XTAL_LOAD_CAP_IEC_PF_X100_W<'a> {
 #[doc = "Field `PCB_XIN_PARA_CAP_PF_X100` reader - PCB XIN parasitic capacitance, pF x 100. For example, 6pF becomes 600."]
 pub struct PCB_XIN_PARA_CAP_PF_X100_R(crate::FieldReader<u16, u16>);
 impl PCB_XIN_PARA_CAP_PF_X100_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         PCB_XIN_PARA_CAP_PF_X100_R(crate::FieldReader::new(bits))
     }
@@ -123,6 +128,7 @@ impl<'a> PCB_XIN_PARA_CAP_PF_X100_W<'a> {
 #[doc = "Field `PCB_XOUT_PARA_CAP_PF_X100` reader - PCB XOUT parasitic capacitance, pF x 100. For example, 6pF becomes 600."]
 pub struct PCB_XOUT_PARA_CAP_PF_X100_R(crate::FieldReader<u16, u16>);
 impl PCB_XOUT_PARA_CAP_PF_X100_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         PCB_XOUT_PARA_CAP_PF_X100_R(crate::FieldReader::new(bits))
     }
@@ -190,6 +196,7 @@ impl W {
         PCB_XOUT_PARA_CAP_PF_X100_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

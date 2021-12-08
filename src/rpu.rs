@@ -1,7 +1,7 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    _reserved0: [u8; 212usize],
+    _reserved0: [u8; 0xd4],
     #[doc = "0xd4 - Value replacement 7"]
     pub value7: crate::Reg<value7::VALUE7_SPEC>,
     #[doc = "0xd8 - Value replacement 6"]
@@ -20,7 +20,7 @@ pub struct RegisterBlock {
     pub value0: crate::Reg<value0::VALUE0_SPEC>,
     #[doc = "0xf4 - Control register"]
     pub control: crate::Reg<control::CONTROL_SPEC>,
-    _reserved9: [u8; 4usize],
+    _reserved9: [u8; 0x04],
     #[doc = "0xfc - Enable register"]
     pub enable: crate::Reg<enable::ENABLE_SPEC>,
     #[doc = "0x100 - Replacement address 0"]

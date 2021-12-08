@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CPU0_LOCK_REG_SPEC>> for R {
+impl From<crate::R<CPU0_LOCK_REG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CPU0_LOCK_REG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CPU0_LOCK_REG_SPEC>> for W {
+impl From<crate::W<CPU0_LOCK_REG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CPU0_LOCK_REG_SPEC>) -> Self {
         W(writer)
     }
@@ -50,6 +52,7 @@ impl From<LOCK_NS_VTOR_A> for u8 {
 #[doc = "Field `LOCK_NS_VTOR` reader - Cortex M33 (CPU0) VTOR_NS register write-lock."]
 pub struct LOCK_NS_VTOR_R(crate::FieldReader<u8, LOCK_NS_VTOR_A>);
 impl LOCK_NS_VTOR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LOCK_NS_VTOR_R(crate::FieldReader::new(bits))
     }
@@ -125,6 +128,7 @@ impl From<LOCK_NS_MPU_A> for u8 {
 #[doc = "Field `LOCK_NS_MPU` reader - Cortex M33 (CPU0) non-secure MPU register write-lock."]
 pub struct LOCK_NS_MPU_R(crate::FieldReader<u8, LOCK_NS_MPU_A>);
 impl LOCK_NS_MPU_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LOCK_NS_MPU_R(crate::FieldReader::new(bits))
     }
@@ -200,6 +204,7 @@ impl From<LOCK_S_VTAIRCR_A> for u8 {
 #[doc = "Field `LOCK_S_VTAIRCR` reader - Cortex M33 (CPU0) VTOR_S, AIRCR.PRIS, IRCR.BFHFNMINS registers write-lock."]
 pub struct LOCK_S_VTAIRCR_R(crate::FieldReader<u8, LOCK_S_VTAIRCR_A>);
 impl LOCK_S_VTAIRCR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LOCK_S_VTAIRCR_R(crate::FieldReader::new(bits))
     }
@@ -275,6 +280,7 @@ impl From<LOCK_S_MPU_A> for u8 {
 #[doc = "Field `LOCK_S_MPU` reader - Cortex M33 (CPU0) Secure MPU registers write-lock."]
 pub struct LOCK_S_MPU_R(crate::FieldReader<u8, LOCK_S_MPU_A>);
 impl LOCK_S_MPU_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LOCK_S_MPU_R(crate::FieldReader::new(bits))
     }
@@ -350,6 +356,7 @@ impl From<LOCK_SAU_A> for u8 {
 #[doc = "Field `LOCK_SAU` reader - Cortex M33 (CPU0) SAU registers write-lock."]
 pub struct LOCK_SAU_R(crate::FieldReader<u8, LOCK_SAU_A>);
 impl LOCK_SAU_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LOCK_SAU_R(crate::FieldReader::new(bits))
     }
@@ -425,6 +432,7 @@ impl From<CPU0_LOCK_REG_LOCK_A> for u8 {
 #[doc = "Field `CPU0_LOCK_REG_LOCK` reader - CPU0_LOCK_REG write-lock."]
 pub struct CPU0_LOCK_REG_LOCK_R(crate::FieldReader<u8, CPU0_LOCK_REG_LOCK_A>);
 impl CPU0_LOCK_REG_LOCK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CPU0_LOCK_REG_LOCK_R(crate::FieldReader::new(bits))
     }
@@ -546,6 +554,7 @@ impl W {
         CPU0_LOCK_REG_LOCK_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

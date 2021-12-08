@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<RESP_SPEC>> for R {
+impl From<crate::R<RESP_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<RESP_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<RESP_SPEC>> for W {
+impl From<crate::W<RESP_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<RESP_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<RESP_SPEC>> for W {
 #[doc = "Field `RESPONSE` reader - Bits of response."]
 pub struct RESPONSE_R(crate::FieldReader<u32, u32>);
 impl RESPONSE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         RESPONSE_R(crate::FieldReader::new(bits))
     }
@@ -54,7 +57,7 @@ impl<'a> RESPONSE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
+        self.w.bits = value as u32;
         self.w
     }
 }
@@ -62,7 +65,7 @@ impl R {
     #[doc = "Bits 0:31 - Bits of response."]
     #[inline(always)]
     pub fn response(&self) -> RESPONSE_R {
-        RESPONSE_R::new((self.bits & 0xffff_ffff) as u32)
+        RESPONSE_R::new(self.bits as u32)
     }
 }
 impl W {
@@ -72,6 +75,7 @@ impl W {
         RESPONSE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

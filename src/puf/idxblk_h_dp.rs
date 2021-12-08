@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<IDXBLK_H_DP_SPEC>> for R {
+impl From<crate::R<IDXBLK_H_DP_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<IDXBLK_H_DP_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<IDXBLK_H_DP_SPEC>> for W {
+impl From<crate::W<IDXBLK_H_DP_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<IDXBLK_H_DP_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<IDXBLK_H_DP_SPEC>> for W {
 #[doc = "Field `IDX8` reader - Use to block PUF index 8"]
 pub struct IDX8_R(crate::FieldReader<u8, u8>);
 impl IDX8_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX8_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> IDX8_W<'a> {
 #[doc = "Field `IDX9` reader - Use to block PUF index 9"]
 pub struct IDX9_R(crate::FieldReader<u8, u8>);
 impl IDX9_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX9_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> IDX9_W<'a> {
 #[doc = "Field `IDX10` reader - Use to block PUF index 10"]
 pub struct IDX10_R(crate::FieldReader<u8, u8>);
 impl IDX10_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX10_R(crate::FieldReader::new(bits))
     }
@@ -113,6 +118,7 @@ impl<'a> IDX10_W<'a> {
 #[doc = "Field `IDX11` reader - Use to block PUF index 11"]
 pub struct IDX11_R(crate::FieldReader<u8, u8>);
 impl IDX11_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX11_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +145,7 @@ impl<'a> IDX11_W<'a> {
 #[doc = "Field `IDX12` reader - Use to block PUF index 12"]
 pub struct IDX12_R(crate::FieldReader<u8, u8>);
 impl IDX12_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX12_R(crate::FieldReader::new(bits))
     }
@@ -165,6 +172,7 @@ impl<'a> IDX12_W<'a> {
 #[doc = "Field `IDX13` reader - Use to block PUF index 13"]
 pub struct IDX13_R(crate::FieldReader<u8, u8>);
 impl IDX13_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX13_R(crate::FieldReader::new(bits))
     }
@@ -191,6 +199,7 @@ impl<'a> IDX13_W<'a> {
 #[doc = "Field `IDX14` reader - Use to block PUF index 14"]
 pub struct IDX14_R(crate::FieldReader<u8, u8>);
 impl IDX14_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX14_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +226,7 @@ impl<'a> IDX14_W<'a> {
 #[doc = "Field `IDX15` reader - Use to block PUF index 15"]
 pub struct IDX15_R(crate::FieldReader<u8, u8>);
 impl IDX15_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         IDX15_R(crate::FieldReader::new(bits))
     }
@@ -324,6 +334,7 @@ impl W {
         IDX15_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

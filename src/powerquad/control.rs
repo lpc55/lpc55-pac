@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CONTROL_SPEC>> for R {
+impl From<crate::R<CONTROL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CONTROL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CONTROL_SPEC>> for W {
+impl From<crate::W<CONTROL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CONTROL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CONTROL_SPEC>> for W {
 #[doc = "Field `decode_opcode` reader - opcode specific to decode_machine"]
 pub struct DECODE_OPCODE_R(crate::FieldReader<u8, u8>);
 impl DECODE_OPCODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DECODE_OPCODE_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> DECODE_OPCODE_W<'a> {
 #[doc = "Field `decode_machine` reader - 0 : Coprocessor , 1 : matrix , 2 : fft , 3 : fir , 4 : stat , 5 : cordic , 6 -15 : NA"]
 pub struct DECODE_MACHINE_R(crate::FieldReader<u8, u8>);
 impl DECODE_MACHINE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DECODE_MACHINE_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> DECODE_MACHINE_W<'a> {
 #[doc = "Field `inst_busy` reader - Instruction busy signal when high indicates processing is on"]
 pub struct INST_BUSY_R(crate::FieldReader<bool, bool>);
 impl INST_BUSY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INST_BUSY_R(crate::FieldReader::new(bits))
     }
@@ -127,6 +132,7 @@ impl W {
         DECODE_MACHINE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

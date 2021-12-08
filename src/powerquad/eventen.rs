@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<EVENTEN_SPEC>> for R {
+impl From<crate::R<EVENTEN_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<EVENTEN_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<EVENTEN_SPEC>> for W {
+impl From<crate::W<EVENTEN_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<EVENTEN_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<EVENTEN_SPEC>> for W {
 #[doc = "Field `event_oflow` reader - 1 : Enable event trigger on Floating point overflow"]
 pub struct EVENT_OFLOW_R(crate::FieldReader<bool, bool>);
 impl EVENT_OFLOW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENT_OFLOW_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> EVENT_OFLOW_W<'a> {
 #[doc = "Field `event_nan` reader - 1 : Enable event trigger on Floating point NaN"]
 pub struct EVENT_NAN_R(crate::FieldReader<bool, bool>);
 impl EVENT_NAN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENT_NAN_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> EVENT_NAN_W<'a> {
 #[doc = "Field `event_fixed` reader - 1: Enable event trigger on Fixed point Overflow"]
 pub struct EVENT_FIXED_R(crate::FieldReader<bool, bool>);
 impl EVENT_FIXED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENT_FIXED_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> EVENT_FIXED_W<'a> {
 #[doc = "Field `event_uflow` reader - 1 : Enable event trigger on Subnormal truncation"]
 pub struct EVENT_UFLOW_R(crate::FieldReader<bool, bool>);
 impl EVENT_UFLOW_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENT_UFLOW_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> EVENT_UFLOW_W<'a> {
 #[doc = "Field `event_berr` reader - 1: Enable event trigger on AHBM Buss Error"]
 pub struct EVENT_BERR_R(crate::FieldReader<bool, bool>);
 impl EVENT_BERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENT_BERR_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> EVENT_BERR_W<'a> {
 #[doc = "Field `event_comp` reader - 1: Enable event trigger on instruction completion"]
 pub struct EVENT_COMP_R(crate::FieldReader<bool, bool>);
 impl EVENT_COMP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EVENT_COMP_R(crate::FieldReader::new(bits))
     }
@@ -312,6 +320,7 @@ impl W {
         EVENT_COMP_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

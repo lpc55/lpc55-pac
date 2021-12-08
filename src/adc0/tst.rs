@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<TST_SPEC>> for R {
+impl From<crate::R<TST_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<TST_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<TST_SPEC>> for W {
+impl From<crate::W<TST_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<TST_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<CST_LONG_A> for bool {
 #[doc = "Field `CST_LONG` reader - Calibration Sample Time Long"]
 pub struct CST_LONG_R(crate::FieldReader<bool, CST_LONG_A>);
 impl CST_LONG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CST_LONG_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<FOFFM_A> for bool {
 #[doc = "Field `FOFFM` reader - Force M-side positive offset"]
 pub struct FOFFM_R(crate::FieldReader<bool, FOFFM_A>);
 impl FOFFM_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FOFFM_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<FOFFP_A> for bool {
 #[doc = "Field `FOFFP` reader - Force P-side positive offset"]
 pub struct FOFFP_R(crate::FieldReader<bool, FOFFP_A>);
 impl FOFFP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FOFFP_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<FOFFM2_A> for bool {
 #[doc = "Field `FOFFM2` reader - Force M-side negative offset"]
 pub struct FOFFM2_R(crate::FieldReader<bool, FOFFM2_A>);
 impl FOFFM2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FOFFM2_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<FOFFP2_A> for bool {
 #[doc = "Field `FOFFP2` reader - Force P-side negative offset"]
 pub struct FOFFP2_R(crate::FieldReader<bool, FOFFP2_A>);
 impl FOFFP2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FOFFP2_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<TESTEN_A> for bool {
 #[doc = "Field `TESTEN` reader - Enable test configuration"]
 pub struct TESTEN_R(crate::FieldReader<bool, TESTEN_A>);
 impl TESTEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TESTEN_R(crate::FieldReader::new(bits))
     }
@@ -594,6 +602,7 @@ impl W {
         TESTEN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -70,7 +70,6 @@ PUF:
 # Fix bogus offsets
 SAU:
   _modify:
-    description: Security Attribution Unit
     CTRL:
       addressOffset: 0x00
     TYPE:
@@ -94,6 +93,7 @@ _modify:
   SAU:
     addressBlock:
       size: 0x1C
+    description: Security Attribution Unit
 
 USB1:
   EPLISTSTART:
@@ -146,7 +146,7 @@ _add:
     addressBlock:
       offset: 0x0
       size: 320
-      usage: "Known RPU registers"
+      usage: registers
     registers:
       VALUE7:
         description: Value replacement 7

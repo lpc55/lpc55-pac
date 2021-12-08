@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<TV_SPEC>> for R {
+impl From<crate::R<TV_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<TV_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<TV_SPEC>> for R {
 #[doc = "Field `COUNT` reader - Counter timer value."]
 pub struct COUNT_R(crate::FieldReader<u32, u32>);
 impl COUNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         COUNT_R(crate::FieldReader::new(bits))
     }

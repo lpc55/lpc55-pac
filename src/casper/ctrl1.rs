@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CTRL1_SPEC>> for R {
+impl From<crate::R<CTRL1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CTRL1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CTRL1_SPEC>> for W {
+impl From<crate::W<CTRL1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CTRL1_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CTRL1_SPEC>> for W {
 #[doc = "Field `ITER` reader - Iteration counter. Is number_cycles - 1. write 0 means Does one cycle - does not iterate."]
 pub struct ITER_R(crate::FieldReader<u8, u8>);
 impl ITER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ITER_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> ITER_W<'a> {
 #[doc = "Field `MODE` reader - Operation mode to perform. write 0 means Accelerator is inactive. write others means accelerator is active."]
 pub struct MODE_R(crate::FieldReader<u8, u8>);
 impl MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MODE_R(crate::FieldReader::new(bits))
     }
@@ -101,6 +105,7 @@ impl From<RESBPAIR_A> for bool {
 #[doc = "Field `RESBPAIR` reader - Which bank-pair the offset RESOFF is within. This must be 0 if only 2-up. Ideally this is not the same bank as ABBPAIR (when 4-up supported)"]
 pub struct RESBPAIR_R(crate::FieldReader<bool, RESBPAIR_A>);
 impl RESBPAIR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RESBPAIR_R(crate::FieldReader::new(bits))
     }
@@ -170,6 +175,7 @@ impl<'a> RESBPAIR_W<'a> {
 #[doc = "Field `RESOFF` reader - Word or DWord Offset of result. Word offset only allowed if 32 bit operation. Ideally not in the same RAM as the AB and CD values"]
 pub struct RESOFF_R(crate::FieldReader<u16, u16>);
 impl RESOFF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         RESOFF_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +221,7 @@ impl From<CSKIP_A> for u8 {
 #[doc = "Field `CSKIP` reader - Skip rules on Carry if needed. This operation will be skipped based on Carry value (from previous operation) if not 0:"]
 pub struct CSKIP_R(crate::FieldReader<u8, CSKIP_A>);
 impl CSKIP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CSKIP_R(crate::FieldReader::new(bits))
     }
@@ -348,6 +355,7 @@ impl W {
         CSKIP_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

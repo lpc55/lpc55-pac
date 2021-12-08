@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<WAKEIOCAUSE_SPEC>> for R {
+impl From<crate::R<WAKEIOCAUSE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<WAKEIOCAUSE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<WAKEIOCAUSE_SPEC>> for W {
+impl From<crate::W<WAKEIOCAUSE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<WAKEIOCAUSE_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<WAKEUP0_A> for bool {
 #[doc = "Field `WAKEUP0` reader - Allows to identify Wake up I/O 0 as the wake-up source from Deep Power Down mode."]
 pub struct WAKEUP0_R(crate::FieldReader<bool, WAKEUP0_A>);
 impl WAKEUP0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAKEUP0_R(crate::FieldReader::new(bits))
     }
@@ -95,6 +98,7 @@ impl From<WAKEUP1_A> for bool {
 #[doc = "Field `WAKEUP1` reader - Allows to identify Wake up I/O 1 as the wake-up source from Deep Power Down mode."]
 pub struct WAKEUP1_R(crate::FieldReader<bool, WAKEUP1_A>);
 impl WAKEUP1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAKEUP1_R(crate::FieldReader::new(bits))
     }
@@ -178,6 +182,7 @@ impl From<WAKEUP2_A> for bool {
 #[doc = "Field `WAKEUP2` reader - Allows to identify Wake up I/O 2 as the wake-up source from Deep Power Down mode."]
 pub struct WAKEUP2_R(crate::FieldReader<bool, WAKEUP2_A>);
 impl WAKEUP2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAKEUP2_R(crate::FieldReader::new(bits))
     }
@@ -261,6 +266,7 @@ impl From<WAKEUP3_A> for bool {
 #[doc = "Field `WAKEUP3` reader - Allows to identify Wake up I/O 3 as the wake-up source from Deep Power Down mode."]
 pub struct WAKEUP3_R(crate::FieldReader<bool, WAKEUP3_A>);
 impl WAKEUP3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WAKEUP3_R(crate::FieldReader::new(bits))
     }
@@ -366,6 +372,7 @@ impl W {
         WAKEUP3_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

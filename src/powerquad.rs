@@ -17,7 +17,7 @@ pub struct RegisterBlock {
     pub inbbase: crate::Reg<inbbase::INBBASE_SPEC>,
     #[doc = "0x1c - Input B format"]
     pub inbformat: crate::Reg<inbformat::INBFORMAT_SPEC>,
-    _reserved8: [u8; 224usize],
+    _reserved8: [u8; 0xe0],
     #[doc = "0x100 - PowerQuad Control register"]
     pub control: crate::Reg<control::CONTROL_SPEC>,
     #[doc = "0x104 - Length register"]
@@ -28,7 +28,7 @@ pub struct RegisterBlock {
     pub misc: crate::Reg<misc::MISC_SPEC>,
     #[doc = "0x110 - Cursory register"]
     pub cursory: crate::Reg<cursory::CURSORY_SPEC>,
-    _reserved13: [u8; 108usize],
+    _reserved13: [u8; 0x6c],
     #[doc = "0x180 - Cordic input X register"]
     pub cordic_x: crate::Reg<cordic_x::CORDIC_X_SPEC>,
     #[doc = "0x184 - Cordic input Y register"]
@@ -43,10 +43,10 @@ pub struct RegisterBlock {
     pub eventen: crate::Reg<eventen::EVENTEN_SPEC>,
     #[doc = "0x198 - INTERRUPT STATUS register"]
     pub intrstat: crate::Reg<intrstat::INTRSTAT_SPEC>,
-    _reserved20: [u8; 100usize],
-    #[doc = "0x200 - General purpose register bank N."]
+    _reserved20: [u8; 0x64],
+    #[doc = "0x200..0x240 - General purpose register bank N."]
     pub gpreg: [crate::Reg<gpreg::GPREG_SPEC>; 16],
-    #[doc = "0x240 - Compute register bank"]
+    #[doc = "0x240..0x260 - Compute register bank"]
     pub compreg: [crate::Reg<compreg::COMPREG_SPEC>; 8],
 }
 #[doc = "OUTBASE register accessor: an alias for `Reg<OUTBASE_SPEC>`"]

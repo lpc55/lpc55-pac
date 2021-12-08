@@ -35,7 +35,7 @@ pub struct RegisterBlock {
     pub ctrl_tog: crate::Reg<ctrl_tog::CTRL_TOG_SPEC>,
     #[doc = "0x40 - USB PHY Status Register"]
     pub status: crate::Reg<status::STATUS_SPEC>,
-    _reserved17: [u8; 92usize],
+    _reserved17: [u8; 0x5c],
     #[doc = "0xa0 - USB PHY PLL Control/Status Register"]
     pub pll_sic: crate::Reg<pll_sic::PLL_SIC_SPEC>,
     #[doc = "0xa4 - USB PHY PLL Control/Status Register"]
@@ -44,7 +44,7 @@ pub struct RegisterBlock {
     pub pll_sic_clr: crate::Reg<pll_sic_clr::PLL_SIC_CLR_SPEC>,
     #[doc = "0xac - USB PHY PLL Control/Status Register"]
     pub pll_sic_tog: crate::Reg<pll_sic_tog::PLL_SIC_TOG_SPEC>,
-    _reserved21: [u8; 16usize],
+    _reserved21: [u8; 0x10],
     #[doc = "0xc0 - USB PHY VBUS Detect Control Register"]
     pub usb1_vbus_detect: crate::Reg<usb1_vbus_detect::USB1_VBUS_DETECT_SPEC>,
     #[doc = "0xc4 - USB PHY VBUS Detect Control Register"]
@@ -53,7 +53,7 @@ pub struct RegisterBlock {
     pub usb1_vbus_detect_clr: crate::Reg<usb1_vbus_detect_clr::USB1_VBUS_DETECT_CLR_SPEC>,
     #[doc = "0xcc - USB PHY VBUS Detect Control Register"]
     pub usb1_vbus_detect_tog: crate::Reg<usb1_vbus_detect_tog::USB1_VBUS_DETECT_TOG_SPEC>,
-    _reserved25: [u8; 48usize],
+    _reserved25: [u8; 0x30],
     #[doc = "0x100 - USB PHY Analog Control Register"]
     pub anactrl: crate::Reg<anactrl::ANACTRL_SPEC>,
     #[doc = "0x104 - USB PHY Analog Control Register"]

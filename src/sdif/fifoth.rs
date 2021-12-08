@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FIFOTH_SPEC>> for R {
+impl From<crate::R<FIFOTH_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FIFOTH_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FIFOTH_SPEC>> for W {
+impl From<crate::W<FIFOTH_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FIFOTH_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<FIFOTH_SPEC>> for W {
 #[doc = "Field `TX_WMARK` reader - FIFO threshold watermark level when transmitting data to card."]
 pub struct TX_WMARK_R(crate::FieldReader<u16, u16>);
 impl TX_WMARK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         TX_WMARK_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> TX_WMARK_W<'a> {
 #[doc = "Field `RX_WMARK` reader - FIFO threshold watermark level when receiving data to card."]
 pub struct RX_WMARK_R(crate::FieldReader<u16, u16>);
 impl RX_WMARK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         RX_WMARK_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> RX_WMARK_W<'a> {
 #[doc = "Field `DMA_MTS` reader - Burst size of multiple transaction; should be programmed same as DW-DMA controller multiple-transaction-size SRC/DEST_MSIZE."]
 pub struct DMA_MTS_R(crate::FieldReader<u8, u8>);
 impl DMA_MTS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DMA_MTS_R(crate::FieldReader::new(bits))
     }
@@ -144,6 +149,7 @@ impl W {
         DMA_MTS_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SLVCTL_SPEC>> for R {
+impl From<crate::R<SLVCTL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SLVCTL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SLVCTL_SPEC>> for W {
+impl From<crate::W<SLVCTL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SLVCTL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<SLVCONTINUE_A> for bool {
 #[doc = "Field `SLVCONTINUE` reader - Slave Continue."]
 pub struct SLVCONTINUE_R(crate::FieldReader<bool, SLVCONTINUE_A>);
 impl SLVCONTINUE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLVCONTINUE_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<SLVNACK_A> for bool {
 #[doc = "Field `SLVNACK` reader - Slave NACK."]
 pub struct SLVNACK_R(crate::FieldReader<bool, SLVNACK_A>);
 impl SLVNACK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLVNACK_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<SLVDMA_A> for bool {
 #[doc = "Field `SLVDMA` reader - Slave DMA enable."]
 pub struct SLVDMA_R(crate::FieldReader<bool, SLVDMA_A>);
 impl SLVDMA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SLVDMA_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<AUTOACK_A> for bool {
 #[doc = "Field `AUTOACK` reader - Automatic Acknowledge.When this bit is set, it will cause an I2C header which matches SLVADR0 and the direction set by AUTOMATCHREAD to be ACKed immediately; this is used with DMA to allow processing of the data without intervention. If this bit is clear and a header matches SLVADR0, the behavior is controlled by AUTONACK in the SLVADR0 register: allowing NACK or interrupt."]
 pub struct AUTOACK_R(crate::FieldReader<bool, AUTOACK_A>);
 impl AUTOACK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AUTOACK_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<AUTOMATCHREAD_A> for bool {
 #[doc = "Field `AUTOMATCHREAD` reader - When AUTOACK is set, this bit controls whether it matches a read or write request on the next header with an address matching SLVADR0. Since DMA needs to be configured to match the transfer direction, the direction needs to be specified. This bit allows a direction to be chosen for the next operation."]
 pub struct AUTOMATCHREAD_R(crate::FieldReader<bool, AUTOMATCHREAD_A>);
 impl AUTOMATCHREAD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         AUTOMATCHREAD_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +508,7 @@ impl W {
         AUTOMATCHREAD_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

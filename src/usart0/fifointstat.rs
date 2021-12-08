@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FIFOINTSTAT_SPEC>> for R {
+impl From<crate::R<FIFOINTSTAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FIFOINTSTAT_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<FIFOINTSTAT_SPEC>> for R {
 #[doc = "Field `TXERR` reader - TX FIFO error."]
 pub struct TXERR_R(crate::FieldReader<bool, bool>);
 impl TXERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXERR_R(crate::FieldReader::new(bits))
     }
@@ -29,6 +31,7 @@ impl core::ops::Deref for TXERR_R {
 #[doc = "Field `RXERR` reader - RX FIFO error."]
 pub struct RXERR_R(crate::FieldReader<bool, bool>);
 impl RXERR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXERR_R(crate::FieldReader::new(bits))
     }
@@ -43,6 +46,7 @@ impl core::ops::Deref for RXERR_R {
 #[doc = "Field `TXLVL` reader - Transmit FIFO level interrupt."]
 pub struct TXLVL_R(crate::FieldReader<bool, bool>);
 impl TXLVL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXLVL_R(crate::FieldReader::new(bits))
     }
@@ -57,6 +61,7 @@ impl core::ops::Deref for TXLVL_R {
 #[doc = "Field `RXLVL` reader - Receive FIFO level interrupt."]
 pub struct RXLVL_R(crate::FieldReader<bool, bool>);
 impl RXLVL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXLVL_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +76,7 @@ impl core::ops::Deref for RXLVL_R {
 #[doc = "Field `PERINT` reader - Peripheral interrupt."]
 pub struct PERINT_R(crate::FieldReader<bool, bool>);
 impl PERINT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PERINT_R(crate::FieldReader::new(bits))
     }

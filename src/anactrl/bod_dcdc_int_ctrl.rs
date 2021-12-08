@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<BOD_DCDC_INT_CTRL_SPEC>> for R {
+impl From<crate::R<BOD_DCDC_INT_CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<BOD_DCDC_INT_CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<BOD_DCDC_INT_CTRL_SPEC>> for W {
+impl From<crate::W<BOD_DCDC_INT_CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<BOD_DCDC_INT_CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<BODVBAT_INT_ENABLE_A> for bool {
 #[doc = "Field `BODVBAT_INT_ENABLE` reader - BOD VBAT interrupt control."]
 pub struct BODVBAT_INT_ENABLE_R(crate::FieldReader<bool, BODVBAT_INT_ENABLE_A>);
 impl BODVBAT_INT_ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BODVBAT_INT_ENABLE_R(crate::FieldReader::new(bits))
     }
@@ -118,6 +121,7 @@ impl<'a> BODVBAT_INT_ENABLE_W<'a> {
 #[doc = "Field `BODVBAT_INT_CLEAR` reader - BOD VBAT interrupt clear.1: Clear the interrupt. Self-cleared bit."]
 pub struct BODVBAT_INT_CLEAR_R(crate::FieldReader<bool, bool>);
 impl BODVBAT_INT_CLEAR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BODVBAT_INT_CLEAR_R(crate::FieldReader::new(bits))
     }
@@ -168,6 +172,7 @@ impl From<BODCORE_INT_ENABLE_A> for bool {
 #[doc = "Field `BODCORE_INT_ENABLE` reader - BOD CORE interrupt control."]
 pub struct BODCORE_INT_ENABLE_R(crate::FieldReader<bool, BODCORE_INT_ENABLE_A>);
 impl BODCORE_INT_ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BODCORE_INT_ENABLE_R(crate::FieldReader::new(bits))
     }
@@ -237,6 +242,7 @@ impl<'a> BODCORE_INT_ENABLE_W<'a> {
 #[doc = "Field `BODCORE_INT_CLEAR` reader - BOD CORE interrupt clear.1: Clear the interrupt. Self-cleared bit."]
 pub struct BODCORE_INT_CLEAR_R(crate::FieldReader<bool, bool>);
 impl BODCORE_INT_CLEAR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         BODCORE_INT_CLEAR_R(crate::FieldReader::new(bits))
     }
@@ -287,6 +293,7 @@ impl From<DCDC_INT_ENABLE_A> for bool {
 #[doc = "Field `DCDC_INT_ENABLE` reader - DCDC interrupt control."]
 pub struct DCDC_INT_ENABLE_R(crate::FieldReader<bool, DCDC_INT_ENABLE_A>);
 impl DCDC_INT_ENABLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DCDC_INT_ENABLE_R(crate::FieldReader::new(bits))
     }
@@ -356,6 +363,7 @@ impl<'a> DCDC_INT_ENABLE_W<'a> {
 #[doc = "Field `DCDC_INT_CLEAR` reader - DCDC interrupt clear.1: Clear the interrupt. Self-cleared bit."]
 pub struct DCDC_INT_CLEAR_R(crate::FieldReader<bool, bool>);
 impl DCDC_INT_CLEAR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DCDC_INT_CLEAR_R(crate::FieldReader::new(bits))
     }
@@ -453,6 +461,7 @@ impl W {
         DCDC_INT_CLEAR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

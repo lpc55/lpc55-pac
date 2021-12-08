@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<DEBNCE_SPEC>> for R {
+impl From<crate::R<DEBNCE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<DEBNCE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<DEBNCE_SPEC>> for W {
+impl From<crate::W<DEBNCE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<DEBNCE_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<DEBNCE_SPEC>> for W {
 #[doc = "Field `DEBOUNCE_COUNT` reader - Number of host clocks (SD_CLK) used by debounce filter logic for card detect; typical debounce time is 5-25 ms."]
 pub struct DEBOUNCE_COUNT_R(crate::FieldReader<u32, u32>);
 impl DEBOUNCE_COUNT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         DEBOUNCE_COUNT_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         DEBOUNCE_COUNT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

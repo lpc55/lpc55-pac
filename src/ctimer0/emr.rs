@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<EMR_SPEC>> for R {
+impl From<crate::R<EMR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<EMR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<EMR_SPEC>> for W {
+impl From<crate::W<EMR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<EMR_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<EMR_SPEC>> for W {
 #[doc = "Field `EM0` reader - External Match 0. This bit reflects the state of output MAT0, whether or not this output is connected to a pin. When a match occurs between the TC and MR0, this bit can either toggle, go LOW, go HIGH, or do nothing, as selected by EMR\\[5:4\\]. This bit is driven to the MAT pins if the match function is selected via IOCON. 0 = LOW. 1 = HIGH."]
 pub struct EM0_R(crate::FieldReader<bool, bool>);
 impl EM0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EM0_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> EM0_W<'a> {
 #[doc = "Field `EM1` reader - External Match 1. This bit reflects the state of output MAT1, whether or not this output is connected to a pin. When a match occurs between the TC and MR1, this bit can either toggle, go LOW, go HIGH, or do nothing, as selected by EMR\\[7:6\\]. This bit is driven to the MAT pins if the match function is selected via IOCON. 0 = LOW. 1 = HIGH."]
 pub struct EM1_R(crate::FieldReader<bool, bool>);
 impl EM1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EM1_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> EM1_W<'a> {
 #[doc = "Field `EM2` reader - External Match 2. This bit reflects the state of output MAT2, whether or not this output is connected to a pin. When a match occurs between the TC and MR2, this bit can either toggle, go LOW, go HIGH, or do nothing, as selected by EMR\\[9:8\\]. This bit is driven to the MAT pins if the match function is selected via IOCON. 0 = LOW. 1 = HIGH."]
 pub struct EM2_R(crate::FieldReader<bool, bool>);
 impl EM2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EM2_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> EM2_W<'a> {
 #[doc = "Field `EM3` reader - External Match 3. This bit reflects the state of output MAT3, whether or not this output is connected to a pin. When a match occurs between the TC and MR3, this bit can either toggle, go LOW, go HIGH, or do nothing, as selected by MR\\[11:10\\]. This bit is driven to the MAT pins if the match function is selected via IOCON. 0 = LOW. 1 = HIGH."]
 pub struct EM3_R(crate::FieldReader<bool, bool>);
 impl EM3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EM3_R(crate::FieldReader::new(bits))
     }
@@ -198,6 +204,7 @@ impl From<EMC0_A> for u8 {
 #[doc = "Field `EMC0` reader - External Match Control 0. Determines the functionality of External Match 0."]
 pub struct EMC0_R(crate::FieldReader<u8, EMC0_A>);
 impl EMC0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         EMC0_R(crate::FieldReader::new(bits))
     }
@@ -299,6 +306,7 @@ impl From<EMC1_A> for u8 {
 #[doc = "Field `EMC1` reader - External Match Control 1. Determines the functionality of External Match 1."]
 pub struct EMC1_R(crate::FieldReader<u8, EMC1_A>);
 impl EMC1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         EMC1_R(crate::FieldReader::new(bits))
     }
@@ -400,6 +408,7 @@ impl From<EMC2_A> for u8 {
 #[doc = "Field `EMC2` reader - External Match Control 2. Determines the functionality of External Match 2."]
 pub struct EMC2_R(crate::FieldReader<u8, EMC2_A>);
 impl EMC2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         EMC2_R(crate::FieldReader::new(bits))
     }
@@ -501,6 +510,7 @@ impl From<EMC3_A> for u8 {
 #[doc = "Field `EMC3` reader - External Match Control 3. Determines the functionality of External Match 3."]
 pub struct EMC3_R(crate::FieldReader<u8, EMC3_A>);
 impl EMC3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         EMC3_R(crate::FieldReader::new(bits))
     }
@@ -664,6 +674,7 @@ impl W {
         EMC3_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

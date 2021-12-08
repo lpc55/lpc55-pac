@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FIFORDNOPOP_SPEC>> for R {
+impl From<crate::R<FIFORDNOPOP_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FIFORDNOPOP_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<FIFORDNOPOP_SPEC>> for R {
 #[doc = "Field `RXDATA` reader - Received data from the FIFO."]
 pub struct RXDATA_R(crate::FieldReader<u16, u16>);
 impl RXDATA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         RXDATA_R(crate::FieldReader::new(bits))
     }
@@ -29,6 +31,7 @@ impl core::ops::Deref for RXDATA_R {
 #[doc = "Field `RXSSEL0_N` reader - Slave Select for receive."]
 pub struct RXSSEL0_N_R(crate::FieldReader<bool, bool>);
 impl RXSSEL0_N_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXSSEL0_N_R(crate::FieldReader::new(bits))
     }
@@ -43,6 +46,7 @@ impl core::ops::Deref for RXSSEL0_N_R {
 #[doc = "Field `RXSSEL1_N` reader - Slave Select for receive."]
 pub struct RXSSEL1_N_R(crate::FieldReader<bool, bool>);
 impl RXSSEL1_N_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXSSEL1_N_R(crate::FieldReader::new(bits))
     }
@@ -57,6 +61,7 @@ impl core::ops::Deref for RXSSEL1_N_R {
 #[doc = "Field `RXSSEL2_N` reader - Slave Select for receive."]
 pub struct RXSSEL2_N_R(crate::FieldReader<bool, bool>);
 impl RXSSEL2_N_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXSSEL2_N_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +76,7 @@ impl core::ops::Deref for RXSSEL2_N_R {
 #[doc = "Field `RXSSEL3_N` reader - Slave Select for receive."]
 pub struct RXSSEL3_N_R(crate::FieldReader<bool, bool>);
 impl RXSSEL3_N_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXSSEL3_N_R(crate::FieldReader::new(bits))
     }
@@ -85,6 +91,7 @@ impl core::ops::Deref for RXSSEL3_N_R {
 #[doc = "Field `SOT` reader - Start of transfer flag."]
 pub struct SOT_R(crate::FieldReader<bool, bool>);
 impl SOT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SOT_R(crate::FieldReader::new(bits))
     }

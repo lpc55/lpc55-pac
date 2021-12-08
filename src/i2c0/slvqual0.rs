@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SLVQUAL0_SPEC>> for R {
+impl From<crate::R<SLVQUAL0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SLVQUAL0_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SLVQUAL0_SPEC>> for W {
+impl From<crate::W<SLVQUAL0_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SLVQUAL0_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<QUALMODE0_A> for bool {
 #[doc = "Field `QUALMODE0` reader - Qualify mode for slave address 0."]
 pub struct QUALMODE0_R(crate::FieldReader<bool, QUALMODE0_A>);
 impl QUALMODE0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         QUALMODE0_R(crate::FieldReader::new(bits))
     }
@@ -119,6 +122,7 @@ impl<'a> QUALMODE0_W<'a> {
 <= received address <= SLVQUAL0\\[7:1\\])."]
 pub struct SLVQUAL0_R(crate::FieldReader<u8, u8>);
 impl SLVQUAL0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SLVQUAL0_R(crate::FieldReader::new(bits))
     }
@@ -169,6 +173,7 @@ impl W {
         SLVQUAL0_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

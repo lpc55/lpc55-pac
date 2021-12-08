@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<STAT_SPEC>> for R {
+impl From<crate::R<STAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<STAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<STAT_SPEC>> for W {
+impl From<crate::W<STAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<STAT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<STAT_SPEC>> for W {
 #[doc = "Field `RXIDLE` reader - Receiver Idle. When 0, indicates that the receiver is currently in the process of receiving data. When 1, indicates that the receiver is not currently in the process of receiving data."]
 pub struct RXIDLE_R(crate::FieldReader<bool, bool>);
 impl RXIDLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXIDLE_R(crate::FieldReader::new(bits))
     }
@@ -49,6 +52,7 @@ impl core::ops::Deref for RXIDLE_R {
 #[doc = "Field `TXIDLE` reader - Transmitter Idle. When 0, indicates that the transmitter is currently in the process of sending data.When 1, indicate that the transmitter is not currently in the process of sending data."]
 pub struct TXIDLE_R(crate::FieldReader<bool, bool>);
 impl TXIDLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXIDLE_R(crate::FieldReader::new(bits))
     }
@@ -63,6 +67,7 @@ impl core::ops::Deref for TXIDLE_R {
 #[doc = "Field `CTS` reader - This bit reflects the current state of the CTS signal, regardless of the setting of the CTSEN bit in the CFG register. This will be the value of the CTS input pin unless loopback mode is enabled."]
 pub struct CTS_R(crate::FieldReader<bool, bool>);
 impl CTS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CTS_R(crate::FieldReader::new(bits))
     }
@@ -99,6 +104,7 @@ impl<'a> DELTACTS_W<'a> {
 #[doc = "Field `TXDISSTAT` reader - Transmitter Disabled Status flag. When 1, this bit indicates that the USART transmitter is fully idle after being disabled via the TXDIS bit in the CFG register (TXDIS = 1)."]
 pub struct TXDISSTAT_R(crate::FieldReader<bool, bool>);
 impl TXDISSTAT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXDISSTAT_R(crate::FieldReader::new(bits))
     }
@@ -113,6 +119,7 @@ impl core::ops::Deref for TXDISSTAT_R {
 #[doc = "Field `RXBRK` reader - Received Break. This bit reflects the current state of the receiver break detection logic. It is set when the Un_RXD pin remains low for 16 bit times. Note that FRAMERRINT will also be set when this condition occurs because the stop bit(s) for the character would be missing. RXBRK is cleared when the Un_RXD pin goes high."]
 pub struct RXBRK_R(crate::FieldReader<bool, bool>);
 impl RXBRK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXBRK_R(crate::FieldReader::new(bits))
     }
@@ -320,6 +327,7 @@ impl W {
         ABERR_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

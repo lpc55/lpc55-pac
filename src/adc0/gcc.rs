@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<GCC_SPEC>> for R {
+impl From<crate::R<GCC_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<GCC_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<GCC_SPEC>> for R {
 #[doc = "Field `GAIN_CAL` reader - Gain Calibration Value"]
 pub struct GAIN_CAL_R(crate::FieldReader<u16, u16>);
 impl GAIN_CAL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         GAIN_CAL_R(crate::FieldReader::new(bits))
     }
@@ -44,6 +46,7 @@ impl From<RDY_A> for bool {
 #[doc = "Field `RDY` reader - Gain Calibration Value Valid"]
 pub struct RDY_R(crate::FieldReader<bool, RDY_A>);
 impl RDY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RDY_R(crate::FieldReader::new(bits))
     }

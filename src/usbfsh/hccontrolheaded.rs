@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<HCCONTROLHEADED_SPEC>> for R {
+impl From<crate::R<HCCONTROLHEADED_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<HCCONTROLHEADED_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<HCCONTROLHEADED_SPEC>> for W {
+impl From<crate::W<HCCONTROLHEADED_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<HCCONTROLHEADED_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<HCCONTROLHEADED_SPEC>> for W {
 #[doc = "Field `CHED` reader - HC traverses the Control list starting with the HcControlHeadED pointer."]
 pub struct CHED_R(crate::FieldReader<u32, u32>);
 impl CHED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         CHED_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         CHED_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

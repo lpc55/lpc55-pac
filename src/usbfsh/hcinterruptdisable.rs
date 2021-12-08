@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<HCINTERRUPTDISABLE_SPEC>> for R {
+impl From<crate::R<HCINTERRUPTDISABLE_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<HCINTERRUPTDISABLE_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<HCINTERRUPTDISABLE_SPEC>> for W {
+impl From<crate::W<HCINTERRUPTDISABLE_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<HCINTERRUPTDISABLE_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<HCINTERRUPTDISABLE_SPEC>> for W {
 #[doc = "Field `SO` reader - Scheduling Overrun interrupt."]
 pub struct SO_R(crate::FieldReader<bool, bool>);
 impl SO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SO_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> SO_W<'a> {
 #[doc = "Field `WDH` reader - HcDoneHead Writeback interrupt."]
 pub struct WDH_R(crate::FieldReader<bool, bool>);
 impl WDH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WDH_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> WDH_W<'a> {
 #[doc = "Field `SF` reader - Start of Frame interrupt."]
 pub struct SF_R(crate::FieldReader<bool, bool>);
 impl SF_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SF_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> SF_W<'a> {
 #[doc = "Field `RD` reader - Resume Detect interrupt."]
 pub struct RD_R(crate::FieldReader<bool, bool>);
 impl RD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RD_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> RD_W<'a> {
 #[doc = "Field `UE` reader - Unrecoverable Error interrupt."]
 pub struct UE_R(crate::FieldReader<bool, bool>);
 impl UE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         UE_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> UE_W<'a> {
 #[doc = "Field `FNO` reader - Frame Number Overflow interrupt."]
 pub struct FNO_R(crate::FieldReader<bool, bool>);
 impl FNO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FNO_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +259,7 @@ impl<'a> FNO_W<'a> {
 #[doc = "Field `RHSC` reader - Root Hub Status Change interrupt."]
 pub struct RHSC_R(crate::FieldReader<bool, bool>);
 impl RHSC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RHSC_R(crate::FieldReader::new(bits))
     }
@@ -287,6 +296,7 @@ impl<'a> RHSC_W<'a> {
 #[doc = "Field `OC` reader - Ownership Change interrupt."]
 pub struct OC_R(crate::FieldReader<bool, bool>);
 impl OC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OC_R(crate::FieldReader::new(bits))
     }
@@ -323,6 +333,7 @@ impl<'a> OC_W<'a> {
 #[doc = "Field `MIE` reader - A 0 written to this field is ignored by HC."]
 pub struct MIE_R(crate::FieldReader<bool, bool>);
 impl MIE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MIE_R(crate::FieldReader::new(bits))
     }
@@ -450,6 +461,7 @@ impl W {
         MIE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

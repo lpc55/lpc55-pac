@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<INTEN_SPEC>> for R {
+impl From<crate::R<INTEN_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<INTEN_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<INTEN_SPEC>> for W {
+impl From<crate::W<INTEN_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<INTEN_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<INTEN_SPEC>> for W {
 #[doc = "Field `READYEN` reader - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
 pub struct READYEN_R(crate::FieldReader<bool, bool>);
 impl READYEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         READYEN_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> READYEN_W<'a> {
 #[doc = "Field `SUCCESEN` reader - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
 pub struct SUCCESEN_R(crate::FieldReader<bool, bool>);
 impl SUCCESEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUCCESEN_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> SUCCESEN_W<'a> {
 #[doc = "Field `ERROREN` reader - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
 pub struct ERROREN_R(crate::FieldReader<bool, bool>);
 impl ERROREN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ERROREN_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> ERROREN_W<'a> {
 #[doc = "Field `KEYINREQEN` reader - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
 pub struct KEYINREQEN_R(crate::FieldReader<bool, bool>);
 impl KEYINREQEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         KEYINREQEN_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> KEYINREQEN_W<'a> {
 #[doc = "Field `KEYOUTAVAILEN` reader - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
 pub struct KEYOUTAVAILEN_R(crate::FieldReader<bool, bool>);
 impl KEYOUTAVAILEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         KEYOUTAVAILEN_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> KEYOUTAVAILEN_W<'a> {
 #[doc = "Field `CODEINREQEN` reader - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
 pub struct CODEINREQEN_R(crate::FieldReader<bool, bool>);
 impl CODEINREQEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CODEINREQEN_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +259,7 @@ impl<'a> CODEINREQEN_W<'a> {
 #[doc = "Field `CODEOUTAVAILEN` reader - Enable corresponding interrupt. Note that bit numbers match those assigned in QK_SR (Quiddikey Status Register)"]
 pub struct CODEOUTAVAILEN_R(crate::FieldReader<bool, bool>);
 impl CODEOUTAVAILEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CODEOUTAVAILEN_R(crate::FieldReader::new(bits))
     }
@@ -358,6 +367,7 @@ impl W {
         CODEOUTAVAILEN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

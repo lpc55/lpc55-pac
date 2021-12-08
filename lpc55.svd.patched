@@ -81124,7 +81124,7 @@ SPDX-License-Identifier: BSD-3-Clause
 
 Undocumented by NXP, this peripheral is experimentally modeled following research by
 Oxide Computer Company: &lt;https://oxide.computer/blog/lpc55/&gt;.
-</description><groupName>RPU</groupName><baseAddress>1073995776</baseAddress><addressBlock><offset>0</offset><size>320</size><usage>Known RPU registers</usage></addressBlock><registers><register><name>VALUE7</name><description>Value replacement 7</description><addressOffset>212</addressOffset><size>32</size><access>read-write</access><resetValue>0</resetValue></register>
+</description><groupName>RPU</groupName><baseAddress>1073995776</baseAddress><addressBlock><offset>0</offset><size>320</size><usage>registers</usage></addressBlock><registers><register><name>VALUE7</name><description>Value replacement 7</description><addressOffset>212</addressOffset><size>32</size><access>read-write</access><resetValue>0</resetValue></register>
         <register><name>VALUE6</name><description>Value replacement 6</description><addressOffset>216</addressOffset><size>32</size><access>read-write</access><resetValue>0</resetValue></register>
         <register><name>VALUE5</name><description>Value replacement 5</description><addressOffset>220</addressOffset><size>32</size><access>read-write</access><resetValue>0</resetValue></register>
         <register><name>VALUE4</name><description>Value replacement 4</description><addressOffset>224</addressOffset><size>32</size><access>read-write</access><resetValue>0</resetValue></register>

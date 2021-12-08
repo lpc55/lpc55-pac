@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FALL_SPEC>> for R {
+impl From<crate::R<FALL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FALL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FALL_SPEC>> for W {
+impl From<crate::W<FALL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FALL_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<FALL_SPEC>> for W {
 #[doc = "Field `FDET` reader - Falling edge detect. Bit n detects the falling edge of the pin selected in PINTSELn. Read 0: No falling edge has been detected on this pin since Reset or the last time a one was written to this bit. Write 0: no operation. Read 1: a falling edge has been detected since Reset or the last time a one was written to this bit. Write 1: clear falling edge detection for this pin."]
 pub struct FDET_R(crate::FieldReader<u8, u8>);
 impl FDET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FDET_R(crate::FieldReader::new(bits))
     }
@@ -72,6 +75,7 @@ impl W {
         FDET_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,7 @@ pub struct RegisterBlock {
     pub request: crate::Reg<request::REQUEST_SPEC>,
     #[doc = "0x08 - Return value from ROM."]
     pub return_: crate::Reg<return_::RETURN_SPEC>,
-    _reserved3: [u8; 240usize],
+    _reserved3: [u8; 0xf0],
     #[doc = "0xfc - Identification register"]
     pub id: crate::Reg<id::ID_SPEC>,
 }

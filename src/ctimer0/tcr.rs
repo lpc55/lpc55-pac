@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<TCR_SPEC>> for R {
+impl From<crate::R<TCR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<TCR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<TCR_SPEC>> for W {
+impl From<crate::W<TCR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<TCR_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<CEN_A> for bool {
 #[doc = "Field `CEN` reader - Counter enable."]
 pub struct CEN_R(crate::FieldReader<bool, CEN_A>);
 impl CEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CEN_R(crate::FieldReader::new(bits))
     }
@@ -133,6 +136,7 @@ impl From<CRST_A> for bool {
 #[doc = "Field `CRST` reader - Counter reset."]
 pub struct CRST_R(crate::FieldReader<bool, CRST_A>);
 impl CRST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CRST_R(crate::FieldReader::new(bits))
     }
@@ -224,6 +228,7 @@ impl W {
         CRST_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

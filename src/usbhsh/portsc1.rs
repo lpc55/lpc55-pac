@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PORTSC1_SPEC>> for R {
+impl From<crate::R<PORTSC1_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PORTSC1_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PORTSC1_SPEC>> for W {
+impl From<crate::W<PORTSC1_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PORTSC1_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<PORTSC1_SPEC>> for W {
 #[doc = "Field `CCS` reader - Current Connect Status: Logic 1 indicates a device is present on the port."]
 pub struct CCS_R(crate::FieldReader<bool, bool>);
 impl CCS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CCS_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> CCS_W<'a> {
 #[doc = "Field `CSC` reader - Connect Status Change: Logic 1 means that the value of CCS has changed."]
 pub struct CSC_R(crate::FieldReader<bool, bool>);
 impl CSC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CSC_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> CSC_W<'a> {
 #[doc = "Field `PED` reader - Port Enabled/Disabled."]
 pub struct PED_R(crate::FieldReader<bool, bool>);
 impl PED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PED_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> PED_W<'a> {
 #[doc = "Field `PEDC` reader - Port Enabled/Disabled Change: Logic 1 means that the value of PED has changed."]
 pub struct PEDC_R(crate::FieldReader<bool, bool>);
 impl PEDC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PEDC_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> PEDC_W<'a> {
 #[doc = "Field `OCA` reader - Over-current active: Logic 1 means that this port has an over-current condition."]
 pub struct OCA_R(crate::FieldReader<bool, bool>);
 impl OCA_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OCA_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> OCA_W<'a> {
 #[doc = "Field `OCC` reader - Over-current change: Logic 1 means that the value of OCA has changed."]
 pub struct OCC_R(crate::FieldReader<bool, bool>);
 impl OCC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         OCC_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +259,7 @@ impl<'a> OCC_W<'a> {
 #[doc = "Field `FPR` reader - Force Port Resume: Logic 1 means resume (K-state) detected or driven on the port."]
 pub struct FPR_R(crate::FieldReader<bool, bool>);
 impl FPR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FPR_R(crate::FieldReader::new(bits))
     }
@@ -287,6 +296,7 @@ impl<'a> FPR_W<'a> {
 #[doc = "Field `SUSP` reader - Suspend: Logic 1 means port is in the suspend state."]
 pub struct SUSP_R(crate::FieldReader<bool, bool>);
 impl SUSP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SUSP_R(crate::FieldReader::new(bits))
     }
@@ -323,6 +333,7 @@ impl<'a> SUSP_W<'a> {
 #[doc = "Field `PR` reader - Port Reset: Logic 1 means the port is in the reset state."]
 pub struct PR_R(crate::FieldReader<bool, bool>);
 impl PR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PR_R(crate::FieldReader::new(bits))
     }
@@ -359,6 +370,7 @@ impl<'a> PR_W<'a> {
 #[doc = "Field `LS` reader - Line Status: This field reflects the current logical levels of the DP (bit 11) and DM (bit 10) signal lines."]
 pub struct LS_R(crate::FieldReader<u8, u8>);
 impl LS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         LS_R(crate::FieldReader::new(bits))
     }
@@ -373,6 +385,7 @@ impl core::ops::Deref for LS_R {
 #[doc = "Field `PP` reader - Port Power: The function of this bit depends on the value of the Port Power Control (PPC) bit in the HCSPARAMS register."]
 pub struct PP_R(crate::FieldReader<bool, bool>);
 impl PP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PP_R(crate::FieldReader::new(bits))
     }
@@ -409,6 +422,7 @@ impl<'a> PP_W<'a> {
 #[doc = "Field `PIC` reader - Port Indicator Control : Writing to this field has no effect if the P_INDICATOR bit in the HCSPARAMS register is logic 0."]
 pub struct PIC_R(crate::FieldReader<u8, u8>);
 impl PIC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PIC_R(crate::FieldReader::new(bits))
     }
@@ -435,6 +449,7 @@ impl<'a> PIC_W<'a> {
 #[doc = "Field `PTC` reader - Port Test Control: A non-zero value indicates that the port is operating in the test mode as indicated by the value."]
 pub struct PTC_R(crate::FieldReader<u8, u8>);
 impl PTC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PTC_R(crate::FieldReader::new(bits))
     }
@@ -461,6 +476,7 @@ impl<'a> PTC_W<'a> {
 #[doc = "Field `PSPD` reader - Port Speed: 00b: Low-speed 01b: Full-speed 10b: High-speed 11b: Reserved."]
 pub struct PSPD_R(crate::FieldReader<u8, u8>);
 impl PSPD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PSPD_R(crate::FieldReader::new(bits))
     }
@@ -487,6 +503,7 @@ impl<'a> PSPD_W<'a> {
 #[doc = "Field `WOO` reader - Wake on overcurrent enable: Writing this bit to a one enables the port to be sensitive to overcurrent conditions as wake-up events."]
 pub struct WOO_R(crate::FieldReader<bool, bool>);
 impl WOO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         WOO_R(crate::FieldReader::new(bits))
     }
@@ -669,6 +686,7 @@ impl W {
         WOO_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

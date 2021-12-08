@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<IR_SPEC>> for R {
+impl From<crate::R<IR_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<IR_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<IR_SPEC>> for W {
+impl From<crate::W<IR_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<IR_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<IR_SPEC>> for W {
 #[doc = "Field `MR0INT` reader - Interrupt flag for match channel 0."]
 pub struct MR0INT_R(crate::FieldReader<bool, bool>);
 impl MR0INT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR0INT_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> MR0INT_W<'a> {
 #[doc = "Field `MR1INT` reader - Interrupt flag for match channel 1."]
 pub struct MR1INT_R(crate::FieldReader<bool, bool>);
 impl MR1INT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR1INT_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> MR1INT_W<'a> {
 #[doc = "Field `MR2INT` reader - Interrupt flag for match channel 2."]
 pub struct MR2INT_R(crate::FieldReader<bool, bool>);
 impl MR2INT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR2INT_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> MR2INT_W<'a> {
 #[doc = "Field `MR3INT` reader - Interrupt flag for match channel 3."]
 pub struct MR3INT_R(crate::FieldReader<bool, bool>);
 impl MR3INT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MR3INT_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> MR3INT_W<'a> {
 #[doc = "Field `CR0INT` reader - Interrupt flag for capture channel 0 event."]
 pub struct CR0INT_R(crate::FieldReader<bool, bool>);
 impl CR0INT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CR0INT_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> CR0INT_W<'a> {
 #[doc = "Field `CR1INT` reader - Interrupt flag for capture channel 1 event."]
 pub struct CR1INT_R(crate::FieldReader<bool, bool>);
 impl CR1INT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CR1INT_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +259,7 @@ impl<'a> CR1INT_W<'a> {
 #[doc = "Field `CR2INT` reader - Interrupt flag for capture channel 2 event."]
 pub struct CR2INT_R(crate::FieldReader<bool, bool>);
 impl CR2INT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CR2INT_R(crate::FieldReader::new(bits))
     }
@@ -287,6 +296,7 @@ impl<'a> CR2INT_W<'a> {
 #[doc = "Field `CR3INT` reader - Interrupt flag for capture channel 3 event."]
 pub struct CR3INT_R(crate::FieldReader<bool, bool>);
 impl CR3INT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CR3INT_R(crate::FieldReader::new(bits))
     }
@@ -404,6 +414,7 @@ impl W {
         CR3INT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<LASTPTD_SPEC>> for R {
+impl From<crate::R<LASTPTD_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<LASTPTD_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<LASTPTD_SPEC>> for W {
+impl From<crate::W<LASTPTD_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<LASTPTD_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<LASTPTD_SPEC>> for W {
 #[doc = "Field `ATL_LAST` reader - If hardware has reached this PTD and the J bit is not set, it will go to PTD0 as the next PTD to be processed."]
 pub struct ATL_LAST_R(crate::FieldReader<u8, u8>);
 impl ATL_LAST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ATL_LAST_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> ATL_LAST_W<'a> {
 #[doc = "Field `ISO_LAST` reader - This indicates the last PTD in the ISO list."]
 pub struct ISO_LAST_R(crate::FieldReader<u8, u8>);
 impl ISO_LAST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         ISO_LAST_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> ISO_LAST_W<'a> {
 #[doc = "Field `INT_LAST` reader - This indicates the last PTD in the INT list."]
 pub struct INT_LAST_R(crate::FieldReader<u8, u8>);
 impl INT_LAST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         INT_LAST_R(crate::FieldReader::new(bits))
     }
@@ -144,6 +149,7 @@ impl W {
         INT_LAST_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

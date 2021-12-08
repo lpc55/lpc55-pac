@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CFG_SPEC>> for R {
+impl From<crate::R<CFG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CFG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CFG_SPEC>> for W {
+impl From<crate::W<CFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CFG_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<CFG_SPEC>> for W {
 #[doc = "Field `CAPEN0` reader - Enable Capture 0. 1 = Enabled, 0 = Disabled."]
 pub struct CAPEN0_R(crate::FieldReader<bool, bool>);
 impl CAPEN0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAPEN0_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> CAPEN0_W<'a> {
 #[doc = "Field `CAPEN1` reader - Enable Capture 1. 1 = Enabled, 0 = Disabled."]
 pub struct CAPEN1_R(crate::FieldReader<bool, bool>);
 impl CAPEN1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAPEN1_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> CAPEN1_W<'a> {
 #[doc = "Field `CAPEN2` reader - Enable Capture 2. 1 = Enabled, 0 = Disabled."]
 pub struct CAPEN2_R(crate::FieldReader<bool, bool>);
 impl CAPEN2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAPEN2_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> CAPEN2_W<'a> {
 #[doc = "Field `CAPEN3` reader - Enable Capture 3. 1 = Enabled, 0 = Disabled."]
 pub struct CAPEN3_R(crate::FieldReader<bool, bool>);
 impl CAPEN3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAPEN3_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> CAPEN3_W<'a> {
 #[doc = "Field `CAPPOL0` reader - Capture Polarity 0. 0 = Positive edge capture, 1 = Negative edge capture."]
 pub struct CAPPOL0_R(crate::FieldReader<bool, bool>);
 impl CAPPOL0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAPPOL0_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> CAPPOL0_W<'a> {
 #[doc = "Field `CAPPOL1` reader - Capture Polarity 1. 0 = Positive edge capture, 1 = Negative edge capture."]
 pub struct CAPPOL1_R(crate::FieldReader<bool, bool>);
 impl CAPPOL1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAPPOL1_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +259,7 @@ impl<'a> CAPPOL1_W<'a> {
 #[doc = "Field `CAPPOL2` reader - Capture Polarity 2. 0 = Positive edge capture, 1 = Negative edge capture."]
 pub struct CAPPOL2_R(crate::FieldReader<bool, bool>);
 impl CAPPOL2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAPPOL2_R(crate::FieldReader::new(bits))
     }
@@ -287,6 +296,7 @@ impl<'a> CAPPOL2_W<'a> {
 #[doc = "Field `CAPPOL3` reader - Capture Polarity 3. 0 = Positive edge capture, 1 = Negative edge capture."]
 pub struct CAPPOL3_R(crate::FieldReader<bool, bool>);
 impl CAPPOL3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAPPOL3_R(crate::FieldReader::new(bits))
     }
@@ -404,6 +414,7 @@ impl W {
         CAPPOL3_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<FLADJ_FRINDEX_SPEC>> for R {
+impl From<crate::R<FLADJ_FRINDEX_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<FLADJ_FRINDEX_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<FLADJ_FRINDEX_SPEC>> for W {
+impl From<crate::W<FLADJ_FRINDEX_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<FLADJ_FRINDEX_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<FLADJ_FRINDEX_SPEC>> for W {
 #[doc = "Field `FLADJ` reader - Frame Length Timing Value."]
 pub struct FLADJ_R(crate::FieldReader<u8, u8>);
 impl FLADJ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         FLADJ_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> FLADJ_W<'a> {
 #[doc = "Field `FRINDEX` reader - Frame Index: Bits 29 to16 in this register are used for the frame number field in the SOF packet."]
 pub struct FRINDEX_R(crate::FieldReader<u16, u16>);
 impl FRINDEX_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         FRINDEX_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl W {
         FRINDEX_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<MINTSTS_SPEC>> for R {
+impl From<crate::R<MINTSTS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<MINTSTS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<MINTSTS_SPEC>> for W {
+impl From<crate::W<MINTSTS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<MINTSTS_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<MINTSTS_SPEC>> for W {
 #[doc = "Field `CDET` reader - Card detect."]
 pub struct CDET_R(crate::FieldReader<bool, bool>);
 impl CDET_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CDET_R(crate::FieldReader::new(bits))
     }
@@ -71,6 +74,7 @@ impl<'a> CDET_W<'a> {
 #[doc = "Field `RE` reader - Response error."]
 pub struct RE_R(crate::FieldReader<bool, bool>);
 impl RE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RE_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +111,7 @@ impl<'a> RE_W<'a> {
 #[doc = "Field `CDONE` reader - Command done."]
 pub struct CDONE_R(crate::FieldReader<bool, bool>);
 impl CDONE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CDONE_R(crate::FieldReader::new(bits))
     }
@@ -143,6 +148,7 @@ impl<'a> CDONE_W<'a> {
 #[doc = "Field `DTO` reader - Data transfer over."]
 pub struct DTO_R(crate::FieldReader<bool, bool>);
 impl DTO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DTO_R(crate::FieldReader::new(bits))
     }
@@ -179,6 +185,7 @@ impl<'a> DTO_W<'a> {
 #[doc = "Field `TXDR` reader - Transmit FIFO data request."]
 pub struct TXDR_R(crate::FieldReader<bool, bool>);
 impl TXDR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         TXDR_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +222,7 @@ impl<'a> TXDR_W<'a> {
 #[doc = "Field `RXDR` reader - Receive FIFO data request."]
 pub struct RXDR_R(crate::FieldReader<bool, bool>);
 impl RXDR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RXDR_R(crate::FieldReader::new(bits))
     }
@@ -251,6 +259,7 @@ impl<'a> RXDR_W<'a> {
 #[doc = "Field `RCRC` reader - Response CRC error."]
 pub struct RCRC_R(crate::FieldReader<bool, bool>);
 impl RCRC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RCRC_R(crate::FieldReader::new(bits))
     }
@@ -287,6 +296,7 @@ impl<'a> RCRC_W<'a> {
 #[doc = "Field `DCRC` reader - Data CRC error."]
 pub struct DCRC_R(crate::FieldReader<bool, bool>);
 impl DCRC_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DCRC_R(crate::FieldReader::new(bits))
     }
@@ -323,6 +333,7 @@ impl<'a> DCRC_W<'a> {
 #[doc = "Field `RTO` reader - Response time-out."]
 pub struct RTO_R(crate::FieldReader<bool, bool>);
 impl RTO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RTO_R(crate::FieldReader::new(bits))
     }
@@ -359,6 +370,7 @@ impl<'a> RTO_W<'a> {
 #[doc = "Field `DRTO` reader - Data read time-out."]
 pub struct DRTO_R(crate::FieldReader<bool, bool>);
 impl DRTO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DRTO_R(crate::FieldReader::new(bits))
     }
@@ -395,6 +407,7 @@ impl<'a> DRTO_W<'a> {
 #[doc = "Field `HTO` reader - Data starvation-by-host time-out (HTO)."]
 pub struct HTO_R(crate::FieldReader<bool, bool>);
 impl HTO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HTO_R(crate::FieldReader::new(bits))
     }
@@ -431,6 +444,7 @@ impl<'a> HTO_W<'a> {
 #[doc = "Field `FRUN` reader - FIFO underrun/overrun error."]
 pub struct FRUN_R(crate::FieldReader<bool, bool>);
 impl FRUN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FRUN_R(crate::FieldReader::new(bits))
     }
@@ -467,6 +481,7 @@ impl<'a> FRUN_W<'a> {
 #[doc = "Field `HLE` reader - Hardware locked write error."]
 pub struct HLE_R(crate::FieldReader<bool, bool>);
 impl HLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HLE_R(crate::FieldReader::new(bits))
     }
@@ -503,6 +518,7 @@ impl<'a> HLE_W<'a> {
 #[doc = "Field `SBE` reader - Start-bit error."]
 pub struct SBE_R(crate::FieldReader<bool, bool>);
 impl SBE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SBE_R(crate::FieldReader::new(bits))
     }
@@ -539,6 +555,7 @@ impl<'a> SBE_W<'a> {
 #[doc = "Field `ACD` reader - Auto command done."]
 pub struct ACD_R(crate::FieldReader<bool, bool>);
 impl ACD_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ACD_R(crate::FieldReader::new(bits))
     }
@@ -575,6 +592,7 @@ impl<'a> ACD_W<'a> {
 #[doc = "Field `EBE` reader - End-bit error (read)/write no CRC."]
 pub struct EBE_R(crate::FieldReader<bool, bool>);
 impl EBE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         EBE_R(crate::FieldReader::new(bits))
     }
@@ -611,6 +629,7 @@ impl<'a> EBE_W<'a> {
 #[doc = "Field `SDIO_INTERRUPT` reader - Interrupt from SDIO card."]
 pub struct SDIO_INTERRUPT_R(crate::FieldReader<bool, bool>);
 impl SDIO_INTERRUPT_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SDIO_INTERRUPT_R(crate::FieldReader::new(bits))
     }
@@ -818,6 +837,7 @@ impl W {
         SDIO_INTERRUPT_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

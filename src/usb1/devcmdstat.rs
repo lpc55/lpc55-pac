@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<DEVCMDSTAT_SPEC>> for R {
+impl From<crate::R<DEVCMDSTAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<DEVCMDSTAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<DEVCMDSTAT_SPEC>> for W {
+impl From<crate::W<DEVCMDSTAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<DEVCMDSTAT_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<DEVCMDSTAT_SPEC>> for W {
 #[doc = "Field `DEV_ADDR` reader - USB device address."]
 pub struct DEV_ADDR_R(crate::FieldReader<u8, u8>);
 impl DEV_ADDR_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DEV_ADDR_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> DEV_ADDR_W<'a> {
 #[doc = "Field `DEV_EN` reader - USB device enable."]
 pub struct DEV_EN_R(crate::FieldReader<bool, bool>);
 impl DEV_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEV_EN_R(crate::FieldReader::new(bits))
     }
@@ -97,6 +101,7 @@ impl<'a> DEV_EN_W<'a> {
 #[doc = "Field `SETUP` reader - SETUP token received."]
 pub struct SETUP_R(crate::FieldReader<bool, bool>);
 impl SETUP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SETUP_R(crate::FieldReader::new(bits))
     }
@@ -133,6 +138,7 @@ impl<'a> SETUP_W<'a> {
 #[doc = "Field `FORCE_NEEDCLK` reader - Forces the NEEDCLK output to always be on:."]
 pub struct FORCE_NEEDCLK_R(crate::FieldReader<bool, bool>);
 impl FORCE_NEEDCLK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         FORCE_NEEDCLK_R(crate::FieldReader::new(bits))
     }
@@ -169,6 +175,7 @@ impl<'a> FORCE_NEEDCLK_W<'a> {
 #[doc = "Field `LPM_SUP` reader - LPM Supported:."]
 pub struct LPM_SUP_R(crate::FieldReader<bool, bool>);
 impl LPM_SUP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LPM_SUP_R(crate::FieldReader::new(bits))
     }
@@ -205,6 +212,7 @@ impl<'a> LPM_SUP_W<'a> {
 #[doc = "Field `INTONNAK_AO` reader - Interrupt on NAK for interrupt and bulk OUT EP:."]
 pub struct INTONNAK_AO_R(crate::FieldReader<bool, bool>);
 impl INTONNAK_AO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INTONNAK_AO_R(crate::FieldReader::new(bits))
     }
@@ -241,6 +249,7 @@ impl<'a> INTONNAK_AO_W<'a> {
 #[doc = "Field `INTONNAK_AI` reader - Interrupt on NAK for interrupt and bulk IN EP:."]
 pub struct INTONNAK_AI_R(crate::FieldReader<bool, bool>);
 impl INTONNAK_AI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INTONNAK_AI_R(crate::FieldReader::new(bits))
     }
@@ -277,6 +286,7 @@ impl<'a> INTONNAK_AI_W<'a> {
 #[doc = "Field `INTONNAK_CO` reader - Interrupt on NAK for control OUT EP:."]
 pub struct INTONNAK_CO_R(crate::FieldReader<bool, bool>);
 impl INTONNAK_CO_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INTONNAK_CO_R(crate::FieldReader::new(bits))
     }
@@ -313,6 +323,7 @@ impl<'a> INTONNAK_CO_W<'a> {
 #[doc = "Field `INTONNAK_CI` reader - Interrupt on NAK for control IN EP:."]
 pub struct INTONNAK_CI_R(crate::FieldReader<bool, bool>);
 impl INTONNAK_CI_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         INTONNAK_CI_R(crate::FieldReader::new(bits))
     }
@@ -349,6 +360,7 @@ impl<'a> INTONNAK_CI_W<'a> {
 #[doc = "Field `DCON` reader - Device status - connect."]
 pub struct DCON_R(crate::FieldReader<bool, bool>);
 impl DCON_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DCON_R(crate::FieldReader::new(bits))
     }
@@ -385,6 +397,7 @@ impl<'a> DCON_W<'a> {
 #[doc = "Field `DSUS` reader - Device status - suspend."]
 pub struct DSUS_R(crate::FieldReader<bool, bool>);
 impl DSUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DSUS_R(crate::FieldReader::new(bits))
     }
@@ -421,6 +434,7 @@ impl<'a> DSUS_W<'a> {
 #[doc = "Field `LPM_SUS` reader - Device status - LPM Suspend."]
 pub struct LPM_SUS_R(crate::FieldReader<bool, bool>);
 impl LPM_SUS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LPM_SUS_R(crate::FieldReader::new(bits))
     }
@@ -457,6 +471,7 @@ impl<'a> LPM_SUS_W<'a> {
 #[doc = "Field `LPM_REWP` reader - LPM Remote Wake-up Enabled by USB host."]
 pub struct LPM_REWP_R(crate::FieldReader<bool, bool>);
 impl LPM_REWP_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         LPM_REWP_R(crate::FieldReader::new(bits))
     }
@@ -471,6 +486,7 @@ impl core::ops::Deref for LPM_REWP_R {
 #[doc = "Field `Speed` reader - This field indicates the speed at which the device operates: 00b: reserved 01b: full-speed 10b: high-speed 11b: super-speed (reserved for future use)."]
 pub struct SPEED_R(crate::FieldReader<u8, u8>);
 impl SPEED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SPEED_R(crate::FieldReader::new(bits))
     }
@@ -485,6 +501,7 @@ impl core::ops::Deref for SPEED_R {
 #[doc = "Field `DCON_C` reader - Device status - connect change."]
 pub struct DCON_C_R(crate::FieldReader<bool, bool>);
 impl DCON_C_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DCON_C_R(crate::FieldReader::new(bits))
     }
@@ -521,6 +538,7 @@ impl<'a> DCON_C_W<'a> {
 #[doc = "Field `DSUS_C` reader - Device status - suspend change."]
 pub struct DSUS_C_R(crate::FieldReader<bool, bool>);
 impl DSUS_C_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DSUS_C_R(crate::FieldReader::new(bits))
     }
@@ -557,6 +575,7 @@ impl<'a> DSUS_C_W<'a> {
 #[doc = "Field `DRES_C` reader - Device status - reset change."]
 pub struct DRES_C_R(crate::FieldReader<bool, bool>);
 impl DRES_C_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DRES_C_R(crate::FieldReader::new(bits))
     }
@@ -593,6 +612,7 @@ impl<'a> DRES_C_W<'a> {
 #[doc = "Field `VBUS_DEBOUNCED` reader - This bit indicates if VBUS is detected or not."]
 pub struct VBUS_DEBOUNCED_R(crate::FieldReader<bool, bool>);
 impl VBUS_DEBOUNCED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         VBUS_DEBOUNCED_R(crate::FieldReader::new(bits))
     }
@@ -607,6 +627,7 @@ impl core::ops::Deref for VBUS_DEBOUNCED_R {
 #[doc = "Field `PHY_TEST_MODE` reader - This field is written by firmware to put the PHY into a test mode as defined by the USB2.0 specification"]
 pub struct PHY_TEST_MODE_R(crate::FieldReader<u8, u8>);
 impl PHY_TEST_MODE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         PHY_TEST_MODE_R(crate::FieldReader::new(bits))
     }
@@ -809,6 +830,7 @@ impl W {
         PHY_TEST_MODE_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

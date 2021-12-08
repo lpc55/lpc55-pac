@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<MODULEID_SPEC>> for R {
+impl From<crate::R<MODULEID_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<MODULEID_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<MODULEID_SPEC>> for R {
 #[doc = "Field `APERTURE` reader - Aperture i."]
 pub struct APERTURE_R(crate::FieldReader<u8, u8>);
 impl APERTURE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         APERTURE_R(crate::FieldReader::new(bits))
     }
@@ -29,6 +31,7 @@ impl core::ops::Deref for APERTURE_R {
 #[doc = "Field `MIN_REV` reader - Minor revision i."]
 pub struct MIN_REV_R(crate::FieldReader<u8, u8>);
 impl MIN_REV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MIN_REV_R(crate::FieldReader::new(bits))
     }
@@ -43,6 +46,7 @@ impl core::ops::Deref for MIN_REV_R {
 #[doc = "Field `MAJ_REV` reader - Major revision i."]
 pub struct MAJ_REV_R(crate::FieldReader<u8, u8>);
 impl MAJ_REV_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         MAJ_REV_R(crate::FieldReader::new(bits))
     }
@@ -57,6 +61,7 @@ impl core::ops::Deref for MAJ_REV_R {
 #[doc = "Field `ID` reader - Identifier."]
 pub struct ID_R(crate::FieldReader<u16, u16>);
 impl ID_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         ID_R(crate::FieldReader::new(bits))
     }

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<STAT_SPEC>> for R {
+impl From<crate::R<STAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<STAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<STAT_SPEC>> for W {
+impl From<crate::W<STAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<STAT_SPEC>) -> Self {
         W(writer)
     }
@@ -79,6 +81,7 @@ impl<'a> SSD_W<'a> {
 #[doc = "Field `STALLED` reader - Stalled status flag. This indicates whether the SPI is currently in a stall condition."]
 pub struct STALLED_R(crate::FieldReader<bool, bool>);
 impl STALLED_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         STALLED_R(crate::FieldReader::new(bits))
     }
@@ -93,6 +96,7 @@ impl core::ops::Deref for STALLED_R {
 #[doc = "Field `ENDTRANSFER` reader - End Transfer control bit. Software can set this bit to force an end to the current transfer when the transmitter finishes any activity already in progress, as if the EOT flag had been set prior to the last transmission. This capability is included to support cases where it is not known when transmit data is written that it will be the end of a transfer. The bit is cleared when the transmitter becomes idle as the transfer comes to an end. Forcing an end of transfer in this manner causes any specified FRAME_DELAY and TRANSFER_DELAY to be inserted."]
 pub struct ENDTRANSFER_R(crate::FieldReader<bool, bool>);
 impl ENDTRANSFER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ENDTRANSFER_R(crate::FieldReader::new(bits))
     }
@@ -129,6 +133,7 @@ impl<'a> ENDTRANSFER_W<'a> {
 #[doc = "Field `MSTIDLE` reader - Master idle status flag. This bit is 1 whenever the SPI master function is fully idle. This means that the transmit holding register is empty and the transmitter is not in the process of sending data."]
 pub struct MSTIDLE_R(crate::FieldReader<bool, bool>);
 impl MSTIDLE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         MSTIDLE_R(crate::FieldReader::new(bits))
     }
@@ -174,6 +179,7 @@ impl W {
         ENDTRANSFER_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

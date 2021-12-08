@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<PWMC_SPEC>> for R {
+impl From<crate::R<PWMC_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<PWMC_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<PWMC_SPEC>> for W {
+impl From<crate::W<PWMC_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<PWMC_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<PWMEN0_A> for bool {
 #[doc = "Field `PWMEN0` reader - PWM mode enable for channel0."]
 pub struct PWMEN0_R(crate::FieldReader<bool, PWMEN0_A>);
 impl PWMEN0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PWMEN0_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<PWMEN1_A> for bool {
 #[doc = "Field `PWMEN1` reader - PWM mode enable for channel1."]
 pub struct PWMEN1_R(crate::FieldReader<bool, PWMEN1_A>);
 impl PWMEN1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PWMEN1_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<PWMEN2_A> for bool {
 #[doc = "Field `PWMEN2` reader - PWM mode enable for channel2."]
 pub struct PWMEN2_R(crate::FieldReader<bool, PWMEN2_A>);
 impl PWMEN2_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PWMEN2_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<PWMEN3_A> for bool {
 #[doc = "Field `PWMEN3` reader - PWM mode enable for channel3. Note: It is recommended to use match channel 3 to set the PWM cycle."]
 pub struct PWMEN3_R(crate::FieldReader<bool, PWMEN3_A>);
 impl PWMEN3_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         PWMEN3_R(crate::FieldReader::new(bits))
     }
@@ -408,6 +414,7 @@ impl W {
         PWMEN3_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<CTRL_SPEC>> for R {
+impl From<crate::R<CTRL_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<CTRL_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<CTRL_SPEC>> for W {
+impl From<crate::W<CTRL_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<CTRL_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<ADCEN_A> for bool {
 #[doc = "Field `ADCEN` reader - ADC Enable"]
 pub struct ADCEN_R(crate::FieldReader<bool, ADCEN_A>);
 impl ADCEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         ADCEN_R(crate::FieldReader::new(bits))
     }
@@ -132,6 +135,7 @@ impl From<RST_A> for bool {
 #[doc = "Field `RST` reader - Software Reset"]
 pub struct RST_R(crate::FieldReader<bool, RST_A>);
 impl RST_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RST_R(crate::FieldReader::new(bits))
     }
@@ -215,6 +219,7 @@ impl From<DOZEN_A> for bool {
 #[doc = "Field `DOZEN` reader - Doze Enable"]
 pub struct DOZEN_R(crate::FieldReader<bool, DOZEN_A>);
 impl DOZEN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DOZEN_R(crate::FieldReader::new(bits))
     }
@@ -298,6 +303,7 @@ impl From<CAL_REQ_A> for bool {
 #[doc = "Field `CAL_REQ` reader - Auto-Calibration Request"]
 pub struct CAL_REQ_R(crate::FieldReader<bool, CAL_REQ_A>);
 impl CAL_REQ_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CAL_REQ_R(crate::FieldReader::new(bits))
     }
@@ -381,6 +387,7 @@ impl From<CALOFS_A> for bool {
 #[doc = "Field `CALOFS` reader - Configure for offset calibration function"]
 pub struct CALOFS_R(crate::FieldReader<bool, CALOFS_A>);
 impl CALOFS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         CALOFS_R(crate::FieldReader::new(bits))
     }
@@ -464,6 +471,7 @@ impl From<RSTFIFO0_A> for bool {
 #[doc = "Field `RSTFIFO0` reader - Reset FIFO 0"]
 pub struct RSTFIFO0_R(crate::FieldReader<bool, RSTFIFO0_A>);
 impl RSTFIFO0_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RSTFIFO0_R(crate::FieldReader::new(bits))
     }
@@ -547,6 +555,7 @@ impl From<RSTFIFO1_A> for bool {
 #[doc = "Field `RSTFIFO1` reader - Reset FIFO 1"]
 pub struct RSTFIFO1_R(crate::FieldReader<bool, RSTFIFO1_A>);
 impl RSTFIFO1_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         RSTFIFO1_R(crate::FieldReader::new(bits))
     }
@@ -643,6 +652,7 @@ impl From<CAL_AVGS_A> for u8 {
 #[doc = "Field `CAL_AVGS` reader - Auto-Calibration Averages"]
 pub struct CAL_AVGS_R(crate::FieldReader<u8, CAL_AVGS_A>);
 impl CAL_AVGS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         CAL_AVGS_R(crate::FieldReader::new(bits))
     }
@@ -850,6 +860,7 @@ impl W {
         CAL_AVGS_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

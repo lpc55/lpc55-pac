@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<BUSY0_SPEC>> for R {
+impl From<crate::R<BUSY0_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<BUSY0_SPEC>) -> Self {
         R(reader)
     }
@@ -15,6 +16,7 @@ impl core::convert::From<crate::R<BUSY0_SPEC>> for R {
 #[doc = "Field `BSY` reader - Busy flag for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = not busy. 1 = busy."]
 pub struct BSY_R(crate::FieldReader<u32, u32>);
 impl BSY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
         BSY_R(crate::FieldReader::new(bits))
     }
@@ -30,7 +32,7 @@ impl R {
     #[doc = "Bits 0:31 - Busy flag for DMA channel n. Bit n corresponds to DMA channel n. The number of bits = number of DMA channels in this device. Other bits are reserved. 0 = not busy. 1 = busy."]
     #[inline(always)]
     pub fn bsy(&self) -> BSY_R {
-        BSY_R::new((self.bits & 0xffff_ffff) as u32)
+        BSY_R::new(self.bits as u32)
     }
 }
 #[doc = "Channel Busy status for all DMA channels.\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [busy0](index.html) module"]

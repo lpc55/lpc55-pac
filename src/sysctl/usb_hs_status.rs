@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<USB_HS_STATUS_SPEC>> for R {
+impl From<crate::R<USB_HS_STATUS_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<USB_HS_STATUS_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<USB_HS_STATUS_SPEC>> for W {
+impl From<crate::W<USB_HS_STATUS_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<USB_HS_STATUS_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<USBHS_3V_NOK_A> for bool {
 #[doc = "Field `USBHS_3V_NOK` reader - USB_HS: Low voltage detection on 3.3V supply."]
 pub struct USBHS_3V_NOK_R(crate::FieldReader<bool, USBHS_3V_NOK_A>);
 impl USBHS_3V_NOK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         USBHS_3V_NOK_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +90,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

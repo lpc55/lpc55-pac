@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SEC_VIO_MISC_INFO_SPEC>> for R {
+impl From<crate::R<SEC_VIO_MISC_INFO_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SEC_VIO_MISC_INFO_SPEC>) -> Self {
         R(reader)
     }
@@ -29,6 +30,7 @@ impl From<SEC_VIO_INFO_WRITE_A> for bool {
 #[doc = "Field `SEC_VIO_INFO_WRITE` reader - security violation access read/write indicator."]
 pub struct SEC_VIO_INFO_WRITE_R(crate::FieldReader<bool, SEC_VIO_INFO_WRITE_A>);
 impl SEC_VIO_INFO_WRITE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEC_VIO_INFO_WRITE_R(crate::FieldReader::new(bits))
     }
@@ -75,6 +77,7 @@ impl From<SEC_VIO_INFO_DATA_ACCESS_A> for bool {
 #[doc = "Field `SEC_VIO_INFO_DATA_ACCESS` reader - security violation access data/code indicator."]
 pub struct SEC_VIO_INFO_DATA_ACCESS_R(crate::FieldReader<bool, SEC_VIO_INFO_DATA_ACCESS_A>);
 impl SEC_VIO_INFO_DATA_ACCESS_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         SEC_VIO_INFO_DATA_ACCESS_R(crate::FieldReader::new(bits))
     }
@@ -107,6 +110,7 @@ impl core::ops::Deref for SEC_VIO_INFO_DATA_ACCESS_R {
 #[doc = "Field `SEC_VIO_INFO_MASTER_SEC_LEVEL` reader - bit \\[5:4\\]: master sec level and privilege level bit \\[7:6\\]: anti-pol value for master sec level and privilege level"]
 pub struct SEC_VIO_INFO_MASTER_SEC_LEVEL_R(crate::FieldReader<u8, u8>);
 impl SEC_VIO_INFO_MASTER_SEC_LEVEL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SEC_VIO_INFO_MASTER_SEC_LEVEL_R(crate::FieldReader::new(bits))
     }
@@ -154,6 +158,7 @@ impl From<SEC_VIO_INFO_MASTER_A> for u8 {
 #[doc = "Field `SEC_VIO_INFO_MASTER` reader - security violation master number"]
 pub struct SEC_VIO_INFO_MASTER_R(crate::FieldReader<u8, SEC_VIO_INFO_MASTER_A>);
 impl SEC_VIO_INFO_MASTER_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SEC_VIO_INFO_MASTER_R(crate::FieldReader::new(bits))
     }

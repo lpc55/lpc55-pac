@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<STOP_SPEC>> for R {
+impl From<crate::R<STOP_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<STOP_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<STOP_SPEC>> for W {
+impl From<crate::W<STOP_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<STOP_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<STOP_SPEC>> for W {
 #[doc = "Field `STOPMSK_L` reader - If bit n is one, event n sets the STOP_L bit in the CTRL register (event 0 = bit 0, event 1 = bit 1, etc.). The number of bits = number of events in this SCT."]
 pub struct STOPMSK_L_R(crate::FieldReader<u16, u16>);
 impl STOPMSK_L_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         STOPMSK_L_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> STOPMSK_L_W<'a> {
 #[doc = "Field `STOPMSK_H` reader - If bit n is one, event n sets the STOP_H bit in the CTRL register (event 0 = bit 16, event 1 = bit 17, etc.). The number of bits = number of events in this SCT."]
 pub struct STOPMSK_H_R(crate::FieldReader<u16, u16>);
 impl STOPMSK_H_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
         STOPMSK_H_R(crate::FieldReader::new(bits))
     }
@@ -108,6 +112,7 @@ impl W {
         STOPMSK_H_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<SECURE_BOOT_CFG_SPEC>> for R {
+impl From<crate::R<SECURE_BOOT_CFG_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<SECURE_BOOT_CFG_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<SECURE_BOOT_CFG_SPEC>> for W {
+impl From<crate::W<SECURE_BOOT_CFG_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<SECURE_BOOT_CFG_SPEC>) -> Self {
         W(writer)
     }
@@ -35,6 +37,7 @@ impl core::convert::From<crate::W<SECURE_BOOT_CFG_SPEC>> for W {
 #[doc = "Field `RSA4K` reader - Use RSA4096 keys only. 00- RSA2048 keys 01, 10, 11 - RSA4096 keys"]
 pub struct RSA4K_R(crate::FieldReader<u8, u8>);
 impl RSA4K_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         RSA4K_R(crate::FieldReader::new(bits))
     }
@@ -61,6 +64,7 @@ impl<'a> RSA4K_W<'a> {
 #[doc = "Field `DICE_ENC_NXP_CFG` reader - Include NXP area in DICE computation. 00 - not included 01, 10, 11 - included"]
 pub struct DICE_ENC_NXP_CFG_R(crate::FieldReader<u8, u8>);
 impl DICE_ENC_NXP_CFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DICE_ENC_NXP_CFG_R(crate::FieldReader::new(bits))
     }
@@ -87,6 +91,7 @@ impl<'a> DICE_ENC_NXP_CFG_W<'a> {
 #[doc = "Field `DICE_CUST_CFG` reader - Include Customer factory area (including keys) in DICE computation. 00 - not included 01, 10, 11 - included"]
 pub struct DICE_CUST_CFG_R(crate::FieldReader<u8, u8>);
 impl DICE_CUST_CFG_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DICE_CUST_CFG_R(crate::FieldReader::new(bits))
     }
@@ -113,6 +118,7 @@ impl<'a> DICE_CUST_CFG_W<'a> {
 #[doc = "Field `SKIP_DICE` reader - Skip DICE computation. 00 - Enable DICE 01,10,11 - Disable DICE"]
 pub struct SKIP_DICE_R(crate::FieldReader<u8, u8>);
 impl SKIP_DICE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SKIP_DICE_R(crate::FieldReader::new(bits))
     }
@@ -139,6 +145,7 @@ impl<'a> SKIP_DICE_W<'a> {
 #[doc = "Field `TZM_IMAGE_TYPE` reader - TrustZone-M mode. 00 - TZM mode in image header. 01 - Disable TZ-M. Boots to NonSecure. 10 - TZ-M enable boots to secure mode. 11 - Preset TZM checker from image header."]
 pub struct TZM_IMAGE_TYPE_R(crate::FieldReader<u8, u8>);
 impl TZM_IMAGE_TYPE_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         TZM_IMAGE_TYPE_R(crate::FieldReader::new(bits))
     }
@@ -165,6 +172,7 @@ impl<'a> TZM_IMAGE_TYPE_W<'a> {
 #[doc = "Field `BLOCK_SET_KEY` reader - Block PUF key code generation. 00 - Enable Key code generation 01, 10, 11 - Disable key code generation"]
 pub struct BLOCK_SET_KEY_R(crate::FieldReader<u8, u8>);
 impl BLOCK_SET_KEY_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BLOCK_SET_KEY_R(crate::FieldReader::new(bits))
     }
@@ -191,6 +199,7 @@ impl<'a> BLOCK_SET_KEY_W<'a> {
 #[doc = "Field `BLOCK_ENROLL` reader - Block PUF enrollement. 00 - Enable enrollment mode 01, 10, 11 - Disable further enrollmnet"]
 pub struct BLOCK_ENROLL_R(crate::FieldReader<u8, u8>);
 impl BLOCK_ENROLL_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         BLOCK_ENROLL_R(crate::FieldReader::new(bits))
     }
@@ -217,6 +226,7 @@ impl<'a> BLOCK_ENROLL_W<'a> {
 #[doc = "Field `DICE_INC_SEC_EPOCH` reader - Include security EPOCH in DICE"]
 pub struct DICE_INC_SEC_EPOCH_R(crate::FieldReader<u8, u8>);
 impl DICE_INC_SEC_EPOCH_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         DICE_INC_SEC_EPOCH_R(crate::FieldReader::new(bits))
     }
@@ -243,6 +253,7 @@ impl<'a> DICE_INC_SEC_EPOCH_W<'a> {
 #[doc = "Field `SEC_BOOT_EN` reader - Secure boot enable. 00 - Plain image (internal flash with or without CRC) 01, 10, 11 - Boot signed images. (internal flash, RSA signed)"]
 pub struct SEC_BOOT_EN_R(crate::FieldReader<u8, u8>);
 impl SEC_BOOT_EN_R {
+    #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
         SEC_BOOT_EN_R(crate::FieldReader::new(bits))
     }
@@ -360,6 +371,7 @@ impl W {
         SEC_BOOT_EN_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self

@@ -7,7 +7,8 @@ impl core::ops::Deref for R {
         &self.0
     }
 }
-impl core::convert::From<crate::R<USB1NEEDCLKSTAT_SPEC>> for R {
+impl From<crate::R<USB1NEEDCLKSTAT_SPEC>> for R {
+    #[inline(always)]
     fn from(reader: crate::R<USB1NEEDCLKSTAT_SPEC>) -> Self {
         R(reader)
     }
@@ -27,7 +28,8 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl core::convert::From<crate::W<USB1NEEDCLKSTAT_SPEC>> for W {
+impl From<crate::W<USB1NEEDCLKSTAT_SPEC>> for W {
+    #[inline(always)]
     fn from(writer: crate::W<USB1NEEDCLKSTAT_SPEC>) -> Self {
         W(writer)
     }
@@ -49,6 +51,7 @@ impl From<DEV_NEEDCLK_A> for bool {
 #[doc = "Field `DEV_NEEDCLK` reader - USB1 Device need_clock signal status:."]
 pub struct DEV_NEEDCLK_R(crate::FieldReader<bool, DEV_NEEDCLK_A>);
 impl DEV_NEEDCLK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         DEV_NEEDCLK_R(crate::FieldReader::new(bits))
     }
@@ -95,6 +98,7 @@ impl From<HOST_NEEDCLK_A> for bool {
 #[doc = "Field `HOST_NEEDCLK` reader - USB1 Host need_clock signal status:."]
 pub struct HOST_NEEDCLK_R(crate::FieldReader<bool, HOST_NEEDCLK_A>);
 impl HOST_NEEDCLK_R {
+    #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
         HOST_NEEDCLK_R(crate::FieldReader::new(bits))
     }
@@ -138,6 +142,7 @@ impl R {
 }
 impl W {
     #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
         self.0.bits(bits);
         self
