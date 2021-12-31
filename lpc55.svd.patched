@@ -80767,7 +80767,7 @@ SPDX-License-Identifier: BSD-3-Clause
     </peripheral>
     <peripheral>
       <name>SAU</name>
-      <description>no description available</description>
+      <description>Security Attribution Unit</description>
       <groupName>SAU</groupName>
       <baseAddress>0xE000EDD0</baseAddress>
       <addressBlock>

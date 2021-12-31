@@ -2845,7 +2845,7 @@ impl core::fmt::Debug for SCNSCB {
 }
 #[doc = "no description available"]
 pub mod scn_scb;
-#[doc = "no description available"]
+#[doc = "Security Attribution Unit"]
 pub struct SAU {
     _marker: PhantomData<*const ()>,
 }
@@ -2871,7 +2871,7 @@ impl core::fmt::Debug for SAU {
         f.debug_struct("SAU").finish()
     }
 }
-#[doc = "no description available"]
+#[doc = "Security Attribution Unit"]
 pub mod sau;
 #[doc = "USB1 High-speed Device Controller"]
 pub struct USB0 {
