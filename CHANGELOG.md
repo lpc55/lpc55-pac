@@ -5,6 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [v0.5.0] - 2022-03-17
+
+- bump cortex-m-rt (breaking because reasons)
+
 ## [v0.4.1] - 2021-12-31
 
 - fix addressBlock usage
