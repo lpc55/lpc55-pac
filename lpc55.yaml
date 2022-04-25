@@ -50,6 +50,55 @@ SYSCON:
       pll0: [0x01, "PLL0 clk."]
       fro96: [0x02, "FRO 96 MHZ clk."]
       none: [0x04, "No clk."]
+  _add:
+    DICE_REG0:
+      description: DICE CDI bytes 0 through 3
+      access: read-write
+      addressOffset: 0x900
+      size: 0x20
+      resetValue: 0x0
+    DICE_REG1:
+      description: DICE CDI bytes 4 through 7
+      access: read-write
+      addressOffset: 0x904
+      size: 0x20
+      resetValue: 0x0
+    DICE_REG2:
+      description: DICE CDI bytes 8 through 11
+      access: read-write
+      addressOffset: 0x908
+      size: 0x20
+      resetValue: 0x0
+    DICE_REG3:
+      description: DICE CDI bytes 12 through 15
+      access: read-write
+      addressOffset: 0x90c
+      size: 0x20
+      resetValue: 0x0
+    DICE_REG4:
+      description: DICE CDI bytes 16 through 19
+      access: read-write
+      addressOffset: 0x910
+      size: 0x20
+      resetValue: 0x0
+    DICE_REG5:
+      description: DICE CDI bytes 20 through 23
+      access: read-write
+      addressOffset: 0x914
+      size: 0x20
+      resetValue: 0x0
+    DICE_REG6:
+      description: DICE CDI bytes 24 through 27
+      access: read-write
+      addressOffset: 0x918
+      size: 0x20
+      resetValue: 0x0
+    DICE_REG7:
+      description: DICE CDI bytes 28 through 31
+      access: read-write
+      addressOffset: 0x91c
+      size: 0x20
+      resetValue: 0x0
 
 
 PUF:
